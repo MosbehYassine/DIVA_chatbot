@@ -1,0 +1,87 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation d'un arbre</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Programmation d'un arbre</h3>
+<p class="Body-Text">Cette rubrique précise uniquement les spécificités de la programmation des arbres par rapport à la programmation des tableaux. Il est donc indispensable de maîtriser cette dernière avant d'aborder ce qui suit. Pour cela, on se reportera préalablement au chapitre consacré aux tableaux et plus particulièrement à la rubrique <a href="Programmationd_untableau.htm">Programmation d'un tableau</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le schéma de <font class="hcp1">boucle de traitement des événements</font> liés à un arbre est identique au schéma décrit pour un tableau. Rappelons toutefois que de nouveaux événements sont susceptibles de se produire dans le cas d'un arbre (Cf. rubrique <a href="Ev_nementssourisli_s_l_objetarbre.htm">Evénements souris liés à l'objet arbre</a>).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">En ce qui concerne la <font class="hcp1">séquence de mise en œuvre d'un arbre</font>, il faut ajouter, par rapport à la séquence de mise en œuvre d'un tableau&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Le cas échéant (création prévue de nouveaux éléments par XmeListConsultDefault mais procédure <a href="DefProcSaisie.htm">DefProcSaisie</a> <font class="hcp1">non</font> utilisée), initialisation des variables Harmony.BitmapExp et Harmony.BitmapRed, en général au début du programme.<br>
+A l'occasion d'une création d'élément et avant sa saisie, le contenu de ces deux variables (images bitmap par défaut) sera copié par XmeListConsultDefault, respectivement dans les champs BitmapExp et BitmapRed de la variable de contrôle associée au nouvel élément.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le cas échéant, remplissage initial de l'arbre (Cf. rubrique <a href="Gestiondelalisteassoci_e_unarbre.htm">Gestion de la liste associée à un arbre</a>), avec garnissage de la variable de contrôle (Cf. rubrique <a href="Variabledecontr_led_unarbre.htm">Variable de contrôle d'un arbre</a>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le cas échéant, demande d'affichage et initialisation du curseur de création (fonction <a href="XmeListTreeCursorInit.htm">XmeListTreeCursorInit</a>).</p>
+</li>
+</ul>
+<p class="Body-Text">On obtient alors une séquence de mise en route du type suivant&#160;:</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Arbre &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;contenu d'un élément</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;incluant une variable de&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;contrôle de l'arbre&#160;</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ScrollBar32 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ascenseur</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd RowInfo &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;SI donnée de contrôle</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;des lignes&#160;</p>
+<p class="Source">...</p>
+<p class="Source">1 Ident L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;identifiant du tableau</p>
+<p class="Source">1 Car B</p>
+<p class="Source">1 Fini B</p>
+<p class="Source">...</p>
+<p class="Source">MAIN&#160;</p>
+<p class="Source">...</p>
+<p class="Source">XmeLoad ("masque") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font class="hcp1">X</font>meInfoPage ("masque",<font class="hcp2">Page</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("masque",<font class="hcp2">Page</font>,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation tableau&#160;</p>
+<p class="Source">Ident = XmeListGetId ("MASQUE",<font class="hcp2">Page</font>,"TABLEAU",Arbre)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;choix des options&#160;</p>
+<p class="Source">XmeListSetSelectionOption (Ident,...) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne courante</p>
+<p class="Source">XmeListSetCreatingOption (Ident,TRUE) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;SI ligne "création"</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;init contrôle ligne&#160;</p>
+<p class="Source">RowInfo = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;SI marquage ou sélection</p>
+<p class="Source">RowInfo.Bitmap = "..." &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;image bitmap</p>
+<p class="Source">RowInfo.Couleur = "..." &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;couleur</p>
+<p class="Source">RowInfo.CoulSelec = ...</p>
+<p class="Source">RowInfo.Selection = FALSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;état initial</p>
+<p class="Source">&#160;</p>
+<p class="Source">Harmony.BitmapRed = " " ou <font class="hcp2">xxx</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;valeur / défaut des bitmaps</p>
+<p class="Source">Harmony.BitmapExp = " " ou <font class="hcp2">yyy</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;des futurs nouveaux éléments</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(hors DefProcSaisie)</p>
+<p class="Source">&#160;</p>
+<p class="Source">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;remplissage et</p>
+<p class="Source">XmeListFirst (Ident,Arbre) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;positionnement initial</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeDispv ("MASQUE",<font class="hcp2">Page</font>,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche la page</p>
+<p class="Source">XmeListScrollBarInit (Ident,ScrollBar32) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation ascenseur</p>
+<p class="Source">XmeListTreeCursorInit (Ident,TRUE) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;SI curseur de création</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="Exempledeprogrammationd_unarbre.htm">Exemple de programmation d'un arbre</a></p>
+<p class="Body-Text"><a href="FonctionsdepersonnalisationdeXmeListConsultDefProc.htm">Fonctions de personnalisation de XmeListConsultDefault</a></p>
+</body>
+</html>

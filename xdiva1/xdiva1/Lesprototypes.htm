@@ -1,0 +1,59 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Les prototypes</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Les prototypes &#160;<a href="Fonctionsetproc_dures_r_sum_.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Fonctionsetproc_duresutilisateur.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Le prototype d'une fonction permet d'appeler la fonction avant qu'elle soit réellement définie. Cela permet de résoudre les problèmes d'ordre des fonctions dans les sources et d'avoir des références croisées dans un même module.</p>
+<p class="Body-Text">En effet, pour qu'une fonction/procédure puisse être utilisée, il faut qu'elle soit préalablement déclarée. Le prototype d'une fonction/procédure permet d'utiliser cette dernière bien que le corps de la fonction ne soit pas encore défini.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Syntaxe</font></p>
+<p class="Body-Text"><font class="hcp2">Proto</font> <font class="hcp2">Procedure</font> <font class="hcp3">nom</font>_<font class="hcp3">procédure</font> [ ( <font class="hcp3">p1</font>, … <font class="hcp3">pn</font>) ]<br>
+&#160;déclaration des paramètres formels<font class="hcp2"><br>
+EndProto</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Proto</font> <font class="hcp2">Function</font> <font class="hcp3">type</font>_<font class="hcp3">retour nom</font>_<font class="hcp3">fonction</font> [( <font class="hcp3">p1</font>, … <font class="hcp3">pn</font>) ]<br>
+&#160;déclaration des paramètres formels<font class="hcp2"><br>
+EndProto</font></p>
+<p class="Body-Text">La déclaration d'un prototype est identique à la déclaration d'une fonction ou d'une procédure. Le mot clé Function ou Procedure doit être précédée du mot clé Proto.<br>
+La déclaration des paramètres formels doit se terminer par le mot clé EndProto.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font><br>
+&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; définition du prototype de p1&#160;</p>
+<p class="Source">Proto Procedure p1(ch)<br>
+1 ch A</p>
+<p class="Source">Endproto</p>
+<p class="Source">; corps de la fonction p2</p>
+<p class="Source">Procedure p2(ch)</p>
+<p class="Source">1 ch A</p>
+<p class="Source">beginp</p>
+<p class="Source">&#160;&#160;&#160;p1(ch) ; appel de p1, bien que p1 soit définie</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; plus loin</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">endp</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">procedure p1(ch) ; corps de la fonction p1</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">1 ch A</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">beginp</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display ch</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">endp&#160;</p>
+</body>
+</html>

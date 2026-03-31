@@ -1,0 +1,102 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListTreeAscendant - XmeListTreeParent</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp6 { list-style:disc; }
+li.hcp7 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListTreeAscendant - XmeListTreeParent &#160;<a href="Lister_capitulativedesfonctionsdegestiondesarbres.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Arbres.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Lecture de l'ascendant de niveau N de l'élément d'arbre courant</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Long XmeListTreeAscendant</font> (<font class="hcp3">Identifiant, Ligne, Niveau</font>)</p>
+<p class="Body-Text"><font class="hcp2">Long XmeListTreeParent</font> (<font class="hcp3">Identifiant, Ligne, Niveau</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="604">
+<tr class="hcp4">
+<td style="width:19.72%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.28%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.72%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Ligne</font></p>
+</td>
+<td style="width:80.28%;" class="hcp5">
+<p class="Body-Text">Adresse de l'enregistrement "ligne du tableau".</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.72%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Niveau</font></p>
+</td>
+<td style="width:80.28%;" class="hcp5">
+<p class="Body-Text">Niveau dans l'arbre de l'ascendant à atteindre.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font> Adresse de l'élément délivré qui devient le nouvel élément courant.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">Les fonctions <font class="hcp2">XmeListTreeAscendant</font> et <font class="hcp2">XmeListTreeParent</font> délivrent l'élément ascendant de niveau <font class="hcp3">Niveau</font> de l'élément courant. Elles garnissent&#160;:</p>
+</li>
+<li class="hcp7">
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">L'<font class="hcp2">élément proprement dit</font> (enregistrement <font class="hcp3">Ligne</font>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp2">donnée de contrôle</font> correspondante, si la propriété "Avec donnée de contrôle des lignes" a été activée dans Xwin (Cf. rubriques <a href="Marquagedeslignesd_untableau.htm">Marquage des lignes d'un tableau</a> et <a href="S_lectionmultipledeslignesd_untableau.htm">Sélection multiple des lignes d'un tableau</a>).</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La fonction <span style="font-weight: bold;">XmeListTreeParent</span> :</p>
+</li>
+<li class="hcp7">
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">Ne recalcule pas les informations internes nécessaires à l'affichage de l'arbre à l'écran, contrairement à la fonction XmeListTreeAscendant.<br>
+Il en résulte que <span style="text-decoration: underline;">cette fonction est nettement plus performante</span> que XmeListTreeAscendant (dans la mesure où le nombre d'éléments stockés en liste et le nombre d'appels à cette fonction sont relativement importants - sinon, le gain de performance est négligeable).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ne doit pas remplacer un appel à XmeListTreeAscendant si des opérations ont été réalisées sur la liste depuis le dernier affichage (ajouts, suppressions, expansions, réductions, ...).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque :</font> Ces fonctions <font class="hcp2">NE peuvent être appelées QUE</font> si la page de masque contenant le tableau est la page courante (ou l'une de ses pages panels).</p>
+</body>
+</html>

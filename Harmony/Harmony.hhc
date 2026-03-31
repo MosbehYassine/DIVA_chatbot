@@ -1,0 +1,183 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Comment utiliser l'aide ?">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Comment utiliser l'aide ?">
+      <param name="Local" value="Harmony/Commentutiliserl_aide_.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Rechercher une rubrique d'aide">
+      <param name="Local" value="Harmony/Rechercherunerubriqued_aide.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Parcourir le sommaire de l'aide">
+      <param name="Local" value="Harmony/Parcourirlesommairedel_aide.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Rechercher une phrase clé dans la table d'index">
+      <param name="Local" value="Harmony/Rechercherunephrasecl_danslatabled_index.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Recherches approfondies dans le fichier d'aides">
+      <param name="Local" value="Harmony/Recherchesapprofondiesdanslefichierd_aides.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Parcourir la fenêtre d'affichage des textes d'aide">
+      <param name="Local" value="Harmony/Parcourirlafen_tred_affichagedestextesd_aide.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Imprimer une ou toutes les rubriques d'un livre">
+      <param name="Local" value="Harmony/Imprimeruneoutouteslesrubriquesd_unlivre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Copier une rubrique d'aide dans le presse-papiers">
+      <param name="Local" value="Harmony/Copierunerubriqued_aidedanslepresse_papiers.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="La version 7 d'Harmony">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="La version 7 d'Harmony">
+      <param name="Local" value="Harmony/La_version_7_d_Harmony.htm">
+    </object>
+    </ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xharview.chm::/Xharview.hhc">
+  <param name="Merge" value="Xharview.chm::/Xharview.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xlog.chm::/Xlog.hhc">
+  <param name="Merge" value="Xlog.chm::/Xlog.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xlog1.chm::/Xlog1.hhc">
+  <param name="Merge" value="Xlog1.chm::/Xlog1.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xpath.chm::/Xpath.hhc">
+  <param name="Merge" value="Xpath.chm::/Xpath.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="xperf.chm::/xperf.hhc">
+  <param name="Merge" value="xperf.chm::/xperf.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xrecup.chm::/Xrecup.hhc">
+  <param name="Merge" value="Xrecup.chm::/Xrecup.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xreof.chm::/Xreof.hhc">
+  <param name="Merge" value="Xreof.chm::/Xreof.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="xtools.chm::/xtools.hhc">
+  <param name="Merge" value="xtools.chm::/xtools.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xconsole.chm::/Xconsole.hhc">
+  <param name="Merge" value="Xconsole.chm::/Xconsole.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="utilitaires.chm::/utilitaires.hhc">
+  <param name="Merge" value="utilitaires.chm::/utilitaires.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Installation.chm::/Installation.hhc">
+  <param name="Merge" value="Installation.chm::/Installation.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Administration.chm::/Administration.hhc">
+  <param name="Merge" value="Administration.chm::/Administration.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="reseaux.chm::/reseaux.hhc">
+  <param name="Merge" value="reseaux.chm::/reseaux.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="xlansql.chm::/xlansql.hhc">
+  <param name="Merge" value="xlansql.chm::/xlansql.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="menus.chm::/menus.hhc">
+  <param name="Merge" value="menus.chm::/menus.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="zoom.chm::/zoom.hhc">
+  <param name="Merge" value="zoom.chm::/zoom.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Services.chm::/Services.hhc">
+  <param name="Merge" value="Services.chm::/Services.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Search.chm::/Search.hhc">
+  <param name="Merge" value="Search.chm::/Search.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xtranslate.chm::/Xtranslate.hhc">
+  <param name="Merge" value="Xtranslate.chm::/Xtranslate.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Annexes.chm::/Annexes.hhc">
+  <param name="Merge" value="Annexes.chm::/Annexes.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Erreurs.chm::/Erreurs.hhc">
+  <param name="Merge" value="Erreurs.chm::/Erreurs.hhc">
+</object>
+<ul>
+</ul>
+</html>

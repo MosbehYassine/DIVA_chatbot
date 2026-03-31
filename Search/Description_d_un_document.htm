@@ -1,0 +1,34 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Description d'un document</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:48px; }
+p.hcp2 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Description d'un document</h1>
+<p>Après la phase de conception, intervient la phase de description où l’on indiquera précisément ce qui constitue le document :</p>
+<p class="hcp1">• Son domaine ;</p>
+<p class="hcp1">• son sujet ;</p>
+<p class="hcp1">• son titre ;</p>
+<p class="hcp1">• l’application qui permettra d’afficher le résultat de la recherche (le zoom client pour un client, le programme d’interrogation des pièces pour une facture, …) ;</p>
+<p class="hcp1">• son niveau de confidentialité ;</p>
+<p class="hcp1">• les données de l’ERP qui entrent dans sa composition (il s’agit d’une forêt de RecordSQL permettant de trouver, dans les données structurées de l’ERP, les informations qui constituent le document).</p>
+<p class="hcp1">&#160;</p>
+<p>La description des documents est conservée dans un dictionnaire de documents au format Xml. Il y a généralement un dictionnaire par domaine (CRM, Commerce et Logistique, Comptabilité, Paie, etc.).</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">RecordSQL</p>
+<p class="hcp2">Avant de pouvoir effectuer des recherches, il faut alimenter la base Search à partir des données de l’ERP. Cette opération est effectuée par le serveur Search «&#160;hors contexte&#160;» soit par lot, soit en «&#160;presque temps réel&#160;». Le service DhsSearchServer accède à la base ERP par des RecordSQL.</p>
+<p class="hcp2">La description du document Search comporte l’arborescence des RecordSQL permettant de récupérer les informations à partir de la base ERP pour les injecter dans la base SEARCH. Divalto fournit un dictionnaire de RecordSQL pour chaque domaine de l'ERP.</p>
+</body>
+</html>

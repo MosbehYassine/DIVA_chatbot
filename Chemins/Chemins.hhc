@@ -1,0 +1,72 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Serveurs et chemins Harmony">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Accès aux fichiers d'Harmony">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Accès aux fichiers d'Harmony">
+        <param name="Local" value="Chemins/Acc_sauxfichiersd_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Chemin d'accès et nom de fichier complet">
+        <param name="Local" value="Chemins/Chemind_acc_setnomdefichiercomplet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Chemins Harmony">
+        <param name="Local" value="Chemins/CheminsHarmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Noms de fichier en réseau Xlan">
+        <param name="Local" value="Chemins/Nomsdefichierenr_seauXlan.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Chemins d'accès implicites">
+        <param name="Local" value="Chemins/Cheminsd_acc_simplicites.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Règles générales applicables aux noms de fichier Harmony">
+        <param name="Local" value="Chemins/R_glesg_n_ralesapplicablesauxnomsdefichierHarmony.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Paramétrage des serveurs Harmony">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage des serveurs Harmony">
+        <param name="Local" value="Chemins/Param_tragedesserveursHarmony.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Paramétrage des chemins Harmony">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage des chemins Harmony">
+        <param name="Local" value="Chemins/Param_tragedescheminsHarmony.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Paramétrage des chemins implicites">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage des chemins implicites">
+        <param name="Local" value="Chemins/Param_tragedescheminsimplicites.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

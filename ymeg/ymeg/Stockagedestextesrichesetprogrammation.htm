@@ -1,0 +1,70 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Stockage des textes riches et programmation</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Stockage des textes riches et programmation</h3>
+<p class="Body-Text">Voyons maintenant l'incidence du stockage des objets de type texte riche sur la programmation. Sous Harmony, la taille des enregistrements est limitée. Si un seul enregistrement ne suffit pas à contenir la totalité d'une "fiche", il faut la découper en deux ou plusieurs enregistrements, ce qui, bien entendu, complique l'écriture des programmes traitant cette fiche.</p>
+<p class="Body-Text">Concernant les textes riches, nous pouvons distinguer deux cas pratiques&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Le texte à saisir est un texte classique, limité en taille et ne nécessitant pas une mise en forme évoluée (simple commentaire dans une fiche "client", par exemple).<br>
+En utilisant un texte riche au format "Texte", la saisie pourra se faire entièrement en mémoire et le texte pourra souvent être stocké directement dans l'enregistrement.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le texte à saisir peut contenir des objets spéciaux (images bitmap, par exemple) ou nécessite une mise en forme évoluée (utilisation de diverses polices de caractères, par exemple) ou ne doit pas être limité en taille.<br>
+Dans les deux premiers cas, il faut utiliser un texte riche au format "Rich-Text", format dans lequel le volume du texte peut rapidement devenir important.<br>
+Lorsque la taille augmente, la saisie nécessite l'emploi d'un fichier de manoeuvre et le stockage du texte dans l'enregistrement est exclu.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Au niveau de Xwin (propriété <font class="hcp2">Mode</font>), vous pouvez déclarer que la donnée associée au texte riche doit contenir soit le texte lui-même, soit un nom de fichier&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">La donnée contient le texte</font>.<br>
+Dans ce cas, le texte (et tous ses attributs en format "Rich-Text") est stocké directement dans la donnée. La taille de l'objet est alors limitée à la longueur déclarée de la donnée.<br>
+&#160;<br>
+Du fait de leur encombrement relativement important, il est conseillé de ne pas utiliser ce mode de stockage pour les textes définis au format "Rich-Text".<br>
+&#160;<br>
+Remarque&#160;: A titre indicatif, un texte "&#160;vide&#160;" défini au format "Rich-Text" occupe déjà plus de 200 caractères.<br>
+&#160;<br>
+Par contre, ce mode est intéressant pour le stockage des textes au format "Texte" (format souvent suffisant pour la saisie de simples notes ou commentaires). En effet, si on limite le texte de manière à pouvoir placer la donnée dans l'enregistrement, la programmation s'en trouvera simplifiée.<br>
+La donnée texte riche est alors une donnée comme les autres, avec une seule contrainte&#160;: <font class="hcp2">avant la première saisie</font> (ou le premier affichage) d'un texte, <font style="font-weight: bold; text-decoration: underline;">il faut initialiser la donnée associée à 0 binaire</font> (ceci est du au fait qu'Harmony doit conserver la longueur effective du texte saisi, en tête de la donnée).<br>
+&#160;<br>
+Exemple&#160;: Si RTF est le nom de la donnée, initialisez le texte correspondant par l'instruction Diva&#160;:<font style="font-family: 'Courier New'; font-weight: bold;" face="Courier New"><br>
+INIT Rtf = $00<br>
+&#160;</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">La donnée contient un nom de fichier</font>.<br>
+Dans ce cas, c'est le fichier indiqué qui contient le texte&#160;: il faut charger le texte dans ce fichier avant tout affichage ou saisie du masque et c'est dans ce fichier que l'on récupère le texte modifié au retour de la saisie.<br>
+&#160;<font class="hcp2"><br>
+L'idéal est donc que ce fichier serve de manière définitive au stockage du texte riche car dans ce cas, aucune programmation particulière n'est nécessaire</font> (hormis le choix du nom du fichier, l'éditeur créant au besoin le fichier automatiquement).<br>
+&#160;<br>
+Toutefois, il faut être conscient du fait qu'un fichier sera créé pour chaque fiche contenant un texte riche. Par exemple, si l'on désire gérer 2000 articles avec un texte riche dans la fiche "article", 2000 fichiers différents seront créés sur le disque. Si vous considérez que ce nombre de fichiers est trop important, vous avez deux solutions&#160;:<font face="Symbol" class="hcp3"><br>
+-</font> Stocker le texte dans la fiche article elle-même (en gérant N enregistrements par fiche).<font face="Symbol" class="hcp3"><br>
+-</font> Stocker les textes dans un fichier séquentiel indexé spécifique (ce qui nous paraît la solution la plus simple à mettre en oeuvre&#160;: voir l'exemple rubrique suivante).<br>
+&#160;<br>
+Dans les deux cas, un transfert du fichier de base vers le fichier de manoeuvre est nécessaire avant chaque affichage ou saisie, de même que le transfert inverse après validation de la saisie. Les règles à respecter pour effectuer ces transferts sont expliquées dans l'exemple de la rubrique suivante.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque</font>&#160;: Les textes riches ont un format standard (fichiers DOS .rtf pour le format "Rich-Text", .txt pour le format "Texte"). Les fichiers Harmony servant à la saisie d'un texte riche sont donc parfaitement lisibles par un éditeur de textes riches tel que WordPad et réciproquement.</p>
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListExport</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp6 { font-weight:bold; }
+ul.hcp7 { list-style:disc; }
+span.hcp8 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListExport &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="font-weight: bold;">Export et filtrage des données d'un tableau<br>
+<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeListExport</font> (<font class="hcp3">Identifiant, Ligne, Pexport, [Module]<span style="font-style: normal;">,</span> [Id_filtre]</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 13.111%;">
+<col style="width: 86.889%;">
+<tr class="hcp4">
+<td style="width:13.111%;" class="hcp5">
+<p class="Body-Text" style="font-style: italic;">Identifiant</p>
+</td>
+<td style="width:86.889%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.111%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Ligne</font></p>
+</td>
+<td style="width:86.889%;" class="hcp5">
+<p class="Body-Text">Enregistrement "ligne du tableau".</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.111%;" class="hcp5">
+<p class="Body-Text" style="font-style: italic;">Pexport</p>
+</td>
+<td style="width:86.889%;" class="hcp5">
+<p class="Body-Text">Paramètre de gestion de l’export (Cf. variable <a href="yzoom.chm::/yzoom/Zoom_SceExport.htm">Zoom.SceExport</a>).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.111%;" class="hcp5">
+<p class="Body-Text" style="font-style: italic;">Module</p>
+</td>
+<td style="width:86.889%;" class="hcp5">
+<p class="Body-Text">Nom du module contenant la fonction de sélection DefprocExportSelection.<br>
+Voir le paragraphe "<span class="hcp6">Sélection des lignes du tableau dans le cadre de l'export</span>".<br>
+Ce paramètre est facultatif (Harmony.DefpModule par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.111%;" class="hcp5">
+<p style="font-style: italic;">Id_filtre</p>
+</td>
+<td style="width:86.889%;" class="hcp5">
+<p class="Body-Text">Identificateur de la liste où stocker les éléments filtrés.<br>
+Voir le paragraphe "<span class="hcp6">Filtrage des lignes du tableau</span>".<span class="hcp6"><br>
+Attention</span> : ce paramètre est <span class="hcp6">obligatoire</span> si un filtrage est effectué.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<br>
+&#160;<font class="hcp2"><br>
+Description de la procédure&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Cette procédure permet en particulier :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp7">
+<li class="p">
+<p>D’exporter les données d’un tableau (de manière similaire à l’impression paramétré du zoom).</p>
+</li>
+<li class="p">
+<p>De filtrer les lignes d’un tableau (de manière similaire à la fonction de filtrage du zoom).</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Plus précisément, elle exécute l'action correspondant au point d'arrêt généré par le choix du menu, affiché par la procédure XmeListExportPopupMenu et sélectionné par l'utilisateur (XmeListExportPopupMenu affiche un menu surgissant contextuel, proposant les fonctions d'export et/ou de filtrage que vous souhaitez fournir à l'utilisateur pour l'objet tableau <span class="hcp8">Identifiant</span> ; chaque choix génère un point d'arrêt spécifique traité par XmeListExport).<br>
+Reportez-vous à la rubrique consacrée à <a href="XmeListExportPopupMenu.htm">XmeListExportPopupMenu</a> pour connaître la liste complète des fonctions offertes.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListExport est définie dans le module <span class="hcp6">yListExport.dhop</span>. Votre programme doit donc déclarer ce module<br>
+(Module "yListExport.dhop") avant d'y faire appel.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Sélection des lignes du tableau dans le cadre de l'export :</p>
+<p class="Body-Text">Si l'action demandée est un export, XmeListExport appelle, pour chaque ligne du tableau, la fonction de nom pré-défini DefprocExportSelection du module <span class="hcp8">Module</span>. <span class="hcp6">Si vous désirez effectuer une sélection</span>, programmez la fonction DefprocExportSelection. Cette fonction a la syntaxe suivante :<br>
+<br>
+Function int <span class="hcp6">DefprocExportSelection</span> (<span class="hcp8">Identifiant</span>, <span class="hcp8">&amp;Ligne</span>, <span class="hcp8">Selection</span>)<span class="hcp6"><br>
+<br>
+Paramètres en entrée</span> :</p>
+<p class="Body-Text"><span class="hcp8">Identifiant</span> &#160;&#160;&#160;Identificateur du tableau.</p>
+<p class="Body-Text"><span class="hcp8">Ligne</span> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Enregistrement "ligne du tableau" garni par XmeListExport avec la ligne courante.</p>
+<p class="Body-Text"><span class="hcp8">Selection</span> &#160;&#160;&#160;&#160;Valeur de la variable RowInfo.Selection associée à la ligne courante.</p>
+&#160;
+<p class="Body-Text"><span class="hcp6">Retour de la fonction :</span></p>
+<p class="Body-Text" style="font-weight: normal;">0 : La ligne doit être sélectionnée.<br>
+1 : La ligne doit être ignorée.<br>
+<br>
+DefprocExportSelection est facultative. Si vous l'implémentez et si vous la placez dans un module autre que celui désigné par la variable Harmony.DefpModule, précisez ce module dans le paramètre <span class="hcp8">Module</span>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Filtrage des lignes du tableau :</p>
+<p class="Body-Text">Si l'action demandée est un filtrage, XmeListExport stocke les lignes éliminées par le filtre dans une liste complémentaire. Vous devez créer cette liste et indiquer son identificateur dans le paramètre <span class="hcp8">Id_filtre</span>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p style="font-weight: bold;">Exemple :</p>
+<p>Vous trouverez un exemple de programmation à la rubrique <a href="Export_des_donn&eacute;es_d’un_tableau.htm">Export des données d’un tableau</a>.</p>
+&#160;
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeListExportPopupMenu.htm">XmeListExportPopupMenu</a></p>
+<p class="Body-Text" style="margin-top: 1.00pt;"><a href="XmeListExportRefreshColumnHeaders.htm">XmeListExportRefreshColumnHeaders</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

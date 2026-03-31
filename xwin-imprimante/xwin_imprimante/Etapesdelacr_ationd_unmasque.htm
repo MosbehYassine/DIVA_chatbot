@@ -1,0 +1,60 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Etapes de la création d'un masque</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Etapes de la création d'un masque</h2>
+<p class="Body-Text">Voyons succinctement les grandes étapes de la conception d'un nouveau fichier masque :</p>
+<ol style="list-style: decimal;">
+<li class="p-Body-Text">
+<p class="Body-Text">Il faut en premier lieu définir (ou au besoin compléter) les paramètres communs à toute l'application. Il s'agit :<br>
+De déclarer dans la <font class="hcp1">feuille de styles</font> de l'application les styles, polices de caractères, couleurs et bitmaps que l'on va utiliser dans les masques.<br>
+De déclarer les <font class="hcp1">multi-choix</font> de l'application dans le dictionnaire des multi-choix.&#160;En général, cette étape a été effectuée lors de la saisie d'un masque écran.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">On définira ensuite les caractéristiques générales du fichier masque, c'est à dire les paramètres communs à l'ensemble des blocs et/ou des données du fichier. Il s'agit :<font class="hcp1"><br>
+De définir la feuille de styles utilisée.<br>
+De définir certains paramètres "par défaut". &#160;</font><br>
+Initialiser les paramètres qui sont identiques pour une majorité des données évitera de les définir ultérieurement pour chacune d'entre elles.<font class="hcp1"><br>
+De définir les "dimensions" du masque.</font><br>
+Il faut indiquer la taille d'une ligne et d'une colonne ainsi que le nombre de lignes et de colonnes d'une page (cf. paragraphe <a href="Miseenpagedes_tatsgraphiques.htm">Mise en page des états graphiques</a> ).<font class="hcp1"><br>
+De déclarer les fichiers et les enregistrements utilisés.</font><br>
+Cette opération doit être effectuée avant tout placement de donnée dans un bloc.&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Puis on définira les <font class="hcp1">caractéristiques générales du bloc courant,</font> c'est à dire son type ("Fixe", "Mobile", "Fond" ou "Tableau"), sa taille, sa position dans la page ou le corps du tableau, etc.<br>
+Contrairement à la première étape qui concerne l'ensemble des blocs, <font class="hcp1">cette opération doit être répétée pour CHAQUE bloc du fichier.</font>&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">On procédera alors <font class="hcp1">au placement et au paramétrage</font> des objets (textes, cadres, champs, etc.), bloc par bloc.&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Par le choix <font class="hcp1">Simuler un état</font> du menu <font class="hcp1">Blocs</font>, on pourra avoir une vision groupée des différents blocs et s'assurer que les objets sont correctement alignés (cette étape est facultative).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour finir, on n'oubliera pas de compiler le source pour le rendre exécutable par <font style="font-variant: small-caps;">y</font>mig.</p>
+</li>
+</ol>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp2">Attention</span> :<br>
+<br>
+Si le masque est susceptible d'être personnalisé, le développeur devra également <span class="hcp2">renseigner un certain nombre de propriétés</span>, spécifiques à l'<span><a href="Assistant_de_personnalisation_des_masques_d_impression.htm" style="font-weight: bold;">assistant de personnalisation des masques d'impression</a></span>.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

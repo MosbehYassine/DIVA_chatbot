@@ -1,0 +1,131 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>hCopyFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+ul.hcp4 { list-style:disc; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HCopyFile &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">La fonction HCopyFile permet de copier un fichier.&#160;</p>
+<p class="Body-Text"><font class="hcp2">Numer</font> <font class="hcp2">HCopyFile</font> (<font class="hcp3">FichierDepart, FichierArrivee, [SansEffacement] , [Partage], [AfficherErreur], NumeroFichierErreur</font>)</p>
+<p style="margin-top: 0.00pt;">&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">FichierDepart</font></p>
+<p class="decalage05">Nom du fichier à copier.</p>
+<p class="Body-Text"><font class="hcp3">FichierArrivee</font></p>
+<p class="decalage05">Nom du fichier destination.</p>
+<p class="Body-Text"><font class="hcp3">SansEffacement</font></p>
+<p class="decalage05">Booléen indiquant le traitement à faire si le fichier <font class="hcp3">Dest</font> existe.</p>
+<ul class="hcp4">
+<li class="p-decalage05">
+<p class="decalage05" style="margin-left: 2.20pt;">TRUE : le fichier n'est pas effacé et la fonction retourne la valeur 9.</p>
+</li>
+<li class="p-decalage05">
+<p class="decalage05" style="margin-left: 2.20pt;">FALSE : le fichier est effacé (valeur par défaut)</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp3">Partage</font></p>
+<p class="decalage05">Mode d'ouverture ("R", "P" ou "F") du fichier <font class="hcp3">Dep</font>. La valeur par défaut est "R"</p>
+<p class="decalage05">Le fichier <font class="hcp3">Dest</font> est toujours ouvert en mode réservé ("R").</p>
+<p class="Body-Text"><font class="hcp3">AfficherErreur</font></p>
+<p class="decalage05">Booléen indiquant si la fonction doit afficher un message en cas d'erreur. (FALSE par défaut).</p>
+<p class="Body-Text"><font class="hcp3">NumeroFichierErreur</font></p>
+<p class="decalage05">Variable numérique de 1 caractère. En cas d'erreur pendant la copie, elle contient une valeur permettant d'identifier le fichier en erreur.</p>
+<ul class="hcp4">
+<li class="p-decalage05">
+<p class="decalage05" style="margin-left: 2.20pt;">1 = fichier de départ.</p>
+</li>
+<li class="p-decalage05">
+<p class="decalage05" style="margin-left: 2.20pt;">2 = fichier de destination.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="652">
+<tr class="hcp5">
+<td style="width:15.23%;" class="hcp6">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:84.77%;" class="hcp6">
+<p class="Body-Text">Pas d'erreur.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:15.23%;" class="hcp6">
+<p class="Body-Text">9</p>
+</td>
+<td style="width:84.77%;" class="hcp6">
+<p class="Body-Text" style="margin-top: 2.00pt;">Le fichier de destination existe et l'option <font class="hcp3">Noerase</font> est positionnée.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:15.23%;" class="hcp6">
+<p class="Body-Text">20</p>
+</td>
+<td style="width:84.77%;" class="hcp6">
+<p class="Body-Text" style="margin-top: 2.00pt;">Fichier de départ absent</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:15.23%;" class="hcp6">
+<p class="Body-Text">47</p>
+</td>
+<td style="width:84.77%;" class="hcp6">
+<p class="Body-Text" style="margin-top: 2.00pt;">Fichier réservé (voir <font class="hcp3">NumeroFichierErreur</font> pour savoir de quel fichier il s'agit)</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:15.23%;" class="hcp6">
+<p class="Body-Text">99</p>
+</td>
+<td style="width:84.77%;" class="hcp6">
+<p class="Body-Text" style="margin-top: 2.00pt;">Les fichiers de départ et destination sont les mêmes.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:15.23%;" class="hcp6">
+<p class="Body-Text">Autres</p>
+</td>
+<td style="width:84.77%;" class="hcp6">
+<p class="Body-Text" style="margin-top: 2.00pt;">Code d'erreur système (voir <font class="hcp3">NumeroFichierErreur</font> pour savoir de quel fichier a provoqué l'erreur).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">1 numfic 1,0</p>
+<p class="Source">1 st X</p>
+<p class="Source">main</p>
+<p class="Source">st = Hcopyfile("/Divalto/sys/test1.dhsp" , \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"/Divalto/tmp/test1.dhsp", \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FALSE,&#160;&#160;&#160;\&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"F",&#160;\&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;true,&#160;\&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;numfic)&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="HCreateFile.htm">HCreateFile</a>, <a href="HSiCreate.htm">HSiCreate</a>, <a href="HDeleteFile.htm">HDeleteFile</a><a href="HMoveFile.htm">, HMoveFile</a></p>
+</body>
+</html>

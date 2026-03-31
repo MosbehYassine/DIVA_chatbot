@@ -1,0 +1,47 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Attributs dynamiques</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Attributs dynamiques</h2>
+<p class="Body-Text">La plupart des attributs (couleurs, polices, etc.) des objets placés dans les masques peuvent être modifiés dynamiquement par programme. Vous pouvez donc par programme modifier le fond d'un objet pour le mettre en valeur sans pour autant dessiner un nouveau bloc.</p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Méthode</font><br>
+<br>
+Afin de pouvoir modifier un attribut, le programme doit pouvoir désigner l'objet (ou les objets) concernés. Pour cela, vous devez affecter aux objets concernés un ou plusieurs noms qui serviront à identifier l'objet.</p>
+<p class="Body-Text">Il est tout à fait possible de donner le même nom à plusieurs objets. Cela permet de modifier les attributs d'une famille d'objets en une seule opération.</p>
+<p class="Body-Text">Un objet peut avoir plusieurs noms, ce qui lui permet d'appartenir à plusieurs familles.</p>
+<p class="Body-Text">Pour saisir les noms associés à un objet, appelez la boîte des propriétés de l'objet et sélectionnez la paramètre : Noms de l'objet.</p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Programmation</font></p>
+<p class="Body-Text">Pour les détails complets sur la programmation des attributs dynamiques, appelez l'aide de <font class="hcp1">XmiSetAttribut</font>.</p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Exemple</font></p>
+<p class="Body-Text">Soit un état imprimant la liste des modèles d'imprimantes. L'état comporte deux champs, le nom du modèle et le nom de l'imprimante.</p>
+<p class="Body-Text">Le premier objet a pour noms : <font class="hcp2">nom</font> et <font class="hcp2">tous</font><br>
+Le deuxième objet a pour noms : <font class="hcp2">lib</font> et <font class="hcp2">tous</font>.</p>
+<p class="Body-Text">- L'impression de la première ligne est normale, aucun attribut n'est modifié.</p>
+<p class="Body-Text">- L'impression de la deuxième ligne est précédée des instructions :</p>
+<p class="Source">XmiSetAttribut("nom", AN_COULEUR_FOND,"rouge")</p>
+<p class="Source">XmiSetAttribut("lib", AN_COULEUR_FOND,"std")</p>
+<p class="Body-Text">- L'impression de la troisième ligne est précédée de l'instruction:</p>
+<p class="Source">XmiSetAttribut("tous",AN_COULEUR_FOND,"vert")</p>
+<p class="Body-Text">L'état obtenu est le suivant :</p>
+<p class="Body-Text"><img src="../image/help0014.gif" alt="" width="441" height="95" border="0"></p>
+</body>
+</html>

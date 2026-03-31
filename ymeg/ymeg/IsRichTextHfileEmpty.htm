@@ -1,0 +1,44 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>IsRichTextHfileEmpty</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>IsRichTextHfileEmpty</h3>
+<p class="Body-Text"><font class="hcp1">Pour vérifier si un fichier "&#160;texte riche&#160;" est vide</font></p>
+<p class="Body-Text">Le nombre d'octets écrits dans un fichier "&#160;texte riche&#160;" n'est jamais nul car le fichier contient <font class="hcp1">toujours</font> des informations de gestion internes. Pour savoir si l'utilisateur a ou non saisi du texte, le programme doit appeler la fonction Diva <font class="hcp1">IsRichTextHfileEmpty</font>, qui vérifie si le fichier indiqué en paramètre contient une information "utile" saisie par l'utilisateur.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Fonction Diva&#160;:</font></p>
+<p class="Body-Text"><font style="font-weight: bold; font-style: italic;">Status</font> <font class="hcp1">= IsRichTextHfileEmpty</font> (<font style="font-style: italic;">Nom du fichier texte riche</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Compte-rendu renvoyé par la fonction (type X)&#160;:</font></p>
+<p class="Body-Text"><font class="hcp1">1</font> = Fichier vide.<font class="hcp1"><br>
+2</font> = Fichier non vide.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">...</p>
+<p class="Source">IF IsRichTextHfileEmpty (Rtf.Name) = 1</p>
+<p class="Source">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fichier vide</p>
+<p class="Source">ELSE</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fichier non vide&#160;</p>
+<p class="Source">ENDIF</p>
+<p class="Source">...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Attention&#160;:</font></p>
+<p class="Body-Text">Cette fonction ouvre le fichier texte riche en mode partagé. <font class="hcp1">Il est donc interdit de l'appeler si le fichier est déjà ouvert par votre programme en mode réservé</font>.</p>
+</body>
+</html>

@@ -1,0 +1,133 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Ruptures</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Ruptures</h3>
+<p class="Body-Text"><font class="hcp1">Définitions</font></p>
+<p class="Body-Text">On dit qu'il y a <font class="hcp1">rupture</font> 
+ lors de la lecture séquentielle d'un fichier lorsqu'une valeur de référence 
+ (appelée critère de rupture) change en passant d'un enregistrement au 
+ suivant.</p>
+<p class="Body-Text">Le terme <font class="hcp1">rupture 
+ de début</font> correspond à la détection initiale de la rupture, alors 
+ que le terme <font class="hcp1">rupture de fin</font> correspond 
+ à la détection d'une rupture après une série de valeurs égales.</p>
+<p class="Body-Text">Lorsque le fichier de base n'est pas vide, une rupture 
+ de début est toujours détectée à la lecture du premier enregistrement 
+ du fichier et une rupture de fin à la fin de la lecture du fichier.</p>
+<p class="Body-Text">Les critères de rupture peuvent être composés de plusieurs 
+ champs. Dans ce cas ils sont ordonnés des <font class="hcp1">critères 
+ majeurs</font> ( à partir du premier champ) aux <font class="hcp1">critères 
+ mineurs</font> ( jusqu'au dernier champ).</p>
+<p class="Body-Text">Ils <font class="hcp1">doivent</font> 
+ correspondre aux critères de tri (soit liés à la clé de lecture du fichier, 
+ soit obtenus par une phase de tri initial).</p>
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<p class="Body-Text">Lecture du fichier des villes de France triées par 
+ région puis par département.</p>
+<p class="Body-Text">Les critères de rupture sont la région et le département.</p>
+<p class="Body-Text">La région est le critère majeur, le département le 
+ critère mineur.</p>
+<p class="Body-Text">La lecture de la première ville provoque une rupture 
+ de début sur la région, puis une rupture de début sur le département.</p>
+<p class="Body-Text">La lecture de la dernière ville du département provoque 
+ une rupture de fin sur le département.</p>
+<p class="Body-Text">La lecture de la dernière ville de la région provoque 
+ une rupture de fin sur la région.</p>
+<p class="Body-Text"><font class="hcp1">Les comptages et 
+ totalisations</font></p>
+<p class="Body-Text">Dans les chapitres de rupture de fin, la donnée <font class="hcp1">Hql.Nbfiches</font> contient le nombre 
+ de fiches correspondant à ce niveau de rupture. Dans notre exemple, Hql.Nbfiches 
+ contiendra le nombre de villes du département dans la procédure de rupture 
+ de fin du département, et le nombre de villes de la région dans la procédure 
+ de rupture de fin de la région. Elle contiendra par ailleurs, le nombre 
+ de villes total dans le chapitre HqlFinListe. La donnée <font class="hcp1">Hql.NbTotal</font> 
+ contient le nombre de fiches total (dans notre exemple, le nombre de villes 
+ total) si le tri du fichier a été obtenu par la procédure HqlTri.</p>
+<p class="Body-Text">Dans les chapitres de rupture de fin, les variables 
+ de totalisation contiennent un sous-total correspondant à ce niveau de 
+ rupture. Dans notre exemple, la donnée NbHabitants contiendra le nombre 
+ d'habitants du département dans la procédure de rupture de fin du département, 
+ et le nombre d'habitants de la région dans la procédure de rupture de 
+ fin de la région. Elle contiendra par ailleurs, le nombre d'habitants 
+ total dans le chapitre HqlFinListe. Les données de totalisation obtenus 
+ par la fonction <font class="hcp1">HqlTotalGeneral</font> 
+ contiennent le cumul général pour toutes les fiches sélectionnées(par 
+ exemple le nombre total d'habitants) si le tri du fichier a été obtenu 
+ par la procédure HqlTri.</p>
+<p class="Body-Text">Voir <a href="Introduction2.htm">comptage et totalisations</a></p>
+<p class="Body-Text"><font class="hcp1">La procédure HqlRupture</font></p>
+<p class="Body-Text">La procédure HqlRupture appelée depuis le chapitre 
+ HqlDebutListe permet d'indiquer au moteur HQL les critères de rupture.</p>
+<p class="Body-Text">Si les critères de rupture comportent plusieurs champs, 
+ on appellera autant de fois la fonction HqlRupture qu'il y a de champs, 
+ en commençant par les critères majeurs et en finissant par les critères 
+ mineurs.</p>
+<p class="Body-Text">A chaque niveau de rupture (c'est à dire à chaque 
+ champ composant les critères de rupture), on indiquera le nom de la procédure 
+ à exécuter en cas de rupture (soit début, soit fin, soit les deux).</p>
+<p class="Body-Text"><font class="hcp1">HqlRupture</font> 
+ (<font class="hcp2">Critere,[Debut],[Fin],[Raz])</font></p>
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Critere</font></p>
+<p class="decalage05">Donnée composant le critère de rupture. Les données 
+ qui composent les critères peuvent appartenir indifféremment au fichier 
+ principal, à un ou plusieurs fichiers complémentaires, aux données internes 
+ du programme. Ce paramètre est passé par adresse à la fonction, les données 
+ ne peuvent pas être des variables locales d'une fonction, mais doivent 
+ impérativement être des variables globales.</p>
+<p class="Body-Text"><font class="hcp2">[Debut]</font></p>
+<p class="decalage05">Nom de la procédure du module des chapitres à exécuter 
+ lors de la détection de la rupture de fin. Ce paramètre est facultatif. 
+ <a href="Debut.htm">Voir Chapitre Début</a></p>
+<p class="Body-Text"><font class="hcp2">[Fin]</font></p>
+<p class="decalage05">Nom de la procédure du module des chapitres à exécuter 
+ lors de la détection de la rupture de début. <a href="Fin.htm">Voir Chapitre 
+ Fin</a></p>
+<p class="Body-Text"><font class="hcp2">[Raz]</font></p>
+<p class="decalage05">La valeur TRUE initialise la liste des critères de 
+ rupture. Ainsi, le champ <font class="hcp2">Critere</font> 
+ devient le critère majeur de rupture et les champs précédemment passés 
+ en paramètre à la fonction HqlRupture sont effacés des critères de rupture. 
+ On utilisera cette option en particulier dans un module de surcharge du 
+ module des chapitres si l'on souhaite changer les critères de rupture.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Rupture sur des données 
+ complémentaires ou calculées</font></p>
+<p class="Body-Text">Lorsque les ruptures portent sur des données provenant 
+ de fichiers complémentaires ou sur des données calculées, il faut évidemment 
+ rechercher ou calculer ces données avant les traitements de rupture. Ces 
+ opérations devront être réalisées dans différents chapitres en fonction 
+ de l'algorithme retenu.</p>
+<ul style="list-style: disc;">
+	<li class="p-Body-Text"><p class="Body-Text"><font class="hcp1">Algorithme 
+	 sans tri</font>.<br>
+	La recherche ou le calcul se fera dans le chapitre HqlLecture.</p></li>
+	<li class="p-Body-Text"><p class="Body-Text"><font class="hcp1">Algorithme 
+	 avec tri</font>.<br>
+	La recherche ou le calcul se fera dans le chapitre HqlSelection (avant 
+	 le tri) <font class="hcp1">et</font> dans le chapitre 
+	 HqlLecture (avant le traitement).</p></li>
+</ul>
+<p class="Body-Text">Si le traitement porte sur la rupture de fin, il faudra 
+ déclarer les enregistrements contenant les données complémentaires ou 
+ calculées par la procédure <a href="HqlRecord.htm">HqlRecord</a>.</p>
+</body>
+</html>

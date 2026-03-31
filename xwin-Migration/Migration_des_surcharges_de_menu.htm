@@ -1,0 +1,47 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Migration des surcharges de menu</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Migration des surcharges de menu</h3>
+<p>&#160;</p>
+<p>L’utilitaire xMigrationMenu.dhop reporte l’ensemble des surcharges d'un menu d’une version d’origine vers une version cible (en général la dernière).</p>
+<p><br>
+Lancez, depuis le menu Harmony, le choix <span class="hcp1">Migration : Migration des surcharges d'un menu</span>.</p>
+<p>&#160;</p>
+<p>Sont traités les enregistrements M1, M2, M4 et M7. L'utilitaire identifie champ par champ les modifications apportées par la surcharge puis convertit les enregistrements dans le format de la version cible en leur appliquant les modifications détectées. Elle prend aussi en compte les confidentialités appliquées à des choix de menu.</p>
+<p>Les opérations suivantes sont effectuées :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Migration des choix de menu.</p>
+</li>
+<li class="p">
+<p>Migration de la table des zooms.</p>
+</li>
+<li class="p">
+<p>Migration des favoris (v6 ou version IA).</p>
+</li>
+<li class="p">
+<p>Migration des états d’impression.</p>
+</li>
+</ul>
+<p>Les nouveaux choix de surcharge ou de zoom sont re-numérotés s’ils entrent en conflit avec de nouveaux choix standard. Un mouchard est produit avec les listes des conflits détectés.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Attention</span> : En cas de re-numérotation de zoom ou de choix de menu, il convient de vérifier l’impact sur les appels programmés de ces zooms ou de ces choix.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Rappel</span> : Les zooms spécifiques doivent être numérotés à partir de 60 000 pour éviter les conflits avec de nouveaux zooms standard.</p>
+<p>&#160;</p>
+</body>
+</html>

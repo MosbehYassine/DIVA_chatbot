@@ -1,0 +1,49 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Menus : Surcharge</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Menus : Surcharge</h3>
+<p class="Body-Text">Un menu peut être «&#160;surchargé&#160;» par un (ou plusieurs) autre(s) menu(s). Pour ce faire, dessinez le <font class="hcp1">menu de surcharge</font> avec l’éditeur de menus dans un fichier masques quelconque et, par programme, faites appel à la fonction&#160;Diva <a href="XmeMenuAppend.htm">XmeMenuAppend</a>.</p>
+<p class="Body-Text">Avec un <font class="hcp1">même</font> menu de surcharge, vous pouvez compléter <font class="hcp1">à la fois</font> le <font class="hcp1">menu de base principal</font> et <font class="hcp1">ses sous-menus</font>.</p>
+<p class="Body-Text">Les choix du menu de surcharge sont toujours ajoutés <font class="hcp1">à la suite</font> des choix du menu de base. Ainsi&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Si dans votre menu de surcharge vous faites figurer de <font class="hcp1">nouveaux choix principaux</font>, ils seront ajoutés à la fin de la barre des choix principaux du menu de base.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Si dans votre menu de surcharge vous faites figurer un <font class="hcp1">choix principal qui existait déjà</font> dans le menu de base, ce sont les nouveaux choix du sous-menu de surcharge de ce choix principal qui seront ajoutés à la fin du sous-menu du choix de base.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Et cette opération peut se répéter pour un nombre quelconque et à tous les niveaux de sous-menus.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques&#160;:</font></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">XmeMenuAppend ne permet pas de changer les caractéristiques (par exemple le libellé) d'un choix du menu de surcharge déjà existant dans le menu de base (les valeurs indiquées dans la surcharge sont ignorées).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Dans l’éditeur de menus de Xwin, le menu de surcharge d’un <a href="Menus_classiques_et_menus_surgissant.htm">menu popup</a> doit comporter un unique choix principal ayant le même identificateur que le choix principal fictif du menu de base.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Des exemples de surcharge de menu et de popup-menu sont donnés dans le livre <font class="hcp1">Utilisez l’éditeur de menus&#160;: Manuel de référence</font> de l’aide en ligne concernant les <font class="hcp1">éditeurs</font> de Xwin.</p>
+</body>
+</html>

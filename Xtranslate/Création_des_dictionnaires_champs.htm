@@ -1,0 +1,154 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Création des dictionnaires</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+p.hcp3 { font-weight:normal; }
+li.hcp4 { list-style:none;
+display:inline; }
+ul.hcp5 { list-style:circle; }
+tr.hcp6 { vertical-align:top; }
+td.hcp7 { padding-right:10px;
+padding-left:10px; }
+p.hcp8 { margin-left:8px;
+font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Extraction des libellés</h3>
+<p>&#160;</p>
+<p>La création des dictionnaires consiste à extraire tous les champs multilingues de la base de données. Pour que cette opération soit la plus simple possible, Harmony dispose d'un outil (XtranslateDataTools) qui permet d'automatiser ce traitement. Il suffit de préciser les dictionnaires de données associés à vos données, et XtanslateDataTools détermine quels sont les fichiers à traiter, puis effectue le traitement.</p>
+<p>&#160;</p>
+<p class="hcp1">Mise en oeuvre</p>
+<p class="hcp1"><span style="font-weight: normal;">Lancez le programme XtranslateDataTools.dhop puis sélectionnez le choix</span> Extraire des libellés.</p>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp3">La boîte de dialogue de sélection des fichiers s'ouvre. Vous devez sélectionner <span style="text-decoration: underline;">les</span> dictionnaires de données associés à vos fichiers (en général, tous les fichiers .dhsd du répertoire contenant vos fichiers).</p>
+</li>
+<li class="p">
+<p class="hcp3">XtranslateDataTools recherche dans ces dictionnaires toutes les tables contenant des champs multilingues.</p>
+</li>
+<li class="p">
+<p class="hcp3">Puis le résultat de cette recherche est affiché dans une page contenant deux tableaux :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp5">
+<li class="p">
+<p class="hcp3">le premier tableau contient la liste des langues pour lesquelles un dictionnaire va être créé. Vous pouvez modifier la sélection pour exclure certaines langues.</p>
+</li>
+<li class="p">
+<p class="hcp3">le second tableau contient la liste des tables qui vont être traitées. Ces tables contiennent un ou plusieurs champs multilingues. Vous pouvez également modifier la sélection pour exclure certaines tables de la recherche.<br>
+Les colonnes de ce tableau sont :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="83.32%">
+<col style="width: 20.112%;">
+<col style="width: 79.888%;">
+<tr class="hcp6">
+<td style="width:20.112%;" class="hcp7">
+<p class="hcp1">Dictionnaire</p>
+</td>
+<td style="width:79.888%;" class="hcp7">
+<p>Nom du dictionnaire de données contenant la description du fichier.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:20.112%;" class="hcp7">
+<p class="hcp1">Fichier</p>
+</td>
+<td style="width:79.888%;" class="hcp7">
+<p>Mnémonique du fichier dans le dictionnaire.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:20.112%;" class="hcp7">
+<p class="hcp1">Nom physique du fichier</p>
+</td>
+<td style="width:79.888%;" class="hcp7">
+<p>Nom du fichier sur le disque. Ce nom vous permet de vérifier que l'extraction des libellés se fera dans les bons fichiers.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:20.112%;" class="hcp7">
+<p class="hcp1">Status d'ouverture</p>
+</td>
+<td style="width:79.888%;" class="hcp7">
+<p>Résultat de la fonction Fopen sur ce fichier. Cela permet de voir qu'un fichier est éventuellement absent.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:20.112%;" class="hcp7">
+<p class="hcp1">Table</p>
+</td>
+<td style="width:79.888%;" class="hcp7">
+<p>Mnémonique de la table.</p>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp5">
+<li class="hcp4">
+<ul class="hcp5">
+<li class="p">
+<p class="hcp3">les autres paramètres à saisir sont :</p>
+</li>
+</ul>
+</li>
+</ul>
+<table style="vertical-align: top; margin-left: 80px;" cellspacing="0" width="78.963%">
+<col style="width: 20.222%;">
+<col style="width: 79.778%;">
+<tr class="hcp6">
+<td style="width:20.222%;" class="hcp7">
+<p class="hcp8">Répertoire des dictionnaires</p>
+</td>
+<td style="width:79.778%;" class="hcp7">
+<p>Répertoire où les dictionnaires sont créés. XtranslateDataTools créé le répertoire si nécessaire.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:20.222%;" class="hcp7">
+<p class="hcp8">Module contenant la fonction de filtrage</p>
+</td>
+<td style="width:79.778%;" class="hcp7">
+<p>Facultatif. Nom d'un module diva qui contient une fonction permettant de filtrer les enregistrements. Cette fonction est appelée avant chaque ajout de libellé dans le dictionnaire de traduction.</p>
+<p>Cette fonction se nomme FiltrageLibelle et doit avoir le prototype suivant :<br>
+&#160;</p>
+<p class="Source" style="margin-left: 8px;">function int FiltrageLibelle ( dico, nomFichier, nomTable, nomChamp, tdf, enreg, libelle)<br>
+; Retour : TRUE &#160;= ajouter le libellé</p>
+<p class="Source" style="margin-left: 8px;">; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FALSE = ignorer le libellé</p>
+<p class="Source" style="margin-left: 8px;">1 dico &#160;&#160;&#160;&#160;&#160;&#160;A &#160;&#160;&#160;&#160;; nom du dictionnaire de données (.dhsd)</p>
+<p class="Source" style="margin-left: 8px;">1 nomFichier A &#160;&#160;&#160;&#160;; nom du fichier</p>
+<p class="Source" style="margin-left: 8px;">1 nomTable &#160;&#160;A &#160;&#160;&#160;&#160;; nom de la table</p>
+<p class="Source" style="margin-left: 8px;">1 nomChamp &#160;&#160;A &#160;&#160;&#160;&#160;; nom du champ</p>
+<p class="Source" style="margin-left: 8px;">record * htdf tdf &#160;; tdf du dictionnaire de langue</p>
+<p class="Source" style="margin-left: 8px;">1 enreg &#160;&#160;&#160;&#160;&#160;A &#160;&#160;&#160;&#160;; table</p>
+<p class="Source" style="margin-left: 8px;">1 libelle &#160;&#160;&#160;A &#160;&#160;&#160;&#160;; libellé qui va être ajouté au dictionnaire de traduction</p>
+<p class="Source" style="margin-left: 8px;">beginf</p>
+<p class="Source" style="margin-left: 8px;">&#160;freturn TRUE</p>
+<p class="Source" style="margin-left: 8px;">endf</p>
+<p class="Source" style="margin-left: 8px;">&#160;</p>
+</td>
+</tr>
+</table>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp3">Après la validation de cette page le traitement commence.<br>
+XtranslateDataTools parcours les fichiers de données (.dhsd) et utilise le code enregistrement des tables pour identifier les enregistrements lus.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

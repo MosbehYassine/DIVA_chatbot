@@ -1,0 +1,81 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HkeySkipNext</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+p.hcp2 { font-family:MS Sans Serif; }
+font.hcp3 { font-weight:bold; }
+font.hcp4 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>HkeySkipNext &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p>&#160;</p>
+<p class="hcp2">La fonction HkeySkipNext permet de positionner la clé de manière à ce que la prochaine lecture rende la valeur suivante sur une portion de clé spécifiée.</p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Ptr</font> = <font class="hcp3">HkeySkipNext</font> (<font class="hcp4">tdf</font> , <span style="font-style: italic;">valeurCle</span>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp3">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp4">Tdf</font></p>
+<p class="decalage05">Table de définition du fichier.</p>
+<p class="Body-Text"><font class="hcp4">ValeurCle</font></p>
+<p class="decalage05">Valeur de la clé.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Retour</font></p>
+<p class="decalage05">La fonction retourne toujours 0.</p>
+<p class="decalage05">Tdf.key est positionnée à ValeurCle &#160;complétée avec le caractère $ff.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple 1</p>
+<p class="Body-Text">Soit un fichier d'adresses avec une clé sur le code postal.</p>
+<p class="Body-Text">On désire afficher la liste de tous les codes postaux présents dans le fichier. Comme il y a des doublons, le traitement sera nettement optimisé par l'utilisation de la fonction HkeySkipNext.</p>
+<p class="Source">&#160;</p>
+<p class="Source">tdf.key = "A"</p>
+<p class="Source">loop hread(tdf,adresse) = 0</p>
+<p class="Source" style="margin-left: 88px;">display adresse.cp</p>
+<p class="Source" style="margin-left: 88px;">hkeyskipnext(tdf,"A" &amp; adresse.cp) &#160;&#160;; sauter tous les homonymes</p>
+<p class="Source">endloop</p>
+<p class="body-text">&#160;</p>
+<p class="body-text">Si le fichier contient les valeurs suivantes :</p>
+<p class="body-text">&#160;57000<br>
+57000<br>
+57130<br>
+57130<br>
+67050<br>
+67060<br>
+67060</p>
+<p class="body-text">le programme lit uniquement quatre enregistrements et affiche :</p>
+<p class="body-text">&#160;57000<br>
+57130<br>
+67050<br>
+67060</p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple 2</p>
+<p class="body-text">Toujours avec le même fichier et la clé sur le code postal, nous voulons afficher la liste de tous les départements.</p>
+<p class="Source">tdf.key = "A"</p>
+<p class="Source">loop hread(tdf,adresse) = 0</p>
+<p class="Source" style="margin-left: 88px;">display adresse.departement</p>
+<p class="Source" style="margin-left: 88px;">hkeyskipnext(tdf,"A" &amp; adresse.departement) &#160;&#160;; sauter tous les enregistrements du même département</p>
+<p class="Source">endloop</p>
+<p class="source">&#160;</p>
+<p class="body-text">le programme lit uniquement deux enregistrements et affiche :</p>
+<p class="body-text">57<br>
+67</p>
+<p class="body-text">&#160;</p>
+<p class="body-text" style="font-weight: bold;">Voir</p>
+<p class="body-text" style="font-weight: normal;"><a href="HkeySkipPrevious.htm">HkeySkipPrevious</a>, <a href="IkeySkipNext.htm">IkeySkipNext</a></p>
+<p class="decalage05" style="margin-left: 59px;">&#160;</p>
+<p class="decalage05" style="margin-left: 59px;">&#160;</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp2">&#160;</p>
+</body>
+</html>

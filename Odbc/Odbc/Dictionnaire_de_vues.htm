@@ -1,0 +1,36 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Dictionnaire de vues</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Dictionnaire de vues</h3>
+<p class="Body-Text">Le programme XodbcView.dhop est accessible depuis le menu harmony, depuis le dictionnaire de données dans Xwin, ainsi que depuis la saisie des tables et des vues d’une source de données (par Xodbc.dhop). Les vues sont stockées dans un dictionnaire de vues. Il s’agit d’un fichier texte avec l’extension .dhdv. On peut créer autant de dictionnaires de vues qu’on le souhaite.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Nouveau dictionnaire de vues</font></p>
+<p class="Body-Text">Le choix «&#160;Nouveau dictionnaire de vues&#160;» permet de créer un nouveau dictionnaire. Il porte une extension <font class="hcp1">.dhdv</font>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Choix des dictionnaires de données</font></p>
+<p class="Body-Text">Une vue peut être composée de champs de tables décrites dans différents dictionnaires de données. A partir d’une table de base, l’outil affiche la liste de toutes les tables liées. Ces tables sont cherchées dans la liste des dictionnaires de données associés au dictionnaire des vues. Le choix «&#160;<font class="hcp1">Liste des dictionnaires</font>&#160;» (raccourci <font class="hcp1">F5</font>) permet de compléter ou de mettre à jour la liste des dictionnaires de données associés.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque <span style="font-weight: normal;">:</span></font> Ce choix est appelé automatiquement lors de la création d’un nouveau dictionnaire de vues.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Généralités sur les vues</font></p>
+<p class="Body-Text">A partir d’une table de base, le programme affiche un arbre avec toutes les tables liées à cette table de base. L’ouverture de la branche d’une table liée affiche la liste des tables liées de second niveau.</p>
+<p class="Body-Text">Pour chaque table le programme affiche la liste des champs. La constitution de la vue s’effectue par une simple sélection des champs que l’on souhaite inclure dans la vue à partir de la table de base et des tables liées.</p>
+<p class="Body-Text">La vue est constituée d’une liste de champs en provenance des différentes tables. L’ordre final des champs de la vue est respecté lors de l’interrogation du catalogue d’une vue par un client odbc. On peut ainsi rapprocher un code de sa désignation.</p>
+<p class="Body-Text">Une vue peut contenir des champs provenant d’un grand nombre de tables (plusieurs dizaines par exemple). Le driver ODBC optimise les accès lors de l’interrogation de la vue pour n’accéder qu’aux tables pour lesquelles des champs ont été sélectionnés dans la requête.</p>
+</body>
+</html>

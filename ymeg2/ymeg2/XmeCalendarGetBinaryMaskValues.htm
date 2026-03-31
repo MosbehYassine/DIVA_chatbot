@@ -1,0 +1,59 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeCalendarGetBinaryMaskValues</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeCalendarGetBinaryMaskValues <span style="font-weight: normal;">&#160;</span><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_agendas.htm"><span class="hcp1">Famille</span></a> <span class="hcp1"><a href="Agendas.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p style="font-weight: bold;">Extraction des valeurs unitaires d'un masque binaire</p>
+<p>&#160;</p>
+<p><span class="hcp2">String XmeCalendarGetBinaryMaskValues</span> (<span style="font-style: italic;">Masque</span>)</p>
+<p>&#160;</p>
+<p><span class="hcp2">Paramètre</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 12.445%;">
+<col style="width: 87.555%;">
+<tr style="vertical-align: top;">
+<td style="border: Solid 1px #000000;width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p style="font-style: italic;">Masque</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Valeur binaire à décomposer.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp2"><span class="hcp2">V</span>aleur rendue par la fonction</span> :</p>
+<p>Chaîne au format HMP décrivant les valeurs unitaires qui composent le masque binaire.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Description de la fonction</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp3">La fonction XmeCalendarGetBinaryMaskValues permet de décomposer un masque binaire pour obtenir les valeurs unitaires (toutes égales à une puissance de 2) qui ont servi à sa conception.</p>
+</li>
+<li class="p">
+<p class="hcp3">Elle peut être utilisée pour retrouver les valeurs unitaires qui ont été combinées pour former les <a href="Options_de_l_agenda.htm">options de l'agenda</a> CAL_OPT_MASK_WORKING_DAYS, CAL_OPT_ACCESS_RIGHTS et CAL_OPT_CUSTOMIZATION.<br>
+&#160;</p>
+</li>
+</ul>
+<p><span class="hcp2">Exemple</span> :</p>
+<p class="hcp3">Si on lui passe en paramètre la valeur 61, la fonction retourne :</p>
+<p>&lt;value&gt;32&lt;value&gt;16&lt;value&gt;8&lt;value&gt;4&lt;value&gt;1</p>
+<p>&#160;</p>
+</body>
+</html>

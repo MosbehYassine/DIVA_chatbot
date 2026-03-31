@@ -1,0 +1,42 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>L'objet Rich-Edit</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>L'objet Rich-Edit</h2>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Un objet Rich-Edit permet d'éditer un texte riche dans une zone d'une page Xwin. L'éditeur dispose de fonctions puissantes telles que la gestion des attributs et la mise en forme des paragraphes. Un tel objet permet, par exemple, d'associer des commentaires libres à des enregistrements.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Stockage des textes</font></p>
+<p class="Body-Text">L'objet Rich-Edit peut travailler sur un texte placé en mémoire ou sur un texte contenu dans un fichier (.txt ou .rtf).</p>
+<p class="Body-Text"><span class="hcp2">Si l'on ne désire pas limiter la taille des textes</span>, il faut utiliser la deuxième méthode, à savoir le stockage dans un fichier. De plus, pour ne pas encombrer le disque d'une multitude de petits fichiers de textes, il est conseillé de regrouper tous les textes dans un fichier spécifique.<span class="hcp2"><br>
+<br>
+Attention également</span> : il faut savoir que l'on <span class="hcp2">ne sait pas limiter le texte saisi par l’utilisateur</span>. Avec le texte stocké en mémoire, l'utilisateur peut "perdre" la fin de son texte s'il dépasse la capacité de la donnée réceptrice.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Types de contenu</p>
+<p class="Body-Text">L'objet gère aussi deux types de contenu (propriété <span class="hcp2">Format</span>) : les textes simples (.txt) qui ne peuvent pas faire l'objet d'un formatage évolué mais qui occupent moins de place et les "vrais" textes riches (.rtf) qui disposent de toutes les fonctions de formatage mais occupent une place supérieure.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="Body-Text">A chaque fiche client, nous voulons associer une zone de commentaires libres. Le texte ne peut être stocké dans l'enregistrement client, la taille des commentaires pouvant grandement varier d'un client à un autre. Une solution consiste à gérer un fichier séquentiel-indexé contenant tous les commentaires. <font class="hcp1">Mais dans ce cas, attention : les commentaires ne peuvent plus être édités directement et le programme doit copier le texte dans un fichier de manœuvre avant son affichage et doit le remettre dans le fichier d'origine après sa saisie</font>.</p>
+<p class="Body-Text"><img src="../image/help0028.gif" alt="" width="489" height="258" border="0"></p>
+<p class="Body-Text" style="font-weight: normal;">Pour plus de détails, consultez le paragraphe "Textes riches" du livre consacré à Ywpf. Vous y trouverez en particulier un exemple de programmation.</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="ObjetRich_Edit.htm">Objet Rich-Edit</a></p>
+</body>
+</html>

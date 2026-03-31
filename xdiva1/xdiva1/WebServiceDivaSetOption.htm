@@ -1,0 +1,81 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WebServiceDivaSetOption</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-right:10px;
+padding-left:10px; }
+p.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>WebServiceDivaSetOption &#160;<a href="Liste_des_fonctions_pour_les_services_web.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Services_Web_G_n_ralit_s.htm"><font class="hcp1">Thème</font></a></h1>
+<p>La fonction WebServiceDivaSetOption permet de positionner des options avant l'appel d'un service Web.</p>
+<p>En version 6.2, une seule option est disponible permettant de préciser un délai maximal d'attente.</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">long WebServiceDivaSetOption</span> ( <span style="font-style: italic;">options</span> )</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text"><font style="font-style: italic;">Options</font></p>
+<p class="decalage05">Chaîne <a href="G_n_ralit_s.htm">HMP</a> contenant les options à positionner.</p>
+<table style="vertical-align: top; margin-left: 40px;" cellspacing="0" width="100%">
+<col style="width: 8.592%;">
+<col style="width: 91.408%;">
+<tr class="hcp2">
+<td style="width:8.592%;" class="hcp3">
+<p class="hcp4">&lt;timeout&gt;xxxx</p>
+</td>
+<td style="width:91.408%;" class="hcp3">
+<p>délai d'attente maximale en milli-secondes. Si au bout de ce délai il n'y a pas eu de réponse de la part du serveur, la fonction <a href="WebServiceDivaExecute.htm">WebServiceDivaExecute</a> sort en erreur.</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 5.826%;">
+<col style="width: 94.174%;">
+<tr class="hcp2">
+<td style="width:5.826%;" class="hcp3">
+<p>0</p>
+</td>
+<td style="width:94.174%;" class="hcp3">
+<p>Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:5.826%;" class="hcp3">
+<p>1</p>
+</td>
+<td style="width:94.174%;" class="hcp3">
+<p>Chaîne Hmp incorrecte</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:5.826%;" class="hcp3">
+<p>2</p>
+</td>
+<td style="width:94.174%;" class="hcp3">
+<p>Option inconnue</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="hcp4">Exemple</p>
+<p class="Source">WebServiceDivaSetOption("&lt;timeout&gt;10000") &#160;;attente maximale de 10 secondes.</p>
+<p class="Source">st = WebServiceDivaExecute(...)</p>
+<p class="Source">&#160;</p>
+<p class="hcp4">Voir</p>
+<p><a href="WebServiceDivaExecute.htm">WebServiceDivaExecute</a>, &#160;<a href="G_n_ralit_s.htm">HMP</a></p>
+</body>
+</html>

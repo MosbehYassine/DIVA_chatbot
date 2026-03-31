@@ -1,0 +1,57 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeGanttCount</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeGanttCount <span style="font-weight: normal;">&#160;</span><span style="font-weight: normal; font-size: 11pt;"><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_objets_Gantt.htm">Famille</a> <a href="Objet_Gantt.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p class="Body-Text"><font class="hcp1">Lecture du nombre d'éléments d'une liste d'un Gantt</font></p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Long XmeGanttCount</font> (<font class="hcp2">Identifiant</font>)</p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Paramètre</font>&#160;:</p>
+<table cellspacing="0" width="100%">
+<col style="width: 12.586%;">
+<col style="width: 87.414%;">
+<tr style="vertical-align: top;">
+<td style="width:12.586%;" class="hcp3">
+<p class="Body-Text"><font class="hcp2">Identifiant</font></p>
+</td>
+<td style="width:87.414%;" class="hcp3">
+<p>Identifiant de la liste.</p>
+<p>Vous trouverez l'identifiant de la liste dans l'enregistrement rendu par la fonction XmeGanttGetId (Cf. rubrique <a href="Interface_de_programmation_d_un_objet_Gantt.htm">Interface de programmation d'un Gantt</a>).&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p class="Body-Text"><span class="hcp4">Description de la fonction</span> :</p>
+<p class="Body-Text">Cette fonction renvoie le nombre d’éléments contenus par la liste dont l’identifiant est passé en paramètre.</p>
+<p class="Body-Text">Voir la fonction Diva <a href="XDIVA1.chm::/Xdiva1/ListCount.htm">ListCount</a>.</p>
+<p class="body-text">&#160;</p>
+<p><span class="hcp4">Remarque</span> :</p>
+<p>Cette fonction peut délivrer un résultat différent du nombre réel d’éléments contenu par la liste et délivré par le débogueur de Xwin. En effet, afin d'optimiser les transferts d'informations avec l'objet Gantt, les fonctions de suppression d'un élément du Gantt positionnent simplement un drapeau indiquant que l'objet devra être détruit au prochain affichage des données du Gantt. La suppression physique en liste est donc différée.</p>
+<p>&#160;</p>
+<p><span class="hcp4">Exemple</span> :<br>
+&#160;</p>
+<p class="Source">XmeGanttCount (<span style="font-style: italic;">IdGantt</span>.IdTask) &#160;&#160;;compte de la liste des tâches</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

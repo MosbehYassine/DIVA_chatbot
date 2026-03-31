@@ -1,0 +1,160 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800002">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DLMT - Gestion des licences nommées">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Introduction">
+      <param name="Local" value="DLMT/1_Introduction.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Certificat de licences d'un site">
+      <param name="Local" value="DLMT/2_Certificat_de_licences_site.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Divalto Licences Management Tool (DLMT)">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Divalto Licences Management Tool (DLMT)">
+        <param name="Local" value="DLMT/3_Divalto_Licences_Management_Tool.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Association des utilisateurs aux profils">
+        <param name="Local" value="DLMT/3.1_Association_des_utilisateurs_aux_profils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Association des utilisateurs aux options">
+        <param name="Local" value="DLMT/3.2_Association_des_utilisateurs_aux_options.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Export et import Excel">
+        <param name="Local" value="DLMT/3.3_Export_et_import_Excel.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Contrôle de la saisie">
+        <param name="Local" value="DLMT/3.4_Controle_de_la_saisie.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Réaffectation d’un profil ou d’une option">
+        <param name="Local" value="DLMT/3.5_Reaffectation_profil_ou_option.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="IUOP supplémentaires">
+        <param name="Local" value="DLMT/3.6_IUOP_supplementaires.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Option Annuaire LDAP">
+        <param name="Local" value="DLMT/3.7_Option_Annuaire_LDAP.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Import depuis un annuaire LDAP">
+        <param name="Local" value="DLMT/3.8_Import_depuis_un_annuaire_LDAP.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Gestion des utilisateurs de l’annuaire LDAP">
+        <param name="Local" value="DLMT/3.9_Gestion_des_utilisateurs_de_l’annuaire_LDAP.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Gestion des groupes d’utilisateurs de l’annuaire LDAP">
+        <param name="Local" value="DLMT/3.10_Gestion_des_groupes_utilisateurs_annuaire_LDAP.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Informations">
+        <param name="Local" value="DLMT/3.11_Informations.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Proroger un serveur de licences">
+        <param name="Local" value="DLMT/3.12_Proroger_un_serveur_de_licences.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Planifier la prorogation d’un serveur de licences">
+        <param name="Local" value="DLMT/3.13_Planifier_la_prorogation_serveur_de_licences.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Désinstaller un serveur de licences">
+        <param name="Local" value="DLMT/3.14_Desinstaller_un_serveur_de_licences.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Gestion de plusieurs serveurs de licences">
+        <param name="Local" value="DLMT/3.15_Gestion_de_plusieurs_serveurs_de_licences.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Le profil Administrateur">
+        <param name="Local" value="DLMT/3.16_Le_profil_Administrateur.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Le profil Consultation">
+        <param name="Local" value="DLMT/3.17_Le_profil_Consultation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Le mode d’exécution « en Consultation »">
+        <param name="Local" value="DLMT/3.18_mode_execution_en_consultation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation de DLMT sur un poste client">
+        <param name="Local" value="DLMT/3.19_Installation_de_DLMT_sur_un_poste_client.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Dépannage">
+        <param name="Local" value="DLMT/3.20_Depannage.htm">
+      </object>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Divalto SAAS">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Divalto SAAS">
+      <param name="Local" value="DLMT/Divalto_SAAS.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Installation de DLMT">
+      <param name="Local" value="DLMT/Installation_de_DLMT.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Gestion des licences nommées par DLMT">
+      <param name="Local" value="DLMT/Gestion_des_licences_nomm&eacute;es_par_DLMT.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Gestion des utilisateurs">
+      <param name="Local" value="DLMT/Gestion_des_utilisateurs.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Installation d’un client léger Wpf pour le cloud">
+      <param name="Local" value="DLMT/Installation_d’un_client_l&eacute;ger_Wpf_pour_le_cloud.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mode &quot;Test distributeur&quot;">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Mode &quot;Test distributeur&quot;">
+      <param name="Local" value="DLMT/Mode__Test_distibuteur_.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Connexion aux serveurs de Divalto">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Connexion aux serveurs de Divalto">
+      <param name="Local" value="DLMT/Connexion_aux_serveurs_de_Divalto.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Passage de la version tarifaire infinity 01-2017 à&#160;infinity 04-2018">
+    <param name="Local" value="DLMT/Passage_version_10.1a_version_groupes_de_profils.htm">
+  </object>
+</ul>
+</html>

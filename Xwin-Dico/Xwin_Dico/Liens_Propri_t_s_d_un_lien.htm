@@ -1,0 +1,137 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Liens : Propriétés d'un lien</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp3 { font-weight:bold; }
+p.hcp4 { font-weight:bold; }
+p.hcp5 { margin-top:0;
+margin-bottom:0; }
+p.hcp6 { margin-left:22.60pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Liens : Propriétés d'un lien</h3>
+<p>Les paramètres d’un lien sont&#160;:</p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="712">
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p><font class="hcp3">Commentaire</font></p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Commentaire libre associé au lien.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p><font class="hcp3">Lien invalide</font></p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Si cette case est cochée ce lien n’est pas visible par les outils utilisant le dictionnaire. Quand un lien est créé, il est toujours créé invalide, en couleur rouge dans l’arbre et le schéma. Vérifiez le lien et décochez la case.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p><font class="hcp3">Invalider ce lien dans le répertoire d’origine</font></p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Cette case à cocher n’est présente que si le dictionnaire est surchargé. Voir <a href="Surcharge_des_liens.htm">Surcharge des liens</a> .</p>
+<p>Cela vous permet d’invalider un lien sans modifier le dictionnaire d’origine.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p><font class="hcp3">Nom de l’index</font></p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Index utilisé dans la table destianation du lien.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p class="hcp4">Nom Odbc pour la table destination</p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Voir <a href="Odbc.chm::/Odbc/Lien.htm">Odbc : Liens</a></p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p class="hcp4">Fonction Diva associée pour Odbc</p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Voir <a href="Odbc.chm::/Odbc/Lecture_d_une_table_li_e_d_une_vue.htm">Lecture d'une table liée d'une vue</a></p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p><font class="hcp3">Remplissage</font></p>
+<p class="hcp5">&#160;</p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Chaque ligne du tableau représente un champ de l’index de la table destination du lien, et la valeur à placer dans ce champ. La valeur peut être un champ de la table d’origine du lien ou une constante.</p>
+<p><img src="../image/liens15.gif" alt="" width="603" height="462" border="0"></p>
+<p class="hcp5">&#160;</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p class="hcp6"><font class="hcp3">Niveau</font></p>
+<p class="hcp6"><font class="hcp3">Nom</font></p>
+<p class="hcp6"><font class="hcp3">Libellé</font></p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Les colonnes Niv Nom Libellé et Nature donnent les informations concernant le champ de l’index à remplir.</p>
+<p class="hcp5">&#160;</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p class="hcp6"><font class="hcp3">Valeur</font></p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Valeur à mettre dans le champ de l’index.</p>
+<p>Valeur peut être un champ de la table, une constante, $ident.<br>
+(les constantes alpha doivent être entre quotes, les constantes binaires précédées de $).</p>
+<p>$ident indique que la valeur à mettre dans le champ de l’index est le code identifiant de la table destination du lien. Dans l’exemple ci-dessus, le champ CEBIN est l’identifiant de la table et doit valoir ")".</p>
+<p class="hcp5">&#160;</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p class="hcp6"><font class="hcp3">1 2 3 4</font></p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Indices si Valeur est un champ indicé (un tableau).</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.52%;" class="hcp2">
+<p class="hcp6"><font class="hcp3">Max 1 2 3 4</font></p>
+</td>
+<td style="width:87.48%;" class="hcp2">
+<p>Information donnant les valeurs maximales que peuvent prendre les indices.</p>
+</td>
+</tr>
+</table>
+<p class="hcp5">&#160;</p>
+<p class="hcp5">&#160;</p>
+<p class="voir" style="border-top: 0.50pt solid #000000;">Voir également :</p>
+<p><a href="Les_liens_pr_sentation.htm">Les liens : présentation</a></p>
+<p><a href="Surcharge_des_liens.htm">Surcharge des liens</a> .</p>
+</body>
+</html>

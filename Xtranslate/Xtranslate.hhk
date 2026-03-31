@@ -1,0 +1,212 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="WindowName" value="$Global_Harmony">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Boîtes de dialogue du client léger">
+    <param name="Name" value="Traduction des boîtes de dialogue du client léger">
+    <param name="Local" value="Traduction_des_bo&icirc;tes_de_dialogue_du_client_l&eacute;ger.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Champs multilingues">
+    <param name="Name" value="Introduction">
+    <param name="Local" value="Introduction_traduction_libelles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Code langue">
+    <param name="Name" value="Choix du code langue">
+    <param name="Local" value="Choix_du_code_langue.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Code page">
+    <param name="Name" value="Codes Page">
+    <param name="Local" value="Codes_Page.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Codes page">
+    <param name="Name" value="Codes Page">
+    <param name="Local" value="Codes_Page.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Import Tableur">
+    <param name="Name" value="Import Tableur">
+    <param name="Local" value="Import_Excel.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Pilotage de Xwin pour la mise à jour des dictionnaires">
+    <param name="Name" value="Pilotage de Xwin pour la mise à jour des dictionnaires">
+    <param name="Local" value="Pilotage_de_Xwin_pour_la_mise_&agrave;_jour_des_dictionnaires.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Réintégrer un fichier Tableur">
+    <param name="Name" value="Import / Export Tableur">
+    <param name="Local" value="Import___Export_Excel.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Tableur (import-export)">
+    <param name="Name" value="Import / Export Tableur">
+    <param name="Local" value="Import___Export_Excel.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traduction">
+    <param name="Name" value="Introduction">
+    <param name="Local" value="Introduction.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Afficher les masques en cours de traduction">
+      <param name="Name" value="Affichage des masques">
+      <param name="Local" value="Affichage_des_masques.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Code langue">
+      <param name="Name" value="Choix du code langue">
+      <param name="Local" value="Choix_du_code_langue.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Compilation">
+      <param name="Name" value="Compilation du dictionnaire">
+      <param name="Local" value="Compilation_du_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Création d'un dictionnaire de référence">
+      <param name="Name" value="Création d'un dictionnaire français">
+      <param name="Local" value="Cr&eacute;ation_d_un_dictionnaire_fran&ccedil;ais.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Création d'un dictionnaire en langue étrangère">
+      <param name="Name" value="Création d'un dictionnaire en langue étrangère">
+      <param name="Local" value="Cr&eacute;ation_d_un_dictionnaire_en_langue_&eacute;trang&egrave;re.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fichiers d'aides">
+      <param name="Name" value="Fichiers d'aides">
+      <param name="Local" value="Fichiers_d_aides.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Liste des codes langues">
+      <param name="Name" value="Liste des codes langues">
+      <param name="Local" value="Liste_des_codes_langues.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Programme de saisie des traductions">
+      <param name="Name" value="Xtranslate.dhop">
+      <param name="Local" value="Xtranslate.dhop.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Résumé des étapes">
+      <param name="Name" value="Résumé des étapes">
+      <param name="Local" value="R&eacute;sum&eacute;_des_&eacute;tapes.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Tableur (import-export)">
+      <param name="Name" value="Import / Export Tableur">
+      <param name="Local" value="Import___Export_Excel.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Translate">
+      <param name="Name" value="Ajout de la fonction Translate">
+      <param name="Local" value="Ajout_de_la_fonction_Translate.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="TranslateParams.txt">
+      <param name="Name" value="Fichier TranslateParams.txt">
+      <param name="Local" value="Fichier_TranslateParams.txt.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Vérification des boîtes dans les masques">
+      <param name="Name" value="Vérification des boîtes">
+      <param name="Local" value="V&eacute;rification_des_bo&icirc;tes.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traduction des aides">
+    <param name="Name" value="Fichiers d'aides">
+    <param name="Local" value="Fichiers_d_aides.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traduction des boîtes de dialogue du client léger">
+    <param name="Name" value="Traduction des boîtes de dialogue du client léger">
+    <param name="Local" value="Traduction_des_bo&icirc;tes_de_dialogue_du_client_l&eacute;ger.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Translate">
+    <param name="Name" value="Ajout de la fonction Translate">
+    <param name="Local" value="Ajout_de_la_fonction_Translate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="TranslateParams.txt">
+    <param name="Name" value="Fichier TranslateParams.txt">
+    <param name="Local" value="Fichier_TranslateParams.txt.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="xTranslate">
+    <param name="See Also" value="xTranslate">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Ecran de saisie">
+      <param name="Name" value="L'écran de xtranslate">
+      <param name="Local" value="L_&eacute;cran_de_xtranslate.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Filtrage">
+      <param name="Name" value="Fonction de recherche / Filtrage">
+      <param name="Local" value="Fonction_de_recherche.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Importer des textes en langue de base">
+      <param name="Name" value="Importer les textes d'un autre dictionnaire dans un dictionnaire français">
+      <param name="Local" value="Importer_les_textes_d_un_autre_dictionnaire_dans_un_dictionnaire_fran&ccedil;ais.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Importer des traductions">
+      <param name="Name" value="Importer les traductions d'un autre dictionnaire">
+      <param name="Local" value="Importer_les_traductions_d_un_autre_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Pour...">
+      <param name="Name" value="Pour...">
+      <param name="Local" value="Pour....htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Propager la saisie des traductions">
+      <param name="Name" value="Propagation des traductions">
+      <param name="Local" value="Propagation_des_traductions.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Recherche">
+      <param name="Name" value="Fonction de recherche">
+      <param name="Local" value="Fonction_de_recherche.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Recréer un dictionnaire de référence">
+      <param name="Name" value="Recréer un dictionnaire français à partir d'un dictionnaire étranger">
+      <param name="Local" value="Recr&eacute;er_un_dictionnaire_fran&ccedil;ais_&agrave;_partir_d_un_dictionnaire_&eacute;tranger.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Saisie">
+      <param name="Name" value="Fonctions d'édition">
+      <param name="Local" value="Fonctions_d_&eacute;dition.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Tableur (import-export)">
+      <param name="Name" value="Import / Export Tableur">
+      <param name="Local" value="Import___Export_Excel.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="xTranslate.dhop">
+    <param name="Name" value="Xtranslate.dhop">
+    <param name="Local" value="Xtranslate.dhop.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XtranslateDataTools">
+    <param name="Name" value="Introduction">
+    <param name="Local" value="Introduction_traduction_libelles.htm">
+  </object>
+</ul>
+</html>

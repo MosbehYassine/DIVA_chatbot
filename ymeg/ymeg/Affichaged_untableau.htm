@@ -1,0 +1,55 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Affichage d'un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Affichage d'un tableau</h3>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Le "<font class="hcp1">cadre<span style="font-weight: normal;">"</span></font> d'un objet tableau est affiché par les fonctions classiques d'affichage de page de Ywpf (XmeDisp, etc.).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Par contre, <font class="hcp1">aucune fonction de base de Ywpf</font> n'affiche les <font class="hcp1">données</font> d'un tableau. Il faut utiliser pour cela des fonctions spécifiques "tableau"&#160;: <a href="XmeListDisplay.htm">XmeListDisplay</a>, <a href="XmeListConsult.htm">XmeListConsult</a> ou <a href="XmeListInput.htm">XmeListInput</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il <font class="hcp1">n'existe pas</font> de fonction permettant d'afficher une <font class="hcp1">ligne</font> ou une <font class="hcp1">donnée isolée</font> d'un tableau&#160;: les fonctions citées précédemment affichent toujours toutes les lignes (présentes à l'écran). En revanche, l'affichage est <font class="hcp1">optimisé</font> de telle manière que seuls les champs modifiés sont actualisés à l'écran.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le tableau contient plus d'éléments que l'écran ne peut en afficher, vous <font class="hcp1">devez préciser</font> l'élément à placer en <font class="hcp1">première ligne à l'écran</font> grâce à la fonction <a href="XmeListSetOffset.htm">XmeListSetOffset</a>. La fonction <a href="XmeListGetOffset.htm">XmeListGetOffset</a> permet de connaître le rang du premier élément affiché.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour connaître le nombre de lignes d'un tableau qu'il est possible d'afficher à l'écran, utilisez la fonction <a href="XmeListScreenCount.htm">XmeListScreenCount</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour <font class="hcp1">modifier dynamiquement les attributs d’affichage</font>&#160;:<br>
+- D’une colonne complète de tableau, utilisez la méthode de <a href="Marquagedescolonnesd_untableau.htm">marquage des colonnes</a> ou la fonction <a href="XmeSetAttribut.htm">XmeSetAttribut</a>.<br>
+- D’une ligne complète de tableau, utilisez la méthode de <a href="Marquagedeslignesd_untableau.htm">marquage des lignes</a> ou la fonction <a href="XmeListSetAttribut.htm">XmeListSetAttribut</a>.<br>
+- D’une cellule isolée de tableau, utilisez la fonction <a href="XmeListSetAttribut.htm">XmeListSetAttribut</a>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Attention&#160;:</font></p>
+<p class="Body-Text">Un <font class="hcp2">objet tableau ne peut pas être inclus dans un masque multi-écran (pages chaînées)</font>, pour la raison suivante&#160;: seule une fonction telle que XmeListDisplay permet d'afficher les données d'un tableau&#160;; dans un masque multi-écran, le passage d'une page à une autre est transparent pour le programme&#160;; celui-ci n'étant pas averti du changement de page, il ne peut appeler XmeListDisplay pour remplir le tableau et ce dernier sera affiché vide. Vous pouvez toutefois <font class="hcp1">contourner ce problème</font> en remplaçant le masque multi-écran par des <font class="hcp1">pages</font> <font class="hcp2">non</font> <font class="hcp1">chaînées</font>, avec programmation explicite des changements de page.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="Modificationdelatailled_untableau.htm">Modification de la taille d'un tableau</a></p>
+<p class="Body-Text"><a href="Ascenseurverticald_untableau.htm">Ascenseur vertical d'un tableau</a></p>
+</body>
+</html>

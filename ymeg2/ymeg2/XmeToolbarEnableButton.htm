@@ -1,0 +1,78 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeToolbarEnableButton</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeToolbarEnableButton &#160;<a href="Liste_r_capitulative_des_fonctions_de_gestion_des_barres_d_outils.htm"><font size="2" class="hcp1">Famille</font></a> &#160;<a href="Barres_d_outils.htm"><font size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><a href="Barres_d_outils_D_sactivation_et_invalidation_des_boutons.htm"><font class="hcp2">Désactivation (grisage) ou réactivation (dégrisage)</font></a> <font class="hcp2">d’un bouton de barre d'outils</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Ptr XmeToolbarEnableButton</font> (<font class="hcp3">Id_Toolbar</font>, <font class="hcp3">Id_Bouton</font>, <font class="hcp3">Etat</font>)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 11.439%;">
+<col style="width: 88.561%;">
+<tr class="hcp4">
+<td style="width:11.439%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Id_Toolbar</font></p>
+</td>
+<td style="width:88.561%;" class="hcp5">
+<p class="Body-Text">Identifiant de la barre d'outils rendu par la fonction XmeToolbarGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.439%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Id_Bouton</font></p>
+</td>
+<td style="width:88.561%;" class="hcp5">
+<p class="Body-Text">Identificateur du bouton à désactiver ou réactiver.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.439%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Etat</font></p>
+</td>
+<td style="width:88.561%;" class="hcp5">
+<p class="Body-Text">FALSE&#160;: le bouton doit être désactivé (grisé).<br>
+TRUE &#160;: le bouton doit être réactivé (dégrisé).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Valeur rendue par la fonction</font>&#160;:</p>
+<p class="Body-Text" style="margin-left: 49.65pt; text-indent: -43.90pt;">0&#160;:&#160;Pas d’erreur détectée.</p>
+<p class="Body-Text" style="margin-left: 49.65pt; text-indent: -43.90pt;">0x107B&#160;:&#160;Bouton inconnu dans la barre d'outils.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction XmeToolbarEnableButton permet de désactiver (<font class="hcp3">Etat</font> = FALSE) ou réactiver (<font class="hcp3">Etat</font> = TRUE) le bouton d’<a href="Barres_d_outils_Identificateur_des_boutons.htm">identificateur</a> <font class="hcp3">Id_Bouton</font> dans la barre d'outils <font class="hcp3">Id_Toolbar</font>. Un bouton désactivé apparaît grisé à l’écran et ne peut plus être sélectionné par l’utilisateur. Cette fonction reste sans effet pour un bouton de type séparateur.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque&#160;:</font></p>
+<p class="Body-Text">Lorsqu'une même barre d'outils est affichée dans plusieurs fenêtres empilées, ses MISES A JOUR (grisages, invalidations, coches, ajouts ou suppressions de bouton, surcharge, ...) sont répercutées dans TOUTES les OCCURENCES affichées.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">;Désactivation du bouton "COUPER"</p>
+<p class="Source">XmeToolbarEnableButton (Id_toolbar,"COUPER",FALSE)</p>
+</body>
+</html>

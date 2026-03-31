@@ -1,0 +1,134 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Définition et caractéristiques des objets panels pages</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+li.hcp3 { list-style:none;
+display:inline; }
+span.hcp4 { font-weight:bold;
+text-decoration:underline; }
+span.hcp5 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Définition et caractéristiques des objets panels pages</h3>
+<p>&#160;</p>
+<p>L’objet Panel page permet d’inclure, dans une cellule de <a href="Caract&eacute;ristiques_des_objets_grille.htm">grille</a>, une autre page du <span class="hcp1">même</span> masque. Ses caractéristiques sont les suivantes :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Il <span class="hcp1">ne peut être placé que</span> dans une <span class="hcp1">cellule de grille</span> et il occupe toute la surface de cette cellule (il n’est donc pas possible de placer une autre grille ou un autre panel dans la même cellule).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Il <span class="hcp1">référence une autre page Xwin</span> du masque qui, à l'affichage, <span class="hcp1">remplacera l'objet panel</span> dans la cellule de grille.<br>
+Cette page :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp2">
+<li class="p">
+<p>Est automatiquement affichée en même temps que sa page parent.<br>
+(Remarque : il est interdit d'afficher une page panel indépendamment de sa page parente - une erreur est signalée à l'exécution.)</p>
+</li>
+<li class="p">
+<p>Est automatiquement positionnée à l’endroit occupé par la cellule dans la page parent.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Une page référencée par un objet panel peut elle-même contenir une grille avec d'autres panels pages. Il est ainsi possible de concevoir un arbre de pages, sans limite au nombre de niveaux.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Une page à onglet (chaînée ou non) peut inclure des pages panels</span>.<br>
+Chaque page faisant partie du groupe de pages liées par onglet peut alors inclure son propre arbre de pages panels.<span class="hcp1"><br>
+Exemple</span> : Les pages A1 et A2 sont liées par un onglet. A1 inclut une grille avec les objets panels référençant les pages A11, A12 et A13 ; A2 inclut aussi une grille avec les objets panels référençant les pages A21 et A22.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Une page référencée par un objet Panel peut faire partie d’un groupe de pages (chaînées ou non) liées par un onglet</span>.<br>
+On parle alors de pages panels liées. Dans ce cas :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp2">
+<li class="p">
+<p>L'objet Panel page doit référencer la <span class="hcp1">première</span> page du groupe.<br>
+A l'exécution, l'onglet est géré de la même manière qu'un onglet placé sur un groupe de pages classiques : gestion automatique en cas de pages panels chaînées, génération du point d'arrêt onglet en cas de pages panels non chaînées.</p>
+</li>
+<li class="p">
+<p>La cellule de grille correspondante affichera la page panel active du groupe.</p>
+</li>
+<li class="p">
+<p>Chacune des pages panels liées peut inclure son propre sous-arbre de pages panels (sans limite au nombre de niveaux d’onglets ainsi définis).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 48px;"><span class="hcp1">Exemple</span> : La page A1 fait partie d’un groupe de pages à onglet comprenant les pages A1, A2 et A3. La page parente A inclut ce groupe de pages. L'objet panel placé dans A doit référencer la page A1.</p>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp4">Attention : Une page parente ne peut pas contenir plusieurs fois une même page panel</span>.<br>
+<br>
+Cette règle inclut (récursivement) les pages liées par onglet à toutes les pages panels <span class="hcp1">ainsi que</span> les pages liées par onglet à la page parente elle-même. Une erreur est détectée <span class="hcp1">à l'exécution</span> si une même page apparaît en double.<span class="hcp1"><br>
+Exemple</span> : La page parente A1 fait partie d’un groupe de pages à onglet comprenant les pages A1, A2 et A3. A1 inclut les pages panels A11 et A12, A2 les pages panels A21, A22 et A23, A3 la page panel A31. A11 inclut elle-même les pages panels A111 et A112. Toutes les pages panels (A11, A12, A21, A22, A23, A31, A111 et A112) doivent être distinctes.<br>
+<br>
+A l'inverse, il est autorisé de référencer une même page panel dans des pages parentes distinctes.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Xwin place tous les objets Panels pages dans l'ordre de saisie de la page parente (*)</span>.<br>
+En effet, la saisie d'une page parente inclut automatiquement les objets en saisie de ses pages panels (*).<br>
+Le choix de l'ordre de saisie dans la page parente détermine le séquencement relatif des pages panels (pour déterminer le séquencement des objets à l'intérieur d'une page panel donnée, procédez au choix de l'ordre de saisie au niveau de cette page à la manière habituelle).<span class="hcp1"><br>
+<br>
+Exemple</span> : La page A inclut les pages panels A1, A2 et A3. Lors du choix de l'ordre de saisie dans la page A, vous sélectionnez successivement les objets panels référençant les pages A2, A3 et A1. Une saisie séquentielle de la page A débutera par les objets en saisie de la page A2, poursuivra par ceux de la page A3 et terminera par ceux de la page A1. Le séquencement des objets en saisie à l'intérieur des pages panels est déterminé par le choix de l'ordre de saisie opéré au niveau de chacune d'elles.<br>
+<br>
+(*) <span class="hcp5">A l'exécution toutefois, un panel qui référence une page à onglet</span> <span class="hcp4">NON chaînée</span> <span class="hcp5">est exclu de la liste des objets saisis</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les objets gérés par Ygraph ne doivent pas être inclus dans une page panel.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>De plus, le <a href="Page.htm">paramétrage d'une page panel dans Xwin</a> présente quelques particularités par rapport aux pages classiques :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Une page panel ne peut pas être de type "Fenêtre".<br>
+Aucun contrôle n’est effectué sur ce point. L'option "Fenêtre" est simplement ignorée à l’exécution.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Une page panel référencée par un objet Panel page est automatiquement positionnée dans la cellule de grille correspondante. En conséquence, ses <span class="hcp1">offsets ligne et colonne sont purement et simplement ignorés à l'exécution</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Le <span class="hcp1">nombre de lignes et de colonnes</span> a la même signification qu'avec une page classique.<br>
+Ce n'est pas une obligation mais il est conseillé d'ajuster la taille de la cellule de grille qui affichera la page panel pour qu'elle corresponde exactement à la taille de cette page.<span class="hcp5"><br>
+Cet ajustement n'est pas automatique</span> mais un choix du menu de Xwin permet de redimensionner une page parente et ses grilles pour qu'elles s'ajustent parfaitement aux pages panels qu’elles contiennent : voir la rubrique <a href="Agencement_des_pages_panels_dans_les_cellules_de_grille.htm">Agencement des pages panels dans les cellules de grille</a>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Le paramètre <span class="hcp1">Effacement</span> n’est significatif que pour la prise en compte de la <span class="hcp1">couleur de fond</span>. Il est ignoré pour l’effacement proprement dit car une page panel occupe toujours la totalité de la cellule de grille où elle réside.<span class="hcp1"><br>
+Remarque</span> : L'effacement d'une page panel par une page indépendante n’est pas traité.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les <span class="hcp1">attachements</span> sont gérés à la manière habituelle.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque</span> :</p>
+<p>Cette rubrique ne détaille pas les particularités des pages panels concernant plus spécifiquement leur programmation. Sur ce point, on se référera au chapitre de la documentation « Xwin – Programmation » consacré aux pages panels dans l’exécuteur de masques d’écran Ywpf.</p>
+<p>&#160;</p>
+</body>
+</html>

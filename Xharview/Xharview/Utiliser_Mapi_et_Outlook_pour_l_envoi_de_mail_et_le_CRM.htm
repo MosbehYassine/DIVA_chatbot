@@ -1,0 +1,178 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Utiliser le protocole Mapi pour l'envoi de mail ou de fax et le CRM</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+font.hcp3 { font-weight:bold; }
+li.hcp4 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Utiliser le protocole MAPI pour l'envoi de mail ou de fax et le CRM</h3>
+<p>&#160;</p>
+<p>Le bouton <span class="hcp1">Protocole MAPI (client de messagerie et fax)</span> du choix <span class="hcp1">Paramètres</span> du menu <span class="hcp1">Options</span> de DivaltoViewer donne accès aux paramètres d'envoi de mail ou de fax et du CRM par l'interface MAPI. Les options suivantes sont proposées :<br>
+&#160;</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp3">Profil par Défaut dans le client de messagerie</font>.<br>
+Le profil est celui défini par défaut au niveau du client de messagerie.<br>
+DivaltoViewer l'utilisera pour envoyer les messages ou les fax si aucun autre profil n'est spécifié.<br>
+Dans ce cas, indiquez le mot de passe à utiliser pour ce profil dans la zone <span class="hcp1">Mot de passe pour ce profil</span>.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp3">Profil et Mot de passe par défaut</font>.<br>
+Vous pouvez aussi demander à DivaltoViewer d'utiliser un autre profil par défaut (et un mot de passe associé) que celui défini par défaut dans le client de messagerie.<span class="hcp1"><br>
+<br>
+Attention</span> : Certains produits de gestion de mails (Mozilla Thunderbird par exemple) <span class="hcp1">n’acceptent pas de nom de profil</span> lors de la connexion. Il faut dans ce cas remplir les champs "Profil ET Mot de passe par défaut" avec le mot clé conventionnel :<span class="hcp1"><br>
+/noprofile &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>&#160;(qui permet d’indiquer un nom de profil vide lors de la connexion) OU<span class="hcp1"><br>
+/noprofilenull</span> &#160;&#160;&#160;(qui permet d’indiquer une adresse de nom de profil NULL lors de la connexion).<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Utiliser l'interface 64 bits pour dialoguer avec le client de messagerie</span>.<br>
+Cochez cette case en cas d'utilisation de la version 64 bits.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Toujours afficher la boîte d'envoi du client de messagerie</span>.<br>
+Si cette case est cochée :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque le message est envoyé par programme, la boîte d'envoi de mail du client de messagerie est toujours ouverte, même si le programme ne l'a pas demandé.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La case "Afficher la boîte d'envoi du client de messagerie" sera cochée par défaut dans la boîte de dialogue du choix "<a href="Envoyerversunfaxouunemessagerie_lectronique.htm">Envoyer vers ...</a>".</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Sinon, proposer l'affichage de cette boîte par défaut dans le choix Envoyer vers</span>.<br>
+Si cette case est cochée, la case "Afficher la boîte d'envoi du client de messagerie" sera cochée par défaut dans la boîte de dialogue du choix "<a href="Envoyerversunfaxouunemessagerie_lectronique.htm">Envoyer vers ...</a>".</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Paramètres avancés pour les mails</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;"><span class="hcp1">Ajouter ce texte en cas d'envoi d'un fichier au format dhvw</span>.<br>
+Par défaut, le texte standard spécifié dans la zone "Texte par défaut" (indiquant comment télécharger DivaltoViewer) est ajouté à la fin d’un mail ou E-mail.<br>
+En cochant cette case, vous pouvez remplacer le texte par défaut par un texte de votre choix. Garnissez alors la zone "<span class="hcp1">Sinon, prendre ce texte</span>".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;"><span class="hcp1">Ajouter cette signature à mes mails</span>.<br>
+Cochez cette case et garnissez la zone associée pour ajouter une signature personnalisée.</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-size: 11pt; font-weight: bold;">Paramètres avancés pour MAPI</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Ne pas utiliser Extended Mapi</span>.<br>
+Demande l'utilisation de l'interface "simple" Mapi plutôt que son extension Extended Mapi.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Remplacer MAPI32.dll par la dll</span><span style="font-weight: normal;">.<br>
+Demande d'utiliser la dll spécifiée plutôt que MAPI32.dll.</span></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;"><span class="hcp1">Dans les mails, renommer les fichiers temporaires dhvw par</span>.<br>
+Indiquez ici le nom à utiliser pour cette opération.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;"><span class="hcp1">Ne pas entourer l'adresse par des crochets [] à la lecture du carnet d'adresses</span>.<br>
+Pour éliminer les crochets des noms cherchés dans le carnet d'adresses.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;"><span class="hcp1">Oter [SMTP:] et [NTERNET:] à la lecture du carnet d'adresses</span>.<br>
+Pour éliminer ces préfixes des noms cherchés dans le carnet d'adresses.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;"><span class="hcp1">Découpez une adresse du type 'aaa'&lt;bbb@ccc&gt;</span>.<br>
+La nécessité de découper une adresse finale de type "nom + adresse" en deux champs dépend du produit utilisé pour l'envoi :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Aucun.<br>
+L'adresse finale n'est pas découpée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Nom / Adresse.<br>
+L'adresse finale est découpée de manière à placer le nom dans le 1er champ et l'adresse proprement dite dans le second.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Adresse.<br>
+L'adresse n'est pas découpée mais le nom est éliminé pour ne garder que l'adresse proprement dite.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Nom / Nom+Adresse.<br>
+L'adresse est découpée de manière à placer le nom dans le 1er champ et l'adresse globale dans le second.</p>
+</li>
+</ul>
+</li>
+<li class="p-body-text">
+<p class="body-text"><font class="hcp3">Décoder les \n,\r, etc. dans la zone Adresse<br>
+Décoder les \n,\r, etc. dans la zone Message</font>.<br>
+On peut ajouter dans la zone Message ou Adresse des caractères tels que "\n","\r","\t","\ddd" ou "\xdd"&#160;:<br>
+"\n" sera remplacé par un saut de ligne (code $0a).<br>
+"\r" sera remplacé par un retour à la ligne (code $0d).<br>
+"\t" sera remplacé par une tabulation (code $09).<br>
+"\ddd" où ddd représente le code octal du caractère à insérer (exemple&#160;: "\012" = caractère $10).<br>
+"\xdd" où dd représente le code hexadécimal du caractère à insérer (exemple&#160;: "\x0A" = caractère $10).<br>
+&#160;<br>
+Certains drivers de messageries utilisent des adresses avec plusieurs blocs séparés par des "\r".<br>
+Exemple&#160;: les drivers de type MCI utilisent des adresses finales du type&#160;:<br>
+[MCI: xxx \r EMS: xxx \r MBX: xxx].<br>
+Il suffit alors d'insérer le code "\r" dans le format de l'adresse finale.<br>
+Mais attention&#160;: si vous voulez mettre le caractère "\" dans la zone Adresse ou Message alors que le décodage des "\n", "\r", etc. est activé, il faut doubler ce caractère par un autre "\".<br>
+Exemple&#160;: au lieu d'écrire "mot1\mot2", il faut écrire "mot1\\mot2".</p>
+</li>
+<li class="p-body-text">
+<p class="body-text"><font class="hcp3">Fermer le fichier DivaltoViewer</font>.<br>
+Le fichier à envoyer est ouvert par DivaltoViewer afin de l'afficher et de lire ses paramètres d'envoi.<br>
+Si le driver de messagerie n'arrive pas à ouvrir ce fichier, il faut mettre ce paramètre à "Oui", ce qui obligera DivaltoViewer à fermer le fichier le temps de l'envoi du message.</p>
+</li>
+<li class="p-body-text">
+<p class="body-text"><font class="hcp3">Devant le numéro de téléphone (FAX), ajouter le code</font>.<br>
+Lorsque le programme d’application demande la composition automatique du numéro de téléphone, permet de préfixer le numéro par la chaîne de caractères indiquée (par exemple "0,").<br>
+DivaltoViewer recherche alors le caractère "@" dans l'adresse du destinataire et ajoute le code derrière ce caractère.<br>
+S'il n'y a pas de caractère "@" dans l'adresse du destinataire, DivaltoViewer ajoute le code au début de l'adresse du destinataire.<br>
+Exemple&#160;:<br>
+Si l'adresse de base est "03 88 01 02 03" ou "paul@03 88 01 02 03" et que le code à ajouter est "0,", DivaltoViewer générera les adresses suivantes&#160;:<br>
+"03 88 01 02 03" ==&gt; "0,03 88 01 02 03"<br>
+"paul@03 88 01 02 03" ==&gt; "paul@0,03 88 01 02 03"</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Résoudre les adresses email avec</span>.<br>
+Permet de résoudre un nom "en clair" avec l'adresse Internet réelle associée (cette adresse est recherchée dans la base de données du client de messagerie), en spécifiant l'interface à utiliser :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Simple Mapi.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Extended Mapi.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Gestion des profils</p>
+<p class="Body-Text" style="font-weight: normal;">Ouvre une boîte de dialogue permettant de gérer les profils du client de messagerie.</p>
+<p>&#160;</p>
+</body>
+</html>

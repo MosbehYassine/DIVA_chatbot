@@ -1,0 +1,210 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinFindFirstFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinFindFirstFile &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinFindFirstFile recherche les caractéristiques d'un fichier spécifié.</p>
+<p class="Body-Text">Cette fonction ne peut pas être utilisée en réseau Xlan. Pour cela voir : <a href="DirOpen.htm">DirOpen</a>.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Long</font> <font class="hcp2">WinFindFirstFile</font> (<font class="hcp3">Nom</font>, <font class="hcp3">Résultat</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Nom</font></p>
+<p class="decalage05">Nom du fichier ou d'un répertoire qui peut contenir les caractères génériques (* et ?).</p>
+<p class="Body-Text"><font class="hcp3">Résultat</font></p>
+<p class="decalage05">Donnée de 400 octets qui reçoit le résultat de la recherche.</p>
+<p class="Source">1 Bufdir 400</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 Attributs L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 HeureCreation 8&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 HeureAcces 8&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 HeureEcriture 8&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 TaillePoidsForts L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 TaillePoidsFaibles L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 f1 L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 f2 L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 Nom 260&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 NomCourt 14&#160;</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Attributs</font></p>
+<p class="Body-Text">Précise les attributs du fichier trouvé. Ce champ est une combinaison des valeurs suivantes :</p>
+<table cellspacing="0" width="474">
+<tr class="hcp4">
+<td style="width:44.82%;" class="hcp5">
+<p class="Body-Text">FILE_ATTRIBUTE_ARCHIVE&#160;</p>
+</td>
+<td style="width:55.18%;" class="hcp5">
+<p class="Body-Text">Le fichier est un fichier d'archive. Les applications utilisent cette valeur pour les sauvegardes ou les épurations.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:44.82%;" class="hcp5">
+<p class="Body-Text">FILE_ATTRIBUTE_COMPRESSED</p>
+</td>
+<td style="width:55.18%;" class="hcp5">
+<p class="Body-Text">Le fichier ou le répertoire est compressé. Pour un fichier, cela signifie que les données sont compressées. Pour un répertoire, cela signifie que les fichiers sont créés par défaut avec l'option.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:44.82%;" class="hcp5">
+<p class="Body-Text">FILE_ATTRIBUTE_DIRECTORY</p>
+</td>
+<td style="width:55.18%;" class="hcp5">
+<p class="Body-Text">Le fichier est un répertoire.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:44.82%;" class="hcp5">
+<p class="Body-Text">FILE_ATTRIBUTE_HIDDEN&#160;</p>
+</td>
+<td style="width:55.18%;" class="hcp5">
+<p class="Body-Text">Le fichier est caché. Il n'est pas affiché lors d'une liste normale du répertoire.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:44.82%;" class="hcp5">
+<p class="Body-Text">FILE_ATTRIBUTE_NORMAL&#160;</p>
+</td>
+<td style="width:55.18%;" class="hcp5">
+<p class="Body-Text">Le fichier n'a pas d'autres attributs.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:44.82%;" class="hcp5">
+<p class="Body-Text">FILE_ATTRIBUTE_READONLY</p>
+</td>
+<td style="width:55.18%;" class="hcp5">
+<p class="Body-Text">Le fichier est en lecture seule. Les applications ne peuvent pas écrire dans ce fichier ou le supprimer.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:44.82%;" class="hcp5">
+<p class="Body-Text">FILE_ATTRIBUTE_SYSTEM&#160;</p>
+</td>
+<td style="width:55.18%;" class="hcp5">
+<p class="Body-Text">Ce fichier fait partie du système d'exploitation ou est utilisé exclusivement par ce dernier.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:44.82%;" class="hcp5">
+<p class="Body-Text">FILE_ATTRIBUTE_TEMPORARY</p>
+</td>
+<td style="width:55.18%;" class="hcp5">
+<p class="Body-Text">Ce fichier est temporaire.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">HeureCreation</font></p>
+<p class="decalage05">Indique la date et l'heure de la création du fichier. Pour convertir cette heure, utilisez la fonction <a href="WinConvertFileTime.htm">WinConvertFileTime</a>.</p>
+<p class="Body-Text"><font class="hcp3">HeureAcces</font></p>
+<p class="decalage05">Indique la date et l'heure du dernier accès au fichier. Pour convertir cette heure, utilisez la fonction <a href="WinConvertFileTime.htm">WinConvertFileTime</a>.</p>
+<p class="Body-Text"><font class="hcp3">HeureEcriture</font></p>
+<p class="decalage05">Indique la date et l'heure de la dernière modification du fichier. Pour convertir cette heure, utilisez la fonction <a href="WinConvertFileTime.htm">WinConvertFileTime</a>.</p>
+<p class="Body-Text"><font class="hcp3">TaillePoidsForts</font></p>
+<p class="decalage05">Spécifie les poids forts de la taille du fichier. La taille d'un fichier est un nombre sur 64 bits.</p>
+<p class="Body-Text"><font class="hcp3">TaillePoidsFaibles</font></p>
+<p class="decalage05">Spécifie les poids faibles de la taille du fichier. La taille d'un fichier est un nombre sur 64 bits.</p>
+<p class="Body-Text"><font class="hcp3">Nom</font></p>
+<p class="decalage05">Cette zone contient le nom du fichier.</p>
+<p class="Body-Text"><font class="hcp3">NomCourt</font></p>
+<p class="decalage05">Nom court du fichier. Ce nom à la forme classique 8.3 (nom.extension) des noms de fichiers Ms-dos.</p>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="474">
+<tr class="hcp4">
+<td style="width:16.94%;" class="hcp5">
+<p class="Body-Text">-1</p>
+</td>
+<td style="width:83.06%;" class="hcp5">
+<p class="Body-Text">Erreur. Appelez la fonction <a href="WinGetLastError.htm">WinGetLastError</a> pour connaître le détail de l'erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.94%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:83.06%;" class="hcp5">
+<p class="Body-Text">Ticket. Ce ticket (handle) est utilisé pour les appels suivants à WinFindNextFile ou WinFindClose.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">La fonction WinFindFirstFile ouvre un ticket (handle) de recherche et retourne les informations du premier fichier trouvé. Après cette première recherche, vous pouvez utiliser la fonction WinFindNextFile pour chercher les autres fichiers qui répondent à votre critère de recherche. Quand votre recherche est terminée, fermez votre ticket par la fonction WinFindClose.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Body-Text">Ce programme affiche le nom des fichiers d'un répertoire et de tous ses sous-répertoires. La procédure AfficheDirectorie est récursive ; lorsqu'elle rencontre un sous-répertoire, elle se rappelle elle-même pour explorer le sous-répertoire.</p>
+<p class="Source">1 Bufdir 400 ; zone réceptrice</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 Attributs L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 HeureCreation 8&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 HeureAcces 8&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 HeureEcriture 8&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 TaillePoidsForts L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 TaillePoidsFaibles L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 f1 L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 f2 L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 Nom 260&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;2 NomCourt 14&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">;-----------------------------------------------</p>
+<p class="Source">;Procédure récursive qui affiche le nom et la</p>
+<p class="Source">;date de dernière modification d'un fichier</p>
+<p class="Source">;-----------------------------------------------</p>
+<p class="Source">procedure AfficheDirectorie(nombase)</p>
+<p class="Source">1 nombase A</p>
+<p class="Source">1 hdir L</p>
+<p class="Source">beginp</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; lecture du premier fichier&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;hdir = WinFindFirstFile(nombase, Bufdir)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;if hdir = -1&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;preturn&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;endif&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; si répertoire, appel récursif&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; sinon affichage du nom&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Repeat&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;display left(nom) &amp; " " &amp; WinConvertFileTime(HeureEcriture)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;if band(Attributs, FILE_ATTRIBUTE_DIRECTORY) \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;and Nom &lt;&gt; "." and Nom &lt;&gt; ".."&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;AfficheDirectorie(left(nombase, length(nombase)-2) \ &#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&amp; "/" &amp; left(nom) &amp; "/*")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;endif&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Until WinFindNextFile(hdir, Bufdir) = FALSE&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;; fermeture du répertoire &#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;WinFindClose(hdir)&#160;</p>
+<p class="Source">endp</p>
+<p class="Source">&#160;</p>
+<p class="Source">main</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 rep 50</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">Input "Répertoire à afficher " rep&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">AfficheDirectorie(left(rep) &amp; "/*")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">ProgramExit&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="WinGetLastError.htm">WinGetLastError</a>, <a href="WinFindNextFile.htm">WinFindNextFile</a>, <a href="WinFindClose.htm">WinFindClose</a>, <a href="WinConvertFileTime.htm">WinConvertFileTime</a>, <a href="WinGetFileSize.htm">WinGetFileSize</a></p>
+</body>
+</html>

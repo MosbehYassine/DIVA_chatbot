@@ -1,0 +1,32 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xlog1&#160;: Gestion des utilisateurs">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Descriptif du programme Xlog1">
+      <param name="Local" value="Xlog1/DescriptifduprogrammeXlog1.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Paramètres d'un utilisateur">
+      <param name="Local" value="Xlog1/Param_tres_d_un_utilisateur.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Déclaration des utilisateurs d'un réseau Xlan">
+      <param name="Local" value="Xlog1/D_clarationdesutilisateursd_unr_seauXlan.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Choix du fichier Xlogf">
+      <param name="Local" value="Xlog1/ChoixdufichierXlogf_horsserveurXlans_curis__.htm">
+    </object>
+    </ul>
+</ul>
+</html>

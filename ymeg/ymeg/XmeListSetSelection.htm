@@ -1,0 +1,144 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListSetSelection</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-weight:bold;
+font-style:italic; }
+ul.hcp7 { list-style:disc; }
+font.hcp8 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListSetSelection &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Marquage ou sélection des éléments d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+XmeListSetSelection</font> (<font class="hcp3">Identifiant</font>, <font class="hcp3">Sélection</font>, <font class="hcp3">Indice Début</font>, <font class="hcp3">Indice Fin</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="604">
+<tr class="hcp4">
+<td style="width:19.72%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.28%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.72%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Sélection</font></p>
+</td>
+<td style="width:80.28%;" class="hcp5">
+<p class="Body-Text">Indicateur demandant le marquage (TRUE) ou le démarquage (FALSE) des lignes indiquées.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.72%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice Début</font></p>
+</td>
+<td style="width:80.28%;" class="hcp5">
+<p class="Body-Text">Rang dans la liste de la première ligne à (dé)marquer.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.72%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice Fin</font></p>
+</td>
+<td style="width:80.28%;" class="hcp5">
+<p class="Body-Text">Rang dans la liste de la dernière ligne à (dé)marquer.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La procédure <font class="hcp2">XmeListSetSelection</font> modifie le champ <font class="hcp2">Sélection</font> de la donnée de contrôle, associée aux éléments du tableau paramétré dont le rang est compris entre <font class="hcp6">Indice Début</font> et <font class="hcp6">Indice Fin</font> (pour tous renseignements sur la donnée de contrôle, on se reportera aux rubriques <a href="Marquagedeslignesd_untableau.htm">Marquage des lignes d'un tableau</a> et <a href="S_lectionmultipledeslignesd_untableau.htm">Sélection multiple des lignes d'un tableau</a>).<br>
+&#160;<font class="hcp2"><br>
+Au prochain affichage du tableau</font>&#160;:</p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Si le paramètre <font class="hcp6">Sélection</font> vaut TRUE, les lignes correspondant aux éléments paramétrés seront marquées (pour ces éléments, l'indicateur <font class="hcp3">Donnée de contrôle</font>.Selection sera mis à TRUE). Dans ce cas&#160;:<font face="Symbol" class="hcp8"><br>
+-</font> Si la donnée de contrôle associée à un élément précise une <font class="hcp2">couleur</font> (<font class="hcp3">Donnée de contrôle</font>.Couleur = "Nom d'une couleur dans la feuille de styles" ou <font class="hcp3">Donnée de contrôle</font>.CoulSelec = TRUE), la ligne correspondante prendra la couleur indiquée.<font face="Symbol" class="hcp8"><br>
+-</font> Et/ou si la donnée de contrôle précise une <font class="hcp2">image bitmap</font> (<font class="hcp3">Donnée de contrôle</font>.Bitmap = "Nom dans la feuille de styles ou <a href="Listedesimagesbitmappr_d_finiespouruntableau.htm">numéro prédéfini</a> d'une image bitmap"), la colonne d'état en regard de la ligne affichera la bitmap indiquée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le paramètre <font class="hcp6">Sélection</font> vaut FALSE, les lignes seront démarquées (<font class="hcp3">Donnée de contrôle</font>.Selection mis à FALSE)&#160;:<font face="Symbol" class="hcp8"><br>
+-</font> Elles reprendront leur couleur de base.<font face="Symbol" class="hcp8"><br>
+-</font> Les images bitmap éventuellement présentes dans la colonne d'état seront effacées.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">XmeListSetSelection est une facilité d'écriture qui équivaut à programmer les instructions suivantes&#160;:<br>
+&#160;</p>
+<p class="Source">;XmeListSetSelection (<font class="hcp3">Ident</font>, <font class="hcp3">Selec</font>, <font class="hcp3">Ideb</font>, <font class="hcp3">Ifin</font>) &lt;=&gt;</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeListGetPosition (<font class="hcp3">Ident</font>, <font class="hcp3">Position</font>)</p>
+<p class="Source">XmeListIndex (<font class="hcp3">Ident</font>, <font class="hcp3">Ligne</font>, <font class="hcp3">Ideb</font>)</p>
+<p class="Source">LOOP <font class="hcp3">Ideb</font>++ &lt;= <font class="hcp3">Ifin</font></p>
+<p class="Source"><font class="hcp3">&#160;&#160;&#160;RowInfo</font>.Selection = <font class="hcp3">Selec</font></p>
+<p class="Source">&#160;&#160;&#160;XmeListModify (<font class="hcp3">Ident</font>, <font class="hcp3">Ligne</font>)</p>
+<p class="Source">&#160;&#160;&#160;XmeListNext (<font class="hcp3">Ident</font>, <font class="hcp3">Ligne</font>)</p>
+<p class="Source">ENDLOOP</p>
+<p class="Source">XmeListSetPosition (<font class="hcp3">Ident</font>, <font class="hcp3">Position</font>)</p>
+<p class="Source">XmeListCurrent (<font class="hcp3">Ident</font>, <font class="hcp3">Ligne</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Couleur et/ou image bitmap peuvent être différentes pour chaque ligne du tableau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure XmeListSetSelection elle-même n'effectue aucun affichage.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure standard <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> gère la sélection multiple des lignes lors d'une consultation par <a href="XmeListConsult.htm">XmeListConsult</a>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Marquage uniforme (toutes les lignes marquées</p>
+<p class="Source">;sont affichées avec les mêmes attributs)</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd RowInfo</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">MAIN&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;on initialise les infos</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;sur&#160;les attributs des lignes&#160;</p>
+<p class="Source">RowInfo = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;<font class="hcp2">une fois pour toutes</font> :</p>
+<p class="Source">RowInfo.Bitmap = "1" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;coche en colonne d'état</p>
+<p class="Source">RowInfo.CoulSelec = FALSE</p>
+<p class="Source">RowInfo.Couleur = "BLEUCIEL" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;couleur bleu ciel</p>
+<p class="Source">&#160;</p>
+<p class="Source">RowInfo.Selection = FALSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;état initial</p>
+<p class="Source">...</p>
+<p class="Source">XmeListSetSelection (Ident,TRUE,3,5) &#160;;marque les éléments 3, 4, 5</p>
+<p class="Source">...</p>
+<p class="Source">XmeListSetSelection (Ident,FALSE,4,4) ;démarque l'élément 4</p>
+<p class="Source">...</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeListSelectionCount.htm">XmeListSelectionCount</a></p>
+</body>
+</html>

@@ -1,0 +1,768 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Les fichiers séquentiels-indexés</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { text-decoration:underline; }
+font.hcp4 { text-decoration:underline; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Les fichiers séquentiels-indexés</h3>
+<p class="Body-Text">Les fichiers séquentiels-indexés sont les fichiers les plus utilisés lors du développement d'applications de gestion.</p>
+<p class="Body-Text">Un fichier séquentiel-indexé est en réalité composé de deux fichiers :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">un fichier paramètres et clés (type I),</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">un fichier de données (généralement de type N, mais qui peut, avec certaines restrictions, être aussi de type C ou U).</p>
+</li>
+</ul>
+<p class="Body-Text">Grâce à la technique du séquentiel-indexé multi-clés d'Harmony, le même fichier de données peut être vu comme s'il était trié suivant plusieurs ordres différents. On pourra par exemple lire un fichier des factures dans l'ordre des numéros de clients, des dates de factures ou des numéros de facture.</p>
+<p class="Body-Text">Les fichiers séquentiel-indexés d'Harmony sont particulièrement performants. Il n'y a pas de clé primaire et des clés secondaires. Les temps d'accès sont indépendants de la clé utilisée ainsi que du nombre d'enregistrements contenus dans le fichier. De plus, il n'est jamais nécessaire de réorganiser les clés pour améliorer les performances, quelles que soient les opérations effectuées.</p>
+<p class="Body-Text"><font class="hcp2">Remarques :</font></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">La décomposition des fichiers séquentiels-indexés en deux fichiers distincts est transparente pour le programmeur. Celui-ci devra <font class="hcp2">toujours</font> préciser le nom du fichier paramètres et clés pour accéder à un fichier de type I.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les clés sont automatiquement mises à jour en temps réel à chaque écriture, modification ou suppression d'un enregistrement.</p>
+</li>
+</ul>
+<p class="List">&#160;</p>
+<p class="Body-Text"><font class="hcp2">I. FICHIERS SEQUENTIELS-INDEXES ETENDUS</font></p>
+<p class="Body-Text"><font class="hcp2">A partir de la version 6</font>, tous les fichiers séquentiels-indexés sont en mode "étendu".<br>
+Les fichiers séquentiels-indexés étendus bénéficient des avantages suivants :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">La nombre de clés est de 253.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La taille des clés peut atteindre 240 caractères.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Une clé peut être composée de 16 segments de l'enregistrement).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La taille du fichier des données peut passer la frontière des 4 Go.</p>
+</li>
+</ul>
+<p class="List">&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">II. LES PARAMETRES</font></p>
+<p class="Body-Text">Les paramètres d'un fichier séquentiel-indexé se composent :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">du nom du fichier des données associé aux clés,</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">de la description des clés (nom, type, données qui composent chaque clé).</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp2">Le nom du fichier des données</font></p>
+<p class="Body-Text">Généralement, le nom du fichier des données n'est pas précisé. Dans ce cas, il est déduit du nom du fichier I en remplaçant l'extension .dhfi en .dhfd.</p>
+<p class="Body-Text"><span class="hcp3">Si le nom du fichier des données est &#160;précisé</span>, il l'est généralement sans préciser de chemin complet. Dans ce cas, le fichier des données est tout d'abord cherché dans le même répertoire que le fichier des clés. Si le fichier des données n'est pas trouvé dans ce répertoire, il est recherché dans la liste des chemins implicites.</p>
+<p class="Body-Text"><span class="hcp3">Si le nom du fichier des données est un nom avec un chemin complet,</span> la recherche se fait exclusivement d'après ce nom.<br>
+Il est déconseillé de procéder ainsi, car en cas de déplacement du fichier des données, il faut penser à modifier son nom dans les paramètres.</p>
+<p class="Body-Text"><span class="hcp3">Si le nom des clés n'a pas l'extension dhfi</span> et que le nom du fichier des données est a espaces, le nom du fichier des données a même extension mais avec la lettre d avant le point.<br>
+&#160;&#160;&#160;Ex : &#160;&#160;fichier.tmp &#160;--&gt; fichierd.tmp</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Description des clés</font></p>
+<p class="Body-Text"><font class="hcp2">A. Définition</font></p>
+<p class="Body-Text">Une clé définit un ordre de tri du fichier des données. Elle est identifiée par une valeur binaire appelée "lettre clé". L'ordre de tri est toujours croissant mais une fonction (Fpread) permet de lire les clés suivant l'ordre inverse.</p>
+<p class="Body-Text">Il est possible de définir 253 clés. Les seules valeurs interdites sont $00 $20 $FF.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Clés nommées :</p>
+<p class="Body-Text" style="font-weight: normal;">Lorsqu'un index est ajouté au fichier, deux possibilités se présentent pour le définir :</p>
+<ol style="list-style: decimal;">
+<li style="font-weight: normal;" class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Une lettre clé est affectée à l'index.</p>
+</li>
+<li style="font-weight: normal;" class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Un nom est affecté à l'index. Dans ce cas, Harmony attribue dynamiquement une lettre clé à l'index au moment de la création (modification) du fichier physique.</p>
+</li>
+</ol>
+<p class="Body-Text" style="font-weight: bold; margin-left: 24px;">Terminologie</p>
+<p class="Body-Text" style="margin-left: 24px;">Un index est dit <span style="font-weight: bold;">nommé</span> si un nom lui est affecté.<br>
+&#160;</p>
+<p class="Body-Text" style="margin-left: 24px; font-weight: bold;">Remarques</p>
+<ul style="list-style: inside disc;">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">L'utilisation des noms d'index est conseillée pour le développement des ''add-on". Par exemple, plusieurs sociétés peuvent développer un Add-on sur Divalto et chacune a besoin d'ajouter de nouveaux index aux fichiers. Pour éviter tout conflit dans le choix des "lettre clés", les index seront définis par un nom. L'unicité de ce nom sera assurée en préfixant le nom par les initiales de l'entreprise.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">Les "lettre clés" supérieures à 122 ('z') sont réservées pour les index nommés.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">Si un index n'est pas nommé, le système lui attribue automatiquement un nom, ce nom étant la lettre clé.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">Les fonctions Iread IWrite etc. permettent d'accéder au fichier en fonction du nom de l'index.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">La fonction GetKeyByName permet de connaître la lettre clé d'un index en fonction de son nom.<span style="margin-left: 24px;"><br>
+&#160;&#160;&#160;</span></p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Clés homonymes :</p>
+<p class="Body-Text">Le séquentiel-indexé d'Harmony autorise les clés homonymes (identiques). Il n'y a donc pas de notion de clé unique. A la lecture, les homonymes sont lus dans l'ordre chronologique dans lequel ils ont été écrits.</p>
+&#160;
+<p class="Body-Text"><font class="hcp4">Exemple</font> :</p>
+<p class="Body-Text">Soit un fichier d'adresses avec une clé sur le nom. Les enregistrements ont été écrits dans l'ordre chronologique suivant :</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">DUPONT JEAN</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">DUPONT MICHEL</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">DUPONT NICOLE</p>
+<p class="Body-Text">Lors de la recherche d'un enregistrement dont le nom correspond à DUPONT, c'est le premier enregistrement (JEAN) qui est lu. Par des lectures successives, les enregistrement MICHEL et NICOLE sont lus.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Clés à espaces :</font></p>
+<p class="Body-Text">Le séquentiel-indexé ne traite pas les clés garnies avec des espaces. Une telle clé n'est jamais générée lors de l'écriture, et il est donc impossible de relire un enregistrement par une clé à espaces.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Exemple</font> :</p>
+<p class="Body-Text">Prenons l'exemple d'un fichier d'abonnés dont la structure est la suivante :</p>
+<p class="Body-Text">Nom &#160;&#160;20</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Prénom &#160;20</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Adresse &#160;40</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">CodePostal &#160;5</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Ville &#160;&#160;20</p>
+<p class="Body-Text">Nous voulons pouvoir éditer ce fichier dans les ordres suivants :</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;- par nom et prénom</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;- par code postal</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;- par ville.</p>
+<p class="Body-Text">On définira pour cela les 3 clés suivantes :</p>
+<table cellspacing="0" width="436">
+<tr class="hcp5">
+<td style="width:20.57%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Lettre Clé</font></p>
+</td>
+<td style="width:79.43%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Données qui composent la clé</font></p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:20.57%;" class="hcp6">
+<p class="Body-Text">A</p>
+</td>
+<td style="width:79.43%;" class="hcp6">
+<p class="Body-Text">Nom + Prénom</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:20.57%;" class="hcp6">
+<p class="Body-Text">B</p>
+</td>
+<td style="width:79.43%;" class="hcp6">
+<p class="Body-Text">CodePostal</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:20.57%;" class="hcp6">
+<p class="Body-Text">C</p>
+</td>
+<td style="width:79.43%;" class="hcp6">
+<p class="Body-Text">Ville</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text">Une lecture séquentielle du fichier suivant la clé A délivre les enregistrements triés suivant le nom et le prénom. Une lecture séquentielle sur la clé B délivre les enregistrements triés par code postal, et ainsi de suite.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">B. Composition d'une clé</font></p>
+<p class="Body-Text">Une clé est exclusivement composée de données contenues dans l'enregistrement. Elle peut atteindre au maximum 240 caractères.</p>
+<p class="Body-Text">Une clé est composée de une à 16 &#160;zones de l'enregistrement qui seront concaténées pour créer la clé.</p>
+<p class="Body-Text">Une zone est définie par sa position par rapport au début de l'enregistrement (à partir de la position 1) et par sa taille.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple :</font></p>
+<p class="Body-Text">Voici la définition des clés du fichier des abonnés :</p>
+<p class="Body-Text" style="margin-top: 0.00pt;"><img src="../image/help0003.gif" alt="image\help0003.gif" title="image\help0003.gif" width="609" height="77" border="0"></p>
+<p class="Body-Text">Comme les zones Nom et Prénom sont contiguës, il est possible de simplifier la définition de la clé A en remplaçant les colonnes 1 et 2 par une seule colonne contenant 1 et 40.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">C. Clés conditionnelles</font></p>
+<p class="Body-Text">Dans le cas du fichier des abonnés précédemment utilisé, toutes les clés sont systématiquement générées lors de l'écriture d'un enregistrement. Les clés sont alors dites "inconditionnelles".</p>
+<p class="Body-Text">Mais dans certains cas, il est souhaitable de ne générer que certaines clés, en fonction du contenu de l'enregistrement.</p>
+<p class="Body-Text">Les clés qui ne sont pas générées pour tous les enregistrements sont dites "clés conditionnelles".</p>
+<p class="Body-Text">Pour exprimer la condition de génération d'une clé, il faut préciser :</p>
+<ul class="hcp1">
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">la position d'un caractère particulier de l'enregistrement (appelé code-enregistrement);</p>
+</li>
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">un opérateur;</p>
+</li>
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">une constante (appelée "Valeur du code enregistrement").</p>
+</li>
+</ul>
+<p class="Body-Text">Si l'expression &lt;code_enregistrement opérateur constante&gt; est vraie, la clé est générée.</p>
+&#160;
+<p class="Body-Text">L'opérateur peut prendre les valeurs suivantes :</p>
+<table cellspacing="0" width="436">
+<tr class="hcp5">
+<td style="width:16.24%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Valeur</font></p>
+</td>
+<td style="width:83.76%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Signification</font></p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:16.24%;" class="hcp6">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:83.76%;" class="hcp6">
+<p class="Body-Text">= égal</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:16.24%;" class="hcp6">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:83.76%;" class="hcp6">
+<p class="Body-Text">&lt;&gt; différent</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:16.24%;" class="hcp6">
+<p class="Body-Text">2</p>
+</td>
+<td style="width:83.76%;" class="hcp6">
+<p class="Body-Text">&lt; inférieur</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:16.24%;" class="hcp6">
+<p class="Body-Text">3</p>
+</td>
+<td style="width:83.76%;" class="hcp6">
+<p class="Body-Text">&gt; supérieur</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:16.24%;" class="hcp6">
+<p class="Body-Text">4</p>
+</td>
+<td style="width:83.76%;" class="hcp6">
+<p class="Body-Text">&lt;= inférieur ou égal</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:16.24%;" class="hcp6">
+<p class="Body-Text">5</p>
+</td>
+<td style="width:83.76%;" class="hcp6">
+<p class="Body-Text">&gt;= supérieur ou égal</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:16.24%;" class="hcp6">
+<p class="Body-Text">6</p>
+</td>
+<td style="width:83.76%;" class="hcp6">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&amp; et logique&#160;</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text">Voyons sur deux cas l'intérêt des clés conditionnelles.</p>
+<p class="Body-Text"><font class="hcp2">Cas 1 : Fichier contenant plusieurs types d'enregistrements</font></p>
+<p class="Body-Text">Soit un fichier facture contenant les deux types d'enregistrement suivants :</p>
+<table cellspacing="0" width="193">
+<tr class="hcp5">
+<td colspan="2" style="width:100.00%;" class="hcp6">
+<p class="Body-Text" style="text-align: center;"><font class="hcp2">Enregistrement entête</font></p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Champ</font></p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Type</font></p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">CodeEnregistrement</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">1</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">NuméroFacture</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">8,0</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">Ligne</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">4,0</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">CodeClient</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">10</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">Total</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">14,2</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">ModeReglement</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">1,0</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">Date</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">8</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<br>
+&#160;</p>
+<table cellspacing="0" width="193">
+<tr class="hcp5">
+<td colspan="2" style="width:100.00%;" class="hcp6">
+<p class="Body-Text" style="text-align: center;"><font class="hcp2">Enregistrement détail</font></p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Champ</font></p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Type</font></p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">CodeEnregistrement</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">1</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">NuméroFacture</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">8,0</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">Ligne</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">4,0</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">CodeArticle</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">10</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">Prix</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">8,2</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">Quantité</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">8,2</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:61.54%;" class="hcp6">
+<p class="Body-Text">Montant</p>
+</td>
+<td style="width:38.46%;" class="hcp6">
+<p class="Body-Text">10,2</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Le champ CodeEnregistrement nous permet de distinguer un enregistrement d'entête d'un enregistrement de ligne détail.</p>
+<p class="Body-Text">La valeur du champ CodeEnregistrement est par exemple :<br>
+&#160;- 1 pour les enregistrements d'entête,<br>
+&#160;- 2 pour les enregistrements de détail.</p>
+<p class="Body-Text">Nous voulons définir les accès nous permettant de lire :</p>
+<p class="List" style="margin-left: 17.85pt; text-indent: -17.85pt;">a)&#160;tous les enregistrements (entêtes et détails) triés par numéro et ligne de facture</p>
+<p class="List" style="margin-left: 17.85pt; text-indent: -17.85pt;">b)&#160;uniquement les entêtes triées par numéro de facture.</p>
+<p class="List" style="margin-left: 17.85pt; text-indent: -17.85pt;">c)&#160;uniquement les lignes détail triées par code article.</p>
+<p class="Body-Text">Pour réaliser l'accès a), on définit une clé inconditionnelle sur le numéro et la ligne de facture.</p>
+<p class="Body-Text">Pour réaliser l'accès b), il faut définir une clé conditionnelle sur le numéro de facture qui ne soit générée que sur les enregistrements d'entête (Code Enregistrement = 1).</p>
+<p class="Body-Text">Pour réaliser l'accès c), il faut définir une clé conditionnelle sur le code article qui ne soit générée que pour les enregistrements de détail (Code Enregistrement&#160;=&#160;2).</p>
+<p class="Body-Text">Voici le paramétrage :</p>
+<p class="Body-Text"><img src="../image/help0004.gif" alt="image\help0004.gif" title="image\help0004.gif" width="516" height="199" border="0">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Cas 2 : optimisation des traitements</font></p>
+<p class="Body-Text">Voyons sur un exemple comment les clés conditionnelles permettent d'optimiser les traitements sur les fichiers surtout quand ils deviennent volumineux.</p>
+<p class="Body-Text">Reprenons notre fichier d'abonnés précédemment défini :</p>
+<p class="Body-Text">Nom &#160;&#160;20</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Prénom &#160;20</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Adresse &#160;40</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">CodePostal &#160;5</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Ville &#160;&#160;20</p>
+&#160;
+<p class="Body-Text">Nous voulons programmer une sélection manuelle dans ce fichier, un pointage de certains enregistrements. Si nous voulons afficher rapidement la liste des enregistrements sélectionnés (qui peut représenter 1 enregistrement sur 10000), il est hors de question de balayer tout le fichier.</p>
+<p class="Body-Text">Pour résoudre simplement ce problème nous devons :</p>
+<p class="List" style="margin-left: 17.85pt; margin-top: 1.00pt; text-indent: -17.85pt;">-&#160;ajouter une donnée à l'enregistrement qui indique si l'enregistrement est sélectionné,</p>
+<p class="List" style="margin-left: 17.85pt; margin-top: 1.00pt; text-indent: -17.85pt;">-&#160;ajouter une clé conditionnelle qui ne sera générée que si l'enregistrement est sélectionné.</p>
+<p class="Body-Text">Voici la nouvelle description des données et la liste des clés :</p>
+<p class="Body-Text">Nom &#160;&#160;20</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Prénom &#160;20</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Adresse &#160;40</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">CodePostal &#160;5</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Ville &#160;&#160;20</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Selection&#160;1</p>
+<p class="Body-Text"><img src="../image/help0005.gif" alt="image\help0005.gif" title="image\help0005.gif" width="504" height="100" border="0"><br>
+La nouvelle clé D est conditionnelle sur la donnée Sélection. L'ordre est le même que pour la clé A, à savoir sur le nom et le prénom.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">III. OPERATIONS POSSIBLES SUR UN FICHIER DE TYPE I</font></p>
+<table cellspacing="0" width="647">
+<col style="width: 13.293%;">
+<col style="width: 15.508%;">
+<col style="width: 15.507%;">
+<col style="width: 55.983%;">
+<tr class="hcp5">
+<th colspan="4" style="width: 100.291%;">
+<p class="Body-Text" style="text-align: center;"><font class="hcp2">Fonctions de gestion des fichiers de type I</font></p>
+</th>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text" style="font-weight: bold;">Fonction utilisant les index nommés</p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Fonction évoluée</font></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Fonction de base</font></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text"><font class="hcp2">Opération</font> <font class="hcp2">réalisée</font></p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Hopen.htm">Hopen</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hopen.htm">Hopen</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Fopen.htm">Fopen</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">ouverture du fichier</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Hopen.htm">Hopen</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hclose.htm">Hclose</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Fclose.htm">Fclose</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">fermeture du fichier</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Hpclose.htm">Hpclose</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hpclose.htm">Hpclose</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Fpclose.htm">Fpclose</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">fermeture partielle</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Herase.htm">Herase</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Herase.htm">Herase</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Ferase.htm">Ferase</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">effacement des clés &amp; des données</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Iread.htm">Iread</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hread.htm">Hread</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Fread.htm">Fread</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">lecture séquentielle</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Ipread.htm">Ipread</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hpread.htm">Hpread</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Fpread.htm">Fpread</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">lecture séquentielle du précédent</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Iseek.htm">Iseek</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hseek.htm">Hseek</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Fseek2.htm">Fseek2</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">lecture en accès direct</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Iwrite.htm">Iwrite</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hwrite.htm">Hwrite</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Fwrite.htm">Fwrite</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">écriture</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Irewrite.htm">Irewrite</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hrewrite.htm">Hrewrite</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Frewrite.htm">Frewrite</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">réécriture du dernier enreg. lu (données de type N seulement)</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Idelete.htm">Idelete</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hdelete.htm">Hdelete</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Fdelete.htm">Fdelete</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">suppression du dernier enreg. lu (données de type N seulement)</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="IFilter.htm">IFilter</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Hfilter.htm">Hfilter</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Hfilter.htm">Hfilter</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">positionnement d'un filtre de recherche</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="HSiCreate.htm">HSiCreate</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="HSiCreate.htm">HSiCreate</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="HSiCreate.htm">HSiCreate</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">création d'un fichier I</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="HDeleteFile.htm">HDeleteFile</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="HDeleteFile.htm">HDeleteFile</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="HDeleteFile.htm">HDeleteFile</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">suppression d'un fichier</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="HSiRead.htm">HSiRead</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="HSiRead.htm">HSiRead</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="HSiRead.htm">HSiRead</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">lecture du paramétrage</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="HSiMod.htm">HSiMod</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="HSiMod.htm">HSiMod</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="HSiMod.htm">HSiMod</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">modification du paramétrage</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Libr.htm">Libr</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Libr.htm">Libr</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Libr.htm">Libr</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">libération d'un ticket</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="Liball.htm">Liball</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="Liball.htm">Liball</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="Liball.htm">Liball</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">libération de tous les enreg.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="ISaveKey.htm">ISaveKey</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="ISaveKey.htm">ISaveKey</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="ISaveKey.htm">ISaveKey</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">Sauvegarde de la clé courante et du nom de l'index courant</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:13.293%;" class="hcp6">
+<p class="Body-Text"><a href="IRestoreKey.htm">IRestoreKey</a></p>
+</td>
+<td style="width:15.508%;" class="hcp6">
+<p class="Body-Text"><a href="IRestoreKey.htm">IRestoreKey</a></p>
+</td>
+<td style="width:15.507%;" class="hcp6">
+<p class="Body-Text"><a href="IRestoreKey.htm">IRestoreKey</a></p>
+</td>
+<td style="width:55.983%;" class="hcp6">
+<p class="Body-Text">Restauration de la clé et du nom de l'index.</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp4">Remarque</font> : Lors de la suppression d'un enregistrement (fonction <font>f</font>delete) l'enregistrement est mis à espaces dans le fichier des données. L'emplacement occupé par l'enregistrement supprimé n'est pas récupéré par le système. Pour récupérer les emplacements supprimés, il faut utiliser périodiquement l'utilitaire <font class="hcp2">x</font><font class="hcp2">reof</font>.</p>
+<p class="Body-Text">Voir la déclaration des fichiers par les instructions <a href="HFile.htm">HFile</a> et <a href="HTmpFile.htm">HTmpFile</a> qui ouvrent automatiquement les fichiers.</p>
+</body>
+</html>

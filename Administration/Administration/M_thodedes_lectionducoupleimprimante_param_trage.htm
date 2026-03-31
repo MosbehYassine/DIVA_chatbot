@@ -1,0 +1,61 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Méthode de sélection du couple imprimante / paramétrage</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Méthode de sélection du couple imprimante / paramétrage</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Harmony emploie la méthode suivante pour sélectionner un couple imprimante / paramétrage&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Si le modèle <font class="hcp2">précise un format d'impression</font> (format pour le spool), Harmony recherche un chapitre <font class="hcp2">[GraphPrinter-xxxx]</font> référençant ce format. On <font class="hcp2">associe ainsi un couple</font> imprimante/ paramétrage à <font class="hcp2">chaque format</font>&#160;:<br>
+[GraphPrinter-xxxx]<br>
+device=...<br>
+... (commandes de paramétrage "Windows")<br>
+[GraphPrinter-yyyy]<br>
+device=...<br>
+... (commandes de paramétrage "Windows")<br>
+&#160;<br>
+Remarque&#160;: si un chapitre ne précise pas de commandes de paramétrage, Harmony utilise les paramètres définis pour l'imprimante au niveau du gestionnaire d'impression.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le modèle <font class="hcp2">ne précise pas de format</font> ou si le format n'est pas référencé comme indiqué ci-dessus, Harmony recherche le chapitre générique <font class="hcp2">[GraphPrinter]</font>. On <font class="hcp2">associe ainsi un couple</font> imprimante / paramétrage aux impressions <font class="hcp2">sans format</font>&#160;:<br>
+[GraphPrinter]<br>
+device=...<br>
+... (commandes de paramétrage "Windows")<br>
+&#160;<br>
+Remarque&#160;: si ce chapitre ne précise pas de commandes de paramétrage, Harmony utilise les paramètres définis pour l'imprimante au niveau du gestionnaire d'impression.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Enfin, si aucun de ces chapitres n'est présent dans Divalto.ini, c'est l'imprimante par défaut de Windows qui est utilisée. Dans ce cas&#160;:<br>
+- Si le chapitre [DefaultGraphPrinter] est présent, Harmony utilise les paramètres d'impression définis dans ce chapitre.<br>
+- Si le chapitre [DefaultGraphPrinter] est absent, Harmony utilise les paramètres d'impression définis au niveau du gestionnaire d'impressions.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque vous faites figurer des paramètres d'impression "Windows" dans un chapitre [GraphPrinter], vous les <font style="text-decoration: underline;">définissez au niveau d'Harmony</font>. Ce paramétrage de l'imprimante associée n'interfère pas avec le paramétrage défini au niveau du gestionnaire d'impression de Windows&#160;: ainsi, vous changez les paramètres d'édition des états Harmony mais vous ne touchez pas aux paramètres d'édition des autres applications Windows (Word, Excel, ...).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Aucune différence n'est faite au niveau du format entre lettres minuscules et majuscules.</p>
+</li>
+</ul>
+</body>
+</html>

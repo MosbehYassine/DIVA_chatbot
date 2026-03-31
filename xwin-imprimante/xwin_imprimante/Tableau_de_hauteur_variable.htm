@@ -1,0 +1,200 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Tableau et bloc mobile de hauteur variable</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+img.hcp2 { border:none; }
+span.hcp3 { font-weight:bold; }
+font.hcp4 { font-weight:bold; }
+span.hcp5 { font-weight:normal; }
+li.hcp6 { list-style:none;
+display:inline; }
+p.hcp7 { margin-left:8px; }
+span.hcp8 { margin-left:8px; }
+span.hcp9 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Tableau et bloc mobile de hauteur variable</h3>
+<p>&#160;</p>
+<p>Cette rubrique explique comment obtenir que l'exécuteur de masques Ymig ajuste automatiquement la hauteur d'un bloc en fonction de la place encore disponible dans la page imprimée. Pour clarifier la présentation qui suit, nous allons travailler sur l'exemple simple suivant :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Trois blocs (hors blocs détails) sont imprimés sur chaque page de 20 lignes : un en-tête de page, un tableau (bloc numéro 3) et un pied de page de 2 lignes (bloc numéro 4).</p>
+</li>
+<li class="p">
+<p>Sur la toute première page de l'état, l'en-tête imprimé est une version "complète" qui occupe 5 lignes (bloc numéro 1).<br>
+Sur les pages suivantes, l'en-tête est une version "résumé" qui n'occupe plus que 3 lignes (bloc numéro 2).</p>
+</li>
+<li class="p">
+<p>On veut que le bloc central occupe toute la place restante, soit 13 lignes (20-5-2) sur la page 1 et 15 lignes (20-3-2) sur les pages suivantes :<br>
+<br>
+<img src="../image15.gif" alt="" width="404" height="303" border="0" class="hcp2"><img src="../image16.gif" alt="" width="401" height="302" border="0" class="hcp2"></p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Les <span class="hcp3">règles à respecter</span> pour obtenir ce type d'état sont les suivantes :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Tout d'abord, Ymig ne procède à un ajustement automatique de hauteur que dans <span class="hcp3">un cas précis</span> : celui d'un <a href="Blocsfixesetblocsmobiles.htm">bloc de type Mobile</a> contenant un <a href="Les_tableaux.htm">objet Tableau</a>.<br>
+Dans notre exemple, c'est le bloc numéro 3 qui inclut le tableau et dont la hauteur va varier. Il <span class="hcp3">doit être déclaré de type Mobile</span> car sa position <span class="hcp3">va varier</span> <font class="hcp4"><span class="hcp3">dans la page</span><span class="hcp5">. Ici, il ne sera</span></font> <font class="hcp4"><span class="hcp5">imprimé</span> <span class="hcp5">qu'une seule fois par page.</span></font><span class="hcp3"><br>
+<br>
+Remarque</span> :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp1">
+<li class="p">
+<p>Un bloc de ce type <span class="hcp3">ne peut contenir qu’un unique objet Tableau</span> (si la page doit contenir d'autres tableaux, placez-les dans autant d'autres blocs).<br>
+Si deux ou plusieurs tableaux sont inclus dans un même bloc Mobile, une erreur est détectée à la compilation du masque.</p>
+</li>
+<li class="p">
+<p class="hcp7">Cet ajustement automatique n'est pas paramétrable. Autrement dit, tout bloc de type Mobile contenant un objet Tableau est susceptible d’être réduit si la place manque pour imprimer le bloc en totalité. Une réduction de taille n’est jamais appliquée aux blocs fixes ou de fond.<span class="hcp8"><br>
+&#160;</span></p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Ensuite, Ymig n'augmente jamais la hauteur du bloc et du tableau. <span class="hcp3">Celle-ci ne peut que diminuer</span>.<br>
+Dans Xwin, ceci a une conséquence directe sur le paramétrage du bloc contenant le tableau et sur le dessin du tableau dans ce bloc :<br>
+&#160;</p>
+</li>
+<li class="hcp6">
+<ul class="hcp1">
+<li class="p">
+<p>Le <span class="hcp3">paramétrage du bloc</span> doit être basé sur le <span class="hcp3">cas où il occupe la plus grande hauteur</span> :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp1">
+<li class="p">
+<p>Le <span class="hcp3">Nombre de lignes</span> doit être positionné à la valeur <span class="hcp3">maximale</span> possible.<br>
+Dans notre exemple, il doit être (au minimum) de 15 lignes. Pour la page 1, Ymig réduira automatiquement ce nombre à 13 lignes.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La <span class="hcp3">Position Début</span> doit être positionnée à la valeur <span class="hcp3">minimale</span> possible.<br>
+Dans notre exemple, elle doit valoir 4 (au maximum : voir remarque ci-dessous). Pour la page 1, le numéro de ligne courante vaudra déjà 6 après l'impression du bloc d'en-tête complet ; l'impression du bloc 3 commencera donc en ligne 6.<span class="hcp3"><br>
+<br>
+Remarque</span> : La position Fin n'est pas dépendante de la page imprimée.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 88px;"><img src="../image17.gif" alt="" width="242" height="197" border="0" class="hcp2"><br>
+&#160;</p>
+<ul class="hcp1">
+<li class="hcp6">
+<ul class="hcp1">
+<li class="p">
+<p>Le tableau doit être dessiné en conséquence :<br>
+<br>
+Dans notre exemple (bloc de 15 lignes) &#160;:<br>
+<br>
+<img src="../image18.gif" alt="" width="585" height="277" border="0" class="hcp2"><br>
+(Cet exemple montre un tableau qui occupe la quasi-totalité du bloc mais ce n'est pas une obligation.)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp3">Remarque</span> :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Le nombre de lignes du bloc et du tableau est recalculé à l’exécution en tenant compte de la ligne imprimée courante au moment de l’impression du bloc (dans l’exemple, cette ligne variera entre la page 1 et les suivantes selon la hauteur du bloc d’en-tête). Si la ligne courante est supérieure à la Position début du bloc, la taille du bloc et du tableau est réduite de la différence. Sinon, le bloc est imprimé tel quel.<br>
+<br>
+En pratique, Ymig réduit d'abord le tableau puis le bloc en conséquence. S'il reste de la place libre (zone vide d'objets) entre la fin du tableau et la fin du bloc, Ymig rogne d'abord sur cette place libre avant de réduire la hauteur du bloc.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Dans notre exemple, la valeur de la Position début du bloc 3 (4) est exactement égale à la Position fin de l'en-tête réduite + 1. Il est toutefois possible de spécifier une valeur inférieure (1 par exemple), à condition bien entendu d'augmenter la taille du bloc et le dessin du tableau en conséquence. Dans ce cas, la taille du tableau et du bloc sera réduite à l'exécution, quelque soit la page imprimée.<br>
+<br>
+L’intérêt de spécifier 1 plutôt que 4 comme Position début est que cette valeur fonctionnera quelle que soit la taille des blocs d’en-tête. Ainsi, une diminution de la hauteur du bloc d'en-tête réduit n’aura aucune conséquence sur le paramétrage du bloc contenant le tableau.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>En dehors du cas où le bloc contenant le tableau comporte également des <a href="Les_objets_multi-ligne.htm">objets multi-ligne</a>, la position de départ du tableau dans le bloc ne change pas. Seule sa hauteur peut être diminuée.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p class="hcp7">Par souci de simplicité, le bloc 3 de cet exemple ne contient pas d'autres objets que l'objet Tableau. Si d'autres objets existent dans le même bloc et si le tableau est réduit :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp1">
+<li class="p">
+<p class="hcp7">Les objets situés <span class="hcp9">strictement</span> <span class="hcp3">derrière</span> le tableau (i.e. dont l'ordonnée début est strictement supérieure à l'ordonnée fin du tableau) sont automatiquement remontés de la valeur de la réduction (remarque : les positions sont calculées après application des attributs dynamiques).</p>
+</li>
+<li class="p">
+<p class="hcp7">Les autres objets (même ceux situés initialement sur les côtés du tableau, dans la partie tronquée du fait de sa réduction) ne sont pas déplacés.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p class="hcp7">Ymig ne réduit pas la hauteur d'un tableau en dessous d'une certaine limite, égale à la hauteur de son en-tête augmentée de celle du plus petit de ses blocs Tableau. De même, la hauteur du bloc ne descend pas en dessous de la hauteur <span class="hcp8">hors tableau augmentée de la hauteur minimale du tableau.</span></p>
+</li>
+</ul>
+<p>&#160;</p>
+<p style="font-weight: bold;">Suite de l'exemple</p>
+<ul class="hcp1">
+<li class="p">
+<p>Les autres blocs sont paramétrés ainsi :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp1">
+<li class="p">
+<p>Blocs 1 et 2 (en-tête complète et réduite) :<br>
+<br>
+<img src="../image19.gif" alt="" width="242" height="248" border="0" class="hcp2"> <img src="../image20.gif" alt="" width="242" height="248" border="0" class="hcp2"><br>
+<br>
+Comme nous le verrons plus loin, le programme Diva ne demande pas explicitement l'impression du bloc 3 contenant le tableau. Le bloc 3 est imprimé par chaînage par ces deux blocs d'en-tête.<br>
+<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Bloc 4 (pied de page) :<br>
+<br>
+<img src="../image21.gif" alt="" width="242" height="248" border="0" class="hcp2"><br>
+<br>
+Le bloc de pied commande un saut de page après son impression et enchaîne au bloc 2 d'en-tête réduit.<br>
+<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Bloc 5 (bloc détail de type Tableau) :<br>
+<br>
+<img src="../image22.gif" alt="" width="242" height="248" border="0" class="hcp2"><br>
+<br>
+En cas de débordement dans le tableau, ce bloc enchaîne au bloc 4 de pied de page.<br>
+<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Le programme Diva d'impression correspondant :</p>
+</li>
+</ul>
+<p class="Source">XmiPrint Harmony.Imasque 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;<span class="hcp9">premier</span> bloc d'en-tête (complet)</p>
+<p class="Source">&#160;</p>
+<p class="Source">Loop Hread (Fcomp, Cpenr) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;<span class="hcp9">boucle de lecture et d'impression</span></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmiPrint Harmony.Imasque 5 &#160;&#160;&#160;&#160;&#160;&#160;&#160;;des blocs détail&#160;(blocs Tableau)</p>
+<p class="Source">Endloop</p>
+<p class="source">&#160;</p>
+<p class="Source">XmiPrint1 Harmony.Imasque 4 0 0 0 0 &#160;;<span class="hcp9">dernier</span> pied de page (chaînages et sauts invalidés)</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp3">Voir aussi</span> : <a href="Les_objets_multi-ligne.htm">Les objets multi-ligne</a>.</p>
+<p>&#160;</p>
+</body>
+</html>

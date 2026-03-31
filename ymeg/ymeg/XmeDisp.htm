@@ -1,0 +1,157 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeDisp</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+span.hcp4 { font-style:italic; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp7 { list-style:disc; }
+font.hcp8 { font-weight:bold;
+font-style:italic; }
+font.hcp9 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeDisp &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Affichage des constantes d'une page</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeDisp</font> (<font class="hcp3">Nom du fichier masque</font>, <font class="hcp3">Numéro de page</font>, <font class="hcp3">Mode</font>, <span class="hcp4">Pages panels initiales</span>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="623">
+<tr class="hcp5">
+<td style="width:25.76%;" class="hcp6">
+<p class="Body-Text"><font class="hcp3">Nom du fichier masque</font><br>
+(Harmony.Masque)</p>
+</td>
+<td style="width:74.24%;" class="hcp6">
+<p class="Body-Text">Nom du fichier masque.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:25.76%;" class="hcp6">
+<p class="Body-Text"><font class="hcp3">Numéro de page</font><br>
+(Harmony.Page)</p>
+</td>
+<td style="width:74.24%;" class="hcp6">
+<p class="Body-Text">Numéro de la page à afficher.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:25.76%;" class="hcp6">
+<p class="Body-Text"><font class="hcp3">Mode</font><br>
+(Harmony.Mode)</p>
+</td>
+<td style="width:74.24%;" class="hcp6">
+<p class="Body-Text">XME_MODE_GOTO = 0&#160;: mode GOTO<br>
+XME_MODE_GOSUB = 2&#160;: mode GOSUB.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:25.76%;" class="hcp6">
+<p class="Body-Text" style="font-style: italic;">Pages panels initiales</p>
+</td>
+<td style="width:74.24%;" class="hcp6">
+<p class="Body-Text">Drapeau demandant le réaffichage des pages panels initialement configurées dans Xwin &#160;(FALSE par défaut).<br>
+Ce paramètre n'est significatif que si la page inclut des pages panels (chaînées ou non) liées par un onglet.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Si la page est déclarée dans Xwin comme étant une fenêtre, la fonction XmeDisp demande l'<font class="hcp2">affichage</font> de ses seules <font class="hcp2">constantes</font> (objets de type texte, cadre, bouton, bitmap constante, ..., cadre de tableau).<br>
+Sinon, la fonction XmeDisp affiche les seules constantes uniquement au tout premier affichage de la page. Si la page a déjà été affichée préalablement, elle est réaffichée en totalité (constantes et variables).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La page ou la fenêtre est identifiée par un <font class="hcp8">Nom de fichier masque</font> et par un <font class="hcp8">Numéro de page</font> dans ce fichier.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le paramètre <span class="hcp4">Mode</span> précise le <a href="ModeGOTOetmodeGOSUB.htm">Mode d'exécution</a>&#160;:<font face="Symbol" class="hcp9"><br>
+-</font> <font class="hcp2">XME_MODE_GOTO</font> &#160;: mode GOTO.<font face="Symbol" class="hcp9"><br>
+-</font> <font class="hcp2">XME_MODE_GOSUB</font> &#160;: mode GOSUB.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le paramètre <span class="hcp4">Pages panels initiales</span> est expliqué à la rubrique <a href="R&eacute;affichage_des_pages_panels_initialement_configur&eacute;es_dans_Xwin.htm">Réaffichage des pages panels initialement configurées dans Xwin</a> du chapitre consacré aux <a href="Les_grilles_et_les_panels_pages.htm">Grilles et pages panels</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si l'affichage concerne des pages panels, prenez également connaissance des rubriques <a href="Affichage,_consultation_et_saisie_de_la_page_m&egrave;re.htm">Affichage, consultation et saisie de la page mère (pages panels)</a> et <a href="Affichage,_consultation_et_saisie_isol&eacute;e_d_une_page_panel.htm">Affichage, consultation et saisie isolée d'une page panel</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Remarque : Contrairement à la fonction XmeDispv, XmeDisp ne provoque jamais l'exécution du traitement "Avant affichage des variables de la page".</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple&#160;:</p>
+<p class="Body-Text">&#160;</p>
+<p class="Source">XmeLoad ("masque1")</p>
+<p class="Source">XmeLoad ("masque2")</p>
+<p class="source">&#160;</p>
+<p class="Source"><font class="hcp2">X</font>meInfoPage ("masque1",1)</p>
+<p class="Source">XmeSetWindowSize ("masque1",1,Harmony.Opara3,Harmony.Opara4)</p>
+<p class="source">&#160;</p>
+<p class="Source">;Affichage des constantes de la page 1 du fichier "MASQUE1"</p>
+<p class="Source">;La page est appelée en mode GOTO</p>
+<p class="Source">XmeDisp ("masque1",1,XME_MODE_GOTO)</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">;Affichage des constantes de la page 3 du fichier "MASQUE2"</p>
+<p class="Source">;La page (ou la fenêtre) est appelée en mode GOSUB</p>
+<p class="Source">XmeDisp ("masque2",3,XME_MODE_GOSUB)</p>
+<p class="Source">...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Le masque doit être préalablement chargé par la fonction <a href="XmeLoad.htm">XmeLoad</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeDisp est facultative quand elle est suivie d'un appel à la fonction <a href="XmeDispv.htm">XmeDispv</a> ou à la fonction <a href="XmeInput.htm">XmeInput</a> sur la même page ou fenêtre.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">L'affichage d'un masque en mode GOSUB nécessite un appel ultérieur</font> à la fonction <a href="XmeRet.htm">XmeRet</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les cases à cocher et les groupes de radio-boutons ne sont pas affichés ici (même les titres et les dessins constants).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Positionnement de la page ou de la fenêtre à l'écran&#160;:</font></p>
+<p class="Body-Text">Dans l'éditeur de masques d'écran de Xwin, vous avez indiqué où vous vouliez afficher le masque à l'écran (champs <font class="hcp2">Offset Ligne</font> et <font class="hcp2">Offset Colonne</font> des paramètres généraux de la page&#160;; accès par le choix <font class="hcp2">Page Courante</font> du menu <font class="hcp2">Paramètres</font> <font face="Symbol" class="hcp9">-</font> raccourci clavier <font class="hcp2">F3</font>).<br>
+A ce niveau, il s'agissait d'une position "de base" pouvant être modifiée par programme. <font class="hcp2">Si vous souhaitez déplacer la page ou la fenêtre à l'écran</font> par rapport à cette position de base, consultez la rubrique <a href="D_placementd_unmasque_l__cran.htm">Déplacement d'un masque à l'écran</a>.<br>
+Une ligne "détails" affichée <font class="hcp3">N</font> fois à l'intérieur d'un tableau est un exemple typique de page déplacée par programme (hors objet Tableau de Xwin).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Modification dynamique des attributs d'affichage des constantes&#160;(et de l'onglet) d'une page :</font></p>
+<p class="Body-Text">Dans l'éditeur de masques de Xwin, vous avez précisé des attributs d'affichage (Position, Police, Couleur de fond, …) pour chaque constante du masque. Ces attributs "de base" ne sont pas figés et, par programme, vous pouvez demander à les modifier. Pour les détails de mise en œuvre, consultez la rubrique consacrée à la fonction <a href="XmeSetAttribut.htm">XmeSetAttribut</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeDispv.htm">XmeDispv</a></p>
+<p class="Body-Text"><a href="XmeConsult.htm">XmeConsult</a></p>
+<p class="Body-Text"><a href="XmeFlush.htm">XmeFlush</a></p>
+<p class="Body-Text"><a href="XmeFlushAsync.htm">XmeFlushAsync</a></p>
+<p class="Body-Text"><a href="Les_grilles_et_les_panels_pages.htm">Grilles et pages panels</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

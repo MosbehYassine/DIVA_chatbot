@@ -1,0 +1,46 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Index avec identifiant</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { text-align:justify; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Index avec identifiant</h3>
+<p class="Body-Text">Pour un fichier Harmony, lorsqu'une même lettre clé permet d'accéder à plusieurs tables différentes et que l'index inclut l'identifiant de la table à laquelle il permet d'accéder, l'index peut-être déclaré de type avec identifiant.</p>
+<p class="hcp1"><font class="hcp2">Avantages</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Contrairement à l'index de type multi-tables, l'index avec identifiant n'a pas besoin de table intermédiaire. Chaque index de chaque table devient alors un simple index de la table SQL.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">De plus chaque index peut avoir une <font class="hcp2">description différente</font>. Toutefois, pour une lettre clé donnée, la taille totale des champs des l'index doit être identique pour tous les index. Si pour un index cette taille est plus courte, il convient d'ajouter un <font class="hcp2">filler</font> dans la description de l'index.</p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font class="hcp2">Incompatibilité</font></p>
+<p class="Body-Text">Cependant, il y a deux différences majeures dans l'utilisation des index avec identifiant au niveau de la programmation qui peuvent nécessiter une adaptation des programmes qui les utilisent.</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">L'identifiant de la table <font class="hcp2">doit impérativement</font> être positionné dans la clé avant tout accès en lecture. En effet c'est la valeur de l'identifiant dans la donnée tdf.key qui permet de savoir à quelle table s'adresse la requête. Une tentative d'accès sans une valeur de l'identifiant correcte dans la clé provoque une <font class="hcp2">erreur fatale spécifique</font> lors de l'accès à une base SQL, alors qu'elle n'en génère pas lors d'un accès à un fichier Harmony.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Lors d'une lecture séquentielle d'une table SQL pour un code identifiant donné, une tentative de lecture après la dernière ligne de la table renvoie un code de détection de fin de fichier (H_EOF), alors que la lecture d'une table Harmony renvoie la première ligne de la table avec l'identifiant suivant.</p>
+</li>
+</ul>
+<p class="hcp1"><font class="hcp2">Exemple</font></p>
+<p class="Body-Text">Pour le fichier GTFTAB de Divalto Achat-Vente, la lettre clé 'A' permet d'accéder à toutes les tables de paramètres du fichier (Libellés des familles de tarif, mode de règlements, taux de tva, etc…). L'index contient l'identifiant de la table à laquelle il permet d'accéder. L'application positionne toujours l'identifiant dans la clé avant un accès.</p>
+</body>
+</html>

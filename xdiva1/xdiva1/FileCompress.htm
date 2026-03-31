@@ -1,0 +1,81 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FileCompress</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>FileCompress &#160;<a href="Listedesfonctionsavanc_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Cette fonction permet de comprimer un fichier. Les fichiers comprimés par FileCompress peuvent être expansés par la fonction <a href="FileUnCompress.htm">FileUnCompress</a>.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr = FileCompress</font> (<font class="hcp3">fichier_départ , fichier_arrivée, code_système, [comm]</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Fichier_départ</font></p>
+<p class="decalage05">Nom du fichier à comprimer.</p>
+<p class="Body-Text"><font class="hcp3">Fichier_arrivée</font></p>
+<p class="decalage05">Nom du fichier comprimé. Si ce fichier n'existe pas, il est automatiquement créé. Le fichier d'arrivée doit obligatoirement être distinct du fichier de départ.</p>
+<p class="Body-Text"><font class="hcp3">Code_système</font></p>
+<p class="decalage05">Donnée numérique qui reçoit un code d'erreur système.</p>
+<p class="Body-Text"><font class="hcp3">Comm</font></p>
+<p class="decalage05">Commentaires à associer au fichier. Voir la fonction <a href="FileCompressGetComment.htm">FileCompressGetComment</a> qui permet de lire ces commentaires.</p>
+<p class="Body-Text">&#160;&#160;<font class="hcp2"><br>
+Retour</font></p>
+<p class="Body-Text">La fonction retourne un code d'erreur principal et un code d'erreur système.</p>
+<p class="Body-Text">Voir <a href="Codes_d_erreurs_des_fonctions_de_cryptage_et_de_compression.htm">Codes d'erreurs des fonctions de cryptage et de compression</a> .</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">La compression d'un fichier vide ne provoque pas d'erreur. Le résultat est également un fichier vide.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">; compression du répertoire /Divalto/sys dans /Divalto/compresse</p>
+<p class="Source">procedure comprime</p>
+<p class="Source">beginp</p>
+<p class="Source">record 'ddsys.dhsd' OPDIR OP</p>
+<p class="Source">record 'ddsys.dhsd' ELTDIR EL</p>
+<p class="Source">1 car 1</p>
+<p class="Source">1 st X</p>
+<p class="Source">op.racine = "/Divalto/sys"&#160;</p>
+<p class="Source">op.prefixe = "*"</p>
+<p class="Source">op.tri = 1</p>
+<p class="Source">st = DirOpen(op)</p>
+<p class="Source">if st</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Display "Erreur " &amp; tohexa(st) &amp; " lors de l'ouverture"&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;preturn&#160;</p>
+<p class="Source">endif</p>
+<p class="Source">loop DirRead(op,el) = 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;if el.flagdir = 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;display left(el.nom) &amp; el.taillefd &#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;st = FileCompress("/Divalto/sys/" &amp; el.nom, \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"/Divalto/comprime/" &amp; el.nom, stat)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;if st&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Display "Erreur " &amp; str(st) &amp; " Err. Sys = " &amp; tohexa(stat)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;input " " car&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;endif&#160;</p>
+<p class="Source">&#160;&#160;&#160;endif</p>
+<p class="Source">endloop</p>
+<p class="Source">DirClose(op)</p>
+<p class="Source">endp</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="FileUnCompress.htm">FileUnCompress</a>, <a href="FileCompressGetComment.htm">FileCompressGetComment</a>, <font style="text-decoration: underline;">DirOpen</font></p>
+<p class="Body-Text"><a href="Codes_d_erreurs_des_fonctions_de_cryptage_et_de_compression.htm">Codes d'erreurs des fonctions de cryptage et de compression</a> .</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListTreeIncrementOffset</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp6 { margin-top:0;
+margin-bottom:0; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListTreeIncrementOffset &#160;<a href="Lister_capitulativedesfonctionsdegestiondesarbres.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Arbres.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Positionnement d'un nouvel élément en première ligne à l'écran</font> (par incrément/décrément du rang dans l'arbre du premier élément affiché)</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Long XmeListTreeIncrementOffset</font> (<font class="hcp3">Identifiant, Increment</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Increment</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Nombre de lignes d'arbre à ajouter (valeur positive) ou à retrancher (valeur négative) au rang du premier élément affiché actuel.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font> Rang absolu <font style="text-decoration: underline;">DANS LA LISTE</font> (et non position dans l'arbre) du nouveau premier élément affiché à l'écran.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction <font class="hcp2">XmeListTreeIncrementOffset</font> prépare un scrolling à l'écran de l'arbre dont l'identifiant est fourni en paramètre. Le nombre de lignes concernées est donné par la valeur, positive ou négative, du paramètre <font class="hcp3">Increment</font>. Seuls les éléments "affichables" (c'est à dire ceux qui ne sont pas des sous-niveaux d'élément réduit) sont comptabilisés. Le scrolling aura lieu au prochain affichage du tableau.</p>
+<p class="Body-Text">Remarque&#160;: le positionnement direct d'un élément en première ligne à l'écran s'obtient classiquement par la fonction tableau <a href="XmeListSetOffset.htm">XmeListSetOffset</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque :</font> La fonction XmeListTreeIncrementOffset <font class="hcp2">NE peut être appelée QUE</font> si la page de masque contenant le tableau est la page courante (ou l'une de ses pages panels).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemples&#160;:<br>
+&#160;</font></p>
+<p class="Source">XmeListTreeIncrementOffset (Ident, 1) ;préparation d'un scrolling</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;de 1 ligne d'arbre vers le&#160;<span class="hcp6">haut&#160;</span></p>
+<p class="Source">XmeListTreeIncrementOffset (Ident,-8) ;préparation d'un scrolling</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;de 8 lignes d'arbre vers le&#160;<span class="hcp6">bas&#160;</span></p>
+</body>
+</html>

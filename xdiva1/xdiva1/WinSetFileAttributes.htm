@@ -1,0 +1,88 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinSetFileAttributes</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>WinSetFileAttributes <a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinSetFileAttributes permet de positionner les attributs d'un fichier (lecture seule etc.)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Long</font> <span style="font-weight: bold;">WinSetFileAttributes</span> (<span style="font-style: italic;">Fichier , Attributs</span>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font style="font-style: italic;">Fichier</font></p>
+<p class="decalage05">Nom du fichier.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Attributs</p>
+<p class="decalage05">Valeur des attributs.</p>
+<p class="decalage05">Les attributs sont une combinaison des valeurs suivantes (définies dans zdiva.dhsp) :</p>
+<p class="decalage05" style="margin-left: 59px;">FILE_ATTRIBUTE_READONLY</p>
+<p class="decalage05" style="margin-left: 59px;">FILE_ATTRIBUTE_HIDDEN &#160;&#160;&#160;</p>
+<p class="decalage05" style="margin-left: 59px;">FILE_ATTRIBUTE_SYSTEM &#160;</p>
+<p class="decalage05" style="margin-left: 59px;">FILE_ATTRIBUTE_DIRECTORY</p>
+<p class="decalage05" style="margin-left: 59px;">FILE_ATTRIBUTE_ARCHIVE &#160;&#160;&#160;</p>
+<p class="decalage05" style="margin-left: 59px;">FILE_ATTRIBUTE_NORMAL &#160;&#160;&#160;</p>
+<p class="decalage05" style="margin-left: 59px;">FILE_ATTRIBUTE_TEMPORARY</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<table cellspacing="0" width="648">
+<col style="width: 15.31%;">
+<col style="width: 84.69%;">
+<tr class="hcp3">
+<td style="width:15.31%;" class="hcp4">
+<p>0</p>
+</td>
+<td style="width:84.69%;" class="hcp4">
+<p class="Body-Text">Erreur. Appelez la fonction <a href="WinGetLastError.htm">WinGetLastError</a> pour connaître le détail de l'erreur.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:15.31%;" class="hcp4">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:84.69%;" class="hcp4">
+<p class="Body-Text">Pas d'erreur.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Source">&#160;</p>
+<p class="Source">; mettre toto.txt en lecture seule</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 att &#160;L</p>
+<p class="Source">att = WinGetFileAttributes("e:\divalto\sys\toto.txt")</p>
+<p class="Source">if att = -1</p>
+<p class="Source">&#160;&#160;&#160;display "Erreur " &amp; WinGetTextError(WinGetLastError)</p>
+<p class="Source">&#160;&#160;&#160;ProgramExit</p>
+<p class="Source">endif</p>
+<p class="Source">&#160;</p>
+<p class="Source">att += FILE_ATTRIBUTE_READONLY</p>
+<p class="Source">if &#160;WinSetFileAttributes("e:\divalto\sys\toto.txt",att) = 0</p>
+<p class="Source">&#160;&#160;&#160;display "Erreur " &amp; WinGetTextError(WinGetLastError)</p>
+<p class="Source">&#160;&#160;&#160;ProgramExit</p>
+<p class="Source">endif</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text" style="font-weight: normal;"><a href="WinGetLastError.htm">WinGetLastError</a> , <a href="WinGetFileAttributes.htm">WinGetFileAttributes</a>, <a href="LCWinSetFileAttributes.htm">LCWinSetFileAttributes</a></p>
+</body>
+</html>

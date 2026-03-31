@@ -1,0 +1,44 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Paramètres d'appel d'un Zoom liste</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Paramètres d'appel d'un Zoom liste</h3>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Zoom_Enreg.htm">Zoom.Enreg</a> (nom du RecordSql associé à la table traitée) et <a href="Zoom_ModTrait.htm">Zoom.ModTrait</a> (nom de l'objet du module de traitements du zoom) <span class="hcp2">doivent</span> être renseignés <span class="hcp2">avant</span> d'appeler la fonction <a href="ZoomCombo.htm">ZoomCombo</a>,<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp2">Zoom.ZoomComboRetour</span> (64 caractères maximum) détermine la méthode de calcul du résultat du Zoom liste (voir la rubrique "<a href="Param&egrave;tres_de_retour_du_Zoom_combo.htm">Paramètres de retour du Zoom liste</a>") :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous garnissez ce paramètre, dans la séquence <a href="ZoomComboDebut.htm">ZoomComboDebut</a> (ou ZoomDebut), avec le <span class="hcp2">nom</span> du champ SQL à renvoyer en résultat, <a href="Zoom_ValRetour.htm">Zoom.ValRetour</a> sera automatiquement garni avec la valeur que prend ce champ dans la fiche sélectionnée par l'utilisateur lorsqu'il valide le zoom.<span class="hcp2"><br>
+<br>
+Exemple</span> : Zoom.ZoomComboRetour = "REF" &#160;&#160;&#160;;référence de l'article sélectionné<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous le laissez à espace, Zoom.ValRetour devra être renseigné dans la séquence de validation <a href="ZoomComboFin.htm">ZoomComboValidation</a> (ou ZoomValidation).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

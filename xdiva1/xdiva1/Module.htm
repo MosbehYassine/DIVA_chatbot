@@ -1,0 +1,61 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Module</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Module &#160;<a href="InstructionsdeModulesetProgrammes.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font 
+	 style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a 
+	 href="G_n_ralit_s1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Module</font> <font class="hcp3">nom</font></p>
+<p class="Body-Text">La déclarative Module permet de déclarer un module 
+ externe. Toutes les fonctions/procédures publiques du module peuvent alors 
+ être utilisées.<br>
+<br>
+A l'exécution, le module sera chargé lors du premier appel d'une de ses 
+ fonctions/procédures.</p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Nom</font></p>
+<p class="decalage05">Nom (objet compilé) du module externe.</p>
+&#160; 
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">Module &quot;Gfcli.dhop&quot;&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Cas particulier des surcharges 
+ multiples </p>
+<p class="Body-Text" style="margin-left: 48px;">Dans le cadre des surcharges 
+ multiples, il est possible de préciser le nom de l'add-on. Dans ce cas, 
+ la déclaration doit être suivie de <span style="font-weight: bold;">AS 
+ alias.</span></p>
+<p class="Body-Text" style="margin-left: 48px;">Exemple : </p>
+<p class="Body-Text" style="margin-left: 48px;">module addon1.modulegttmfic.dhop 
+ &#160;&#160;as addon1_modulegttmfic </p>
+<p class="Body-Text" style="margin-left: 48px;">module addon2.modulegttmfic.dhop 
+ &#160;&#160;as addon2_modulegttmfic </p>
+<p class="Body-Text" style="margin-left: 48px;">; ensuite l'alias remplace 
+ le nom du module</p>
+<p class="Body-Text" style="margin-left: 48px;">addon2_modulegttmfic.gttmfic_Proc1 
+ &#160;&#160;: appel de Proc1 du module modulegttmfic.dhop de l'add-on 
+ 2</p>
+<p class="Body-Text" style="margin-left: 48px;">&#160;</p>
+<p class="Body-Text" style="margin-left: 48px;">&#160;</p>
+</body>
+</html>

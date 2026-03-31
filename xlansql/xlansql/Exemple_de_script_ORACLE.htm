@@ -1,0 +1,65 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple de script ORACLE</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Exemple de script ORACLE</h1>
+<p>&lt;execute&gt;</p>
+<p>/* Déclaration des variables et des curseurs */</p>
+<p>DECLARE</p>
+<p>n_ce4 &#160;&#160;&#160;char(1);</p>
+<p>mres_id &#160;int;</p>
+<p>resqte &#160;&#160;&#160;int;</p>
+<p>CURSOR c_mres IS select mres_id, resqte from &lt;BASESQL&gt;.mres ORDER BY mres_id;</p>
+<p>&#160;</p>
+<p>BEGIN</p>
+<p>/* Requête simple pour récupérer la valeur d'un ancien champ */</p>
+<p>/* substr sert à tronquer la valeur car le nouveau champ est plus court que l'ancien */</p>
+<p>/* pour le substr d'oracle, le &lt;start_position&gt; (2ème paramètre) commence à 1 */</p>
+<p>&#160;</p>
+<p>UPDATE &lt;BASESQL&gt;.soc SET chemincod = (SELECT substr(o.winchn, 1, 20) FROM &lt;BASESQL&gt;.soc_oldcolumns o WHERE o.soc_id = &lt;BASESQL&gt;.soc.soc_id);</p>
+<p>COMMIT;</p>
+<p>&#160;</p>
+<p>/* Requête avec un test utilisant un curseur */</p>
+<p>&#160;OPEN c_mres;</p>
+<p>&#160;LOOP</p>
+<p>&#160;&#160;&#160;&#160;FETCH c_mres INTO mres_id, resqte;</p>
+<p>&#160;&#160;&#160;&#160;EXIT WHEN c_mres%NOTFOUND;</p>
+<p>/* positionne ce4 en fonction de resqte */ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p>&#160;&#160;&#160;&#160;IF resqte != 0 THEN</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;n_ce4 := 1;</p>
+<p>&#160;&#160;&#160;&#160;ELSE</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;n_ce4 := 0;</p>
+<p>&#160;&#160;&#160;&#160;END IF;</p>
+<p>&#160;</p>
+<p>&#160;&#160;&#160;&#160;EXECUTE IMMEDIATE('update &lt;BASESQL&gt;.mres set ce4 = ' || n_ce4 || ' where mres_id = ' || mres_id);</p>
+<p>&#160;</p>
+<p>END LOOP;</p>
+<p>COMMIT;</p>
+<p>CLOSE c_mres;</p>
+<p>&#160;</p>
+<p>/* Suppression des tables suffixées par "_oldcolumns" */</p>
+<p>&lt;executeDropOldColumns&gt;</p>
+<p>DECLARE</p>
+<p>table_name user_tables.table_name%TYPE;</p>
+<p>CURSOR cur_table IS SELECT table_name FROM user_tables where lower(table_name) like '%_oldcolumns';</p>
+<p>&#160;</p>
+<p>BEGIN</p>
+<p>OPEN cur_table;</p>
+<p>LOOP</p>
+<p>&#160;&#160;&#160;FETCH cur_table INTO table_name;</p>
+<p>&#160;&#160;&#160;EXIT WHEN cur_table%NOTFOUND;</p>
+<p>&#160;&#160;&#160;EXECUTE IMMEDIATE('DROP TABLE &lt;BASESQL&gt;.' || table_name);</p>
+<p>&#160;END LOOP;</p>
+<p>COMMIT;</p>
+<p>CLOSE cur_table;</p>
+<p>END;</p>
+</body>
+</html>

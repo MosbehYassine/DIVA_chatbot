@@ -1,0 +1,63 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Les constantes</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Les constantes</h3>
+<p class="Body-Text"><font class="hcp1">Constantes alpha-numériques</font></p>
+<p class="Body-Text">Les constantes alpha-numériques sont délimitées par</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">une paire de simples quotes '</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">une paire de doubles quotes "</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">une paire de quotes inverses `</p>
+</li>
+</ul>
+<p class="Body-Text">La taille d'une constante alpha-numérique est limitée par la taille de la ligne instruction.</p>
+&#160;
+<p class="Body-Text">Exemples :</p>
+<p class="Source">Display "BONJOUR"</p>
+<p class="Source">Display 'BONJOUR'</p>
+<p class="Source">Display "L'apostrophe"</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Constantes numériques</font></p>
+<p class="Body-Text">Une constante numérique ne peut être composée que de chiffres et éventuellement d'une virgule ou d'un point décimal et d'un signe - .</p>
+<p class="Body-Text">Le compilateur remplace le point décimal par une virgule.<br>
+Ainsi : DISPLAY 123.45 affichera 123,45</p>
+<p class="Body-Text">Exemples : -123 12 123,4562123 124.12354 etc...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Constantes binaires</font></p>
+<p class="Body-Text">Une constante binaire est composée du signe $ immédiatement suivi de chiffres hexadécimaux (0-9 et A-F).</p>
+<p class="Body-Text">Si la longueur de la constante hexadécimale est impaire, un 0 est rajouté à gauche de la chaîne ($D = $0D).</p>
+<p class="Body-Text">Exemples : <font style="font-family: 'Courier New';" face="Courier New">$0D $0D0A $1B476F $D</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Constantes de type X et L</font></p>
+<p class="Body-Text">Une constante de type X (donnée sur 16 bits) doit commencer par <font class="hcp1">0X</font> suivi de chiffres hexadécimaux (4 au maximum).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Une constante de type L (donnée sur 32 bits) doit commencer par <font class="hcp1">0L</font> suivi de chiffres hexadécimaux (8 au maximum).</p>
+&#160;
+<p class="Body-Text">Exemples :</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">i = 0xabcd<br>
+i = 0Lfadaffff&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</body>
+</html>

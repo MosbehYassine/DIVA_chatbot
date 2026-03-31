@@ -1,0 +1,213 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Table de définition de fichier (TDF)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+
+<h3>Table de définition de fichier (TDF)</h3>
+<p class="Body-Text">Pour utiliser un fichier, le programme doit allouer une zone de 1024 octets appelée Table de Définition de Fichier (TDF) qui servira de zone de communication avec le système. Cette TDF est utilisée par le système pour y stocker des informations propres à la tâche. Elle est également utilisée par le programme pour par exemple indiquer la clé à lire.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">On distingue essentiellement deux champs à l'intérieur de cette TDF :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">le nom du fichier sur 256 octets</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">la clé sur 256 octets (fichiers indexés) ou sur 8 octets (fichiers normaux à taille d'enregistrements fixes).</p>
+</li>
+</ul>
+<p class="List">La déclaration d'une Tdf se fait par les instructions <a href="HFile.htm">HFile</a> et <a href="HTmpFile.htm">HTmpFile</a>.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemples :</font></p>
+&#160;
+<p class="Source">Hfile exodd fcli tdfcli ; déclaration d'une Tdf nommée tdfcli</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; le fichier sera automatiquement ouvert &#160;</p>
+&#160;
+<p><span style="font-weight: bold;">Remarque</span> : une tdf de manoeuvre peut aussi être déclarée de la manière suivante :</p>
+<p class="Body-Text">Record * htdf wtdf</p>
+&#160;
+<p class="Body-Text">Avant de faire une ouverture de fichier (Hopen), il faut mettre le nom du fichier que l'on veut ouvrir dans le champ Name de la <font>t</font>df.</p>
+<p class="Body-Text">Avant de faire une lecture en accès direct ou indexé, il faut (en général) positionner la clé.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple 1 :</font> Ouverture d'un fichier séquentiel-indexé et recherche d'un enregistrement :</p>
+<p class="Source">Record * htdf wtdf ; déclaration d'une tdf de manoeuvre</p>
+<p class="Source">wtdf.name = "fcomp"</p>
+<p class="Source">Hopen(wtdf,'P')</p>
+<p class="Source">....</p>
+<p class="Source">wtdf.key = "A" &amp; "BACH" ; positionnement de la clé à lire</p>
+<p class="Source">status = Fseek2(wtdf,article,"P"); recherche de l'enreg. dont la</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; clé est BACH&#160;</p>
+<p class="Source">; on aurait aussi pu écrire</p>
+<p class="Source">status = Hseek(wtdf,article,"A" &amp; "BACH","P")</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 2</font> : Ouverture d'un fichier de type N à taille d'enregistrement fixe et lecture de l'enregistrement 5230.</p>
+<p class="Source">Record * htdf fnf</p>
+<p class="Source">fnf.name = "FNF"</p>
+<p class="Source">status = fopen(fnf,'P')</p>
+<p class="Source">....</p>
+<p class="Source">fnf.keyn = 5230 ; positionnement de la clé à lire</p>
+<p class="Source">status = fseek2(fnf,article,"P"); lecture de l'enreg <span style="margin-top: 0; margin-bottom: 0;">no 5230</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque 1</font> : Si la clé n'est pas positionnée après l'ouverture du fichier, la fonction <font>f</font>read lit le premier enregistrement du fichier (suivant la clé A pour un fichier séquentiel-indexé).</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Remarque 2 :</font> L'instruction <a href="HFile.htm">HFile</a> (déclaration d'un fichier défini dans un dictionnaire) réserve la table de définition du fichier (TDF), positionne le nom du fichier et ouvre ce dernier.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La <a href="javascript:void(0);" id="A1" onmouseover="if (parseInt(navigator.appVersion) >= 4 &amp;&amp; typeof(BSPSPopupOnMouseOver) == 'function') BSPSPopupOnMouseOver(event);" class="BSSCPopup" onclick="BSSCPopup('Caption_1.htm');return false;">Tdf</a> de 1024 octets est une donnée structurée définie comme suit</p>
+<table cellspacing="0" width="610">
+<col style="width: 19.364%;">
+<col style="width: 12.381%;">
+<col style="width: 68.255%;">
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Champ</font></p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Pos.lg</font></p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Commentaire</font></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Name</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">5.256</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Nom complet du fichier</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">SizeLast</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">535.X</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Taille du dernier enregistrement lu</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Prot</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">261.1</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Protection</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Key</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">262.256</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">En séquentiel indexé</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Avant lecture : prochaine clé à lire&#160;</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Après lecture : dernière clé lue&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Lkey</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">262.1</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Lettre clé</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">KeyValue</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">263.255</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Valeur de la clé (sans la lettre clé)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Keyn</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">262.10,0</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">En accès direct (type N, taille fixe)<br>
+Numéro du prochain enregistrement<br>
+&#160;&#160;à lire par Fseek</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">IndexName</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">741.32</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Nom de l'index courants. Fonctions Ixxx.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">BaseType</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">774.B</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">1=fichier harmony &#160;&#160;2=base sql</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.364%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">_count…</p>
+</td>
+<td style="width:12.381%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">&#160;</p>
+</td>
+<td style="width:68.255%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 3.00pt;">Compteurs d'opérations sur le fichier. Ces compteurs sont mis à jour par le système.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Le positionnement de la clé s'écrit : vartdf.key = "A" &amp; ….</p>
+<p class="Body-Text">&#160;</p>
+<script type="text/javascript" language="JavaScript1.2">
+//<![CDATA[
+        if( typeof( FilePopupInit ) != 'function' ) FilePopupInit = new Function();
+        FilePopupInit('A1');
+//]]>
+</script>
+</body>
+</html>

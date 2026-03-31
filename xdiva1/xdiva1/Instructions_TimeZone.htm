@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<title>Instructions Set Get TimeZone</title>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js"></script>
+
+<h1 style="font-family: Arial, sans-serif;">Instructions TimeZone</h1>
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-size: 10pt;"><span 
+	 style="font-weight: bold;">int SetTimeZone</span> <span style="font-style: italic;">( 
+ nom de la time zone</span> )</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Les fonctions 
+ Today et Time(n) renvoient la date/heure en cours selon la time zone de 
+ windows</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">On peut changer 
+ la Time zone du xrtdiva en cours en donnant le nom de la time zone</p>
+<p><span style="font-family: Arial, sans-serif; font-size: 10pt;">exemple</span> 
+ :</p>
+<div style="padding: 5px; width: 950px; color: #091E42; background-color: #F4F5F7; 
+	 height: 121px; font-family: 'Lucida Console', monospace; font-size: 10pt;">
+	<p style="font-size: 10pt; margin-top: 4.5pt; margin-bottom: 4.5pt; 
+		 margin-left: 40px; font-family: 'Lucida Console', monospace;">1 
+	 st x</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">st 
+	 = SetTimeZone(&quot;Romance Standard Time&quot;) <span style="color: #008000;">;Time 
+	 zone de la France par exemple</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">if 
+	 st &lt;&gt; 0</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 80px; 
+		 color: #008000;">;la time zone n'existe pas, le nom passé en paramètre 
+	 est faux</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">endif</p>
+</div>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Les fonctions 
+ Today et time renvoient alors la date/heure du jour mais selon la time 
+ zone<br />
+NB : Time(11) renvoie la date/heure en UTC, elle n'est donc pas modifiée 
+ par la fonction SetTimeZone et continue donc a renvoyer la date/heure 
+ en UTC<br />
+pour revenir a la time zone standard du serveur, il faut écrire st = SetTimeZone(&quot; 
+ “)</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">A noter que 
+ le nom d’une time zone est toujours sur 32 caractères</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt;">fonction GetTimeZone</h2>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">La fonction 
+ valeur = GetTimeZone renvoi le nom de la time zone en cours<br />
+si on a précédemment &#160;fait un appel a SetTimeZone( “xxx” ), GetTimeZone 
+ renvoie la valeur xxx<br />
+sinon GetTimeZone renvoi le nom de la time zone en cours de windows .</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">A noter que 
+ cette time zone n’est valable que pour le programme xrtdiva diva en cours, 
+ il n’affecte pas les autres programmes diva. Par contre elle est transmise 
+ au xrtdiva fils quand on fait un programmCall ou un programgoto “ “</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt;">fonction WinReadListTimeZone</h2>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Elle permet 
+ de remplir une liste avec les noms des timezones de Windows</p>
+<p><span style="font-family: Arial, sans-serif; font-size: 10pt;">Dans 
+ le module ysystemex.dhop<br />
+Il faut faire un multichoix numérique lié à une liste</span> :</p>
+<div style="padding: 5px; width: 950px; color: #091E42; background-color: #F4F5F7; 
+	 font-family: 'Lucida Console', monospace; font-size: 10pt; height: 128px;">
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 &#160;&#160;liste 
+	 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;L</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 &#160;&#160;nomtimezone 
+	 &#160;&#160;32 &#160;&#160;&#160;<span style="color: #008000;">;nom 
+	 de la time zone provenant de l’enregistrement entreprise de l’ERP 
+	 ou bien mettre espace</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 &#160;&#160;indice 
+	 &#160;&#160;&#160;&#160;&#160;&#160;&#160;3,0 &#160;&#160;<span style="color: #008000;">;numéro 
+	 d’indice da la time zone selon le nom de nomtimezone</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;"><br />
+	liste = ListGetId(&quot;zoomlistechoix&quot;) <span style="color: #008000;">;on 
+	 récupère l’identifiant de la liste du multichoix</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">indice = WinReadListTimeZone(liste, 
+	 nomtimezone)</p>
+</div>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">La fonction 
+ renvoie l'indice de la time zone <span style="font-style: italic;">nomtimezone 
+ dans la liste.</span> Si nomtimezone est vide (à espace) retourne le résultat 
+ de GetTimeZone appliquée à la timeZone définie dans Windows (elle renverra 
+ donc toujours un indice)</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;"><span style="font-style: italic;">indice</span> 
+ peut ensuite être renseigné dans la variable du multichoix dans le masque 
+ correspondant, ce qui permet de récupérer le nom de la timeZone via la 
+ fonction <span style="font-family: Arial, sans-serif; font-size: 10pt;">Listindex(liste, 
+ enregTZI, indice)</span></p>
+<p><span style="font-family: Arial, sans-serif; font-size: 10pt;">Et la 
+ structure de enregTZI est toujours</span></p>
+<div style="padding: 5px; width: 950px; color: #091E42; background-color: #F4F5F7; 
+	 font-family: 'Lucida Console', monospace; font-size: 10pt; height: 79px;">
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 &#160;&#160;enregTZI 
+	 &#160;&#160;&#160;&#160;&#160;&#160;160</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">2 &#160;&#160;enregTZInom 
+	 &#160;&#160;&#160;32 &#160;&#160;&#160;<span style="color: #008000;">;nom 
+	 à garder dans l’ERP</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">2 &#160;&#160;enregTZIdsp 
+	 &#160;&#160;&#160;128</p>
+</div>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: normal;">exemple 
+ &#160;de masque :</h2>
+<p><img src="../image1.png" alt="" style="border: none;" border="0" /></p>
+<p>&#160;</p>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt;"><img alt="" 
+	 src="../image2.png" style="border: none;" border="0" /></h2>
+<div style="padding: 5px; width: 950px; color: #091E42; background-color: #F4F5F7; 
+	 font-family: 'Lucida Console', monospace; font-size: 10pt; height: 79px;">
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: #008000;">;Exemple 
+	 de programme</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: #008000;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">module &quot;ysystemex.dhop&quot;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">function char readdate</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 dte &#160;&#160;&#160;&#160;32</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">2 dte8 &#160;&#160;&#160;8</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">beginf</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;dte 
+	 = time(7)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;freturn 
+	 formatd(&quot;DD/MM/YYYY &quot;, dte8) &amp; mid(dte, 9, 2) &amp; 
+	 &quot;:&quot; &amp; mid(dte, 11, 2) &amp; &quot;:&quot; &amp; mid(dte, 
+	 13, 2)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">endf</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">Public Record &quot;xxxxxxx&quot; 
+	 wenreg &#160;wenreg <span style="color: #008000;">;enregirement qui 
+	 contient le champ indice du combo liste wtzn</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span 
+	 style="color: #008000;">;et deux variables texte wtz et wdte2 de 16 
+	 pour afficher les dates en clair</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">procedure testtz</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 &#160;&#160;masque 
+	 &#160;&#160;&#160;&#160;&#160;&#160;64</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 &#160;&#160;liste 
+	 &#160;&#160;&#160;&#160;&#160;&#160;&#160;L = 0</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 &#160;&#160;enregTZI 
+	 &#160;&#160;&#160;&#160;160</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">2 &#160;&#160;enregTZInom 
+	 &#160;32</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">2 &#160;&#160;enregTZIdsp 
+	 &#160;128</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">beginp</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;masque 
+	 = 'xxxxxx.dhof'</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;XmeLoad(masque)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;liste 
+	 = ListGetId(&quot;zoomlistechoix&quot;)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;wenreg 
+	 = &quot; &quot;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;wenreg.wtzn 
+	 = WinReadListTimeZone(liste, wenreg.wtz) &#160;&#160;<span style="color: #008000;">;wenreg.wtz 
+	 fait 3,0 car il y a à peu près 140 times zones</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;label 
+	 reinput</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;xmeinput 
+	 masque &#160;1 &#160;0 XME_MODE_GOTO</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;if 
+	 harmony.Dataarret = 1000</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;enregTZI 
+	 = &quot; &quot;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;Listindex(liste, 
+	 enregTZI, wenreg.wtzn) <span style="color: #008000;">;au retour, enregTZInom 
+	 contient le nom de la time zone a mettre dans l'ERP</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;SetTimeZone(&quot; 
+	 &quot;)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;wenreg.wdte 
+	 = readdate &#160;&#160;<span style="color: #008000;">;date en clair 
+	 selon la time zone Windows</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;SetTimeZone(enregTZInom)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;wenreg.wdte2 
+	 = readdate &#160;<span style="color: #008000;">;date en clair selon 
+	 la time zone choisie</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;&#160;&#160;&#160;goto 
+	 reinput</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;endif</p>
+</div>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</h2>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt;">fonction WinReadListTimeZoneAlpha</h2>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Elle fonctionne 
+ comme la fonction WinReadListTimeZone, mais elle est faite pour travailler 
+ avec une variable écran de type alpha sur 32 caractères, elle est donc 
+ plus simple car on a directement le nom de la time zone dans le champ 
+ qui est dans la page du masque écran</p>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt;"><img src="../image4.png" 
+	 alt="" style="border: none;" border="0" /></h2>
+<div style="padding: 5px; width: 950px; color: #091E42; background-color: #F4F5F7; 
+	 font-family: 'Lucida Console', monospace; font-size: 10pt; height: 79px;">
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">main</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">masque 
+	 = '_test_utc.dhof'</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">XmeLoad(masque)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">liste 
+	 = ListGetId(&quot;zoomlistechoix&quot;)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">wenreg 
+	 = &quot; &quot;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">wenreg.wtz 
+	 = GetTimeZone() &#160;<span style="color: #008000;">;la valeur qui 
+	 provient de l'ERP</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">WinReadListTimeZoneAlpha(liste)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">label 
+	 reinput</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">xmeinput 
+	 masque &#160;1 &#160;0 XME_MODE_GOTO</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">switch 
+	 harmony.Dataarret</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 80px;">case 
+	 1000</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 120px;">SetTimeZone(&quot; 
+	 &quot;)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 120px;">&#160;&#160;&#160;&#160;&#160;wenreg.wdte 
+	 = readdate</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 120px;">SetTimeZone(wenreg.wtz) 
+	 <span style="color: #008000;">;le champ wenreg.wtz contient directement 
+	 le nom de la time zone</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 120px;">wenreg.wdte2 
+	 = readdate</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 120px;">goto 
+	 reinput</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 80px;">endswitch</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">freturn 
+	 0</p>
+</div>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt;"><img src="../image5.png" 
+	 alt="" style="border: none;" border="0" /></h2>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</h2>
+<h2 style="font-family: Arial, sans-serif; font-size: 10pt;">fonction WinReadListTimeZoneList</h2>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">Cette fonction 
+ renvoie la liste des time zones dans le détail.</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">exemple :</p>
+<div style="padding: 5px; width: 950px; color: #091E42; background-color: #F4F5F7; 
+	 font-family: 'Lucida Console', monospace; font-size: 10pt; height: 79px;">
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 liste L</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">recordDiva ysystemex.enregTZI 
+	 wenregTZI</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">liste 
+	 = ListCreat()</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">WinReadListTimeZoneList(liste)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">ListBegin(liste)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">do</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 80px;">st 
+	 = ListNext(liste, wenregTZI)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">while 
+	 st not in (0, -1)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 80px;">display 
+	 left(wenregTZI)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">Wend</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; margin-left: 40px;">ListDestroy(liste)</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: #008000;">;elle 
+	 renvoie une liste dont les éléments sont de la structure &#160;ysystemex.enregTZI 
+	 :</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt; color: #008000;">&#160;</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">Public Structure 
+	 enregTZI</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 TZI_Nom &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;32 
+	 &#160;&#160;&#160;&#160;<span style="color: #008000;">;nom de la time 
+	 zone</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 TZI_Display &#160;&#160;&#160;&#160;&#160;&#160;&#160;128 
+	 &#160;&#160;&#160;<span style="color: #008000;">;libelle</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 TZI_DTL &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;128 
+	 &#160;&#160;&#160;<span style="color: #008000;">;texte heure d'été</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 TZI_MUI_Display 
+	 &#160;&#160;&#160;32 &#160;&#160;&#160;&#160;<span style="color: #008000;">;c'est 
+	 pour afficher une icone</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 TZI_MUI_Dlt &#160;&#160;&#160;&#160;&#160;&#160;&#160;32</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 TZI_MUI_Std &#160;&#160;&#160;&#160;&#160;&#160;&#160;32</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">1 TZI_Std &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;128 
+	 &#160;&#160;&#160;<span style="color: #008000;">;texte heure standart</span></p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">EndStructure</p>
+	<p style="margin-top: 4.5pt; margin-bottom: 4.5pt;">&#160;&#160;</p>
+</div>
+<p style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
+<p><br class="ProseMirror-trailingBreak" />
+</p>
+</body>
+</html>

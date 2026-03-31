@@ -1,0 +1,93 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HCreateFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HCreateFile &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction HCreateFile permet de créer un fichier de type U ou N.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Numer</font> <font class="hcp2">HCreateFile</font> (<font class="hcp3">Fichier</font>, <font class="hcp3">Type, [ Lgenr ]</font> , <font class="hcp3">[ Abort ]</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Fichier</font></p>
+<p class="decalage05">Nom complet du fichier à créer.</p>
+<p class="Body-Text"><font class="hcp3">Type</font></p>
+<p class="decalage05">Type du fichier N C ou U.</p>
+<p class="Body-Text"><font class="hcp3">Lgenr</font></p>
+<p class="decalage05">Longueur des enregistrements ou 0 (valeur par défaut) pour une taille d'enregistrements variable.</p>
+<p class="Body-Text"><font class="hcp3">Abort</font></p>
+<p class="decalage05">Booléen (TRUE par défaut) indiquant si la fonction doit arrêter le programme en cas d'erreur, ou rendre la main avec un code d'erreur.</p>
+<p class="decalage05">En cas d'arrêt du programme, la fenêtre standard des erreurs est affichée et l'erreur est journalisée dans le fichier ferror.log.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text">Pas d'erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">$14</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Chemin du fichier erroné.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">$09</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Le fichier existe déjà.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">Autres</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Code d'erreur système.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Si <font class="hcp3">Abort</font> = TRUE, toutes les erreurs provoquent l'arrêt du programme.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">La création des fichiers séquentiels indexés se fait par la fonction <a href="HSiCreate.htm">HSiCreate</a></p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">; création du fichier "mon fichier" dans le répertoire sys</p>
+<p class="Source">; type "N" et enregistrements de taille variable.</p>
+<p class="Source">; La fonction aborte en cas d'erreur.</p>
+<p class="Source">HCreateFile("/Divalto/sys/mon fichier","N")</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="HSiRead.htm">HSiRead</a>, <a href="HSiCreate.htm">HSiCreate</a>, <a href="HDeleteFile.htm">HDeleteFile</a>, <a href="HMoveFile.htm">HMoveFile</a></p>
+</body>
+</html>

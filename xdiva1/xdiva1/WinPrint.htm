@@ -1,0 +1,137 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinPrint</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+font.hcp3 { font-weight:bold; }
+font.hcp4 { font-style:italic; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinPrint &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">La fonction WinPrint permet d’imprimer un fichier.</p>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">Ptr WinPrint</font> <font class="hcp4">( fichier , [imprimante] , [avec_message )</font></p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp4">Fichier</font></p>
+<p class="decalage05">Nom complet du fichier à imprimer. Ce nom doit être au format Windows. La fonction <a href="GetSystemFileName.htm">GetSystemFileName</a> permet de récupérer le nom windows d’un fichier ouvert par Harmony.</p>
+<p class="decalage05">De plus, le fichier doit posséder une extension pour laquelle il existe un programme d’impression (.doc, .hwv , .txt etc.).</p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Imprimante</font></p>
+<p class="decalage05">Nom de l’imprimante à utiliser. Si ce dernier n’est pas précisé ou est à espaces, l’impression sera dirigée vers l’imprimante par défaut de la tâche.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Avec_message</font></p>
+<p class="decalage05">TRUE/FALSE. Si ce paramètre est à TRUE et qu’il n’y a pas de programme pour traiter l’extension du fichier, un boîte de dialogue s’affiche proposant à l’utilisateur d’abandonner, d’ignorer ou de recommencer.</p>
+<p class="decalage05">Si l’utilisateur choisit d’ignorer, la fonction retourne 0.</p>
+<p class="decalage05">Si l’utilisateur choisit d’abandonner, la fonction retourne WINPRINT_ABORT.</p>
+<p class="decalage05">Si le programme qui utilise WinPrint est une tache de fond ou un service, il faut positionner ce paramètre à FALSE.<br>
+Valeur par défaut&#160;: TRUE.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Definition" style="margin-top: 4.00pt;">&#160;</p>
+<p class="Definition" style="margin-top: 4.00pt;"><font class="hcp3">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp5">
+<td style="width:7.50%;" class="hcp6">
+<p><font class="hcp3">0</font></p>
+</td>
+<td style="width:92.50%;" class="hcp6">
+<p class="hcp2">Pas d'erreur&#160;</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:7.50%;" class="hcp6">
+<p><font class="hcp3">1</font></p>
+</td>
+<td style="width:92.50%;" class="hcp6">
+<p class="hcp2">WINPRINT_ABORT. Il y a eu une erreur et l'utilisateur à demandé d'abandonner la suite de l'impression.&#160;</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:7.50%;" class="hcp6">
+<p><font class="hcp3">2</font></p>
+</td>
+<td style="width:92.50%;" class="hcp6">
+<p class="hcp2">WINPRINT_OPENFILE. Impossible d'ouvrir le fichier , il n'existe pas l’utilisateur n'a pas les droits pour l'ouvrir.&#160;</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:7.50%;" class="hcp6">
+<p><font class="hcp3">3</font></p>
+</td>
+<td style="width:92.50%;" class="hcp6">
+<p class="hcp2">WINPRINT_NOREADY. Le programme qui a été lancé pour imprimer ce fichier ne répond plus&#160;</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:7.50%;" class="hcp6">
+<p><font class="hcp3">4</font></p>
+</td>
+<td style="width:92.50%;" class="hcp6">
+<p class="hcp2">WINPRINT_NOPROG. Il n'y a pas de programme pour traiter cette extension&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Definition" style="margin-top: 4.00pt;">&#160;</p>
+<p class="hcp2">&#160;</p>
+<p class="Heading-Base">Remarque</p>
+<ul>
+<li style="font-size: 8pt;" class="p">
+<p style="margin-left: 11.75pt;">Cette fonction est du même type que la fonction <a href="WinShellExecute.htm">WinShellExecute</a>.</p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p style="margin-top: 0; margin-bottom: 0; font-weight: bold;">Cas particulier du client léger Web</p>
+<p class="hcp2"><br>
+Cette fonction ne traite que les fichiers de type .pdf ou .dhvw (automatiquement convertis en PDF).</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">&#160;</p>
+<p class="Heading-Base">Exemple</p>
+<p class="source">1 i x</p>
+<p class="source">1 fic&#160;260</p>
+<p class="source">1 imp&#160;260</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">main</p>
+<p class="source">&#160;imp = WinPrintSelec</p>
+<p class="source">&#160;if imp &lt;&gt; " "&#160;</p>
+<p class="source">&#160;&#160;fic = "c:\Divalto\sys\exemples.txt"&#160;&#160;</p>
+<p class="source">&#160;&#160;display "impression de " &amp; left(fic)</p>
+<p class="source">&#160;&#160;i = WinPrint(fic,imp) &#160;</p>
+<p class="source">&#160;&#160;if i = WINPRINT_ABORT</p>
+<p class="source">&#160;&#160;&#160;&#160;;abandon&#160;&#160;</p>
+<p class="source">&#160;&#160;endif &#160;&#160;&#160;&#160;&#160;</p>
+<p class="source">&#160;endif</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">&#160;;meme chose mais en prenant l'imprimante par defaut d'harmony</p>
+<p class="source">&#160;fic = "c:\Divalto\sys\exemples.txt"&#160;&#160;</p>
+<p class="source">&#160;display "impression de " &amp; left(fic)</p>
+<p class="source">&#160;i = WinPrint(fic) &#160;</p>
+<p class="source">&#160;if i = WINPRINT_ABORT</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;;abandon&#160;&#160;&#160;</p>
+<p class="source">&#160;endif</p>
+<p class="hcp2">&#160;</p>
+<p class="Heading-Base">Voir</p>
+<p><a href="WinShellExecute.htm">WinShellExecute</a> , <a href="GetSystemFileName.htm">GetSystemFileName</a> , <a href="WinPrintSelec.htm">WinPrintSelec</a>, <a href="LCWinPrint.htm">LCWinPrint</a></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</body>
+</html>

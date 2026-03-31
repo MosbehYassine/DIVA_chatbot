@@ -1,0 +1,116 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fdelete</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fdelete &#160;<a href="Listedesfonctionsdebasedegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Introduction1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Fdelete supprime le dernier enregistrement lu.<br>
+Cette fonction ne peut être appelée qu'après une lecture (fonctions <a href="Fread.htm">Fread</a>, <a href="Fpread.htm">Fpread</a>, <a href="Fseek2.htm">Fseek2</a>) effectuée généralement en mode réservé.</p>
+<p class="Body-Text">La suppression d'un enregistrement n'est possible qu'avec les fichiers de type séquentiel-indexé (I) dont le fichier des données est de type N.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">f</font><font class="hcp2">delete</font> ( <font class="hcp3">tdf</font> , <font class="hcp3">variable</font> )<font class="hcp2"><br>
+<br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Table de définition de fichier.</p>
+<p class="Body-Text"><font class="hcp3">Variable</font></p>
+<p class="decalage05">Dernier enregistrement lu.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:14.09%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">0 &#160;</p>
+</td>
+<td style="width:85.91%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.09%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">$1D</p>
+</td>
+<td style="width:85.91%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas de lecture préalable dans le fichier&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.09%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">autres</p>
+</td>
+<td style="width:85.91%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Code d'erreur système.&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font></p>
+<p class="Body-Text">Le système supprime l'enregistrement et ses clés.</p>
+<p class="Body-Text"><font style="text-decoration: underline;">Attention</font> : Le système ne récupère pas la place dans le fichier des données. Pour récupérer la place des enregistrements supprimés, il faut utiliser l'utilitaire Xreof.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemples</font></p>
+<p class="Source">;________________________________________________________________<br>
+; Fonction : F_DELETE</p>
+<p class="Source">; Type : int</p>
+<p class="Source">; Description : Supprime l'article art dans le fichier tdf</p>
+<p class="Source">; Paramètres en sortie : 0 = ok # = erreur</p>
+<p class="Source">;________________________________________________________________<br>
+;</p>
+<p class="Source">Function int F_DELETE (&amp;tdf , &amp;art)</p>
+<p class="Source">Record * htdf tdf ;table de définition</p>
+<p class="Source">1 art A ;article</p>
+<p class="Source">beginf</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">cr = fdelete (tdf,art)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">switch cr&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">case 0 ;ok&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;freturn (0)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">default ;erreur système&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox("Erreur système numéro " &amp; binhexa (stx (cr)) &amp; \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" en suppression dans le fichier " &amp; \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;left(tdf.name)," ")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">endswitch&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">freturn(cr)&#160;</p>
+<p class="Source">endf</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Suppression de l'enregistrement client. L'enregistrement a été lu au préalable en mode P ou F dans la donnée client.</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; Validation de la suppression&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; relecture en mode réservé&#160;</p>
+<p class="Source">st = fseek2(fcli , wcli , 'R');</p>
+<p class="Source">switch st</p>
+<p class="Source">case 0 ; lecture OK</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;stdel = f_delete(fcli , client)&#160;</p>
+<p class="Source">case H_RESERVED ; enreg. réservé</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox("Enregistrement réservé"," ")&#160;</p>
+<p class="Source">case H_RECORD_NOT_FOUND ; enregistrement supprimé</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox("Le client " &amp; client.codcli &amp; \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"n'existe plus"," ")&#160;</p>
+<p class="Source">endswitch</p>
+<p class="Source">fpclose (fcli)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Hdelete.htm">Hdelete</a>, <a href="Fwrite.htm">Fwrite</a>, <a href="Frewrite.htm">Frewrite</a></p>
+</body>
+</html>

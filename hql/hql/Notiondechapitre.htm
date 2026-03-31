@@ -1,0 +1,133 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Notion de chapitre</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Notion de chapitre</h3>
+<p class="Body-Text">Avec un langage de programmation classique, le programmeur choisit l'algorithme et la structure de son programme. En contre partie, tous les traitements à réaliser sont à sa charge et doivent être programmés. Avec la fonction Xhql, un algorithme générique assure le traitement d'un fichier de base, le programmeur intervient à certains points stratégiques de l'algorithme que nous appellerons <font class="hcp1">chapitres</font>.</p>
+<p class="Body-Text">L'algorithme central est le suivant :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">le programme parcourt séquentiellement un fichier, appelé fichier principal, suivant une clé que l'on indiquera en paramètre.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Une phase de sélection permet de traiter ou d'ignorer chaque enregistrement lu.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si la clé de lecture ne correspond pas aux critères de tri souhaités pour la présentation, une phase de tri permet de classer les données précédemment sélectionnées suivant un ou plusieurs critères de tri croissant ou décroissant.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les enregistrements sélectionnés peuvent alors être traités, édités, voire modifiés ou supprimés.</p>
+</li>
+</ul>
+<p class="Body-Text">Sur cet algorithme central, se greffent d'autres fonctions :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Le moteur Xhql détecte les ruptures, aussi bien sur les données du fichier principal que sur des données complémentaires (provenant d'enregistrements liés). Il y a rupture sur une donnée lorsque sa valeur change en passant d'un enregistrement au suivant.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La mise en page de l'état est réalisée automatiquement grâce aux masques d'impression d'Harmony.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font style="font-size: 12pt; font-weight: bold;" size="4">Les chapitres</font></p>
+<p class="Body-Text">Le module des <font class="hcp1">chapitres</font> comprend les procédures préfixées par HQL.</p>
+<p class="Body-Text">Les chapitres sont :</p>
+<table cellspacing="0" width="543">
+<tr class="hcp3">
+<td style="width:22.61%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">HqlDebutListe</font></p>
+</td>
+<td style="width:77.39%;" class="hcp4">
+<p class="Body-Text">Traitements à effectuer en début de liste.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.61%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">HqlSelection</font></p>
+</td>
+<td style="width:77.39%;" class="hcp4">
+<p class="Body-Text">Traitements indiquant si l'enregistrement lu doit être traité ou ignoré.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.61%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Debut</font></p>
+</td>
+<td style="width:77.39%;" class="hcp4">
+<p class="Body-Text">Traitement des ruptures de début.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.61%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">HqlDetail</font></p>
+</td>
+<td style="width:77.39%;" class="hcp4">
+<p class="Body-Text">Traitement d'un enregistrement.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.61%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Fin</font></p>
+</td>
+<td style="width:77.39%;" class="hcp4">
+<p class="Body-Text">Traitement des ruptures de fin.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.61%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">HqlFinListe</font></p>
+</td>
+<td style="width:77.39%;" class="hcp4">
+<p class="Body-Text">Traitements à effectuer en fin de liste.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.61%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">HqlLecture</font></p>
+</td>
+<td style="width:77.39%;" class="hcp4">
+<p class="Body-Text">Traitements à effectuer immédiatement après la lecture dans le fichier principal (utilisé pour les ruptures sur des données n'appartenant pas au fichier principal).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.61%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">HqlAbandon</font></p>
+</td>
+<td style="width:77.39%;" class="hcp4">
+<p class="Body-Text">Traitements en cas d'abandon par l'utilisateur du traitement en cours.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.61%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">HqlPreliminaire</font></p>
+</td>
+<td style="width:77.39%;" class="hcp4">
+<p class="Body-Text">Traitements à effectuer en début de programme (pour compatibilité).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Tous ces chapitres ne doivent pas forcément figurer dans le module des chapitres, seul le chapitre <font class="hcp1">HqlDebutListe</font> est obligatoire.</p>
+<p class="Body-Text">Le nom des chapitres traitant les ruptures de début et fin n'est pas figé, il est librement donné dans les paramètres de rupture.</p>
+</body>
+</html>

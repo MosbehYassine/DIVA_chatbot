@@ -1,0 +1,69 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZoomConsultFiche</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt; }
+font.hcp2 { font-size:10pt;
+font-weight:normal; }
+font.hcp3 { font-weight:bold; }
+span.hcp4 { color:#000000; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ZoomConsult &#160;&#160;&#160;&#160;&#160;<font size="2" class="hcp1">&#160;</font><a href="Tableaur_capitulatifdess_quences.htm"><font size="2" class="hcp2">Famille</font></a> <font size="2" class="hcp1">&#160;</font><a href="ModuleDivaduZoom.htm"><font size="2" class="hcp2">Thème</font></a></h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Objet&#160;:</font> Traitement après consultation.</p>
+<p class="Body-Text"><font class="hcp3">Procédure&#160;:</font> Facultative.</p>
+<p class="Body-Text"><font class="hcp3">Exécutée :</font> Après une action de l'utilisateur en consultation (tous modes d'affichage).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Cette séquence de traitement peut être utilisée notamment pour :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Appeler un autre zoom.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Afficher une page d'informations complémentaires.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appeler un autre programme.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Afficher un menu surgissant (popup).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Menu popup :</p>
+<p class="Body-Text">Pour afficher un menu surgissant, il faut garnir Harmony.PopupMenu avec l'identifiant du menu à afficher et positionner Zoom.Ok à 'N'.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarque :</p>
+<p class="Body-Text">Dans cette séquence, il est possible d'appeler la procédure publique <a href="ZoomReactualiserListe.htm">ZoomReactualiserListe</a> afin de mettre à jour l'ensemble des éléments de la liste de l'objet tableau. Cela peut s'avérer utile lorsque le traitement effectue des modifications sur d'autres fiches affichées. Il convient alors de déclarer le module xzoom7.dhop par l'instruction "module" puis d'appeler la procédure ZoomReactualiserListe. Par exemple :<br>
+&#160;</p>
+<p class="Body-Text"><font color="#0000FF">Module</font> "xzoom7.dhop"</p>
+<p class="Body-Text"><font class="hcp3">Public Procedure ZoomConsult</font></p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source"><font color="#0000FF">Record <span class="hcp4">ddsys.dhsd Zoom</span></font> <span class="hcp4">WZoom</span></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;If <span class="hcp4">Harmony.Key</span></font> = <font color="#0000FF">K_F8</font></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;&#160;&#160;&#160;Init</font> <font color="#000000">WZoom = ' '</font></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;&#160;&#160;&#160;ZoomSql</font> <font color="#000000">(WZoom,'article','me1.dhof','mod1.dhop')</font></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;&#160;&#160;&#160;If</font> <font color="#000000">WZoom.ModifFlg =</font> <font color="#0000FF">ZOOM_OUI</font></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font>ZoomReactualiserListe &#160;&#160;&#160;&#160;&#160;&#160;&#160;;ou ZoomReactualiserPage (*)</p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;&#160;&#160;&#160;Endif</font></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;Endif</font></p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+&#160;
+<p class="source">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">(*) Attention</span>, ZoomReactualiserListe ré-exécute la requête. On repart donc au début et le courant de la liste est perdu. Pour ne pas ré-exécuter la requête et ne pas perdre le courant, il faut appeler la procédure <a href="ZoomReactualiserPage.htm">ZoomReactualiserPage</a>, qui relit seulement les lignes de la page en cours, sans perdre le courant.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

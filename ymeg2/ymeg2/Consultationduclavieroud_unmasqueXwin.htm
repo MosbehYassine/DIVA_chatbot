@@ -1,0 +1,49 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Consultation du clavier ou d'un masque Xwin</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Consultations clavier sous Harmony</h3>
+<p class="Body-Text">Voyons pour terminer le cas des fonctions de <a href="Principedesentr_esclavier_inputs_.htm">consultation clavier</a> :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Elles positionnent <a href="System_Statin.htm">Harmony.Key</a> et les indicateurs <a href="ShiftKeyetControlKey.htm">ShiftKey et ControlKey</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Elles fournissent aussi comme résultat le code ANSI de la touche tapée.<br>
+Mais certaines touches n’ont pas de code ANSI associé (touches de fonction, par exemple).<br>
+On aura donc intérêt à tester systématiquement la valeur de Harmony.Key pour identifier la touche tapée. A cet effet, les touches "normales" (lettres, chiffres, etc.) positionnent Harmony.Key à la valeur <span class="hcp2">K_ANSIKEY_OFFSET+nnn</span>, où nnn est le code ANSI de la touche.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp2">Fonctions XmeConsult et XmeListConsult de Ywpf</span></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Les touches <span class="hcp2">Ctrl+Tab</span> (respectivement <span class="hcp2">Maj+Ctrl+Tab</span>) font automatiquement passer à la page suivante (respectivement précédente) <span class="hcp2">en cas de masque multi-écran</span> (pages chaînées). Elles rendent la main dans le cas contraire.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Toutes les autres touches significatives rendent le contrôle au programme appelant.<br>
+En particulier, <span class="hcp2">Shift+F1</span> ne fait l'objet d'aucun traitement automatique (contrairement aux fonctions XmeInput&#160;et XmeListInput) : l’affichage éventuel d’une fenêtre d’aide est donc ici à la charge du programme appelant.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">GetChar et GetbChar</p>
+<p class="Body-Text"><span class="hcp2">Attention</span> : ces fonctions positionnent Harmony.Key uniquement si vous donnez à leur <span class="hcp2">paramètre d'entrée</span> (facultatif) la valeur <span class="hcp2">TRUE</span> (qui n'est pas la valeur par défaut pour des raisons de compatibilité avec les versions antérieures d'Harmony).</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

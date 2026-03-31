@@ -1,0 +1,61 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Ascenseur vertical d'un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Ascenseur vertical d'un tableau</h3>
+<p class="Body-Text">L'ascenseur vertical d'un tableau se comporte comme les <a href="YMEG2.chm::/Ymeg2/Ascenseurs.htm">ascenseurs</a> habituels. Pour connaître les principes généraux de fonctionnement et de déclaration des ascenseurs, on se reportera aux rubriques&#160;:<a href="YMEG2.chm::/Ymeg2/Principedesascenseurs.htm"><br>
+Principe des ascenseurs</a> <a href="YMEG2.chm::/Ymeg2/Commandesassoci_esauxascenseurs.htm"><br>
+Commandes associées aux ascenseurs</a> <a href="YMEG2.chm::/Ymeg2/Tailleducurseurdesascenseurs.htm"><br>
+Taille du curseur des ascenseurs</a> <a href="YMEG2.chm::/Ymeg2/Positionnementducurseurdesascenseurs.htm"><br>
+Positionnement du curseur des ascenseurs</a> <a href="YMEG2.chm::/Ymeg2/D_clarationd_unascenseurWindows.htm"><br>
+Déclaration d'un ascenseur</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Validité de l'ascenseur vertical d'un tableau</p>
+<p class="Body-Text">L'ascenseur vertical d'un tableau est automatiquement invalidé lors de la saisie d'une ligne de tableau (XmeListInput).<br>
+De plus, deux fonctions spécifiques permettent d'invalider (<a href="XmeListDisableScrollBar.htm">XmeListDisableScrollBar</a>) et de revalider (<a href="XmeListEnableScrollBar.htm">XmeListEnableScrollBar</a>) cet ascenseur par programme.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Programmation de l'ascenseur vertical d'un tableau</p>
+<p class="Body-Text">Les informations de gestion de l'ascenseur vertical d'un tableau sont celles de tout ascenseur Windows (voir la rubrique <a href="YMEG2.chm::/Ymeg2/D_clarationd_unascenseurWindows.htm">Déclaration d'un ascenseur</a>). Sa programmation fait l'objet de fonctions spécifiques&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous souhaitez conserver le traitement standard (Cf. rubrique <a href="Traitementsli_s_l_objettableau.htm">Traitements liés à l'objet tableau</a>), la gestion de l'ascenseur vertical du tableau peut être assurée par la procédure <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> (en dehors de son initialisation qui s'obtient en appelant la procédure XmeListScrollBarInit).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Même si vous n'utilisez pas XmeListConsultDefault, la procédure standard <a href="XmeListScrollBarInit.htm">XmeListScrollBarInit</a> peut calculer, A VOTRE PLACE, les informations de gestion de l'ascenseur vertical d'un tableau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Sinon, la procédure <a href="XmeListSetScrollBar.htm">XmeListSetScrollBar</a> permet de (ré)afficher l'ascenseur vertical d'un tableau après calcul de son état&#160;; la procédure <a href="XmeListGetScrollBar.htm">XmeListGetScrollBar</a> permet de lire son état actuel.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les actions effectuées sur l'ascenseur par l'utilisateur génèrent le <a href="Ev_nementssourisli_s_l_objettableau.htm">message spécifique "tableau"</a> LIST_CLICK_SCROLLBAR.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Traitement de la <span class="hcp1">molette</span> lorsque <span class="hcp1">plusieurs tableaux</span> coexistent à l'écran.<br>
+La molette est « affectée » automatiquement au contrôle placé sous le curseur de la souris. Ainsi, si un écran affiche simultanément plusieurs tableaux, la molette simulera le déplacement de l’ascenseur vertical du tableau sur lequel est placée la souris. Mais il faut évidemment que le programme appelant traite les réveils en provenance des ascenseurs de tous les tableaux (par exemple, en appelant la fonction XmeListConsultDefault du tableau concerné).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Bulle de l'ascenseur vertical d'un tableau</p>
+<p class="Body-Text">Les procédures <a href="XmeListGetVerticalScrollBarTooltip.htm">XmeListGetVerticalScrollBarTooltip</a> et <a href="XmeListSetVerticalScrollBarTooltip.htm">XmeListSetVerticalScrollBarTooltip</a> permettent de lire et de modifier la bulle attachée à l'ascenseur vertical d'un tableau.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-size: 11pt; font-weight: bold;">Nombre maximal de lignes dans un tableau</p>
+<p class="Body-Text">Pour déclarer un ascenseur, on utilisera l'enregistrement standard <span class="hcp1">ScrollBar32</span> du dictionnaire système DDSYS.dhsd. ScrollBar32 contient des données de gestion de l'ascenseur ayant une capacité de 31 bits, ce qui permet (au moins en théorie) de stocker jusqu'à 2 milliards de lignes dans le tableau.</p>
+<p class="Body-Text">N'utilisez plus l'enregistrement ScrollBar de la version 6 d'Harmony, qui lui contient des données de gestion de l'ascenseur ayant une capacité de seulement 15 bits, limitant le nombre de lignes à 32767.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

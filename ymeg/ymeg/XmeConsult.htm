@@ -1,0 +1,216 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeConsult</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp6 { font-weight:bold; }
+ul.hcp7 { list-style:disc; }
+font.hcp8 { font-family:Symbol; }
+font.hcp9 { font-weight:bold;
+font-style:italic; }
+span.hcp10 { margin-top:0;
+margin-bottom:0; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeConsult &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Consultation d'un masque</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Char XmeConsult</font> (<font class="hcp3">Nom du fichier masque</font>, <font class="hcp3">Numéro de page</font>, <font class="hcp3">Mode</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 24.847%;">
+<col style="width: 75.153%;">
+<tr class="hcp4">
+<td style="width:24.847%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Nom du fichier masque</font><br>
+(Harmony.Masque)</p>
+</td>
+<td style="width:75.153%;" class="hcp5">
+<p class="Body-Text">Nom du fichier masque.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:24.847%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Numéro de page</font><br>
+(Harmony.Page)</p>
+</td>
+<td style="width:75.153%;" class="hcp5">
+<p class="Body-Text">Numéro de la page à consulter (page initiale s'il s'agit d'un masque multi-écran).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:24.847%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Mode</font><br>
+(Harmony.Mode)</p>
+</td>
+<td style="width:75.153%;" class="hcp5">
+<p class="Body-Text">XME_MODE_GOTO = 0&#160;: mode GOTO<br>
+XME_MODE_GOSUB = 2&#160;: mode GOSUB.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:24.847%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Traitement de Page-Up et Page-Down</font></p>
+</td>
+<td style="width:75.153%;" class="hcp5">
+<p class="Body-Text">Paramètre obsolète ignoré à partir de la version 7 d'Harmony.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp6">Valeur rendue par la fonction</span> (type B) :</p>
+<p class="Body-Text"><span class="hcp6">Il est conseillé d'ignorer cette valeur</span> et de plutôt tester Harmony.Key pour identifier la touche tapée. En effet, toutes les touches et combinaisons de touches génèrent une valeur différente de Harmony.Key, y compris les touches "normales" (lettres, chiffres, etc.) qui génèrent la valeur K_ANSIKEY_OFFSET+nnn, où nnn est le code ANSI de la touche. Sinon :</p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Si un événement souris s'est produit, la valeur rendue est Espace.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si un événement clavier s'est produit, la valeur rendue correspond au code de la touche tapée.<br>
+Pour les caractères "normaux", il s'agit du code ANSI du caractère. Pour les touches spéciales, il s'agit de leur ancien code PC8 (Cf. Defines F_xxx de Zdiva), pour assurer la compatibilité des programmes conçus en versions 5 ou antérieures d'Harmony.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">XmeConsult</font> est la <font class="hcp2">fonction à appeler</font> pour proposer une <font class="hcp2">consultation</font> et <font class="hcp2">attendre un événement</font> sur un <span class="hcp6">masque</span>.<br>
+(Remarque : pour proposer une consultation et attendre un événement sur un objet tableau, utilisez la fonction <a href="XmeListConsult.htm">XmeListConsult</a>.)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Elle <font class="hcp2">affiche</font> une <font class="hcp2">page</font> Xwin puis se met en attente d'une frappe au clavier ou d'un événement souris significatif.<br>
+Aucune modification des données n'est possible pour l'utilisateur.<span class="hcp6"><br>
+Attention</span>&#160;: cette fonction <font class="hcp2">n'affiche pas les données</font> des <a href="Tableaux.htm">objets tableau</a> de la page (appelez auparavant la fonction <a href="XmeListDisplay.htm">XmeListDisplay</a>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Le contrôle est rendu au programme appelant</font> dès qu'un événement <font class="hcp2">clavier <span style="font-weight: normal;">ou</span> souris</font> est produit par l'utilisateur&#160;:<font face="Symbol" class="hcp8"><br>
+-</font> Si une touche du clavier a été tapée, la variable <a href="YMEG2.chm::/Ymeg2/System_Statin.htm">Harmony.Key</a> est positionnée à la manière habituelle, de même que les indicateurs <a href="YMEG2.chm::/Ymeg2/ShiftKeyetControlKey.htm">ShiftKey et ControlKey</a>.<font face="Symbol" class="hcp8"><br>
+-</font> Si un événement souris s'est produit, Harmony.Key est mis à 0.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La page ou la fenêtre est identifiée par un <font class="hcp9">Nom de fichier masque</font> et par un <font class="hcp9">Numéro de page</font> dans ce fichier. S'il s'agit d'un masque multi-écran, indiquez le numéro de la page à afficher au départ.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Vous devez aussi préciser le <a href="ModeGOTOetmodeGOSUB.htm">Mode d'exécution</a>&#160;:<font face="Symbol" class="hcp8"><br>
+-</font> <font class="hcp2">XME_MODE_GOTO</font> &#160;: mode GOTO.<font face="Symbol" class="hcp8"><br>
+-</font> <font class="hcp2">XME_MODE_GOSUB</font> &#160;: mode GOSUB.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si la consultation concerne des pages panels, prenez également connaissance des rubriques <a href="Affichage,_consultation_et_saisie_de_la_page_m&egrave;re.htm">Affichage, consultation et saisie de la page mère (pages panels)</a> et <a href="Affichage,_consultation_et_saisie_isol&eacute;e_d_une_page_panel.htm">Affichage, consultation et saisie isolée d'une page panel</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp6">Si la page consultée comporte un chaînage</span> (c'est à dire en cas de masque multi-écran), Ywpf effectue automatiquement les changements de page en cas de frappe des touches Ctrl+Tab ou Maj+Ctrl+Tab. Dans le cas contraire, ces touches rendent la main au programme. Ce fonctionnement n’est pas paramétrable.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un <span class="hcp6">délai</span> peut être associé à la fonction XmeConsult, de manière à ce que celle-ci rende la main à intervalles réguliers et ce, même si l'utilisateur ne produit aucun événement clavier ou souris. Pour tous les détails de mise en œuvre, consultez la rubrique consacrée à la fonction <a href="XmeSetTimer.htm">XmeSetTimer</a>.</p>
+</li>
+</ul>
+<p class="source">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple :</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">;consultation de la page 2&#160;du fichier masque "MASQUE"&#160;en mode GOTO</p>
+<p class="Source">XmeConsult ("MASQUE",2,XME_MODE_GOTO)</p>
+<p class="Source">SWITCH Harmony.Key &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement de la touche tapée :</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE K_CTRL_SINSERT <span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Maj+Ctrl+Inser&#160;</span></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE K_CTRL_INSERT <span class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Ctrl+Inser&#160;</span></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE K_SINSERT <span class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Maj+Inser&#160;</span></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;etc.&#160;</p>
+<p class="Source">ENDSWITCH</p>
+<p class="Source">...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Le masque doit être préalablement chargé par la fonction XmeLoad.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Une consultation en mode GOSUB nécessite un appel ultérieur</font> à la fonction <font class="hcp2">XmeRet</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En consultation par XmeConsult, Ywpf&#160;:</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Valide</font> tous les <font class="hcp2">boutons et choix de menu non nommés</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Valide</font> les <font class="hcp2">boutons et choix de menu nommés</font>, <font class="hcp2">à condition</font> qu'ils soient présents dans la <font class="hcp2">liste des boutons valides de la page consultée</font> (pour modifier cette liste, cliquez sur le bouton <font class="hcp2">Boutons</font> dans la boîte de dialogue des caractéristiques de la page).<br>
+Remarque : <span style="margin-left: 48px;">En cas de <a href="Affichage,_consultation_et_saisie_isol&eacute;e_d_une_page_panel.htm">consultation isolée d'une page panel</a>, les boutons nommés valides sont ceux spécifiés pour la page panel consultée (et non ceux de sa page mère).</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Si l'utilisateur clique sur un <font class="hcp2">bouton ou un choix de menu</font> générant un <font class="hcp2">point d'arrêt</font>, la main est rendue au programme&#160;; celui-ci peut récupérer le numéro du point d'arrêt dans Harmony.DataArret (attention, pas dans Harmony.Arret)&#160;; après le traitement du point d'arrêt, vous pouvez bien entendu rappeler la fonction XmeConsult <font class="hcp2">mais un éventuel code de retour placé dans Harmony.Retour sera ignoré</font> (ce code n'a de sens qu'à l'appel de l'instruction XmeNext).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si l'utilisateur clique sur un <font class="hcp2">bouton ou un choix de menu</font> associé à un <font class="hcp2">point de traitement</font>, la séquence de traitement est exécutée&#160;; au retour de la séquence, Ywpf revient toujours à la consultation&#160;; les données de la page (hors tableaux) sont automatiquement réaffichées <font class="hcp2">mais un éventuel code de retour placé dans Harmony.Retour sera ignoré</font> (ce code n'a de sens qu'au retour d'un traitement exécuté en saisie du masque).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En consultation par XmeConsult, <font class="hcp2">tous les événements souris significatifs rendent la main</font>&#160;: clic sur une donnée en saisie quelconque (Cf. <a href="Souris_Positionnementsenconsultationdemasque.htm">Souris : Positionnements en consultation de masque</a>), &#160;"clic tableau" quelconque, onglets.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Attention</font>, tout numéro de point d'arrêt généré n'est pas transmis dans Harmony.Arret mais dans <font class="hcp2">Harmony.DataArret</font>.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Appel d’un menu surgissant en consultation de masque</font></p>
+<p class="Body-Text">Pour afficher un <a href="YMEG2.chm::/Ymeg2/Menus_classiques_et_menus_surgissant.htm">menu surgissant</a> (popup-menu) à l’occasion d’une consultation de masque, chargez la donnée <font class="hcp2">Harmony.PopupMenu</font> avec l’<a href="YMEG2.chm::/Ymeg2/XmeMenuGetId.htm">identifiant du menu</a> à afficher, <font class="hcp2">avant</font> d’appeler XmeConsult (exemple à la rubrique&#160;<a href="YMEG2.chm::/Ymeg2/Chargement_et_affichage_d_un_menu.htm">Menus : Chargement et affichage d'un menu</a>).</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Appel de l’aide associée à la page consultée</font></p>
+<p class="Body-Text">Avec Xwin, vous pouvez&#160;associer une aide à toute page de masque. Cette aide servira d’abord d’aide par défaut pour toutes les données présentes dans cette page. Il peut aussi être intéressant d’afficher cette aide si l’utilisateur tape Shift+F1 (touche standard d’appel de l’aide) alors que la page est en consultation par XmeConsult. Pour ce faire, en réponse à la touche Shift+F1, appelez successivement les fonctions <a href="XmeInfoPage.htm">XmeInfoPage</a> pour récupérer le nom du fichier d’aides et le numéro de l’aide associée à la page puis le fonction <a href="XmeHelp.htm">XmeHelp</a>.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Positionnement de la page ou de la fenêtre à l'écran&#160;:</font></p>
+<p class="Body-Text">Dans l'éditeur de masques d'écran de Xwin, vous avez indiqué où vous vouliez afficher le masque à l'écran (champs <font class="hcp2">Offset Ligne</font> et <font class="hcp2">Offset Colonne</font> des paramètres généraux de la page&#160;; accès par le choix <font class="hcp2">Page Courante</font> du menu <font class="hcp2">Paramètres</font> <font face="Symbol" class="hcp8">-</font> raccourci clavier <font class="hcp2">F3</font>).<br>
+A ce niveau, il s'agissait d'une position "de base" pouvant être modifiée par programme. <font class="hcp2">Si vous souhaitez déplacer la page ou la fenêtre à l'écran</font> par rapport à cette position de base, consultez la rubrique <a href="D_placementd_unmasque_l__cran.htm">Déplacement d'un masque à l'écran</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Attention&#160;:</font></p>
+<p class="Body-Text">Vous <font class="hcp2">ne devez pas</font> utiliser la fonction XmeConsult en MODE GOSUB pour consulter une page de masque incluant un <a href="Tableaux.htm">objet tableau</a>, pour la raison suivante&#160;:</p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Ni la fonction XmeConsult ni la fonction XmeDispv n'affichent les données d'un tableau (il faut utiliser la fonction tableau spécifique XmeListDisplay).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeConsult fait une entrée clavier&#160;: il faut donc demander l'affichage de la page (par XmeDispv) puis des données du tableau (par XmeListDisplay) AVANT d'appeler XmeConsult.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le mode GOSUB demande à Ywpf de réafficher la page consultée "par dessus" la page précédemment affichée (même s'il s'agit en réalité de la même page). Un nouveau tableau VIDE sera donc lui aussi réaffiché&#160;!</p>
+</li>
+</ul>
+<p class="Body-Text">Pour consulter une page de masque incluant un tableau, utilisez la fonction XmeConsult en MODE GOTO (ou la fonction spécifique tableau <a href="XmeListConsult.htm">XmeListConsult</a>).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="Les_grilles_et_les_panels_pages.htm">Grilles et pages panels</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

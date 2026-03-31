@@ -1,0 +1,78 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Options de compilation</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-top:0;
+margin-bottom:0; }
+font.hcp2 { font-weight:bold; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Options de compilation</h3>
+<p>Pour que la navigation soit possible, il faut que les sources soient compilés avec l'option B des compilateurs xDivaCompiler et xFormCompiler.</p>
+<p>Cette option est positionnée au niveau du profil.</p>
+<p><img src="../image/IMG00013.gif" alt="image\IMG00013.gif" title="image\IMG00013.gif" width="247" height="23" border="0"></p>
+<p class="hcp1">&#160;</p>
+<p>Lorsque cette option est positionnée, les compilateurs génèrent un fichier .dhbr pour chaque fichier objet. Ces fichiers doivent être en ligne pour utiliser les fonctionnalités de la navigation.</p>
+<p class="hcp1">&#160;</p>
+<p><font style="font-size: 14pt; font-weight: bold;" size="4" color="#FF0000">Sauvegarde des masques</font></p>
+<p>Pour que les masques soient utilisables, ils doivent être sauvés avec <font class="hcp2">Mode : Avec infos de navigation.</font></p>
+<p>Pour cela, ouvrez le masque et puis sélectionnez le choix <font class="hcp2">Enregistrer</font> <font class="hcp2">sous</font> du menu <font class="hcp2">Fichier</font>, puis sélectionnez <font class="hcp2">Avec infos de navigation</font>.</p>
+<p class="hcp1">&#160;</p>
+<p><img src="../image/IMG00025.gif" alt="image\IMG00025.gif" title="image\IMG00025.gif" width="380" height="113" border="0"></p>
+<p class="hcp1">&#160;</p>
+<p><font class="hcp2">Compilation en tâche de fond</font></p>
+<p>Les compilations des masques et des modules se font par des tâches de fond.</p>
+<p>Si pendant les compilations, vous ne pouvez plus travailler confortablement dans l'éditeur (lenteur d'affichage, retard lors de la frappe de caractères), vous pouvez baisser la priorité d'exécution des compilateurs.</p>
+<p>La priorité d'exécution des compilateurs est définie par le paramètre <font class="hcp2">PrioriteCompilateurs</font> dans le chapitre <font class="hcp2">system</font> du fichier <font class="hcp2">harmony</font>.<font class="hcp2">ini</font>.</p>
+<p>Trois valeurs sont possibles :</p>
+<table cellspacing="0" width="580">
+<col style="width: 8.929%;">
+<col style="width: 91.071%;">
+<tr class="hcp3">
+<td style="width:8.929%;" class="hcp4">
+<p>0</p>
+</td>
+<td style="width:91.071%;" class="hcp4">
+<p>Priorité normale</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.929%;" class="hcp4">
+<p>-1</p>
+</td>
+<td style="width:91.071%;" class="hcp4">
+<p>Priorité moyenne</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.929%;" class="hcp4">
+<p>-2</p>
+</td>
+<td style="width:91.071%;" class="hcp4">
+<p>Priorité basse</p>
+</td>
+</tr>
+</table>
+<p class="hcp1">&#160;</p>
+<p>Exemple : <font style="font-family: 'Courier New';" face="Courier New">PrioriteCompilateurs=-1</font></p>
+<p class="hcp1">&#160;</p>
+<p class="voir" style="border-top: 0.50pt solid #000000;">Voir également :</p>
+<p><a href="Pour_cr_er_modifier_un_profil.htm">Pour créer/modifier un profil</a></p>
+</body>
+</html>

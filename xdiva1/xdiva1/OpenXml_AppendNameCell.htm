@@ -1,0 +1,57 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>OpenXml_AppendNameCell</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-style:italic; }
+p.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>OpenXml_AppendNameCell &#160;<span style="font-weight: normal;"><a href="Liste_des_fonctions_OpenXml.htm">Famille</a> &#160;<a href="Fonctions_OpenXml.htm">Theme</a></span></h3>
+<p>&#160;</p>
+<p>La fonction OpenXml_AppendNameCell crée une cellule ou une plage de cellules nommée(s).</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">int OpenXml_AppendNameCell</span> (<span class="hcp1">nomcellule</span>, <span class="hcp1">nomfeuille</span>, <span class="hcp1">lignedebut</span>, <span class="hcp1">lignefin</span>, <span class="hcp1">coldebut</span>, <span class="hcp1">colfin</span>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;">NomCellule</p>
+<p class="decalage05">Nom donné à la (plage de) cellule(s).</p>
+<p class="Body-Text" style="font-style: italic;">NomFeuille</p>
+<p class="decalage05">Nom de la feuille (onglet).</p>
+<p class="Body-Text" style="font-style: italic;">LigneDebut</p>
+<p class="decalage05">Indice de la première ligne de la plage.</p>
+<p class="Body-Text" style="font-style: italic;">LigneFin</p>
+<p class="decalage05">Indice de la dernière ligne de la plage.</p>
+<p class="Body-Text" style="font-style: italic;">ColDebut</p>
+<p class="decalage05">Indice de la première colonne de la plage.</p>
+<p class="Body-Text" style="font-style: italic;">ColFin</p>
+<p class="decalage05">Indice de la dernière colonne de la plage.</p>
+<p style="margin-left: 48px;">&#160;</p>
+<p class="hcp2">Retour</p>
+<p>La fonction renvoie 1 si la création s'est bien passée.</p>
+<p>&#160;</p>
+<p class="hcp2">Exemple</p>
+<p class="Source">1 &#160;NomCellule &#160;&#160;32 &#160;= "TEST" &#160;&#160;&#160;&#160;&#160;&#160;;Nom que l’on va donner à la plage de cellules</p>
+<p class="Source">1 &#160;NomFeuille &#160;&#160;32 &#160;= "Feuille1" &#160;&#160;;Nom de la feuille (onglet)</p>
+<p class="Source">1 &#160;LigneDebut &#160;&#160;6,0 = 10 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Indice ligne début de la plage à nommer</p>
+<p class="Source">1 &#160;LigneFin &#160;&#160;&#160;&#160;6,0 = 15 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Indice ligne fin de la plage à nommer</p>
+<p class="Source">1 &#160;ColDebut &#160;&#160;&#160;&#160;6,0 = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Indice colonne début de la plage à nommer</p>
+<p class="Source">1 &#160;ColFin &#160;&#160;&#160;&#160;&#160;&#160;6,0 = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Indice colonne fin de la plage à nommer</p>
+<p class="Source">1 &#160;Ok &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;valeur de retour de la fonction</p>
+<p class="Source">&#160;</p>
+<p class="Source">Ok = OpenXml_AppendNameCell (NomCellule, NomFeuille, LigneDebut, LigneFin, ColDebut, ColFin)</p>
+<p class="Source">if Ok</p>
+<p class="Source">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;la plage a bien été nommée</p>
+<p class="Source">endif</p>
+<p>&#160;</p>
+</body>
+</html>

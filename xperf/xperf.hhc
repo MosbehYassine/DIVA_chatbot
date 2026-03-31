@@ -1,0 +1,50 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="WindowName" value="$Global_Harmony">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xperf : Analyse des performances">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Introduction">
+      <param name="Local" value="Xperf__Analyse_des_performances.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Exécution des programmes en mode analyse">
+      <param name="Local" value="Ex&eacute;cution_des_programmes_en_mode_analyse.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Xperf.dhop : Analyse des résultats">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="L'écran de Xperf">
+        <param name="Local" value="L_&eacute;cran_de_xperf.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Affichage des piles">
+        <param name="Local" value="Affichage_des_piles.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Affichage des fonctions appelées">
+        <param name="Local" value="Affichage_des_fonctions_appel&eacute;es.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Navigation">
+        <param name="Local" value="Navigation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Instructions Diva">
+        <param name="Local" value="Instructions_Diva.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

@@ -1,0 +1,158 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctions Date</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { border-top:0.75pt solid #000080;
+border-bottom:0.75pt solid #000080;
+border-left:0.75pt solid #000080;
+border-right:0.75pt solid #000080;
+padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fonctions Date</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Des fonctions spécifiques du driver Harmony permettent de faciliter le traitement des dates, et de développer des vues ou des requêtes SQL indépendantes de la période.</p>
+<p class="Body-Text">Par exemple la clause&#160;:</p>
+<p class="Body-Text"><font style="font-style: italic;">DateFacture between Har_FirstDayofLastMonth() and Har_LastDayofLastMonth()</font></p>
+<p class="Body-Text">donnera tous les mois les factures du mois précédent. Il n’est pas nécessaire d’adapter la requête chaque mois.</p>
+<p style="margin-left: 18.00pt;">&#160;</p>
+<table style="border-collapse: separate;" cellspacing="0" width="612" border="1">
+<tr class="hcp1">
+<td style="width:41.57%;" bgcolor="#000080" class="hcp2">
+<p><font color="#FFFFFF" class="hcp3">Fonctions Date</font></p>
+</td>
+<td style="width:58.43%;" bgcolor="#000080" class="hcp2">
+<p><font color="#FFFFFF" class="hcp3">Commentaire</font></p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_Yesterday() &#160;</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Hier</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_FirstDayofMonth()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Premier jour du mois courant</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_LastDayofMonth()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Dernier jour du mois courant</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_FirstDayofLastMonth()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Premier jour du mois – 1</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_LastDayofLastMonth()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Dernier jour du mois – 1</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_FirstDayofMonthLastYear()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Premier jour du mois année n-1</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_LastDayofMonthLastYear()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Dernier jour du mois année n-1</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_FirstDayofYear()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Premier jour de l’année courante</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_LastDayofYear()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Dernier jour de l’année courante</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_FirstDayofLastYear()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Premier jour de l’année – 1</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_LastDayofLastYear()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Dernier jour de l’année – 1</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_TodayLastYear()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Aujourd’hui l’année dernière</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_FirstDayofLastMonthLastYear()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Premier jour du mois – 1 de l’année – 1</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:41.57%;" class="hcp2">
+<p><font color="#0000FF">Har_LastDayofLastMonthLastYear ()</font></p>
+</td>
+<td style="width:58.43%;" class="hcp2">
+<p>Dernier jour du mois – 1 de l’année – 1</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

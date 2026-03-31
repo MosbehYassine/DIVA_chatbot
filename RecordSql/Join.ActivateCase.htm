@@ -1,0 +1,78 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Join.ActivateCase</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+p.hcp3 { font-weight:bold; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp6 { font-weight:normal; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>RecordSql.Join.ActivateCase&#160;&#160;&#160;<span style="font-weight: normal; 
+														 font-family: 'Microsoft Sans Serif', sans-serif;"><a 
+	 href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> 
+ &#160;<a href="Introduction.htm">Thème</a></span></h1>
+<p>&#160;</p>
+<p>La méthode Join.ActivateCase permet de sélectionner une variante pour 
+ la condition d'une jointure.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Long</span> RecordSql.<span class="hcp1">Join.ActivateCase</span> 
+ (<span class="hcp2"> alias, variante</span>)</p>
+<p>&#160;</p>
+<p class="hcp3"><span><span class="hcp1">Paramètre</span></span></p>
+<p style="font-style: italic;">alias</p>
+<p class="Decalage05">Nom de l'alias de la table liée par la jointure. 
+ Attention, il ne s'agit pas des noms habituellement utilisés pour l'activation 
+ des jointures.</p>
+<p><span class="hcp2">variante</span></p>
+<p class="Decalage05">Nom de la variante à activer.</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Retour</font></p>
+<table cellspacing="0" width="436">
+	<tr class="hcp4">
+		<td style="width:16.24%;" class="hcp5"><p class="Body-Text">0</p></td>
+		<td style="width:83.76%;" class="hcp5"><p class="Body-Text">Pas 
+		 d'erreur</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:16.24%;" class="hcp5"><p class="Body-Text">1</p></td>
+		<td style="width:83.76%;" class="hcp5"><p class="Body-Text">Variante 
+		 non trouvée</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:16.24%;" class="hcp5"><p class="Body-Text">2</p></td>
+		<td style="width:83.76%;" class="hcp5"><p class="Body-Text">Alias 
+		 non trouvé</p></td>
+	</tr>
+</table>
+<p>&#160;</p>
+<p class="hcp3">Remarque</p>
+<p class="hcp6">Cette fonction active également la jointure 
+ si celle-ci n'est pas activée.</p>
+<p class="hcp6">Si la jointure est activée par RecordSql.Join.Activate 
+ il faut impérativement appeler ActivateCase pour sélectionner une variante. 
+ Il n'y a pas de variante par défaut.</p>
+<p>&#160;</p>
+<p class="hcp3">Voir aussi</p>
+<p class="hcp3"><a href="Join_Activate.htm">RecordSql.Join.Activate</a>, 
+ <a href="ColumnActivate.htm">RecordSql.Column.Activate</a>, <a href="ColumnDeactivate.htm">RecordSql.Column.Deactivate</a>, 
+ <a href="Optimisation_d_un_RecordSql_pour_le_ZoomSql.htm">Optimisation 
+ d'un RecordSql pour le ZoomSql</a></p>
+</body>
+</html>

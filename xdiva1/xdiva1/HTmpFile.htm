@@ -1,0 +1,48 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HTmpFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HTmpFile</h3>
+<p class="Body-Text">HTmpFile permet de déclarer un fichier temporaire. Le format du fichier temporaire (type, description des clés) est pris dans le dictionnaire.</p>
+<p class="Body-Text"><font class="hcp1">[public | protected] HTmpFile</font> <font class="hcp2">dico mnémo vartdf</font> <font class="hcp1">[NoOpen] [OpenOnUse][DeleteOnExit]</font></p>
+<p class="Body-Text"><font class="hcp2">Public</font></p>
+<p class="decalage05">Spécifie que la variable Vartdf est publique. Si plusieurs modules déclarent la même variable publique, elle est allouée une seule fois à l'exécution.</p>
+<p class="Body-Text"><font class="hcp2">Protected</font></p>
+<p class="decalage05">Spécifie que la variable <font class="hcp2">Vartdf</font> est protégée. Une nouvelle instance de <font class="hcp2">Vartdf</font> est allouée.</p>
+<p class="Body-Text"><font class="hcp2">Dico</font></p>
+<p class="decalage05">Nom du dictionnaire de données.</p>
+<p class="Body-Text"><font class="hcp2">Mnémo</font></p>
+<p class="decalage05">Nom du fichier défini dans le dictionnaire.</p>
+<p class="Body-Text"><font class="hcp2">Vartdf</font></p>
+<p class="decalage05">Variable qui identifie la Tdf</p>
+<p class="Body-Text"><font class="hcp2">Noopen</font></p>
+<p class="decalage05">Par défaut, le fichier est ouvert automatiquement avec un nom aléatoire lors du chargement du module ou lors de l'entrée dans la fonction/procédure.</p>
+<p class="decalage05">Noopen indique que le fichier ne doit pas être créé par le système. Cette option est utilisée dans le cas d'enchaînement de programmes. Le premier programme crée et rempli le fichier qui doit être exploité par un autre programme. Le premier programme doit donc passer le nom du fichier temporaire (via le tunnel) et le second doit ouvrir le fichier "à la main".</p>
+<p class="decalage05">Le chemin des fichiers temporaire est défini par la variable d’environnement TEMP. Il peut également être paramétré dans Divalto.ini (avec l'utilitaire xDivaltoMajIni), chapitre [system] entrée <font class="hcp2">pathtemp</font>.</p>
+<p class="decalage05">OPENONUSE permet de différer la création, dans ce cas le fichier est créé lors de sa première utilisation.</p>
+<p class="decalage05">NOOPEN permet également de différer la création. Dans ce cas, la création se fait par la fonction <a href="TmpFcreate.htm">TmpFcreate</a>.</p>
+<p class="Body-Text"><font class="hcp2">Openonuse</font></p>
+<p class="decalage05">Indique que le fichier ne doit pas être créé lors du chargement du module mais lors de la première utilisation de la Tdf.</p>
+<p class="Body-Text"><font class="hcp2">DeleteOnExit</font></p>
+<p class="decalage05">Si DeleteOnExit est précisé, le fichier doit être automatiquement détruit à la fin du programme. Si le fichier est déclaré avec les options NoOpen et DeleteOnExit, le fichier, dont le nom se trouve dans la Tdf à la fin du programme, est détruit. Le fichier peut être fermé puis ouvert à nouveau, la suppression se faisant à la fin du programme ou à la fin de la fonction/procédure.</p>
+<p class="Body-Text"><br>
+<font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="HFile.htm">HFile</a>, <a href="Public.htm">Public</a>, <a href="Protected.htm">Protected</a>, <a href="Extern.htm">Extern</a>, <a href="Record.htm">Record</a>, <a href="TmpFcreate.htm">TmpFcreate</a> , <a href="GetTempPath.htm">GetTempPath</a></p>
+</body>
+</html>

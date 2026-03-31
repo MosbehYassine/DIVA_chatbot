@@ -1,0 +1,63 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeSetColorTheme</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeSetColorTheme &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="font-weight: bold;">Imposer un thème de couleurs par programme<br>
+<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeSetColorTheme</font> (<font style="font-style: italic;">Theme</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:22.60%;" class="hcp3">
+<p class="Body-Text" style="font-style: italic;">Theme</p>
+</td>
+<td style="width:77.40%;" class="hcp3">
+<p class="Body-Text">Nom du thème de couleurs<br>
+(ou Espace pour ne pas imposer de thème).<br>
+<br>
+Les thèmes suivants sont actuellement disponibles : Default, Yellow, Beige, LightGreen, Green, Turquoise, LightBlue, Blue, LightPurple, Purple, LightPink, Pink, Maroon.<br>
+&#160;</p>
+<p class="Body-Text">Default correspond au thème de couleurs standard Divalto (orange).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul>
+<li class="p-List">
+<p class="List">L'utilisateur peut normalement choisir un "thème de couleurs". Toutefois, une société cliente peut décider d’imposer un thème précis à ses utilisateurs.<br>
+Cette imposition est à la charge des programmes d’application. Pour la mettre en oeuvre, le programme doit faire appel à la procédure XmeSetColorTheme.</p>
+</li>
+<li class="p-List">
+<p class="List">En pratique, l’imposition du thème étant transmise aux processus fils lors d’un ProgramCall, on l’implémentera simplement au niveau du menu de l’application.<br>
+Remarque : cette implémentation est réalisée par le menu de l'ERP Divalto.</p>
+</li>
+<li class="p-List">
+<p class="List">En client léger Html, XmeSetColorTheme doit être appelée avant tout affichage.</p>
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,52 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Impression d'un objet Graphe</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Impression d'un objet Graphe</h2>
+<p>&#160;</p>
+<p>Pour imprimer l'objet graphe de nom "<span class="hcp1">Graphe</span>", dessiné dans le bloc numéro <span class="hcp1">N</span> du masque <span class="hcp1">Masque</span>, procédez de la manière suivante :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Appelez la fonction <a href="XmiChartGetId.htm">XmiChartGetId</a> &#160;(<span class="hcp1">Masque</span>, <span class="hcp1">N</span>, "<span class="hcp1">Graphe"</span>) pour récupérer l'identifiant de l'objet graphe.</p>
+</li>
+<li class="p">
+<p>Constituez le graphe comme si celui-ci devait être affiché à l'écran, en utilisant les fonctions de l'éditeur de masques d'écran (XmeChartXxxx).</p>
+</li>
+<li class="p">
+<p>Appelez la fonction <a href="XmiChartDisplay.htm">XmiChartDisplay</a> avant d'imprimer le bloc <span class="hcp1">N</span>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">Exemple</span> :</p>
+<p>&#160;</p>
+<p class="Source">XmiLoad ("Masque.dhoi") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">id_graphe = XmiChartGetId ("Masque.dhoi",<span class="hcp1">N</span>,"Graphe") &#160;;identifiant du graphe</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeChartXxxx (id_graphe, ...) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;constitution du graphe</p>
+<p class="Source">XmeChartXxxx (id_graphe, ...)</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmiChartDisplay (id_graphe) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;préparation en vue de l'impression</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmiPrint ("Masque.dhoi",<span class="hcp1">N</span>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;impression du bloc <span class="hcp1">N</span></p>
+<p class="source">...</p>
+<p>&#160;</p>
+</body>
+</html>

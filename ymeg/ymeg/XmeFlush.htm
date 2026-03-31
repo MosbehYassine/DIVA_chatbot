@@ -1,0 +1,74 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeFlush</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+ul.hcp4 { list-style:disc; }
+span.hcp5 { font-weight:bold; }
+a.hcp6 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeFlush &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Force le rafraîchissement synchrone de l'écran<span class="hcp3"><br>
+(synchrone signifie que le programme Diva attend que le client termine l'affichage pour poursuivre son exécution)</span></font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeFlush</font></p>
+<p>&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Pas de paramètre</p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la procédure&#160;:</font></p>
+<ul class="hcp4">
+<li class="p">
+<p>En mode client léger <span class="hcp5">distant</span> (par exemple, lorsque le poste client se connecte au serveur d'applications avec une liaison VPN), il s'avère <span class="hcp5">déterminant</span> de <span class="hcp5">limiter</span> au maximum le <span class="hcp5">nombre</span> de messages qui transitent entre le client et le serveur. Pour diminuer le nombre de messages et ainsi optimiser les performances, l'écran du poste client <span class="hcp5">n'est</span> <span class="hcp5">rafraîchi qu'au moment où le programme</span> <span class="hcp5">se met en attente d'une action de l'utilisateur</span> (instructions Xme(List)Consult, Xme(List)Input, ...) ou lorsqu'il interroge le client (instruction XmeListScreenCount par exemple).<br>
+<br>
+Pour plus de détails sur ce sujet, consultez la rubrique <a href="Affichages_de_masque_et_rafra&icirc;chissemnt_de_l_&eacute;cran.htm">Rafraîchissement de l'écran</a>.</p>
+</li>
+</ul>
+<ul class="hcp4">
+<li class="p">
+<p><span class="hcp5">XmeFlush</span> permet de demander le rafraîchissement immédiat de l'écran.<br>
+Pendant que le client procède à l'affichage, le programme Diva est interrompu.</p>
+</li>
+</ul>
+&#160;
+<p><span class="hcp5">Exemple d'utilisation de l'instruction XmeFlush - Affichage d'un compteur ou d'une barre de progression</span> :<br>
+<br>
+Le plus souvent, un programme qui effectue un long traitement <span class="hcp5">sans intervention de l'utilisateur</span> affiche régulièrement une information, par exemple un compteur ou une barre de progression, pour visualiser l'avancement des travaux. Cet affichage nécessite évidemment une mise à jour périodique de l'écran.</p>
+<p>Pour l'obtenir, faites appel à l'instruction <span class="hcp5">XmeFlush</span>. A défaut, l'utilisateur ne verra pas son écran actualisé au fur et à mesure du traitement (un rafraîchissement de l'écran est toutefois réalisé en automatique tous les 20 XmeDisp(v)).<br>
+<br>
+On fera attention à <span class="hcp5">limiter le nombre de rafraîchissements</span> pour que le temps consacré aux affichages reste négligeable par rapport au temps pris par le traitement lui-même.<br>
+<br>
+&#160;</p>
+<p class="Source">Loop ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;boucle (sans aucune entrée utilisateur)</p>
+<p class="Source">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement</p>
+<p class="Source">&#160;&#160;&#160;if ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;condition pour limiter le nombre d'affichages</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;XmeDispv ("masque",1,XME_MODE_GOTO) &#160;;affichage "logique" du compteur</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;XmeFlush &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affichage "physique"</p>
+<p class="Source">&#160;&#160;&#160;endif</p>
+<p class="Source">EndLoop</p>
+&#160; <br>&#160;
+<p class="Body-Text" style="font-weight: bold;">Autre exemple - Lancement d'un programme nécessitant un long temps de préparation avant d'effectuer une toute première entrée utilisateur <span class="hcp3">:<br>
+<br>
+Côté client, la fenêtre Windows est ouverte le plus souvent au moment de la première consultation ou saisie de masque. Un long temps de préparation retarde donc l'ouverture et l'utilisateur peut être tenté de croire que le programme n'a pas démarré. La solution consiste ici à afficher une page (par XmeDispv) puis à appeler l'instruction XmeFlush AVANT de débuter la préparation.</span></p>
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp3">Mais dans ce cas, on utilisera plutôt l'instruction <a href="XmeFlushAsync.htm" class="hcp6">XmeFlushAsync</a> qui laisse le programme Diva</span> poursuivre son exécution sans attendre <span class="hcp3">que le client ait terminé l'affichage. Il en résultera en supplément une accélération du chargement, du fait que les deux processus s'exécutent en parallèle (voir la rubrique <a href="Optimisation_des_performances.htm" class="hcp6">Affichage et exécution d'un traitement Diva simultanés</a>).</span></p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeDispv.htm">XmeDispv</a></p>
+<p class="body-text"><a href="XmeFlushAsync.htm">XmeFlushAsync</a></p>
+</body>
+</html>

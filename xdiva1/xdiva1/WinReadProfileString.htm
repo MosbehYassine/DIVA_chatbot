@@ -1,0 +1,48 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinReadProfileString</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinReadProfileString &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinReadProfileString permet de lire une chaîne de caractères dans un fichier .ini.</p>
+<p>Attention, le fichier divalto.ini est géré de manière particulière. Voir le chapitre <strong>divalto.ini</strong> de la documentation <strong>Installation et paramétrage d'Harmony</strong>.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Alpha</font> <font class="hcp2">WinReadProfileString</font> <font class="hcp3">(section, entrée, fichier)</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Section</font></p>
+<p class="decalage05">Nom de la section du fichier .ini. Dans un fichier .ini, une section est un mot encadré par les crochets [ ]. Ne pas mettre les crochets dans ce paramètre.</p>
+<p class="Body-Text"><font class="hcp3">Entrée</font></p>
+<p class="decalage05">Entrée (ou mot-clé) dans la section.</p>
+<p class="Body-Text"><font class="hcp3">Fichier</font></p>
+<p class="decalage05">Nom du fichier .ini.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction renvoie la valeur trouvée ou espaces si l'entrée n'existe pas.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">display WinReadProfileString("System","ServeurXlogf","monfichier.ini")</p>
+<p class="Source">; recherche de ServeurXlogf=xxxxx dans la section system du fichier</p>
+<p class="Source">; monfichier.ini</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text"><a href="LCWinReadProfileString.htm"><font class="hcp2">L</font>CWinReadProfileString</a>, <a href="WinReadProfileInt.htm">WinReadProfileInt</a>, <a href="WinWriteProfileString.htm">WinWriteProfileString</a>, <a href="WinWriteProfileInt.htm">WinWriteProfileInt</a>, <a href="WinDeleteProfile.htm">WinDeleteProfile</a>, <a href="WinDeleteProfileSection.htm">WinDeleteProfileSection</a>, <a href="WinFlushProfile.htm">WinFlushProfile</a>, <a href="WinReadProfileSection.htm">WinReadProfileSection</a>, <a href="WinReadProfile.htm">WinReadProfile</a></p>
+</body>
+</html>

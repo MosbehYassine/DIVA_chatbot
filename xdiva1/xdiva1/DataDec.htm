@@ -1,0 +1,54 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DataDec</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DataDec</h3>
+<p class="Body-Text">La fonction DataDec permet de connaître le nombre de décimales d'une donnée.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Long</font> <font class="hcp1">DataDec</font> (<font class="hcp2">Donnée</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">DataDec retourne le nombre de décimales de <font class="hcp2">donnée</font>.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Remarque</font></p>
+<p class="Body-Text">Cette fonction peut être utile dans les fonctions/procédures pour connaître le format exact d'un paramètre formel.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="Source">Procedure proc(p1)</p>
+<p class="Source">1 p1 N</p>
+<p class="Source">1 nbdec 2,0</p>
+<p class="Source">beginp</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;nbdec = DataDec(p1)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display nbdec&#160;</p>
+<p class="Source">endp</p>
+<p class="Source">1 v1 3,0</p>
+<p class="Source">1 v2 8,2</p>
+<p class="Source">1 v3 X</p>
+<p class="Source">1 v4 L</p>
+<p class="Source">main</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">proc (v1)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">proc (v2)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">proc (v3)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">proc (v4)&#160;</p>
+<p class="Body-Text">Ce programme affiche les valeurs suivantes : 0 2 0 0</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="DataSize.htm">DataSize</a>, <a href="DataType.htm">DataType</a></p>
+</body>
+</html>

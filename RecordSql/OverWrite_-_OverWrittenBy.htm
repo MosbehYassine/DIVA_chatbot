@@ -1,0 +1,49 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>OverWrite - OverWrittenBy</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { text-decoration:underline; }
+p.hcp3 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>OverWrite - OverWrittenBy</h3>
+<p>&#160;</p>
+<p>La balise &lt;DictionarySql&gt; contient deux paramètres qui indiquent si le dictionnaire est une surcharge et si le dictionnaire est surchargé. Comme la surcharge peut être à plusieurs niveaux, les deux paramètres peuvent être simultanément présents.</p>
+<p>Voir <a href="DictionarySql.htm">DictionarySql</a></p>
+<p>&#160;</p>
+<p class="hcp1">Convention de nommage</p>
+<p>La convention est d’ajouter un u à la fin du nom du dictionnaire d’origine. Ainsi, si la règle est respectée, le nombre de u à la fin du nom indique le niveau de la surcharge.</p>
+<p><span class="hcp2">Exemple</span></p>
+<p>Le dictionnaire gtrsart.dhsq est surchargé par le dictionnaire gtrsartu.dhsq, pouvant lui-même être surchargé par gtrsartuu.dhsq, et ainsi de suite.</p>
+<p>&#160;</p>
+<p class="hcp1">OverwrittenBy</p>
+<p>Pour être surchargeable, le dictionnaire doit contenir l’attribut OverwrittenBy dans la balise &lt;DictionarySQL&gt;.</p>
+<p><span class="hcp2">Exemple</span></p>
+<p>&lt;DictionarySql … DataBase=DAV overwrittenby="gtrsartu.dhoq"&gt;</p>
+<p>Le dictionnaire de surcharge doit être compilé pour produire un objet du dictionnaire de surcharge (extension .dhoq). A l’exécution, la présence du dictionnaire de surcharge est facultative.</p>
+<p>&#160;</p>
+<p class="hcp1">Overwrite</p>
+<p>Pour indiquer qu’un dictionnaire de recordSql est une surcharge, on ajoute l’attribut Overwrite dans la balise &lt;DictionarySQL&gt; du dictionnaire de surcharge.</p>
+<p><span class="hcp2">Exemple</span></p>
+<p>&lt;DictionarySQL &#160;… &#160;overwrite="gtrsart.dhoq"&gt;</p>
+&#160;
+<p>Si le dictionnaire de surcharge doit lui-même pouvoir être surchargé, on ajoutera l’attribut OverwrittenBy dans la balise &lt;DictionarySQL&gt; du dictionnaire de surcharge.</p>
+<p><span class="hcp2">Exemple</span></p>
+<p>&lt;DictionarySQL &#160;… &#160;overwrite="gtrsart.dhoq" overwritenby="gtrsartuu.dhoq" &gt;</p>
+<p>&#160;</p>
+<p class="hcp1">Voir</p>
+<p class="hcp3"><a href="DictionarySql.htm"><span style="font-weight: normal;">DictionarySql</span></a></p>
+<p class="hcp3"><a href="Surcharge_des_RecordSql.htm">Surcharge des RecordSql</a></p>
+</body>
+</html>

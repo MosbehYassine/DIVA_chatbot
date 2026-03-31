@@ -1,0 +1,347 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListConsultDefault</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-family:Symbol; }
+ul.hcp7 { list-style:disc; }
+font.hcp8 { font-weight:bold;
+font-style:italic; }
+span.hcp9 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListConsultDefault &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Traitement par défaut en consultation de tableau / arbre</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Int XmeListConsultDefault</font> (<font class="hcp3">Identifiant, Ligne, Ascenseur, [Privilège, Sélection, Perso, MessagesInhibes]</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 12.866%;">
+<col style="width: 87.134%;">
+<tr class="hcp4">
+<td style="width:12.866%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:87.134%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.866%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Ligne</font></p>
+</td>
+<td style="width:87.134%;" class="hcp5">
+<p class="Body-Text">Adresse de l'enregistrement "ligne du tableau"&#160;; au retour de la fonction, cet enregistrement est garni avec les données de la ligne courante.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.866%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Ascenseur</font></p>
+</td>
+<td style="width:87.134%;" class="hcp5">
+<p class="Body-Text">Adresse de l'enregistrement "ascenseur" (on utilisera l'enregistrement standard <font class="hcp2">ScrollBar32</font> du dictionnaire système DDSYS.dhsd)&#160;; au retour de la fonction, l'enregistrement est actualisé pour refléter l'état courant de l'<a href="Ascenseurverticald_untableau.htm">ascenseur vertical du tableau</a>.<br>
+Voir paragraphe "Attention" ci-après.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.866%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Privilège</font></p>
+</td>
+<td style="width:87.134%;" class="hcp5">
+<p class="Body-Text">Niveau de privilège (paramètre facultatif, ZOOM_PRIVILEGE_SUPPRESSION par défaut)&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> ZOOM_PRIVILEGE_CONSULTATION (1)&#160;: la fonction ne doit pas traiter les événements concernant la modification, la création et la suppression de ligne.<font face="Symbol" class="hcp6"><br>
+-</font> ZOOM_PRIVILEGE_MODIFICATION (2)&#160;: la fonction doit traiter les événements concernant la modification de ligne mais pas ceux concernant la création et la suppression.<font face="Symbol" class="hcp6"><br>
+-</font> ZOOM_PRIVILEGE_CREATION (3)&#160;: la fonction doit traiter les événements concernant la modification et la création de ligne mais pas ceux concernant la suppression.<font face="Symbol" class="hcp6"><br>
+-</font> ZOOM_PRIVILEGE_SUPPRESSION (4)&#160;: la fonction doit traiter tous les événements concernant la modification, la création et la suppression de ligne.<br>
+Voir texte ci-après.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.866%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Sélection</font></p>
+</td>
+<td style="width:87.134%;" class="hcp5">
+<p class="Body-Text">Positionnez cette option à&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> TRUE si vous voulez que XmeListConsultDefault traite les événements concernant la <a href="S_lectionmultipledeslignesd_untableau.htm">sélection multiple</a>.<font face="Symbol" class="hcp6"><br>
+-</font> FALSE&#160;sinon.<br>
+Voir texte et paragraphe "Attention" ci-après.<br>
+Paramètre facultatif, FALSE par défaut.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.866%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Perso</font></p>
+</td>
+<td style="width:87.134%;" class="hcp5">
+<p class="Body-Text">Positionnez cette option à&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> TRUE&#160;si vous souhaitez personnaliser XmeListConsultDefault.<font face="Symbol" class="hcp6"><br>
+-</font> FALSE sinon.<br>
+Pour plus de détails, voir la rubrique <a href="FonctionsdepersonnalisationdeXmeListConsultDefProc.htm">Fonctions de personnalisation de XmeListConsultDefault</a>.<br>
+Paramètre facultatif, FALSE par défaut.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.866%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">MessagesInhibes</font></p>
+</td>
+<td style="width:87.134%;" class="hcp5">
+<p class="Body-Text">Positionnez ce paramètre à FALSE si vous autorisez XmeListConsultDefault à afficher tous ses messages de confirmation.<br>
+Sinon, ce paramètre peut être une combinaison quelconque (sous forme de somme ou de OU logique) des valeurs suivantes, chacune représentant un message que vous désirez inhiber&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> DEFPROC_MESS_SUPPRESSION inhibe le message demandant confirmation d'une suppression de ligne.<font face="Symbol" class="hcp6"><br>
+-</font> DEFPROC_MESS_SUPPRESSION_SELECTION inhibe le message demandant confirmation d'une suppression de la sélection.<font face="Symbol" class="hcp6"><br>
+-</font> DEFPROC_MESS_COLLER_AVANT_APRES inhibe le message demandant si le "Coller" doit se faire avant ou après la ligne courante (ce message est affiché uniquement lorsque l'élément courant se trouve en fin de liste&#160;; en cas d'inhibition du message, le "Coller" aura lieu APRES la ligne courante).<br>
+Paramètre facultatif, FALSE par défaut.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">TRUE</font> si la liste a été modifiée durant l'exécution de XmeListConsultDefault.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">FALSE</font> dans le cas contraire.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">XmeListConsultDefault</font> est une fonction standard qui propose un <font class="hcp2">traitement par défaut</font> pour la plupart des événements, susceptibles de se produire lors d'une consultation de tableau / arbre par XmeListConsult&#160;: si vous choisissez d'appliquer le traitement standard suite à un événement donné, appelez XmeListConsultDefault au retour de XmeListConsult pour cet événement.<br>
+<br>
+Vous pouvez choisir d'<font class="hcp2">appeler ou non</font> XmeListConsultDefault pour <font class="hcp2">chaque</font> événement à traiter&#160;: par exemple, vous pouvez décider de reprogrammer les opérations de création, modification et suppression de lignes car le traitement standard ne convient pas, tout en conservant le traitement standard pour les déplacements et les sélections dans le tableau / arbre.<br>
+&#160;<br>
+En pratique, programmez une structure de contrôle SWITCH / CASE / DEFAULT / ENDSWITCH derrière l'appel à XmeListConsult&#160;; programmez les CASE correspondant aux événements que vous voulez traiter vous-même&#160;; à la suite des CASE, programmez l'appel à XmeListConsultDefault sous DEFAULT (Cf. exemples).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListConsultDefault <font class="hcp2">n'est utilisable que</font> si la totalité des lignes du tableau est résidente en mémoire et si l'enregistrement <font class="hcp3">Ligne</font> inclut les données affichées sur une ligne (Cf. rubrique <a href="Gestiondelalisteassoci_e_untableau.htm">Gestion de la liste associée à un tableau</a>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListConsultDefault <font class="hcp2">traite les événements suivants</font>&#160;:<br>
+&#160;<font class="hcp2"><br>
+Touches de déplacement</font>&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> Flèche en haut&#160;: ligne précédente.<font face="Symbol" class="hcp6"><br>
+-</font> Flèche en bas&#160;: ligne suivante.<font face="Symbol" class="hcp6"><br>
+-</font> Home&#160;: première ligne.<font face="Symbol" class="hcp6"><br>
+-</font> End&#160;: dernière ligne.<font face="Symbol" class="hcp6"><br>
+-</font> Page-Up&#160;: page précédente.<font face="Symbol" class="hcp6"><br>
+-</font> Page-Down&#160;: page suivante.<br>
+&#160;<font class="hcp2"><br>
+Déplacements à la souris</font>&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> Clic souris sur une cellule du tableau&#160;: positionnement sur la ligne correspondante.<font face="Symbol" class="hcp6"><br>
+-</font> Toutes actions sur l'<a href="Ascenseurverticald_untableau.htm">ascenseur vertical du tableau</a>&#160;: positionnement correspondant.<br>
+&#160;<font class="hcp2"><br>
+Création</font> – <font class="hcp2">Modification</font> – <font class="hcp2">Suppression de ligne</font><br>
+(si vous avez autorisé l'opération en donnant une valeur suffisante au paramètre <font class="hcp8">Privilège</font>)&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> Inser&#160;: création d'une ligne derrière la ligne courante.<font face="Symbol" class="hcp6"><br>
+-</font> F4&#160;: modification de la ligne courante.<font face="Symbol" class="hcp6"><br>
+-</font> Suppr&#160;: suppression de la ligne courante.<font face="Symbol" class="hcp6"><br>
+-</font> Clic dans la <a href="Colonned__tatd_untableau.htm">colonne d'état "création"</a> (en regard de la première ligne vide affichant un plus)&#160;: création d'un nouvel élément en fin de tableau (<font class="hcp2">attention</font>&#160;: cette méthode de création est optionnelle&#160;; pour la valider, appelez la procédure <a href="XmeListSetCreatingOption.htm">XmeListSetCreatingOption</a> avec le paramètre <font class="hcp3">Création</font> à TRUE, voir l'exemple 2).<font face="Symbol" class="hcp6"><br>
+-</font> Clic dans la colonne d'état en regard d'une ligne de données non vide&#160;: modification de cette ligne.<br>
+&#160;<font class="hcp2"><br>
+Sélection multiple</font> – <font class="hcp2">Copier</font> – <font class="hcp2">Couper</font> – <font class="hcp2">Coller</font><br>
+(si vous avez autorisé la <a href="S_lectionmultipledeslignesd_untableau.htm">sélection multiple</a> en donnant la valeur TRUE au paramètre <font class="hcp8">Sélection</font>)&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> Clic gauche dans l'en-tête de la colonne d'état ou touche Ctrl+A&#160;: sélection de toutes les lignes du tableau.<font face="Symbol" class="hcp6"><br>
+-</font> Espace&#160;: inversion de la sélection pour la ligne courante.<font face="Symbol" class="hcp6"><br>
+-</font> Ctrl+Touche de déplacement&#160;:&#160;déplacement sans effacement de la sélection précédente.<font face="Symbol" class="hcp6"><br>
+-</font> Maj+Touche de déplacement&#160;: sélection d'un groupe de lignes contiguës.<font face="Symbol" class="hcp6"><br>
+-</font> Maj+Ctrl+Touche de déplacement&#160;: sélection d'un groupe de lignes contiguës sans effacement de la sélection précédente.<font face="Symbol" class="hcp6"><br>
+-</font> Ctrl+Clic souris sur une ligne du tableau&#160;: inversion de la sélection pour cette ligne sans effacement de la sélection précédente.<font face="Symbol" class="hcp6"><br>
+-</font> Maj+Clic souris sur une ligne du tableau&#160;: sélection d'un groupe de lignes contiguës.<font face="Symbol" class="hcp6"><br>
+-</font> Maj+Ctrl+Clic souris sur une ligne du tableau&#160;: sélection d'un groupe de lignes contiguës sans effacement de la sélection précédente.<font face="Symbol" class="hcp6"><br>
+-</font> Ctrl+Inser&#160;: copie des lignes sélectionnées dans le presse-papiers.<font face="Symbol" class="hcp6"><br>
+-</font> Maj+Inser&#160;: insertion des lignes précédemment copiées dans le presse-papiers, devant la ligne courante (remarque&#160;: si la ligne courante est la dernière ligne du tableau, la fonction demande à l'utilisateur si l'insertion doit se faire devant ou derrière la dernière ligne).<font face="Symbol" class="hcp6"><br>
+-</font> Suppr&#160;: suppression des lignes sélectionnées sans recopie dans le presse-papiers.<font face="Symbol" class="hcp6"><br>
+-</font> Maj+Suppr&#160;: suppression des lignes sélectionnées avec recopie dans le presse-papiers.<br>
+&#160;<font class="hcp2"><br>
+Changement de la hauteur de la fenêtre</font>&#160;:<br>
+Réaffichage du tableau réduit ou agrandi.<br>
+&#160;<font class="hcp2"><br>
+Expansion / Réduction d'un élément d'arbre&#160;:</font><font style="font-family: Symbol; font-weight: bold;" face="Symbol"><br>
+-</font> + ou clic souris sur le signe +&#160;: expansion de l'élément courant.<font face="Symbol" class="hcp6"><br>
+-</font> <font face="Symbol" class="hcp6">-</font> ou clic souris sur le signe <font face="Symbol" class="hcp6">-</font>&#160;: réduction de l'élément courant.<br>
+&#160;<font class="hcp2"><br>
+Gestion du curseur de création d'un arbre</font><br>
+(si vous avez demandé la présence du <a href="Cr_ationd_un_l_mentd_arbre.htm">curseur de création</a> à l'écran en appelant la procédure <a href="XmeListTreeCursorInit.htm">XmeListTreeCursorInit</a> avec le paramètre <font class="hcp3">Curseur</font> positionné à TRUE)&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> Tab&#160;: incrémentation du niveau (et du curseur) de création.<font face="Symbol" class="hcp6"><br>
+-</font> Back-Tab&#160;:décrémentation du niveau (et du curseur) de création.<font face="Symbol" class="hcp6"><br>
+-</font> Déplacement à la souris du curseur de création&#160;: modification du niveau de création pour refléter la nouvelle position du curseur.<br>
+Remarques&#160;:<br>
+– Lorsque l'utilisateur modifie la position du curseur de création, XmeListConsultDefault vérifie automatiquement la cohérence du niveau de création sélectionné, en fonction de l'état de l'arbre et du niveau de l'élément courant&#160;; en cas d'incohérence, le repositionnement du curseur est refusé.<br>
+– Lorsque l'utilisateur se déplace dans l'arbre, XmeListConsultDefault modifie automatiquement la position du curseur de création pour qu'elle corresponde au niveau du nouvel élément courant.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Attention&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListConsultDefault <font class="hcp2">teste les variables</font> <a href="YMEG2.chm::/Ymeg2/System_Statin.htm">Harmony.Key</a>, <a href="YMEG2.chm::/Ymeg2/ShiftKeyetControlKey.htm">ShiftKey et ControlKey</a>, positionnées par XmeListConsult. Entre le XmeListConsult et le XmeListConsultDefault, il ne faut donc pas "&#160;casser&#160;" ces données.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Gestion de l'ascenseur vertical du tableau</font>.<br>
+XmeListConsultDefault gère l'<a href="Ascenseurverticald_untableau.htm">ascenseur vertical du tableau</a>. Dans votre programme, vous devez (voir exemples)&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> Déclarer une variable qui contiendra les <a href="YMEG2.chm::/Ymeg2/D_clarationd_unascenseurWindows.htm">informations de gestion de l'ascenseur</a> (on utilisera pour cela l'enregistrement standard <font class="hcp2">ScrollBar32</font> du dictionnaire système DDSYS.dhsd).<font face="Symbol" class="hcp6"><br>
+-</font> <font class="hcp2">Avant</font> d'exécuter le premier XmeListConsult et, le cas échéant, <font class="hcp2">après</font> le remplissage initial du tableau et <font class="hcp2">après</font> avoir exécuté la procédure <a href="XmeListSetCreatingOption.htm">XmeListSetCreatingOption</a>, appeler la procédure <a href="XmeListScrollBarInit.htm">XmeListScrollBarInit</a> pour initialiser l'ascenseur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Gestion de la sélection multiple</font>.<br>
+Si vous souhaitez que XmeListConsultDefault gère la <a href="S_lectionmultipledeslignesd_untableau.htm">sélection multiple des lignes du tableau</a>, vous devez, dans votre programme (voir exemple 2)&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> Positionner le paramètre <font class="hcp8">Sélection</font> à la valeur TRUE.<font face="Symbol" class="hcp6"><br>
+-</font> Déclarer une variable qui contiendra les informations de gestion du marquage des lignes (on utilisera pour cela l'enregistrement standard <font class="hcp2">RowInfo</font> du dictionnaire système DDSYS.dhsd).<font face="Symbol" class="hcp6"><br>
+-</font> Initialiser cette variable pour préciser la couleur et/ou l'image bitmap qui devront être affectées aux lignes sélectionnées.<font face="Symbol" class="hcp6"><br>
+-</font> Indiquer cette variable dans le masque Xwin en tant que donnée de contrôle&#160;: déclarez l'enregistrement RowInfo dans la liste des enregistrements du masque, activez la propriété du tableau <span class="hcp9">Avec donnée de contrôle des lignes</span> et cliquez dans la colonne de droite de la propriété <span class="hcp9">Donnée de contrôle</span> puis sur le bouton d’ouverture de la fenêtre de sélection de la donnée. Sélectionnez la donnée RowInfo de l'enregistrement RowInfo.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp9">Mode "Licence consultation"</span>.<br>
+Lorsque le programme s'exécute en mode "Licence consultation", les fonctions de création, modification, suppression, couper et coller sont automatiquement invalidées. De plus, le cas échéant :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Le "+", normalement présent dans la colonne d'état en regard de la première ligne vide du tableau, n'est plus affiché.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le curseur de création d'un arbre, normalement présent dans l'en-tête de la colonne du tableau affichant l'arborescence, n'est plus affiché.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListConsultDefault peut éventuellement être appelée après un XmeConsult.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le source de la procédure XmeListConsultDefault est livré à titre d'exemple dans le fichier ZYDEFPRO.dhsp.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 1&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Schéma de programmation de la fonction XmeListConsultDefault</p>
+<p class="Source">;(sans option particulière)</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Ligne</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ScrollBar32 Ascens</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 Ident L</p>
+<p class="Source">1 Fini B</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">MAIN&#160;</p>
+<p class="Source">...</p>
+<p class="Source">Ligne = " "</p>
+<p class="Source">XmeLoad ("EOBJTAB")</p>
+<p class="Source"><font class="hcp2">X</font>meInfoPage ("EOBJTAB",1)</p>
+<p class="Source">XmeSetWindowSize ("EOBJTAB",1,Harmony.Opara3,Harmony.Opara4)</p>
+<p class="Source">&#160;</p>
+<p class="Source">Ident = XmeListGetId ("EOBJTAB",1,"TABLEAU",Ligne)</p>
+<p class="Source">...</p>
+<p class="Source">XmeDispv ("EOBJTAB",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche page tableau</p>
+<p class="Source">XmeListScrollBarInit (Ident, Ascens) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation ascenseur</p>
+<p class="Source">&#160;</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListConsult (Ident) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Key&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fin&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement traité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement traité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement traité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres événements&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Ident, Ligne, Ascens)&#160;</p>
+<p class="Source">&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 2&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Schéma de programmation de la fonction XmeListConsultDefault</p>
+<p class="Source">;(avec sélection multiple et affichage d'un plus dans la colonne</p>
+<p class="Source">; d'état de la première ligne vide)</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Ligne</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd RowInfo</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ScrollBar32 Ascens</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 Ident L</p>
+<p class="Source">1 Fini B</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">MAIN&#160;</p>
+<p class="Source">...</p>
+<p class="Source">Ligne = " "</p>
+<p class="Source">RowInfo = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;infos pour la sélection</p>
+<p class="Source">RowInfo.bitmap = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;pas de bitmap en col. état</p>
+<p class="Source">RowInfo.couleur = "BLEUCIEL" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;couleur ligne sélectionnée</p>
+<p class="Source">RowInfo.CoulSelec = FALSE</p>
+<p class="Source">RowInfo.Selection = FALSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;état initial</p>
+<p class="Source">...</p>
+<p class="Source">XmeLoad ("EOBJTAB")</p>
+<p class="Source"><font class="hcp2">X</font>meInfoPage ("EOBJTAB",1)</p>
+<p class="Source">XmeSetWindowSize ("EOBJTAB",1,Harmony.Opara3,Harmony.Opara4)</p>
+<p class="Source">&#160;</p>
+<p class="Source">Ident = XmeListGetId ("EOBJTAB",1,"TABLEAU",Ligne)</p>
+<p class="Source">XmeListSetCreatingOption (Ident, TRUE) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;plus en colonne d'état</p>
+<p class="Source">...</p>
+<p class="Source">XmeDispv ("EOBJTAB",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche page tableau</p>
+<p class="Source">XmeListScrollBarInit (Ident, Ascens) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation ascenseur</p>
+<p class="Source">&#160;</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListConsult (Ident) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Key&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fin&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement traité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement traité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres événements&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Ident, Ligne, Ascens,,TRUE)&#160;</p>
+<p class="Source">&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+</body>
+</html>

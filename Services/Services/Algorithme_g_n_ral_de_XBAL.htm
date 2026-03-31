@@ -1,0 +1,101 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Algorithme général de XBAL</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+font.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Algorithme général de XBAL</h3>
+<p class="Body-Text">XBAL lit la boîte de réception des messages. Il ne traite que les messages non lus. Il récupère l'objet du message qui doit contenir une chaîne de commande de type HMP.</p>
+<p class="Body-Text">Le paramètre &lt;Action&gt; permet de préciser l'action à exécuter pour ce message. Il fait référence à une action décrite dans <a href="Le_param_trage_de_XBAL.htm">le fichier paramètres des actions</a> (xbalf.dhfi). Ce fichier contient pour chaque action :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Un commentaire décrivant l'action.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un indicateur de validité de l'action. Celui-ci permet de suspendre provisoirement l'exécution d'une action. En cas de problème lors de l'exécution d'une action le programme XBAL invalide l'action en positionnant cet indicateur qui devra ensuite être repositionné manuellement.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le nom du programme Diva qui traite le message.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le code utilisateur sous lequel le programme Diva doit s'exécuter.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les paramètres de l'action sous forme de chaîne de commande HMP.</p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text">Lorsque XBAL lit un message dont l'objet contient le paramètre &lt;Action&gt;, il effectue les opérations suivantes.</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Recherche de l'action dans le fichier des actions. Si l’action n’est pas <font class="hcp3">active</font>, le message n’est pas traité.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chargement des droits et des chemins implicites de l'utilisateur lié à l'action. S'il n'est pas renseigné, le programme s'exécute avec le code utilisateur du service XBAL. En cas d'erreur lors du changement de code utilisateur, l'action est désactivée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Envoi par le tunnel des paramètres du message.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Exécution du traitement par la fonction "ProgramCall".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XBAL attend l'acquittement du traitement par la fonction "PongReceive" de "Xbal_Status". Quatre cas sont pris en compte :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Xbal reçoit un acquittement positif (valeur 0). Le message est supprimé.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Xbal reçoit un acquittement négatif grave (valeur 1). L'action est invalidée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Xbal reçoit un acquittement négatif (valeur 2). Le message est transféré dans le dossier des messages en erreur ou est marqué comme étant lu.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Xbal ne reçoit pas d'acquittement. L'action est invalidée.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text">Lorsque tous les messages de la boîte de réception sont traités, XBAL s'endort, soit jusqu'à l'arrivée d'un nouveau message avec l'interface Extended MAPI ou pendant une minute (par défaut voir le paramètre <a href="Param_tres_du_service_Xbal.htm">Attente</a>) avec l'interface Simple MAPI avant de consulter à nouveau la boîte de réception.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Remarques :</font></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">En cas d'erreur de traitement d'un message, XBAL le transfère dans le dossier des messages en erreur. Pour que ces messages soient à nouveau traités, la cause de l'erreur doit être corrigée par un opérateur, puis ces messages doivent être transférés à nouveau dans la boîte de réception et marqués comme étant non lus.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XBAL ne traite que les messages "Non lus". Dans certains cas d'erreur de traitement, lorsque l'interface MAPI ne permet pas le transfert dans un autre dossier, XBAL marque le message comme étant lu. Il ne sera plus donc plus traité par XBAL à moins d'être remis dans l'état "non lu" dans la boîte de réception par un opérateur après correction de la cause de l'erreur consignée dans le journal des erreurs.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque le paramètre général &lt;log&gt; est actif, XBAL consigne les erreurs dans un journal.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque le paramètre général &lt;logMessage&gt; est actif, XBAL consigne une trace des messages traités avec succès dans le journal des messages.</p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">&#160;</p>
+<p class="voir" style="border-top: 0.50pt solid #000000; font-size: 10pt;">Voir également &#160;:</p>
+<p>Rubrique "Tunnels" de la documentation Xwin - Programmation.</p>
+<p>Rubrique "PingReceive - PongReceive - PingLocalReceive" de la documentation Xwin - Programmation.</p>
+<p><a href="Les_services_Diva.htm">Services Diva</a></p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListGetUserOrderedColumns</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListGetUserOrderedColumns &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="font-weight: bold;">Lecture de la liste des numéros des colonnes d'un tableau affichées par l'utilisateur<br>
+(liste délivrée dans l'ordre d'affichage demandé par l'utilisateur)</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Char XmeListGetUserOrderedColumns</font> (<font class="hcp3">Identifiant</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:19.42%;" class="hcp4">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp4">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font></p>
+<p class="Body-Text">Chaîne de caractères contenant la liste des numéros de colonne séparés entre eux par un ";" (point virgule). La première colonne porte le numéro 1.<span class="hcp5"><br>
+Exemple</span> : "1;2;3;6;13".</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction <span class="hcp5">XmeListGetUserColumns</span> permet de récupérer la liste des numéros des colonnes affichées par l'utilisateur pour le tableau passé en paramètre.</p>
+<p class="Body-Text"><span class="hcp5">Attention</span>, les numéros de colonne sont délivrés ici dans l'ordre d'affichage demandé par l'utilisateur. Pour obtenir les numéros de colonne dans l'ordre défini dans Xwin, utilisez la fonction <a href="XmeListGetUserColumns.htm">XmeListGetUserColumns</a>.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Attention&#160;: <span style="margin-left: 17.85pt; text-indent: -17.85pt; font-size: 8pt; font-family='Times: New Roman; font-family: Symbol;">&#160;</span></font>XmeListGetUserColumns <span style="margin-left: 17.85pt; text-indent: -17.85pt;">NE peut être appelée QUE si la page de masque contenant le tableau est la page courante.</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">1 &#160;&#160;&#160;colonnes &#160;&#160;&#160;S<br>
+colonnes = XmeListGetUserOrderedColumns (Ident)</p>
+<p>&#160;</p>
+<p><span class="hcp5">Remarque</span> : <a href="XmeListGetColumn.htm">XmeListGetColumn</a> permet aussi de lire la valeur du paramètre "Affichage" d'une colonne, qui a été paramétrée dans Xwin par le développeur (ColumnInfo.Affichage).</p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeListGetUserColumns.htm">XmeListGetUserColumns</a></p>
+</body>
+</html>

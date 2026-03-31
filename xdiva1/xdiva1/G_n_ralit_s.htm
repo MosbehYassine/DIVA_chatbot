@@ -1,0 +1,78 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Généralités</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:Courier New; }
+font.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:square; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Généralités</h3>
+<p>HMP (Harmony Markup Parameters) est un petit langage simple permettant de passer un grand nombre de paramètres dans une chaîne de caractères.</p>
+<p>Le nom de chaque paramètre est encadré par les caractères &lt; &gt;. Le paramètre est suivi de sa valeur.</p>
+<p>Exemple : <font face="Courier New" class="hcp1">chaine = "&lt;param1&gt;valeur1&lt;param2&gt;valeur2"</font></p>
+&#160;
+<p><font class="hcp2">HMP est utilisé par exemple :</font></p>
+<ul class="hcp3">
+<li style="font-size: 8pt;" class="p">
+<p>lorsqu’une fonction a un grand nombre de paramètres, dont la plupart sont facultatifs.</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>lorsque le nombre de paramètres d’une fonction risque d’évoluer dans le temps. Dans ce cas, HMP permet de rajouter des paramètres sans avoir à recompiler tous les modules appelants.</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>pour stocker des paramètres dans un fichier paramètre. La recherche des paramètres est alors très simple à réaliser.</p>
+</li>
+</ul>
+&#160;
+<p><font class="hcp2">Les fonctions HMP :</font></p>
+<ul style="list-style: disc;">
+<li class="p">
+<p><a href="HmpRead.htm">HmpRead</a> permet de lire un paramètre ainsi que sa valeur.</p>
+</li>
+<li class="p">
+<p><a href="HmpSeek.htm">HmpSeek</a> permet de rechercher un paramètre ainsi que sa valeur.</p>
+</li>
+<li class="p">
+<p><a href="HmpVerify.htm">HmpVerify</a> permet de vérifier la syntaxe d’une chaîne HMP.</p>
+</li>
+<li class="p">
+<p><a href="HmpEncode.htm">HmpEncode</a> permet d’encoder la valeur d’un paramètre pour éviter toute ambiguïté avec les délimiteurs de paramètres.</p>
+</li>
+</ul>
+<p class="Definition" style="margin-top: 4.00pt;">&#160;</p>
+<p class="Definition" style="margin-top: 4.00pt;"><font class="hcp2">La syntaxe HMP</font></p>
+<p>La syntaxe HMP est la suivante : &lt;param1&gt;[valeur1]&lt;param2&gt;[valeur2]…</p>
+<ul class="hcp3">
+<li class="p">
+<p>Le paramètre peut être délimité par les groupes de caractères suivants<span style="margin-left: 88px;"><br>
+&#160;&lt;&gt;<br>
+&#160;{}<br>
+&#160;[]<br>
+&#160;()</span></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il n’y a pas de distinction minuscules/majuscules pour les paramètres. La fonction de lecture traduit toujours le nom du paramètre en caractères majucules.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les espaces non significatifs autour d’un nom de paramètre sont ignorés.<font face="Courier New" class="hcp1"><br>
+&lt; p1 &gt; est équivalent à &lt;p1&gt;</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La valeur d’un paramètre peut être omise. Dans ce cas, la valeur lue sera à espaces.</p>
+</li>
+</ul>
+</body>
+</html>

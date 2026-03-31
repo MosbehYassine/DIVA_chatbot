@@ -1,0 +1,460 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utiliser l'éditeur de Ressources : Manuel de référence">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Ressources - Principes généraux">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ressources - Principes généraux">
+        <param name="Local" value="Xwin_ressources/Ressources_Principes_g_n_raux.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ressources - Définition">
+        <param name="Local" value="Xwin_ressources/Ressources_D_finition.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ressources - Programmation">
+        <param name="Local" value="Xwin_ressources/Ressources_Programmation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ressources - Stockage">
+        <param name="Local" value="Xwin_ressources/Ressources_Stockage.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Présentation de l'éditeur de ressources">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Présentation de l'éditeur de ressources">
+        <param name="Local" value="Xwin_ressources/Pr_sentation_de_l__diteur_de_ressources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Principales fonctions de l'éditeur de ressources">
+        <param name="Local" value="Xwin_ressources/Principales_fonctions_de_l__diteur_de_ressources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="L'écran de l'éditeur de ressources">
+        <param name="Local" value="Xwin_ressources/L__cran_de_l__diteur_de_ressources.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Ressources - Fonctions d'édition">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ressources - Fonctions d'édition">
+        <param name="Local" value="Xwin_ressources/Ressources_Fonctions_d__dition.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Editer une ressource">
+        <param name="Local" value="Xwin_ressources/Editer_une_ressource.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Créer une ressource">
+        <param name="Local" value="Xwin_ressources/Cr_er_une_ressource.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Supprimer une ressource">
+        <param name="Local" value="Xwin_ressources/Supprimer_une_ressource.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Changer le nom d'une ressource">
+        <param name="Local" value="Xwin_ressources/Changer_le_nom_d_une_ressource.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Copier une ressource dans le presse-papiers">
+        <param name="Local" value="Xwin_ressources/Copier_une_ressource_dans_le_presse_papiers.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Couper une ressource">
+        <param name="Local" value="Xwin_ressources/Couper_une_ressource.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Coller une ressource">
+        <param name="Local" value="Xwin_ressources/Coller_une_ressource.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Annuler (undo) une opération d'édition de ressource">
+        <param name="Local" value="Xwin_ressources/Annuler_undo_une_op_ration_d__dition_de_ressource.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Recommencer (redo) une opération d'édition de ressource">
+        <param name="Local" value="Xwin_ressources/Recommencer_redo_une_op_ration_d__dition_de_ressource.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Ressources - Surcharge">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ressources - Surcharge">
+        <param name="Local" value="Xwin_ressources/Ressources_Surcharge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Surcharger une ressource">
+        <param name="Local" value="Xwin_ressources/Surcharger_une_ressource.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Menu, barre d'outils et raccourcis clavier de l'éditeur de ressources">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu, barre d'outils et raccourcis clavier de l'éditeur de ressources">
+        <param name="Local" value="Xwin_ressources/Ressource_Menu_barre_d_outils_et_raccourcis_clavier.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="La barre de menus de l'éditeur de ressources">
+        <param name="Local" value="Xwin_ressources/La_barre_de_menus_de_l__diteur_de_ressources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Le menu contextuel de l'éditeur de ressources">
+        <param name="Local" value="Xwin_ressources/Le_menu_contextuel_de_l__diteur_de_ressources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="La barre d'outils de l'éditeur de ressources">
+        <param name="Local" value="Xwin_ressources/La_barre_d_outils_de_l__diteur_de_ressources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Raccourcis clavier de l'éditeur&#160;de ressources">
+        <param name="Local" value="Xwin_ressources/Raccourcis_clavier_de_l__diteur_de_ressources.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Aide à la saisie d'une ressource">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Aide à la saisie d'une ressource">
+        <param name="Local" value="Xwin_ressources/Bo_te_de_dialogue_de_l__diteur_de_ressources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ressource : Menu ou Barre d'outils">
+        <param name="Local" value="Xwin_ressources/Ressource_Menu_ou_Barre_d_outils.htm">
+      </object>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utiliser l'éditeur de Menus : Manuel de référence">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Menus - Principes généraux">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menus - Principes généraux">
+        <param name="Local" value="Xwin_ressources/Menus_Principes_g_n_raux.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menus - Définition">
+        <param name="Local" value="Xwin_ressources/Menus_D_finition.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menus - Programmation">
+        <param name="Local" value="Xwin_ressources/Menus_Programmation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menus - Stockage">
+        <param name="Local" value="Xwin_ressources/Menus_Stockage.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Présentation de l'éditeur de menus">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Présentation de l'éditeur de menus">
+        <param name="Local" value="Xwin_ressources/Pr_sentation_de_l__diteur_de_menus.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Principales fonctions de l'éditeur de menus">
+        <param name="Local" value="Xwin_ressources/Principales_fonctions_de_l__diteur_de_menus.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="L'écran de l'éditeur de menus">
+        <param name="Local" value="Xwin_ressources/L__cran_de_l__diteur_de_menus.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Menus - Fonctions d'édition">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menus - Fonctions d'édition">
+        <param name="Local" value="Xwin_ressources/Menus_Fonctions_d__dition.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Editer un menu">
+        <param name="Local" value="Xwin_ressources/Editer_un_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déplacer le curseur dans le menu">
+        <param name="Local" value="Xwin_ressources/D_placer_le_curseur_dans_le_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déplacer le menu à l'écran">
+        <param name="Local" value="Xwin_ressources/D_placer_le_menu___l__cran.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sélectionner des choix de menu">
+        <param name="Local" value="Xwin_ressources/S_lectionner_des_choix_de_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Créer un choix de menu">
+        <param name="Local" value="Xwin_ressources/Cr_er_un_choix_de_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Supprimer un choix de menu">
+        <param name="Local" value="Xwin_ressources/Supprimer_un_choix_de_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Modifier les propriétés d'un choix de menu">
+        <param name="Local" value="Xwin_ressources/Modifier_les_propri_t_s_d_un_choix_de_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Copier des choix de menu dans le presse-papiers">
+        <param name="Local" value="Xwin_ressources/Copier_des_choix_de_menu_dans_le_presse_papiers.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Couper des choix de menu">
+        <param name="Local" value="Xwin_ressources/Couper_des_choix_de_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Coller des choix de menu">
+        <param name="Local" value="Xwin_ressources/Coller_des_choix_de_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déplacer des choix de menu">
+        <param name="Local" value="Xwin_ressources/D_placer_des_choix_de_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Annuler (undo) une opération d'édition de menu">
+        <param name="Local" value="Xwin_ressources/Annuler_undo_une_op_ration_d__dition_de_menu.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Recommencer (redo) une opération d'édition de menu">
+        <param name="Local" value="Xwin_ressources/Recommencer_redo_une_op_ration_d__dition_de_menu.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Menus - Surcharge">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menus - Surcharge">
+        <param name="Local" value="Xwin_ressources/Menus_Surcharge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Surcharger un menu">
+        <param name="Local" value="Xwin_ressources/Surcharger_un_menu.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Menu, barre d'outils et raccourcis clavier de l'éditeur de menus">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu, barre d'outils et raccourcis clavier de l'éditeur de menus">
+        <param name="Local" value="Xwin_ressources/Menu_Menu_barre_d_outils_et_raccourcis_clavier.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="La barre de menus de l'éditeur de menus">
+        <param name="Local" value="Xwin_ressources/La_barre_de_menus_de_l__diteur_de_menus.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Le menu contextuel de l'éditeur de menus">
+        <param name="Local" value="Xwin_ressources/Le_menu_contextuel_de_l__diteur_de_menus.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="La barre d'outils de l'éditeur de menus">
+        <param name="Local" value="Xwin_ressources/La_barre_d_outils_de_l__diteur_de_menus.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Raccourcis clavier de l'éditeur&#160;de menus">
+        <param name="Local" value="Xwin_ressources/Raccourcis_clavier_de_l__diteur_de_menus.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Aide à la saisie d'un choix de menu">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Aide à la saisie d'un choix de menu">
+        <param name="Local" value="Xwin_ressources/Bo_te_de_dialogue_de_l__diteur_de_menus.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Choix de menu">
+        <param name="Local" value="Xwin_ressources/Choix_de_menu.htm">
+      </object>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utiliser l'éditeur de Barre d'outils : Manuel de référence">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Barres d'outils - Principes généraux">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Barres d'outils - Principes généraux">
+        <param name="Local" value="Xwin_ressources/Barres_d_outils_Principes_g_n_raux.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Barres d'outils - Définition">
+        <param name="Local" value="Xwin_ressources/Barres_d_outils_D_finition.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Barres d'outils - Programmation">
+        <param name="Local" value="Xwin_ressources/Barres_d_outils_Programmation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Barres d'outils - Stockage">
+        <param name="Local" value="Xwin_ressources/Barres_d_outils_Stockage.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Présentation de l'éditeur de barres d'outils">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Présentation de l'éditeur de barres d'outils">
+        <param name="Local" value="Xwin_ressources/Pr_sentation_de_l__diteur_de_barres_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Principales fonctions de l'éditeur de barres d'outils">
+        <param name="Local" value="Xwin_ressources/Principales_fonctions_de_l__diteur_de_barres_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="L'écran de l'éditeur de barres d'outils">
+        <param name="Local" value="Xwin_ressources/L__cran_de_l__diteur_de_barres_d_outils.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Barres d'outils - Fonctions d'édition">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Barres d'outils - Fonctions d'édition">
+        <param name="Local" value="Xwin_ressources/Barres_d_outils_Fonctions_d__dition.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Editer une barre d'outils">
+        <param name="Local" value="Xwin_ressources/Editer_une_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déplacer le curseur dans la barre d'outils">
+        <param name="Local" value="Xwin_ressources/D_placer_le_curseur_dans_la_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déplacer la barre d'outils à l'écran">
+        <param name="Local" value="Xwin_ressources/D_placer_la_barre_d_outils___l__cran.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sélectionner des boutons de barre d'outils">
+        <param name="Local" value="Xwin_ressources/S_lectionner_des_boutons_de_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Créer un bouton de barre d'outils">
+        <param name="Local" value="Xwin_ressources/Cr_er_un_bouton_de_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Supprimer un bouton de barre d'outils">
+        <param name="Local" value="Xwin_ressources/Supprimer_un_bouton_de_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Modifier les propriétés d'un bouton de barre d'outils">
+        <param name="Local" value="Xwin_ressources/Modifier_les_propri_t_s_d_un_bouton_de_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Copier des boutons de barre d'outils dans le presse-papiers">
+        <param name="Local" value="Xwin_ressources/Copier_des_boutons_de_barre_d_outils_dans_le_presse_papiers.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Couper des boutons de barre d'outils">
+        <param name="Local" value="Xwin_ressources/Couper_des_boutons_de_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Coller des boutons de barre d'outils">
+        <param name="Local" value="Xwin_ressources/Coller_des_boutons_de_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déplacer des boutons de barre d'outils">
+        <param name="Local" value="Xwin_ressources/D_placer_des_boutons_de_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Annuler (undo) une opération d'édition de barre d'outils">
+        <param name="Local" value="Xwin_ressources/Annuler_undo_une_op_ration_d__dition_de_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Recommencer (redo) une opération d'édition de barre d'outils">
+        <param name="Local" value="Xwin_ressources/Recommencer_redo_une_op_ration_d__dition_de_barre_d_outils.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Barres d'outils - Surcharge">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Barres d'outils - Surcharge">
+        <param name="Local" value="Xwin_ressources/Barres_d_outils_Surcharge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Surcharger une barre d'outils">
+        <param name="Local" value="Xwin_ressources/Surcharger_une_barre_d_outils.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Menu, barre d'outils et raccourcis clavier de l'éditeur de barres d'outils">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu, barre d'outils et raccourcis clavier de l'éditeur de barres d'outils">
+        <param name="Local" value="Xwin_ressources/Outils_Menu_barre_d_outils_et_raccourcis_clavier.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="La barre de menus de l'éditeur de barres d'outils">
+        <param name="Local" value="Xwin_ressources/La_barre_de_menus_de_l__diteur_de_barres_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Le menu contextuel de l'éditeur de barres d'outils">
+        <param name="Local" value="Xwin_ressources/Le_menu_contextuel_de_l__diteur_de_barres_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="La barre d'outils de l'éditeur de barres d'outils">
+        <param name="Local" value="Xwin_ressources/La_barre_d_outils_de_l__diteur_de_barres_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Raccourcis clavier de l'éditeur&#160;de barres d'outils">
+        <param name="Local" value="Xwin_ressources/Raccourcis_clavier_de_l__diteur_de_barres_d_outils.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Aide à la saisie d'un bouton de barre d'outils">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Aide à la saisie d'un bouton de barre d'outils">
+        <param name="Local" value="Xwin_ressources/Bo_te_de_dialogue_de_l__diteur_de_barre_d_outils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Bouton de barre d'outils">
+        <param name="Local" value="Xwin_ressources/Bouton_de_barre_d_outils.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

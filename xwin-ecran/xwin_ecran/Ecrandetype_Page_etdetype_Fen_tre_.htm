@@ -1,0 +1,67 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Ecran de type &quot;Page&quot; et de type &quot;Fenêtre&quot;</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Ecran de type "Page" et de type "Fenêtre"</h3>
+<p class="Body-Text">Au départ, toute application Windows ouvre toujours une première fenêtre, dite <span class="hcp1">fenêtre principale</span>. Ensuite, l'application peut ouvrir une ou plusieurs fenêtres complémentaires en cascade (par exemple une fenêtre de consultation ou de saisie annexe, elle-même ouvrant une fenêtre de confirmation de saisie).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">L'éditeur Xwin permet de dessiner des "pages de masque". Une propriété de la page permet de faire la distinction entre les deux types d'écran, <font class="hcp2">"Page"</font> et <font class="hcp2">"Fenêtre" <span style="font-weight: normal;">:</span></font></p>
+<ul>
+<li class="p-List">
+<p class="List"><span class="hcp1">Une page de type "Page" s'affiche à l'intérieur de la fenêtre courante</span>.<br>
+Une page peut éventuellement recouvrir (et effacer) une page déjà affichée.<br>
+&#160;</p>
+</li>
+<li class="p-List">
+<p class="List"><span class="hcp1">Une page de type "Fenêtre" ouvre une fenêtre complémentaire</span>.</p>
+</li>
+</ul>
+<p class="Body-Text"><span class="hcp1">Remarque importante</span> : <span class="hcp1">deux ou plusieurs pages peuvent aussi remplir un même écran</span>.</p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Body-Text">Soit un programme de saisie d'une facture. L'écran de saisie est divisé en trois parties : une zone de saisie de l'entête de facture, une zone de saisie des lignes détail, une zone de saisie du pied. De plus, la frappe d'une touche de fonction permet de consulter le stock de l'article en cours de saisie dans une fenêtre secondaire .</p>
+<p class="Body-Text">Cet exemple nécessite la définition de 4 pages Xwin :</p>
+<ul>
+<li class="p-List">
+<p class="List">une page "de fond d'écran" incluant les lignes détail,</p>
+</li>
+<li class="p-List">
+<p class="List">une page présentant l'entête de la facture,</p>
+</li>
+<li class="p-List">
+<p class="List">une page présentant le pied de la facture,</p>
+</li>
+<li class="p-List">
+<p class="List">une page de type fenêtre affichant le détail du stock d'un article.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">La page de fond incluant les lignes détail (de type "Page") :</p>
+<p class="Body-Text" style="margin-top: 0.00pt;"><img src="../image/help0004.gif" alt="" width="369" height="310" border="0"></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">Les pages d'entête et de pied (de type "Page", sans effacement ou en effacement partiel pour ne pas effacer la page de fond).</p>
+<p class="Body-Text" style="margin-top: 0.00pt;"><img src="../image/help0006.gif" alt="" width="299" height="53" border="0"></p>
+&#160;
+<p class="Body-Text" style="margin-top: 0.00pt;"><img src="../image/help0007.gif" alt="" width="355" height="30" border="0"></p>
+&#160;
+<p class="Body-Text">Résultat final après ouverture de la fenêtre stock (de type "Fenêtre") :</p>
+<p class="Body-Text"><img src="../image/help0005.gif" alt="" width="382" height="289" border="0"></p>
+&#160;
+</body>
+</html>

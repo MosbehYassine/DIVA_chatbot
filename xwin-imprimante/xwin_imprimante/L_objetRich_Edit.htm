@@ -1,0 +1,89 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>L'objet Rich-Edit</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:12pt;
+font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+ul.hcp4 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>L'objet Rich-Edit</h2>
+<p class="Body-Text">Xwin permet d'insérer un texte riche dans un masque d'impression. Un tel texte peut avoir été saisi dans un masque d'écran Xwin ou par un éditeur Windows tel que WordPad. La manipulation des textes (stockage, lecture, ...) est décrite au chapitre "Stockage des textes riches et programmation" du livre consacré à Ywpf.<br>
+<br>
+&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">Principe de l'impression d'un objet Rich-Edit</font></p>
+<p class="Body-Text">Ce type d'objet est utilisé pour gérer du texte libre (commentaires, par exemple). <font class="hcp2">La taille du texte est donc inconnue au moment de la saisie du masque<span class="hcp3">.</span></font></p>
+<p class="Body-Text">Pour que le texte entier puisse être imprimé (et pas seulement la partie délimitée par la boîte de l'objet), les Rich-Edit ont une option de fonctionnement particulière autorisant l'objet à s'agrandir et/ou à se répéter. Pour activer cette option, il faut cocher la case "<span style="font-weight: bold;">Répéter si impression d'un Rich-Edit</span>" au niveau des paramètres du bloc.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques :</font></p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">La case ne peut pas être cochée pour un "bloc de fond".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Cette option est interdite si le bloc contient aussi un objet Tableau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si la case est cochée, le bloc ne doit contenir qu'un seul objet Rich-Edit.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si la case n'est pas cochée, l'objet Rich-Edit se comporte comme un objet ordinaire, à savoir que le texte imprimé est limité à la taille de la boîte (il est donc éventuellement tronqué).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">Répétition des objets Rich-Edit</font></p>
+<p class="Body-Text">Le mécanisme de la répétition des blocs contenant un objet Rich-Edit est différent si le bloc est mobile ou fixe :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: bold; text-decoration: none;">Bloc de type "Fixe"<span class="hcp3">.<br>
+Le texte est imprimé à l'intérieur de la boîte, telle que vous l'avez dessinée dans Xwin. Pour que le texte soit imprimé en totalité, le bloc est simplement répété autant de fois que nécessaire. Un saut de page a lieu entre chaque répétition.</span></p>
+</li>
+</ul>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: bold; text-decoration: none;">Bloc de type "Mobile" ou "Tableau"<span class="hcp3">.<br>
+La boîte de l'objet Rich-Edit est automatiquement agrandie en hauteur jusqu'à la ligne correspondant à la valeur "Position fin" des paramètres du bloc. De plus, si le texte ne tient pas sur la page, il y a débordement et le bloc est répété sur la page suivante.<br>
+Comme la boîte s'agrandit, il ne doit pas y avoir d'objets dans le bloc après l'objet Rich-Edit.</span></p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp2">Exemple</font> : Soit les paramètres du bloc mobile suivants :</p>
+<p class="Body-Text"><img src="../image/help0011.gif" alt="" width="204" height="257" border="0"></p>
+<p class="Body-Text">Supposons que la boîte d'un objet Rich-Edit occupe les 6 lignes du bloc. Ces 6&#160;lignes représentent la taille minimum de l'objet mais en fonction de la taille réelle du texte à imprimer, l'objet pourra s'agrandir jusqu'à la position -7.</p>
+<p class="Body-Text"><font class="hcp2">Cas 1</font> :&#160;Le texte occupe 3 lignes ; son édition se fera sur 6 lignes, les trois dernières lignes restant blanches.</p>
+<p class="Body-Text"><font class="hcp2">Cas 2</font> :&#160;Le texte occupe 10 lignes ; son édition se fera sur 10 lignes, sans débordement de la page.</p>
+<p class="Body-Text"><font class="hcp2">Cas 3</font> :&#160;Le texte occupe deux fois et demi la place disponible dans la page pour les blocs mobiles ; son édition se fera sur trois pages, de la manière suivante (le grisé indique la place prise par l'objet Rich-Edit) :</p>
+<p class="Body-Text"><img src="../image/help0012.gif" alt="" width="382" height="184" border="0"></p>
+<p class="Body-Text">Le bloc de pied des pages 1 et 2 et le bloc d'en-tête des pages 2 et 3 sont comme d'habitude imprimés automatiquement par le mécanisme de débordement.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">Traitements, débordement et chaînage</font></p>
+<p class="Body-Text">Lors de la répétition automatique d'un bloc contenant un objet Rich-Edit, les points de traitement, les débordements et les chaînages fonctionnent de manière à rendre transparente cette répétition :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Le point de traitement avant est exécuté à chaque répétition, de même que le saut de page avant.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le point de traitement "avant gestion" est exécuté une seule fois, lors de l'appel à <font style="font-variant: small-caps;">y</font>mig pour imprimer le bloc.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si un bloc de débordement est prévu, il est imprimé à l'occasion de chaque répétition.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si un bloc de chaînage est prévu, il n'est imprimé qu'après la dernière répétition.</p>
+</li>
+</ul>
+</body>
+</html>

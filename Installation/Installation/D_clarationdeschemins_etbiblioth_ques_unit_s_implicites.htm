@@ -1,0 +1,45 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Déclaration des chemins implicites</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Déclaration des chemins implicites</h4>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Une liste de chemins implicites est enregistrée dans un <font class="hcp1">fichier .txt</font> (un fichier par liste). La constitution d'un tel fichier s'obtient en faisant appel à l'utilitaire <a href="UTILITAIRES.chm::/UTILITAIRES/XPATH_Gestiondescheminsimplicites.htm">Xpath.dhop</a>.</p>
+<p class="Body-Text">Chaque ligne d'un fichier d'implicites contient un chemin d'accès (local ou réseau). Le nombre total de lignes n'est pas limité.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemples&#160;:</font></p>
+<p class="Body-Text">/divalto/sys/<br>
+d:/src/<font color="#000000"><br>
+//serveurcompta/fichiers/comptabilité</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques&#160;:</font></p>
+<p class="Body-Text">S'il n'est pas présent dans une liste, le chemin implicite <font class="hcp1">/Divalto/Sys/</font> (qui mène au dossier "système" d'Harmony) est automatiquement ajouté en fin de liste.</p>
+<p class="Body-Text">Pour améliorer les performances, il est conseillé&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">De placer les chemins menant à des dossiers locaux avant les chemins menant sur le réseau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">De placer le chemin /Divalto/Sys/ en tête de liste.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">De réduire le nombre d'implicites au minimum, afin de limiter les recherches inopérantes lors de l'ouverture des fichiers.</p>
+</li>
+</ul>
+</body>
+</html>

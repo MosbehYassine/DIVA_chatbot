@@ -1,0 +1,73 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Tester si le navigateur accepte les cookies</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Tester si le navigateur accepte les cookies</h3>
+<p class="Body-Text"><br>
+Pour tester si le navigateur accepte les cookies, vous pouvez insérer du code JavaScript dans votre page aspx. Ce code crée un cookie et vérifie si la création a fonctionné.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="Source">&lt;%@ Page language="c#" Codebehind="WebForm1.aspx.cs" AutoEventWireup="false" Inherits="DhXwebForm.WebForm1" %&gt;</p>
+<p class="Source">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" &gt;</p>
+<p class="Source">&lt;HTML&gt;</p>
+<p class="Source">&#160;&lt;HEAD&gt;</p>
+<p class="Source">&#160;&#160;&lt;title&gt;WebForm1&lt;/title&gt;</p>
+<p class="Source">&#160;&#160;&lt;meta content="Microsoft Visual Studio .NET 7.1" name="GENERATOR"&gt;</p>
+<p class="Source">&#160;&#160;&lt;meta content="C#" name="CODE_LANGUAGE"&gt;</p>
+<p class="Source">&#160;&#160;&lt;meta content="JavaScript" name="vs_defaultClientScript"&gt;</p>
+<p class="Source">&#160;&#160;&lt;meta content="http://schemas.microsoft.com/intellisense/ie5"</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;name="vs_targetSchema"&gt;</p>
+<p class="Source">&#160;&#160;&lt;LINK href="style/style.css" type="text/css" rel="stylesheet"&gt;</p>
+<p class="Source">&#160;&lt;/HEAD&gt;</p>
+<p class="Source">&lt;SCRIPT&gt;&#160;</p>
+<p class="Source">&#160;&#160;<font class="hcp1">function testCookie</font>(){</p>
+<p class="Source">&#160;&#160;var checkCookie = 'checkCookie' + (new Date().getTime());</p>
+<p class="Source">&#160;&#160;document.cookie = checkCookie + '=cookieValue';</p>
+<p class="Source">&#160;&#160;var yesCookie = document.cookie.indexOf(checkCookie) != -1;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">&#160;&#160;if (yesCookie){</p>
+<p class="Source">&#160;&#160;&#160;alert("Votre navigateur supporte les cookies");</p>
+<p class="Source">&#160;&#160;}else{</p>
+<p class="Source">&#160;&#160;&#160;alert("Votre navigateur ne supporte pas les cookies");</p>
+<p class="Source">&#160;&#160;}</p>
+<p class="Source">&#160;&#160;deleteCookie(checkCookie);</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">&#160;}</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">&#160;function deleteCookie (cookieName) {</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;var expire = new Date();&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;document.cookie = cookieName + "=" + "; expires=Thu, 01-Jan-70 00:00:01 GMT" + &#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"; path=/";</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">}&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">&lt;/SCRIPT&gt;&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&lt;body MS_POSITIONING="GridLayout"&gt;</p>
+<p class="Source">&#160;&#160;&lt;FORM id="form1" name="form1" method="post" runat="server"&gt;</p>
+<p class="Source">&#160;&#160;&#160;&lt;asp:Label id="parametres" runat="server"</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;Visible="False"&gt;&lt;program&gt;commande.dhop&lt;user&gt;demo&lt;/asp:Label&gt;</p>
+<p class="Source">&#160;&#160;&lt;/FORM&gt;</p>
+<p class="Source">&#160;&lt;/body&gt;</p>
+<p class="Source"><font class="hcp1">&lt;SCRIPT&gt;</font></p>
+<p class="Source"><font class="hcp1">testCookie();</font></p>
+<p class="Source"><font class="hcp1">&lt;/SCRIPT&gt;</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">&lt;/HTML&gt;</p>
+</body>
+</html>

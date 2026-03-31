@@ -1,0 +1,40 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Confidentialité des documents</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Confidentialité des documents</h1>
+<p>&#160;</p>
+<p><img src="image19.jpg" style="border: none;" alt="" width="507" height="141" border="0"></p>
+<p>&#160;</p>
+<p>La description d’un document contient les <a href="Document__Security_.htm">serrures de celui-ci</a>. Pour chaque document, les noms des serrures sont écrits dans la base Search au moment de l’indexation.</p>
+<p>Lors de la connexion d’un utilisateur au serveur de recherche, le client envoie ses droits d’accès (les clés) sous forme de codes de confidentialité (4 caractères).</p>
+<p>Ces codes sont traduits en une liste de noms de serrures grâce au fichier de correspondance <a href="Search_Security.xml.htm">Search_Security.xm</a>l.</p>
+<p>La requête dans la base Search <span class="hcp1">filtre</span> les documents pour lesquels l'utilisateur ne dispose pas des droits d'accès. Lorsque <span class="hcp1">plusieurs serrures</span> sont associées au même document, <span class="hcp1">une seule clef</span> est nécessaire pour y accéder.</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">NB :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Les documents n'ayant pas de section &lt;Security&gt; sont <span class="hcp1">publics</span> et donc accessibles à tous.</p>
+</li>
+<li class="p">
+<p>Lorsque le fichier Search_Security est absent ou vide, tous les documents sont accessibles à tous.</p>
+</li>
+<li class="p">
+<p>En cas de changement des noms de serrures associées à un document, il convient de re-indexer le document concerné.</p>
+</li>
+</ul>
+</body>
+</html>

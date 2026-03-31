@@ -1,0 +1,128 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Iwrite</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp6 { font-weight:bold; }
+p.hcp7 { font-style:italic; }
+td.hcp8 { padding-right:10px;
+padding-left:10px; }
+td.hcp9 { border-right:Solid 0px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Iwrite &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p class="Body-Text">Iwrite écrit un nouvel enregistrement dans un fichier.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">Iwrite</font> ( <font class="hcp3">tdf</font> , <font class="hcp3">table [ , code_réservation ]</font> )<font class="hcp2"><br>
+<br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Table de définition de fichier.</p>
+<p class="Body-Text" style="font-style: italic;">Table</p>
+<p class="decalage05">Donnée à écrire dans le fichier.</p>
+<p class="Body-Text">Code_<font class="hcp3">réservation</font></p>
+<p class="decalage05">Mode de partage de l'enregistrement ('P' par défaut).<br>
+Il est possible de réserver le nouvel enregistrement écrit. L'enregistrement écrit ne sera donc pas accessible aux autres tâches tant qu'il ne sera pas libéré.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="880">
+<col style="width: 6.981%;">
+<col style="width: 93.019%;">
+<tr class="hcp4">
+<td style="width:6.981%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">0 &#160;</p>
+</td>
+<td style="width:93.019%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.&#160;</p>
+<p class="Body-Text" style="margin-top: 2.00pt;">Si une procédure <span class="hcp6">Avant Write</span> est définie dans le dictionnaire, elle est appelée.</p>
+<p class="Body-Text" style="margin-top: 2.00pt;">Les paramètres passés à la procédure <span class="hcp6">Avant Write</span> sont :</p>
+<table style="vertical-align: top;" cellspacing="0">
+<col style="width: 11.022%;">
+<col style="width: 88.978%;">
+<tr class="hcp4">
+<td style="border-top: Solid 0px #000000; width: 11.022%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp7">Tdf</p>
+</td>
+<td style="border-top: Solid 0px #000000; border-right: Solid 0px #000000; width: 88.978%; padding-right: 10px; padding-left: 10px;">
+<p>La Tdf du fichier.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.022%;" class="hcp8">
+<p class="hcp7">Table</p>
+</td>
+<td style="width:88.978%;" class="hcp9">
+<p>L'enregistrement qui a été lu.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.022%;" class="hcp8">
+<p class="hcp7">Partage</p>
+</td>
+<td style="width:88.978%;" class="hcp9">
+<p>Le mode de partage.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:6.981%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;</p>
+</td>
+<td style="width:93.019%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Toutes les erreurs provoquent l'arrêt du programme.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font></p>
+<p class="Body-Text">L'écriture dans un fichier de type N, C ou U est toujours séquentielle, c'est à dire que les données sont toujours écrites en fin de fichier.</p>
+<p class="Body-Text">Lors de l'écriture d'un enregistrement comportant une zone packée, les données dépackées sont compressés dans la zone packée et l'écriture se fait automatiquement sur le champ Write de l'enregistrement. La zone dépackée n'est donc pas écrite dans le fichier (Voir <a href="Record.htm">Record</a>).</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Fichiers normaux (N) avec taille d'enregistrement variable</font></p>
+<p class="Body-Text">L'enregistrement aura pour longueur la taille de la variable donnée en paramètre.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Fichiers normaux (N) avec taille d'enregistrement fixe</font></p>
+<p class="Body-Text">Le système écrit un enregistrement ayant la longueur indiquée à la création du fichier, en effectuant une éventuelle troncature ou une complémentation à droite avec des espaces.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Fichiers séquentiels-indexés (I)</font></p>
+<p class="Body-Text">L'enregistrement est écrit à la fin du fichier des données et le système crée toutes les clés inconditionnelles et ne crée que les clés conditionnelles pour lesquelles la condition est remplie.</p>
+<p class="Body-Text">Si le fichier des données est de type N avec taille d'enregistrement fixe, le système écrit un enregistrement ayant la longueur indiquée à la création du fichier, en effectuant une éventuelle troncature ou une complémentation à droite avec des espaces.</p>
+<p class="Body-Text">Si le fichier des données est de type N avec taille d'enregistrement variable, l'enregistrement aura pour longueur la taille de la variable donnée en paramètre.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Body-Text">&#160;Soit le fichier séquentiel-indexé de factures FFAC contenant deux types d'enregistrements :<br>
+&#160;- un type entête,<br>
+&#160;- un type ligne détail.</p>
+<p class="Body-Text">Le fichier des données est de type N à taille d'enregistrement variable.</p>
+<p class="Body-Text">Les instructions suivantes créent une entête et une ligne détail :</p>
+<p class="Source">1 entete 80</p>
+<p class="Source">1 detail 120</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">st = Iwrite(ffac , entete ) ; crée un enreg. de longueur 80&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">st = Iwrite(ffac , detail ) ; crée un enreg. de longueur 120&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Hwrite.htm">Hwrite</a> , <a href="Fwrite.htm">Fwrite</a>, <a href="GetAdressProcedureRecord.htm">GetAdressProcedureRecord</a></p>
+</body>
+</html>

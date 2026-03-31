@@ -1,0 +1,109 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Traitements effectués en cas de fermeture du navigateur</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold;
+text-decoration:underline; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { font-weight:bold; }
+li.hcp4 { list-style:none;
+display:inline; }
+p.hcp5 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Traitements effectués en cas de fermeture du navigateur</h3>
+<p>&#160;</p>
+<p><span class="hcp1">Cette rubrique est importante</span> car elle présente un aspect de la programmation propre au client léger Web.</p>
+<p>&#160;</p>
+<p>En cliquant sur la croix de fermeture de la fenêtre (ou en tapant Alt+F4), un utilisateur du Web peut, à tout moment, refermer son navigateur et <span class="hcp1">rien ne peut l’en empêcher</span>. Les programmes qui s’exécutent sur le Web doivent tenir compte de cette contrainte et prévoir la possibilité d’être interrompus à un moment quelconque.</p>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp3">En client léger classique, Alt+F4 ne ferme jamais directement l’application</span>.<br>
+Xwpf ne referme pas la fenêtre et simule simplement la frappe de la touche Echap.<span class="hcp3"><br>
+Le programme Diva garde toujours le contrôle</span> et traite cette touche en fonction du contexte courant d’exécution. La fermeture effective de l’application doit être programmée explicitement par l’instruction ProgramExit.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp3">En client léger Html</span>, la fermeture du navigateur simule également la frappe de la touche Echap. Mais si le programme Diva ne termine pas immédiatement l’application, <span class="hcp1">il perd le contrôle</span> (la fenêtre du navigateur est fermée).<br>
+<br>
+Supposons par exemple que le programme se poursuive par une instruction qui rend la main à l’utilisateur (consultation, input, …). Le programme restera bloqué puisque l’utilisateur ne répondra jamais.<br>
+<br>
+A l’issue d’un time-out (*), la session Web sera coupée et l’exécuteur xrtDiva associé brutalement arrêté.<br>
+<br>
+(*) La durée du délai est un paramètre du fichier Web.config (20 minutes par défaut) :<br>
+&lt;sessionState timeout="nn" /&gt;<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les navigateurs donnent la possibilité d’afficher une <span class="hcp3">demande de confirmation</span> de la fermeture.<span class="hcp3"><br>
+<br>
+Mais attention</span> : Cette demande est un simple message d’avertissement. <span class="hcp3">Par programme, il n’est pas possible d’empêcher l’utilisateur de fermer définitivement le navigateur</span>.<span class="hcp3"><br>
+<br>
+Remarque</span> : Le texte de la demande est paramétrable. IE et Chrome affichent effectivement le texte paramétré mais Firefox ne tient pas compte de ce texte et affiche toujours une demande au contenu standard.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Dans le but de réduire les risques d’anomalie tout en conservant une mise en œuvre intuitive et une compatibilité maximale entre exécution classique et exécution Web, <span class="hcp3">le client léger Html adopte le compromis fonctionnel suivant</span> :</p>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp3">Par défaut, la fermeture du navigateur a lieu sans demande de confirmation</span>.<br>
+On considère en effet qu’un programme ne se situe généralement pas dans une zone « à risque » lorsqu’il donne la main à l’utilisateur et n’a donc pas besoin de confirmation.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Les programmes « sensibles » peuvent demander l’affichage d’un message de confirmation</span> durant l’exécution d’un traitement « à risque », donnant ainsi à l’utilisateur la possibilité de renoncer à la fermeture. Ils peuvent aussi annuler l’affichage du message lorsque ce traitement est terminé.<br>
+<br>
+L’activation et l’annulation de la demande de confirmation se programment par l'instruction <span class="hcp3"><a href="ymeg.chm::/ymeg/XmeSetOptions.htm">XmeSetOptions</a></span> (avec une chaîne HMP en paramètre) :<br>
+&#160;</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp3">Activation de la demande de confirmation</span> :<br>
+Message = Translate ("Texte du message") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;texte du message traduit<br>
+XmeSetOptions ("&lt;HTMLBrowserCloseWarning&gt;" &amp; Message)<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Annulation de la demande de confirmation</span> :<br>
+XmeSetOptions ("&lt;HTMLBrowserCloseWarning&gt;") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;texte vide<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp3">Le programme Diva ne peut pas empêcher l’utilisateur de refermer le navigateur</span> s’il le désire. Il est donc souhaitable qu’il se termine « proprement » avant d’être « tué ».<br>
+<br>
+Si le programme tourne encore après la fermeture du navigateur, <span class="hcp3">Harmony tente de provoquer son arrêt « normal »</span> en :<br>
+&#160;</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p>Simulant la frappe de la touche Echap sur toutes les instructions de consultation ou d’input exécutées ultérieurement par le programme.</p>
+</li>
+<li class="p">
+<p>Ignorant d’éventuelles MessageBox.<br>
+Pour ce faire, le bouton suivant est simulé : Ok si MB_OK, Annuler si MB_OKCANCEL, MB_YESNOCANCEL ou MB_RETRYCANCEL, Abandonner si MB_ABORTRETRYIGNORE. Avec MB_YESNO, c’est le bouton par défaut qui est simulé et, si une boucle de MessageBox successives est détectée, l’autre bouton est simulé pour sortir de la boucle.</p>
+</li>
+<li class="p">
+<p>Ignorant un éventuel ErrorBox.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp5">Ceci peut permettre au programme d’exécuter des traitements finaux, de libérer des réservations, etc.</p>
+<p class="hcp5">Il est également important de <span class="hcp3">clore rapidement l’exécution d’un programme appelé par ProgramCall en mode WAIT</span> : à défaut, le programme appelant ne sera réveillé qu’à l’issue du time-out de fin de session !</p>
+<p>&#160;</p>
+</body>
+</html>

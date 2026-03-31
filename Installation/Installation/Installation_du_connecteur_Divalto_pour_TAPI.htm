@@ -1,0 +1,167 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Installation du connecteur Divalto pour TAPI</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+img.hcp1 { border:none; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { font-weight:bold; }
+li.hcp4 { list-style:none;
+display:inline; }
+ul.hcp5 { list-style:circle; }
+p.hcp6 { font-weight:normal; }
+p.hcp7 { margin-left:88px; }
+span.hcp8 { text-decoration:underline; }
+span.hcp9 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Installation et paramétrage du connecteur Divalto pour TAPI</h3>
+<p>&#160;</p>
+<p>L’installation standard de Harmony (à partir de la version 6.3, cd 103a) installe les modules Tapi de Divalto.<br>
+&#160;</p>
+<p>Après l’installation de Harmony, lancez le choix « Paramétrage : Paramètres CTI » du menu Harmony.dhop :</p>
+<p>&#160;</p>
+<p><img src="../image/tapi_04_menu.png" alt="" width="421" height="505" border="0" class="hcp1"></p>
+<p>&#160;</p>
+<ul class="hcp2">
+<li class="p">
+<p>Indiquez au CTI de Divalto qu’il doit utiliser l<span class="hcp3">’interface TAPI</span> :<br>
+<br>
+<img src="../image/tapi_05_choix_interface.png" alt="" width="656" height="349" border="0" class="hcp1"><br>
+<br>
+&#160;</p>
+</li>
+</ul>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp3">Paramétrage de la ligne TAPI :</span><br>
+&#160;</p>
+</li>
+<li class="hcp4">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp3">Paramétrage Global et paramétrage Local</span>.<br>
+Le connecteur gère deux niveaux de paramétrage : un niveau général, qu'on utilisera lorsque les mêmes paramètres sont partagés par plusieurs postes de travail et un niveau local, prioritaire sur le niveau général, qu'on utilisera pour configurer un poste en particulier :<br>
+&#160;</p>
+</li>
+<li class="hcp4">
+<ul style="list-style: square;">
+<li class="p">
+<p class="hcp6"><span class="hcp3">Paramétrage global</span>.<br>
+Les paramètres globaux sont recherchés dans le fichier <span class="hcp3">x:\Divalto\Sys\tapi_param.txt</span>.<br>
+La première ligne du fichier spécifie le modèle du nom de la ligne téléphonique (par défaut, le connecteur prendra la dernière ligne de type téléphonie <span class="hcp3">-</span> voir paragraphe "Nom de la ligne téléphonique" ci-dessous).<br>
+La deuxième ligne spécifie les paramètres à fournir à la dll Tapi (au format hmp) (pas de paramètres par défaut).<br>
+La troisième ligne spécifie le nom de la dll Tapi à utiliser (par défaut, le module YCTI charge DhDivaltoTapi.dll).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p class="hcp6"><span class="hcp3">Paramétrage local</span>.<br>
+Les paramètres locaux doivent être indiqués dans la boîte de dialogue "Configuration du numéro de ligne pour TAPI". Pour l'afficher, cliquez sur le bouton <span class="hcp3">"Configuration pour TAPI</span>".<br>
+Les informations saisies ici sont locales à l’utilisateur (elles sont enregistrées dans le chapitre HKEY_CURRENT_USER de la base de registre) et sont prioritaires sur les informations contenues par le fichier tapi_param.txt.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp7"><span class="hcp3">Cas particulier des paramètres à destination de la dll Tapi</span> : les paramètres globaux contenus par le fichier tapi_param.txt sont envoyés en premier, les paramètres locaux sont envoyés ensuite. On peut donc spécifier à la fois des paramètres globaux valables pour tous les utilisateurs et leur ajouter des paramètres spécifiques à un utilisateur particulier.<br>
+&#160;</p>
+<ol style="list-style: disc;">
+<li class="hcp4">
+<ul class="hcp5">
+<li class="p">
+<p class="hcp6"><span class="hcp3">Nom de la ligne téléphonique</span>.<br>
+Pour préciser la ligne de téléphonie à utiliser sur le poste, sélectionnez la ligne voulue dans la liste puis cliquez sur le bouton "<span class="hcp3">Prendre la ligne sélectionnée</span>" :<br>
+<br>
+<br>
+<img src="../image/tapi_06_selection_ligne.png" alt="" width="846" height="515" border="0" class="hcp1"><br>
+<br>
+<br>
+Vous pouvez aussi saisir un simple mot dans le champ « <span class="hcp3">Nom de la ligne téléphonique ou du modèle</span> » : un "Like *mot*" est alors effectué pour rechercher la ligne. Par exemple, en saisissant le mot "cisco", la recherche se fera sur &#160;"*cisco*" et renverra la ligne Cisco Line:[Paul] (1003) :<br>
+<br>
+<img src="../image/tapi_07_selection_ligne_juste_une_mot_cle.png" alt="" width="846" height="515" border="0" class="hcp1"><br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ol>
+<p class="hcp7"><span class="hcp3">Remarque</span> : Spécifier le nom de ligne n’est pas obligatoire car par défaut le connecteur prendra la <span class="hcp3">dernière</span> ligne de type <span class="hcp3">téléphonie</span> (chaque driver indique s’il est de type téléphonie ou de type modem).<br>
+&#160;</p>
+<ul class="hcp2">
+<li class="hcp4">
+<ul class="hcp5">
+<li class="p">
+<p class="hcp6"><span class="hcp3">Paramètres à fournir à la dll Tapi</span>.<br>
+On peut indiquer des paramètres à envoyer au connecteur Divalto pour TAPI.<br>
+Remarque : Dans le fichier x:\Divalto\Sys\tapi_param.txt, ces paramètres sont au format Hmp.<br>
+<br>
+Ces paramètres concernent essentiellement les attributs d’affichage de la fenêtre d’informations comme la couleur de fond, la couleur, la taille et la position du texte, les images de fond (dans le fichier tapi_param.txt, on peut indiquer qu’on ne veut pas d’image de fond en mettant &lt;image&gt;null).<br>
+<br>
+Exemple :<br>
+<br>
+<img src="../image/tapi_08_params.png" alt="" width="846" height="604" border="0" class="hcp1"><br>
+<br>
+<img src="../image/tapi_09_params_suite.png" alt="" width="846" height="516" border="0" class="hcp1"><br>
+<br>
+&#160;</p>
+</li>
+<li class="p">
+<p class="hcp6"><span class="hcp3">Nom de la dll Tapi</span>.<br>
+Spécifiez ici le nom de la dll TAPI à utiliser (par défaut, le module YCTI charge DhDivaltoTapi.dll).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp6">&#160;</p>
+<ul class="hcp2">
+<li class="p">
+<p style="font-weight: bold;">Autres paramétrages :<br>
+&#160;</p>
+</li>
+<li class="hcp4">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp3">Configuration de la montée de fiche</span> (bouton <span class="hcp3">"Configuration pour la montée de fiche"</span>) :<br>
+<br>
+<img src="../image/tapi_10_config_montee_fiche.png" alt="" width="656" height="348" border="0" class="hcp1"><br>
+<br>
+<br>
+Pour la montée de fiche, il existe deux méthodes de traitement dépendant de l'application :<br>
+&#160;</p>
+</li>
+<li class="hcp4">
+<ul class="hcp5">
+<li class="p">
+<p>Si l'application gère elle-même quand il faut monter la fiche, sélectionnez le bouton "<span class="hcp3">Laisser l'application gérer ce paramètre</span>".<span class="hcp3"><br>
+Remarque</span> : <span class="hcp8">La montée de fiche de</span> <span class="hcp9">l'</span><span class="hcp9">application</span> <span class="hcp9">Divalto</span> <span class="hcp8">est dans de cas</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Sinon, sélectionnez le <span class="hcp3">bouton correspondant à l'événement choisi</span> pour monter la fiche (à la sonnerie, au décroché, à la demande du CTI si l'interface l'autorise -par exemple, l'interface Alsatel ne le permet pas-).<br>
+<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp3">Ajout automatique d’un préfixe lors de la composition d’un appel</span> (bouton <span class="hcp3">"Configuration d'un préfixe pour sortir"</span>) :<br>
+<br>
+<img src="../image/tapi_11_config_prefixe.png" alt="" width="658" height="470" border="0" class="hcp1"><br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

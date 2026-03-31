@@ -1,0 +1,120 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WebServiceDivaExecute</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3 style="margin-left: 48px;">WebServiceDivaExecute&#160;<a href="Liste_des_fonctions_pour_les_services_web.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Services_Web_G_n_ralit_s.htm"><font class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">WebServiceDivaExecute permet d’appeler un service web Diva&#160;; il s'agit d'un programme Diva exécuté sur le serveur Web.</p>
+<p class="Body-Text">La description complète des services Web Diva fait l’objet d’un livre spécifique. Pour l'écriture d'un service Web Diva voir le guide d'utilisation au chapitre Services Web.&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Long</font> <font class="hcp2">WebServiceDivaExecute</font> (<font class="hcp3">url</font> , <font class="hcp3">action</font>_<font class="hcp3">hmp</font> , <font class="hcp3">parametres</font>_<font class="hcp3">hmp</font>, <font class="hcp3">resultat</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Url</font></p>
+<p class="decalage05">URL du service Web Diva à exécuter.</p>
+<p class="Body-Text"><font class="hcp3">Action_hmp</font></p>
+<p class="decalage05">Action à effectuer.<br>
+L’action est une chaîne &lt;hmp&gt; qui contient obligatoirement le paramètre &lt;action&gt;</p>
+<p class="decalage05">L’action fait référence au fichier paramètre des actions des services, qui contient notamment pour chaque action le nom du programme diva à exécuter.<br>
+L’action ne doit pas être cryptée.</p>
+<p class="Body-Text"><font class="hcp3">Parametres_hmp</font></p>
+<p class="decalage05">Paramètres à passer au service Diva sous le forme de chaîne <a href="Harmony_Markup_Parametres_HMP.htm">HMP</a>. La fonction <a href="Crypt.htm">Crypt</a> permet de crypter les paramètres. Ils devront être décryptés par la fonction <a href="UnCrypt.htm"><font color="#000000">UnCrypt</font></a> .<br>
+Si vous ne cryptez pas vos paramètres utilisez la fonction <a href="HmpEncode.htm">HmpEncode</a> pour encoder les valeurs.</p>
+<p class="Body-Text"><font class="hcp3">Resultat_hmp</font></p>
+<p class="decalage05">Résultat retourné par le service web. Si le résultat est crypté par le service Web il faut le décrypter par la fonction <a href="UnCrypt.htm"><font color="#000000">UnCrypt</font></a> .</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Pas d’erreur</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Exception Soap. <font class="hcp3">Resultat</font>_<font class="hcp3">Hmp</font> contient le texte de l’erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">2</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Exception Web. <font class="hcp3">Resultat</font>_<font class="hcp3">Hmp</font> contient le texte de l’erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">3</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Autre Exception. <font class="hcp3">Resultat</font>_<font class="hcp3">Hmp</font> contient le texte de l’erreur</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">0x23xx</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Code d’erreur renvoyé par le programme Diva xwebservices.dhop. <font class="hcp3"><br>
+Resultat</font>_<font class="hcp3">Hmp</font> contient le texte de l’erreur</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Code d’erreur renvoyé par le programme Diva lancé par xwebservices.dhop. <font class="hcp3"><br>
+Resultat</font>_<font class="hcp3">Hmp</font> contient le texte de l’erreur</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="source">1 retour S</p>
+<p class="source">1 st L</p>
+<p class="source">1 cryptee S</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">cryptee = Crypt("&lt;param1&gt;p1&lt;param2&gt;p2","monmotdepasse",st)</p>
+<p class="source">st= WebServiceDivaExecute("http://localhost/WebServiceDiva/WebServiceDiva.asmx", \</p>
+<p class="source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;action&gt;sanscalcaire", \&#160;</p>
+<p class="source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;,cryptee,retour)</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">if st &lt;&gt; 0 &#160;; en cas d'erreur (service inconnu par ex) retour contient le message</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox(retour&#160;," ")&#160;</p>
+<p class="source">else</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display retour&#160;</p>
+<p class="source">endif</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Voir</p>
+<p style="font-weight: normal;"><a href="WebServiceDivaSetOption.htm"><span style="font-weight: normal;">WebServiceDivaSetOption</span></a></p>
+</body>
+</html>

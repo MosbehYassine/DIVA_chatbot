@@ -1,0 +1,179 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FtpList</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+table.hcp3 { vertical-align:top; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>FtpList <a href="Liste_des_fonctions_Ftp___Sftp.htm">Famille</a> <a 
+	 href="Fonctions_Ftp___Sftp.htm">Thème</a></h1>
+<p>&#160;</p>
+<p>Récupérer la liste des fichiers d'un répertoire du serveur.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Module</span> &quot;yftp.dhop&quot;</p>
+<p><span class="hcp1">FtpResult FtpList</span> <span class="hcp2">(server, 
+ login, password, directory, &amp;hmpRetour, [proxyServer], [ProxyMode], 
+ [proxyLogin], [proxyPassword])</span></p>
+<p>&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp1">Paramètres</span></p>
+<p class="Body-Text" style="font-style: italic;">Server</p>
+<p class="decalage05">Adresse du serveur sous la forme</p>
+<p class="decalage05">ftp://ip[:port] &#160;pour un serveur ftp</p>
+<p class="decalage05">sftp://ip[:port] &#160;pour un serveur sftp</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Login</p>
+<p class="decalage05">Identifiant sur le serveur. Si non précisé, c'est 
+ &quot;anonymous&quot; qui est utilisé. Dans ce cas, le serveur doit accepter 
+ les connexions anonymes.</p>
+&#160;&#160; 
+<p class="Body-Text" style="font-style: italic;"><span class="hcp2">Password</span></p>
+<p class="decalage05">Mot de passe sur le serveur.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Directory</p>
+<p class="decalage05">Chemin du répertoire fichier sur l'ordinateur local. 
+ </p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>HmpRetour</span></p>
+<p class="decalage05">Chaîne Hmp contenant la liste des fichiers</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProxyServer</span></p>
+<p class="decalage05">Adresse du serveur proxy</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProxyMode</span></p>
+<p class="decalage05">Mode d'identification sur le proxy.</p>
+<table cellspacing="0" width="65.57%" class="hcp3">
+	<col style="width: 7.956%;">
+	<col style="width: 92.044%;">
+	<tr class="hcp4">
+		<td style="width:7.956%;" class="hcp5"><p>1</p></td>
+		<td style="width:92.044%;" class="hcp5"><p>Prendre 
+		 les paramètres du système. Il n'y a pas d'autre paramètres à préciser, 
+		 l'authentification est celle du poste de travail.</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:7.956%;" class="hcp5"><p>2</p></td>
+		<td style="width:92.044%;" class="hcp5"><p>Préciser 
+		 l'url du serveur, mais authentification SSPI. Inutile de préciser 
+		 ProxyLogin et ProxyPassword</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:7.956%;" class="hcp5"><p>3</p></td>
+		<td style="width:92.044%;" class="hcp5"><p>Mode 
+		 manuel. Il faut préciser tous les paramètres</p></td>
+	</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span class="hcp2">ProxyLogin</span></p>
+<p class="decalage05">Identifiant sur le serveur proxy.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProxyPassword</span></p>
+<p class="decalage05">Mot de passe sur le serveur proxy.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Retour</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: normal;">La 
+ fonction retourne une structure FtpResult de trois valeurs.</p>
+<table cellspacing="0" width="66.667%" class="hcp3">
+	<col style="width: 11.115%;">
+	<col style="width: 88.884%;">
+	<tr class="hcp4">
+		<td style="width:11.115%;" class="hcp5"><p>Status</p></td>
+		<td style="width:88.884%;" class="hcp5"><p>0 
+		 = pas d'erreur &#160;&#160;2 = Erreur &#160;&#160;&#160;&#160;&#160;3 
+		 = paramètres incorrects</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:11.115%;" class="hcp5"><p>hmpRetour</p></td>
+		<td style="width:88.884%;" class="hcp5"><p>Chaîne 
+		 Hmp contenant la liste des fichiers</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:11.115%;" class="hcp5"><p>Desc</p></td>
+		<td style="width:88.884%;" class="hcp5"><p>Texte 
+		 rendu par le serveur ou description de l'exception en cas d'erreur. 
+		 Voir aussi <a href="FtpGetLastErrorMessage.htm">FtpGetLastErrorMessage</a></p></td>
+	</tr>
+</table>
+<p class="decalage05" style="margin-left: 0px; font-weight: normal;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Remarques</p>
+<ul style="list-style: disc;">
+	<li class="p-decalage05"><p class="decalage05" style="margin-left: 0px; 
+								 font-weight: normal;">De nombreux serveurs 
+	 Ftp / Sftp sont sous Unix ou Linux. Sur ces systèmes d'exploitation, 
+	 les noms de fichiers sont sensibles à la casse.<br>
+	Le paramètre Directory doit donc avoir la casse exacte.</p></li>
+	<li class="p-decalage05"><p class="decalage05" style="margin-left: 0px; 
+								 font-weight: normal;">En fonction de la 
+	 configuration du serveur, il se peut que les caractères spéciaux et 
+	 accentués posent problème.</p></li>
+	<li class="p-decalage05"><p class="decalage05" style="margin-left: 0px; 
+								 font-weight: normal;">En FTP la fonction 
+	 ne retourne pas la liste des fichiers dans une chaîne HMP. La fonction 
+	 retourne la liste des fichiers telle qu'elle est rendue par la commande 
+	 ftp.</p></li>
+</ul>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Exemple</p>
+<p class="Source">structure ElementDir</p>
+<p class="Source">&#160;&#160;1 Nom 256</p>
+<p class="Source">&#160;&#160;1 Taille 14,0</p>
+<p class="Source">&#160;&#160;1 DateModif DH </p>
+<p class="Source">&#160;&#160;1 IsDir 1,0</p>
+<p class="Source">&#160;&#160;1 IsRegular 1,0</p>
+<p class="Source">endstructure</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 ListeDir L = ListCreate()</p>
+<p class="Source">&#160;</p>
+<p class="Source">Procedure DecodeDirectory(hmp)</p>
+<p class="Source">1 hmp A</p>
+<p class="Source">1 cle S</p>
+<p class="Source">1 valeur S</p>
+<p class="Source">1 position X = 0</p>
+<p class="Source">RecordDiva ElementDir elem</p>
+<p class="Source">beginp</p>
+<p class="Source">&#160;&#160;Loop HmpReadExt(hmp,cle,valeur,position) 
+ = 0 </p>
+<p class="Source">&#160;&#160;&#160;&#160;switch cle</p>
+<p class="Source">&#160;&#160;&#160;&#160;case &quot;NAME&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;elem.Nom = valeur</p>
+<p class="Source">&#160;&#160;&#160;&#160;case &quot;LENGTH&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;elem.Taille = valeur</p>
+<p class="Source">&#160;&#160;&#160;&#160;case &quot;LASTWRITETIME&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;elem.DateModif = 
+ valeur</p>
+<p class="Source">&#160;&#160;&#160;&#160;case &quot;ISDIRECTORY&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;elem.IsDir = valeur</p>
+<p class="Source">&#160;&#160;&#160;&#160;case &quot;ISREGULAR&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;elem.IsRegular = 
+ valeur</p>
+<p class="Source">&#160;&#160;&#160;&#160;case &quot;/ELEMENT&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;ListAddEnd(ListeDir,elem)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;elem = &quot; &quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;endswitch</p>
+<p class="Source">&#160;&#160;endloop</p>
+<p class="Source">endp</p>
+<p class="Source">&#160;</p>
+<p class="Source"><span class="hcp1">main</span></p>
+<p class="Source">recordDiva yftp.FtpResult &#160;r</p>
+<p class="Source">1 hmpRet S</p>
+<p class="Source">&#160;</p>
+<p class="Source">r = FtpList(&quot;sftp://test.rebex.net&quot;,&quot;demo&quot;,&quot;password&quot;,&quot;pub/example&quot;,hmpret)</p>
+<p class="Source">&#160;</p>
+<p class="Source">DecodeDirectory(hmpret)</p>
+<p class="Source">&#160;</p>
+</body>
+</html>

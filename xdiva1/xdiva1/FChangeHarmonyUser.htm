@@ -1,0 +1,117 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FChangeHarmonyUser</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+table.hcp3 { vertical-align:top; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-right:10px;
+padding-left:10px; }
+p.hcp6 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>FChangeHarmonyUser</h1>
+<p>La fonction FChangeHarmonyUser permet de changer le code utilisateur de la tâche courante.</p>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp1">Long</font> <font class="hcp1">FChangeHarmonyUser</font> <span class="hcp2">( action , [ utilisateur ] )</span></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><span class="hcp2">Action</span></p>
+<table cellspacing="0" width="43.037%" class="hcp3">
+<col style="width: 11.61%;">
+<col style="width: 88.39%;">
+<tr class="hcp4">
+<td style="width:11.61%;" class="hcp5">
+<p>1</p>
+</td>
+<td style="width:88.39%;" class="hcp5">
+<p>Changer de code utilisateur. Attention, l'utilisateur courant doit avoir HIP dans ses codes de confidentialités.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.61%;" class="hcp5">
+<p>2</p>
+</td>
+<td style="width:88.39%;" class="hcp5">
+<p>Revenir à l'état initial.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.61%;" class="hcp5">
+<p>3</p>
+</td>
+<td style="width:88.39%;" class="hcp5">
+<p>Demande au système si un changement d'utilisateur a eu lieu.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="font-style: italic;">&#160;</p>
+<p class="Body-Text"><font style="font-style: italic;">Code utilisateur</font></p>
+<p class="decalage05">Nouveau code utilisateur (si Action = 1)</p>
+<p>&#160;</p>
+<p class="hcp6">Retour</p>
+<table cellspacing="0" width="43.037%" class="hcp3">
+<col style="width: 21.999%;">
+<col style="width: 78.001%;">
+<tr class="hcp4">
+<td style="width:21.999%;" class="hcp5">
+<p>Action = 1</p>
+</td>
+<td style="width:78.001%;" class="hcp5">
+<p>0 : pas d'erreur</p>
+<p>0x0070 Privilège insuffisant</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:21.999%;" class="hcp5">
+<p>Action = 2</p>
+</td>
+<td style="width:78.001%;" class="hcp5">
+<p>La fonction retourne 0</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:21.999%;" class="hcp5">
+<p>Action = 3</p>
+</td>
+<td style="width:78.001%;" class="hcp5">
+<p>1 : le code utilisateur a été modifié</p>
+<p>0 : le code utilisateur n'a pas été modifié.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p class="hcp6">Remarques</p>
+<ul style="list-style: inside disc;">
+<li class="p">
+<p>Le code utilisateur utilisé pour effectuer les connexions xlan ne change pas.</p>
+</li>
+<li class="p">
+<p>Après l'appel de la fonction avec Action=1, la zone harmony.user contient le nouveau code utilisateur.</p>
+</li>
+<li class="p">
+<p>Les contrôles de confidentialités (fonction <a href="HAccessCodeControl.htm">HAccessCodeControl</a>) sont effectuées avec le nouveau code utilisateur.</p>
+</li>
+<li class="p">
+<p>Le changement de code utilisateur (Action = 1) est protégé. L'utilisateur courant doit avoir HIP dans ses codes de confidentialités. La retour à l'état initial (action = 2) n'est pas protégé.</p>
+</li>
+<li class="p">
+<p>Cette fonction peut être utilisée notamment par les programmes Web qui effectuent une saisie de code utilisateur.</p>
+</li>
+</ul>
+<p class="hcp6">&#160;</p>
+<p class="hcp6">Voir</p>
+<p>&#160;<a href="HAccessCodeControl.htm">HAccessCodeControl</a>, <a href="XlogCheckUser_1.htm">XlogCheckUser</a></p>
+</body>
+</html>

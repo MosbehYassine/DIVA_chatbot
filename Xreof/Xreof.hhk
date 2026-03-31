@@ -1,0 +1,33 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Comment choisir la taille du cache ?">
+    <param name="Name" value="Comment choisir la taille du cache ?">
+    <param name="Local" value="Xreof/Commentchoisirlatailleducache_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Compte-rendu d'exécution">
+    <param name="Name" value="Compte-rendu d'exécution">
+    <param name="Local" value="Xreof/Compte_rendud_ex_cution.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Descriptif du programme Xreof">
+    <param name="Name" value="Descriptif du programme Xreof">
+    <param name="Local" value="Xreof/DescriptifduprogrammeXreof.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Principe de la génération">
+    <param name="Name" value="Principe de la génération">
+    <param name="Local" value="Xreof/Principedelag_n_ration.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Taille de la mémoire cache">
+    <param name="Name" value="Taille de la mémoire cache">
+    <param name="Local" value="Xreof/Tailledelam_moirecache.htm">
+  </object>
+</ul>
+</html>

@@ -1,0 +1,66 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Les formats d'affichage</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+ul.hcp4 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Les formats d'affichage</h2>
+<p class="Body-Text">La propriété <span class="hcp1">Format</span> de la <span class="hcp1">famille Présentation</span> permet de définir un format d'affichage pour les champs.</p>
+<p class="Body-Text"><font class="hcp2"><span class="hcp3">Ce format</span> s'applique uniquement lors de l'affichage du champ</font>. Au passage en saisie, celui-ci est réaffiché de manière classique, selon son type (alpha, numérique, date, etc.). Après la saisie, le format d'affichage s'applique à nouveau.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple :</font></p>
+<p class="Body-Text">La donnée DateNai (de type date) est paramétrée avec le format de saisie JJ/MM/AAAA et le format d'affichage jjj JJ mmm AAAA.</p>
+<p class="Body-Text">A l'appel du masque, DATENAI contient la valeur "20071025".</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Elle est alors affichée formatée :<font class="hcp2"><br>
+Date de naissance : Jeu 25 Oct 2007</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Au passage en saisie, la donnée est réaffichée :&#160;<font class="hcp2"><br>
+Date de naissance : 25/10/2007</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">L'utilisateur introduit la date suivante :<font class="hcp2"><br>
+Date de naissance : 26/10/07</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Après validation, la donnée est réaffichée formatée :<font class="hcp2"><br>
+Date de naissance : Ven 26 Oct 2007</font></p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Composition du format</font></p>
+<p class="Body-Text">Le texte du format est généralement constitué de commandes ou de codes. Vous trouverez dans les rubriques suivantes des tableaux résumant leur signification. Pour tout renseignement complémentaire, consultez les rubriques associées aux fonctions Format, Formatd et Fstring du manuel de référence du langage <font class="hcp2">Diva<span class="hcp3">.</span></font></p>
+<p class="Body-Text">Si les possibilités offertes par les formats standard ne suffisent pas, vous avez la possibilité d'écrire une fonction Diva qui effectue un formatage personnalisé de la donnée (voir <a href="Formatdynamique.htm">Format dynamique</a>).</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarques :</font></p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Pour les données de type Heure, il n’existe pas de format particulier (hormis le format dynamique standard \FormatHeure). Si vous précisez un format, il s’agira d'un format ALPHA.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour les données de type Date+Heure, il n’existe pas de format particulier. Si un format d'affichage est précisé, il s'agira d'un format DATE qui sera appliqué aux 8 premiers caractères de la donnée ; on appliquera sur les 6 autres caractères un format standard (HH:MM:SS) avec un espace de séparation entre la date et l'heure.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour les données de type Date Mensuelle, il n’existe pas de format particulier. Si un format d'affichage est précisé, il s'agira d'un format DATE qui sera appliqué aux 6 premiers caractères de la donnée (les 2 derniers caractères étant considérés comme étant à espace).</p>
+</li>
+</ul>
+</body>
+</html>

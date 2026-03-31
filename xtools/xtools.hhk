@@ -1,0 +1,228 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Afficher / Modifier le contenu d'un fichier">
+    <param name="Name" value="Afficher / Modifier le contenu d'un fichier">
+    <param name="Local" value="xtools/Afficher_Modifierlecontenud_unfichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Afficher / Modifier le contenu d'un fichier d'après le dictionnaire">
+    <param name="Name" value="Afficher / Modifier le contenu d'un fichier d'après le dictionnaire">
+    <param name="Local" value="xtools/Afficher_Modifierlecontenud_unfichierd_apr_sledictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Afficher / Modifier le contenu physique d'un fichier">
+    <param name="Name" value="Afficher / Modifier le contenu physique d'un fichier">
+    <param name="Local" value="xtools/Afficher_Modifierlecontenuphysiqued_unfichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Afficher / Modifier les paramètres d'un fichier séquentiel indexé">
+    <param name="Name" value="Afficher / Modifier les paramètres d'un fichier séquentiel indexé (étendu)">
+    <param name="Local" value="xtools/Afficher_Modifierlesparam_tresd_unfichiers_quentielindex___tendu_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Appel des fonctions de Xtools">
+    <param name="Name" value="Appel des fonctions de Xtools">
+    <param name="Local" value="xtools/AppeldesfonctionsdeXtools.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Changer les chemins implicites">
+    <param name="Name" value="Changer les chemins implicites">
+    <param name="Local" value="xtools/Changerlescheminsimplicites.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Comprimer / décomprimer les fichiers pointés">
+    <param name="Name" value="Comprimer / décomprimer les fichiers pointés">
+    <param name="Local" value="xtools/Comprimer_d_comprimerlesfichierspoint_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Contrôler l intégrité des fichiers pointés">
+    <param name="Name" value="Contrôler l'intégrité des fichiers pointés">
+    <param name="Local" value="xtools/Contr_ler_l_int_grit__des_fichiers_point_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Copier les fichiers pointés">
+    <param name="Name" value="Copier les fichiers pointés">
+    <param name="Local" value="xtools/Copierlesfichierspoint_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Copier un fichier">
+    <param name="Name" value="Copier un fichier">
+    <param name="Local" value="xtools/Copierunfichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Créer un fichier">
+    <param name="Name" value="Créer un fichier">
+    <param name="Local" value="xtools/Cr_erunfichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Créer un fichier pilote">
+    <param name="Name" value="Créer un fichier pilote">
+    <param name="Local" value="xtools/Cr_erunfichierpilote.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Créer un fichier séquentiel indexé">
+    <param name="Name" value="Créer un fichier séquentiel indexé (étendu)">
+    <param name="Local" value="xtools/Cr_erunfichiers_quentielindex___tendu_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Descriptif du programme Xtools">
+    <param name="Name" value="Descriptif du programme Xtools">
+    <param name="Local" value="xtools/DescriptifduprogrammeXtools.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Effacer les fichiers pointés">
+    <param name="Name" value="Effacer les fichiers pointés">
+    <param name="Local" value="xtools/Effacerlesfichierspoint_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Effacer un fichier">
+    <param name="Name" value="Effacer un fichier">
+    <param name="Local" value="xtools/Effacerunfichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Explorer un dossier avec l'explorateur">
+    <param name="Name" value="Explorer un dossier avec l'explorateur">
+    <param name="Local" value="xtools/Explorerundossieravecl_explorateur.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Explorer un dossier avec Xtools">
+    <param name="Name" value="Explorer un dossier avec Xtools">
+    <param name="Local" value="xtools/ExplorerundossieravecXtools.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Filtre">
+    <param name="Name" value="Filtre">
+    <param name="Local" value="xtools/Filtre.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fonctions de Xtools">
+    <param name="Name" value="Fonctions de Xtools">
+    <param name="Local" value="xtools/FonctionsdeXtools.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fonctions diverses">
+    <param name="Name" value="Fonctions diverses">
+    <param name="Local" value="xtools/Fonctionsdiverses.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fonctions mono-fichier">
+    <param name="Name" value="Fonctions mono-fichier">
+    <param name="Local" value="xtools/Fonctionsmono_fichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fonctions multi-fichier">
+    <param name="Name" value="Fonctions multi-fichier">
+    <param name="Local" value="xtools/Fonctionsmulti_fichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Format">
+    <param name="Name" value="Format">
+    <param name="Local" value="xtools/Format.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Garnissage du nom de dictionnaire et de fichier">
+    <param name="Name" value="Garnissage des noms de dictionnaire et de base">
+    <param name="Local" value="xtools/Garnissage_des_noms_de_dictionnaire_et_de_base.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Imprimer les fichiers pointés">
+    <param name="Name" value="Imprimer les fichiers pointés">
+    <param name="Local" value="xtools/Imprimerlesfichierspoint_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Interpréter un code d'erreur Harmony">
+    <param name="Name" value="Interpréter un code d'erreur Harmony">
+    <param name="Local" value="xtools/Interpr_teruncoded_erreurHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Interpréter un code d'erreur Windows">
+    <param name="Name" value="Interpréter un code d'erreur Windows">
+    <param name="Local" value="xtools/Interpr&eacute;ter_un_code_d_erreur_Windows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Méthodes de sélection">
+    <param name="Name" value="Méthodes de sélection">
+    <param name="Local" value="xtools/M_thodesdes_lection.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modifier les caractéristiques d'un fichier">
+    <param name="Name" value="Modifier les caractéristiques d'un fichier">
+    <param name="Local" value="xtools/Modifierlescaract_ristiquesd_unfichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ouvrir un fichier avec le programme associé">
+    <param name="Name" value="Ouvrir un fichier avec le programme associé">
+    <param name="Local" value="xtools/Ouvrirunfichieravecleprogrammeassoci_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Pointer les fichiers sélectionnés">
+    <param name="Name" value="Pointer les fichiers sélectionnés">
+    <param name="Local" value="xtools/Pointerlesfichierss_lectionn_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Présélection d'un répertoire au démarrage de Xtools">
+    <param name="Name" value="Présélection d'un répertoire au démarrage de Xtools">
+    <param name="Local" value="xtools/Pr_s_lectiond_unr_pertoireaud_marragedeXtools.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Régénérer les clés des fichiers pointés">
+    <param name="Name" value="Régénérer les clés des fichiers pointés">
+    <param name="Local" value="xtools/R_g_n_rerlescl_sdesfichierspoint_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Régénérer un fichier séquentiel indexé">
+    <param name="Name" value="Régénérer un fichier séquentiel indexé">
+    <param name="Local" value="xtools/R_g_n_rerunfichiers_quentielindex_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Renommer un fichier">
+    <param name="Name" value="Renommer un fichier">
+    <param name="Local" value="xtools/Renommerunfichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Réorganiser les fichiers pointés">
+    <param name="Name" value="Réorganiser les fichiers pointés">
+    <param name="Local" value="xtools/R_organiserlesfichierspoint_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Réorganiser un fichier séquentiel indexé">
+    <param name="Name" value="Réorganiser un fichier séquentiel indexé">
+    <param name="Local" value="xtools/R_organiserunfichiers_quentielindex_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélection dans plusieurs dossiers et recherche de fichiers">
+    <param name="Name" value="Sélection dans plusieurs dossiers et recherche de fichiers">
+    <param name="Local" value="xtools/S_lectiondansplusieursdossiersetrecherchedefichiers.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélection dans un seul dossier">
+    <param name="Name" value="Sélection dans un seul dossier">
+    <param name="Local" value="xtools/S_lectiondansunseuldossier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélectionner des fichiers">
+    <param name="Name" value="Sélectionner des fichiers">
+    <param name="Local" value="xtools/S_lectionnerdesfichiers.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Supprimer les fichiers pointés">
+    <param name="Name" value="Supprimer les fichiers pointés">
+    <param name="Local" value="xtools/Supprimerlesfichierspoint_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Supprimer un fichier">
+    <param name="Name" value="Supprimer un fichier">
+    <param name="Local" value="xtools/Supprimerunfichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Tester l'ouverture d'un fichier">
+    <param name="Name" value="Tester l'ouverture d'un fichier">
+    <param name="Local" value="xtools/Testerl_ouvertured_unfichier.htm">
+  </object>
+</ul>
+</html>

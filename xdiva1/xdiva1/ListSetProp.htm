@@ -1,0 +1,117 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ListSetProp</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ListSetProp&#160;&#160;<a href="Instructionsdegestiondeslistes.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a> 
+ <font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a 
+	 href="Gestiondelistes.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">ListSetProp permet d’affecter une propriété à un élément 
+ de la liste.</p>
+<p class="Body-Text"><br>
+<font class="hcp2">Long</font> <font class="hcp2">ListSetProp</font> 
+ (<font class="hcp3">ticket , propriété , valeur , [ courant 
+ ])</font></p>
+<p class="Body-Text"><font class="hcp2"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Ticket</font></p>
+<p class="decalage05">Identifiant de la liste.</p>
+<p class="Body-Text"><font class="hcp3">Propriété</font></p>
+<p class="decalage05">Numéro de la propriété (de 1 à 255).</p>
+<p class="Body-Text"><font class="hcp3">Valeur</font></p>
+<p class="decalage05">Valeur de la propriété.</p>
+<p class="Body-Text"><font class="hcp3">Courant</font></p>
+<p class="decalage05">Adresse (type L) de l'élément courant. Ce paramètre 
+ est facultatif ; il permet de préciser l'élément courant (l'adresse d'un 
+ élément de la liste est renvoyée par les fonctions d'ajout et de déplacement 
+ dans la liste). Si ce paramètre est omis, la propriété est affectée à 
+ l’élément courant.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2"><br>
+Retour</font></p>
+<table cellspacing="0" width="436">
+	<tr class="hcp4">
+		<td style="width:20.57%;" class="hcp5"><p class="Body-Text">-1</p></td>
+		<td style="width:79.43%;" class="hcp5"><p class="Body-Text">Ticket 
+		 invalide.</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:20.57%;" class="hcp5"><p class="Body-Text">-2</p></td>
+		<td style="width:79.43%;" class="hcp5"><p class="Body-Text">Numéro 
+		 de propriété incorrect.</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:20.57%;" class="hcp5"><p class="Body-Text">0</p></td>
+		<td style="width:79.43%;" class="hcp5"><p class="Body-Text">Courant 
+		 indéfini.</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:20.57%;" class="hcp5"><p class="Body-Text">TRUE</p></td>
+		<td style="width:79.43%;" class="hcp5"><p class="Body-Text">Pas 
+		 d’erreur.</p></td>
+	</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font></p>
+<ul>
+	<li class="p-Body-Text" style="font-size: 10pt;"><p class="Body-Text" 
+														 style="margin-left: 11.75pt;">Si 
+	 la propriété existe déjà, elle est remplacée par la nouvelle valeur.</p></li>
+	<li class="p-Body-Text" style="font-size: 10pt;"><p class="Body-Text" 
+														 style="margin-left: 11.75pt;">L’élément 
+	 courant de la liste n’est pas modifié.</p></li>
+	<li class="p-Body-Text" style="font-size: 10pt;"><p class="Body-Text" 
+														 style="margin-left: 11.75pt;">Chaque 
+	 élément de liste dispose d’un tableau dynamique de pointeurs. ListSetProp 
+	 permet d’affecter des valeurs complémentaires aux élements de la liste.</p></li>
+	<li class="p-Body-Text" style="font-size: 10pt;"><p class="Body-Text" 
+														 style="margin-left: 11.75pt;">La 
+	 liste associée à un tableau Web réserve les 5 premières propriétés. 
+	 Utilisez les propriétés à partir de la sixième.</p></li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-left: 36.00pt;">1 l1 L</p>
+<p class="source" style="margin-left: 36.00pt;">1 st L</p>
+<p class="source" style="margin-left: 36.00pt;">1 art 50</p>
+<p class="source" style="margin-left: 36.00pt;">&#160;</p>
+<p class="source" style="margin-left: 36.00pt;">l1 = ListCreate</p>
+<p class="source" style="margin-left: 36.00pt;">ListAddEnd(l1,&quot;element1&quot;)</p>
+<p class="source" style="margin-left: 36.00pt;">ListLast(l1,art)&#160;&#160;&#160;&#160;&#160;; 
+ courant = dernier</p>
+<p class="source" style="margin-left: 36.00pt;">st = ListSetProp(l1,1,&quot;propriete1&quot;)&#160;&#160;;</p>
+<p class="source" style="margin-left: 36.00pt;">st = ListSetProp(l1,1,&quot;propriete1bis&quot;)&#160;; 
+ remplace propriete1</p>
+<p class="source" style="margin-left: 36.00pt;">st = ListSetProp(l1,5,&quot;propriete5&quot;)</p>
+<p class="source" style="margin-left: 36.00pt;">&#160;</p>
+<p class="source" style="margin-left: 36.00pt;">st = ListGetProp(l1,1,art)&#160;; 
+ --&gt; propriete1bis</p>
+<p class="source" style="margin-left: 36.00pt;">st = ListGetProp(l1,5,art)&#160;; 
+ --&gt; propriete5</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Definition"><a href="ListGetProp.htm">ListGetProp</a> , <a href="ListRemoveProp.htm">ListRemoveProp</a></p>
+</body>
+</html>

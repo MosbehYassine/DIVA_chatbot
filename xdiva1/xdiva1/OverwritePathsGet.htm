@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<title>OverwritePathsGet</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css" />
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js"></script>
+
+<h3 style="font-family: Arial, sans-serif; font-size: 12pt;">OverwritePathsGet &#160;<span style="font-weight: normal;"><a href="Liste_des_fonctions_liées_aux_surcharges_multiples.htm" style="font-weight: normal;">Famille</a> <a href="Surcharges_multiples_theme.htm" style="font-weight: normal;">Thème</a></span></h3>
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-size: 10pt;">La fonction OverwritePathsGet renvoie une liste contenant le fichier owerwrite.txt actuellement chargé.</p>
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-size: 10pt;"><font style="font-weight: bold;">Int</font> = <span style="font-weight: bold;">OverwritePathsGet</span></p>
+<p class="Body-Text" style="font-weight: bold; font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-family: Arial, sans-serif; font-size: 10pt;">Retour</p>
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px; font-weight: normal;">La fonction retourne un identifiant de liste. Cette liste devra être ultérieurement détruite par ListDestroy.</p>
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px; font-weight: normal;">Chaque élément de la liste est décomposé comme suit :</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">; structure des implicites add-on utilisée par OverwritePathsGet</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">structure uneImpliciteAddOn</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">1 &#160;Type &#160;B &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;voir ADDONIMPLI_TYPE</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">1&#160;&#160;IsAddon B &#160;&#160;&#160;&#160;&#160;&#160;&#160;;1=je suis un addOn &#160;&#160;0=je ne suis pas un add-on mais j'ai écrit une surcharge sur les add-on</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">1&#160;&#160;Nom 256</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">1 &#160;CheminRelatif 256</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">1 &#160;CheminComplet 256</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">endstructure</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">define ADDONIMPLI_TYPE_SOURCE = 1</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">define ADDONIMPLI_TYPE_OBJET &#160;= 2</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">define ADDONIMPLI_TYPE_PATH_DHOS &#160;= 3</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">&#160;</p>
+<p class="Body-Text" style="font-size: 10pt; margin-left: 40px; font-weight: normal; font-family: 'Courier New', monospace;">&#160;</p>
+<p class="source">&#160;</p>
+</body>
+</html>

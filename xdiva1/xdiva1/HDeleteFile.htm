@@ -1,0 +1,56 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HDeleteFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HDeleteFile &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction HDeleteFile permet de supprimer un fichier. Si le fichier est de type séquentiel indexé (I), la fonction peut également supprimer le fichier des données.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Numer</font> = <font class="hcp2">HDeleteFile</font> <font class="hcp3">(fichier, status, [ suppdata ] , [abort])</font><br>
+&#160;<font class="hcp2"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Fichier</font></p>
+<p class="decalage05">Nom complet du fichier à supprimer.</p>
+<p class="Body-Text"><font class="hcp3">Status</font></p>
+<p class="decalage05">Donnée de type X qui reçoit en retour le code d'erreur système.</p>
+<p class="Body-Text"><font class="hcp3">Suppdata</font></p>
+<p class="decalage05">Booléen (TRUE par défaut) indiquant si le fichier des données doit également être supprimé. (cas où <font class="hcp3">Fichier</font> est de type I).</p>
+<p class="Body-Text"><font class="hcp3">Abort</font></p>
+<p class="decalage05">Booléen (TRUE par défaut) indiquant si la fonction doit arrêter le programme en cas d'erreur ou rendre la main avec un code d'erreur.</p>
+<p class="decalage05">En cas d'arrêt du programme, la fenêtre standard des erreurs est affichée et l'erreur est journalisée dans le fichier ferror.log.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction renvoie la valeur nulle en cas de succès. Sinon, elle renvoie un code d'erreur principal, et le paramètre <font class="hcp3">Status</font> contient le code d'erreur du système.</p>
+<p class="Body-Text">Pour la liste des erreurs possibles, voir <a href="ErreursdesfonctionsHcreate_Hsicreate.htm">Erreurs des fonctions HcreateFile, HSicreate</a></p>
+<p class="Body-Text">Si <font class="hcp3">Abort</font> = TRUE, toutes les erreurs provoquent l'arrêt du programme.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">Le fichier ne doit pas être ouvert au moment de l'appel à cette fonction.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">; suppression du fichier "mon fichier"</p>
+<p class="Source">1 st X</p>
+<p class="Source">HDeleteFile("/Divalto/sys/mon fichier",st)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="HCreateFile.htm">HCreateFile</a>, <a href="HSiCreate.htm">HSiCreate</a>, <a href="HSiRead.htm">HSiRead</a>, <a href="HSiMod.htm">HSiMod</a>, <a href="HMoveFile.htm">HMoveFile</a>, <a href="hCopyFile.htm">HCopyFile</a></p>
+</body>
+</html>

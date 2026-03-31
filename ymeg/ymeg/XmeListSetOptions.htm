@@ -1,0 +1,175 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListSetOptions</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-family:Wingdings; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListSetOptions &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Positionnement des options complémentaires&#160;:</font></p>
+<p class="Body-Text"><font class="hcp2">. Paramétrage du Drag &amp; drop tableau</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeListSetOptions</font> (<font class="hcp3">Identifiant</font>, <font class="hcp3">Options</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Options</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Chaîne au format <a href="XDIVA1.chm::/Xdiva1/Harmony_Markup_Parametres_HMP.htm">HMP</a>, contenant la liste des options complémentaires.</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font> cette fonction permet de spécifier des options de fonctionnement complémentaires, pour l’objet tableau identifié par le paramètre <font class="hcp3">Identifiant</font>. Garnissez le paramètre <font class="hcp3">Options</font> avec ces options, au format Hmp&#160;:</p>
+<p class="Body-Text"><font class="hcp2"><br>
+Paramètres HMP concernant le drag and drop tableau</font> (cette rubrique décrit succintement les différents paramètres&#160;; pour des explications détaillées, reportez-vous à la rubrique «&#160;<a href="Drag_and_drop_d__l_ments_de_tableau.htm">Drag and drop d'éléments de tableau</a> »&#160;; les paramètres débutant par Drag concernent le tableau émetteur, ceux débutant par Drop concernent le tableau récepteur) :</p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;Drag&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Drapeau autorisant ou interdisant l’opération «&#160;drag&#160;» <font class="hcp2">à partir de</font> ce tableau&#160;:<br>
+. <font class="hcp2">1</font>, <font class="hcp2">Y</font> ou <font class="hcp2">O</font>&#160;: drag autorisé (option par défaut).<br>
+. <font class="hcp2">0</font> ou <font class="hcp2">N</font>&#160;: drag interdit.<br>
+Exemple&#160;: &lt;Drag&gt;N</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;Drop&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Drapeau autorisant ou interdisant l’opération «&#160;drop&#160;» <font class="hcp2">vers</font> ce tableau&#160;:<br>
+. <font class="hcp2">1</font>, <font class="hcp2">Y</font> ou <font class="hcp2">O</font>&#160;: drop autorisé&#160;mais cette option seule n’autorise que les drops locaux (tableau émetteur appartenant au même programme)&#160;; pour autoriser les drops externes (tableau émetteur appartenent à un autre programme ou à une autre instance du même programme), il faut aussi positionner le paramètre &lt;DropExtern&gt; à vrai et spécifier la liste des tableaux émetteurs acceptés dans le paramètre &lt;DropNames&gt;.<br>
+. <font class="hcp2">0</font> ou <font class="hcp2">N</font>&#160;: tous drops interdits (option par défaut).<br>
+Exemple&#160;: &lt;Drop&gt;O</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;DropExtern&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Drapeau autorisant ou interdisant l’opération «&#160;drop&#160;externe » vers ce tableau&#160;:<br>
+. <font class="hcp2">1</font>, <font class="hcp2">Y</font> ou <font class="hcp2">O</font>&#160;: drop externe autorisé (à condition que le paramètre &lt;Drop&gt; soit lui aussi positionné à vrai et que le paramètre &lt;DropNames&gt; contienne la liste des tableaux émetteurs acceptés).<br>
+. <font class="hcp2">0</font> ou <font class="hcp2">N</font>&#160;: drop externe interdit (option par défaut)&#160;; dans ce cas et si le paramètre &lt;Drop&gt; est à vrai, seuls les drops locaux seront autorisés.<br>
+Exemple&#160;: &lt;DropExtern&gt;1</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;DragName&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau émetteur (pas d’identificateur par défaut).<br>
+Exemple&#160;: &lt;DragName&gt;MonTableau<br>
+Remarque&#160;: pour qu’un tableau émetteur identifié soit traité par un tableau récepteur, il faut qu’il figure dans la liste des tableaux acceptés du tableau récepteur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;DropNames&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Liste des identificateurs des tableaux émetteurs acceptés (par défaut, seuls les tableaux émetteurs locaux et non identifiés sont acceptés). Séparez les identificateurs par une virgule (",") ou un point virgule (";").<br>
+Exemples&#160;: &lt;DropNames&gt;MonTableau<br>
+&lt;DropNames&gt;MaTable1,MaTable2<br>
+Remarque&#160;: dès que cette liste est non vide, tout tableau émetteur ne sera traité que s’il est identifié et si son identifiant figure dans la liste.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;DragInfo&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Information personnalisée, qui sera ajoutée au contenu de la mémoire transmise au récepteur et qui pourra donc être récupérée au moment du «&#160;Drop&#160;» (drag and drop externe).<br>
+Exemples&#160;: &lt;DragInfo&gt;001<br>
+&lt;DragInfo&gt;Dos=001;Ref=abcd</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;DropEmpty&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Drapeau autorisant ou interdisant l’opération «&#160;Drop&#160;» dans la zone vide située sous la dernière ligne effective du tableau récepteur&#160;:<br>
+. <font class="hcp2">1</font>, <font class="hcp2">Y</font> ou <font class="hcp2">O</font>&#160;: opération autorisée.<br>
+. <font class="hcp2">0</font> ou <font class="hcp2">N</font>&#160;: opération interdite (valeur par défaut).<br>
+Exemple&#160;: &lt;DropEmpty&gt;Y</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;DropInsert&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Drapeau activant ou désactivant l’insertion de ligne Avant / Après&#160;:<br>
+. <font class="hcp2">0</font> ou <font class="hcp2">N</font>&#160;: insertion Avant / Après désactivée (valeur par défaut).<br>
+. <font class="hcp2">1</font>, <font class="hcp2">Y</font> ou <font class="hcp2">O</font>&#160;: insertion Avant / Après activée. Dans ce cas, le drag and drop adapte le dessin de visualisation attaché au curseur souris pour qu’il représente le type d’insertion actif.<br>
+Exemple&#160;: &lt;DropInsert&gt;1</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;DropMove&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Drapeau activant ou désactivant le traitement de la touche Ctrl<br>
+(<font style="text-decoration: underline;">drag and drop local uniquement</font>)&#160;:<br>
+. <font class="hcp2">0</font> ou <font class="hcp2">N</font>&#160;: traitement de la touche Ctrl désactivé (valeur par défaut).<br>
+. <font class="hcp2">1</font>, <font class="hcp2">Y</font> ou <font class="hcp2">O</font>&#160;: traitement de la touche Ctrl activé. Dans ce cas, le drag and drop différencie le drop avec touche Ctrl enfoncée (<font face="Wingdings" class="hcp6">ó</font> simple copie de la ligne émettrice) du drop sans touche Ctrl enfoncée (<font face="Wingdings" class="hcp6">ó</font> copie de la ligne émettrice et suppression de cette ligne du tableau émetteur).<br>
+Exemple&#160;: &lt;DropMove&gt;1</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.99%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">&lt;DragEffect&gt;<br>
+&lt;DropEffect&gt;</font></p>
+</td>
+<td style="width:79.01%;" class="hcp5">
+<p class="Body-Text">Dessin de visualisation, attaché au curseur souris durant l’opération de drag and drop :<br>
+. <font class="hcp2">S</font> (standard)&#160;&#160;: rectangle ayant la taille de la <font class="hcp2">cellule</font> concernée<br>
+&#160;&#160;&#160;&#160;(valeur par défaut).<br>
+. <font class="hcp2">R</font> (row)&#160;&#160;: rectangle ayant la taille de la <font class="hcp2">ligne</font> du tableau.<br>
+. <font class="hcp2">O</font> (object)&#160;&#160;:&#160;rectangle ayant la taille de l’<font class="hcp2">objet &lt;hog&gt;</font> concerné.<br>
+Tant que le curseur souris ne survole pas un tableau qui accepte le drop pour le tableau émetteur, le dessin est déterminé par la valeur du paramètre &lt;DragEffect&gt; du tableau émetteur. Sinon, le dessin est déterminé par la valeur du paramètre &lt;DropEffect&gt; du tableau récepteur.<br>
+Exemple&#160;: &lt;DropEffect&gt;R</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

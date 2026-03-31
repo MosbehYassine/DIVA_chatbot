@@ -1,0 +1,65 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Ping - Pong - PingLocal - PingSelf</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Ping - Pong - PingLocal - PingSelf &#160;<a href="InstructionsdeModulesetProgrammes.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font 
+	 style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a 
+	 href="G_n_ralit_s1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Les instructions Ping, Pong et PingLocal permettent 
+ de placer des données dans un tunnel.</p>
+<p class="Body-Text"><font class="hcp2">Ping</font> <font class="hcp3">(libellé , expression)<br>
+</font><font class="hcp2"><br>
+Pong</font> <font class="hcp3">(libellé , expression)<br>
+</font><font class="hcp2"><br>
+PingLocal</font> <font class="hcp3">(libellé , expression)</font></p>
+<p class="Body-Text"><font class="hcp2"><br>
+PingSelf</font> <font class="hcp3">(libellé , expression)</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text"><font class="hcp3">Libellé</font></p>
+<p class="decalage05">Chaîne de caractères identifiant la donnée placée 
+ dans le tunnel. La lecture des données placées dans le tunnel se fait 
+ par ce libellé.</p>
+<p class="Body-Text"><font class="hcp3">Expression</font></p>
+<p class="decalage05">Donnée à placer dans le tunnel.</p>
+<p class="Body-Text"><font class="hcp2">Ping</font> est utilisé 
+ avant un enchaînement (ProgramGoto) ou un appel de programme (ProgramCall). 
+ Le programme appelé récupère ces données par la fonction PingReceive.</p>
+<p class="Body-Text"><font class="hcp2">Pong</font> est utilisé 
+ avant un retour au programme appelant pour lui renvoyer des données. Le 
+ programme appelant récupère ces données par la fonction PongReceive.</p>
+<p class="Body-Text"><font class="hcp2">PingLocal</font> 
+ est utilisé pour sauvegarder une donnée dans le tunnel local.</p>
+<p class="Body-Text"><font class="hcp2">PingSelf<span style="font-weight: normal;"> 
+ permet d'écrire des données dans le tunnel lu par PingReceive (donc comme 
+ si elles avaient été écrites par le programme appelant par Ping)</span><br>
+<br>
+Exemple :</font> <font style="font-family: 'Courier New';" face="Courier New">Ping 
+ (&quot;client&quot; , ecli)</font></p>
+&#160; 
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="XDIVA0.chm::/Xdiva0/Tunnels.htm">Tunnels</a> 
+ <a href="PingReceive_PongReceive_PingLocalReceive.htm">PingReceive - PongReceive 
+ - PingLocalReceive</a> <a href="ProgramGoto.htm">ProgramGoto</a></p>
+</body>
+</html>

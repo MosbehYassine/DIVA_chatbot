@@ -1,0 +1,234 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctions Xml</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { border-top:0.50pt solid #000000;
+border-bottom:0.50pt solid #000000;
+border-left:0.50pt solid #000000;
+border-right:0.50pt solid #000000;
+padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fonctions Xml</h3>
+<p class="Body-Text">Les fonctions Xml permettent de lire un flux XML. Ce flux peut être un fichier ou une chaîne de caractères.</p>
+<p class="Body-Text">Ces fonctions sont principalement utilisées dans les services Web. En effet, le dialogue entre le client et le service se fait généralement en utilisant XML.</p>
+<p class="Body-Text">Les fonctions XML utilisent la classe XmlTextReader du framework .Net qui fournit un accès en avant uniquement et en lecture seule dans un flux de données XML.</p>
+<p class="Body-Text"><font color="#FF0000" class="hcp1">Le framework .Net doit être installé AVANT Harmony pour que ces fonctions soit opérationnelles. Si le framework n’est pas installé, installez-le puis réinstallez Harmony. Si le framework a été installé après Harmony, réinstallez Harmony.</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Les trois principales fonctions sont&#160;:</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><a href="XmlOpen.htm">XmlOpen</a> pour ouvrir un flux.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><a href="XmlRead.htm">XmlRead</a> pour lire l’élément suivant du flux Xml.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><a href="XmlClose.htm">XmlClose</a> pour fermer le flux.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Il n’y a pas de fonctions spécifiques pour l’écriture d’un flux XML. Il est vivement conseillé d’utiliser la fonction <a href="XmlTranslate.htm">XmlTranslate</a> qui convertit les caractères spéciaux (&lt; &gt; etc.).</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Description succinte de XML</font></p>
+<p class="Body-Text">Le langage Xml (Extensible Markup Language) permet de décrire des données structurées. Il ressemble à Html par sa structure de balises.</p>
+<p class="Body-Text">Un document XML est constitué&#160;:</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">D’une déclaration</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">D’un ensemble de balises pour définir les éléments de données. Chaque élément encapsule un sous-ensemble des données qui peut être très simple ou au contraire très complexe.</p>
+</li>
+</ul>
+<p class="Body-Text">Dans l’exemple ci-dessous, nous avons la balise &lt;BaseArticle&gt; qui marque le début d’une liste d’articles. Cette balise doit avoir sa balise de fermeture plus loin &lt;/BaseArticle&gt;.</p>
+<p class="Body-Text">Pour chaque article nous trouvons une balise &lt;Article&gt;. Les différents champs de l’article se trouvent placés à l’intérieur de la balise sous forme d’attributs. Si l’article n’a pas de commentaires, la balise se termine immédiatement (voir A1). Si l’article a des commentaires, il sont placés entre la balise de début et la balise de fin de l’article (voir A2).</p>
+<p class="Body-Text"><img src="../image/xml1.gif" alt="image\xml1.gif" title="image\xml1.gif" width="655" height="269" border="0"></p>
+<p class="Body-Text">La lecture de ce flux Xml nous rend les éléments suivants&#160;:</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<table style="margin-left: 2.25pt; border-top: 0.50pt solid #000000; border-bottom: 0.50pt solid #000000; border-left: 0.50pt solid #000000; border-right: 0.50pt solid #000000; border-collapse: separate;" cellspacing="0" width="630">
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Type</font></p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Balise</font></p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Valeur</font></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Déclaration</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text">version="1.0" standalone="yes"</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Début de balise</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">BaseArticle</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Début de balise</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">Article</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Attribut</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">code</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text">A1</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Attribut</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">libelle</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text">libellé article A1</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Attribut</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">prix</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text">12,34</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Fin de balise</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">Article</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Début de balise</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">Article</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Attribut</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">code</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text">A2</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Attribut</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">libelle</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text">libellé article A2</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Attribut</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">prix</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text">45,88</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Valeur texte</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">Article</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text">commentaire sous forme de valeur</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Fin de balise</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">Article</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:33.60%;" class="hcp3">
+<p class="Body-Text">Fin de balise</p>
+</td>
+<td style="width:33.13%;" class="hcp3">
+<p class="Body-Text">BaseArticle</p>
+</td>
+<td style="width:33.27%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,37 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctions WinShell_</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Fonctions WinShell_</h1>
+<p>&#160;</p>
+<p>En Diva, la fonction <a href="WinShellExecute.htm">WinShellExecute</a> permet d'exécuter une action sur un fichier.</p>
+<p>Mais, une fois l'action lancée, le programme Diva ne conserve aucun lien avec le fichier. Entre autres, il est impossible de :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Savoir si le fichier est encore ouvert par le programme qui l’utilise,</p>
+</li>
+<li class="p">
+<p>Savoir si le fichier a été modifié ou pas.</p>
+</li>
+</ul>
+<p>Pour pallier certaines de ces carences, le module <span style="font-weight: bold;">ymapi.dhop</span> expose une suite de fonctions « WinShell_».</p>
+<p>&#160;</p>
+<p>Dans ces fonctions, la principale, <a href="WinShell_Execute.htm">WinShell_Execute</a>, se substitue à WinShellExecute et rend le même service de base, mais en plus conserve un lien avec les fichiers lancés.</p>
+<p>&#160;</p>
+<p>Pour les fichiers exécutés via cette fonction WinShell_Execute, le programme Diva peut, par exemple, ultérieurement consulter leur état avec <a href="WinShell_Read.htm">WinShell_Read</a>.</p>
+<p>&#160;</p>
+<p>La suite de cette section détaille le fonctionnement de WinShell_Execute et des fonctions connexes.</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Remarque :</p>
+<p>La fonction WinShell_Execute et les fonctions WinShell_ connexes ne sont pas utilisables avec le client web xHtml5 (le navigateur interdit les application web de lancer des programmes)!</p>
+<p>&#160;</p>
+</body>
+</html>

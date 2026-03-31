@@ -1,0 +1,161 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Structure des journaux</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Structure des journaux</h3>
+<p class="Body-Text">Les fichiers journaux se nomment respectivement <font class="hcp1">/Divalto/divaltolog/Ferror.log</font> pour le journal des erreurs et <font class="hcp1">/Divalto/divaltolog/</font><font class="hcp1">Fevent.log</font> pour le journal des evénements.</p>
+<p class="Body-Text">Chaque erreur (ou appel de la fonction <a href="SystemLogWrite.htm">SystemLogWrite</a> ) provoque l’écriture d’une ligne au format HMP. Les paramètres sont les suivants&#160;:</p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Cat</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Catégorie du message</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Date</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Date</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Heure</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Heure</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">NumErr</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Numéro de l’erreur</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">CodeSys</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Code système</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">CodeCompl</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Code complémentaire</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Lieu</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Lieu</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">User</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Code utilisateur Harmony</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Tache</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Numéro de tâche</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Adresse</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Adresse dans le programme Diva</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Programme</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Nom du programme</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Module</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Nom du module courant</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Texte</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Texte de l’erreur</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">UserWin</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Utilisateur Window</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Ordinateur</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Nom de l’ordinateur</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.98%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Pile</font></p>
+</td>
+<td style="width:82.02%;" class="hcp3">
+<p class="Body-Text">Etat de la pile Diva</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Tous les paramètres ne sont forcément renseignés.</p>
+<p class="Body-Text">Pour obtenir la ligne du source correspondant à l'adresse d'exécution, il faut compiler le module avec l'option L pour obtenir un listing de compilation. Attention, si le programme était compilé en mode Debug il faut également mettre l'option d.</p>
+</body>
+</html>

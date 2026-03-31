@@ -1,0 +1,42 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>OpenXml_DeleteSheet</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>OpenXml_DeleteSheet &#160;<span style="font-weight: normal;"><a href="Liste_des_fonctions_OpenXml.htm">Famille</a> &#160;<a href="Fonctions_OpenXml.htm">Theme</a></span></h3>
+<p>&#160;</p>
+<p>La fonction OpenXml_DeleteSheet supprime la feuille dont le nom est indiqué en paramètre.</p>
+<p>Attention, il faut que la feuille à supprimer soit "simple" car yOpenXml ne gère pas les feuilles "complexes" (contenant par exemple du graphique).</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">string OpenXml_DeleteSheet</span> (<span class="hcp1">feuille</span>)</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètre</font></p>
+<p class="Body-Text"><span class="hcp1">Feuille</span></p>
+<p class="decalage05">Nom de la feuille à supprimer.</p>
+<p class="decalage05">Si la feuille à supprimer est la feuille courante, la feuille courante devient la première feuille.</p>
+<p class="decalage05">Si la feuille à supprimer est l'unique feuille, une feuille vierge est créée et devient la feuille courante.</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Retour</p>
+<p>La fonction retourne :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Le nom de la feuille en cours.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">"1" en cas d'erreur. Voir la fonction <a href="OpenXml_GetMsgError.htm">OpenXml_GetMsgError</a>.</p>
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FromByteToBase64</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>FromByteToBase64 &#160;<a href="Listedesfonctionsdeconversion.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h3>
+<p class="Body-Text">La fonction FromByteToBase64 code une chaîne d’octets en une chaîne d’octets au format Base64.</p>
+<p class="Body-Text">Le format Base64 est très utilisé pour transférer des données binaires sur le réseau Internet. La conversion en base64 produit une chaine ne comportant que des caractères alphabétiques. La chaîne convertie est plus longue seulement d’un tiers par rapport à la chaîne d’origine.</p>
+<p class="Body-Text">La réciproque de cette fonction est FromBase64ToByte.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp1">Alpha</font> <font class="hcp1">FromByteToBase64</font> (<font class="hcp2">chaîne</font> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Chaine</font></p>
+<p class="decalage05">Chaîne de caractères à convertir.</p>
+<p class="decalage05"><br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La fonction renvoie la chaîne de caractères codée en Base64</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">La chaîne rendue par la fonction est plus longue que la chaîne d’origine.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Il est conseillé d’utiliser des variables <a href="Le_type_String0.htm">de type S</a></p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">1 chaine S&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">1 base64 S&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">chaine = "$01020304abcéàç"&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">base64 = FromByteToBase64(chaine)&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">display base64&#160;; --&gt; AQIDBGFiY4KFhw==&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Le_type_String0.htm">Le type String</a></p>
+<p class="Body-Text"><a href="FromByteToBase64.htm">FromByteToBase64</a></p>
+</body>
+</html>

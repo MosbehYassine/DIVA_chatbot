@@ -1,0 +1,64 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctions de personnalisation de XmeListConsultDefault</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fonctions de personnalisation de XmeListConsultDefault</h3>
+<p class="Body-Text">TOUT en APPELANT la procédure, vous pouvez personnaliser ou influer sur le traitement standard de <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> dans les cas suivants&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="DefProcSaisie.htm">Saisie d'une ligne</a>.<br>
+Consiste à remplacer la procédure de saisie standard, appelée en création ou en modification de ligne, par votre propre procédure de saisie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="DefProcDelete.htm">Suppression</a> d'une ligne ou de la sélection.<br>
+Consiste à exécuter une procédure personnelle avant la suppression de chaque ligne (à la manière de la procédure ZoomAvantDelete de xZoom).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="DefProcCopier.htm">Copie</a> d'une ligne dans le presse-papiers.<br>
+Consiste à exécuter une procédure personnelle avant le "copier" d'une ligne.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="DefProcColler.htm">Coller</a> du contenu du presse-papiers.<br>
+Consiste à exécuter une procédure personnelle avant le "coller" d'une ligne.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="DefProcExpanser.htm">Expansion d'un élément d'arbre</a>.<br>
+Consiste à exécuter une procédure personnelle vous permettant de compléter la liste avant l'expansion d'un élément d'arbre.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">Remarque</font>&#160;: Si vous décidez de personnaliser XmeListConsultDefault, vous pouvez <font class="hcp1">choisir</font> de le faire pour <font class="hcp1">n'importe le(s)quel(s)</font> des cas précédents.</p>
+<p class="Body-Text">&#160;<br>
+De manière générale, pour que XmeListConsultDefault fasse appel à une (ou plusieurs) fonction(s) personnelle(s), <font class="hcp1">vous devez</font>&#160;:</p>
+<ol style="list-style: decimal;">
+<li class="p-Body-Text">
+<p class="Body-Text">Mettre le paramètre <font style="font-weight: bold; font-style: italic;">Perso</font> de XmeListConsultDefault à la valeur <font class="hcp1">TRUE</font> (indépendamment du nombre de cas et des cas traités).<br>
+Si ce paramètre est positionné à FALSE (valeur par défaut), XmeListConsultDefault effectuera dans tous les cas son traitement standard.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dans votre programme et avant tout appel à XmeListConsultDefault, placer le <font class="hcp1">nom du module</font> (qui peut être le programme courant) contenant la (ou les) procédure(s) personnelle(s), dans la zone <font class="hcp1">DefpModule</font> de l'enregistrement Harmony.<br>
+Exemple&#160;: Harmony.DefpModule = "PROG.dhop"</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Programmer</font> dans ce module la (ou les) procédure(s) personnelle(s) désirées. Si une procédure n'existe pas dans le module, XmeListConsultDefault effectuera le traitement standard pour le cas correspondant.</p>
+</li>
+</ol>
+<p class="Body-Text">&#160;<br>
+Les procédures de personnalisation de XmeListConsultDefault portent des noms prédéfinis (à la manière des procédures ZoomXxxx de xZoom), à savoir&#160;: <font class="hcp1">DefProcSaisie</font>, <font class="hcp1">DefProcDelete</font>, <font class="hcp1">DefProcCopier</font>, <font class="hcp1">DefProcColler</font> et <font class="hcp1">DefProcExpanser</font>.</p>
+<p class="Body-Text">Les rubriques suivantes détaillent syntaxe et mise en œuvre de ces procédures.</p>
+</body>
+</html>

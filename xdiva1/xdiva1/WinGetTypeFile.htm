@@ -1,0 +1,66 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinGetTypeFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinGetTypeFile &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinGetTypeFile permet de récupérer en clair le type de fichier associé à une extension.</p>
+<p class="Body-Text">Cette fonction se trouve dans le module ysystemex.dhop.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Char</font> <font class="hcp2">WinGetTypeFile</font> <font class="hcp3">(ext)</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Extension</font></p>
+<p class="decalage05">Extension du fichier dont on cherche l'icone. L'extension ne doit pas comporter le point. Ex : "hop".</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text">Espace</p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Extension non trouvée, ou pas de type associé</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Le type du fichier</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;</font></p>
+<p class="Source">module "ysystemex.dhop"</p>
+<p class="Source">display WinGetTypeFile("doc") --&gt; Document Microsoft Word</p>
+<p class="Source">display WinGetTypeFile("hop") --&gt; Module Diva</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text"><a href="LCWinGetTypeFile.htm"><font class="hcp2">L</font>CWinGetTypeFile</a>, <a href="WinRegQueryValue.htm">WinRegQueryValue</a>, <a href="Exec.htm">Exec</a> , <a href="WinFindExecutable.htm">WinFindExecutable</a>, <a href="WinShellExecute.htm">WinShellExecute</a>, <a href="WinGetDefaultIcon.htm">WinGetDefaultIcon</a></p>
+</body>
+</html>

@@ -1,0 +1,66 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Menu du zoom</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:48px; }
+p.hcp2 { margin-left:88px; }
+p.hcp3 { margin-left:8px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3 class="Body-Text">Onglets dans la zone de sélection</h3>
+<p>&#160;</p>
+<p>Il est possible d'avoir, au-dessus du tableau de la liste du zoom, des onglets pour avoir plus de place pour placer les champs de filtrage.</p>
+<p>&#160;</p>
+<p>Principe :</p>
+<p>&#160;</p>
+<p>La page 3 du masque ne contient plus le tableau mais une grille avec deux panels. Celui du haut contiendra les onglets, et celui du bas le tableau.</p>
+<p>Les pages qui contiennent le tableau et les onglets sont libres. Pour l'exemple, on va supposer que le tableau sera en page 4, et les onglets commencent en page 5.</p>
+<p>&#160;</p>
+<p>Page 3 :</p>
+<p class="hcp1">Objet Grille</p>
+<p class="hcp2">Panel du haut : page 5</p>
+<p class="hcp2">Panel du bas : page 4</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp3">Page 4 :</p>
+<p class="hcp1">Le tableau du Zoom.</p>
+<p class="hcp1">La taille en hauteur de cette page devra être la taille de page 3 - taille de la page des onglets.</p>
+<p class="hcp1">La page doit être en largeur et hauteur variable.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp3">Page 5 :</p>
+<p class="hcp1">Premier onglet.</p>
+<p class="hcp1">La taille en hauteur de cette page correspond à la hauteur souhaitée.</p>
+<p class="hcp1">La page doit être en largeur variable.</p>
+<p class="hcp1">Il faut également créer un onglet avec en point d'arrêt 33.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp3">Page 6 :</p>
+<p class="hcp1">Second onglet.</p>
+<p class="hcp1">La taille en hauteur doit être la même que la page du premier onglet.</p>
+<p class="hcp1">La page doit être en largeur variable.</p>
+<p class="hcp1">Rajouter l'onglet créé précédemment.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp3">Dans le module du traitement du zoom, dans la procédure ZoomDebut, il est impératif de renseigner la page contenant réellement le tableau en l'affectant à la variable Zoom.PageListe.</p>
+<p class="hcp3">Avec l'exemple ci-dessus, on écrit :</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">Public Procedure ZoomDebut</p>
+<p class="hcp3">BeginP</p>
+<p class="hcp1">Zoom.PageListe = 4</p>
+<p class="hcp3"><span style="margin-left: 8px;">EndP</span></p>
+<p class="hcp3">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp3"><img src="../image/onglets_zoom_1.png" style="border: none;" alt="" width="1050" height="484" border="0"></p>
+<p class="hcp3">&#160;</p>
+</body>
+</html>

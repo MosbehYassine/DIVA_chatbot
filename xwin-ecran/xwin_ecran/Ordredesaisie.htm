@@ -1,0 +1,83 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Ordre de saisie</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Ordre de saisie</h3>
+<p class="Body-Text">L'ordre de saisie précise l'ordre dans lequel l'utilisateur saisira les données de la page, s'il utilise les touches de déplacement Tab (ou Flèche en bas) et Back-Tab (ou Flèche en haut).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Méthode et règles appliquées par Xwin</font></p>
+<ul class="hcp2">
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Par défaut</font>, l'ordre est déterminé en considérant tout d'abord les variables déclarées "En saisie" présentes sur la première ligne puis celles présentes sur la deuxième ligne et ainsi de suite jusqu'à la fin de la page. Sur une ligne, les variables sont prises de gauche à droite. Après avoir considéré les variables, Xwin applique le même traitement aux boutons déclarés "En saisie".</p>
+</li>
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text">Quand un nouvel objet est créé dans la page, il est <font class="hcp1">automatiquement mis à sa place</font> dans l'ordre décrit ci-dessus. Si l'option "Ordre de saisie après insertion" est active, vous serez averti par Xwin que l'ordre a été modifié, au moment où vous quitterez la page.</p>
+</li>
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Lorsqu'un objet est déplacé à l'écran</font>, l'ordre <span style="font-weight: bold; text-decoration: underline;">n'est pas implicitement modifié</span>. Il faut alors explicitement demander à Xwin de mettre à jour l'ordre de saisie.</p>
+</li>
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Si l'ordre par défaut ne convient pas</font> (saisie en colonnes par exemple), il faut passer par une entrée manuelle de l'ordre de saisie.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Pour préciser l'ordre de saisie des données</font>, appelez le choix <font class="hcp1">Ordre de saisie</font> du menu <font class="hcp1">Paramètres</font> ou cliquez avec le bouton droit dans le fond de la page et sélectionnez le choix <font class="hcp1">Ordre de saisie automatique</font> ou <font class="hcp1">Ordre de saisie manuel</font>.</p>
+<p class="Body-Text"><font class="hcp1">Si vous choisissez l'ordre de saisie automatique (par défaut)<span style="font-weight: normal;">, X</span></font>win calcule l'ordre de saisie par défaut.</p>
+<p class="Body-Text"><br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple :</font><br>
+<br>
+Avec le masque suivant :</p>
+<p class="Body-Text"><img src="../image/help0097.gif" alt="" width="318" height="65" border="0"></p>
+<p class="Body-Text">les variables seront saisies - par défaut - dans l'ordre suivant : Code client, Nom, Prénom et Adresse.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Si vous ne choisissez pas l'ordre de saisie automatique</font>, Xwin efface les données déclarées "En affichage". Il ne reste donc plus à l'écran que celles déclarées "En saisie". Un petit carré s'affiche sur chaque objet indiquant sa place dans l'ordre de saisie.</p>
+<p class="Body-Text"><img src="../image/help0098.gif" alt="" width="323" height="142" border="0"></p>
+&#160;
+<p class="Body-Text">Opérez alors de la manière suivante :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">Cliquez sur la donnée qui doit être la première saisie. Elle reçoit le numéro 1 et le carré change de couleur. Cliquez ensuite sur la deuxième donnée, la troisième et ainsi de suite.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">Pour ne pas avoir à balayer systématiquement toutes les données, depuis la première jusqu'à la dernière, vous pouvez <span class="hcp3">démarrer la saisie de l'ordre</span> sur n'importe quelle donnée par <font class="hcp1">Ctrl</font>+clic. <font class="hcp1">Ctrl</font>+clic sur une donnée A laisse la donnée A à sa place dans l'ordre, mais le clic suivant sur une donnée B placera celle-ci après la donnée A.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">Vous quittez le mode "Ordre de Saisie" :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">Lorsque toutes les données en saisie de la page ont été sélectionnées.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">En tapant <font class="hcp1">Entrée</font> ou <font class="hcp1">F10</font>.</p>
+</li>
+</ul>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp1">Attention :</font></p>
+<p class="Body-Text"><font class="hcp1">Xwin ne signale pas que l'ordre de saisie initial a été "cassé"</font> par un déplacement d'objet ou par la suppression d'un objet. Il conviendra donc d'être vigilant lors de la modification d'une page où l'ordre de saisie n'est pas celui par défaut.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp3">Cas d'une page incluant des pages panels</span> : voir la rubrique <a href="Caract&eacute;ristiques_des_objets_panels_pages.htm">Définition et caractéristiques des objets panels pages</a>.</p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

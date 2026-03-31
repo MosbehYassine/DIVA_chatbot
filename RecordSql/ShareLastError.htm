@@ -1,0 +1,140 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>RecordSql.ShareLastError</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-right:10px;
+padding-left:10px; }
+p.hcp5 { font-weight:bold; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>RecordSql.ShareLastError &#160;&#160;<span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp1">Ptr</font> = RecordSql.<font class="hcp1">ShareLastError</font> ( &amp;<font class="hcp2">résultat</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètre</font></p>
+<p class="Body-Text"><font class="hcp2">Résultat</font></p>
+<p class="decalage05">Variable de type alpha ou string recevant une chaîne Hmp indiquant la tâche qui réserve l'entité. Si l'entité est partagée par plusieurs tâches, la chaîne contient la liste des tâches qui partagent l'entité.</p>
+<p class="decalage05">La chaîne Hmp contient les paramètres suivants :</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 11.018%;">
+<col style="width: 88.982%;">
+<tr class="hcp3">
+<td colspan="2" style="width:100%;" class="hcp4">
+<p class="hcp5">Si l'entité est réservée :</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:11.018%;" class="hcp4">
+<p>&lt;Reserved&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp4">
+<p>Etat de l'entité. (R = réservé, F = forcé). Si ce paramètre est absent, cela signifie que l'entité est partagée.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:11.018%;" class="hcp4">
+<p>&lt;Task&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp4">
+<p>Numéro de tâche qui réserve l'entité.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:11.018%;" class="hcp4">
+<p>&lt;Host&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp4">
+<p>Nom de l'ordinateur qui réserve l'entité</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:11.018%;" class="hcp4">
+<p>&lt;User&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp4">
+<p>Nom de l'utilisateur qui réserve l'entité</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:11.018%;" class="hcp4">
+<p>&#160;</p>
+</td>
+<td style="width:88.982%;" class="hcp4">
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td colspan="2" style="width:100%;" class="hcp4">
+<p class="hcp5">Si l'entité est partagée, pour chaque tâche partageant l'entité :</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:11.018%;" class="hcp4">
+<p>&lt;Share&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp4">
+<p>Numéro de tâche qui partage l'entité</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:11.018%;" class="hcp4">
+<p>&lt;Host&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp4">
+<p>Nom de l'ordinateur qui partage l'entité</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:11.018%;" class="hcp4">
+<p>&lt;User&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp4">
+<p>Nom de l'utilisateur qui partage l'entité</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp3">
+<td style="width:13.49%;" class="hcp6">
+<p class="Definition" style="margin-top: 4.00pt;">0</p>
+</td>
+<td style="width:86.51%;" class="hcp6">
+<p class="Definition" style="margin-top: 4.00pt;">Pas d’erreur</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.49%;" class="hcp6">
+<p class="Definition" style="margin-top: 4.00pt;">Autre</p>
+</td>
+<td style="width:86.51%;" class="hcp6">
+<p class="Definition" style="margin-top: 4.00pt;">Code d’erreur système.</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p>Voir <a href="xdiva1.chm::/xdiva1/ShareLastError.htm">ShareLastError</a></p>
+<p class="Source">&#160;</p>
+<p class="hcp5">Voir</p>
+<p><a href="Hshare_methode.htm">RecordSql.Hshare</a></p>
+</body>
+</html>

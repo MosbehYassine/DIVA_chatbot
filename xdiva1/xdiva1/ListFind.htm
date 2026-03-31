@@ -1,0 +1,95 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ListFind</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ListFind &#160;&#160;<a href="Instructionsdegestiondeslistes.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a> <font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondelistes.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">ListFind permet de rechercher un élément dans une liste non triée (en mode Normal).<br>
+ListFind balaye séquentiellement la liste et fait toujours une comparaison de type alpha-numérique.</p>
+<p class="Body-Text"><font class="hcp2">Long ListFind</font> <font class="hcp3">( ticket , position , longueur , valeur, article)</font></p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Ticket</font></p>
+<p class="decalage05">Identifiant de la liste.</p>
+<p class="Body-Text"><font class="hcp3">Position, Longueur</font></p>
+<p class="decalage05">Position (à partir de 1) et longueur de la clé de recherche dans l'élément de la liste.</p>
+<p class="Body-Text"><font class="hcp3">Valeur</font></p>
+<p class="decalage05">Valeur à rechercher dans la liste.</p>
+<p class="Body-Text"><font class="hcp3">Article</font></p>
+<p class="decalage05">Donnée réceptrice de l'élément de la liste.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:16.24%;" class="hcp5">
+<p class="Body-Text">-1</p>
+</td>
+<td style="width:83.76%;" class="hcp5">
+<p class="Body-Text">Ticket invalide</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.24%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:83.76%;" class="hcp5">
+<p class="Body-Text">Recherche infructueuse</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.24%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:83.76%;" class="hcp5">
+<p class="Body-Text">Adresse de l'élément trouvé. Cet élément devient l'élément courant de la liste.</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">Avant de commencer la recherche, la fonction ListFind se positionne sur le prochain. Si vous voulez que la recherche se fasse depuis le début de la liste, vous devez préalablement appeler la fonction <a href="ListBegin.htm">ListBegin</a>.<br>
+Des appels successifs à la fonction ListFind permettent donc de trouver plusieurs éléments correspondants à la même clé.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">1 art 10 ; élément de la liste</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 txt 5&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 cle 5,0&#160;</p>
+<p class="Source">1&#160;quoi&#160;5,0 ; pour la recherche. Ses caractéristiques</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; sont les mêmes que cle&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">liste = ListCreate</p>
+<p class="Source">... ; remplissage de la liste</p>
+<p class="Source">input "chercher " quoi</p>
+<p class="Source">ListBegin(liste) ; positionnement au début de la liste</p>
+<p class="Source">do ; recherche de tous les éléments</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;; correspondant à la clé&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = ListFind(liste,6,5,quoi,art)&#160;</p>
+<p class="Source">while st &lt;&gt; 0 and st &lt;&gt; -1</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display art&#160;</p>
+<p class="Source">wend</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="ListSeek.htm">ListSeek</a>, <a href="ListSort.htm">ListSort</a>, <a href="ListSearch.htm">ListSearch</a></p>
+</body>
+</html>

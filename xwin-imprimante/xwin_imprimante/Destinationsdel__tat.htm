@@ -1,0 +1,162 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Destinations de l'état</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-size:12pt;
+font-weight:bold; }
+font.hcp3 { font-variant:small-caps; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-weight:bold;
+text-decoration:underline; }
+font.hcp7 { font-family:Wingdings; }
+font.hcp8 { letter-spacing:-0.50pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Destinations de l'état</h3>
+<p class="Body-Text">Cette boîte de dialogue est accessible depuis la boîte de dialogue des paramètres du masque (bouton Adresses).</p>
+<p class="Body-Text">Elle permet de paramétrer deux adresses différentes (une adresse fax et une adresse E-Mail par exemple) avec ou sans impression.</p>
+<p class="Body-Text"><font class="hcp1">Attention</font> : la gestion des adresses nécessite l'installation préalable du produit Exchange de Microsoft. De plus, cette possibilité n'existe pas pour les masques caractères.</p>
+&#160;
+<p class="Body-Text"><font size="4" class="hcp2">Impression et envoi de l'édition</font></p>
+<p class="Body-Text">Par défaut, une édition est toujours envoyée à l'imprimante, il n'y a donc rien à paramétrer dans la boîte de dialogue "Destination de l'état", <font class="hcp1">sauf si vous</font> <font class="hcp1">indiquez une ou deux adresses de destination</font>. Dans ce cas, pour que l'édition soit systématiquement envoyée à l'imprimante en plus des adresses indiquées, il faut le préciser dans la page de l'onglet "Impression".</p>
+&#160;
+<p class="Body-Text"><font size="4" class="hcp2">Paramètres constants ou variables</font></p>
+<p class="Body-Text">Il y a deux méthodes pour donner la valeur de chaque paramètre :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">donner directement sa valeur dans le masque <font class="hcp3">Xwin</font> (pour le sujet de l'édition par exemple). Ce mode est appelé "mode constante".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">indiquer une variable qui contiendra la valeur lors de l'exécution (le numéro de fax du client par exemple). Ce mode est appelé "mode variable".<br>
+Ce deuxième mode permet par exemple d'envoyer automatiquement une commande par fax à un fournisseur, le numéro de fax étant contenu dans la fiche fournisseur.<br>
+Dans ce cas, les variables devront être renseignées <font class="hcp1">avant</font> la demande d'impression du <font class="hcp1">premier</font> bloc de l'état, soit par le programme Diva, soit dans le point de traitement avant gestion.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font size="4" class="hcp2">Paramètres</font></p>
+<p class="Body-Text">Les pages des deux premiers onglets sont identiques, elles concernent chacune une des deux adresses possibles. La page de <font class="hcp1">l'onglet impression</font> indique si l'état doit être imprimé ou non.</p>
+<p class="Body-Text">La colonne <font class="hcp1">Variable</font> indique pour chaque paramètre s'il s'agit d'une constante ou d'une variable. Si vous cochez cette case, <font class="hcp3">Xwin</font> vous demande de choisir la donnée par la méthode habituelle. Pour changer ultérieurement de variable, il faut cliquer sur la flèche qui se trouve à droite de la ligne.</p>
+<p class="Body-Text">Les paramètres à saisir sont :</p>
+<table cellspacing="0">
+<col>
+<col>
+<tr class="hcp4">
+<td class="hcp5">
+<p class="Body-Text"><font class="hcp1">Type&#160;</font></p>
+</td>
+<td class="hcp5">
+<p class="Body-Text">Il s'agit du type de l'adresse du destinataire. Il permet de faire le lien avec le driver de transport de messagerie qui doit être utilisé pour envoyer l'édition. Pour plus de détails sur les différents types d'adresses, voir le programme DivaltoViewer.<font class="hcp6"><br>
+En mode constante</font>, il peut prendre une des valeurs suivantes :<font class="hcp1"><br>
+Rien</font> : cette adresse ne doit pas être prise en compte.<font class="hcp1"><br>
+Impression</font> : l'état doit être imprimé. Ce choix présente surtout un intérêt en mode variable, qui permet de choisir au moment de l'exécution si l'état doit être imprimé ou non.<font class="hcp1"><br>
+Fax</font> : l'adresse est un numéro de fax.<font class="hcp1"><br>
+Mail</font> : l'adresse est de type mail. <font class="hcp1"><br>
+E-Mail</font> : l'adresse est une adresse Internet.<font class="hcp1"><br>
+Autre</font> : l'adresse est d'un autre type.<font class="hcp1"><br>
+Fax2</font>,<font class="hcp1"><br>
+Mail2</font>,<font class="hcp1"><br>
+E-Mail2</font> et<font class="hcp1"><br>
+Autre2</font> représentent les mêmes types que Fax, Mail etc. mais en utilisant un deuxième type de driver de transport de messagerie. <font class="hcp1"><br>
+Adresse Directe</font> : Dans ce mode, le champ Adresse contient l'adresse complète du destinataire.<font class="hcp6"><br>
+<br>
+En mode variable</font>, la donnée contenant le type doit être de type L, X ou B. A l'exécution elle doit contenir une des valeurs suivantes&#160;:&#160;&#160;<br>
+0 ou 1 correspondent à Rien,<br>
+2 <font face="Wingdings" class="hcp7">à</font> Impression,<br>
+3 <font face="Wingdings" class="hcp7">à</font> Fax,<br>
+4 <font face="Wingdings" class="hcp7">à</font> Mail,<br>
+5 <font face="Wingdings" class="hcp7">à</font> E-Mail,<br>
+6 <font face="Wingdings" class="hcp7">à</font> Autre,<br>
+7 <font face="Wingdings" class="hcp7">à</font> Fax2,<br>
+8 <font face="Wingdings" class="hcp7">à</font> Mail2,<br>
+9 <font face="Wingdings" class="hcp7">à</font> E-Mail2,<br>
+10 <font face="Wingdings" class="hcp7">à</font>Autre2,<br>
+11 <font face="Wingdings" class="hcp7">à</font>Adresse Directe.<br>
+<br>
+Remarque : A l'exécution, il ne peut y avoir plus d'une impression, quelque soit l'état des paramètres.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td class="hcp5">
+<p class="Body-Text"><font class="hcp1">Adresse&#160;</font></p>
+</td>
+<td class="hcp5">
+<p class="Body-Text">Indique l'adresse du destinataire. Le format de l'adresse varie en fonction du type précédemment défini.</p>
+<p class="Body-Text"><font class="hcp6">En mode constante</font>, les éditions iront toujours au même destinataire, ce qui est d'un intérêt limité.</p>
+<p class="Body-Text"><font class="hcp6">En mode variable</font><font class="hcp8">, la variable doit être de type alpha-numérique d'une longueur maximum de 256 caractères.</font> Si le type de l'adresse est autre que Rien ou Impression, ce champ est obligatoire.<br>
+<br>
+Ce champ est limité à 2048 caractères et peut contenir jusqu'à 32 adresses (de 63 caractères), séparées par un ";".<br>
+Exemples :<br>
+xxx@divalto.fr;yyy@hotmail.fr;...<br>
+&lt;mailto:xxx@divalto.fr;yyy@hotmail.fr&gt;;...<br>
+<br>
+Sans autre précision, l'édition est adressée à un destinataire classique ("A..."). Mais vous pouvez aussi nommer des destinataires en copie et/ou en copie invisible. Pour cela, spécifiez devant l'adresse :<br>
+Cc: &#160;&#160;(pour Copie à)<br>
+Bcc: (pour Copie invisible à)</p>
+<p class="Body-Text">Exemples :<br>
+xxx@divalto.fr;cc:yyy@divalto.fr;cc:zzz@divalto.fr;bcc:test@hotmail.fr;...<br>
+&lt;mailto:xxx@divalto.fr;cc:yyy@divalto.fr;cc:zzz@divalto.fr;bcc:test@hotmail.fr&gt;;...</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td class="hcp5">
+<p class="Body-Text"><font class="hcp1">Sujet&#160;</font></p>
+</td>
+<td class="hcp5">
+<p class="Body-Text">Indique le sujet de l'édition. Ce texte est affiché dans Exchange pour présenter la liste des messages.</p>
+<p class="Body-Text"><font class="hcp6">En mode constante</font>, le sujet est figé.</p>
+<p class="Body-Text"><font class="hcp6">En mode variable</font><font class="hcp8">, la variable doit être de type alpha-numérique d'une longueur maximum de 256 caractères.</font> Si le type est autre que Rien ou Impression, ce champ est obligatoire.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td class="hcp5">
+<p class="Body-Text"><font class="hcp1">Message&#160;</font></p>
+</td>
+<td class="hcp5">
+<p class="Body-Text">Il s'agit d'un petit texte de présentation facultatif qui est intégré à l'édition. Lors de la visualisation d'un message dans Exchange, on voit le sujet, le texte contenu dans la zone Message et une icone représentant l'édition Harmony. <font class="hcp6"><br>
+En mode constante</font>, le message est figé.</p>
+<p class="Body-Text"><font class="hcp6">En mode variable</font><font class="hcp8">, la variable doit être de type alpha-numérique d'une longueur maximum de 2048 caractères.</font></p>
+<p class="Body-Text">Si cette zone message est garnie pour une adresse de type Fax, la première page du fax contiendra seulement le contenu de la zone Message et l'édition de l'état Harmony commencera alors sur la deuxième page.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td class="hcp5">
+<p class="Body-Text"><font class="hcp1">Profil</font></p>
+</td>
+<td class="hcp5">
+<p class="Body-Text">Il s'agit du profil utilisateur à utiliser dans Exchange. Si cette zone n'est pas renseignée, c'est le profil par défaut de Exchange ou celui paramétré au niveau de DivaltoViewer qui sera utilisé (cas le plus courant).</p>
+<p class="Body-Text"><font class="hcp6">En mode constante</font>, le profil est figé.</p>
+<p class="Body-Text"><font class="hcp6">En mode variable</font><font class="hcp8">, la variable doit être de type alpha-numérique d'une longueur maximum de 256 caractères.</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td class="hcp5">
+<p class="Body-Text"><font class="hcp1">Mot de passe&#160;</font></p>
+</td>
+<td class="hcp5">
+<p class="Body-Text">Il s'agit du mot de passe associé au profil si ce dernier n'est pas le profil par défaut. Si cette zone n'est pas renseignée et si le profil est figé, l'envoi de l'édition utilisera le mot de passe paramétré dans DivaltoViewer.</p>
+<p class="Body-Text"><font class="hcp6">En mode constante</font>, le mot de passe est figé.</p>
+<p class="Body-Text"><font class="hcp6">En mode variable</font><font class="hcp8">, la variable doit être de type alpha-numérique d'une longueur maximum de 256 caractères.</font></p>
+</td>
+</tr>
+</table>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="Adressesdedestinationd_une_ditionXwin.htm">Adresses de destination d'une édition Xwin</a></p>
+</body>
+</html>

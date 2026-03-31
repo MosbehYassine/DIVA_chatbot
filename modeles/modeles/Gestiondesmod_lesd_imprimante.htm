@@ -1,0 +1,203 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion des modèles d'imprimante</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { text-decoration:underline; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Gestion des modèles d'imprimante</h2>
+<p class="Body-Text">La gestion des modèles se commande, depuis n'importe quel menu de type Hmenu (Harmony.dhop, par exemple), par la frappe de <font class="hcp1">Shift+F6</font>.</p>
+<p class="Body-Text">En suivant la procédure habituelle des zooms, vous pouvez créer de nouveaux modèles, consulter, modifier ou supprimer des modèles existants. Une fiche modèle contient les champs suivants&#160;:</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Toutes impressions</font><br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 20.66%;">
+<col style="width: 79.34%;">
+<tr class="hcp3">
+<td style="width:20.66%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Modèle d'imprimante</font></p>
+</td>
+<td style="width:79.34%;" class="hcp4">
+<p class="Body-Text">Nom du modèle (6 caractères maximum).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.66%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Libellé</font></p>
+</td>
+<td style="width:79.34%;" class="hcp4">
+<p class="Body-Text">Commentaire (30 caractères maximum).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.66%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Format pour le spool</font></p>
+</td>
+<td style="width:79.34%;" class="hcp4">
+<p class="Body-Text">Ce champ de quatre caractères maximum précise l'imprimante et le paramétrage Windows à utiliser pour imprimer l'état.<br>
+Par <font class="hcp1">xDivaltoPrinters</font>, l'administrateur du système <font class="hcp1">doit établir un lien</font> entre ce format et le couple imprimante / paramétrage associé&#160;: Cf. rubrique "Liaison entre modèle et imprimante/ paramétrage Windows" du guide d'utilisation en ligne d'Harmony.<br>
+Remarque&#160;: le format est significatif uniquement en mode d'impression "Spool".</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.66%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Hauteur papier</font></p>
+</td>
+<td style="width:79.34%;" class="hcp4">
+<p class="Body-Text">Nombre maximum de lignes par page (toutes orientations pour les états graphiques ; en mode portrait uniquement pour les états caractères).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.66%;" class="hcp4">
+<p class="Body-Text" style="font-weight: bold;">Type d'imprimante</p>
+</td>
+<td style="width:79.34%;" class="hcp4">
+<p class="Body-Text">Si vous sélectionnez l'option <span style="font-weight: bold;">Maquette</span>, toute édition effectuée avec ce modèle générera un fichier "maquette", qui pourra ensuite être rejoué indépendamment du programme ayant produit cette édition. Cette option est normalement réservée à un usage de développement et de test.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.66%;" class="hcp4">
+<p class="Body-Text" style="font-weight: bold;">Suffixer le nom du fichier maquette avec la date</p>
+</td>
+<td style="width:79.34%;" class="hcp4">
+<p class="Body-Text">Cette option permet, lorsque le choix Maquette a été sélectionné comme type d'imprimante, de suffixer le nom du fichier généré par la date de l'édition. Elle permet d'obtenir plusieurs versions de maquette à partir d'une même édition.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Toutes impressions en mode graphique</font><br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 20.863%;">
+<col style="width: 79.137%;">
+<tr class="hcp3">
+<td style="width:20.863%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Mode d'impression</font></p>
+</td>
+<td style="width:79.137%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Le choix "Spool" est obligatoire en mode graphique</font> car les états (caractères ou graphiques) édités en mode graphique doivent passer par le spouleur de Windows.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.863%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Fichier descriptif</font></p>
+</td>
+<td style="width:79.137%;" class="hcp4">
+<p class="Body-Text"><font style="font-weight: bold; text-decoration: underline;">FIHWGRA</font> <font class="hcp2">(ou FIHWGRC) est obligatoire en mode graphique</font>.<font class="hcp1"><br>
+Ce paramètre ne concerne que les états caractères</font>.<br>
+FIHWGRC utilise des caractères plus "comprimés" que FIHWGRA. Il permet donc de placer plus de caractères dans une ligne. Utilisez-le, par exemple, si votre imprimante ne permet pas d'imprimer 80 caractères par ligne en mode normal ou 132 caractères par ligne en mode comprimé.<font class="hcp1"><br>
+Attention</font>&#160;: l'envoi d'une séquence d'initialisation en début d'édition est obligatoire avec FIHWGRC (Cf. annexe "Envoi d'une séquence d'initialisation à l'imprimante" du guide d'utilisation en ligne d'Harmony).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Toutes impressions caractères</font><br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 20.863%;">
+<col style="width: 79.137%;">
+<tr class="hcp3">
+<td style="width:20.863%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Saut de page standard</font></p>
+</td>
+<td style="width:79.137%;" class="hcp4">
+<p class="Body-Text">Méthode pour réaliser les sauts de page :<font class="hcp1"><br>
+Oui</font> demande que les sauts de page soient commandés par l'envoi du caractère 0C (form-feed). Ce choix est obligatoire pour les imprimantes laser.<font class="hcp1"><br>
+Non</font> demande que les pages soient au besoin complétées avec des lignes blanches, jusqu'à atteindre la hauteur de papier indiquée.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.863%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Saut de page</font></p>
+</td>
+<td style="width:79.137%;" class="hcp4">
+<p class="Body-Text">Commande de saut(s) de page :<font class="hcp1"><br>
+Avant</font>&#160;: un saut de page est fait au début de chaque édition.<font class="hcp1"><br>
+Après</font>&#160;: un saut de page est fait à la fin de chaque édition.<font class="hcp1"><br>
+Avant et après</font>&#160;: un saut de page est fait au début et à la fin de chaque édition.<font class="hcp1"><br>
+Aucun</font>&#160;: pas de saut de page en début ni en fin d'édition.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.863%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Hauteur papier<br>
+en mode paysage</font></p>
+</td>
+<td style="width:79.137%;" class="hcp4">
+<p class="Body-Text">Nombre maximum de lignes par page quand l'état est édité en mode paysage (Cf. rubrique "Réglage de la hauteur d'édition" du guide d'utilisation en ligne d'Harmony).<br>
+Si ce champ est laissé à 0, c'est le paramètre "Hauteur papier" qui indique le nombre maximum de lignes par page.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.863%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Mode paysage / Caractères comprimés</font></p>
+</td>
+<td style="width:79.137%;" class="hcp4">
+<p class="Body-Text">Si vous cochez la case située sur la ligne :<br>
+"<font class="hcp1">Plus de 132 colonnes</font>",<br>
+"<font class="hcp1">81 à 132 colonnes</font>",<br>
+"<font class="hcp1">1 à 80 colonnes</font>",<br>
+les états faisant respectivement plus de 132 caractères par ligne,<br>
+de 81 à 132 caractères par ligne, de 1 à 80 caractères par ligne seront édités en mode paysage / caractères comprimés (pour toutes explications complémentaires, voir la rubrique "Réglage de la largeur d'édition" du guide d'utilisation en ligne d'Harmony).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Impressions caractères en mode caractères</font><br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 20.863%;">
+<col style="width: 79.137%;">
+<tr class="hcp3">
+<td style="width:20.863%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Mode d'impression</font></p>
+</td>
+<td style="width:79.137%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Spool</font>&#160;: les éditions passent par le spouleur de Windows (mode conseillé).<font class="hcp1"><br>
+Normal</font>&#160;: les éditions sont faites sur l'imprimante affectée à la tâche.<font class="hcp1"><br>
+Transparence</font>&#160;: interdit sous Windows.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.863%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Unité logique</font></p>
+</td>
+<td style="width:79.137%;" class="hcp4">
+<p class="Body-Text">Numéro d'unité logique de l'imprimante en mode d'impression normal.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.863%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Fichier descriptif</font></p>
+</td>
+<td style="width:79.137%;" class="hcp4">
+<p class="Body-Text">Nom du fichier descriptif imprimante.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque</font>&#160;: Le fichier de stockage des modèles d'imprimante (Fprinters.dhfi) est un fichier "système", unique pour toutes les applications Harmony. Le paramétrage des imprimantes de l'installation peut donc se faire à partir de n'importe quel menu (y compris le menu Harmony.dhop).</p>
+</body>
+</html>

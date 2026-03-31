@@ -1,0 +1,25 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Installation (IBM DB2)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Installation (IBM DB2)</h1>
+<p>&#160;</p>
+<p>Attention, sous IBM DB2 uniquement, la synchronisation nécessite l'exécution préalable par l’administrateur du System i de la commande :</p>
+<p>ADDRPYLE SEQNBR(5555) MSGID(CPA32B2) RPY('I') &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;(attention <span style="font-weight: bold; text-decoration: underline;">lettre grand i</span> derrière RPY)</p>
+<p>&#160;</p>
+<p>Ceci a pour conséquence de changer la &#160;liste des réponses automatiques du système. En effet, lors d’une commande de suppression (par exemple d’un champ), le système demande une confirmation. Comme l’utilisateur n’a pas la main, ce sont les réponses automatiques du système qui sont utilisées.</p>
+<p>&#160;</p>
+<p>Remarque : Cette commande n’est à exécuter qu’une seule fois pour un serveur (et non à chaque synchronisation).</p>
+<p>&#160;</p>
+<p>Pour les autres moteurs de base de données, il n’y a aucune manipulation particulière à effectuer.</p>
+<p>&#160;</p>
+</body>
+</html>

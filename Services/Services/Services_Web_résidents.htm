@@ -1,0 +1,86 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Services Web résidents</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+p.hcp3 { text-decoration:underline; }
+p.hcp4 { margin-left:48px; }
+span.hcp5 { font-weight:bold; }
+p.hcp6 { font-family:"Courier New"  , monospace;
+margin-left:88px; }
+p.hcp7 { font-family:"Courier New"  , monospace;
+margin-left:88px;
+font-weight:bold; }
+p.hcp8 { margin-left:88px; }
+font.hcp9 { font-family:Courier New; }
+p.hcp10 { font-family:Courier New;
+margin-left:88px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Services Web résidents</h1>
+<p class="hcp1">Principe</p>
+<p>A partir de la version 6.3a d'Harmony, le système gère un pool de tâches pour &#160;l'exécution des services web. Ce pool permet de garder des tâches Harmony en attente et ainsi de réduire considérablement le temps d'exécution d'une requête.</p>
+<p>Lors du premier appel à un service web, le programme XwebServices.dhop est chargé. Une fois le traitement de l'action effectué, le contrôle est rendu au programme XwebServices.dhop (par l'instruction ProgramGoto). Ce dernier se met alors en attente d'un appel de service web.</p>
+<p>Lors de l'appel suivant à un service web, s'il existe une tâche disponible dans le pool, celle-ci est immédiatement activée.</p>
+<p>&#160;</p>
+<p class="hcp1">Mise en oeuvre</p>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp3">Paramètre des actions</p>
+</li>
+</ul>
+<p class="hcp4">La case <span class="hcp5">Résidente</span> de l'action doit être cochée. Voir <a href="Le_param_trage_de_XBAL.htm">le fichier paramètres des actions</a>.</p>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp3">Fin du programme qui traite l'action.</p>
+</li>
+</ul>
+<p class="hcp4">Le programme qui traite l'action doit renvoyer le résultat, éventuellement écrire dans le fichier journal, puis enchaîner au programme XwebServices.dhop.</p>
+<p class="hcp4">Pour assurer la compatibilité avec l'ancien mode de fonctionnement il est conseillé d'écrire le code de la manière suivante (les lignes en gras sont celles qui doivent être ajoutées pour les services web écrits dans les versions antérieures à la version 6.2) :</p>
+<p class="hcp6">&#160;</p>
+<p class="hcp6"><font color="#008000">&#160;<span class="hcp5">i</span></font><span class="hcp5">f IsProgramCalled = FALSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; l'action est paramétrée Résidente &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></p>
+<p class="hcp7">&#160;&#160;&#160;&#160;WebServiceReturn(resultat,0) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;ProgramGoto("xwebservices.dhop")</p>
+<p class="hcp7">&#160;endif</p>
+<p style="font-family: 'Courier New'; color: #008000; margin-left: 88px;">&#160;</p>
+<p class="hcp8"><font face="Courier New" class="hcp9">&#160;</font><font face="Courier New" color="#0000FF" class="hcp9">Pong</font><font face="Courier New" class="hcp9">("WebServiceStatus",0) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; l'action n'est pas résidente</font></p>
+<p class="hcp8"><font face="Courier New" class="hcp9">&#160;</font><font face="Courier New" color="#0000FF" class="hcp9">Pong</font><font face="Courier New" class="hcp9">("WebServiceResult",resultat)</font></p>
+<p class="hcp8"><font face="Courier New" class="hcp9">&#160;</font><font face="Courier New" color="#0000FF" class="hcp9">Pong</font><font face="Courier New" class="hcp9">("WebServiceVersion",MaVersion)</font></p>
+<p class="hcp10">&#160;<font color="#0000FF">programexit</font></p>
+<p class="hcp10">&#160;</p>
+<p class="hcp1">Paramétrage de la taille du pool des services web</p>
+<p class="hcp4">Par défaut, le système garde 10 tâches dans le pool.</p>
+<p class="hcp4">Pour changer cette valeur, &#160;ajoutez, dans le chapitre System du fichier Divalto.Ini, la clé :</p>
+<p class="hcp4">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;WebServicesSizePool=nombre_de_tâches</p>
+<p class="hcp4">Attention, la modification doit être faite dans la base de registre globale à l'ordinateur.</p>
+<p>&#160;</p>
+<p class="hcp1">Journalisation</p>
+<p class="hcp4">Dans le mode non résident, Xwebservices.dhop écrit dans le journal après chaque action, la date et l’heure d’exécution de l’action, ainsi que sa durée.</p>
+<p class="hcp4">Dans le mode résident, Xwebservices.dhop ne récupère plus la main après l’exécution de l’action (en effet, dans ce mode, celle-ci est exécutée par un programGoto et non plus un programCall). Il convient donc au programme qui gère l’action de journaliser lui-même s’il le désire.</p>
+<p class="hcp4">Pour cela :</p>
+<p class="hcp4">Il devra déclarer le module XwebServices.Dhop et faire appel à la fonction de journalisation WriteLogFile</p>
+<p class="hcp4">&#160;</p>
+<p style="margin-left: 48px; font-weight: bold;">Exemple</p>
+<p class="hcp4">Module "Xwebservice.dhop"</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">TempsTic = wingetTickCount - T0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;T0 est initialisé au début du main t0 = winGetTickCount</p>
+<p class="hcp4">Temps = TempsTic/1000</p>
+<p class="hcp4">WriteLogFile(0,"Exécution de l'action &#160;Mon Action v1.1 en " &amp; nospaces(temps) &amp; " secondes")</p>
+<p class="hcp4">&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,214 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion des profils de connexion</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+table.hcp2 { vertical-align:top; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { border:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp5 { font-weight:bold; }
+td.hcp6 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp8 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+ul.hcp9 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Gestion des profils de connexion</h3>
+<p>&#160;</p>
+<p>L’utilitaire xConfigProfil.dhop permet de gérer les <a href="Profils_de_connexion.htm">profils de connexion</a> d'un serveur d'applications.</p>
+<p>Pour y faire appel, sélectionnez le choix "<span class="hcp1">Gestion des Profils de connexion en client léger</span>" du menu "<span class="hcp1">Paramétrage</span>" du menu Harmony.</p>
+<p>Vous pouvez créer, modifier ou supprimer des profils, à la manière habituelle avec un objet "Tableau".</p>
+<p>&#160;</p>
+<p>Un profil de connexion comporte les paramètres suivants :<br>
+&#160;</p>
+<table cellspacing="0" width="100%" class="hcp2">
+<col style="width: 22.787%;">
+<col style="width: 77.213%;">
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp4">
+<p class="hcp5">Nom</p>
+</td>
+<td style="width:77.213%;" class="hcp6">
+<p>Nom servant à identifier le profil de connexion.<br>
+Exemples :<br>
+Local<br>
+ConnexionLan<br>
+ConnexionWeb</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">Courant</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Si vous cochez cette case, ce profil sera chargé par défaut.<br>
+Si cette case n'est cochée pour aucun profil, le profil chargé par défaut sera le premier rencontré dans la liste.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">Type de connexion</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Il existe trois types de connexion :</p>
+<ul class="hcp9">
+<li class="p">
+<p><span class="hcp1">Local</span>.<br>
+A configurer lorsque le poste client léger est aussi serveur d'applications.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Réseau LAN</span>.<br>
+A configurer lorsque le poste client léger se connecte au serveur d'applications en mode Socket.<br>
+Dans ce cas, spécifiez aussi le nom du serveur (plus, éventuellement, son adresse IP et le port TCP/IP à utiliser).</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Service Web</span>.<br>
+A configurer lorsque le poste client léger se connecte au serveur d'applications en mode Service Web.<br>
+Dans ce cas, spécifiez aussi l'Url d'accès au service Web sur le serveur.<br>
+Ce mode nécessite d'installer le service IIS de Microsoft sur le serveur d'applications.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">Nom du serveur</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Type de connexion Réseau LAN :<br>
+Nom NetBios du serveur d'applications (seul paramètre obligatoire).<br>
+Exemple : ServeurLan</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">Adresse IP du serveur</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Type de connexion Réseau LAN :<br>
+Adresse IP du serveur (paramètre facultatif : en général, il n'est pas utile de la préciser car elle est automatiquement détectée).<br>
+A préciser si le poste client ne sait pas résoudre le nom du serveur.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">Port TCP/IP</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Type de connexion Réseau LAN :<br>
+Port utilisé (1246 par défaut ; sauf si ce port est déjà utilisé, il n'est pas utile de le spécifier).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">URL du service WEB</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Type de connexion Service Web :<br>
+Url d'accès au service Web sur le serveur d'applications.<br>
+<br>
+Un modèle de la page asmx à spécifier ("<span class="hcp1">DHTerminalServer.asmx</span>") est fourni sur le CD Divalto.<br>
+Après avoir installé le produit "Harmony Power Foundation", vous le trouverez dans le répertoire <span class="hcp1">x:\Divalto\Internet\LCWebService</span>. Il est conseillé de faire pointer le répertoire virtuel IIS (Erp dans l'exemple) sur ce répertoire : il peut être changé mais dans ce cas, il ne faudra pas oublier de reprendre le modèle livré par Divalto en cas de mise à jour dans une version future d'Harmony.<span class="hcp1"><br>
+<br>
+Exemple</span> :<br>
+http://divalto.societe.fr/Erp/DHTerminalServer.asmx</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">Autres paramètres</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Paramètres de connexion complémentaires (réservé à un usage ultérieur).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">Simple utilisateur</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Si vous ne cochez pas cette case, l'utilisateur de ce profil de connexion aura accès à toutes les options et fonctionnalités proposées par la boîte des <a href="Options_de_connexion_avanc&eacute;es.htm">Options de connexion avancées</a>.<br>
+Dans le cas contraire, certaines opérations lui seront interdites. Toutefois, un administrateur qui se rend sur le poste d'un utilisateur pourra, sous réserve de saisie d'un mot de passe (voir le paramètre <span class="hcp1">Mot de passe</span>), récupérer ponctuellement le droit d'accès à toutes les options.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">Option d'identification</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Lorsque l'utilisateur lance une application Divalto, une boîte de connexion est normalement ouverte pour lui permettre de (ou le forcer à) s'identifier. Plusieurs solutions d'identification sont disponibles (pour en connaître la liste et le fonctionnement, voir le paramètre <span class="hcp1">Options d'identification</span> de la boîte des <a href="Options_de_connexion_avanc&eacute;es.htm">Options de connexion avancées</a>).<br>
+<br>
+Ce multi-choix permet :</p>
+<ul class="hcp9">
+<li class="p">
+<p>De forcer, pour tous les utilisateurs de ce profil, une méthode d'identification parmi celle proposée.<br>
+Voir la rubrique <a href="Conseils_de_mise_en_place_d_une_strat&eacute;gie_de_s&eacute;curit&eacute;_Divalto.htm">Conseils de mise en place d'une stratégie de sécurité Divalto</a>.</p>
+</li>
+<li class="p">
+<p>Ou, au contraire, de laisser ces utilisateurs libres de choisir eux-mêmes leur méthode. Pour ce faire, sélectionnez le choix "L'utilisateur est libre de choisir".</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:22.787%;" class="hcp7">
+<p class="hcp5">Mot de passe</p>
+</td>
+<td style="width:77.213%;" class="hcp8">
+<p>Si vous avez coché la case "<span class="hcp1">Simple utilisateur</span>", certaines options avancées de la boîte de connexion seront indisponibles aux utilisateurs de ce profil de connexion. Un administrateur se rendant sur le poste de l'utilisateur pourra à nouveau y avoir accès en cliquant sur le bouton <img src="../image/BoutonCadenas.png" style="border: none;" alt="" width="22" height="24" border="0"> puis en saisissant le mot de passe fourni ici.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>De plus, l'utilitaire propose les <span class="hcp1">deux commandes</span> supplémentaires suivantes :<br>
+&#160;</p>
+<table cellspacing="0" width="100%" class="hcp2">
+<col style="width: 23.199%;">
+<col style="width: 76.801%;">
+<tr class="hcp3">
+<td style="width:23.199%;" class="hcp4">
+<p class="hcp5">Propager</p>
+</td>
+<td style="width:76.801%;" class="hcp6">
+<p>Chaque utilisateur dispose de sa propre section Divalto.ini dans la base de registre. Les modifications faites ici s'appliquent par défaut uniquement à l'utilisateur courant.<br>
+Ce bouton permet de répercuter localement (sur le serveur d'applications courant) les modifications vers les autres utilisateurs.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:23.199%;" class="hcp7">
+<p class="hcp5">Exporter dans un fichier</p>
+</td>
+<td style="width:76.801%;" class="hcp8">
+<p>Permet d'exporter la liste de profils dans un fichier .reg.<br>
+Si vous exécutez ensuite ce fichier sur un poste client léger, vous copierez les profils exportés dans la base de registre de l'utilisateur de ce poste. Ceci constitue une méthode alternative de diffusion des profils sur les postes clients légers : voir la rubrique <a href="Profils_de_connexion.htm">Profils de connexion</a>.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+</body>
+</html>

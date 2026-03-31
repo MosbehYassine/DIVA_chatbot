@@ -1,0 +1,36 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Principe du serveur sécurisé</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Principe du serveur de données sécurisé</h4>
+<p class="Body-Text">Par défaut, lorsqu'un utilisateur se connecte à un serveur Xlan, ce dernier vérifie uniquement que le code de cet utilisateur est enregistré dans le fichier Xlogf du serveur de données. Cette connexion simplifiée présente un important défaut, si l'on désire assurer une bonne sécurité sur le site&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Même si la sécurité est installée côté Windows (à savoir&#160;: vous avez déclarés les utilisateurs et vous leur avez attribué des permissions, de manière à ce qu'ils aient un accès limité aux répertoires et aux fichiers via l'explorateur, Excel ou Word par exemple), l'utilisateur, lorsqu'il travaille sous Harmony, accède au serveur en passant par Xlan. De ce fait, il hérite des droits d'accès de Xlan, qui ne peuvent être que complets, tout au moins en ce qui concerne les fichiers Harmony.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Une <font class="hcp2">option</font> de Xlan permet de modifier ce comportement&#160;: le <font class="hcp2">serveur sécurisé</font>. Avec un tel serveur&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Xlan accède aux fichiers non plus avec ses propres droits Windows mais avec ceux de l'utilisateur pour lequel il "travaille".</p>
+</li>
+</ul>
+</body>
+</html>

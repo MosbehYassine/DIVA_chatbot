@@ -1,0 +1,103 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="WindowName" value="$Global_Program">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Générateur de zoom : Manuel de référence">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Générateur de zoom">
+      <param name="Local" value="G&eacute;n&eacute;rateur_de_zoom.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Paramétrage du générateur de zoom">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage du générateur de zoom">
+        <param name="Local" value="Param&eacute;trage_du_g&eacute;n&eacute;rateur_de_zoom.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage au niveau du projet">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage au niveau du projet">
+          <param name="Local" value="Param&eacute;trage_au_niveau_du_projet.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage au niveau du dictionnaire de données">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage au niveau du dictionnaire de données">
+          <param name="Local" value="Param&eacute;trage_dans_le_dictionnaire_de_donn&eacute;es.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage au niveau des tables">
+          <param name="Local" value="Param&eacute;trage_au_niveau_de_la_Table.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage au niveau des champs">
+          <param name="Local" value="Param&eacute;trage_au_niveau_des_champs.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage au niveau des index">
+          <param name="Local" value="Param&eacute;trage_au_niveau_des_index.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage au niveau des champs des index">
+          <param name="Local" value="Param&eacute;trage_au_niveau_des_champs_des_index.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage au lancement de la génération">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage au lancement de la génération">
+          <param name="Local" value="Param&eacute;trage_au_lancement_de_la_g&eacute;n&eacute;ration.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Personnalisation du zoom généré">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Personnalisation du zoom généré">
+        <param name="Local" value="Personnalisation_du_zoom_g&eacute;n&eacute;r&eacute;.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Utiliser un modèle de masque ou de traitement">
+        <param name="Local" value="Utiliser_un_mod&egrave;le_de_masque_ou_de_traitement.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Personnaliser le masque d'écran">
+        <param name="Local" value="Personnaliser_le_masque_d_&eacute;cran.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Personnaliser le module de traitements">
+        <param name="Local" value="Personnaliser_le_module_de_traitements.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Mise en oeuvre du générateur de zoom">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Mise en oeuvre du générateur de zoom">
+        <param name="Local" value="Mise_en_oeuvre_du_g&eacute;n&eacute;rateur_de_zoom.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

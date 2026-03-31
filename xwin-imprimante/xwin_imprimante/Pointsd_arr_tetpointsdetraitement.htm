@@ -1,0 +1,71 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Points d'arrêt et points de traitement</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-variant:small-caps; }
+ul.hcp2 { list-style:disc; }
+font.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Points d'arrêt et points de traitement</h2>
+&#160;
+<p class="Body-Text">Dans le cas du gestionnaire d'écran, les points d'arrêt et de traitement étaient indispensables au bon fonctionnement du programme. En effet, pendant la saisie d'un masque, Ywpf fonctionne en totale autonomie.</p>
+<p class="Body-Text">Le cas du gestionnaire d'imprimante <font class="hcp1">y</font>mig est différent. Comme nous l'avons vu <a href="Notiondebloc.htm">dans notre exemple</a>, le programme Diva a la main en permanence (il doit lire le fichier des compositeurs) et il commande l'impression de chaque bloc. Ce n'est que lors des <a href="Encha_nementdeblocs.htm">enchaînements automatiques de blocs</a> que le programme Diva cède le contrôle au gestionnaire d'imprimante. La gestion des points de traitement et des points d'arrêt est donc moins "cruciale" que dans le cas de Ywpf. Néanmoins, nous y verrons deux intérêts principaux :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Les logiciels développés sous <font class="hcp1">h</font>armony doivent être paramétrables. Les états d'impression doivent pouvoir être modifiés rapidement et simplement et ce, sans toucher au programme lui-même. Ainsi, en cours d'impression, il est possible d'effectuer des traitements spécifiques, de lire des données dans des fichiers annexes et de les imprimer, de calculer des totaux, d'imprimer un bloc différent de celui demandé par le programme Diva ou d'imprimer un bloc en supplément de celui demandé par le programme Diva.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les logiciels doivent pouvoir rester maître du processus d'impression, même lors des enchaînements automatiques de blocs.</p>
+</li>
+</ul>
+<p class="Body-Text">Le développeur doit donc disposer d'un moyen :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Pour effectuer des traitements avant et/ou après l'impression d'un bloc.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour modifier le déroulement normal de l'impression, lorsqu'un cas particulier est détecté à l'occasion d'un traitement ou lorsque <font class="hcp1">y</font>mig procède à des enchaînements automatiques de blocs.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">h</font>armony offre pour cela deux méthodes, les <font class="hcp3">points de traitement</font> et les <font class="hcp3">points d'arrêt</font> :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Si un point de traitement "Avant" et / ou "Après" est défini sur un bloc, <font class="hcp1">y</font>mig appelle une procédure Diva avant et / ou après l'impression du bloc.<br>
+Le point de traitement "Après" peut servir à demander l'impression d'un bloc supplémentaire.<br>
+Le point de traitement "Avant gestion d'un bloc" permet d'ignorer ce bloc ou de le remplacer par un bloc plus approprié.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les points d'arrêt ne sont effectifs qu'en cas d'enchaînement automatique ou de débordement. En dehors de ces cas, le retour au programme Diva n'a aucun intérêt puisque celui-ci a constamment la main.<br>
+Si un point d'arrêt "Avant" est défini sur un bloc, <font class="hcp1">y</font>mig redonne le contrôle au programme Diva qui a demandé l'impression avant l'impression de ce bloc.<br>
+De même, un point d'arrêt "Après" demande le retour au programme Diva après l'impression du bloc concerné.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp3">Exemples</font></p>
+<ol style="list-style: decimal;">
+<li class="p-Body-Text">
+<p class="Body-Text">On utilisera par exemple les points de traitement pour faire des recherches dans un fichier externe.<br>
+Dans une impression du fichier articles, on pourra par exemple ajouter un point de traitement avant l'impression du bloc détail pour lire la fiche fournisseur de l'article. Le nom du fournisseur pourra être imprimé face à la référence article.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les points de traitement avant gestion pourront être utilisés pour imprimer un bloc spécifique en fonction de la famille de l'article.</p>
+</li>
+</ol>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">L'aspect programmation des points d'arrêt et des points de traitement est abordé dans le chapitre <font class="hcp3">Programmation de l'impression d'un masque</font> du livre consacré à Ymig.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

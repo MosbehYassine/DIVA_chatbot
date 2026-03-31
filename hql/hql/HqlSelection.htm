@@ -1,0 +1,61 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HqlSelection</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt;
+font-weight:normal; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HqlSelection &#160;<a href="Listedeschapitres.htm"><font size="2" class="hcp1">Famille</font></a><font style="font-size: 10pt;" size="2">&#160;</font><a href="Introduction3.htm"><font size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Le chapitre HqlSelection permet de choisir les enregistrements à traiter parmi tous les enregistrements lus dans le fichier. Il est exécuté après chaque lecture dans le fichier (si le programme comporte un tri les enregistrements sont sélectionnés avant d'être triés).</p>
+<p class="Body-Text">Pour exprimer votre choix il faut positionner la variable HQL.Ok :</p>
+<table cellspacing="0" width="524">
+<tr class="hcp2">
+<td style="width:22.74%;" class="hcp3">
+<p class="Body-Text"><font class="hcp4">Hql.ok = 'O'</font></p>
+</td>
+<td style="width:77.26%;" class="hcp3">
+<p class="Body-Text">Demande que l'enregistrement soit pris en compte</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.74%;" class="hcp3">
+<p class="Body-Text"><font class="hcp4">Hql.ok = 'I'</font></p>
+</td>
+<td style="width:77.26%;" class="hcp3">
+<p class="Body-Text">Demande au contraire que l'enregistrement ne soit pas considéré. L'enregistrement suivant est alors lu.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.74%;" class="hcp3">
+<p class="Body-Text"><font class="hcp4">Hql.ok='N'</font></p>
+</td>
+<td style="width:77.26%;" class="hcp3">
+<p class="Body-Text">Lorsque la variable Hql.Ok est positionnée à 'N', au retour de la procédure, la lecture du fichier principal est interrompue (les ruptures de fin sont tout de même exécutées). Cela permet d'arrêter la lecture, dès lors qu'on sait qu'il n'y aura plus aucun enregistrement à traiter : on évite ainsi de parcourir la totalité du fichier.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><br>
+<font class="hcp4">Remarque</font></p>
+<p class="Body-Text">Par défaut Hql.Ok prend la valeur 'O', l'enregistrement est traité.</p>
+</body>
+</html>

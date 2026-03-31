@@ -1,0 +1,37 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZoomComboApresRead</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt; }
+font.hcp2 { font-size:10pt;
+font-weight:normal; }
+font.hcp3 { font-weight:bold; }
+span.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ZoomComboApresRead &#160;&#160;&#160;&#160;&#160;<font size="2" class="hcp1">&#160;</font><a href="S&eacute;quences_du_module_Diva_sp&eacute;cifiques_au_Zoom_combo.htm"><font size="2" class="hcp2">Famille</font></a> <font size="2" class="hcp1">&#160;</font><a href="ModuleDivaduZoom.htm"><font size="2" class="hcp2">Thème</font></a></h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Objet&#160;:</font> Traitement après lecture.</p>
+<p class="Body-Text"><font class="hcp3">Procédure&#160;:</font> Facultative. A défaut, c'est la séquence <a href="ZoomApresRead.htm">ZoomApresRead</a> qui est exécutée.</p>
+<p class="Body-Text"><font class="hcp3">Exécutée :</font> Après la lecture de la fiche courante.</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text">La procédure ZoomComboApresRead est appelée après chaque lecture de fiche. Si elle est présente, elle se substitue à la procédure ZoomApresRead habituelle. Dans le cas contraire, si le paramètre du RecordSql ZoomOptimize est positionné à 1, c'est la procédure ZoomApresReadListe qui est exécutée, à défaut, ou si elle n'existe pas, c'est .ZoomApresRead qui est exécutée.</p>
+<p class="Body-Text">Elle peut en particulier servir à la sélection des éléments lus, exactement comme dans le Zoom classique.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp4">L'intérêt d'appeler cette procédure spécifique plutôt que la procédure ZoomApresRead habituelle est de réduire au maximum le temps de lecture des fiches</span>. Placez-y les traitements de la procédure ZoomApresRead strictement indispensables à l'affichage de la fenêtre liste.</p>
+<p>En particulier, prohibez toutes les recherches d'informations complémentaires dans des tables externes, qui apportent un plus au Zoom classique mais qui n'ont pas un intérêt flagrant dans le Zoom liste.</p>
+&#160;
+<p class="Body-Text"><span class="hcp4">Remarque</span> : Le module de traitements Diva est commun au Zoom liste et au Zoom classique. Si vous avez besoin de connaître le type du zoom exécuté dans un traitement, consultez la rubrique "<a href="Param&egrave;tres_des_proc&eacute;dures_de_traitement_du_Zoom_combo.htm">Paramètres des procédures de traitement du Zoom liste</a>".</p>
+<p>&#160;</p>
+</body>
+</html>

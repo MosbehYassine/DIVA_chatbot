@@ -1,0 +1,92 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FtpRequestSetMethod</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>FtpRequestSetMethod <a href="Liste_des_fonctions_Ftp___Sftp.htm">Famille</a> <a href="Fonctions_Ftp___Sftp.htm">Thème</a></h1>
+<p>&#160;</p>
+<p>Positionnement de la méthode Ftp et des paramètres complémentaires.</p>
+<p>&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">int FtpRequestSetMethod &#160;</span>( <span style="font-style: italic;">Ticket , Methode , Fichier, &#160;[ FichierHarmony ] , [ TimeOut ]</span> )</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">Ticket</p>
+<p class="decalage05">Identifiant de la requête obtenu par <a href="FtpRequestNew.htm">FtpRequestNew</a></p>
+&#160;
+<p class="Body-Text" style="font-style: italic;">Méthode</p>
+<p class="decalage05">Nom de la méthode.</p>
+<p class="decalage05">En Ftp toutes les méthodes suivantes peuvent être appelées :</p>
+<p class="decalage05" style="margin-left: 59px;">DownloadFile = "RETR";</p>
+<p class="decalage05" style="margin-left: 59px;">ListDirectory = "NLST";</p>
+<p class="decalage05" style="margin-left: 59px;">UploadFile = "STOR";</p>
+<p class="decalage05" style="margin-left: 59px;">DeleteFile = "DELE";</p>
+<p class="decalage05" style="margin-left: 59px;">AppendFile = "APPE";</p>
+<p class="decalage05" style="margin-left: 59px;">GetFileSize = "SIZE";</p>
+<p class="decalage05" style="margin-left: 59px;">UploadFileWithUniqueName = "STOU"</p>
+<p class="decalage05" style="margin-left: 59px;">MakeDirectory = "MKD";</p>
+<p class="decalage05" style="margin-left: 59px;">RemoveDirectory = "RMD";</p>
+<p class="decalage05" style="margin-left: 59px;">ListDirectoryDetails = "LIST";</p>
+<p class="decalage05" style="margin-left: 59px;">GetDateTimestamp = "MDTM";</p>
+<p class="decalage05" style="margin-left: 59px;">PrintWorkingDirectory = "PWD";</p>
+<p class="decalage05" style="margin-left: 59px;">Rename = "RENAME";</p>
+<p class="decalage05" style="margin-left: 19px;">En Sftp, seules les méthodes suivantes peuvent être appelées :</p>
+<p class="decalage05" style="margin-left: 59px;">UploadFile = "STOR";</p>
+<p class="decalage05" style="margin-left: 59px;">DownloadFile = "RETR";</p>
+<p class="decalage05" style="margin-left: 59px;">Rename = "RENAME";</p>
+<p class="decalage05" style="margin-left: 59px;">MakeDirectory = "MKD";</p>
+<p class="decalage05" style="margin-left: 59px;">RemoveDirectory = "RMD";</p>
+<p class="decalage05" style="margin-left: 59px;">DeleteFile = "DELE";</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Fichier</p>
+<p class="decalage05">Nom du fichier local pour les commandes de transfert.</p>
+<p class="decalage05">Nouveau nom du fichier ou du répertoire en cas de renommage.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Retour</p>
+<table style="vertical-align: top;" cellspacing="0" width="36.597%">
+<col style="width: 14.034%;">
+<col style="width: 85.966%;">
+<tr class="hcp1">
+<td style="width:14.034%;" class="hcp2">
+<p>0</p>
+</td>
+<td style="width:85.966%;" class="hcp2">
+<p>Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.034%;" class="hcp2">
+<p>1</p>
+</td>
+<td style="width:85.966%;" class="hcp2">
+<p>Ticket incorrect</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.034%;" class="hcp2">
+<p>2</p>
+</td>
+<td style="width:85.966%;" class="hcp2">
+<p>Exception. Voir <a href="FtpRequestGetError.htm">FtpRequestGetError</a></p>
+</td>
+</tr>
+</table>
+<p class="decalage05" style="margin-left: 0px; font-weight: normal;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Exemple</p>
+<p class="decalage05">Voir <a href="FtpRequestExecRequest.htm">FtpRequestExecRequest</a></p>
+<p>&#160;</p>
+</body>
+</html>

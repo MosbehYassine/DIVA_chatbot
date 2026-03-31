@@ -1,0 +1,84 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Compilation des dictionnaires</title>
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:Arial, sans-serif;
+font-size:10pt; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-family:Arial, sans-serif;
+font-size:10pt; }
+ul.hcp4 { list-style:disc; }
+p.hcp5 { font-family:Arial, sans-serif;
+font-size:10pt;
+margin-left:40px; }
+span.hcp6 { font-family:Arial, sans-serif;
+font-size:10pt;
+font-weight:bold; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1 style="font-family: Arial, sans-serif; font-size: 14pt;">Compilation 
+ des dictionnaires</h1>
+<p class="hcp1"><span style="text-decoration: underline; ">Avant 
+ toute exécution de programme avec des surcharges multiples, il est impératif 
+ de compiler les dictionnaires de données</span> par le programme XoverwriteCompile.dhop. 
+ Bien évidemment, ce compilateur doit être relancé en cas de modification 
+ d'un des dictionnaires.</p>
+<p class="hcp1">Même si un 
+ seul add-on est installé et qu'il a été développé en mode Surcharge Multiples 
+ (pour avoir des Zones-U sans limites) il faut lancer ce compilateur.</p>
+<p class="hcp1">Ce programme 
+ se lance depuis Xwin : Clic-droit sur le projet puis sélectionnez le choix 
+ <span class="hcp2">&lt;Surcharges multiples&gt;</span>&lt;<span class="hcp2">Compiler les dictionnaires de données (surcharges 
+ multiples)</span>&gt;</p>
+<p class="hcp1">Ce compilateur 
+ crée un fichier overwrite.dhos au même endroit que le fichier overwrite.txt. 
+ Il<span class="hcp3"> charge 
+ tous les dictionnaires qui sont surchargés et en extrait des informations 
+ indispensables à l'exécution (et qui seraient trop lourdes à chercher 
+ en temps réel). </span></p>
+<p class="hcp1">A titre documentaire, 
+ ces informations sont :</p>
+<ul class="hcp4">
+	<li><p class="hcp1">les 
+	 tailles des Records</p></li>
+	<li><p class="hcp1">les 
+	 taille des Zones-U</p></li>
+	<li><p class="hcp1">la 
+	 position des champs dans la Zone-U (dans le cas de Tuscany, les données 
+	 de la zone U provenant de l'add-on Maroquinerie doivent être déplacées 
+	 à l'exécution<span class="hcp3">).</span></p></li>
+</ul>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Lancement 
+ piloté</p>
+<p class="hcp5">Le 
+ compilateur XoverwriteCompile.dhop peut également être lancé en mode commande.</p>
+<p class="hcp5"><span class="hcp3">La syntaxe 
+ est : xwin7.exe </span><span class="hcp6">-action buildoverwrite</span><span class="hcp3"> &#160;</span><span class="hcp6">-project</span><span class="hcp3"> nom-du-projet 
+ </span><span class="hcp6">&#160;-profile</span><span class="hcp3"> nom-du-profil 
+ </span><span class="hcp6">-output</span><span class="hcp3"> nom-du-fichier-de-sortie</span></p>
+<p class="hcp5">Exemple 
+ : -action buildoverwrite &#160;-project C:\specifs\WS_AO_Tuscany\Projets\WS_AO_Tuscanny.dhpt 
+ &#160;-profile développement -output logerr.txt</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 0px; 
+	 font-weight: bold;">Remarque</p>
+<ul class="hcp4">
+	<li><p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 0px; 
+			 font-weight: normal;">il ne faut oublier de lancer également 
+	 le choix &lt;<span class="hcp2">Surcharges multiples&gt;&lt;Contrôler 
+	 les fonctions&gt; </span><span>pour vérifier que les surcharges multiples 
+	 de fonctions sont correctes.</span><span class="hcp2"> 
+	 </span></p></li>
+</ul>
+</body>
+</html>

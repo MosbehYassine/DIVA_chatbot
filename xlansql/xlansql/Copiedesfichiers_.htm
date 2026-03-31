@@ -1,0 +1,77 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Copie des fichiers.</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Copie des fichiers</h3>
+<p class="Body-Text">Ce choix permet de copier un fichier HARMONY dans la base SQL. Il demande&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Le chemin du fichier d'origine.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le chemin du fichier de destination. Rappelons qu'il s'agit d'un chemin correspondant au serveur SQL. Les accès à la base sont toujours effectués en mode client-serveur, même à partir du serveur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'option avec ou sans effacement du contenu des tables existantes.</p>
+</li>
+</ul>
+<p class="Body-Text">Lorsque la copie est lancée "&#160;par application&#160;" le mode "&#160;<font class="hcp2">pas à pas</font>&#160;" permet d'intervenir dans le déroulement du transfert fichier par fichier.</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font>&#160;:</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Chemin d’origine&#160;: &#160;&#160;/Divalto/ERPDivalto</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Chemin de destination&#160;//ServeurSQL/ERPDivalto</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0; font-weight: bold;">Filtrage des tables à l'import</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Il est possible de ne pas transférer (et donc de ne pas effacer) des tables lors de la copie des données vers SQL.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Pour cela, il faut, dans le répertoire de la base, créer un fichier "excludeimport.txt" (excludeimportu.txt pour la plateforme cloud).</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Dans ce fichier, il faut indiquer les couples dictionnaire / fichier / table pour chaque table à ignorer. Il y a un couple par ligne.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Exemple :</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">gtfdd.dhsd;gtfat.dhfi;art;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">gtfdd.dhsd;gtfdos.dhfi;ets;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Note : les points-virgules sont obligatoires, même le dernier, celui après le nom de la table.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Dans la fenêtre de compte-rendu, le texte suivant s'affiche si une ou plusieurs tables ont été ignorées : "Des tables ont été exclues de la copie des données".</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;"><span style="font-weight: bold; text-decoration: underline;">Remarques</span> : <span style="margin-top: 0; margin-bottom: 0; margin-left: 48px;"><br>
+<br>
+- Avant la version 2018-403 d'Harmony, la copie d'un fichier contenant un champ de type Blob n'est pas possible. Maintenant, la copie avec l'option effacement requiert le fichier .blob correspond à la table. Ce fichier est créé lors de l'extraction des données.<br>
+&#160;</span></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0; margin-left: 0px;">- La copie des données vérifie le numéro de version du fichier .dhfd. Si le numéro de version du fichier .dhfd ne correspond pas à celui renseigné dans xpsql, une erreur est affichée. Si vous êtes en possession d'un fichier sans version, il est possible de la renseigner via l'utilitaire xtools.dhop</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">- Si le fichier est comprimé (.dhzi), l'utilitaire effectue la décompression.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="text-indent: 2.25pt;"><font color="#0000FF" class="hcp2">Voir également&#160;&#160;:</font></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Erreurslespluscourantes.htm">Les erreurs de transfert</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Erreurs.htm">Les erreurs</a></p>
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,129 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DirectoryBox</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DirectoryBox &#160;<a href="Listedesfonctionsavanc_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Cette fonction permet d'appeler la boîte de dialogue de sélection des répertoires d'Harmony.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Long</font> = <font class="hcp2">DirectoryBox</font> (<font class="hcp3">StructureDirBox, Répertoire</font>)</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">StructureDirBox</font></p>
+<p class="decalage05">Instance de l'enregistrement Edirbox du dictionnaire ddsys.dhsd. Cette structure contient tous les paramètres d'appels de la boîte de dialogue.</p>
+<p class="Body-Text"><font class="hcp3">Répertoire</font></p>
+<p class="decalage05">Variable alpha recevant en retour le nom du répertoire sélectionné.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">FALSE</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text">Pas de répertoire sélectionné</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">TRUE</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Un répertoire a été sélectionné. Son nom est dans <font class="hcp3">Répertoire</font>.</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp2">Structure EDirBox</font></p>
+<p class="Body-Text"><font class="hcp3">Dbtitre</font></p>
+<p class="decalage05">Titre de la boîte de dialogue.</p>
+<p class="Body-Text"><font class="hcp3">Dbrep</font></p>
+<p class="decalage05">Répertoire à proposer à l'utilisateur.</p>
+<p class="Body-Text"><font class="hcp3">Dbrepdep</font></p>
+<p class="decalage05">Répertoire de départ. La boîte de dialogue s'ouvre en affichant les sous-répertoires de ce répertoire.</p>
+<p class="Body-Text"><font class="hcp3">Fbiimpli</font></p>
+<p class="decalage05">Indice dans la liste des chemins implicites de la tâche. Si Dbrepdep (répertoire de départ) n'est pas positionné, la boîte de dialogue s'ouvre en affichant les fichiers du répertoire implicite demandé.</p>
+<p class="Body-Text"><font class="hcp3">FbFlags</font></p>
+<p class="decalage05">Drapeaux (combinaison des valeurs suivantes par addition)</p>
+<table cellspacing="0" width="563">
+<tr class="hcp4">
+<td style="width:32.92%;" class="hcp5">
+<p class="Body-Text">HAR_NOCHANGEDIR</p>
+</td>
+<td style="width:67.08%;" class="hcp5">
+<p class="Body-Text">L'utilisateur n'a pas le droit de changer de répertoire. Le bouton Aller Vers ainsi que le bouton permettant de remonter dans le répertoire parent est caché.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:32.92%;" class="hcp5">
+<p class="Body-Text">HAR_FILEMUSTEXIST</p>
+</td>
+<td style="width:67.08%;" class="hcp5">
+<p class="Body-Text">Le répertoire retourné par la fonction doit obligatoirement exister.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:32.92%;" class="hcp5">
+<p class="Body-Text">HAR_NOBUTTONIMPLI</p>
+</td>
+<td style="width:67.08%;" class="hcp5">
+<p class="Body-Text">Le bouton permettant de modifier les chemins implicites est caché.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:32.92%;" class="hcp5">
+<p class="Body-Text">HAR_NOCREATEBUTTON</p>
+</td>
+<td style="width:67.08%;" class="hcp5">
+<p class="Body-Text">Le bouton permettant de créer un répertoire est caché.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:32.92%;" class="hcp5">
+<p class="Body-Text">HAR_CHANGEIMPLIONLY</p>
+</td>
+<td style="width:67.08%;" class="hcp5">
+<p class="Body-Text">L'utilisateur doit choisir un répertoire dans la liste de ses répertoires implicites. Le bouton Aller Vers est caché.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Exemple</font></p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">record 'ddsys.dhsd' edirbox edb</p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">1 resultat HAR_MAX_PATH</p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">main</p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">edb.dbtitre = "titre"</p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">edb.dbflags = har_nobuttonimpli</p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">edb.dbrepdep = "c:/program files"</p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">edb.dbrep = "microsoft"</p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">if DirectoryBox(edb,resultat)</p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">&#160;&#160;&#160;display resultat</p>
+<p class="Source" style="border-right: 0.75pt solid #000000;">endif</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="FileBox.htm">FileBox</a><font class="hcp2">,</font> <a href="WinGetOpenFileName.htm">WinGetOpenFileName</a><font class="hcp2">,</font> <a href="WinShBrowseForFolder.htm">WinShBrowseForFolder</a></p>
+</body>
+</html>

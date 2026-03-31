@@ -1,0 +1,156 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Réseau Xlan">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Réseau Xlan">
+      <param name="Local" value="reseaux/R&eacute;seau_Xlan.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Réseau Xlan sous Windows">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Réseau Xlan sous Windows">
+        <param name="Local" value="reseaux/R_seauClient_ServeurWINDOWSNT.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Configuration du réseau Xlan sous Windows">
+        <param name="Local" value="reseaux/Installationetparam_tragedur_seauWindowsNT.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation et paramétrage du serveur de données Windows">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation et paramétrage du serveur de données Windows">
+          <param name="Local" value="reseaux/Installationetparam_trageduserveurWindowsNT.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation de TCP/IP">
+          <param name="Local" value="reseaux/InstallationdeTCP_IP2.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Service Xlan">
+          <param name="Local" value="reseaux/CopiedesprogrammessurleserveurWindowsNT.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Configuration du serveur de données">
+          <param name="Local" value="reseaux/Configurationduserveur2.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Messages d'erreur des services DhsDivalto et DhsXlanServer">
+          <param name="Local" value="reseaux/Messagesd_erreurdesservicesXmuetXlan.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Les programmes Xconsole et xUpdateConfig">
+          <param name="Local" value="reseaux/LesprogrammesXtasketXmajconf2.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation de TCP/IP sur le client Windows">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation de TCP/IP sur le client Windows">
+          <param name="Local" value="reseaux/InstallationdeTCP_IPsurleclientWindows2.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déclaration des serveurs de données Windows du client Windows">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Déclaration des serveurs de données Windows du client Windows">
+          <param name="Local" value="reseaux/D_clarationdesserveursWindowsNTduclientWindows.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déclaration des chemins Harmony du serveur de données">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Déclaration des chemins Harmony du serveur de données">
+          <param name="Local" value="reseaux/D_clarationdescheminsHarmonyduserveur2.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage des utilisateurs du réseau Xlan">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage des utilisateurs du réseau Xlan">
+          <param name="Local" value="reseaux/Param_tragedesutilisateursdur_seau3.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation d'un serveur Xlan sécurisé">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation d'un serveur Xlan sécurisé">
+          <param name="Local" value="reseaux/Installationd_unserveurXlans_curis_.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Principe du serveur de données sécurisé">
+          <param name="Local" value="reseaux/Principeduserveurs_curis_.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Mise en place d'un serveur de données sécurisé">
+          <param name="Local" value="reseaux/Miseenplaced_unserveurs_curis_.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Déclaration des mots de passe (gestion centralisée des utilisateurs)">
+          <param name="Local" value="reseaux/D_clarationdesmotsdepasse_gestioncentralis_edesutilisateurs_.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Fonctionnement détaillé du serveur de données sécurisé">
+          <param name="Local" value="reseaux/Fonctionnementd_taill_duserveurs_curis_.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Login de l'utilisateur (hors client léger)">
+          <param name="Local" value="reseaux/Logindel_utilisateur.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Mémorisation des mots de passe">
+          <param name="Local" value="reseaux/M_morisationdesmotsdepasse.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Serveur de données semi-sécurisé">
+          <param name="Local" value="reseaux/Serveur_semi_s_curis_.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sites délocalisés : informations complémentaires">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Sites délocalisés : informations complémentaires">
+          <param name="Local" value="reseaux/Sitesd_localis_s__informationscompl_mentaires.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Connexion à un poste délocalisé">
+          <param name="Local" value="reseaux/Connexion_unposted_localis_.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Autres conseils pour la connexion de postes délocalisés">
+          <param name="Local" value="reseaux/Autresconseilspourlaconnexiondepostesd_localis_s.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Windows Terminal Serveur Edition, une alternative">
+          <param name="Local" value="reseaux/WindowsNTTerminalServeurEdition_unealternative.htm">
+        </object>
+        </ul>
+      </ul>
+    </ul>
+</ul>
+</html>

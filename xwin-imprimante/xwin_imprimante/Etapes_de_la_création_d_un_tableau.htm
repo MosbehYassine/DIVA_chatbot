@@ -1,0 +1,137 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Etapes de la création d'un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ol.hcp1 { list-style:decimal; }
+p.hcp2 { font-weight:bold;
+font-size:11pt; }
+p.hcp3 { margin-left:48px; }
+span.hcp4 { font-weight:bold; }
+ul.hcp5 { list-style:disc; }
+span.hcp6 { margin-left:48px; }
+p.hcp7 { margin-left:48px;
+font-size:10pt;
+font-weight:normal; }
+span.hcp8 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Etapes de la création d'un tableau</h3>
+<p>&#160;</p>
+<ol class="hcp1">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp2">Ajout d'un objet Tableau dans le bloc en cours d'édition</p>
+</li>
+</ol>
+<p class="hcp3">Sélectionnez le choix <span class="hcp4">Tableau</span> du menu <span class="hcp4">Objets</span> ou cliquez sur le bouton correspondant de la barre d'outils.<br>
+Une boîte de dialogue est ouverte, vous demandant de saisir le <span class="hcp4">nombre de colonnes initial</span> du tableau. Bien entendu, ce nombre de colonnes pourra être augmenté ou diminué par la suite. Après avoir validé, déposez l'objet à l'endroit souhaité dans le bloc courant.<br>
+&#160;</p>
+<p class="hcp3"><span class="hcp4">Remarque</span> :</p>
+<ul class="hcp5">
+<li class="p">
+<p class="hcp3">Le choix <span class="hcp4">Transformer la sélection en tableau</span> du menu <span class="hcp4">Edition</span> permet aussi de convertir un objet Cadre et son en-tête en objet Tableau : voir la rubrique d'exemple <a href="Inclure_un_tableau_dans_un_masque_existant.htm">Inclure un tableau dans un masque existant</a>.</p>
+</li>
+<li class="p">
+<p class="hcp3">Plusieurs tableaux peuvent être placés dans un bloc de type Fixe ou Fond.</p>
+</li>
+<li class="p">
+<p class="hcp3"><span>Un bloc de type Mobile ne peut contenir qu’un unique objet Tableau.<br>
+Si la page imprimée doit contenir d'autres tableaux, placez-les dans autant d'autres blocs.<br>
+Si deux ou plusieurs tableaux sont inclus dans un même bloc Mobile, une erreur est détectée à la compilation du masque.</span></p>
+</li>
+<li class="p">
+<p class="hcp3">Dans un même bloc, il n'est pas possible de faire figurer simultanément un objet Tableau et un objet Rich-Edit, <span class="hcp4">avec l'option "Répéter si impression d'un rich-edit"</span> (interdiction vérifiée à la compilation du masque) : voir la rubrique <a href="Programmation_d_un_objet_Tableau.htm">Programmation d'un objet Tableau</a>.<br>
+&#160;</p>
+</li>
+</ul>
+<ol start="2" class="hcp1">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp2">Saisie des propriétés du tableau et de ses colonnes</p>
+</li>
+</ol>
+<p class="hcp3">Comme tout autre type d'objet, un tableau expose des <span class="hcp4">propriétés</span> (essentiellement des paramètres de présentation). Dans la fenêtre d'édition, cliquez sur le cadre du tableau pour le sélectionner et ainsi, accéder à ses propriétés dans la fenêtre des Propriétés de Xwin. Les propriétés d'un tableau sont détaillées à la rubrique <a href="Objet_Tableau.htm">Objet Tableau</a> du manuel de référence. La saisie du Nom du tableau est obligatoire.<br>
+&#160;</p>
+<p class="hcp3">Chaque colonne d'un tableau expose également ses propres propriétés de présentation. Dans la fenêtre d'édition, cliquez dans le fond d'une colonne pour la sélectionner et ainsi, accéder à ses propriétés dans la fenêtre des Propriétés de Xwin. Les propriétés d'une colonne de tableau sont détaillées à la rubrique <a href="Objet_Tableau.htm">Objet Tableau</a> du manuel de référence.<span class="hcp6"><br>
+&#160;</span></p>
+<ol start="3" class="hcp1">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp2">Garnissage d'un objet Tableau</p>
+</li>
+</ol>
+<ul class="hcp5">
+<li class="p">
+<p class="hcp7"><span class="hcp4"><a href="Constituants_d_un_objet_Tableau.htm">Corps du tableau</a></span>.<br>
+Le corps est la zone du tableau où vont s'imprimer les <a href="Notiondebloc.htm">blocs</a> qui le constituent. Au départ, le tableau ne contient aucun bloc. La première étape du garnissage consiste donc à insérer les blocs concernés dans le tableau. Pour ce faire, deux choix du menu contextuel de l'<a href="Arbre_des_tableaux_d_un_bloc.htm">arbre des tableaux d'un bloc</a> :<br>
+&#160;</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp5">
+<li class="p">
+<p class="hcp7"><span class="hcp4">Insérer un nouveau bloc</span> (raccourci clavier <span class="hcp4">Inser</span>).<br>
+Cette commande crée un <span class="hcp4">nouveau</span> bloc (de type Tableau) et l'insère immédiatement dans le tableau.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p class="hcp7"><span class="hcp4">Insérer des blocs existants</span>.<br>
+Cette commande permet la sélection de blocs mobiles <span class="hcp4">déjà présents</span> dans le masque et leur insertion dans le tableau. Un bloc inséré de type Mobile est transformé en bloc de type Tableau et ses bornes d'impression, initialement relatives à la page, sont automatiquement converties pour devenir relatives au corps du tableau. Un bloc inséré qui est déjà de type Tableau n'est pas modifié.<br>
+<br>
+Utilisez en particulier ce choix pour <span class="hcp8">faire évoluer un masque conçu au départ sans objet Tableau</span> (voir un exemple à la rubrique <a href="Inclure_un_tableau_dans_un_masque_existant.htm">Inclure un tableau dans un masque existant</a>).<br>
+<br>
+<span class="hcp8"><br>
+Remarque importante</span> :<br>
+Il est <span font-size:="" font-weight:="">fortement conseillé</span> de prendre connaissance du paragraphe <span class="hcp4">Insertion dans un tableau de blocs déjà existants</span> de la rubrique <a href="Arbre_des_tableaux_d_un_bloc.htm">Arbre des tableaux d'un bloc</a> avant d'exécuter ce choix. Y sont en particulier détaillées les <span class="hcp8">conditions requises pour une conversion correcte des bornes d'impression</span>.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 88px;">Une fois les blocs insérés dans le tableau, il devient possible d'y placer des objets (en restant en édition du bloc contenant l'objet Tableau).<span class="hcp4"><br>
+<br>
+Attention</span> : Les objets déposés dans le corps du tableau mais hors bloc Tableau <span class="hcp4">NE font PAS à proprement parler partie du tableau</span>.<br>
+&#160;</p>
+<div style="list-style: disc; margin-left: 2em">
+<ul class="hcp5">
+<li class="p">
+<p style="font-weight: normal; font-size: 10pt;"><span class="hcp4"><a href="Constituants_d_un_objet_Tableau.htm">En-tête du Tableau</a></span>.<span class="hcp6"><br>
+Le garnissage de l'en-tête du tableau est complètement différent. En effet, les objets qui y figurent ne</span> proviennent pas d'un autre bloc du masque et, contrairement aux tableaux des masques d'écran, le titre d'une colonne n'est pas une propriété de la colonne.<br>
+<br>
+Pour placer un objet dans l'en-tête, <span class="hcp4">créez</span> cet objet à la manière habituelle et <span class="hcp4">déposez-le à l'intérieur de la zone délimitant l'en-tête</span>. Tous les types d'objets peuvent y figurer.<br>
+&#160;</p>
+</li>
+</ul>
+</div>
+<ol start="4" class="hcp1">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp2">Manipulations sur l'objet Tableau</p>
+</li>
+</ol>
+<p class="hcp3">Consultez la rubrique <a href="Manipulations_sur_l_objet_Tableau.htm">Manipulations sur l'objet Tableau</a> pour modifier sa taille, ajouter ou retirer une colonne, changer la largeur d'une colonne ou la hauteur de l'en-tête, etc.</p>
+&#160;
+<p class="hcp3">Consultez la rubrique <a href="Arbre_des_tableaux_d_un_bloc.htm">Arbre des tableaux d'un bloc</a> pour insérer des blocs dans le tableau, en retirer, spécifier l'ordre d'affichage ou masquer des blocs Tableau, etc.</p>
+<p class="hcp3">&#160;</p>
+<ol start="5" class="hcp1">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp2">Exemple</p>
+</li>
+</ol>
+<p class="hcp3">L'exemple donné à la rubrique <a href="Inclure_un_tableau_dans_un_masque_existant.htm">Inclure un tableau dans un masque existant</a> peut être facilement transposé à la conception d'un nouveau masque incluant un objet Tableau. Simplement, on utilisera la commande <span class="hcp4">Insérer un nouveau bloc</span> (raccourci clavier <span class="hcp4">Inser</span>) pour créer et inclure les blocs Tableau dans le tableau plutôt que la commande <span class="hcp4">Insérer des blocs existants</span>.<br>
+&#160;</p>
+<ol start="6" class="hcp1">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp2">Maintenance d'un objet Tableau</p>
+</li>
+</ol>
+<p class="hcp3">Voir la rubrique <a href="Maintenance_d_un_objet_Tableau.htm">Maintenance d'un objet Tableau</a>.</p>
+<p class="hcp3">&#160;</p>
+</body>
+</html>

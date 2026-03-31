@@ -1,0 +1,300 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Envoi de messages électroniques par le protocole Smtp</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { font-weight:bold;
+font-size:11pt; }
+ul.hcp3 { list-style:disc; }
+ol.hcp4 { list-style:decimal; }
+p.hcp5 { margin-left:8px;
+font-weight:bold;
+font-size:11pt; }
+p.hcp6 { margin-left:8px; }
+span.hcp7 { font-weight:bold;
+text-decoration:underline; }
+p.hcp8 { margin-left:8px;
+font-size:10pt; }
+span.hcp9 { margin-left:8px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Envoi de messages électroniques par le protocole SMTP</h3>
+<p>&#160;</p>
+<p>Pour l'envoi d'un message électronique par programme, Harmony utilise habituellement l'interface MAPI (<span class="hcp1">I</span>nterface standard de <span class="hcp1">P</span>rogrammation d'<span class="hcp1">A</span>pplications de <span class="hcp1">M</span>essagerie). Le destinataire est un "serveur" Mapi (Outlook Express, Outlook, ...), qui stocke le message dans une base de données et l'émet (soit directement vers un fournisseur d'accès, soit par l'intermédiaire du service de messagerie Microsoft Exchange Server). Un <span class="hcp1">inconvénient</span> à cette méthode est l'obligation d'ouvrir une session utilisateur et d'y lancer le programme Microsoft Outlook (Cf. rubrique <span class="hcp1">Paramétrage de Outlook</span> du livre <span class="hcp1">Service Xbal</span>).</p>
+<p>&#160;</p>
+<p>Une <span class="hcp1">alternative</span> consiste à utiliser directement le protocole SMTP (<span class="hcp1">S</span>imple <span class="hcp1">M</span>ail <span class="hcp1">T</span>ransfer <span class="hcp1">P</span>rotocol).</p>
+<p>SMTP est un protocole standard non propriétaire, utilisé pour transférer le courrier électronique vers les serveurs de messagerie et les boîtes aux lettres des destinataires, via l’Internet. Il va nous permettre ici d'envoyer des messages sans transiter par le client Outlook.</p>
+<p class="body-text">&#160;</p>
+<p class="hcp2">Principe de fonctionnement</p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Méthode utilisant un service SMTP (*)</span>.<br>
+Le principe consiste ici à "déposer" le mail dans un répertoire spécifique (c'est à dire à copier le fichier dans ce répertoire). Le service SMTP scrute ce répertoire en permanence ; dès qu'un nouveau fichier y est ajouté, il l'envoie au destinataire puis le supprime du répertoire. En cas d'erreur lors de l’envoi du mail, un rapport de non-remise est envoyé à l'expéditeur (des copies de ce rapport peuvent aussi être envoyées à d'autres destinataires). Si l'envoi du rapport de non-remise fait lui-même l'objet d'une erreur, le message est transféré dans un autre répertoire spécifique.<br>
+<br>
+(*) <span class="hcp1">Ce service n'est pas disponible sous système Vista</span> (mais ce n'est pas nécessairement un problème réel car Vista tourne généralement sur un ordinateur "client" et on implémentera plutôt le service SMTP sur un ordinateur équipé d'un système "serveur").<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Méthode sans service SMTP</span>.<br>
+Ici, Divalto envoie directement le mail au destinataire, par l'intermédiaire d'une fonction du FrameWork dotnet.<br>
+&#160;</p>
+</li>
+</ul>
+<p>Dans les deux cas, le mail peut être envoyé soit directement depuis le poste client léger (hors client léger Web), soit depuis le serveur d'applications.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Paramétrage "Divalto"</p>
+<p>Le paramétrage "Divalto" s'effectue en deux temps dans DivaltoViewer : il faut demander que les envois d'e-mails fassent appel au protocole SMTP et configurer le client SMTP.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Utilisation du protocole SMTP</span>.<br>
+<br>
+Le bouton <span class="hcp1">Format des adresses</span> du choix <span class="hcp1">Paramètres</span> du menu <span class="hcp1">Options</span> de DivaltoViewer donne accès au choix du format d'adresse.<br>
+Pour l'adresse <span class="hcp1">Email</span> et/ou <span class="hcp1">Email2</span>, sélectionnez le choix "<span class="hcp1">SERV_SMTP:%ADR%</span>" du multi-choix :</p>
+<p style="margin-left: 48px;"><img src="../image/Parametres_serv_smtp.jpg" style="border: none;" alt="" width="328" height="237" border="0"></p>
+&#160;
+<p>&#160;</p>
+<p class="hcp2">Paramétrage du client avec utilisation d'un service SMTP</p>
+<p>Le bouton <span class="hcp1">Protocole SMTP (par le service smtp)</span> du choix <span class="hcp1">Paramètres</span> du menu <span class="hcp1">Options</span> de DivaltoViewer donne accès aux paramètres suivants :</p>
+<ol start="2" class="hcp4">
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">A destination du serveur Smtp</span>.<br>
+Entrez ici le chemin d'accès au répertoire scruté par le serveur SMTP pour l'envoi des messages.<span class="hcp1"><br>
+Exemple</span> : //messagerie/pickup (où messagerie est le nom de l'ordinateur et pickup le nom de partage Windows du répertoire).<br>
+<br>
+Le répertoire physique dépend du type d'installation. Il est local à l'ordinateur sur lequel s'exécute le service SMTP, se nomme Pickup et se situe sous le répertoire de base du serveur de messagerie (à titre indicatif : <span class="hcp1">c:\Inetpub\Mailroot\PickUp</span> ou <span class="hcp1">c:\Program Files\Exchsrvr\Mailroot\vsi 1\PickUp</span> avec Microsoft Exchange Server).<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Identité ou Adresse internet à placer dans le champ 'De la part de ...'</span>.<br>
+Texte que les destinataires des messages recevront comme venant "<span class="hcp1">De la part de...</span>".<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p style="font-weight: bold;">En mode connecté, le service SMTP est sur le serveur distant Divalto<span style="font-weight: normal;">.<br>
+Cochez cette case pour utiliser le service SMTP du serveur d'applications plutôt que celui du poste client local (en mode connecté uniquement).</span></p>
+</li>
+</ol>
+<p><br>
+<span class="hcp1">Répertoires de copie des mails</span></p>
+<p>Ce bouton donne accès aux paramètres :&#160;</p>
+<ol start="2" class="hcp4">
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Répertoire de copie des mails envoyés</span>.<br>
+Répertoire de stockage d'une copie du fichier généré.<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Répertoire des mails en erreur</span>.<br>
+En cas d'erreur, répertoire de stockage d'une copie du fichier généré et d'un fichier de même nom mais d'extension .log contenant le texte de l'erreur produite.<br>
+Exemple : si l'envoi du fichier 201009031428380000PORT_JPT28r5eihy86zo6ajn.eml est sorti en erreur, on trouvera aussi dans le répertoire des mails en erreur un fichier 201009031428380000PORT_JPT28r5eihy86zo6ajn.log contenant le texte de l'erreur qui a empêché l'envoi du mail.<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Répertoire du fichier Smtp.log</span>.<br>
+Un fichier log contient, pour chaque message envoyé, la date et l'heure de l’envoi, l’objet du message, l’émetteur, le destinataire, un indicateur de succès ou d’erreur, le nom du fichier contenant le message.<span class="hcp1"><br>
+&#160;</span></p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Ne journaliser que les erreurs dans Smtp.log</span>.<br>
+Option permettant de ne tracer que les erreurs dans le fichier log.<br>
+&#160;</p>
+</li>
+</ol>
+<p><span class="hcp1">Paramètres avancés</span></p>
+<p>Ce bouton donne accès aux paramètres :&#160;</p>
+<ol start="2" class="hcp4">
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Délai de latence entre deux envois de mails</span>.<br>
+En cas d'envois consécutifs de mail en grand nombre (par exemple, envoi de flashs ou de messages dans le CRM Divalto), certains fournisseurs d'accès Smtp bloquent l'envoi, considérant qu'il s'agit de spams.<br>
+Ce paramètre permet d'espacer les envois (la valeur 15 permet par exemple de n'envoyer un mail que toutes les 15 secondes).<br>
+Attention : Ne fonctionne que pour un <span class="hcp1">même</span> programme Diva mais <span class="hcp1">pas entre</span> plusieurs programme Diva.<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Extension du fichier temporaire à générer</span>.<br>
+Harmony utilise l’extension .eml par défaut (Exchange 2010 exige notamment cette extension).<br>
+Dans les versions précédentes, Harmony générait des fichiers avec l’extension .txt. Vous pouvez utiliser ce paramètre pour reprendre cette extension .txt ou forcer toute autre extension.<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Code page du corps du message par défaut</span>.<br>
+Le code page indique le type de caractères utilisé dans Windows : en Europe du nord, c’est le type « windows-1252 ». Dans d’autres pays, ce code peut être différent (par exemple « windows-1257 » pour les pays de l’est). Il permet au destinataire du message de savoir comment interpréter les caractères spéciaux, notamment les caractères accentués.<span class="hcp1"><br>
+<br>
+Sinon, utiliser le texte suivant</span>.<br>
+Code page à utiliser.<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Autoriser l'envoi du corps du message au format HTML</span>.<span class="hcp1"><br>
+Autoriser l'envoi du corps du message au format RTF</span>.<br>
+Le format du corps du message par défaut est le format HTML car ce format est reconnu par la plupart des récepteurs de mails.<br>
+Vous pouvez aussi sélectionner le format RTF (moins utilisé) ou texte simple (formats HTML et RTF décochés).<br>
+Le logiciel CRM de Divalto génère automatiquement le texte de certains messages (par exemple à l'occasion d'un e-mailing ou d'un événement). Pour cela, le programme interroge la DLL DhMapi pour savoir s'il peut générer du HTML, du RTF ou uniquement un texte simple. Selon la réponse de DhMapi, le programme générera un texte au format adapté.<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span style="margin-left: 48px; font-weight: bold;">Mettre le corps du message en base 64</span><span style="margin-left: 48px;">.<br>
+Par défaut, le corps du message est codé au format "base64".<br>
+On peut décocher cette case, auquel cas le corps du message sera envoyé au format "8bits" (mais alors, il faut que votre serveur SMTP accepte ce format).<br>
+Le format 8bits permet de voir le texte du message en clair dans le fichier généré alors que le format base64 ne le permet pas. On pourra utiliser le format 8bits lors de la mise au point de l'installation SMTP, afin de « voir » si le corps du message est bien transmis entre l’applicatif et le générateur du fichier destiné au serveur SMTP. Après cette vérification, il vaut mieux reprendre le format base64, qui garantit que le corps du message sera bien transmis au destinataire, sans altération par les couches de transport.</span><br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Mettre une commande To: par destinataire</span>.<br>
+Certains fournisseurs d’accès interdisent plus d’une commande To: par mail. D’autres fournisseurs préfèrent plutôt avoir une commande To: pour chaque destinataire (certains autorisent les deux modes).<br>
+Par défaut, Harmony génère une seule commande To: avec les noms des destinataires sur plusieurs lignes.<br>
+Ce paramètre active l'envoi d'une commande To: par destinataire.<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Découper le champ Sujet s'il est plus long que 78 caractères</span>.<br>
+La norme actuelle permet l'envoi de 998 caractères maximum par ligne.<br>
+D’anciens produits limitent la lecture à 78 caractères par ligne.<br>
+Ce paramètre demande à Harmony de découper le sujet sur plusieurs lignes.<br>
+Remarque : Ceci peut faire perdre la notion de plusieurs espaces ou de tabulation entre les mots.<br>
+&#160;</p>
+</li>
+<li style="list-style: disc;" class="p">
+<p><span class="hcp1">Ne pas mettre les balises de fin boundary_Alternate/Relative dans le fichier eml</span>.<br>
+Pour ôter ces balises du fichier généré.<br>
+&#160;</p>
+</li>
+</ol>
+&#160;
+<p class="hcp5">Paramétrage du client sans utilisation d'un service SMTP</p>
+<p class="hcp6">Le bouton <span class="hcp1">Protocole SMTP (par les fonctions smtp)</span> du choix <span class="hcp1">Paramètres</span> du menu <span class="hcp1">Options</span> de DivaltoViewer donne accès aux paramètres suivants :</p>
+<ul class="hcp3">
+<li style="list-style:none;display: inline">
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Envoyer le mail directement avec la fonction SMTP de Divalto</span>.<span style="text-decoration: underline;"><br>
+Cochez cette case pour utiliser le mode "sans service SMTP"</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">En mode connecté, la fonction SMTP de Divalto est sur le serveur distant Divalto</span>.<br>
+Cochez cette case pour que l'envoi se fasse à partir du serveur d'applications plutôt qu'à partir du poste client local -en mode connecté (*) uniquement-.<br>
+Si DivaltoViewer n’est pas connecté et si cette case est cochée, une tentative d'envoi du mail sera tout de même faite depuis le poste local.<br>
+<br>
+(*) DivaltoViewer est en mode <span class="hcp1">connecté</span> lorsqu'on paramètre côté client un profil de connexion non local pour dialoguer avec un serveur d'applications Divalto. Il est alors possible de générer le mail localement ou depuis le serveur Divalto.<br>
+Remarque : Au besoin, un choix du menu de DivaltoViewer permet de se connecter (ou de se déconnecter) à un serveur d'applications Divalto.<br>
+<br>
+Un accès au réseau Internet est nécessaire pour l'envoi du mail (sur le poste client en cas d'envoi local, sur le serveur d'applications en cas d'envoi depuis ce serveur).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Identité ou Adresse internet à placer dans le champ 'De la part de ...'</span>.<br>
+Texte que les destinataires des messages recevront comme venant "<span class="hcp1">De la part de...</span>".<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Envoyer le mail sans générer de fichier</span>.<br>
+Si vous cochez cette case, aucun fichier n'est généré ni sauvegardé dans le répertoire SMTP des mails envoyés. A contrario, précisez le répertoire de stockage des mails.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Répertoires de copie des mails</span> : voir plus haut.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Nom du serveur SMTP, Port et Domaine</span>.<br>
+Adresse du fournisseur d'accès Internet.<br>
+Si un nom de domaine est requis, renseignez-le dans le champ "Domaine".<br>
+Par défaut (valeur nulle), le numéro de port utilisé est le port 25 en mode normal, le port 587 en mode SSL. Si un autre port est requis, renseignez-le dans le champ "Port".<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Code utilisateur et Mot de passe</span>.<br>
+Indiquez le code d'utilisateur et le mot de passe enregistrés auprès du fournisseur d'accès.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Le serveur SMTP utilise SSL</span>.<br>
+Cochez cette case si la connexion est sécurisée.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Installation et configuration du service SMTP<span style="font-weight: normal; font-size: 10pt;"><br>
+<br>
+La procédure d'installation et de paramétrage diffère suivant l'OS installé, le service utilisé, le fournisseur d'accès.</span></p>
+<p><span class="hcp7">A titre indicatif</span>, nous donnons ici quelques éléments pour installer et paramétrer le service SMTP de Microsoft sur une machine équipé du système XP.</p>
+<p>&#160;</p>
+<p><span class="hcp7">Remarque importante</span> :</p>
+<p>Votre serveur SMTP sert uniquement de relais vers le serveur SMTP de votre fournisseur d’accès. Il est très important que ce relais soit correctement configuré. Dans le cas contraire, <span class="hcp1">les logiciels anti-spam des fournisseurs d'accès risquent de bloquer la remise de vos mails (voire de vous enregistrer dans leur "black-list")</span>.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Installation du service SMTP</p>
+&#160;
+<p>Le service SMTP n'est pas installé par défaut avec IIS (<span class="hcp1">I</span>nternet <span class="hcp1">I</span>nformation <span class="hcp1">S</span>ervices). Pour l'installer :</p>
+<ol class="hcp4">
+<li class="p">
+<p>Dans le Panneau de configuration, double-cliquez sur Ajout/Suppression de programmes.</p>
+</li>
+<li class="p">
+<p>Cliquez sur Ajouter/Supprimer des composants Windows.</p>
+</li>
+<li class="p">
+<p>Double-cliquez sur Services Internet (IIS).</p>
+</li>
+<li class="p">
+<p>Dans la liste des composants des Services Internet (IIS), cochez la case Service SMTP et terminez l'installation.</p>
+</li>
+</ol>
+<p class="hcp8">L'installation crée, au niveau du <span class="hcp1">Gestionnaire des Services Internet</span>, le noeud "<span class="hcp1">Serveur virtuel SMTP par défaut</span>".<br>
+Ce noeud inclut la branche "<span class="hcp1">Domaines</span>", dans laquelle nous allons maintenant créer un domaine distant.<br>
+&#160;</p>
+<p class="hcp8"><span class="hcp1">Remarque importante</span> : vous devez ouvrir une session en tant que membre du groupe Administrateurs sur l'ordinateur local ou être doté de l'autorité appropriée pour être autorisé à paramétrer le gestionnaire des services Internet.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Création d'un domaine distant</p>
+<p>Dans le Gestionnaire des Services Internet :</p>
+<ul class="hcp3">
+<li class="p">
+<p>Ouvrez la branche "Serveur virtuel SMTP par défaut".</p>
+</li>
+<li class="p">
+<p>Cliquez droit sur la ligne "<span class="hcp1">Domaines</span>" et sélectionnez le choix Nouveau --&gt; Domaine...</p>
+</li>
+<li class="p">
+<p>Dans l'"<span class="hcp1">Assistant Nouveau domaine SMTP</span>", sélectionnez le radio bouton "<span class="hcp1">Distant</span>" et cliquez sur le bouton Suivant.<br>
+Entrez un "<span class="hcp1">Nom de domaine</span>" (par exemple *.Societe.fr) et cliquez sur le bouton Terminer.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp2">Configuration du domaine distant</p>
+<p>Dans le Gestionnaire des Services Internet :</p>
+<ul class="hcp3">
+<li class="p">
+<p>Cliquez droit sur la ligne affichant le nom du domaine distant et sélectionnez le choix "<span class="hcp1">Propriétés</span>".</p>
+</li>
+<li class="p">
+<p>Sous l'<span class="hcp1">onglet</span> <span class="hcp1">Général</span>, sélectionnez l'option "<span class="hcp1">Transférer tout le courrier vers l'hôte actif</span>" et on indiquera le nom (ou l'adresse IP entre []) du serveur SMTP d'un fournisseur d'accès (par exemple : smtp.fr.oleane.com).</p>
+</li>
+<li class="p">
+<p>Le bouton <span class="hcp1">Sécurité sortante...</span> permet de définir le mode de connexion.<br>
+La case "Connexion Anonyme" permet de se connecter sans fournir de renseignements supplémentaires mais la plupart des providers autorisent l'accès à leur serveur SMTP sous réserve d'une authentification basée au minimum sur un nom d’utilisateur et un mot de passe (Cf. remarque importante sur les logiciels anti-spams ci-dessus).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp2">Configuration générale du service SMTP</p>
+<p>Le service SMTP se paramètre globalement en c<span class="hcp9">liquant droit sur la ligne "Serveur virtuel SMTP par défaut" puis en sélectionnant le choix "</span><span style="margin-left: 8px; font-weight: bold;">Propriétés</span><span class="hcp9">".</span></p>
+<p class="hcp8">Il est en particulier possible de spécifier d'autres destinataires que l'émetteur pour les rapports de non-remise en cas d'erreur, de modifier le port TCP ou le répertoire de stockage du courrier incorrect, d'imposer une limite à la taille des messages, de configurer l'intervalle de temps entre les tentatives d'envoi, etc.</p>
+<p class="hcp6">&#160;</p>
+<p class="hcp5">Site Internet</p>
+<p class="hcp6">Pour la mise en place et la configuration de serveurs virtuels SMTP dans IIS, se référer au besoin au site http://msdn2.microsoft.com/fr-fr/library/8b83ac7t(VS.80).aspx</p>
+<p>&#160;</p>
+</body>
+</html>

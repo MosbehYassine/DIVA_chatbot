@@ -1,0 +1,64 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>For - To - Step - Next</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>For - To - Step - Next &#160;<a href="Listedesstructuresdecontr_le.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La structure For est une structure itérative à bornes définies.</p>
+<p class="Body-Text"><font class="hcp1">For</font> <font class="hcp2">compteur = valeur_initiale</font> <font class="hcp1">To</font> <font class="hcp2">valeur_finale [</font> <font class="hcp1">Step</font> <font class="hcp2">pas ]</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;<font class="hcp2">instructions</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font class="hcp1">Next</font></p>
+&#160;
+<p class="Body-Text">Cette structure est caractérisée par la présence d'un compteur dont l'incrémentation se fait automatiquement. La variable <font class="hcp2">compteur</font> doit être numérique.</p>
+<p class="Body-Text">Le mot réservé <font class="hcp1">Next</font> n'est pas suivi du nom de la variable compteur.</p>
+<p class="Body-Text">Si plusieurs boucles For sont imbriquées, il faut autant d'instructions Next que d'instructions For.</p>
+<p class="Body-Text">Si <font class="hcp2">pas</font> n'est pas spécifié, la valeur prise par défaut est 1.</p>
+<p class="Body-Text">Il est possible d'utiliser un pas négatif. Dans ce cas, le pas doit obligatoirement être une constante. Si le pas est une variable négative, le test de fin de boucle généré par le compilateur sera faux.</p>
+<p class="Body-Text">Si le compteur dépasse la borne finale avant d'avoir exécuté la boucle, cette dernière n'est jamais exécutée.</p>
+<p class="Body-Text">La valeur du compteur peut être utilisée et éventuellement modifiée à l'intérieur de la boucle.</p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Exemple 1 :</font></p>
+<p class="Source">for i = 1 to 100</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display i&#160;</p>
+<p class="Source">next</p>
+&#160;
+<p class="Body-Text" style="margin-top: 0.00pt;">affiche les 100 premiers entiers.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple 2 :</font></p>
+<p class="Source">for i = 100 to 1 step -2</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display i&#160;</p>
+<p class="Source">next</p>
+&#160;
+<p class="Body-Text" style="margin-top: 0.00pt;">affiche les 50 premiers entiers pairs par ordre décroissant</p>
+&#160;
+<p class="Body-Text" style="margin-top: 0.00pt;"><font class="hcp1">Exemple 3 :</font></p>
+<p class="Source">p = -1</p>
+<p class="Source">for i = 100 to 1 step p</p>
+<p class="Body-Text" style="margin-top: 0.00pt;"><font class="hcp1">est interdit</font> car le pas n'est pas une constante et est négatif.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="margin-top: 0.00pt;"><font class="hcp1">Exemple 4 :</font></p>
+<p class="Source">for i = 3 to 1</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display i&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">next</p>
+<p class="Body-Text" style="font-family: Arial, sans-serif;"><font><span style="font-family: Arial, sans-serif;">n'affiche rien du tout car le compteur est supérieur à la borne de fin.</span></font></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="RedoFor.htm"><font class="hcp1">RedoFor</font></a><font class="hcp1">,</font> <a href="ExitFor.htm"><font class="hcp1">ExitFor</font></a><font class="hcp1">,</font> <a href="Loop_Endloop.htm"><font class="hcp1">Loop - Endloop</font></a><font class="hcp1">,</font> <a href="Repeat_Until.htm"><font class="hcp1">Repeat - Until</font></a><font class="hcp1">,</font> <a href="Do_While_Wend.htm"><font class="hcp1">Do - While - Wend</font></a></p>
+</body>
+</html>

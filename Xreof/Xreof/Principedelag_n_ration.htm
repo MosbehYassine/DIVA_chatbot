@@ -1,0 +1,47 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Principe de la génération</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Principe de la génération</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le principe utilisé pour reconstituer les clés est le suivant :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Dans une première phase, le programme lit le fichier des données, génère et trie les clés dans une mémoire "cache", allouée au lancement du programme. A chaque fois que cette mémoire est pleine, les clés qu'elle contient sont copiées sur disque, dans un fichier intermédiaire qui, physiquement, est le fichier des clés lui-même. La mémoire redevient disponible pour y stocker les clés suivantes.<br>
+On obtient ainsi un ensemble de "groupes de clés" appelés "monotonies" (une monotonie étant donc un sous-ensemble de clés triées).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dans une deuxième phase, le programme charge une "tranche" de chaque monotonie dans la mémoire "cache", procède à un interclassement des clés puis les réécrit de manière définitive dans le fichier des clés.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques :</font></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Dans la plupart des cas, après traitement par Xreof, le volume occupé par les clés sera significativement inférieur au volume occupé à l'origine. Ceci est du au fait que, contrairement à l'utilisation courante, Xreof regroupe les clés au maximum.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Notez que le volume occupé par les clés augmentera à nouveau</font>, suite aux écritures ultérieures produites en utilisation "normale".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Exception&#160;:</font> Lorsque la première phase de la génération ne produit qu'une unique monotonie, l'écriture et la relecture du fichier intermédiaire deviennent inutiles. Pour gagner du temps, elles sont donc annulées. Par contre, le volume occupé par les clés ne sera pas réduit.</p>
+</li>
+</ul>
+</body>
+</html>

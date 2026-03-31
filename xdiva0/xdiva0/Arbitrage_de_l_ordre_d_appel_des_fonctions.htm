@@ -1,0 +1,102 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Arbitrage de l'ordre d'appel des fonctions</title>
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:Arial, sans-serif;
+font-size:10pt; }
+p.hcp2 { font-family:Arial, sans-serif;
+font-size:10pt;
+font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+span.hcp4 { font-weight:bold; }
+p.hcp5 { font-family:Arial, sans-serif;
+font-size:10pt;
+margin-left:40px; }
+span.hcp6 { font-weight:normal; }
+p.hcp7 { font-size:10pt;
+margin-left:40px;
+font-family:"Courier New"  , monospace; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2 style="font-family: Arial, sans-serif; font-size: 14pt;">Arbitrage 
+ de l'ordre d'appel des fonctions</h2>
+<p class="hcp1">Il y a deux 
+ cas particuliers où l'exécuteur ne sait pas dans quel ordre appeler les 
+ fonctions. L'intégrateur devra alors spécifier explicitement l'ordre des 
+ appels.</p>
+<p class="hcp2">CAS 
+ 1</p>
+<p class="hcp1">Voyons sur 
+ un exemple :</p>
+<ul class="hcp3">
+	<li><p class="hcp1">le 
+	 standard appelle la procédure MaProc en utilisant GetAdressProcedure. 
+	 La procédure MaProc n'existe pas dans le standard.</p></li>
+	<li><p class="hcp1">Plusieurs 
+	 add-ons déclarent la procédure MaProc en public. Si l'intégrateur 
+	 surcharge cette procédure l'exécuteur ne sais pas quoi faire. A la 
+	 compilation il y aura une erreur<br>
+	Dans ce cas, il faut obligatoirement surcharger la procédure et utiliser 
+	 la nouvelle écriture :<br>
+	<span class="hcp4"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;standard.nom_de_laddOn.procedure</span></p></li>
+	<li><p class="hcp1">Un 
+	 nouveau choix de Xwin, au clic droit sur le projet, &#160;<span class="hcp4">&lt;Surcharges 
+	 multiples&gt;&lt;Contrôler les fonctions&gt;</span><span> permet de 
+	 détecter ce cas de figure. Il est important de lancer ce choix lors 
+	 de l'installation pour vérifier que si la même procédure est surchargée 
+	 plusieurs fois mais n'existe pas dans la base, elle doit obligatoirement 
+	 exister au niveau intégrateur.</span></p></li>
+</ul>
+<p class="hcp1">.<img src="../image41.gif" alt="" style="border: none;" width="959" height="579" border="0"></p>
+<p class="hcp2">CAS 
+ 2</p>
+<p class="hcp5">Il 
+ existe des appels via GetAdressProcedure ou GetAdressFunction vers des 
+ modules qui n'existent pas dans le standard de l'ERP. Ces modules sont 
+ uniquement créés dans le cadre des surcharges.</p>
+<p class="hcp5">Exemple 
+ :</p>
+<ul class="hcp3">
+	<li><p class="hcp5">GTPMFICSQL 
+	 appelle GTTMFICSQL mais GTTMFICSQL n'existe pas dans le standard de 
+	 l'ERP, car il est dédié aux surcharges.</p></li>
+	<li><p class="hcp5">L'add-on 
+	 Italy crée le source GTTMFICSQL et y met des fonctions.</p></li>
+	<li><p class="hcp5">L'add-on 
+	 Maroquinerie fait de même.</p></li>
+	<li><p class="hcp5">Et 
+	 l'intégrateur Tuscany ajoute également le module GTTMFICSQL.</p></li>
+</ul>
+<p class="hcp5">Si 
+ on veut que les fonctions des add-on soient exécutées, &#160;il faut que 
+ le module Tuscany se charge de l'appel des fonctions dans les deux add-ons.</p>
+<p class="hcp5">Pour 
+ ce faire, le module intégrateur doit déclarer les deux modules de l'add-on. 
+ Cela se fait par la syntaxe suivante :</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px; 
+	 font-weight: bold;">Module<span class="hcp6"> nom_addon.nom_fichier</span> 
+ AS <span class="hcp6">alias_module</span></p>
+<p class="hcp5">Ensuite 
+ l'alias peut être utilisé comme un nom de module classique.</p>
+<p class="hcp5">Exemple 
+ :</p>
+<p class="hcp7">module 
+ maroquinerie.GTTMFICSQL.dhop &#160;&#160;&#160;as maroquinerie_GttmficSql<br>
+module italy.GTTMFICSQL.dhop &#160;&#160;&#160;as italy_GttmficSql</p>
+<p class="hcp7">italy.GttmficSql.Fonction(...)<br>
+</p>
+<p class="hcp7">&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">&#160;</p>
+</body>
+</html>

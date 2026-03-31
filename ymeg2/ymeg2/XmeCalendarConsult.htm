@@ -1,0 +1,159 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeCalendarConsult</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal;
+font-size:11pt; }
+p.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:bold; }
+span.hcp4 { font-style:italic; }
+ul.hcp5 { list-style:disc; }
+li.hcp6 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeCalendarConsult <span style="font-weight: normal;">&#160;</span><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_agendas.htm"><span class="hcp1">Famille</span></a> <span class="hcp1"><a href="Agendas.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p class="hcp2">Consultation d'un agenda</p>
+<p>&#160;</p>
+<p><span class="hcp3">XmeCalendarConsult</span> (&amp;<span class="hcp4">Identifiant</span>)</p>
+<p>&#160;</p>
+<p><span class="hcp3">Paramètre</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 12.445%;">
+<col style="width: 87.555%;">
+<tr style="vertical-align: top;">
+<td style="border: Solid 1px #000000;width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p style="font-style: italic;">Identifiant</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Enregistrement identifiant l'agenda rendu par la fonction XmeCalendarGetId.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp3">Description de la procédure</span> :</p>
+<ul class="hcp5">
+<li class="p">
+<p>XmeCalendarConsult est la procédure à appeler pour proposer une consultation et attendre un événement sur un objet agenda.<br>
+Elle NE peut être exécutée QUE si la page de masque contenant l'agenda est la page courante (ou l'une de ses pages panels).</p>
+</li>
+<li class="p">
+<p>La procédure affiche, comme XmeCalendarDisplay, les données de l'agenda dont l'identifiant est fourni en paramètre (en se limitant à la partie présente à l'écran).</p>
+</li>
+<li class="p">
+<p>Elle se met ensuite en attente d'une frappe au clavier ou d'un événement souris significatif.</p>
+</li>
+<li class="p">
+<p>Le contrôle est rendu au programme appelant dès qu'un événement clavier ou souris est produit par l'utilisateur :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Si une touche du clavier a été tapée, la variable Harmony.Key est positionnée à la manière habituelle, de même que les indicateurs ShiftKey et ControlKey.</p>
+</li>
+<li class="p">
+<p>Si un événement souris s'est produit, Harmony.Key est mis à 0.</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Un délai peut être associé à la fonction XmeCalendarConsult, de manière à ce que celle-ci rende la main à intervalles réguliers et ce, même si l'utilisateur ne produit aucun événement clavier ou souris. Pour tous les détails de mise en œuvre, consultez la rubrique consacrée à la fonction XmeSetTimer.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp3">Exemple</span> :<br>
+&#160;</p>
+<p class="Source">;Schéma de programmation d'une consultation par XmeCalendarConsult</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;boucle d'attente</p>
+<p class="Source">&#160;&#160;XmeCalendarConsult (<span class="hcp4">IdCal</span>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(ré)affiche l'agenda et attend</p>
+<p class="Source">&#160;&#160;SWITCH Harmony.DataArret &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement produit ?</p>
+<p class="Source">&#160;&#160;&#160;&#160;CASE Harmony.Key = K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;touche Echap :</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;stop</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;CASE nnn &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;point d'arrêt agenda</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;SWITCH2 Harmony.CalendarClic &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;test événement agenda produit :</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE CALENDAR_CLICK_APPOINTMENT_CREATION &#160;;création de rendez-vous</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE CALENDAR_CLICK_APPOINTMENT_DELETION &#160;;suppression de rendez-vous</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;etc.</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres cas (menu, barre d'outils, ...)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;...</p>
+<p class="source">&#160;</p>
+<p class="Source">&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND</p>
+<p class="Source">...</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp3">Remarques</span> :</p>
+<ul class="hcp5">
+<li class="p">
+<p>XmeCalendarConsult :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Valide tous les boutons et choix de menu non nommés.</p>
+</li>
+<li class="p">
+<p>Valide les boutons et choix de menu nommés, à condition qu'ils soient présents dans la liste des boutons valides de l'agenda (pour modifier cette liste, cliquez sur la ligne Boutons valides des propriétés de l'agenda).</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Si l'utilisateur clique sur un bouton ou un choix de menu générant un point d'arrêt, la main est rendue au programme ; celui-ci peut récupérer le numéro du point d'arrêt dans Harmony.DataArret ; après le traitement du point d'arrêt, vous pouvez bien entendu rappeler la fonction XmeCalendarConsult mais un éventuel code de retour placé dans Harmony.Retour sera ignoré (ce code n'a de sens qu'à l'appel de l'instruction XmeNext).</p>
+</li>
+<li class="p">
+<p>Si l'utilisateur clique sur un bouton ou un choix de menu associé à un point de traitement, la séquence de traitement est exécutée ; au retour de cette séquence, Ywpf revient toujours à la consultation ; les données de la page courante (hors tableaux et agendas) sont automatiquement réaffichées ; un éventuel code de retour placé dans Harmony.Retour sera ignoré (ce code n'a de sens qu'au retour d'un traitement exécuté en saisie).</p>
+</li>
+<li class="p">
+<p>En consultation par XmeCalendarConsult, tous les événements souris significatifs rendent la main. Attention, le numéro du point d'arrêt généré n'est pas transmis dans Harmony.Arret mais dans Harmony.DataArret. Les événements souris traités sont les suivants :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Clic "agenda".<br>
+Outre le numéro du point d'arrêt lié à l'agenda transmis dans Harmony.DataArret, le programme peut récupérer tous les renseignements sur le clic produit (Cf. rubrique <a href="Ev&eacute;nements_li&eacute;s_&agrave;_l_objet_agenda.htm">Evénements liés à l'objet agenda</a>).</p>
+</li>
+<li class="p">
+<p>Clic "tableau".</p>
+</li>
+<li class="p">
+<p>Clic sur une donnée en saisie.</p>
+</li>
+<li class="p">
+<p>Onglets. Attention, seuls les onglets placés sur des pages non chaînées sont valides ; ceux placés sur des pages chaînées sont ignorés.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp2">Appel d’un menu surgissant en consultation d'agenda</p>
+<p>Pour afficher un menu surgissant (popup-menu) à l’occasion d’une consultation d'agenda, chargez la donnée Harmony.PopupMenu avec l’identifiant du menu à afficher, avant d’appeler XmeCalendarConsult (exemple à la rubrique <a href="Chargement_et_affichage_d_un_menu.htm">Menus : Chargement et affichage d'un menu</a>).</p>
+<p>&#160;</p>
+<p class="hcp2">Appel de l’aide associée à la page consultée</p>
+<p>Avec Xwin, vous pouvez associer une aide à toute page de masque. Cette aide servira d’abord d’aide par défaut pour toutes les données présentes dans cette page. Il peut aussi être intéressant d’afficher cette aide si l’utilisateur tape Shift+F1 (touche standard d’appel de l’aide) alors que la page est en consultation par XmeCalendarConsult. Pour ce faire, en réponse à la touche Shift+F1, appelez successivement les fonctions XmeInfoPage pour récupérer le nom du fichier d’aides et le numéro de l’aide associée à la page puis le fonction XmeHelp.</p>
+<p>&#160;</p>
+</body>
+</html>

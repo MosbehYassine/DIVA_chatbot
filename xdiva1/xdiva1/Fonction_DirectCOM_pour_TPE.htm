@@ -1,0 +1,119 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctions DirectCOM pour TPE</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px;
+border-bottom-width:1px;
+border-bottom-style:Solid;
+border-right-width:1px;
+border-right-style:Solid;
+border-top-width:1px;
+border-top-style:Solid; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px;
+border-bottom-width:1px;
+border-bottom-style:Solid;
+border-right-width:1px;
+border-right-style:Solid;
+border-left-width:1px;
+border-left-style:Solid; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px;
+border-bottom-width:1px;
+border-bottom-style:Solid;
+border-right-width:1px;
+border-right-style:Solid; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Fonction DirectCOM pour TPE</h1>
+<p>&#160;</p>
+<p>Les fonctions DirectCOM permettent aux programmes Diva de communiquer avec les ports séries d'un poste client (WPF), mais ne sont pas assez riches pour traiter les dialogues avec un TPE (terminal point d'encaissement, comme un lecteur de CB, par exemple), dont les protocoles, plus sécurisés, sont aussi bien plus complexes.</p>
+<p>&#160;</p>
+<p>Le module yDirectPrinter.dhop a donc été enrichi de fonctions dédiées pour la communication avec un TPE. Celles-ci sont suffixées "TPE" et sont décrites plus en détails dans les sections qui suivent.</p>
+<p>Les fonctions pour le dialogue avec un TPE encapsulent la complexité liée aux échanges de pur protocole. Le protocole utilisé est basé sur le protocole Concert (document Concert référence 095 &#160;version 2.0 du 01/09/2001).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Personnalisation du port COM pour un TPE.</p>
+<p>&#160;</p>
+<p>On peut personnaliser le paramétrage des ports COM avec un TPE, comme cela se fait dans le cas général (cf <a href="Fonctions_DirectCOM.htm">Fonctions DirectCOM</a>, paragraphe "<span style="font-weight: bold;">Personnalisation des paramétrages des voies série.</span>").</p>
+<p>A cela s'ajoutent deux nouvelles options, spécifiques au dialogue TPE :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>le temps d'attente étendu du dialogue TPE (cette option prendra la priorité sur la valeur paramétrée par la fonction <a href="DirectCOM_OpenTPE.htm">DirectCOM_OpenTPE</a>),</p>
+</li>
+<li class="p">
+<p>le protocole TPE utilisé. il existe plusieurs protocole TPE, mais seul le protocole Concert est actuellement implanté au niveau de Harmony. <span style="text-decoration: underline;">Cette option n'est qu'une porte d'entrée au cas où de nouveaux protocoles seraient mis en oeuvre à l'avenir, et ne devrait pas être utilisée</span>.</p>
+</li>
+</ul>
+<table cellspacing="0" width="1068">
+<col style="width: 20.251%;">
+<col style="width: 40.762%;">
+<col style="width: 38.987%;">
+<tr class="hcp2">
+<td style="width: 20.251%; padding-left: 1px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; border-bottom-width: 1px; border-bottom-style: Solid; border-right-width: 1px; border-right-style: Solid; border-left-width: 1px; border-left-style: Solid; border-top-width: 1px; border-top-style: Solid;">
+<p class="hcp1"><span style="font-weight: normal; font-style: italic;">Nom du paramètre</span></p>
+</td>
+<td style="width:40.762%;" class="hcp3">
+<p>Description</p>
+</td>
+<td style="width:38.987%;" class="hcp3">
+<p>Valeurs</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:20.251%;" class="hcp4">
+<p>&lt;n°de voie&gt;ProtocolTPE</p>
+</td>
+<td style="width:40.762%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">protocole de dialogue avec le TPE.</p>
+<p class="Body-Text" style="margin-top: 2.00pt;">A ce jour, seul le protocole Concert est supporté par Harmony et cette option ne devrait pas être utilisée.</p>
+</td>
+<td style="width:38.987%;" class="hcp5">
+<p>0 = protocole Concert.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:20.251%;" class="hcp4">
+<p>&lt;n°de voie&gt;TimeOutTPE</p>
+</td>
+<td style="width:40.762%;" class="hcp5">
+<p>Temps d'attente étendu du dialogue TPE. Les programmes utilisent habituellement 60 secondes pour ce time out, grâce à cette option, le temps d'attente peut être personnalisé poste par poste.</p>
+</td>
+<td style="width:38.987%;" class="hcp5">
+<p>durée, en secondes, que l'on souhaite donner à ce temps d'attente étendu.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:20.251%;" class="hcp4">
+<p>&#160;</p>
+</td>
+<td style="width:40.762%;" class="hcp5">
+<p>&#160;</p>
+</td>
+<td style="width:38.987%;" class="hcp5">
+<p>&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+</body>
+</html>

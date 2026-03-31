@@ -1,0 +1,723 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="#FETCH1">
+    <param name="Name" value="SubQuery">
+    <param name="Local" value="SubQuery.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="#TOP1">
+    <param name="Name" value="SubQuery">
+    <param name="Local" value="SubQuery.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Activate">
+    <param name="Name" value="Join.Activate">
+    <param name="Local" value="Join_Activate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ActivateCase">
+    <param name="Name" value="Join.ActivateCase">
+    <param name="Local" value="Join.ActivateCase.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="addandcondition">
+    <param name="Name" value="RecordSql.Where.AddAndCondition">
+    <param name="Local" value="RecordSql.Where.AddToCondition.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AddClause">
+    <param name="Name" value="RecordSql.AddClause">
+    <param name="Local" value="AddClause.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AddCondition">
+    <param name="Name" value="RecordSql.AddCondition">
+    <param name="Local" value="AddCondition.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AddExcept">
+    <param name="Name" value="RecordSql.AddExcept">
+    <param name="Local" value="AddExcept.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AddIntersect">
+    <param name="Name" value="RecordSql.AddIntersect">
+    <param name="Local" value="AddIntersect.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="addorcondition">
+    <param name="Name" value="RecordSql.Where.AddOrCondition">
+    <param name="Local" value="addorcondition.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AddOrder">
+    <param name="Name" value="OrderBy.AddOrder">
+    <param name="Local" value="OrderBy.AddOrder.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AddUnion">
+    <param name="Name" value="RecordSql.AddUnion">
+    <param name="Local" value="AddUnion.htm">
+    <param name="Name" value="RecordSql.AddUnionAll">
+    <param name="Local" value="AddUnionAll.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AddUnionAll">
+    <param name="Name" value="RecordSql.AddUnionAll">
+    <param name="Local" value="AddUnionAll.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="AddUpdateValue">
+    <param name="Name" value="RecordSql.AddUpdateValue">
+    <param name="Local" value="AddUpdateValue.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ajouts de nouveaux RecordSql">
+    <param name="Name" value="Ajouts de nouveaux RecordSql">
+    <param name="Local" value="Ajouts_de_nouveaux_RecordSql.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="banalisation">
+    <param name="Name" value="Banalisation et log">
+    <param name="Local" value="Banalisation_et_log.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Bind">
+    <param name="Name" value="Bind">
+    <param name="Local" value="Bind.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ChangeTable">
+    <param name="Name" value="RecordSql.ChangeTable">
+    <param name="Local" value="ChangeTable.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ClearSetOperations">
+    <param name="Name" value="RecordSql.ClearSetOperations">
+    <param name="Local" value="ClearSetOperations.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Column.Activate">
+    <param name="Name" value="ColumnActivate">
+    <param name="Local" value="ColumnActivate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Column.Deactivate">
+    <param name="Name" value="ColumnDeactivate">
+    <param name="Local" value="ColumnDeactivate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Concaténation">
+    <param name="Name" value="Concaténation">
+    <param name="Local" value="Concat&eacute;nation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="CrossJoin">
+    <param name="Name" value="&lt;Join&gt;">
+    <param name="Local" value="Join.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Deactivate">
+    <param name="Name" value="Join.Deactivate">
+    <param name="Local" value="Join_Deactivate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Delete">
+    <param name="Name" value="RecordSql.Delete">
+    <param name="Local" value="Delete_methode.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DeleteWhere">
+    <param name="Name" value="RecordSql.DeleteWhere">
+    <param name="Local" value="DeleteWhere.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DictionarySql">
+    <param name="Name" value="DictionarySql">
+    <param name="Local" value="DictionarySql.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DirectReaderClose">
+    <param name="Name" value="RecordSql.DirectReaderClose">
+    <param name="Local" value="DirectReaderClose.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DirectReaderNext">
+    <param name="Name" value="RecordSql.DirectReaderNext">
+    <param name="Local" value="DirectReaderNext.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DirectReaderOpen">
+    <param name="Name" value="RecordSql.DirectReaderOpen">
+    <param name="Local" value="DirectReaderOpen.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DirectReaderSelect">
+    <param name="Name" value="RecordSql.DirectReaderSelect">
+    <param name="Local" value="DirectReaderSelect.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DirectSelect">
+    <param name="Name" value="RecordSql.DirectSelect">
+    <param name="Local" value="DirectSelect.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DuplicateInstance">
+    <param name="Name" value="DuplicateInstance">
+    <param name="Local" value="DuplicateInstance.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exists">
+    <param name="Name" value="RecordSql.Exists">
+    <param name="Local" value="Exists.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ExistsReset">
+    <param name="Name" value="RecordSql.ExistsReset">
+    <param name="Local" value="ExistsReset.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="From">
+    <param name="Name" value="&lt;From&gt;">
+    <param name="Local" value="From.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="FullJoin">
+    <param name="Name" value="&lt;Join&gt;">
+    <param name="Local" value="Join.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetColumnValue">
+    <param name="Name" value="RecordSql.GetColumnValue">
+    <param name="Local" value="GetColumnValue.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetCount">
+    <param name="Name" value="RecordSql.GetCount">
+    <param name="Local" value="GetCount.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetId">
+    <param name="Name" value="RecordSql.GetId">
+    <param name="Local" value="GetId.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetInfo">
+    <param name="Name" value="RecordSql.GetInfo">
+    <param name="Local" value="GetInfo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetLastRecord">
+    <param name="Name" value="RecordSql.GetLastRecord">
+    <param name="Local" value="RecordSqlGetLastRecord.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetOption">
+    <param name="Name" value="GetOption">
+    <param name="Local" value="GetOption.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetRecordInfo">
+    <param name="Name" value="RecordSql.GetRecordInfo">
+    <param name="Local" value="RecordSql.GetRecordInfo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetRecordSqlErrorMessage">
+    <param name="Name" value="GetRecordSqlErrorMessage">
+    <param name="Local" value="GetRecordSqlErrorMessage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetRowNumber">
+    <param name="Name" value="GetRowNumber">
+    <param name="Local" value="GetRowNumber.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GetTemporaryTableName">
+    <param name="Name" value="RecordSql.Tables temporaires">
+    <param name="Local" value="RecordSql.TablesTemporaires.htm">
+    <param name="Name" value="RecordSql.GetTemporayTableName">
+    <param name="Local" value="RecordSql.GetTemporayTableName.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GlobalConf">
+    <param name="Name" value="&lt;Join&gt;">
+    <param name="Local" value="Join.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="GroupBy">
+    <param name="Name" value="&lt;GroupBy&gt;">
+    <param name="Local" value="GroupBy.htm">
+    <param name="Name" value="GroupBy.Activate">
+    <param name="Local" value="GroupBy.Activate.htm">
+    <param name="Name" value="GroupBy.DeActivate">
+    <param name="Local" value="GroupBy.DeActivate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="groupby.activate">
+    <param name="Name" value="GroupBy.Activate">
+    <param name="Local" value="GroupBy.Activate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="groupby.deactivate">
+    <param name="Name" value="GroupBy.DeActivate">
+    <param name="Local" value="GroupBy.DeActivate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Having">
+    <param name="Name" value="&lt;Having&gt;">
+    <param name="Local" value="Having.htm">
+    <param name="Name" value="Having">
+    <param name="Local" value="Having_methode.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="HShare">
+    <param name="Name" value="RecordSql.Hshare">
+    <param name="Local" value="Hshare_methode.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Init">
+    <param name="Name" value="RecordSql.Init">
+    <param name="Local" value="Init.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="InitForUpdateWhere">
+    <param name="Name" value="InitForUpdateWhere">
+    <param name="Local" value="InitForUpdateWhere.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Insert">
+    <param name="Name" value="RecordSql.Insert">
+    <param name="Local" value="Insert_methode.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Introduction au dictionnaire de jointures">
+    <param name="Name" value="Introduction au dictionnaire de jointures">
+    <param name="Local" value="Introduction_jointure.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Join">
+    <param name="Name" value="&lt;Join&gt;">
+    <param name="Local" value="Join.htm">
+    <param name="Name" value="Join.Activate">
+    <param name="Local" value="Join_Activate.htm">
+    <param name="Name" value="Join.Deactivate">
+    <param name="Local" value="Join_Deactivate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Join.Activate">
+    <param name="Name" value="Join.Activate">
+    <param name="Local" value="Join_Activate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Join.ActivateCase">
+    <param name="Name" value="Join.ActivateCase">
+    <param name="Local" value="Join.ActivateCase.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Join.Deactivate">
+    <param name="Name" value="Join.Deactivate">
+    <param name="Local" value="Join_Deactivate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Join01">
+    <param name="Name" value="&lt;Join01&gt;">
+    <param name="Local" value="Join01.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="journalisation">
+    <param name="Name" value="Banalisation et log">
+    <param name="Local" value="Banalisation_et_log.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="LeftJoin">
+    <param name="Name" value="&lt;Join&gt;">
+    <param name="Local" value="Join.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Les jointures dynamiques">
+    <param name="Name" value="Les jointures dynamiques">
+    <param name="Local" value="Les_jointures_dynamiques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ListPassKeyGet">
+    <param name="Name" value="ListPassKeyGet">
+    <param name="Local" value="ListPassKeyGet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ListPassKeySet">
+    <param name="Name" value="ListPassKeySet">
+    <param name="Local" value="ListPassKeySet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="LoadTableFields">
+    <param name="Name" value="LoadTableFields">
+    <param name="Local" value="LoadTableFields.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="log">
+    <param name="Name" value="Banalisation et log">
+    <param name="Local" value="Banalisation_et_log.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="MandatoryColumns">
+    <param name="Name" value="MandatoryColumns">
+    <param name="Local" value="MandatoryColumns.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="NoCheckOrderBy">
+    <param name="Name" value="&lt;OrderBy&gt;">
+    <param name="Local" value="OrderBy.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="optimisation">
+    <param name="Name" value="Optimisation d'un RecordSql pour le ZoomSql">
+    <param name="Local" value="Optimisation_d_un_RecordSql_pour_le_ZoomSql.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="OrderBy">
+    <param name="Name" value="&lt;OrderBy&gt;">
+    <param name="Local" value="OrderBy.htm">
+    <param name="Name" value="RecordSql.OrderBy">
+    <param name="Local" value="OrderBy_methode.htm">
+    <param name="Name" value="OrderBy.AddOrder">
+    <param name="Local" value="OrderBy.AddOrder.htm">
+    <param name="Name" value="OrderBy.RemoveOrder">
+    <param name="Local" value="OrderBy.RemoveOrder.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="orderby.addorder">
+    <param name="Name" value="OrderBy.AddOrder">
+    <param name="Local" value="OrderBy.AddOrder.htm">
+    <param name="Name" value="OrderBy.RemoveOrder">
+    <param name="Local" value="OrderBy.RemoveOrder.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="OverWrite">
+    <param name="Name" value="OverWrite - OverWrittenBy">
+    <param name="Local" value="OverWrite_-_OverWrittenBy.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="OverWrittenBy">
+    <param name="Name" value="OverWrite - OverWrittenBy">
+    <param name="Local" value="OverWrite_-_OverWrittenBy.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="PagingReaderSelect">
+    <param name="Name" value="PagingReaderSelect">
+    <param name="Local" value="PagingReaderSelect.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="PtrRecordSql">
+    <param name="Name" value="PtrRecordSql">
+    <param name="Local" value="PtrRecordSql.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="PtrRecordSqlFreeInstance">
+    <param name="Name" value="PtrRecordSqlFreeInstance">
+    <param name="Local" value="PtrRecordSqlFreeInstance.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="PtrRecordSqlFromDescriptor">
+    <param name="Name" value="PtrRecordSqlFromDescriptor">
+    <param name="Local" value="PtrRecordSqlFromDescriptor.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="PtrRecordSqlModule">
+    <param name="Name" value="PtrRecordSqlModule">
+    <param name="Local" value="PtrRecordSqlModule.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="PtrRecordSqlNew">
+    <param name="Name" value="PtrRecordSqlNew">
+    <param name="Local" value="PtrRecordSqlNew.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReadAgain">
+    <param name="Name" value="RecordSql.ReadAgain">
+    <param name="Local" value="ReadAgain.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderBegin">
+    <param name="Name" value="RecordSql.ReaderBegin">
+    <param name="Local" value="ReaderBegin.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderClose">
+    <param name="Name" value="RecordSql.ReaderClose">
+    <param name="Local" value="ReaderClose.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderCurrent">
+    <param name="Name" value="RecordSql.ReaderCurrent">
+    <param name="Local" value="ReaderCurrent.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderDelete">
+    <param name="Name" value="RecordSql.ReaderDelete">
+    <param name="Local" value="ReaderDelete.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderEnd">
+    <param name="Name" value="RecordSql.ReaderEnd">
+    <param name="Local" value="ReaderEnd.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderFirst">
+    <param name="Name" value="RecordSql.ReaderFirst">
+    <param name="Local" value="ReaderFirst.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderInsert">
+    <param name="Name" value="RecordSql.ReaderInsert">
+    <param name="Local" value="ReaderInsert.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderLast">
+    <param name="Name" value="RecordSql.ReaderLast">
+    <param name="Local" value="ReaderLast.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderNext">
+    <param name="Name" value="RecordSql.ReaderNext">
+    <param name="Local" value="ReaderNext.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderOpen">
+    <param name="Name" value="RecordSql.ReaderOpen">
+    <param name="Local" value="ReaderOpen.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Readers">
+    <param name="Name" value="Les Readers">
+    <param name="Local" value="Les_Readers.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderSelect">
+    <param name="Name" value="RecordSql.ReaderSelect">
+    <param name="Local" value="ReaderSelect.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderSelectDistinctValue">
+    <param name="Name" value="RecordSql.ReaderSelectDistinctValue">
+    <param name="Local" value="ReaderSelectDistinctValue.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ReaderUpdate">
+    <param name="Name" value="RecordSql.ReaderUpdate">
+    <param name="Local" value="ReaderUpdate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RecordSql">
+    <param name="Name" value="&lt;RecordSql&gt;">
+    <param name="Local" value="BaliseRecordSql.htm">
+    <param name="Name" value="Déclaration d'un RecordSql">
+    <param name="Local" value="D&eacute;claration_d_un_RecordSql.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RecordSql.AddField">
+    <param name="Name" value="RecordSql.AddField">
+    <param name="Local" value="RecordSql.AddField.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RecordSql.SetInfo">
+    <param name="Name" value="SetInfo">
+    <param name="Local" value="SetInfo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RecordSql.SetTransaction">
+    <param name="Name" value="RecordSql.SetTransaction">
+    <param name="Local" value="SetTransaction.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RecordSqlGetModuleInstancesNames">
+    <param name="Name" value="RecordSqlGetModuleInstancesNames">
+    <param name="Local" value="RecordSqlGetModuleInstancesNames.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RecordSqlPtr">
+    <param name="Name" value="Pointeur de RecordSql">
+    <param name="Local" value="Pointeur_de_RecordSql.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RecordSqlPtrFromVoid">
+    <param name="Name" value="RecordSqlPtrFromVoid">
+    <param name="Local" value="RecordSqlPtrFromVoid.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RecordSqlPtrToVoid">
+    <param name="Name" value="RecordSqlPtrToVoid">
+    <param name="Local" value="RecordSqlPtrToVoid.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Remove">
+    <param name="Name" value="RecordSql.Remove">
+    <param name="Local" value="Remove_orderby.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RemoveCondition">
+    <param name="Name" value="RecordSql.RemoveCondition">
+    <param name="Local" value="RemoveCondition.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="removeorder">
+    <param name="Name" value="OrderBy.RemoveOrder">
+    <param name="Local" value="OrderBy.RemoveOrder.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RestoreData">
+    <param name="Name" value="RestoreData">
+    <param name="Local" value="RestoreData.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="RightJoin">
+    <param name="Name" value="&lt;Join&gt;">
+    <param name="Local" value="Join.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="SaveData">
+    <param name="Name" value="SaveData">
+    <param name="Local" value="SaveData.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Select">
+    <param name="Name" value="&lt;Select&gt;">
+    <param name="Local" value="Select.htm">
+    <param name="Name" value="RecordSql.Select">
+    <param name="Local" value="Select_m&eacute;thode.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="SetColumnValue">
+    <param name="Name" value="RecordSql.SetColumnValue">
+    <param name="Local" value="SetColumnValue.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="SetInfo">
+    <param name="Name" value="SetInfo">
+    <param name="Local" value="SetInfo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="SetJoinTemporaryTableName">
+    <param name="Name" value="RecordSql.SetJoinTemporaryTableName">
+    <param name="Local" value="RecordSql.SetJoinTemporaryTableName.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="SetOption">
+    <param name="Name" value="SetOption">
+    <param name="Local" value="SetOption.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="SetTemporaryTableName">
+    <param name="Name" value="RecordSql.Tables temporaires">
+    <param name="Local" value="RecordSql.TablesTemporaires.htm">
+    <param name="Name" value="RecordSql.SetTemporayTableName">
+    <param name="Local" value="RecordSql.SetTemporayTableName.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ShareLastError">
+    <param name="Name" value="RecordSql.ShareLastError">
+    <param name="Local" value="ShareLastError.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Spécificités pour DB2">
+    <param name="Name" value="Spécificités pour DB2">
+    <param name="Local" value="Sp&eacute;cificit&eacute;s_pour_DB2.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="SqlSelect">
+    <param name="Name" value="RecordSql.SqlSelect">
+    <param name="Local" value="SqlSelect.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="subquery">
+    <param name="Name" value="SubQuery">
+    <param name="Local" value="SubQuery.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Surcharge d'un RecordSql">
+    <param name="Name" value="Surcharge d'un RecordSql">
+    <param name="Local" value="Surcharge_d_un_RecordSql.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Surcharge des RecordSql">
+    <param name="Name" value="Surcharge des RecordSql">
+    <param name="Local" value="Surcharge_des_RecordSql.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="SwapData">
+    <param name="Name" value="SwapData">
+    <param name="Local" value="SwapData.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="temporaire">
+    <param name="Name" value="RecordSql.Tables temporaires">
+    <param name="Local" value="RecordSql.TablesTemporaires.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="tmprecordsql">
+    <param name="Name" value="RecordSql.Tables temporaires">
+    <param name="Local" value="RecordSql.TablesTemporaires.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="TransactionCommit">
+    <param name="Name" value="TransactionCommit">
+    <param name="Local" value="TransactionCommit.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="TransactionGetId">
+    <param name="Name" value="TransactionGetId">
+    <param name="Local" value="TransactionGetId.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="TransactionRollback">
+    <param name="Name" value="TransactionRollback">
+    <param name="Local" value="TransactionRollback.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Update">
+    <param name="Name" value="RecordSql.Update">
+    <param name="Local" value="Update_methode.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="UpdateValues">
+    <param name="Name" value="RecordSql.UpdateValues">
+    <param name="Local" value="RecordSql.UpdateValues.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="UpdateWhere">
+    <param name="Name" value="UpdateWhere">
+    <param name="Local" value="UpdateWhere.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="UseClause">
+    <param name="Name" value="RecordSql.UseClause">
+    <param name="Local" value="UseClause.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Where">
+    <param name="Name" value="&lt;Where&gt;">
+    <param name="Local" value="Where.htm">
+    <param name="Name" value="RecordSql.Where">
+    <param name="Local" value="Where_methode.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XRecordSQLCheck">
+    <param name="Name" value="XRecordSQLCheck">
+    <param name="Local" value="XRecordSQLCheck.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="zoomoptimize">
+    <param name="Name" value="Optimisation d'un RecordSql pour le ZoomSql">
+    <param name="Local" value="Optimisation_d_un_RecordSql_pour_le_ZoomSql.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="zoomsql">
+    <param name="Name" value="Optimisation d'un RecordSql pour le ZoomSql">
+    <param name="Local" value="Optimisation_d_un_RecordSql_pour_le_ZoomSql.htm">
+  </object>
+</ul>
+</html>

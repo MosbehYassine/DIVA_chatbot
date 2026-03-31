@@ -1,0 +1,72 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ConsoleWrite</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:48px; }
+p.hcp2 { margin-left:88px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>ConsoleWrite &#160;<a href="Listedesinstructionsd_entr_es_sorties.htm"><font 
+	 style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font 
+	 style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h1>
+<p class="coprs-de-texte">L'instruction ConsoleWrite permet d'afficher 
+ un texte dans l'onglet Compte-rendu de Xwin.</p>
+<p class="coprs-de-texte">Cela nécessite que le programme soit lancé en 
+ mode debug depuis Xwin. Si ce n'est pas le cas, ConsoleWrite ne fait aucune 
+ action.</p>
+<p class="coprs-de-texte">&#160;</p>
+<p class="coprs-de-texte"><span style="font-weight: bold;">ConsoleWrite</span> 
+ (<span style="font-style: italic;">mess</span>)</p>
+<p style="font-family: 'MS Sans Serif';">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text"><font style="font-style: italic;">mess</font></p>
+<p class="decalage05">Message à afficher dans xwin.</p>
+<p class="decalage05">&#160;</p>
+<p class="coprs-de-texte" style="font-weight: bold;">Remarque</p>
+<p class="hcp1">Les messages sont également écrits vers un 
+ manager de Logs. Cela permet de traiter les logs dans un contexte d'exploitation, 
+ sans utiliser Xwin.</p>
+<p class="hcp1">Un logicel comme https://github.com/ishegatron/Sentinel 
+ permet de visualiser les logs au dil de l'eau.</p>
+<p class="hcp1">Il faut créer un fichier nlog.config (dans 
+ divalto/sys)</p>
+<p class="hcp1">Exemple :</p>
+<p class="Source" style="margin-left: 88px;">&lt;?xml version=&quot;1.0&quot; 
+ encoding=&quot;utf-8&quot; ?&gt;</p>
+<p class="Source" style="margin-left: 88px;">&lt;nlog xmlns=&quot;http://www.nlog-project.org/schemas/NLog.xsd&quot; 
+ xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; autoReload=&quot;true&quot;&gt;</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&lt;targets&gt;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;&lt;target 
+ xsi:type=&quot;NLogViewer&quot;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;name=&quot;diva&quot;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;includeSourceInfo=&quot;true&quot;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;address=&quot;udp://127.0.0.1:9999&quot;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;/&gt;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&lt;/targets&gt;</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&lt;rules&gt;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;&lt;logger 
+ name=&quot;*&quot; minlevel=&quot;Trace&quot; writeTo=&quot;diva&quot; 
+ /&gt;</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&lt;/rules&gt;</p>
+<p class="Source" style="margin-left: 88px;">&lt;/nlog&gt;</p>
+<p class="hcp1">Au lancement de Sentinel :</p>
+<p class="hcp2">- faire Next pour prendre les paramètres 
+ par défaut</p>
+<p class="hcp2">- dans la fenêtre &lt;Provider Registration&gt;, 
+ faire Add et prendre tous les paramètres par défaut. (Next puis finish)</p>
+<p class="hcp2">&#160;</p>
+</body>
+</html>

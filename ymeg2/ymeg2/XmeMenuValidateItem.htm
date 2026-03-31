@@ -1,0 +1,98 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeMenuValidateItem</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp6 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeMenuValidateItem <font style="font-size: 10pt;" size="2">&#160;</font><a href="Liste_r_capitulative_des_fonctions_de_gestion_des_menus.htm"><font size="2" class="hcp1">Famille</font></a> &#160;<a href="Menus.htm"><font size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><a href="Menus_D_sactivation_et_invalidation_des_choix.htm"><font class="hcp2">Invalidation ou revalidation</font></a> <font class="hcp2">d’un choix de menu</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Ptr XmeMenuValidateItem</font> (<font class="hcp3">Id_Menu</font>, <font class="hcp3">Id_Choix</font>, <font class="hcp3">Etat</font>, <font class="hcp3">Prise_en_compte</font>)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 13.48%;">
+<col style="width: 86.52%;">
+<tr class="hcp4">
+<td style="width:13.48%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Id_Menu</font></p>
+</td>
+<td style="width:86.52%;" class="hcp5">
+<p class="Body-Text">Identifiant du menu rendu par la fonction XmeMenuGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.48%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Id_Choix</font></p>
+</td>
+<td style="width:86.52%;" class="hcp5">
+<p class="Body-Text">Identificateur du choix à invalider ou revalider.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.48%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Etat</font></p>
+</td>
+<td style="width:86.52%;" class="hcp5">
+<p class="Body-Text">FALSE&#160;: le choix doit être invalidé (il devient invisible).<br>
+TRUE &#160;: le choix doit être revalidé (il redevient visible).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.48%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Prise_en_compte</font></p>
+</td>
+<td style="width:86.52%;" class="hcp5">
+<p class="Body-Text">TRUE &#160;: le menu doit être immédiatement réaffiché.<br>
+FALSE&#160;: le menu ne doit pas être immédiatement réaffiché.<br>
+<br>
+FALSE permet d'optimiser les réaffichages du menu lorsque vous effectuez plusieurs invalidations ou revalidations successives de choix principal : <span style="font-weight: bold;">ne mettez ce drapeau à TRUE qu'au tout dernier appel à XmeMenuValidateItem</span>. <font style="font-weight: bold; text-decoration: underline;">Attention</font> toutefois&#160;: ce dernier appel ne doit pas concerner un choix dont l’état n’est pas modifié&#160;(la fonction étant ignorée si l’état du choix reste inchangé, l’ensemble des réaffichages sera «&#160;perdu&#160;») !<span class="hcp6"><br>
+<br>
+Remarque</span> : dans les versions d'Harmony précédant la version 7, cette optimisation n’affectait pas forcément les performances de manière visible. <span class="hcp6">Mais elle peut s’avérer cruciale en client léger</span> pour éviter un fort ralentissement de l’affichage.</p>
+<p class="Body-Text">Ce paramètre facultatif (TRUE par défaut) n’est significatif que si le menu est déjà affiché et si le choix concerné est un choix principal.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Valeur rendue par la fonction</font>&#160;:</p>
+<p class="Body-Text" style="margin-left: 49.65pt; text-indent: -43.90pt;">0&#160;:&#160;Pas d’erreur détectée.</p>
+<p class="Body-Text" style="margin-left: 49.65pt; text-indent: -43.90pt;">0x1089&#160;:&#160;Choix inconnu dans le menu.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction XmeMenuValidateItem permet d’invalider (<font class="hcp3">Etat</font> = FALSE) ou revalider (<font class="hcp3">Etat</font> = TRUE) le choix d’<a href="Identificateur_des_choix_de_menu.htm">identificateur</a> <font class="hcp3">Id_Choix</font> dans le menu <font class="hcp3">Id_Menu</font>. Un choix invalidé devient totalement invisible, de même que son sous-menu si ce choix est tête de sous-menu.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque&#160;:&#160;</font></p>
+<p class="Body-Text">Lorsqu'un même menu est affiché dans plusieurs fenêtres empilées, ses MISES A JOUR (grisages, invalidations, coches, ajouts ou suppressions de choix, surcharge, ...) sont répercutées dans TOUTES les OCCURENCES affichées.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">;Invalidation des choix "OPTION_1" et "OPTION_2"</p>
+<p class="Source">XmeMenuValidateItem (Id_menu,"OPTION_1",FALSE,FALSE)</p>
+<p class="Source">XmeMenuValidateItem (Id_menu,"OPTION_2",FALSE)</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeMenuEnableItem.htm">XmeMenuEnableItem</a>, qui permet de désactiver (griser) un choix de menu.</p>
+</body>
+</html>

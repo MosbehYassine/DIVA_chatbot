@@ -1,0 +1,55 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Incompatibilités</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Incompatibilités</h3>
+<p class="List">Elles sont d'importances diverses et peuvent aller jusqu'à l'impossibilité de faire fonctionner l'application.</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Les clés avec des <font class="hcp1">données packées</font> ne sont pas gérées.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les <font class="hcp1">index</font> avec des <font class="hcp1">valeurs à espace</font> sont générés dans la base alors que les clés à espace ne sont pas générées avec HARMONY. Cette incompatibilité devrait être mineure.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les index comportant des données numériques signées tiennent <font class="hcp1">compte du signe</font>. L'ordre de tri ne sera pas le même qu'avec HARMONY. Cette incompatibilité devrait être mineure.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les données numériques à espaces sont remplacées par 0. Cette incompatibilité devrait être mineure.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les <font class="hcp1">dates à espace</font> prennent la valeur 1/1/1753 dans la base de données. Cette incompatibilité devrait être mineure.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La gestion des <font class="hcp1">protections</font> globales de fichier d'HARMONY en lecture, écriture ou effacement (R,W,E) n'est pas assurée. Cette incompatibilité devrait être mineure.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour les données numériques avec un nombre de <font class="hcp1">décimales variables</font> (Numerique,D) celui-ci doit être déterminé à la création des tables et ne peut pas être modifié dynamiquement. Cette incompatibilité devrait être mineure.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Harmony permet de définir pour les <font class="hcp1">clés conditionnelles</font> l'opérateur <font class="hcp1">ET LOGIQUE</font> (&amp;). Cette fonctionnalité n'est pas gérée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le mode de fonctionnement des accès par un index de <font class="hcp1">type avec identifiant</font> sous SQL n'est pas strictement identique à celui sous Harmony. (<a href="Index_avec_identifiant.htm">voir Index avec identifiant</a>)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La gestion de fichiers Hamony, lors d'une lecture séquentielle, délivre les clés <font class="hcp1">homonymes strictes</font> (tous les champs de la clé contiennent la même valeur) en respectant l'ordre dans lequel les enregistrements ont été créés (du plus ancien au plus récent). Dans le cas d'index de <font class="hcp1">type multi-tables</font> lorsque des tables différentes comportent des homonymes, cette chronologie n'est pas respectée.</p>
+</li>
+</ul>
+</body>
+</html>

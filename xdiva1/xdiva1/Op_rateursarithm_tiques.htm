@@ -1,0 +1,99 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Opérateurs arithmétiques</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:Courier New; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Opérateurs arithmétiques &#160;<a href="Op_rateurs_r_sum_.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Les opérateurs arithmétiques travaillent indifféremment sur les données numériques, de type L ou X ou B. Ils sont :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Courier New" class="hcp1">+</font> &#160;: l'addition</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Courier New" class="hcp1">++</font> : opérateur de pré ou post incrémentation</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Courier New" class="hcp1">-</font> &#160;: la soustraction ou la négation</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Courier New" class="hcp1">--</font>&#160;: opérateur de pré ou post décrémentation</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Courier New" class="hcp1">*</font> &#160;: la multiplication</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Courier New" class="hcp1">/</font>&#160;: la division</p>
+</li>
+</ul>
+<p class="Body-Text">Lors de l'évaluation d'expressions complexes, tous les calculs intermédiaires sont faits avec la précision maximale (24,10).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Opérateurs de pré/post incrémentation / décrémentation</font></p>
+<p class="Body-Text">Les opérateurs unaires (<font face="Courier New" class="hcp1">++</font> et <font face="Courier New" class="hcp1">--</font>) sont appelés opérateurs de pré-incrémentation ou de pré-décrémentation lorsque l'opérateur apparaît avant l'opérande. Ils sont appelés opérateurs de post-incrémentation lorsque l'opérateur apparaît après l'opérande.</p>
+<p class="Body-Text">L'opérateur ++ augmente de 1 la valeur de l'opérande, l'opérateur <font face="Courier New" class="hcp1">--</font> diminue de 1 la valeur de l'opérande.</p>
+<p class="Body-Text">Dans le cas de la post-incrémentation (décrémentation), le résultat de l'expression est la valeur avant son incrémentation (décrémentation).</p>
+<p class="Body-Text">Dans le cas de la pré-incrémentation (décrémentation), la valeur incrémentée (décrémentée) est le résultat de l'expression.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Exemples :</p>
+<table cellspacing="0" width="436">
+<tr class="hcp2">
+<td style="width:29.22%;" class="hcp3">
+<p class="Body-Text"><font face="Courier New" class="hcp1">I = 1<br>
+I++<br>
+Display i</font></p>
+</td>
+<td style="width:70.78%;" class="hcp3">
+<p class="Body-Text">Affiche 2<br>
+Dans ce cas, <font face="Courier New" class="hcp1">I++</font> est équivalent à<font face="Courier New" class="hcp1"><br>
+I = I + 1</font>.<font face="Courier New" class="hcp1"><br>
+++I</font> est également équivalent</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:29.22%;" class="hcp3">
+<p class="Body-Text"><font face="Courier New" class="hcp1">I = 1<br>
+Display I++<br>
+Display I</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:70.78%;" class="hcp3">
+<p class="Body-Text">Affiche 1 puis 2.<br>
+Cas de la post-incrémentation. Le résultat est la valeur AVANT l'incrémentation</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:29.22%;" class="hcp3">
+<p class="Body-Text"><font face="Courier New" class="hcp1">I = 1<br>
+Display ++I<br>
+Display I</font></p>
+</td>
+<td style="width:70.78%;" class="hcp3">
+<p class="Body-Text">Affiche 2 puis 2.<br>
+Cas de la pré-incrémentation. Le résultat est la valeur APRES l'incrémentation</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

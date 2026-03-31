@@ -1,0 +1,83 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Paramètres de sortie des fonctions d'impression</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp3 { font-weight:bold; }
+ul.hcp4 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Paramètres de sortie des fonctions d'impression</h3>
+<p class="Body-Text">Après l'impression d'un bloc ou suite à un point d'arrêt, le contrôle est rendu au programme appelant. Celui-ci a accès à un certain nombre d'informations, fournies par Ymig et récapitulées dans le tableau suivant&#160;:<br>
+&#160;</p>
+<table cellspacing="0" width="614">
+<tr class="hcp1">
+<td style="width:19.42%;" class="hcp2">
+<p class="Body-Text"><font class="hcp3">Harmony.Iarret</font></p>
+</td>
+<td style="width:80.58%;" class="hcp2">
+<p class="Body-Text">Numéro du point d'arrêt courant, si la sortie a été provoquée par un point d'arrêt.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:19.42%;" class="hcp2">
+<p class="Body-Text"><font class="hcp3">System.Zpage</font></p>
+</td>
+<td style="width:80.58%;" class="hcp2">
+<p class="Body-Text">Numéro de page courante.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:19.42%;" class="hcp2">
+<p class="Body-Text"><font class="hcp3">System.Zligne</font></p>
+</td>
+<td style="width:80.58%;" class="hcp2">
+<p class="Body-Text">Numéro de ligne dans la page (*).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><br>
+<br>
+(*) <font class="hcp3">Attention</font>, la variable System.Zligne est actualisée en <font class="hcp3">fin de bloc</font> (**) et non ligne par ligne&#160;:</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Le programme peut donc tester System.Zligne pour, par exemple, connaître le nombre de lignes encore disponibles dans la page.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">System.Zligne peut être imprimée dans une ligne détail.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Mais System.Zligne ne peut être imprimée sur chaque ligne d'un bloc comprenant plusieurs lignes (le même numéro sera édité sur toutes les lignes du bloc).<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text">(**) <span style="font-weight: bold;">Cas d'un bloc contenant un objet Tableau</span> :</p>
+<p class="Body-Text">Après l'impression d'un bloc contenant un tableau, Ymig laisse le numéro de ligne courant inchangé. Le numéro délivré n’est donc pas encore actualisé.<br>
+Ensuite :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Après l’impression d’un bloc inclus dans le tableau, Ymig incrémente normalement le numéro de ligne courant de la taille du bloc Tableau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si l'impression d'un bloc ne faisant plus partie du tableau est demandée, Ymig positionne au préalable le numéro de ligne courant derrière la fin du bloc contenant le tableau.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

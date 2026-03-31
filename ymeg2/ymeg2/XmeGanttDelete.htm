@@ -1,0 +1,64 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeGanttDelete</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+span.hcp3 { font-weight:bold;
+text-decoration:underline; }
+span.hcp4 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeGanttDelete <span style="font-weight: normal;">&#160;</span><span style="font-size: 11pt; font-weight: normal;"><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_objets_Gantt.htm" style="font-weight: normal;">Famille</a> <a href="Objet_Gantt.htm" style="font-size: 11pt; font-weight: normal;">Thème</a></span></h3>
+<p style="font-weight: bold;"><span class="hcp1">Suppression de l'élément courant d'une liste d'un Gantt</span></p>
+<p>&#160;</p>
+<p><span class="hcp1">Long XmeGanttDelete</span> (<span class="hcp2">Identifiant</span>)</p>
+<p>&#160;</p>
+<p><span class="hcp1">Paramètre</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 12.445%;">
+<col style="width: 87.555%;">
+<tr style="vertical-align: top;">
+<td style="border: Solid 1px #000000;width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p style="font-style: italic;">Identifiant</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Identifiant de la liste.</p>
+<p>Vous trouverez cet identifiant dans l'enregistrement rendu par la fonction XmeGanttGetId (Cf. rubrique <a href="Interface_de_programmation_d_un_objet_Gantt.htm">Interface de programmation d'un objet Gantt</a>).</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp1">Description de la fonction</span> :</p>
+<p class="Body-Text">Cette fonction supprime l'élément courant de la liste dont l’identifiant est passé en paramètre.<br>
+Le courant de cette liste est placé sur l'élément qui suit l'élément supprimé.</p>
+<p>Voir la fonction Diva <a href="../XDIVA1.chm::/Xdiva1/ListDelete.htm">ListDelete</a>.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque</span> :</p>
+<p>Afin d'optimiser les transferts d'informations avec l'objet Gantt, la suppression d'un élément d'une liste du Gantt positionne simplement un drapeau indiquant que l'objet devra être détruit au prochain affichage des données du Gantt. La suppression physique en liste est donc différée.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Attention</span> :</p>
+<p>En cas de <span class="hcp3">suppression d'une tâche</span>, vous <span class="hcp3">devez explicitement détruire la liste de ses tâches enfants et tâches dépendantes</span> en appelant la fonction <span class="hcp1">ListDestroy (</span><span style="font-style: italic; font-weight: bold;">rv</span><span class="hcp1">.IdListChildren) et ListDestroy(rv.IdListDependencies)</span>, où <span class="hcp2">rv</span> est l'instance de l'enregistrement ObjectTask concerné.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Exemples</span> :<br>
+&#160;</p>
+<p class="Source">Record ddGantt.dhsd ObjectTask rv</p>
+<p class="Source">...</p>
+<p class="Source">XmeGanttCurrent (<span class="hcp2">IdGantt</span>.IdTask,rv) &#160;;lecture de la tâche courante</p>
+<p class="Source">ListDestroy &#160;&#160;&#160;&#160;(rv.IdListChildren) &#160;&#160;&#160;&#160;&#160;&#160;;<span class="hcp4">s'il y lieu, suppression des enfants</span></p>
+<p class="Source"><span class="hcp4">L</span>istDestroy &#160;&#160;&#160;&#160;(rv.IdListDependencies) &#160;&#160;;<span class="hcp4">s'il y lieu, suppression des dépendences</span></p>
+<p class="Source">XmeGanttDelete &#160;(<span class="hcp2">IdGantt</span>.IdTask) &#160;&#160;&#160;&#160;;suppression en liste de la tâche</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Variable de contrôle d'un arbre</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { text-decoration:underline; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Variable de contrôle d'un arbre</h3>
+<p class="Body-Text">Chaque ligne d'arbre dispose d'attributs spécifiques liés à la hiérarchisation&#160;: niveau de l'élément, drapeau "réduit/expansé", …<br>
+Pour stocker ces attributs, on associe <font class="hcp1">à chaque élément</font> de l'arbre une variable de contrôle structurée, <font class="hcp1">à déclarer</font> dans votre enregistrement "<a href="Gestiondelalisteassoci_e_untableau.htm">Ligne de tableau</a>" et <font class="hcp1">à sélectionner</font> dans Xwin lors du placement de la donnée "Objet arbre" dans le tableau.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Garnissage initial de la variable de contrôle</font></p>
+<p class="Body-Text">Si vous ne faites pas appel à XmeListConsultDefault, les traitements sur la variable de contrôle sont entièrement à la charge de votre programme (<font class="hcp2">hors données de gestion internes</font>&#160;: champ <font style="font-style: italic;">GesInterne</font>).</p>
+<p class="Body-Text">Sinon, votre programme doit au moins <font class="hcp1">initialiser</font> la variable de contrôle de chaque élément, au moment du <font class="hcp1">remplissage initial de la liste</font> (avant le 1<font style="vertical-align: super;">er</font> appel à XmeListConsult).</p>
+<p class="Body-Text">Outre le <font class="hcp1">niveau</font> de l'élément, il faudra choisir son <font class="hcp1">état d'expansion initial</font>, les <font class="hcp1">images bitmap</font> associées à l'élément réduit ou expansé et la <font class="hcp1">méthode de garnissage de la liste</font> (présence initiale de la totalité des éléments ou uniquement des éléments "racine"). Consultez la rubrique <a href="Expansionour_ductiond_un_l_mentd_arbre.htm">Expansion ou réduction d'un élément d'arbre</a> pour découvrir les différents choix possibles.</p>
+<p class="Body-Text">D'autre part, reportez-vous à la rubrique <a href="Cr_ationd_un_l_mentd_arbre.htm">Création d'un élément d'arbre</a> pour savoir comment XmeListConsultDefault initialise la variable de contrôle à l'occasion de la création d'un nouvel élément.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Description de la variable de contrôle</font></p>
+<p class="Body-Text">La variable de contrôle d'un arbre est décrite <font class="hcp1">à titre d'exemple</font> dans l'enregistrement <font class="hcp1">TreeInfo</font> du dictionnaire système <font class="hcp1">DDSYS.dhsd</font>. Mais <font class="hcp2">attention</font>, comme elle doit être placée dans votre enregistrement "<a href="Gestiondelalisteassoci_e_untableau.htm">Ligne de tableau</a>" personnel, <font class="hcp2">vous devrez la reproduire</font> dans votre dictionnaire d'application.</p>
+<p class="Body-Text">Voici sa structure (<font class="hcp2">à reproduire scrupuleusement</font>) et la signification des champs qui la composent&#160;:<br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 13.606%;">
+<col style="width: 10.829%;">
+<col style="width: 75.565%;">
+<tr class="hcp3">
+<td style="width:13.606%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Niveau</font></p>
+</td>
+<td style="width:10.829%;" class="hcp4">
+<p class="Body-Text">2,0</p>
+</td>
+<td style="width:75.565%;" class="hcp4">
+<p class="Body-Text">Niveau de l'élément dans l'arbre.<br>
+(Compris entre 1 et 99).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.606%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">GesInterne</font></p>
+</td>
+<td style="width:10.829%;" class="hcp4">
+<p class="Body-Text">32</p>
+</td>
+<td style="width:75.565%;" class="hcp4">
+<p class="Body-Text">Données de gestion internes.<br>
+Cette zone ne sert qu'à l'exécuteur Ywpf.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.606%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">SousNiveau</font></p>
+</td>
+<td style="width:10.829%;" class="hcp4">
+<p class="Body-Text">Type B</p>
+</td>
+<td style="width:75.565%;" class="hcp4">
+<p class="Body-Text">Drapeau indiquant l'existence de sous-niveau(x) –non présent(s) en liste– pour l'élément&#160;:<br>
+&#160;<font class="hcp1"><br>
+FALSE</font> indique que l'élément n'a pas de sous-niveau (ou que ses sous-niveaux sont déjà placés dans la liste).<br>
+&#160;<font class="hcp1"><br>
+TRUE</font> indique que l'élément a éventuellement des sous-niveaux, <font class="hcp1">qui seront ajoutés à la liste uniquement lorsque l'utilisateur demandera son expansion</font>.<br>
+&#160;<br>
+Pour plus de détails, voir la rubrique <a href="Expansionour_ductiond_un_l_mentd_arbre.htm">Expansion ou réduction d'un élément d'arbre</a>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.606%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Expanse</font></p>
+</td>
+<td style="width:10.829%;" class="hcp4">
+<p class="Body-Text">Type B</p>
+</td>
+<td style="width:75.565%;" class="hcp4">
+<p class="Body-Text">Drapeau indiquant si l'élément doit être expansé à l'écran&#160;:<br>
+&#160;<font class="hcp1"><br>
+TRUE</font> autorise Ywpf à afficher les éventuels sous-niveaux de l'élément (élément expansé).</p>
+<p class="Body-Text"><font class="hcp1">FALSE</font> interdit cet affichage (élément réduit).<br>
+&#160;<font class="hcp1"><br>
+Remarques</font>&#160;:<br>
+– Si vous faites appel à XmeListConsultDefault, la mise à jour de ce drapeau à l'occasion d'expansions ou réductions demandées par l'utilisateur sera automatique&#160;;<br>
+au chargement initial de la liste, initialisez le drapeau à FALSE si vous voulez que l'élément soit au départ à l'état réduit, à TRUE si vous voulez que ses sous-niveaux soient immédiatement visibles.<br>
+&#160;<br>
+– Ce drapeau peut valoir TRUE alors que l'élément n'a aucun sous-niveau (en particulier, XmeListConsultDefault ne le repositionne pas à FALSE après la suppression du dernier sous-niveau de l'élément).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.606%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">BitmapRed<br>
+/<br>
+BitmapExp</font></p>
+</td>
+<td style="width:10.829%;" class="hcp4">
+<p class="Body-Text">32</p>
+</td>
+<td style="width:75.565%;" class="hcp4">
+<p class="Body-Text">Nom d'une image bitmap (*), à afficher dans la colonne de l'arborescence lorsque l'élément est à l'état réduit / expansé. Aucune image n'est affichée si ce nom est laissé à espace.<br>
+Reportez-vous à la rubrique <a href="Cr_ationd_un_l_mentd_arbre.htm">Création d'un élément d'arbre</a> pour savoir comment XmeListConsultDefault initialise ces champs à l'occasion de la création d'un nouvel élément.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.606%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Libel</font></p>
+</td>
+<td style="width:10.829%;" class="hcp4">
+<p class="Body-Text">100 maxi</p>
+</td>
+<td style="width:75.565%;" class="hcp4">
+<p class="Body-Text">Libellé (de 1 à 100 caractères) de l'élément, à afficher dans la colonne de l'arborescence.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">(*) Le nom d'une image bitmap peut avoir trois formats&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Si le nom indiqué contient un <font class="hcp1">"."</font> (point), Ywpf considère qu'il s'agit d'un fichier contenant la bitmap voulue.<br>
+Exemple&#160;:&#160;Image1.jpg.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le nom indiqué commence par <font class="hcp1">"#"</font> (dièse), Ywpf considère qu'il s'agit d'une bitmap "interne" (pour connaître la liste de ces bitmaps, consultez le champ Fichier image de la boîte de Xwin présentant les bitmaps et boutons graphiques).<br>
+Exemple&#160;:&#160;#tblcadf (bitmap TBLCADF dans la feuille de styles standard).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Sinon, il s'agit d'un nom de bitmap dans la feuille de styles.<br>
+Exemple&#160;:&#160;TBLCADO.</p>
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,132 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fpread</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fpread &#160;<a href="Listedesfonctionsdebasedegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Introduction1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font>f</font>pread permet de lire l'enregistrement précédent le dernier enregistrement lu (fichiers séquentiel-indexé uniquement).<br>
+La lecture se fait d'après la clé courante et la "fin de fichier" est provoquée par le début de la clé en cours.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">f</font><font class="hcp2">pread</font> ( <font class="hcp3">tdf</font> , <font class="hcp3">variable</font> <font class="hcp3">[ , code_réservation ] [ , depack_auto ]</font> )</p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Table de définition de fichier.</p>
+<p class="Body-Text"><font class="hcp3">Variable</font></p>
+<p class="decalage05">Donnée réceptrice qui contiendra l'enregistrement lu.</p>
+<p class="Body-Text">Code_<font class="hcp3">réservation</font></p>
+<p class="decalage05">Mode de partage de l'enregistrement ('P' par défaut).</p>
+<p class="Body-Text"><font class="hcp3">Depack</font>_<font class="hcp3">auto</font></p>
+<p class="decalage05">Décompression automatique des données si l'enregistrement comporte une zone packée.<br>
+0 &#160;: non &#160;(par défaut)</p>
+<p class="decalage05">1 &#160;: oui</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">0 &#160;</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">H_EOF &#160;</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Début du fichier atteint.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">H_RESERVED &#160;</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Enregistrement réservé.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">autres</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Code d'erreur système.&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font></p>
+<p class="Body-Text">Il est possible de modifier la clé avant d'utiliser la fonction <font>f</font>pread pour se positionner directement sur un enregistrement. L'enregistrement lu est alors celui dont la clé est inférieure ou égale à la clé placée dans la TDF.</p>
+<p class="Body-Text">Pour lire un fichier "à l'envers", il faut charger au départ la clé avec une valeur supérieure à la clé la plus grande possible.<br>
+Exemples :<br>
+&#160;fic.key = 'A' &amp; $FF ou<br>
+&#160;fic.key = "Azzzzzz"</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La fonction <a href="GetLastRecord.htm">GetLastRecord</a> permet de récupérer le dernier enregistrement lu.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">;________________________________________________________________<br>
+; Fonction : F_PREAD</p>
+<p class="Source">; Type : int</p>
+<p class="Source">; Description : Lit en arrière le fichier tdf en mode "par"</p>
+<p class="Source">; et dépacke automatique</p>
+<p class="Source">; Paramètres en sortie : 0 = ok 1 = début 2 = réservé 3 = errsys</p>
+<p class="Source">;________________________________________________________________<br>
+;</p>
+<p class="Source">Function int F_PREAD (&amp;tdf , &amp;art , par)</p>
+<p class="Source">record * htdf tdf ;table de définition</p>
+<p class="Source">1 art A ;article</p>
+<p class="Source">1 par A = 'P' ;code partage</p>
+<p class="Source">beginf</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">cr = Fpread (tdf,art,par,1)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">switch cr&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">case 0 ;ok&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;freturn (0)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">case H_EOF ;début de fichier&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;freturn (1)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">case H_RESERVED ;réservé&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;freturn (2)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">default ;erreur système&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox("Erreur système numéro " &amp; binhexa (stx (cr)) &amp; \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" en lecture du fichier " &amp; left(tdf.name)," ")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;freturn (3)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">endswitch&#160;</p>
+<p class="Source">endf</p>
+<p class="Body-Text">…….</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">; Lire le fichier des compositeurs à partir de la fin.</p>
+<p class="Source">comp.key = 'A' &amp; $FF ; positionnement clé</p>
+<p class="Source">do</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = f_pread (comp , cpenr , 'P')&#160;</p>
+<p class="Source">while st = 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display [ cpenr.codecp " " cpenr.nom " " cpenr.prenom ]&#160;</p>
+<p class="Source">wend</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Hpread.htm">Hpread</a>, <a href="Fread.htm">Fread</a>, <a href="Fseek2.htm">Fseek2</a></p>
+</body>
+</html>

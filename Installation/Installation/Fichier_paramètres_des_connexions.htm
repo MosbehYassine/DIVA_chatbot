@@ -1,0 +1,47 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fichier paramètres des connexions</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-family:"Courier New"  , monospace; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fichier paramètres des connexions</h3>
+<p>&#160;</p>
+<p>Le fichier paramètre <span class="hcp1">Connexions.xml</span> est utilisé par le connecteur SQL.<br>
+&#160;</p>
+<p>Il contient une liste de connexions vers les bases de données. Pour chaque connexion, on définit :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Le type de la base (Microsoft SQL Server, Oracle, IBM Db2).</p>
+</li>
+<li class="p">
+<p>Le nom de la base de données.</p>
+</li>
+<li class="p">
+<p>La chaîne de connexion Ado.net à la base.</p>
+</li>
+<li class="p">
+<p>Le nom du serveur de réservation.</p>
+</li>
+</ul>
+<p>Chaque connexion est identifiée par un nom (attribut "nom" de la balise connexion).</p>
+<p>La connexion « <span class="hcp1">default</span> » est utilisée par défaut.</p>
+<p>&#160;</p>
+<p>Ce fichier doit être stocké dans le répertoire du fichier des utilisateurs (clé ServeurXLOGF du chapitre [System] de xDivaltoMajIni).</p>
+<p>&#160;</p>
+<p>Lors de la connexion, pour utiliser les informations de connexion de Windows, il faut mettre dans la chaîne de connexion : "<span class="hcp2">Trusted_Connection=Yes;</span>".</p>
+<p>Si, au contraire, vous voulez utiliser un compte générique, local au serveur SQL, il faut mettre : "<span class="hcp2">User Id=xxxx; Password=xxxx;</span>".</p>
+<p>&#160;</p>
+</body>
+</html>

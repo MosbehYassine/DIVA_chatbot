@@ -1,0 +1,165 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListGetComboValue</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-family:Symbol; }
+font.hcp7 { font-weight:bold;
+font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListGetComboValue &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Lecture des choix d'un multi-choix (ou d'une case à cocher) placé dans une cellule de tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Bin XmeListGetComboValue</font> (<font class="hcp3">Masque, Page, Tableau, Colonne, Indice</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="585">
+<tr class="hcp4">
+<td style="width:23.69%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Masque</font></p>
+</td>
+<td style="width:76.31%;" class="hcp5">
+<p class="Body-Text">Nom du fichier masque.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:23.69%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Page</font></p>
+</td>
+<td style="width:76.31%;" class="hcp5">
+<p class="Body-Text">Numéro de page.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:23.69%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Tableau</font></p>
+</td>
+<td style="width:76.31%;" class="hcp5">
+<p class="Body-Text">Nom du tableau.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:23.69%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Colonne</font></p>
+</td>
+<td style="width:76.31%;" class="hcp5">
+<p class="Body-Text">Numéro de colonne.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:23.69%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice</font></p>
+</td>
+<td style="width:76.31%;" class="hcp5">
+<p class="Body-Text">Indice du choix dans la table des choix (début à 1).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font></p>
+<ul>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;"><font class="hcp2">TRUE</font> si un choix existe. Dans ce cas, l’enregistrement Harmony est également garni avec les données suivantes&#160;:</p>
+</li>
+<li style="list-style: none; display: inline">
+<table style="margin-left: 32.50pt;" cellspacing="0" width="100%">
+<col style="width: 16.407%;">
+<col style="width: 83.593%;">
+<tr class="hcp4">
+<td style="width:16.407%;" class="hcp5">
+<p class="List"><font class="hcp2">DataVal</font></p>
+</td>
+<td style="width:83.593%;" class="hcp5">
+<p class="List">Libellé du choix.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.407%;" class="hcp5">
+<p class="List"><font class="hcp2">DataValComp</font></p>
+</td>
+<td style="width:83.593%;" class="hcp5">
+<p class="List">Valeur du choix, convertie au format de stockage de la donnée multi-choix (format fonction de sa longueur <font class="hcp3">LG</font> et de sa nature&#160;: B, X, L, numérique, numérique,D ou alpha).<br>
+Vous pouvez ainsi, quelque soit sa nature, utiliser la fonction Diva Left (Harmony.DataValComp, <font class="hcp3">LG</font>) pour comparer / transférer directement la valeur rendue à / dans la donnée multi-choix (voir l’exemple 2).<span style="font-weight: bold;"><br>
+<br>
+Cas des cases à cocher</span> : la fonction délivre d'abord la valeur associée à l'état non coché puis celle associée à l'état coché.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.407%;" class="hcp5">
+<p class="List" style="font-weight: bold;">CodePageMultiChoix</p>
+</td>
+<td style="width:83.593%;" class="hcp5">
+<p class="List">Code page.<br>
+Remarques :</p>
+<ul style="list-style: disc;">
+<li class="p-List">
+<p class="List">Le code page est commun à l'ensemble des choix du multi-choix. Tous les choix doivent donc être dans la même langue.</p>
+</li>
+<li class="p-List">
+<p class="List">La fonction n'analyse que les choix dont le numéro d'ordre est inférieur ou égal à l'indice du choix demandé. Il se peut donc qu'elle délivre la valeur 0 pour les premiers choix puis une valeur non nulle (par exemple, si le multi-choix est déclaré "non obligatoire" dans Xwin car dans ce cas, le 1er choix délivré vaut "Espace" et n'a pas de code page). Par contre, une fois rendu un code page non nul, le code page rendu pour tous les choix suivants sera identique à ce premier code page rendu non nul.</p>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p class="List" style="margin-left: 35.45pt;">&#160;</p>
+<ul>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;"><font class="hcp2">FALSE</font> dans l’un des trois cas suivants&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> La table des choix est terminée (paramètre <font class="hcp3">Indice</font> supérieur au nombre de choix).<font face="Symbol" class="hcp6"><br>
+-</font> La donnée identifiée par son numéro de <font class="hcp3">Colonne</font> dans le tableau n'est pas un multi-choix.<font face="Symbol" class="hcp6"><br>
+-</font> Le libellé du choix contient des caractères non affichables&#160;: dans le cas d'un multi-choix de type "Tableau", le libellé est recherché dans un enregistrement&#160;; s’il est invalide, Ywpf ne le délivre pas, considérant que l'enregistrement n'a pas encore été garni.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">La fonction XmeListGetComboValue lit le <font class="hcp7">Indice</font> ème choix de la donnée multi-choix placée dans la colonne numérotée <font class="hcp7">Colonne</font>, du tableau identifié par le nom du fichier <font class="hcp7">Masque</font> plus le numéro de <font class="hcp7">Page</font> où il a été dessiné et par le nom de <font class="hcp7">Tableau</font> qui lui a été attribué dans Xwin.</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Le paramètre <font class="hcp3">Colonne</font> est le <font class="hcp2">numéro d'ordre</font> de la colonne dans le tableau, <font class="hcp2">l'ordre à considérer étant celui défini dans Xwin</font>. Les numéros sont calculés à la compilation du masque&#160;: ils n'évoluent pas en exploitation, même si l'utilisateur intervertit des colonnes.<font face="Symbol" class="hcp6"><span style="font-size: 8pt; font-family='Times: New Roman;">&#160;&#160;&#160;</span></font></p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 1&#160;:</font> Boucle de lecture des choix d'un multi-choix (colonne 3 du tableau nommé TABLEAU et situé en page 2 du masque ETABLE).<br>
+&#160;</p>
+<p class="Source">Indice = 1</p>
+<p class="Source">LOOP XmeListGetComboValue ("ETABLE",2,"TABLEAU",3,Indice)</p>
+<p class="Source">&#160;&#160;&#160;DISPLAY (Harmony.DataVal)</p>
+<p class="Source">&#160;&#160;&#160;Indice ++</p>
+<p class="Source">ENDLOOP</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 2&#160;:</font> Pour un choix de valeur "12", Harmony.DataValComp contiendra&#160;:</p>
+</li>
+</ul>
+<p class="Source" style="margin-left: 88px;">Nature B &#160;&#160;&#160;&#160;&#160;&#160;: $0C</p>
+<p class="Source" style="margin-left: 88px;">Nature X &#160;&#160;&#160;&#160;&#160;&#160;: $0C $00</p>
+<p class="Source" style="margin-left: 88px;">Nature L &#160;&#160;&#160;&#160;&#160;&#160;: $0C $00 $00 $00</p>
+<p class="Source" style="margin-left: 88px;">Nature Num 5,0 : " 12"</p>
+<p class="Source" style="margin-left: 88px;"><span style="margin-left: 35.45pt;">Nature Alpha 5 : "12 "</span></p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+</body>
+</html>

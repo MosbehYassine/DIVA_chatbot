@@ -135,3 +135,7 @@ networkx_graph.pkl
 
 # CHM specific ignores if needed
 # Add any large or generated files here
+
+# Executables
+*.exe
+*.msi

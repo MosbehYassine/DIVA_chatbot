@@ -1,0 +1,40 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fichiers de chemins implicites et utilisateurs</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { text-decoration:underline; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fichiers de chemins implicites et utilisateurs</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Chaque utilisateur déclaré dans la base des utilisateurs d'Harmony <font class="hcp1">peut</font> disposer de son <font class="hcp1">propre fichier de chemins implicites</font> mais un même fichier peut aussi être affecté à plusieurs utilisateurs (l'association d'un fichier de chemins implicites à chaque utilisateur s'effectuant par <a href="UTILITAIRES.chm::/UTILITAIRES/XLOG1_Gestiondesutilisateurs.htm">Xlog1</a>).</p>
+<p class="Body-Text"><font class="hcp2">Remarque</font>&#160;: Si aucun fichier n'est spécifié dans les paramètres d'un utilisateur, Harmony lui affecte automatiquement le fichier <font class="hcp2">ImplicitesDefaut.txt</font>.</p>
+<p class="Body-Text">En pratique, le plus simple est de limiter au maximum le nombre de fichiers présents sur le site. A cet effet, on pourra par exemple affecter le même fichier aux utilisateurs qui exécutent les mêmes applications (et qui par voie de conséquence accèdent aux mêmes fichiers).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font> Sur un site, les utilisateurs LISE, JEAN, PAUL et MAX travaillent sur la compta et la gestion, LINE et CATY uniquement sur la compta, LUC uniquement sur la paie. On simplifie le paramétrage au maximum en se limitant à 3 fichiers d'implicites&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Paie.txt&#160;: spécifié dans les paramètres de l'utilisateur LUC, et contenant les chemins d'accès aux fichiers de la paie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Compta.txt&#160;: spécifié dans les paramètres des utilisateurs LINE et CATY, et contenant les chemins d'accès aux fichiers de la compta.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">ImplicitesDefaut.txt&#160;: contenant les chemins d'accès aux fichiers de la compta et de la gestion (aucun fichier n'étant spécifié dans les paramètres des utilisateurs LISE, JEAN, PAUL et MAX).</p>
+</li>
+</ul>
+</body>
+</html>

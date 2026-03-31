@@ -1,0 +1,213 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Restrictions imposées par les navigateurs Web</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+tr.hcp3 { vertical-align:top; }
+p.hcp4 { font-weight:bold; }
+td.hcp5 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp6 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Restrictions imposées par les navigateurs Web</h3>
+<p>Ces grandes fonctionnalités sont indisponibles sur le Web (ou ne sont pas disponibles avec toutes les interfaces de programmation) :</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Interfaces OLE Automation et YOffice</span>.<br>
+Le <span class="hcp2">publipostage</span> avec un traitement de textes n'est plus disponible.<br>
+L'export tableur fonctionne, mais uniquement en passant par l’<span class="hcp2">interface OpenXml</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Interface CTI</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Interface MAPI</span>.<br>
+L'envoi de <span class="hcp2">fax</span> par MAPI depuis le poste client n'est plus disponible.<br>
+Les autres fonctions de messagerie peuvent être mises en œuvre sur un site disposant d’un serveur Exchange, grâce aux <span class="hcp2">fonctions d’interface avec Exchange Server</span> (méthode également disponible avec le client léger Wpf).<br>
+Le protocole standard <span class="hcp2">MAILTO</span> (schéma d'URI permettant de créer un lien hypertexte vers une adresse courriel) peut aussi être utilisé pour l’<span class="hcp2">envoi de mails simplifiés</span> (sans pièce jointe).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Connecteur Outlook</span>.<br>
+L’ajout de boutons Divalto dans Outlook n’est pas fonctionnelle en client léger Web.<span style="margin-left: 24px;">&#160;</span></p>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Drag &amp; drop "Externe"</span> (c’est-à-dire d’une fenêtre de navigateur à une autre).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Quasi-totalité</span> des fonctions de <span class="hcp2">gestion de fichiers Windows</span>.<br>
+Voir le paragraphe "Copie, exécution et gestion de fichiers Windows".<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Exécution de programmes Windows sur le poste client</span> (fonction LcExec).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Fonctions de <span class="hcp2">gestion de la base de registres du client</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Fonctions de <span class="hcp2">gestion du presse-papiers</span>.<br>
+Ces fonctions s’exécutent sur le serveur et ne lisent donc pas le presse-papiers du client Web.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Affichage de fenêtre en mode caché et fonction WindowShow</span>.<br>
+Il est impossible de cacher la fenêtre d’un navigateur Web. Le mode SW_HIDE (WindowShow, ProgramCall, …) ne peut donc pas fonctionner.<br>
+La fonction WindowShow, qui permet de maximiser, minimiser ou cacher la fenêtre Harmony ne fonctionne pas en client léger Html.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La <span class="hcp2">zone de notification (traybar)</span> n’est pas disponible.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Formats d'image interdits</span>.<br>
+Les images provenant d’un exécutable (fichier .exe ou .dll) ne sont pas traitées (hors icones de xrtDiva.exe).<br>
+Le paramètre "Petite icone" des images de la feuille de styles est ignoré.<br>
+Tous les formats d’images ne sont pas reconnus sur le Web. C’est le cas en particulier du format WMF (et attention, ceci concerne aussi les images placées par l’utilisateur dans un texte riche).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Touches interceptées par les navigateurs</span>.<br>
+Certaines touches (dépendant du navigateur) ne sont pas disponibles. Voici un tableau résumant les touches du clavier que les différents navigateurs ne laissent pas à disposition des programmes d’application :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 13.815%;">
+<col style="width: 31.658%;">
+<col style="width: 24.334%;">
+<col style="width: 30.193%;">
+<tr class="hcp3">
+<td style="border: Solid 1px #000000;width: 13.815%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp4">Touches</p>
+</td>
+<td style="width:31.658%;" class="hcp5">
+<p class="hcp4">IE</p>
+</td>
+<td style="width:24.334%;" class="hcp5">
+<p class="hcp4">Firefox</p>
+</td>
+<td style="width:30.193%;" class="hcp5">
+<p class="hcp4">Chrome</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.815%;" class="hcp6">
+<p class="hcp4">Ctrl+F4</p>
+</td>
+<td style="width:31.658%;" class="hcp7">
+<p>Referme la fenêtre</p>
+</td>
+<td style="width:24.334%;" class="hcp7">
+<p>Referme la fenêtre</p>
+</td>
+<td style="width:30.193%;" class="hcp7">
+<p>Referme la fenêtre</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.815%;" class="hcp6">
+<p class="hcp4">Ctrl+N</p>
+</td>
+<td style="width:31.658%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:24.334%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:30.193%;" class="hcp7">
+<p>Ouvre un nouvel onglet</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.815%;" class="hcp6">
+<p class="hcp4">Ctrl+O</p>
+</td>
+<td style="width:31.658%;" class="hcp7">
+<p>Transmis au serveur mais ouvre une fenêtre interne</p>
+</td>
+<td style="width:24.334%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:30.193%;" class="hcp7">
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.815%;" class="hcp6">
+<p class="hcp4">Ctrl+P</p>
+</td>
+<td style="width:31.658%;" class="hcp7">
+<p>Transmis au serveur mais ouvre la fenêtre d’impression</p>
+</td>
+<td style="width:24.334%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:30.193%;" class="hcp7">
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.815%;" class="hcp6">
+<p class="hcp4">Ctrl+T</p>
+</td>
+<td style="width:31.658%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:24.334%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:30.193%;" class="hcp7">
+<p>Ouvre un nouvel onglet</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.815%;" class="hcp6">
+<p class="hcp4">Ctrl+W</p>
+</td>
+<td style="width:31.658%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:24.334%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:30.193%;" class="hcp7">
+<p style="font-weight: normal;">Referme la fenêtre</p>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Voir aussi : <a href="Autres_diff&eacute;rences_entre_Html_et_Wpf_affectant_la_programmation.htm">Autres différences entre Html et Wpf affectant la programmation</a>.</p>
+</body>
+</html>

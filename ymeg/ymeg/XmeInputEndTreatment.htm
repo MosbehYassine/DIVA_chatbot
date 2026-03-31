@@ -1,0 +1,53 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeInputEndTreatment</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeInputEndTreatment &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Exécution du traitement après saisie d'une page ou d'une ligne de tableau</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeInputEndTreatment</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<p class="Body-Text">Dans Xwin, vous pouvez programmer une séquence de <a href="Traitementapr_ssaisiedumasque.htm">traitement après saisie</a> pour toute page de masque ou ligne de tableau. Cette séquence est normalement appelée (automatiquement) par Ywpf lorsque l'utilisateur <font class="hcp2">valide</font> la saisie. La fonction XmeInputEndTreatment permet d'appeler "manuellement" la séquence dans un programme, suite à une interruption de saisie <font class="hcp2">autre</font> que la validation (point d'arrêt, piège de touche, etc.).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple d'utilisation&#160;:</font> Cf. rubrique <a href="Programmationdupointd_arr_t_Demandedesaisie_.htm">Programmation du point d'arrêt "Demande de saisie"</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">ATTENTION&#160;:</font></p>
+<p class="Body-Text">La fonction concerne toujours la page ou la ligne de tableau courante. Le cas échéant, <font class="hcp2">XmeInputEndTreatment DOIT donc être appelée AVANT le XmeRet</font> de la page (ou le <font class="hcp2">XmeListInputRet</font> de la ligne de tableau) en cours de saisie !</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Si une ligne de tableau est en cours de saisie au moment de son appel, XmeInputEndTreatment exécute la séquence de traitement après saisie de la ligne&#160;; sinon, elle exécute la séquence de traitement après saisie de la page courante.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si la page saisie inclut des <a href="Les_grilles_et_les_panels_pages.htm">pages panels</a>, sont exécutés les traitements Après saisie de TOUTES les pages Xwin rencontrées dans l'arbre des pages panels de la page saisie. Les traitements sont exécutés en ordre « ascendant » : on part des feuilles de l'arbre et on remonte jusqu’à la page saisie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeInputEndTreatment <font class="hcp2">ne traite pas</font> les <font class="hcp2">codes de retour</font> (Harmony.Retour et Harmony.CplRetour) positionnés par la séquence, mais les transmet au programme appelant&#160;; ce dernier peut donc demander le retour à la saisie (avec les codes de retour courants) si Harmony.Retour n'est pas nul.<br>
+Par contre, ATTENTION à razer les codes si vous décidez de ne pas revenir à la saisie alors que la séquence les a positionnés.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeInputEndTreatment réaffiche les variables de la page/ligne au retour de la séquence (tout comme lorsqu'elle est appelée par Ywpf après validation de la saisie).</p>
+</li>
+</ul>
+</body>
+</html>

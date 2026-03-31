@@ -1,0 +1,83 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ListPassKeySet</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-right:10px;
+padding-left:10px; }
+p.hcp4 { font-weight:normal; }
+span.hcp5 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ListPassKeySet &#160;&#160;<span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>La fonction ListPassKeySet permet de positionner les <a href="Confidentialit&eacute;s.htm">passe-partout</a>.</p>
+<p>Les éléments de la liste sont des enregistrements PassePartout du dictionnaire ddsys.dhsd.</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">Long ListPassKeySet</span> &#160;( <span style="font-style: italic;">idListe</span> )</p>
+<p>&#160;</p>
+<p class="hcp1">Paramètre</p>
+<p style="font-style: italic;">IdListe</p>
+<p class="Decalage05">Identifiant de la liste contenant les passe-partout.</p>
+<p>&#160;</p>
+<p class="hcp1">Retour</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 6.536%;">
+<col style="width: 93.464%;">
+<tr class="hcp2">
+<td style="width:6.536%;" class="hcp3">
+<p>0</p>
+</td>
+<td style="width:93.464%;" class="hcp3">
+<p>Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:6.536%;" class="hcp3">
+<p>-1</p>
+</td>
+<td style="width:93.464%;" class="hcp3">
+<p>IdListe est incorrect.</p>
+</td>
+</tr>
+</table>
+<p class="hcp4">&#160;</p>
+<p class="hcp1">Remarque</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp4">La liste est automatiquement détruite.</p>
+</li>
+</ul>
+<p class="hcp1">Exemple</p>
+<p class="Source"><span class="hcp5"><span class="hcp5">P</span>ublic Procedure Charger_Table_Passe_Partout</span></p>
+<p class="Source">1 idLstPass L</p>
+<p class="Source">Record ddsys.dhsd PassePartout pass</p>
+<p class="Source">beginp</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;idLstPass = ListPassKeyGet()</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;ListErase(idLstPass)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;A5FTAB.Key = ['L']</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;Do While next_mapplic (' ',A5FTAB.Key)=0 &#160;&#160;&#160;&#160;; chargement des passe-partout de l'utilisateur</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;pass.NomPassePartout = MAPPLIC.Applic</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;pass.ClePassePartout = MAPPLIC.SuperConf</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ListInsert(idLstPass, pass)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;Wend</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;ListPassKeySet(idLstPass) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; mise en place de la nouvelle liste</p>
+<p class="Source">Endp</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp1">Voir</p>
+<p class="hcp4"><a href="ListPassKeyGet.htm">ListPassKeyGet</a></p>
+<p class="hcp4"><span class="hcp5"><a href="Confidentialit&eacute;s.htm">Confidentialités</a></span></p>
+<p>&#160;</p>
+</body>
+</html>

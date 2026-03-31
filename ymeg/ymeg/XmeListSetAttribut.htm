@@ -1,0 +1,523 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListSetAttribut</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp6 { font-weight:bold; }
+font.hcp7 { font-family:Symbol; }
+font.hcp8 { font-weight:bold;
+text-decoration:underline; }
+span.hcp9 { margin-left:24.00pt; }
+li.hcp10 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListSetAttribut &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Modification des attributs d'affichage d'une ou plusieurs cellules de&#160;tableau&#160;;<br>
+Masquage d’un ou plusieurs choix de cellules de type multi-choix</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeListSetAttribut</font> (<font class="hcp3">Nom des lignes</font>, <font class="hcp3">Nom des objets</font>, <font class="hcp3">Attribut</font>, <font class="hcp3">Valeur de l'attribut</font>)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 16.226%;">
+<col style="width: 83.774%;">
+<tr class="hcp4">
+<td style="width:16.226%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Nom des lignes</font></p>
+</td>
+<td style="width:83.774%;" class="hcp5">
+<p class="Body-Text">Nom de la ou des lignes concernées (32 caractères maximum).<font class="hcp2"><br>
+Attention</font>&#160;:</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text">Nommer une ligne de tableau nécessite de <font class="hcp2">définir une donnée de contrôle des lignes</font> pour ce tableau&#160;(on utilisera à cet effet l'enregistrement standard <font class="hcp2">RowInfo</font> du dictionnaire système DDSYS.dhsd)&#160;: dans Xwin, déclarez l'enregistrement RowInfo dans la liste des enregistrements du masque, activez la propriété du tableau <span class="hcp6">Avec donnée de contrôle des lignes</span> et cliquez dans la colonne de droite de la propriété <span class="hcp6">Donnée de contrôle</span> puis sur le bouton d’ouverture de la fenêtre de sélection de la donnée. Sélectionnez la donnée RowInfo de l'enregistrement RowInfo.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text">L’enregistrement <font class="hcp2">RowInfo</font> doit être déclaré <font class="hcp2">Public</font> dans votre programme.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text">La sous-donnée <font class="hcp2">RowInfo.NomLigne</font>, destinée à contenir le nom attribué à une ligne, <font class="hcp2">doit être renseignée</font> au moment de la création et/ou de la modification de chaque élément du tableau&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> RowInfo.NomLigne = espace ==&gt; la ligne n’est pas nommée.<font face="Symbol" class="hcp7"><br>
+-</font> RowInfo.NomLigne = ‘xxxxx’ ==&gt; la ligne porte le nom ‘xxxxx’.<br>
+Vous pouvez aussi modifier le nom de la ligne courante du tableau en faisant appel à la fonction XmeListModifyRowName (dans un point d’arrêt ou de traitement, <font class="hcp8">IL FAUT</font> d’ailleurs utiliser cette fonction pour <font class="hcp2">changer le nom d’une ligne</font> <font class="hcp8">EN COURS DE SAISIE</font> : voir la rubrique consacrée à <a href="XmeListModifyRowName.htm">XmeListModifyRowName</a>).</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp2">Remarques</font>&#160;:</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text">Une ligne ne peut porter qu’<font class="hcp2">un seul nom</font> (contrairement aux objets qui peuvent en porter plusieurs) mais le même nom peut être porté par plusieurs lignes distinctes.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text">Ce paramètre ne doit pas être garni à espace&#160;: pour modifier une colonne complète du tableau, utilisez la fonction <a href="XmeSetAttribut.htm">XmeSetAttribut</a>.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.226%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Nom des objets</font></p>
+</td>
+<td style="width:83.774%;" class="hcp5">
+<p class="Body-Text">Nom du ou des objets concernés <font class="hcp2">(*)</font>.<br>
+Si ce paramètre est à <font class="hcp2">espace</font>, le nouvel attribut s’appliquera à <font class="hcp2">toutes</font> les colonnes (même celles contenant un objet non nommé) des lignes concernées.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.226%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Attribut</font></p>
+</td>
+<td style="width:83.774%;" class="hcp5">
+<p class="Body-Text">Identificateur de l'attribut à modifier<br>
+(Define de Zdiva de la forme AN_XXXX).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.226%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Valeur de l'attribut</font></p>
+</td>
+<td style="width:83.774%;" class="hcp5">
+<p class="Body-Text">Nouvelle valeur de l'attribut.<br>
+Suivant l'attribut considéré, il s'agira d'une valeur numérique, alphanumérique ou d'un Define de Zdiva de la forme AV_XXXX.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;"><font face="Symbol" class="hcp7">-</font> Les attributs d'affichage de la plupart des objets d'un masque d'écran peuvent être modifiés par programme, grâce à la fonction <a href="XmeSetAttribut.htm">XmeSetAttribut</a>. Toutefois, pour un objet inclus dans un tableau, cette fonction ne s’applique qu’à la colonne COMPLETE correspondante : elle ne permet donc pas, par exemple, de colorer une CELLULE de tableau isolé.<font face="Symbol" class="hcp7"><br>
+-</font> D’autre part, comme XmeListConsultDefault utilise la méthode de marquage des lignes pour mettre en œuvre la sélection multiple, il <font class="hcp2">n’est pas possible</font> de disposer <font class="hcp2">à la fois</font> de la <a href="S_lectionmultipledeslignesd_untableau.htm">sélection multiple</a> et d’un <a href="Marquagedeslignesd_untableau.htm">marquage des lignes</a> «&#160;personnel&#160;»&#160;: par cette méthode, on ne sait donc pas colorer globalement une ou plusieurs lignes du tableau, tout en disposant de la sélection multiple.<span class="hcp9"><br>
+<br>
+Ces deux restrictions sont levées par la fonction XmeListSetAttribut. Celle-ci permet en effet&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> De modifier les attributs d’affichage d’une ligne et/ou d’une cellule isolée d’un tableau.<font face="Symbol" class="hcp7"><br>
+-</font> De colorer les lignes de tableau indépendamment de la sélection multiple.<br>
+On trouvera plus loin un tableau récapitulatif des attributs concernés et la liste des attributs modifiables par type d'objet. Consultez également le paragraphe <font class="hcp2">Priorités d'application des attributs aux objets placés dans un tableau</font> ci-après pour savoir dans quel ordre sont pris en compte les différents types de changement d’attribut (ligne courante, ligne marquée ou sélectionnée, XmeListSetAttribut, XmeSetAttribut).<font class="hcp2"><br>
+<br>
+(*) Cas particulier des choix de multi-choix</font>&#160;: les choix des multi-choix peuvent être masqués par programme. Pour alléger la présentation, il n’en est fait mention dans la suite de cette rubrique qu’au paragraphe «&#160;Masquage des choix de multi-choix&#160;».</span></p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">La fonction <font class="hcp2">XmeListSetAttribut</font> affecte la nouvelle valeur <font class="hcp3">Valeur de l'attribut</font> à l'attribut d'affichage <font class="hcp3">Attribut</font>, pour <font class="hcp2">tous</font> les objets portant le nom <font class="hcp3">Nom des objets</font> et se trouvant dans une ligne nommée <font class="hcp3">Nom des lignes</font>.<br>
+Si le paramètre <font class="hcp3">Nom des objets</font> est garni à <font class="hcp2">espace</font>, le nouvel attribut s’appliquera à <font class="hcp2">toutes</font> les colonnes (même celles contenant un objet non nommé) des lignes concernées&#160;; ceci permet par exemple de donner une nouvelle couleur de fond à toute une ligne nommée du tableau.</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Outre les attributs définis dans l'éditeur de masques Xwin (police de caractères, couleur, bulle, etc.), il est possible de modifier la "visibilité" d'un objet, de manière à le griser ou à le rendre soit invisible (on dit aussi caché), soit illisible.</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Les objets concernés peuvent appartenir à n'importe quel tableau (déjà présent ou non à l'écran) de n'importe quel masque d'écran (déjà chargé ou non par XmeLoad).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Vous pouvez faire appel à XmeListSetAttribut autant de fois que vous le désirez. Lorsque deux appels portent sur le même triplet (<font class="hcp3">Nom des lignes</font>, <font class="hcp3">Nom des objets</font>, <font class="hcp3">Attribut</font>), la seconde affectation annule et remplace la première. Ywpf applique également la <font class="hcp2">règle</font>&#160;: «&#160;<font class="hcp2">Le dernier a gagné</font>&#160;» dans les cas moins triviaux du type suivant&#160;: un même objet porte plusieurs noms et l'un de ses attributs est modifié plusieurs fois sous des noms différents (voir aussi le paragraphe «&#160;Cas particulier de l’attribut AN_STYLE&#160;» dans la présente rubrique).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Ywpf constitue une liste des modifications demandées&#160;; cette liste est <font class="hcp2">globalement</font> valable pour <font class="hcp2">tous les tableaux</font> traités par votre programme et elle reste valide durant <font class="hcp2">toute la durée de vie</font> de ce dernier (hors fonction XmeListResetAttribut, qui peut être utilisée en particulier pour effacer complètement la liste).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Un <font class="hcp2">même nom peut être attribué à plusieurs objets</font> (de mêmes types ou de types différents, d'un même tableau / masque ou de tableaux / masques différents) et un <font class="hcp2">même objet peut porter plusieurs noms</font> (saisis dans Xwin).<br>
+Le <font class="hcp2">même nom peut être porté par plusieurs lignes</font> distinctes. Par contre, une <font class="hcp2">ligne ne peut porter qu’un seul nom</font> (RowInfo.NomLigne).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Pour <font class="hcp2">attribuer un nom à un objet</font>, procédez comme suit&#160;:<br>
+dans les propriétés de l'objet, saisissez le nom choisi sur la ligne <font class="hcp2">Noms de l'objet</font>&#160;; si vous désirez attribuer plusieurs noms à l'objet, séparez-les entre eux par un ";" (point virgule)&#160;; la casse est sans importance.<br>
+Exemples&#160;:<br>
+option<br>
+option1;option2;option3</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Pour <font class="hcp2">attribuer un nom&#160;à une ligne</font>, garnissez le champ <font class="hcp2">RowInfo.NomLigne</font> avant de créer et/ou de modifier l’élément de tableau concerné&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> RowInfo.NomLigne = espace ==&gt; la ligne n’est pas nommée.<font face="Symbol" class="hcp7"><br>
+-</font> RowInfo.NomLigne = ‘xxxxx’ ==&gt; la ligne porte le nom ‘xxxxx’.<font class="hcp2"><br>
+Remarque</font>&#160;: vous pouvez aussi modifier le nom de la ligne courante du tableau en faisant appel à la fonction XmeListModifyRowName (dans un point d’arrêt ou de traitement, <font class="hcp8">IL FAUT</font> d’ailleurs utiliser cette fonction pour <font class="hcp2">changer le nom d’une ligne</font> <font class="hcp8">EN COURS DE SAISIE</font> : voir la rubrique consacrée à <a href="XmeListModifyRowName.htm">XmeListModifyRowName</a>). <font class="hcp2"><br>
+Attention</font>&#160;: il faut avoir défini une <font class="hcp2">donnée de contrôle des lignes pour le tableau</font>&#160;(on utilisera à cet effet l'enregistrement standard <font class="hcp2">RowInfo</font> du dictionnaire système DDSYS.dhsd). Pour ce faire&#160;: dans Xwin, déclarez l'enregistrement RowInfo dans la liste des enregistrements du masque, activez la propriété du tableau <span class="hcp6">Avec donnée de contrôle des lignes</span> et cliquez dans la colonne de droite de la propriété <span class="hcp6">Donnée de contrôle</span> puis sur le bouton d’<span class="hcp9">ouverture de la fenêtre de sélection de la donnée. Sélectionnez la donnée RowInfo de l'enregistrement RowInfo. D’autre part, l’enregistrement <font class="hcp2">RowInfo</font> doit être déclaré <font class="hcp2">Public</font> dans votre programme.</span></p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Pour qu'un objet modifié retrouve ses attributs d'origine (ceux déclarés au niveau du masque Xwin), appelez la fonction <a href="XmeListResetAttribut.htm">XmeListResetAttribut</a>.</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Un objet placé dans un tableau peut voir ses <font class="hcp2">attributs</font> d’affichage <font class="hcp2">modifiés</font> de <font class="hcp2">deux manières</font>&#160;:<br>
+1. Après une <font class="hcp2">nouvelle affectation</font> par XmeListSetAttribut ou XmeListResetAttribut.<br>
+2. Après attribution d’un <font class="hcp2">nouveau nom</font> à la <font class="hcp2">ligne</font> où il se situe (par XmeListModifyRowName ou par XmeListModify avec changement de la valeur de RowInfo.NomLigne).<br>
+Si l'objet appartient à un tableau ou à une ligne non encore affiché, ses nouveaux attributs lui seront immédiatement affectés dès son affichage. Mais si l'objet est déjà affiché, <font class="hcp8">attention</font>, une modification <font class="hcp2">N'est PAS immédiatement répercutée</font> à l'écran&#160;; pour toutes explications à ce sujet, voir le paragraphe <font class="hcp2">Prise en compte des nouveaux attributs à l'affichage</font> ci-après.</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;"><font class="hcp2">Remarque</font>&#160;: Ywpf ne détecte <font class="hcp8">aucune erreur</font> sur un XmeListSetAttribut (ou XmeListResetAttribut)&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> Un nom de ligne à espace ou jamais attribué est ignoré (aucun objet ne sera jamais affecté).<font face="Symbol" class="hcp7"><br>
+-</font> Un nom d’objet qui n’est attribué à aucun objet est ignoré (aucun objet ne sera jamais affecté).<font face="Symbol" class="hcp7"><br>
+-</font> Un attribut inconnu pour un objet est ignoré ; ceci permet éventuellement de donner le même nom à deux objets de types différents et de modifier un attribut qui n'est significatif que pour un des deux types.<font face="Symbol" class="hcp7"><br>
+-</font> Une valeur alphanumérique affectée à un attribut numérique est remplacée par une valeur nulle.<font face="Symbol" class="hcp7"><br>
+-</font> Une valeur numérique affectée à un attribut alphanumérique est ignorée.<font face="Symbol" class="hcp7"><br>
+-</font> XmeListResetAttribut d'un triplet (<font class="hcp3">Nom des lignes</font>, <font class="hcp3">Nom des objets</font>, <font class="hcp3">Attribut</font>) non présent en liste est ignoré.<font face="Symbol" class="hcp7"><br>
+-</font> <font class="hcp8">Attention, Ywpf n'effectue aucun contrôle</font> sur la <font class="hcp3">Valeur de l'attribut</font> passée en paramètre (résultat nul ou aléatoire selon les cas d'erreur)&#160;; par exemple, il ignore la police de caractères ou la couleur demandée si celle-ci n'est pas définie dans la feuille de styles.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Liste récapitulative des attributs d'affichage pour un objet placé dans un tableau&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 26.202%;">
+<col style="width: 73.798%;">
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Attribut</font><br>
+(valeur correspondante du Define)</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Signification</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text">AN_BULLE<br>
+(19)</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text">Texte d'une info bulle.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text">AN_CADRAGE_TEXTE<br>
+(10)</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text">Type d'alignement d'un texte&#160;:<br>
+AV_CADRAGE_AUCUN (1)<br>
+AV_CADRAGE_GAUCHE (2)<br>
+AV_CADRAGE_DROIT (3)<br>
+AV_CADRAGE_CENTRE (4)<br>
+Ces Defines correspondent, dans Xwin, à la propriété «&#160;Cadrage&#160;» de l’objet champ.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text">AN_CODE_PAGE<br>
+(31)</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text">Code page (champ et arbre uniquement).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text">AN_COULEUR_FOND<br>
+(7)</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text">Nom d'une couleur de fond dans la feuille de styles.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text">AN_POLICE<br>
+(5)</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text">Nom d'une police de caractères dans la feuille de styles.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text">AN_STYLE<br>
+(26)</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text">Nom d’un style (global) dans la feuille de styles<br>
+(pour plus de détails, voir le paragraphe «&#160;Cas particulier de l’attribut AN_STYLE&#160;» dans la présente rubrique).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text">AN_VISIBILITE<br>
+(20)</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text">Type de visibilité&#160;:<br>
+AV_VISIBLE (0)&#160;: objet visible.<br>
+AV_GRISE (1)&#160;: objet grisé.<br>
+AV_ILLISIBLE (2)&#160;: objet illisible (<span style="text-decoration: underline;">objets Champ -hors champ caché-</span> <span style="font-weight: bold; text-decoration: underline;">uniquement</span>).<br>
+AV_CACHE (3)&#160;: objet caché.<br>
+Cet attribut s'ajoute aux attributs classiques paramétrables dans Xwin. Il ne peut être modifié que par XmeListSetAttribut (et annulé par XmeListResetAttribut).<font class="hcp2"><br>
+<br>
+Remarques</font>&#160;:</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 1.95pt;">La visibilité d’un objet peut aussi être affectée par <a href="XmeSetAttribut.htm">XmeSetAttribut</a> (fonction qui s’applique à la colonne complète du tableau). Si vous effectuez deux modifications simultanées de la visibilité d’un même objet avec les deux fonctions XmeSetAttribut et XmeListSetAttribut, la visibilité résultante de l’objet sera la plus restrictive (visible &lt; grisé &lt; illisible &lt; caché).</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 1.95pt;">Un objet "en saisie" dont le type de visibilité est différent de AV_VISIBLE n'est plus "saisissable"&#160;: attention donc à ne pas changer cet attribut pour la donnée en cours de saisie, dans un point de traitement ou d'arrêt&#160;!</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.202%;" class="hcp5">
+<p class="Body-Text">AN_TOUS_ATTRIBUTS<br>
+(0)</p>
+</td>
+<td style="width:73.798%;" class="hcp5">
+<p class="Body-Text">Tous les attributs (XmeListResetAttribut).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Liste des attributs modifiables, par type, pour un objet placé dans un tableau&#160;:</font>&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 26.081%;">
+<col style="width: 73.919%;">
+<tr class="hcp4">
+<td style="width:26.081%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Objet</font></p>
+</td>
+<td style="width:73.919%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Attributs modifiables</font> (pour une explication plus détaillée, voir la liste récapitulative des attributs d'affichage ci-dessus)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.081%;" class="hcp5">
+<p class="Body-Text">Arbre</p>
+</td>
+<td style="width:73.919%;" class="hcp5">
+<p class="Body-Text">AN_BULLE<br>
+AN_CODE_PAGE<br>
+AN_COULEUR_FOND<br>
+AN_POLICE<br>
+AN_STYLE<br>
+AN_VISIBILITE (sauf AV_ILLISIBLE)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.081%;" class="hcp5">
+<p class="Body-Text">Bitmap variable</p>
+</td>
+<td style="width:73.919%;" class="hcp5">
+<p class="Body-Text">AN_BULLE<br>
+AN_COULEUR_FOND<br>
+AN_VISIBILITE (sauf AV_ILLISIBLE)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.081%;" class="hcp5">
+<p class="Body-Text">Champ</p>
+</td>
+<td style="width:73.919%;" class="hcp5">
+<p class="Body-Text">AN_BULLE<br>
+AN_CADRAGE_TEXTE<br>
+AN_CODE_PAGE<br>
+AN_COULEUR_FOND<br>
+AN_POLICE<br>
+AN_STYLE<br>
+AN_VISIBILITE (sauf AV_ILLISIBLE pour un champ caché)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.081%;" class="hcp5">
+<p class="Body-Text">Multi-choix</p>
+</td>
+<td style="width:73.919%;" class="hcp5">
+<p class="Body-Text">AN_BULLE<br>
+AN_COULEUR_FOND<br>
+AN_POLICE<br>
+AN_STYLE<br>
+AN_VISIBILITE (sauf AV_ILLISIBLE)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:26.081%;" class="hcp5">
+<p class="Body-Text">Case à cocher</p>
+</td>
+<td style="width:73.919%;" class="hcp5">
+<p class="Body-Text">AN_BULLE<br>
+AN_COULEUR_FOND<br>
+AN_STYLE<br>
+AN_VISIBILITE (sauf AV_ILLISIBLE)</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Cas particulier de l’attribut AN_STYLE</p>
+<p class="Body-Text" style="font-weight: normal;">L’attribut AN_STYLE a ceci de particulier qu’il regroupe, dans le cas d’objets placés dans un tableau, deux attributs également <span class="hcp6">modifiables individuellement</span> (AN_POLICE, AN_COULEUR_FOND).</p>
+<p class="Body-Text" style="font-weight: normal;">Il n’est pas interdit d’appliquer conjointement une modification de l’attribut AN_STYLE et d'une autre de ses composantes. En cas de conflit, la <span class="hcp6">règle : « Le dernier a gagné »</span> s’applique toujours. Ainsi, en cas de :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Modification de la composante A suivie d’une modification du style global, le style global gagne (y compris pour la composante A).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Modification du style global suivie d’une modification de la composante A, le style global gagne pour sa composante B mais perd pour la composante A.</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: normal;"><span class="hcp6">Remarque</span> : les polices et les couleurs regroupent elles-mêmes des propriétés mais ces dernières ne sont par contre pas modifiables individuellement (on reste au niveau feuille de styles).</p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Prise en compte des nouveaux attributs à l'affichage</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 5.45pt;">Un objet placé dans un tableau peut voir ses attributs d’affichage modifiés de deux manières&#160;:<br>
+1. Après une <font class="hcp2">nouvelle affectation</font> par XmeListSetAttribut ou XmeListResetAttribut.<br>
+2. Après attribution d’un <font class="hcp2">nouveau nom</font> à la <font class="hcp2">ligne</font> où il se situe (par XmeListModifyRowName ou par XmeListModify avec changement de la valeur de RowInfo.NomLigne).<br>
+Mais il faut savoir qu’une modification, lorsqu’elle concerne un objet <font class="hcp2">déjà</font> présent à l'écran, <font class="hcp8">NE</font> <font class="hcp2">provoque</font> <font class="hcp8">PAS</font> systématiquement son <font class="hcp2">réaffichage immédiat</font>&#160;: sa répercussion à l’écran peut <font class="hcp2">nécessiter</font> une demande <font class="hcp8">explicite</font> de réaffichage par le programme (par appel à une fonction d'affichage du tableau&#160;: XmeListDisplay, XmeListConsult ou XmeListInput).</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 5.45pt;">Une <font class="hcp2">exception</font> toutefois,&#160;à l’occasion de la <font class="hcp2">saisie d’une ligne de tableau</font> : un changement d’attribut, effectué sur une donnée DANS la ligne EN COURS DE SAISIE, est immédiatement répercuté AU RETOUR d'un point d’arrêt ou de traitement.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 5.45pt;">On remarquera que les règles de réaffichage, appliquées après un changement d’attribut concernant un objet placé dans un tableau, diffèrent des règles de réaffichage appliquées après un changement d’attribut (par XmeSetAttribut ou XmeResetAttribut) concernant une variable placée dans une page de masque&#160;(de la même manière que les règles d’affichage des lignes de tableau diffèrent des règles d’affichage des variables dans une page de masque).</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Priorités d'application des attributs aux objets placés dans un tableau</font></p>
+<p class="Body-Text">Les attributs d’un objet placé dans un tableau peuvent être dynamiquement modifiés à la fois par XmeListSetAttribut et par <a href="XmeSetAttribut.htm">XmeSetAttribut</a> (cette dernière fonction s’appliquant à la colonne complète du tableau). Parmi ces attributs, deux font l’objet d’un traitement particulier&#160;: la visibilité et la couleur de fond, cette dernière parce qu’elle peut être affectée si l’objet appartient à la ligne courante ou à une ligne marquée ou sélectionnée du tableau.</p>
+<p class="Body-Text">Voici, respectivement pour la couleur de fond, la visibilité et les autres attributs, comment Ywpf détermine la valeur finalement prise en compte&#160;:</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp2">Couleur de fond</font><br>
+La couleur de fond d’un objet sera, par ordre de priorité&#160;:</p>
+</li>
+</ul>
+<ul>
+<li class="hcp10">
+<ol>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Si l’objet appartient à la ligne courante, la couleur standard de la sélection (Cf. fonction <a href="XmeListSetSelectionOption.htm">XmeListSetSelectionOption</a>).</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Si la ligne est sélectionnée (cas de la <a href="S_lectionmultipledeslignesd_untableau.htm">sélection multiple</a> ou du <a href="Marquagedeslignesd_untableau.htm">marquage des lignes</a> lorsque RowInfo.Selection = TRUE), la couleur précisée par les champs RowInfo.Couleur et RowInfo.CoulSelec.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">La couleur définie par XmeListSetAttribut.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">La couleur définie par XmeSetAttribut.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">La couleur définie au niveau du masque Xwin.</p>
+</li>
+</ol>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp2">Visibilité</font><br>
+Si vous appliquez simultanément les fonctions XmeListSetAttribut et XmeSetAttribut sur un même objet, la visibilité résultante sera la plus restrictive (visible &lt; grisé &lt; illisible &lt; caché).&#160;</p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp2">Autres attributs</font><br>
+La valeur d’un attribut autre que la couleur de fond et la visibilité sera, par ordre de priorité&#160;:</p>
+</li>
+</ul>
+<ol>
+<li class="hcp10">
+<ol>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">La valeur définie par XmeListSetAttribut.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">La valeur définie par XmeSetAttribut.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">La valeur définie au niveau du masque Xwin.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p class="Body-Text" style="margin-left: 42.55pt;">Vous pouvez ainsi, par exemple, attribuer dynamiquement la police de caractères A à toute une colonne par XmeSetAttribut et la police de caractères B à une cellule particulière de cette colonne par XmeListSetAttribut.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques diverses</font>&#160;:</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">XmeListConsultDefault initialise RowInfo.NomLigne à espace en <font class="hcp2">création</font> d’une ligne de tableau. Mais si vous avez personnalisé la fonction de saisie d’une ligne (Cf. <a href="DefProcSaisie.htm">DefProcSaisie</a>), vous êtes autorisé à modifier la valeur initiale du nom de ligne (RowInfo.NomLigne) aussi bien AVANT l’appel à XmeListInput qu’APRES&#160;: dans le premier cas, les nouveaux attributs seront utilisés dès la saisie (solution à adopter lorsque vous connaissez les attributs à priori)&#160;; dans le second, les nouveaux attributs ne seront pas visibles lors de la saisie mais apparaîtront après validation (solution à adopter lorsque les attributs dépendent des données saisies). Bien entendu, vous pouvez aussi, dans DefProcSaisie, modifier le nom de la ligne saisie après sa <font class="hcp2">modification</font>.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">La fonction XmeListGetColumn <font style="text-decoration: underline;">NE fournit PAS</font> les valeurs modifiées par XmeListSetAttribut.<br>
+De même, XmeListGetColumnNumber et XmeListGetColumnNumberByName renverront le numéro de colonne concernée, même si la donnée est illisible ou cachée après modification de sa visibilité par XmeListSetAttribut.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemples&#160;:</font></p>
+<p class="Source">;Changement de police de caractères pour les objets nommés <font class="hcp3">Libel</font></p>
+<p class="Source">;et affichés dans les lignes nommées <font class="hcp3">Credit</font> :</p>
+<p class="Source" style="font-style: italic;">XmeListSetAttribut ("Credit", "Libel", AN_POLICE, "Arial12")</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Changement de couleur de fond pour toutes les colonnes des lignes</p>
+<p class="Source">;nommées <font class="hcp3">Debit</font> :</p>
+<p class="Source">XmeListSetAttribut ("Debit", " ", AN_COULEUR_FOND, "ROUGE")</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Masquage des choix de multi-choix</font></p>
+<p class="Body-Text">Par programme, vous pouvez invalider contextuellement un ou plusieurs choix d’un objet multi-choix placé dans une cellule de tableau (en particulier, il devient ainsi possible qu’un multi-choix présente des listes de choix différentes suivant la ligne où il apparaît). Pour ce faire, attribuez des noms d’objet aux choix à invalider (au niveau du dictionnaire des multi-choix) et utilisez la fonction XmeListSetAttribut comme décrit précédemment ainsi que la fonction XmeListResetAttribut (voir rubrique suivante) :</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Seuls l’attribut <font class="hcp2">AN_VISIBILITE</font> et ses valeurs <font class="hcp2">AV_VISIBLE</font> et <font class="hcp2">AV_CACHE</font> sont significatifs.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Il n'est pas possible de griser ou rendre illisible un choix isolé.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp2">L’invalidation des choix a lieu uniquement au moment de la saisie de ligne</font> :<br>
+En saisie, les choix cachés ne sont pas présentés dans la liste des choix.<br>
+En affichage, si la variable associée au multi-choix contient une valeur correspondant à un choix caché, ce choix est quand même affiché et sélectionné.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Pour <font class="hcp2">nommer les choix</font> de type «&#160;<font class="hcp2">normal</font>&#160;», procédez comme suit&#160;(on suppose ici que le multi-choix et ses choix sont déjà créés dans le dictionnaire des multi-choix) :<br>
+dans les propriétés du multi-choix, cliquez dans la colonne de droite de la ligne «&#160;Dictionnaire, Choix&#160;» puis sur le bouton d’<span style="margin-left: 11.75pt;">ouverture de la boîte de dialogue «&#160;Dictionnaire des Multi-choix&#160;» ;<br>
+cliquez sur le bouton «&#160;Modifier&#160;», qui ouvre la boîte de dialogue «&#160;Choix&#160;»&#160;;<br>
+pour chaque choix concerné, saisissez le(s) nom(s) choisi(s) dans le champ <font class="hcp2">Noms</font>&#160;(et n’oubliez pas de valider la modification par le bouton «&#160;Modifier&#160;»); les différents noms doivent être séparés par un ";" (point virgule)&#160;; la casse est sans importance.<br>
+Exemples&#160;:<br>
+option<br>
+option1;option2;option3<br>
+<br>
+Le ou les <font class="hcp2">noms d’un choix</font> placé dans une <font class="hcp2">liste&#160;Diva</font>&#160;doivent être spécifiés au niveau de l’élément de liste correspondant (un élément contient successivement le libellé du choix, sa valeur et la liste de ses noms).<br>
+Exemples&#160;(sans valeur, choix 3 non nommé) :<br>
+ListAddEnd (id_liste,"choix1;;option")<br>
+ListAddEnd (id_liste,"choix2;;option1;option2;option3")<br>
+ListAddEnd (id_liste,"choix3")<br>
+Exemples&#160;(avec valeur, choix 3 non nommé) :<br>
+ListAddEnd (id_liste,"choix1;1;option")<br>
+ListAddEnd (id_liste,"choix2;2;option1;option2;option3")<br>
+ListAddEnd (id_liste,"choix3;3")</span></p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Ici, Ywpf ne tient pas compte d’une instruction XmeListSetAttribut où le nom d'objet n’est pas précisé (mais aucun test de cohérence n’est effectué&#160;: si le nom d'objet est à espace, l’instruction n’aura pas de répercussion sur les choix présentés). En effet, un nom d’objet à espace n’a pas de sens car il provoquerait l’invalidation de TOUS les choix de TOUS les multi-choix de la ligne !?</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Si vous appliquez simultanément les fonctions XmeListSetAttribut et XmeSetAttribut sur un même choix, la visibilité résultante sera la plus restrictive des deux (autrement dit, le choix sera caché dès lors que la valeur AV_CACHE aura été spécifiée pour l’une des deux fonctions).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">;Invalidation à la saisie des choix nommés <font class="hcp3">Option</font></p>
+<p class="Source">;et affichés dans les lignes nommées <font class="hcp3">Ligne</font> :</p>
+<p class="Source" style="font-style: italic;">XmeListSetAttribut ("Ligne", "Option", AN_VISIBILITE, AV_CACHE)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeSetAttribut.htm">XmeSetAttribut</a></p>
+</body>
+</html>

@@ -1,0 +1,63 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion et paramétrage des chemins implicites</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+td.hcp1 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Gestion et paramétrage des chemins implicites</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">En suivant les procédures habituelles de création, mise à jour et suppression d'éléments dans un objet tableau Harmony standard, vous pouvez ajouter, modifier ou supprimer des chemins implicites (le nombre total de lignes n'est pas limité).</p>
+<p class="Body-Text">Un chemin comporte les paramètres suivants&#160;:</p>
+<table cellspacing="0" width="524">
+<tr style="vertical-align: top;">
+<td style="width:22.53%;" class="hcp1">
+<p class="Body-Text"><font class="hcp2">Chemin implicite</font></p>
+</td>
+<td style="width:77.47%;" class="hcp1">
+<p class="Body-Text">Chemin d'accès (local ou réseau).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemples&#160;:</font></p>
+<p class="Body-Text">/divalto/sys/<br>
+d:/src/<font color="#000000"><br>
+//serveurcompta/fichiers/comptabilité</font></p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><font style="font-size: 14pt; font-weight: bold; text-decoration: underline;" size="4">Attention</font>&#160;:</p>
+<p class="Body-Text">Pour rendre <font class="hcp2">effectives</font> les modifications apportées au tableau, sélectionnez le bouton ou le choix du menu <font class="hcp2">Appliquer</font> (pour une mise à jour de la liste des implicites en <font class="hcp2">mémoire</font> de la tâche) <font class="hcp2">ET/OU</font> <font class="hcp2">Enregistrer</font> (pour une mise à jour du <font class="hcp2">fichier</font> d'implicites courant sur le disque).</p>
+<p class="Body-Text">Pour que les modifications soient reportées <font class="hcp3">à la fois</font> en mémoire de la tâche et dans le fichier d'implicites courant, sélectionnez successivement les choix Appliquer <font class="hcp3">ET</font> Enregistrer (dans un ordre quelconque).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">S'il n'est pas présent dans une liste, le chemin implicite <font class="hcp2">/Divalto/Sys/</font> (qui mène au dossier "système" d'Harmony) est automatiquement ajouté en fin de liste.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour améliorer les performances, il est conseillé&#160;:<br>
+.&#160;De placer les chemins menant à des dossiers locaux avant les chemins menant sur le réseau.<br>
+.&#160;De placer le chemin /Divalto/Sys/ en tête de liste.<br>
+.&#160;De réduire le nombre d'implicites au minimum, afin de limiter les recherches inopérantes lors de l'accès aux fichiers.</p>
+</li>
+</ul>
+</body>
+</html>

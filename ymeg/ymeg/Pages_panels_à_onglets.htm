@@ -1,0 +1,165 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Page mère et pages panels à onglets</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+li.hcp3 { list-style:none;
+display:inline; }
+p.hcp4 { margin-left:48px; }
+p.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Page mère et pages panels à onglets</h3>
+<p>De manière générale :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Une page mère peut faire partie d’un groupe de pages (chaînées ou non) liées par un onglet et chaque page mère du groupe peut inclure son propre arbre de pages panels.<span class="hcp2"><br>
+Exemple</span> : Les pages A1 et A2 sont liées par un onglet. A1 inclut une grille avec les objets panels référençant les pages A11, A12 et A13 ; A2 inclut aussi une grille avec les objets panels référençant les pages A21 et A22.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Une page panel peut aussi faire partie d’un groupe de pages (chaînées ou non) liées par un onglet. Dans ce cas :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p">
+<p>Dans Xwin, l'objet "Panel page" doit référencer la <span class="hcp2">première</span> page du groupe.<br>
+A l'exécution, l'onglet est géré de la même manière qu'un onglet placé sur un groupe de pages classiques : gestion automatique en cas de pages panels chaînées, génération du point d'arrêt onglet en cas de pages panels non chaînées.</p>
+</li>
+<li class="p">
+<p>A un instant donné, la cellule de grille correspondante affichera la page panel active du groupe.</p>
+</li>
+<li class="p">
+<p>Chacune des pages panels liées peut inclure son propre sous-arbre de pages panels (sans limite au nombre de niveaux d’onglets ainsi définis).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp4"><span class="hcp2">Exemple :</span> La page A1 fait partie d’un groupe de pages à onglet comprenant les pages A1, A2 et A3. La page mère A inclut ce groupe de pages. Dans Xwin, l'objet panel placé dans A doit référencer la page A1.</p>
+<ul class="hcp1">
+<li class="p">
+<p><span style="text-decoration: underline;">Mais une page mère ne peut pas contenir plusieurs fois une même page panel</span>.<br>
+<br>
+Cette règle inclut (récursivement) les pages liées par onglet à toutes les pages panels <span class="hcp2">ainsi que</span> les pages liées par onglet à la page mère elle-même. Une erreur est détectée <span class="hcp2">à l'exécution</span> si une même page apparaît en double.<span class="hcp2"><br>
+<br>
+Exemple</span> : La page mère A1 fait partie d’un groupe de pages à onglet comprenant les pages A1, A2 et A3. A1 inclut les pages panels A11 et A12, A2 les pages panels A21, A22 et A23, A3 la page panel A31. A11 inclut elle-même les pages panels A111 et A112. Toutes les pages panels (A11, A12, A21, A22, A23, A31, A111 et A112) doivent être distinctes.<br>
+<br>
+A l'inverse, il est autorisé de référencer une même page panel dans des pages parentes distinctes.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp2">Concernant plus particulièrement la programmation</span> :</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Attention</span> : <span class="hcp2">Les pages panels à onglet NON chaînées n'entrent pas dans l'ordre de saisie de leur page mère</span> (voir la rubrique "<a href="Affichage,_consultation_et_saisie_de_la_page_m&egrave;re.htm">Affichage, consultation et saisie de la page mère</a>").<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Le fonctionnement classique en cas de clic sur un onglet ou de frappe d'une touche de raccourci équivalente (Ctrl+Tab, Maj+Ctrl+Tab) est grosso modo étendu aux pages panels à onglet :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p">
+<p>En consultation ou en saisie d'une page panel <span class="hcp2">chaînée</span> (OU d’une page <span class="hcp2">parente</span>) à la page souhaitée, le <span class="hcp2">changement de page est automatique</span>.<span class="hcp2"><br>
+<br>
+Remarque</span> : Mais il <span class="hcp2">n</span>’y a bien entendu <span class="hcp2">aucun</span> changement automatique d’onglet (même chaîné) <span class="hcp2">de niveau</span> <span style="font-weight: bold; text-decoration: underline;">supérieur</span> à celui de la page consultée / saisie. Le cas échéant, la demande de changement d’onglet est traitée de la même manière qu’un onglet non chaîné.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Une <span class="hcp2">demande de changement d’onglet non chaîné est signalée au programme appelant</span> et ne fait l’objet d’aucun traitement automatique. Si un numéro de point d’arrêt est paramétré dans Xwin pour l’onglet, ce point d’arrêt est transmis dans Harmony.DataArret, ainsi que les numéros de la page courante et de la page souhaitée dans Harmony.SourisPosY et Harmony.SourisPosX. Sinon, seuls Harmony.SourisPosY et Harmony.SourisPosX sont renseignés.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp4"><span class="hcp2">Pour plus de détails</span>, voir le paragraphe "<span class="hcp2">Changements automatiques de (sous-)onglet chaîné</span>" ci-dessous.</p>
+<ul class="hcp1">
+<li class="p">
+<p>Les règles de prise en compte de l’<a href="XmeSetAttribut.htm">attribut dynamique AN_VISIBILITE</a> sont étendues au cas des sous-onglets, à savoir qu'un changement dynamique de visibilité est uniquement pris en compte lors du changement de sous-page ou d’un appel à la fonction XmeDisp.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp5">Changements automatiques de (sous-)onglet chaîné</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Changement de (sous-)onglet chaîné à la souris</span>.<br>
+On étend le fonctionnement classique aux pages panels, à savoir :</p>
+<ul class="hcp1">
+<li class="p">
+<p>En consultation / saisie de page, Ywpf traite <span class="hcp2">automatiquement</span> les clics onglet vers une page chaînée à la page courante ou <span class="hcp2">vers une page chaînée à l'une de ses pages panels</span>. Dans les autres cas (page courante non chaînée, page panel non chaînée, onglet indépendant, onglet de niveau supérieur à la page courante), la main est rendue au programme appelant (avec ou sans numéro de point d’arrêt selon le paramétrage de l’onglet dans Xwin).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>En consultation de tableau ou d’agenda, Ywpf n’effectue <span class="hcp2">aucun</span> changement <span class="hcp2">automatique</span> de page. Il faut en effet éviter que ce changement fasse disparaître le tableau / agenda consulté. Il rend toutefois la main au programme appelant :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p">
+<p>Si la page contenant le tableau / agenda n’est pas chaînée.</p>
+</li>
+<li class="p">
+<p>Ou si le clic a eu lieu sur un onglet non lié à la page contenant le tableau / agenda ET paramétré dans Xwin avec un numéro de point d’arrêt.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>En saisie de ligne de tableau, Ywpf ignore tous les clics onglet.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p class="hcp5">Changement de (sous-)onglet au clavier<span style="font-weight: normal;">.<br>
+Sur la frappe de la touche de raccourci Crtl+Tab ou Maj+Crtl+Tab :<br>
+&#160;</span></p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">En consultation d'une page chaînée</span> :<br>
+Si la page consultée est elle-même chaînée, Ywpf passe automatiquement à sa page suivante ou précédente.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">En consultation d'une page sans onglet ou non chaînée</span> :<br>
+Ywpf cherche le cas échéant dans ses pages panels chaînées.<span class="hcp2"><br>
+<br>
+Exemple</span> : Une page de fond non chaînée contient deux pages panels (à la manière d’un zoom, une page "liste" et une page "fiche" avec onglets chaînés). En consultation de cette page de fond, les touches changent automatiquement les onglets de la fiche.<span class="hcp2"><br>
+<br>
+Conséquence</span> : Sans pages panels, ces touches auraient rendu la main au programme appelant. Ce n'est plus vrai si la page consultée inclut des pages panels chaînées.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">En saisie d'une page comportant des onglets chaînés imbriqués</span> :<br>
+Le choix de l’onglet activé dépend du <span class="hcp2">lieu de la donnée en cours de saisie</span> :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p">
+<p>La donnée se trouve dans une page (mère ou panel) qui est elle-même chaînée : Ywpf passe automatiquement à la page suivante ou précédente de cette page.</p>
+</li>
+<li class="p">
+<p>A défaut, Ywpf cherche l'onglet à pages chaînées « de niveau supérieur le plus proche » (en remontant dans l'arbre).</p>
+</li>
+<li class="p">
+<p>A défaut, Ywpf cherche la première page fille chaînée (en descendant dans l'arbre).</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

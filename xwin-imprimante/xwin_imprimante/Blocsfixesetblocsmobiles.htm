@@ -1,0 +1,93 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Blocs fixes et blocs mobiles</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+ul.hcp4 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Blocs fixes et blocs mobiles</h3>
+<p>&#160;</p>
+<p>Dans Xwin, les blocs sont affectés de quatre propriétés définissant leurs positions et leur taille dans la page imprimée : le <span class="hcp1">Type de bloc</span>, les <span class="hcp1">Postions début</span> et <span class="hcp1">fin</span> et le <span class="hcp1">Nombre de lignes</span>. La signification de ces paramètres dépend de la famille à laquelle appartiennent ces blocs. On distingue en effet deux familles de blocs :</p>
+<ol>
+<li style="list-style: decimal;" class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Les blocs "fixes"<span class="hcp3">.</span></font><br>
+Un bloc fixe occupe toujours la <span class="hcp1">même position dans la page</span>. De ce fait, il ne peut être imprimé <span class="hcp1">qu'une seule fois par page</span>.<br>
+<br>
+Dans <a href="Notiondebloc.htm">l'exemple d'état de la rubrique précédente</a>, le bloc d'en-tête et le bloc de pied sont des blocs fixes.<br>
+<br>
+Dans Xwin, un <span class="hcp1">bloc fixe est défini en spécifiant les lignes Début et Fin</span> où il doit être imprimé.<br>
+Dans notre exemple, les bornes d'impression du bloc d'en-tête sont [1, 10], celles du bloc de pied [63, 66] <span class="hcp1">(*)</span>.<br>
+<br>
+Le nombre de lignes du bloc est <span class="hcp1">automatiquement déduit</span> des valeurs des bornes d'impression par la formule :<span class="hcp1"><br>
+Nombre de lignes = Position fin - Position début + 1</span><br>
+Dans notre exemple, le bloc d'en-tête comporte 10 lignes, le bloc de pied en comporte 4.<br>
+<br>
+Enfin, il existe deux types de blocs fixes :</p>
+</li>
+</ol>
+<ol>
+<li style="list-style:none;display: inline">
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Le <span class="hcp1">Type de bloc "Fixe"</span>.<br>
+Après l'impression d'un bloc de ce type, le numéro de ligne courant progresse pour atteindre la valeur "Position fin du bloc + 1".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le <span class="hcp1">Type de bloc "Fond"</span>.<br>
+Un <a href="Blocdefond.htm">bloc de fond</a> diffère du type précédent par le fait qu'il <span class="hcp1">ne fait pas progresser le numéro de ligne courant</span>. Sur une même page, son impression peut être suivie de celle d'un bloc dont la Position début précède sa Position fin. En général, il s'agit du premier bloc imprimé sur une page.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="2">
+<li style="list-style: decimal;" class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Les blocs "mobiles"<span class="hcp3">.<br>
+La position d'un bloc mobile</span></font> <span class="hcp1">peut varier</span> <font class="hcp2"><span class="hcp1">dans la page</span> <span class="hcp3">et il peut être</span></font> <font class="hcp2"><span class="hcp3">imprimé</span> plusieurs fois sur une même page<span class="hcp3">.<br>
+Dans notre exemple</span></font>, le bloc détail et le bloc récapitulatif sont des blocs mobiles. Le bloc détail est répété (jusqu'à 51 fois par page).<br>
+<br>
+Dans Xwin,un <span class="hcp1">bloc mobile est défini par son nombre de lignes</span> et par <span class="hcp1">un intervalle [Position début, Position fin]</span> à l'intérieur duquel il <span style="font-weight: bold; text-decoration: underline;">peut</span> <span class="hcp1">(**)</span> être imprimé.<br>
+Dans notre exemple, les deux blocs mobiles ont une taille de 1 ligne et leurs bornes d'impression respectives sont [11, 61] et [12, 62] <span class="hcp1">(*)</span>.<br>
+<br>
+Enfin, il existe deux types de blocs mobiles :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Le <span class="hcp1">Type de bloc "Mobile"</span>.<br>
+Les blocs de ce type s'impriment dans la page et leurs bornes d'impression s'expriment de manière relative à la page <span class="hcp1">(*)</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le <span class="hcp1">Type de bloc "Tableau"</span>.<br>
+Les blocs de ce type s'impriment dans un <a href="Les_tableaux.htm">tableau</a> et leurs bornes d'impression s'expriment de manière relative au corps du tableau <span class="hcp1">(*)</span>.<br>
+Un bloc de type Tableau doit impérativement être inclus dans un tableau au niveau de Xwin et son impression doit être précédée de celle du tableau correspondant.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ol>
+<p class="Body-Text"><span class="hcp1">(*)</span> Nous verrons à la rubrique <a href="Positiondesblocs.htm">Positionnement des blocs</a> que les bornes d'impression peuvent s'exprimer relativement au <span class="hcp1">début ou à la fin</span> de la page ou du corps du tableau.<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp1">(**) Remarque sur les bornes d'impression d'un bloc de type Mobile</span> :</p>
+<p class="Body-Text">L'intervalle [Position début, Position fin] détermine une fourchette de numéros de lignes dans laquelle le bloc est <span class="hcp1">autorisé</span> à s'imprimer. Il n'est donc pas impératif que les bornes d'impression d'un bloc de type Mobile soient parfaitement exactes. En particulier, la position début peut être inférieure à la ligne où sera imprimé le bloc pour la première fois dans la page. Ainsi, dans notre exemple, la position début du bloc 2 peut valoir de 1 à 11 sans que cela n'ait une quelconque influence sur la pagination : après l'impression du bloc d'en-tête, la ligne imprimée courante valant 11, le premier bloc détail sera toujours imprimé en ligne 11.<br>
+<br>
+Par contre, si la position début a une valeur Ld strictement supérieure à 11, le bloc sera imprimé pour la première fois en ligne Ld.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp1">Voir aussi</span> :</p>
+<p class="Body-Text"><a href="Propri&eacute;t&eacute;s_des_blocs_de_type_Tableau_sp&eacute;cifiques_&agrave;_l_assistant.htm">Propriétés des blocs de type Tableau spécifiques à l'assistant</a></p>
+<p>&#160;</p>
+</body>
+</html>

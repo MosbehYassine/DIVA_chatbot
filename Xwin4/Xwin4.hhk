@@ -1,0 +1,21 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="WindowName" value="$Global_Editeurs">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xwin">
+    <param name="Name" value="Xwin-Editeurs">
+    <param name="Local" value="Xwin4/Xwin.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Editeurs">
+      <param name="Name" value="Xwin-Editeurs">
+      <param name="Local" value="Xwin4/Xwin.htm">
+    </object>
+    </ul>
+</ul>
+</html>

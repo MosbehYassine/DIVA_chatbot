@@ -1,0 +1,158 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeChartCreateRangePointHmp</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { font-weight:bold; }
+tr.hcp4 { vertical-align:top; }
+p.hcp5 { font-weight:normal; }
+td.hcp6 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp8 { margin-left:48px; }
+span.hcp9 { font-style:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>XmeChartCreateRangePointHmp <span class="hcp1"><a href="Liste_r&eacute;capitulative_des_fonctions_du_graphe.htm">Famille</a> <a href="Objet_Graphe.htm" style="font-size: 11pt;">Thème</a></span></h1>
+<p><span class="hcp1">C</span><span class="hcp2">réation de la chaîne hmp décrivant un point de graphique cartésien décrivant une plage (</span>minimum, maximum<span class="hcp2">).</span></p>
+<p>&#160;</p>
+<p class="hcp3">Char XmeChartCreateRangePointHmp <span style="font-weight: normal;">(category, minValue, maxValue, seriesId, pointId, pointLabel, pointColor, pointSelectionColor, tooltip)</span></p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">Paramètres :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 16.882%;">
+<col style="width: 83.118%;">
+<tr class="hcp4">
+<td style="border: Solid 1px #000000;width: 16.882%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">category</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 83.118%; padding-right: 10px; padding-left: 10px;">
+<p>catégorie (alphanumérique).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">minValue</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>valeur minimum de la plage (numérique).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p>maxValue</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>valeur maximum de la plage (numérique).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p>seriesId</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>Identifiant de la série parente (alphanumérique).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">pointId</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>Identifiant du point (alphanumérique).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">pointLabel</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>Libellé du point (alphanumérique).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">pointColor</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>Couleur du point (alphanumérique).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">pointSelectionColor</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>Couleur de sélection du point (alphanumérique).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">tooltip</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>infobulle (alphanumérique).</p>
+</td>
+</tr>
+</table>
+<p class="hcp3">&#160;</p>
+<p><span class="hcp2">Valeur rendue par la fonction</span> :</p>
+<p>espace : si le paramètre seriesId est absent ou invalide.</p>
+<p>Autre : chaîne hmp décrivant le point défini par les paramètres.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Description de la fonction</span> :</p>
+<p>Cette fonction crée la chaîne hmp qui décrit un point "Range" de graphique cartésien tel que défini par les paramètres.</p>
+<p>Seuls l'identifiant de la série, et les coordonnées du points (category, minValue, maxValue) sont obligatoires.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Pré-requis sur les axes</span> :</p>
+<p>L'axe des abscisses doit être catégoriel.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Pré-requis sur les séries</span> :</p>
+<p>le type de série de la série parente doit être l'un des suivant :</p>
+<p class="hcp8">- CHART_OPTV_SR_T_RANGE</p>
+<p class="hcp8">- CHART_OPTV_SR_T_SPLINE_RANGE</p>
+<p class="hcp8">- CHART_OPTV_SR_T_RANGE_BAR</p>
+<p>&#160;</p>
+<p><span class="hcp2">Exemple</span> :<br>
+&#160;</p>
+<p class="Source" style="font-style: normal;">module ychart.dhop</p>
+<p class="Source" style="font-style: normal;">include zchart.dhsp</p>
+<p class="Source" style="font-style: normal;">&#160;</p>
+<p class="Source" style="font-style: normal;">...</p>
+<p class="Source" style="font-style: normal;">record ddsys.dhsd IdChart chartId &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="Source" style="font-style: normal;">...</p>
+<p class="Source" style="font-style: normal;">XmeLoad ("masque") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source" style="font-style: normal;">chartId = XmeChartGetId(masque, 1, "CartesianChart") &#160;&#160;;initialisation du graphique nommé CartesianChart et situé dans la page 1 du masque</p>
+<p class="Source" style="font-style: normal;">...</p>
+<p class="Source" style="font-style: normal;"><span class="hcp9">XmeChartSetOption(chartId, CHART_OPT_CHART_TYPE, CHART_OPTV_CHART_TYPE_CARTESIAN)</span></p>
+<p class="Source" style="font-style: normal;">...</p>
+<p class="Source" style="font-style: normal;">ListAddEnd(chartId.IdSeries, XmeChartCreateCartesianSeriesHmp("serie1", CHART_OPTV_SR_T_RANGE, , , , true))</p>
+<p class="Source" style="font-style: normal;">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="Source" style="font-style: italic;">ListAddEnd(chartId.IdPoints, XmeChartCreateRangePointHmp("Paris", 11.7, 27.5, "serie1", , "pt1","affok" )) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="source">...</p>
+<p class="Source" style="font-style: normal;">&#160;</p>
+<p class="Source" style="font-style: normal;"><span class="hcp9">XmeDispv ("masque",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche la page contenant le graphe.</span></p>
+<p class="Source" style="font-style: normal;">...</p>
+<p class="Source" style="font-style: normal;">XmeChartDisplay (chartId ) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche les données du graphe.</p>
+<p class="hcp3">&#160;</p>
+</body>
+</html>

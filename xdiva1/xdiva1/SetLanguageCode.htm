@@ -1,0 +1,92 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>SetLanguageCode</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+span.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-right:10px;
+padding-left:10px; }
+p.hcp5 { font-weight:bold; }
+p.hcp6 { font-weight:normal; }
+p.hcp7 { font-family:MS Sans Serif; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>SetLanguageCode <a href="Liste_des_fonctions_de_gestion_des_langues.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Fonctions_de_gestion_des_langues.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p>&#160;</p>
+<p>L'instruction &#160;SetLanguageCode permet de positionner le code langue courant par programme.</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">SetLanguageCode</span> (<span class="hcp2">Code , [ EcranImp ]</span>)</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètre</font></p>
+<p class="Body-Text"><font style="font-style: italic;">Code</font></p>
+<p class="decalage05">Code langue.</p>
+<p class="Body-Text"><span class="hcp2">EcranImp</span></p>
+<table style="vertical-align: top; margin-left: 40px;" cellspacing="0" width="77.918%">
+<col style="width: 8.739%;">
+<col style="width: 91.261%;">
+<tr class="hcp3">
+<td style="width:8.739%;" class="hcp4">
+<p>1 =</p>
+</td>
+<td style="width:91.261%;" class="hcp4">
+<p>Positionnement du code langue pour les affichages. Si les impressions utilisent la même langue que les affichages, le code langue pour les impressions est également positionné.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.739%;" class="hcp4">
+<p>2 =</p>
+</td>
+<td style="width:91.261%;" class="hcp4">
+<p>Positionnement du code langue pour les impressions.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.739%;" class="hcp4">
+<p>3 =</p>
+</td>
+<td style="width:91.261%;" class="hcp4">
+<p>Positionnement du code langue pour les affichages et les impressions (valeur par défaut).</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="hcp5">Remarques</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp6">Cette instruction est surtout utile pour les programmes Web, afin de permettre à l'internaute de sélectionner une langue.</p>
+</li>
+<li class="p">
+<p class="hcp6">Le code langue positionné par SetLanguageCode concerne la tâche en cours.<br>
+Il se transmet lors de l'enchaînement (ProgramGoto) et de l'appel (ProgrammCall) de programmes.</p>
+</li>
+<li class="p">
+<p class="hcp6">Pour éviter des mélanges de langues dans une même tâche, il est conseillé (voir impératif) d'enchaîner à un autre programme après avoir changé de code langue.</p>
+</li>
+</ul>
+<p class="hcp5">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Source">SetLanguageCode("DE")</p>
+<p class="Source">ProgramGoto ("Divalto.dhop")</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text" style="font-weight: normal;"><a href="GetLanguageCode.htm"><span style="font-weight: normal;">GetLanguageCode</span></a></p>
+<p class="body-text">&#160;</p>
+<p class="body-text">&#160;</p>
+&#160;
+<p class="hcp7">&#160;</p>
+<p class="hcp7">&#160;</p>
+</body>
+</html>

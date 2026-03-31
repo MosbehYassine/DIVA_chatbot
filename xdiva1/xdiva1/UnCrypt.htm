@@ -1,0 +1,74 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>UnCrypt</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>UnCrypt</h3>
+<p class="Body-Text">La fonction UnCrypt permet de décrypter une chaîne de caractères qui a été cryptée avec la fonction Crypt.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Alpha</font> <font class="hcp1">UnCrypt</font> (<font class="hcp2">chaine</font> , <font class="hcp2">clé</font> , <font class="hcp2">erreur</font> , [<font class="hcp2">hexa</font>] , [<font class="hcp2">début</font>] , [<font class="hcp2">fin</font>])</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Chaine</font></p>
+<p class="decalage05">Chaîne à crypter.</p>
+<p class="Body-Text"><font class="hcp2">Clé</font></p>
+<p class="decalage05">Clé de cryptage.</p>
+<p class="Body-Text"><font class="hcp2">Erreur</font></p>
+<p class="decalage05">Variable numérique qui contient en retour un éventuel code d’erreur (0=pas d’erreur)</p>
+<p class="Body-Text"><font class="hcp2">Hexa</font></p>
+<p class="decalage05">Booléen indiquant que la châine cryptée a été traduite en hexadécimal.</p>
+<p class="decalage05">Valeur par défaut&#160;: TRUE.</p>
+<p class="Body-Text"><font class="hcp2">Début</font></p>
+<p class="decalage05">Booléen indiquant que la fonction débute un nouveau décryptage. Voir remarques ci-dessous.</p>
+<p class="decalage05">Valeur par défaut&#160;: TRUE.</p>
+<p class="Body-Text"><font class="hcp2">Fin</font></p>
+<p class="decalage05">Booléen indiquant que la fonction termine un décryptage. Voir remarques ci-dessous.</p>
+<p class="decalage05">Valeur par défaut&#160;: TRUE.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">En cas de succès, la fonction retourne la chaîne décryptée et <font class="hcp2">erreur</font> est positionné à 0<br>
+En cas d’erreur, le paramètre <font class="hcp2">erreur</font> contient un code d’erreur précis.</p>
+<p class="Body-Text">Voir <a href="Codes_d_erreurs_des_fonctions_de_cryptage_et_de_compression.htm">Codes d'erreurs des fonctions de cryptage et de compression</a> .</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Les paramètres <font class="hcp2">Début</font> et <font class="hcp2">Fin</font> permettent de décrypter un flot de données par étapes. Voir les explications de la fonction <a href="Crypt.htm">Crypt</a> .</p>
+</li>
+</ul>
+<p class="source" style="margin-left: 41.75pt;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="Body-Text">Exemple de cryptage d’une chaîne de caractères.</p>
+<p class="source">1 depart &#160;S</p>
+<p class="source">1 arrivee S</p>
+<p class="source">1 coder &#160;&#160;X</p>
+<p class="source">1 cle&#160;&#160;&#160;&#160;&#160;S</p>
+<p class="source">&#160;</p>
+<p class="source">depart = "chaine a crypter"</p>
+<p class="source">cle = "macle"</p>
+<p class="source">arrivee = crypt(depart,cle,coder)&#160;&#160;</p>
+<p class="source">display arrivee</p>
+<p class="source">depart = arrivee</p>
+<p class="source">arrivee = uncrypt(depart,cle,coder)&#160;; --&gt; redonne la chaine de départ</p>
+<p class="Body-Text">Voir également&#160;les exemples de la fonction <a href="Crypt.htm">Crypt</a> .</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Crypt.htm">Crypt</a> , <a href="FileUncrypt.htm">FileUncrypt</a></p>
+<p class="Body-Text"><a href="Codes_d_erreurs_des_fonctions_de_cryptage_et_de_compression.htm">Codes d'erreurs des fonctions de cryptage et de compression</a> .</p>
+</body>
+</html>

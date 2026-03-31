@@ -1,0 +1,38 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Lancement automatique d'une tâche de fond</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Lancement automatique d'une tâche de fond</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Pour qu'un programme Harmony (compatible version 6) soit lancé automatiquement lors de l'initialisation de Windows, il suffit de l'intégrer dans le groupe "Démarrage" du gestionnaire de programmes. La procédure à suivre est identique à celle décrite au paragraphe <a href="Iconiseruneapplication.htm">Iconiser une application</a>. De plus, lors de la modification des propriétés&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Pour que la fenêtre de la tâche de fond ne reste pas ouverte, il faut aussi sélectionner le choix <font class="hcp1">Réduire à l'utilisation</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La ligne de commande doit se <font class="hcp1">terminer</font> par le caractère "<font class="hcp1">&amp;</font>". Par exemple, la ligne de commande&#160;:<br>
+C:\Divalto\Sys\xRtDiva.exe Prog.dhop &amp; demande l'exécution du programme Prog en tâche de fond.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Après le caractère "&amp;", vous pouvez indiquer le numéro de tâche qui doit être utilisée (entre 2 et 16). Par exemple, la ligne de commande&#160;:<br>
+C:\Divalto\Sys\xRtDiva.exe Prog.dhop &amp;16 demande l'exécution du programme Prog en tâche de fond 16.</p>
+</li>
+</ul>
+<p class="Body-Text">Bien entendu, deux tâches de fond ne peuvent être lancées avec le même numéro de tâche.</p>
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Types de données</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-family:Courier New; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Types de données</h3>
+<p class="Body-Text"><font class="hcp1">Les variables alpha-numériques</font></p>
+<p class="Body-Text">Pour déclarer une variable de type alpha-numérique il suffit de préciser sa longueur.</p>
+<p class="Body-Text">Exemple : <font face="Courier New" class="hcp2"><br>
+1 Art 508</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les variables String</font></p>
+<p class="Body-Text">Une variable de type String est une variable de type alpha-numérique de taille variable.</p>
+<p class="Body-Text">Pour déclarer un variable en type String, il faut remplacer la longueur par la lettre S. La déclaration se fait obligatoirement au niveau 1.</p>
+<p class="Body-Text">Les données de type String s’utilisent exactement comme les variables de type alpha-numérique.</p>
+<p class="Body-Text">Exemples&#160;:</p>
+<p class="Source">1 MonString S</p>
+<p class="Source">1 Chaine&#160;&#160;S</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Type_String.htm">Définition du type String</a></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les variables numériques</font></p>
+<p class="Body-Text">Pour déclarer une variable numérique, la longueur de la variable doit être suivie d'une virgule et du nombre de décimales de la variable. La longueur de la variable représente la longueur totale, signe et virgule compris.</p>
+<p class="Body-Text">La taille maximale d'une donnée numérique est de 24 caractères. La partie entière ne peut excéder 14 caractères et la partie décimale ne peut excéder 10 caractères.</p>
+<p class="Body-Text">Exemples :</p>
+<p class="Source">1 Nombre 3,0 ; entier sans décimales<br>
+1 Montant 10,2 ; entier avec 2 décimales</p>
+<p class="Body-Text">avec</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">-99 &lt; Nombre &lt; 999<br>
+-999999,99 &lt; Montant &lt; 9999999,99&#160;</p>
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="D_cimalesvariables.htm">Décimales variables</a></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Les variables de type X</font></p>
+<p class="Body-Text">Une variable de type X est une donnée de 2 octets dont la valeur est comprise entre 0 et $FFFF.</p>
+<p class="Body-Text">Les variables de type X sont considérées par le compilateur comme des variables numériques; il est donc possible de les utiliser dans des calculs.</p>
+<p class="Body-Text">Les variables de type X <font class="hcp1">ne doivent pas</font> être utilisées pour stocker des adresses.</p>
+<p class="Body-Text">Pour déclarer une variable en type X, il faut remplacer la longueur par la lettre&#160;X.</p>
+&#160;
+<p class="Body-Text">Exemples :</p>
+<p class="Source">1 i X<br>
+1 Indice 10.X</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les variables de type L</font></p>
+<p class="Body-Text">Une variable de type L est une donnée de 4 octets dont la valeur est comprise entre 0 et $FFFFFFFF.</p>
+<p class="Body-Text">Il est conseillé d'utiliser des données de type L comme indices de tableau, le calcul des adresses étant beaucoup plus rapide.</p>
+<p class="Body-Text">Les variables de type L peuvent être utilisées pour stocker des adresses.</p>
+<p class="Body-Text">Les variables de type L sont considérées par le compilateur comme des variables numériques; il est donc possible de les utiliser dans des calculs.</p>
+<p class="Body-Text">Pour déclarer une variable en type L, il faut remplacer la longueur par la lettre&#160;L.</p>
+&#160;
+<p class="Body-Text">Exemples :</p>
+<p class="Source">1 i L<br>
+1 Adr L</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les variables binaires</font></p>
+<p class="Body-Text">Une variable binaire est une donnée de 1 octet dont la valeur est comprise entre 0 et 255 ($FF).</p>
+<p class="Body-Text">Les variables binaires sont considérées par le compilateur comme des variables numériques; il est donc possible de les utiliser dans des calculs.</p>
+<p class="Body-Text">Pour déclarer une variable de type binaire, il faut remplacer la longueur par la lettre B.</p>
+<p class="Body-Text">Exemples :<font face="Courier New" class="hcp2"><br>
+1 B1 B<br>
+1 B2 10.B</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les variables booléennes</font></p>
+<p class="Body-Text">Il n'y a pas à proprement parler de variable booléenne en Diva. Les opérateurs de test renvoient toujours une valeur numérique, 1 pour vrai et 0 pour faux. De manière plus générale, la valeur 0 vaut pour faux et toutes les autres valeurs valent pour vrai.</p>
+<p class="Body-Text">Il est donc tout à fait possible d'écrire :<font face="Courier New" class="hcp2"><br>
+Vn = V1 &lt; 10<br>
+IF VN ...</font><br>
+où VN et V1 sont des variables numériques.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les variables dates</font></p>
+<p class="Body-Text">Les dates doivent être déclarées de type D (8 positions). Les dates sont stockées avec le format suivant : AAAAMMJJ.</p>
+<p class="Body-Text">Les fonctions utilisant des dates ne fonctionnent que si les dates sont stockées de cette manière. Il existe des fonctions pour formater des dates et faire des calculs (Formatd, Dtnum, Numdt etc...).</p>
+<p class="body-text">Pour accéder aux sous-champs d'une date (an, mois, jour) il faut impérativement utiliser les fonctions <a href="HDay.htm">HDay</a> etc.</p>
+<p class="body-text">Exemple :</p>
+<p class="body-text">1 &#160;date &#160;D</p>
+<p class="body-text" style="margin-left: 48px;">hday(date) = 1</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les</font> <font class="hcp1">variables</font> <font class="hcp1">heures</font></p>
+<p class="Body-Text">Les variables heures doivent être déclarées de type H H4 ou H6 . Les heures sont stockées avec le format suivant&#160;: HHMM(SS).</p>
+<p class="Body-Text">H6 est équivalent à H.</p>
+<p class="body-text">Pour accéder aux sous-champs d'une heure, &#160;il faut impérativement utiliser les fonctions <a href="THour.htm">THour</a> etc.</p>
+<p class="body-text"><span style="margin-top: 0; margin-bottom: 0;">Exemple :</span></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">1 &#160;heure &#160;&#160;H6</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les variables dates+heures</font></p>
+<p class="Body-Text">Les variables dates+heures doivent être déclarées de type DH &#160;(14 positions). Les dates+heures sont stockées au format AAAAMMJJHHMMSS.</p>
+<p class="body-text">Pour accéder aux sous-champs d'une date+heure (an, mois, jour) il faut impérativement utiliser les fonctions <a href="DHDate.htm">DHDate</a> etc.</p>
+<p class="Body-Text">Exemple :</p>
+<p class="Body-Text">1 DateHeure &#160;DH</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les variables dates mensuelles</font></p>
+<p class="Body-Text">Les variables dates mensuelles doivent être déclarées de type DM ( 6 positions). Les dates mensuelles sont stockées au format AAAAMM.</p>
+<p class="body-text">Pour accéder aux sous-champs d'une date mensuelle &#160;(an, mois) il faut impérativement utiliser les fonctions <a href="HYear.htm">HYear</a> et <a href="HMonth.htm">HMonth</a>.</p>
+<p class="Body-Text">Exemple :</p>
+<p class="Body-Text">1 DateMens &#160;DM</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les variables durées</font></p>
+<p class="Body-Text">Les variables durées doivent être déclarées de type T (numérique sur 8 positions). Elles contiennent un nombre de secondes.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,41 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListConsultDefproc</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>XmeListConsultDefProc</h1>
+<p class="Body-Text" style="font-weight: bold;">Traitement par défaut en consultation de tableau / arbre<br>
+(<font class="hcp1">pour compatibilité avec les versions 5 et antérieures d'Harmony)</font></p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Int XmeListConsultDefProc</font> (<font class="hcp2">Identifiant, Ligne, Ascenseur, Réponse, [Privilège, Sélection, Perso, MessagesInhibes]</font>)</p>
+<p class="body-text">&#160;</p>
+<p class="body-text">&#160;<font class="hcp1"><br>
+Description de la fonction&#160;:</font></p>
+<p class="body-text">Cette fonction diffère de <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> sur trois points :</p>
+<ul style="list-style: disc;">
+<li class="p-body-text">
+<p class="body-text">Elle comporte le paramètre supplémentaire <font class="hcp2">Réponse</font>.<br>
+Ce paramètre (type B) doit être garni avec la valeur rendue par la fonction <a href="XmeListConsult.htm">XmeListConsult</a>.</p>
+</li>
+<li class="p-body-text">
+<p class="body-text">La fonction considère le paramètre <font class="hcp2">Réponse</font> et l'ancien code de retour des entrées clavier System.Statin (alors que XmeListConsultDefault considère uniquement le nouveau code de retour clavier Harmony.Key).</p>
+</li>
+<li class="p-body-text">
+<p class="body-text">Elle traite encore les touches F3 (création) et Shift+F3 (suppression).</p>
+</li>
+</ul>
+</body>
+</html>

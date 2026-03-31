@@ -1,0 +1,359 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DDInterface : Champs</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+table.hcp2 { margin-left:21.30pt;
+border-collapse:separate; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { border-top:0.50pt solid #000000;
+border-bottom:0.50pt solid #000000;
+border-left:0.50pt solid #000000;
+border-right:0.50pt solid #000000;
+padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp5 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DDInterface : Champs</h3>
+<p class="Body-Text">Les commandes de lecture de champs renvoient les valeurs suivantes&#160;:</p>
+<p class="Body-Text"><font class="hcp1">Pour le niveau 1&#160;:</font></p>
+<table cellspacing="0" width="656" border="1" class="hcp2">
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">Nom</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">Nom du champ en majuscules.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">NomSaisi</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">Nom avec minuscules et majuscules.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">Libelle</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">Commentaire.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">Niveau</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">1 pour les champs de premier niveau. 2 pour les sous-champs etc.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">DonneePack</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">1 si le champ courant est le champ PACK (zone packée de la table)<br>
+2 si le champ courant est le champ DEPACK (zone dépackée de la table)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">Position</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">Position dans la table courante.<br>
+Pour les commandes DD_DATAFIND_DD et DD_DATABEGIN_DD la position est par rapport à la table de tous les champs du dictionnaire et ne peut donc être utilisée.<br>
+Pour les index, il s’agit de la position du champ dans la clé.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">Longueur</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">Taille du champ</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">Nature</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">1 = Numérique avec décimales variables<br>
+2 = Numérique<br>
+3 = Alphanumérique<br>
+4 = Date (aaaammjj)<br>
+5 = 1 caractère<br>
+6 = Type B<br>
+7 = Type X<br>
+8 = Binaire<br>
+9 = Type L<br>
+10 = Heure (hhmmss)<br>
+11 = Date mensuelle (aaaamm)<br>
+12 = date + heure (aaaammjjhhmmss)&#160;&#160;<br>
+13 = Durée<br>
+14 = Blob (Objet Binaire)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">NbDecimales</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">Nombre de décimales pour les données numériques.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">NbDimensions</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">Nombre de dimensions si la donnée est un tableau.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">Dimensions<font class="hcp5">n</font></p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">Nombre d’éléments par dimensions (<font class="hcp5">n</font> varie de 1 à 4).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text">Enjambees<font class="hcp5">n</font></p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text">Offset à ajouter par dimension (<font class="hcp5">n</font> varie de 1 à 4).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.70%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:68.30%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp1">Pour le niveau 2</font></p>
+<table cellspacing="0" width="656" border="1" class="hcp2">
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">DateCreation</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Date de création de l’élément.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">UtilisateurCreation</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Utilisateur qui a créé l’élément.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">DateModif</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Date de dernière modification de l’élément.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">UtilisateurModif</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Utilisateur qui a effectué la dernière modification.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">NumeroCommentaire</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Numéro de commentaire général dans le fichier des commentaires.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">NumeroCommentaireLocal</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Numéro de commentaire local.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">Union</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">1 si le champ est une union.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">LongueurTableau</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Taille totale de tous les éléments si le champ courant est un tableau.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">FlagOdbc</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">1 si «&#160;Masqué dans ODBC&#160;» est coché.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">FlagSql</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">1 si «&#160;Masqué dans SQL&#160;» est coché.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">ValeurInit</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Valeur d’initialisation générale.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">ValeurInitLocale</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Valeur d’initialisation locale.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">Edi</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Zone «&#160;Edi général&#160;»</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.36%;" class="hcp4">
+<p class="Body-Text">EdiLocal</p>
+</td>
+<td style="width:68.64%;" class="hcp4">
+<p class="Body-Text">Zone «&#160;Edi local&#160;»</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Pour les champs dans les index&#160;:</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<table cellspacing="0" width="656" border="1" class="hcp2">
+<tr class="hcp3">
+<td style="width:24.49%;" class="hcp4">
+<p class="Body-Text">IndiceIndex<font class="hcp5">n</font></p>
+</td>
+<td style="width:75.51%;" class="hcp4">
+<p class="Body-Text">Indices utilisés dans la clé. (<font class="hcp5">n</font> varie de 1 à 4).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:24.49%;" class="hcp4">
+<p class="Body-Text">PositionTable</p>
+</td>
+<td style="width:75.51%;" class="hcp4">
+<p class="Body-Text">Position du champ à l’intérieur de la table</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<p class="source">1 Dico_Nom &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;32</p>
+<p class="source">1 Dico_NomSaisi &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;32</p>
+<p class="source">1 Dico_Libelle &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;80</p>
+<p class="source">1 Dico_DateCreation &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;8</p>
+<p class="source">1 Dico_UtilisateurCreation &#160;&#160;&#160;&#160;&#160;&#160;20</p>
+<p class="source">1 Dico_DateModif &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;8</p>
+<p class="source">1 Dico_UtilisateurModif &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;20</p>
+<p class="source">1 Dico_NumeroCommentaire &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0</p>
+<p class="source">1 Dico_NumeroCommentaireLocal &#160;&#160;&#160;6,0</p>
+<p class="source">1 Dico_Niveau&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2,0&#160;;1,2, etc</p>
+<p class="source">1 Dico_DonneePack &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2,0&#160;;1=variable pack 2=variable depack 0=normal</p>
+<p class="source">1 Dico_Position&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0&#160;&#160;&#160;&#160;&#160;</p>
+<p class="source">1 Dico_Longueur&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0&#160;&#160;&#160;&#160;</p>
+<p class="source">1 Dico_Nature&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2,0</p>
+<p class="source">1 Dico_NbDecimales&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2,0</p>
+<p class="source">1 Dico_NbDimensions&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2,0&#160;;nb de dimensions 0,1,2,3,4</p>
+<p class="source">1 Dico_Dimensions&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;4,0*4</p>
+<p class="source">1 Dico_Enjambees&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0*4&#160;&#160;</p>
+<p class="source">1 Dico_LongueurTableau&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0</p>
+<p class="source">1 Dico_FlagOdbc&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1,0&#160;;true/false masquer pour odbc</p>
+<p class="source">1 Dico_FlagSql&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1,0&#160;;true = masquer pour sql</p>
+<p class="source">1 Dico_Edi&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;80&#160;;pour EDI echange de donnees informatique</p>
+<p class="source">1 Dico_EdiLocal&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;80&#160;&#160;&#160;</p>
+<p class="source">1 Dico_ValeurInit&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;80&#160;&#160;&#160;&#160;</p>
+<p class="source">1 Dico_ValeurInitLocal&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;80&#160;&#160;&#160;&#160;</p>
+<p class="source">1 Dico_Union&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1,0&#160;;true si le champ est une union</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">1 reponse &#160;&#160;&#160;4096</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">&#160;Dico_Nom&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"Nom")</p>
+<p class="source">&#160;Dico_NomSaisi &#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"NomSaisi")</p>
+<p class="source">&#160;Dico_Libelle &#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"Libelle")</p>
+<p class="source"><span style="text-indent: 30.35pt;">&#160;Dico_DateCreation&#160;&#160;= HmpSeek(reponse,"DateCreation")</span></p>
+<p class="source">&#160;Dico_UtilisateurCreation &#160;= HmpSeek(reponse,"UtilisateurCreation")</p>
+<p class="source">&#160;Dico_DateModif &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"DateModif")</p>
+<p class="source">&#160;Dico_UtilisateurModif &#160;= HmpSeek(reponse,"UtilisateurModif")</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;Dico_NumeroCommentaire = HmpSeek(reponse,"NumeroCommentaire")&#160;</p>
+<p class="source">&#160;Dico_NumeroCommentaireLocal = HmpSeek(reponse,"NumeroCommentaireLocal")</p>
+<p class="source">&#160;Dico_Niveau&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"Niveau")&#160;</p>
+<p class="source">&#160;Dico_DonneePack&#160;&#160;&#160;&#160;= HmpSeek(reponse,"DonneePack")</p>
+<p class="source">&#160;Dico_Position&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"Position")</p>
+<p class="source">&#160;Dico_Longueur&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"Longueur")</p>
+<p class="source">&#160;Dico_Nature &#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"Nature")</p>
+<p class="source">&#160;Dico_NbDecimales&#160;&#160;&#160;= HmpSeek(reponse,"NbDecimales")</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">&#160;Dico_NbDimensions&#160;&#160;= HmpSeek(reponse,"NbDimensions")</p>
+<p class="source">&#160;Dico_Dimensions(1)&#160;= HmpSeek(reponse,"Dimensions1")</p>
+<p class="source">&#160;Dico_Dimensions(2)&#160;= HmpSeek(reponse,"Dimensions2")</p>
+<p class="source">&#160;Dico_Dimensions(3)&#160;= HmpSeek(reponse,"Dimensions3")</p>
+<p class="source">&#160;Dico_Dimensions(4)&#160;= HmpSeek(reponse,"Dimensions4")</p>
+<p class="source">&#160;Dico_Enjambees(1)&#160;&#160;= HmpSeek(reponse,"Enjambees1")</p>
+<p class="source">&#160;Dico_Enjambees(2)&#160;&#160;= HmpSeek(reponse,"Enjambees2")</p>
+<p class="source">&#160;Dico_Enjambees(3)&#160;&#160;= HmpSeek(reponse,"Enjambees3")</p>
+<p class="source">&#160;Dico_Enjambees(4)&#160;&#160;= HmpSeek(reponse,"Enjambees4")</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">&#160;Dico_Union &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"union")</p>
+<p class="source">&#160;Dico_LongueurTableau = HmpSeek(reponse,"LongueurTableau")</p>
+<p class="source">&#160;Dico_FlagOdbc &#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"FlagOdbc")&#160;</p>
+<p class="source">&#160;Dico_FlagSql&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"FlagSql")&#160;</p>
+<p class="source">&#160;Dico_ValeurInit &#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"ValeurInit")</p>
+<p class="source">&#160;Dico_ValeurInitLocal = HmpSeek(reponse,"ValeurInitLocal")</p>
+<p class="source">&#160;Dico_Edi &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"Edi")</p>
+<p class="source">&#160;Dico_EdiLocal &#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"EdiLocal")</p>
+</body>
+</html>

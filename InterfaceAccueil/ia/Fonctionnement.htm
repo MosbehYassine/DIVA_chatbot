@@ -1,0 +1,54 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctionnement général de l'interface d'accueil</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Fonctionnement général de l'interface d'accueil</h1>
+<p>&#160;</p>
+<p>Contrairement au reste de l'ERP, ce n'est pas le serveur qui reste maître et le client qui est attente.</p>
+<p>Dans l'interface d'accueil, c'est le serveur qui répond aux demandes du client.</p>
+<p>&#160;</p>
+<p>Il y a deux types de demandes :</p>
+<ol style="list-style: decimal;">
+<li class="p">
+<p>Les actions utilisateur (demande de la liste des activités, lancement d'un choix, ...).</p>
+</li>
+<li class="p">
+<p>La mise à jour automatique des widgets.</p>
+</li>
+</ol>
+<p>&#160;</p>
+<p>La communication entre le client et le serveur étant <span class="hcp1">synchrone</span>, il n'y a qu'une seule demande en cours de traitement à la fois.</p>
+<p>L'interface d'accueil gère donc une <span class="hcp1">file d'attente des demandes</span> avec une notion de priorité :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Lorsqu'une demande (action utilisateur ou mise à jour de widget) nécessite d'accéder au serveur et que celui-ci est disponible, elle lui est envoyée et <span class="hcp1">l'interface d'accueil attend sa réponse (*)</span>.</p>
+</li>
+<li class="p">
+<p>Si une ou plusieurs autres demandes sont faites alors que le serveur n'a pas terminé le traitement et envoyé la réponse à la demande courante, les nouvelles demandes sont mises en file d'attente.</p>
+</li>
+<li class="p">
+<p>Les éléments de la file sont ensuite traités séquentiellement, au fur et à mesure de la disponibilité du serveur.</p>
+</li>
+<li class="p">
+<p>Les demandes de mise à jour de widget sont toujours mises en queue de file. Les actions de l'utilisateur, mises en tête de file, sont ainsi prioritaires.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp1">(*) Attention</span> :</p>
+<p>Le fait que les demandes soient traitées de manière synchrone implique que <span class="hcp1">l'interface d'accueil reste en attente tout le temps qu'un widget passe à calculer sa valeur</span>. En pratique, rien ne se passe à l'écran, toutes les autres demandes (y compris les actions de l'utilisateur) étant mises en file d'attente. Il est donc fortement recommandé de ne pas créer de widgets nécessitant un temps de calcul plus que raisonnable.</p>
+<p>&#160;</p>
+</body>
+</html>

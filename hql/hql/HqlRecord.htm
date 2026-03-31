@@ -1,0 +1,55 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HqlRecord</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HqlRecord</h3>
+<p class="Body-Text"><font class="hcp1">La procédure HqlRecord</font></p>
+<p class="Body-Text">La procédure HqlRecord appelée depuis le chapitre HqlDebutListe permet d'indiquer au moteur HQL les enregistrements à préserver dans les procédures de rupture de fin.</p>
+<p class="Body-Text">En effet pour détecter la rupture de fin, le moteur Hql lit un enregistrement d'avance et exécute donc les chapitres HqlSelection puis HqlLecture lié à cet enregistrement. Avant d'effectuer cette lecture, il sauvegarde l'enregistrement en cours. Si des enregistrements complémentaires liés à l'enregistrement principal sont lus dans les chapitres HqlSelection ou HqlLecture, la fonction HqlRecord permet de les sauvegarder également et donc de les restaurer en même temps que l'enregistrement principal avant d'exécuter les chapitres de rupture de fin.</p>
+<p class="Body-Text"><font class="hcp1">HqlRecord</font>(<font class="hcp2">Nom,[Raz])</font></p>
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Nom</font></p>
+<p class="decalage05">Donnée correspondant au nom de l'instance de l'enregistrement public à sauvegarder.</p>
+<p class="Body-Text"><font class="hcp2">[Raz]</font></p>
+<p class="decalage05">La valeur TRUE initialise la liste des enregistrements à sauvegarder. La liste est effacée avant l'ajout de l'enregistrement passé en paramètre. On utilisera cette option en particulier dans un module de surcharge du module des chapitres si l'on souhaite changer la liste des enregistrements à sauvegarder.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="Source"><font color="#0000FF">public hfile</font> exodd freg tdfreg</p>
+<p class="Source"><font color="#0000FF">public record</font> exodd reg</p>
+<p class="Source"><font color="#0000FF">procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source">&#160;HqlTri(reg.nomregion)</p>
+<p class="Source">&#160;HqlRupture(reg.nomregion,,"FinRegion")</p>
+<p class="Source">&#160;HqlRecord("reg")</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+<p class="Source"><font color="#0000FF">procedure</font> HqlSelection ; recherche de la région pour le Tri</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;Hseek(tdfreg, reg, "A" &amp; adr.departement)&#160;</p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Source"><font color="#0000FF">procedure</font> HqlLecture ; recherche de la région pour le traitement</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;Hseek(tdfreg, reg, "A" &amp; adr.departement)&#160;</p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Source"><font color="#0000FF">procedure</font> FinRegion ; traitement de fin région</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;xprint 10&#160;</p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+&#160;
+</body>
+</html>

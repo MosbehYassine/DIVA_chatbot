@@ -1,0 +1,71 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>EvFolderOpen</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+font.hcp3 { font-weight:bold; }
+font.hcp4 { font-style:italic; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>EvFolderOpen&#160;<a href="Liste_des_fonctions_EvFolder.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Introduction_aux_fonctions_EvFolder_.htm"><font class="hcp1">Thème</font></a></h3>
+<p>La fonction EvFolderOpen ouvre et initialise la Dll dhEventFolder.dll.</p>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">module</font> "<font class="hcp3">ysystemex.dhop</font>"</p>
+<p><font class="hcp3">Ptr EvFolderOpen</font> ( <font class="hcp4">caractère , tem</font><font class="hcp4">po</font> )</p>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp4">Caractère</font></p>
+<p class="decalage05">Caractère qui sera placé dans le tampon du clavier lorsqu’une modification du répertoire est détectée. Le fait de placer ce caractère dans le tampon du clavier va réveiller le programme.<br>
+Ce caractère pourra être lu par une instruction <a href="XDIVA1.chm::/Xdiva1/Getbchar.htm">Getbchar</a> . Si l’appel entrant doit pouvoir être détecté pendant la saisie d’un masque Harmony, il faut mettre un point d’arrêt sur la touche correspondante.</p>
+<p class="decalage05">Si l’appel a lieu pendant une instruction XmeConsult ou XmeListConsult, Harmony.Key contient le code de retour clavier correspondant.</p>
+<p class="decalage05">Une fois le caracètre lu, le programme doit boucler sur la fonction <a href="EvFolderGet.htm">EvFolderGet</a> pour lire les evénements.</p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Tempo</font></p>
+<p class="decalage05">Délai en secondes. Si au bout de ce délai ancun événément n’a eu lieu pour un répertoire surveillé, un événement est déclenché sur ce répertoire pour forcer le programme à traiter ces répertoires.</p>
+<p class="decalage05">Cette temporisation est une sécurité forçant le programme à traiter les répertoires à des intervalles réguliers, au cas ou Windows aurait «&#160;sauté&#160;» un message.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="669">
+<tr class="hcp5">
+<td style="width:9.89%;" class="hcp6">
+<p>0</p>
+</td>
+<td style="width:90.11%;" class="hcp6">
+<p>Pas d’erreur</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:9.89%;" class="hcp6">
+<p>1</p>
+</td>
+<td style="width:90.11%;" class="hcp6">
+<p>Erreur au chargement de la dll dhEventFolder.dll</p>
+</td>
+</tr>
+</table>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Exemple</font></p>
+<p>Voir <a href="EvFolderStart.htm">EvFolderStart</a></p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Voir</font></p>
+<p class="Body-Text"><a href="EvFolderStart.htm"><font class="hcp3">EvFolderStart</font></a> <font class="hcp3">,</font> <a href="EvFolderClose.htm"><font class="hcp3">EvFolderClose</font></a></p>
+</body>
+</html>

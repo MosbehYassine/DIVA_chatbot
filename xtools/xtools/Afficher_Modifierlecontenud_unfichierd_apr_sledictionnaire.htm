@@ -1,0 +1,169 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Afficher / Modifier le contenu d'un fichier d'après le dictionnaire</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { text-decoration:underline; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Afficher / Modifier le contenu d'un fichier d'après le dictionnaire</h4>
+<p class="Body-Text">Cette fonction est appelée par le choix du menu &lt;<font class="hcp1">Fichier</font> <font style="font-family: Symbol; font-weight: bold;" face="Symbol">®</font> <font class="hcp1">Afficher / Modifier d'après le dictionnaire</font>&gt;. Elle permet d'afficher les enregistrements d'un fichier d'après leur description dans le dictionnaire des données.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Choix de l'enregistrement à afficher</font></p>
+<p class="Body-Text">Lorsque vous appelez cette fonction pour la première fois (pour un enregistrement donné), vous devez introduire le nom réel du fichier, ainsi que le nom du dictionnaire des données, le nom du fichier et le nom de l'enregistrement dans le dictionnaire.<br>
+Par la suite, si vous avez sauvegardé votre paramétrage dans un fichier, vous pouvez introduire simplement le nom du fichier paramètres&#160;: vous retrouverez alors le paramétrage sauvegardé.</p>
+<p class="Body-Text">En saisie d'un nom de fichier, le bouton <font class="hcp1">Parcourir</font> ouvre la boîte de dialogue permettant de sélectionner le fichier en naviguant dans les dossiers ou en sélectionnant un chemin implicite.<br>
+En saisie du champ "&#160;Nom d'enregistrement&#160;", le bouton <font class="hcp1">Parcourir</font> permet de sélectionner l'enregistrement dans la liste des enregistrements du dictionnaire.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Affichage de l'enregistrement</font></p>
+<p class="Body-Text">La boîte de saisie initiale validée, Xtools affiche un tableau présentant UN enregistrement du fichier. Chaque ligne du tableau présente UNE donnée de cet enregistrement. Les premières colonnes affichent la <font class="hcp1">description</font> de la donnée dans le dictionnaire (nom, libellé, position, longueur, nature), la dernière affiche la <font class="hcp1">valeur</font> de cette donnée dans le fichier. Au dessus du tableau, la clé en cours est également affichée et peut être saisie.</p>
+<p class="Body-Text">Remarque&#160;: le dictionnaire renseigne sur l'existence et la position d'un code enregistrement pour l'enregistrement sélectionné. Le cas échéant, Xtools n'affiche que les enregistrements du fichier dont le code enregistrement correspond à celui précisé dans le dictionnaire.</p>
+<p class="Body-Text">Plus précisément, les colonnes du tableau contiennent&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">mnémonique</font> de la donnée (à saisir au moment de la création). F7 permet de sélectionner la donnée parmi la liste des données de l'enregistrements. Le mnémonique de la donnée peut être à espace si on choisit de saisir la position et la longueur de la donnée (dans ce cas, la donnée est considérée comme alphanumérique).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">libellé</font> de la donnée dans le dictionnaire (en affichage).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">position</font> de la donnée dans l'enregistrement. A saisir si on a laissé le mnémonique en colonne 1 à espace.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">taille</font> de la donnée dans l'enregistrement. A saisir si on a laissé le mnémonique en colonne 1 à espace.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">nature</font> de la donnée (en affichage).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">valeur</font> de la donnée dans l'enregistrement (d'une longueur maximum de 128 caractères).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Choix des données à afficher</font></p>
+<p class="Body-Text">Au départ, le tableau est affiché vide&#160;: vous devez préciser les données que vous voulez voir à l'écran. Pour inclure une donnée dans le tableau, cliquez sur l'étoile de création ou tapez <font class="hcp1">F3</font> (si le focus est sur le champ "&#160;Clé&#160;", tapez d'abord Return pour passer en consultation du tableau). Saisissez le mnémonique de la donnée (ou tapez <font class="hcp1">F7</font> pour le sélectionner dans le dictionnaire) ou alors laissez le mnémonique à espace et saisissez la position et la longueur à afficher.</p>
+<p class="Body-Text">Une fois le tableau garni avec les données voulues, vous pouvez <font class="hcp1">sauvegarder les paramètres d'affichage dans un fichier</font> (bouton Enregistrement des paramètres dans un fichier). Vous pourrez ainsi retrouver ce paramétrage lors d'une consultation ultérieure.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Fonctions disponibles à ce niveau</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">F3</font> ou bouton<font class="hcp1"><br>
+Création</font></p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Ajout d'une donnée dans le tableau.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">F4</font> ou bouton<font class="hcp1"><br>
+Modification</font></p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Modification du mnémonique, de la position / longueur ou de la valeur de la donnée courante.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Shift+F3</font> ou bouton<font class="hcp1"><br>
+Suppression</font></p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Suppression de l'affichage d'une donnée.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Début</font> ou bouton<font class="hcp1"><br>
+Premier enregistrement</font></p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Affichage du premier enregistrement (dont le code enregistrement correspond) d'après la clé en cours.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Fin</font> ou bouton<font class="hcp1"><br>
+Dernier enregistrement</font></p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Affichage du dernier enregistrement (dont le code enregistrement correspond) d'après la clé en cours.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">F2</font> ou bouton<font class="hcp1"><br>
+Enregistrement suivant</font></p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Affichage de l'enregistrement suivant (dont le code enregistrement correspond).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Shift+F2</font> ou bouton<font class="hcp1"><br>
+Enregistrement précédent</font></p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Affichage de l'enregistrement précédent (dont le code enregistrement correspond).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Shift+F10</font> ou bouton<font class="hcp1"><br>
+Autre enregistrement</font> ou<font class="hcp1"><br>
+Clic</font> dans le champ "&#160;Clé&#160;"</p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Saisie d'une clé de départ. Après validation, affichage du premier enregistrement (dont le code enregistrement correspond) à partir de cette clé.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Shift+F6</font> ou bouton<font class="hcp1"><br>
+Réécriture</font> de l'enregistrement dans le fichier</p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Après confirmation, réécriture de l'enregistrement dans le fichier, en tenant compte des modifications effectuées dans la colonne "&#160;Valeur de la donnée&#160;". Xtools effectue une affectation DIVA d'après la nature de la donnée avec la valeur saisie.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">F5</font> ou bouton<font class="hcp1"><br>
+Enregistrement</font> des paramètres dans un fichier</p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Enregistrement du paramétrage courant dans un fichier, de façon à ne pas avoir à ressaisir la liste des données à afficher entre deux utilisations.<br>
+Lors des appels suivants au choix "&#160;Afficher / Modifier d'après le dictionnaire&#160;", entrez le nom du fichier paramètres pour retrouver le même tableau.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:31.55%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">F6</font> ou bouton<font class="hcp1"><br>
+Imprimer</font></p>
+</td>
+<td style="width:68.45%;" class="hcp4">
+<p class="Body-Text">Impression de l'enregistrement.</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

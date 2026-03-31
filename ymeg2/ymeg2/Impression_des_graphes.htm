@@ -1,0 +1,30 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Impression des graphes</title>
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:Arial, sans-serif;
+font-size:10pt; }
+span.hcp2 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2 style="font-family: Arial, sans-serif;">Impression des graphes</h2>
+<p class="hcp1">Deux instructions supplémentaires complètent YChart.dhop pour réaliser l’impression des Graphes :</p>
+<p class="hcp1"><span class="hcp2">XmiChartGetId</span> (masque, page, nom)</p>
+<p class="hcp1">Récupère l’idChart d’un graphe placé dans un masque d’impression.</p>
+<p class="hcp1"><span class="hcp2">XmiChartDisplay</span>(idChart)</p>
+<p style="font-family: Arial, sans-serif;"><span style="font-size: 10pt;">Interprète la chaine hmp décrivant le graphe et prépare son impression.</span></p>
+<p style="font-weight: bold; font-family: Arial, sans-serif;">Impression</p>
+<p style="font-weight: normal; font-family: Arial, sans-serif; font-size: 10pt;">L'objet graphe à imprimer doit être disposé dans un masque d'impression et nommé, comme il le serait dans un masque d'écran.</p>
+<p class="hcp1">Pour imprimer un graphique, il faut, après le printBegin, mais avant l’instruction XmiPrint, construire le graphique (de la même façon que s’il était dans un masque écran), puis appeler la fonction XmiChartDisplay(&amp;idChart)</p>
+<p class="hcp1">Attention : A l’impression, les couleurs sont recherchées dans la feuille de style d’impression, et non dans la feuille de style d’écran. En conséquence, les couleurs produites à l’impression peuvent différer des couleurs écran si le nom de couleur n’existe pas dans la feuille de style d’impression (c’est une couleur de la palette de couleurs qui prendra la place dans ce cas), ou si le nom de couleur dans la feuille de style d’impression n’a pas la même valeur de couleur que dans la feuille de style écran.</p>
+</body>
+</html>

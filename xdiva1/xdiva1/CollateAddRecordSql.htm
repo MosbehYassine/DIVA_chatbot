@@ -1,0 +1,82 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>CollateAddRecordSql</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+p.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>CollateAddRecordSQL &#160;<a href="Liste_des_fonctions_Collate.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Fonctions_Collate.htm"><font class="hcp1">Thème</font></a></h1>
+<p>&#160;</p>
+<p>La procédure CollateAddRecordSQL permet d’ajouter un RecordSQL à la liste des RecordSQL à interclasser.</p>
+<p>&#160;</p>
+<p><span class="hcp2">CollateAddRecordSQL</span>( <span class="hcp3">idCollate, Name, ProcBegin, ProcEnd, ProcDetail, FuncKey, [ ModuleName ]</span> )</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;">idCollate</p>
+<p class="decalage05">id de la liste renvoyé par CollateOpen</p>
+<p class="Body-Text" style="font-style: italic;"><span>Name</span></p>
+<p class="decalage05">Nom du RecordSQL public à interclasser</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProcBegin</span></p>
+<p class="decalage05">Nom de la procédure à exécuter en cas de rupture de début. Il s’agit d’une fonction publique.</p>
+<p class="decalage05">Une valeur à espace indique qu’il n’y a pas de traitement de rupture de début à exécuter.</p>
+<p class="Body-Text" style="font-style: italic;">ProcEnd</p>
+<p class="decalage05">Nom de la procédure à exécuter en cas de rupture de fin. Il s’agit d’une fonction publique.</p>
+<p class="decalage05">Une valeur à espace indique qu’il n’y a pas de traitement de rupture de fin à exécuter.</p>
+<p class="Body-Text" style="font-style: italic;">ProcDetail</p>
+<p class="decalage05">Nom de la procédure à exécuter pour chaque ligne lue. Il s’agit d’une fonction publique.</p>
+<p class="decalage05">Une valeur à espace indique qu’il n’y a pas de traitement à exécuter pour les lignes de détail.</p>
+<p class="Body-Text" style="font-style: italic;">FuncKey</p>
+<p class="decalage05">Nom de la fonction publique à exécuter pour récupérer la clé d’interclassement. Elle correspond à la concaténation des champs qui compose la clé de tri des différents RecordSQL, du majeur au mineur.</p>
+<p class="Body-Text" style="font-style: italic;">ModuleName</p>
+<p class="decalage05">Nom du module qui contient les fonctions <span class="hcp3">ProcBegin</span>, <span class="hcp3">ProcEnd</span>, <span class="hcp3">ProcDetail</span> et <span class="hcp3">FuncKey</span> s’l ne s’agit pas du programme (main) courant.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarque</p>
+<p class="Body-Text">Avant l’appel de cette procédure, le critère de tri et éventuellement de filtrage doivent avoir été mis en œuvre sur le RecordSQL concerné. En effet cette procédure exécute le <span class="hcp3">ReaderSelect</span> et lit la première ligne de résultat.</p>
+<p class="body-text">&#160;</p>
+<p>&#160;</p>
+<p class="hcp4">Exemple<span class="hcp2"><br>
+&#160;</span></p>
+<p>; condition sur le stock ce jour</p>
+<p>Stock.OrderBy.Par_Ref()</p>
+<p>PositionnerConditionsSQLStock<br>
+&#160;</p>
+<p>; condition sur les ES</p>
+<p>Mvtl.OrderBy.Par_Ref()</p>
+<p>PositionnerConditionsSQLMvtl<br>
+&#160;</p>
+<p>; condition sur les EF</p>
+<p>EF.OrderBy.Par_Ref()</p>
+<p>PositionnerConditionsSQLEntreeForcee<br>
+&#160;</p>
+<p>idCollate = CollateOpen()</p>
+<p>CollateAddRecordSQL(idCollate, "STOCK", "", "fin_ref", "detail_Stock", "Cle_Stock")</p>
+<p>CollateAddRecordSQL(idCollate , "MVTL", "deb_mvtl", "fin_ref", "detail_mvtl", "Cle_Mvtl")</p>
+<p>CollateAddRecordSQL(idCollate, "EF", "", "fin_ref", "detail_Ef", "Cle_EF")<br>
+&#160;</p>
+<p>; fonction de calcul de la clé d’interclassement pour le RecordSQL Stock</p>
+<p>Public Function string CleStock</p>
+<p>beginf</p>
+<p style="margin-left: 48px;">freturn(Stock.Ref &amp; Stock.Sref1 &amp; Stock.Sref2 )</p>
+<p>endf</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp4">Voir</p>
+<p><a href="CollateOpen.htm">CollateOpen</a>, <a href="CollateClose.htm">CollateClose</a>, <a href="CollateProgressBar.htm">CollateProgressBar</a>, <a href="CollateNext.htm">CollateNext</a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

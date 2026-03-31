@@ -1,0 +1,55 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Spécificités de développement pour le client léger Web</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Spécificités de développement pour le client léger Web</h2>
+<p>&#160;</p>
+<p>Dans l'architecture 3 tiers d'Harmony, la couche Présentation est assurée par le client léger Harmony. Deux types de client léger sont proposés par Harmony : le client léger Wpf, qui s'exécute de manière classique sur un poste client équipé du système Windows, et le client léger Web (ou client léger Html) qui s'exécute dans un navigateur Web.</p>
+<p>&#160;</p>
+<p>Les applications Harmony destinées aux clients légers Web et Wpf sont dans l'ensemble identiques. Elles utilisent les mêmes masques d’écran Xwin et font appel au même exécuteur de masques Ywpf. Toutefois, le client léger Html s’exécute dans un navigateur Web et certaines fonctionnalités, habituellement offertes par le système Windows et accessibles sous Xwpf, ne sont pas mises à disposition sur le Web (en particulier pour des raisons de sécurité).</p>
+<p>&#160;</p>
+<p>Ce livre présente les restrictions imposées par le Web, les fonctionnalités non implémentées en Html5 et les différences entre Wpf et Html susceptibles de nécessiter des adaptations dans les programmes d'application.</p>
+<p>&#160;</p>
+<p>Il contient les rubriques :</p>
+<p><a href="Traitements_effectu&eacute;s_en_cas_de_fermeture_du_navigateur.htm">Traitements effectués en cas de fermeture du navigateur</a>.</p>
+<p><a href="Diff&eacute;rences_d’affichage_entre_Html_et_Wpf.htm">Différences d’affichage entre Html et Wpf</a>.</p>
+<p><a href="Restrictions_impos&eacute;es_par_les_navigateurs_Web.htm">Restrictions imposées par les navigateurs Web</a>.</p>
+<p style="font-weight: normal; font-size: 10pt;"><a href="Fonctions_non_impl&eacute;ment&eacute;es_en_Html.htm">Fonctions non implémentées en Html</a>.</p>
+<p><a href="Autres_diff&eacute;rences_entre_Html_et_Wpf_affectant_la_programmation.htm">Autres différences entre Html et Wpf affectant la programmation</a>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque importante</span> :</p>
+<p>Le "<span class="hcp1">Client léger Web</span>" et "<span class="hcp1">Harmony Web</span>" sont deux produits totalement distincts, qui utilisent deux technologies différentes et <span style="font-weight: bold; text-decoration: underline;">ne doivent pas être confondus</span>.<br>
+&#160;</p>
+<p><span class="hcp1">Les documentations de développement pour ces deux produits sont totalement séparées</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Les applications Harmony exécutables en clients légers Html et Wpf utilisent les masques d’écran et font appel à l'exécuteur de masques Ywpf.<br>
+Documentations associées :<br>
+Xwin - Atelier de développement Harmony - Editeurs : "Masques écran : concepts généraux" et "Utiliser l'éditeur de Masques écran : Manuel de référence".<br>
+Xwin - Atelier de développement Harmony - Programmation : "Ywpf, exécuteur de masques d'écran - Manuel de référence (1ère et 2ème partie)" et "Spécificités de développement pour le client léger Web".</p>
+</li>
+<li class="p">
+<p>Les applications "Harmony Web" utilisent les masques Web et font appel à l'exécuteur de masques Yweb.<br>
+Documentations associées :<br>
+Xwin - Atelier de développement Harmony - Editeurs : "Masques web : concepts généraux" et "Utiliser l'éditeur de Masques web : Manuel de référence".<br>
+Xwin - Atelier de développement Harmony - Programmation : "Yweb, exécuteur de masques Web - Manuel de référence".</p>
+</li>
+</ul>
+<p style="font-weight: bold;">&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Zoom.TableAssociee</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Zoom.TableAssociee</h1>
+<p>&#160;</p>
+<p>Permet de déterminer le fonctionnement du double clic en mode liste, <span style="text-decoration: underline;">lorsque mode liste et mode fiche sont réunis</span>.</p>
+<p>Dans la pratique, on distinguera deux cas :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Le <span class="hcp1">zoom est appelé depuis une donnée en saisie</span> possédant la propriété « <span class="hcp1">Table associée</span> » dans Xwin.<br>
+On positionnera Zoom.TableAssociee à ZOOM_OUI avant d’appeler le zoom. Le double clic en mode liste provoquera la sortie du zoom (avec renvoi de la valeur de retour et transfert dans la donnée en cours de saisie si le zoom l’autorise par ailleurs -voir le paramètre Recup de l'instruction <a href="Zoom4.htm">ZoomSql</a>-).</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Autres cas d'appel du zoom</span> (par exemple depuis un menu).<br>
+On positionnera Zoom.TableAssociee à ZOOM_NON avant d’appeler le zoom. Le double clic en mode liste sera ignoré et ne provoquera pas la sortie du zoom.</p>
+</li>
+</ul>
+<p><span class="hcp1">ATTENTION</span> :</p>
+<p><span class="hcp1">ZOOM_OUI est la valeur par défaut</span>, ce qui permet, pour les programmes appelants qui ne positionnent pas cette donnée (introduite en version 7.3 d'Harmony), de conserver le fonctionnement antérieur à la version 7.3.</p>
+<p>&#160;</p>
+<p>Si le zoom est appelé depuis une donnée en saisie, on pourra transférer le paramètre de sortie des fonctions de saisie <span class="hcp1">Harmony.DataTableAssociee</span> dans Zoom.TableAssociee. Pour permettre cette affectation directe, Harmony.DataTableAssociee est mis à 1 si la propriété « Table associée » de la donnée en cours de saisie est à Oui dans Xwin (1 = ZOOM_OUI), à 2 sinon (2 = ZOOM_NON).</p>
+<p>Voir l'exemple de la rubrique <a href="Appel_d_un_Zoom_Sql_en_saisie_de_donn&eacute;e.htm">Appel d'un Zoom Sql en saisie de donnée</a>.</p>
+<p>&#160;</p>
+</body>
+</html>

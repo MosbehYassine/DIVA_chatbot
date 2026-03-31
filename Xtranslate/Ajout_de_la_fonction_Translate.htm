@@ -1,0 +1,104 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Ajout de la fonction Translate</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+p.hcp3 { font-weight:bold; }
+p.hcp4 { font-style:italic; }
+p.hcp5 { font-weight:normal; }
+ul.hcp6 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Ajout de la fonction Translate</h3>
+<p>&#160;</p>
+<p>Certaines chaînes de caractères constantes se trouvant dans les programmes Diva doivent être traduites. De même, des libellés (textes d'erreur par exemple) stockés dans des fichiers doivent également être traduits.</p>
+<p>&#160;</p>
+<p>ATTENTION : Cette fonction doit impérativement être sur une seule ligne. Elle ne doit pas être interrompue par le caractère \.</p>
+<p>&#160;</p>
+<p><span class="hcp1">char Translate</span> (<span class="hcp2">libellé, [dictionnaire] ,[indice] , [EcranImp] , [CodeLangueLibelle] &#160;</span>)</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">Paramètres</p>
+<p class="hcp4">Libellé</p>
+<p class="Decalage05">Texte à traduire.</p>
+<p class="hcp4"><span class="hcp2">Dictionnaire</span></p>
+<p class="Decalage05">Nom du dictionnaire à utiliser pour la traduction (Divalto par défaut).</p>
+<p><span class="hcp2">Indice</span></p>
+<p class="Decalage05">Variable numérique (valeur par défaut = 0). L'indice permet de distinguer deux libellés identiques dans le dictionnaire. Les libellés extraits de la fonction Translate ne sont présents qu'une seule fois dans le dictionnaire. Si un même libellé doit être traduit de plusieurs façons, l'indice permet de les distinguer.</p>
+<p><span class="hcp2">EcranImp</span></p>
+<p class="Decalage05">1 = utiliser le code langue des affichages (valeur par défaut).</p>
+<p class="Decalage05">2 = utiliser le code langue des impressions.</p>
+<p><span class="hcp2">CodeLangueLibelle</span></p>
+<p class="Decalage05">Code langue du libellé à traduire. (FR par défaut).</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp3">Retour</p>
+<p class="Decalage05">La fonction Translate retourne :</p>
+<p class="Decalage05">- soit la chaîne traduite<br>
+- soit la chaîne d'origine (si <span class="hcp2">CodeLangueLibelle</span> = Code_langue_de_l''utilisateur ou si la traduction n'a pas été trouvée dans le dictionnaire, ou en cas d'erreur).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Traduction des constantes Diva</p>
+<p class="hcp5">Pour traduire une constante Diva, il faut appeler la fonction Translate. Cette <span style="font-weight: normal;">fonction a deux effets :</span></p>
+<ul class="hcp6">
+<li class="p">
+<p class="hcp5">elle permet l'extraction du libellé et son ajout au dictionnaire</p>
+</li>
+<li class="p">
+<p class="hcp5">elle effectue la traduction proprement dite au moment de l'exécution.</p>
+</li>
+</ul>
+<p class="hcp5">Exemple 1 :</p>
+<p class="Source">MessageBox("Le fichier des clients est absent"," ")</p>
+<p class="Source">&#160;</p>
+<p class="Source">devient :</p>
+<p class="Source">&#160;</p>
+<p class="Source">MessageBox(<span class="hcp1">Translate</span>("Le fichier des clients est absent")," ")</p>
+<p>&#160;</p>
+<p>Exemple 2 :</p>
+<p class="Source">MessageBox("Le fichier " &amp; tdf.name &amp;&amp; " est absent"," ")</p>
+<p class="Source">&#160;</p>
+<p class="Source">devient :</p>
+<p class="Source">&#160;</p>
+<p class="Source">m = Translate("Le fichier %1 est absent")</p>
+<p class="Source">m = Modify("%1",left(tdf.Name),m)</p>
+<p class="Source">MessageBox(m,' ')</p>
+<p class="Source">&#160;</p>
+<p class="Source">ou, en plus condensé :</p>
+<p class="Source">&#160;</p>
+<p class="Source">MessageBox(Modify("%1",left(tdf.Name),Translate("Le fichier %1 est absent")),' ')</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text" style="margin-left: 48px; font-weight: bold;">Remarque</p>
+<p class="Body-Text" style="margin-left: 48px; font-weight: normal;">L'écriture : MessageBox(Translate("Le fichier ") &amp; tdf.name &amp;&amp; Translate(" est absent")," ") n'est pas fausse mais elle va insérer deux libellés distincts dans le dictionnaire. Le traducteur devra donc traiter séparément "Le fichier" et "est absent". Pour fournir au traducteur des textes cohérents, il est conseillé d'utiliser des caractères "jocker" et de les substituer <span style="font-weight: bold; text-decoration: underline;">APRES</span> la traduction.</p>
+<p class="source">&#160;</p>
+<p class="source">&#160;</p>
+<p class="source">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Traduction d'un texte provenant d'un fichier</p>
+<p class="Body-Text" style="font-weight: normal;">Lorsque le premier paramètre de la fonction Translate n'est pas une constante, cette fonction effectue uniquement la traduction (elle n'ajoute pas d'entrée au dictionnaire). Translate recherche la chaîne dans le dictionnaire et retourne la chaîne traduite.</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: normal;">Exemple :</p>
+<p class="Source" style="font-weight: normal;">Hseek(tdf,art,'A' &amp; NumErr) &#160;&#160;&#160;&#160;&#160;&#160;&#160;; recherche dans le fichier</p>
+<p class="Source" style="font-weight: normal;">m = Translate(art) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; traduction</p>
+<p class="Source" style="font-weight: normal;">m = Modify("%1",left(tdf.Name),m) &#160;; substitution</p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarque</p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Les fonctions Diva Fdate, FdateDh, Sdate et SdateDh tiennent compte du paramétrage de la langue.<br>
+Elles comportent un nouveau paramètre leur permettant d'ignorer le paramétrage de la langue.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Pour les champs multilingues (description de l'article par ex.) il faut utiliser la fonction TranslateData.</p>
+</li>
+</ul>
+</body>
+</html>

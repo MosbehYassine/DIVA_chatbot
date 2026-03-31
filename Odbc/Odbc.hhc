@@ -1,0 +1,265 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Odbc">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Généralités">
+      <param name="Local" value="Odbc/G_n_ralit_s.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Langage SQL">
+      <param name="Local" value="Odbc/Le_langage_SQL.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Clients ODBC">
+      <param name="Local" value="Odbc/Les_clients_ODBC.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Sources ODBC">
+      <param name="Local" value="Odbc/Sources_ODBC.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Driver Harmony">
+      <param name="Local" value="Odbc/Driver_Harmony.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Source de données">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Source de données">
+        <param name="Local" value="Odbc/Source_de_donnee.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Définir une source">
+        <param name="Local" value="Odbc/definir_une_source.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Gestion centralisée des sources">
+        <param name="Local" value="Odbc/Gestion_centralis_e_des_sources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Création de source">
+        <param name="Local" value="Odbc/Cr_ation_de_source.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Tables de la source">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Tables de la source">
+        <param name="Local" value="Odbc/Table_de_la_source.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Table">
+        <param name="Local" value="Odbc/Table.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Tables de référence">
+        <param name="Local" value="Odbc/Table_de_reference.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Tables de référence spécifiques">
+        <param name="Local" value="Odbc/Tables_de_r_f_rence_sp_cifiques.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Vues de la source">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Vues de la source">
+        <param name="Local" value="Odbc/Vues_de_la_source.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Vue">
+        <param name="Local" value="Odbc/Vue.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Vues de référence">
+        <param name="Local" value="Odbc/Vues_de_r_f_rence.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Gestion des vues">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Gestion des vues">
+        <param name="Local" value="Odbc/Gestion_des_vues.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Définition des vues">
+        <param name="Local" value="Odbc/D_finition_des_vues.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Dictionnaire de vues">
+        <param name="Local" value="Odbc/Dictionnaire_de_vues.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Création d'une vue">
+        <param name="Local" value="Odbc/Cr_ation_d_une_vue.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Champs d'une vue">
+        <param name="Local" value="Odbc/Champs_d_une_vue.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Surcharge des vues">
+        <param name="Local" value="Odbc/Surcharge_des_vues.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Dictionnaire de données">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Dictionnaire de données">
+        <param name="Local" value="Odbc/Dictionnaire_de_donn_es.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Dictionnaire">
+        <param name="Local" value="Odbc/Dictionnaire.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Table et champs">
+        <param name="Local" value="Odbc/Table_dico.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Index">
+        <param name="Local" value="Odbc/Index.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Lien">
+        <param name="Local" value="Odbc/Lien.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Driver ODBC">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Driver ODBC">
+        <param name="Local" value="Odbc/Driver_ODBC.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Connexion">
+        <param name="Local" value="Odbc/Connexion.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Optimisation des accès">
+        <param name="Local" value="Odbc/Optimisation_des_acc_s.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Diva">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Diva">
+        <param name="Local" value="Odbc/Diva.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Traitements Diva pour les requêtes ODBC">
+        <param name="Local" value="Odbc/Traitements_Diva_pour_les_requ_tes_ODBC.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Initialisation d'une vue">
+        <param name="Local" value="Odbc/Initialisation_d_une_vue.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Lecture de la table de base d'une vue">
+        <param name="Local" value="Odbc/Lecture_de_la_table_de_base_d_une_vue.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Confidentialités des champs d'une vue">
+        <param name="Local" value="Odbc/Confidentialit_s_des_champs_d_une_vue.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Lecture d'une table liée d'une vue">
+        <param name="Local" value="Odbc/Lecture_d_une_table_li_e_d_une_vue.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ecriture de variables d'environnement ODBC">
+        <param name="Local" value="Odbc/Ecriture_de_variables_d_environnement_ODBC.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Lecture des variables d'environnement ODBC">
+        <param name="Local" value="Odbc/Lecture_des_variables_d_environnement_ODBC.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Hyperion Intelligence Explorer">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Hyperion Intelligence Explorer">
+        <param name="Local" value="Odbc/Hyperion.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Hyperion">
+        <param name="Local" value="Odbc/Hyperion_intro.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fichier OCE">
+        <param name="Local" value="Odbc/Fichier_OCE.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fichier BQY">
+        <param name="Local" value="Odbc/Fichier_BQY.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Modèle de données">
+        <param name="Local" value="Odbc/Mod_le_de_donn_es.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Annexes">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Annexes">
+        <param name="Local" value="Odbc/Annexes.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage complémentaire">
+        <param name="Local" value="Odbc/Param_trage_compl_mentaire.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Gestion des décimales variables">
+        <param name="Local" value="Odbc/Gestion_des_d_cimales_variables.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Caractéristiques et limites du Serveur ODBC Harmony">
+        <param name="Local" value="Odbc/Caract_ristiques_et_limites_du_Serveur_ODBC_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Grammaire SQL supportée par le driver ODBC Harmony">
+        <param name="Local" value="Odbc/Grammaire_SQL_support_e_par_le_driver_ODBC_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fonctions Scalaires">
+        <param name="Local" value="Odbc/Fonctions_Scalaires.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fonctions Date">
+        <param name="Local" value="Odbc/Fonctions_Date.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Variables d'environnement ODBC">
+        <param name="Local" value="Odbc/Variables_d_environnement_ODBC.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

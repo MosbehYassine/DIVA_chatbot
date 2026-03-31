@@ -1,0 +1,35 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation des positionnements souris en consultation de masque</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Programmation des positionnements souris en consultation de masque</h3>
+<p class="Body-Text">Avant d'aborder ce chapitre, nous vous conseillons de consulter la rubrique <a href="Positionnementssourisenconsultationdemasque.htm">Positionnements souris en consultation de masque</a>, qui explique les principes généraux régissant les <font class="hcp1">positionnements</font> effectués par l'utilisateur à la <font class="hcp1">souris</font>, lors de la consultation d'un masque (fonction XmeConsult ou XmeListConsult).<br>
+&#160;</p>
+<p class="Body-Text">Dès que l'utilisateur clique sur une donnée en saisie présente à l'écran, le programme appelant récupère le contrôle (comme si une touche du clavier était tapée). Il n'y a donc pas de point d'arrêt à proprement parler (Harmony.Arret n'est pas positionné).</p>
+<p class="Body-Text">Les paramètres <font class="hcp1">Harmony.SourisPage <span style="font-weight: normal;">et</span> Harmony.SourisSeq</font> <font class="hcp1">sont par contre garnis</font> (Cf. rubrique <a href="Param_tresdesortieli_saupointd_arr_t_Demandedesaisie_.htm">Paramètres de sortie liés au point d'arrêt "Demande de saisie"</a>) avec le numéro de page et le numéro de point de séquence de la donnée cliquée. Ce dernier peut donc être testé pour savoir si la sortie du XmeConsult (ou du XmeListConsult) a été provoquée par la frappe d'une touche (Harmony.SourisSeq = 0) ou par un clic sur une donnée en saisie (Harmony.SourisSeq = numéro de point de séquence de la donnée, Harmony.SourisPage = numéro de la page qui la contient).</p>
+<p class="Body-Text"><span style="font-weight: bold;">Remarque</span>&#160;: Si la donnée cliquée se trouve dans une page, paramétrée dans Xwin avec un point d'arrêt "Demande de saisie", Harmony.DataArret est également chargé avec le numéro de ce point d'arrêt.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Cas particulier du clic sur une donnée en saisie d'un tableau</font></p>
+<p class="Body-Text">Si l'écran présente un <a href="Tableaux.htm">objet tableau</a> et si le clic a lieu sur une donnée en saisie du tableau, ce qui précède reste vrai, à ceci près que le paramètre Harmony.DataArret est chargé avec le numéro de point d'arrêt affecté au tableau dans Xwin. De plus, les paramètres fournis habituellement en cas de "clic tableau" (en particulier le numéro de ligne, Cf. rubrique <a href="Ev_nementssourisli_s_l_objettableau.htm">Evénements souris liés à l'objet tableau</a>) sont aussi garnis.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="Num&eacute;ros_de_page_transmis_dans_l’enregistrement_Harmony.htm">Numéros de page transmis dans l’enregistrement Harmony (pages panels)</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mise en place des dictionnaires compilés</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+p.hcp2 { font-weight:bold; }
+p.hcp3 { font-weight:normal; }
+span.hcp4 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Mise en place des dictionnaires compilés</h3>
+<p><img src="images/schemaexec.png" style="border: none;" alt="" width="729" height="475" border="0"></p>
+<p>&#160;</p>
+<ul class="hcp1">
+<li class="p">
+<p>Le chapitre [System] de Divalto.ini (utiliser xDivaltoMajIni) doit contenir l'entrée suivante : CheminLangues=xxxxx.<br>
+CheminLangues indique un répertoire dont le nom est au format Windows. Si ce répertoire est situé sur un serveur, il faut ici mettre un nom de partage Windows.</p>
+</li>
+<li class="p">
+<p>Le répertoire pointé par CheminLangues contient :<br>
+- le fichier paramètre TranslateParams.txt<br>
+- les dictionnaires compilés (.dhot).</p>
+</li>
+<li class="p">
+<p>Le fichier paramètres TranslateParams.txt contient trois parties :<br>
+- une partie information qui indique les codes langues disponibles ainsi que le format d'affichage/saisie des dates et le code pour les fichiers d'aides<br>
+- une partie donnant la liste des fichiers pour chaque couple dictionnaire-langue.<br>
+- une partie indiquant les langues disponibles pour les données contenues dans les fichiers (la traduction des champs multilingues fait l'objet d'un livre à part).</p>
+</li>
+<li class="p">
+<p>Dans l'exemple ci-dessus :<br>
+- l'utilisateur a le choix entre deux langues étrangères, DE et EN<br>
+- le dictionnaire Divalto - DE est composé de deux fichiers : DivaltoU_de.dhot et Divalto_de.dhot<br>
+- le dictionnaire Divalto - EN est composé d'un fichier : Divalto_en.dhot.</p>
+</li>
+</ul>
+<p class="hcp2">Remarques importantes</p>
+<ul class="hcp1">
+<li class="p">
+<p>Pour le paramétrage des applications Web, voir &#160;<span style="font-weight: bold;">Installation d'un site Web multilingue</span> <span>dans la documentation d'installation d'Harmony.</span></p>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p">
+<p class="hcp3">Quand on parle de dictionnaire pour les programmes Diva (instruction Translate) ou pour les masques, <span class="hcp4">il</span> <span class="hcp4">s'agit toujours de l'entrée &lt;Dictionnary&gt; du fichier TranslateParams.txt</span>.<br>
+<br>
+Par exemple, la traduction de tous les libellés de l'ERP Divalto est cherchée dans le dictionnaire Divalto : si le code langue courant est DE, ce sont les fichiers DivaltoU_de.dhot et Divalto.dhot qui seront utilisés ; si le code langue courant est EN, c'est le fichier Divalto_en.dhot qui sera utilisé.</p>
+</li>
+<li class="p">
+<p class="hcp3"><span style="font-weight: normal;">Divalto livre deux dictionnaires. Un dictionnaire pour le système (nommé Harmony) et un dictionnaire pour les applications (nommé Divalto).</span></p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Voir aussi : <a href="Param&eacute;trage.htm">Paramétrage</a></p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,619 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Options de l'agenda</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+tr.hcp3 { vertical-align:top; }
+p.hcp4 { font-weight:bold; }
+td.hcp5 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp6 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp8 { margin-left:0px; }
+p.hcp9 { font-weight:normal; }
+span.hcp10 { font-weight:bold;
+text-decoration:underline; }
+span.hcp11 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Options de l'agenda</h3>
+<p>&#160;</p>
+<p>L’objet agenda propose un certain nombre d’options.</p>
+<p>&#160;</p>
+<p>Pour positionner UNE option, il faut :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Utiliser une instance de l’enregistrement <span class="hcp2">ObjectOption</span> du dictionnaire ddCalendar.dhsd.</p>
+</li>
+<li class="p">
+<p>Préciser l’option choisie dans le champ <span class="hcp2">ObjectOption.Option</span>.</p>
+</li>
+<li class="p">
+<p>Affecter sa valeur dans le champ <span class="hcp2">ObjectOption.Value</span>.<br>
+Remarque : ce champ est de type alphanumérique ; si vous lui affectez une variable binaire (nature B, X ou L), prenez soin de la convertir en alpha par la fonction ToString ; réciproquement, utilisez la fonction Val pour transférer une option dans une variable binaire.</p>
+</li>
+<li class="p">
+<p>Ajouter l’option à l’agenda avec la fonction <a href="XmeCalendarSetOption.htm">XmeCalendarSetOption</a>.</p>
+</li>
+</ul>
+<p><span class="hcp2">Si vous désirez positionner plusieurs options, répétez cette opération pour chacune d'elles</span>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les identifiants des options, ainsi que les valeurs possibles de certaines options, sont des "<span class="hcp2">Define</span>" Diva définis dans le fichier "Include" <span class="hcp2">zCalendar.dhsp</span>.<br>
+<br>
+&#160;</p>
+<p>Voici la liste des options disponibles :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<tr class="hcp3">
+<td style="border: Solid 1px #000000;width: 25%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp4">Identifiant</p>
+</td>
+<td style="width:25%;" class="hcp5">
+<p class="hcp4">Signification</p>
+</td>
+<td style="width:25%;" class="hcp5">
+<p class="hcp4">Valeurs possibles</p>
+</td>
+<td style="width:25%;" class="hcp5">
+<p class="hcp4">Valeur par défaut</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_VIEW_DAILY</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8"><a href="Vues_d_un_agenda.htm">Vue</a> journalière</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp9">Voir le paragraphe "Cas particulier des options concernant les types de vue proposés"</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Oui<br>
+Libellé : "Jour"</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_VIEW_WEEKLY</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8"><a href="Vues_d_un_agenda.htm">Vue</a> hebdomadaire</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Id.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Oui<br>
+Libellé : "Semaine"</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_VIEW_WORKWEEK</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8"><a href="Vues_d_un_agenda.htm">Vue</a> par semaine de travail</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Id.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Oui<br>
+Libellé : "Semaine de travail"</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_VIEW_MONTHLY</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8"><a href="Vues_d_un_agenda.htm">Vue</a> mensuelle</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Id.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Oui<br>
+Libellé : "Mois"</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_VIEW_TIMELINE</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8"><a href="Vues_d_un_agenda.htm">Vue</a> chronologique</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Id.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Oui<br>
+Libellé : "Chronologique"</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_CURRENT_VIEW</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8"><a href="Vues_d_un_agenda.htm">Vue</a> courante</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_VIEW_DAILY<br>
+CAL_VIEW_WEEKLY<br>
+CAL_VIEW_WORKWEEK<br>
+CAL_VIEW_MONTHLY<br>
+CAL_VIEW_TIMELINE</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_VIEW_DAILY<br>
+(journalière)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_CURRENT_DATE</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Date courante</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Date du jour</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_DAILY_TIME_RANGE_BEGIN</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Heure de début du jour</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>00h00</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_DAILY_TIME_RANGE_END</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Heure de fin du jour</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>00h00</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_WORKING_TIME_RANGE_BEGIN</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Heure de début du travail</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>08h00</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_WORKING_TIME_RANGE_END</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Heure de fin du travail</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>18h00</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_MINOR_TICK_LENGTH</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Durée de l'<a href="Intervalles_de_temps_de_l_agenda.htm">intervalle de temps mineur</a></p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_MINOR_TICK_LENGTH_15M<br>
+CAL_MINOR_TICK_LENGTH_30M<br>
+CAL_MINOR_TICK_LENGTH_1H<br>
+CAL_MINOR_TICK_LENGTH_2H</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_MINOR_TICK_LENGTH_30M</p>
+<p>(30')</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_MAJOR_TICK_LENGTH</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Durée de l'<a href="Intervalles_de_temps_de_l_agenda.htm">intervalle de temps majeur</a></p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_MAJOR_TICK_LENGTH_1H<br>
+CAL_MAJOR_TICK_LENGTH_2H<br>
+CAL_MAJOR_TICK_LENGTH_3H<br>
+CAL_MAJOR_TICK_LENGTH_6H</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_MAJOR_TICK_LENGTH_1H</p>
+<p>(60')</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_ORIENTATION</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Orientation de l’agenda</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_ORIENTATION_HORIZONTAL<br>
+CAL_ORIENTATION_VERTICAL</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_ORIENTATION_VERTICAL</p>
+<p>(Verticale)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_FIRST_DAY_OF_WEEK</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Premier jour de la semaine de travail</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_DAY_SUNDAY<br>
+CAL_DAY_MONDAY<br>
+CAL_DAY_TUESDAY<br>
+CAL_DAY_WEDNESDAY<br>
+CAL_DAY_THURSDAY<br>
+CAL_DAY_FRIDAY<br>
+CAL_DAY_SATURDAY</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_DAY_MONDAY</p>
+<p>(Lundi)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_MASK_WORKING_DAYS</p>
+&#160;
+<p class="hcp9">(vous pouvez additionner plusieurs valeurs ou utiliser la fonction BOR pour les combiner - voir aussi le paragraphe "Extraire les valeurs unitaires d'une option à valeurs combinées")</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Jours de travail</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_MASK_NONE<br>
+CAL_MASK_MONDAY<br>
+CAL_MASK_TUESDAY<br>
+CAL_MASK_WEDNESDAY<br>
+CAL_MASK_THURSDAY<br>
+CAL_MASK_FRIDAY<br>
+CAL_MASK_SATURDAY<br>
+CAL_MASK_SUNDAY</p>
+&#160;
+<p>CAL_MASK_WEEKDAYS<br>
+(cumule les jours du lundi au vendredi)<br>
+CAL_MASK_WEEKENDDAYS<br>
+(cumule samedi et dimanche)<br>
+CAL_MASK_EVERYDAY<br>
+(cumule tous les jours de la semaine)<br>
+&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_MASK_WEEKDAYS</p>
+<p>(Lundi - Vendredi)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_TIMELINE_VISIBLE_DAYS</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Nombre de jours affichés en vue chronologique</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>7</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_EDIT_NON_WORKED_HOURS</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Autorisation d'édition des heures non travaillées</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_CAN_EDIT<br>
+(éditables)<br>
+CAL_CANNOT_EDIT<br>
+(non éditables)</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_CANNOT_EDIT</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_ACCESS_RIGHTS</p>
+&#160;
+<p class="hcp9">(vous pouvez additionner plusieurs valeurs ou utiliser la fonction BOR pour les combiner - voir aussi le paragraphe "Extraire les valeurs unitaires d'une option à valeurs combinées")</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Droits d’accès à l’agenda</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_ACCESS_READONLY<br>
+(aucun droit)</p>
+<p>CAL_ACCESS_DRAG_RESIZE<br>
+(droit d'étirer un rendez-vous -<br>
+nécessite le droit d'édition)</p>
+<p>CAL_ACCESS_DRAG_DROP<br>
+(droit de drag &amp; drop d'un rendez-vous -<br>
+nécessite le droit d'édition)</p>
+<p>CAL_ACCESS_EDIT<br>
+(droit d'édition d'un rendez-vous)</p>
+<p>CAL_ACCESS_DELETE<br>
+(droit de suppression d'un rendez-vous)</p>
+<p>CAL_ACCESS_CREATE<br>
+(droit de création d'un rendez-vous)</p>
+&#160;
+<p>CAL_ACCESS_DRAG_DROP_OPERATIONS<br>
+(drag resize + drag &amp; drop<span style="text-decoration: underline;">)</span></p>
+<p>CAL_ACCESS_DRAG_RESIZE_EDIT<br>
+(drag resize + edit)</p>
+<p>CAL_ACCESS_DRAG_DROP_EDIT<br>
+(drag &amp; drop + edit)</p>
+<p>CAL_ACCESS_EDIT_NOT_DELETE<br>
+(drag resize + drag &amp; drop + edit)</p>
+<p>CAL_ACCESS_NO_CREATE<br>
+(drag resize + drag &amp; drop + edit + delete)</p>
+<p>CAL_ACCESS_NO_DELETE<br>
+(drag resize + drag &amp; drop + edit + create)</p>
+<p>CAL_ACCESS_EVERYTHING<br>
+(tous les droits)<br>
+&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Tous</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_CUSTOMIZATION</p>
+&#160;
+<p class="hcp9">(vous pouvez additionner plusieurs valeurs ou utiliser la fonction BOR pour les combiner - voir aussi le paragraphe "Extraire les valeurs unitaires d'une option à valeurs combinées")</p>
+<p class="hcp9">&#160;</p>
+<p class="hcp9"><span class="hcp10">Voir le paragraphe "Droits de personnalisation"</span>.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">Droits de personnalisation</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_CUSTOM_NONE<br>
+(aucun droit)</p>
+<p>CAL_CUSTOM_CHANGE_SNAP_APPOINTMENTS<br>
+(droit de changer le magnétisme)</p>
+<p>CAL_CUSTOM_CHANGE_TICK_LENGTH<br>
+(droit de changer les échelles de temps)</p>
+<p>CAL_CUSTOM_EDIT_WORKING_DAYS<br>
+(droit de changer les jours travaillés)</p>
+<p>CAL_CUSTOM_EDIT_FIRST_DAY_OF_WEEK<br>
+(droit de changer le 1er jour de la semaine)</p>
+<p>CAL_CUSTOM_EDIT_WORK_HOURS<br>
+(droit de changer les heures de travail)</p>
+<p>CAL_CUSTOM_USE_NON_WORKING_HOURS<br>
+(droit de poser un r.v. hors heures de travail -<span class="hcp2"><br>
+option non gérée actuellement</span>)</p>
+<p>CAL_CUSTOM_EDIT_VISIBLE_HOURS<br>
+(droit de changer les heures visibles)</p>
+<p>CAL_CUSTOM_EVERYTHING<br>
+(tous les droits)<br>
+&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>Aucun</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_SETTINGS_VISIBILITY</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">CAL_NOT_VISIBLE masque totalement le volet des options. Celui-ci peut être réaffiché lorsque l'utilisateur survole le liséré situé dans le coin inférieur gauche de l'agenda.</p>
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_VISIBLE ou CAL_NOT_VISIBLE</p>
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_VISIBLE</p>
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_OVERRIDE_USERSETTINGS</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">permet au programme diva de prendre la priorité par rapport aux personnalisations de l'utilisateur sauvegardées.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>true ou false</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>false</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_SNAP_APPOINTMENTS</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">permet de piloter par programme diva l'option de personnalisation SNAP APPOINTMENTS</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>true ou false</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_RESOURCE_HEADER_MODE</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">mode d'affichage des entêtes de lignes en vue chronologie ou semaine (horizontale) regroupée par type de ressources.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_RESOURCE_HEADER_NORMAL, le mode standard avec lequel la vue est plus aérée</p>
+<p>CAL_RESOURCE_HEADER_REDUCED, un mode "réduit" qui permet d'afficher plus de lignes en réduisant la hauteur dédiée à l'image des ressources.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>CAL_RESOURCE_HEADER_NORMAL</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p class="hcp4">CAL_OPT_RESOURCE_HEADER_WIDTH</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p class="hcp8">permet de fixer la largeur de la colonne des entêtes en vue chronologie ou semaine (horizontale) regroupée par type de ressources.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>0 : &#160;la largeur sera calculée automatiquement par l'agenda.</p>
+<p>valeur entière strictement positive : la largeur, en pixels, que le développeur souhaite forcer pour la colonne d'entête. Cela peut entraîner des troncatures de libellés.</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>0</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:25%;" class="hcp6">
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+<td style="width:25%;" class="hcp7">
+<p>&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp2">Cas particulier des options concernant les types de vue proposés</span> :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Le programme peut changer le libellé affiché des <a href="Vues_d_un_agenda.htm">vues</a> et/ou choisir de ne pas proposer tel ou tel type de vue.<br>
+Par défaut, un libellé standard est proposé pour chaque type de vue et tous les types de vue possibles sont proposés à l'utilisateur.<br>
+Pour ne proposer que certaines d'entre elles, vous devez ajouter une option par vue désirée (voir l'exemple 2 ci-dessous).</p>
+</li>
+<li class="p">
+<p><span class="hcp10">Attention</span>, les options qui concernent les vues doivent se programmer <span class="hcp10">AVANT</span> le premier affichage de la page Xwin contenant l’agenda.</p>
+</li>
+<li class="p">
+<p>XmeCalendarSetOption garantit l’unicité d'une option dans la liste des options. Ainsi, si on ajoute deux fois la vue « Semaine », elle n’apparaîtra qu’une seule fois dans l’agenda.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp4">Droits de personnalisation</p>
+<p>A condition de lui en donner les droits, l'utilisateur peut personnaliser certaines options (en cliquant sur le bouton "Options" tout en bas de l'agenda). Par exemple, il peut choisir le 1er jour de la semaine, ses heures de travail, etc. Les valeurs qu'il choisit sont sauvegardées dans sa base de registres locale, de manière à les retrouver lorsqu'il rouvre son agenda.</p>
+<p>Si vous désirez <span class="hcp2">forcer une option par programme</span>, il <span class="hcp2">ne faut pas autoriser l'utilisateur à modifier cette option</span>.</p>
+<p>Lorsque l'agenda est affiché, le client initialise dans un premier temps les options avec les valeurs sauvegardées dans la base de registre. Ensuite et seulement si l'utilisateur n'a pas le droit correspondant, il prend en compte l'option forcée par programme.</p>
+<p>Corollaire : Lorsque le programme <span class="hcp2">ne donne pas le droit de modification d'une option</span> à l'utilisateur, il <span class="hcp2">doit aussi la forcer par programme</span>.</p>
+&#160;
+<p>&#160;</p>
+<p><span class="hcp2">Exemples</span> :<br>
+&#160;</p>
+<p class="Source">Public Record ddCalendar.dhsd ObjectOption <span class="hcp11">Opt</span></p>
+<p class="Source">&#160;</p>
+<p class="Source"><span class="hcp2">;Donner tous les droits de personnalisation à l'utilisateur</span> :</p>
+<p class="Source"><span class="hcp11">Opt</span>.Option &#160;&#160;= CAL_OPT_CUSTOMIZATION</p>
+<p class="Source"><span class="hcp11">Opt</span>.OptValue = CAL_CUSTOM_EVERYTHING</p>
+<p class="Source">XmeCalendarSetOption (<span class="hcp11">IdCal</span>,<span class="hcp11">Opt</span>)<br>
+&#160;</p>
+<p class="Source"><span class="hcp2">;Ne proposer que les vues journalières et hebdomadaires</span> :</p>
+<p class="Source"><span class="hcp11">Opt</span>.Option &#160;&#160;= CAL_OPT_VIEW_DAILY &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;vue journalière</p>
+<p class="Source"><span class="hcp11">Opt</span>.OptValue = "Jour" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;libellé affiché personnalisé</p>
+<p class="Source">XmeCalendarSetOption (<span class="hcp11">IdCal</span>,<span class="hcp11">Opt</span>)<span class="hcp11"><br>
+Opt</span>.Option &#160;&#160;= CAL_OPT_VIEW_WEEKLY &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;vue hebdomadaire</p>
+<p class="Source"><span class="hcp11">Opt</span>.OptValue = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;libellé affiché par défaut</p>
+<p class="Source">XmeCalendarSetOption (<span class="hcp11">IdCal</span>,<span class="hcp11">Opt</span>)</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="font-weight: bold;">;Forcer les intervalles mineurs et majeurs</p>
+<p class="Source"><span class="hcp2">;(nécessite d'interdire le changement d'intervalles)</span></p>
+<p class="Source"><span class="hcp11">Opt</span>.Option &#160;&#160;= CAL_OPT_CUSTOMIZATION</p>
+<p class="Source"><span class="hcp11">Opt</span>.OptValue = CAL_CUSTOM_EVERYTHING - CAL_CUSTOM_CHANGE_TICK_LENGTH &#160;;tous droits de personnalisation</p>
+<p class="Source">XmeCalendarSetOption (<span class="hcp11">IdCal</span>,<span class="hcp11">Opt</span>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;<span class="hcp2">hormis les intervalles</span></p>
+<p class="Source"><span class="hcp11">Opt</span>.Option &#160;&#160;= CAL_OPT_MINOR_TICK_LENGTH</p>
+<p class="Source"><span class="hcp11">Opt</span>.OptValue = CAL_MINOR_TICK_LENGTH_30M &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;forcer les intervalles</p>
+<p class="Source">XmeCalendarSetOption (<span class="hcp11">IdCal</span>,<span class="hcp11">Opt</span>)</p>
+<p class="Source"><span class="hcp11">Opt</span>.Option &#160;&#160;= CAL_OPT_MAJOR_TICK_LENGTH</p>
+<p class="Source"><span class="hcp11">Opt</span>.OptValue = CAL_MAJOR_TICK_LENGTH_1H</p>
+<p class="Source">XmeCalendarSetOption (<span class="hcp11">IdCal</span>,<span class="hcp11">Opt</span>)</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp4">Extraire les valeurs unitaires d'une option à valeurs combinées</p>
+<p class="hcp9">Ce paragraphe concerne les options CAL_OPT_MASK_WORKING_DAYS, CAL_OPT_ACCESS_RIGHTS et CAL_OPT_CUSTOMIZATION dont la valeur peut être une combinaison de plusieurs valeurs unitaires toutes égales à une puissance de 2.</p>
+<p class="hcp9">La fonction <a href="XmeCalendarGetBinaryMaskValues.htm">XmeCalendarGetBinaryMaskValues</a> permet de retrouver les valeurs unitaires à partir de la valeur combinée de l'option. Par exemple, si on lui passe en paramètre la valeur 61, elle retourne :</p>
+<p>&lt;value&gt;32&lt;value&gt;16&lt;value&gt;8&lt;value&gt;4&lt;value&gt;1</p>
+<p>ce qui permet de retrouver les différentes valeurs qui ont été combinées.</p>
+<p>&#160;</p>
+</body>
+</html>

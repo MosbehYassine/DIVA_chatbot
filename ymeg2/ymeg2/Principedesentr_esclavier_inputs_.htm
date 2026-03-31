@@ -1,0 +1,58 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Principe des entrées clavier (inputs)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+li.hcp3 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Inputs et consultations clavier</h3>
+<p class="Body-Text">Le chapitre «&#160;Entrées clavier sous Harmony&#160;» traite :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Des <span class="hcp2">saisies</span> de donnée (on parlera par la suite d’<span class="hcp2">Input</span> clavier), en mode "graphique" ou en mode "caractère" :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">En mode "<span class="hcp2">graphique</span>", les données sont incluses dans un masque Xwin. La saisie d'un masque est commandée par la fonction <span class="hcp2">XmeInput</span> ou <span class="hcp2">XmeListInput</span> de l’exécuteur de masques <span class="hcp2">Ywpf</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En mode "<span class="hcp2">caractère</span>", la saisie d’une donnée est commandée par l'instruction <span class="hcp2">Input</span> du langage <span class="hcp2">Diva</span>.<br>
+<span style="font-weight: bold; text-decoration: underline;">Mais attention</span>, l'instruction Input <span class="hcp2">n'est pas utilisable</span> dans un programme pour demander une saisie <span class="hcp2">manuelle</span> d'informations par l'utilisateur.<br>
+Elle peut par contre être utilisée dans un programme <span class="hcp2">piloté</span> (un programme qui lit ses paramètres d’entrée dans un "fichier pilote").<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Des <span class="hcp2">consultations</span> clavier. On peut ici distinguer&#160;:</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Les "consultations" de masque Xwin, commandées par les fonctions <span class="hcp2">XmeConsult</span> et <span class="hcp2">XmeListConsult</span> de <span class="hcp2">Ywpf</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les fonctions de consultation non bloquantes (le programme continue son exécution, même si aucun caractère n'est tapé par l'utilisateur) <span class="hcp2">GetChar</span> et <span class="hcp2">GetbChar</span> du langage <span class="hcp2">Diva</span>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

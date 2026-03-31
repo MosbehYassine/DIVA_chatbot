@@ -1,0 +1,93 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeToolbarValidateButton</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp6 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeToolbarValidateButton &#160;<a href="Liste_r_capitulative_des_fonctions_de_gestion_des_barres_d_outils.htm"><font size="2" class="hcp1">Famille</font></a> &#160;<a href="Barres_d_outils.htm"><font size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><a href="Barres_d_outils_D_sactivation_et_invalidation_des_boutons.htm"><font class="hcp2">Invalidation ou revalidation</font></a> <font class="hcp2">d’un bouton de barre d'outils</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Ptr XmeToolbarValidateButton</font> (<font class="hcp3">Id_Toolbar</font>, <font class="hcp3">Id_Bouton</font>, <font class="hcp3">Etat</font>, <font class="hcp3">Prise_en_compte</font>)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 13.874%;">
+<col style="width: 86.126%;">
+<tr class="hcp4">
+<td style="width:13.874%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Id_Toolbar</font></p>
+</td>
+<td style="width:86.126%;" class="hcp5">
+<p class="Body-Text">Identifiant de la barre d'outils rendu par la fonction XmeToolbarGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.874%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Id_Bouton</font></p>
+</td>
+<td style="width:86.126%;" class="hcp5">
+<p class="Body-Text">Identificateur du bouton à invalider ou revalider.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.874%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Etat</font></p>
+</td>
+<td style="width:86.126%;" class="hcp5">
+<p class="Body-Text">FALSE&#160;: le bouton doit être invalidé (il devient invisible).<br>
+TRUE &#160;: le bouton doit être revalidé (il redevient visible).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.874%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Prise_en_compte</font></p>
+</td>
+<td style="width:86.126%;" class="hcp5">
+<p class="Body-Text">TRUE &#160;: la barre d'outils doit être immédiatement réaffichée.<br>
+FALSE&#160;: la barre d'outils ne doit pas être immédiatement réaffichée.</p>
+<p class="Body-Text">FALSE permet d'optimiser les réaffichages de la barre d'outils lorsque vous effectuez plusieurs invalidations ou revalidations successives de bouton : <span style="font-weight: bold;">ne mettez ce drapeau à TRUE qu'au tout dernier appel à XmeToolbarValidateButton</span>.&#160;<font style="font-weight: bold; text-decoration: underline;">Attention</font> toutefois&#160;: ce dernier appel ne doit pas concerner un bouton dont l’état n’est pas modifié&#160;(la fonction étant ignorée si l’état du bouton reste inchangé, l’ensemble des réaffichages sera «&#160;perdu&#160;») !</p>
+<p class="Body-Text"><span class="hcp6">Remarque</span> : dans les versions d'Harmony précédant la version 7, cette optimisation n’affectait pas forcément les performances de manière visible. <span class="hcp6">Mais elle peut s’avérer cruciale en client léger</span> pour éviter un fort ralentissement de l’affichage.</p>
+<p class="Body-Text">Ce paramètre facultatif (TRUE par défaut) n’est significatif que si la barre d'outils est déjà affichée.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Valeur rendue par la fonction</font>&#160;:</p>
+<p class="Body-Text" style="margin-left: 49.65pt; text-indent: -43.90pt;">0&#160;:&#160;Pas d’erreur détectée.</p>
+<p class="Body-Text" style="margin-left: 49.65pt; text-indent: -43.90pt;">0x107B&#160;:&#160;Bouton inconnu dans la barre d'outils.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction XmeToolbarValidateButton permet d’invalider (<font class="hcp3">Etat</font> = FALSE) ou revalider (<font class="hcp3">Etat</font> = TRUE) le bouton d’<a href="Barres_d_outils_Identificateur_des_boutons.htm">identificateur</a> <font class="hcp3">Id_Bouton</font> dans la barre d'outils <font class="hcp3">Id_Toolbar</font>. Un bouton invalidé devient totalement invisible.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque&#160;:&#160;</font></p>
+<p class="Body-Text">Lorsqu'une même barre d'outils est affichée dans plusieurs fenêtres empilées, ses MISES A JOUR (grisages, invalidations, coches, ajouts ou suppressions de bouton, surcharge, ...) sont répercutées dans TOUTES les OCCURENCES affichées.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">;Invalidation des boutons "OPTION_1" et "OPTION_2"</p>
+<p class="Source">XmeToolbarValidateButton (Id_toolbar,"OPTION_1",FALSE,FALSE)</p>
+<p class="Source">XmeToolbarValidateButton (Id_toolbar,"OPTION_2",FALSE)</p>
+</body>
+</html>

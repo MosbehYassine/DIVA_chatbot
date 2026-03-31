@@ -1,0 +1,35 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Index multi-descriptions</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { text-align:justify; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Index multi-descriptions</h3>
+<p class="Body-Text">Pour un fichier Harmony, lorsqu'une même lettre clé permet d'accéder à une seule table, mais que cette lettre clé est utilisée dans plusieurs index avec des descriptions différentes mais homogènes, l'index peut-être déclaré de type multi-descriptions.</p>
+<p class="hcp1">&#160;</p>
+<p class="Body-Text">Pour cet index, XLANSQL gère une table intermédiaire contenant les champs de l'index de référence et pointant sur les lignes correspondantes de la table de base.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font class="hcp2">Descriptions homogènes</font></p>
+<p class="Body-Text">"Descriptions différentes mais homogènes" signifie que les champs qui composent chaque index avec la même lettre clé sont différents, mais que chaque index comporte le même nombre de champs et que chacun des champs a la même nature (alphanumérique, numérique,…) et la même longueur dans tous les index. Les descriptions des clés différentes mais non homogènes ne sont pas prises en compte par XLANSQL et constituent une <font class="hcp2">incompatibilité totale</font>.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font class="hcp2">Référence pour la table intermédiaire</font></p>
+<p class="Body-Text">Pour les index de type multi-descriptions, le paramètre "Référence pour la table intermédiaire" doit être coché pour un et un seul des index de la lettre clé considérée. Cette description sera utilisée pour la création de la table intermédiaire</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><font class="hcp2">Exemple</font></p>
+<p class="Body-Text">Pour le fichier GTFSTAT de Divalto Achat-Vente, la lettre clé 'K' permet d'accéder à la table STA. Cette table contient un tableau de trois codes représentant. La lettre 'K' est utilisée par trois index de description homogène, chacune avec un des trois codes représentant. Le premier index est défini comme "référence pour la table intermédiaire". XLANSQL gère automatiquement la table intermédiaire des statistiques de ventes par représentant.</p>
+</body>
+</html>

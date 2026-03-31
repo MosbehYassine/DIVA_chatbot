@@ -1,0 +1,88 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListInputPossible</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp5 { list-style:disc; }
+span.hcp6 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListInputPossible &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Test d'existence d'une donnée en saisie dans la ligne de tableau courante</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Bin XmeListInputPossible</font> (<font class="hcp3">Identifiant</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:19.42%;" class="hcp4">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp4">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font></p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">TRUE</font> si la ligne de tableau comporte au moins une donnée en saisie (l’appel à <a href="XmeListInput.htm">XmeListInput</a> est possible).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">FALSE</font> dans le cas contraire.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">La fonction <font class="hcp2">XmeListInputPossible</font> permet de savoir si la saisie d'une ligne du tableau (dont l'identifiant est fourni en paramètre) est possible. Elle NE peut être exécutée QUE si la page de masque contenant le tableau est la page courante.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Une ligne peut être saisie si <span class="hcp6">au moins une</span> colonne du tableau est à la fois <span class="hcp6">visible</span> et définie "<span class="hcp6">En saisie</span>" dans Xwin.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour déterminer la visibilité d'une colonne :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Ywpf tient compte des attributs dynamiques de visibilité "ligne" (Cf. fonction <a href="XmeListSetAttribut.htm">XmeListSetAttribut</a>) ET "colonne" (Cf. fonction <a href="XmeSetAttribut.htm">XmeSetAttribut</a>).<br>
+<span class="hcp6">Attention</span> : pour que la visibilité "ligne" soit vue correctement, il faut que XmeListInputPossible soit appelée alors qu’une <span class="hcp6">ligne courante existe</span> et que cette <span class="hcp6">ligne courante soit présente à l’écran</span>. Ces conditions sont réalisées si vous appelez XmeListInputPossible dans la fonction de saisie personnalisée <a href="DefProcSaisie.htm">DefProcSaisie</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ywpf considère également qu'une colonne <span style="text-decoration: underline;">cachée par l'utilisateur ne peut pas être saisie</span>.<br>
+Il est donc <span style="font-weight: bold; text-decoration: underline;">important d’interdire à l’utilisateur de cacher les colonnes stratégiques</span> en sélectionnant dans Xwin, pour ces colonnes, l’option "<span class="hcp6">Toujours</span>" de la propriété <span class="hcp6">Affichage</span>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">IF XmeListInputPossible (Ident)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SaisieLigneTableau&#160;</p>
+<p class="Source">ENDIF</p>
+</body>
+</html>

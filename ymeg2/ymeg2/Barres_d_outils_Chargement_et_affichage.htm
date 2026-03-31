@@ -1,0 +1,89 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Barres d'outils : Chargement et affichage</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Barres d'outils : Chargement et affichage</h3>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Avant toute utilisation d’une barre d'outils, il est nécessaire de la <font class="hcp2">charger en mémoire</font> et de récupérer son <font class="hcp2">identifiant</font>, en faisant appel à la fonction <a href="XmeToolbarGetId.htm">XmeToolbarGetId</a>. Cet identifiant servira de paramètre à toutes les fonctions Diva référençant cette barre d'outils et appelées ultérieurement par votre programme.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour préparer l’<span class="hcp3">affichage</span> d’une <font class="hcp2">barre d'outils</font> (<font style="text-decoration: underline;">il n’existe pas de fonction d’affichage</font>), vous devez l’<font class="hcp2">attacher à une page de masque</font> Xwin, par la fonction <a href="XmeToolbarSetWindow.htm">XmeToolbarSetWindow</a>. Cet attachement fait que la barre d'outils sera ensuite automatiquement affichée en même temps que la page de masque considérée (à l’occasion d’un XmeDisp, XmeDispv, XmeInput, XmeConsult de cette page&#160;: voir l’exemple).<br>
+<br>
+<span class="hcp3">Attention</span> :<br>
+<br>
+L’attachement de ressources <span class="hcp3">spécifiques à une page panel n’est pas géré</span>. Lorsqu’une page mère incluant des pages panels est affichée, Ywpf affiche les ressources attachées à cette page mère mais il NE parcourt PAS l’arbre des pages panels pour voir si d'autres ressources leur sont attachées (si c’est le cas, ces attachements sont ignorés). Il faut donc limiter l'attachement de ressources aux seules pages mères.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Une fenêtre peut afficher simultanément un nombre quelconque de barres d'outils (voir le paragraphe suivant).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il n’est pas possible de supprimer une barre d'outils.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il n’est pas possible de remplacer une barre d'outils par une autre pour une <span class="hcp3">même page Xwin</span> (mais il est possible de le faire pour une même fenêtre&#160;: attachez la seconde barre d'outils à une deuxième page et affichez cette dernière lorsque la seconde barre d'outils est requise).</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0; font-size: 11pt; font-weight: bold;">Barres d’outils principales et secondaires</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Lorsque plusieurs barres d’outils sont affichées simultanément, Harmony prévoit deux types de rendu :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">La première barre, dite <span class="hcp3">principale</span>, est présenté sur un fond coloré (déterminé par le thème de couleurs choisi).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Les barres suivantes, dites <span class="hcp3">secondaires</span>, sont normalement présentées sur fond blanc (pour ne pas « saturer » l’écran avec la couleur de la barre principale).</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Au premier affichage d’une barre d’outils, Ywpf détermine définitivement son type de rendu. Par défaut, une barre encore inconnue est enregistrée comme <span class="hcp3">principale</span> si elle est la <span class="hcp3">première attachée à la page</span> qui va être affichée, comme secondaire sinon. <span class="hcp3">Ensuite, la barre ne peut plus changer de type de rendu</span>.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Ce fonctionnement peut apparaître incohérent, par exemple si la même barre d’outils est attachée en premier à une page A et en second à autre page B. Dans ce cas, il faut soit modifier les attachements pour que la barre soit toujours ou principale ou secondaire, soit utiliser deux barres d’outils de contenu identique mais physiquement différentes.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Par programme, il est possible d'obtenir un type de rendu principal pour une barre d’outils secondaire, dans le but d’afficher deux ou plusieurs barres et non une seule sur fond coloré : voir la fonction <a href="XmeToolbarSetWindow.htm">XmeToolbarSetWindowEx</a>. Mais attention, il reste impossible de demander un type de rendu principal pour une page et pas pour une autre (puisque le type de rendu est déterminé au premier affichage de la barre et ne peut plus évoluer ensuite).</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;: affichage de deux barres d'outils dans une fenêtre Harmony</font></p>
+&#160;
+<p class="Source">1 Id_toolbar1 L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ident barre d'outils 1</p>
+<p class="Source">1 Id_toolbar2 L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ident barre d'outils 2</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">XmeLoad "masque" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source">XmeInfoPage ("masque",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("masque",1,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement des barres</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;d'outils "OUTILS_1/2"</p>
+<p class="Source"><font class="hcp2">Id_toolbar1 = XmeToolbarGetId ("masque","OUTILS_1")</font></p>
+<p class="Source"><font class="hcp2">Id_toolbar2 = XmeToolbarGetId ("masque","OUTILS_2")</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;attachements à la page 1<font class="hcp2"><br>
+XmeToolbarSetWindow (Id_toolbar1,"masque",1)</font></p>
+<p class="Source"><font class="hcp2">XmeToolbarSetWindow (Id_toolbar2,"masque",1)</font></p>
+&#160;
+<p class="Source">XmeDisp ("masque",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;;affichage de la page 1 et</p>
+<p class="Source">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;des deux barres d’outils<br>
+...</p>
+</body>
+</html>

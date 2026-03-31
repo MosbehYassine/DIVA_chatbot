@@ -1,0 +1,1237 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;a&gt;">
+    <param name="Name" value="Commandes d'ajustement de textes">
+    <param name="Local" value="xwin_ecran/Commandes_d_ajustement_de_textes.htm">
+    <param name="Name" value="Commandes de l'objet Jauge">
+    <param name="Local" value="xwin_ecran/Commandes_de_l_objet_Jauge.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;a0&gt;">
+    <param name="Name" value="Commandes d'ajustement de textes">
+    <param name="Local" value="xwin_ecran/Commandes_d_ajustement_de_textes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;aa&gt;">
+    <param name="Name" value="Commandes d'ajustement de textes">
+    <param name="Local" value="xwin_ecran/Commandes_d_ajustement_de_textes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;aa0&gt;">
+    <param name="Name" value="Commandes d'ajustement de textes">
+    <param name="Local" value="xwin_ecran/Commandes_d_ajustement_de_textes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;b&gt;">
+    <param name="Name" value="Barres horizontales">
+    <param name="Local" value="xwin_ecran/Barres_horizontales.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;b1&gt;">
+    <param name="Name" value="Barres horizontales">
+    <param name="Local" value="xwin_ecran/Barres_horizontales.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;b2&gt;">
+    <param name="Name" value="Barres horizontales">
+    <param name="Local" value="xwin_ecran/Barres_horizontales.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;b3&gt;">
+    <param name="Name" value="Barres horizontales">
+    <param name="Local" value="xwin_ecran/Barres_horizontales.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;bafv&gt;">
+    <param name="Name" value="Affichage des valeurs des barres">
+    <param name="Local" value="xwin_ecran/Affichage_des_valeurs_des_barres.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;bl&gt;">
+    <param name="Name" value="Barres verticales">
+    <param name="Local" value="xwin_ecran/Barres_verticales.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;c&gt;">
+    <param name="Name" value="Commandes de présentation">
+    <param name="Local" value="xwin_ecran/Commandes_de_pr_sentation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;cc&gt;">
+    <param name="Name" value="Commandes de présentation">
+    <param name="Local" value="xwin_ecran/Commandes_de_pr_sentation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;com&gt;">
+    <param name="Name" value="Autres commandes">
+    <param name="Local" value="xwin_ecran/Autres_commandes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;ctx&gt;">
+    <param name="Name" value="Commandes de texte">
+    <param name="Local" value="xwin_ecran/Commandes_de_texte.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;cty&gt;">
+    <param name="Name" value="Commandes de texte">
+    <param name="Local" value="xwin_ecran/Commandes_de_texte.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;d&gt;">
+    <param name="Name" value="Commandes de positionnement">
+    <param name="Local" value="xwin_ecran/Commandes_de_positionnement.htm">
+    <param name="Name" value="Commandes de l'objet Jauge">
+    <param name="Local" value="xwin_ecran/Commandes_de_l_objet_Jauge.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;e&gt;">
+    <param name="Name" value="Commandes de positionnement">
+    <param name="Local" value="xwin_ecran/Commandes_de_positionnement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;ha&gt;">
+    <param name="Name" value="Commandes de présentation">
+    <param name="Local" value="xwin_ecran/Commandes_de_pr_sentation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;hoj&gt;">
+    <param name="Name" value="Commandes de l'objet Jauge">
+    <param name="Local" value="xwin_ecran/Commandes_de_l_objet_Jauge.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;id&gt;">
+    <param name="Name" value="Mode Flash">
+    <param name="Local" value="xwin_ecran/Mode_Flash.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;idpre&gt;">
+    <param name="Name" value="Mode Flash">
+    <param name="Local" value="xwin_ecran/Mode_Flash.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;img&gt;">
+    <param name="Name" value="Commandes d'image">
+    <param name="Local" value="xwin_ecran/Commandesdimage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;imge&gt;">
+    <param name="Name" value="Commandes d'image">
+    <param name="Local" value="xwin_ecran/Commandesdimage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;imgf&gt;">
+    <param name="Name" value="Commandes d'image">
+    <param name="Local" value="xwin_ecran/Commandesdimage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;imgg&gt;">
+    <param name="Name" value="Commandes d'image">
+    <param name="Local" value="xwin_ecran/Commandesdimage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;l&gt;">
+    <param name="Name" value="Commandes de texte">
+    <param name="Local" value="xwin_ecran/Commandes_de_texte.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;m&gt;">
+    <param name="Name" value="Commandes de texte">
+    <param name="Local" value="xwin_ecran/Commandes_de_texte.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;max&gt;">
+    <param name="Name" value="Barres horizontales">
+    <param name="Local" value="xwin_ecran/Barres_horizontales.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;nh&gt;">
+    <param name="Name" value="Commandes de texte">
+    <param name="Local" value="xwin_ecran/Commandes_de_texte.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;nv&gt;">
+    <param name="Name" value="Commandes de texte">
+    <param name="Local" value="xwin_ecran/Commandes_de_texte.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;p&gt;">
+    <param name="Name" value="Commandes de présentation">
+    <param name="Local" value="xwin_ecran/Commandes_de_pr_sentation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;r&gt;">
+    <param name="Name" value="Commandes de texte">
+    <param name="Local" value="xwin_ecran/Commandes_de_texte.htm">
+    <param name="Name" value="Commandes de l'objet Jauge">
+    <param name="Local" value="xwin_ecran/Commandes_de_l_objet_Jauge.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;s&gt;">
+    <param name="Name" value="Commandes de positionnement">
+    <param name="Local" value="xwin_ecran/Commandes_de_positionnement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;t&gt;">
+    <param name="Name" value="Commandes de texte">
+    <param name="Local" value="xwin_ecran/Commandes_de_texte.htm">
+    <param name="Name" value="Commandes de l'objet Jauge">
+    <param name="Local" value="xwin_ecran/Commandes_de_l_objet_Jauge.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;tt&gt;">
+    <param name="Name" value="Commandes de texte">
+    <param name="Local" value="xwin_ecran/Commandes_de_texte.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;v&gt;">
+    <param name="Name" value="Commandes de positionnement">
+    <param name="Local" value="xwin_ecran/Commandes_de_positionnement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="&lt;vb&gt;">
+    <param name="Name" value="Barres verticales">
+    <param name="Local" value="xwin_ecran/Barres_verticales.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accordéons">
+    <param name="Name" value="Les volets et les accordéons">
+    <param name="Local" value="xwin_ecran/Les_volets_et_les_accord&eacute;ons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Action d'un bouton">
+    <param name="Name" value="Action d'un bouton">
+    <param name="Local" value="xwin_ecran/Action_d_un_bouton.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Affichage des objets dans Xwin">
+    <param name="Name" value="Affichage des objets dans Xwin">
+    <param name="Local" value="xwin_ecran/Affichage_des_objets_dans_Xwin.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Agencement des pages panels dans les cellules de grille">
+    <param name="Name" value="Agencement des pages panels dans les cellules de grille">
+    <param name="Local" value="xwin_ecran/Agencement_des_pages_panels_dans_les_cellules_de_grille.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Aide">
+    <param name="Name" value="Aide page">
+    <param name="Local" value="xwin_ecran/Aidepage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Aide à la saisie des boîtes de dialogue et des propriétés">
+    <param name="Name" value="Aide à la saisie des boîtes de dialogue et des propriétés">
+    <param name="Local" value="xwin_ecran/Aide_lasaisiedesbo_tesdedialogue.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Aide fenêtrée">
+    <param name="Name" value="Bulle, aide en ligne et aide fenêtrée">
+    <param name="Local" value="xwin_ecran/Bulle_aideenligneetaidefen_tr_e.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ajouter boutons">
+    <param name="Name" value="Ajouter boutons">
+    <param name="Local" value="xwin_ecran/Ajouterboutons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ajouter touches">
+    <param name="Name" value="Ajouter touches">
+    <param name="Local" value="xwin_ecran/Ajoutertouches.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ajouter traitements">
+    <param name="Name" value="Ajouter traitements">
+    <param name="Local" value="xwin_ecran/Ajoutertraitements.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ajustement de la taille des cellules d'une grille">
+    <param name="Name" value="Agencement des pages panels dans les cellules de grille">
+    <param name="Local" value="xwin_ecran/Agencement_des_pages_panels_dans_les_cellules_de_grille.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Appel de l'aide dans la fenêtre Propriétés">
+    <param name="Name" value="Appel de l'aide dans la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/appel_de_l_aide_dans_la_fen&ecirc;tre_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Attachement des objets">
+    <param name="Name" value="Attachement des objets">
+    <param name="Local" value="xwin_ecran/Attachementdesobjets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Attachement des pages">
+    <param name="Name" value="Attachement des pages">
+    <param name="Local" value="xwin_ecran/Attachementdespages.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Attachements / Coordonnées">
+    <param name="Name" value="Attachements / Coordonnées">
+    <param name="Local" value="xwin_ecran/Attachements_Coordonn_es.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Attributs dynamiques">
+    <param name="Name" value="Attributs dynamiques">
+    <param name="Local" value="xwin_ecran/Attributsdynamiques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Boîtes de dialogue de l'éditeur de masque">
+    <param name="Name" value="Boîtes de dialogue de l'éditeur de masque">
+    <param name="Local" value="xwin_ecran/Bo_tesdedialoguedel__diteurdemasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Bordure">
+    <param name="Name" value="Encadrement">
+    <param name="Local" value="xwin_ecran/Encadrement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Bordures">
+    <param name="Name" value="Encadrements">
+    <param name="Local" value="xwin_ecran/Encadrements.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Bouton">
+    <param name="Name" value="Bouton">
+    <param name="Local" value="xwin_ecran/Bouton.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Bouton d'appel de zoom">
+    <param name="Name" value="Action d'un bouton">
+    <param name="Local" value="xwin_ecran/Action_d_un_bouton.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Bouton en saisie">
+    <param name="Name" value="Bouton en saisie">
+    <param name="Local" value="xwin_ecran/Boutonensaisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Bouton texte et bouton graphique">
+    <param name="Name" value="Bouton texte et bouton graphique">
+    <param name="Local" value="xwin_ecran/Introduction2.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Boutons">
+    <param name="Name" value="Les boutons">
+    <param name="Local" value="xwin_ecran/Lesboutons.htm">
+    <param name="Name" value="Boutons">
+    <param name="Local" value="xwin_ecran/Boutons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Boutons dynamiques">
+    <param name="Name" value="Boutons dynamiques">
+    <param name="Local" value="xwin_ecran/Boutonsdynamiques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Boutons nommés">
+    <param name="Name" value="Boutons nommés">
+    <param name="Local" value="xwin_ecran/Boutonsnomm_s.htm">
+    <param name="Name" value="Validité d'un bouton">
+    <param name="Local" value="xwin_ecran/Validit_d_unbouton.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Bulle">
+    <param name="Name" value="Bulle, aide en ligne et aide fenêtrée">
+    <param name="Local" value="xwin_ecran/Bulle_aideenligneetaidefen_tr_e.htm">
+    <param name="Name" value="Aide page">
+    <param name="Local" value="xwin_ecran/Aidepage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Bulle et aide fenêtrée">
+    <param name="Name" value="Bulle, aide en ligne et aide fenêtrée">
+    <param name="Local" value="xwin_ecran/Bulle_aideenligneetaidefen_tr_e.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Caractéristiques et paramétrage d'un accordéon">
+    <param name="Name" value="Caractéristiques et paramétrage d'un accordéon">
+    <param name="Local" value="xwin_ecran/Caract&eacute;ristiques_et_param&eacute;trage_d_un_accord&eacute;on.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Caractéristiques et paramétrage d'un volet">
+    <param name="Name" value="Caractéristiques et paramétrage d'un volet">
+    <param name="Local" value="xwin_ecran/Caract&eacute;ristiques_et_param&eacute;trage_d_un_volet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Cellule de grille">
+    <param name="Name" value="Objet Grille">
+    <param name="Local" value="xwin_ecran/Objet_Grille.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Changer en multi-choix">
+    <param name="Name" value="Changer en multi-choix">
+    <param name="Local" value="xwin_ecran/Changerenmulti_choix.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Changer Multi-choix">
+    <param name="Name" value="Changer Multi-choix">
+    <param name="Local" value="xwin_ecran/ChangerMulti_choix.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Codification standard des noms de traitement">
+    <param name="Name" value="Codification standard des noms de traitement">
+    <param name="Local" value="xwin_ecran/Codification_standard_des_noms_de_traitement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Coller">
+    <param name="Name" value="Copier, couper, coller">
+    <param name="Local" value="xwin_ecran/Copier_couper_coller_ins_reretsupprimerdesobjets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Colonne de tableau">
+    <param name="Name" value="Colonne de tableau">
+    <param name="Local" value="xwin_ecran/Colonne_de_tableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="com">
+    <param name="Name" value="Autres commandes">
+    <param name="Local" value="xwin_ecran/Autres_commandes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Commandes de l'objet jauge">
+    <param name="Name" value="Commandes de l'objet Jauge">
+    <param name="Local" value="xwin_ecran/Commandes_de_l_objet_Jauge.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Commentaire">
+    <param name="Name" value="Commentaire">
+    <param name="Local" value="xwin_ecran/Commentaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Compilation des masques">
+    <param name="Name" value="Compilation des masques">
+    <param name="Local" value="xwin_ecran/Compilationdesmasques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Contenu de la fenêtre Propriétés">
+    <param name="Name" value="Contenu de la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/contenu_de_la_fen&ecirc;tre_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Conversion V6 - V7">
+    <param name="Name" value="Conversion V6 - V7">
+    <param name="Local" value="xwin_ecran/Conversion_V6_-_V7.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Copier">
+    <param name="Name" value="Copier, couper, coller, insérer et supprimer des objets">
+    <param name="Local" value="xwin_ecran/Copier_couper_coller_ins_reretsupprimerdesobjets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Couleur">
+    <param name="Name" value="Couleur">
+    <param name="Local" value="xwin_ecran/Couleur.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Couleurs">
+    <param name="Name" value="Couleurs">
+    <param name="Local" value="xwin_ecran/Couleurs.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Couper">
+    <param name="Name" value="Copier, couper, coller">
+    <param name="Local" value="xwin_ecran/Copier_couper_coller_ins_reretsupprimerdesobjets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Création d'un objet Panel page">
+    <param name="Name" value="Création d'un objet Panel page">
+    <param name="Local" value="xwin_ecran/Cr&eacute;ation_d_un_objet_Panel_page.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Création d'une grille">
+    <param name="Name" value="Création d'une grille">
+    <param name="Local" value="xwin_ecran/Cr&eacute;ation_d_une_grille.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Création des dictionnaires de langues">
+    <param name="Name" value="Création des dictionnaires de langues">
+    <param name="Local" value="xwin_ecran/Cr&eacute;ation_des_dictionnaires_de_langues.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Créer un masque écran">
+    <param name="Name" value="Créer un masque écran">
+    <param name="Local" value="xwin_ecran/Cr_erunmasque_cran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Définition et caractéristiques des objets grille">
+    <param name="Name" value="Caractéristiques des objets grille">
+    <param name="Local" value="xwin_ecran/Caract&eacute;ristiques_des_objets_grille.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Définition et caractéristiques des objets panels pages">
+    <param name="Name" value="Caractéristiques des objets panels pages">
+    <param name="Local" value="xwin_ecran/Caract&eacute;ristiques_des_objets_panels_pages.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déplacements dans la fenêtre Propriétés">
+    <param name="Name" value="Déplacements dans la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/d_placements_dans_la_fen&ecirc;tre_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Dictionnaire des multi-choix">
+    <param name="Name" value="Dictionnaire des multi-choix">
+    <param name="Local" value="xwin_ecran/Dictionnairedesmulti_choix.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Dupliquer/Propager">
+    <param name="Name" value="Dupliquer/Propager">
+    <param name="Local" value="xwin_ecran/Dupliquer_Propager.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="durée">
+    <param name="Name" value="Format des données de type durée">
+    <param name="Local" value="xwin_ecran/Format_des_donn_es_de_type_dur_e.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ecran de type &quot;Page&quot; et de type &quot;Fenêtre&quot;">
+    <param name="Name" value="Ecran de type &quot;Page&quot; et de type &quot;Fenêtre&quot;">
+    <param name="Local" value="xwin_ecran/Ecrandetype_Page_etdetype_Fen_tre_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ecran de Xwin">
+    <param name="Name" value="L'écran de Xwin">
+    <param name="Local" value="xwin_ecran/L__crandeXwin.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Edition des traitements du masque">
+    <param name="Name" value="Edition des traitements du masque">
+    <param name="Local" value="xwin_ecran/Edition_des_traitements_du_masque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Enregistrements">
+    <param name="Name" value="Enregistrements">
+    <param name="Local" value="xwin_ecran/Enregistrements.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Familles de propriétés">
+    <param name="Name" value="Familles de propriétés">
+    <param name="Local" value="xwin_ecran/familles_de_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Feuille de styles">
+    <param name="Name" value="Feuille de styles">
+    <param name="Local" value="xwin_ecran/Feuilledestyles.htm">
+    <param name="Name" value="Feuille de styles">
+    <param name="Local" value="xwin_ecran/Feuille_de_styles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Flash">
+    <param name="Name" value="Mode Flash">
+    <param name="Local" value="xwin_ecran/Mode_Flash.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Format des données alpha-numériques">
+    <param name="Name" value="Format des données alpha-numériques">
+    <param name="Local" value="xwin_ecran/Formatdesdonn_esalpha_num_riques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Format des données de type date">
+    <param name="Name" value="Format des données de type date">
+    <param name="Local" value="xwin_ecran/Formatdesdonn_esdetypedate.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Format des données de type durée">
+    <param name="Name" value="Format des données de type durée">
+    <param name="Local" value="xwin_ecran/Format_des_donn_es_de_type_dur_e.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Format des données numériques">
+    <param name="Name" value="Format des données numériques">
+    <param name="Local" value="xwin_ecran/Formatdesdonn_esnum_riques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Format dynamique">
+    <param name="Name" value="Format dynamique">
+    <param name="Local" value="xwin_ecran/Formatdynamique.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Formats daffichage">
+    <param name="Name" value="Les formats d'affichage">
+    <param name="Local" value="xwin_ecran/Lesformatsd_affichage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fractionnement de cellules de grille">
+    <param name="Name" value="Fractionnement de cellules de grille">
+    <param name="Local" value="xwin_ecran/Fractionnement_de_cellules_de_grille.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion de la feuille de styles">
+    <param name="Name" value="Utilisation de la feuille de styles">
+    <param name="Local" value="xwin_ecran/La_feuille_de_styles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion des fichiers masques écran">
+    <param name="Name" value="Gestion des fichiers masques écran">
+    <param name="Local" value="xwin_ecran/Gestiondesfichiersmasques_cran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion du clic souris lors de la saisie">
+    <param name="Name" value="Gestion du clic souris lors de la saisie">
+    <param name="Local" value="xwin_ecran/Gestionduclicsourislorsdelasaisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Grilles et panels pages">
+    <param name="Name" value="Les grilles">
+    <param name="Local" value="xwin_ecran/Les_grilles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Groupes de radio-boutons">
+    <param name="Name" value="Les groupes de radio-boutons">
+    <param name="Local" value="xwin_ecran/Lesgroupesderadio_boutons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Image">
+    <param name="Name" value="Image">
+    <param name="Local" value="xwin_ecran/Image.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Images">
+    <param name="Name" value="Images">
+    <param name="Local" value="xwin_ecran/Images.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Imbrication de grilles">
+    <param name="Name" value="Imbrication de grilles">
+    <param name="Local" value="xwin_ecran/Imbrication_de_grilles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Insérer et supprimer des objets">
+    <param name="Name" value="Insérer et supprimer des objets">
+    <param name="Local" value="xwin_ecran/Ins&eacute;rer_et_supprimer_des_objets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Insertion multiple d'objets depuis le dictionnaire">
+    <param name="Name" value="Insertion multiple d'objets depuis le dictionnaire">
+    <param name="Local" value="xwin_ecran/Insertion_multiple_d_objets_depuis_le_dictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="L'objet Gantt">
+    <param name="Name" value="L'objet Gantt">
+    <param name="Local" value="xwin_ecran/L_objet_Gantt.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="L'objet Graphe">
+    <param name="Name" value="L'objet Graphe">
+    <param name="Local" value="xwin_ecran/L_objet_Graphe.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liste des choix d'un dictionnaire de multi-choix">
+    <param name="Name" value="Liste des choix d'un dictionnaire de multi-choix">
+    <param name="Local" value="xwin_ecran/Listedeschoixd_undictionnairedemulti_choix.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liste des noms">
+    <param name="Name" value="Liste des noms">
+    <param name="Local" value="xwin_ecran/Liste_des_noms.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liste des objets">
+    <param name="Name" value="Liste des objets">
+    <param name="Local" value="xwin_ecran/Listedesobjets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liste des onglets">
+    <param name="Name" value="Liste des onglets">
+    <param name="Local" value="xwin_ecran/Listedesonglets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Masque">
+    <param name="Name" value="Masque">
+    <param name="Local" value="xwin_ecran/Masque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Masque mono et multi-écran">
+    <param name="Name" value="Masque mono et multi-écran">
+    <param name="Local" value="xwin_ecran/Masquemonoetmulti__cran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menu - barre d'outils - raccourcis clavier">
+    <param name="Name" value="Menus, barres d'outils et raccourcis clavier">
+    <param name="Local" value="xwin_ecran/Menus_barresd_outilsetraccourcisclavier.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Editeur de masques décran">
+      <param name="Name" value="Menus, barres d'outils et raccourcis clavier">
+      <param name="Local" value="xwin_ecran/Menus_barresd_outilsetraccourcisclavier.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menus contextuels de la fenêtre Propriétés">
+    <param name="Name" value="Menus contextuels de la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/Menus_contextuels_de_la_fen&ecirc;tre_Propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mode Flash">
+    <param name="Name" value="Mode Flash">
+    <param name="Local" value="xwin_ecran/Mode_Flash.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modèle de présentation">
+    <param name="Name" value="Style de présentation">
+    <param name="Local" value="xwin_ecran/Style_de_pr&eacute;sentation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modèles de présentation">
+    <param name="Name" value="Modèles de présentation">
+    <param name="Local" value="xwin_ecran/Mod&egrave;les_de_pr&eacute;sentation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modification d'une propriété">
+    <param name="Name" value="Modification d'une propriété">
+    <param name="Local" value="xwin_ecran/modification_d_une_propri&eacute;t&eacute;.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modifier les propriétés des objets">
+    <param name="Name" value="Modifier les propriétés des objets">
+    <param name="Local" value="xwin_ecran/Modifier_les_propri&eacute;t&eacute;s_des_objets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Moulinettes V6 - V7">
+    <param name="Name" value="Conversion V6 - V7">
+    <param name="Local" value="xwin_ecran/Conversion_V6_-_V7.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Multi-choix">
+    <param name="Name" value="Dictionnaire des multi-choix">
+    <param name="Local" value="xwin_ecran/Dictionnairedesmulti_choix.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Définition">
+      <param name="Name" value="Définition">
+      <param name="Local" value="xwin_ecran/D_finition.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Dictionnaire">
+      <param name="Name" value="Dictionnaire des multi-choix">
+      <param name="Local" value="xwin_ecran/Dictionnairedesmulti_choix.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Multi-choix alpha ou numérique">
+      <param name="Name" value="Multi-choix alpha et multi-choix numérique">
+      <param name="Local" value="xwin_ecran/Multi_choixalphaetmulti_choixnum_rique.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Multi-choix bitmaps">
+      <param name="Name" value="Multi-choix bitmaps">
+      <param name="Local" value="xwin_ecran/Multi_choixbitmaps.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Saisie des valeurs">
+      <param name="Name" value="Multi-Choix">
+      <param name="Local" value="xwin_ecran/Multi_Choix.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Noms de boutons supplémentaires">
+    <param name="Name" value="Noms de boutons supplémentaires">
+    <param name="Local" value="xwin_ecran/Noms_de_botuons_suppl_mentaires.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Noms de l'objet">
+    <param name="Name" value="Noms de l'objet">
+    <param name="Local" value="xwin_ecran/Nomsdel_objet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Agenda">
+    <param name="Name" value="Objet Agenda">
+    <param name="Local" value="xwin_ecran/Objet_Agenda.htm">
+    <param name="Name" value="L'objet agenda">
+    <param name="Local" value="xwin_ecran/L_objet_agenda.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Arbre">
+    <param name="Name" value="L'objet arbre">
+    <param name="Local" value="xwin_ecran/L_objetarbre.htm">
+    <param name="Name" value="Objet Arbre">
+    <param name="Local" value="xwin_ecran/ObjetArbre.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet bouton">
+    <param name="Name" value="Objet bouton">
+    <param name="Local" value="xwin_ecran/Objet_bouton.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Cadre">
+    <param name="Name" value="Objet cadre">
+    <param name="Local" value="xwin_ecran/Objetcadre.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Case à cocher">
+    <param name="Name" value="Objet Case à cocher">
+    <param name="Local" value="xwin_ecran/ObjetCase_cocher.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Champ">
+    <param name="Name" value="Objet Champ">
+    <param name="Local" value="xwin_ecran/ObjetChamp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Gantt">
+    <param name="Name" value="Objet Gantt">
+    <param name="Local" value="xwin_ecran/Objet_Gantt.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Graphe">
+    <param name="Name" value="Objet Graphe">
+    <param name="Local" value="xwin_ecran/Objet_Graphe.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Graphique">
+    <param name="Name" value="L'objet graphique">
+    <param name="Local" value="xwin_ecran/L_objet_graphique.htm">
+    <param name="Name" value="Objet Graphique">
+    <param name="Local" value="xwin_ecran/Objet_Graphique.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Grille">
+    <param name="Name" value="Objet Grille">
+    <param name="Local" value="xwin_ecran/Objet_Grille.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Groupe">
+    <param name="Name" value="Objet Groupe">
+    <param name="Local" value="xwin_ecran/Objet_Groupe.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Groupe de radio-boutons">
+    <param name="Name" value="Objet Groupe de radio-boutons">
+    <param name="Local" value="xwin_ecran/ObjetGroupederadio_boutons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Image">
+    <param name="Name" value="Objet Bitmap constante">
+    <param name="Local" value="xwin_ecran/ObjetBitmapconstante.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Image variable">
+    <param name="Name" value="Objet Bitmap variable">
+    <param name="Local" value="xwin_ecran/ObjetBitmapvariable.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Jauge">
+    <param name="Name" value="Objet Jauge">
+    <param name="Local" value="xwin_ecran/Objet_Jauge.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Multi-choix">
+    <param name="Name" value="Objet Multi-choix">
+    <param name="Local" value="xwin_ecran/ObjetMulti_choix.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Onglet">
+    <param name="Name" value="Objet Onglet (paramètres liés à la page)">
+    <param name="Local" value="xwin_ecran/Onglet_Page.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Panel page">
+    <param name="Name" value="Objet Panel page">
+    <param name="Local" value="xwin_ecran/Objet_Panel_page.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Radio-bouton">
+    <param name="Name" value="Objet Radio-bouton">
+    <param name="Local" value="xwin_ecran/ObjetRadio_bouton.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Rich-Edit">
+    <param name="Name" value="L'objet Rich-Edit">
+    <param name="Local" value="xwin_ecran/L_objetRich_Edit.htm">
+    <param name="Name" value="Objet Rich-Edit">
+    <param name="Local" value="xwin_ecran/ObjetRich_Edit.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Surface">
+    <param name="Name" value="L'objet Surface">
+    <param name="Local" value="xwin_ecran/L_objet_Surface.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Tableau">
+    <param name="Name" value="L'objet tableau">
+    <param name="Local" value="xwin_ecran/L_objettableau.htm">
+    <param name="Name" value="Objet Tableau">
+    <param name="Local" value="xwin_ecran/ObjetTableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Objet Texte">
+    <param name="Name" value="Objet Texte">
+    <param name="Local" value="xwin_ecran/ObjetTexte.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Onglet / Page">
+    <param name="Name" value="Onglet / Page">
+    <param name="Local" value="xwin_ecran/Onglet_Page.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Onglet avec des pages non chaînées">
+    <param name="Name" value="Onglet avec des pages non chaînées">
+    <param name="Local" value="xwin_ecran/Ongletavecdespagesnoncha_n_es.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Onglets">
+    <param name="Name" value="Les onglets">
+    <param name="Local" value="xwin_ecran/Lesonglets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Onglets (paramètres généraux)">
+    <param name="Name" value="Onglets (paramètres généraux)">
+    <param name="Local" value="xwin_ecran/Onglets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Onglets avec des pages chaînées">
+    <param name="Name" value="Onglets avec des pages chaînées">
+    <param name="Local" value="xwin_ecran/Ongletsavecdespagescha_n_es.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Options générales des éditeurs de masques">
+    <param name="Name" value="Options générales des éditeurs de masques">
+    <param name="Local" value="xwin_ecran/Options_g&eacute;n&eacute;rales_des_&eacute;diteurs_de_masques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ordre de saisie">
+    <param name="Name" value="Ordre de saisie">
+    <param name="Local" value="xwin_ecran/Ordredesaisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Orteil">
+    <param name="Name" value="Orteil">
+    <param name="Local" value="xwin_ecran/Orteil.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ouverture / fermeture de la fenêtre Propriétés">
+    <param name="Name" value="Ouverture / fermeture de la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/ouverture_fermeture_de_la_fen_tre_propri_t_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ouvrir un fichier masque">
+    <param name="Name" value="Ouvrir un fichier masque">
+    <param name="Local" value="xwin_ecran/Ouvrirunfichiermasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Padding">
+    <param name="Name" value="Padding">
+    <param name="Local" value="xwin_ecran/Padding.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paddings">
+    <param name="Name" value="Paddings">
+    <param name="Local" value="xwin_ecran/Paddings.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Page">
+    <param name="Name" value="Page">
+    <param name="Local" value="xwin_ecran/Page.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Pages panels">
+    <param name="Name" value="Les grilles">
+    <param name="Local" value="xwin_ecran/Les_grilles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Panels pages">
+    <param name="Name" value="Les grilles">
+    <param name="Local" value="xwin_ecran/Les_grilles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage d'un accordéon">
+    <param name="Name" value="Caractéristiques et paramétrage d'un accordéon">
+    <param name="Local" value="xwin_ecran/Caract&eacute;ristiques_et_param&eacute;trage_d_un_accord&eacute;on.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage d'un volet">
+    <param name="Name" value="Caractéristiques et paramétrage d'un volet">
+    <param name="Local" value="xwin_ecran/Caract&eacute;ristiques_et_param&eacute;trage_d_un_volet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage de la feuille de styles">
+    <param name="Name" value="Paramétrage de la feuille de styles">
+    <param name="Local" value="xwin_ecran/Feuilledestyles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage des onglets">
+    <param name="Name" value="Paramètres des onglets">
+    <param name="Local" value="xwin_ecran/Param_tresdesonglets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramètres de saisie">
+    <param name="Name" value="Paramètres de saisie">
+    <param name="Local" value="xwin_ecran/Param_tresdesaisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Parcourir les fenêtres">
+    <param name="Name" value="Parcourir les fenêtres">
+    <param name="Local" value="xwin_ecran/Parcourirlesfen_tres.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Parcourir un source">
+    <param name="Name" value="Parcourir un source">
+    <param name="Local" value="xwin_ecran/Parcourirunsource.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Parcours d'un source">
+    <param name="Name" value="Parcours d'un source">
+    <param name="Local" value="xwin_ecran/Parcoursd_unsource.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Passer à la page suivante/précédente">
+    <param name="Name" value="Passer à la page suivante/précédente">
+    <param name="Local" value="xwin_ecran/Passer_lapagesuivante_pr_c_dente.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Personnalisation d'une propriété de la feuille de styles">
+    <param name="Name" value="Personnalisation d'une propriété de la feuille de styles">
+    <param name="Local" value="xwin_ecran/personnalisation_d_une_propri&eacute;t&eacute;s_de_la_feuille_de_styles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Pièges des touches">
+    <param name="Name" value="Pièges des touches">
+    <param name="Local" value="xwin_ecran/Pi_gesdestouches.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Poignées">
+    <param name="Name" value="Poignées">
+    <param name="Local" value="xwin_ecran/Poign_es.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Point d'arrêt">
+    <param name="Name" value="Point d'arrêt, point de traitement et piège de touche">
+    <param name="Local" value="xwin_ecran/Pointd_arr_t_pointdetraitementetpi_gedetouche.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="point de traitement et piège de touche">
+      <param name="Name" value="Point d'arrêt, point de traitement et piège de touche">
+      <param name="Local" value="xwin_ecran/Pointd_arr_t_pointdetraitementetpi_gedetouche.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Point de séquence">
+    <param name="Name" value="Point de séquence">
+    <param name="Local" value="xwin_ecran/Pointdes_quence.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Police de caractères">
+    <param name="Name" value="Police de caractères">
+    <param name="Local" value="xwin_ecran/Policedecaract_res.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Polices">
+    <param name="Name" value="Polices">
+    <param name="Local" value="xwin_ecran/Polices.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Portée d'un bouton">
+    <param name="Name" value="Validité d'un bouton">
+    <param name="Local" value="xwin_ecran/Validit_d_unbouton.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Prendre la valeur par défaut">
+    <param name="Name" value="Styles par défaut">
+    <param name="Local" value="xwin_ecran/Styles_par_d&eacute;faut.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Présentation">
+    <param name="Name" value="Présentation">
+    <param name="Local" value="xwin_ecran/Pr_sentation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Procédures de traitement Public et Private">
+    <param name="Name" value="Procédures de traitement Public et Private">
+    <param name="Local" value="xwin_ecran/Proc&eacute;dures_de_traitement_Public_et_Private.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Propriétés communes des objets">
+    <param name="Name" value="Paramètres communs des boîtes de dialogue des objets">
+    <param name="Local" value="xwin_ecran/Param_trescommunsdesbo_tesdedialoguedesobjets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Propriétés des objets">
+    <param name="Name" value="Boîtes de dialogue des objets">
+    <param name="Local" value="xwin_ecran/Bo_tesdedialoguedesobjets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Raccourcis clavier">
+    <param name="Name" value="Raccourcis clavier de l'éditeur de masques: récapitulatif">
+    <param name="Local" value="xwin_ecran/Raccourcisclavierdel__diteurdemasques__r_capitulatif.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Editeur de masque d'écran">
+      <param name="Name" value="Raccourcis clavier de l'éditeur de masques: récapitulatif">
+      <param name="Local" value="xwin_ecran/Raccourcisclavierdel__diteurdemasques__r_capitulatif.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Raccourcis clavier de la fenêtre Propriétés">
+    <param name="Name" value="Raccourcis clavier de la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/raccourcis_clavier_de_la_fen&ecirc;tre_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Refermer une fenêtre">
+    <param name="Name" value="Refermer une fenêtre">
+    <param name="Local" value="xwin_ecran/Refermerunefen_tre.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Rendus par défaut">
+    <param name="Name" value="Styles par défaut">
+    <param name="Local" value="xwin_ecran/Styles_par_d&eacute;faut.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ressources">
+    <param name="Name" value="Ressources">
+    <param name="Local" value="xwin_ecran/Ressources_xwin_ecran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie d'un nom de traitement">
+    <param name="Name" value="Saisie d'un nom de traitement">
+    <param name="Local" value="xwin_ecran/Saisie_d_un_nom_de_traitement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie d'une propriété avec boîte de dialogue">
+    <param name="Name" value="Les types de ligne de la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/les_types_de_lignes_de_la_fen&ecirc;tre_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie d'une propriété multi-choix">
+    <param name="Name" value="Les types de ligne de la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/les_types_de_lignes_de_la_fen&ecirc;tre_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie d'une propriété texte multi-lignes">
+    <param name="Name" value="Les types de ligne de la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/les_types_de_lignes_de_la_fen&ecirc;tre_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie des aides">
+    <param name="Name" value="Saisie des aides">
+    <param name="Local" value="xwin_ecran/Saisiedesaides.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie des propriétés des objets">
+    <param name="Name" value="Saisie des propriétés des objets">
+    <param name="Local" value="xwin_ecran/Saisie_des_propri&eacute;t&eacute;s_des_objets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie normale d'une propriété">
+    <param name="Name" value="Les types de ligne de la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/les_types_de_lignes_de_la_fen&ecirc;tre_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sauvegarder un masque">
+    <param name="Name" value="Sauvegarder un masque">
+    <param name="Local" value="xwin_ecran/Sauvegarderunmasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélection d'une donnée">
+    <param name="Name" value="Sélection d'une donnée">
+    <param name="Local" value="xwin_ecran/S_lectiond_unedonn_e.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélection des données en insertion multiple">
+    <param name="Name" value="Sélection des données en insertion multiple">
+    <param name="Local" value="xwin_ecran/S&eacute;lection_des_donn&eacute;es_en_insertion_multiple.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélection multiple">
+    <param name="Name" value="Sélection multiple">
+    <param name="Local" value="xwin_ecran/S_lection_multiple.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélections dans un masque">
+    <param name="Name" value="Sélections">
+    <param name="Local" value="xwin_ecran/S_lections.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Souris">
+    <param name="Name" value="Souris">
+    <param name="Local" value="xwin_ecran/Souris.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Style">
+    <param name="Name" value="Style">
+    <param name="Local" value="xwin_ecran/Style.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Styles">
+    <param name="Name" value="Styles">
+    <param name="Local" value="xwin_ecran/Styles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Styles par défaut">
+    <param name="Name" value="Styles par défaut">
+    <param name="Local" value="xwin_ecran/Styles_par_d&eacute;faut.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Supprimer des objets">
+    <param name="Name" value="Insérer et supprimer des objets">
+    <param name="Local" value="xwin_ecran/Ins&eacute;rer_et_supprimer_des_objets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Surcharge des masques">
+    <param name="Name" value="Surcharge des masques">
+    <param name="Local" value="xwin_ecran/Surcharge_des_masques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Surface">
+    <param name="Name" value="Objet Surface">
+    <param name="Local" value="xwin_ecran/Objet_Surface.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Taille des cellules d'une grille">
+    <param name="Name" value="Agencement des pages panels dans les cellules de grille">
+    <param name="Local" value="xwin_ecran/Agencement_des_pages_panels_dans_les_cellules_de_grille.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traduction des masques">
+    <param name="Name" value="Traduction des masques">
+    <param name="Local" value="xwin_ecran/Traduction_des_masques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitements">
+    <param name="Name" value="Traitements">
+    <param name="Local" value="xwin_ecran/Traitements.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Types de ligne de la fenêtre Propriétés">
+    <param name="Name" value="Les types de ligne de la fenêtre Propriétés">
+    <param name="Local" value="xwin_ecran/les_types_de_lignes_de_la_fen&ecirc;tre_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utilisation de la feuille de styles">
+    <param name="Name" value="Utilisation de la feuille de styles">
+    <param name="Local" value="xwin_ecran/La_feuille_de_styles.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Validité d'un bouton">
+    <param name="Name" value="Validité d'un bouton">
+    <param name="Local" value="xwin_ecran/Validit_d_unbouton.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Vérifications de la taille des boîtes">
+    <param name="Name" value="Vérifications de la taille des boîtes">
+    <param name="Local" value="xwin_ecran/V&eacute;rifications_de_la_taille_des_bo&icirc;tes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Visibilité des colonnes d'un tableau en exploitation">
+    <param name="Name" value="Visibilité des colonnes d'un tableau en exploitation">
+    <param name="Local" value="xwin_ecran/Visibilit&eacute;_des_colonnes_d_un_tableau_en_exploitation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Visibilité des onglets">
+    <param name="Name" value="Visibilité des onglets">
+    <param name="Local" value="xwin_ecran/Visibilit&eacute;_des_onglets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Volets et accordéons">
+    <param name="Name" value="Les volets et les accordéons">
+    <param name="Local" value="xwin_ecran/Les_volets_et_les_accord&eacute;ons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Zoom - Bouton d'appel">
+    <param name="Name" value="Action d'un bouton">
+    <param name="Local" value="xwin_ecran/Action_d_un_bouton.htm">
+  </object>
+</ul>
+</html>

@@ -1,0 +1,48 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Points d’arrêt &quot;Demande de saisie&quot; (pages panels)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Points d’arrêt "Demande de saisie" (pages panels)</h3>
+<p>Si vous n'êtes pas familier avec la notion de point d'arrêt "Demande de saisie", consultez au préalable les rubriques <a href="Positionnementssourisensaisiedemasque.htm">Positionnements souris en saisie de masque</a> et <a href="Programmationdupointd_arr_t_Demandedesaisie_.htm">Programmation du point d'arrêt "Demande de saisie"</a>.</p>
+<p>&#160;</p>
+<p>Pour fixer les idées, prenons l'exemple d'une page A, mère des pages panels A1 et A2. En saisie, l'utilisateur peut passer d'une page à l'autre en cliquant sur une donnée en saisie de la page souhaitée.</p>
+<p>&#160;</p>
+<p>Il faut distinguer deux méthodes de saisie :</p>
+<ol style="list-style: decimal;">
+<li class="p">
+<p><span class="hcp1">Le programme saisit la page A en globalité</span> (un XmeInput unique de la page A).<br>
+Les déplacements à la souris sont alors gérés automatiquement. Le découpage de A en pages panels est transparent et aucun paramétrage de point d'arrêt "Demande de saisie" n'est nécessaire.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Le programme saisit chaque page panel indépendamment l'une de l'autre</span> (deux XmeInput séparés des pages A1 et A2).<br>
+Pour ce qui concerne la gestion des déplacements souris d'une page à l'autre, ce cas est en tout point similaire au cas de la saisie d'un masque affichant deux pages Xwin classiques. Il nécessite le <span class="hcp2">paramétrage et le traitement habituels des points d'arrêt "Demande de saisie"</span>.<br>
+<br>
+De manière générale, il est <span class="hcp2">impératif de paramétrer le point d'arrêt "Demande de saisie" sur toutes les (sous-)pages Xwin concernées</span>.<br>
+En effet, un arrêt paramétré pour une page parente N'est PAS automatiquement "transmis" à ses pages filles.<br>
+Le numéro d'arrêt paramétré pourra en revanche être identique pour toutes les sous-pages d'une page saisie.<br>
+<br>
+Reprenons le cas de départ d'une page A, mère des pages panels A1 et A2. A2 inclut maintenant les sous-pages panels A21 et A22 et le programme saisit toujours les pages A1 et A2 de manière indépendante. En saisie de A1, l'utilisateur passe à la page A2 en cliquant sur une donnée de la page A21 ou de la page A22.<br>
+Il faut ici paramétrer un point d'arrêt "Demande de saisie" (de numéro éventuellement identique) sur les <span class="hcp1">deux</span> sous-pages panels A21 et A22 de la page A2 (en plus de celui spécifié sur la page A1).<br>
+&#160;</p>
+</li>
+</ol>
+<p><span class="hcp1">Rappel</span> :</p>
+<p>Même dans le premier cas où la page mère est saisie en globalité, il n’y a pas de gestion automatique de la souris en cas de clic sur une donnée d'une page panel (de la page saisie) à onglet NON chaînée (puisqu’une telle page ne fait pas partie de l’ordre de saisie de sa page parente). Le cas échéant, il faut donc là aussi passer par un point d'arrêt "Demande de saisie".</p>
+<p>&#160;</p>
+</body>
+</html>

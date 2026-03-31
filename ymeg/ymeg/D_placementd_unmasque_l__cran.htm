@@ -1,0 +1,110 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Déplacement d'un masque à l'écran</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Déplacement d'un masque à l'écran</h3>
+<p class="Body-Text"><font class="hcp1">Fonctions concernées&#160;:</font></p>
+<p class="Body-Text" style="margin-top: 1.00pt;"><a href="XmeClearv.htm">XmeClearv</a></p>
+<p class="Body-Text" style="margin-top: 1.00pt;"><a href="XmeConsult.htm">XmeConsult</a></p>
+<p class="Body-Text" style="margin-top: 1.00pt;"><a href="XmeDisp.htm">XmeDisp</a></p>
+<p class="Body-Text" style="margin-top: 1.00pt;"><a href="XmeDispv.htm">XmeDispv</a></p>
+<p class="Body-Text" style="margin-top: 1.00pt;"><a href="XmeInput.htm">XmeInput</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Paramètres d'entrée auxiliaires&#160;:</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp2">
+<td style="width:34.61%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.Ocolonne</font></p>
+</td>
+<td style="width:65.39%;" class="hcp3">
+<p class="Body-Text">Déplacement colonne (0 par défaut).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.61%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.Oligne</font></p>
+</td>
+<td style="width:65.39%;" class="hcp3">
+<p class="Body-Text">Déplacement ligne (0 par défaut).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Harmony.Ocolonne</font> et <font class="hcp1">Harmony.Oligne</font> permettent de modifier par programme l'emplacement d'un masque (page ou fenêtre) à l'écran. Les <font class="hcp1">valeurs</font> que vous donnez à ces paramètres <font class="hcp1">s'ajoutent aux coordonnées "&#160;de base&#160;"</font>, indiquées dans l'éditeur de masques d'écran de Xwin (champs <font class="hcp1">Offset Ligne</font> et <font class="hcp1">Offset Colonne</font> des paramètres généraux de la page&#160;; accès par le choix <font class="hcp1">Page Courante</font> du menu <font class="hcp1">Paramètres</font> <font style="font-family: Symbol;" face="Symbol">-</font> raccourci clavier <font class="hcp1">F3</font>). Par exemple&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Harmony.Ocolonne / Harmony.Oligne = 0 / 0.<br>
+Conserve la position de base indiquée dans l'éditeur Xwin.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Harmony.Ocolonne / Harmony.Oligne = 0 / 7.<br>
+Déplace le masque de 7 lignes vers le bas, par rapport à la position définie dans Xwin.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Harmony.Ocolonne / Harmony.Oligne = 5 / 3.<br>
+Déplace le masque de 3 lignes vers le bas et de 5 colonnes vers la droite, par rapport à la position définie dans Xwin.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:</font></p>
+<p class="Body-Text">L'affichage des lignes "&#160;détails&#160;" d'une facture constitue un exemple représentatif de masque déplacé à l'écran par programme&#160;:</p>
+<p class="Source">Ligne 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;-+ En-tête facture&#160;:</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;2 Numéro de facture : &#160;&#160;&#160;&#160;&#160;|&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;3 Code client : &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| Page 1&#160;;&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;4 Mode de règlement : &#160;&#160;&#160;&#160;&#160;| 7 lignes&#160;;&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;5 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| <font class="hcp4">Offset ligne</font> = 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;6 Article Prix Qté Total &#160;&#160;|&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;7 ---------------------- &lt;-+&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;8 ....... .... ... ..... &lt;-- Une ligne détail&#160;:&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;9 ....... .... ... ..... &#160;&#160;&#160;&#160;Page 2&#160;;&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;10 ....... .... ... ..... &#160;&#160;&#160;1 ligne&#160;;&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;11 ....... .... ... ..... &#160;&#160;&#160;<font class="hcp4">Offset ligne</font> = 6 (*)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;12 ....... .... ... .....&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;13 ....... .... ... .....&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;14 ....... .... ... .....&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;15 ....... .... ... .....&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;16 ....... .... ... .....&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;17 ....... .... ... .....&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;18 ---------------------- &lt;-+ Pied de facture&#160;:&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;19 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| Page 3&#160;;&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;20 Total général : &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| 4 lignes&#160;;&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;21 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;-+ <font class="hcp4">Offset ligne</font> = 17</p>
+<p class="Body-Text">(*) Cette valeur, définie dans l'éditeur de masques Xwin, est la position "&#160;de base&#160;" de la ligne détails. Avant d'afficher la page 2, nous lui ajouterons l'indice de la ligne courante dans le tableau des lignes détails (en faisant débuter les indices à 1). Ainsi, par exemple, l'offset définitif de la première ligne détails vaudra bien 7 (valeur de base de l'offset ligne 6 + indice début 1 = 7).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Source">XmeDispv ("MASQUE",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche l'en-tête</p>
+<p class="Source">&#160;</p>
+<p class="Source">FOR i = 1 TO 10 ;10 lignes détails</p>
+<p class="Source">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement des données</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;à afficher pour la&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne courante&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Harmony.Oligne = i &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;offset ligne à ajouter&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;à l'offset de base&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeDispv ("MASQUE",2,XME_MODE_GOSUB) &#160;&#160;&#160;&#160;&#160;;affiche une ligne&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeRet &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;retour à la page 1&#160;</p>
+<p class="Source">NEXT</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeDispv ("MASQUE",3,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche le pied</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

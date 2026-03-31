@@ -1,0 +1,131 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Crypt</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+font.hcp3 { font-family:Arial;
+font-size:10pt; }
+font.hcp4 { font-family:Arial;
+font-size:10pt;
+font-style:italic; }
+font.hcp5 { font-family:Arial; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Crypt</h3>
+<p class="Body-Text">La fonction Crypt permet de crypter une chaîne de caractères avec une clé de cryptage en utilisant le service de cryptographie de Windows.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Alpha</font> <font class="hcp1">Crypt</font> (<font class="hcp2">chaine</font> , <font class="hcp2">clé</font> , <font class="hcp2">erreur</font> , [<font class="hcp2">hexa</font>] , [<font class="hcp2">début</font>] , [<font class="hcp2">fin</font>])</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Chaine</font></p>
+<p class="decalage05">Chaîne à crypter.</p>
+<p class="Body-Text"><font class="hcp2">Clé</font></p>
+<p class="decalage05">Clé de cryptage.</p>
+<p class="Body-Text"><font class="hcp2">Erreur</font></p>
+<p class="decalage05">Variable numérique qui contient en retour un éventuel code d’erreur (0=pas d’erreur)</p>
+<p class="Body-Text"><font class="hcp2">Hexa</font></p>
+<p class="decalage05">Booléen indiquant que le résultat doit être codifié en hexadécimal. Cela permet de générer une chaîne cryptée qui ne contient que des caractères affichables. Cette option est indispensable si votre chaîne cryptée doit être envoyée sur l’internet (pour un service Web par exemple).<br>
+Valeur par défaut&#160;: TRUE.</p>
+<p class="Body-Text"><font class="hcp2">Début</font></p>
+<p class="decalage05">Booléen indiquant que la fonction débute un nouveau cryptage. Voir remarques ci-dessous.</p>
+<p class="decalage05">Valeur par défaut&#160;: TRUE.</p>
+<p class="Body-Text"><font class="hcp2">Fin</font></p>
+<p class="decalage05">Booléen indiquant que la fonction termine un cryptage. Voir remarques ci-dessous.</p>
+<p class="decalage05">Valeur par défaut&#160;: TRUE.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">En cas de succès, la fonction retourne la chaîne cryptée et <font class="hcp2">erreur</font> est positionné à 0<br>
+En cas d’erreur, le paramètre <font class="hcp2">erreur</font> contient un code d’erreur précis.</p>
+<p class="Body-Text" style="margin-left: 56.70pt; text-indent: -49.60pt;">Attention&#160;: &#160;La fonction Crypt ne met pas d’entête de reconnaissance au début de la chaîne cryptée. Cela implique que <font style="text-decoration: underline;">la fonction Uncrypt ne renvoie jamais d’erreur si la clé de décryptage est fausse</font>.<br>
+Si vous voulez vérifier que la clé de décryptage est correcte, ajoutez à la chaîne à crypter une séquence de caractères fixe et vérifiez que vous la retrouvez bien après décryptage.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Voir <a href="Codes_d_erreurs_des_fonctions_de_cryptage_et_de_compression.htm">Codes d'erreurs des fonctions de cryptage et de compression</a> .</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Remarques</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Les paramètres <font class="hcp2">Début</font> et <font class="hcp2">Fin</font> permettent de crypter un flot de données par étapes. Par exemple, pour crypter un fichier, nous allons lire une partie du fichier, crypter cette partie, écrire le résultat dans le fichier de destination et répéter ces opérations jusqu’à la fin du fichier.<br>
+Début et Fin permettent d’indiquer à quel stade du cryptage se trouve le programme.<br>
+<br>
+L'algorithme à utiliser est le suivant&#160;:</p>
+</li>
+</ul>
+<p class="source" style="margin-left: 41.75pt;">Crypt(chainevide,cle,debut=TRUE,fin=FALSE)</p>
+<p class="source" style="margin-left: 41.75pt;">Tantque non fin de fichier</p>
+<p class="source" style="margin-left: 41.75pt;">&#160;Crypt(buffer,cle,debut=FALSE,fin=FALSE)</p>
+<p class="source" style="margin-left: 41.75pt;">Fintq</p>
+<p class="source" style="margin-left: 41.75pt;">Crypt(chainevide,cle,debut=FALSE,fin=TRUE)<br>
+<font face="Arial" size="2" class="hcp3"><br>
+Par défaut,</font> <font face="Arial" size="2" class="hcp4">Début</font> <font face="Arial" size="2" class="hcp3">et</font> <font face="Arial" size="2" class="hcp4">Fin</font> <font face="Arial" size="2" class="hcp3">sont à TRUE. Ces valeurs sont celles qu’il faut utiliser pour crypter une simple chaine de caractères.</font><font face="Arial" class="hcp5"><br></font><font face="Arial" size="2" class="hcp3"><br>
+Voir</font> <a href="FileCrypt.htm"><font face="Arial" size="2" class="hcp3">FileCrypt</font></a> <font face="Arial" size="2" class="hcp3">qui crypte un fichier</font><font face="Arial" class="hcp5">.</font></p>
+<p class="source" style="margin-left: 41.75pt;">&#160;</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Le résultat d’un cryptage par la fonction Crypt ne peut pas être décrypté par la fonction FileUnCrypt. Il faut utiliser <a href="FileCrypt.htm">FileCrypt</a> pour crypter un fichier.</p>
+</li>
+</ul>
+<p class="source" style="margin-left: 41.75pt;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 1</font></p>
+<p class="Body-Text">Exemple de cryptage d’une chaîne de caractères.</p>
+<p class="source">1 depart S</p>
+<p class="source">1 arrivee S</p>
+<p class="source">1 coder X*</p>
+<p class="source">1 cle&#160;&#160;S</p>
+<p class="source">&#160;</p>
+<p class="source">depart = "chaine a crypter"</p>
+<p class="source">cle = "macle"</p>
+<p class="source">arrivee = crypt(depart,cle,coder)&#160;&#160;</p>
+<p class="source">display arrivee</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 2</font></p>
+<p class="Body-Text">Exemple de cryptage d’un fichier dans une chaîne de caractères.</p>
+<p class="source">1 depart S&#160;&#160;; chaine a crypter</p>
+<p class="source">1 arrivee S&#160;; résultat cryptage</p>
+<p class="source">1 coder X&#160;&#160;&#160;; code d'erreur</p>
+<p class="source">1 cle S&#160;&#160;&#160;&#160;&#160;; cle de cryptage</p>
+<p class="source">1 art 20&#160;&#160;&#160;&#160;; buffer de lecture</p>
+<p class="source">1 vide S&#160;&#160;&#160;&#160;; chaine vide</p>
+<p class="source">1 verif S&#160;&#160;&#160;; tout l'original pour verif</p>
+<p class="source">record * htdf tdfe</p>
+<p class="source">main</p>
+<p class="source">&#160;; cryptage d'un fichier dans un string</p>
+<p class="source">&#160;tdfe.name = "testcrypt.dhsp"</p>
+<p class="source">&#160;hopen (tdfe,"F")</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">&#160;; marque le début du cryptage</p>
+<p class="source">&#160;arrivee = crypt(vide,cle,coder,debut=TRUE,fin=FALSE)&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">&#160;; boucle lecture + cryptage</p>
+<p class="source">&#160;loop freadst(tdfe,art) = 0</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;verif &amp;= left(art,tdfe.sizelast)&#160;</p>
+<p class="source">&#160;&#160;&#160;&#160;arrivee &amp;= crypt(left(art,tdfe.sizelast),cle,coder,debut=FALSE,fin=FALSE)</p>
+<p class="source">&#160;endloop</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">&#160;; marque la fin du cryptage</p>
+<p class="source">&#160;arrivee &amp;= crypt(vide,cle,coder,debut=FALSE,fin=TRUE)</p>
+<p class="source">&#160;</p>
+<p class="source">&#160;; verification</p>
+<p class="source">&#160;depart = arrivee</p>
+<p class="source">&#160;arrivee = uncrypt(depart,cle,coder)</p>
+<p class="source">&#160;if arrivee = verif</p>
+<p class="source">&#160;&#160;&#160;&#160;display "ok"</p>
+<p class="source">&#160;endif</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="UnCrypt.htm">UnCrypt</a> , <a href="FileCrypt.htm">FileCrypt</a></p>
+<p class="Body-Text"><a href="Codes_d_erreurs_des_fonctions_de_cryptage_et_de_compression.htm">Codes d'erreurs des fonctions de cryptage et de compression</a> .</p>
+</body>
+</html>

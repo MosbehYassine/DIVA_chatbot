@@ -1,0 +1,33 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déclaration d'un mot de passe (hors serveur Xlan sécurisé)">
+    <param name="Name" value="Déclaration d'un mot de passe (hors serveur Xlan sécurisé)">
+    <param name="Local" value="Xlog/D_clarationd_unmotdepasse_horsserveurXlans_curis__.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Descriptif du programme Xlog">
+    <param name="Name" value="Descriptif du programme Xlog">
+    <param name="Local" value="Xlog/DescriptifduprogrammeXlog.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Identification de l'utilisateur">
+    <param name="Name" value="Identification de l'utilisateur">
+    <param name="Local" value="Xlog/Identificationdel_utilisateur.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mémorisation du mot de passe">
+    <param name="Name" value="Mémorisation du mot de passe">
+    <param name="Local" value="Xlog/M_morisationdumotdepasse.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mise en oeuvre de Xlog">
+    <param name="Name" value="Mise en oeuvre de Xlog">
+    <param name="Local" value="Xlog/MiseenoeuvredeXlog.htm">
+  </object>
+</ul>
+</html>

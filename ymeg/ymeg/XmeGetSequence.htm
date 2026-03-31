@@ -1,0 +1,134 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeGetSequence</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp6 { font-weight:bold; }
+ul.hcp7 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>XmeGetSequence &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h1>
+<p class="Body-Text"><font class="hcp2">Lecture du numéro de point de séquence d'une donnée en saisie de la page courante</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Int XmeGetSequence</font> (<font class="hcp3">Enregistrement, Donnée, Indice1, Indice2, Indice3, Indice4</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 13.024%;">
+<col style="width: 86.976%;">
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Enregistrement</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Nom de l'instance de l'enregistrement (Record) auquel la donnée cherchée appartient.<span class="hcp6"><br>
+Attention</span> : Si la donnée se trouve dans un RecordSql, il faut distinguer deux cas, suivant que le RecordSQL est lié (Bind) ou non à une instance publique du Record correspondant à la table :</p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Sans Bind : il faut donner en paramètre le nom de l'instance du RecordSql.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Avec Bind : il faut donner en paramètre le nom de l'instance du Record lié.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Donnée</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Mnémonique de la donnée (dans le dictionnaire).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice1</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Premier indice de la donnée (0 s'il ne s'agit pas d'un élément de tableau). Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice2</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Deuxième indice de la donnée (0 si la donnée n'est pas un élément de tableau ou s'il s'agit d'un élément de tableau à une seule dimension). Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice3</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Troisième indice de la donnée (0 si la donnée n'est pas un élément de tableau ou s'il s'agit d'un élément de tableau à une ou deux dimensions). Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice4</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Quatrième indice de la donnée (0 si la donnée n'est pas un élément de tableau ou s'il s'agit d'un élément de tableau à une, deux ou trois dimensions). Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font> Numéro du point de séquence affecté dans Xwin (ou à la compilation du masque) à la donnée concernée.</p>
+<p class="Body-Text">La fonction renvoie 0 :</p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">S'il n'y a pas ou plus de page courante.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">En cours de saisie d'un tableau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Si la donnée n'existe pas dans la page en cours ou s'il ne s'agit pas d'une donnée en saisie de la page.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Si la donnée est cachée, illisible ou grisée ou si elle est placée dans un onglet caché ou grisé.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction <font class="hcp2">XmeGetSequence</font> délivre le numéro du point de séquence affecté dans Xwin à la donnée identifiée par son nom <font class="hcp3">Donnée</font>, le nom de l'instance de l'enregistrement auquel elle appartient <font class="hcp3">Enregistrement</font> et, s'il s'agit d'un élément de tableau, ses indices dans ce tableau <font class="hcp3">Indice1</font>, <font class="hcp3">Indice2</font>, <font class="hcp3">Indice3</font> et <font class="hcp3">Indice4</font>.</p>
+<p class="Body-Text"><span class="hcp6">Rappel</span> : A la compilation du masque, un numéro de point de séquence est automatiquement affecté à toute donnée en saisie dont la propriété "Point de séquence" n'a pas été manuellement renseignée dans Xwin.</p>
+<p class="Body-Text"><span class="hcp6">Attention</span> : La fonction s'applique à la page <span style="text-decoration: underline;">courante</span> (en incluant ses éventuelles pages chaînées et pages panels en cascade - Cf. rubrique <a href="Affichage,_consultation_et_saisie_de_la_page_m&egrave;re.htm">Affichage, consultation et saisie de la page mère (pages panels)</a> -).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Cette fonction peut être utilisée pour récupérer le numéro de point de séquence d'une donnée en saisie présente dans un masque Xwin en fournissant son nom, afin d'entrer en saisie directement sur cette donnée (paramètre <font class="hcp3">Numéro de point de séquence</font> de la fonction <a href="XmeInput.htm">XmeInput</a>) ou de poursuivre la saisie sur cette donnée (paramètre Harmony.CplRetour à associer à Harmony.Retour = XMENEXT_POINT_SEQUENCE de la fonction <a href="XmeNext.htm">XmeNext</a>).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemples&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Recherche du point de séquence de la donnée simple Codart de l'enregistrement Arti</p>
+<p class="Source">enreg &#160;= "Arti"</p>
+<p class="Source">donnee = "Codart"</p>
+<p class="Source">NumSeq = XmeGetSequence (enreg,donnee)</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Recherche du point de séquence de l'élément Table (2,7) de l'enregistrement Man</p>
+<p class="Source">enreg &#160;= "Man"</p>
+<p class="Source">donnee = "Table"</p>
+<p class="Source">NumSeq = XmeGetSequence (enreg,donnee,2,7)</p>
+<p class="source">&#160;</p>
+</body>
+</html>

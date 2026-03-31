@@ -1,0 +1,148 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Configuration des serveurs d’aides et d’applications</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { font-size:11pt;
+font-weight:bold;
+font-style:italic; }
+ul.hcp3 { list-style:disc; }
+span.hcp4 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Configuration des serveurs d’aides et d’applications</h3>
+<p>&#160;</p>
+<p>Cette rubrique concerne les <span class="hcp1">aides affichées par les applications s'exécutant en mode client léger</span> (aides au format WebHelp).</p>
+<p>Elle explique comment configurer votre site,en cas d'<span class="hcp1">installation personnalisée</span> des aides des applications <span class="hcp1">ou</span> si vous désirez <span class="hcp1">héberger les aides sur un serveur Web</span>. En cas d'installation "standard", reportez-vous à la rubrique <a href="Installation_des_fichiers_d_aides.htm">Installation des aides utilisateur Harmony et de l'ERP Divalto</a>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Déploiement des aides</p>
+<p>Tous les constituants d'une aide au format WebHelp sont regroupés dans un même dossier. Lorsqu'une ou plusieurs applications proposent plusieurs aides, on obtient plusieurs dossiers. Par exemple, l'ERP Divalto propose une aide pour l'application "Commerce et logistique", une aide pour l'application "Comptabilité", etc. Chacune de ces aides fait l'objet d'un dossier distinct (gtfaide, ccfaid, ...).</p>
+&#160;
+<p>Sur l’ordinateur qui hébergera les fichiers d’aides, <span class="hcp1">tous ces dossiers doivent être déployés sous un</span> <span class="hcp1">même répertoire « racine »</span>.<br>
+Le chemin d’accès à ce répertoire est paramétré, côté serveur d’applications, dans la base de registre de l’utilisateur.</p>
+&#160;
+<p>Remarque : Chaque dossier contient lui-même une "page de lancement", portant le même nom que le nom du dossier avec l'extension .htm. Par exemple, le dossier gtfaide contient la page de lancement gtfaide.htm.</p>
+&#160;
+<p>Par exemple :</p>
+<p><span class="hcp1">c:/Divalto/WebAide</span> : <span class="hcp1">répertoire "racine"</span></p>
+<p>&#160;&#160;&#160;&#160;<span class="hcp1">gtfaide</span> : <span class="hcp1">dossier</span> &lt;=&gt; aides de l’application "Commerce et logistique"</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;gtfaide.htm, ... : fichiers constituants avec la page de lancement gtfaide.htm</p>
+<p>&#160;&#160;&#160;&#160;<span class="hcp1">ccfaid</span> : <span class="hcp1">dossier</span> &lt;=&gt; aides de l’application "Comptabilité"</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ccfaid.htm, ... : fichiers constituants avec la page de lancement ccfaid.htm</p>
+<p>&#160;&#160;&#160;&#160;etc.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque à l'attention des développeurs</span> :</p>
+<p>Le nom du fichier d’aides spécifié dans les programmes et les masques doit être identique au nom du dossier d’aides correspondant (gtfaide ou ccfaid dans l’exemple ci-dessus). Cf. Aide à la programmation de Xwin, Chapitre "Aides fenêtrées : Manuel de référence", Rubrique "Saisie et génération d'un fichier d'aides".</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Configuration des serveurs d’aides et d’applications</p>
+<p>Deux méthodes permettent d'accéder aux aides déployées sur un ordinateur serveur :</p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Accès "local"</span>.<br>
+Les aides se trouvent soit sur l’ordinateur sur lequel s’exécute le client léger, soit sur un « serveur d’aides » en réseau local.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Accès "distant"</span>.<br>
+Les aides sont délivrées par un serveur Web, avec IIS installé.<br>
+Remarque : le logiciel de conception d'aides RoboHelp propose un outil de publication sur un serveur Web.</p>
+</li>
+</ul>
+&#160;
+<p><span class="hcp1">Dans la pratique</span>, on distinguera <span class="hcp1">trois cas</span> :</p>
+<ul class="hcp3">
+<li class="p">
+<p>Les aides sont directement hébergées sur le client léger (en mode local).<br>
+Cette configuration sera par exemple utilisée par les développeurs.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les aides sont hébergées sur un ordinateur serveur en réseau local.<br>
+Cette configuration sera généralement utilisée avec un client léger connecté au serveur d’applications en mode TCP/IP. Le serveur d’aides pourra être le serveur d’applications lui-même.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les aides sont hébergées sur un serveur Web.<br>
+On utilisera généralement cette configuration avec un client léger connecté au serveur d’applications en mode Service Web.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp2">1. Hébergement par le client léger en mode local</p>
+<p>Configurez uniquement le poste client léger (qui est aussi le serveur d’applications) : dans la base de registre de l’utilisateur, garnissez la clé "<span class="hcp1">CheminAidesWeb</span>" du chapitre "<span class="hcp1">System</span>" avec le chemin d’accès Windows au répertoire « racine » des aides.</p>
+&#160;
+<p>On utilisera ici le <span class="hcp1">protocole "file:"</span>.</p>
+&#160;
+<p><span class="hcp1">Exemple</span> : file://c:/divalto/WebAide</p>
+&#160;
+<p><span class="hcp1">Remarque</span> :</p>
+<p>En mode local, la valeur "standard" indiquée dans l’exemple sera prise par défaut. Il ne sera donc nécessaire de modifier la clé de registre qu’en cas de stockage des aides dans un autre répertoire que x:/divalto/WebAide.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">2. Hébergement par un serveur d’aides en réseau local</p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Serveur d’aides</span> :<br>
+Créez un <span class="hcp1">partage</span> sur le répertoire « racine » des aides.<span class="hcp1"><br>
+<br>
+Exemple</span> : partagez c:/divalto/WebAide avec le nom de partage <span class="hcp4">DivaltoWebAide</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Serveur d’applications</span> :<br>
+Dans la base de registre des utilisateurs, garnissez la clé "<span class="hcp1">CheminAidesWeb</span>" du chapitre "<span class="hcp1">System</span>" avec le chemin d’accès Windows au partage défini précédemment.<br>
+<br>
+On utilisera ici le <span class="hcp1">protocole "file:"</span>.<span class="hcp1"><br>
+<br>
+Exemple</span> : file://ServeurAides/<span class="hcp4">DivaltoWebAide</span><span class="hcp1"><br>
+<br>
+Remarque</span> :<br>
+Le serveur d’aides et le serveur d’applications peuvent être confondus.<br>
+En mode TCP/IP, la valeur "standard" file://&lt;<span class="hcp4">MoiMême</span>&gt;/<span class="hcp4">DivaltoWebAide</span> sera prise par défaut (où &lt;<span class="hcp4">MoiMême</span>&gt; représente le nom du serveur d’applications). Il ne sera donc nécessaire de modifier la clé de registre qu’en cas d’utilisation d’un autre nom de partage que <span class="hcp4">DivaltoWebAide</span> OU d’un serveur d’aides différent du serveur d’applications.<br>
+&#160;</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp2">3. Hébergement par un serveur Web</p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Serveur d’aides</span> :<br>
+Créez une application virtuelle IIS et faites-la pointer sur le dossier « racine » des aides.<span class="hcp1"><br>
+<br>
+Exemple</span> : <span class="hcp4">DivaltoWebAide</span> pointant sur c:/Divalto/WebAide.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Serveur d’applications</span> :<br>
+Dans la base de registre des utilisateurs, garnissez la clé <span class="hcp1">CheminAidesWeb</span> du chapitre "<span class="hcp1">System</span>" avec l’url d’accès au répertoire virtuel IIS défini précédemment.<br>
+<br>
+On utilisera ici le <span class="hcp1">protocole "http:"</span>.<span class="hcp1"><br>
+<br>
+Exemple</span> : http://ServeurAides/<span class="hcp4">DivaltoWebAide</span><span class="hcp1"><br>
+<br>
+Remarque</span> :<br>
+Le serveur d’aides et le serveur d’applications peuvent être confondus.<br>
+En mode Service Web, la valeur "standard" http://&lt;<span class="hcp4">MoiMême</span>&gt;/<span class="hcp4">DivaltoWebAide</span> sera prise par défaut (où &lt;<span class="hcp4">MoiMême</span>&gt; représente le nom du serveur d’applications). Il ne sera donc nécessaire de modifier la clé de registre qu’en cas d’utilisation d’un autre répertoire virtuel IIS que <span class="hcp4">DivaltoWebAide</span> OU d’un serveur d’aides différent du serveur d’applications.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="Body-Text"><span class="hcp1">Attention</span> :</p>
+<p class="Body-Text">Pour un utilisateur donné, le chemin d’accès aux aides est dans tous les cas <span class="hcp1">unique</span> pour l’<span class="hcp1">ensemble des aides</span>. En particulier, il faut installer les aides spécifiques au même endroit que les <a href="Installation_des_fichiers_d_aides.htm">aides utilisateur Harmony et de l'ERP Divalto</a>.</p>
+<p class="body-text">&#160;</p>
+<p class="body-text"><span class="hcp1">Voir aussi</span> :</p>
+<p class="body-text"><a href="Installation_des_aides_sur_un_site_multi-environnement.htm">Installation des aides sur un site multi-environnement</a></p>
+<p class="body-text"><a href="Installation_des_aides_sur_un_site_multi-langue.htm">Installation des aides sur un site multi-langue</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

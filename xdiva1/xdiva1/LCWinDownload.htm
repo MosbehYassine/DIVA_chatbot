@@ -1,0 +1,86 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>LCWinDownload</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal; }
+p.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal;
+font-style:italic; }
+p.hcp4 { font-weight:normal; }
+span.hcp5 { font-style:italic; }
+span.hcp6 { font-weight:bold; }
+p.hcp7 { font-weight:normal;
+font-style:italic; }
+tr.hcp8 { vertical-align:top; }
+td.hcp9 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>LCWinDownload &#160;<span class="hcp1"><a href="Liste_des_fonctions_LC.htm">Famille</a> <a href="Introduction_devLC.htm">Thème</a></span></h1>
+<p>La fonction LCWinDownload permet de copier un fichier du serveur vers le client.</p>
+<p>&#160;</p>
+<p class="hcp2">Long LcWinDownload <span class="hcp1">(</span><span class="hcp3">FichierDepart</span> <span class="hcp1">, &amp;</span><span class="hcp3">FichierArrivee</span> <span class="hcp1">, [</span><span class="hcp3">CleCryptage</span><span class="hcp1">] , [</span><span class="hcp3">NePasModifierNomFichierArrivee</span><span class="hcp1">])</span></p>
+<p class="hcp4">&#160;</p>
+<p class="hcp2">Paramètres</p>
+<p class="hcp4"><span class="hcp5">FichierDepart</span></p>
+<p class="decalage05">Nom complet du fichier de départ</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp4"><span class="hcp5">FichierArrivee</span> <span class="hcp6">(*)</span></p>
+<p class="decalage05">Nom complet du fichier d'arrivée. En retour de la fonction, <span class="hcp5">FichierArrivee</span> contient le nom effectif du fichier copié.</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp7">CleCryptage</p>
+<p class="decalage05">&#160;Clé de cryptage. Si la clé n'est pas spécifiée ou vaut espace il n'y a pas de cryptage.</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp7">NePasModifierNomFichierArrivee</p>
+<p class="decalage05">True / False (par défaut)</p>
+<p class="decalage05">True indique que le nom de fichier Arrivee est un nom « complet » sur le poste client et qu'il faut l'utiliser tel que.</p>
+<p class="decalage05">False : le fichier est copié dans le répertoire : "Mes Documents/Divalto/Download" du poste client et Arrivee contient le nom complet sur le client.</p>
+<p class="hcp4">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp8">
+<td style="width:14.99%;" class="hcp9">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:85.01%;" class="hcp9">
+<p class="Body-Text">Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:14.99%;" class="hcp9">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:85.01%;" class="hcp9">
+<p class="Body-Text">Code d'erreur système.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Cas particulier du client léger Web</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp4"><span class="hcp6">(*)</span> Le client léger Html ne tient pas compte du paramètre <span class="hcp5">FichierArrivee</span> : le fichier de départ est directement téléchargé vers le poste client.<br>
+De plus, le navigateur client n’acceptera pas le transfert si l’extension du fichier lui est inconnue. Cela peut poser problème si l’extension précisée dans le nom du fichier de départ n’est pas celle correspondant effectivement au contenu du fichier. Par exemple, lorsque le fichier de départ est un fichier temporaire d’extension .tmp car cette dernière n’est pas reconnue par le navigateur. La solution consiste ici à produire un fichier de départ directement avec la bonne extension.</p>
+</li>
+<li class="p">
+<p class="hcp4">D’autre part, si le navigateur demande confirmation du téléchargement du fichier, le programme Diva ne doit pas se terminer immédiatement derrière l’instruction car la fenêtre du navigateur se fermera avant que l’utilisateur ait pu répondre à la demande. Le cas échéant, une solution consiste à faire suivre l’instruction d’une MessageBox.</p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Voir</p>
+<p class="hcp4"><a href="LCWinUpload.htm">LCWinUpload</a></p>
+</body>
+</html>

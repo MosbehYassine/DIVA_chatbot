@@ -1,0 +1,97 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Edition des traitements du masque</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+img.hcp3 { border:none; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Edition des traitements du masque</h2>
+<p>&#160;</p>
+<p>Des traitements peuvent être définis au niveau des paramètres généraux du masque et de chaque page, au niveau des objets en saisie, des boutons, etc. Chaque traitement est une procédure Diva identifié par le nom de cette procédure.</p>
+<p>L'édition du code source des traitements du masque s'effectue dans Xwin, avec les particularités suivantes :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Les lignes de source des traitements sont stockées dans le fichier source du masque lui-même. S'il s'agit d'un masque de surcharge, une copie du source des traitements de base est aussi stockée dans le fichier de surcharge.<br>
+Remarque : le fichier objet du masque contient lui-aussi l'objet de ses traitements.</p>
+</li>
+<li class="p">
+<p>Toutes les procédures de traitement du masque sont éditées regroupées.</p>
+</li>
+<li class="p">
+<p>Le source des traitements s'édite dans une fenêtre MDI (presque) indépendante de la fenêtre MDI du masque. <span style="font-style: italic;">Presque</span> indépendante car :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp1">
+<li class="p">
+<p>La fermeture de la fenêtre MDI du masque referme automatiquement celle de ses traitements.</p>
+</li>
+<li class="p">
+<p>Une sauvegarde faite depuis la fenêtre MDI du masque sauve aussi le source des traitements (avec invalidation des listes d'undo et redo correspondantes).</p>
+</li>
+<li class="p">
+<p>La compilation du masque compile aussi ses traitements.</p>
+</li>
+<li class="p">
+<p>Une sauvegarde ou une demande de compilation faite depuis la fenêtre MDI des traitements du masque provoque la sauvegarde ou la compilation du masque.</p>
+</li>
+<li class="p">
+<p>Une modification du source des traitements implique l’affichage de l’étoile de modification dans la fenêtre masque : le masque peut donc être marqué comme modifié même si vous ne l'avez pas lui-même modifié.</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>A partir du masque, vous ouvrez ou activez la fenêtre de ses traitements par le choix <span class="hcp2">Traitements du masque</span> du menu <span class="hcp2">Fenêtres</span> (raccourci clavier <span class="hcp2">Ctrl+T</span>) ou par le bouton <img src="../image/btn_trt.bmp" alt="" width="16" height="16" border="0" class="hcp3">.<br>
+Remarque : éditer un traitement est également possible à partir de la zone de <a href="Saisie_d_un_nom_de_traitement.htm">saisie de son nom</a> dans la fenêtre des propriétés.</p>
+</li>
+<li class="p">
+<p>A partir des traitements du masque, vous revenez à la fenêtre MDI du masque par le choix <span class="hcp2">Masque / dictionnaire</span> du menu <span class="hcp2">Fenêtres</span> (raccourci clavier <span class="hcp2">Ctrl+T</span>) ou par le bouton <img src="../image/btn_retour_masque_trt.bmp" alt="" width="16" height="16" border="0" class="hcp3">.</p>
+</li>
+<li class="p">
+<p>Remarque : lorsque le masque est un masque de surcharge, vous pouvez, dans la fenêtre MDI des traitements, éditer aussi les traitements de base. Le choix <span class="hcp2">Traitements Base &lt;-&gt; Surcharge</span> du menu <span class="hcp2">Fenêtres</span> (raccourci clavier <span class="hcp2">Shift+Ctrl+T</span>) ou le bouton <img src="../image/btn_trt_base_surch.bmp" alt="" width="16" height="16" border="0" class="hcp3"> permet de basculer entre traitements de surcharge et traitements de base.</p>
+</li>
+<li class="p">
+<p>En édition de la fenêtre MDI des traitements du masque, l'onglet vertical <span class="hcp2"><a href="xwin-texte.chm::/xwin_texte/Fenêtre_Arbre_des_traitements.htm">Arbre des traitements</a></span> est ajouté.</p>
+</li>
+<li class="p">
+<p>Le squelette du code source d'un traitement peut être automatiquement généré par Xwin. Dans le cas d'un masque de surcharge, le squelette du traitement de surcharge peut aussi être généré (avec appel au traitement de base).<br>
+En cas de génération, les procédures sont rangées par ordre alphabétique.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span style="font-weight: bold; text-decoration: underline;">Restriction très importante</span> :</p>
+<p>La <span class="hcp2">définition des procédures</span> de traitement du masque doit <span class="hcp2">obligatoirement se trouver dans le source des traitements lui-même</span>. Elle <span class="hcp2">ne peut pas</span> être placée dans un <span class="hcp2">module externe ni</span> dans un <span class="hcp2">fichier "Include"</span>. Remarque : &#160;le compilateur détecte les procédures manquantes.<br>
+&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp2">Remarque importante</span> :</p>
+<p><span class="hcp2">Aucune suppression automatique</span> de lignes de code n'intervient jamais : si, au niveau d'un objet, vous annulez l'appel à un traitement (vous remettez à espace ou changez le nom de la procédure), le code source correspondant n'est pas touché. Remarque : le compilateur signale les procédures qui ne sont plus appelées (sous forme de "Warning").</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Remarques concernant les masques de surcharge <span style="font-weight: normal;">:</span></p>
+<ul class="hcp1">
+<li class="p">
+<p>En débogage, les points d'arrêt posés dans les traitements de base peuvent (et doivent) être placés dans le source de base <span style="text-decoration: underline;">édité depuis le</span> <a href="Surcharge_des_masques.htm">masque de surcharge</a>. Mais <span class="hcp2">attention</span>, pour que ces points d'arrêt fonctionnent, il faut que le masque de base ait été compilé en mode debug !</p>
+</li>
+<li class="p">
+<p>Les occurrences de la recherche multi-fichiers et de la navigation trouvées dans les traitements de base sont éditées dans le masque de surcharge. Mais <span class="hcp2">attention</span>, pour que la navigation fonctionne dans les traitements de base, <span class="hcp2">il faut avoir les DEUX fichiers "browse" (.dhbr) en ligne</span>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="Traitements.htm">Traitements</a></p>
+<p class="Body-Text"><a href="Pointd_arr_t_pointdetraitementetpi_gedetouche.htm">Point d'arrêt, point de traitement et piège de touche</a></p>
+<p class="Body-Text"><a href="Saisie_d_un_nom_de_traitement.htm">Saisie d'un nom de traitement</a></p>
+<p class="Body-Text"><a href="Codification_standard_des_noms_de_traitement.htm">Codification standard des noms de traitement</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

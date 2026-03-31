@@ -1,0 +1,1741 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accordéon : Programmation">
+    <param name="Name" value="Programmation d'un accordéon">
+    <param name="Local" value="ymeg/Programmation_d_un_accord&eacute;on.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accordéons">
+    <param name="Name" value="Les volets et les accordéons">
+    <param name="Local" value="ymeg/Les_volets_et_les_accord&eacute;ons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Affichage et exécution d'un traitement Diva simultanés">
+    <param name="Name" value="Affichage et exécution d'un traitement Diva simultanés">
+    <param name="Local" value="ymeg/Optimisation_des_performances.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Algorithme de saisie des données">
+    <param name="Name" value="Algorithme de saisie des données">
+    <param name="Local" value="ymeg/Algorithmedesaisiedesdonn_es.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Appel d'un menu surgissant en regard de la donnée en cours de saisie">
+    <param name="Name" value="Appel d'un menu surgissant en regard de la donnée en cours de saisie">
+    <param name="Local" value="ymeg/Appel_d_un_menu_surgissant_en_regard_de_la_donn_e_en_cours_de_saisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Appel d'un Zoom ou Consultation de la Liste des fiches d'une table">
+    <param name="Name" value="Appel d'un Zoom ou Consultation de la Liste des fiches d'une table">
+    <param name="Local" value="ymeg/Appel_d_un__Zoom__ou_de_la_fen&ecirc;tre__Combo_zoom_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Appel des fonctions de Ywpf">
+    <param name="Name" value="Appel des fonctions de Ymeg">
+    <param name="Local" value="ymeg/AppeldesfonctionsdeYmeg.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Appel personnalisé d'un Zoom par la touche Ctrl+F">
+    <param name="Name" value="Appel personnalisé d'un Zoom par la touche Ctrl+F">
+    <param name="Local" value="ymeg/Appel_personnalis&eacute;_d_un_Zoom_par_la_touche_Ctrl+F.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Arbres">
+    <param name="Name" value="Arbres">
+    <param name="Local" value="ymeg/Arbres.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Affichage">
+      <param name="Name" value="Affichage, consultation, saisie et déplacements dans un arbre">
+      <param name="Local" value="ymeg/Affichage_consultation_saisieetd_placementsdansunarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Consultation">
+      <param name="Name" value="Affichage, consultation, saisie et déplacements dans un arbre">
+      <param name="Local" value="ymeg/Affichage_consultation_saisieetd_placementsdansunarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Copie d'éléments">
+      <param name="Name" value="Copie d'éléments dans un arbre">
+      <param name="Local" value="ymeg/Copied__l_mentsdansunarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Création d'un élément">
+      <param name="Name" value="Création d'un élément d'arbre">
+      <param name="Local" value="ymeg/Cr_ationd_un_l_mentd_arbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Déplacements">
+      <param name="Name" value="Affichage, consultation, saisie et déplacements dans un arbre">
+      <param name="Local" value="ymeg/Affichage_consultation_saisieetd_placementsdansunarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Description">
+      <param name="Name" value="Description d'un arbre">
+      <param name="Local" value="ymeg/Descriptiond_unarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Evénements souris">
+      <param name="Name" value="Evénements souris liés à l'objet arbre">
+      <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objetarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Exemple de programmation">
+      <param name="Name" value="Exemple de programmation d'un arbre">
+      <param name="Local" value="ymeg/Exempledeprogrammationd_unarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Expansion ou réduction d'un élément">
+      <param name="Name" value="Expansion ou réduction d'un élément d'arbre">
+      <param name="Local" value="ymeg/Expansionour_ductiond_un_l_mentd_arbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Expansion personnalisée d'un élément">
+      <param name="Name" value="Expansion personnalisée d'un élément d'arbre">
+      <param name="Local" value="ymeg/Expansionpersonnalis_ed_un_l_mentd_arbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fonctions de gestion">
+      <param name="Name" value="Fonctions de gestion des arbres">
+      <param name="Local" value="ymeg/Fonctionsdegestiondesarbres.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Gestion de la liste associée">
+      <param name="Name" value="Gestion de la liste associée à un arbre">
+      <param name="Local" value="ymeg/Gestiondelalisteassoci_e_unarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Liste récapitulative des fonctions de gestion">
+      <param name="Name" value="Liste récapitulative des fonctions de gestion des arbres">
+      <param name="Local" value="ymeg/Lister_capitulativedesfonctionsdegestiondesarbres.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Programmation">
+      <param name="Name" value="Programmation d'un arbre">
+      <param name="Local" value="ymeg/Programmationd_unarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Saisie">
+      <param name="Name" value="Affichage, consultation, saisie et déplacements dans un arbre">
+      <param name="Local" value="ymeg/Affichage_consultation_saisieetd_placementsdansunarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Sélection multiple des lignes">
+      <param name="Name" value="Sélection multiple des lignes d'un arbre">
+      <param name="Local" value="ymeg/S_lectionmultipledeslignesd_unarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Traitements liés à l'objet arbre">
+      <param name="Name" value="Traitements liés à l'objet arbre">
+      <param name="Local" value="ymeg/Traitementsli_s_l_objetarbre.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Variable de contrôle">
+      <param name="Name" value="Variable de contrôle d'un arbre">
+      <param name="Local" value="ymeg/Variabledecontr_led_unarbre.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Clic droit sur un bouton de barre d'outils">
+    <param name="Name" value="Clic droit sur un bouton de barre d'outils">
+    <param name="Local" value="ymeg/Clic_droit_sur_un_bouton_de_barre_d_outils.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Clics souris spéciaux (clics droit, double clics, ...)">
+    <param name="Name" value="Clics souris spéciaux (clics droit, double clics, ...)">
+    <param name="Local" value="ymeg/Clicssourissp_ciaux_clicsdroit_doubleclics_____.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Consultation de la Liste des fiches d'une table">
+    <param name="Name" value="Appel d'un Zoom ou Consultation de la Liste des fiches d'une table">
+    <param name="Local" value="ymeg/Appel_d_un__Zoom__ou_de_la_fen&ecirc;tre__Combo_zoom_.htm">
+    <param name="Name" value="XmeZoomCombo">
+    <param name="Local" value="ymeg/XmeZoomCombo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déclaration des données communes au programme et au(x) masque(s)">
+    <param name="Name" value="Déclaration des données communes au programme et au(x) masque(s)">
+    <param name="Local" value="ymeg/D_clarationdesdonn_escommunesauprogrammeetau_x_masque_s_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déclaration des données globales d'un masque">
+    <param name="Name" value="Déclaration des données globales d'un masque">
+    <param name="Local" value="ymeg/D_clarationdesdonn_esglobalesd_unmasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DefProcColler">
+    <param name="Name" value="DefProcColler">
+    <param name="Local" value="ymeg/DefProcColler.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DefProcCopier">
+    <param name="Name" value="DefProcCopier">
+    <param name="Local" value="ymeg/DefProcCopier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DefProcDelete">
+    <param name="Name" value="DefProcDelete">
+    <param name="Local" value="ymeg/DefProcDelete.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DefProcExpanser">
+    <param name="Name" value="DefProcExpanser">
+    <param name="Local" value="ymeg/DefProcExpanser.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DefProcSaisie">
+    <param name="Name" value="DefProcSaisie">
+    <param name="Local" value="ymeg/DefProcSaisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déplacement d'un masque à l'écran">
+    <param name="Name" value="Déplacement d'un masque à l'écran">
+    <param name="Local" value="ymeg/D_placementd_unmasque_l__cran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Drag and drop déléments de tableau">
+    <param name="Name" value="Drag and drop d'éléments de tableau">
+    <param name="Local" value="ymeg/Drag_and_drop_d__l_ments_de_tableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ecran - Rafraîchissement">
+    <param name="Name" value="Affichages de masque et rafraîchissemnt de l'écran">
+    <param name="Local" value="ymeg/Affichages_de_masque_et_rafra&icirc;chissemnt_de_l_&eacute;cran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Erreurs détectées par Ywpf">
+    <param name="Name" value="Erreurs détectées par Ymeg">
+    <param name="Local" value="ymeg/Erreursd_tect_esparYmeg.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exécuteur de masques d'écran Ywpf">
+    <param name="Name" value="L'exécuteur de masques d'écran Ymeg">
+    <param name="Local" value="ymeg/L_ex_cuteurdemasquesd__cranYmeg.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation d'un accordéon">
+    <param name="Name" value="Programmation d'un accordéon">
+    <param name="Local" value="ymeg/Programmation_d_un_accord&eacute;on.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation d'un arbre">
+    <param name="Name" value="Exemple de programmation d'un arbre">
+    <param name="Local" value="ymeg/Exempledeprogrammationd_unarbre.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation d'un tableau">
+    <param name="Name" value="Exemple de programmation d'un tableau">
+    <param name="Local" value="ymeg/Exempledeprogrammationd_untableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation d'un volet">
+    <param name="Name" value="Programmation d'un volet">
+    <param name="Local" value="ymeg/Programmation_d_un_volet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation de grille et pages panels">
+    <param name="Name" value="Exemple de programmation de grille et pages panels">
+    <param name="Local" value="ymeg/Exemple_de_programmation_de_grille_et_pages_panels.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation de pages panels">
+    <param name="Name" value="Exemple de programmation de grille et pages panels">
+    <param name="Local" value="ymeg/Exemple_de_programmation_de_grille_et_pages_panels.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation de positionnement souris en consultation de masque">
+    <param name="Name" value="Exemple de programmation de positionnement souris en consultation de masque">
+    <param name="Local" value="ymeg/Exempledeprogrammationdepositionnementsourisenconsultationdemasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation de texte riche">
+    <param name="Name" value="Exemple de programmation de texte riche">
+    <param name="Local" value="ymeg/Exempledeprogrammationdetexteriche.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation du point d'arrêt &quot;Clic souris&quot;">
+    <param name="Name" value="Exemple de programmation du point d'arrêt &quot;Clic souris&quot;">
+    <param name="Local" value="ymeg/Exempledeprogrammationdupointd_arr_t_Clicsouris_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de programmation du point d'arrêt &quot;Demande de saisie&quot;">
+    <param name="Name" value="Exemple de programmation du point d'arrêt &quot;Demande de saisie&quot;">
+    <param name="Local" value="ymeg/Exempledeprogrammationdupointd_arr_t_Demandedesaisie_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple général de programmation d'une saisie de masque">
+    <param name="Name" value="Exemple général de programmation d'une saisie de masque">
+    <param name="Local" value="ymeg/Exempleg_n_raldeprogrammationd_unesaisiedemasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Export des données d'un tableau">
+    <param name="Name" value="XmeListExport">
+    <param name="Local" value="ymeg/XmeListExport.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Export des données d’un tableau">
+    <param name="Name" value="Export des données d’un tableau">
+    <param name="Local" value="ymeg/Export_des_donn&eacute;es_d’un_tableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fermeture de fenêtre">
+    <param name="Name" value="Fermeture de fenêtre">
+    <param name="Local" value="ymeg/Fermeture_de_fen&ecirc;tre.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fermeture de fenêtres en cascade">
+    <param name="Name" value="Fermeture de fenêtres en cascade">
+    <param name="Local" value="ymeg/Fermetured_unefen_treparAlt_F4.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Filtrage des données d'un tableau">
+    <param name="Name" value="XmeListExport">
+    <param name="Local" value="ymeg/XmeListExport.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Flush">
+    <param name="Name" value="XmeFlush">
+    <param name="Local" value="ymeg/XmeFlush.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fonctions de Ywpf">
+    <param name="Name" value="Fonctions de Ymeg">
+    <param name="Local" value="ymeg/FonctionsdeYmeg.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fonctions interdites dans une séquence de traitement">
+    <param name="Name" value="Fonctions interdites dans une séquence de traitement">
+    <param name="Local" value="ymeg/Fonctionsinterditesdansunes_quencedetraitement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Format d'un objet Xwin de type &quot;texte riche&quot;">
+    <param name="Name" value="Format d'un objet Xwin de type &quot;texte riche&quot;">
+    <param name="Local" value="ymeg/Formatd_unobjetXwindetype__texteriche__.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestionnaire de saisie globale">
+    <param name="Name" value="Gestionnaire de saisie globale">
+    <param name="Local" value="ymeg/Gestionnaire_de_saisie_globale.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Grilles">
+    <param name="Name" value="Les grilles et les panels pages">
+    <param name="Local" value="ymeg/Les_grilles_et_les_panels_pages.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Initialisation d'un masque">
+    <param name="Name" value="Initialisation d'un masque">
+    <param name="Local" value="ymeg/Initialisationd_unmasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Interface d'appel à Ywpf">
+    <param name="Name" value="Interface d'appel à Ymeg">
+    <param name="Local" value="ymeg/Interfaced_appel_Ymeg.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="IsRichTextFileEmpty">
+    <param name="Name" value="IsRichTextFileEmpty">
+    <param name="Local" value="ymeg/IsRichTextFileEmpty.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="IsRichTextHfileEmpty">
+    <param name="Name" value="IsRichTextHfileEmpty">
+    <param name="Local" value="ymeg/IsRichTextHfileEmpty.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_Click_Active_Cell">
+    <param name="Name" value="Evénements souris liés à l'objet tableau">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objettableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_Click_Column_Control">
+    <param name="Name" value="Evénements souris liés à l'objet tableau">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objettableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_Click_Create_Control">
+    <param name="Name" value="Evénements souris liés à l'objet tableau">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objettableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_Click_Heading_Control">
+    <param name="Name" value="Evénements souris liés à l'objet tableau">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objettableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_Click_Row_Control">
+    <param name="Name" value="Evénements souris liés à l'objet tableau">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objettableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_Click_ScrollBar">
+    <param name="Name" value="Evénements souris liés à l'objet tableau">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objettableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_Click_Tree_Control">
+    <param name="Name" value="Evénements souris liés à l'objet arbre">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objetarbre.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_Click_Tree_Cursor">
+    <param name="Name" value="Evénements souris liés à l'objet arbre">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objetarbre.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_Height_Changing">
+    <param name="Name" value="Evénements souris liés à l'objet tableau">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objettableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="List_No_Mouse_Action">
+    <param name="Name" value="Evénements souris liés à l'objet tableau">
+    <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objettableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liste des fiches d'une table">
+    <param name="Name" value="Appel d'un Zoom ou Consultation de la Liste des fiches d'une table">
+    <param name="Local" value="ymeg/Appel_d_un__Zoom__ou_de_la_fen&ecirc;tre__Combo_zoom_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liste récapitulative des fonctions de gestion des arbres">
+    <param name="Name" value="Liste récapitulative des fonctions de gestion des arbres">
+    <param name="Local" value="ymeg/Lister_capitulativedesfonctionsdegestiondesarbres.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liste récapitulative des fonctions de gestion des tableaux">
+    <param name="Name" value="Liste récapitulative des fonctions de gestion des tableaux">
+    <param name="Local" value="ymeg/Lister_capitulativedesfonctionsdegestiondestableaux.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liste récapitulative des fonctions de personnalisation de XmeListConsultDefProc">
+    <param name="Name" value="Liste récapitulative des fonctions de personnalisation de XmeListConsultDefProc">
+    <param name="Local" value="ymeg/Lister_capitulativedesfonctionsdepersonnalisationdeXmeListConsultDefProc.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liste récapitulative des fonctions de Ywpf">
+    <param name="Name" value="Liste récapitulative des fonctions de Ymeg">
+    <param name="Local" value="ymeg/Lister_capitulativedesfonctionsdeYmeg.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mode GOTO et mode GOSUB">
+    <param name="Name" value="Mode GOTO et mode GOSUB">
+    <param name="Local" value="ymeg/ModeGOTOetmodeGOSUB.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modification des attributs d'affichage des objets">
+    <param name="Name" value="Modification des attributs d'affichage des objets">
+    <param name="Local" value="ymeg/Modificationdesattributsd_affichagedesobjets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Notification du changement de valeur d'une donnée à choix multiples">
+    <param name="Name" value="Notification du changement de valeur d'une donnée à choix multiples">
+    <param name="Local" value="ymeg/Notificationduchangementdevaleurd_unedonn_e_choixmultiples.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Optimisation des performances">
+    <param name="Name" value="Optimisation des performances">
+    <param name="Local" value="ymeg/Optimisation_des_performances.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ordre d'analyse des clics souris en saisie de donnée">
+    <param name="Name" value="Ordre d'analyse des clics souris en saisie de donnée">
+    <param name="Local" value="ymeg/Ordred_analysedesclicssourisensaisiededonn_e.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Pages panels">
+    <param name="Name" value="Les grilles et les panels pages">
+    <param name="Local" value="ymeg/Les_grilles_et_les_panels_pages.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Affichage, consultation et saisie de la page mère">
+      <param name="Name" value="Affichage, consultation et saisie de la page mère">
+      <param name="Local" value="ymeg/Affichage,_consultation_et_saisie_de_la_page_m&egrave;re.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Affichage, consultation et saisie isolée d'une page panel">
+      <param name="Name" value="Affichage, consultation et saisie isolée d'une page panel">
+      <param name="Local" value="ymeg/Affichage,_consultation_et_saisie_isol&eacute;e_d_une_page_panel.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Conditions d'appel isolé d’une page panel">
+      <param name="Name" value="Conditions d'appel isolé d’une page panel">
+      <param name="Local" value="ymeg/Affichage_d’une_page_panel_&laquo;_isol&eacute;e_&raquo;.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Conservation au XmeRet de la topographie courante des pages panels liées">
+      <param name="Name" value="Conservation au XmeRet de la topographie courante des pages panels liées">
+      <param name="Local" value="ymeg/Conservation_de_la_topographie_des_pages_panels_li&eacute;es_au_XmeRet.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Définitions">
+      <param name="Name" value="Pages panels - Définitions">
+      <param name="Local" value="ymeg/Pages_panels_-_Concepts_g&eacute;n&eacute;raux.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Introduction">
+      <param name="Name" value="Grilles et pages panels">
+      <param name="Local" value="ymeg/Les_grilles_et_les_panels_pages.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Numéros de page transmis dans l’enregistrement Harmony">
+      <param name="Name" value="Numéros de page transmis dans l’enregistrement Harmony">
+      <param name="Local" value="ymeg/Num&eacute;ros_de_page_transmis_dans_l’enregistrement_Harmony.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Page mère et pages panels à onglets">
+      <param name="Name" value="Page mère et pages panels à onglets">
+      <param name="Local" value="ymeg/Pages_panels_&agrave;_onglets.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Points d’arrêt &quot;Demande de saisie&quot;">
+      <param name="Name" value="Points d’arrêt &quot;Demande de saisie&quot;">
+      <param name="Local" value="ymeg/Points_d’arr&ecirc;t__Demande_de_saisie_.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Réaffichage des pages panels initialement configurées dans Xwin">
+      <param name="Name" value="Réaffichage des pages panels initialement configurées dans Xwin">
+      <param name="Local" value="ymeg/R&eacute;affichage_des_pages_panels_initialement_configur&eacute;es_dans_Xwin.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Réaffichages automatiques au retour d’un point d’arrêt ou de traitement">
+      <param name="Name" value="Réaffichages automatiques au retour d’un point d’arrêt ou de traitement">
+      <param name="Local" value="ymeg/R&eacute;affichages_automatiques_au_retour_d’un_point_d’arr&ecirc;t_ou_de_traitement.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Utilisation et intérêt">
+      <param name="Name" value="Utilisation et intérêt des pages panels">
+      <param name="Local" value="ymeg/Utilisation_et_int&eacute;r&ecirc;t_des_pages_panels.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Panels pages">
+    <param name="Name" value="Les grilles et les panels pages">
+    <param name="Local" value="ymeg/Les_grilles_et_les_panels_pages.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage d'un volet par programme">
+    <param name="Name" value="XmeSetPageOptions">
+    <param name="Local" value="ymeg/XmeSetPageOptions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramètres d'entrée auxiliaires des fonctions de Ywpf">
+    <param name="Name" value="Paramètres d'entrée auxiliaires des fonctions de Ymeg">
+    <param name="Local" value="ymeg/Param_tresd_entr_eauxiliairesdesfonctionsdeYmeg.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramètres de sortie des fonctions de saisie">
+    <param name="Name" value="Paramètres de sortie des fonctions de saisie">
+    <param name="Local" value="ymeg/Param_tresdesortiedesfonctionsdesaisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramètres de sortie liés au point d'arrêt &quot;Demande de saisie&quot;">
+    <param name="Name" value="Paramètres de sortie liés au point d'arrêt &quot;Demande de saisie&quot;">
+    <param name="Local" value="ymeg/Param_tresdesortieli_saupointd_arr_t_Demandedesaisie_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramètres de sortie liés aux points d'arrêt et de traitement &quot;Clic souris&quot;">
+    <param name="Name" value="Paramètres de sortie liés aux points d'arrêt et de traitement &quot;Clic souris&quot;">
+    <param name="Local" value="ymeg/Param_tresdesortieli_sauxpointsd_arr_tetdetraitement_Clicsouris_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Performances - optimisation">
+    <param name="Name" value="Optimisation des performances">
+    <param name="Local" value="ymeg/Optimisation_des_performances.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Piège automatique de la touche Ctrl+D en saisie">
+    <param name="Name" value="XmeTrapCtrlD">
+    <param name="Local" value="ymeg/XmeTrapCtrlD.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Points de séquence">
+    <param name="Name" value="Points de séquence">
+    <param name="Local" value="ymeg/Pointsdes_quence.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Positionnements souris en consultation de masque">
+    <param name="Name" value="Positionnements souris en consultation de masque">
+    <param name="Local" value="ymeg/Positionnementssourisenconsultationdemasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Positionnements souris en saisie de masque">
+    <param name="Name" value="Positionnements souris en saisie de masque">
+    <param name="Local" value="ymeg/Positionnementssourisensaisiedemasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Principes d'utilisation des fonctions de Ywpf">
+    <param name="Name" value="Principes d'utilisation des fonctions de Ymeg">
+    <param name="Local" value="ymeg/Principesd_utilisationdesfonctionsdeYmeg.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Principes généraux de la saisie d'un masque">
+    <param name="Name" value="Principes généraux de la saisie d'un masque">
+    <param name="Local" value="ymeg/Principesg_n_rauxdelasaisied_unmasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Programmation d'un accordéon">
+    <param name="Name" value="Programmation d'un accordéon">
+    <param name="Local" value="ymeg/Programmation_d_un_accord&eacute;on.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Programmation d'un arbre">
+    <param name="Name" value="Programmation d'un arbre">
+    <param name="Local" value="ymeg/Programmationd_unarbre.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Programmation d'un tableau">
+    <param name="Name" value="Programmation d'un tableau">
+    <param name="Local" value="ymeg/Programmationd_untableau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Programmation d'un volet">
+    <param name="Name" value="Programmation d'un volet">
+    <param name="Local" value="ymeg/Programmation_d_un_volet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Programmation de la saisie d'un masque">
+    <param name="Name" value="Programmation de la saisie d'un masque">
+    <param name="Local" value="ymeg/Programmationdelasaisied_unmasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Programmation des points d'arrêt et de traitement &quot;Clic souris&quot;">
+    <param name="Name" value="Programmation des points d'arrêt et de traitement &quot;Clic souris&quot;">
+    <param name="Local" value="ymeg/Programmationdespointsd_arr_tetdetraitement_Clicsouris_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Programmation des positionnements souris en consultation de masque">
+    <param name="Name" value="Programmation des positionnements souris en consultation de masque">
+    <param name="Local" value="ymeg/Programmationdespositionnementssourisenconsultationdemasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Programmation du point d'arrêt &quot;Demande de saisie&quot;">
+    <param name="Name" value="Programmation du point d'arrêt &quot;Demande de saisie&quot;">
+    <param name="Local" value="ymeg/Programmationdupointd_arr_t_Demandedesaisie_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Qu'est-ce qu'un texte riche">
+    <param name="Name" value="Qu'est-ce qu'un texte riche">
+    <param name="Local" value="ymeg/Qu_est_cequ_untexteriche.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Rafraîchissement de l'écran">
+    <param name="Name" value="Affichages de masque et rafraîchissemnt de l'écran">
+    <param name="Local" value="ymeg/Affichages_de_masque_et_rafra&icirc;chissemnt_de_l_&eacute;cran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Réaffichage des pages panels initialement configurées dans Xwin">
+    <param name="Name" value="Réaffichage des pages panels initialement configurées dans Xwin">
+    <param name="Local" value="ymeg/R&eacute;affichage_des_pages_panels_initialement_configur&eacute;es_dans_Xwin.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Réaffichage du masque au retour d'une interruption de saisie">
+    <param name="Name" value="Réaffichage du masque au retour d'une interruption de saisie">
+    <param name="Local" value="ymeg/R&eacute;affichage_du_masque_au_retour_d_une_interruption_de_saisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Reprise de la saisie dun masque">
+    <param name="Name" value="Exemple 1 de reprise de saisie: XMENEXT_RESSAISIE">
+    <param name="Local" value="ymeg/Exemple1dereprisedesaisie__XMENEXT_RESSAISIE.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Exemple 1 (XMENEXT_RESSAISIE)">
+      <param name="Name" value="Exemple 1 de reprise de saisie: XMENEXT_RESSAISIE">
+      <param name="Local" value="ymeg/Exemple1dereprisedesaisie__XMENEXT_RESSAISIE.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Exemple 2 (XMENEXT_POINT_SEQUENCE)">
+      <param name="Name" value="Exemple 2 de reprise de saisie: XMENEXT_POINT_SEQUENCE">
+      <param name="Local" value="ymeg/Exemple2dereprisedesaisie__XMENEXT_POINT_SEQUENCE.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Exemple 3 (XMENEXT_SIMULATION_TOUCHE)">
+      <param name="Name" value="Exemple 3 de reprise de saisie: XMENEXT_SIMULATION_TOUCHE">
+      <param name="Local" value="ymeg/Exemple3dereprisedesaisie__XMENEXT_SIMULATION_TOUCHE.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Exemple 4 (XMENEXT_SAUT_DONNEE)">
+      <param name="Name" value="Exemple 4 de reprise de saisie: XMENEXT_SAUT_DONNEE">
+      <param name="Local" value="ymeg/Exemple4dereprisedesaisie__XMENEXT_SAUT_DONNEE.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Exemple 5 (XMENEXT_DEBUT_DONNEE)">
+      <param name="Name" value="Exemple 5 de reprise de saisie: XMENEXT_DEBUT_DONNEE">
+      <param name="Local" value="ymeg/Exemple5dereprisedesaisie__XMENEXT_DEBUT_DONNEE.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie des objets de type &quot;texte riche&quot;">
+    <param name="Name" value="Saisie des objets de type &quot;texte riche&quot;">
+    <param name="Local" value="ymeg/Saisiedesobjetsdetype__texteriche__.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie globale">
+    <param name="Name" value="XmeGlobalInputBegin">
+    <param name="Local" value="ymeg/XmeGlobalInputBegin.htm">
+    <param name="Name" value="XmeGlobalInputEnd">
+    <param name="Local" value="ymeg/XmeGlobalInputEnd.htm">
+    <param name="Name" value="Gestionnaire de saisie globale">
+    <param name="Local" value="ymeg/Gestionnaire_de_saisie_globale.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Souris">
+    <param name="Name" value="Souris : Clics spéciaux (clics droit, double clics, ...)">
+    <param name="Local" value="ymeg/Souris_Clicssp_ciaux_clicsdroit_doubleclics_____.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Clic droit sur un bouton de barre d'outils">
+      <param name="Name" value="Clic droit sur un bouton de barre d'outils">
+      <param name="Local" value="ymeg/Clic_droit_sur_un_bouton_de_barre_d_outils.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Clics spéciaux (clics droit, clics double, ...)">
+      <param name="Name" value="Souris : Clics spéciaux (clics droit, double clics, ...)">
+      <param name="Local" value="ymeg/Souris_Clicssp_ciaux_clicsdroit_doubleclics_____.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Positionnements en consultation de masque">
+      <param name="Name" value="Souris : Positionnements en consultation de masque">
+      <param name="Local" value="ymeg/Souris_Positionnementsenconsultationdemasque.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Positionnements en saisie de masque">
+      <param name="Name" value="Souris : Positionnements en saisie de masque">
+      <param name="Local" value="ymeg/Souris_Positionnementsensaisiedemasque.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Principes généraux de programmation">
+      <param name="Name" value="Souris: Principes généraux de programmation">
+      <param name="Local" value="ymeg/Souris__principesg_n_rauxdeprogrammation.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Stockage des textes riches et programmation">
+    <param name="Name" value="Stockage des textes riches et programmation">
+    <param name="Local" value="ymeg/Stockagedestextesrichesetprogrammation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Tableau">
+    <param name="Name" value="Affichage d'un tableau">
+    <param name="Local" value="ymeg/Affichaged_untableau.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Affichage">
+      <param name="Name" value="Affichage d'un tableau">
+      <param name="Local" value="ymeg/Affichaged_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Ascenseur horizontal">
+      <param name="Name" value="Ascenseur horizontal d'un tableau">
+      <param name="Local" value="ymeg/Ascenseurhorizontald_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Ascenseur vertical">
+      <param name="Name" value="Ascenseur vertical d'un tableau">
+      <param name="Local" value="ymeg/Ascenseurverticald_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Cellules actives">
+      <param name="Name" value="Cellules actives d'un tableau">
+      <param name="Local" value="ymeg/Cellulesactivesd_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Colonne d'état">
+      <param name="Name" value="Colonne d'état d'un tableau">
+      <param name="Local" value="ymeg/Colonned__tatd_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Consultation">
+      <param name="Name" value="Consultation d'un tableau">
+      <param name="Local" value="ymeg/Consultationd_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Description">
+      <param name="Name" value="Description d'un tableau">
+      <param name="Local" value="ymeg/Descriptiond_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Entêtes de colonne">
+      <param name="Name" value="Entêtes de colonne d'un tableau">
+      <param name="Local" value="ymeg/Ent_tesdecolonned_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Evénements souris">
+      <param name="Name" value="Evénements souris liés à l'objet tableau">
+      <param name="Local" value="ymeg/Ev_nementssourisli_s_l_objettableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Exemple de programmation">
+      <param name="Name" value="Exemple de programmation d'un tableau">
+      <param name="Local" value="ymeg/Exempledeprogrammationd_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fonctions de gestion">
+      <param name="Name" value="Fonctions de gestion des tableaux">
+      <param name="Local" value="ymeg/Fonctionsdegestiondestableaux.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fonctions de personnalisation de XmeListConsultDefProc">
+      <param name="Name" value="Fonctions de personnalisation de XmeListConsultDefProc">
+      <param name="Local" value="ymeg/FonctionsdepersonnalisationdeXmeListConsultDefProc.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Gestion de la liste associée">
+      <param name="Name" value="Gestion de la liste associée à un tableau">
+      <param name="Local" value="ymeg/Gestiondelalisteassoci_e_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Ligne courante">
+      <param name="Name" value="Ligne courante d'un tableau">
+      <param name="Local" value="ymeg/Lignecouranted_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Liste des images bitmap prédéfinies">
+      <param name="Name" value="Liste des images bitmap prédéfinies pour un tableau">
+      <param name="Local" value="ymeg/Listedesimagesbitmappr_d_finiespouruntableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Liste récapitulative des fonctions de gestion">
+      <param name="Name" value="Liste récapitulative des fonctions de gestion des tableaux">
+      <param name="Local" value="ymeg/Lister_capitulativedesfonctionsdegestiondestableaux.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Liste récapitulative des fonctions de personnalisation de XmeListConsultDefProc">
+      <param name="Name" value="Liste récapitulative des fonctions de personnalisation de XmeListConsultDefProc">
+      <param name="Local" value="ymeg/Lister_capitulativedesfonctionsdepersonnalisationdeXmeListConsultDefProc.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Marquage des colonnes">
+      <param name="Name" value="Marquage des colonnes d'un tableau">
+      <param name="Local" value="ymeg/Marquagedescolonnesd_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Marquage des lignes">
+      <param name="Name" value="Marquage des lignes d'un tableau">
+      <param name="Local" value="ymeg/Marquagedeslignesd_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Modification de la taille">
+      <param name="Name" value="Modification de la taille d'un tableau">
+      <param name="Local" value="ymeg/Modificationdelatailled_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Programmation">
+      <param name="Name" value="Programmation d'un tableau">
+      <param name="Local" value="ymeg/Programmationd_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Réaffichage des données">
+      <param name="Name" value="Réaffichage des données liées à un tableau">
+      <param name="Local" value="ymeg/R_affichagedesdonn_esli_es_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Saisie d'une ligne">
+      <param name="Name" value="Saisie d'une ligne de tableau">
+      <param name="Local" value="ymeg/Saisied_unelignedetableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Sélection multiple des lignes">
+      <param name="Name" value="Sélection multiple des lignes d'un tableau">
+      <param name="Local" value="ymeg/S_lectionmultipledeslignesd_untableau.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Traitements liés à l'objet tableau">
+      <param name="Name" value="Traitements liés à l'objet tableau">
+      <param name="Local" value="ymeg/Traitementsli_s_l_objettableau.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Tableaux">
+    <param name="Name" value="Tableaux">
+    <param name="Local" value="ymeg/Tableaux.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Textes riches">
+    <param name="Name" value="Textes riches">
+    <param name="Local" value="ymeg/Textesriches.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement après saisie du masque">
+    <param name="Name" value="Traitement après saisie du masque">
+    <param name="Local" value="ymeg/Traitementapr_ssaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement de la molette">
+    <param name="Name" value="Traitement de la molette">
+    <param name="Local" value="ymeg/Traitement_de_la_molette.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utilisation des paramètres d'entrée auxiliaires">
+    <param name="Name" value="Utilisation des paramètres d'entrée auxiliaires">
+    <param name="Local" value="ymeg/Utilisationdesparam_tresd_entr_eauxiliaires.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Volet">
+    <param name="Name" value="XmeSetPageOptions">
+    <param name="Local" value="ymeg/XmeSetPageOptions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Volet : Programmation">
+    <param name="Name" value="Programmation d'un volet">
+    <param name="Local" value="ymeg/Programmation_d_un_volet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Volets">
+    <param name="Name" value="Les volets et les accordéons">
+    <param name="Local" value="ymeg/Les_volets_et_les_accord&eacute;ons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xme_Mode_Gosub">
+    <param name="Name" value="Mode GOTO et mode GOSUB">
+    <param name="Local" value="ymeg/ModeGOTOetmodeGOSUB.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xme_Mode_Goto">
+    <param name="Name" value="Mode GOTO et mode GOSUB">
+    <param name="Local" value="ymeg/ModeGOTOetmodeGOSUB.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeClearv">
+    <param name="Name" value="XmeClearv">
+    <param name="Local" value="ymeg/XmeClearv.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeConsult">
+    <param name="Name" value="XmeConsult">
+    <param name="Local" value="ymeg/XmeConsult.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeDisp">
+    <param name="Name" value="XmeDisp">
+    <param name="Local" value="ymeg/XmeDisp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeDispv">
+    <param name="Name" value="XmeDispv">
+    <param name="Local" value="ymeg/XmeDispv.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeExecuteTreatmentAfter">
+    <param name="Name" value="XmeExecuteTreatmentAfter">
+    <param name="Local" value="ymeg/XmeExecuteTreatmentAfter.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeFlush">
+    <param name="Name" value="XmeFlush">
+    <param name="Local" value="ymeg/XmeFlush.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeFlushAsync">
+    <param name="Name" value="XmeFlushAsync">
+    <param name="Local" value="ymeg/XmeFlushAsync.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeGetIcon">
+    <param name="Name" value="XmeGetIcon">
+    <param name="Local" value="ymeg/XmeGetIcon.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeGetInputDatasFromPage">
+    <param name="Name" value="XmeGetInputDatasFromPage">
+    <param name="Local" value="ymeg/XmeGetInputDatasFromPage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeGetSequence">
+    <param name="Name" value="XmeGetSequence">
+    <param name="Local" value="ymeg/XmeGetSequence.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeGlobalInputBegin">
+    <param name="Name" value="XmeGlobalInputBegin">
+    <param name="Local" value="ymeg/XmeGlobalInputBegin.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeGlobalInputEnd">
+    <param name="Name" value="XmeGlobalInputEnd">
+    <param name="Local" value="ymeg/XmeGlobalInputEnd.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeHelp">
+    <param name="Name" value="XmeHelp">
+    <param name="Local" value="ymeg/XmeHelp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeInfoPage">
+    <param name="Name" value="XmeInfoPage">
+    <param name="Local" value="ymeg/XmeInfoPage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeInfoPageSize">
+    <param name="Name" value="XmeInfoPageSize">
+    <param name="Local" value="ymeg/XmeInfoPageSize.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeInput">
+    <param name="Name" value="XmeInput">
+    <param name="Local" value="ymeg/XmeInput.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeInputEndTreatment">
+    <param name="Name" value="XmeInputEndTreatment">
+    <param name="Local" value="ymeg/XmeInputEndTreatment.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListAddAfter">
+    <param name="Name" value="XmeListAddAfter">
+    <param name="Local" value="ymeg/XmeListAddAfter.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListAddBefore">
+    <param name="Name" value="XmeListAddBefore">
+    <param name="Local" value="ymeg/XmeListAddBefore.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListAddBegin">
+    <param name="Name" value="XmeListAddBegin">
+    <param name="Local" value="ymeg/XmeListAddBegin.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListAddEnd">
+    <param name="Name" value="XmeListAddEnd">
+    <param name="Local" value="ymeg/XmeListAddEnd.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListBegin">
+    <param name="Name" value="XmeListBegin">
+    <param name="Local" value="ymeg/XmeListBegin.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListConsult">
+    <param name="Name" value="XmeListConsult">
+    <param name="Local" value="ymeg/XmeListConsult.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListConsultDefault">
+    <param name="Name" value="XmeListConsultDefProc">
+    <param name="Local" value="ymeg/XmeListConsultDefault.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListConsultDefProc">
+    <param name="Name" value="XmeListConsultDefproc">
+    <param name="Local" value="ymeg/XmeListConsultDefproc.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListCount">
+    <param name="Name" value="XmeListCount">
+    <param name="Local" value="ymeg/XmeListCount.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListCurrent">
+    <param name="Name" value="XmeListCurrent">
+    <param name="Local" value="ymeg/XmeListCurrent.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListDelete">
+    <param name="Name" value="XmeListDelete">
+    <param name="Local" value="ymeg/XmeListDelete.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListDeleteAndNext">
+    <param name="Name" value="XmeListDeleteAndNext">
+    <param name="Local" value="ymeg/XmeListDeleteAndNext.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListDeleteAndPrevious">
+    <param name="Name" value="XmeListDeleteAndPrevious">
+    <param name="Local" value="ymeg/XmeListDeleteAndPrevious.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListDisableScrollBar">
+    <param name="Name" value="XmeListDisableScrollBar">
+    <param name="Local" value="ymeg/XmeListDisableScrollBar.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListDisplay">
+    <param name="Name" value="XmeListDisplay">
+    <param name="Local" value="ymeg/XmeListDisplay.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListEnableScrollBar">
+    <param name="Name" value="XmeListEnableScrollBar">
+    <param name="Local" value="ymeg/XmeListEnableScrollBar.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListEnd">
+    <param name="Name" value="XmeListEnd">
+    <param name="Local" value="ymeg/XmeListEnd.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListErase">
+    <param name="Name" value="XmeListErase">
+    <param name="Local" value="ymeg/XmeListErase.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListExecuteTreatmentAfter">
+    <param name="Name" value="XmeListExecuteTreatmentAfter">
+    <param name="Local" value="ymeg/XmeListExecuteTreatmentAfter.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListExport">
+    <param name="Name" value="XmeListExport">
+    <param name="Local" value="ymeg/XmeListExport.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListExportPopupMenu">
+    <param name="Name" value="XmeListExportPopupMenu">
+    <param name="Local" value="ymeg/XmeListExportPopupMenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListExportRefreshColumnHeaders">
+    <param name="Name" value="XmeListExportRefreshColumnHeaders">
+    <param name="Local" value="ymeg/XmeListExportRefreshColumnHeaders.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListFind">
+    <param name="Name" value="XmeListFind">
+    <param name="Local" value="ymeg/XmeListFind.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListFirst">
+    <param name="Name" value="XmeListFirst">
+    <param name="Local" value="ymeg/XmeListFirst.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetAdressCurrent">
+    <param name="Name" value="XmeListGetAdressCurrent">
+    <param name="Local" value="ymeg/XmeListGetAdressCurrent.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetColumn">
+    <param name="Name" value="XmeListGetColumn">
+    <param name="Local" value="ymeg/XmeListGetColumn.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetColumnCount">
+    <param name="Name" value="XmeListGetColumnCount">
+    <param name="Local" value="ymeg/XmeListGetColumnCount.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetColumnNumber">
+    <param name="Name" value="XmeListGetColumnNumber">
+    <param name="Local" value="ymeg/XmeListGetColumnNumber.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetColumnNumberByName">
+    <param name="Name" value="XmeListGetColumnNumberByName">
+    <param name="Local" value="ymeg/XmeListGetColumnNumberByName.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetColumnValue">
+    <param name="Name" value="XmeListGetColumnValue">
+    <param name="Local" value="ymeg/XmeListGetColumnValue.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetComboValue">
+    <param name="Name" value="XmeListGetComboValue">
+    <param name="Local" value="ymeg/XmeListGetComboValue.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetCreatingOption">
+    <param name="Name" value="XmeListGetCreatingOption">
+    <param name="Local" value="ymeg/XmeListGetCreatingOption.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetHorizontalScrollBarTooltip">
+    <param name="Name" value="XmeListGetHorizontalScrollBarTooltip">
+    <param name="Local" value="ymeg/XmeListGetHorizontalScrollBarTooltip.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetId">
+    <param name="Name" value="XmeListGetId">
+    <param name="Local" value="ymeg/XmeListGetId.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetOffset">
+    <param name="Name" value="XmeListGetOffset">
+    <param name="Local" value="ymeg/XmeListGetOffset.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetPosition">
+    <param name="Name" value="XmeListGetPosition">
+    <param name="Local" value="ymeg/XmeListGetPosition.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetProp">
+    <param name="Name" value="XmeListGetProp">
+    <param name="Local" value="ymeg/XmeListGetProp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetScrollBar">
+    <param name="Name" value="XmeListGetScrollBar">
+    <param name="Local" value="ymeg/XmeListGetScrollBar.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetSequence">
+    <param name="Name" value="XmeListGetSequence">
+    <param name="Local" value="ymeg/XmeListGetSequence.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetUserColumns">
+    <param name="Name" value="XmeListGetUserColumns">
+    <param name="Local" value="ymeg/XmeListGetUserColumns.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetUserOrderedColumns">
+    <param name="Name" value="XmeListGetUserOrderedColumns">
+    <param name="Local" value="ymeg/XmeListGetUserOrderedColumns.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListGetVerticalScrollBarTooltip">
+    <param name="Name" value="XmeListGetVerticalScrollBarTooltip">
+    <param name="Local" value="ymeg/XmeListGetVerticalScrollBarTooltip.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListIndex">
+    <param name="Name" value="XmeListIndex">
+    <param name="Local" value="ymeg/XmeListIndex.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListInput">
+    <param name="Name" value="XmeListInput">
+    <param name="Local" value="ymeg/XmeListInput.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListInputNext">
+    <param name="Name" value="XmeListInputNext">
+    <param name="Local" value="ymeg/XmeListInputNext.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListInputPossible">
+    <param name="Name" value="XmeListInputPossible">
+    <param name="Local" value="ymeg/XmeListInputPossible.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListInputRet">
+    <param name="Name" value="XmeListInputRet">
+    <param name="Local" value="ymeg/XmeListInputRet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListInsert">
+    <param name="Name" value="XmeListInsert">
+    <param name="Local" value="ymeg/XmeListInsert.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListLast">
+    <param name="Name" value="XmeListLast">
+    <param name="Local" value="ymeg/XmeListLast.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListMode">
+    <param name="Name" value="XmeListMode">
+    <param name="Local" value="ymeg/XmeListMode.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListModify">
+    <param name="Name" value="XmeListModify">
+    <param name="Local" value="ymeg/XmeListModify.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListModifyRowName">
+    <param name="Name" value="XmeListModifyRowName">
+    <param name="Local" value="ymeg/XmeListModifyRowName.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListMove">
+    <param name="Name" value="XmeListMove">
+    <param name="Local" value="ymeg/XmeListMove.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListNext">
+    <param name="Name" value="XmeListNext">
+    <param name="Local" value="ymeg/XmeListNext.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListNumber">
+    <param name="Name" value="XmeListNumber">
+    <param name="Local" value="ymeg/XmeListNumber.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListPrevious">
+    <param name="Name" value="XmeListPrevious">
+    <param name="Local" value="ymeg/XmeListPrevious.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListRemoveProp">
+    <param name="Name" value="XmeListRemoveProp">
+    <param name="Local" value="ymeg/XmeListRemoveProp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListResetAttribut">
+    <param name="Name" value="XmeListResetAttribut">
+    <param name="Local" value="ymeg/XmeListResetAttribut.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListScreenCount">
+    <param name="Name" value="XmeListScreenCount">
+    <param name="Local" value="ymeg/XmeListScreenCount.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListScreenCountAsync">
+    <param name="Name" value="XmeListScreenCountAsync">
+    <param name="Local" value="ymeg/XmeListScreenCountAsync.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListScrollBarInit">
+    <param name="Name" value="XmeListScrollBarInit">
+    <param name="Local" value="ymeg/XmeListScrollBarInit.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSearch">
+    <param name="Name" value="XmeListSearch">
+    <param name="Local" value="ymeg/XmeListSearch.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSeek">
+    <param name="Name" value="XmeListSeek">
+    <param name="Local" value="ymeg/XmeListSeek.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSelectionCount">
+    <param name="Name" value="XmeListSelectionCount">
+    <param name="Local" value="ymeg/XmeListSelectionCount.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetAdressCurrent">
+    <param name="Name" value="XmeListSetAdressCurrent">
+    <param name="Local" value="ymeg/XmeListSetAdressCurrent.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetAttribut">
+    <param name="Name" value="XmeListSetAttribut">
+    <param name="Local" value="ymeg/XmeListSetAttribut.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetColumn">
+    <param name="Name" value="XmeListSetColumn">
+    <param name="Local" value="ymeg/XmeListSetColumn.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetCreatingOption">
+    <param name="Name" value="XmeListSetCreatingOption">
+    <param name="Local" value="ymeg/XmeListSetCreatingOption.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetHorizontalScrollBarLeft">
+    <param name="Name" value="XmeListSetHorizontalScrollBarLeft">
+    <param name="Local" value="ymeg/XmeListSetHorizontalScrollBarLeft.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetHorizontalScrollBarTooltip">
+    <param name="Name" value="XmeListSetHorizontalScrollBarTooltip">
+    <param name="Local" value="ymeg/XmeListSetHorizontalScrollBarTooltip.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetOffset">
+    <param name="Name" value="XmeListSetOffset">
+    <param name="Local" value="ymeg/XmeListSetOffset.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetOptions">
+    <param name="Name" value="XmeListSetOptions">
+    <param name="Local" value="ymeg/XmeListSetOptions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetPosition">
+    <param name="Name" value="XmeListSetPosition">
+    <param name="Local" value="ymeg/XmeListSetPosition.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetProp">
+    <param name="Name" value="XmeListSetProp">
+    <param name="Local" value="ymeg/XmeListSetProp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetScrollBar">
+    <param name="Name" value="XmeListSetScrollBar">
+    <param name="Local" value="ymeg/XmeListSetScrollBar.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetSelection">
+    <param name="Name" value="XmeListSetSelection">
+    <param name="Local" value="ymeg/XmeListSetSelection.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetSelectionOption">
+    <param name="Name" value="XmeListSetSelectionOption">
+    <param name="Local" value="ymeg/XmeListSetSelectionOption.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSetVerticalScrollBarTooltip">
+    <param name="Name" value="XmeListSetVerticalScrollBarTooltip">
+    <param name="Local" value="ymeg/XmeListSetVerticalScrollBarTooltip.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListSort">
+    <param name="Name" value="XmeListSort">
+    <param name="Local" value="ymeg/XmeListSort.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeAscendant">
+    <param name="Name" value="XmeListTreeAscendant">
+    <param name="Local" value="ymeg/XmeListTreeAscendant.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeColumnNumber">
+    <param name="Name" value="XmeListTreeColumnNumber">
+    <param name="Local" value="ymeg/XmeListTreeColumnNumber.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeCount">
+    <param name="Name" value="XmeListTreeCount">
+    <param name="Local" value="ymeg/XmeListTreeCount.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeCursorInit">
+    <param name="Name" value="XmeListTreeCursorInit">
+    <param name="Local" value="ymeg/XmeListTreeCursorInit.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeFirst">
+    <param name="Name" value="XmeListTreeFirst">
+    <param name="Local" value="ymeg/XmeListTreeFirst.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeGetCursor">
+    <param name="Name" value="XmeListTreeGetCursor">
+    <param name="Local" value="ymeg/XmeListTreeGetCursor.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeGetCursorOption">
+    <param name="Name" value="XmeListTreeGetCursorOption">
+    <param name="Local" value="ymeg/XmeListTreeGetCursorOption.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeGetOffset">
+    <param name="Name" value="XmeListTreeGetOffset">
+    <param name="Local" value="ymeg/XmeListTreeGetOffset.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeIncrementOffset">
+    <param name="Name" value="XmeListTreeIncrementOffset">
+    <param name="Local" value="ymeg/XmeListTreeIncrementOffset.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeIndex">
+    <param name="Name" value="XmeListTreeIndex">
+    <param name="Local" value="ymeg/XmeListTreeIndex.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeLast">
+    <param name="Name" value="XmeListTreeLast">
+    <param name="Local" value="ymeg/XmeListTreeLast.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeLastDescendant">
+    <param name="Name" value="XmeListTreeLastDescendant">
+    <param name="Local" value="ymeg/XmeListTreeLastDescendant.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeNext">
+    <param name="Name" value="XmeListTreeNext">
+    <param name="Local" value="ymeg/XmeListTreeNext.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeNumber">
+    <param name="Name" value="XmeListTreeNumber">
+    <param name="Local" value="ymeg/XmeListTreeNumber.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeParent">
+    <param name="Name" value="XmeListTreeAscendant">
+    <param name="Local" value="ymeg/XmeListTreeAscendant.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreePrevious">
+    <param name="Name" value="XmeListTreePrevious">
+    <param name="Local" value="ymeg/XmeListTreePrevious.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeRestoreSelection">
+    <param name="Name" value="XmeListTreeRestoreSelection">
+    <param name="Local" value="ymeg/XmeListTreeRestoreSelection.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeSaveSelection">
+    <param name="Name" value="XmeListTreeSaveSelection">
+    <param name="Local" value="ymeg/XmeListTreeSaveSelection.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeSetCursor">
+    <param name="Name" value="XmeListTreeSetCursor">
+    <param name="Local" value="ymeg/XmeListTreeSetCursor.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeListTreeSetCursorOption">
+    <param name="Name" value="XmeListTreeSetCursorOption">
+    <param name="Local" value="ymeg/XmeListTreeSetCursorOption.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeLoad">
+    <param name="Name" value="XmeLoad">
+    <param name="Local" value="ymeg/XmeLoad.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeLoadCurrentData">
+    <param name="Name" value="XmeLoadCurrentData">
+    <param name="Local" value="ymeg/XmeLoadCurrentData.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeNext">
+    <param name="Name" value="XmeNext">
+    <param name="Local" value="ymeg/XmeNext.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Arret_Apres">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Arret_Avant">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Debut_Donnee">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Defaut">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Derniere_Donnee">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Donnee_Suivante">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Point_Sequence">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Popup_Menu">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Premiere_Donnee">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Ressaisie">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Saut_Donnee">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Simulation_Touche">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Test_Abandon">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Test_Souriciere">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Test_Validation">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Traitement_Apres">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xmenext_Traitement_Avant">
+    <param name="Name" value="Points de reprise dans la saisie du masque">
+    <param name="Local" value="ymeg/Pointsdereprisedanslasaisiedumasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeResetAttribut">
+    <param name="Name" value="XmeResetAttribut">
+    <param name="Local" value="ymeg/XmeResetAttribut.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeRet">
+    <param name="Name" value="XmeRet">
+    <param name="Local" value="ymeg/XmeRet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeSetAttribut">
+    <param name="Name" value="XmeSetAttribut">
+    <param name="Local" value="ymeg/XmeSetAttribut.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeSetColorTheme">
+    <param name="Name" value="XmeSetColorTheme">
+    <param name="Local" value="ymeg/XmeSetColorTheme.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeSetIcon">
+    <param name="Name" value="XmeSetIcon">
+    <param name="Local" value="ymeg/XmeSetIcon.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeSetOptions">
+    <param name="Name" value="XmeSetOptions">
+    <param name="Local" value="ymeg/XmeSetOptions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeSetPageOptions">
+    <param name="Name" value="XmeSetPageOptions">
+    <param name="Local" value="ymeg/XmeSetPageOptions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeSetTimer">
+    <param name="Name" value="XmeSetTimer">
+    <param name="Local" value="ymeg/XmeSetTimer.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeSetWindowId">
+    <param name="Name" value="XmeSetWindowId">
+    <param name="Local" value="ymeg/XmeSetWindowId.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeSetWindowSize">
+    <param name="Name" value="XmeSetWindowSize">
+    <param name="Local" value="ymeg/XmeSetWindowSize.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeTitle">
+    <param name="Name" value="XmeTitle">
+    <param name="Local" value="ymeg/XmeTitle.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeTrapCtrlD">
+    <param name="Name" value="XmeTrapCtrlD">
+    <param name="Local" value="ymeg/XmeTrapCtrlD.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XmeZoomCombo">
+    <param name="Name" value="XmeZoomCombo">
+    <param name="Local" value="ymeg/XmeZoomCombo.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ywpf">
+    <param name="Name" value="L'exécuteur de masques d'écran Ymeg">
+    <param name="Local" value="ymeg/L_ex_cuteurdemasquesd__cranYmeg.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Algorithme de saisie des données">
+      <param name="Name" value="Algorithme de saisie des données">
+      <param name="Local" value="ymeg/Algorithmedesaisiedesdonn_es.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Appel des fonctions">
+      <param name="Name" value="Appel des fonctions de Ymeg">
+      <param name="Local" value="ymeg/AppeldesfonctionsdeYmeg.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Arbres">
+      <param name="Name" value="Arbres">
+      <param name="Local" value="ymeg/Arbres.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Erreurs">
+      <param name="Name" value="Erreurs détectées par Ymeg">
+      <param name="Local" value="ymeg/Erreursd_tect_esparYmeg.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fonctions">
+      <param name="Name" value="Fonctions de Ymeg">
+      <param name="Local" value="ymeg/FonctionsdeYmeg.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Interface d'appel">
+      <param name="Name" value="Interface d'appel à Ymeg">
+      <param name="Local" value="ymeg/Interfaced_appel_Ymeg.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Modification des attributs d'affichage des objets">
+      <param name="Name" value="Modification des attributs d'affichage des objets">
+      <param name="Local" value="ymeg/Modificationdesattributsd_affichagedesobjets.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Paramètres d'entrée auxiliaires">
+      <param name="Name" value="Paramètres d'entrée auxiliaires des fonctions de Ymeg">
+      <param name="Local" value="ymeg/Param_tresd_entr_eauxiliairesdesfonctionsdeYmeg.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Points de séquence">
+      <param name="Name" value="Points de séquence">
+      <param name="Local" value="ymeg/Pointsdes_quence.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Présentation">
+      <param name="Name" value="Présentation de Ymeg">
+      <param name="Local" value="ymeg/Pr_sentationdeYmeg.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Programmation de la saisie d'un masque">
+      <param name="Name" value="Programmation de la saisie d'un masque">
+      <param name="Local" value="ymeg/Programmationdelasaisied_unmasque.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Souris">
+      <param name="Name" value="Souris: Principes généraux de programmation">
+      <param name="Local" value="ymeg/Souris__principesg_n_rauxdeprogrammation.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Tableaux">
+      <param name="Name" value="Tableaux">
+      <param name="Local" value="ymeg/Tableaux.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Textes riches">
+      <param name="Name" value="Textes riches">
+      <param name="Local" value="ymeg/Textesriches.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Zdiva">
+    <param name="Name" value="Zdiva">
+    <param name="Local" value="ymeg/Zdiva.htm">
+  </object>
+</ul>
+</html>

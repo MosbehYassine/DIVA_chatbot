@@ -1,0 +1,135 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Enregistrements</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold;
+text-decoration:underline; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Enregistrements</h3>
+<p class="Body-Text">Cette boîte de dialogue permet d'indiquer dans quels dictionnaires de données et dans quels enregistrements les données utilisées dans le masque sont recherchées.</p>
+<p class="Body-Text">La saisie de cette boîte doit être exécutée avant (ou au moment de) l'insertion d'un objet lié à une variable.</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Pour ajouter un enregistrement à la liste, garnissez les zones Dictionnaire, Enregistrement et Instance puis cliquez sur le bouton Ajouter.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour supprimer un enregistrement de la liste, sélectionnez-le en cliquant avec la souris puis cliquez sur le bouton Supprimer. La suppression n'est possible que si aucun champ de l'enregistrement n'est utilisé dans le masque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour renommer une instance d'enregistrement, sélectionnez-la dans la liste puis cliquez sur le bouton Renommer. Saisissez les nouvelles valeurs.<span class="hcp2"><br>
+Attention</span> :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Tous les objets du masque qui référencent l'instance concernée sont modifiés pour pointer la nouvelle instance.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En revanche, <span class="hcp2">aucune modification n'est apportée aux traitements du masque</span>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les champs à saisir pour l'ajout d'un enregistrement sont :<br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 10.542%;">
+<col style="width: 9.513%;">
+<col style="width: 2.443%;">
+<col style="width: 77.502%;">
+<tr class="hcp3">
+<td style="width:10.542%;" class="hcp4">
+<p class="Body-Text"><font class="hcp5">Dictionnaire</font></p>
+</td>
+<td colspan="3" style="width:89.458%;" class="hcp4">
+<p class="Body-Text">Nom du dictionnaire des données. Le bouton situé à droite de la zone permet de rechercher un dictionnaire.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:10.542%;" class="hcp4">
+<p class="Body-Text"><font class="hcp5">Enregistrement</font></p>
+</td>
+<td colspan="3" style="width:89.458%;" class="hcp4">
+<p class="Body-Text">Nom de l'enregistrement dans le dictionnaire. Le bouton situé à la droite de la zone permet de sélectionner un ou plusieurs enregistrements dans la liste des enregistrements du dictionnaire.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:10.542%;" class="hcp4">
+<p class="Body-Text"><font class="hcp5">Instance</font></p>
+</td>
+<td colspan="3" style="width:89.458%;" class="hcp4">
+<p class="Body-Text">Le nom de l'instance est facultatif. S'il n'est pas précisé, son nom est le même que celui de l'enregistrement.</p>
+<p class="Body-Text">Le lien entre l'enregistrement déclaré dans le masque et l'enregistrement du programme Diva se fait d'après ce nom.<br>
+&#160;</p>
+<p class="Body-Text"><span style="text-decoration: underline;">Exemple</span> :</p>
+<p class="Body-Text">L'enregistrement Client est déclaré comme suit dans le programme Diva :<br>
+&#160;Public Record Demo.dhsd Client Ecli</p>
+<p class="Body-Text">Pour déclarer ce même enregistrement dans le masque, il faut garnir les zones de la manière suivante :</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:10.542%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:9.513%;" class="hcp4">
+<p class="Body-Text">Dictionnaire</p>
+</td>
+<td style="width:2.443%;" class="hcp4">
+<p class="Body-Text">:</p>
+</td>
+<td style="width:77.502%;" class="hcp4">
+<p class="Body-Text">Demo.dhsd</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:10.542%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:9.513%;" class="hcp4">
+<p class="Body-Text">Enregistrement</p>
+</td>
+<td style="width:2.443%;" class="hcp4">
+<p class="Body-Text">:</p>
+</td>
+<td style="width:77.502%;" class="hcp4">
+<p class="Body-Text">Client</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:10.542%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:9.513%;" class="hcp4">
+<p class="Body-Text">Instance</p>
+</td>
+<td style="width:2.443%;" class="hcp4">
+<p class="Body-Text">:</p>
+</td>
+<td style="width:77.502%;" class="hcp4">
+<p class="Body-Text">Ecli</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

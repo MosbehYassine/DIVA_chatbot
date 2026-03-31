@@ -1,0 +1,61 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Construire un programme ou une application</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+font.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Construire un programme ou une application</h3>
+<p class="Body-Text">Avant d'exécuter votre application, vous devez compiler les programmes, les masques et les dictionnaires qui la composent. Les compilations s'effectuent en "tâche de fond". Durant une génération, vous conservez donc la main pour éditer d'autres sources, naviguer dans votre application, etc. Seule l'exécution du programme est interdite.</p>
+<p class="Body-Text" style="font-size: 8pt;">Exception&#160;<span class="hcp1">hors projet</span> : une compilation de masque est faite par l'éditeur lui-même. Dans ce cas, vous perdez la main durant la compilation et vous devez en attendre la fin pour la récupérer.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span style="text-decoration: underline;">Nous vous conseillons de créer un projet autour de votre application</span>. Un des nombreux avantages des projets est que Xwin détermine automatiquement la liste des sources, qui doivent être recompilés suite aux modifications apportées depuis la dernière construction, et enchaîne automatiquement les compilations.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Xwin propose deux modes de compilation&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp3">Le mode "débogueur"</font>.<br>
+Ce mode vous permet de bénéficier des fonctions du <a href="D_boguerunprogramme.htm">débogueur</a> pour effectuer la mise au point de votre programme.<br>
+L'option complémentaire "<span class="hcp1">Couverture du code</span>" demande au compilateur de code source de Xwin de générer les informations nécessaires à la fonction de <a href="Contr&ocirc;le_de_code_source_couverture_du_code_ex&eacute;cut&eacute;.htm">couverture du code</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp3">Le mode "normal"</font>.<br>
+Ce mode vous permet de générer le code objet qui sera ensuite utilisé en exploitation.</p>
+</li>
+</ul>
+<p class="body-text">&#160;</p>
+<p class="Body-Text">Si des erreurs sont détectées lors des compilations de sources, Xwin vous permet de les repérer très rapidement&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">L’onglet <font class="hcp3">Compte rendu</font> affiche la liste de toutes les erreurs.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous tapez une première fois la touche <font class="hcp3">F4</font>, Xwin charge au besoin le source concerné dans une nouvelle fenêtre, affiche cette dernière et place automatiquement le curseur sur la ligne en erreur. Vous pouvez alors corriger immédiatement votre source.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les touches <font class="hcp3">F4</font> et <span class="hcp1">Maj</span><font class="hcp3">+F4</font> (ou les commandes du menu équivalentes) permettent ensuite de passer à l'erreur suivante ou de revenir sur l'erreur précédente. Une marque dessinée en marge permet de repérer la ligne erronée courante.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'accès direct à une erreur précise est également possible. Il suffit de double-cliquer sur la ligne voulue dans la fenêtre Compte rendu.</p>
+</li>
+</ul>
+<p class="Body-Text">Si les compilations se terminent sans erreur, vous pouvez lancer l'<a href="Ex_cuterunprogramme.htm">exécution du programme</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp1">Remarque</span> : Pour vous aider à développer plus rapidement vos programmes, Xwin <span class="hcp1">compile "en ligne"</span> tous les codes source (programmes et traitements de masque ou de dictionnaire) chargés de votre sous-projet courant. En ligne (ou à la volée) signifie <span class="hcp1">sans demande explicite de génération</span> et <span class="hcp1">chaque fois que vous modifiez un source</span>. Les erreurs détectées sont immédiatement signalées par le <span class="hcp1">soulignage de la zone de code</span> concernée et si vous faites stationner la souris sur une zone soulignée, <span class="hcp1">une bulle explicitant l'erreur</span> est affichée. Attention, une vraie génération est toutefois nécessaire pour pouvoir exécuter un programme modifié.</p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

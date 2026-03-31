@@ -1,0 +1,53 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Left</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Left &#160;<a href="Fonctionsdetraitementdescha_nesdecaract_res.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Left permet d'extraire la partie gauche d'une chaîne de caractères. Elle peut se trouver à gauche dans une affectation.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Char</font> <font class="hcp1">Left</font> ( <font class="hcp2">variable</font> , [ <font class="hcp2">longueur</font> ] )</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Variable</font></p>
+<p class="decalage05">Le type de la variable est quelconque.</p>
+<p class="Body-Text"><font class="hcp2">Longueur</font></p>
+<p class="decalage05">Valeur numérique indiquant le nombre de caractères de la chaîne résultat. Ce paramètre est facultatif. S'il n'est pas précisé, la <font class="hcp2">longueur</font> correspond à la taille de <font class="hcp2">variable</font> sans compter les espaces et les caractères $00 de fin.<br>
+Left(var) est donc équivalent à Left(var,&#160;length(var)).</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La fonction retourne la partie gauche de la chaîne de caractères. Le type de retour est toujours alphanumérique.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemples</font></p>
+<p class="Source">Display left("Bonjour",3)</p>
+<p class="Source">affiche Bon</p>
+&#160;
+<p class="Source">Left(nom, 3) = "ABC"</p>
+<p class="Source">; place les caractères ABC dans les trois premiers caractères de la</p>
+<p class="Source">; donnée nom.</p>
+&#160;
+<p class="Source">1 nom 30<br>
+nom = "Dupont"</p>
+<p class="Source">Display '!' &amp; left(nom) &amp; '!'</p>
+<p class="Source">; affiche !Dupont!</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Length.htm">Length</a>, <a href="Right.htm">Right</a>, <a href="Mid.htm">Mid</a>, <a href="NoSpaces.htm">NoSpaces</a></p>
+</body>
+</html>

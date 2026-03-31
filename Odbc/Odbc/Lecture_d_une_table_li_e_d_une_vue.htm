@@ -1,0 +1,46 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Lecture d'une table liée d'une vue</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Lecture d'une table liée d'une vue</h3>
+<p class="Body-Text">La description des liens dans le dictionnaire de données permet d’associer au lien une procédure Diva de lecture de la table liée. Cette procédure n’est exécutée que dans le cadre des vues. Elle n’est jamais exécutée dans le cas d’une requête simple portant directement sur des tables.</p>
+<p class="Body-Text">Elle permet d’effectuer une recherche «&#160;intelligente&#160;» de la table liée plutôt qu’une recherche simplement relationnelle, par exemple effectuer des recherches en cascade d’abord avec le dossier du client, puis avec le dossier par défaut.</p>
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text">Le module comportant la procédure de lecture de la table liée doit <font class="hcp1">impérativement</font> comporter une déclaration publique des deux tables liées. Le nom des instances doit être <font class="hcp1">impérativement</font> le nom des tables elles-mêmes.</p>
+<p class="Body-Text">Le driver ODBC garnit la table d’origine avant l’appel de la procédure.</p>
+<p class="Body-Text">La procédure effectue la recherche de l’enregistrement public correspondant à la table liée. C’est cet enregistrement qui est renvoyé au driver à la fin de l’exécution de la procédure.</p>
+<p class="Body-Text">S’il n’y a pas de correspondance, l’enregistrement doit être mis entièrement à espace.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:</font></p>
+<p class="Body-Text"><font color="#000000">La fonction Lectab du module Gttm000 cherche le mode de règlement soit dans le dossier du client soit dans le dossier commun en fonction du paramétrage.</font></p>
+<p class="Body-Text"><font color="#000000">La procédure d’initialisation de la vue charge la table T000 qui précise le mode de fonctionnement par la fonction seek_t000</font></p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source"><font color="#0000FF">Module</font> <font color="#000000">GTTM000.dhop</font></p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source"><font color="#0000FF">public record</font> <font color="#000000">&#160;gtfdd.dhsd T000</font></p>
+<p class="source"><font color="#0000FF">public record</font> <font color="#000000">&#160;gtfdd.dhsd cli</font></p>
+<p class="source"><font color="#0000FF">public record</font> <font color="#000000">&#160;gtfdd.dhsd T006&#160;</font></p>
+<p class="source"><font color="#008000">;recherche du mode de règlement en fonction des paramètres Dossier</font></p>
+<p class="source"><font color="#0000FF">Public Procedure</font> <font color="#000000">Cli_T006_FL</font></p>
+<p class="source"><font color="#0000FF">Beginp</font></p>
+<p class="source"><font color="#000000">Mz.Dos = Cli.dos</font></p>
+<p class="source"><font color="#0000FF">if</font> <font color="#000000">Lectab(6 , Cli.Regl) &lt;&gt; 0</font></p>
+<p class="source"><font color="#000000">&#160;&#160;</font><font color="#000000">T006 = ' '</font></p>
+<p class="source"><font color="#0000FF">endif</font></p>
+<p class="source"><font color="#0000FF">Endp</font></p>
+</body>
+</html>

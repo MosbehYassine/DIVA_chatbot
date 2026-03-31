@@ -1,0 +1,49 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Masques imprimante : concepts généraux - Introduction</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-variant:small-caps; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Introduction</h2>
+&#160;
+<p class="Body-Text">Dans une application <font class="hcp1">h</font>armony, les impressions sont réalisées par un gestionnaire d'imprimante (<font class="hcp1">y</font>mig), afin de décharger les programmes d'une partie importante de la présentation des états. Cette gestion d'imprimante se caractérise essentiellement par un bon compromis entre simplicité de mise en œuvre et souplesse de paramétrage :</p>
+<ul style="list-style: disc;">
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text">Les différentes composantes d'un état (en-tête, détail, pied) sont dessinées sans aucune programmation.</p>
+</li>
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text">Grâce à la notion de "Feuille de styles", les attributs de présentation peuvent être choisis par l'utilisateur.</p>
+</li>
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text">De nombreuses fonctions de mise en forme sont applicables aux données (cadrage, formatage, conversion, etc.).</p>
+</li>
+<li style="margin-left: -20px;" class="p-Body-Text">
+<p class="Body-Text">Des contrôles et des traitements peuvent être effectués pour faire une recherche dans un fichier annexe, influer sur le déroulement de l'impression, etc. Ils sont déclenchés par :</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Des "points de traitement" qui donnent le contrôle à une séquence de programme écrite en langage Diva et stockée directement au niveau du masque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Des "points d'arrêt" qui rendent ponctuellement le contrôle au programme à l'origine de l'édition.</p>
+</li>
+</ul>
+<p class="Body-Text">Le dessin des masques d'imprimante fait appel à l'éditeur <font class="hcp1">Xwin</font>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span style="text-decoration: underline;">Remarque importante</span> :</p>
+<p class="Body-Text">Le présent livre n'aborde pas l'aspect programmation : l'interface entre le gestionnaire d'imprimante <font class="hcp1">y</font>mig et le programmes Diva fait l'objet du livre Ymig, exécuteur de masques d'imprimante.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,65 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>OpenXmlWord_Replace</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal; }
+span.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>OpenXmlWord_Replace &#160;<span class="hcp1"><a href="Liste_des_fonctions_traitement_de_texte_OpenXml.htm">Famille</a> &#160;<a href="Fonctions_OpenXml.htm">Theme</a></span></h3>
+<p>&#160;</p>
+<p>La fonction OpenXmlWord_Replace cherche et remplace une chaîne de référence dans le document MS Word en cours.</p>
+<p>&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">Int OpenXmlWord_Replace</span> (<span class="hcp2">cherche, remplace, ancrage</span>)</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;">Cherche</p>
+<p class="decalage05">Chaîne de caractères à rechercher.</p>
+<p class="Body-Text" style="font-style: italic;">Remplace</p>
+<p class="decalage05">Chaîne de caractères de remplacement.</p>
+<p class="Body-Text" style="font-style: italic;">Ancrage</p>
+<p class="decalage05">False : OpenXml recherche toutes les occurrences de la chaîne <span class="hcp2">Cherche</span> et les remplace par la chaîne <span class="hcp2">Remplace</span> (valeur par défaut). La main n'est pas rendue au programme avant la fin des remplacements.</p>
+<p class="decalage05">True : OpenXml recherche la 1ère occurrence de la chaîne <span class="hcp2">Cherche</span>, la remplace par la chaîne <span class="hcp2">Remplace</span> et pose un point d'ancrage après le paragraphe contenant la chaîne recherchée. La main est rendue au programme pour que celui-ci puisse utiliser ce point d'ancrage pour y insérer un ou plusieurs <a href="OpenXmlWord_CreateParagraph.htm">paragraphes</a> avec du <a href="OpenXmlWord_InsertText.htm">texte</a> ou un ou plusieurs <a href="OpenXmlWord_InsertFile.htm">fichiers</a>. Le programme peut ensuite rappeler cette fonction pour procéder à un autre remplacement.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour <span class="hcp1">:</span></p>
+<table style="vertical-align: top;" cellspacing="0" width="82.422%">
+<col style="width: 4.844%;">
+<col style="width: 93.333%;">
+<tr class="hcp3">
+<td style="width:4.844%;" class="hcp4">
+<p>n</p>
+</td>
+<td style="width:93.333%;" class="hcp4">
+<p>Nombre de modifications faites dans le fichier par la fonction.<br>
+Si le paramètre <span class="hcp2">Ancrage</span> = true, n = 1, ce qui signifie qu'il y a eu une modification et qu'un point d’ancrage a été créé.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:4.844%;" class="hcp4">
+<p>0</p>
+</td>
+<td style="width:93.333%;" class="hcp4">
+<p>Aucune modification.<br>
+Si le paramètre <span class="hcp2">Ancrage</span> = true, 0 signifie que le traitement est terminé.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p style="font-weight: bold;">Voir</p>
+<p><a href="OpenXml_Exemple_de_publipostage.htm">OpenXml Exemple de publipostage</a></p>
+<p>&#160;</p>
+</body>
+</html>

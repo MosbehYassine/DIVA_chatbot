@@ -1,0 +1,70 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation d'un accordéon</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { text-decoration:underline; }
+font.hcp3 { font-weight:bold; }
+p.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Programmation d'un accordéon</h3>
+<p>Une fois configuré dans Xwin (Cf. rubrique "<span class="hcp1">Caractéristiques et paramétrage d'un accordéon</span>" de la documentation consacrée à l'éditeur de masques Xwin), l'affichage d'un accordéon est entièrement géré par le client et ne nécessite donc pas de programmation complémentaire.</p>
+<p>&#160;</p>
+<p>Toutefois, voici quelques remarques ayant trait aux accordéons :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Il est <span class="hcp2">impératif d'afficher la page parente AVANT les pages incluses</span> dans l'accordéon.<br>
+<br>
+Attention aux effets de bord potentiels. L'exemple suivant ne fonctionnera pas :<br>
+- Affichage de la page parente A incluant l'accordéon (mais vide d'objet).<br>
+- Affichage en mode GOSUB d’une AUTRE page avec effacement de la page A.<br>
+- XmeRet : La page A, bien qu'effacée, redevient la page courante pour Ywpf. Comme elle ne contient pas d’objet, visuellement tout semble correct.<br>
+- Affichage des pages incluses dans l’accordéon.<br>
+Attention donc à ne pas effacer la page qui définit l'accordéon avec une autre page en mode GOSUB ou bien réafficher EXPLICITEMENT la page par <span class="hcp2">XmeDisp</span> après le XmeRet.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Un accordéon <span class="hcp2">ne doit pas être inclus dans un masque multi-écran (pages chaînées)</span>, pour la raison suivante :<br>
+L'affichage des pages incluses dans un accordéon est toujours à la charge du programme. Mais dans un masque multi-écran, le passage d'une page à une autre est transparent pour le programme. Ce dernier n'étant pas averti du changement de page, il ne peut donc procéder à l'affichage des pages incluses. Vous pouvez toutefois contourner ce problème en remplaçant le masque multi-écran par des pages <span class="hcp1">non chaînées</span>, avec programmation explicite des changements de page.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Il est possible d’avoir plusieurs accordéons sur un même écran et de les imbriquer (attention toutefois à les paramétrer de manière cohérente).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Lorsqu'une page escamotée par l'utilisateur fait l'objet d'une consultation par Xme(List)Consult ou d'une saisie par Xme(List)Input, le client rouvre le pan d'accordéon de manière automatique.<span class="hcp1"><br>
+Attention à cette conséquence</span> : La fermeture du pan est refusé à l'utilisateur (sans aucun avertissement) si la page concernée est en cours de consultation ou de saisie.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Traitement des messages <font class="hcp3">LIST_HEIGHT_CHANGING <span style="font-weight: normal;">(i</span></font>nterruption due à un <font class="hcp3">changement</font> <font class="hcp3">du nombre de lignes d'un tableau affichées à l'écran</font>, suite à une modification de la hauteur de la fenêtre ou à une modification de la hauteur des lignes du tableau) avec deux ou plusieurs tableaux affichés dans l'accordéon : voir la rubrique <a href="Modificationdelatailled_untableau.htm">Modification de la taille d'un tableau</a>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp4">Paramétrage d'un accordéon par programme</p>
+<p>L'instruction <a href="XmeSetPageOptions.htm">XmeSetPageOptions</a> permet de modifier dynamiquement le <span class="hcp1">libellé des en-têtes de pan</span> d'accordéon.</p>
+&#160;
+<p>&#160;</p>
+<p class="hcp4">Interopérabilité avec les onglets, les volets et les grilles</p>
+<p>Dans un accordéon : onglets, sous-accordéon et grille ok ; pas de volet.<br>
+Accordéon dans une page à onglet <span class="hcp2">non chaînée</span> : ok.</p>
+<p>Aucun contrôle n’est effectué sur ce point (ni à la compilation ni à l’exécution).<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp4">Exemple de programmation d'un accordéon</p>
+<p>Un exemple de programmation d'un accordéon est fourni dans le dossier /Divalto/Exemples/Accordeon.</p>
+<p>&#160;</p>
+</body>
+</html>

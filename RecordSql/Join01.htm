@@ -1,0 +1,70 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>&lt;Join01&gt;</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { margin-left:128px;
+font-family:"Courier New"  , monospace; }
+p.hcp3 { font-weight:normal; }
+span.hcp4 { font-weight:bold; }
+span.hcp5 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Join01 <span style="font-family: Arial, sans-serif;">&#160;&#160;</span><span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_balises_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>Join01 sert à rechercher des informations dans une table jointe, ces informations <span style="text-decoration: underline;">pouvant ou non</span> exister. De plus, contrairement aux autres <a href="Join.htm">Join</a>, elle retourne un seul résultat.</p>
+<p>Cette balise a exactement la même syntaxe qu’une balise <a href="Join.htm">&lt;Join&gt;</a> classique mais génère du code SQL qui n’a rien à voir avec une jointure.</p>
+<p>Lorsque l’information n’existe pas, des valeurs Nulles sont renvoyées (comme pour une jointure par un Left Join) mais lorsque plusieurs lignes de la table jointe correspondent à la condition de jointure, une seule ligne est « liée » (contrairement à une jointure par un Left Join). Cela correspond à une liaison de type 0 ou 1 (d’où le nom de la balise).</p>
+<p>&#160;</p>
+<p class="hcp1">Sous-Requête du Select</p>
+<p>En pratique, chaque champ d’une table liée par une balise &lt;Join01&gt; génère une sous-requête du Select.</p>
+<p>Exemple de jointure « simple » avec &lt;Join01&gt; :</p>
+<p class="Source">&lt;JOIN01&gt;</p>
+<p class="Source" style="margin-left: 88px;">STC as STC</p>
+<p class="Source" style="margin-left: 88px;">ON STC.Dos = CLI.Dos And STC.TiCod = 'C' And STC.Tiers = CLI.Tiers</p>
+<p class="Source">&#160;</p>
+<p class="Source">Génère :</p>
+<p class="Source" style="margin-left: 88px;">Select</p>
+<p class="Source" style="margin-left: 128px;">CLI.*,</p>
+<p class="Source" style="margin-left: 128px;">…</p>
+<p class="hcp2">(SELECT TOP 1 STC. MVSTAT</p>
+<p class="hcp2">FROM &#160;&#160;STC</p>
+<p class="hcp2">WHERE STC.DOS = CLI.DOS And STC.TICOD = 'C' And STC.TIERS = CLI.TIERS),</p>
+<p style="margin-left: 128px;"><span style="margin-left: 168px;">…</span></p>
+<p class="hcp1">Performances</p>
+<p>Par rapport à une balise &lt;LeftJoin&gt;, la balise &lt;join01&gt; améliore les performances de manière significative puisqu'il n’y a que 0 ou 1 ligne répondant à la condition de jointure.</p>
+<p class="hcp3">Attention, une sous-requête est générée pour chaque champ de la table. On évitera d'écrire Tab.* pour ne pas dégrader les performances de la requête.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><span class="hcp4">Jointure dynamique</span></p>
+<p class="hcp3">Il peut être intéressant de désactiver momentanément une ou plusieurs jointures. <span class="hcp5">Pour cela, il faut les nommer et utiliser les instructions <a href="Join_Activate.htm">RecordSql.Join.Activate</a> et <a href="Join_Deactivate.htm">RecordSql.Join.Deactivate</a>.</span></p>
+<p class="hcp3">L'attribut Name=value permet de donner un ou plusieurs noms à une jointure. Les différents noms doivent être séparés par le caractère ; (point-virgule).</p>
+<p class="hcp3">Par défaut, toutes les jointures possèdent un nom qui correspond au nom de la table (ou de l'alias).</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp1"><span class="hcp4">L'attribut "ColumnNames"</span></p>
+<p class="hcp3">Dans les champs du Select, il est possible d'associer un "Name" aux expressions. Ce "Name" correspond à un "ColumnName" de jointure. <span class="hcp5">Une jointure peut avoir plusieurs "ColumnNames" (noms séparés par un point-virgule).</span></p>
+<p class="hcp3">Ce lien est utilisé par le zoom pour désactiver les jointures qui deviennent inutiles lorsque des champs sont retirés du Select.</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp1"><span class="hcp4">L'attribut "Dependencies"</span></p>
+<p class="hcp3">Cet attribut permet de définir des dépendances entre les jointures. <span class="hcp5">Une jointure doit en effet déclarer les autres jointures qui doivent obligatoirement être activées si elle-même est active.</span></p>
+<p class="hcp3">Pour déclarer une dépendance, il convient de renseigner l'attribut "Dependencies" avec le nom de la table de jointure utilisée en dépendance. Si cette table possède un alias, c'est cet alias qu'il faut utiliser.</p>
+<p class="hcp3">Une jointure peut avoir plusieurs dépendances. Dans ce cas, il convient de séparer les différents noms par un point-virgule.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">Restriction</p>
+<p>Ces champs ne peuvent pas être utilisés dans la condition Where.</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp4">Voir</span></p>
+<p class="hcp3"><a href="R&eacute;sum&eacute;_de_la_syntaxe.htm"><span class="hcp5">Résumé de la syntaxe</span></a></p>
+<p class="hcp3"><a href="Liste_des_balises_RecordSql.htm" style="font-weight: normal;">Liste des balises RecordSql</a></p>
+<p><a href="Join.htm">Join</a></p>
+</body>
+</html>

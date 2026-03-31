@@ -1,0 +1,49 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinRegReadInt</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinRegReadInt &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">La fonction WinRegReadInt permet de lire une valeur entière dans le registre.</p>
+<p class="Body-Text">Si la valeur est de type REG_SZ dans le registre, la chaine est convertie en valeur numérique.</p>
+<p class="Body-Text">Cette fonction se trouve dans le module ysystemex.dhop.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Int</font> <font class="hcp2">WinRegReadInt</font> <font class="hcp3">(clé, nom_valeur)</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Clé</font></p>
+<p class="decalage05">Clé dans le registre.</p>
+<p class="Body-Text"><font class="hcp3">Nom_valeur</font></p>
+<p class="decalage05">Valeur à lire.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction retourne la valeur lue.</p>
+<p class="Body-Text">Si la clé ou la sous-clé n’existent pas, la fonction retourne zéro.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">module "ysystemex.dhop"</p>
+<p class="Source">1 i 10,0</p>
+<p class="Source">main</p>
+<p class="Source">i=WinRegReadInt("HKEY_CURRENT_USER\Software\DivaltoHarmony\macle","mavaleur")</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text"><a href="LCWinRegReadInt.htm"><font class="hcp2">L</font>CWinRegReadInt</a>, <span style="margin-top: 2.00pt;"><a href="WinRegDeleteKey.htm">WinRegDeleteKey</a> <a href="WinRegDeleteValue.htm">WinRegDeleteValue</a> <a href="WinRegQueryKeyRun.htm">WinRegQueryKeyRun</a> <a href="WinRegQueryValue.htm">WinRegQueryValue</a> <a href="WinRegReadDword.htm">WinRegReadDword</a> <a href="WinRegReadString.htm">WinRegReadString</a> <a href="WinRegWriteDword.htm">WinRegWriteDword</a> <a href="WinRegWriteInt.htm">WinRegWriteInt</a> <a href="WinRegWriteString.htm">WinRegWriteString</a> </span></p>
+</body>
+</html>

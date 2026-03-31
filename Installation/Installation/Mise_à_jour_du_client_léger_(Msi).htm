@@ -1,0 +1,42 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mise à jour du client léger (Msi)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Mise à jour du client léger (Msi)</h3>
+<p>&#160;</p>
+<p>Lorsque la version du serveur change, il faut installer sur les postes clients la version correspondante du client léger.<br>
+<br>
+Vous pouvez configurer le serveur d'applications pour qu'un client léger qui se connecte au serveur avec une ancienne version non compatible se voit automatiquement proposer d’installer la nouvelle version :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Appelez l'utilitaire <span class="hcp1">xDivaltoMajini</span>.</p>
+</li>
+<li class="p">
+<p>Au menu "<span class="hcp1">Lecture</span>", sélectionnez le choix "<span class="hcp1">Dans la base de registre globale à l'ordinateur (HKEY_LOCAL_MACHINE)</span>".</p>
+</li>
+<li class="p">
+<p>Si le chapitre ClientLeger n'existe pas, cliquez droit sur la ligne affichant "divalto.ini", sélectionnez le choix "<span class="hcp1">Ajouter un chapitre</span>" et créez le chapitre "<span class="hcp1">ClientLeger</span>".<br>
+Sinon, cliquez droit sur la ligne affichant "ClientLeger" et sélectionnez le choix "<span class="hcp1">Ajouter une valeur</span>".</p>
+</li>
+<li class="p">
+<p>Créer la valeur "<span class="hcp1">UrlTelechargement</span>" et affectez-lui le <span class="hcp1">chemin d'accès au fichier DivaltoSetup.msi</span> correspondant à la nouvelle version du client léger. Par exemple : \\Serveur\<span class="hcp2">LCWebService</span>\DivaltoSetup.msi (où <span class="hcp2">LCWebService</span> est le nom d'un partage pointant sur /Divalto/Internet/LCWebService).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

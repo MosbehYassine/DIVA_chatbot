@@ -1,0 +1,34 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Déclaration des données communes au programme et au(x) masque(s)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Déclaration des données communes au programme et au(x) masque(s)</h3>
+<p class="Body-Text">Toutes les variables utilisées dans un masque d'imprimante Xwin doivent être définies dans un (ou plusieurs) enregistrement d'un (ou plusieurs) dictionnaire de données.</p>
+<p class="Body-Text">En général, les variables imprimées dans le(s) masque(s) sont chargées par le programme appelant. Pour que Ymig et votre programme travaillent effectivement sur les mêmes données, il faut déclarer <font class="hcp1">PUBLIC</font> le(s) enregistrement(s) concerné(s).</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">;enregistrements communs au <span>programme et au masque Xwin&#160;:&#160;</span></p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Arti &#160;&#160;;article</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Four &#160;&#160;;fournisseur</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">;enregistrement non commun&#160;:&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">RECORD Appli.dhsd Man &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;travail&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Attention</font>&#160;:<br>
+N'oubliez pas de déclarer <font class="hcp1">Public</font> les enregistrements communs au programme et au(x) masque(s). A défaut, Diva et Ymig travailleront sur des <font class="hcp1">enregistrements physiques différents</font>&#160;; aucune erreur ne sera détectée mais il en résultera une incohérence entre les données manipulées par le programme et les données imprimées.</p>
+</body>
+</html>

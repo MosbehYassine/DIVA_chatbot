@@ -1,0 +1,103 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DirectCOM_Write</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+p.hcp2 { font-family:Arial, sans-serif; }
+span.hcp3 { font-weight:bold; }
+span.hcp4 { font-style:italic; }
+p.hcp5 { font-weight:bold; }
+tr.hcp6 { vertical-align:top; }
+td.hcp7 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp8 { font-style:italic;
+font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>DirectCOM_Write <a href="Liste_des_fonctions_DirectCOM.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Fonctions_DirectCOM.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Ecrit sur le port COM désigné par le canal passé en premier paramètre le contenu du buffer (deuxième paramètre).</p>
+<p class="hcp2">Si le flag "clear" (4è paramètre) est positionné à 1, la fonction d'écriture effacera le contenu du buffer du port avant d'y écrire les données (pour que les données écrites sur le port par la fonction DirectCOM_Write ne soient pas polluées par des données pré-existantes).</p>
+<p>&#160;</p>
+<p><span class="hcp3">int DirectCOM_Write</span> (<span class="hcp4">canal, &amp;buffer, lg, clear</span>)</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp5"><span class="hcp3">Paramètres</span></p>
+<p style="font-weight: normal;">&#160;</p>
+<table cellspacing="0" width="725">
+<col style="width: 10.88%;">
+<col style="width: 15.839%;">
+<col style="width: 70.184%;">
+<tr class="hcp6">
+<td style="width:10.88%;" class="hcp7">
+<p class="hcp8">canal</p>
+</td>
+<td style="width:15.839%;" class="hcp7">
+<p>Numérique (3,0)</p>
+</td>
+<td style="width:70.184%;" class="hcp7">
+<p>numéro de canal renvoyé par la fonction <a href="DirectCOM_Open.htm">DirectCOM_Open</a>.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:10.88%;" class="hcp7">
+<p class="hcp8">buffer</p>
+</td>
+<td style="width:15.839%;" class="hcp7">
+<p>Alphanumérique</p>
+</td>
+<td style="width:70.184%;" class="hcp7">
+<p>buffer d'écriture.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:10.88%;" class="hcp7">
+<p><span class="hcp4">lg</span></p>
+</td>
+<td style="width:15.839%;" class="hcp7">
+<p>Numérique (5,0)</p>
+</td>
+<td style="width:70.184%;" class="hcp7">
+<p>taille du buffer en octet.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:10.88%;" class="hcp7">
+<p style="font-style: italic;">clear</p>
+</td>
+<td style="width:15.839%;" class="hcp7">
+<p>Numérique (1,0)</p>
+</td>
+<td style="width:70.184%;" class="hcp7">
+<p>flag indiquant si le buffer du port doit être vidé avant d'écrire les données. Ce flag vaut 0 par défaut.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp5">Retour</p>
+<p>&#160;</p>
+<table cellspacing="0" width="588">
+<col style="width: 100%;">
+<tr class="hcp6">
+<td style="width:100%;" class="hcp7">
+<p>La fonction retourne le nombre d'octets écrits en cas de succès, et 0 si une erreur s'est produite.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Traitements du dictionnaire associés aux fichiers</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-size:11pt; }
+ul.hcp2 { list-style:inside disc; }
+p.hcp3 { font-weight:bold; }
+p.hcp4 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Traitements du dictionnaire associés aux fichiers</h1>
+<p>&#160;</p>
+<p class="hcp1">Définition</p>
+<p>Dans le dictionnaire des données, il est possible d'associer des traitements à un couple enregistrement-fichier.</p>
+<p>&#160;</p>
+<p>Ces traitements pourront être exécutés soit :</p>
+<ul class="hcp2">
+<li class="p">
+<p>après une lecture &#160;(Après Read)</p>
+</li>
+<li class="p">
+<p>avant une écriture (avant Write)</p>
+</li>
+<li class="p">
+<p>avant une modification (avant Rewrite)</p>
+</li>
+<li class="p">
+<p>avant une suppression (avant Delete).</p>
+</li>
+</ul>
+<p>Les traitements liés aux fichiers sont exécutés :</p>
+<ul class="hcp2">
+<li class="p">
+<p>automatiquement par les fonctions Iread, Iwrite, Irewrite et Idelete</p>
+</li>
+<li class="p">
+<p>par programme en utilisant les fonctions GetAdressProcedureRecord et ProcedureCall. (cas du Zoom par exemple).</p>
+</li>
+</ul>
+<p>Les fonctions Hread etc. et les fonctions Fread etc. n'appellent pas automatiquement les traitements liés aux fichiers.</p>
+<p class="hcp3">Attention : L'ERP Divalto n'utilise pas ces fonctionnalités. Seuls les Zoom et les programmes Hql appellent les fonctions liées aux enregistrements.</p>
+&#160;
+<p class="hcp1">Gestion d'un enregistrement complémentaire</p>
+<p>Les traitements associés aux fichiers permettent de gérer automatiquement un enregistrement complémentaire à l'enregistrement principal.</p>
+<p>En effet, à chaque opération effectuée dans le fichier principal, un traitement est appelé pour permettre d'effectuer la même opération dans le fichier complémentaire.</p>
+<p>Pour gérer un enregistrement complémentaire, il faut bien sûr écrire les quatre fonctions (Après Read, avant Write etc.).</p>
+<p><span style="font-weight: bold;">Attention</span> : un enregistrement complémentaire doit obligatoirement se trouver dans un autre fichier que l'enregistrement principal.</p>
+&#160;
+<p class="hcp3">Gestion des erreurs</p>
+<p class="hcp4">Les fonctions Ixxxx appellent les fonctions Hxxxx correspondantes et renvoient le code d'erreur rendu par ces dernières.</p>
+<p class="hcp4">Les traitements du dictionnaire sont des procédures qui ne renvoient pas de code d'erreur. Si une erreur y est <span style="font-weight: normal;">détectée, il faut la corriger, l'ignorer ou provoquer l'arrêt du programme (par ferror).</span></p>
+<p class="hcp4">&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Voir</p>
+<p class="hcp4"><a href="GetAdressProcedureRecord.htm">GetAdressProcedureRecord</a>, <a href="GetAdressProcedureRecordEx.htm">GetAdressProcedureRecordEx</a></p>
+</body>
+</html>

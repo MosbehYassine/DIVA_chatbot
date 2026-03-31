@@ -1,0 +1,52 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Paramétrage de l'icone d'une tâche</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Paramétrage de l'icone d'une tâche (version 6)</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">Cette rubrique ne concerne que les programmes compatibles avec la version 6</span>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Pour toutes les tâches Harmony, on peut faire suivre la ligne de commande indiquée dans &lt;Fichier : Propriétés&gt; par le caractère "&amp;" suivi du numéro de tâche précis (ou d'une fourchette de numéros&#160;: n1-n2) à utiliser. Si le numéro est nul, Harmony affectera lui-même un numéro à la tâche, en fonction des numéros encore disponibles au moment de son lancement.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemples&#160;:</font></p>
+<p class="Body-Text">C:\Divalto\Sys\xRtDiva.exe Xlog.dhop &amp;0 demande le lancement d'une tâche Harmony de numéro quelconque, avec appel initial au programme Xlog.</p>
+<p class="Body-Text">C:\Divalto\Sys\xRtDiva.exe Xlog.dhop &amp;3 impose le numéro de tâche 3.</p>
+<p class="Body-Text">C:\Divalto\Sys\xRtDiva.exe Xlog.dhop &amp;3-5 demande une tâche de numéro compris entre 3 et 5.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font style="text-decoration: underline;">A la suite</font> du numéro de tâche, vous pouvez paramétrer l'icone qui sera affichée si l'utilisateur "iconise" la fenêtre&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Les icones "standard" sont représentées par un numéro&#160;; par exemple :<font class="hcp1"><br>
+1</font> : icone Divalto standard<font class="hcp1"><br>
+2</font> : icone du programme DhsDivalto<font class="hcp1"><br>
+9</font> : icone de Xwin<font class="hcp1"><br>
+10</font> : joueur de disquette<br>
+&#160;<br>
+Exemple : C:\Divalto\Sys\xRtDiva.exe Xlog.dhop &amp;0 1 (numéro de tâche quelconque, 'icone Divalto).<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les icones personnelles (enregistrées dans un fichier d'icones ou dans un programme) sont indiquées par un numéro d'ordre suivi de leur nom de fichier.<br>
+&#160;<br>
+Exemple : C:\Divalto\Sys\xRtDiva.exe Prog.dhop &amp;0 3 c:\perso\progwin.exe<br>
+(troisième icone du programme progwin.exe)<br>
+&#160;</p>
+</li>
+</ul>
+</body>
+</html>

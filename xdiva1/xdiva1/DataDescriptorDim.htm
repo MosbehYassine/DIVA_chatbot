@@ -1,0 +1,63 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DataDescriptorDim</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>DataDescriptorDim</h1>
+<p>&#160;</p>
+<p>DataDescriptorDim permet de savoir si un descripteur obtenu par DataDescriptor correspond à une donnée indicée (tableau).</p>
+<p>Elle fourni le nombre de dimensions du tableau.</p>
+<p>&#160;</p>
+<p class="hcp1">Long DataDescriptorDim <span style="font-style: italic; font-weight: normal;">(descripteur)</span></p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-style: italic;">Descripteur</font></p>
+<p class="decalage05">Descripteur &#160;obtenu par la fonction <a href="DataDescriptor.htm">DataDescriptor</a>.</p>
+<p class="decalage05">Attention, lors de l'appel de DataDescriptor, la donnée doit être suivie de () pour être considérée comme un tableau. Voir l'exemple ci-dessous.</p>
+<p>&#160;</p>
+<p class="hcp1">Retour</p>
+<p>La fonction retourne le nombre de dimensions.</p>
+<p>&#160;</p>
+<p class="hcp1">Exemple</p>
+<p>&#160;</p>
+<p class="Source">1 desc &#160;&#160;&#160;S</p>
+<p class="Source">1 i &#160;&#160;&#160;&#160;&#160;&#160;3,0</p>
+<p class="Source">1 nbdim &#160;&#160;3,0</p>
+<p class="Source">1 nom &#160;&#160;&#160;&#160;10</p>
+<p class="Source">1 tableau 2*3*4</p>
+<p class="Source">&#160;</p>
+<p class="Source">; nom n'est pas un tableau, DataDescriptor renvoie une erreur</p>
+<p class="Source">st = DataDescriptor("nom()",desc) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="font-weight: bold; font-size: 12pt;">; ne pas oublier () après le nom de la variable</p>
+<p class="Source">st = DataDescriptor("tableau()",desc)</p>
+<p class="Source">if st = 0</p>
+<p class="Source">&#160;&#160;&#160;nbdim = DataDescriptorDim(desc)</p>
+<p class="Source">&#160;&#160;&#160;for i = 1 to nbdim</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;display i &amp; '-&gt;' &amp; tostring(DataDescriptorIndex(desc,i))</p>
+<p class="Source">&#160;&#160;&#160;next</p>
+<p class="Source">endif</p>
+<p class="Source">; affiche &#160;1-&gt;3 &#160;2-&gt;4</p>
+<p class="Source">&#160;</p>
+<p class="Source">; accès à une case</p>
+<p class="Source">DataDescriptor("tableau(1,2)",desc)</p>
+<p class="Source">DataValue(desc) = "12"</p>
+<p class="Source">display tableau(1,2) &#160;&#160;&#160;&#160;&#160;; affiche 12</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text" style="margin-top: 0.00pt;"><font style="font-weight: bold;">Voir</font></p>
+<p><a href="DataDescriptor.htm">DataDescriptor</a> &#160;<a href="DataDescriptorIndex.htm">DataDescriptorIndex</a></p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,80 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation d'un volet</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+p.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Programmation d'un volet</h3>
+<p>Une fois configuré dans Xwin (Cf. rubrique "<span class="hcp1">Caractéristiques et paramétrage d'un volet</span>" de la documentation consacrée à l'éditeur de masques Xwin) ET / OU par programme (Cf. instruction <a href="XmeSetPageOptions.htm">XmeSetPageOptions</a>), un volet est géré entièrement par le client et ne nécessite donc pas de programmation complémentaire.</p>
+<p>&#160;</p>
+<p>Toutefois, voici quelques remarques ayant trait aux volets :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Rappelons que le placement d’un volet sur une <span class="hcp1">page escamotable</span> n'a de sens que si cette page est <span class="hcp1">attachée à droite</span>.<br>
+<br>
+La plupart du temps, les <span class="hcp1">pages extensibles</span> seront définies en <span class="hcp1">largeur variable</span> et accolées à la page escamotable. S’il y en a plusieurs, elles seront placées les unes sous les autres.<br>
+<br>
+Des montages plus complexes peuvent toutefois être réalisés. Par exemple, une page extensible A en largeur variable mais séparée de la page escamotable C par une page B attachée à droite. En fermant le volet, B est décalée jusqu’au bord de l'écran tandis que A s'étend jusqu'à la nouvelle position de B. Dans cet exemple, les pages A <span style="font-weight: bold; text-decoration: underline;">et</span> B doivent être mentionnées dans la liste des pages extensibles.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Il est possible d’avoir plusieurs volets (non imbriqués) sur un même écran (attention toutefois à les paramétrer de manière cohérente).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Lorsqu'une page escamotée par l'utilisateur fait l'objet d'une consultation par Xme(List)Consult ou d'une saisie par Xme(List)Input, le client rouvre le volet de manière automatique.<span class="hcp1"><br>
+Attention à cette conséquence</span> : La fermeture du volet est <span class="hcp1">refusée</span> à l'utilisateur (<span class="hcp1">sans aucun avertissement</span>) si la page escamotable est en cours de consultation ou de saisie.</p>
+</li>
+<li class="p">
+<p>Sauf volet invisible, l'utilisateur peut actionner le volet en cliquant sur l'icône ou en tapant la combinaison de touches Alt+Flèche Gauche / Droite.<br>
+Si plusieurs volets sont présents à l'écran, les raccourcis clavier s'appliquent à tous les volets affichés.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp3">Paramétrage d'un volet par programme</p>
+<p>L'instruction <a href="XmeSetPageOptions.htm">XmeSetPageOptions</a> permet de spécifier :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Qu'une page, non configurée comme telle dans Xwin, est escamotable et qu’elle doit comporter un volet.</p>
+</li>
+<li class="p">
+<p>Que la page doit rester fermée et que l'icône du volet doit rester invisible.</p>
+</li>
+<li class="p">
+<p>Que la page doit être fermée lorsqu'elle est affichée pour la 1ère fois par le programme.</p>
+</li>
+<li class="p">
+<p>La position verticale de l'icône du volet.</p>
+</li>
+</ul>
+&#160;
+<p>&#160;</p>
+<p class="hcp3">Interopérabilité avec les onglets, les accordéons et les grilles</p>
+<p>Dans un volet : onglets et accordéon ok ; pas d'autre volet ni de grille.<br>
+Volet dans un onglet : ok.</p>
+<p>Aucun contrôle n’est effectué sur ce point (ni à la compilation ni à l’exécution).<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Utilisation d'un volet dans le zoom SQL</p>
+<p>Le Zoom SQL autorise l'utilisateur à escamoter la page du mode fiche afin d’élargir au maximum la page et le tableau du mode liste.<br>
+Pour éviter l'obligation de paramétrer le volet dans chaque masque de zoom, le Zoom utilise l'instruction Diva XmeSetPageOptions qui permet de configurer un volet par programme. Ainsi, le <span class="hcp1">volet est totalement transparent pour le développeur d’un zoom</span>.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Exemple de programmation d'un volet</p>
+<p>Un exemple de programmation d'un volet est fourni dans le dossier /Divalto/Exemples/Volet.</p>
+<p>&#160;</p>
+</body>
+</html>

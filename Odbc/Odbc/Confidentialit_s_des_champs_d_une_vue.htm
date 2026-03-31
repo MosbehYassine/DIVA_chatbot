@@ -1,0 +1,34 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Confidentialités des champs d'une vue</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Confidentialités des champs d'une vue</h3>
+<p class="Body-Text">Le paramétrage des vues permet d’associer à la vue une procédure Diva de gestion des confidentialités des champs de la table de base d’une vue. Cette procédure est exécutée par le driver ODBC pour chaque lecture d’une ligne de la table de base.</p>
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text">Le module comportant la procédure de gestion des confidentialités doit <font class="hcp1">impérativement</font> comporter une déclaration publique de la table de base de la vue. Le nom de l’instance doit être <font class="hcp1">impérativement</font> le nom de la table elle-même.</p>
+<p class="Body-Text">Cet enregistrement est garni par le driver ODBC avant l’appel de la procédure. Il est renvoyé au driver après le traitement.</p>
+<p class="Body-Text">La procédure peut&#160;:</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 18.00pt;">Mettre à espace les champs confidentiels.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 18.00pt;">Mettre à espace tout l’enregistrement. Dans ce cas, il n’est pas renvoyé au client ODBC. Le driver passe à la ligne suivante de la table de base.</p>
+</li>
+</ul>
+</body>
+</html>

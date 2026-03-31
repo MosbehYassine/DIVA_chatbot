@@ -1,0 +1,61 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Déclaration des fichiers et des enregistrements</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Déclaration des fichiers et des enregistrements</h3>
+<p class="Body-Text">Dans le module des chapitres, vous <font class="hcp1">DEVEZ</font> obligatoirement déclarer les enregistrements <font class="hcp1">publics</font> suivants :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">L'enregistrement HQL, qui est défini dans le dictionnaire système Ddsys.dhsd et qui sert de zone de communication entre XHql.dhop et le module.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'enregistrement du fichier considéré par l'instruction Record.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<p class="Body-Text"><font color="#0000FF">Public record</font> Ddsys.dhsd HQL</p>
+<p class="Body-Text"><font color="#0000FF">Public record</font> odfdd.dhsd Article</p>
+<p class="Body-Text">En fonction des besoins, il faudra également déclarer :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">l'enregistrement SYSTEM du dictionnaire Ddsys.dhsd (si vous utilisez par exemple le code utilisateur)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">les fichiers externes</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">les enregistrements de manœuvre&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">etc.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<p class="Body-Text"><font color="#0000FF">Public record</font> Ddsys.dhsd System</p>
+<p class="Body-Text"><font color="#0000FF">hFile</font> Odfdd.dhsd Odf TdfFour</p>
+<p class="Body-Text"><font color="#0000FF">Public record</font> odfdd.dhsd Four</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Contrôle des versions de fichiers</p>
+<p class="Body-Text">Harmony contrôle la cohérence entre les versions des fichiers et des programmes qui y accèdent. Pour cela la description d'une base dans le dictionnaire de données comporte un numéro de version. Le fichier comporte lui aussi un numéro de version. Pour les programmes ordinaires, ce contrôle est effectué automatiquement à l'ouverture du fichier déclaré par l'instruction Hfile. Dans le cas particulier de HQL, celui-ci ne connaît pas à priori le fichier qu'il va traiter. Ce fichier n'est connu que par le programme appelant et par le module de traitement.</p>
+<p class="Body-Text">L'instruction <font class="hcp1">HfileVersion</font> permet d'indiquer dans le module des chapitres, le nom du fichier pour lequel il faut contrôler la version. Si cette instruction est présente dans le module, HQL contrôle la cohérence de version avec le fichier. Si l'option <font class="hcp1">«&#160;Toujours contrôler la version&#160;»</font> est active au niveau du fichier, et que l'instruction <font class="hcp1">HfileVersion</font> est absente du module, HQL interrompt le traitement avec une erreur fatale.</p>
+<p class="Body-Text">Le contrôle de la version peut-être inhibé en positionnant l'indicateur <font class="hcp1">HQL.CheckVersion</font> à ZOOM_NON avant l'appel du programme HQL ou bien dans le chapitre HQLPreliminaire. Ceci peut-être intéressant dans le cas où le même programme traite indifféremment une base réelle ou une extraction de la base dans un fichier temporaire. Dans ce dernier cas, il ne faut pas contrôler la version.</p>
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<p class="Body-Text"><font color="#0000FF">HFileVersion</font> Odfdd.dhsd Odf</p>
+</body>
+</html>

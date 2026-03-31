@@ -1,0 +1,75 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Déclaration des index dans le dictionnaire</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Déclaration des index dans le dictionnaire</h2>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Introduction</p>
+<p class="Body-Text">Le dictionnaire de données décrit pour chaque table les index permettant d'y accéder. Un index est caractérisé par une <font class="hcp1">lettre clé</font> utilisée par les programmes afin de préciser le choix du ou des index à utiliser pour accéder aux tables.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La gestion de fichiers d'Harmony est particulièrement riche au niveau des fonctionnalités apportées par les index. Notamment une même lettre clé peut permettre d'accéder à <font class="hcp1">plusieurs tables différentes</font> ou peut être définie plusieurs fois avec des <font class="hcp1">compositions différentes</font> ou encore peut porter de manière sélective sur <font class="hcp1">certaines lignes particulières</font> d'une table. Ces fonctionnalités n'existent pas directement dans les index classiques d'une base de données SQL où chaque index ne permet d'accéder qu'à une seule table unique, ne comporte qu'une seule description et accède de manière inconditionnelle à toutes les lignes d'une table.</p>
+<p class="Body-Text">Pourtant ces fonctionnalités des index de la gestion de fichiers d'harmony peuvent être apportées facilement et de manière complètement transparente grâce à des <font class="hcp1">tables intermédiaires</font>. Ces tables intermédiaires sont alimentées automatiquement par les <font class="hcp1">déclencheurs</font> opérant sur les tables de base.</p>
+<p class="Body-Text"><font class="hcp1">Exemples</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">L'index permettant d'accéder aux tiers (c'est à dire à la table des clients, la table des fournisseurs, la table des prospects …) est simulé par la création d'une table des tiers, dans laquelle, pour chaque tiers l'on précisera s'il s'agit d'un client, d'un fournisseur ou d'un prospect.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">La table des statistiques de ventes comporte plusieurs codes représentant. On décrira autant index utilisant la même lettre que de codes représentant. Pour SQL, la table intermédiaire des statistiques par représentant permet de simuler le fonctionnement de ces index.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">La table des écritures comptables comporte des écritures lettrées et des écritures non lettrées. Harmony permet de définir un index conditionnel ne portant que sur les écritures non lettrées. Les écritures non lettrées forment un sous-ensemble de la table des écritures. Pour SQL, la table intermédiaire des écritures non lettrées fera office d'index conditionnel sur l'ensemble des écritures.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">Rappels</font> <font class="hcp1">terminologiques</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">L'<font class="hcp1">identifiant</font> d'une table est un code d'un caractère qui distingue chaque table d'un fichier Harmony. Il est obligatoire pour les fichiers comportant des tables différentes.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Le <font class="hcp1">code condition</font> est un code d'un caractère déterminant si une entrée doit être générée dans l'index d'une table pour une ligne particulière. Dans la description de l'index soumis à une condition on indique le nom du champ servant de code condition ainsi que l'opérateur de la condition et sa valeur. Le code condition peut être un des champs qui compose l'index ou non. Il peut correspondre à l'identifiant de la table ou non.</p>
+</li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les types d'index</font></p>
+<p class="Body-Text">Lors de la description d'un index dans le dictionnaire de données, le paramètre <font class="hcp1">type d'index SQL</font> permet de définir comment l'index d'Harmony doit être traité dans le cas d'une utilisation avec un serveur SQL. La suite de ce chapitre décrit les différents types d'index pris en compte.</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text"><a href="Index_normal.htm">L'index normal</a></p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text"><a href="Index_multi_tables.htm">L'index multi-tables</a></p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text"><a href="Index_avec_identifiant.htm">L'index avec identifiant</a></p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text"><a href="Index_multi_descriptions.htm">L'index multi-descriptions</a></p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text"><a href="Index_conditionnel.htm">L'index conditionnel</a></p>
+</li>
+</ul>
+<p class="Definition" style="margin-top: 4.00pt;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les déclencheurs</font></p>
+<p class="Body-Text">Un déclencheur (en anglais <font class="hcp1">trigger</font>) est une procédure stockée SQL qui est automatiquement exécutée par le moteur SQL lors de la mise à jour d'une table (requêtes insert, update ou delete). Elle s'exécute avec la mise à jour de la table dans le cadre d'une <font class="hcp1">transaction</font>, c'est à dire que si l'opération effectuée par le déclencheur n'aboutit pas, la mise à jour de la table n'est pas non plus effectuée. Ceci permet de garantir <font class="hcp1">l'intégrité référentielle</font> de la base de données.</p>
+<p style="margin-top: 0.00pt;">&#160;</p>
+<p class="Body-Text">Lors de la création des tables dans SQL par XPSQL.dhop, celui-ci crée automatiquement les tables intermédiaires nécessaires ainsi que les déclencheurs pour les alimenter. Une mise à jour directe d'une table par une requête SQL met également à jour les tables intermédiaires de manière tout à fait automatique et transparente.</p>
+</body>
+</html>

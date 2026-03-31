@@ -1,0 +1,71 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Connecteur Outlook pour un client léger Html5</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+img.hcp2 { border:none; }
+p.hcp3 { font-size:11pt;
+font-weight:bold; }
+span.hcp4 { font-family:"Courier New"  , monospace; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Connecteur Outlook pour un client léger Html5</h3>
+<p>&#160;</p>
+<p>Une version du connecteur pour Outlook, gérant l’interface avec l’ERP sans qu’Harmony soit installé sur le poste client, permet son utilisation avec un client léger Html5. Ce connecteur dialogue avec le serveur par un service Web.</p>
+<p>Les trois fonctionnalités offertes par le connecteur Outlook classique sont disponibles :</p>
+<p>• L’affichage de la fiche tiers</p>
+<p>• La génération d’un événement</p>
+<p>• L’accès aux contacts.</p>
+<p>&#160;</p>
+<p>Sur le poste client, il faut installer les éléments suivants :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Le connecteur Outlook, qui ajoute l’onglet Divalto dans le client de messagerie.</p>
+</li>
+<li class="p">
+<p>Le composant Divalto pour Outlook, qui permet à Outlook de dialoguer avec le serveur Divalto par un Web Service.</p>
+</li>
+</ul>
+<p><img src="../image2.jpg" alt="" width="399" height="188" border="0" class="hcp2"></p>
+<p>&#160;</p>
+<p class="hcp3">Sur le serveur IIS</p>
+<p>Il est nécessaire de mettre en œuvre :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Le "Serveur pour le client léger Web".<br>
+En effet, les traitements de l’interface avec l’ERP lancés depuis Outlook s’exécutent dans un navigateur client du serveur Divalto.</p>
+</li>
+<li class="p">
+<p>Le "Service Web pour programmes Diva" car le client Outlook dialogue avec le serveur grâce aux services Web.</p>
+</li>
+</ul>
+<p>Cette installation s’effectue par le choix "Installation Serveur Client léger Web" du menu "Paramétrage" d’Harmony&#160;puis par l’onglet "Autre Services Web".</p>
+<p>&#160;</p>
+<p class="hcp3">Outlook du poste client</p>
+<p>Dans Outlook du poste client, il est nécessaire d’effectuer les paramétrages particuliers suivants :</p>
+<p>&#160;</p>
+<p><img src="../image3.jpg" alt="" width="324" height="362" border="0" class="hcp2"></p>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">Attention</span> : les URL du service Web et du client léger Html5 doivent rigoureusement correspondre au paramétrage effectué sur le serveur.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Cas où le serveur de webservices est différent du serveur HTML5</p>
+<p>&#160;</p>
+<p>Dans ce cas, il faut, dans le répertoire du service web, créer un fichier DivaltoEnv.txt (il existe peut-être déjà).</p>
+<p>Il faut y rajouter deux balises :</p>
+<p><span class="hcp4">&lt;Outlook_WebServer_Path&gt;</span> : Chemin au format Windows d'un dossier où seront stockés temporairement les éléments envoyés par le client</p>
+<p><span class="hcp4">&lt;Outlook_Harmony_Path&gt;</span> : Chemin au format Harmony de ce même dossier</p>
+<p>&#160;</p>
+<p>En effet, le client envoie des informations via un webservice et le client HTML5 doit pouvoir y accéder. Si des deux serveurs sont distincts, il faut renseigner ces deux paramètres pour indiquer à chacun où trouver les informations envoyés par le client.</p>
+</body>
+</html>

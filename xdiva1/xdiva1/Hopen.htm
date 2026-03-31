@@ -1,0 +1,73 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Hopen</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Hopen &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Hopen permet d'ouvrir un fichier "à la main". Par défaut les fichiers déclarés par l'instruction <a href="HFile.htm">HFile</a> sont automatiquement ouverts.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> <font class="hcp2">Hopen</font> ( <font class="hcp3">tdf</font> <font class="hcp3">,</font> <font class="hcp3">code</font>_<font class="hcp3">réservation</font> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Table de définition de fichier. Le nom du fichier à ouvrir doit être placé au préalable dans la <font>t</font>df.</p>
+<p class="Body-Text"><font class="hcp3">Code_réservation</font></p>
+<p class="decalage05">Mode de partage du fichier.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:14.09%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">0 &#160;</p>
+</td>
+<td style="width:85.91%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.09%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;</p>
+</td>
+<td style="width:85.91%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Toutes les erreurs provoquent l'arrêt du programme.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques :</font></p>
+<p class="Body-Text">Un fichier ouvert doit être fermé avant toute réouverture.</p>
+<p class="Body-Text">Sous Unix, les noms de fichiers doivent être en caractères minuscules. Harmony ne peut accéder à un fichier <font>u</font>nix dont le nom comprend un caractère majuscule. Le nom du fichier à ouvrir placé dans la <font>t</font>df est automatiquement converti en caractères minuscules.</p>
+<p class="Body-Text">Si le fichier est de type I (séquentiel-indexé), la clé de la tdf est initialisée à "A". Une lecture (Hread) délivrera donc le premier enregistrement du fichier pour la clé A.</p>
+<p class="Body-Text">Le champ <a href="Tableded_finitiondefichier_TDF_.htm">BaseType</a> de la tdf permet de savoir si le fichier ouvert se trouve dans une base SQL.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple :</font></p>
+<p class="Source">Record * htdf comp</p>
+<p class="Source">comp.name = "fcomp.dhfi"</p>
+<p class="Source">Hopen(comp,"P")</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="HFile.htm">HFile</a>, <a href="HTmpFile.htm">HTmpFile</a> , <a href="Hclose.htm">Hclose</a>, <a href="Herase.htm">Herase</a>, <a href="Fopen.htm">Fopen</a></p>
+</body>
+</html>

@@ -1,0 +1,93 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Attachements / Coordonnées</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp3 { font-weight:bold; }
+span.hcp4 { font-weight:bold; }
+span.hcp5 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Attachements / Coordonnées</h3>
+<p>Cette famille de propriétés permet de saisir manuellement les coordonnées et la taille des objets et de préciser leurs attachements.</p>
+<p>&#160;</p>
+<p>Les propriétés concernant les coordonnées et la taille des objets sont les suivantes :<br>
+&#160;</p>
+<table cellspacing="0" width="496">
+<col style="width: 26.144%;">
+<col style="width: 73.856%;">
+<tr class="hcp1">
+<td style="width:26.144%;" class="hcp2">
+<p class="Body-Text"><font class="hcp3">Position X / Y</font></p>
+</td>
+<td style="width:73.856%;" class="hcp2">
+<p class="Body-Text">Coordonnées en orteils de l'objet en X et Y.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:26.144%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Taille X / Y</p>
+</td>
+<td style="width:73.856%;" class="hcp2">
+<p class="Body-Text">Tailles en orteils de l'objet en X et Y.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les propriétés concernant l'attachement des objets sont les suivantes :<br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 11.944%;">
+<col style="width: 88.056%;">
+<tr class="hcp1">
+<td style="width:11.944%;" class="hcp2">
+<p class="Body-Text"><font class="hcp3">Attachement droite</font></p>
+</td>
+<td style="width:88.056%;" class="hcp2">
+<p class="Body-Text"><span class="hcp4">Attaché à droite</span> : spécifie que l'objet est attaché à la droite de la page/fenêtre, c'est à dire qu'il peut être décalé vers la droite en cas d'élargissement de la fenêtre.<font class="hcp3"><br>
+<br>
+Largeur variable <span class="hcp5">: s</span></font>pécifie que la largeur de l'objet est variable, c'est à dire qu'il peut être élargi en cas d'élargissement de la page/fenêtre (à appliquer en particulier aux objets tableau et aux onglets).</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.944%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Attachement bas</p>
+</td>
+<td style="width:88.056%;" class="hcp2">
+<p class="Body-Text"><span class="hcp4">Attaché au bas</span> : spécifie que l'objet est attaché au bas de la page/fenêtre, c'est à dire qu'il peut être décalé vers le bas en cas d'allongement de la page/fenêtre.<font class="hcp3"><br>
+<br>
+Hauteur variable <span class="hcp5">: s</span></font>pécifie que la hauteur de l'objet est variable, c'est à dire qu'il peut être agrandi en hauteur en cas d'allongement de la page/fenêtre (à appliquer en particulier aux objets tableau et aux onglets).</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp3"><font class="hcp3">A</font>ttention :</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Un type d'attachement défini pour une <span class="hcp4">page</span> est automatiquement répercuté <font class="hcp3">à l'exécution</font> à <span class="hcp4">tous les objets</span> contenus dans la page. Par exemple, si vous déclarez qu'une page est "Attachée en bas", tous ses objets auront cette propriété.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque vous définissez un type d'attachement pour un objet, il est <span class="hcp4">impératif de définir un type d'attachement compatible pour la page</span> contenant cet objet. Dans le cas contraire, une erreur est détectée à la compilation. Par exemple, si vous déclarez qu'un objet est "Attachée en bas", il faut aussi déclarer que la page est de "Hauteur variable" (la page peut aussi être déclarée "Attachée en bas" mais dans ce cas, il est redondant d'affecter cette propriété à l'objet - voir le paragraphe précédent).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="Attachementdesobjets.htm">Attachement des objets</a></p>
+</body>
+</html>

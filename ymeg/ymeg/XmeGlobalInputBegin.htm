@@ -1,0 +1,96 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeGlobalInputBegin</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-weight:bold; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp6 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeGlobalInputBegin &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><span class="hcp2">Mise en route du gestionnaire de saisie globale</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">XmeGlobalInputBegin</font> (<font style="font-style: italic;">Buffer de réception<span style="font-style: normal;">,</span> Nom du module, Nom de la procédure</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 16.312%;">
+<col style="width: 83.688%;">
+<tr class="hcp4">
+<td style="width:16.312%;" class="hcp5">
+<p class="Body-Text" style="font-style: italic;">Buffer de réception</p>
+</td>
+<td style="width:83.688%;" class="hcp5">
+<p class="Body-Text">Zone de réception des caractères reçus du client.<br>
+Le nombre de caractères est limité à 256.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.312%;" class="hcp5">
+<p class="Body-Text" style="font-style: italic;">Nom du module</p>
+</td>
+<td style="width:83.688%;" class="hcp5">
+<p class="Body-Text">Nom du module Diva incluant la procédure de traitement à exécuter.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.312%;" class="hcp5">
+<p class="Body-Text" style="font-style: italic;">Nom de la procédure</p>
+</td>
+<td style="width:83.688%;" class="hcp5">
+<p class="Body-Text">Nom de la procédure de traitement à exécuter.</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Description de la fonction&#160;:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Cette procédure permet de lancer le gestionnaire de saisie globale.<br>
+Des explications détaillées sur ce mode de saisie sont données à la rubrique <a href="Gestionnaire_de_saisie_globale.htm">Gestionnaire de saisie globale</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La zone destinée à stocker les caractères reçus du client est identifiée par <span style="font-weight: bold; font-style: italic;">Buffer de réception</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un traitement spécifique est déclenché par Ywpf à la réception des caractères pour permettre à l'application de <span class="hcp2">décoder et interpréter le contenu du buffer</span>.<br>
+Ywpf exécute ce traitement exactement comme un point de traitement classique. Toutefois, vous avez la possibilité de le définir dans un module Diva quelconque et non obligatoirement dans le masque d'écran lui-même. La procédure est identifiée par son nom <span class="hcp6">Nom de la procédure</span> et le <span class="hcp6">Nom du module</span> où elle est définie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure <a href="XmeGlobalInputEnd.htm">XmeGlobalInputEnd</a> permet de repasser en mode de saisie classique.</p>
+</li>
+</ul>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Exemple&#160;:</font></p>
+<p class="Source">1 &#160;&#160;Buffer &#160;&#160;256</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeGlobalInputBegin (Buffer, "MonModule.dhop", "MaProcedure")<br>
+&#160;</p>
+<p class="Source">XmeInput (...) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;saisie de masque en mode "Saisie globale"</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeGlobalInputEnd</p>
+<p class="Source">XmeInput (...) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;saisie de masque classique</p>
+<p class="Source">...</p>
+<p class="source">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,87 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Menus : Natures des choix</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+font.hcp3 { text-decoration:underline; }
+font.hcp4 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Menus : Natures des choix</h3>
+<p class="Body-Text">Sauf s'il s'agit d'un choix principal de menu classique, un choix terminal peut simuler une case à cocher ou un bouton radio. Ces choix "à cocher" sont généralement utilisés pour activer ou désactiver une option du programme, le dessin de la coche servant à montrer à l’utilisateur si l’option est ou non active.</p>
+&#160;
+<p class="Body-Text">On distingue donc trois natures pour les choix terminaux (propriété <font class="hcp1">Nature</font> dans l’éditeur de menus de Xwin)&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Les choix "<font class="hcp1">normaux</font>", c’est à dire les choix qui ne sont jamais cochés.<br>
+Cette nature de choix ne demande pas de programmation spécifique.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les choix de type "<font class="hcp1">case à cocher</font>" qui simulent une case à cocher.<br>
+Il revient au programme de demander à ce que le choix soit coché (voir remarque importante).<font class="hcp1"><br>
+<br>
+Exemple</font>&#160;dans un logiciel de traitement de textes :<br>
+Avec / Sans affichage de la règle.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les choix de type "<font class="hcp1">bouton radio</font>", qui simulent un item de groupe de boutons radio.<br>
+Cette nature n’a évidemment de sens que si elle est utilisée pour deux ou plusieurs choix <font class="hcp1">consécutifs</font>.<br>
+Un seul des boutons du groupe est valide à un instant donné&#160;: si l'utilisateur coche un autre bouton du même groupe, le bouton précédemment coché doit être décoché. Il revient au programme de demander à ce qu’un choix du groupe soit coché (voir remarque importante).<font class="hcp1"><br>
+<br>
+Exemple</font> dans un logiciel de traitement de textes :<br>
+Affichage en mode Normal / Page / Plan.<font class="hcp1"><br>
+<br>
+Remarque</font>&#160;: si vous souhaitez afficher <font class="hcp1">deux groupes</font> de choix «&#160;bouton radio&#160;» <font class="hcp1">côte à côte</font>, vous devez obligatoirement placer un «&#160;Séparateur&#160;» entre le dernier choix bouton radio du 1er groupe et le premier choix bouton radio du 2ème groupe.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Visuellement, la coche est présentée différemment suivant que le choix affiche ou non une image bitmap. Dans le premier cas, la bitmap apparaît entourée d’un cadre enfoncé. Sans bitmap&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><img src="../image/ebx_-1234825695.gif" alt="image\ebx_-1234825695.gif" title="image\ebx_-1234825695.gif" width="20" height="19" border="0"> apparaît devant le libellé d'un choix actif de type "case à cocher".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><img src="../image/ebx_58313302.gif" alt="image\ebx_58313302.gif" title="image\ebx_58313302.gif" width="20" height="19" border="0"> apparaît devant le libellé du choix actif d’un groupe de boutons radio.</p>
+</li>
+</ul>
+<p class="List" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Programmation des choix "à cocher"</font></p>
+<p class="Body-Text">Initialement, tous les choix "à cocher" sont à l’état «&#160;non coché&#160;». De plus, lorsque l’utilisateur sélectionne un tel choix, <font class="hcp3">l’état de la coche</font> <font class="hcp4">N</font><font class="hcp3">’est</font> <font class="hcp4">PAS</font> <font class="hcp4">AUTOMATIQUEMENT</font> <font class="hcp3">actualisé</font>. En conséquence, il revient au programme :</p>
+<ul>
+<li style="list-style: disc;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Pour une case à cocher, d’exécuter la fonction</font> <a href="XmeMenuCheckItem.htm"><font class="hcp1">XmeMenuCheckItem</font></a><font class="hcp1">&#160;:</font></p>
+</li>
+<li style="list-style: disc;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Avant le premier affichage du menu, afin de cocher le choix si l’option correspondante est initialement active.</p>
+</li>
+<li style="list-style: disc;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Ensuite, afin de mettre l’état du choix à jour en cas de sélection par l’utilisateur (si l’utilisateur sélectionne un choix non coché, le programme doit le cocher et inversement, si l’utilisateur sélectionne un choix déjà coché, le programme doit le décocher).</p>
+</li>
+<li style="list-style: disc;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Pour un groupe de boutons radio, d’exécuter la fonction</font> <a href="XmeMenuCheckRadioItem.htm"><font class="hcp1">XmeMenuCheckRadioItem</font></a> <font class="hcp1">:</font></p>
+</li>
+<li style="list-style: disc;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Avant le premier affichage du menu, afin de cocher le choix du groupe correspondant à l’option initialement active (sauf si aucune option n’est active au départ).</p>
+</li>
+<li style="list-style: disc;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Ensuite, afin de mettre l’état des choix du groupe à jour en cas de sélection d’un des choix par l’utilisateur (si l’utilisateur sélectionne un choix appartenant à un groupe de boutons radio, le programme doit cocher ce choix <font style="font-family: Symbol;" face="Symbol">-</font> le choix du groupe précédemment coché étant automatiquement décoché).</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Vous pouvez aussi utiliser la fonction&#160;<a href="XmeMenuIsItemChecked.htm">XmeMenuIsItemChecked</a> pour connaître l’état courant d’un choix «&#160;à cocher&#160;».</p>
+</body>
+</html>

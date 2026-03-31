@@ -1,0 +1,58 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Déclaration des RecordSql</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Déclaration des RecordSql</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Dans le module de traitements Diva d'un zoom, vous <font class="hcp1">DEVEZ</font> obligatoirement déclarer <font class="hcp1">Public</font> :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">L'enregistrement ZOOM, qui est défini dans le dictionnaire système ddsys.dhsd et qui sert de zone de communication entre xZoom7 et le module de traitements.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le RecordSql considéré par l’instruction RecordSql.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<p class="Body-Text"><font color="#0000FF">Public Record</font> ddsys.dhsd Zoom</p>
+<p class="Body-Text"><span style="color: #0000ff;">Public RecordSql</span> gtrsart.dhoq Article</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">En fonction des besoins, il faudra également déclarer :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">L'enregistrement SYSTEM du dictionnaire ddsys.dhsd (si vous utilisez par exemple le code utilisateur).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les RecordSql des tables externes.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les enregistrements de manœuvre.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Etc.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<p class="Body-Text"><font color="#0000FF">Public Record</font> ddsys.dhsd System</p>
+<p class="Body-Text"><font color="#0000FF">Public RecordSql <span style="color: #000000;">gtrstiers.dhoq Four</span></font></p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

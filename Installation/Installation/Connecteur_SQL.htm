@@ -1,0 +1,167 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Connecteur SQL</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+p.hcp3 { font-weight:bold; }
+td.hcp4 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp5 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp6 { text-decoration:underline; }
+ul.hcp7 { list-style:disc; }
+span.hcp8 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Connecteur SQL</h3>
+<p>&#160;</p>
+<p>Le <span class="hcp1">connecteur SQL</span> accède à la base de données par une connexion <span class="hcp1">ADO.net</span>.</p>
+&#160;
+<p>L’installateur de l'ERP demande les paramètres suivants pour créer les tables et copier les données dans la base SQL :</p>
+&#160;
+<p><img src="../image/SQL_installation.gif" style="border: none;" alt="" width="656" height="578" border="0"></p>
+<p>&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 21.189%;">
+<col style="width: 78.811%;">
+<tr class="hcp2">
+<td style="border: Solid 1px #000000;width: 21.189%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp3">Nom de la base</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 78.811%; padding-right: 10px; padding-left: 10px;">
+<p>Il s’agit du nom de la base de données (par exemple ERPDivalto).<span class="hcp1"><br>
+Attention</span> : Cette base doit être créée au préalable avec le gestionnaire de la base de données cible (Microsoft SQL Server, Oracle ou IBM DB2).</p>
+<p>L’installateur crée automatiquement un répertoire portant ce nom sous le répertoire Divalto du serveur de données (par exemple /Divalto/ERPDivalto). Il y copie les dictionnaires de données et le fichier paramètre FHSQL qui contient la chaîne de connexion à la base SQL. Il ajoute une entrée de type "<span class="hcp1">base SQL</span>" dans la table des serveurs.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.189%;" class="hcp4">
+<p class="hcp3">Nom du serveur SQL</p>
+</td>
+<td style="width:78.811%;" class="hcp5">
+<p>Il s’agit du nom NETBIOS du serveur SQL.<br>
+L’installateur ajoute une entrée de type "<span class="hcp1">Serveur XLAN</span>" dans la table des serveurs.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.189%;" class="hcp4">
+<p class="hcp3">Nom de l’instance</p>
+</td>
+<td style="width:78.811%;" class="hcp5">
+<p>S’il y a plusieurs instances de Microsoft SQL serveur sur le serveur de données, on indiquera ici le nom de l’instance.<span class="hcp1"><br>
+<br>
+Attention</span> : Avec la version <span class="hcp1">SQL Express de Microsoft SQL server</span>, <span class="hcp6">il faut impérativement renseigner ce nom d’instance</span> (SQLEXPRESS par défaut).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.189%;" class="hcp4">
+<p class="hcp3">Chaîne de connexion ODBC</p>
+</td>
+<td style="width:78.811%;" class="hcp5">
+<p>Il convient ici de sélectionner la source de données ODBC permettant à Xlan d’accéder à la base. <span class="hcp6">La sélection renvoie la chaîne de connexion ODBC</span>.<br>
+<br>
+Voir un exemple (concernant Microsoft SQL Server) à la rubrique "<a href="Microsoft_Sql_Server_-_Particularit&eacute;s.htm">Base de données Microsoft Sql Server - Particularités</a>".<span style="font-style: italic;"><br>
+&#160;</span></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.189%;" class="hcp4">
+<p class="hcp3">Chaîne de connexion ADO</p>
+</td>
+<td style="width:78.811%;" class="hcp5">
+<p>Utilisée par le connecteur SQL, elle est calculée automatiquement à partir des paramètres introduits précédemment, mais peut être adaptée en cas de nécessité.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.189%;" class="hcp4">
+<p class="hcp3">Nom du serveur de réservation</p>
+</td>
+<td style="width:78.811%;" class="hcp5">
+<p>Il s’agit du nom du serveur Xlan (généralement, c’est le même que le serveur SQL).<br>
+Les programmes réservent des entités par les fonctions FSHARE du langage DIVA, fonctions également implémentées au niveau du connecteur SQL.</p>
+<p>Le nom du serveur de réservation est stocké dans le <a href="Fichier_param&egrave;tres_des_connexions.htm">fichier paramètres des connexions ADO.net</a> (connexions.xml).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.189%;" class="hcp4">
+<p class="hcp3">Création des tables</p>
+<p class="hcp3">Transfert des données</p>
+</td>
+<td style="width:78.811%;" class="hcp5">
+<p>Ces deux options permettent respectivement :</p>
+<ul class="hcp7">
+<li class="p">
+<p>De créer les tables de l'ERP.</p>
+</li>
+<li class="p">
+<p>De transférer les données (celles de la visite guidée si vous installez la visite guidée, les données "de base" de l'ERP si vous installez l'ERP).</p>
+</li>
+</ul>
+<p><span class="hcp1">Remarque</span> : En cas d'installation successive de l'ERP puis de la visite guidée dans la même base, décochez ces deux cases lors de l'installation de l'ERP afin de ne créer les tables et transférer les données qu'une seule fois (au moment de l'installation de la visite guidée).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.189%;" class="hcp4">
+<p class="hcp3">Nombre de décimales</p>
+</td>
+<td style="width:78.811%;" class="hcp5">
+<p>Ce cadre concerne les données numériques à "décimales variables".<br>
+Harmony permet de définir des valeurs numériques dont le nombre de décimales est variable. Par exemple, les montants dans certains pays s'expriment avec trois décimales, en gestion les quantités peuvent s'exprimer avec 0, 1, 2 ou n décimales selon la nature de l'objet.</p>
+<p>Diva gère jusqu’à <span class="hcp1">10</span> <span class="hcp1">classes de décimales variables</span>. Pour chaque classe, on indique le nombre de décimales à affecter aux valeurs numériques de cette classe.<br>
+&#160;</p>
+<p>L’ERP Divalto utilise les 4 classes suivantes (<span class="hcp1">attention</span> : <span class="hcp6">ce paramétrage doit impérativement correspondre à celui des</span> <span class="hcp8">dossiers</span> <span class="hcp6">dans l’ERP Divalto</span>) :</p>
+<ul class="hcp7">
+<li class="p">
+<p><span class="hcp1">Nombre</span><br>
+Classe 0 : Toutes les données contenant généralement des montants. Paramétrable uniquement par programme dans l’ERP.</p>
+</li>
+<li class="p">
+<p class="hcp3">Montant 2<span style="font-weight: normal;"><br>
+Classe 1 : Correspond au paramètre nature des "Montant 2" dans les paramètres du dossier de comptabilité.</span></p>
+</li>
+<li class="p">
+<p style="font-weight: normal;"><span class="hcp1">Quantités articles</span><br>
+Classe 2 : Correspond au paramètre "Quantité articles" dans les options du dossier de "Divalto Commerce et logistique".</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Valeurs mesurées</span><br>
+Classe 5 : Correspond au paramètre "Valeurs mesurées" dans le dossier de "Divalto Contrôle".</p>
+</li>
+</ul>
+<p><span class="hcp1">Contrairement au fonctionnement avec un fichier Harmony</span>, le nombre de décimales d'une classe est <span class="hcp8">fixe</span> pour une colonne donnée d'une table et sa <span class="hcp6">valeur doit être connue lors de la création des tables</span>.</p>
+<p>Le fichier paramètres Decimales.txt donne la correspondance entre la classe et le libellé affiché dans le programme d’installation.</p>
+<p>&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold; font-style: italic; font-size: 11pt;">Emplacement du fichier des connexions</p>
+<p>L’installateur SQL crée le fichier <span class="hcp1">connexions.xml</span> dans le répertoire /Divalto/Sys s’il n’existe pas. Si le fichier de connexions existe déjà, l’installateur n’y touche pas mais crée un fichier de connexions portant le nom de la base de données avec l’extension .xml (par exemple ErpDivalto.xml) dans le sous-répertoire /Divalto/BasedeDonnees (par exemple /Divalto/ErpDivalto/ErpDivalto.xml).</p>
+<p>La personne qui installe pourra ensuite copier/coller la connexion correspondante dans le fichier des connexions (/Divalto/Sys/connexions.xml).</p>
+<p>&#160;</p>
+</body>
+</html>

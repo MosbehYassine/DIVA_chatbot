@@ -1,0 +1,107 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FtpRequestSetProxy</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-style:italic; }
+table.hcp2 { vertical-align:top; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>FtpRequestSetProxy <a href="Liste_des_fonctions_Ftp___Sftp.htm">Famille</a> <a href="Fonctions_Ftp___Sftp.htm">Thème</a></h1>
+<p>&#160;</p>
+<p>Positionnement des paramètres du proxy.</p>
+<p>&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">int FtpRequestSetProxy &#160;</span>( <span class="hcp1">Ticket</span> , <span class="hcp1">Url, Mode, Utilisateur, MotDePasse</span> )</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">Ticket</p>
+<p class="decalage05">Identifiant de la requête obtenu par <a href="FtpRequestNew.htm">FtpRequestNew</a></p>
+&#160;
+<p class="Body-Text" style="font-style: italic;">Url</p>
+<p class="decalage05">Url du serveur proxy.</p>
+&#160;
+<p class="Body-Text" style="font-style: italic;"><span class="hcp1">Mode</span></p>
+<table cellspacing="0" width="65.57%" class="hcp2">
+<col style="width: 7.956%;">
+<col style="width: 92.044%;">
+<tr class="hcp3">
+<td style="width:7.956%;" class="hcp4">
+<p>1</p>
+</td>
+<td style="width:92.044%;" class="hcp4">
+<p>Prendre les paramètres du système. Il n'y a pas d'autre paramètres à préciser, l'authentification est celle du poste de travail.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:7.956%;" class="hcp4">
+<p>2</p>
+</td>
+<td style="width:92.044%;" class="hcp4">
+<p>Préciser l'url du serveur, mais authentification SSPI. Inutile de préciser Utilisateur et MotDePasse</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:7.956%;" class="hcp4">
+<p>3</p>
+</td>
+<td style="width:92.044%;" class="hcp4">
+<p>Mode manuel. Il faut préciser tous les paramètres</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Utilisateur</p>
+<p class="decalage05">Nom de l'utilisateur dans le domaine.</p>
+&#160;
+<p class="Body-Text" style="font-style: italic;">MotDePasse</p>
+<p class="decalage05">Mot de passe de l'utilisateur.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Retour</p>
+<table cellspacing="0" width="36.597%" class="hcp2">
+<col style="width: 14.034%;">
+<col style="width: 85.966%;">
+<tr class="hcp3">
+<td style="width:14.034%;" class="hcp4">
+<p>0</p>
+</td>
+<td style="width:85.966%;" class="hcp4">
+<p>Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:14.034%;" class="hcp4">
+<p>1</p>
+</td>
+<td style="width:85.966%;" class="hcp4">
+<p>Ticket incorrect</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:14.034%;" class="hcp4">
+<p>2</p>
+</td>
+<td style="width:85.966%;" class="hcp4">
+<p>Exception. Voir <a href="FtpRequestGetError.htm">FtpRequestGetError</a></p>
+</td>
+</tr>
+</table>
+<p class="decalage05" style="margin-left: 0px; font-weight: normal;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Exemple</p>
+<p class="decalage05">Voir <a href="FtpRequestExecRequest.htm">FtpRequestExecRequest</a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

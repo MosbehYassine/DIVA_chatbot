@@ -1,0 +1,81 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Utilisation de la feuille de styles</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Gestion de la feuille de styles</h2>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Pour créer une feuille de styles</font>, vous pouvez :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Appeler le choix <font class="hcp1">Masque</font> du menu <font class="hcp1">Paramètres</font> puis taper le nom de votre nouvelle feuille de styles dans le champ <font class="hcp1">Feuille de Styles</font>.<br>
+Après validation de la boîte de dialogue, Xwin vous propose la création de la feuille.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appeler le choix <span class="hcp3">Feuille de Styles</span> du menu <span class="hcp3">Outils</span>. Si vous ouvrez une feuille non encore créée, Xwin vous proposera sa création. Il faudra dans ce cas préciser le type de feuille à créer (écran, imprimante ou web).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp3">Pour modifier une feuille de styles</span>, vous pouvez :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Appeler les choix <span class="hcp3">Styles</span>, <span class="hcp3">Polices</span>, etc. du menu <span class="hcp3">Paramètres</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appeler le choix <span class="hcp3">Feuille de Styles</span> du menu <span class="hcp3">Outils</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En saisie du nom d’un élément de la feuille de styles dans les propriétés d’un objet, cliquer sur le <span class="hcp3">bouton</span> <img src="../image12.gif" style="border: none;" alt="" width="18" height="18" border="0"> correspondant.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Surcharge d'une feuille de styles</font></p>
+<p class="Body-Text">Si vous désirez apporter des modifications à une feuille de styles dont vous n'êtes pas l'auteur, il est conseillé de préalablement créer une feuille de styles de surcharge. Dans ce cas, toutes les modifications effectuées se feront dans la surcharge. En cas de réinstallation de la feuille de styles de base (changement de version du produit par exemple), vos modifications ne seront pas perdues.</p>
+<p class="Body-Text">Le nom de la feuille de styles de surcharge est déduit du nom de la feuille d'origine en lui ajoutant le caractère "u". Ainsi, la surcharge de fstyleWpf.dhfi se nomme fstyleWpfu.dhfi.</p>
+<p class="Body-Text">Pour créer une feuille de styles de surcharge, appelez le choix <font class="hcp1">Feuille de styles</font> du menu <font class="hcp1">Outils</font> (bouton <span class="hcp3">Création surcharge</span>).</p>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp1">Modifications d'une feuille de styles en exploitation</font></p>
+<p class="Body-Text">En exploitation, la feuille de styles est chargée à l'exécution des programmes. En modifiant la feuille de styles, <font style="text-decoration: underline;">sans qu'il soit nécessaire de recompiler les masques</font>, il est donc possible de modifier leur présentation à l'écran.</p>
+<p class="Body-Text">Voici ce qui est modifiable dans la feuille de styles sans compromettre la bonne exécution des masques :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Polices de caractères</font><br>
+Modifier une police est possible, à condition que la nouvelle police soit "compatible" avec l'ancienne. En effet, si la taille des caractères est plus grande, les textes risquent de se trouver tronqués car la taille des boîtes dans lesquelles ils sont affichés ne change pas.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Bordures</font><br>
+Modifier une bordure est possible, à condition de rester "compatible" avec l'ancienne. En effet, si la nouvelle bordure occupe plus de place que l'ancienne, vous risquez que certains textes soient tronqués car la taille des boîtes ne change pas.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Couleurs</font><br>
+Les couleurs de la feuille de styles peuvent être modifiées sans restriction. Il faut néanmoins veiller à ne pas avoir des cas où la couleur de fond est la même que celle des caractères !</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Images et boutons graphiques</font><br>
+Les bitmaps et boutons graphiques peuvent être modifiés, à condition dans la plupart des cas de choisir des images de même taille.<span class="hcp3"><br>
+Remarque</span> : une modification des paramètres situés dans le cadre "Valeurs par défaut lors de la création de l'image / du bouton " n'a aucun effet sur les objets déjà créés et donc aucun effet en exploitation.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">ATTENTION : Il est recommandé de ne pas modifier la feuille de styles "standard" fstyleWpf.dhfi.</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="Feuille_de_styles.htm">Feuille de styles</a>, <a href="Policedecaract_res.htm">Police</a>, <a href="Couleur.htm">Couleur</a>, <a href="Encadrement.htm">Bordure</a>, <a href="Padding.htm">Padding</a>, <a href="Image.htm">Image</a>, <a href="Bouton.htm">Bouton</a>, <a href="Style_de_pr&eacute;sentation.htm">Modèle de présentation</a></p>
+<p class="Body-Text"><a href="Feuilledestyles.htm">Paramétrage de la feuille de styles</a></p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mise en place d'un serveur sécurisé</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Mise en place d'un serveur de données sécurisé</h4>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le service XLANSQL s’exécute sous le compte utilisateur Windows ayant activé le service (par défaut le compte système local).</p>
+<p class="Body-Text">Le mode sécurisé permet au service XLAN de s’exécuter pour chaque session cliente sous un compte utilisateur Windows. Ceci permet d’appliquer à XLAN des droits d’accès aux fichiers différenciés pour des groupes d’utilisateurs. En effet chaque utilisateur Harmony est &#160;associé à un utilisateur Windows dont le compte sera utilisé pour la session XLAN sur le serveur de données.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Mise en oeuvre</p>
+<p class="Body-Text">Pour que Xlan devienne "serveur sécurisé", il suffit de <font class="hcp1">modifier</font> le chapitre <font class="hcp1">[System]</font> de Divalto.ini sur le <font class="hcp1">serveur</font> (par xDivaltoMajIni) en lui ajoutant la clé&#160;:</p>
+<p class="Body-Text"><font class="hcp1">XlanSecurite=3 <span style="font-weight: normal;">(cette clé doit être ajoutée dans la base de registre globale à l'ordinateur HKEY_LOCAL_MACHINE).</span></font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Attention</font>, il est également nécessaire de respecter certaines <font style="font-weight: bold; text-decoration: underline;">règles</font>, côté Harmony et côté Windows&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Pour s'attribuer les droits d'accès de l'utilisateur, Xlan effectue un "Login" Windows avec un code utilisateur et un mot de passe enregistrés dans Xlogf.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;">Ce code utilisateur Windows et son mot de passe sont saisis dans le zoom des comptes utilisateur Windows accessible depuis le zoom de création des utilisateurs Harmony ou Divalto.</p>
+<p class="Body-Text" style="margin-left: 48px;">Les comptes utilisateur Windows doivent impérativement être créés sur le serveur XLAN lui-même. (pour des raisons de sécurité, ces informations ne transitent jamais sur le réseau).</p>
+<p class="Body-Text" style="margin-left: 48px;">Dans la fiche de l'utilisateur Harmony, <span class="hcp3">la zone "</span><span style="font-weight: bold; text-decoration: underline;">Compte Windows pour Xlan</span><span class="hcp3">" de l'utilisateur doit être garnie</span>.</p>
+<p class="Body-Text" style="margin-left: 48px;">Cette méthode permet de créer des "groupes d'utilisateurs". Dans le cas d'une installation de type Saas, on pourra créer un seul compte Windows par société cliente, tous les utilisateurs d'une société cliente utilisant ce compte.</p>
+<p class="Body-Text" style="margin-left: 48px;">Par défaut le compte utilisateur est recherché dans la base locale des utilisateurs. Pour accéder à un domaine, il faut utiliser l'écriture UPN, c'est à dire :<br>
+user@domaine.</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Lors de la création Windows des utilisateurs correspondant à ces comptes, <font class="hcp1">ne cochez pas</font> la case&#160;:<br>
+"L'utilisateur doit changer de mot de passe à la prochaine ouverture de session"<br>
+Mais <font class="hcp1">cochez</font> les cases&#160;:<br>
+"L'utilisateur ne peut pas changer de mot de passe"<br>
+"Le mot de passe n'expire jamais"</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Vérifiez</font> que le <font class="hcp1">compte</font> sous lequel tourne le <font class="hcp1">service DhsXlanServer</font> a le droit&#160;:<br>
+"Agir en tant que partie du système d'exploitation"</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Sécurisez</font> le fichier <font class="hcp1">Xlog</font> du serveur, en attribuant le droit "<font class="hcp1">Aucun accès</font>" à tous les utilisateurs sauf aux administrateurs.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarques</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">La manière de procéder ci-dessus est implémentée à partir de la version 6.3a d'Harmony.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Dans les versions antérieures, il fallait mettre XlanSecurite=1. Dans ce cas, le login Windows se fait avec le même code utilisateur et le même mot de passe que le login Harmony. Cela oblige l'administrateur à créer autant d'utilisateurs Windows que d'utilisateurs Harmony.</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="margin-left: 48px;">&#160;</p>
+</body>
+</html>

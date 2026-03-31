@@ -1,0 +1,125 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Le fichier overwrite.txt</title>
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:Arial, sans-serif;
+font-size:10pt; }
+li.hcp2 { font-family:Arial, sans-serif;
+font-size:10pt; }
+span.hcp3 { font-weight:bold; }
+p.hcp4 { font-family:Arial, sans-serif;
+font-size:10pt;
+margin-left:40px; }
+td.hcp5 { vertical-align:Top; }
+span.hcp6 { font-family:Arial, sans-serif;
+font-size:10pt;
+font-weight:bold; }
+span.hcp7 { font-family:Arial, sans-serif;
+font-size:10pt; }
+p.hcp8 { font-family:Arial, sans-serif;
+font-size:10pt;
+margin-left:80px; }
+p.hcp9 { font-family:Arial, sans-serif;
+font-size:10pt;
+margin-left:40px;
+font-weight:bold; }
+img.hcp10 { border:none; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2 style="font-family: Arial, sans-serif; font-size: 14pt;"><span style="font-family: Arial, sans-serif; 
+	 font-size: 14pt;">Le fichier overwrite.txt</span></h2>
+<p class="hcp1">Ce fichier 
+ à trois rôles :</p>
+<ol style="list-style: decimal;">
+	<li class="hcp2"><p class="hcp1">Il indique à Harmony que le mode &quot;Surcharges 
+	 Multiples&quot; est activé, <br>
+	c'est à dire que les ZonesU deviennent extensibles et qu'il est possible 
+	 d'avoir plusieurs surcharges sur un même dictionnaire de données.</p></li>
+	<li class="hcp2"><p class="hcp1">Il indique où se trouvent les fichiers sources 
+	 et objets de chaque add-on.<br>
+	<br>
+	<span class="hcp3">Attention</span> : <br>
+	- Habituellement, les fichiers de surcharge sont recherchés par les 
+	 chemins implicites.<br>
+	- En mode Surcharges Multiples ce n'est plus le cas. <span style="text-decoration: underline; ">Les 
+	 fichiers de surcharge sont uniquement cherchés à partir des chemins 
+	 trouvés dans le fichier overwrite.txt</span></p></li>
+	<li class="hcp2"><p class="hcp1">Il indique l'ordre d'utilisation des add-ons.</p></li>
+</ol>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Description 
+ du fichier</p>
+<p class="hcp4">Pour 
+ chaque add-on, il faut une ligne de type SOURCE et une ligne de type OBJET</p>
+<p class="hcp4">Les 
+ différents paramètres sont :</p>
+<table style="margin-left: 40px;" cellspacing="10" width="100%">
+	<col style="width: 9.038%;">
+	<col style="width: 90.962%;">
+	<tr>
+		<td class="hcp5"><span class="hcp6">Type</span></td>
+		<td class="hcp5"><span class="hcp7">Source 
+		 : répertoire où se trouvent les sources de l'add-on<br>
+		Object : répertoire où se trouvent les objets de l'add-on</span></td>
+	</tr>
+	<tr>
+		<td class="hcp5"><span class="hcp6">Name</span></td>
+		<td class="hcp5"><span class="hcp7">Nom 
+		 de l'add-on</span></td>
+	</tr>
+	<tr>
+		<td class="hcp5"><span class="hcp6">Path</span></td>
+		<td class="hcp5"><span class="hcp7">Chemin 
+		 relatif par rapport au fichier overwrite.txt du répertoire (source 
+		 ou objet selon le type). Paramètre inutilisé dans la pratique.</span></td>
+	</tr>
+	<tr>
+		<td class="hcp5"><span class="hcp6">AbsolutePath</span></td>
+		<td class="hcp5"><span class="hcp7">Chemin 
+		 absolu du répertoire (source ou objet selon le type)</span></td>
+	</tr>
+</table>
+<p class="hcp4"><span class="hcp3">Remarques</span> </p>
+<ul style="list-style: disc;">
+	<li><p class="hcp8">Il 
+	 est obligatoire que les chemins spécifiés ici soient écrits de la 
+	 même manière que dans le fichier des implicites.<br>
+	Il ne faut pas avoir : c:/divalto/specifs/WS_AO_Italy/objets dans les 
+	 implicites et <br>
+	&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;/specifs/WS_AO_Italy/sources 
+	 dans le fichier overwrite.txt</p></li>
+	<li><p class="hcp8">Tous 
+	 les sources d'un add-on ne sont pas forcément livrés par l'éditeur 
+	 de l'add-on. Il est néanmoins impératif que les sources des dictionnaires 
+	 de données (.dhsd) soient livrés.</p></li>
+</ul>
+<p class="hcp9">Exemples</p>
+<p class="hcp9">1 - Add-on Italy</p>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px; 
+	 font-weight: normal;">Remarquez que le développeur qui écrit l'add-on 
+ Italy ne positionne pas &lt;addon&gt; à 1. &lt;addon&gt; est positionné 
+ uniquement lorsque il y a plusieurs niveaux.</p>
+<p class="hcp4"><img src="../image27.gif" alt="" border="0" class="hcp10"></p>
+<p class="hcp9">2 - Tuscany </p>
+<p class="hcp9"><span style="font-weight: normal;">Ici, l'intégrateur 
+ utilise deux add-ons et, en plus, fait une surcharge.</span></p>
+<p class="hcp4"><img src="../image20.gif" alt="" border="0" class="hcp10"><br>
+<br>
+<span class="hcp3">Remarque importante </span></p>
+<p class="hcp8">Lors 
+ de la synchronisation du schéma SQL, le fichier overwrite sera recopié 
+ dans le répertoire de la base de données. Il permet à XlanSql d'avoir 
+ les bons dictionnaires en ligne.</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,79 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Créer des liens</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-top:0;
+margin-bottom:0; }
+font.hcp2 { font-weight:bold; }
+p.hcp3 { margin-left:11.75pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Créer des liens</h3>
+<p class="hcp1">&#160;</p>
+<p class="NormalGG">Création automatique</p>
+<p>La création des liens peut être faite de façon automatique&#160;lorsque vous ajoutez une table dans l’éditeur de liens. Voir <a href="Options_de_l__diteur_de_liens.htm">Options de l'éditeur de liens</a> .</p>
+<p>Il est également possible de créer tous les liens pour un dictionnaire par le choix <font class="hcp2">Créer automatiquement les liens</font> du menu <font class="hcp2">Edition</font>. Ce choix ajoute toutes les tables du dictionnaire et calcule automatiquement les liens. Les tables appartenant à des fichiers temporaires sont ignorées.</p>
+<p class="hcp1">&#160;</p>
+<p class="NormalGG">Création manuelle</p>
+<p>La création manuelle d’un lien peut s’effectuer de deux manières&#160;:</p>
+<ul>
+<li style="font-size: 8pt;" class="p">
+<p class="hcp3">Par le choix <font class="hcp2">Créer un lien vers une autre table</font> du menu contextuel des tables (dans l’arbre ou le schéma).</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p class="hcp3">En dessinant le nouveau lien avec la souris. Pour cela, dans le schéma, placez le curseur de la souris près du bord extérieur de la table de départ, enfoncez la touche <font class="hcp2">Ctrl</font>, et dessinez le lien avec la souris vers la table destination.</p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="footnote-text"><font style="font-size: 12pt; font-weight: bold;" size="4">Création de plusieurs liens entre deux tables</font></p>
+<p>Il est possible de créer plusieurs liens entre deux tables. C’est le cas notamment où la table de départ contient un tableau de valeurs.</p>
+<p>Lorsque vous dessinez un lien entre deux tables qui sont déjà liées, une info-bulle apparaît vous indiquant que ce lien existe déjà. Si vous relâchez la souris près de la table de destination, le lien est tout de même créé.</p>
+<p class="hcp1">&#160;</p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Exemple&#160;</p>
+<p>Il y a deux liens entre la table Article et la table des «&#160;Libellés famille de tarification&#160;». Les deux liens utilisent le même index mais avec un replissage différent.</p>
+<p><img src="../image/liens7.gif" alt="" width="538" height="264" border="0"></p>
+<p class="hcp1">&#160;</p>
+<p><img src="../image/liens8.gif" alt="" width="512" height="313" border="0"></p>
+<p><img src="../image/liens9.gif" alt="" width="503" height="311" border="0"></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="NormalGG">Création d’un lien avec une seule table</p>
+<p>Il est également possible de créer un lien ayant la même table de départ et d’arrivée.</p>
+&#160;
+<p><font class="hcp2">Exemple</font>&#160;</p>
+<p>Les champs TAREF et REFRPL de la table article sont des codes articles permettant d’accéder à d’autres enregistrements de la table des articles.</p>
+<p class="hcp1">&#160;</p>
+<p><img src="../image/liens10.gif" alt="" width="267" height="329" border="0"></p>
+<p><img src="../image/liens11.gif" alt="" width="513" height="291" border="0"></p>
+<p><img src="../image/liens12.gif" alt="" width="508" height="291" border="0"></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Remarques</p>
+<ul>
+<li style="font-size: 8pt;" class="p">
+<p>Lorsqu’un lien est créé, il est créé invalide (marqué en rouge). Pensez à le valider après avoir vérifié ses paramètres.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Source">
+<p class="Source" style="margin-top: 4.00pt;"><font style="font-family: Arial;" face="Arial">Lorsqu’un lien est créé, Xwin sélectionne l’index primaire de la table destination et compose le garnissage avec les données de la table de départ qui correspondent aux champs de la clé. Avant de valider ce lien, vérifiez que toutes ces informations sont correctes.</font></p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>Si votre dictionnaire contient des champs de même nom qui n’ont pas toujours la même signification, utilisez les alias pour que des liens inexacts ne soient pas créés. <a href="Champs.htm">Voir la remarque sur les alias</a>.</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>Les liens marqués de couleur verte indiquent une surcharge. Voir <a href="Surcharge_des_liens.htm">Surcharge des liens</a> .</p>
+</li>
+</ul>
+</body>
+</html>

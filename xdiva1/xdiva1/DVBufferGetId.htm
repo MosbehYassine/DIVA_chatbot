@@ -1,0 +1,46 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DVBufferGetId</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>DVBufferGetId &#160;&#160;<a href="Liste_des_fonctions_DVBuffer.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Fonctions_DVBuffer.htm"><font class="hcp1">Thème</font></a></h1>
+<p class="Body-Text">La fonction DVBufferGetId permet de créer un nouveau DVBuffer.</p>
+<p class="Body-Text">Ce DVBuffer peut être créé vide, ou peut être créé à partir d'une chaîne de caractères (c'est le cas lorsque le DVBuffer a été lu sur un socket).</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Long &#160;DVBufferGetId</font> &#160;( <span style="font-style: italic;">[ <font class="hcp3">taille ] , [ chaine ]</font></span> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Taille</font></p>
+<p class="decalage05">Unité d'allocation du DVBuffer. A chaque fois que le DVBuffer doit s'agrandir, sa taille est incrémentée de cette valeur.</p>
+<p class="decalage05">Si vous savez à l'avance que vous allez écrire une grande quantité de données, mettez une grande valeur.</p>
+<p class="decalage05">La valeur par défaut est de 8 Ko.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Chaine</font></p>
+<p class="decalage05">Variable alphanumérique au format DVBuffer. Cela permet d'initialiser un DVBuffer avec des données lues sur le réseau ou depuis un fichier.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction retourne un identifiant de DVBuffer. Cet identifiant est passé en paramètre aux fonctions DVBuffer.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;</font></p>
+<p class="decalage05">Voir <a href="Exemple_de_programmation_d_un_DVBuffer.htm">Exemple de programmation d'un DVBuffer</a></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="body-text"><a href="DVBufferDestroy.htm">DVBufferDestroy</a></p>
+<p>&#160;</p>
+</body>
+</html>

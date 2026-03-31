@@ -1,0 +1,283 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>MessageBox</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>MessageBox &#160;<a href="Listedesinstructionsd_entr_es_sorties.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">MessageBox gère une boite de dialogue avec un message et un ou plusieurs boutons.<br>
+La boite contient un message, un titre et une combinaison d'icones et de boutons prédéfinis.<br>
+Les paramètres de cette instruction correspondent à la fonction MessageBox de Windows.</p>
+<p class="Body-Text">Int <font class="hcp1">MessageBox</font> (M<font class="hcp2">ess , Titre , [ Drap ]</font>)</p>
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Mess</font></p>
+<p class="decalage05">Message à afficher. Le caractère | permet de placer des retours à la ligne.</p>
+<p class="Body-Text"><font class="hcp2">Titre</font></p>
+<p class="decalage05">Titre de la fenêtre.</p>
+<p class="Body-Text"><font class="hcp2">Drap</font></p>
+<p class="decalage05">Précise le contenu et le comportement de la boite de dialogue. Ce paramètre est une combinaison (addition) des paramètres suivants :</p>
+<table cellspacing="0" width="601">
+<col style="width: 33.813%;">
+<col style="width: 66.187%;">
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="decalage05"><font class="hcp1">Valeur</font></p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="decalage05"><font class="hcp1">Commentaire</font></p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_ABORTRETRYIGNORE</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient 3 boutons, Abandon, Réessayer, Ignorer.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_APPLMODAL</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">L'utilisateur doit répondre et ne peut cliquer dans une autre fenêtre de l'application (cas par défaut).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_DEFBUTTON1</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">Le premier bouton est le bouton par défaut.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_DEFBUTTON2</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">Le deuxième bouton est le bouton par défaut.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_DEFBUTTON3</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">Le troisième bouton est le bouton par défaut.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_DEFBUTTON4</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">Le quatrième bouton est le bouton par défaut.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_ICONASTERISK</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">Idem à MB_ICONINFORMATION</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_ICONEXCLAMATION</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient une icone avec un point d'exclamation.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_ICONHAND</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">Idem à MB_ICONSTOP.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_ICONINFORMATION</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient une icone avec la lettre i.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_ICONQUESTION</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient une icone avec un point d'interrogation.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_ICONSTOP</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient une icone avec le symbole Stop.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_OK</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient un bouton Ok.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_OKCANCEL</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient deux boutons, Ok , Annuler</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_RETRYCANCEL</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient deux boutons, Réessayer, Abandonner</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_SETFOREGROUND</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite de dialogue passe au premier plan à l'écran.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_SYSTEMMODAL</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">Toutes les applications sont suspendues jusqu'à la fermeture de la boite.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_TASKMODAL</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">Idem à MB_APPLMODAL</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_YESNO</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient deux boutons, Oui et Non.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.813%;" class="hcp4">
+<p class="Body-Text">MB_YESNOCANCEL</p>
+</td>
+<td style="width:66.187%;" class="hcp4">
+<p class="Body-Text">La boite contient trois boutons, Oui, Non, Abandonner</p>
+</td>
+</tr>
+</table>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La fonction renvoie 0 si le système n'a pu ouvrir la fenêtre.</p>
+<table cellspacing="0" width="604">
+<col style="width: 19.556%;">
+<col style="width: 80.444%;">
+<tr class="hcp3">
+<td style="width:19.556%;" class="hcp4">
+<p class="decalage05"><font class="hcp1">Valeur</font></p>
+</td>
+<td style="width:80.444%;" class="hcp4">
+<p class="decalage05"><font class="hcp1">Commentaire</font></p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:19.556%;" class="hcp4">
+<p class="Body-Text">IDABORT</p>
+</td>
+<td style="width:80.444%;" class="hcp4">
+<p class="Body-Text">Le bouton Abandonner a été sélectionné</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:19.556%;" class="hcp4">
+<p class="Body-Text">IDCANCEL</p>
+</td>
+<td style="width:80.444%;" class="hcp4">
+<p class="Body-Text">Le bouton Annuler a été sélectionné ou l'utilisateur a tapé sur Esc.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:19.556%;" class="hcp4">
+<p class="Body-Text">IDIGNORE</p>
+</td>
+<td style="width:80.444%;" class="hcp4">
+<p class="Body-Text">Le bouton Ignorer a été sélectionné</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:19.556%;" class="hcp4">
+<p class="Body-Text">IDNO</p>
+</td>
+<td style="width:80.444%;" class="hcp4">
+<p class="Body-Text">Le bouton Non a été sélectionné</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:19.556%;" class="hcp4">
+<p class="Body-Text">IDOK</p>
+</td>
+<td style="width:80.444%;" class="hcp4">
+<p class="Body-Text">Le bouton Ok a été sélectionné</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:19.556%;" class="hcp4">
+<p class="Body-Text">IDRETRY</p>
+</td>
+<td style="width:80.444%;" class="hcp4">
+<p class="Body-Text">Le bouton Réessayer a été sélectionné</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:19.556%;" class="hcp4">
+<p class="Body-Text">IDYES</p>
+</td>
+<td style="width:80.444%;" class="hcp4">
+<p class="Body-Text">Le bouton Oui a été sélectionné</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

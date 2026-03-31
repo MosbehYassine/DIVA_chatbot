@@ -1,0 +1,32 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Interface d'appel à Ymig</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Interface d'appel à Ymig</h3>
+<p class="Body-Text">Comme toute application s'exécutant sous Harmony, les programmes désirant faire appel à Ymig sont écrits en langage Diva. Ils doivent donc respecter les règles sémantiques habituelles du langage&#160;: déclaration des fichiers, enregistrements, données et modules avant utilisation, définition des procédures et fonctions avant utilisation, présence d'une procédure MAIN indiquant le programme principal, sortie du programme principal par ProgramExit ou ProgramGoto, …</p>
+<p class="Body-Text">Toutefois, un programme faisant appel à Ymig <font class="hcp1">devra de plus faire attention</font> à&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Déclarer PUBLIC</font> les <font class="hcp1">enregistrements utilisés conjointement</font> par le programme et le(s) masque(s) Xwin (Cf. rubrique <a href="D_clarationdesdonn_escommunesauprogrammeetau_x_masque_s_.htm">Déclaration des données communes au programme et au(x) masque(s)</a>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Avant toute utilisation, <font class="hcp1">charger en mémoire le(s) masque(s) utilisé(s)</font>, par l'instruction <a href="XmiLoad.htm">XmiLoad</a>.</p>
+</li>
+</ul>
+</body>
+</html>

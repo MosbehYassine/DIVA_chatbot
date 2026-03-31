@@ -1,0 +1,55 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>RecordSql.Select</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>RecordSql.Select &#160;&#160;<span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La méthode Select exécute la requête et renvoie la première ligne de résultat.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Long</font> RecordSql<span style="font-weight: bold;">.Select</span> ()</p>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp2">
+<td style="width:16.24%;" class="hcp3">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:83.76%;" class="hcp3">
+<p class="Body-Text">La requête n'a pas retourné de ligne</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.24%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 2.00pt;">1</p>
+</td>
+<td style="width:83.76%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Toutes les autres erreurs provoquent l'arrêt du programme</p>
+&#160; <br>&#160;
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Source"><font class="hcp1">P</font>ublic RecordSql 'GTRSTIERS.dhoq' CLIENT</p>
+<p class="Source">Client.Where.Zoom_pk("C0000001") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; positionnement du where</p>
+<p class="Source">St = Client.Select() &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; lecture</p>
+</body>
+</html>

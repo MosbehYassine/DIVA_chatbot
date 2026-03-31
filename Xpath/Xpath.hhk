@@ -1,0 +1,38 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Descriptif du programme Xpath">
+    <param name="Name" value="Descriptif du programme Xpath">
+    <param name="Local" value="Xpath/DescriptifduprogrammeXpath.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fichiers de chemins implicites et utilisateurs">
+    <param name="Name" value="Fichiers de chemins implicites et utilisateurs">
+    <param name="Local" value="Xpath/Fichiersdecheminsimplicitesetutilisateurs.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion et paramétrage des chemins implicites">
+    <param name="Name" value="Gestion et paramétrage des chemins implicites">
+    <param name="Local" value="Xpath/Gestionetparam_tragedescheminsimplicites.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Implantation des fichiers d'implicites en réseau">
+    <param name="Name" value="Implantation des fichiers d'implicites en réseau">
+    <param name="Local" value="Xpath/Implantationdesfichiersd_implicitesenr_seau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="L'écran de Xpath">
+    <param name="Name" value="L'écran de Xpath">
+    <param name="Local" value="Xpath/L__crandeXpath.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menu et outils de Xpath">
+    <param name="Name" value="Menu et outils de Xpath">
+    <param name="Local" value="Xpath/MenuetoutilsdeXpath.htm">
+  </object>
+</ul>
+</html>

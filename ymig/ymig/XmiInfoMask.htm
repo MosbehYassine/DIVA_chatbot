@@ -1,0 +1,122 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmiInfoMask</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmiInfoMask &#160;<a href="Lister_capitulativedesfonctionsdeYmig.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="L_ex_cuteurdemasquesd_imprimanteYmig.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Lecture des caractéristiques d'un masque</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmiInfoMask</font> (<font class="hcp3">Nom du fichier masque</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:27.70%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Nom du fichier masque</font><br>
+(Harmony.Imasque)</p>
+</td>
+<td style="width:72.30%;" class="hcp5">
+<p class="Body-Text">Nom du fichier masque (fichier objet, 32 caractères maximum).<br>
+Le cas échéant, l'extension .dhoi <font class="hcp2">doit</font> être précisé.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<p class="Body-Text">XmiInfoMask permet d'obtenir des <font class="hcp2">informations</font> sur le <font class="hcp2">masque</font> Xwin identifié par son <font style="font-weight: bold; font-style: italic;">Nom de fichier masque</font>. Si le masque indiqué n'est pas chargé, aucune erreur n'est détectée mais tous les paramètres de retour sont positionnés à 0.</p>
+<p class="Body-Text">Au retour de la fonction, les informations sont disponibles dans les données Opara1 à Opara7 de l'enregistrement Harmony&#160;:</p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text">Harmony.Opara1</p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Contenu du champ Taille d'une ligne (paramètres généraux du masque).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text">Harmony.Opara2</p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Contenu du champ Taille d'une colonne (paramètres généraux du masque).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text">Harmony.Opara3</p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Contenu du champ Nombre de lignes (paramètres généraux du masque).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text">Harmony.Opara4</p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Contenu du champ Nombre de colonnes (paramètres généraux du masque).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text">Harmony.Opara5</p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Valeur correspondant au bouton du cadre Orientation sélectionné (paramètres généraux du masque)&#160;:<br>
+1 = Portrait.<br>
+2 = Paysage.<br>
+3 = Défaut.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text">Harmony.Opara6</p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Valeur correspondant au bouton du cadre Hauteur de page sélectionné (paramètres généraux du masque)&#160;:<br>
+1 = d'après le modèle.<br>
+2 = d'après le masque.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text">Harmony.Opara7</p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Nombre total de blocs dessinés dans le masque.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">XmiInfoMask ("MASQUE.dhoi") ;demande d'informations sur le</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fichier masque "MASQUE"&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmiInfoBloc.htm">XmiInfoBloc</a></p>
+</body>
+</html>

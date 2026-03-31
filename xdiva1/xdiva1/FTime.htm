@@ -1,0 +1,49 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FTime</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>FTime <a href="ListedesfonctionsdeDateetHeure.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Fonctionsdedateetheure.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">La fonction FTime convertit une donnée heure au format de saisie en une heure au format HHMMSS.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> <font class="hcp2">FTime</font> ( <font class="hcp3">heure</font>_<font class="hcp3">résultat</font> , <font class="hcp3">heure</font>_<font class="hcp3">entrée</font> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Heure</font>_<font class="hcp3">résultat</font></p>
+<p class="decalage05">Zone de 6 caractères recevant l’heure formatée au format HHMMSS.</p>
+<p class="Body-Text"><font class="hcp3">Heure</font>_<font class="hcp3">entrée</font></p>
+<p class="decalage05">Heure au format de saisie (comme dans les masques), par exemple :<br>
+hh&#160;:mm&#160;:ss.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction renvoie la valeur 1 si <font class="hcp3">heure</font>_<font class="hcp3">entrée</font> est une heure valide, 0 dans le cas contraire. L’heure formatée est placée dans <font class="hcp3">heure</font>_<font class="hcp3">résultat</font>.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">1 st X</p>
+<p class="Source">1 hh H</p>
+<p class="Source">st = ftime(hh,"12.08.59")</p>
+<p class="Source">display hh</p>
+<p class="Source">; affiche : 120859</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="STime.htm">STime</a> , <a href="SDateDH.htm">SDateDH</a></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</body>
+</html>

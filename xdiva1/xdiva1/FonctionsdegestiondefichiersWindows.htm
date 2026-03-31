@@ -1,0 +1,1161 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:st1="urn:schemas-microsoft-com:office:smarttags">
+<head>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+        {mso-style-name:"Tableau Normal";
+        mso-tstyle-rowband-size:0;
+        mso-tstyle-colband-size:0;
+        mso-style-noshow:yes;
+        mso-style-parent:"";
+        mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+        mso-para-margin:0cm;
+        mso-para-margin-bottom:.0001pt;
+        mso-pagination:widow-orphan;
+        font-size:10.0pt;
+        font-family:"Times New Roman";
+        mso-ansi-language:#0400;
+        mso-fareast-language:#0400;
+        mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctions de gestion de fichiers Windows</title>
+<link rel="File-List" href="FonctionsdegestiondefichiersWindows_fichiers/filelist.xml" type=""><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>bhouver</o:Author>
+  <o:LastAuthor>bhouver</o:LastAuthor>
+  <o:Revision>3</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:Created>2007-03-05T10:17:00Z</o:Created>
+  <o:LastSaved>2007-03-05T10:18:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>161</o:Words>
+  <o:Characters>886</o:Characters>
+  <o:Company>il</o:Company>
+  <o:Lines>7</o:Lines>
+  <o:Paragraphs>2</o:Paragraphs>
+  <o:CharactersWithSpaces>1045</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:Zoom>TextFit</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:HyphenationZone>21</w:HyphenationZone>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<link rel="Stylesheet" type="text/css" media="all" href="../Docs.css">
+<style type="text/css">
+&lt;!--
+@font-face {
+        font-family: Wingdings;
+        panose-1: 5 0 0 0 0 0 0 0 0 0;
+        mso-font-charset: 2;
+        mso-generic-font-family: auto;
+        mso-font-pitch: variable;
+        mso-font-signature: 0 268435456 0 0 -2147483648 0;
+}; @font-face { font-family:Tahoma;
+panose-1:2 11 6 4 3 5 4 4 2 4;
+mso-font-charset:0;
+mso-generic-font-family:swiss;
+mso-font-pitch:variable;
+mso-font-signature:1627421319 -2147483648 8 0 66047 0; }
+; @page Section1 { x-size:595.3pt 841.9pt;
+margin:70.85pt 70.85pt 70.85pt 70.85pt;
+mso-header-margin:35.4pt;
+mso-footer-margin:35.4pt;
+mso-paper-source:0; }
+; @list l0 { mso-list-id:1621912035;
+mso-list-type:hybrid;
+mso-list-template-ids:-283329892 -1341067644 67895299 67895301 67895297 67895299 67895301 67895297 67895299 67895301; }
+; @list l0:level1 { mso-level-number-format:bullet;
+mso-level-reset-level:level1;
+mso-level-text:&#61623;;
+mso-level-tab-stop:41.75pt;
+mso-level-number-position:left;
+margin-left:41.75pt;
+text-indent:-18.15pt;
+font-family:Symbol; }
+; p.MsoNormal { margin:0cm;
+margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:Times New Roman;
+mso-fareast-font-family:Times New Roman; }
+li.MsoNormal { margin:0cm;
+margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:Times New Roman;
+mso-fareast-font-family:Times New Roman; }
+div.MsoNormal { margin:0cm;
+margin-bottom:.0001pt;
+mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:Times New Roman;
+mso-fareast-font-family:Times New Roman; }
+LI.p-MsoNormal { mso-pagination:widow-orphan;
+font-size:12.0pt;
+font-family:Times New Roman;
+mso-fareast-font-family:Times New Roman; }
+p { font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p { font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.heading-base { mso-style-name:heading-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.heading-base { mso-style-name:heading-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.heading-base { mso-style-name:heading-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-heading-base { mso-style-name:heading-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.body-text { mso-style-name:body-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.body-text { mso-style-name:body-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.body-text { mso-style-name:body-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-body-text { mso-style-name:body-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.list { mso-style-name:list;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.list { mso-style-name:list;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.list { mso-style-name:list;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-list { mso-style-name:list;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.definition { mso-style-name:definition;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.definition { mso-style-name:definition;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.definition { mso-style-name:definition;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-definition { mso-style-name:definition;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.toc-3 { mso-style-name:toc-3;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.toc-3 { mso-style-name:toc-3;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.toc-3 { mso-style-name:toc-3;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-toc-3 { mso-style-name:toc-3;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.toc-base { mso-style-name:toc-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.toc-base { mso-style-name:toc-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.toc-base { mso-style-name:toc-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-toc-base { mso-style-name:toc-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.toc-2 { mso-style-name:toc-2;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.toc-2 { mso-style-name:toc-2;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.toc-2 { mso-style-name:toc-2;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-toc-2 { mso-style-name:toc-2;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.toc-1 { mso-style-name:toc-1;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.toc-1 { mso-style-name:toc-1;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.toc-1 { mso-style-name:toc-1;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-toc-1 { mso-style-name:toc-1;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-3 { mso-style-name:index-3;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-3 { mso-style-name:index-3;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-3 { mso-style-name:index-3;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-3 { mso-style-name:index-3;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-base { mso-style-name:index-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-base { mso-style-name:index-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-base { mso-style-name:index-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-base { mso-style-name:index-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-2 { mso-style-name:index-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-2 { mso-style-name:index-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-2 { mso-style-name:index-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-2 { mso-style-name:index-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-1 { mso-style-name:index-1;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-1 { mso-style-name:index-1;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-1 { mso-style-name:index-1;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-1 { mso-style-name:index-1;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-heading { mso-style-name:index-heading;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-heading { mso-style-name:index-heading;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-heading { mso-style-name:index-heading;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-heading { mso-style-name:index-heading;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.footer { mso-style-name:footer;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.footer { mso-style-name:footer;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.footer { mso-style-name:footer;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-footer { mso-style-name:footer;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.header-base { mso-style-name:header-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.header-base { mso-style-name:header-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.header-base { mso-style-name:header-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-header-base { mso-style-name:header-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.header { mso-style-name:header;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.header { mso-style-name:header;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.header { mso-style-name:header;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-header { mso-style-name:header;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.normal-indent { mso-style-name:normal-indent;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.normal-indent { mso-style-name:normal-indent;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.normal-indent { mso-style-name:normal-indent;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-normal-indent { mso-style-name:normal-indent;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.sourcetop { mso-style-name:sourcetop;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.sourcetop { mso-style-name:sourcetop;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.sourcetop { mso-style-name:sourcetop;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-sourcetop { mso-style-name:sourcetop;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.source { mso-style-name:source;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.source { mso-style-name:source;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.source { mso-style-name:source;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-source { mso-style-name:source;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.code-base { mso-style-name:code-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.code-base { mso-style-name:code-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.code-base { mso-style-name:code-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-code-base { mso-style-name:code-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.list-2 { mso-style-name:list-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.list-2 { mso-style-name:list-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.list-2 { mso-style-name:list-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-list-2 { mso-style-name:list-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.liste-table { mso-style-name:liste-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.liste-table { mso-style-name:liste-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.liste-table { mso-style-name:liste-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-liste-table { mso-style-name:liste-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.margin-note { mso-style-name:margin-note;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.margin-note { mso-style-name:margin-note;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.margin-note { mso-style-name:margin-note;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-margin-note { mso-style-name:margin-note;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.corps-de-texte-table { mso-style-name:corps-de-texte-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.corps-de-texte-table { mso-style-name:corps-de-texte-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.corps-de-texte-table { mso-style-name:corps-de-texte-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-corps-de-texte-table { mso-style-name:corps-de-texte-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.toctitle { mso-style-name:toctitle;
+font-size:24.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.toctitle { mso-style-name:toctitle;
+font-size:24.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.toctitle { mso-style-name:toctitle;
+font-size:24.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-toctitle { mso-style-name:toctitle;
+font-size:24.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.title { mso-style-name:title;
+font-size:36.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.title { mso-style-name:title;
+font-size:36.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.title { mso-style-name:title;
+font-size:36.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-title { mso-style-name:title;
+font-size:36.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.byline { mso-style-name:byline;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.byline { mso-style-name:byline;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.byline { mso-style-name:byline;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-byline { mso-style-name:byline;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.figures { mso-style-name:figures;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.figures { mso-style-name:figures;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.figures { mso-style-name:figures;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-figures { mso-style-name:figures;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.caption { mso-style-name:caption;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.caption { mso-style-name:caption;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.caption { mso-style-name:caption;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-caption { mso-style-name:caption;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.figures-table { mso-style-name:figures-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.figures-table { mso-style-name:figures-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.figures-table { mso-style-name:figures-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-figures-table { mso-style-name:figures-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.codeexplained { mso-style-name:codeexplained;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.codeexplained { mso-style-name:codeexplained;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.codeexplained { mso-style-name:codeexplained;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-codeexplained { mso-style-name:codeexplained;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.tableheading { mso-style-name:tableheading;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.tableheading { mso-style-name:tableheading;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.tableheading { mso-style-name:tableheading;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-tableheading { mso-style-name:tableheading;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.tabletext { mso-style-name:tabletext;
+font-size:9.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.tabletext { mso-style-name:tabletext;
+font-size:9.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.tabletext { mso-style-name:tabletext;
+font-size:9.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-tabletext { mso-style-name:tabletext;
+font-size:9.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.note { mso-style-name:note;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.note { mso-style-name:note;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.note { mso-style-name:note;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-note { mso-style-name:note;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.supertitle { mso-style-name:supertitle;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.supertitle { mso-style-name:supertitle;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.supertitle { mso-style-name:supertitle;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-supertitle { mso-style-name:supertitle;
+font-size:14.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.liste-2-table { mso-style-name:liste-2-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.liste-2-table { mso-style-name:liste-2-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.liste-2-table { mso-style-name:liste-2-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-liste-2-table { mso-style-name:liste-2-table;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.tableborder { mso-style-name:tableborder;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.tableborder { mso-style-name:tableborder;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.tableborder { mso-style-name:tableborder;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-tableborder { mso-style-name:tableborder;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.relatedhead { mso-style-name:relatedhead;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.relatedhead { mso-style-name:relatedhead;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.relatedhead { mso-style-name:relatedhead;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-relatedhead { mso-style-name:relatedhead;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.jump { mso-style-name:jump;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.jump { mso-style-name:jump;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.jump { mso-style-name:jump;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-jump { mso-style-name:jump;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.bodytable { mso-style-name:bodytable;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.bodytable { mso-style-name:bodytable;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.bodytable { mso-style-name:bodytable;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-bodytable { mso-style-name:bodytable;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.figuredesc { mso-style-name:figuredesc;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.figuredesc { mso-style-name:figuredesc;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.figuredesc { mso-style-name:figuredesc;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-figuredesc { mso-style-name:figuredesc;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.keyword-link { mso-style-name:keyword-link;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.keyword-link { mso-style-name:keyword-link;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.keyword-link { mso-style-name:keyword-link;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-keyword-link { mso-style-name:keyword-link;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.decalage05 { mso-style-name:decalage05;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.decalage05 { mso-style-name:decalage05;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.decalage05 { mso-style-name:decalage05;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-decalage05 { mso-style-name:decalage05;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.plain-text { mso-style-name:plain-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.plain-text { mso-style-name:plain-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.plain-text { mso-style-name:plain-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-plain-text { mso-style-name:plain-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.document-map { mso-style-name:document-map;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.document-map { mso-style-name:document-map;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.document-map { mso-style-name:document-map;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-document-map { mso-style-name:document-map;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.coprs-de-texte { mso-style-name:coprs-de-texte;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.coprs-de-texte { mso-style-name:coprs-de-texte;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.coprs-de-texte { mso-style-name:coprs-de-texte;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-coprs-de-texte { mso-style-name:coprs-de-texte;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.captiontable { mso-style-name:captiontable;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.captiontable { mso-style-name:captiontable;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.captiontable { mso-style-name:captiontable;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-captiontable { mso-style-name:captiontable;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.footnote-text { mso-style-name:footnote-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.footnote-text { mso-style-name:footnote-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.footnote-text { mso-style-name:footnote-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-footnote-text { mso-style-name:footnote-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.glossaryterm { mso-style-name:glossaryterm;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.glossaryterm { mso-style-name:glossaryterm;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.glossaryterm { mso-style-name:glossaryterm;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-glossaryterm { mso-style-name:glossaryterm;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.jump-base { mso-style-name:jump-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.jump-base { mso-style-name:jump-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.jump-base { mso-style-name:jump-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-jump-base { mso-style-name:jump-base;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.jump-from-contents { mso-style-name:jump-from-contents;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.jump-from-contents { mso-style-name:jump-from-contents;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.jump-from-contents { mso-style-name:jump-from-contents;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-jump-from-contents { mso-style-name:jump-from-contents;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.jump-from-list { mso-style-name:jump-from-list;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.jump-from-list { mso-style-name:jump-from-list;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.jump-from-list { mso-style-name:jump-from-list;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-jump-from-list { mso-style-name:jump-from-list;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.list-bullet { mso-style-name:list-bullet;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.list-bullet { mso-style-name:list-bullet;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.list-bullet { mso-style-name:list-bullet;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-list-bullet { mso-style-name:list-bullet;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.list-bullet-2 { mso-style-name:list-bullet-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.list-bullet-2 { mso-style-name:list-bullet-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.list-bullet-2 { mso-style-name:list-bullet-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-list-bullet-2 { mso-style-name:list-bullet-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.list-number { mso-style-name:list-number;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.list-number { mso-style-name:list-number;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.list-number { mso-style-name:list-number;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-list-number { mso-style-name:list-number;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.list-number-2 { mso-style-name:list-number-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.list-number-2 { mso-style-name:list-number-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.list-number-2 { mso-style-name:list-number-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-list-number-2 { mso-style-name:list-number-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.toc-4 { mso-style-name:toc-4;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.toc-4 { mso-style-name:toc-4;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.toc-4 { mso-style-name:toc-4;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-toc-4 { mso-style-name:toc-4;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.tip-note-heading { mso-style-name:tip-note-heading;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.tip-note-heading { mso-style-name:tip-note-heading;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.tip-note-heading { mso-style-name:tip-note-heading;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-tip-note-heading { mso-style-name:tip-note-heading;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.tip-note-text { mso-style-name:tip-note-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.tip-note-text { mso-style-name:tip-note-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.tip-note-text { mso-style-name:tip-note-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-tip-note-text { mso-style-name:tip-note-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.tip-note-text-bulleted { mso-style-name:tip-note-text-bulleted;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.tip-note-text-bulleted { mso-style-name:tip-note-text-bulleted;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.tip-note-text-bulleted { mso-style-name:tip-note-text-bulleted;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-tip-note-text-bulleted { mso-style-name:tip-note-text-bulleted;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.topic-text-bulleted { mso-style-name:topic-text-bulleted;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.topic-text-bulleted { mso-style-name:topic-text-bulleted;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.topic-text-bulleted { mso-style-name:topic-text-bulleted;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-topic-text-bulleted { mso-style-name:topic-text-bulleted;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.topic-text-indent { mso-style-name:topic-text-indent;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.topic-text-indent { mso-style-name:topic-text-indent;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.topic-text-indent { mso-style-name:topic-text-indent;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-topic-text-indent { mso-style-name:topic-text-indent;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.topic-text-numbered { mso-style-name:topic-text-numbered;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.topic-text-numbered { mso-style-name:topic-text-numbered;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.topic-text-numbered { mso-style-name:topic-text-numbered;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-topic-text-numbered { mso-style-name:topic-text-numbered;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.topic-text-onestep { mso-style-name:topic-text-onestep;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.topic-text-onestep { mso-style-name:topic-text-onestep;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.topic-text-onestep { mso-style-name:topic-text-onestep;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-topic-text-onestep { mso-style-name:topic-text-onestep;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.normalg { mso-style-name:normalg;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.normalg { mso-style-name:normalg;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.normalg { mso-style-name:normalg;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-normalg { mso-style-name:normalg;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.normalgg { mso-style-name:normalgg;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.normalgg { mso-style-name:normalgg;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.normalgg { mso-style-name:normalgg;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-normalgg { mso-style-name:normalgg;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.corps { mso-style-name:corps;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.corps { mso-style-name:corps;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.corps { mso-style-name:corps;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-corps { mso-style-name:corps;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.list-continue { mso-style-name:list-continue;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.list-continue { mso-style-name:list-continue;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.list-continue { mso-style-name:list-continue;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-list-continue { mso-style-name:list-continue;
+font-size:11.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.envelope-address { mso-style-name:envelope-address;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.envelope-address { mso-style-name:envelope-address;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.envelope-address { mso-style-name:envelope-address;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-envelope-address { mso-style-name:envelope-address;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.envelope-return { mso-style-name:envelope-return;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.envelope-return { mso-style-name:envelope-return;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.envelope-return { mso-style-name:envelope-return;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-envelope-return { mso-style-name:envelope-return;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.annotation-text { mso-style-name:annotation-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.annotation-text { mso-style-name:annotation-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.annotation-text { mso-style-name:annotation-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-annotation-text { mso-style-name:annotation-text;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.body-text-2 { mso-style-name:body-text-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.body-text-2 { mso-style-name:body-text-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.body-text-2 { mso-style-name:body-text-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-body-text-2 { mso-style-name:body-text-2;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.body-text-3 { mso-style-name:body-text-3;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.body-text-3 { mso-style-name:body-text-3;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.body-text-3 { mso-style-name:body-text-3;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-body-text-3 { mso-style-name:body-text-3;
+font-size:8.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.date { mso-style-name:date;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.date { mso-style-name:date;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.date { mso-style-name:date;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-date { mso-style-name:date;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.message-header { mso-style-name:message-header;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.message-header { mso-style-name:message-header;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.message-header { mso-style-name:message-header;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-message-header { mso-style-name:message-header;
+font-size:12.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.closing { mso-style-name:closing;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.closing { mso-style-name:closing;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.closing { mso-style-name:closing;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-closing { mso-style-name:closing;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-4 { mso-style-name:index-4;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-4 { mso-style-name:index-4;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-4 { mso-style-name:index-4;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-4 { mso-style-name:index-4;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-5 { mso-style-name:index-5;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-5 { mso-style-name:index-5;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-5 { mso-style-name:index-5;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-5 { mso-style-name:index-5;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-6 { mso-style-name:index-6;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-6 { mso-style-name:index-6;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-6 { mso-style-name:index-6;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-6 { mso-style-name:index-6;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-7 { mso-style-name:index-7;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-7 { mso-style-name:index-7;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-7 { mso-style-name:index-7;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-7 { mso-style-name:index-7;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-8 { mso-style-name:index-8;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-8 { mso-style-name:index-8;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-8 { mso-style-name:index-8;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-8 { mso-style-name:index-8;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+p.index-9 { mso-style-name:index-9;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+li.index-9 { mso-style-name:index-9;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+div.index-9 { mso-style-name:index-9;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+LI.p-index-9 { mso-style-name:index-9;
+font-size:10.0pt;
+mso-fareast-font-family:Times New Roman; }
+span.SpellE { mso-spl-e:yes; }
+span.GramE { mso-gram-e:yes; }
+div.Section1 { page:Section1; }
+ol { margin-bottom:0cm; }
+ul { margin-bottom:0cm; }
+body { background-color:#ffffff; }
+--&gt;
+</style>
+
+<!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]-->
+<!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-family:Symbol;
+mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol; }
+span.hcp2 { mso-list:Ignore; }
+span.hcp3 { font:7.0pt 'Times New Roman'; }
+-->
+</style>
+</head>
+<body lang="FR" style="tab-interval: 35.4pt;" xml:lang="FR">
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<div class="Section1">
+<h2>Fonctions de gestion de fichiers Windows</h2>
+<p class="body-text">Diva propose un ensemble de fonctions permettant d'utiliser les API Windows de gestion de fichier. La plupart ont le même nom que dans la bibliothèque Windows mais préfixées par "Win" ; ainsi la fonction d'ouverture de fichier qui s'appelle <span class="SpellE">CreateFile</span> se nomme <span class="SpellE">WinCreateFile</span> en Diva.</p>
+<p class="body-text">Elles permettent :</p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span class="hcp1"><span class="hcp2">·<span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></span>d'ouvrir un fichier quelque soit son emplacement,</p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span class="hcp1"><span class="hcp2">·<span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></span>de lire ou des d'écrire des données,</p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span class="hcp1"><span class="hcp2">·<span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></span>de copier ou renommer un fichier,</p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span class="hcp1"><span class="hcp2">·<span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></span>d'appeler la boîte de dialogue standard de Windows pour la sélection d'un ou plusieurs fichiers,</p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span class="hcp1"><span class="hcp2">·<span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></span>de connaître le nom des répertoires utilisés par Windows (répertoire Windows, Système etc.),</p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span class="hcp1"><span class="hcp2">·<span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></span>de créer ou de supprimer des répertoires,</p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span class="hcp1"><span class="hcp2">·<span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></span>de parcourir les répertoires de Windows.</p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span class="hcp1"><span class="hcp2">·<span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></span>de lire et écrire les fichiers .<span class="SpellE">ini</span></p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span class="hcp1"><span class="hcp2">·<span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></span>d'accéder à la base de registres</p>
+<p class="body-text" style="margin-left: 41.75pt; text-indent: -18.15pt; mso-list: l0 level1 lfo1; tab-stops: list 41.75pt;"><span style="font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol; mso-list: Ignore;">·</span><span class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>de sélectionner une imprimante et d’imprimer un fichier</p>
+<p class="list" style="margin-left: 17.85pt; text-indent: -17.85pt;">&#160;</p>
+<p class="body-text">L'usage de ces fonctions est réservé à des applications particulières comme l'interface avec d'autres applications (<span class="GramE">traitement</span> de texte, tableur) ou pour des applications "système".</p>
+</div>
+</body>
+</html>

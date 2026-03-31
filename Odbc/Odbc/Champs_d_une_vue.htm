@@ -1,0 +1,62 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Champs d'une vue</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Champs d'une vue</h3>
+<p class="Body-Text">A partir d’une table de base, la création des vues affiche un arbre avec toutes les tables liées à cette table de base. L’ouverture de la branche «&#160;Champs de <font style="font-style: italic;">nom table</font>&#160;» permet d’afficher les champs de cette table. C’est la première branche de chaque table liée.</p>
+<p class="Body-Text">L’option «&#160;<font class="hcp1">Voir champs masqués ODBC&#160;</font>» du menu permet d’inclure dans la liste des champs des tables les champs masqués pour ODBC dans le dictionnaire de données. Elle doit être activée avant l’affichage de l’arborescence des tables de la vue.</p>
+<p class="Body-Text">La constitution de la vue s’effectue par <font class="hcp1">simple sélection</font> des champs des différentes tables liées.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Sélection des champs de la vue</font></p>
+<p class="Body-Text">Pour ajouter un champ à la vue, il suffit de se positionner sur le champ (pour ne pas dire tout de suite! ) de l’arbre et de l’envoyer (soit par le <font class="hcp1">bouton &gt;&gt;</font>, soit par <font class="hcp1">double-clic</font> ou la touche <font class="hcp1">inser</font>), soit par un <font class="hcp1">drag and drop</font> dans le tableau des champs de la vue.</p>
+<p class="Body-Text">La <font class="hcp1">sélection multiple</font> dans l’arbre permet d’envoyer plusieurs champs simultanément.</p>
+<p class="Body-Text">La touche <font class="hcp1">Tab</font> permet de passer de l’arbre au tableau et vice-versa.</p>
+<p class="Body-Text">La touche <font class="hcp1">Ctrl+Tab</font> permet de se positionner sur le même champ dans l’arborescence. Ceci est assez pratique si l’on souhaite ajouter d’autres champs de cette table dans la vue.</p>
+<p style="margin-left: 18.00pt; text-align: justify;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Propriétés des champs de la vue</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">nom de la table</font>. Le nom contient une concaténation des noms des tables liées depuis la table de base jusqu’à la table contenant le champ de la vue. Ceci permet d’identifier la table dans l’arborescence des tables liées.<br>
+<br>
+Exemple Mouvement.Client.Table_Naf identifie la Table_Naf liée au Client, elle-même liée à la table des mouvements.</p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">nom ODBC</font> du champ. Ce nom provient généralement du dictionnaire de données, en prenant d’abord le nom local à la table (s’il existe), puis le nom général (s’il existe et en effectuant éventuellement la substitution de $r par le nom de la table) et enfin le nom du champ. Il peut arriver que deux champs de deux tables portent le <font class="hcp1">même nom</font>, il faut dans ce cas <font class="hcp1">changer manuellement</font> un des deux noms, en effet, <font class="hcp1">chaque champ de la vue doit porter un nom unique</font>.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">nature</font>. Elle provient du dictionnaire de données à titre informatif.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">L’indicateur de <font class="hcp1">champ caché</font>. Cet indicateur permet de masquer un champ de la vue lors de l’interrogation du catalogue de la vue par le client ODBC. On utilise généralement cette option pour les champs ajoutés à la vue pour des besoins de filtrage par la <a href="Cr_ation_d_une_vue.htm">condition</a> de la vue. Pour les champs masqués pour ODBC au niveau du dictionnaire de données, cette option est active par défaut lors de l’insertion du champ dans la vue.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">confidentialité</font>. Elle permet de cacher les champs de la vue aux utilisateurs n’ayant les droits d’accès correspondants</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">L’ordre des champs</font></p>
+<p class="Body-Text">L’ordre final des champs de la vue est respecté lors de l’interrogation du catalogue d’une vue par un client odbc. On peut ainsi effectuer un <font class="hcp1">regroupement sémantique</font> des champs. (par exemple rapprocher un code de sa désignation)</p>
+<p class="Body-Text">Pour <font class="hcp1">déplacer un champ</font> il faut se positionner sur le champ et utiliser les boutons de déplacement vertical vers le haut ou vers le bas. (<font class="hcp1">raccourci Ctrl+flèche haut ou bas</font>)</p>
+<p class="Body-Text">Pour <font class="hcp1">déplacer plusieurs champs</font> il faut au préalable les sélectionner.</p>
+<p class="Body-Text">On pourra également procéder par <font class="hcp1">couper/coller</font> des lignes du tableau.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Optimisation des accès</font></p>
+<p class="Body-Text">Une vue peut contenir des champs provenant d’un grand nombre de tables (plusieurs dizaines par exemple). Le driver ODBC optimise les accès lors de l’interrogation de la vue pour n’accéder qu’aux tables pour lesquelles des champs ont été sélectionnés dans la requête.</p>
+</body>
+</html>

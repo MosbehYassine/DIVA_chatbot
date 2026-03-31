@@ -1,0 +1,97 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Les objets multi-ligne</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-size:11pt;
+font-weight:bold; }
+span.hcp2 { font-size:11pt;
+font-weight:bold; }
+span.hcp3 { font-weight:bold; }
+img.hcp4 { border:none; }
+span.hcp5 { margin-left:168px; }
+span.hcp6 { font-size:8pt; }
+ul.hcp7 { list-style:disc; }
+p.hcp8 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Les objets multi-ligne</h2>
+<p>&#160;</p>
+<p>Dans un masque Xwin, tout objet est délimité par une "boîte". Si le contenu de l'objet est plus large que la boîte, il est tronqué à l'impression.</p>
+&#160;
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2">Définition de la propriété multi-ligne</span></p>
+<p>Un objet ayant la propriété "Multi-ligne" est autorisé à s'imprimer sur deux ou plusieurs lignes si son contenu déborde de la boîte dessinée dans Xwin. Cette propriété est disponible pour les objets <a href="ObjetTexte.htm">Texte</a>, <a href="ObjetChamp.htm">Champ</a> et <a href="ObjetMulti_choix.htm">Multi-choix</a>. Elle permet par exemple de rétrécir une colonne de tableau sans perte d’information.<br>
+&#160;</p>
+<p>La hauteur finale de l'objet imprimé dépend donc de son contenu. Si nécessaire, la boîte est agrandie en hauteur de manière à ce que le contenu, éclaté sur plusieurs lignes, soit intégralement imprimé. La hauteur de la boîte n'est jamais diminuée et sa largeur reste inchangée.<span class="hcp3"><br>
+<br>
+<br>
+Exemple</span> :</p>
+<p><img src="../image23.gif" alt="" width="333" height="56" border="0" class="hcp4"></p>
+<p><span class="hcp5"><img src="../image24.gif" alt="" width="101" height="20" border="0" class="hcp4"> &#160;&#160;&#160;&#160;&#160;&#160;(</span><span class="hcp6">Contenu tronqué)</span></p>
+<p>&#160;</p>
+<p style="margin-left: 156px;"><img src="../image25.gif" alt="" width="198" height="59" border="0" class="hcp4"></p>
+<p><span class="hcp5"><img src="../image26.gif" alt="" width="99" height="36" border="0" class="hcp4"> &#160;&#160;&#160;&#160;&#160;&#160;(</span><span class="hcp6">Contenu multi-ligne)</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2">Répercussion sur les autres objets du bloc</span></p>
+<p>Un objet multi-ligne peut être placé dans n'importe quel <a href="Blocsfixesetblocsmobiles.htm">type de bloc</a>. Toutefois, la répercussion de l’extension de la boîte sur les autres objets diffère selon le type du bloc :</p>
+<ul class="hcp7">
+<li class="p">
+<p><span class="hcp3">Bloc de type Mobile ou Tableau</span>.<br>
+Ymig <span class="hcp3">décale vers le bas tous les objets du bloc situés</span> <span style="font-weight: bold; text-decoration: underline;">strictement</span> <span class="hcp3">derrière</span> l’objet étendu (i.e. dont l'ordonnée début est strictement supérieure à l'ordonnée fin de l’objet multi-ligne). Le cas échéant, le <span class="hcp3">bloc</span> est lui-même <span class="hcp3">étendu en hauteur</span> (d'un multiple de la hauteur d'une ligne).<span class="hcp3"><br>
+<br>
+Si le bloc Mobile contient un objet Tableau</span>, le traitement est adapté de la manière suivante :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp7">
+<li class="p">
+<p>Le <span style="text-decoration: underline;">bloc n'est jamais étendu en hauteur</span> mais l'extension est <span class="hcp3">compensée par une diminution de la hauteur du tableau</span>.</p>
+</li>
+<li class="p">
+<p>Si des objets multi-ligne placés dans l’<span class="hcp3">en-tête</span> du tableau sont étendus, l'en-tête est agrandie et la hauteur du tableau diminuée d'autant.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp8"><span class="hcp3">Remarque</span> :</p>
+<p class="hcp8">Cette diminution de la hauteur du tableau vient <span class="hcp3">en supplément</span> d'une éventuelle réduction due à un manque de place dans la page imprimée (voir la rubrique <a href="Tableau_de_hauteur_variable.htm">Tableau et bloc mobile de hauteur variable</a>).</p>
+<p class="hcp8"><br>
+<span class="hcp3">Attention</span> :<br>
+La hauteur du tableau n'est pas réduite en dessous d'une certaine limite, égale à la hauteur de l'en-tête augmentée de celle du plus petit des blocs Tableau. De plus, <span class="hcp3">le bloc n'étant pas agrandi</span> quand la hauteur du tableau devient insuffisante pour absorber la <span style="margin-left: 48px;">totalité des extensions, les débordements subsistants liés aux objets multi-ligne seront ignorés et les objets concernés déborderont du bloc à l'impression.</span></p>
+<ul class="hcp7">
+<li class="p">
+<p><span class="hcp3">Bloc de type Fixe ou Fond</span>.<br>
+Ymig <span class="hcp3">n’effectue aucun décalage automatique</span> des autres objets. Pour éviter d'éventuels chevauchements d’objets, le dessin du masque doit laisser, derrière l’objet multi-ligne, un espace vide disponible pour étendre la boîte.</p>
+</li>
+</ul>
+<p><span class="hcp3">Remarque</span> : D’éventuels cadres verticaux dessinés aux côtés de l’objet ne sont pas automatiquement agrandis pour "suivre" l'extension de la boîte. Cette restriction ne concerne normalement pas les blocs de type Tableau, pour lesquels le cadre vertical est lié au tableau.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Algorithme de décalage des objets</p>
+<ul class="hcp7">
+<li class="p">
+<p>Un objet multi-ligne étendu décale potentiellement tous les objets situés strictement derrière lui. Toutefois, le décalage n’est pas systématique et n’est pas obligatoirement égal à l’extension de l’objet multi-ligne. En effet, les espaces entre objets sont d'abord rognés (sans descendre en dessous de 2 orteils) avant de procéder au décalage.</p>
+</li>
+<li class="p">
+<p>L’algorithme est appliqué de proche en proche et de bas en haut.<br>
+Il analyse tous les objets du bloc triés par ordonnées croissantes. Lorsqu’il rencontre un objet multi-ligne qui s’étend en hauteur, il décale s’il y a lieu tous les objets placés derrière lui. Il passe alors à l’objet suivant et recommence.</p>
+</li>
+<li class="p">
+<p>En final, le nombre de lignes du bloc mobile (sans objet Tableau) est aussi augmenté si un objet décalé ou agrandi déborde effectivement du bloc d'origine. Si le bloc mobile contient un tableau, le débordement est compensé par une réduction de la hauteur du tableau.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp3">Voir aussi</span> : <a href="Les_tableaux.htm">Les tableaux</a>.</p>
+<p>&#160;</p>
+</body>
+</html>

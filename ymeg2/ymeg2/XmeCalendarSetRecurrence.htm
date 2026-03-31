@@ -1,0 +1,280 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeCalendarSetRecurrence</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+p.hcp5 { font-style:italic; }
+td.hcp6 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+ul.hcp8 { list-style:disc; }
+li.hcp9 { list-style:none;
+display:inline; }
+span.hcp10 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeCalendarSetRecurrence <span style="font-weight: normal;">&#160;</span><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_agendas.htm"><span class="hcp1">Famille</span></a> <span class="hcp1"><a href="Agendas.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p style="font-weight: bold;">Positionnement d'une règle de récurrence sur un rendez-vous d'un agenda</p>
+<p>&#160;</p>
+<p><span class="hcp2">Long XmeCalendarSetRecurrence</span> (<span class="hcp3">Identifiant</span>, <span class="hcp3">Rendez_vous</span>, [<span class="hcp3">Fréquence</span>], [<span class="hcp3">Intervalle</span>], [<span class="hcp3">Masque_des_jours</span>], [<span class="hcp3">Jour_ordinal</span>], [<span class="hcp3">Jour_du_mois</span>], [<span class="hcp3">Mois_de_l_année</span>], [<span class="hcp3">Nbmax_occurrences</span>], [<span class="hcp3">Fin_récurrence</span>])</p>
+<p>&#160;</p>
+<p><span class="hcp2">Paramètres</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 18.688%;">
+<col style="width: 81.312%;">
+<tr class="hcp4">
+<td style="border: Solid 1px #000000;width: 18.688%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">Identifiant</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 81.312%; padding-right: 10px; padding-left: 10px;">
+<p>Enregistrement identifiant l'agenda rendu par la fonction XmeCalendarGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.688%;" class="hcp6">
+<p class="hcp5">Rendez_vous</p>
+</td>
+<td style="width:81.312%;" class="hcp7">
+<p>Identifiant du rendez-vous retourné par la fonction <a href="XmeCalendarNewAppointment.htm">XmeCalendarNewAppointment</a>.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.688%;" class="hcp6">
+<p class="hcp5">Fréquence</p>
+</td>
+<td style="width:81.312%;" class="hcp7">
+<p>Fréquence de récurrence :</p>
+<ul class="hcp8">
+<li class="p">
+<p>CAL_RECURRENCE_NONE : pas de récurrence (valeur par défaut).</p>
+</li>
+<li class="p">
+<p>CAL_RECURRENCE_DAILY : journalière.<br>
+Dans ce cas, la fonction force les valeurs suivantes :</p>
+</li>
+<li class="hcp9">
+<ul class="hcp8">
+<li class="p">
+<p class="hcp5">Jour_ordinal = 0.</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Jour_du_mois</span> = 0.</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Mois_de_l_année</span> = 0.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 48px;">De plus, si on spécifie un <span class="hcp3">Masque de jours</span>, alors <span class="hcp3">Intervalle</span> doit valoir 1.<br>
+Sinon, <span class="hcp3">Masque de jours</span> doit valoir CAL_MASK_NONE.</p>
+<ul class="hcp8">
+<li class="p">
+<p>CAL_RECURRENCE_WEEKLY : hebdomadaire.<br>
+Dans ce cas, la fonction force les valeurs suivantes :</p>
+</li>
+<li class="hcp9">
+<ul class="hcp8">
+<li class="p">
+<p class="hcp5">Jour_ordinal = 0.</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Jour_du_mois</span> = 0.</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Mois_de_l_année</span> = 0.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="text-indent: 40px;">Spécifiez un <span class="hcp3">Masque de jours</span> pour indiquer le(s) jour(s) de la semaine concerné(s).</p>
+<ul class="hcp8">
+<li class="p">
+<p>CAL_RECURRENCE_MONTHLY : mensuelle.<br>
+Dans ce cas, la fonction force les valeurs suivantes :</p>
+</li>
+<li class="hcp9">
+<ul class="hcp8">
+<li class="p">
+<p><span class="hcp3">Mois_de_l_année</span> = 0.</p>
+</li>
+<li class="p">
+<p>Si <span class="hcp3">Jour_du_mois</span> est non nul :<span class="hcp3"><br>
+Jour_ordinal</span> = 0.<span class="hcp3"><br>
+Masque de jours</span> = CAL_MASK_NONE.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>CAL_RECURRENCE_YEARLY : annuelle.<br>
+Dans ce cas, la fonction force les valeurs suivantes :</p>
+</li>
+<li class="hcp9">
+<ul class="hcp8">
+<li class="p">
+<p><span class="hcp3">Intervalle</span> = 1.</p>
+</li>
+<li class="p">
+<p>Si <span class="hcp3">Jour_du_mois</span> est non nul :<span class="hcp3"><br>
+Jour_ordinal</span> = 0.<span class="hcp3"><br>
+Masque de jours</span> = CAL_MASK_NONE.</p>
+</li>
+</ul>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.688%;" class="hcp6">
+<p class="hcp5">Intervalle</p>
+</td>
+<td style="width:81.312%;" class="hcp7">
+<p>Intervalle entre deux occurrences (selon la fréquence indiquée précédemment ; 1 par défaut).<br>
+Permet par exemple de spécifier qu'un rendez-vous a lieu tous les n jours, semaines ou mois.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.688%;" class="hcp6">
+<p class="hcp5">Masque_des_jours</p>
+</td>
+<td style="width:81.312%;" class="hcp7">
+<p>Masque (*) des jours de la semaine :</p>
+<ul class="hcp8">
+<li class="p">
+<p>CAL_MASK_NONE : aucun.</p>
+</li>
+<li class="p">
+<p>CAL_MASK_SUNDAY, CAL_MASK_MONDAY, CAL_MASK_TUESDAY, CAL_MASK_WEDNESDAY, CAL_MASK_THURSDAY, CAL_MASK_FRIDAY, CAL_MASK_SATURDAY : dimanche, lundi, ...</p>
+</li>
+<li class="p">
+<p>CAL_MASK_WEEKDAYS : tous les jours sauf samedi et dimanche.</p>
+</li>
+<li class="p">
+<p>CAL_MASK_WEEKENDDAYS : samedi et dimanche.</p>
+</li>
+<li class="p">
+<p>CAL_MASK_EVERYDAY : tous les jours (valeur par défaut).</p>
+</li>
+</ul>
+<p>(*) Vous pouvez additionner plusieurs valeurs (ou utiliser la fonction BOR) pour les combiner.</p>
+<p style="margin-left: 24px;">Voir aussi la fonction <a href="XmeCalendarGetBinaryMaskValues.htm" style="font-style: normal;">XmeCalendarGetBinaryMaskValues</a>.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.688%;" class="hcp6">
+<p class="hcp5">Jour_ordinal</p>
+</td>
+<td style="width:81.312%;" class="hcp7">
+<p>Jour ordinal ou 0 (valeur par défaut) :</p>
+<ul class="hcp8">
+<li class="p">
+<p>CAL_FIRST : première occurrence du jour de la semaine dans le mois.</p>
+</li>
+<li class="p">
+<p>CAL_SECOND : 2ème occurrence du jour de la semaine dans le mois.</p>
+</li>
+<li class="p">
+<p>CAL_THIRD : 3ème occurrence du jour de la semaine dans le mois.</p>
+</li>
+<li class="p">
+<p>CAL_FOURTH : 4ème occurrence du jour de la semaine dans le mois.</p>
+</li>
+<li class="p">
+<p>CAL_LAST = dernière occurrence du jour de la semaine dans le mois.</p>
+</li>
+</ul>
+<p>Permet par exemple de spécifier qu'un rendez-vous a lieu tous les 3ème jeudi du mois ou tous les derniers jeudi de Juillet.</p>
+<p>Spécifiez un <span class="hcp3">Masque de jours</span> pour indiquer le jour de la semaine concerné.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.688%;" class="hcp6">
+<p class="hcp5">Jour_du_mois</p>
+</td>
+<td style="width:81.312%;" class="hcp7">
+<p>Numéro du jour dans le mois ou 0 (valeur par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.688%;" class="hcp6">
+<p class="hcp5">Mois_de_l_année</p>
+</td>
+<td style="width:81.312%;" class="hcp7">
+<p>Numéro du mois dans l’année ou 0 (valeur par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.688%;" class="hcp6">
+<p class="hcp5">Nbmax_occurrences</p>
+</td>
+<td style="width:81.312%;" class="hcp7">
+<p>Nombre maximal d’occurrences ou 0 (valeur par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.688%;" class="hcp6">
+<p class="hcp5">Fin_récurrence</p>
+</td>
+<td style="width:81.312%;" class="hcp7">
+<p>Date de fin de la récurrence (exclue) ou espace (valeur par défaut).</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp2">Valeur rendue par la fonction</span> :</p>
+<p>-1 : ticket invalide ou courant erroné.</p>
+<p>Autre : Adresse du rendez-vous dans la liste des rendez-vous.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Description de la fonction</span> :</p>
+<ul class="hcp8">
+<li class="p">
+<p style="font-weight: normal;">La fonction XmeCalendarSetRecurrence positionne une règle de récurrence sur le rendez-vous spécifié en paramètre.</p>
+</li>
+<li class="p">
+<p>Pour plus de renseignements sur la récurrence, consultez l’exemple de programmation d’agenda fourni &#160;dans le dossier /Divalto/Exemples/Agenda. Le masque Calendar.dhsf contient en particulier une fenêtre à onglets (intitulée "Propriétés de la récurrence") qui &#160;montrent les options disponibles pour les récurrences journalières, hebdomadaires, mensuelles et annuelles. Vous pouvez vous en inspirer pour proposer votre propre paramétrage des récurrences.<br>
+N. B. : Les pages de masque de l’exemple contiennent des multi-choix dont les valeurs font l’objet d’un "Define" dans zCalendar.dhsp.</p>
+</li>
+<li class="p">
+<p>Les informations concernant la récurrence sont stockées dans l’<a href="Interface_de_programmation_d_un_agenda.htm">enregistrement "rendez-vous" ObjectAppointment</a>.</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Attention</span> (en particulier si vous modifiez les paramètres de récurrence directement dans cet enregistrement) : <span class="hcp10">Soyez très attentif à la cohérence des informations fournie</span><span class="hcp10">s</span>. Des paramètres erronés ou incompatibles peuvent provoquer des dysfonctionnements, voire un "bouclage" ou un "plantage" du composant Agenda.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp2">Exemples</span> :<br>
+&#160;</p>
+<p class="Source">XmeCalendarSetRecurrence (<span class="hcp3">IdCal</span>,<span class="hcp3">IdRv</span>, ...</p>
+<p class="Source" style="margin-left: 48px;">... CAL_RECURRENCE_DAILY,,CAL_MASK_MONDAY) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tous les lundi</p>
+<p class="Source" style="margin-left: 48px;">... CAL_RECURRENCE_DAILY,2) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tous les 2 jours</p>
+<p class="Source" style="margin-left: 48px;">... CAL_RECURRENCE_WEEKLY,2,CAL_MASK_TUESDAY+CAL_MASK_THURSDAY) ;toutes les 2 semaines, Mardi et Jeudi</p>
+<p class="Source" style="margin-left: 48px;">... CAL_RECURRENCE_MONTHLY,,CAL_MASK_THURSDAY,CAL_THIRD) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;tous les 3ème Jeudi du mois</p>
+<p class="Source" style="margin-left: 48px;">... CAL_RECURRENCE_YEARLY,,CAL_MASK_THURSDAY,CAL_LAST,,7) &#160;&#160;&#160;&#160;&#160;&#160;;tous les derniers Jeudi de Juillet</p>
+<p class="Source" style="margin-left: 48px;">... CAL_RECURRENCE_MONTHLY,,,,4,,6) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tous les 4 du mois pendant 6 mois</p>
+<p class="Source" style="margin-left: 48px;">... CAL_RECURRENCE_MONTHLY,,,,10,,,"20131231") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tous les 10 du mois jusqu'à fin 2013</p>
+<p>&#160;</p>
+</body>
+</html>

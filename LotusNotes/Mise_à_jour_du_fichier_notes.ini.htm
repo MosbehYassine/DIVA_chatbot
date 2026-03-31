@@ -1,0 +1,59 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mise à jour du fichier notes.ini</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Mise à jour du fichier notes.ini</h2>
+<p>&#160;</p>
+<p class="Body-Text">L'installateur modifie le fichier <span class="hcp1">Notes.ini par défaut</span> en ajoutant, dans le chapitre [Notes], la clé :</p>
+<p>EXTMGR_ADDINS = xHarAddonForLotusXX.dll (où XX dépend de la version du produit Notes : 60, 70 ou 80).</p>
+<p>Remarque : Si EXTMGR_ADDINS existe déjà, l’installateur ajoute xHarAddonForLotusXX.dll au début de la liste des DLL à charger.</p>
+<p>&#160;</p>
+<p>Cette clé demande que la DLL Harmony soit automatiquement chargée au démarrage du client LotusNotes. La DLL permet le dialogue entre Lotus Notes et Harmony (elle fournit en particulier le mot de passe lors des connexions à partir de Divalto).</p>
+<p>&#160;</p>
+<p class="Body-Text">Lotus Notes peut être installé :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Soit avec un seul fichier Notes.ini pour tous les utilisateurs.</p>
+</li>
+<li class="p">
+<p>Soit en mode multi-users avec des fichiers Notes.ini personnalisés (par exemple sous TSE ou CITRIX).<br>
+<span class="hcp1">Dans ce cas, il est impératif que la clé ci-dessus soit ajoutée à tous les fichiers Notes.ini</span>. L'installateur effectue une tentative de premier niveau en modifiant les fichiers trouvés dans les <span class="hcp1">profils utilisateurs de Windows</span>. <span class="hcp3">Mais si</span> <font style="text-decoration: underline;"><span class="hcp3">les fichiers</span> <span class="hcp1">personnalisés ont été placés dans d'autres répertoires</span> <span style="text-decoration: none;">(voire sur un autre serveur)</span></font>, l'installation sera incomplète.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Si donc Lotus Notes continue à demander la saisie du mot de passe à l'occasion d'une connexion depuis Divalto (ce mot de passe étant correctement configuré dans DivaltoViewer), cela signifie probablement qu'il existe des fichiers Notes.ini que l’installateur n'a pas détectés. Pour répercuter la modification dans chacun de ces fichiers, procédez de la manière suivante :</p>
+<ul class="hcp2">
+<li class="p">
+<p style="font-weight: normal;">Appelez l'utilitaire <span class="hcp1">XDivaltoMajNotesIni.exe</span>.</p>
+</li>
+<li class="p">
+<p>Recherchez, par la fonction "Recherche" de l’explorateur de Windows, tous les fichiers Notes.ini sur le disque.</p>
+</li>
+<li class="p">
+<p>Faites glisser la liste de fichiers obtenue dans la fenêtre du programme xDivaltoMajNotesIni.</p>
+</li>
+<li class="p">
+<p>Lancez le choix du menu <span class="hcp1">Mise à jours des fichiers</span> correspondant à votre version de Lotus Notes (ou à la version la plus proche).<br>
+Remarque : cette mise à jour peut être relancée plusieurs fois.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,113 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WindowShow</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WindowShow</h3>
+<p class="Body-Text">La fonction WindowShow permet de modifier l'état de la fenêtre Harmony. Elle permet par exemple de maximiser, de minimiser, de cacher la fenêtre Harmony.</p>
+<p class="Body-Text">Cette instruction ne fonctionne pas en client léger Html. En particulier, il est <span style="font-weight: bold;">impossible de cacher la fenêtre d’un navigateur Web</span>.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Long</font> <font class="hcp1">WindowShow</font> (<font class="hcp2">mode</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Mode</font></p>
+<p class="decalage05">Nouveau mode d'affichage de la fenêtre.</p>
+<table cellspacing="0" width="436">
+<tr class="hcp3">
+<td style="width:37.88%;" class="hcp4">
+<p class="TOC-Base" style="margin-top: 5.00pt;"><font class="hcp1">Valeur</font></p>
+</td>
+<td style="width:62.12%;" class="hcp4">
+<p class="TOC-Base" style="margin-top: 5.00pt;"><font class="hcp1">Action</font></p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:37.88%;" class="hcp4">
+<p class="TOC-Base" style="margin-top: 5.00pt;">SW_HIDE</p>
+</td>
+<td style="width:62.12%;" class="hcp4">
+<p class="TOC-Base" style="margin-top: 5.00pt;">Cache la fenêtre</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:37.88%;" class="hcp4">
+<p>SW_SHOWNORMAL</p>
+</td>
+<td style="width:62.12%;" class="hcp4">
+<p>Si la fenêtre est minimisée ou maximisée, restaure l'état précédent</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:37.88%;" class="hcp4">
+<p>SW_SHOWMINIMIZED</p>
+</td>
+<td style="width:62.12%;" class="hcp4">
+<p>Minimise la fenêtre</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:37.88%;" class="hcp4">
+<p>SW_SHOWMAXIMIZED</p>
+</td>
+<td style="width:62.12%;" class="hcp4">
+<p>Maximise la fenêtre</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:37.88%;" class="hcp4">
+<p>SW_SHOW</p>
+</td>
+<td style="width:62.12%;" class="hcp4">
+<p>Affiche la fenêtre à sa dernière position</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:37.88%;" class="hcp4">
+<p>SW_RESTORE</p>
+</td>
+<td style="width:62.12%;" class="hcp4">
+<p>Restaure l'état de la fenêtre dans son état avant maximisation ou minimisation</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:37.88%;" class="hcp4">
+<p>SW_SHOWDEFAULT</p>
+</td>
+<td style="width:62.12%;" class="hcp4">
+<p>Restaure l'état de la fenêtre à l'état d'origine (début du programme)</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp1">Remarque</font></p>
+<p class="Body-Text">Cette fonction peut être appelée avant un appel de programme par ProgramCall pour masquer la fenêtre du programme appelant.</p>
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+&#160;
+<p class="Source">...st = WindowShow(SW_HIDE) ; cacher la fenêtre</p>
+<p class="Source">&#160;&#160;&#160;ProgramCall ("prog") ; appel du programme</p>
+<p class="Source">&#160;&#160;&#160;st = WindowShow(SW_SHOW) ; restaurer la fenêtre</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="ProgramCall.htm">ProgramCall</a></p>
+</body>
+</html>

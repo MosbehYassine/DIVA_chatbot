@@ -1,0 +1,30 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple 5 de reprise de saisie: XMENEXT_DEBUT_DONNEE</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Exemple 5 de reprise de saisie&#160;: XMENEXT_DEBUT_DONNEE</h3>
+<p class="Body-Text">La valeur de retour Harmony.Retour = 14 (XMENEXT_DEBUT_DONNEE) demande à Ywpf de revenir au tout début de l'<a href="Algorithmedesaisiedesdonn_es.htm">algorithme de saisie</a>. Il diffère du code retour 1 par le fait que Ywpf sauvegarde à nouveau la valeur courante de la donnée considérée. <font class="hcp1">Ainsi, si par la suite une touche restaurant l'ancienne valeur est tapée, ce ne sera plus la valeur initiale qui sera restaurée mais la valeur modifiée</font>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Rappelons tout d'abord le traitement effectué par Ywpf après la frappe d'une touche "restaurant l'ancienne valeur" (Flèche en Haut, Back-Tab, Maj+Ctrl+Tab). Une telle touche interrompt l'algorithme de saisie de Ywpf pour la donnée en cours. En particulier, le point de traitement et le point d'arrêt Après ne sont plus exécutés et la valeur de la donnée n'est donc plus contrôlée. En conséquence et pour éviter une erreur de manipulation susceptible d'entraîner une incohérence, Ywpf <font class="hcp1">restaure la valeur initiale de la donnée</font> si l'utilisateur entame sa saisie, se ravise et frappe <font face="Symbol" class="hcp2">-</font> par exemple <font face="Symbol" class="hcp2">-</font> Back-Tab.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Voyons maintenant l'intérêt du code retour XMENEXT_DEBUT_DONNEE avec l'exemple suivant&#160;: au lancement de la saisie d'une fiche, une donnée contient la valeur A. Supposons que pour cette donnée, on piège la touche F2 afin de lire la fiche suivante. Au retour du piège, toutes les variables du masque seront modifiées. En particulier, la donnée considérée contiendra la nouvelle valeur B.</p>
+<p class="Body-Text">Si nous demandons le retour à la saisie avec Harmony.Retour = 0 (XMENEXT_DEFAUT = valeur par défaut, équivalente après un piège de touche à la valeur 3 = XMENEXT_RESSAISIE = ressaisie de la donnée) ou avec Harmony.Retour = 1 (XMENEXT_ARRET_AVANT) et si l'utilisateur procède comme tout à l'heure, la donnée retrouvera son ancienne valeur A, valeur incohérente avec les autres données affichées.</p>
+<p class="Body-Text">Par contre, si le retour est demandé avec Harmony.Retour = 14 (XMENEXT_DEBUT_DONNEE), la cohérence du masque sera respectée car la donnée retrouvera sa nouvelle valeur B.</p>
+</body>
+</html>

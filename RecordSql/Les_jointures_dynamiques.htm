@@ -1,0 +1,39 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Les jointures dynamiques</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Les jointures dynamiques</h3>
+<p>&#160;</p>
+<p>Il est possible de désactiver par programme des jointures (voir les fonctions <a href="Join_Activate.htm">Join.Activate</a> et <a href="Join_Deactivate.htm">Join.Deactivate</a>).</p>
+<p>&#160;</p>
+<p>Il y a cependant une subtilité en ce qui concerne les champs calculés (expressions).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1"><span>Cas général<br>
+&#160;</span></p>
+<p class="hcp1"><span style="font-weight: normal;">Dans tous les cas de champs calculés, s'il y a un seul des champs qui compose l'expression qui vient d'une jointure et que cette jointure a été désactivée, alors toute l'expression sera absente de la requête SQL et en Diva, le champ correspondant sera à espace.</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Cas particulier du COALESCE "simple"<br>
+&#160;</p>
+<p style="font-weight: normal;">Un "COALESCE simple" est un champ calculé qui contient exclusivement un COALESCE, par exemple "COALESCE(tj1.champ, tj2.champ) as champ (80)".</p>
+<p>&#160;</p>
+<p>Si on désactive la jointure tj1, à l'exécution, la requête contiendra : COALESCE(null, tj2.champ) as champ.</p>
+<p>Si on désactive les deux jointures (tj1 et tj2), à l'exécution, il n'y aura rien dans la requête. En Diva, le champ correspondant sera à espace.</p>
+<p>&#160;</p>
+<p class="hcp1">&#160;</p>
+</body>
+</html>

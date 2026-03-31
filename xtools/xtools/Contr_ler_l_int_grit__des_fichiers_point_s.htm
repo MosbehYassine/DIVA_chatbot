@@ -1,0 +1,442 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Contrôler l'intégrité des fichiers pointés</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:12pt;
+font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { text-decoration:underline; }
+ul.hcp4 { list-style:circle; }
+ul.hcp5 { list-style:disc; }
+table.hcp6 { margin-left:32.50pt;
+border-collapse:separate; }
+tr.hcp7 { vertical-align:top; }
+td.hcp8 { border-top:0.50pt solid #000000;
+border-bottom:0.50pt solid #000000;
+border-left:0.50pt solid #000000;
+border-right:0.50pt solid #000000;
+padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp9 { vertical-align:super; }
+td.hcp10 { border-top:0.75pt solid #000000;
+border-bottom:0.75pt solid #000000;
+border-left:0.75pt solid #000000;
+border-right:0.75pt solid #000000;
+padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Contrôler l'intégrité des fichiers pointés</h4>
+<p class="Body-Text"><font size="4" class="hcp1">Remarque préliminaire</font></p>
+<p class="Body-Text">Par la suite, lorsque nous parlerons de fichier «&#160;.err&#160;», «&#160;.new&#160;» et «&#160;.old&#160;», il s’agira du fichier «&#160;Xxxx.err/new/old&#160;», où Xxxx désigne le nom (sans extension) du fichier contrôlé.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">Méthodologie du programme de contrôle d’intégrité</font></p>
+<p class="Body-Text">Pour chaque fichier pointé, le fichier des données est balayé séquentiellement. Xtools contrôle la longueur de chaque ligne lue par rapport à la taille de la table indiquée dans le dictionnaire. Si le fichier contient plusieurs tables, Xtools détermine à quelle table correspond une ligne grâce aux identifiants décrits dans le dictionnaire.</p>
+<p class="Body-Text">Pour chaque ligne&#160;lue, deux cas peuvent se produire&#160;:</p>
+<ul>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Une table a été trouvée et la longueur lue est identique&#160;à la longueur attendue</font> :<br>
+Les champs de la table <font class="hcp3">non masqués dans SQL</font> au niveau du dictionnaire sont contrôlés (voir point suivant). Si une erreur est détectée&#160;:</p>
+</li>
+</ul>
+<ul class="hcp4">
+<li style="list-style:none;display: inline">
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Dans un champ de type numérique, date, heure ou date+heure, ce champ est mis à espace.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dans un champ de type alphanumérique, les caractères non affichables sont remplacés par des points (".").</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;">Un message d’erreur est ajouté au compte-rendu pour chaque champ erroné (voir paragraphe «&#160;Compte-rendu des erreurs&#160;»).</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Aucune table n’a été trouvée (identifiant inconnu) ou la longueur lue ne correspond pas</font>&#160;:<br>
+Un message d’erreur est ajouté au compte-rendu.</p>
+</li>
+</ul>
+<p class="Body-Text">Les lignes erronées ou comportant des champs erronés sont écrites dans un fichier d’erreurs «&#160;.err&#160;». Dans ce fichier, les lignes sont dépackées si la table a été trouvée (d’après son identifiant) et si la longueur de l’enregistrement est correcte. Sinon, elle est écrite tel quelle.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">Contrôles d’intégrité des champs</font></p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Champ alpha</font>.<font class="hcp3"><br>
+Si l’option «&#160;Binaire autorisé&#160;» n’est pas cochée</font> dans les propriétés du champ dans le dictionnaire, Xtools vérifie qu’il ne contient que des caractères affichables. Sinon, Xtools ne fait aucune vérification sur le champ.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Champ numérique ou numérique,D</font>.<br>
+Xtools vérifie que le champ ne contient que des caractères numériques (0..9), éventuellement des espaces, un signe et une virgule.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Champ date, date mensuelle, date+heure, heure</font>.<br>
+Xtools vérifie que le champ contient une date et/ou une heure valide.<br>
+Les champs comportant des espaces non significatifs font l’objet d’une correction automatique&#160;: les espaces sont remplacés par des zéros.<br>
+Remarque&#160;: les corrections automatiques ne sont pas répertoriées dans le compte-rendu. Par contre, le nombre total de dates corrigées est indiqué dans le récapitulatif du compte-rendu.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Champ d’un autre type</font>.<br>
+Xtools ne vérifie pas les autres types de champ.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">L’option correction automatique</font></p>
+<p class="Body-Text">L’option «&#160;Correction automatique&#160;» permet de générer un fichier corrigé «&#160;.new&#160;». Les lignes lues de longueur erronée ou qui ne correspondent pas à une table identifiée ne sont pas écrites dans le fichier corrigé (mais le sont dans le fichier des erreurs).</p>
+<p class="Body-Text">A la fin du contrôle, Xtools propose, pour chaque fichier ayant fait l’objet de corrections, de remplacer le fichier initial par le fichier corrigé. Il <font style="font-weight: bold; text-decoration: underline;">convient de vérifier la nature des corrections dans le compte-rendu des erreurs avant de valider cette opération</font>.</p>
+<p class="Body-Text">Si le remplacement est demandé, <font class="hcp3">le fichier initial est toutefois conservé avec l’extension «&#160;.old&#160;»</font>.<br>
+Les clés du nouveau fichier sont régénérées par Xtools s’il s’agit d’un séquentiel indexé.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">Compte-rendu des erreurs</font></p>
+<p class="Body-Text">Un compte-rendu au format HTML est généré dans le fichier ‘xtools_cif.htm’. Il est affiché à la fin du contrôle. Il contient une ligne par champ en erreur ainsi qu’un récapitulatif par fichier traité.<br>
+&#160;</p>
+<table cellspacing="0" width="585" border="1" class="hcp6">
+<tr class="hcp7">
+<td style="width:15.16%;" class="hcp8">
+<p class="Body-Text">Lig HFD</p>
+</td>
+<td style="width:7.65%;" class="hcp8">
+<p class="Body-Text">Lig New</p>
+</td>
+<td style="width:6.45%;" class="hcp8">
+<p class="Body-Text">Lig Err</p>
+</td>
+<td style="width:8.77%;" class="hcp8">
+<p class="Body-Text">Table</p>
+</td>
+<td style="width:17.62%;" class="hcp8">
+<p class="Body-Text">Champ</p>
+</td>
+<td style="width:14.21%;" class="hcp8">
+<p class="Body-Text">Message</p>
+</td>
+<td style="width:9.66%;" class="hcp8">
+<p class="Body-Text">Valeur</p>
+</td>
+<td style="width:20.48%;" class="hcp8">
+<p class="Body-Text">Clé primaire ou<br>
+1<font class="hcp9">ère</font> clé générée</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:15.16%;" class="hcp8">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:7.65%;" class="hcp8">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:6.45%;" class="hcp8">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:8.77%;" class="hcp8">
+<p class="Body-Text">CA</p>
+</td>
+<td style="width:17.62%;" class="hcp8">
+<p class="Body-Text">BALRUPT1(1)</p>
+</td>
+<td style="width:14.21%;" class="hcp8">
+<p class="Body-Text">Non Numérique</p>
+</td>
+<td style="width:9.66%;" class="hcp8">
+<p class="Body-Text">2ab</p>
+</td>
+<td style="width:20.48%;" class="hcp8">
+<p class="Body-Text">A999</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:15.16%;" class="hcp8">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:7.65%;" class="hcp8">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:6.45%;" class="hcp8">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:8.77%;" class="hcp8">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:17.62%;" class="hcp8">
+<p class="Body-Text">BALRUPT1(3)</p>
+</td>
+<td style="width:14.21%;" class="hcp8">
+<p class="Body-Text">Non Numérique</p>
+</td>
+<td style="width:9.66%;" class="hcp8">
+<p class="Body-Text">&amp;123</p>
+</td>
+<td style="width:20.48%;" class="hcp8">
+<p class="Body-Text">A999</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:15.16%;" class="hcp8">
+<p class="Body-Text">8</p>
+</td>
+<td style="width:7.65%;" class="hcp8">
+<p class="Body-Text">8</p>
+</td>
+<td style="width:6.45%;" class="hcp8">
+<p class="Body-Text">2</p>
+</td>
+<td style="width:8.77%;" class="hcp8">
+<p class="Body-Text">CC</p>
+</td>
+<td style="width:17.62%;" class="hcp8">
+<p class="Body-Text">CONFFCT(6)</p>
+</td>
+<td style="width:14.21%;" class="hcp8">
+<p class="Body-Text">Non Alpha</p>
+</td>
+<td style="width:9.66%;" class="hcp8">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:20.48%;" class="hcp8">
+<p class="Body-Text">A998</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:15.16%;" class="hcp8">
+<p class="Body-Text">8</p>
+</td>
+<td style="width:7.65%;" class="hcp8">
+<p class="Body-Text">8</p>
+</td>
+<td style="width:6.45%;" class="hcp8">
+<p class="Body-Text">2</p>
+</td>
+<td style="width:8.77%;" class="hcp8">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:17.62%;" class="hcp8">
+<p class="Body-Text">CONFFCT(7)</p>
+</td>
+<td style="width:14.21%;" class="hcp8">
+<p class="Body-Text">Non Alpha</p>
+</td>
+<td style="width:9.66%;" class="hcp8">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:20.48%;" class="hcp8">
+<p class="Body-Text">A998</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:15.16%;" class="hcp8">
+<p class="Body-Text">8</p>
+</td>
+<td style="width:7.65%;" class="hcp8">
+<p class="Body-Text">8</p>
+</td>
+<td style="width:6.45%;" class="hcp8">
+<p class="Body-Text">2</p>
+</td>
+<td style="width:8.77%;" class="hcp8">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:17.62%;" class="hcp8">
+<p class="Body-Text">CONFFCT(8)</p>
+</td>
+<td style="width:14.21%;" class="hcp8">
+<p class="Body-Text">Non Alpha</p>
+</td>
+<td style="width:9.66%;" class="hcp8">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:20.48%;" class="hcp8">
+<p class="Body-Text">A998</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Lig HFD&#160;:&#160;Numéro d’enregistrement dans le fichier à contrôler (fichier des données).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lig NEW&#160;:&#160;Numéro d’enregistrement dans le fichier «&#160;.new&#160;».</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lig ERR&#160;:&#160;Numéro d’enregistrement dans le fichier des erreurs «&#160;.err&#160;».</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Table&#160;:&#160;Nom de la table concernée. Il n’est renseigné que si l’on a pu le déterminer à partir de l’identifiant.&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Message&#160;:&#160;Message d’erreur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Valeur&#160;:&#160;Contenu du champ ou du début de l’enregistrement en erreur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Clé primaire ou 1<font class="hcp9">ère</font> clé générée&#160;: &#160;valeur d’une clé permettant de lire la ligne erronée par Xtools (vous pouvez copier cette valeur dans le presse-papier à partir du document HTML et ensuite la coller dans la zone de saisie de la clé dans Xtools).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">Récapitulatif des opérations effectuées</font></p>
+<p class="Body-Text">Par exemple&#160;:</p>
+<table cellspacing="0" width="468" border="1" class="hcp6">
+<col style="width: 18.421%;">
+<col style="width: 81.579%;">
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>2056&#160;</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>Enregistrements lus.</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>0&#160;</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>Enregistrement à espace.</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>2037&#160;</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>Enregistrements écrits dans /Divalto/ficvg_52/ccfdce51.new</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>19&#160;</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>Enregistrements supprimés.</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p><font class="hcp2">19&#160;</font></p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p><font class="hcp2">Enregistrements en erreur.</font></p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>1084&#160;</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>Enregistrements lus pour la table C3.</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>19&#160;</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>Enregistrements lus pour la table C4.</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>41&#160;</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>Enregistrements lus pour la table C5.</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>912&#160;</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>Enregistrements lus pour la table C8.</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>&#160;</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p><font class="hcp2">35&#160;</font></p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p><font class="hcp2">Dates corrigées automatiquement.</font></p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p><font class="hcp2">12</font></p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p><font class="hcp2">Dates DH corrigées automatiquement.</font></p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:18.421%;" class="hcp10">
+<p>Durée</p>
+</td>
+<td style="width:81.579%;" class="hcp10">
+<p>&#160;&#160;00:00:03.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Enregistrements à espaces&#160;:&#160;&#160;Ils sont ignorés.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Enregistrements supprimés&#160;:&#160;&#160;Ils n’ont pas été écrits dans le fichier «&#160;.new&#160;» à cause d’une erreur «&#160;grave&#160;» (longueur erronée ou type inconnu). Si l’on valide «&#160;Copie vers l’original&#160;» en fin de traitement, ces enregistrements sont perdus.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Enregistrements en erreur&#160;:&#160;Enregistrements pour lesquels au moins une erreur a été détectée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Enregistrements lus pour la table&#160;:&#160;Comptage du nombre de lignes par table.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dates corrigées automatiquement&#160;:&#160;Champs de type date ayant fait l’objet d’une correction automatique (suppression des espaces non significatifs).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dates DH corrigées automatiquement&#160;:&#160;Idem pour les champs de type date+heure ou heure.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">Remarques importantes</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Le contrôle d’intégrité utilise la description des tables et des champs du dictionnaire de données. Les caractéristiques du fichier doivent obligatoirement comporter le nom du dictionnaire ainsi que le nom du fichier dans le dictionnaire.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Pour les fichiers séquentiels Indexés, il faut obligatoirement pointer le nom du fichier des clés (.dhfi).</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Seuls les champs</font> ayant la propriété <font class="hcp2">«&#160;non masqués dans SQL&#160;»</font> dans le dictionnaire de données <font class="hcp2">sont vérifiés</font>.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Les champs alphas</font> ayant la propriété <font class="hcp2">«&#160;Binaire autorisé&#160;»</font> dans le dictionnaire <font class="hcp2">ne sont pas vérifiés.</font></p>
+</li>
+</ul>
+</body>
+</html>

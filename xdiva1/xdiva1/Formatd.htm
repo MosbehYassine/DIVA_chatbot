@@ -1,0 +1,183 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Formatd</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Formatd &#160;<a href="Fonctionsdeformatage.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Formatd permet une mise en forme évoluée des données de type date.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Char</font> <font class="hcp1">Formatd</font> (<font class="hcp2">format</font> , <font class="hcp2">variable</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Format</font></p>
+<p class="decalage05">Format à appliquer à <font class="hcp2">variable</font>. Le format est une chaîne de caractère comportant des codes de mise en forme.</p>
+<table cellspacing="0" width="506">
+<col style="width: 32.977%;">
+<col style="width: 67.023%;">
+<tr class="hcp3">
+<td style="width:32.977%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">c</font><font class="hcp1">ode</font></p>
+</td>
+<td style="width:67.023%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">a</font><font class="hcp1">ction</font></p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:32.977%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">JJ ou DD ou J0 ou D0<br>
+&#160;</p>
+</td>
+<td style="width:67.023%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Numéro du jour dans le mois sur deux positions numériques.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:32.977%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">MM ou M0</p>
+</td>
+<td style="width:67.023%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Numéro du mois dans l'année sur deux positions numériques</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:32.977%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">AA ou YY</p>
+</td>
+<td style="width:67.023%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Année sur 2 positions (2 derniers chiffres)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:32.977%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">AAAA ou YYYY</p>
+</td>
+<td style="width:67.023%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Année sur 4 positions</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:32.977%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">jjj ou ddd</p>
+</td>
+<td style="width:67.023%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Nom du jour (d'après le nombre de j)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:32.977%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">mmmmmm</p>
+</td>
+<td style="width:67.023%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Nom du mois (d'après le nombre de m)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:32.977%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">#xxxxxxxx#</p>
+</td>
+<td style="width:67.023%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Les caractères compris entre deux dièses sont reproduits tels quels</p>
+</td>
+</tr>
+</table>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La fonction renvoie la date mise en forme.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Remarques</font></p>
+<p class="Body-Text">Si l'année est stockée sur deux chiffres (format aammjj), seul le code AA est utilisable.</p>
+<p class="Body-Text">Dans les codes jjjjjjj et mmmmmmmmm, chaque caractère représente une lettre du nom du jour ou du mois. Ces codes peuvent être raccourcis : par exemple, jjj ou mmmm. Dans ce cas, les noms de jour et de mois seront éventuellement tronqués.</p>
+<p class="Body-Text">Pour obtenir le caractère "#" (dièse), il faut le doubler.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemples</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp3">
+<td style="width:18.40%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Date</font></p>
+</td>
+<td style="width:41.10%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Format</font></p>
+</td>
+<td style="width:40.50%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Résultat</font></p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:18.40%;" class="hcp4">
+<p class="Body-Text">19900515</p>
+</td>
+<td style="width:41.10%;" class="hcp4">
+<p class="Body-Text">J0/M0/AAAA</p>
+</td>
+<td style="width:40.50%;" class="hcp4">
+<p class="Body-Text">15/05/1990</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:18.40%;" class="hcp4">
+<p class="Body-Text">19900515</p>
+</td>
+<td style="width:41.10%;" class="hcp4">
+<p class="Body-Text">JJ-MM</p>
+</td>
+<td style="width:40.50%;" class="hcp4">
+<p class="Body-Text">15-05</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:18.40%;" class="hcp4">
+<p class="Body-Text">19900515</p>
+</td>
+<td style="width:41.10%;" class="hcp4">
+<p class="Body-Text">dddddd LE DD/MM/JJJJ</p>
+</td>
+<td style="width:40.50%;" class="hcp4">
+<p class="Body-Text">Mardi LE 15/05/1990</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:18.40%;" class="hcp4">
+<p class="Body-Text">19900515</p>
+</td>
+<td style="width:41.10%;" class="hcp4">
+<p class="Body-Text">jjjj LE JJ/MM/AAAA</p>
+</td>
+<td style="width:40.50%;" class="hcp4">
+<p class="Body-Text">Mard LE 15/05/1990</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:18.40%;" class="hcp4">
+<p class="Body-Text">19900515</p>
+</td>
+<td style="width:41.10%;" class="hcp4">
+<p class="Body-Text">LE JJ mmmmm AAAA</p>
+</td>
+<td style="width:40.50%;" class="hcp4">
+<p class="Body-Text">LE 15 Mai 1990</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

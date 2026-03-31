@@ -1,0 +1,114 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple d'utilisation des fonctions Assembly</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Exemple d'utilisation des fonctions Assembly</h1>
+<p>&#160;</p>
+<p>Le service web "http://www.webserviceX.NET/ConversionRate" permet d'obtenir le taux de change entre deux devises.</p>
+<p>Les étapes pour appeler ce service web depuis Diva sont :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Création d'un projet C# de type "Bibliothèque de classes".</p>
+</li>
+<li style="list-style: none; display: inline">
+<ol style="list-style: decimal;">
+<li class="p">
+<p>Ajout d'une référence de service en utilisant l'URL "http://www.webservicex.net/currencyconvertor.asmx".</p>
+</li>
+<li class="p">
+<p>Ecriture des fonctions d'interface entre Diva et les fonctions du service web.</p>
+</li>
+<li class="p">
+<p>Test de ces fonctions en écrivant un petit programme en C#</p>
+</li>
+</ol>
+</li>
+<li class="p">
+<p>Appel des fonctions depuis Diva.</p>
+</li>
+</ul>
+<p style="font-weight: bold;">Ecriture d'une fonction d'interface entre Diva et le service web</p>
+&#160;
+<p class="Source">/// &lt;summary&gt;</p>
+<p class="Source">/// Obtenir le taux de change</p>
+<p class="Source">/// &lt;/summary&gt;</p>
+<p class="Source">/// &lt;param name="hmp"&gt;d1=devise1 &#160;d2=devise2&lt;/param&gt;</p>
+<p class="Source">/// &lt;returns&gt;chaine hmp avec le taux ou texte de l'exception&lt;/returns&gt;</p>
+<p class="Source">public static string ConvertirDevises(string hmp)</p>
+<p class="Source">{</p>
+<p class="Source" style="margin-left: 88px;">try</p>
+<p class="Source" style="margin-left: 88px;">{</p>
+<p class="Source" style="margin-left: 128px;">Currency p1, p2;</p>
+<p class="Source" style="margin-left: 128px;">string devise1, devise2;</p>
+<p class="Source" style="margin-left: 128px;">CurrencyConvertor conv = new CurrencyConvertor();</p>
+<p class="Source" style="margin-left: 128px;">HmpReader reader = new HmpReader(hmp);</p>
+<p class="Source" style="margin-left: 128px;">reader.Seek("d1", out devise1);</p>
+<p class="Source" style="margin-left: 128px;">reader.Seek("d2", out devise2);</p>
+<p class="Source" style="margin-left: 128px;">&#160;</p>
+<p class="Source" style="margin-left: 128px;">// conversion des valeurs alpha en valeur de l'énumération</p>
+<p class="Source" style="margin-left: 128px;">p1 = (Currency)Enum.Parse(typeof(Currency), devise1, true);</p>
+<p class="Source" style="margin-left: 128px;">p2 = (Currency)Enum.Parse(typeof(Currency), devise2, true);</p>
+<p class="Source" style="margin-left: 128px;">&#160;</p>
+<p class="Source" style="margin-left: 128px;">// appel du service Web. ConversionRate a été générée par .net</p>
+<p class="Source" style="margin-left: 128px;">double retour = conv.ConversionRate(p1, p2);</p>
+<p class="Source" style="margin-left: 128px;">return "&lt;taux&gt;" + retour.ToString();</p>
+<p class="Source" style="margin-left: 88px;">}</p>
+<p class="Source" style="margin-left: 88px;">catch (System.Exception e)</p>
+<p class="Source" style="margin-left: 88px;">{</p>
+<p class="Source" style="margin-left: 128px;">return e.ToString();</p>
+<p class="Source" style="margin-left: 88px;">}</p>
+<p class="Source">}</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text" style="margin-left: 48px;">La fonction ConvertirDevises doit obligatoirement avoir cette signature. Tous les paramètres d'entrée sont passés dans une variable de type string et toutes les valeurs retournées sont également passées dans une variable de type string.</p>
+<p class="Body-Text" style="margin-left: 48px;">Nous avons choisi de placer les deux paramètres dans une chaine Hmp. Les appels à reader.Seek permettent de récupérer les deux paramètres d'entrée.</p>
+<p class="Body-Text" style="margin-left: 48px;">Petite complication : le service attend des données de type Currency. Ce type est une énumération contenant la liste des codes de devises (USD EUR etc.). Les appels à Enum.Parse permettent de convertir les paramètres alphanumériques dans ce type. En cas d'échec, une exception est levée.</p>
+<p class="Body-Text" style="margin-left: 48px;">Ensuite l'appel à ConversionRate permet d'obtenir le taux de conversion en invoquant le service web.</p>
+<p class="Body-Text" style="margin-left: 48px;">Puis le résultat est placé dans une chaine Hmp.</p>
+<p class="Body-Text" style="margin-left: 48px;">&#160;</p>
+<p class="Body-Text" style="margin-left: 8px; font-weight: bold;">Ecriture du programme diva pour appeler le service Web</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 assembly L ; identifiant de l'assembly</p>
+<p class="Source">1 idConvertir L ; id méthode pour obtenir le taux</p>
+<p class="Source">1 messageErreur S</p>
+<p class="Source">1 retour S</p>
+<p class="Source">1 param &#160;S</p>
+<p class="Source">1 valeur S</p>
+<p class="Source">main</p>
+<p class="Source" style="margin-left: 88px;">; chargement de l'assembly</p>
+<p class="Source" style="margin-left: 88px;">assembly = AssemblyLoad("dllServiceWebNonDiva.dll")</p>
+<p class="Source" style="margin-left: 88px;">if assembly = 0</p>
+<p class="Source" style="margin-left: 128px;">AssemblyGetError(messageErreur)</p>
+<p class="Source" style="margin-left: 128px;">messageBox(messageErreur," ")</p>
+<p class="Source" style="margin-left: 128px;">ProgramExit</p>
+<p class="Source" style="margin-left: 88px;">endif</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="Source" style="margin-left: 88px;">; chercher la fonction ConvertirDevises</p>
+<p class="Source" style="margin-left: 88px;">idConvertir = AssemblyGetMethod(Assembly,"ConvertirDevises")</p>
+<p class="Source" style="margin-left: 88px;">if idConvertir = 0</p>
+<p class="Source" style="margin-left: 128px;">AssemblyGetError(messageErreur)</p>
+<p class="Source" style="margin-left: 128px;">messageBox(messageErreur," ")</p>
+<p class="Source" style="margin-left: 128px;">ProgramExit</p>
+<p class="Source" style="margin-left: 88px;">endif</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="Source" style="margin-left: 88px;">AssemblyMethodInvoke(assembly,idConvertir,"&lt;d1&gt;" &amp; "EUR" &amp; "&lt;d2&gt;" &amp; "USD", retour)</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="Source" style="margin-left: 88px;">; si on a recu une chaine HMP on en extrait la valeur</p>
+<p class="Source" style="margin-left: 88px;">; sinon c'est une erreur</p>
+<p class="Source" style="margin-left: 88px;">if HmpVerify(retour)</p>
+<p class="Source" style="margin-left: 128px;">hmpRead(retour,param,valeur)</p>
+<p class="Source" style="margin-left: 128px;">MessageBox("valeur"," ")</p>
+<p class="Source" style="margin-left: 88px;">else</p>
+<p class="Source" style="margin-left: 128px;">messageBox(retour,"Erreur")</p>
+<p class="Source" style="margin-left: 88px;">endif</p>
+<p class="Source" style="margin-left: 88px;">ProgramExit</p>
+<p>&#160;</p>
+</body>
+</html>

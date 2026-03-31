@@ -1,0 +1,120 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmlSetOption</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmlSetOption &#160;<a href="Liste_des_fonctions_Xml.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Fonctions_Xml.htm"><font class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">La fonction XmlSetOption permet de positionner des options de lecture du flux.</p>
+<p class="Body-Text">Pour l’instant, une seule option peut être modifiée, l’option <font class="hcp2">whitespacehandling</font> qui permet d’ignorer ou non les espaces du flux.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Numer</font> <font class="hcp2">XmlSetOption</font> <font class="hcp3">( ticket , valeur</font>)</p>
+<p class="Body-Text"><font class="hcp3">Ticket</font></p>
+<p class="decalage05">Valeur retournée par la fonction XmlOpen.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Valeur</font></p>
+<p class="decalage05">Chaîne <a href="G_n_ralit_s.htm">HMP</a> contenant les options à positionner.</p>
+<p class="decalage05">La seule option qu’il est possible de positionner est WhiteSpaceHandling.</p>
+&#160;
+<p class="decalage05">Les valeurs possibles pour cette option sont&#160;:</p>
+<table style="margin-left: 21.30pt;" cellspacing="0" width="630">
+<tr class="hcp4">
+<td style="width:19.48%;" class="hcp5">
+<p class="decalage05">None</p>
+</td>
+<td style="width:80.52%;" class="hcp5">
+<p class="decalage05">Les espaces sont ignorés (c’est la valeur par défaut lors de l’ouverture du flux).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.48%;" class="hcp5">
+<p class="decalage05">Significant</p>
+</td>
+<td style="width:80.52%;" class="hcp5">
+<p class="decalage05">Les espaces significatifs sont retournés.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.48%;" class="hcp5">
+<p class="decalage05">All</p>
+</td>
+<td style="width:80.52%;" class="hcp5">
+<p class="decalage05">Tous les espaces sont retournés.</p>
+</td>
+</tr>
+</table>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp4">
+<td style="width:9.00%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:91.00%;" class="hcp5">
+<p class="Body-Text">Pas d’erreur</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:9.00%;" class="hcp5">
+<p class="Body-Text">-1</p>
+</td>
+<td style="width:91.00%;" class="hcp5">
+<p class="Body-Text">Ticket invalide</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:9.00%;" class="hcp5">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:91.00%;" class="hcp5">
+<p class="Body-Text">Chaîne Hmp incorrecte</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:9.00%;" class="hcp5">
+<p class="Body-Text">2</p>
+</td>
+<td style="width:91.00%;" class="hcp5">
+<p class="Body-Text">Valeur de l’option incorrecte</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:9.00%;" class="hcp5">
+<p class="Body-Text">3</p>
+</td>
+<td style="width:91.00%;" class="hcp5">
+<p class="Body-Text">Option inconnue</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">XmlSetOption(ticket,"&lt;whitespacehandling&gt;all")&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="XmlOpen.htm">XmlOpen</a></p>
+</body>
+</html>

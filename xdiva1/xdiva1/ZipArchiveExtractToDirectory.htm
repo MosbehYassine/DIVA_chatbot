@@ -1,0 +1,46 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZipArchiveExtractToDirectory</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>ZipArchiveExtractToDirectory <a href="Liste_des_fonctions_de_gestion_des_archives.htm">Famille</a> <a href="Introduction_archive.htm">Thème</a></h1>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Extraction de l'ensemble des fichiers de l'archive zip dans un répertoire</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Bool</font> <span style="font-weight: bold;">ZipArchiveExtractToDirectory</span>( ZipArchivePath, ExtractionDirectory, [ZipPassword] )</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">ZipArchivePath</p>
+<p class="decalage05">Chemin vers l'archive zip</p>
+<p class="Body-Text" style="font-style: italic;">ExtractionDirectory</p>
+<p class="decalage05">Chemin vers le répertoire où extraire l'archive</p>
+<p class="Body-Text" style="font-style: italic;"><span><span style="font-style: italic;">ZipPassword</span></span></p>
+<p class="decalage05">Mot de passe pour les fichiers chiffrés dans l'archive zip</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<p class="Body-Text" style="font-weight: normal;">La fonction renvoie 1 en cas de succès, 0 sinon. Pour avoir plus d'informations sur l'erreur en cas d'échec, utiliser la fonction <a href="ZipArchiveGetLastErrorCode.htm">ZipArchiveGetLastErrorCode</a>()</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques</font></p>
+<p class="Body-Text">Si le fichier n'existe pas, il est crée. S'il existe, son contenu est écrasé.</p>
+<p class="Body-Text">Le nom peut contenir le chemin complet vers le fichier, le chemin relatif ou juste le nom du fichier.</p>
+&#160;
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Code-Base">; Extraction de l'archive test.zip dans le répertoire 'testDirectory'</p>
+<p class="Code-Base">&#160;retVal = ZipArchiveExtractToDirectory("C:/tmp/test.zip", "C:/tmp/'testDirectory'")</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

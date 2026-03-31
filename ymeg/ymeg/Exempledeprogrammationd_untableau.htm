@@ -1,0 +1,261 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple de programmation d'un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-family:Symbol; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Exemple de programmation d'un tableau</h3>
+<p class="Body-Text">Remarque préliminaire&#160;:</p>
+<p class="Body-Text">Nous considérons ici comme acquises certaines notions fondamentales de la programmation sous Harmony&#160;: déclaration des chemins implicites, paramétrage et mise en œuvre des projets dans l'éditeur Xwin, création des bases, tables et champs dans le dictionnaire, création et paramétrage des masques d'écran, etc.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les exemples qui suivent montrent une <font class="hcp1">simple consultation de tableau</font> (boucle de traitement des événements tableau), faisant appel à la procédure standard <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a>.<br>
+&#160;<font class="hcp1"><br>
+Pour des</font> <font style="font-weight: bold; text-decoration: underline;">exemples</font> <font class="hcp1">détaillés sur&#160;:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">saisie d'une ligne de tableau</font>, reportez-vous à la rubrique consacrée à la fonction <a href="XmeListInput.htm">XmeListInput</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Symbol" class="hcp2">-</font> La <font class="hcp1">création des lignes</font> dans un tableau,<font face="Symbol" class="hcp2"><br>
+-</font> la <font class="hcp1">copie sur disque</font> du contenu d'un tableau,<font face="Symbol" class="hcp2"><br>
+-</font> la <font class="hcp1">reconstitution</font> d'un tableau <font class="hcp1">après relecture</font> de son contenu depuis le disque,<font face="Symbol" class="hcp2"><br>
+-</font> l'<font class="hcp1">utilisation d'une donnée de contrôle des lignes</font>,<font face="Symbol" class="hcp2"><br>
+-</font> le <font class="hcp1">tri des lignes</font> avec <font class="hcp1">marquage des colonnes</font>,<br>
+reportez-vous à la rubrique <a href="Gestiondelalisteassoci_e_untableau.htm">Gestion de la liste associée à un tableau</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">Marquage des lignes</font> d'un tableau, reportez-vous aux rubriques <a href="Marquagedeslignesd_untableau.htm">Marquage des lignes d'un tableau</a> et <a href="XmeListSetSelection.htm">XmeListSetSelection</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">Traitement des événements</font> liés à un tableau, reportez-vous aux rubriques <a href="Ev_nementssourisli_s_l_objettableau.htm">Evénements souris liés à l'objet tableau</a> et <a href="Programmationd_untableau.htm">Programmation d'un tableau</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">personnalisation</font> de la procédure XmeListConsultDefault, reportez-vous aux rubriques consacrées aux <a href="FonctionsdepersonnalisationdeXmeListConsultDefProc.htm">Fonctions de personnalisation de XmeListConsultDefault</a>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 1&#160;:</font></p>
+<p class="Body-Text">Ce premier exemple montre un objet tableau utilisé pour présenter les lignes détail d'une facture (schématisée)&#160;:</p>
+<p class="Source">+--------------+----------+------+</p>
+<p class="Source">+ Code article | Quantité | Prix |</p>
+<p class="Source">+--------------+----------+------+</p>
+<p class="Source">+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;+</p>
+<p class="Source">+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;+</p>
+<p class="Source">+--------------+----------+------+</p>
+<p class="Body-Text">&#160;<br>
+Les données correspondantes du tableau sont définies dans l'enregistrement LIGNEFACT du dictionnaire APPLI.dhsd&#160;:</p>
+<table cellspacing="0" width="436">
+<tr class="hcp3">
+<td style="width:27.30%;" class="hcp4">
+<p class="Body-Text">CODE</p>
+</td>
+<td style="width:72.70%;" class="hcp4">
+<p class="Body-Text">Code article (8).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:27.30%;" class="hcp4">
+<p class="Body-Text">QUANTITE</p>
+</td>
+<td style="width:72.70%;" class="hcp4">
+<p class="Body-Text">Quantité (3,0).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:27.30%;" class="hcp4">
+<p class="Body-Text">PRIX</p>
+</td>
+<td style="width:72.70%;" class="hcp4">
+<p class="Body-Text">Prix (12,2).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<br>
+Dans ce premier programme, nous <font class="hcp1">conserverons très exactement les traitements standard</font> proposés par XmeListConsultDefault (Cf. rubriques <a href="Traitementsli_s_l_objettableau.htm">Traitements liés à l'objet tableau</a> et <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a>).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">1. Déclaration des enregistrements dans Xwin</font></p>
+<p class="Body-Text">Créez le nouveau source de masque d'écran EFACT.dhsf.<br>
+Ouvrez la boîte de dialogue des enregistrements (choix du menu &lt;Paramètres&#160;: Enregistrements&gt;).<br>
+Dans la liste des enregistrements du masque, ajoutez l'enregistrement LIGNEFACT du dictionnaire APPLI.dhsd et l'enregistrement ROWINFO du dictionnaire système DDSYS.dhsd.</p>
+<p class="Body-Text"><font class="hcp1">2. Création du tableau dans Xwin</font></p>
+<p class="Body-Text">Validez le choix du menu &lt;Objets&#160;: Tableau&gt; ou cliquez sur le bouton correspondant de la barre d'outils.<br>
+Posez le tableau à l'endroit souhaité dans la page 1.<br>
+Cliquez à l'intérieur du rectangle et utilisez la poignée inférieure droite pour lui donner sa taille définitive.<br>
+Nommez le tableau FACTURE, affectez-lui le point d'arrêt 100.<br>
+Activez l’option "Avec donnée de contrôle des lignes".<br>
+Cliquez dans la colonne de droite de la propriété "Donnée de contrôle" puis sur le bouton d’ouverture de la fenêtre de sélection de la donnée&#160;; sélectionnez la donnée RowInfo de l'enregistrement RowInfo et validez.</p>
+<p class="Body-Text"><font class="hcp1">3. Création des colonnes du tableau dans Xwin</font></p>
+<p class="Body-Text">Créez un premier objet de type Champ correspondant au code article&#160;: validez le choix du menu &lt;Objets&#160;: Champ&gt; ou cliquez sur le bouton correspondant de la barre d'outils&#160;; sélectionnez la donnée CODE de l'enregistrement LIGNEFACT.<br>
+Posez l'objet <font class="hcp1">à l'intérieur</font> du tableau&#160;: une première colonne est insérée.<br>
+Modifiez son paramétrage (titre&#160;: "Code article", etc.) dans les propriétés de la donnée (famille "En-tête colonne").<br>
+Opérez de la même manière pour créer les deux autres colonnes en sélectionnant successivement la donnée QUANTITE et la donnée PRIX de l'enregistrement LIGNEFACT (déclarez la donnée PRIX en Affichage car elle est calculée automatiquement).</p>
+<p class="Body-Text"><font class="hcp1">4. Programme Diva</font></p>
+<p class="Source">PUBLIC RECORD Appli.dhsd LigneFact &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne détail facture</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ScrollBar32 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ascenseur</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd RowInfo &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;donnée de contrôle</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 Ident L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;identifiant tableau</p>
+<p class="Source">1 Fini B</p>
+<p class="Source">&#160;</p>
+<p class="Source">MAIN&#160;</p>
+<p class="Source">LigneFact = " "</p>
+<p class="Source">XmeLoad ("EFACT") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source">XmeInfoPage ("EFACT",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("EFACT",1,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation tableau&#160;</p>
+<p class="Source">Ident = XmeListGetId ("EFACT",1,"FACTURE",LigneFact)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;choix des options&#160;</p>
+<p class="Source">XmeListSetSelectionOption (Ident, 2) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne courante &lt;=&gt; flèche</p>
+<p class="Source">XmeListSetCreatingOption (Ident, TRUE) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne "création"</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation contrôle&#160;</p>
+<p class="Source">RowInfo = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;pour la sélection multiple</p>
+<p class="Source">;RowInfo.Bitmap = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;pas d'image bitmap</p>
+<p class="Source">;RowInfo.Couleur = " "</p>
+<p class="Source">RowInfo.CoulSelec = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;couleur standard de la sélection</p>
+<p class="Source">RowInfo.Selection = FALSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;état initial</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeDispv ("EFACT",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affichage page 1</p>
+<p class="Source">XmeListScrollBarInit (Ident, ScrollBar32) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation ascenseur</p>
+<p class="Source">&#160;</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;boucle d'attente</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListConsult (Ident) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(ré)affiche et attend&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Key &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement produit&#160;?&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;touche Echap&#160;:&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;stop</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tous les autres événements&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Ident,LigneFact,ScrollBar32,,TRUE)</p>
+<p class="Source">&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 2&#160;:</font></p>
+<p class="Body-Text">Par rapport à l'exemple 1, nous allons ajouter au tableau le libellé et le prix unitaire de l'article (renseignements en provenance du fichier Articles <font face="Symbol" class="hcp2">-</font> enregistrement ARTICLE du dictionnaire APPLI.dhsd)&#160;:</p>
+<p class="Source">+--------------+---------+----------+---------------+------+</p>
+<p class="Source">+ Code article | Libellé | Quantité | Prix unitaire | Prix |</p>
+<p class="Source">+--------------+---------+----------+---------------+------+</p>
+<p class="Source">+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;+</p>
+<p class="Source">+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;+</p>
+<p class="Source">+--------------+---------+----------+---------------+------+</p>
+<p class="Body-Text">&#160;<br>
+Pour le dessin du tableau, nous allons maintenant utiliser l'enregistrement de manoeuvre WDETAIL du dictionnaire APPLI.dhsd, regroupant toutes les données affichées&#160;:</p>
+<table cellspacing="0" width="436">
+<tr class="hcp3">
+<td style="width:27.30%;" class="hcp4">
+<p class="Body-Text">CODE</p>
+</td>
+<td style="width:72.70%;" class="hcp4">
+<p class="Body-Text">Code article (8).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:27.30%;" class="hcp4">
+<p class="Body-Text">LIBELLE</p>
+</td>
+<td style="width:72.70%;" class="hcp4">
+<p class="Body-Text">Libellé de l'article (30).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:27.30%;" class="hcp4">
+<p class="Body-Text">QUANTITE</p>
+</td>
+<td style="width:72.70%;" class="hcp4">
+<p class="Body-Text">Quantité (3,0).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:27.30%;" class="hcp4">
+<p class="Body-Text">PRIXUNITE</p>
+</td>
+<td style="width:72.70%;" class="hcp4">
+<p class="Body-Text">Prix unitaire (9,2).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:27.30%;" class="hcp4">
+<p class="Body-Text">PRIX</p>
+</td>
+<td style="width:72.70%;" class="hcp4">
+<p class="Body-Text">Prix (12,2).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<br>
+Toujours par rapport à l'exemple 1, nous continuerons à utiliser XmeListConsultDefault mais nous n'autoriserons plus la sélection multiple des lignes.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">1. Déclaration des enregistrements dans Xwin</font></p>
+<p class="Body-Text">Créez le nouveau source de masque d'écran EFACT2.dhsf.<br>
+Ouvrez la boîte de dialogue des enregistrements (choix du menu &lt;Paramètres&#160;: Enregistrements&gt;).<br>
+Dans la liste des enregistrements du masque, ajoutez l'enregistrement WDETAIL du dictionnaire APPLI.dhsd.</p>
+<p class="Body-Text"><font class="hcp1">2. Création du tableau dans Xwin</font></p>
+<p class="Body-Text">Validez le choix du menu &lt;Objets&#160;: Tableau&gt; ou cliquez sur le bouton correspondant de la barre d'outils.<br>
+Posez le tableau à l'endroit souhaité dans la page 1.<br>
+Cliquez à l'intérieur du rectangle et utilisez la poignée inférieure droite pour lui donner sa taille définitive.<br>
+Nommez le tableau FACTURE, affectez-lui le point d'arrêt 100.</p>
+<p class="Body-Text"><font class="hcp1">3. Création des colonnes du tableau dans Xwin</font></p>
+<p class="Body-Text">Créez un premier objet de type Champ correspondant au code article&#160;: validez le choix du menu &lt;Objets&#160;: Champ&gt; ou cliquez sur le bouton correspondant de la barre d'outils&#160;; sélectionnez la donnée CODE de l'enregistrement WDETAIL.<br>
+Posez l'objet <font class="hcp1">à l'intérieur</font> du tableau&#160;: une première colonne est insérée.<br>
+Modifiez son paramétrage (titre&#160;: "Code article", etc.) dans les propriétés de la donnée (famille "En-tête colonne").<br>
+Opérez de la même manière pour créer les autres colonnes en sélectionnant successivement les données LIBELLE, QUANTITE, PRIXUNITE et PRIX de l'enregistrement WDETAIL (déclarez les données LIBELLE, PRIXUNITE et PRIX en Affichage car les deux premières sont recherchées et la troisième calculée automatiquement).</p>
+<p class="Body-Text"><font class="hcp1">4. Programme Diva</font></p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Wdetail &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne détail affichée</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ScrollBar32 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ascenseur</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 Ident L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;identifiant tableau</p>
+<p class="Source">1 Fini B</p>
+<p class="Source">&#160;</p>
+<p class="Source">MAIN&#160;</p>
+<p class="Source">Wdetail = " "</p>
+<p class="Source">XmeLoad ("EFACT2") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source">XmeInfoPage ("EFACT2",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("EFACT2",1,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation tableau&#160;</p>
+<p class="Source">Ident = XmeListGetId ("EFACT2",1,"FACTURE",Wdetail)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;choix des options&#160;</p>
+<p class="Source">XmeListSetCreatingOption (Ident, TRUE) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne "création"</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeDispv ("EFACT2",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affichage page 1</p>
+<p class="Source">XmeListScrollBarInit (Ident, ScrollBar32) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation ascenseur</p>
+<p class="Source">&#160;</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;boucle d'attente</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListConsult (Ident) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(ré)affiche et attend&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Key &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement produit&#160;?&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;touche Echap&#160;:&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;stop</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tous les autres événements&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Ident, Wdetail, ScrollBar32)</p>
+<p class="Source">&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND<br>
+&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque</font>&#160;: Ces deux exemples ne montrent que les traitements initiaux et la boucle d'attente des événements tableau&#160;; vous trouverez une liste de références à des exemples concernant d'autres éléments de la programmation des tableaux (saisie d'une ligne, relecture du tableau avec écriture du contenu sur le disque, relecture du contenu depuis le disque avec chargement du tableau, etc.) en tête de la présente rubrique.</p>
+</body>
+</html>

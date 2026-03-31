@@ -1,0 +1,84 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeSurfaceSetContent</title>
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-family:Arial, sans-serif;
+font-size:10pt; }
+p.hcp2 { font-family:Arial, sans-serif;
+font-size:10pt; }
+span.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+p.hcp5 { font-weight:normal;
+font-style:italic;
+font-family:Arial, sans-serif;
+font-size:10pt; }
+span.hcp6 { font-weight:bold; }
+ul.hcp7 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4 style="font-family: Arial, sans-serif;">XmeSurfaceSetContent <span style="font-weight: normal;">&#160;</span><span style="font-weight: normal; font-size: 11pt;"><a href="R&eacute;capitulatif_des_fonctions_de_l_objet_Surface.htm" style="font-family: Arial, sans-serif;">Famille</a> <a href="Objet_Surface.htm" style="font-size: 11pt; font-family: Arial, sans-serif;">Thème</a></span></h4>
+<p class="hcp1">Garnis le contenu de l'objet surface.</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Long XmeSurfaceSetContent &#160;(<span class="hcp3">IdSurface</span>, <span class="hcp3">DocumentPath</span>)</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp1">Paramètres :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 14.758%;">
+<col style="width: 85.242%;">
+<tr class="hcp4">
+<td style="border: Solid 1px #000000;width: 14.758%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">IdSurface</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 85.242%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp2">Identifiant de l'objet surface (valeur de retour de XmeSurfaceGetId)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="border-left: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 14.758%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">DocumentPath</p>
+</td>
+<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 85.242%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp2">Chemin (Windows ou Harmony) du document à afficher</p>
+</td>
+</tr>
+</table>
+<span style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</span>
+<p class="hcp2"><span class="hcp6">Description de la fonction</span> :</p>
+<ul class="hcp7">
+<li class="p">
+<p class="hcp2">Affecte le document à afficher à l'objet surface.</p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p class="hcp2"><span class="hcp6">Remarques</span> :</p>
+<ul class="hcp7">
+<li class="p">
+<p class="hcp2">Le masque doit être préalablement chargé par XmeLoad.</p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p class="hcp2"><span class="hcp6">Exemple</span> :<br>
+&#160;</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">module ysurface.dhop</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">include zsurface.dhsp</p>
+<p class="Source" style="font-style: normal; font-family: Arial, sans-serif; font-size: 10pt;">record ddsys.dhsd IdSurface IdSurface</p>
+<p class="Source" style="font-style: italic; font-family: Arial, sans-serif; font-size: 10pt;">...</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">XmeLoad ("masque") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source" style="font-style: normal; font-family: Arial, sans-serif; font-size: 10pt;">IdSurface = XmeSurfaceGetId(masque, 1, surface) &#160;&#160;;initialisation de la surface nommée surface</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;et situé dans la page 1 du masque</p>
+<p class="Source" style="font-style: italic; font-family: Arial, sans-serif; font-size: 10pt;">XmeSurfaceSetContent(IdSurface, "c:\exemple.pdf")</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
+<p class="source" style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
+</body>
+</html>

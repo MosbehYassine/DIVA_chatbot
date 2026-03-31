@@ -1,0 +1,39 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Installation manuelle de IIS sur le serveur de clients légers Web</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Installation manuelle de IIS sur le serveur de clients légers Web</h3>
+<p>Le service IIS de Microsoft doit être installé sur l'ordinateur exécutant les applications Harmony accessibles depuis un client léger Web.</p>
+<p>&#160;</p>
+<p style="font-weight: bold; font-size: 11pt;">Pour installer IIS</p>
+<p>Pour installer le composant IIS de Windows (ou modifier la liste de ses fonctionnalités), sélectionnez le choix "Programmes et fonctionnalités" du Panneau de configuration, puis le choix Activer ou désactiver des fonctionnalités Windows. Sélectionnez ensuite le composant "<span class="hcp1">Internet Information Services</span>" (IIS).</p>
+<p>Les <span class="hcp1">fonctionnalités suivantes de la famille "Services World Wide Web" doivent être impérativement ajoutées</span> (si elles ne sont pas proposées par défaut) :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p><span class="hcp1">ASP.NET 4.5</span> et <span class="hcp1">Extensibilité .NET 4.5</span>.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Authentification de base</span> et <span class="hcp1">Authentification Windows</span>.</p>
+</li>
+</ul>
+<p>Lorsque IIS est installé, tous les paramétrages qui le concernent s'effectuent par le Gestionnaire des Services Internet (IIS), accessible depuis le panneau de configuration, outils d'administration (voir la rubrique <a href="Cr&eacute;ation_d_une_application_IIS_sur_le_serveur_de_clients_l&eacute;gers_Web.htm">Création et configuration d'une application IIS sur le serveur de clients légers Web</a>). Voir aussi la rubrique <a href="Compression_des_trames_pour_un_client_l&eacute;ger_Web.htm">Compression des trames pour un client léger Web</a>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+&#160;&#160;<span style="font-size: 11pt; font-weight: bold;">Service IIS</span>
+<p>IIS est un service qui peut empêcher de renommer ou déplacer des dossiers si ceux-ci sont pointés par des applications IIS. La solution pour pallier cette difficulté consiste à arrêter momentanément le serveur Web. Pour cela, stoppez le service de Publication World Wide Web depuis le gestionnaire de services (Panneau de configuration : Outils d’administration : Services).</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListTreeSetCursorOption</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListTreeSetCursorOption &#160;<a href="Lister_capitulativedesfonctionsdegestiondesarbres.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Arbres.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Positionnement de l'option "Affichage du curseur de création d'un arbre"</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+XmeListTreeSetCursorOption</font> (<font class="hcp3">Identifiant, Curseur</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Curseur</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">TRUE si vous voulez faire apparaître le <a href="Cr_ationd_un_l_mentd_arbre.htm">curseur de création</a> dans l'en-tête de la colonne du tableau affichant l'arborescence.<br>
+&#160;<font class="hcp2"><br>
+Remarque&#160;: Ywpf N'affiche ce curseur QU'à l'occasion d'un XmeListConsult</font>.<br>
+&#160;<br>
+FALSE dans le cas contraire.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La procédure <font class="hcp2">XmeListTreeSetCursorOption</font> permet de valider (<font class="hcp3">Curseur</font> = TRUE) ou d'invalider (<font class="hcp3">Curseur</font> = FALSE) l'affichage du curseur de création dans l'arbre dont l'identifiant est fourni en paramètre.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques :</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure XmeListTreeSetCursorOption <font class="hcp2">NE peut être appelée QUE</font> si la page de masque contenant le tableau est la page courante (ou l'une de ses pages panels).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListConsultDefault assure une <a href="Cr_ationd_un_l_mentd_arbre.htm">gestion standard du curseur de création</a>, dès lors que vous avez fait appel à XmeListTreeSetCursorOption (ou à XmeListTreeCursorInit) avec le paramètre <font class="hcp3">Curseur</font> à TRUE.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Par défaut, Ywpf N'affiche PAS de curseur de création</font>.<br>
+Le curseur n'est pas affiché non plus en mode "Licence consultation".</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">XmeListTreeSetCursorOption (Ident, TRUE) ;curseur création validé</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeListTreeCursorInit.htm">XmeListTreeCursorInit</a></p>
+<p class="Body-Text"><a href="XmeListTreeGetCursorOption.htm">XmeListTreeGetCursorOption</a></p>
+<p class="Body-Text"><a href="XmeListTreeSetCursor.htm">XmeListTreeSetCursor</a></p>
+</body>
+</html>

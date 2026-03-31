@@ -1,0 +1,58 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>OpenXml_ReadNameCell</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+p.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>OpenXml_ReadNameCell &#160;<span style="font-weight: normal;"><a href="Liste_des_fonctions_OpenXml.htm">Famille</a> &#160;<a href="Fonctions_OpenXml.htm">Theme</a></span></h3>
+<p>&#160;</p>
+<p>La fonction OpenXml_ReadNameCell lit les caractéristiques d'une plage de cellules nommées (nom de la feuille, lignes début et fin, colonnes début et fin).</p>
+<p>&#160;</p>
+<p><span class="hcp1">int OpenXml_ReadNameCell (</span><span class="hcp2">nomcellule</span><span class="hcp1">,</span> <span class="hcp2">&amp;nomfeuille</span><span class="hcp1">,</span> <span class="hcp2">&amp;lignedebut</span><span class="hcp1">,</span> <span class="hcp2">&amp;lignefin</span><span class="hcp1">,</span> <span class="hcp2">&amp;coldebut</span><span class="hcp1">,</span> <span class="hcp2">&amp;colfin</span><span class="hcp1">)</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;"><span class="hcp2">NomCellule</span></p>
+<p class="decalage05">Nom de la plage de cellules à rechercher.</p>
+<p class="Body-Text" style="font-style: italic;">NomFeuille</p>
+<p class="decalage05">Nom de la feuille contenant la plage (paramètre de sortie).</p>
+<p class="Body-Text" style="font-style: italic;">LigneDebut</p>
+<p class="decalage05">Indice de la première ligne de la plage (paramètre de sortie).</p>
+<p class="Body-Text" style="font-style: italic;">LigneFin</p>
+<p class="decalage05">Indice de la dernière ligne de la plage (paramètre de sortie).</p>
+<p class="Body-Text" style="font-style: italic;">ColDebut</p>
+<p class="decalage05">Indice de la première colonne de la plage (paramètre de sortie).</p>
+<p class="Body-Text" style="font-style: italic;">ColFin</p>
+<p class="decalage05">Indice de la dernière colonne de la plage (paramètre de sortie).</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp3">Retour</p>
+<p>La fonction renvoie 1 si le nom fourni existe dans la table des noms ou 0 dans le cas contraire.</p>
+<p>&#160;</p>
+<p class="hcp3">Exemple</p>
+<p class="Source">1 &#160;NomCellule &#160;&#160;32 &#160;= "TEST" &#160;&#160;&#160;&#160;&#160;&#160;;Nom de la plage de cellules à rechercher</p>
+<p class="Source">1 &#160;NomFeuille &#160;&#160;32 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Nom de la feuille</p>
+<p class="Source">1 &#160;LigneDebut &#160;&#160;6,0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Indice ligne début de la plage à nommer</p>
+<p class="Source">1 &#160;LigneFin &#160;&#160;&#160;&#160;6,0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Indice ligne fin de la plage à nommer</p>
+<p class="Source">1 &#160;ColDebut &#160;&#160;&#160;&#160;6,0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Indice colonne début de la plage à nommer</p>
+<p class="Source">1 &#160;ColFin &#160;&#160;&#160;&#160;&#160;&#160;6,0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Indice colonne fin de la plage à nommer</p>
+<p class="Source">1 &#160;Ok &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;valeur de retour de la fonction</p>
+<p class="Source">&#160;</p>
+<p class="Source">Ok = OpenXml_ReadNameCell (NomCellule, NomFeuille, LigneDebut, LigneFin, ColDebut, ColFin)</p>
+<p class="Source">if Ok</p>
+<p class="Source">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;le nom a été trouvé dans la table des noms</p>
+<p class="Source">endif</p>
+<p>&#160;</p>
+</body>
+</html>

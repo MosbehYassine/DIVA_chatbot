@@ -1,0 +1,54 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Traitement Champ Modèle</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:normal; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+p.hcp4 { margin-left:8px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Traitement Champ Modèle</h1>
+<p>&#160;</p>
+<p class="hcp1">Le traitement local (facultatif) <span class="hcp2">"Modèle"</span>, associé à un <span class="hcp2">champ</span> d'une table, est normalement destiné à être recopié dans le traitement "Après saisie" de ce champ inséré dans un masque d'écran.<br>
+&#160;</p>
+<p class="hcp1">Il s'agit d'une <span class="hcp2">procédure</span> sans paramètre.</p>
+<p class="hcp1">&#160;</p>
+<p style="font-weight: bold;"><span class="hcp3">Lorsque vous insérez le champ dans un masque d'écran, Xwin génère (*) automatiquement un traitement "Après saisie" pour ce champ et y</span> recopie le corps de la procédure "Modèle" <span class="hcp3">du dictionnaire (**),</span> <span style="text-decoration: underline;">aux conditions</span> <span class="hcp3">suivantes :</span></p>
+<ol>
+<li style="list-style: decimal;" class="p">
+<p>Que le modèle ait été effectivement créé dans le dictionnaire au moment de l'insertion.<br>
+La génération n'a lieu que dans ce cas et une création ultérieure du modèle dans le dictionnaire n'a aucun effet sur les champs déjà insérés dans un masque.</p>
+</li>
+<li style="list-style: decimal;" class="p">
+<p>Que vous ayez sélectionné l'<span class="hcp2">option "Copier le traitement du dictionnaire dans le masque"</span> au niveau des paramètres de votre projet.</p>
+</li>
+</ol>
+<p class="hcp4">(*) Le traitement est généré même si le champ est finalement défini dans le masque comme étant "En affichage" et non "En saisie" (mais bien entendu, il ne sera jamais appelé).</p>
+<p class="hcp4">(**) <span class="hcp2">Attention</span> : le code copié est celui contenu par la dernière version <span class="hcp2">sauvegardée</span> du dictionnaire (et non le code "courant" si celui-ci n'a pas encore été sauvegardé).</p>
+<p>&#160;</p>
+<p>Exemple du squelette de la procédure généré par Xwin dans le dictionnaire :<br>
+&#160;</p>
+<p class="source">;*</p>
+<p class="source">Public Procedure Champ_MaTable_MonChamp_Modele</p>
+<p class="source">;</p>
+<p class="source">Beginp</p>
+<p class="source">&#160;&#160;&#160;</p>
+<p class="source">Endp</p>
+<p>&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p><a href="Description_g&eacute;n&eacute;rale_des_traitements_du_dictionnaire.htm">Description générale des traitements du dictionnaire</a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

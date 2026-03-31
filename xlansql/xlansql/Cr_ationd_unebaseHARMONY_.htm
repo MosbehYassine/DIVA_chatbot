@@ -1,0 +1,35 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Création d'une base Divalto.</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Création d'une base Divalto</h3>
+<p class="Body-Text"><font class="hcp1">Pour Microsoft SQL Server</font></p>
+<p class="Body-Text">Avec l'<font class="hcp1">Entreprise Manager</font> de SQL SERVER il faut créer une base de données pour stocker les tables à transférer. Si l’on ne crée qu’une seule base de données, on la nommera de préférence <span class="hcp2">ERPDIVALTO</span> (Le nom DIVALTO est réservé au chemin d'Harmony sur un poste). La création d'une base permet de choisir notamment l'emplacement et la taille des fichiers de la base.</p>
+<p class="Body-Text">Attention : Le nom de la base est dépendant de la casse. Il faut créer la base en MAJUSCULES.</p>
+<p class="Body-Text">On positionnera également les droits d'accès des utilisateurs.</p>
+<p class="Body-Text">Cette base doit être la base <font class="hcp1">par défaut</font> des utilisateurs d'Harmony si l’on ne gère qu’une seule base. Sinon, on précisera dans la chaîne de connexion au serveur le nom de la base SQL.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">TRES IMPORTANT</p>
+<p class="Body-Text">Le paramètre "Nom du classement" permet de choisir l'ordre de tri pour les index. Il est <font class="hcp1">impératif</font> de modifier la valeur par défaut de ce paramètre par "<font class="hcp1">Latin1_General_Bin</font>" qui correspond à l'ordre des caractères du jeux ascii.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Pour Oracle</font></p>
+<p class="Body-Text">On créera un schéma pour chaque base du même serveur. Le schéma doit porter le nom de la base SQL configuré pour l’accès à la base dans la table des serveurs. Le nom DIVALTO est réservé au chemin d'Harmony sur un poste.</p>
+<p class="Body-Text">On vérifiera que le paramètre <span class="hcp2">NLS_CHARACTERSET</span> &#160;est positionné à <span class="hcp2">WE8MSWIN1252</span> &#160;</p>
+</body>
+</html>

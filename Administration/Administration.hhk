@@ -1,0 +1,403 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accès à un fichier réseau Windows avec son nom Harmony">
+    <param name="Name" value="Accès à un fichier réseau Windows sous son nom Harmony">
+    <param name="Local" value="Administration/Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Accès aux fichiers et aux programmes">
+    <param name="Name" value="Accès aux fichiers d'Harmony">
+    <param name="Local" value="Administration/Acc_sauxfichiersd_Harmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Administration d'Harmony">
+    <param name="Name" value="Administration d'Harmony: Introduction">
+    <param name="Local" value="Administration/Administrationd_Harmony__Introduction.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Introduction">
+      <param name="Name" value="Administration d'Harmony: Introduction">
+      <param name="Local" value="Administration/Administrationd_Harmony__Introduction.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Affichage et présentation des tableaux">
+    <param name="Name" value="Affichage et présentation des tableaux">
+    <param name="Local" value="Administration/Affichage_et_pr_sentation_des_tableaux.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Annuaire LDAP">
+    <param name="Name" value="Import et synchronisation des utilisateurs d’un annuaire LDAP">
+    <param name="Local" value="Administration/Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Aperçus avant impression">
+    <param name="Name" value="Aperçus avant impression">
+    <param name="Local" value="Administration/Aper_usavantimpression.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Appel d'un programme Windows">
+    <param name="Name" value="Appel d'un programme Windows">
+    <param name="Local" value="Administration/Appeld_unprogrammeWindows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Chemin d'accès et nom de fichier complet">
+    <param name="Name" value="Chemin d'accès et nom de fichier complet">
+    <param name="Local" value="Administration/Chemin_d_acc&egrave;s_et_nom_de_fichier_complet.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Chemins d'accès implicites">
+    <param name="Name" value="Chemins d'accès implicites">
+    <param name="Local" value="Administration/Cheminsd_acc_simplicites.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Chemins Harmony">
+    <param name="Name" value="Chemins Harmony">
+    <param name="Local" value="Administration/CheminsHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Console d'administration LDAP">
+    <param name="Name" value="Console d'administration LDAP">
+    <param name="Local" value="Administration/Gestion_et_param&eacute;trage_depuis_la_console_LDAP.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déclaration des chemins Harmony">
+    <param name="Name" value="Déclaration des chemins Harmony">
+    <param name="Local" value="Administration/D_clarationdescheminsHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déclaration des chemins implicites">
+    <param name="Name" value="Déclaration des chemins et des bibliothèques / unités implicites">
+    <param name="Local" value="Administration/D_clarationdescheminsetdesbiblioth_ques_unit_simplicites.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déclaration des serveurs">
+    <param name="Name" value="Déclaration des serveurs et des unités logiques">
+    <param name="Local" value="Administration/D_clarationdesserveursetdesunit_slogiques.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Edition d'une maquette">
+    <param name="Name" value="Edition d'une maquette">
+    <param name="Local" value="Administration/Edition_d_une_maquette.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Envois de message et de télécopie">
+    <param name="Name" value="Envois de message et de télécopie">
+    <param name="Local" value="Administration/Envoisdemessageetdet_l_copie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Etats graphiques et états caractères">
+    <param name="Name" value="Etats graphiques et états caractères">
+    <param name="Local" value="Administration/Etatsgraphiqueset_tatscaract_res.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exemple de liaisons modèle / imprimante">
+    <param name="Name" value="Exemple de liaisons modèle / imprimante">
+    <param name="Local" value="Administration/Exempledeliaisonsmod_le_imprimante.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fichier de commandes">
+    <param name="Name" value="Fichier de commandes">
+    <param name="Local" value="Administration/Fichierdecommandes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fichier des utilisateurs">
+    <param name="Name" value="Fichier des utilisateurs">
+    <param name="Local" value="Administration/Fichierdesutilisateurs.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Filtrage dans l'annuaire LDAP">
+    <param name="Name" value="Règles de filtrage dans l'annuaire LDAP">
+    <param name="Local" value="Administration/R&egrave;gles_de_filtrage_dans_l_annuaire_LDAP.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion des fenêtres et des programmes">
+    <param name="Name" value="Gestion des fenêtres et des programmes">
+    <param name="Local" value="Administration/Gestiondesfen_tresetdesprogrammes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion des modèles d'imprimante">
+    <param name="Name" value="Gestion des modèles d'imprimante">
+    <param name="Local" value="Administration/Gestiondesmod_lesd_imprimante.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion des tableaux">
+    <param name="Name" value="Gestion des tableaux">
+    <param name="Local" value="Administration/Gestion_des_tableaux.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestionnaire d'impression de Windows (spouleur)">
+    <param name="Name" value="Gestionnaire d'impression de Windows (spouleur)">
+    <param name="Local" value="Administration/Gestionnaired_impressiondeWindows_spouleur_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Iconiser une application">
+    <param name="Name" value="Iconiser une application">
+    <param name="Local" value="Administration/Iconiseruneapplication.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Import et synchronisation des utilisateurs d’un annuaire LDAP">
+    <param name="Name" value="Import et synchronisation des utilisateurs d’un annuaire LDAP">
+    <param name="Local" value="Administration/Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Impression d'une maquette">
+    <param name="Name" value="Edition d'une maquette">
+    <param name="Local" value="Administration/Edition_d_une_maquette.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Impressions">
+    <param name="Name" value="Impressions">
+    <param name="Local" value="Administration/Impressions.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Introduction">
+      <param name="Name" value="Impressions: Introduction">
+      <param name="Local" value="Administration/Impressions__Introduction.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Imprimante par défaut de Windows">
+    <param name="Name" value="Imprimante par défaut de Windows">
+    <param name="Local" value="Administration/Imprimantepard_fautdeWindows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Installation et configuration d'une imprimante Windows">
+    <param name="Name" value="Installation et configuration d'une imprimante Windows">
+    <param name="Local" value="Administration/Installationetconfigurationd_uneimprimanteWindows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Lancement automatique d'une tâche de fond">
+    <param name="Name" value="Lancement automatique d'une tâche de fond">
+    <param name="Local" value="Administration/Lancementautomatiqued_unet_chedefond.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="LDAP">
+    <param name="See Also" value="LDAP">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Console d'administration LDAP">
+      <param name="Name" value="Console d'administration LDAP">
+      <param name="Local" value="Administration/Gestion_et_param&eacute;trage_depuis_la_console_LDAP.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Import et synchronisation des utilisateurs d’un annuaire">
+      <param name="Name" value="Import et synchronisation des utilisateurs d’un annuaire LDAP">
+      <param name="Local" value="Administration/Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Modèles d'utilisateurs">
+      <param name="Name" value="Modèles d'utilisateur">
+      <param name="Local" value="Administration/Mod&egrave;les_d_utilisateur.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Notification des opérations réalisées par une synchronisation aux administrateurs">
+      <param name="Name" value="Notification des opérations réalisées par une synchronisation aux administrateurs">
+      <param name="Local" value="Administration/Notification_des_op&eacute;rations_r&eacute;alis&eacute;es_par_une_synchronisation_aux_administrateurs.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Règles de correspondance des propriétés">
+      <param name="Name" value="Règles de correspondance des propriétés">
+      <param name="Local" value="Administration/R&egrave;gles_de_correspondance_des_propri&eacute;t&eacute;s.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Règles de correspondance des utilisateurs">
+      <param name="Name" value="Règles de correspondance des utilisateurs">
+      <param name="Local" value="Administration/R&egrave;gles_de_correspondance_des_utilisateurs.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Règles de filtrage">
+      <param name="Name" value="Règles de filtrage dans l'annuaire LDAP">
+      <param name="Local" value="Administration/R&egrave;gles_de_filtrage_dans_l_annuaire_LDAP.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Services de synchronisation">
+      <param name="Name" value="Services de synchronisation">
+      <param name="Local" value="Administration/Services_de_synchronisation.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Synchronisation">
+      <param name="Name" value="Synchronisation">
+      <param name="Local" value="Administration/Synchronisation.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liaison entre modèle et imprimante / paramétrage Windows">
+    <param name="Name" value="Liaison entre modèle et imprimante / paramétrage Windows">
+    <param name="Local" value="Administration/Liaisonentremod_leetimprimante_param_trageWindows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Maquette">
+    <param name="Name" value="Edition d'une maquette">
+    <param name="Local" value="Administration/Edition_d_une_maquette.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Méthode de sélection du couple imprimante / paramétrage">
+    <param name="Name" value="Méthode de sélection du couple imprimante / paramétrage">
+    <param name="Local" value="Administration/M_thodedes_lectionducoupleimprimante_param_trage.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mise en oeuvre des impressions Harmony / Windows">
+    <param name="Name" value="Mise en oeuvre des impressions Harmony / Windows">
+    <param name="Local" value="Administration/MiseenoeuvredesimpressionsHarmony_Windows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mode graphique et mode caractères">
+    <param name="Name" value="Mode graphique et mode caractères">
+    <param name="Local" value="Administration/Modegraphiqueetmodecaract_res.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modèle d'imprimante par défaut">
+    <param name="Name" value="Modèle d'imprimante par défaut">
+    <param name="Local" value="Administration/Mod_led_imprimantepard_faut.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modèle préconisé et modèle impératif">
+    <param name="Name" value="Modèle préconisé et modèle impératif">
+    <param name="Local" value="Administration/Mod_lepr_conis_etmod_leimp_ratif.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modèles d'imprimante Harmony">
+    <param name="Name" value="Modèles d'imprimante Harmony">
+    <param name="Local" value="Administration/Mod_lesd_imprimanteHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modèles d'utilisateurs">
+    <param name="Name" value="Modèles d'utilisateur">
+    <param name="Local" value="Administration/Mod&egrave;les_d_utilisateur.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Noms de fichier en réseau Windows">
+    <param name="Name" value="Noms de fichier en réseau Windows">
+    <param name="Local" value="Administration/Noms_de_fichier_en_r&eacute;seau_Windows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Noms de fichier en réseau Xlan">
+    <param name="Name" value="Noms de fichier en réseau Xlan">
+    <param name="Local" value="Administration/Nomsdefichierenr_seauXlan.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Notification des opérations réalisées par une synchronisation aux administrateurs">
+    <param name="Name" value="Notification des opérations réalisées par une synchronisation aux administrateurs">
+    <param name="Local" value="Administration/Notification_des_op&eacute;rations_r&eacute;alis&eacute;es_par_une_synchronisation_aux_administrateurs.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Notions de base pour l'administration d'Harmony">
+    <param name="Name" value="Notions de base pour l'administration d'Harmony">
+    <param name="Local" value="Administration/Notionsdebasepourl_administrationd_Harmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage de l'icone d'une tâche">
+    <param name="Name" value="Paramétrage de l'icone d'une tâche">
+    <param name="Local" value="Administration/Param_tragedel_iconed_unet_che.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage des impressions Harmony">
+    <param name="Name" value="Paramétrage des impressions Harmony">
+    <param name="Local" value="Administration/Param_tragedesimpressionsHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Passage de paramètres aux programmes">
+    <param name="Name" value="Passage de paramètres aux programmes">
+    <param name="Local" value="Administration/Passagedeparam_tresauxprogrammes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Principes généraux des impressions Harmony / Windows">
+    <param name="Name" value="Principes généraux des impressions Harmony / Windows">
+    <param name="Local" value="Administration/Principesg_n_rauxdesimpressionsHarmony_Windows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Question Programme">
+    <param name="Name" value="Question Programme">
+    <param name="Local" value="Administration/QuestionProgramme.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Réglage de la hauteur d'édition">
+    <param name="Name" value="Réglage de la hauteur d'édition">
+    <param name="Local" value="Administration/R_glagedelahauteurd__dition.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Réglage de la largeur d'édition">
+    <param name="Name" value="Réglage de la largeur d'édition">
+    <param name="Local" value="Administration/R_glagedelalargeurd__dition.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Règles de correspondance des propriétés">
+    <param name="Name" value="Règles de correspondance des propriétés">
+    <param name="Local" value="Administration/R&egrave;gles_de_correspondance_des_propri&eacute;t&eacute;s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Règles de correspondance des utilisateurs">
+    <param name="Name" value="Règles de correspondance des utilisateurs">
+    <param name="Local" value="Administration/R&egrave;gles_de_correspondance_des_utilisateurs.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Règles de filtrage dans l'annuaire LDAP">
+    <param name="Name" value="Règles de filtrage dans l'annuaire LDAP">
+    <param name="Local" value="Administration/R&egrave;gles_de_filtrage_dans_l_annuaire_LDAP.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Règles générales applicables aux noms de fichier Harmony">
+    <param name="Name" value="Règles générales applicables aux noms de fichier Harmony">
+    <param name="Local" value="Administration/R_glesg_n_ralesapplicablesauxnomsdefichierHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sauvegarde des paramètres de l'utilisateur">
+    <param name="Name" value="Sauvegarde des paramètres de l'utilisateur">
+    <param name="Local" value="Administration/Sauvegarde_des_param&egrave;tres_de_l_utilisateur.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélection d'un modèle d'imprimante">
+    <param name="Name" value="Sélection d'un modèle d'imprimante">
+    <param name="Local" value="Administration/S_lectiond_unmod_led_imprimante.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Services de synchronisation">
+    <param name="Name" value="Services de synchronisation">
+    <param name="Local" value="Administration/Services_de_synchronisation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Synchronisation">
+    <param name="Name" value="Synchronisation">
+    <param name="Local" value="Administration/Synchronisation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Synchronisation LDAP">
+    <param name="Name" value="Services de synchronisation">
+    <param name="Local" value="Administration/Services_de_synchronisation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Tâche Harmony">
+    <param name="Name" value="Tâche Harmony">
+    <param name="Local" value="Administration/T_cheHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Taille et position des fenêtres Harmony">
+    <param name="Name" value="Taille et position des fenêtres Harmony">
+    <param name="Local" value="Administration/Tailleetpositiondesfen_tresHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utilisateurs et annuaire LDAP">
+    <param name="Name" value="Import et synchronisation des utilisateurs d’un annuaire LDAP">
+    <param name="Local" value="Administration/Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="WinShellExecute">
+    <param name="Name" value="Accès à un fichier réseau Windows sous son nom Harmony">
+    <param name="Local" value="Administration/Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Zonage">
+    <param name="Name" value="Zonage">
+    <param name="Local" value="Administration/Zonage.htm">
+  </object>
+</ul>
+</html>

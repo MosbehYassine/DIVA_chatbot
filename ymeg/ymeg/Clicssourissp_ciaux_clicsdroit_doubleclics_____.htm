@@ -1,0 +1,113 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Clics souris spéciaux (clics droit, double clics, ...)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+li.hcp4 { list-style:none;
+display:inline; }
+span.hcp5 { font-weight:normal; }
+span.hcp6 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Clics souris spéciaux (clics droit, double clics, ...)</h3>
+<p class="Body-Text">Les deux rubriques précédentes nous ont présenté l'utilisation du <font class="hcp1">clic simple</font> sur le <font class="hcp1">bouton gauche</font> de la souris, en saisie et en consultation de masque ou de tableau. Dans la présente rubrique, nous nous intéresserons aux autres types de clic souris (<span class="hcp2">hors</span> bouton, menu, onglet). <font class="hcp1">Sous Windows</font>&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">clic droit</font> sert généralement à afficher un menu contextuel (menu surgissant ou menu popup).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En saisie, le <font class="hcp1">double clic</font> est généralement traité en interne par le contrôle concerné (par exemple, il sélectionne le mot courant en saisie d'un champ).<br>
+En consultation, il s'utilise par exemple pour "renvoyer" les données de la ligne couramment sélectionnée d'un tableau.<font class="hcp1"><br>
+<br>
+Remarque importante</font>: il faut savoir qu'un double clic déclenche <font class="hcp1">toujours</font> <font style="font-weight: bold; text-decoration: underline;">DEUX</font> <font class="hcp1">événements successifs</font>&#160;: un événement "clic simple" <font class="hcp1">suivi</font> d'un événement "clic double". Cela signifie que l'événement "clic double" n'arrive jamais sans que l'événement "clic simple" correspondant l'ait précédé.<br>
+Exemple : dans un tableau, la première ligne est actuellement sélectionnée et l'utilisateur double clique sur la huitième ligne. L'événement "clic simple" arrive en premier : il va permettre de simplement sélectionner la huitième ligne. L'événement "clic double" arrive ensuite : il va permettre de "renvoyer" les données de cette ligne.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Sous Harmony, et sans programmation particulière des clics spéciaux</font>&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">En <span class="hcp2">saisie</span> de masque ou d'une ligne de <a href="Tableaux.htm">tableau</a> :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Un clic quelconque sur une donnée lui donne simplement le focus.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le second événement du double clic est purement et simplement ignoré.</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En <span class="hcp2">consultation de masque</span>, tous les clics spéciaux sont ignorés.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En <span class="hcp2">consultation de tableau</span>, la procédure <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> sélectionne la ligne cliquée.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Dans certains cas, Ywpf signale les clics souris spéciaux pour vous permettre d'<font class="hcp1">adapter <span class="hcp5">ou de</span> modifier</font> ce traitement, par exemple pour respecter les conventions habituelles sous Windows&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">En <font class="hcp1">saisie de masque</font> (fonction XmeInput), à l'occasion&#160;:</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">D'un <span class="hcp2">clic droit</span> sur une donnée <span class="hcp2">en saisie</span> de la <span class="hcp2">page courante</span>, <span class="hcp6">à condition</span> d'avoir paramétré pour cette donnée un <a href="Programmationdespointsd_arr_tetdetraitement_Clicsouris_.htm">point de traitement ou un point d'arrêt "Clic souris"</a> dans Xwin.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">D'un <span class="hcp2">clic quelconque</span> sur une donnée <span class="hcp2">en saisie</span> d'une <span class="hcp2">autre page</span>, <span class="hcp6">à condition</span> d'avoir paramétré pour cette donnée un <a href="Programmationdupointd_arr_t_Demandedesaisie_.htm">point d'arrêt "Demande de saisie"</a> dans Xwin.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">D'un <a href="Ev_nementssourisli_s_l_objettableau.htm">clic "tableau"</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">(Rappelons qu'en saisie, le double-clic est ignoré.)<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En <font class="hcp1">saisie d'une ligne de tableau</font> (fonction <a href="XmeListInput.htm">XmeListInput</a>) :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Uniquement à l'occasion d'un <span class="hcp2">clic droit</span> sur une <font class="hcp1"><span class="hcp5">donnée</span> en saisie <span class="hcp5">de la</span> ligne courante</font>, <span class="hcp6">à condition</span> d'avoir paramétré pour cette donnée un <a href="Programmationdespointsd_arr_tetdetraitement_Clicsouris_.htm">point de traitement ou un point d'arrêt "Clic souris"</a> dans Xwin.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">(Tous les autres types de clic sont ignorés en saisie de ligne de tableau.)<font style="font-family: Symbol;" face="Symbol"><br>
+&#160;</font></p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En <font class="hcp1">consultation <span class="hcp5">de</span> masque <span class="hcp5">ou de</span> tableau</font> (fonctions <a href="XmeConsult.htm">XmeConsult</a> et <a href="XmeListConsult.htm">XmeListConsult</a>), à l'occasion&#160;:</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">D'un <a href="Ev_nementssourisli_s_l_objettableau.htm">clic "tableau"</a>.</p>
+</li>
+</ul>
+</li>
+</ul>
+</body>
+</html>

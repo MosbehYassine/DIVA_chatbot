@@ -1,0 +1,46 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HmpEncode</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HmpEncode &#160;<a href="G_n_ralit_s.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Thème</font></a></h3>
+<p class="Body-Text">La fonction HmpEncode permet d’encoder la valeur d’un paramètre pour qu’il n’y ait pas d’ambiguïté possible dans la chaîne hmp avec les délimiteurs de paramètres.</p>
+<p class="Body-Text">En effet, il n’est pas possible de mettre le caractère &lt; dans une valeur de paramètre car il sera interprété comme le début d’un autre paramètre.</p>
+<p class="Body-Text">Par exemple la chaîne <font class="hcp1">&lt;param1&gt;a &lt; b</font> est incorrecte. L’utilisation de HmpEncode permet de résoudre ces problèmes.</p>
+<p class="Body-Text">Les fonctions HmpRead et HmpSeek fonctionnent sans qu’il soit nécessaire de décoder la chaîne.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Alpha</font> <font class="hcp1">HmpEncode</font> (<font class="hcp2">variable</font>)</p>
+<p class="Body-Text"><font class="hcp2">Variable</font></p>
+<p class="decalage05">Valeur d’un paramètre Hmp à encoder</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La fonction retourne la chaîne encodée.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque</font></p>
+<p class="Body-Text">Il ne faut pas encoder toute un chaîne Hmp mais uniquement la valeur des paramètres (voir exemple ci-dessous).</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;</font></p>
+<p class="source" style="margin-left: 36.00pt;">1 hmp&#160;S</p>
+<p class="source" style="margin-left: 36.00pt;">hmp = "&lt;param1&gt;" &amp; HmpEncode("a &lt; b")</p>
+<p class="source" style="margin-left: 36.00pt;">display hmp&#160;; --&gt; &lt;param1&gt;a \&lt; b</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><br>
+<font class="hcp1">Voir</font></p>
+<p><a href="HmpRead.htm">HmpRead</a> <a href="HmpSeek.htm">HmpSeek</a></p>
+</body>
+</html>

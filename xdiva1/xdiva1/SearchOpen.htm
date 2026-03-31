@@ -1,0 +1,85 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>SearchOpen</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp5 { margin-left:48px; }
+p.hcp6 { margin-left:88px; }
+p.hcp7 { margin-left:128px; }
+p.hcp8 { margin-left:168px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>SearchOpen <a href="Liste_des_fonctions_Search.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Fonctions_Search.htm"><font class="hcp1">Thème</font></a></h1>
+<p class="Body-Text">La fonction SearchOpen permet d'établir une connexion avec un serveur Search.</p>
+<p class="Body-Text">SearchOpen retourne un identifiant de connexion qui est passé en paramètre à toutes les autres fonctions.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Long &#160;SearchOpen</font> ( <span style="font-style: italic;">[ NomDuServeur ]</span> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;">NomDuServeur</p>
+<p class="decalage05">Permet de préciser le nom du serveur Search auquel on veut se connecter. Si ce paramètre est omis, la connexion se fait au serveur Search défini dans l'environnement courant.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp3">
+<td style="width:10.50%;" class="hcp4">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:89.50%;" class="hcp4">
+<p>Erreur de connexion. La fonction <a href="SearchGetError.htm">SearchGetError</a> permet de récupérer le message d'erreur.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:10.50%;" class="hcp4">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:89.50%;" class="hcp4">
+<p class="Body-Text">Identifiant de la connexion.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;</font></p>
+<p>1 IdConnexionSearch L</p>
+<p>1 st &#160;L</p>
+<p>1 Libelle S</p>
+<p>1 pos0d L</p>
+<p>main</p>
+<p class="hcp5">if SearchOn</p>
+<p class="hcp6">IdConnexionSearch = SearchOpen("")</p>
+<p class="hcp6">if IdConnexionSearch = 0</p>
+<p class="hcp7">st = SearchGetError(libelle)</p>
+<p class="hcp7">pos0d = string($0d,libelle)</p>
+<p class="hcp7">if pos0d &lt;&gt; 0</p>
+<p class="hcp8">pos0d = string($0d,libelle,pos0d+1)</p>
+<p class="hcp8">if pos0d &lt;&gt; 0</p>
+<p class="hcp8">&#160;&#160;&#160;libelle = left(libelle,pos0d-1)</p>
+<p class="hcp8">endif</p>
+<p class="hcp7">endif</p>
+<p class="hcp7">ErrorWarning(st, "", libelle)</p>
+<p class="hcp6">endif</p>
+<p class="hcp5">endif</p>
+<p>&#160;&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text"><a href="SearchOn.htm">SearchOn</a></p>
+<p class="Body-Text"><a href="SearchModifyDocument.htm">SearchModifyDocument</a>, <a href="SearchCreateDocument.htm">SearchCreateDocument</a>, <a href="SearchDeleteDocument.htm">SearchDeleteDocument</a></p>
+</body>
+</html>

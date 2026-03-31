@@ -1,0 +1,40 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion de listes</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Gestion de listes</h2>
+<p class="Body-Text">Diva intègre un ensemble de fonctions permettant de gérer des listes chaînées.</p>
+<p class="Body-Text">Une liste est identifiée par un ticket rendu par la fonction de création ListCreate. Ce ticket est ensuite passé en paramètre à toutes les fonctions de gestion des listes.</p>
+<p class="Body-Text">Les fonctions ListAddAfter, ListAddBefore, ListAddBegin, ListAddEnd, ListInsert permettent d'ajouter des éléments à une liste.</p>
+<p class="Body-Text">Les fonctions ListBegin, ListEnd, ListFirst, ListLast, ListIndex, ListNext, ListPrevious permettent de se déplacer dans la liste.</p>
+<p class="Body-Text"><font class="hcp1">Le dernier élément lu dans la liste est appelé l'élément</font> <font class="hcp1">courant</font>. Par défaut, les insertions se font par rapport à cet élément courant.</p>
+<p class="Body-Text">Les fonctions ListModify, ListDelete, ListMove et ListSort permettent respectivement de modifier un élément de la liste, de supprimer des éléments de la liste, de déplacer des éléments de la liste et de trier la liste.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Listes nommées</font></p>
+<p class="Body-Text">Il est possible d’associer un nom à une liste puis de rechercher une liste d’après son nom.</p>
+<p class="Body-Text">La fonctions ListGetId recherche une liste d’après son nom. Si la liste n’existe pas elle est automatiquement créée avec le nom spécifié.</p>
+<p class="Body-Text">La fonction ListSetName permet d’associer un nom à une liste existante.</p>
+<p class="Body-Text">Les listes nommées sont utilisées notamment pour la gestion des listes associées aux multi-choix.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Propriétés</font></p>
+<p class="Body-Text">A chaque élément de liste, il est possible d’adjoindre jusqu’à 256 propriétés supplémentaires. Une propriété est une valeur associée à l’élément de liste. Chaque propriété est accessible individuellement. Les fonctions ListSetProp, ListGetProp et ListRemoveProp permettent de gérer ces propriétés. Les propriétés permettent d’associer des valeurs extérieures à la donnée placée dans la liste.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text">Rubrique "Multi-choix" du livre de la documentation Xwin - Editeurs consacré à l'éditeur de masques d'écran.</p>
+</body>
+</html>

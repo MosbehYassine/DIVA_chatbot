@@ -1,0 +1,32 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Consultation d'un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Consultation d'un tableau</h3>
+<p class="Body-Text">La programmation d'un objet tableau va débuter la plupart du temps par une "consultation", c'est à dire une <font class="hcp1">attente de commande</font> clavier ou souris de la part de l'utilisateur.</p>
+<p class="Body-Text">Pour mettre votre programme en attente d'une action sur un tableau, utilisez la procédure <a href="XmeListConsult.htm">XmeListConsult</a>. Cette procédure est la <font class="hcp1">fonction de gestion "centrale"</font> des objets tableaux&#160;: c'est elle qui vous informera sur l'événement clavier ou l'<a href="Ev_nementssourisli_s_l_objettableau.htm">événement souris</a> produit par l'utilisateur.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La fonction standard <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> propose un <font class="hcp1">traitement par défaut</font> pour la plupart des événements concernant le tableau&#160;: déplacements au clavier ou à la souris, changement de la taille de la fenêtre, création – modification – suppression de lignes, sélections, copier – couper – coller.<br>
+Cette fonction <font class="hcp1">peut ou non</font> être appelée pour <font class="hcp1">chaque</font> événement à traiter&#160;: par exemple, vous pouvez décider de reprogrammer les opérations de création, modification et suppression de lignes car le traitement standard ne convient pas, tout en conservant ce traitement standard pour les déplacements dans le tableau.<br>
+De plus, XmeListConsultDefault peut être elle-même personnalisée (un peu à la manière des séquences de traitement des zooms) dans le cas de la saisie d'une ligne, de la suppression, du copier et du coller.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="R_affichagedesdonn_esli_es_untableau.htm">Réaffichage des données liées à un tableau</a></p>
+</body>
+</html>

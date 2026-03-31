@@ -1,0 +1,89 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeCalendarGetResourceType</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+p.hcp5 { font-style:italic; }
+td.hcp6 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp8 { font-weight:normal;
+font-style:normal;
+text-decoration:none; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeCalendarGetResourceType <span style="font-weight: normal;">&#160;</span><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_agendas.htm"><span class="hcp1">Famille</span></a> <span class="hcp1"><a href="Agendas.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p style="font-weight: bold;"><span class="hcp2">Lecture d'un type de ressource dans la liste des types de ressource d'un agenda</span></p>
+<p>&#160;</p>
+<p><span class="hcp2">Long XmeCalendarGetResourceType</span> (<span class="hcp3">Identifiant</span>, <span class="hcp3">Type_Ressource</span>, &amp;<span class="hcp3">Objet_Type_Ressource</span>)</p>
+<p>&#160;</p>
+<p><span class="hcp2">Paramètres</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 12.445%;">
+<col style="width: 87.555%;">
+<tr class="hcp4">
+<td style="border: Solid 1px #000000;width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">Identifiant</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Enregistrement identifiant l'agenda rendu par la fonction XmeCalendarGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">Type_Ressource</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Numéro du <a href="Types_de_ressource_d_un_agenda.htm">type de ressource</a>.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">Objet_Type_Ressource</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Instance d'un <a href="Interface_de_programmation_d_un_agenda.htm">enregistrement ObjectResourceType</a> du dictionnaire ddCalendar.dhsd.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp2">Valeur rendue par la fonction</span> :</p>
+<p>0 : Type de ressource non trouvé.</p>
+<p>Autre : Adresse du type de ressource dans la <a href="Interface_de_programmation_d_un_agenda.htm">liste des types de ressource de l'agenda</a>.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Description de la fonction</span> :</p>
+<p>La fonction XmeCalendarGetResourceType cherche le type de ressource dont le numéro est fourni en paramètre dans la liste des types de ressource et charge l'enregistrement correspondant.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Exemple</span> :<br>
+&#160;</p>
+<p class="Source" style="font-style: normal; font-weight: normal;">Record ddCalendar.dhsd ObjectResourceType TypeRessource</p>
+<p class="Source" style="font-style: normal; font-weight: normal;">1 &#160;adr &#160;L</p>
+<p class="Source" style="font-style: normal; font-weight: normal;">...</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;"><span class="hcp8">XmeCalendarNewResourceType (<span class="hcp3">IdCal</span>,4,"PARTICIPANT","Participant à une réunion",,,"BLEU")</span></p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;"><span class="hcp8">XmeCalendarNewResourceType (IdCal,5,"SALLE","Salle de réunion",FALSE,,"VERT")</span></p>
+<p class="Source" style="font-style: normal; font-weight: normal;">...</p>
+<p class="Source" style="font-style: normal; font-weight: normal;">adr = XmeCalendarGetResourceType (<span class="hcp3">IdCal</span>,5,TypeRessource)</p>
+<p>&#160;</p>
+</body>
+</html>

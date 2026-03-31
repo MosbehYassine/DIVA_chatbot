@@ -1,0 +1,57 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Search_Security.xml</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-style:italic;
+font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { font-weight:bold; }
+p.hcp4 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Search_Security.xml</h1>
+<p>Le fichier <span class="hcp1">Search_Security.x</span><span class="hcp1">ml</span> se trouve dans le répertoire des paramètres d'un serveur Search.</p>
+<p>Lorsque ce fichier est <span class="hcp2">absent</span> ou &#160;"<span class="hcp2">vide</span>" aucune gestion de confidentialité n'est mise en oeuvre. Tous les documents de la base Search sont accessibles à tous.</p>
+<p>&#160;</p>
+<p class="hcp3">Prise en compte de la modification des paramètres</p>
+<p>L'ajout de ce fichier ou la modification de son contenu nécessite la "relecture des paramètres d'indexation" par la console Search. Le redémarrage du service Search concerné prend également en compte les modifications mais on privilégiera la relecture des paramètre afin de ne pas perturber les utilisateurs connectés au serveur.</p>
+<p>&#160;</p>
+<p class="hcp3">Contenu</p>
+<p>Il contient la <span class="hcp2">correspondance</span> entre les noms des <span class="hcp2">serrures</span> associées aux documents dans la base Search et les <span class="hcp2">codes d'accès (Clefs)</span> &#160;de l'utilisateur permettant d'ouvrir ces serrures (donc d'accéder aux documents).</p>
+<p>Une même serrure peut avoir <span class="hcp2">plusieurs clés</span>.</p>
+<p>&#160;</p>
+<p><img src="image13.gif" style="border: none;" alt="" width="466" height="401" border="0"></p>
+<p>&#160;</p>
+<p class="hcp4">L'attribut <span class="hcp1">Name</span> de la balise <span class="hcp1">&lt;Keyhole&gt;</span> indique le nom de la <span class="hcp2">serrure</span>.</p>
+<p class="hcp4">L'attribut <span class="hcp1">Value</span> de la sous-balise <span class="hcp1">&lt;Key&gt;</span> indique la valeur du <span class="hcp2">code de confidentialité</span>.</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">Ainsi dans l'exemple ci-dessus :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp4">Le code "<span class="hcp2">D998</span>" permet d'ouvrir la serrure "<span class="hcp2">Dossier998</span>"</p>
+</li>
+<li class="p">
+<p class="hcp4">Le code "<span class="hcp2">AAAA</span>" permet d'ouvrir les serrures "<span class="hcp2">searchDomCommerceEtLogistique</span>" ET "<span class="hcp2">searchDomCRM</span>"</p>
+</li>
+<li class="p">
+<p class="hcp4">Le code "<span class="hcp2">BBBB</span>" permet également d'ouvrir la serrure "<span class="hcp2">searchDomCRM</span></p>
+</li>
+</ul>
+<p class="hcp4">&#160;</p>
+<p class="hcp3">Attention</p>
+<p class="hcp4">Si une serrure a été positionnée sur un document par la balise <a href="Document__Security_.htm">&lt;Security&gt;</a> et qu'elle n'apparaît pas dans une balise &lt;<span class="hcp1">Keyhole</span>&gt; du fichier <span class="hcp2">Search_Security.xml</span>, ce document ne sera visible par <span class="hcp2">AUCUN</span> utilisateur. <span class="hcp2">Donc</span> lors de la mise en oeuvre des confidentialités assurez-vous que pour chaque document, <span class="hcp2">au moins une</span> des serrures positionnées au niveau des documents soit présente dans ce fichier paramètres.</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">&#160;</p>
+</body>
+</html>

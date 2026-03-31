@@ -1,0 +1,93 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Optimisation d'un RecordSql pour le ZoomSql</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:48px; }
+span.hcp2 { color:#00ff00; }
+p.hcp3 { margin-left:8px; }
+span.hcp4 { color:#ff00ff; }
+span.hcp5 { color:#ff0000; }
+p.hcp6 { margin-left:88px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Optimisation d'un RecordSql pour le ZoomSql</h3>
+<p>&#160;</p>
+<p>Pour accélérer l'affichage du ZoomSql, il faut que la requête soit la plus simple possible. Un des moyens est de ne pas exécuter les jointures qui ne servent pas à l'affichage du mode liste du Zoom, tout en les laissant pour l'affichage du mode fiche.</p>
+<p>Pour permettre cette désactivation automatique, il faut mettre en place un certain nombre de choses.</p>
+<p>&#160;</p>
+<p>Tout d'abord, il faut positionner le paramètre "ZoomOptimize" du RecordSql à yes :</p>
+<p>&#160;</p>
+<p>&lt;RecordSql ZoomOptimize=yes&gt;</p>
+<p>&#160;</p>
+<p>Ensuite, la présence de cet attribut entraîne la nécessité de donner un "Name" aux expressions. Un champ ne peut avoir qu'un seul Name, mais plusieurs champ peuvent posséder la même valeur de Name.</p>
+<p>Ce Name servira à retrouver les jointures qui servent au calcul de ce champ.</p>
+<p>&#160;</p>
+<p>Au niveau des jointures, toutes celles utilisées par le ZoomSql doivent porter le nom Name="ZOOM".</p>
+<p>Les jointures qui sont utilisées par une expression dans le Select doivent faire le lien avec ces champs via l'attribut "ColumnNames". Cet attribut est une liste de noms séparés par un point-virgule. Ces noms sont les valeurs de l'attribut Name des champs du Select.</p>
+<p>&#160;</p>
+<p>A l'entrée du ZoomSql, plusieurs traitements sont effectués :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>il désactive toutes les jointures qui ne portent pas le nom "ZOOM" ;</p>
+</li>
+<li class="p">
+<p>il supprime de la requête tous les champs qui ne sont pas affichés dans le tableau à l'exception des champs renseignés dans le chapitre "MandatoryColumns" ;</p>
+</li>
+<li class="p">
+<p>il supprime toutes les jointures qui ne sont pas utiles pour les champs à sélectionner.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Pour l'affichage du mode fiche, seul le premier point est effectué : en effet, en mode fiche, il faut que tous les champs soient renseignés.</p>
+<p>&#160;</p>
+<p>Dans la procédure ZoomDebut, il est possible d'activer/désactiver des jointures/colonnes via les fonctions <a href="ColumnActivate.htm">RecordSql.Column.Activate</a>, <a href="ColumnDeactivate.htm">RecordSql.Column.Deactivate</a>, <a href="Join_Activate.htm">RecordSql.Join.Activate</a> et <a href="Join_Deactivate.htm">RecordSql.Join.Deactivate</a>. Ces modifications seront effectives dans les deux modes (liste et fiche).</p>
+<p>&#160;</p>
+<p>Une nouvelle procédure est également appelée : ZoomApresReadListe qui remplace ZoomApresRead dans le cas du remplissage du tableau. Si elle n'existe pas, c'est ZoomApresRead qui est appelée.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Exemple :</p>
+<p>&#160;</p>
+<p>&lt;RecordSql Name="Articles" ZoomOptimize=yes&gt;</p>
+<p>&lt;Select&gt;</p>
+<p class="hcp1">Art.*</p>
+<p class="hcp1">ClientImportant.Nom</p>
+<p class="hcp1">COALESCE(Chemin1.chemin, Chemin2.Chemin) as CheminConfigurateur (&gt;a5dd.dhsd Chemin) Name="<span class="hcp2">chemin</span>"</p>
+<p class="hcp3">&lt;MandatoryColumns&gt;</p>
+<p class="hcp1">Art.HsDt</p>
+<p class="hcp3">&lt;From&gt;</p>
+<p class="hcp1">gtfdd.dhsd Art</p>
+<p class="hcp3">&lt;LeftJoin Name="Zoom"&gt;</p>
+<p class="hcp1">gtfdd.dhsd STB as <span class="hcp4">STB</span></p>
+<p class="hcp1">on ...</p>
+<p class="hcp3">&lt;LeftJoin Name="Zoom" Dependencies="<span class="hcp4">STB</span>"&gt;</p>
+<p class="hcp1">gtfdd.dhsd CLI as <span class="hcp5">ClientImportant</span></p>
+<p class="hcp1">on ClientImportant.Tiers = STB.Tiers ....</p>
+<p class="hcp3">&lt;LeftJoin Name="Zoom" ColumnNames="<span class="hcp2">chemin</span>"&gt;</p>
+<p class="hcp1">gtfdd.dhsd MChemin as Chemin1</p>
+<p class="hcp1">...</p>
+<p class="hcp3">&lt;LeftJoin Name="Zoom" ColumnNames="<span class="hcp2">chemin</span>"&gt;</p>
+<p class="hcp1">gtfdd.dhsd MChemin as Chemin2</p>
+<p class="hcp1">...</p>
+<p class="hcp3">&lt;OrderBy&gt;</p>
+<p class="hcp1">case MonTri "Mon tri" Dependencies="<span class="hcp5">ClientImportant</span>"</p>
+<p class="hcp6">Art.Ref</p>
+<p class="hcp6">ClientImportant.Nom</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp3">Si le tableau du mode liste ne contient que des champs de la table ART, il n'y aura aucune jointure d'exécutée.</p>
+<p class="hcp3">Si le champ "ClientImportant.Nom" est affiché dans le tableau, alors la jointure vers CLI sera activée ainsi que toutes ses dépendances, donc ici, STB.</p>
+<p class="hcp3">Si le champ "CheminConfigurateur" est affiché dans le tableau, alors toutes les jointures qui possèdent un ColumnNames "chemin" seront activées. Ici, c'est les deux jointures Chemin1 et Chemin2.</p>
+<p class="hcp3">Si seuls des champs de Art sont affichés et qu'on applique le tri "MonTri", alors la jointure vers CLI sera activée ainsi que sa dépendance vers STB.</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">Dans tous les cas, le champ Art.HsDt sera toujours ramené.</p>
+</body>
+</html>

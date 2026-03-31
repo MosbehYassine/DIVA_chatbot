@@ -1,0 +1,122 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Autorisations du compte de service</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp3 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Autorisations du compte de service</h1>
+<p>&#160;</p>
+<p>Une fois que l'accès aux API est activé, il faut maintenant configurer les droits d'actions dont le compte de service disposera sur le domaine.</p>
+<p>&#160;</p>
+<p>Dans l'interface "Sécurité" de la console d'administration du compte G Suite, ouvrir le sous-menu "Paramètres Avancés", puis sur &#160;"Gérer l’accès au client API".</p>
+<p>C'est ici que l'on va associer les droits d'action au compte de service que nous avons créé plus dans les étapes précédentes.</p>
+<p>Le compte de service est identifié grâce à son Id.</p>
+<p>Dans la zone de saisie destinée à recevoir les droits, il faut énumérer chacun des droits, séparés par des virgules, mais sans espace.</p>
+<p>&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 31.866%;">
+<col style="width: 68.134%;">
+<tr class="hcp1">
+<td style="border: Solid 1px #000000;width: 31.866%; padding-right: 10px; padding-left: 10px;">
+<p>Autorisation Spécifique</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 68.134%; padding-right: 10px; padding-left: 10px;">
+<p>Url associée à l’autorisation</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:31.866%;" class="hcp2">
+<p>Lecture seule de l’agenda</p>
+</td>
+<td style="width:68.134%;" class="hcp3">
+<p>https://www.googleapis.com/auth/calendar.readonly</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:31.866%;" class="hcp2">
+<p>Lecture seule des contacts</p>
+</td>
+<td style="width:68.134%;" class="hcp3">
+<p>https://www.googleapis.com/auth/contacts.readonly</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:31.866%;" class="hcp2">
+<p>Lecture seule des tâches</p>
+</td>
+<td style="width:68.134%;" class="hcp3">
+<p>https://www.googleapis.com/auth/tasks.readonly</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:31.866%;" class="hcp2">
+<p>Lecture seule des mails</p>
+</td>
+<td style="width:68.134%;" class="hcp3">
+<p>https://www.googleapis.com/auth/gmail.readonly</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:31.866%;" class="hcp2">
+<p>Lecture seule des utilisateurs</p>
+</td>
+<td style="width:68.134%;" class="hcp3">
+<p>https://www.googleapis.com/auth/admin.directory.user.readonly</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:31.866%;" class="hcp2">
+<p>Lecture seule des groupes et des membres des groupes</p>
+</td>
+<td style="width:68.134%;" class="hcp3">
+<p>https://www.googleapis.com/auth/admin.directory.group.member.readonly,</p>
+<p>https://www.googleapis.com/auth/admin.directory.group.readonly</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:31.866%;" class="hcp2">
+<p>Manipulation des mails</p>
+</td>
+<td style="width:68.134%;" class="hcp3">
+<p>https://www.googleapis.com/auth/gmail.send,</p>
+<p>https://www.googleapis.com/auth/gmail.insert,</p>
+<p>https://www.googleapis.com/auth/gmail.metadata,</p>
+<p>https://www.googleapis.com/auth/gmail.compose,</p>
+<p>https://www.googleapis.com/auth/gmail.modify,</p>
+<p>https://www.googleapis.com/auth/gmail.labels</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:31.866%;" class="hcp2">
+<p>&#160;</p>
+</td>
+<td style="width:68.134%;" class="hcp3">
+<p>&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>La chaîne finale à coller dans la zone de saisie des droits est donc ;</p>
+<p>https://www.googleapis.com/auth/calendar.readonly,https://www.googleapis.com/auth/contacts.readonly,https://www.googleapis.com/auth/tasks.readonly,https://www.googleapis.com/auth/gmail.readonly,https://www.googleapis.com/auth/admin.directory.user.readonly,https://www.googleapis.com/auth/admin.directory.group.member.readonly,https://www.googleapis.com/auth/admin.directory.group.readonly,https://www.googleapis.com/auth/calendar,https://www.googleapis.com/auth/contacts,https://www.googleapis.com/auth/tasks,https://www.googleapis.com/auth/gmail.send,https://www.googleapis.com/auth/gmail.insert,https://www.googleapis.com/auth/gmail.metadata,https://www.googleapis.com/auth/gmail.compose,https://www.googleapis.com/auth/gmail.modify,https://www.googleapis.com/auth/gmail.labels</p>
+</body>
+</html>

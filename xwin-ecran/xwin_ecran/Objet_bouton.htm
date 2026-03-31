@@ -1,0 +1,391 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Objet Bouton</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp3 { font-weight:bold; }
+ul.hcp4 { list-style:disc; }
+font.hcp5 { font-weight:bold; }
+span.hcp6 { font-weight:normal; }
+span.hcp7 { font-style:italic; }
+span.hcp8 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Objet Bouton</h3>
+<p class="Body-Text">Les propriétés d'un objet Bouton sont :<br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 11.841%;">
+<col style="width: 88.159%;">
+<tr class="hcp1">
+<td colspan="2" style="width:11.841%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Bouton</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.841%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Nom dans la feuille de style</p>
+</td>
+<td style="width:88.159%;" class="hcp2">
+<p class="Body-Text">Nom du bouton dans la <a href="Feuille_de_styles.htm">feuille de styles</a>.<br>
+<br>
+"<span class="hcp3">.Bouton</span>" est pris par défaut (dans fstyleWpf.dhfi, il s'agit d'un bouton texte libellé "Générique").<br>
+<br>
+Suite à la saisie du nom, Xwin affecte au bouton les <a href="Boutons.htm">propriétés correspondantes enregistrées dans la feuille de styles</a> :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp3">Les propriétés faisant partie du sous-arbre ayant pour racine la ligne "Nom dans la feuille de style"</span> peuvent être <a href="personnalisation_d_une_propri&eacute;t&eacute;s_de_la_feuille_de_styles.htm">personnalisées</a> :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Une valeur non personnalisée, affichée en noir, est toujours recherchée dans la feuille de styles ; si vous changez plus tard par exemple le nom du fichier image <span class="hcp3">dans la feuille</span>, la nouvelle image sera automatiquement reprise, sans intervention (ni compilation) au niveau du masque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Une valeur personnalisée, affichée en rouge, n’est plus affectée par un changement au niveau de la feuille. Lorsqu’au moins une valeur est personnalisée, les intitulés de ses ascendants dans l’arbre sont aussi affichés en rouge (dans l'exemple précédent : "Nom dans la feuille de style" puis "Bouton").</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un <span class="hcp3">clic droit sur une propriété personnalisée</span> ouvre un menu popup avec le choix "<span class="hcp3">Reprendre la valeur de la feuille de styles</span>". Ce choix permet de récupérer la valeur enregistrée au niveau de la feuille pour cette propriété.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un <span class="hcp3">clic droit sur le nom dans la feuille de styles</span> ouvre un menu popup avec le choix "<span class="hcp3">Reprendre les valeurs de la feuille de styles</span>". Ce choix permet de récupérer <span class="hcp3">toutes</span> les valeurs enregistrées au niveau de la feuille.</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp3">Les propriétés affichées dans une autre branche de l’arbre sont seulement initialisées</span> avec les valeurs lues dans la feuille (qui sont alors considérées comme de simples valeurs par défaut) : leur valeur, toujours affichée en noir, n’est plus ensuite affectée par un changement au niveau de la feuille.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.841%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;"><span><span class="hcp3">Fichier image</span></span></p>
+<p class="Body-Text" style="font-weight: bold;">(,n°)</p>
+</td>
+<td style="width:88.159%;" class="hcp2">
+<p class="Body-Text">Nom du fichier contenant l'image du bouton (<span class="hcp3">graphique</span>).<font class="hcp5"><span class="hcp6"><br>
+Un nom personnalisé est affiché en rouge.</span><br>
+<br>
+Remarques<span class="hcp6">&#160;:</span></font></p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp6">D</span>es images "standard" peuvent être référencées ici à la place d'un nom de fichier. Le nom à indiquer est alors un nom conventionnel commençant par le caractère de reconnaissance # (consultez les images de fstyleWpf.dhfi pour connaître ces noms).<br>
+Exemples : #tbr_abandon, #tbr_ok.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un bouton <span class="hcp3">ne peut à la fois afficher une image et un texte</span>. Si ces deux propriétés sont renseignées, l'image primera sur le texte et c'est un bouton graphique qui sera affiché.</p>
+</li>
+</ul>
+<p class="Body-Text">Vous pouvez faire suivre le nom du fichier d'une virgule puis du numéro de la bitmap à l'intérieur du fichier (fichier de type .exe, .ico ou .dll, non utilisable en client léger Html en dehors de certaines icones standard de xrtdiva.exe).</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.841%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Fond</p>
+</td>
+<td style="width:88.159%;" class="hcp2">
+<p class="Body-Text">Nom dans la feuille de styles d'une couleur de fond. En cas de bouton graphique, cette couleur est appliquée à la boîte et non à l'image.<br>
+Un nom personnalisé est affiché en rouge.</p>
+<p class="Body-Text">Cette couleur peut être elle-même <a href="personnalisation_d_une_propri&eacute;t&eacute;s_de_la_feuille_de_styles.htm">personnalisée</a>.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.841%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Police</p>
+</td>
+<td style="width:88.159%;" class="hcp2">
+<p class="Body-Text">Nom d'une police de caractères dans la feuille de styles, appliquée au libellé du bouton (<span class="hcp3">texte</span>).<br>
+Un nom personnalisé est affiché en rouge.</p>
+<p class="Body-Text">Les différentes propriétés de cette police peuvent être elles-mêmes <a href="personnalisation_d_une_propri&eacute;t&eacute;s_de_la_feuille_de_styles.htm">personnalisées</a>.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.841%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Padding</p>
+</td>
+<td style="width:88.159%;" class="hcp2">
+<p class="Body-Text">Nom d'un padding dans la feuille de styles.<br>
+Un nom personnalisé est affiché en rouge.</p>
+<p class="Body-Text">Les propriétés de ce padding peuvent être elles-mêmes <a href="personnalisation_d_une_propri&eacute;t&eacute;s_de_la_feuille_de_styles.htm">personnalisées</a>.<br>
+<br>
+En client léger Html, les paddings définis ici ne sont pas pris en compte : le contenu du bouton est simplement centré dans la boîte. Si la taille de la boîte est insuffisante, on perd progressivement les paddings avant de tronquer le contenu (en Wpf, les paddings sont conservés et l'image est automatiquement réduite à la taille restante).</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.841%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Raccourci</p>
+</td>
+<td style="width:88.159%;" class="hcp2">
+<p class="Body-Text"><span class="hcp3">Touche de raccourci</span> à associer au bouton <span class="hcp3">graphique</span> (pour un bouton texte, le raccourci est déterminé par le caractère du libellé précédé d'un "_" ; par exemple, raccourci "S" pour le libellé "_Suivant").<br>
+Un raccourci personnalisé est affiché en rouge.</p>
+<p class="Body-Text">Attention, un raccourci doit être défini de manière unique dans toute fenêtre Windows (menu compris).</p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 11.973%;">
+<col style="width: 88.027%;">
+<tr class="hcp1">
+<td style="width:11.973%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Effets spéciaux</p>
+</td>
+<td style="width:88.027%;" class="hcp2">
+<p class="Body-Text">(tous les paramètres de cette famille peuvent être personnalisés)</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.973%;" class="hcp2">
+<p class="Body-Text"><font class="hcp5">Image survol</font></p>
+</td>
+<td style="width:88.027%;" class="hcp2">
+<p class="Body-Text">Image à afficher lorsque le curseur de la souris survole le bouton.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.973%;" class="hcp2">
+<p class="Body-Text"><font class="hcp5">Curseur survol</font></p>
+</td>
+<td style="width:88.027%;" class="hcp2">
+<p class="Body-Text">Curseur à afficher lorsque la souris survole le bouton.<br>
+Pour afficher un autre curseur, il faut créer un fichier .cur et le placer dans le répertoire /Divalto/Sys.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.973%;" class="hcp2">
+<p class="Body-Text"><font class="hcp5">Son pour le survol</font></p>
+</td>
+<td style="width:88.027%;" class="hcp2">
+<p class="Body-Text">Son à jouer lorsque la souris "entre" sur le bouton.</p>
+<p class="Body-Text">Il s'agit d'un nom de fichier Windows. Pour ne pas avoir à préciser un chemin complet, placez le fichier dans le répertoire /Divalto/Sys.<br>
+<br>
+Attention en mode Html : certains navigateurs ne reconnaissent pas les fichiers .wav.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:11.973%;" class="hcp2">
+<p class="Body-Text"><font class="hcp5">Son pour le clic</font></p>
+</td>
+<td style="width:88.027%;" class="hcp2">
+<p class="Body-Text">Son à jouer lors du clic sur le bouton.</p>
+<p class="Body-Text">Il s'agit d'un nom de fichier Windows. Pour ne pas avoir à préciser un chemin complet, placez le fichier dans le répertoire /Divalto/Sys.<br>
+<br>
+Attention en mode Html : certains navigateurs ne reconnaissent pas les fichiers .wav.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 14.459%;">
+<col style="width: 85.541%;">
+<tr class="hcp1">
+<td colspan="2" style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Présentation</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.459%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Texte</p>
+</td>
+<td style="width:85.541%;" class="hcp2">
+<p class="Body-Text">Libellé du bouton texte.<br>
+Exemples :&#160;Ok, Abandon.<span class="hcp3"><br>
+<br>
+Remarques</span>&#160;:</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Un bouton <span class="hcp3">ne peut à la fois afficher une image et un texte</span>. Si ces deux propriétés sont renseignées, l'image primera sur le texte et c'est un bouton graphique qui sera affiché.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous faites <span class="hcp3">précéder</span> l'un des caractères du libellé d'un "_", ce caractère servira de <span class="hcp3">touche de raccourci</span> (par exemple, raccourci "P" pour le libellé "_Précédent" ou raccourci "U" pour le libellé "Enregistrer to_ut").</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le caractère | permet de découper le texte en plusieurs lignes.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.459%;" class="hcp2">
+<p class="Body-Text"><font class="hcp5">Nom pour la sélection</font></p>
+</td>
+<td style="width:85.541%;" class="hcp2">
+<p class="Body-Text">Nom donné au bouton. Pour qu'un <a href="Validit_d_unbouton.htm">bouton nommé</a> soit valide, il faut que son nom figure dans la liste des boutons valides de la page en cas de la consultation d'une page par XmeConsult, du tableau en cas de la consultation d'un tableau par XmeListConsult, de la donnée en cours de saisie en cas de saisie par XmeInput ou XmeListInput.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.459%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp3">Noms de l'objet</span></p>
+</td>
+<td style="width:85.541%;" class="hcp2">
+<p class="Body-Text">Voir <a href="Pr_sentation.htm" style="font-weight: normal;">Présentation</a>.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.459%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">En saisie</p>
+</td>
+<td style="width:85.541%;" class="hcp2">
+<p class="Body-Text">Indique que le bouton doit faire partie de l'<a href="Ordredesaisie.htm">ordre de saisie</a>.<br>
+Il sera alors possible de lui donner le focus au clavier. Lorsque le curseur est placé sur un tel bouton, la frappe de la touche Entrée ou Espace actionne également le bouton.<br>
+<br>
+Dans ce cas et uniquement dans ce cas, les paramètres d'Aide fenêtrée sont valides, de même que les Pièges de touche et les Boutons valides.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.459%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Portée</p>
+</td>
+<td style="width:85.541%;" class="hcp2">
+<p class="Body-Text">Indique si le bouton est <a href="Validit_d_unbouton.htm">local à la page courante ou global</a>.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.459%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+</td>
+<td style="width:85.541%;" class="hcp2">
+<p class="Body-Text">&#160;</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td colspan="2" style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Traitements</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.459%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Type de traitement</p>
+</td>
+<td style="width:85.541%;" class="hcp2">
+<p class="Body-Text">Spécifie le traitement à déclencher lorsque le bouton est actionné.<br>
+Choisissez entre <a href="Pointd_arr_t_pointdetraitementetpi_gedetouche.htm">Génération de caractère, Point d'arrêt et Point de traitement</a>.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.459%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Traitement<br>
+Arrêt<br>
+Chaîne</p>
+</td>
+<td style="width:85.541%;" class="hcp2">
+<p class="Body-Text">Suivant le type de traitement sélectionné :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Saisie_d_un_nom_de_traitement.htm">nom du traitement Diva</a> ou</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">numéro du point d'arrêt ou</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">touche à simuler (la syntaxe à respecter est décrite ci-après).</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.459%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Autres</p>
+</td>
+<td style="width:85.541%;" class="hcp2">
+<p class="Body-Text">voir <a href="Traitements.htm">Traitements</a>.<br>
+Remarque : paramètres significatifs uniquement en cas de bouton déclaré "En saisie".</p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 100%;">
+<tr class="hcp1">
+<td style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Aide <span class="hcp6">: Voir <a href="Aidepage.htm">Aide</a>.</span><span class="hcp6"><br>
+Remarque : les paramètres d'aide fenêtrée sont significatifs uniquement en cas de bouton déclaré "En saisie".</span></p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 100%;">
+<tr class="hcp1">
+<td style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Attachements / coordonnées <span class="hcp6">: voir <a href="Attachements_Coordonn_es.htm">Attachements / Coordonnées</a>.</span></p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 100%;">
+<tr class="hcp1">
+<td style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Commentaire <span class="hcp6">: voir <a href="Commentaire.htm">Commentaire</a>.</span></p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+&#160;
+<p class="Body-Text" style="font-weight: bold;">Syntaxe de la propriété Chaîne</p>
+<p class="Body-Text">Cette zone peut contenir :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Un caractère "normal" (lettre, chiffre, ...).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un mnémonique représentatif d’une touche de fonction réelle ou virtuelle (cas le plus courant), d'une touche de contrôle ou d'une touche "spéciale". Un tel mnémonique débute par le signe #.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text"><font><span class="hcp7">Liste des mnémoniques représentatifs des</span></font> <span class="hcp7">touches de fonction ou de contrôle</span><br>
+(<span class="hcp3">attention :</span> <span class="hcp3">à faire précéder du caractère</span> <span class="hcp8">#</span>)&#160;:</p>
+<p class="Body-Text" style="margin-left: 36.00pt;">F1 à F16, Shift_F1 à Shift_F16, Ctrl_F1 à Ctrl_F16, Shift_Ctrl_F1 à Shift_Ctrl_F16<br>
+F9W, F10W (*)<br>
+Ctrl_A, Ctrl_B, Ctrl_D, Ctrl_E, Ctrl_F, Ctrl_N, Ctrl_O, Ctrl_P,<br>
+Ctrl_Q, Ctrl_R, Ctrl_S, Ctrl_T, Ctrl_U, Ctrl_W, Ctrl_Y, Ctrl_Z<br>
+Tab, Ctrl_Tab, Shift_Tab, Shift_Ctrl_Tab<br>
+Up (pour flèche vers le haut) ou Haut, Ctrl_Up, Shift_Up, Shift_Ctrl_Up<br>
+Down (pour flèche vers le bas) ou Bas, Ctrl_Down, Shift_Down, Shift_Ctrl_Down<br>
+Left (pour flèche à gauche), Ctrl_Left, Shift_Left, Shift_Ctrl_Left<br>
+Right (pour flèche à droite), Ctrl_Right, Shift_Right, Shift_Ctrl_Right<br>
+End, Ctrl_End, Shift_End, Shift_Ctrl_End<br>
+Home, Ctrl_Home, Shift_Home, Shift_Ctrl_Home<br>
+Page_Up, Ctrl_Page_Up, Shift_Page_Up, Shift_Ctrl_Page_Up<br>
+Page_Down, Ctrl_Page_Down, Shift_Page_Down, Shift_Ctrl_Page_Down<br>
+Insert, Copier ou Ctrl_Insert ou Ctrl_C, Coller ou Shift_Insert ou Ctrl_V, Shift_Ctrl_Insert<br>
+Delete, Couper ou Shift_Delete ou Ctrl_X, Ctrl_Delete, Shift_Ctrl_Delete<br>
+Esp (pour espace)<span style="margin-left: 36.00pt;"><br>
+Return (pour Entrée), Escape (pour Echap)</span></p>
+<p class="Body-Text" style="margin-left: 36.00pt;"><font class="hcp5">Exemple</font> : pour qu'un choix simule la frappe de la touche de fonction F7, entrez la valeur "<span class="hcp3">#F7</span>".<br>
+<br>
+(*) <span class="hcp8">ATTENTION</span> :</p>
+<p class="Body-Text" style="margin-left: 36.00pt;">Par souci de compatibilité avec les versions antérieures à la version 7 d'Harmony, les codes <span class="hcp3">#f9</span> et <span class="hcp3">#f10</span> ne simulent pas les touches F9 et F10 mais les touches d’<span class="hcp3">abandon (Echap)</span> et de <span class="hcp3">validation (Entrée)</span>.<br>
+A partir de la version 7, les codes #Escape et #Return deviennent les codes "standard" de ces touches (qui génèrent respectivement les valeurs K_ESCAPE et K_RETURN de Harmony.Key).<span class="hcp3"><br>
+<br>
+Pour simuler les touches F9 et F10, il faut utiliser les codes #f9w et #f10w</span> (qui génèrent respectivement les valeurs K_F9W et K_F10W de Harmony.Key).<br>
+&#160;</p>
+<p class="Body-Text" style="margin-left: 36.00pt; font-weight: bold;">&#160;</p>
+<p style="font-weight: bold;">Touches virtuelles</p>
+<p>Vous avez la possibilité de faire générer une touche «&#160;virtuelle&#160;» à votre choix en plaçant une valeur numérique derrière le caractère #. Lorsque l’utilisateur sélectionnera ce choix, la variable Harmony.Key sera garnie avec la valeur choisie (40000 dans l’exemple). La plage de valeurs de Harmony.Key [32768,65535] est ainsi réservée pour ces touches virtuelles.<span class="hcp3"><br>
+<br>
+Exemple</span>&#160;: <span class="hcp3">#40000</span>.<br>
+&#160;</p>
+&#160;
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir aussi</p>
+<p class="Body-Text"><a href="Lesboutons.htm">Les boutons</a></p>
+</body>
+</html>

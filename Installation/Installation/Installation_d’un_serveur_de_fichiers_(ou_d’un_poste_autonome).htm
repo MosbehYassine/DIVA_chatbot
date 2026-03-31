@@ -1,0 +1,77 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Installation du serveur de données</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+p.hcp3 { margin-left:48px; }
+p.hcp4 { margin-left:8px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Installation du serveur de données</h3>
+<p>&#160;</p>
+<p>Sur un <span class="hcp1">serveur de données</span>, installez <a href="Installation_de_Harmony_Power_Foundation.htm">Harmony Power Foundation</a> et l<span class="hcp1">'ERP Divalto</span>.<br>
+Le cas échéant, installez aussi le <a href="Connecteur_Harmony_pour_Outlook_2010.htm">Connecteur Divalto pour Outlook</a>.</p>
+<p>&#160;</p>
+<p>L'installation de l’ERP va vous permettre de configurer le <a href="Connecteur_SQL.htm"><span class="hcp1">connecteur SQL</span></a>.<br>
+En version 7, l’<span class="hcp1">accès aux données</span> s’effectue par <span class="hcp1">deux canaux</span> :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Le <span class="hcp1">connecteur SQL</span> concerne tous les accès par les méthodes des "RecordSQL"<br>
+(en particulier, les Zooms SQL utilisent ce canal).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Le <span class="hcp1">serveur Xlan</span> concerne tous les accès par les fonctions Diva de gestion des fichiers :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp2">
+<li class="p">
+<p>Accès aux fichiers séquentiels-indexés.</p>
+</li>
+<li class="p">
+<p>Accès aux bases SQL, par le driver ODBC de la base de données cible (Microsoft SQL Server, Oracle ou IBM DB2).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp3"><span class="hcp1">Remarque</span> :</p>
+<p class="hcp3">La configuration du serveur Xlan fait l'objet de deux livres dans ce manuel :</p>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp3">Le livre intitulé <span class="hcp1"><a href="reseaux.chm::/reseaux/Réseau_Xlan.htm">Réseau Xlan</a></span> traite de la configuration proprement dite du service Xlan.</p>
+</li>
+<li class="p">
+<p class="hcp3">Le livre intitulé <a href="xlansql.chm::/xlansql/Introduction.htm" style="font-weight: bold;">Xlan SQL</a> traite plus particulièrement des accès aux bases de données SQL.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">Les données de l’ERP, avec la visite guidée, sont livrées dans un fichier de base de données au format .mdf. L’installateur demande le nom de la base et joint le fichier livré à la base de données du serveur SQL.</p>
+<p class="hcp4"><br>
+L’installation de l’ERP Divalto diffère selon qu’elle s’applique à une version de démonstration ou à une version pour un site client :</p>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp4"><span class="hcp1">Installation d’une version de démonstration réservée aux partenaires</span>.<br>
+L'installateur crée ici un <span style="text-decoration: underline;">environnement pour chaque version installée</span>.<br>
+Ainsi le partenaire aura à sa disposition les différentes versions et y accèdera très simplement en changeant d’environnement. Chacune des versions est installée dans un sous-répertoire de /Divalto, qui porte le nom de l’environnement associé (par exemple ERP206 pour la version 7.3).<br>
+Ce sous-répertoire contient les dictionnaires de données, le fichier paramètre Fhsql, la base de données, ainsi que des sous-dossiers Documentation, Fichiers, Objets, Sources et WebAide.</p>
+</li>
+<li class="p">
+<p class="hcp4"><span class="hcp1">Installation d’une version pour le site d’un client</span>.<br>
+Pour une version client, l’installateur ne crée pas d’environnement.</p>
+</li>
+</ul>
+<p class="hcp4">&#160;</p>
+</body>
+</html>

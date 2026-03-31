@@ -1,0 +1,90 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Freadst</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Freadst &#160;<a href="Listedesfonctionsdebasedegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Introduction1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction <font>f</font>readst lit le fichier sans tenir compte de la structure des enregistrements , c'est à dire qu'elle lit les octets du fichier tels qu'ils sont écrits sur le disque.<br>
+Cette fonction est utilisée pour la lecture des fichiers au format Rich-Text.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">p</font><font class="hcp2">tr</font> = <font class="hcp2">f</font><font class="hcp2">readst</font> (<font class="hcp3">tdf</font> , <font class="hcp3">variable</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Table de définition du fichier.</p>
+<p class="Body-Text"><font class="hcp3">Variable</font></p>
+<p class="decalage05">Donnée réceptrice. La lecture se fait sur la longueur de cette donnée. La taille de cette donnée doit être inférieure à 64 K.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:14.09%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">0 &#160;</p>
+</td>
+<td style="width:85.91%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.09%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">H_EOF</p>
+</td>
+<td style="width:85.91%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Fin de fichier (0 octets lus)&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.09%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">autres</p>
+</td>
+<td style="width:85.91%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Code d'erreur système.&#160;</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text">Après l'appel de la fonction, le nombre d'octets lus est stocké dans le champ SizeLast de la tdf (voir <a href="XDIVA0.chm::/Xdiva0/ChampsdelaTdf.htm">Champs de la tdf</a>). Le nombre d'octets lus peut être inférieur à la taille de la variable réceptrice (cas de la dernière lecture avant la fin du fichier).</p>
+<p class="Body-Text"><font>f</font>readst renvoie le status de fin fichier si <font class="hcp2">aucun</font> octet n'a été lu.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Body-Text">Lecture et affichage d'un fichier. Pour ne pas afficher des valeurs binaires, on utilise la fonction <font>f</font>string avec le format "F" qui filtre les caractères non affichables.</p>
+<p class="Source">Record * htdf tdf</p>
+<p class="Source">1 art 70</p>
+<p class="Source">1 lgn 3,0</p>
+<p class="Source">1 st X</p>
+<p class="Source">....... ; ouverture du fichier</p>
+<p class="Source">do</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = freadst(tdf,art)&#160;</p>
+<p class="Source">while st = 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;lgn = tdf.sizelast&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display [ lgn ":" fstring("F",left(art,lglu)) ]&#160;</p>
+<p class="Source">wend</p>
+<p class="Source">...... ; fermeture du fichier</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Fwritst.htm">Fwritst</a>, <a href="Frewst.htm">Frewst</a></p>
+</body>
+</html>

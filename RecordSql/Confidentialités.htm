@@ -1,0 +1,87 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Confidentialités</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { margin-left:88px; }
+span.hcp4 { margin-left:48px; }
+p.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Confidentialités</h3>
+<p>&#160;</p>
+<p>La gestion des tables confidentielles dans un RecordSql est automatiquement prise en compte. La confidentialité est traitée pour chaque ligne d’une table. Pour qu’un utilisateur ait accès à une ligne d’une table confidentialisée d’un RecordSQL, il doit posséder :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Soit le code d’accès correspondant au code de confidentialité de la <span class="hcp2">ligne</span> de la table.<br>
+Le code de confidentialité d'une ligne est stocké dans un champ de la table.</p>
+</li>
+<li class="p">
+<p>Soit un code d'accès particulier, appelé "code passe-partout", qui donne accès à <span class="hcp2">toutes les lignes</span> de la table.<br>
+Un "passe-partout" est défini dans les propriétés de la table dans le dictionnaire de données et le programmeur a la charge de faire l'association entre le "passe-partout" et le "code passe-partout" correspondant..</p>
+</li>
+</ul>
+<p>S’il n’y a pas de code de confidentialité associé à la table, l’accès à celle-ci est autorisé à tous. Le passe-partout associé à la table est facultatif. S’il n’y a pas de passe-partout, seul le code de confidentialité opère.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp2">Fonctionnement</span></p>
+<p>La confidentialité opère de manière différente selon la requête et s’il s’agit de la table de base d’un RecordSQL ou d’une table liée par une jointure.</p>
+<p>Si l’accès à la ligne est refusé :</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Pour la table de base</span><span class="hcp3"><br>
+• Select initialise tous les champs du RecordSQL à espace.<br>
+• ReaderNext ignore la ligne et passe automatiquement à la ligne suivante.</span></p>
+</li>
+</ul>
+<p style="margin-left: 48px;">Attention : RecordSQL.Exists ne tient pas compte des confidentialités, c'est à dire qu'une ligne peut exister même si elle ne peut pas être lue.</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Pour les tables liées</span>, <span class="hcp3"><br>
+•</span> <span class="hcp4">Select et ReaderNext initialisent tous les champs de la table liée à espace.</span><span class="hcp3"><br>
+•</span> <span class="hcp4">L'attribut GlobalConf=yes de la description de la jointure du RecordSql permet de modifier ce comportement pour ignorer les lignes pour lesquels l'utilisateur ne dispose pas des droits d'accès à la table liée.<br>
+&#160;</span></p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp5">Contrôle du droit d’accès à une table du RecordSQL</p>
+<ul class="hcp1">
+<li class="p">
+<p>Si un "passe-partout" est associé à la table et si l’utilisateur dispose du "code passe-partout" correspondant, il a accès à toutes les lignes du RecordSQL.</p>
+</li>
+<li class="p">
+<p>Sinon, il a accès aux lignes du RecordSQL pour lesquelles il dispose du code d'accès correspondant.</p>
+</li>
+</ul>
+<p class="hcp5">&#160;</p>
+<p class="hcp5">Description dans le dictionnaire</p>
+<p>Pour mettre en oeuvre la gestion des confidentialités, il faut garnir les deux propriétés suivantes dans la description de la table dans le dictionnaire de données :</p>
+<ul class="hcp1">
+<li class="p">
+<p style="margin-left: 8px;">Le nom du champ de la table contenant le code de confidentialité. C’est un champ alphanumérique de 4 caractères. Par convention, son nom est Conf.</p>
+</li>
+<li class="p">
+<p>Le passe-partout.</p>
+</li>
+</ul>
+<p class="hcp5">&#160;</p>
+<p class="hcp5">Constitution de la liste des passe-partout</p>
+<p>La liste des passe-partout des tables de l'application doit être garnie avant le premier accès à un RecordSQL. Voir les fonctions <a href="ListPassKeyGet.htm">ListPassKeyGet</a> et <a href="ListPassKeySet.htm">ListPassKeySet</a>.</p>
+<p>&#160;</p>
+<p class="hcp5">Exemple</p>
+<p><img src="image1.gif" style="border: none;" alt="" width="646" height="459" border="0"></p>
+<p>L'utilisateur BH peut lire la première ligne de la base puisqu'il dispose du code AAAA mais ne peut lire la seconde ligne puisqu'il ne dispose ni du code BBBB ni du passe-partout.</p>
+<p>L'utilisateur JS peut lire toutes les lignes puisqu'il dispose du code d'accès G$ qui correspond au nom du passe-partout PassGesCom.</p>
+</body>
+</html>

@@ -1,0 +1,159 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeCalendarNewResource</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+p.hcp5 { font-style:italic; }
+td.hcp6 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+font.hcp8 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeCalendarNewResource(Ext) <span style="font-weight: normal;">&#160;</span><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_agendas.htm"><span class="hcp1">Famille</span></a> <span class="hcp1"><a href="Agendas.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p style="font-weight: bold;"><span class="hcp2">Ajout d'une ressource à la liste des ressources d'un agenda</span></p>
+<p>&#160;</p>
+<p><span class="hcp2">Long XmeCalendarNewResource</span> (<span class="hcp3">Identifiant</span>, <span class="hcp3">Type_Ressource</span>, <span class="hcp3">Nom</span>, <span class="hcp3">Libellé</span>, [<span class="hcp3">Image</span>], [<span class="hcp3">Couleur</span>], [<span class="hcp3">Code_page</span>], [<span class="hcp3">BitmapPath</span>])</p>
+<p><span class="hcp2">Long XmeCalendarNewResourceExt</span> (<span class="hcp3">Identifiant</span>, <span class="hcp3">Type_Ressource</span>, <span class="hcp3">Nom</span>, <span class="hcp3">Libellé</span>, [<span class="hcp3">Image</span>], [<span class="hcp3">Couleur</span>], [<span class="hcp3">Code_page</span>], [<span class="hcp3">BitmapPath</span>], [<span class="hcp3">TextColor</span>])</p>
+<p>&#160;</p>
+<p><span class="hcp2">Paramètres</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 12.445%;">
+<col style="width: 87.555%;">
+<tr class="hcp4">
+<td style="border: Solid 1px #000000;width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">Identifiant</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Enregistrement identifiant l'agenda rendu par la fonction XmeCalendarGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">Type_Ressource</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Numéro du type de la ressource à créer (type pré-défini ou nouveau type : Cf. rubriques <a href="Types_de_ressource_d_un_agenda.htm">Types de ressource d'un agenda</a> et <a href="XmeCalendarNewResourceType.htm">XmeCalendarNewResourceType</a>).<br>
+<br>
+Les types pré-définis portent les numéros :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>CAL_MANPOWER : type <span class="hcp2">Personne</span>.</p>
+</li>
+<li class="p">
+<p>CAL_MATERIAL : type <span class="hcp2">Matériel</span>.</p>
+</li>
+<li class="p">
+<p>CAL_LOCATION : type <span class="hcp2">Lieu</span>.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">Nom</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Nom de la ressource (32 caractères maximum).<br>
+Ce nom doit être unique et servira d'identifiant pour la fonction <a href="XmeCalendarAddAssociateResource.htm">XmeCalendarAddAssociateResource</a>.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">Libellé</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Libellé de la ressource affiché (32 caractères maximum).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">Image</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Nom d'une image dans la feuille de styles ou nom d'un fichier image (.bmp, .png, ...).<br>
+Paramètre facultatif (32 caractères maximum).<br>
+Cette image sera utilisée pour représenter la ressource au niveau du rendez-vous.<br>
+Par défaut, l'image utilisée sera celle définie au niveau du type de ressource (le cas échéant).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">Couleur</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Nom d'une couleur dans la feuille de styles.<br>
+Paramètre facultatif (32 caractères maximum).<br>
+Cette couleur sera utilisée comme couleur des caractères du libellé de la ressource au niveau du rendez-vous.<br>
+Par défaut, la couleur utilisée sera celle définie au niveau du type de ressource (le cas échéant).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5"><span class="hcp3">Code_page<br>
+&#160;</span></p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Code page du libellé (jeu de caractères à utiliser pour afficher le libellé en langue étrangère).<br>
+Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">BitmapPath</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Chemin Harmony contenant l'emplacement du fichier image (facultatif).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">TextColor</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Couleur de la police du texte des libellés des ressources (nom d’une couleur de la feuille de styles).<br>
+Permet de changer cette couleur, en particulier lorsque la couleur standard contraste peu avec celle des entêtes en vue groupée.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp2">Valeur rendue par la fonction</span> :</p>
+<p>-1 : ticket invalide.</p>
+<p>Autre : Adresse de la nouvelle ressource dans la liste des ressources.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Description de la fonction</span> :</p>
+<p>La fonction XmeCalendarNewResource ajoute une ressource à la liste des <a href="Ressources_d_un_agenda.htm">ressources de l'agenda</a>.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Exemple</span> :<br>
+&#160;</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResourceType (<font class="hcp8">Id</font><span class="hcp3">Cal</span>,4,"PARTICIPANT","Participant à une réunion",,,"BLEU")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResourceType (<font class="hcp8">Id</font><span class="hcp3">Cal</span>,5,"SALLE","Salle de réunion",FALSE,,"VERT")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">&#160;</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResource (<font class="hcp8">Id</font><span class="hcp3">Cal</span>,4,"NOM1","Pierre Dupont")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResource (<font class="hcp8">Id</font><span class="hcp3">Cal</span>,4,"NOM2","Paul Durand")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResource (<font class="hcp8">Id</font><span class="hcp3">Cal</span>,5,"SALLE1","Salle de réunion Un","IMAGE_SALLE1")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResource (<font class="hcp8">Id</font><span class="hcp3">Cal</span>,5,"SALLE2","Salle de réunion Deux","IMAGE_SALLE2","ROUGE")</p>
+<p>&#160;</p>
+</body>
+</html>

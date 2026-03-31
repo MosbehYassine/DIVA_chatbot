@@ -1,0 +1,65 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Introduction</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:Arial, sans-serif;
+font-size:10pt; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-family:Arial, sans-serif;
+font-size:10pt; }
+p.hcp4 { font-family:Arial, sans-serif;
+font-weight:bold;
+font-size:11pt; }
+span.hcp5 { font-family:Arial, sans-serif;
+font-size:10pt;
+font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Introduction</h2>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">RecordSQL est l'objet qui permet d'accéder à la base de données. Il comporte deux aspects :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp1">C’est une <span class="hcp2">structure de données</span> utilisable dans les programmes Diva et les masques, de la même manière que les Record.</p>
+</li>
+<li class="p">
+<p class="hcp1">Il définit des <span class="hcp2">méthodes d’accès</span> à la base de données.<br>
+Par exemple, Facture.Select() où Facture représente une instance du RecordSQL de la facture.</p>
+</li>
+</ul>
+<p class="hcp1">Les RecordSQL sont décrits dans des <a href="Description_du_langage.htm"><span class="hcp2">dictionnaires</span> de RecordSQL</a>. Un dictionnaire est un fichier source d’extension <span class="hcp2">.dhsq</span>, compilé dans un fichier objet d’extension <span class="hcp2">.dhoq</span>.</p>
+<p class="hcp1"><span class="hcp3"><br>
+&#160;</span></p>
+<p class="hcp4">Opérations réalisées par un RecordSQL</p>
+<p class="hcp1"><span class="hcp3">Le RecordSQL permet de</span> <span class="hcp5">lire</span> <span class="hcp3">les données (Select), de les</span> <span class="hcp5">modifier</span> <span class="hcp3">(Update), de</span> <span class="hcp5">créer</span> <span class="hcp3">(Insert) ou de</span> <span class="hcp5">supprimer</span> <span class="hcp3">(Delete) des lignes.</span></p>
+<p class="hcp1">&#160;</p>
+<p class="hcp4">Format du source d'un dictionnaire de RecordSQL</p>
+<p class="hcp1">Le source du dictionnaire est écrit dans un langage spécifique à <span class="hcp2">balises</span>. Il se saisit dans l'éditeur de textes de Xwin.<br>
+<br>
+Il regroupe un certain nombre de RecordSQL, chacun d'eux ayant la structure générale d’un ordre <span class="hcp2">Select</span> du langage SQL. On y retrouve les balises &lt;Select&gt;, &lt;From&gt;, &lt;Join&gt;, &lt;Where&gt;, &lt;GroupBy&gt;, &lt;Having&gt;, &lt;Orderby&gt;.<br>
+<br>
+La balise &lt;Select&gt; contient la liste des champs (ou des expressions) de la clause Select du langage SQL.<br>
+Les balises &lt;From&gt; et &lt;Join&gt; font référence à la description des tables dans les <span class="hcp2">dictionnaires de données d’Harmony</span>.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp4">Utilité des RecordSQL</p>
+<p class="hcp1">L'objet RecordSQL est une couche d'abstraction qui assure <span class="hcp2">l’indépendance</span> entre d'une part les programmes et les masques et d'autre part le schéma des tables dans la base de données. Ainsi, par exemple, si le champ Facture.Adresse du RecordSQL Facture représente l’adresse de livraison, le développeur qui l'utilise ignore de quelle table ce champ est issu et il peut donc restructurer les tables sans remettre en cause les développements existants.</p>
+<p class="hcp1">De plus, un RecordSQL est plus riche qu’une simple requête du langage SQL. Il peut contenir <span class="hcp2">plusieurs clauses Where, Having ou Order by</span>. La requête est à géométrie variable, autorisant le développeur à combiner à loisir ces différentes clauses.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp4"><span style="font-family: Arial, sans-serif; font-size: 11pt; font-weight: bold;">Compatibilité</span></p>
+<p class="hcp1">Pour des raisons de compatibilité avec les anciens développements, une table d’un RecordSQL peut être liée (<span class="hcp2">BIND</span>) avec une instance publique du Record de la table (pour plus de détails, consultez la rubrique <a href="Bind.htm">Bind</a>).</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp4">Surcharge des RecordSQL</p>
+<p class="hcp1">Les RecordSql peuvent être <a href="Surcharge_des_RecordSql.htm">surchargés</a>, à un ou plusieurs niveaux. Le mécanisme de la surcharge permet d'ajouter des colonnes à la requête, des tables jointes, des filtres, etc.</p>
+<p class="hcp1">&#160;</p>
+</body>
+</html>

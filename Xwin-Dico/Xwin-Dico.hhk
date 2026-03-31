@@ -1,0 +1,538 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ascendants">
+    <param name="Name" value="Ascendants / descendants">
+    <param name="Local" value="Xwin_Dico/Ascendants_descendants.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ascendants / descendants">
+    <param name="Name" value="Ascendants / descendants">
+    <param name="Local" value="Xwin_Dico/Ascendants_descendants.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Champs d'une autre table">
+    <param name="Name" value="Champs d'une autre table">
+    <param name="Local" value="Xwin_Dico/Champs_d_une_autre_table.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Champs et sous-champs">
+    <param name="Name" value="Champs et sous-champs">
+    <param name="Local" value="Xwin_Dico/Champs_et_sous_champs.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Champs virtuels">
+    <param name="Name" value="Champs virtuels">
+    <param name="Local" value="Xwin_Dico/Champs_virtuels.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Codification standard des noms de traitement">
+    <param name="Name" value="Codification standard des noms de traitement">
+    <param name="Local" value="Xwin_Dico/Codification_standard_des_noms_de_traitement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Décimales variables">
+    <param name="Name" value="Décimales variables">
+    <param name="Local" value="Xwin_Dico/D_cimales_variables.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Définition d'un nom de traitement">
+    <param name="Name" value="Définition d'un nom de traitement">
+    <param name="Local" value="Xwin_Dico/D&eacute;finition_d_un_nom_de_traitement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Descendants">
+    <param name="Name" value="Ascendants / descendants">
+    <param name="Local" value="Xwin_Dico/Ascendants_descendants.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Description générale des traitements du dictionnaire">
+    <param name="Name" value="Description générale des traitements du dictionnaire">
+    <param name="Local" value="Xwin_Dico/Description_g&eacute;n&eacute;rale_des_traitements_du_dictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Dictionnaire">
+    <param name="Name" value="Affichage du contenu d'un fichier">
+    <param name="Local" value="Xwin_Dico/Affichage_du_contenu_d_un_fichier.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Affichage du contenu d'un fichier">
+      <param name="Name" value="Affichage du contenu d'un fichier">
+      <param name="Local" value="Xwin_Dico/Affichage_du_contenu_d_un_fichier.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Ascendants / descendants">
+      <param name="Name" value="Ascendants / descendants">
+      <param name="Local" value="Xwin_Dico/Ascendants_descendants.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Champs">
+      <param name="Name" value="Champs">
+      <param name="Local" value="Xwin_Dico/Champs.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Champs dun index">
+      <param name="Name" value="Champs d'un index">
+      <param name="Local" value="Xwin_Dico/Champs_d_un_index.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Champs dune autre table">
+      <param name="Name" value="Champs d'une autre table">
+      <param name="Local" value="Xwin_Dico/Champs_d_une_autre_table.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Champs et sous-champs">
+      <param name="Name" value="Champs et sous-champs">
+      <param name="Local" value="Xwin_Dico/Champs_et_sous_champs.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Champs orphelins">
+      <param name="Name" value="Fichiers spéciaux">
+      <param name="Local" value="Xwin_Dico/Fichiers_sp_ciaux.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Champs spéciaux">
+      <param name="Name" value="Champs spéciaux">
+      <param name="Local" value="Xwin_Dico/Champs_sp_ciaux.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Coller">
+      <param name="Name" value="Couper / Copier / Coller">
+      <param name="Local" value="Xwin_Dico/Couper_Copier_Coller.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Copier">
+      <param name="Name" value="Couper / Copier / Coller">
+      <param name="Local" value="Xwin_Dico/Couper_Copier_Coller.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Couper">
+      <param name="Name" value="Couper / Copier / Coller">
+      <param name="Local" value="Xwin_Dico/Couper_Copier_Coller.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Création/modification des fichiers sur le disque">
+      <param name="Name" value="Création / Modification des fichiers sur le disque">
+      <param name="Local" value="Xwin_Dico/Cr_ation_Modification_des_fichiers_sur_le_disque.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Décimales variables">
+      <param name="Name" value="Décimales variables">
+      <param name="Local" value="Xwin_Dico/D_cimales_variables.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Export dans un fichier txt">
+      <param name="Name" value="Export dans un fichier txt">
+      <param name="Local" value="Xwin_Dico/Export_dans_un_fichier_txt.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Export HTML">
+      <param name="Name" value="Impression du dictionnaire">
+      <param name="Local" value="Xwin_Dico/Impression_du_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fichier - Tables - Champs">
+      <param name="Name" value="Fichier - Tables - Champs">
+      <param name="Local" value="Xwin_Dico/Fichier_Tables_Champs.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fichiers">
+      <param name="Name" value="Fichiers">
+      <param name="Local" value="Xwin_Dico/Fichiers.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fichiers du dictionnaire">
+      <param name="Name" value="Fichiers du dictionnaire">
+      <param name="Local" value="Xwin_Dico/Fichiers_du_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fichiers spéciaux">
+      <param name="Name" value="Fichiers spéciaux">
+      <param name="Local" value="Xwin_Dico/Fichiers_sp_ciaux.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Filler">
+      <param name="Name" value="Filler">
+      <param name="Local" value="Xwin_Dico/Filler.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fonctions dédition">
+      <param name="Name" value="Fonctions d'édition">
+      <param name="Local" value="Xwin_Dico/Fonctions_d__dition.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Geler le dictionnaire">
+      <param name="Name" value="Geler le dictionnaire">
+      <param name="Local" value="Xwin_Dico/Geler_le_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Hiérarchie">
+      <param name="Name" value="Hiérarchie">
+      <param name="Local" value="Xwin_Dico/Hi_rarchie.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Impression">
+      <param name="Name" value="Impression du dictionnaire">
+      <param name="Local" value="Xwin_Dico/Impression_du_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Index">
+      <param name="Name" value="Index">
+      <param name="Local" value="Xwin_Dico/Index.htm">
+      <param name="Name" value="Les index">
+      <param name="Local" value="Xwin_Dico/Les_index.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Insertion dune table">
+      <param name="Name" value="Insertion d'une table">
+      <param name="Local" value="Xwin_Dico/Insertion_d_une_table.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Lécran de léditeur de dictionnaire">
+      <param name="Name" value="L'écran de l'éditeur de dictionnaire">
+      <param name="Local" value="Xwin_Dico/L__cran_de_l__diteur_de_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Lecture seule">
+      <param name="Name" value="Lecture seule">
+      <param name="Local" value="Xwin_Dico/Lecture_seule.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Menu - barre d'outils - raccourcis clavier">
+      <param name="Name" value="Raccourcis clavier">
+      <param name="Local" value="Xwin_Dico/Raccourcis_clavier.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Moulinettes de conversion des fichiers">
+      <param name="Name" value="Moulinettes de conversion des fichiers">
+      <param name="Local" value="Xwin_Dico/Moulinettes_de_conversion_des_fichiers.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Natures">
+      <param name="Name" value="Natures">
+      <param name="Local" value="Xwin_Dico/Natures.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Naviguer">
+      <param name="Name" value="Naviguer dans le dictionnaire">
+      <param name="Local" value="Xwin_Dico/Naviguer_dans_le_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Présentation">
+      <param name="Name" value="Présentation">
+      <param name="Local" value="Xwin_Dico/Pr_sentation.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Protections du dictionnaire">
+      <param name="Name" value="Protections du dictionnaire">
+      <param name="Local" value="Xwin_Dico/Protections_du_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Rechercher">
+      <param name="Name" value="Rechercher">
+      <param name="Local" value="Xwin_Dico/Rechercher.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Saisie des champs en mode liste">
+      <param name="Name" value="Saisie des champs en mode liste">
+      <param name="Local" value="Xwin_Dico/Saisie_des_champs_en_mode_liste.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Surcharge">
+      <param name="Name" value="Surcharge de dictionnaire">
+      <param name="Local" value="Xwin_Dico/Surcharge_de_dictionnaire.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Tables">
+      <param name="Name" value="Tables">
+      <param name="Local" value="Xwin_Dico/Tables.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Tables mémoires">
+      <param name="Name" value="Fichiers spéciaux">
+      <param name="Local" value="Xwin_Dico/Fichiers_sp_ciaux.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Types dindex SQL">
+      <param name="Name" value="Types d'index SQL">
+      <param name="Local" value="Xwin_Dico/Types_d_index_SQL.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Union">
+      <param name="Name" value="Union">
+      <param name="Local" value="Xwin_Dico/Union.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Zone packée">
+      <param name="Name" value="Zone packée">
+      <param name="Local" value="Xwin_Dico/Zone_pack_e.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Edition des traitements du dictionnaire">
+    <param name="Name" value="Edition des traitements du dictionnaire">
+    <param name="Local" value="Xwin_Dico/Edition_des_traitements_du_dictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fichier - Tables - Champs">
+    <param name="Name" value="Fichier - Tables - Champs">
+    <param name="Local" value="Xwin_Dico/Fichier_Tables_Champs.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Filler">
+    <param name="Name" value="Filler">
+    <param name="Local" value="Xwin_Dico/Filler.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fusion de dictionnaires">
+    <param name="Name" value="Fusion de dictionnaires">
+    <param name="Local" value="Xwin_Dico/Fusion_de_dictionnaires.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fusion des traitements">
+    <param name="Name" value="Fusion des traitements">
+    <param name="Local" value="Xwin_Dico/Fusion_des_traitements.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Geler le dictionnaire">
+    <param name="Name" value="Geler le dictionnaire">
+    <param name="Local" value="Xwin_Dico/Geler_le_dictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Lecture seule">
+    <param name="Name" value="Lecture seule">
+    <param name="Local" value="Xwin_Dico/Lecture_seule.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Liens">
+    <param name="Name" value="Créer des liens">
+    <param name="Local" value="Xwin_Dico/Cr_er_des_liens.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="créer">
+      <param name="Name" value="Créer des liens">
+      <param name="Local" value="Xwin_Dico/Cr_er_des_liens.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="dictionnaires connexes">
+      <param name="Name" value="Liens entre plusieurs dictionnaires">
+      <param name="Local" value="Xwin_Dico/Liens_entre_plusieurs_dictionnaires.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="écran de l éditeur">
+      <param name="Name" value="L'écran de l'éditeur de liens">
+      <param name="Local" value="Xwin_Dico/L__cran_de_l__diteur_de_liens.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="options">
+      <param name="Name" value="Options de l éditeur de liens">
+      <param name="Local" value="Xwin_Dico/Options_de_l__diteur_de_liens.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="présentation">
+      <param name="Name" value="Les liens">
+      <param name="Local" value="Xwin_Dico/Les_liens.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="schémas">
+      <param name="Name" value="Les schémas">
+      <param name="Local" value="Xwin_Dico/Les_sch_mas.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="surcharge">
+      <param name="Name" value="Surcharge des liens">
+      <param name="Local" value="Xwin_Dico/Surcharge_des_liens.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menu - barre d'outils - raccourcis clavier">
+    <param name="Name" value="Raccourcis clavier">
+    <param name="Local" value="Xwin_Dico/Raccourcis_clavier.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Editeur de dictionnaires">
+      <param name="Name" value="Raccourcis clavier">
+      <param name="Local" value="Xwin_Dico/Raccourcis_clavier.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="moulinettes">
+    <param name="Name" value="Création des moulinettes">
+    <param name="Local" value="Xwin_Dico/Cr_ation_des_moulinettes.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="création">
+      <param name="Name" value="Création des moulinettes">
+      <param name="Local" value="Xwin_Dico/Cr_ation_des_moulinettes.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="exécution">
+      <param name="Name" value="Exécution des moulinettes">
+      <param name="Local" value="Xwin_Dico/Ex_cution_des_moulinettes.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="principe">
+      <param name="Name" value="Principe">
+      <param name="Local" value="Xwin_Dico/Principe.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="valeur initiale">
+      <param name="Name" value="Valeur initiale des nouveaux champs">
+      <param name="Local" value="Xwin_Dico/Valeur_initiale_des_nouveaux_champs.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Moulinettes de conversion des fichiers">
+    <param name="Name" value="Moulinettes de conversion des fichiers">
+    <param name="Local" value="Xwin_Dico/Moulinettes_de_conversion_des_fichiers.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Natures des champs">
+    <param name="Name" value="Natures">
+    <param name="Local" value="Xwin_Dico/Natures.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Naviguer dans le dictionnaire">
+    <param name="Name" value="Naviguer dans le dictionnaire">
+    <param name="Local" value="Xwin_Dico/Naviguer_dans_le_dictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Partage du dictionnaire">
+    <param name="Name" value="Travail en groupe">
+    <param name="Local" value="Xwin_Dico/Travail_en_groupe.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Pour rechercher dans un dictionnaire">
+    <param name="Name" value="Rechercher">
+    <param name="Local" value="Xwin_Dico/Rechercher.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Procédures de traitement Public et Private">
+    <param name="Name" value="Procédures de traitement Public et Private">
+    <param name="Local" value="Xwin_Dico/Proc&eacute;dures_de_traitement_Public_et_Private.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Propriétés des objets">
+    <param name="Name" value="Propriétés">
+    <param name="Local" value="Xwin_Dico/Propri&eacute;t&eacute;sDico.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Propriétés globales / locales">
+    <param name="Name" value="Propriétés globales / locales">
+    <param name="Local" value="Xwin_Dico/Propri&eacute;t&eacute;s_globales___locales.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Protections du dictionnaire">
+    <param name="Name" value="Protections du dictionnaire">
+    <param name="Local" value="Xwin_Dico/Protections_du_dictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Rechercher dans un dictionnaire">
+    <param name="Name" value="Rechercher">
+    <param name="Local" value="Xwin_Dico/Rechercher.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie des propriétés des objets">
+    <param name="Name" value="Saisie des propriétés des objets">
+    <param name="Local" value="Xwin_Dico/Saisie_des_propri&eacute;t&eacute;s_des_objets.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Surcharge de dictionnaire">
+    <param name="Name" value="Surcharge de dictionnaire">
+    <param name="Local" value="Xwin_Dico/Surcharge_de_dictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Surcharge des traitements du dictionnaire">
+    <param name="Name" value="Définition d'un nom de traitement">
+    <param name="Local" value="Xwin_Dico/D&eacute;finition_d_un_nom_de_traitement.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement Champ Après saisie">
+    <param name="Name" value="Traitement Champ Après saisie">
+    <param name="Local" value="Xwin_Dico/Traitement_Champ_Apr&egrave;s_saisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement Champ Contrôle">
+    <param name="Name" value="Traitement Champ Contrôle">
+    <param name="Local" value="Xwin_Dico/Traitement_Champ_Contr&ocirc;le.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement Champ Modèle">
+    <param name="Name" value="Traitement Champ Modèle">
+    <param name="Local" value="Xwin_Dico/Traitement_Champ_Mod&egrave;le.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement Champ virtuel">
+    <param name="Name" value="Traitement Champ virtuel">
+    <param name="Local" value="Xwin_Dico/Traitement_Champ_virtuel.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement Table Après Read">
+    <param name="Name" value="Traitement Table Après Read">
+    <param name="Local" value="Xwin_Dico/Traitement_Table_Apr&egrave;s_Read.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement Table Avant Delete">
+    <param name="Name" value="Traitement Table Avant Delete">
+    <param name="Local" value="Xwin_Dico/Traitement_Table_Avant_Delete.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement Table Avant Rewrite">
+    <param name="Name" value="Traitement Table Avant Rewrite">
+    <param name="Local" value="Xwin_Dico/Traitement_Table_Avant_Rewrite.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitement Table Avant Write">
+    <param name="Name" value="Traitement Table Avant Write">
+    <param name="Local" value="Xwin_Dico/Traitement_Table_Avant_Write.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitements dans le dictionnaire">
+    <param name="Name" value="Traitements dans le dictionnaire">
+    <param name="Local" value="Xwin_Dico/Traitements_dans_le_dictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traitements du dictionnaire">
+    <param name="Name" value="Description générale des traitements du dictionnaire">
+    <param name="Local" value="Xwin_Dico/Description_g&eacute;n&eacute;rale_des_traitements_du_dictionnaire.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Travail en groupe sur un dictionnaire">
+    <param name="Name" value="Travail en groupe">
+    <param name="Local" value="Xwin_Dico/Travail_en_groupe.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Types de champs">
+    <param name="Name" value="Natures">
+    <param name="Local" value="Xwin_Dico/Natures.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Types dindex SQL">
+    <param name="Name" value="Types d'index SQL">
+    <param name="Local" value="Xwin_Dico/Types_d_index_SQL.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Union">
+    <param name="Name" value="Union">
+    <param name="Local" value="Xwin_Dico/Union.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="virtuel">
+    <param name="Name" value="Champs virtuels">
+    <param name="Local" value="Xwin_Dico/Champs_virtuels.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Zone packée">
+    <param name="Name" value="Zone packée">
+    <param name="Local" value="Xwin_Dico/Zone_pack_e.htm">
+  </object>
+</ul>
+</html>

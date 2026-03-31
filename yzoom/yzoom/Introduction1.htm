@@ -1,0 +1,74 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Présentation du zoom SQL</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Présentation du Zoom SQL</h2>
+<p>&#160;</p>
+<p>Le <span class="hcp1">Zoom</span> SQL est un outil <span class="hcp1">général</span> permettant la consultation et la mise à jour d'une table. Il gère notamment les opérations de base s'appliquant à une ou plusieurs fiches&#160;: consultation, création, modification, suppression, duplication, impression ou extraction, sélection, modification en série.<br>
+&#160;</p>
+<p>L'utilisation de zooms dans une application présente plusieurs avantages. Elle simplifie considérablement le travail du développeur, offre à l'utilisateur l'accès simultané à un maximum d'informations et harmonise la gestion des tables de l'application.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le zoom propose <span class="hcp1">deux</span> <font class="hcp2">manières</font> d'afficher les informations, <span class="hcp1">selon le choix du concepteur</span>&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Une première manière, qui sépare <span class="hcp1">mode liste</span> et <span class="hcp1">mode fiche</span> :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Le mode fiche présente le détail de la fiche en cours.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le mode liste affiche une liste de fiches dans un objet tableau.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Une deuxième manière, qui <span class="hcp1">réunit</span> mode liste et mode fiche&#160;sur le <span class="hcp1">même écran</span>&#160;(mode mixte). Le mode fiche est alors synchronisé sur l’élément courant de la liste.</p>
+</li>
+</ul>
+<p class="Body-Text">De nombreuses opérations du zoom peuvent être réalisées soit en mode fiche soit en mode liste.</p>
+<p class="Body-Text">&#160;</p>
+<p>Les opérations du zoom sont subordonnées aux <font class="hcp2">privilèges</font> de l'utilisateur. Ces privilèges sont hiérarchisés, allant de la simple consultation jusqu'au droit à la suppression :</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Consultation.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Consultation et modification.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Consultation, modification et création.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Consultation, modification, création et suppression.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>La conception d'un zoom est simple et rapide : il suffit de saisir les masques d'écran, de programmer quelques séquences de traitement Diva et d'écrire la requête SQL donnant accès aux données voulues de la table.</p>
+<p>Sa mise en œuvre est tout aussi facile : le zoom peut être appelé indifféremment depuis un menu de type Divalto (sans autre programmation) ou depuis un programme Diva (par l'instruction ZoomSql).</p>
+<p>&#160;</p>
+<p><font class="hcp2">Remarque</font></p>
+<p>Pour une description complète de l'interface utilisateur du Zoom, référez-vous au <font class="hcp2">guide d'utilisation du zoom</font>. Ce guide est au format Web et est accessible, depuis un poste client léger, en appelant l'aide du menu Divalto.</p>
+<p>&#160;</p>
+</body>
+</html>

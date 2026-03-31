@@ -1,0 +1,123 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple de programmation des fonctions WebRequest</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Exemple de programmation des fonctions WebRequest <a href="Liste_des_fonctions_WebRequest.htm">Famille</a> <a href="Fonctions_WebRequest.htm">Thème</a></h1>
+<p class="Source">&#160;</p>
+<p class="Source">define mp = "monmotdepasse"</p>
+<p class="Source">&#160;</p>
+<p class="Source">procedure TraiterErreurJson(ticket,st)</p>
+<p class="Source">;* affichage d'une erreur sur les fonctions JSON</p>
+<p class="Source">1 st L</p>
+<p class="Source">1 merr S</p>
+<p class="Source">1 mexcept S</p>
+<p class="Source">1 ticket L</p>
+<p class="Source">beginp</p>
+<p class="Source" style="margin-left: 48px;">&#160;&#160;&#160;switch st</p>
+<p class="Source" style="margin-left: 48px;">&#160;&#160;&#160;case 1</p>
+<p class="Source" style="margin-left: 48px;">&#160;&#160;&#160;&#160;&#160;&#160;MessageBox("ticket inconnu"," ")</p>
+<p class="Source" style="margin-left: 48px;">&#160;&#160;&#160;case 2</p>
+<p class="Source" style="margin-left: 48px;">&#160;&#160;&#160;&#160;&#160;&#160;JsonGetError(ticket,merr,mexcept)</p>
+<p class="Source" style="margin-left: 48px;">&#160;&#160;&#160;&#160;&#160;&#160;MessageBox(mexcept,merr)</p>
+<p class="Source" style="margin-left: 48px;">&#160;&#160;&#160;case 3</p>
+<p class="Source" style="margin-left: 48px;">&#160;&#160;&#160;&#160;&#160;&#160;MessageBox("Erreur de syntaxe dans l'expressions","")</p>
+<p class="Source" style="margin-left: 48px;">&#160;&#160;&#160;endswitch</p>
+<p class="Source">endp</p>
+<p class="Source">&#160;</p>
+<p class="Source">procedure TraiterErreurRequete(ticket,st)</p>
+<p class="Source">;* affichage d'une erreur sur les fonctions WebRequest</p>
+<p class="Source">1 st L</p>
+<p class="Source">1 merr S</p>
+<p class="Source">1 mexcept S</p>
+<p class="Source">1 err L</p>
+<p class="Source">1 ticket L</p>
+<p class="Source">beginp</p>
+<p class="Source">&#160;&#160;&#160;switch st</p>
+<p class="Source">&#160;&#160;&#160;case 1</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;MessageBox("ticket inconnu"," ")</p>
+<p class="Source">&#160;&#160;&#160;case 2</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;WebRequestGetError(ticket,merr,mexcept,err)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;MessageBox(mexcept,merr &amp; " Erreur web=" &amp; tostring(err))</p>
+<p class="Source">&#160;&#160;&#160;endswitch</p>
+<p class="Source">endp</p>
+<p class="Source">&#160;</p>
+<p class="Source">main</p>
+<p class="Source">1 ticketJson L</p>
+<p class="Source">1 st L</p>
+<p class="Source">1 ticketRequete L</p>
+<p class="Source">1 retour S</p>
+<p class="Source">1 nbelts L</p>
+<p class="Source">1 valeur S</p>
+<p class="Source">1 statusCode L</p>
+<p class="Source">1 i L</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;; alloction de la requête</p>
+<p class="Source">&#160;&#160;&#160;ticketRequete = WebRequestNew()</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;; garnissage des paramètres</p>
+<p class="Source">&#160;&#160;&#160;st = WebRequestSetUrl(ticketRequete,"https://jsonplaceholder.typicode.com/posts")</p>
+<p class="Source">&#160;&#160;&#160;TraiterErreurRequete(ticketRequete,st)</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="Source"><span style="margin-left: 88px;">&#160;&#160;&#160;; uniquement si on passe par un proxy</span></p>
+<p class="Source">&#160;&#160;&#160;st = WebRequestSetProxy(ticketRequete,"http://10.10.10.123:8080","DOMAINE","UTILISATEUR",mp)</p>
+<p class="Source">&#160;&#160;&#160;TraiterErreurRequete(ticketRequete,st)</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;st = WebRequestSetMethod(ticketRequete,"GET",-1)</p>
+<p class="Source">&#160;&#160;&#160;TraiterErreurRequete(ticketRequete,st)</p>
+<p class="Source">&#160;&#160;&#160;st = WebRequestSetHeader(ticketRequete,"Content-Type","application/json");</p>
+<p class="Source">&#160;&#160;&#160;TraiterErreurRequete(ticketRequete,st)</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;; exécution de la requête</p>
+<p class="Source">&#160;&#160;&#160;st = WebRequestSend(ticketRequete , "" , retour, statusCode)</p>
+<p class="Source">&#160;&#160;&#160;TraiterErreurRequete(ticketRequete,st)</p>
+<p class="Source">&#160;&#160;&#160;; libération de la requête</p>
+<p class="Source">&#160;&#160;&#160;st = WebRequestClose(ticketRequete,"close")</p>
+<p class="Source">&#160;&#160;&#160;TraiterErreurRequete(ticketRequete,st)</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;;* traitement de la réponse</p>
+<p class="Source">&#160;&#160;&#160;; allocation d'un objet json</p>
+<p class="Source">&#160;&#160;&#160;ticketJson = JsonOpen(1000)</p>
+<p class="Source">&#160;&#160;&#160;; création de l'objet Json depuis la chaîne reçue</p>
+<p class="Source">&#160;&#160;&#160;st = JsonParse(ticketJson,retour);</p>
+<p class="Source">&#160;&#160;&#160;TraiterErreurJson(ticketJson,st)</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-left: 88px;">;[</p>
+<p class="Source" style="margin-left: 88px;">; &#160;{</p>
+<p class="Source" style="margin-left: 88px;">; &#160;&#160;&#160;"userId": 1,</p>
+<p class="Source" style="margin-left: 88px;">; &#160;&#160;&#160;"id": 1,</p>
+<p class="Source" style="margin-left: 88px;">; &#160;&#160;&#160;"title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",</p>
+<p class="Source" style="margin-left: 88px;">; &#160;&#160;&#160;"body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"</p>
+<p class="Source" style="margin-left: 88px;">; &#160;},</p>
+<p class="Source" style="margin-left: 88px;">; &#160;{</p>
+<p class="Source" style="margin-left: 88px;">; &#160;&#160;&#160;"userId": 1,</p>
+<p class="Source" style="margin-left: 88px;">; &#160;&#160;&#160;"id": 2,</p>
+<p class="Source" style="margin-left: 88px;">; &#160;&#160;&#160;"title": "qui est esse",</p>
+<p class="Source" style="margin-left: 88px;">; &#160;&#160;&#160;"body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"</p>
+<p class="Source" style="margin-left: 88px;">; &#160;},</p>
+<p class="Source" style="margin-left: 88px;">;]</p>
+<p class="Source">&#160;&#160;&#160;; recupération du nombre d'éléments du tableau</p>
+<p class="Source">&#160;&#160;&#160;st= JsonGetLength(ticketJson,"",nbelts) &#160;&#160;; le json commence directement par [</p>
+<p class="Source">&#160;&#160;&#160;TraiterErreurJson(ticketJson,st)</p>
+<p class="Source">&#160;&#160;&#160;; recupération du titre du premier élément</p>
+<p class="Source">&#160;&#160;&#160;st= JsonGetValue(ticketJson,"[1].title",valeur)</p>
+<p class="Source">&#160;&#160;&#160;TraiterErreurJson(ticketJson,st)</p>
+<p class="Source">&#160;&#160;&#160;; balayage de tous les éléments</p>
+<p class="Source">&#160;&#160;&#160;for i = 1 to nbelts</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;st= JsonGetValue(ticketJson,"[" &amp; tostring(i) &#160;&amp; "].title",valeur)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;TraiterErreurJson(ticketJson,st)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;st= JsonGetValue(ticketJson,"[" &amp; tostring(i) &#160;&amp; "].body",valeur)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;TraiterErreurJson(ticketJson,st)</p>
+<p class="Source">&#160;&#160;&#160;next</p>
+<p class="Source">&#160;&#160;&#160;; libération de l'objet JSON</p>
+<p class="Source">&#160;&#160;&#160;JsonClose(ticketJson)</p>
+<p class="Source">&#160;&#160;&#160;ProgramExit</p>
+</body>
+</html>

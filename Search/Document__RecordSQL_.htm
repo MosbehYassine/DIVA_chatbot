@@ -1,0 +1,47 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Document &lt;RecordSQL&gt;</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+span.hcp4 { font-weight:bold;
+font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Document &lt;RecordSQL&gt;</h1>
+<p>Cette section permet de définir les champs de la base ERP que l’on souhaite ajouter au document de la base Search.</p>
+<p>C’est une section <span class="hcp1">complexe</span> qui permet de définir une <span class="hcp1">arborescence</span> de RecordSQL.</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">La première balise <span style="font-style: italic;">&lt;RecordSQL&gt;</span> <span class="hcp3">définit le RecordSQL</span> <span class="hcp3">par lequel se fera l'accès à la base de l'ERP. Chaque ligne renvoyée par ce RecordSQL génère une instance d'un document dans la base Search. Nous l'appellerons le</span> <span class="hcp1">"RecordSQL de base".</span></p>
+<p class="hcp2">&#160;</p>
+<p>Les sous-balises <span class="hcp4">&lt;Field&gt;</span> définissent les fields à ajouter dans la base Search en provenance de la base ERP.</p>
+<p><img src="image7.gif" style="border: none;" alt="" width="837" height="411" border="0"></p>
+<p>Les balises <span class="hcp4">&lt;RecordSQL&gt;</span> peuvent être <span class="hcp1">imbriquées</span>.</p>
+<p>Le premier niveau correspond au <span class="hcp1">RecordSQL de base</span> d’accès à l’ERP.</p>
+<p>Pour chaque ligne lue de ce RecordSQL, le moteur lit toutes les lignes des RecordSQL du niveau inférieur (en respectant la condition de jointure définie dans le RecordSQL du niveau inférieur qui lie les deux RecordSQL).</p>
+<p>&#160;</p>
+<p>Nous appellerons <span class="hcp1">RecordSQL secondaires</span> les RecordSQL de niveau inférieur.</p>
+<p>&#160;</p>
+<p class="hcp2">Remarque</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Il n’y a pas de limite au nombre de niveaux.</p>
+</li>
+<li class="p">
+<p>Il peut y avoir plusieurs RecordSQL au même niveau.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

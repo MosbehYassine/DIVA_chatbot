@@ -1,0 +1,56 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZoomValidation</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt; }
+font.hcp2 { font-size:10pt;
+font-weight:normal; }
+font.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ZoomValidation &#160;&#160;&#160;&#160;&#160;<font size="2" class="hcp1">&#160;</font><a href="Tableaur_capitulatifdess_quences.htm"><font size="2" class="hcp2">Famille</font></a> <font size="2" class="hcp1">&#160;</font><a href="ModuleDivaduZoom.htm"><font size="2" class="hcp2">Thème</font></a></h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Objet&#160;:</font> Validation du zoom.</p>
+<p class="Body-Text"><font class="hcp3">Procédure&#160;:</font> Facultative.</p>
+<p class="Body-Text"><font class="hcp3">Exécutée :</font> A la sortie du zoom après une validation.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La procédure ZoomValidation est appelée lorsque l'utilisateur quitte le zoom par la touche F12 (ou le choix du menu "Renvoyer les données") ou lorsque la procédure ZoomDebut a positionné Zoom.Ok à 'V'.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Elle permet de renvoyer une valeur à l'appelant au retour du zoom. La valeur de retour doit être placée dans la donnée Zoom.ValRetour (256 caractères maximum).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Exemple :</font></p>
+<p class="Body-Text"><font class="hcp3">Public Procedure ZoomValidation</font></p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;Zoom.ValRetour = Article.Reference &#160;;renvoi de la référence article</p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">S'il y a lieu et sauf précision contraire, la valeur placée dans Zoom.ValRetour est automatiquement affectée à la donnée en cours de saisie au moment de l'appel du zoom. Soit par exemple une fiche article, contenant le code du fournisseur de l'article. Sur la donnée "Code fournisseur" de cette fiche, vous prévoyez l'appel d'un zoom sur la table des fournisseurs. Lors de la saisie du code fournisseur, l'utilisateur appelle le zoom des fournisseurs en cliquant sur le bouton en forme de loupe. Il parcourt la liste des fournisseurs, sélectionne l'un d'entre eux (par exemple Four2) et tape F12. Si vous prévoyez, dans la procédure ZoomValidation du zoom des fournisseurs, de fournir en retour le code du fournisseur, la donnée correspondante de la fiche article sera automatiquement renseignée au retour du zoom.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Vous pouvez interdire cette affectation automatique à deux niveaux :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Dans le programme appelant, en positionnant le paramètre Recup de la fonction ZoomSql à FALSE.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En positionnant la donnée Zoom.Status à la valeur E_ZOOM_ABANDON dans la procédure ZoomValidation.</p>
+</li>
+</ul>
+<p class="Body-Text">C'est uniquement le transfert automatique qui est invalidé. Le programme appelant récupère toujours la valeur de Zoom.ValRetour.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarque :</p>
+<p class="Body-Text">Vous pouvez également renvoyer des informations au programme appelant pour la fonction <font class="hcp3">Pong</font>. Pour récupérer les informations placées dans le tunnel dans le programme appelant, il convient d'utiliser la fonction <font class="hcp3">PongReceive.</font> Voir le manuel de référence du langage Diva pour plus d'informations à ce sujet.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

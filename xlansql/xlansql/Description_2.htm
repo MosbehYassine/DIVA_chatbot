@@ -1,0 +1,52 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Description</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Description</h1>
+<p>&#160;</p>
+<p>Une autre fonctionnalité de l’utilitaire xpsqlsynchro.dhop est la possibilité d’exécuter des scripts SQL de migration ou de mise à jour.</p>
+<p>L’utilitaire est accessible depuis le menu « Synchronisation », choix « Exécuter un script ».</p>
+<p>&#160;</p>
+<p>L’exécution de scripts peut également être appelée en-dehors de l’utilitaire xpsql.dhop : il faut simplement appeler le programme « xpsqlsynchro.dhop » et lui envoyer par "ping" les paramètres suivants :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>« TypeAction » : indique le type d’action à effectuer. Deux valeurs sont possibles : « SYNCHRO » et « SCRIPT ». Pour l’exécution d’un script, il faut utiliser « SCRIPT ».<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>« CheminDico » : chemin où se trouvent les dictionnaires actuels, typiquement /divalto/« nom de base sql ».<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>« CheminFichierScript » : chemin complet du script SQL à exécuter.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>« SupprimerTableSauvegarde » : permet de supprimer ou non les tables de sauvegarde des champs supprimés suite à une synchronisation (tables suffixées par « _oldColumns »). Pour les supprimer, doit valoir 1.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>« NomServeur » : Nom du serveur où se situe la base de données.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>« NomBase » : Nom de la base de données à synchroniser.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>« RequiertValidation » : Demande à l'utilisateur de valider la fenêtre de compte-rendu (0 ou 1).<br>
+Si 0, les erreurs d'exécution sont affichés via MessageBox.<br>
+&#160;</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Enregistrement des paramètres de l’utilisateur</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Enregistrement des paramètres de l’utilisateur</h3>
+<p>&#160;</p>
+<p>Les paramètres de l’utilisateur (profil, taille des fenêtres, liste, largeur et ordre d’affichage des colonnes des tableaux, état d’ouverture des volets et des accordéons, tailles des cellules de grilles, etc.) sont stockés côté client. Toutefois, ils ne sont pas enregistrés dans la base de registres locale au poste client (inaccessible depuis un navigateur) mais dans une entité de stockage local propre au Web nommée « <span class="hcp1">Local Storage</span> » (plus ou moins similaire aux cookies).</p>
+<p>&#160;</p>
+<p><span class="hcp1">Attention</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p><span class="hcp1">Chaque navigateur dispose de sa propre entité de stockage</span>.<br>
+En cas de changement de navigateur, l’utilisateur ne retrouvera donc pas les paramètres qu’il a utilisés avec le premier navigateur.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Sous IE, l’enregistrement dans le Local Storage est invalidé si IE est configuré pour supprimer l’historique de navigation en quittant le navigateur.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Concernant les <span class="hcp1">fenêtres principales</span>, <span class="hcp1">seule leur taille est enregistrée</span>, leur position ne l’est pas (contrairement au client léger Wpf).<br>
+L’utilisateur qui a par exemple déplacé et changé la taille de la fenêtre de son zoom Articles à l’écran ne retrouvera pas la nouvelle position en rouvrant ce même zoom ultérieurement (mais il retrouvera la nouvelle taille).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span style="font-weight: bold; font-size: 11pt;">Effacement du Local Storage</span>.</p>
+<p>L’utilisateur peut effacer les données enregistrées dans le Local Storage de son navigateur en appelant, depuis ce même navigateur, la page <span class="hcp1">LocalStorageClear.html</span>.</p>
+<p>&#160;</p>
+<p>L’accès à cette page se fait par l’url :</p>
+<p>Http://<span class="hcp2">nom_du_serveur</span>/<span class="hcp2">nom_du_site_web/</span>LocalStorageClear.html</p>
+<p>&#160;</p>
+<p>La signification des différents éléments composant cette url est donnée à la rubrique <a href="Connexion_au_serveur_de_clients_l&eacute;gers_Html.htm">Connexion au serveur de clients légers Web</a>.</p>
+</body>
+</html>

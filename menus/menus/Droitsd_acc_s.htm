@@ -1,0 +1,120 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Droits d'accès</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { text-decoration:underline; }
+font.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Droits d'accès</h3>
+<p class="Body-Text">Confidentialiser un choix ou un zoom signifie en interdire l'accès à certains utilisateurs. Le but recherché est ici d'autoriser l'appel de certaines fonctions du menu à une partie seulement des utilisateurs. La méthode consiste à poser une serrure sur le choix ou le zoom à protéger, sous la forme d'un code composé de quatre caractères quelconques. L'utilisateur, qui dispose d'un trousseau de clés, n'aura accès à l'objet que s'il possède une clé correspondant à la serrure.</p>
+<p class="Body-Text">Remarque&#160;: les clés sont attribuées aux utilisateurs par l'administrateur du système, grâce à l'utilitaire Xlog1.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Confidentialisation des choix du menu</font></p>
+<p class="Body-Text">Un code d'accès peut être attribué à n'importe quel choix du menu (Cf. rubrique <a href="Gestiondeschoixdumenu.htm">Gestion des choix du menu</a>). Par exemple, si nous donnons au choix "Chapitre 1" le code d'accès "AB", l'appel de la fonction correspondante sera interdit à l'utilisateur propriétaire des clés "AA", "BB" et "CC". Par contre, il sera autorisé à un autre utilisateur possédant les clés "AA", "AB" et "AC".</p>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">La clé <font class="hcp2">$$</font> donne accès à n'importe quel choix, quelque soit son code.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un choix confidentialisé est affiché "grisé".</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Confidentialisation des zooms</font></p>
+<p class="Body-Text">Quatre niveaux d'accès sont associés à un zoom quelconque&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Accès en consultation.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Accès en modification.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Accès en création.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Accès en suppression.</p>
+</li>
+</ul>
+<p class="Body-Text">Une serrure peut être posée pour protéger l'accès à chaque niveau.</p>
+<p class="Body-Text">Si vous posez plusieurs serrures, sachez que les niveaux sont hiérarchisés. Cela signifie que pour avoir accès à un niveau donné, il faut non seulement avoir la clé correspondant à ce niveau mais aussi toutes les clés d'accès aux niveaux inférieurs. Ainsi&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">L'utilisateur qui possède uniquement la clé correspondant à la première serrure n'a accès au zoom qu'en consultation.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'utilisateur possédant les clés des deux premières serrures a accès au zoom en consultation et en modification.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'utilisateur possédant les clés des trois premières serrures a accès au zoom en consultation, modification et création.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'utilisateur possédant les quatre clés a accès au zoom en consultation, modification, création et suppression.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'utilisateur qui ne possède pas la clé d'accès en consultation ne peut pas appeler le zoom, même s'il possède une autre clé.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Etc.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp2">Remarque</font>&#160;: la clé <font class="hcp2">$$</font> donne accès à tous les niveaux de tous les zooms, quelque soient leurs codes d'accès.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Exemple 1&#160;:</font></p>
+<p class="Body-Text">Les codes confidentialité d'un zoom sont respectivement "CC" en création et "SS" en suppression&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Ce zoom est accessible par tous, en consultation et en modification.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il est accessible en création aux utilisateurs possédant la clé "CC".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il est accessible à tous les niveaux aux utilisateurs qui possèdent les clés "CC" et "SS".</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Exemple 2&#160;:</font></p>
+<p class="Body-Text">Les codes confidentialité d'un zoom sont respectivement "AA" en consultation, "BB" en modification, "CC" en création et "DD" en suppression&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Ce zoom est totalement interdit à l'utilisateur possédant les clés "BB", "CC" et "DD" car il ne possède pas la clé d'accès en consultation.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il ne sera autorisé qu'en consultation à l'utilisateur propriétaire des clés "AA", "CC" et "DD" car il ne possède pas la clé d'accès en modification.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Confidentialisation des zooms de gestion internes</font></p>
+<p class="Body-Text">Les zooms de gestion du menu lui-même :</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Gestion des choix du menu (<font class="hcp2">F4</font>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Gestion des utilisateurs (<font class="hcp2">Shift+F3</font>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Gestion des zooms (<font class="hcp2">Shift+F7</font>).</p>
+</li>
+</ul>
+<p class="Body-Text">sont confidentialisés en consultation avec le code "$$". Seul les utilisateurs possédant la clé "$$" y ont donc accès.</p>
+<p class="Body-Text"><font class="hcp2">Remarque</font>&#160;: Les paramètres généraux du menu (<font class="hcp2">Shift+F4</font>) sont accessibles avec les mêmes droits que le zoom des choix du menu.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

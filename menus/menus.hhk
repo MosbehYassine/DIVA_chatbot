@@ -1,0 +1,103 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Assistance à l'utilisation">
+    <param name="Name" value="Assistance à l'utilisation">
+    <param name="Local" value="menus/Assistance_l_utilisation.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Choix de deuxième niveau ou de niveau inférieur">
+    <param name="Name" value="Choix de deuxième niveau ou de niveau inférieur">
+    <param name="Local" value="menus/Choixdedeuxi_meniveauoudeniveauinf_rieur.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Choix de premier niveau">
+    <param name="Name" value="Choix de premier niveau">
+    <param name="Local" value="menus/Choixdepremierniveau.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Concepts généraux et définitions">
+    <param name="Name" value="Concepts généraux et définitions">
+    <param name="Local" value="menus/Conceptsg_n_rauxetd_finitions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Configuration des éditions">
+    <param name="Name" value="Configuration des éditions">
+    <param name="Local" value="menus/Configurationdes_ditions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Droits d'accès">
+    <param name="Name" value="Droits d'accès">
+    <param name="Local" value="menus/Droitsd_acc_s.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fonctions de l'administrateur du menu">
+    <param name="Name" value="Fonctions de l'administrateur du menu">
+    <param name="Local" value="menus/Fonctionsdel_administrateurdumenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fonctions proposées par le menu Harmony">
+    <param name="Name" value="Fonctions proposées par Hmenu en standard">
+    <param name="Local" value="menus/Fonctionspropos_esparHmenuenstandard.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion de l'utilisateur courant">
+    <param name="Name" value="Gestion de l'utilisateur courant">
+    <param name="Local" value="menus/Gestiondel_utilisateurcourant.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion des choix du menu">
+    <param name="Name" value="Gestion des choix du menu">
+    <param name="Local" value="menus/Gestiondeschoixdumenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion des paramètres généraux du menu">
+    <param name="Name" value="Gestion des paramètres généraux du menu">
+    <param name="Local" value="menus/Gestiondesparam_tresg_n_rauxdumenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion des utilisateurs du menu">
+    <param name="Name" value="Gestion des utilisateurs du menu">
+    <param name="Local" value="menus/Gestiondesutilisateursdumenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion des zooms du menu">
+    <param name="Name" value="Gestion des zooms du menu">
+    <param name="Local" value="menus/Gestiondeszoomsdumenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion du menu Harmony">
+    <param name="Name" value="Gestion d'un menu conçu avec Hmenu">
+    <param name="Local" value="menus/Gestiond_unmenucon_uavecHmenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menu Harmony">
+    <param name="Name" value="Présentation de Hmenu">
+    <param name="Local" value="menus/Pr_sentationdeHmenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mode d'emploi du menu Harmony">
+    <param name="Name" value="Mode d'emploi d'un menu conçu avec Hmenu">
+    <param name="Local" value="menus/Moded_emploid_unmenucon_uavecHmenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Présentation du menu Harmony">
+    <param name="Name" value="Présentation de Hmenu">
+    <param name="Local" value="menus/Pr_sentationdeHmenu.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélection d'un choix terminal">
+    <param name="Name" value="Sélection d'un choix terminal">
+    <param name="Local" value="menus/S_lectiond_unchoixterminal.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sélection d'un zoom">
+    <param name="Name" value="Sélection d'un zoom">
+    <param name="Local" value="menus/S_lectiond_unzoom.htm">
+  </object>
+</ul>
+</html>

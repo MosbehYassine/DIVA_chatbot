@@ -1,0 +1,62 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Centralisation des fichiers d'aides</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Centralisation des fichiers d'aides de la version 6</h3>
+<p>&#160;</p>
+<p><span class="hcp1">Cette rubrique concerne les fichiers d'aide affichés par les applications tournant encore en version 6 (hors client léger)</span>.</p>
+<p>&#160;</p>
+<p>Il est intéressant, en particulier pour simplifier leur mise à jour, de centraliser les fichiers d'aides des applications.</p>
+<p>Par xDivaltoMajIni, ajoutez pour ce faire dans le chapitre <span class="hcp1">System</span> la clé :</p>
+<p>&#160;</p>
+<p><span class="hcp1">CheminAides=</span>xxxxx<br>
+où xxxxx spécifie le <span class="hcp1">chemin d'accès</span> <span class="hcp1">Windows</span> à un dossier partagé sur le réseau.<span class="hcp1"><br>
+<br>
+Exemple</span> :<br>
+CheminAides=//Serveur/FichiersAides<br>
+&#160;</p>
+&#160;
+<p><span class="hcp1">Remarque</span> :<br>
+Tout fichier d'aides sera recherché en priorité dans le répertoire indiqué ; si le fichier ne s'y trouve pas, une seconde recherche sera faite sans préciser de répertoire (le fichier doit alors se trouver dans un dossier recensé dans la liste des "Paths" de Windows ou dans le dossier "courant", en général dans x:/Divalto/Sys). Ainsi, on pourra par exemple placer les fichiers d'aides applicatifs dans un répertoire spécifique et laisser les fichiers d'aides "système" dans /Divalto/Sys.<br>
+&#160;</p>
+&#160;
+<p><span class="hcp2">MAIS ATTENTION</span> : En standard, <span class="hcp2">Windows interdit l'appel à un fichier d'aides (.chm) distant</span>.<br>
+Toutefois, cette restriction -imposée pour des raisons de sécurité- peut être contournée de la manière suivante :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Par NotePad, saisissez les lignes suivantes :<br>
+<br>
+REGEDIT4<br>
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\HTMLHelp\1.x\ItssRestrictions]<br>
+"MaxAllowedZone"=dword:00000001<br>
+<br>
+Avec un système 64 bits, il faut saisir les lignes :<br>
+REGEDIT4<br>
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\HTMLHelp\1.x\ItssRestrictions]<br>
+"MaxAllowedZone"=dword:00000001<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Sauvez dans un fichier .reg et exécutez ce fichier.<br>
+Ce script modifie la base de registre pour autoriser l'exécution d'un fichier "HtmlHelp" (.chm) distant.<br>
+Il doit être exécuté sur <span class="hcp1">chaque poste client</span>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,227 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fseek2</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fseek2 &#160;<a href="Listedesfonctionsdebasedegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Introduction1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Fseek2 effectue une lecture en accès direct. <font>f</font>seek2 n'est utilisable qu'avec les fichiers séquentiels-indexés ou avec les fichiers normaux avec enregistrements de taille fixe.</p>
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">f</font><font class="hcp2">seek2</font> ( <font class="hcp3">tdf</font> , <font class="hcp3">variable</font> <font class="hcp3">[ , code_réservation ] [ , depack_auto ]</font> )</p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Table de définition de fichier.</p>
+<p class="Body-Text"><font class="hcp3">Variable</font></p>
+<p class="decalage05">Donnée réceptrice qui contiendra l'enregistrement lu.</p>
+<p class="Body-Text">Code_<font class="hcp3">réservation</font></p>
+<p class="decalage05">Mode de partage de l'enregistrement ('P' par défaut).</p>
+<p class="Body-Text"><font class="hcp3">Depack</font>_<font class="hcp3">auto</font></p>
+<p class="decalage05">Décompression automatique des données si l'enregistrement comporte une zone packée.<br>
+0 &#160;: non &#160;(par défaut)</p>
+<p class="decalage05">1 &#160;: oui</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:37.88%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">0 &#160;</p>
+</td>
+<td style="width:62.12%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:37.88%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">H_RECORD_NOT_FOUND &#160;</p>
+</td>
+<td style="width:62.12%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Enregistrement non trouvé (type I)<br>
+ou positionnement hors fichier (type N).&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:37.88%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">H_RESERVED &#160;</p>
+</td>
+<td style="width:62.12%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Enregistrement réservé.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:37.88%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">autres</p>
+</td>
+<td style="width:62.12%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Code d'erreur système.&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarque</p>
+<p class="decalage05">La fonction <a href="GetLastRecord.htm">GetLastRecord</a> permet de récupérer le dernier enregistrement lu.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">FICHIERS SEQUENTIELS-INDEXES (TYPE I)</font></p>
+<p class="Body-Text"><font>f</font>seek2 permet de rechercher un enregistrement en indiquant sa clé. Le programme doit préalablement positionner celle-ci dans la TDF (champ Key).</p>
+<p class="Body-Text">S'il existe un enregistrement ayant la clé indiquée, celui-ci est lu et le système renvoie un status nul (sauf en cas d'erreur de partage).</p>
+<p class="Body-Text">S'il n'existe aucun enregistrement ayant la clé indiquée, la variable réceptrice est mise à espace et la fonction renvoie le status H_RECORD_NOT_FOUND.</p>
+<p class="Body-Text">S'il existe des homonymes, c'est le premier (dans l'ordre chronologique des créations) qui est délivré. Par des lectures séquentielles (<a href="Fread.htm">Fread</a>), il est ensuite possible de lire les homonymes.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">f</font><font class="hcp2">seek2</font> s'utilise en pratique dans les 3 cas suivants :</p>
+<p class="Body-Text"><font class="hcp2">1) Vérification de l'existence d'une clé avant une création.</font></p>
+<p class="Body-Text">Si un fichier a une clé unique (code client par exemple), avant de créer un nouvel enregistrement, il est impératif de vérifier que cette clé n'existe pas dans le fichier.</p>
+<p class="Body-Text"><font class="hcp6">Exemple</font> : Création d'un client si celui-ci n'existe pas encore dans le fichier client.</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; saisie des champs de client&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; on réserve une entité afin d'interdire la création &#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; simultanée par plusieurs utilisateurs&#160;</p>
+<p class="Source">loop fshare (fcli , " creation-client" , 'R')</p>
+<p class="Source">endloop</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; recherche en mode partagé. On lit dans une zone de travail&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; pour ne pas casser la saisie&#160;</p>
+<p class="Source">fcli.key = 'A' &amp; client.codcli</p>
+<p class="Source">st = fseek2(fcli , wcli , 'P')</p>
+<p class="Source">switch st</p>
+<p class="Source">case H_RECORD_NOT_FOUND ; 2 = il n'existe pas -&gt; écriture</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; puis libération de l'entité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;stw = fwrite(fcli , client," ")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = fshare(fcli," creation-client" , "L")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;</p>
+<p class="Source">case 0 ; il existe déjà</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = fshare(fcli , " creation-client" , "L")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox("Le client " &amp; client.codcli &amp; \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"existe déjà"," ")</p>
+<p class="Source">&#160;</p>
+<p class="Source">case H_RESERVED ; erreur de partage</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = fshare(fcli , " creation-client" , "L")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox("Le client " &amp; client.codcli &amp; \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"est réservé"," ")&#160;</p>
+<p class="Source">default</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = fshare(fcli ," creation-client" , "L")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">ProgramExit&#160;</p>
+<p class="Source">endswitch</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">2) Réservation d'un enregistrement avant modification</font></p>
+<p class="Body-Text">Avant de modifier un enregistrement, il faut le réserver pour en interdire l'accès aux autres programmes. Pour ne pas bloquer l'enregistrement trop longtemps, on fera la réservation juste au moment de la réécriture de l'enregistrement. L'ordre des opérations à effectuer est le suivant :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">lecture de l'enregistrement en mode 'P' ou 'F';</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">saisie des modifications;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">FSEEK2 en mode réservé dans une zone de manœuvre;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">réécriture (FREWRITE) de l'enregistrement.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp6">Exemple</font> : Modification de l'enregistrement client.</p>
+<p class="Body-Text">L'enregistrement a été lu au préalable en mode P ou F dans la donnée client.</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; saisie des modifications&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; avant fseek2, il n'y a pas besoin de positionner la clé&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; on veut relire le même enregistrement que précédemment&#160;</p>
+<p class="Source">st = fseek2(fcli , wcli , 'R');</p>
+<p class="Source">switch st</p>
+<p class="Source">case 0 ; lecture OK</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;stw = frewrite(fcli , client)&#160;</p>
+<p class="Source">case H_RESERVED ; enreg. réservé</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox("Enregistrement réservé"," ")</p>
+<p class="Source">case H_RECORD_NOT_FOUND ; enregistrement supprimé</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox("Le client " &amp; client.codcli &amp; \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"n'existe plus"," ")</p>
+<p class="Source">default</p>
+<p class="Source">...</p>
+<p class="Source">endswitch</p>
+<p class="Source">fpclose (fcli)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">3) Repositionnement sur un enregistrement lu précédemment</font></p>
+<p class="Body-Text">Après avoir lu un enregistrement par <font>f</font>seek2 ou <font>f</font>read, il est possible de sauvegarder la clé dans une zone de 256 caractères. Après avoir fait d'autres opérations sur le fichier, on peut restaurer la clé dans la tdf et par la fonction <font>f</font>seek2 relire le même enregistrement.</p>
+<p class="Body-Text"><font class="hcp6">Exemple</font> :</p>
+<p class="Source">1 wcle 256</p>
+<p class="Source">st = fread(fcli , client , "F")</p>
+<p class="Source">wcle = fcli.key ; sauvegarde de la clé</p>
+<p class="Source">...... ; autres traitements sur le fichier</p>
+<p class="Source">fcli.key = wcle ; restauration de la clé</p>
+<p class="Source">st = fseek2(fcli , client , "F")</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; on relit le même enregistrement&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; qui a été lu par fread&#160;</p>
+<p class="Body-Text"><font class="hcp6">Remarque</font> : Si au lieu d'utiliser la fonction Fseek2 on utilise la fonction <a href="Fread.htm">Fread</a>, c'est l'enregistrement suivant qui est lu.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">FICHIER NORMAL AVEC TAILLE D'ENREGISTREMENT FIXE</font></p>
+<p class="Body-Text"><font>f</font>seek2 permet de lire un enregistrement à partir de son numéro relatif en décimal.</p>
+<p class="Body-Text">Avant d'utiliser la fonction <font>f</font>seek2, il faut spécifier dans la clé, le numéro d'ordre de l'enregistrement à lire dans le champ <a href="Tableded_finitiondefichier_TDF_.htm">Keyn</a>). Il se produit une erreur si cet enregistrement n'existe pas.</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">;________________________________________________________________<br>
+; Fonction : F_SEEK2</p>
+<p class="Source">; Type : int</p>
+<p class="Source">; Description : Lecture directe d'un enregistrement dans le</p>
+<p class="Source">; fichier tdf</p>
+<p class="Source">; en mode "par" et dépacke automatique</p>
+<p class="Source">; La clé doit être positionnée en entrée</p>
+<p class="Source">; Paramètres en sortie : 0 = ok 1 = début 2 = réservé 3 = errsys</p>
+<p class="Source">;________________________________________________________________<br>
+;</p>
+<p class="Source">Function int F_SEEK2 (&amp;tdf , &amp;art , par)</p>
+<p class="Source">record * htdf tdf ;table de définition</p>
+<p class="Source">1 art A ;article</p>
+<p class="Source">1 par A = 'P' ;code partage</p>
+<p class="Source">beginf</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">cr = fseek2 (tdf,art,par,1)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">switch cr&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">case 0 ;ok&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;freturn (0)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">case H_RECORD_NOT_FOUND ;non trouvé&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;freturn (1)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">case H_RESERVED ;réservé&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;freturn (2)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">default ;erreur système&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox("Erreur système numéro " &amp; binhexa (stx (cr)) &amp; \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" en lecture du fichier " &amp; left(tdf.name," ")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">freturn (3)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">endswitch&#160;</p>
+<p class="Source">endf</p>
+&#160;
+<p class="Source">record * htdf tdf</p>
+<p class="Source">&#160;..............</p>
+<p class="Source">input 'Numéro à lire : ' tdf.keyn</p>
+<p class="Source">st = f_seek2(tdf , art , 'P')</p>
+<p class="Source">switch st</p>
+<p class="Source">case 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display 'OK'&#160;</p>
+<p class="Source">case 1</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display 'Numéro hors des limites du fichier'&#160;</p>
+<p class="Source">case 2</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display 'Enregistrement réservé '&#160;</p>
+<p class="Source">default</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">....&#160;</p>
+<p class="Source">endswitch</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Hseek.htm">Hseek</a>, <a href="Fread.htm">Fread</a>, <a href="Fpread.htm">Fpread</a></p>
+</body>
+</html>

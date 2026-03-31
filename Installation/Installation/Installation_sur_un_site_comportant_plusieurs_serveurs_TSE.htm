@@ -1,0 +1,77 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Installation sur un site comportant plusieurs serveurs TSE</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Installation sur un site comportant plusieurs serveurs TSE</h1>
+<p>Lorsque le site comporte plusieurs serveurs d'applications, TSE (ou CITRIX) propose un mode de fonctionnement dénommé "Load balancing". Dans ce mode :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Les clients se connectent <span class="hcp2">non pas à une machine spécifique</span> mais à un <span class="hcp2">"groupe de serveurs"</span>.</p>
+</li>
+<li class="p">
+<p>A la connexion d'un client, le système TSE lui attribue <span class="hcp2">dynamiquement</span> un serveur, afin de répartir la charge de travail sur les différents serveurs d'applications. L'attribution de tel ou tel serveur est décidée à chaque nouvelle connexion et le lien n'est effectif que le temps de cette connexion : si le client se connecte une deuxième fois, un <span class="hcp2">autre</span> serveur TSE pourra lui être attribué.</p>
+</li>
+<li class="p">
+<p>Rappelons que les clients sont dits "nomades" et que leurs profils TSE sont stockés sur un serveur spécifique.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p style="font-weight: bold;">Spécificités de l'installation d'Harmony en cas de "Load balancing"</p>
+<p>Si vous installez Harmony sur un site fonctionnant en mode "Load balancing", vous devez respecter certaines contraintes. Comme n'importe quel serveur peut être attribué à un client, il est impératif que <span class="hcp2">tous les serveurs soient équivalents pour les applications Harmony</span>, afin que ces dernières "tournent" toujours sous un environnement similaire.</p>
+<p>L'environnement d'une application Harmony, c'est son serveur Xlogf, ses dossiers implicites, sa configuration Odbc, ses modèles d'imprimante, sa section Divalto.ini dans la base de registre, etc.</p>
+<p>Si l'environnement diffère d'un serveur à l'autre, le comportement de l'application pourra différer de manière plus ou moins aléatoire.</p>
+&#160;
+<p>&#160;</p>
+<p><span class="hcp3">Il est très important que vous procédiez à la mise en place de l'indirection AVANT d'installer Harmony</span>.<br>
+<br>
+Ce paramétrage est décrit en détails au paragraphe <font style="font-weight: bold;">Report des modifications dans une configuration multi-serveurs TSE</font> de la rubrique <a href="ModificationdesfichiersHarmony_ini.htm">Modification de Divalto.ini</a>.</p>
+&#160;
+<p>&#160;</p>
+<p>Ensuite :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Installez Harmony sur <span class="hcp3">tous</span> les serveurs avec le <span class="hcp3">même</span> <span class="hcp2">paramétrage</span>.<br>
+(en particulier, même unité disque X: et code utilisateur ! conseillé).<br>
+<br>
+Chaque installation va créer un fichier Installlog dans le répertoire d'indirection \\xxx\installlog.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Après avoir procédé au paramétrage complet d'Harmony sur un des serveurs, copiez les fichiers Xlog.dhfi, Xlog.dhfd, fPrinters.dhfi, fPrinters.dhfd, fOdbc.dhfi, fOdbc.dhfd, fConfig.dhfi et fConfig.dhfd dans le répertoire X:\Divalto\Dys de tous les autres serveurs.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp2">Rappels</span> :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Les formats pour le spool et les imprimantes se paramètrent avec xDivaltoPrinters.exe.<br>
+Les paramètres pour Envoyer (mails, fax, etc.) sont saisis avec DivaltoViewer.exe (menu "Options").<br>
+Divalto.ini se paramètre avec xDivaltoMajini.exe (ServeurXlogf en particulier).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Lorsque vous modifiez un paramétrage sur un serveur, vous pouvez propager ou non les modifications apportées vers tous les serveurs. La plupart du temps, on aura intérêt ici à effectuer la propagation, de manière à ce que tous les serveurs conservent le même paramétrage en permanence (par exemple, le paramétrage des imprimantes partagées par tout le monde, le nom du serveur Xlogf, ...).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp2">Remarque</span> :</p>
+<p>Il peut arriver qu'un serveur ne soit pas totalement équivalent aux autres. Par exemple, une imprimante "locale" peut être connectée à un serveur particulier. Dans ce cas, le paramétrage de cette imprimante sera propre à ce serveur. Harmony gère parfaitement ce cas mais n'oubliez pas que les états édités par l'application n'ont pas l'assurance de sortir sur cette imprimante puisque le serveur sur lequel elle va s'exécuter n'est pas connu à l'avance.</p>
+<p>&#160;</p>
+</body>
+</html>

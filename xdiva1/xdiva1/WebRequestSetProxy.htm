@@ -1,0 +1,117 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WebRequestSetProxy</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-style:italic; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-right:10px;
+padding-left:10px; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>WebRequestSetProxy <a href="Liste_des_fonctions_WebRequest.htm">Famille</a> <a href="Fonctions_WebRequest.htm">Thème</a></h1>
+<p>&#160;</p>
+<p class="Body-Text">Positionnement des paramètres pour le serveur proxy. Si votre connexion passe obligatoirement par un serveur proxy, il faut renseigner ces paramètres.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">Int WebRequestSetProxy</span> ( <span class="hcp1">Ticket</span> , <span class="hcp1">Url, Mode, Utilisateur, MotDePasse</span> )</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">Ticket</p>
+<p class="decalage05">Ticket préalablement obtenu par WebRequestNew.</p>
+&#160;
+<p class="Body-Text" style="font-style: italic;">Url</p>
+<p class="decalage05">Url du serveur proxy.</p>
+&#160;
+<p class="Body-Text" style="font-style: italic;"><span class="hcp1">Mode</span></p>
+<table style="vertical-align: top;" cellspacing="0" width="65.57%">
+<col style="width: 7.956%;">
+<col style="width: 92.044%;">
+<tr class="hcp2">
+<td style="width:7.956%;" class="hcp3">
+<p>1</p>
+</td>
+<td style="width:92.044%;" class="hcp3">
+<p>Prendre les paramètres du système. Il n'y a pas d'autre paramètres à préciser, l'authentification est celle du poste de travail.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:7.956%;" class="hcp3">
+<p>2</p>
+</td>
+<td style="width:92.044%;" class="hcp3">
+<p>Préciser l'url du serveur, mais avec authentification SSPI. Inutile de préciser Utilisateur et MotDePasse</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:7.956%;" class="hcp3">
+<p>3</p>
+</td>
+<td style="width:92.044%;" class="hcp3">
+<p>Mode manuel. Il faut préciser tous les paramètres</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text" style="font-style: italic;">Utilisateur</p>
+<p class="decalage05">Nom de l'utilisateur dans le domaine.</p>
+&#160;
+<p class="Body-Text" style="font-style: italic;">MotDePasse</p>
+<p class="decalage05">Mot de passe de l'utilisateur.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<table cellspacing="0" width="436">
+<tr class="hcp2">
+<td style="width:16.24%;" class="hcp4">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:83.76%;" class="hcp4">
+<p class="Body-Text">Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.24%;" class="hcp4">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:83.76%;" class="hcp4">
+<p class="Body-Text">Ticket incorrect</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.24%;" class="hcp4">
+<p>2</p>
+</td>
+<td style="width:83.76%;" class="hcp4">
+<p class="Body-Text">Erreur. Voir le détail avec <a href="WebRequestGetError.htm">WebRequestGetError</a></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarques</p>
+<p class="Body-Text" style="font-weight: bold;"><span style="font-weight: normal;">WebRequestSetProxy vérifie que l'Url est correctement formée, mais ne vérifie pas que l'adresse existe, ni que l'utilisateur et le mot de passe sont corrects.</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 ticketRequete L</p>
+<p class="Source">.....</p>
+<p class="Source">WebRequestSetProxy(ticketRequete,"http://10.10.10.229:8080","DIVALTO","toto","motdepasse")</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: normal;">Voir <a href="Exemple_de_programmation_des_fonctions_WebRequest.htm">Exemple de programmation des fonctions WebRequest</a></p>
+<p class="body-text">&#160;</p>
+<p class="body-text" style="font-weight: bold;">Voir</p>
+<p class="body-text" style="font-weight: normal;"><a href="WebRequestSetUrl.htm">WebRequestSetUrl</a>, <a href="WebRequestSetHeader.htm">WebRequestSetHeader</a>, <a href="WebRequestSetMethod.htm" style="font-weight: normal;">WebRequestSetMethod</a></p>
+</body>
+</html>

@@ -1,0 +1,117 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DD_OPEN</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+font.hcp4 { font-size:12pt;
+font-weight:bold; }
+table.hcp5 { margin-left:24.85pt; }
+tr.hcp6 { vertical-align:top; }
+td.hcp7 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DD_OPEN – DD_CLOSE&#160;<a href="Listedesinstructionsd_acc_saudictionnairedesdonn_es.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Acc_saudictionnairededonn_es.htm"><font class="hcp1">Thème</font></a></h3>
+<p style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p><font class="hcp2">Long</font> <a href="DDInterface.htm"><font class="hcp2">DDInterface</font></a> (<font class="hcp3">Commande 
+ , &amp;ticket , [paramètres] , retour, [niveau]</font>)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font color="#FF0000" size="4" class="hcp4">DD_OPEN</font></p>
+<p class="decalage05" style="text-indent: 14.15pt;">La commande DD_OPEN 
+ permet d’ouvrir un dictionnaire.</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp3">Paramètres</font></p>
+<p class="decalage05" style="margin-left: 28.35pt; text-indent: 14.15pt;">Doit 
+ contenir le nom du dictionnaire à ouvrir.</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp3">Ticket</font></p>
+<p class="decalage05" style="margin-left: 28.35pt; text-indent: 14.15pt;">En 
+ retour de la fonction, Ticket contient la valeur qui permet d’accéder 
+ au dictionnaire.</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="435" class="hcp5">
+	<tr class="hcp6">
+		<td style="width:23.88%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">0</p></td>
+		<td style="width:76.12%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">pas 
+		 d’erreur</p></td>
+	</tr>
+	<tr class="hcp6">
+		<td style="width:23.88%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">autre</p></td>
+		<td style="width:76.12%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">Erreur. 
+		 Voir <a href="DD_GETERROR.htm">DD_GETERROR</a></p></td>
+	</tr>
+</table>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;ticket&#160;L&#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;reponse&#160;8096 
+ &#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;if 
+ DDInterface(DD_OPEN,ticket,&quot;odfdd.dhsd&quot;,reponse) &lt;&gt; 0</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;&#160;&#160;&#160;DDInterface(DD_GETERROR,ticket,&quot; 
+ &quot;,reponse,niveaudico)&#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;&#160;&#160;&#160;display 
+ left(reponse)</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;&#160;&#160;&#160;ProgramExit</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;endif</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font color="#FF0000" size="4" class="hcp4">DD_CLOSE</font></p>
+<p class="decalage05" style="text-indent: 14.15pt;">La commande DD_CLOSE 
+ permet de fermer un dictionnaire et de libérer le ticket.</p>
+<p class="decalage05" style="text-indent: 14.15pt;">Elle doit être appelée 
+ même en cas d’erreur de la commande DD_OPEN.</p>
+<p class="decalage05" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="435" class="hcp5">
+	<tr class="hcp6">
+		<td style="width:23.88%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">0</p></td>
+		<td style="width:76.12%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">pas 
+		 d’erreur</p></td>
+	</tr>
+	<tr class="hcp6">
+		<td style="width:23.88%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">-1</p></td>
+		<td style="width:76.12%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">Ticket 
+		 invalide</p></td>
+	</tr>
+	<tr class="hcp6">
+		<td style="width:23.88%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">autre</p></td>
+		<td style="width:76.12%;" class="hcp7"><p class="decalage05" 
+															 style="text-indent: 14.15pt;">Erreur. 
+		 Voir <a href="DD_GETERROR.htm">DD_GETERROR</a></p></td>
+	</tr>
+</table>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">DDInterface(DD_CLOSE,ticket,&quot; 
+ &quot;,reponse,niveaudico)</p>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05"><font class="hcp2">Voir</font></p>
+<p class="decalage05"><a href="DDInterface.htm">DDInterface</a></p>
+<p class="decalage05"><a href="DD_GETERROR.htm">DD_GETERROR</a></p>
+<p class="decalage05">RecordSql.LoadTableFields dans le livre RecordSql.</p>
+</body>
+</html>

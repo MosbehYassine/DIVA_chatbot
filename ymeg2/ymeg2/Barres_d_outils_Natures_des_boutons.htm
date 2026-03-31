@@ -1,0 +1,80 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Barres d'outils : Natures des boutons</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { text-decoration:underline; }
+font.hcp3 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Barres d'outils : Natures des boutons</h3>
+<p class="Body-Text">Un bouton peut simuler une case à cocher ou un bouton radio. Ces boutons "à cocher" sont généralement utilisés pour activer ou désactiver une option du programme, le «&#160;dessin de la coche&#160;» servant à montrer à l’utilisateur si l’option est ou non active.</p>
+&#160;
+<p class="Body-Text">On distingue donc trois natures de bouton (propriété <font class="hcp1">Nature</font> dans l’éditeur de barre d'outils de Xwin)&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Les boutons "<font class="hcp1">normaux</font>", c’est à dire les boutons qui ne sont jamais cochés.<br>
+Cette nature de bouton ne demande pas de programmation spécifique.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les boutons de type "<font class="hcp1">case à cocher</font>" qui simulent une case à cocher.<br>
+Il revient au programme de demander à ce que le bouton soit coché (voir remarque importante).<font class="hcp1"><br>
+<br>
+Exemple</font>&#160;dans un logiciel de traitement de textes :<br>
+Avec / Sans affichage de la règle.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les boutons de type "<font class="hcp1">bouton radio</font>", qui simulent un item de groupe de boutons radio.<br>
+Cette nature n’a évidemment de sens que si elle est utilisée pour deux ou plusieurs boutons <font class="hcp1">consécutifs</font>.<br>
+Un seul des boutons du groupe est valide à un instant donné&#160;: si l'utilisateur coche un autre bouton du même groupe, le bouton précédemment coché doit être décoché. Il revient au programme de demander à ce qu’un bouton du groupe soit coché (voir remarque importante).<font class="hcp1"><br>
+<br>
+Exemple</font> dans un logiciel de traitement de textes :<br>
+Affichage en mode Normal / Page / Plan.<font class="hcp1"><br>
+<br>
+Remarque</font>&#160;: si vous souhaitez afficher <font class="hcp1">deux groupes</font> de boutons radio <font class="hcp1">côte à côte</font>, vous devez obligatoirement placer un «&#160;Séparateur&#160;» entre le dernier bouton radio du 1er groupe et le premier bouton radio du 2ème groupe.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Visuellement, un bouton coché apparaît entouré d’un cadre enfoncé.</p>
+<p class="List" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Programmation des boutons "à cocher"</font></p>
+<p class="Body-Text">Initialement, tous les boutons "à cocher" sont à l’état «&#160;non coché&#160;». De plus, lorsque l’utilisateur sélectionne un tel bouton, <font class="hcp2">l’état de la coche</font> <font class="hcp3">N</font><font class="hcp2">’est</font> <font class="hcp3">PAS</font> <font class="hcp3">AUTOMATIQUEMENT</font> <font class="hcp2">actualisé</font>. En conséquence, il revient au programme :</p>
+<ul>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Pour une case à cocher, d’exécuter la fonction</font> <a href="XmeToolbarCheckButton.htm"><font class="hcp1">XmeToolbarCheckButton</font></a> <font class="hcp1">:</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Avant le premier affichage de la barre d'outils, afin de cocher le bouton si l’option correspondante est initialement active.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Ensuite, afin de mettre l’état du bouton à jour en cas de sélection par l’utilisateur (si l’utilisateur sélectionne un bouton non coché, le programme doit le cocher et inversement, si l’utilisateur sélectionne un bouton déjà coché, le programme doit le décocher).</p>
+</li>
+</ul>
+<ul>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Pour un groupe radio, d’exécuter la fonction</font> <a href="XmeToolbarCheckRadioButton.htm"><font class="hcp1">XmeToolbarCheckRadioButton</font></a> <font class="hcp1">:</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Avant le premier affichage de la barre d'outils, afin de cocher le bouton du groupe correspondant à l’option initialement active (sauf si aucune option n’est active au départ).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 47.75pt;">Ensuite, afin de mettre l’état des boutons du groupe à jour en cas de sélection d’un des boutons par l’utilisateur (si l’utilisateur sélectionne un bouton appartenant à un groupe de boutons radio, le programme doit cocher ce bouton <font style="font-family: Symbol;" face="Symbol">-</font> le bouton du groupe précédemment coché étant automatiquement décoché).</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Vous pouvez aussi utiliser la fonction <a href="XmeToolbarIsButtonChecked.htm">XmeToolbarIsButtonChecked</a> pour connaître l’état courant d’un bouton «&#160;à cocher&#160;».</p>
+</body>
+</html>

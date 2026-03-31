@@ -1,0 +1,715 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Page</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp4 { font-weight:bold; }
+ul.hcp5 { list-style:disc; }
+span.hcp6 { text-decoration:underline; }
+font.hcp7 { text-decoration:underline; }
+span.hcp8 { font-weight:normal; }
+table.hcp9 { vertical-align:top; }
+td.hcp10 { border:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp11 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp12 { text-align:center; }
+p.hcp13 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Page</h3>
+<p class="Body-Text">Cette boîte de dialogue (accessible depuis le menu Paramètres mais aussi par F3 ou par double-clic dans le fond de la page) permet de définir les caractéristiques générales de la page en cours d'édition. On peut y faire appel à n'importe quel moment mais il est conseillé de l'appeler dès la création de la page.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Attention :</font> les informations saisies ici sont valables uniquement pour la page considérée. Si le fichier masque contient plusieurs pages, vous devrez faire appel à ce choix pour CHAQUE page.</p>
+&#160; <br>&#160;
+<p class="Body-Text">Les propriétés d'une page sont :<br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 23.542%;">
+<col style="width: 76.458%;">
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">No</font></p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Numéro de la page en cours (pour information).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Libellé</font></p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Zone de <span class="hcp4">commentaires</span>.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Effacement</font></p>
+<p class="body-text">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p>Multi-choix spécifiant si l'écran courant doit faire l'objet d'un effacement lorsque la page est affichée :</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp4">Effacement partiel</span> : Toutes les pages actuellement présentes dans la fenêtre en cours et <span class="hcp4">entièrement</span> <span class="hcp4">recouvertes</span> par la page courante sont effacées.</p>
+</li>
+<li class="p">
+<p><span class="hcp4">Effacement complet</span> : <span class="hcp4">Toutes</span> les pages actuellement présentes dans la fenêtre en cours sont effacées (valeur par défaut).</p>
+</li>
+<li class="p">
+<p><span class="hcp4">Pas d'effacement</span> : Aucun effacement n'a lieu dans la fenêtre en cours (mais bien entendu, des objets affichés peuvent "disparaître" de l'écran s'ils sont recouverts par la page courante).</p>
+</li>
+</ul>
+<p><span class="hcp4">Remarques</span> :</p>
+<ul class="hcp5">
+<li class="p">
+<p>L'effacement ne concerne que les pages de type "Page" puisqu'à l'ouverture d'une nouvelle fenêtre, celle-ci ne contient pas encore d'objet.</p>
+</li>
+<li class="p">
+<p>En cas de <a href="Masquemonoetmulti__cran.htm">masque multi-écran</a>, on fera attention à ce que les différentes pages soient définies en effacement partiel ou complet pour qu'elles s'effacent l'une l'autre au changement d'onglet.</p>
+</li>
+<li class="p">
+<p>Si la page est une page panel, ce paramètre n’est significatif que pour la prise en compte de la couleur de fond (voir la propriété Fond). Il est ignoré pour l’effacement proprement dit car une page panel occupe toujours la totalité de la cellule de grille où elle réside.&#160;</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Fond</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Couleur de fond</span> de la page (STD par défaut).<br>
+Attention, cette couleur <span class="hcp4">n'est significative que</span> dans les cas suivants :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">La page est de type "Fenêtre".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La page a la propriété "Effacement partiel" ou "Effacement complet".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il s'agit de la toute première page affichée par le programme dans la fenêtre principale.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Onglet</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Nom de l'onglet</span> attaché à la page (le cas échéant).<br>
+Voir les rubriques : <a href="Lesonglets.htm">Les onglets</a>, <a href="Onglets.htm">Onglets</a>, <a href="Onglet_Page.htm">Onglet / Page</a>.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">En-tête pan accordéon</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Titre attribué à la page lorsque celle-ci est incluse dans un <a href="Caract&eacute;ristiques_et_param&eacute;trage_d_un_accord&eacute;on.htm">accordéon</a></span>.</p>
+<p class="Body-Text">Il s'agit d'un libellé libre qui sera affiché en en-tête du pan correspondant de l'accordéon. A titre indicatif, cet en-tête occupe deux lignes à l'écran (soit 18 orteils - 36 pixels).</p>
+<p class="Body-Text">Si ce libellé n'est pas renseigné, si la page courante fait partie d'un groupe de pages (chaînées ou non) liées par un <span class="hcp4">onglet</span> et si la page courante n'est pas la première page du groupe, le libellé utilisé sera celui spécifié dans les propriétés de la <span class="hcp4">première page</span> du groupe.<br>
+<br>
+Ce champ n'est significatif que si la page est incluse dans un accordéon.<br>
+<br>
+Remarque : L'instruction Diva <span class="hcp4">XmeSetPageOptions</span> permet d'affecter ce libellé par programme.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Pan non escamotable</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Cette option permet d'interdire la fermeture du pan affichant cette page. Par exemple, dans une page qui affiche un en-tête, un tableau et un pied, la fermeture du pan contenant le tableau n’a le plus souvent pas d'intérêt pratique.<br>
+<br>
+En pratique, la flèche d’ouverture / fermeture du pan d’accordéon n'est plus affichée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Nombre de lignes / colonnes</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Spécifie la <span class="hcp4">taille</span> de la page exprimée en nombres de "lignes" et de "colonnes".<br>
+Une "ligne" équivaut à 9 orteils (soit 18 pixels), une "colonne" à 4 orteils (soit 8 pixels).<br>
+<br>
+En cas de <a href="Masquemonoetmulti__cran.htm">masque multi-écran</a>, on fera attention à ce que les différentes pages soient définies avec le même nombre de lignes et de colonne.<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp4">Cas particulier d'une page incluant un <a href="Caract&eacute;ristiques_et_param&eacute;trage_d_un_accord&eacute;on.htm">accordéon</a></span> :</p>
+<p class="body-text">La taille spécifiée ici <span class="hcp6">doit tenir compte des en-têtes des pans de l’accordéon</span>. Comptez DEUX lignes d’en-tête pour chaque pan.<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp4">Cas particulier d'une page incluse dans un <a href="Caract&eacute;ristiques_et_param&eacute;trage_d_un_accord&eacute;on.htm">accordéon</a></span> :</p>
+<p class="Body-Text">La taille spécifiée ici <span class="hcp6">ne doit pas tenir compte de la zone d’en-tête</span>.<br>
+&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Cas particulier d'une <a href="Caract&eacute;ristiques_des_objets_panels_pages.htm">page panel</a> :</p>
+<p class="Body-Text">Ce n'est pas une obligation mais il est conseillé d'ajuster la taille de la cellule de grille qui affichera la page panel pour qu'elle corresponde exactement à la taille de cette page.<span class="hcp6"><br>
+Cet ajustement n'est pas automatique</span> mais un choix du menu de Xwin permet de redimensionner une page parente et ses grilles pour qu'elles s'ajustent parfaitement aux pages panels qu’elles contiennent : voir la rubrique <a href="Agencement_des_pages_panels_dans_les_cellules_de_grille.htm">Agencement des pages panels dans les cellules de grille</a>.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Offset ligne / colonne</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Spécifie la <span class="hcp4">position</span> (exprimée en "lignes" et en "colonnes") d'affichage de la page ou de la fenêtre, relativement au début de la fenêtre courante.<br>
+<br>
+Une valeur nulle est interdite pour les pages de type "Fenêtre", de telle manière qu'une nouvelle fenêtre soit toujours décalée par rapport à la fenêtre courante.<br>
+<br>
+Aucun contrôle n'est effectué sur la validité des offsets indiqués ici.</p>
+<p class="Body-Text"><font class="hcp7">Exemple 1</font> : (0,0) demande d'afficher la&#160;page à partir de la première ligne et de la&#160;première colonne de la fenêtre courante (valeurs par défaut).</p>
+<p class="Body-Text"><font class="hcp7">Exemple&#160;2</font>&#160;&#160;: (5,19) demande d'afficher la page / fenêtre à partir de la 6ème ligne et de la vingtième colonne de la fenêtre courante.</p>
+&#160;
+<p class="Body-Text">En cas de <a href="Masquemonoetmulti__cran.htm">masque multi-écran</a>, on fera attention à ce que les différentes pages soient définies avec les mêmes offsets.<br>
+<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp4">Cas particulier d'une <a href="Caract&eacute;ristiques_des_objets_panels_pages.htm">page panel</a></span> :<br>
+<br>
+Une page Xwin référencée par un objet Panel page est automatiquement positionnée dans la cellule de grille correspondante. En conséquence, les offsets paramétrés ici pour une page panel sont purement et simplement <span class="hcp4">ignorés à l'exécution</span>.<br>
+<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp4">Cas particulier d'une page incluse dans un <a href="Caract&eacute;ristiques_et_param&eacute;trage_d_un_accord&eacute;on.htm">accordéon</a></span> :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">L'<span class="hcp6">offset Colonne</span> s'exprime <span class="hcp6">relativement</span> à la position occupée par la page où est défini l'accordéon et il est totalement significatif.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'<span class="hcp6">offset Ligne</span> s'exprime <span class="hcp6">relativement</span> à la position occupée par la page où est défini l'accordéon mais il <span class="hcp6">n'est que partiellement significatif</span>.<br>
+<br>
+En effet, les pages incluses dans un accordéon sont automatiquement "empilées" les unes sous les autres. L'<span class="hcp4">ordre d'affichage</span> des pans de l'accordéon est déterminé par les <span class="hcp4">valeurs respectives des offsets Ligne</span> des différentes pages incluses mais le client ne tient pas compte des valeurs exactes pour positionner les pages dans la page parente.<span class="hcp4"><br>
+Exemple</span> : L'accordéon de la page parente A inclut les pages A1, A2 et A3, à afficher dans cet ordre. Pour que l'ordre voulu soit respecté, il faut et il suffit que les offsets Ligne respectifs de ces trois pages soient croissants (par exemple 0, 10, 20).<br>
+<br>
+L'offset Ligne est aussi utilisé par le client pour détecter qu'une page doit en remplacer une autre dans un même pan de l'accordéon.<span style="margin-left: 48px; font-weight: bold;"><br>
+<br>
+Exemple</span> : En fonction du contexte, le programme affiche soit la page A11, soit la page A12 dans le même pan d'accordéon. Il faut dans ce cas que les offsets et les tailles des pages A11 et A12 soit identiques afin d'assurer une gestion correcte des effacements.<br>
+<br>
+A titre indicatif, les pages incluses dans un accordéon VISIBLE sont précédées chacune d'un en-tête de deux lignes. On en tiendra compte si l'on désire calculer la valeur exacte de leur offset Ligne (conventionnellement, l'offset Ligne d'une page incluse tient compte des en-têtes des pages précédentes mais omet l'en-tête de la page elle-même).</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Page précédente / suivante</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Si la page ne fait pas partie d'un <a href="Masquemonoetmulti__cran.htm">masque multi-écran</a>, il faut laisser ces deux valeurs à zéro (valeurs par défaut).</p>
+<p class="Body-Text">Sinon, ces champs indiquent respectivement le numéro de la page précédente et le numéro de la page suivante du masque multi-écran. Ils précisent comment doivent s'enchaîner les différentes pages :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1"><span class="hcp8">Il faut garnir le champ</span> &lt;Page Précédente&gt; <span class="hcp8">si la page considérée</span> n'est pas la première page <span class="hcp8">du masque multi-écran.</span></font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1"><span class="hcp8">Il faut garnir le champ</span> &lt;Page suivante&gt; <span class="hcp8">si la page considérée</span> n'est pas la dernière page <span class="hcp8">du masque multi-écran.</span></font></p>
+</li>
+</ul>
+<p class="Body-Text">Si ces liens ne sont pas correctement établis, des anomalies se produiront à l'exécution du masque, lorsque l'utilisateur passera d'une page à l'autre par les touches Ctrl+Tab et Maj+Ctrl+Tab.<span style="font-weight: bold; text-decoration: none;"><br>
+<br>
+Voir aussi</span> : <a href="Ongletsavecdespagescha_n_es.htm">Onglets avec des pages chaînées</a>.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp7">Exemple</font>&#160;: Soit un masque multi-écran formé des 3 pages Xwin numérotées 3, 4 et 6 (les pages ne sont pas obligatoirement consécutives). Il faut établir les liens suivants entre&#160;ces trois pages :<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<table cellspacing="0" width="100%" class="hcp9">
+<col style="width: 33.333%;">
+<col style="width: 33.333%;">
+<col style="width: 33.333%;">
+<tr class="hcp2">
+<td style="width:33.333%;" class="hcp10">
+<p class="Body-Text" style="text-align: center;"><font class="hcp1">Page</font></p>
+</td>
+<td style="width:33.333%;" class="hcp11">
+<p class="Body-Text" style="text-align: center;"><font class="hcp1">Précédente</font></p>
+</td>
+<td style="width:33.333%;" class="hcp11">
+<p class="Body-Text" style="text-align: center;"><font class="hcp1">Suivante</font></p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<table style="vertical-align: Center;" cellspacing="0" width="100%">
+<col style="width: 33.333%;">
+<col style="width: 33.333%;">
+<col style="width: 33.333%;">
+<tr style="vertical-align: center;">
+<td style="width:33.333%;" class="hcp10">
+<p class="hcp12">3</p>
+</td>
+<td style="width:33.333%;" class="hcp11">
+<p class="hcp12">0</p>
+</td>
+<td style="width:33.333%;" class="hcp11">
+<p class="hcp12">4</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<table cellspacing="0" width="100%" class="hcp9">
+<col style="width: 33.333%;">
+<col style="width: 33.333%;">
+<col style="width: 33.333%;">
+<tr class="hcp2">
+<td style="width:33.333%;" class="hcp10">
+<p class="hcp12">4</p>
+</td>
+<td style="width:33.333%;" class="hcp11">
+<p class="hcp12">3</p>
+</td>
+<td style="width:33.333%;" class="hcp11">
+<p class="hcp12">6</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<table cellspacing="0" width="100%" class="hcp9">
+<col style="width: 33.333%;">
+<col style="width: 33.333%;">
+<col style="width: 33.333%;">
+<tr class="hcp2">
+<td style="width:33.333%;" class="hcp10">
+<p class="hcp12">6</p>
+</td>
+<td style="width:33.333%;" class="hcp11">
+<p class="hcp12">4</p>
+</td>
+<td style="width:33.333%;" class="hcp11">
+<p class="hcp12">0</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Fenêtre</font></p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Case à cocher définissant le <a href="Ecrandetype_Page_etdetype_Fen_tre_.htm">type de la page</a> :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Non cochée</font> : la page est de type "Page".<br>
+Elle est affichée dans la fenêtre courante. La propriété "Effacement" détermine si tout ou partie du contenu de la fenêtre en cours doit être effacé.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp4">Cochée</span> : la page est de type "Fenêtre".<br>
+Son affichage provoquera l'ouverture d'une fenêtre complémentaire (initialement vide).<br>
+Option ignorée pour une page panel.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Titre</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Libellé</span> affiché dans la <span class="hcp4">barre de titre</span> de la nouvelle fenêtre.<br>
+Ce champ n'est significatif que si la page est de type "Fenêtre". A défaut, la fenêtre n'aura pas de titre (déconseillé).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Taille</font></p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Multi-choix spécifiant si la fenêtre sera ("<span class="hcp4">Taille variable</span>") ou non ("<span class="hcp4">Taille fixe</span>") redimensionnable par l'utilisateur.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Cadre Traitements</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Traitement avant</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Nom du traitement</span> à exécuter <span class="hcp4">avant</span> l'<span class="hcp6">affichage</span> des <span class="hcp6">variables</span> de la page (XmeDispv, XmeConsult, XmeInput).<br>
+<br>
+Ce traitement peut s'utiliser, par exemple, pour mettre à jour des données complémentaires du masque, non renseignées par le programme appelant.</p>
+<p class="Body-Text"><font class="hcp1">Remarque</font>&#160;: Le traitement est exécuté même si la page ne contient aucune variable. Il n'est pas exécuté au XmeDisp.<br>
+<br>
+Vous pouvez saisir le nom manuellement ou cliquer sur la flèche, auquel cas vous ouvrez un menu contextuel (voir <a href="Saisie_d_un_nom_de_traitement.htm">Saisie d'un nom de traitement</a>).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Traitement Après</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Nom du traitement</span> à exécuter <span class="hcp4">à la fin</span> de la <span class="hcp6">saisie</span> de la page (XmeInput), en général après la validation du masque par Entrée, mais aussi par Tab sur la dernière donnée ou Back-Tab sur la première donnée.</p>
+<p class="Body-Text"><font class="hcp7">En cas de pages chaînées, c'est toujours le traitement indiqué sur la <span class="hcp4">première page</span> qui est exécuté</font> (le traitement indiqué ici n'est pas significatif si la page n'est pas la première du groupe de pages chaînées).</p>
+<p class="Body-Text">Pour les détails de programmation, consultez le chapitre <font class="hcp1">Programmation de la saisie d'un masque</font> du livre consacré à Ywpf.</p>
+<p class="Body-Text">Ce traitement permet par exemple de faire d'ultimes vérifications sur la validité des données saisies. Après son exécution, toutes les données de la page sont automatiquement réaffichées.<br>
+<br>
+Vous pouvez saisir le nom manuellement ou cliquer sur la flèche, auquel cas vous ouvrez un menu contextuel (voir <a href="Saisie_d_un_nom_de_traitement.htm">Saisie d'un nom de traitement</a>).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Arrêt demande de saisie</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Ce <span class="hcp4">point d'arrêt</span> est exécuté lorsqu'une <span class="hcp4">autre page</span> est en cours de saisie et que l'utilisateur clique sur une donnée D en saisie sur <span class="hcp4">cette</span> page.<br>
+<br>
+Le programme peut utiliser ce point d'arrêt pour changer de page. Il peut par la même occasion récupérer le point de séquence de la donnée D et l'utiliser pour se positionner directement sur D.</p>
+<p class="Body-Text">Attention, ce point d'arrêt n'est pas exécuté pendant la saisie d'une ligne de tableau.</p>
+<p class="Body-Text">Voir les rubriques : <a href="Gestionduclicsourislorsdelasaisie.htm">Gestion du clic souris lors de la saisie</a>, <a href="Pointdes_quence.htm">Point de séquence</a>.</p>
+<p class="Body-Text">Voir aussi la rubrique <font class="hcp1">Souris : clic hors de la page en cours</font> du livre consacré à Ywpf.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Cadre <a href="Caract&eacute;ristiques_et_param&eacute;trage_d_un_volet.htm">Volet</a></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Page Escamotable</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Si vous cochez cette case, la page courante sera considérée comme "<span class="hcp4">escamotable</span>". Une "languette" sera affichée dans sa partie supérieure droite pour permettre à l'utilisateur de la faire disparaître de l'écran, au profit des pages spécifiées dans le champ "Pages extensibles".<span class="hcp4"><br>
+<br>
+Attention</span> : Une page escamotable doit être <span class="hcp4">attachée à droite</span> (cadre Attachements).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Pages extensibles</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Liste des numéros des pages autorisées à s'étendre</span> lorsque la page courante est escamotée.<br>
+Les différents numéros doivent être séparés entre eux par un <span class="hcp4">; (point virgule)</span>.</p>
+<p class="Body-Text"><span class="hcp4">Exemple</span> : 2;3;4</p>
+<p class="Body-Text">Les numéros font référence à des pages Xwin du <span class="hcp4">même</span> fichier masque.<br>
+Ce champ n'est pas significatif si la case "Page Escamotable" n'est pas cochée.<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp4">Remarques</span> :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Si une <span class="hcp4">page extensible</span> fait partie d'un <span class="hcp4">groupe de pages (chaînées ou non) liées par un onglet</span>, n'indiquez ici que la <span class="hcp4">première</span> page du groupe. Les autres pages seront automatiquement ajoutées à la liste.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le programme peut être amené à remplacer une page extensible par une autre en fonction du contexte. Dans ce cas, la liste doit mentionner <span class="hcp4">toutes</span> les pages autorisées à s'étendre au cours de la vie du programme. Elle peut donc comprendre des pages qui ne sont pas affichées simultanément : le client ignorera celles non affichées à un instant donné. &#160;Mais attention, lorsqu’une page en remplace une autre, il faut que les offsets et les tailles des deux pages soient identiques afin d'assurer une gestion correcte des effacements.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Si la <span class="hcp4">page escamotable</span> elle-même fait partie d'un <span class="hcp4">groupe de pages (chaînées ou non) liées par un onglet</span>, affectez uniquement les deux propriétés précédentes à la <span class="hcp4">première page</span> du groupe. Elles seront transmises automatiquement aux autres pages du groupe.<br>
+<br>
+Quelques contrôles sont faits à la compilation et à l’exécution sur la liste des pages extensibles fournies : numéro de page non nul et ne dépassant pas le nombre total de pages du masque, numéro de page différent du numéro de la page escamotable elle-même (y compris les pages liées par onglet).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Cadre <a href="Caract&eacute;ristiques_et_param&eacute;trage_d_un_accord&eacute;on.htm">Accordéon</a></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Accordéon</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Si vous cochez cette case, la page courante inclura un <span class="hcp4">accordéon</span> comprenant les pages spécifiées dans le champ "Pages incluses". Chaque page incluse est surmontée d’un titre (libellé d’en-tête). L’utilisateur peut fermer et rouvrir n’importe quel pan de l’accordéon en cliquant sur son titre. Lorsqu’un pan de l’accordéon est fermé, la page correspondante disparaît de l’écran et seul son titre reste affiché.<span class="hcp4"><br>
+<br>
+Attention</span>, un accordéon <span class="hcp6">ne doit pas être inclus dans un masque multi-écran</span> (pages chaînées), pour la raison suivante :<br>
+L'affichage des pages incluses dans un accordéon est toujours à la charge du programme. Mais dans un masque multi-écran, le passage d'une page à une autre est transparent pour le programme. Ce dernier n'étant pas averti du changement de page, il ne peut donc procéder à l'affichage des pages incluses. Vous pouvez toutefois contourner ce problème en remplaçant le masque multi-écran par des pages <span class="hcp4">non chaînées</span>, avec programmation explicite des changements de page.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Invisible</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Deux modes de fonctionnement sont possibles pour un accordéon :</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp4">Case non cochée</span>.<br>
+Les en-têtes des pans de l’accordéon sont affichés en permanence, que les pages soient visibles ou escamotées.</p>
+</li>
+<li class="p">
+<p><span class="hcp4">Case cochée</span>.<br>
+Les en-têtes ne sont affichés que pour les pages escamotées. Ce mode permet de ne perdre aucune place dans le cas d’un masque particulièrement chargé.</p>
+</li>
+</ul>
+<p class="Body-Text">Cette option n'est pas significative si la case "Accordéon" n'est pas cochée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Pages incluses</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Liste des numéros des pages composants l'accordéon</span>.<br>
+Les différents numéros doivent être séparés entre eux par un <span class="hcp4">; (point virgule)</span>.</p>
+<p class="Body-Text"><span class="hcp4">Exemple</span> : 2;5;7</p>
+<p class="Body-Text">Les numéros font référence à des pages Xwin du <span class="hcp4">même</span> fichier masque.<br>
+Ce champ n'est pas significatif si la case "Accordéon" n'est pas cochée.<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp4">Remarques</span> :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Si un pan de l'accordéon affiche une page faisant partie d'un <span class="hcp4">groupe de pages (chaînées ou non) liées par un onglet</span>, indiquez ici uniquement la <span class="hcp4">première</span> page du groupe. Les autres pages seront automatiquement ajoutées à la liste.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En fonction du contexte, le programme peut être amené à remplacer une page par une autre dans un même pan de l'accordéon. Dans ce cas, la liste doit mentionner <span class="hcp4">toutes</span> les pages susceptibles d'être incluses au cours de la vie du programme. Elle peut donc comprendre des pages qui ne sont pas affichées simultanément : le client ignorera celles non affichées à un instant donné. Mais attention, lorsqu’une page en remplace une autre, il faut que les offsets et les tailles des deux pages soient identiques afin d'assurer une gestion correcte des effacements.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Quelques contrôles sont faits à la compilation et à l’exécution sur la liste des pages incluses fournies : numéro de page non nul et ne dépassant pas le nombre total de pages du masque, numéro de page différent du numéro de la page parente (y compris les pages liées par onglet).</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Ordre de saisie automatique</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Si cette case est cochée, l'<a href="Ordredesaisie.htm">ordre de saisie</a> par défaut est calculé automatiquement par Xwin.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="margin-bottom: 6.00pt; line-height: 10.00pt; font-weight: bold;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:23.542%;" class="hcp3">&#160;
+<p class="Body-Text" style="margin-bottom: 6.00pt; line-height: 10.00pt; font-weight: bold;"><span style="font-size: 11pt;">Cadre Transparence</span></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Pages</font></p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Les pages dont les numéros sont spécifiés ici sont affichées en même temps que la page courante. Cela permet d'aligner plus facilement les objets entre plusieurs pages. Il s'agit uniquement d'une facilité de dessin et ce paramètre n'a aucune influence lors de l'exécution du masque.<br>
+Si vous spécifiez plusieurs numéros de page, séparez-les par un point-virgule (;).<br>
+Exemples :<br>
+2<br>
+2;4;5</p>
+&#160;
+<p class="Body-Text"><span class="hcp4">Attention</span> : La transparence <span class="hcp4">n'est pas gérée</span> si la page spécifiée comporte une <span class="hcp4">grille</span> (la page ne s'affiche pas).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1"><span class="hcp4">P</span>ositions</font></p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Numéros de ligne où les pages en transparence doivent être affichées, de manière à éviter d'éventuels chevauchements entre les objets des différentes pages. Si vous avez spécifié plusieurs pages, indiquez la position de chaque page en séparant les numéros de ligne par un point-virgule (;).<br>
+Exemples :<br>
+20<br>
+20;24;27<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Cadre Attachements</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0px; margin-bottom: 0px;">&#160;</p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Les attachements déterminent le comportement de la page lorsque sa taille est susceptible d'augmenter ou de diminuer suite à une action de l'utilisateur : changement de taille ou maximisation de la fenêtre Windows, ouverture ou fermeture d'un volet ou d'un pan d'accordéon, déplacement d'une barre de redimensionnement.<br>
+&#160;</p>
+<p class="Body-Text">Voir : <a href="Attachementdespages.htm">Attachement des pages</a>, <a href="Attachementdesobjets.htm">Attachement des objets</a>.<span class="hcp4"><br>
+<br>
+Remarque</span> : Les propriétés d'attachements "Hauteur variable" et "Largeur variable" sont attribuées automatiquement par Xwin si la page est de type "Fenêtre" et de "Taille variable".<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp4">Attention</span> :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">En cas de pages chaînées comportant un onglet déclaré en "Largeur ou Hauteur variable", il faut que <span class="hcp4">toutes</span> les pages concernées soient elles-mêmes déclarées en "Largeur ou Hauteur variable" (cette erreur n’est pas détectée par le compilateur).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En cas d’écran affichant plusieurs pages simultanément, attention à ne pas introduire de chevauchement entre les différentes pages (ceci peut par exemple se produire si vous déclarez par erreur la page extensible –au lieu d’attachée– pour annuler l'erreur de compilation produite par la présence d’un objet attaché dans la page).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Une page <span class="hcp4">escamotable</span> (cadre Volet) doit être <span class="hcp4">attachée à droite</span>.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Cadre Aide par défaut</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Fichier</font></p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Nom (sans extension) d'un fichier d'aide par défaut.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:23.542%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Numéro</font></p>
+</td>
+<td style="width:76.458%;" class="hcp3">
+<p class="Body-Text">Numéro d'aide. Cette aide est l'aide <span class="hcp4">par défaut</span> de tous les objets de la page. Lorsque l'utilisateur appelle l'aide (touche Maj+F1), Ywpf affiche l'aide liée à l'objet. Si l'objet n'a pas d'aide associée, Ywpf affiche l'aide spécifiée ici.<br>
+<br>
+Voir la rubrique <a href="Aidepage.htm">Aide</a>.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Boutons</p>
+<table cellspacing="0" width="100%" class="hcp9">
+<col style="width: 20.073%;">
+<col style="width: 79.927%;">
+<tr class="hcp2">
+<td style="width:20.073%;" class="hcp10">
+<p class="hcp13">Commentaires</p>
+</td>
+<td style="width:79.927%;" class="hcp11">
+<p>Ouvre une fenêtre permettant de saisir des commentaires attachés à la page.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="border-left: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 20.073%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp13">Boutons</p>
+</td>
+<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 79.927%; padding-right: 10px; padding-left: 10px;">
+<p>Permet de sélectionner la liste des boutons nommés valides, lors de la consultation de la page par XmeConsult. Voir la rubrique <a href="Validit_d_unbouton.htm">Validité d'un bouton</a>.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="RelatedHead" style="border-top: #000000 1.5pt solid;">Voir</p>
+<p class="Body-Text" style="margin-top: 2pt;"><a href="Traitements.htm">Traitements</a></p>
+</body>
+</html>

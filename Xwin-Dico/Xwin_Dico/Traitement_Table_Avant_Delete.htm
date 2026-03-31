@@ -1,0 +1,51 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Traitement Table Avant Delete</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:normal; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Traitement Table Avant Delete</h1>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">Le traitement local (facultatif) "<span class="hcp2">Avant Delete</span>", associé à une <span class="hcp2">table</span> d'un fichier, est automatiquement appelé par l'instruction Diva <span class="hcp2">iDelete</span> avant la suppression de l'enregistrement.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">Il s'agit d'une <span class="hcp2">procédure</span> ayant les paramètres suivants :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp1"><span class="hcp2">tdf</span><br>
+Table de définition de fichier utilisée pour effectuer la suppression de l'enregistrement (passée par adresse).</p>
+</li>
+<li class="p">
+<p class="hcp1"><span class="hcp2">table</span><br>
+Instance de l'enregistrement supprimé (passée par adresse).</p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">Exemple du squelette de la procédure généré par Xwin :<br>
+&#160;</p>
+<p class="source">;*</p>
+<p class="source">Public Procedure Table_MonFichier_MaTable_Delete (&amp;tdf,&amp;table)</p>
+<p class="source">;</p>
+<p class="source">Record * &#160;htdf tdf &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;table de définition de fichier</p>
+<p class="source">Record MonDico.dhsd MaTable table</p>
+<p class="source">Beginp</p>
+<p class="source">&#160;&#160;&#160;</p>
+<p class="source">Endp</p>
+<p>&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p><a href="Description_g&eacute;n&eacute;rale_des_traitements_du_dictionnaire.htm">Description générale des traitements du dictionnaire</a></p>
+<p>&#160;</p>
+<p>.</p>
+</body>
+</html>

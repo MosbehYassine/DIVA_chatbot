@@ -1,0 +1,296 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Assistance au codage dans un dictionnaire Sql</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-size:11pt; }
+span.hcp2 { font-weight:bold;
+font-size:11pt; }
+span.hcp3 { font-weight:bold; }
+ul.hcp4 { list-style:disc; }
+li.hcp5 { list-style:none;
+display:inline; }
+p.hcp6 { font-weight:bold;
+font-size:10pt;
+font-style:normal; }
+p.hcp7 { margin-left:48px; }
+ol.hcp8 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Assistance au codage dans un dictionnaire Sql</h3>
+<p>&#160;</p>
+<p>Les principes généraux de saisie assistée décrits dans les rubriques précédentes restent globalement valides dans un source de dictionnaire de RecordSql ou de Jointures Sql. Toutefois, quelques spécificités sont à signaler.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2">Affichage automatique de la liste des membres</span></p>
+<p>Il existe plusieurs cas spécifiques d'ouverture automatique de la liste des membres. Citons <span class="hcp3">par exemple</span> :</p>
+<ul class="hcp4">
+<li class="p">
+<p>Frappe d'un <span class="hcp3">"&lt;"</span> en colonne 1 :</p>
+</li>
+<li class="hcp5">
+<ul class="hcp4">
+<li class="p">
+<p>Dans un dictionnaire de RecordSql, ouvre une liste comprenant le RecordSql lui-même et ses Sous-sections (&lt;Select&gt;, &lt;From&gt;, &lt;Where&gt;, etc.).</p>
+</li>
+<li class="p">
+<p>Cas particuliers où la liste n'est pas ouverte et pour lesquels une génération automatique de code a lieu (voir le paragraphe "Générations automatiques de code source" ci-dessous) :</p>
+</li>
+<li class="hcp5">
+<ul class="hcp4">
+<li class="p">
+<p>Dans un dictionnaire de Jointures Sql car il n'existe qu'une unique possibilité de balise (le &lt;Join&gt; lui-même).</p>
+</li>
+<li class="p">
+<p>Si le dictionnaire ne comporte pas de balise d'en-tête (&lt;DictionarySql&gt; ou &lt;DictionaryJoinSql&gt;) avant la ligne courante, cette balise est automatiquement générée.</p>
+</li>
+<li class="p">
+<p>Si le dictionnaire de RecordSql ne contient aucun RecordSql avant la ligne courante, un &lt;RecordSql&gt; est automatiquement généré.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp4">
+<li class="p">
+<p>Frappe d'un <span class="hcp3">espace</span> ou d'un <span class="hcp3">caractère de mot</span> à l'intérieur de la <span class="hcp3">déclaration</span> d'une balise (zone comprise entre les délimiteurs <span class="hcp3">"&lt;"</span> et <span class="hcp3">"&gt;"</span>) :<br>
+Ouvre une liste comprenant tous les <span class="hcp3">attributs</span> liés à cette balise.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Frappe d'un point-virgule <span class="hcp3">(;)</span> ou d'un <span class="hcp3">caractère de mot</span> (uniquement entre quotes) ou frappe d'une quote derrière le mot clé "<span class="hcp3">Dependencies=</span>" ou "<span class="hcp3">ColumnNames=</span>" :<br>
+Ouvre une liste comprenant toutes les dépendances ou tous les noms du Select.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Certaines opérations amenant une génération automatique de code :<br>
+Voir le paragraphe "Générations automatiques de code source" ci-dessous.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="hcp1"><span class="hcp2">Cas particuliers d'ouverture manuelle de la liste des membres</span></p>
+<p>Voyons aussi quelques cas particuliers liés aux sources de dictionnaire Sql :</p>
+<ul class="hcp4">
+<li class="p">
+<p><span class="hcp3">Début du corps</span> des Sous-sections <span class="hcp3">&lt;Join&gt;</span> et <span class="hcp3">&lt;From&gt;</span> d'un RecordSql.<br>
+Le corps de ces sections débute normalement par le nom d'une table, éventuellement précédé d'un nom de dictionnaire de données.<br>
+La fenêtre des membres ouverte à cet endroit présente la liste des tables du dictionnaire spécifié (ou, sans nom de dictionnaire, la liste des tables du dictionnaire par défaut précisé dans l'attribut DefaultDictionary de la balise DictionarySql).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La fenêtre des membres ouverte après le mot clé <span class="hcp3">Using</span> dans une Sous-section <span class="hcp3">&lt;Join&gt;</span> d'un RecordSql présente la liste des jointures définies dans le dictionnaire de Jointures Sql pour la table considérée.<br>
+Une jointure est ici traitée comme une fonction. Si elle comporte des paramètres, l'aide à la saisie des fonctions peut être obtenue (Cf. rubrique <a href="Informations_sur_les_param&egrave;tres.htm">Informations sur les paramètres de procédure ou de fonction</a>), en particulier après la frappe d'une <span class="hcp3">"("</span> derrière le nom de la jointure.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La frappe d'un point <span class="hcp3">(.)</span> après le mot clé <span class="hcp3">SubQuery</span> ouvre une fenêtre des membres proposant la liste des <span class="hcp3">sous-requêtes</span> définies dans la Sous-section &lt;Subquery&gt; du RecordSql.<br>
+SubQuery est ici traitée comme une fonction. Si elle comporte des paramètres, l'aide à la saisie des fonctions peut être obtenue (Cf. rubrique <a href="Informations_sur_les_param&egrave;tres.htm">Informations sur les paramètres de procédure ou de fonction</a>), en particulier après la frappe d'une <span class="hcp3">"("</span> derrière le nom de la sous-requête.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Certains mots clés apparaissent dans le corps d'une Sous-section, sur la ligne de déclaration d'un Case ou dans le corps d'un Case. Dans ce cas, Ctrl+J et Ctrl+Espace les proposent, éventuellement accompagnés d'autres membres dépendant du contexte d'appel.<br>
+Exemples :<br>
+Dans un &lt;Select&gt; : As, GroupBy, Name, NoActivate, SubQuery.<br>
+Dans le Case d'un &lt;OrderBy&gt; : Public, Private, Dependencies, ColumnNames, Asc, Desc.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2"><span class="hcp2">E</span>limination des membres déjà saisis</span></p>
+<p>Afin de ne pas dupliquer certains membres, l'éditeur de Xwin vous assiste en éliminant de la liste des membres :</p>
+<ul class="hcp4">
+<li class="p">
+<p><span class="hcp3">Les attributs d'un composant déjà saisis</span>.<br>
+Exemple : Dans la déclaration d'un RecordSql, la liste affiche au départ tous ses attributs (Name, DataBase, ZoomOptimize, ...). Mais si Name et DataBase sont déjà présents dans le source, ces deux attributs ne seront plus suggérés.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Les Sous-sections déjà saisies qui ne peuvent apparaître qu'une seule fois dans un RecordSql</span>.<br>
+Exemple : Sur la frappe d'un <span class="hcp3">"&lt;"</span> en colonne 1, la liste affiche au départ toutes les Sous-sections du RecordSql courant. Mais si les sections uniques &lt;Select&gt; et &lt;From&gt; sont déjà présentes dans le source, elles ne seront plus suggérées.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les dépendances déjà saisies derrière le mot clé "<span class="hcp3">Dependencies</span>", ainsi que les noms déjà mentionnés derrière "<span class="hcp3">ColumnNames</span>".<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les mots clés présents dans le corps d'une Sous-section, sur la ligne de déclaration d'un Case ou dans le corps d'un Case font l'objet de la restriction suivante :<br>
+Seuls les mots clé déjà saisis sur la <span style="text-decoration: underline;">même ligne de source</span> ne seront plus suggérés.<br>
+Si le mot clé "Private" ou "Public" est présent, les deux ne seront plus suggérés. De même pour les mots clé "Asc" et "Desc".</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp1"><span>Membres absents en surcharge</span></p>
+<p>Certaines Sous-sections de RecordSql (&lt;From&gt;, &lt;GroupBy&gt;) et certains attributs (par exemple, Top et Distinct dans un &lt;Select&gt;) ne sont pas suggérés dans la fenêtre des membres parce qu'ils sont interdits dans un dictionnaire de surcharge.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Utilisation de la barre de navigation</p>
+<ul class="hcp4">
+<li class="p">
+<p class="hcp6">Dans un dictionnaire de RecordSql :</p>
+</li>
+<li class="hcp5">
+<ul class="hcp4">
+<li class="p">
+<p>La <span class="hcp3">liste de droite</span> contient <span class="hcp3">tous les RecordSql du source courant</span> et vous permet de consulter le nom du RecordSql en cours d'édition et d'accéder directement à un RecordSql particulier de votre source.</p>
+</li>
+<li class="p">
+<p>La <span class="hcp3">liste de gauche</span> contient toutes les <span class="hcp3">Sous-sections</span> (&lt;Select&gt;, &lt;From&gt;, &lt;Where&gt;, etc.) du RecordSql en cours d'édition (plus le &lt;RecordSql&gt; lui-même) et vous permet de consulter le nom de la section courante et d'accéder directement à une section particulière de ce RecordSql.<br>
+Cette liste affiche aussi les <span class="hcp3">Case</span> des sections concernées.<br>
+La couleur de l'icône d'un élément de la liste permet de reconnaître son type (rouge pour le RecordSql lui-même, verte pour une section, bleue pour un Case).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp7">Vous pouvez donc utiliser la barre de navigation pour :</p>
+<ol class="hcp8">
+<li class="hcp5">
+<ul class="hcp4">
+<li class="p">
+<p><span class="hcp3">Consulter le nom du RecordSql en cours d'édition</span>.<br>
+La liste de droite affiche en permanence le nom du RecordSql en cours d'édition (ou un élément vide si le curseur clavier n'est pas à l'intérieur d'un RecordSql).</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Accéder directement à un RecordSql particulier</span>.<br>
+Si vous sélectionnez un élément de la liste de droite, vous vous rendez immédiatement sur le RecordSql choisi.</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Consulter le nom de la Sous-section ou du Case courant du RecordSql en cours d'édition</span>.<br>
+La liste de gauche affiche en permanence le nom de la section ou du Case courant du RecordSql en cours d'édition.</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Accéder directement à une Sous-section ou à un Case particulier du RecordSql en cours d'édition</span>.<br>
+Si vous sélectionnez un élément de la liste de gauche, vous vous rendez immédiatement sur la section ou le Case choisi.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul class="hcp4">
+<li class="p">
+<p class="hcp6">Dans un dictionnaire de Jointures de Sql :</p>
+</li>
+<li class="hcp5">
+<ul class="hcp4">
+<li class="p">
+<p>La <span class="hcp3">liste de droite</span> contient <span class="hcp3">toutes les Jointures Sql du source courant</span> et vous permet de consulter le nom de la Jointure en cours d'édition et d'accéder directement à une Jointure particulière de votre source.</p>
+</li>
+<li class="p">
+<p>La <span class="hcp3">liste de gauche</span> contient tous les <span class="hcp3">Case</span> de la Jointure en cours d'édition (plus le &lt;Join&gt; lui-même) et vous permet de consulter le nom du Case courant et d'accéder directement à un Case particulier de cette Jointure.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp7">Vous pouvez donc utiliser la barre de navigation pour :</p>
+<ol class="hcp8">
+<li class="hcp5">
+<ul class="hcp4">
+<li class="p">
+<p><span class="hcp3">Consulter le nom de la Jointure en cours d'édition</span>.<br>
+La liste de droite affiche en permanence le nom de la Jointure en cours d'édition (ou un élément vide si le curseur clavier n'est pas à l'intérieur d'une Jointure).</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Accéder directement à une Jointure particulière</span>.<br>
+Si vous sélectionnez un élément de la liste de droite, vous vous rendez immédiatement sur la Jointure choisie.</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Consulter le nom du Case courant de la Jointure en cours d'édition</span>.<br>
+La liste de gauche affiche en permanence le nom du Case courant de la Jointure en cours d'édition.</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Accéder directement à un Case particulier de la Jointure en cours d'édition</span>.<br>
+Si vous sélectionnez un élément de la liste de gauche, vous vous rendez immédiatement sur le Case choisi.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>&#160;</p>
+<p class="hcp1">Information rapide sur un membre</p>
+<p>Tous les mots clé susceptibles d'apparaître dans un source de dictionnaire Sql font l'objet d'une bulle d'information rapide.<br>
+L'information associée aux éléments syntaxiques du "langage" en récapitule la syntaxe.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Générations automatiques de code source</p>
+<p>Des extraits de code sont automatiquement insérés dans le source dans les cas suivants :</p>
+<ul class="hcp4">
+<li class="p">
+<p>Après la frappe de '&lt;' en colonne 1, le '&gt;' correspondant est généré.</p>
+</li>
+<li class="p">
+<p>Après la frappe de '&lt;' en colonne 1 et dans certains cas particuliers :</p>
+</li>
+<li class="hcp5">
+<ul class="hcp4">
+<li class="p">
+<p>Dans un dictionnaire de Jointures Sql, il n'existe qu'une unique possibilité de balise (le &lt;Join&gt; lui-même) et un &lt;Join&gt; est généré.</p>
+</li>
+<li class="p">
+<p>Si le dictionnaire ne comporte pas de balise d'en-tête (&lt;DictionarySql&gt; ou &lt;DictionaryJoinSql&gt;) avant la ligne courante, cette balise est générée.</p>
+</li>
+<li class="p">
+<p>Si le dictionnaire de RecordSql ne contient aucun RecordSql avant la ligne courante, un &lt;RecordSql&gt; est généré.</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Après la sélection de la balise &lt;RecordSql&gt; (ou &lt;Join&gt; dans un dictionnaire de Jointures) dans la fenêtre des membres, l'attribut "Name" (ou "Table") est généré car sa présence est obligatoire.</p>
+</li>
+<li class="p">
+<p>Après la sélection de l'attribut DefaultDictionary dans la balise &lt;RecordSql&gt;, l'extension du nom de fichier est généré.</p>
+</li>
+<li class="p">
+<p>Après la sélection de l'attribut OverWrittenBy ou OverWrite dans les balises &lt;RecordSql&gt; et &lt;Join&gt;, un nom du fichier est généré.</p>
+</li>
+<li class="p">
+<p>Après la sélection d'un attribut acceptant les valeurs Yes ou No, la valeur Yes (respectivement No) est générée si No (respectivement Yes) est la valeur par défaut.</p>
+</li>
+<li class="p">
+<p>Après la sélection d'un attribut dont la valeur est placée entre quotes, les quotes ouvrante et fermante sont générées.</p>
+</li>
+<li class="p">
+<p>Après la frappe du caractère '=', le cas échéant.</p>
+</li>
+</ul>
+<p>D'autre part :</p>
+<ul class="hcp4">
+<li class="p">
+<p>La <span class="hcp3">création</span> d'un dictionnaire de RecordSql ou d'un dictionnaire de Jointures Sql par le choix <span class="hcp3">Nouveau</span> du menu <span class="hcp3">Fichier</span> génère automatiquement la balise d'en-tête :<br>
+&lt;DictionarySql DefaultDictionary='.dhsd' DataBase='', OverWrittenBy='', ModuleInfo='$Id: $'&gt;<br>
+ou<br>
+&lt;DictionaryJoinSql DataBase='', OverWrittenBy='', ModuleInfo='$Id: $'&gt;<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La <span class="hcp3">création</span> d'un dictionnaire de <span class="hcp3">surcharge</span> par le choix <span class="hcp3">Créer un dictionnaire de RecordSql / Jointures de surcharge</span> du menu contextuel de la fenêtre <span class="hcp3">Projet</span> génère également une balise d'en-tête.</p>
+</li>
+</ul>
+<p>Enfin :</p>
+<ul class="hcp4">
+<li class="p">
+<p>Le choix <span class="hcp3">Générer la surcharge du RecordSql / Join</span> du <a href="Lemenucontextueldel__diteurdetextes.htm">menu contextuel de l'éditeur de textes</a> de Xwin, appelé depuis un dictionnaire Sql de base (ou depuis un dictionnaire de surcharge de niveau inférieur, puisque la surcharge est possible à plusieurs niveaux), génère une amorce de RecordSql / Join dans le source de surcharge.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp1">Mises en retrait automatiques</p>
+<p>Les lignes de code dans un source de dictionnaire Sql font l'objet de mises en retrait automatiques (Cf. rubrique <a href="Modifierlavaleurdestabulations.htm">Modifier les paramètres de mise en retrait et de tabulation</a>).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également&#160;:</p>
+<p><a href="Parcourir_les_composants_d_un_RecordSql_ou_d_une_Jointure_Sql.htm">Parcourir les composants d'un RecordSql ou d'une Jointure Sql</a></p>
+<p><a href="Mises_en_surbrillance_dans_un_dictionnaire_de_RecordSql_ou_de_Jointures_Sql.htm">Mises en surbrillance dans un dictionnaire de RecordSql ou de Jointures Sql</a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

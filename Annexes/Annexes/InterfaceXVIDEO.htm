@@ -1,0 +1,332 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Codification des attributs d'impression</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+tr.hcp3 { vertical-align:top; }
+p.hcp4 { font-weight:bold; }
+td.hcp5 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp6 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp7 { margin-left:48px; }
+span.hcp8 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Codification des attributs d'impression</h3>
+<p class="Body-Text">En mode caractères, le driver Windows n'interprète pas les caractères envoyés (il n'est utilisé que pour émettre les caractères sur le port d'entrée-sortie). Afin que les programmes d'application restent <span class="hcp1">indépendants des matériels utilisés</span>, une interface spécifique à Harmony a été définie pour traiter les <a href="Attributs_d_impression_caract&egrave;res.htm">attributs d'impression caractères</a>.</p>
+<p class="Body-Text">Les commandes de cette interface sont stockées dans les <a href="Fichiersdescriptifsd_imprimanteHarmony.htm">fichiers descriptifs d'imprimantes</a>, fichiers au format .txt (on peut donc les saisir par exemple avec Notepad ou Wordpad).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Principe</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Par la suite, on nomme "commande" une séquence de caractères qui sera interprétée par le matériel comme une demande de changement d'attribut.<br>
+<br>
+Une commande ne peut pas être littérale car elle serait interprétée comme du texte à imprimer. Une commande est reconnue par l'imprimante en tant que telle parce qu'elle commence par un caractère dit d'échappement (ainsi nommé car il s'agit généralement du caractère Echap, de code hexadécimal $1B).<br>
+Exemple : le passage en gras en mode Esc/P est commandé par la séquence $1B $45.<br>
+<br>
+Bien évidemment, le programme pourrait lui-même envoyer les "vraies" séquences de commande à l'imprimante. Mais dans ce cas, il serait totalement dépendant du matériel, ce qui n'est pas souhaitable. La solution consiste alors à envoyer non pas les "vraies" séquences d'échappement mais des séquences propres à Harmony.<span class="hcp1"><br>
+Les</span> <span class="hcp1">séquences reconnues par Harmony sont conventionnellement comprises entre $1B $E0 et $1B $FF</span>.<br>
+(Mais attention $1B $E2 et $1B $E3 sont réservées car envoyées automatiquement en début et fin d'impression - traduction en standard par les commandes PrintBegin et PrintEnd.)</p>
+</li>
+</ul>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Un nom de commande est affecté à chaque séquence conventionnelle</span>.<br>
+Remarque : ce nom peut être librement choisi (à quelques exceptions près où le nom est figé).<br>
+Exemple : &#160;&#160;&#160;&#160;$1B $E4 &#160;&#160;&#160;&#160;&#160;BoldBegin</p>
+</li>
+</ul>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Ensuite, on associera à chaque nom de commande la "vraie" séquence à envoyer à l'imprimante</span>.<br>
+Exemple : &#160;&#160;&#160;&#160;BoldBegin &#160;&#160;&#160;$1B $45</p>
+</li>
+</ul>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">De plus, <span class="hcp1">les changements de taille de police peuvent être "empilés"</span>. Cela signifie que la police, obtenue après une commande de changement de taille, pourra dépendre de la taille de police actuelle.<br>
+Exemple : la commande de passage en caractères expansés aura pour résultat deux tailles différentes, selon que la taille actuelle est normale ou comprimée.</p>
+</li>
+</ul>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Enfin, on pourra également indiquer le <span class="hcp1">jeu de caractères à utiliser</span> (ANSI ou PC8).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Chapitres</p>
+<p class="Body-Text">L'interface est subdivisée en 4 chapitres :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 15.588%;">
+<col style="width: 84.412%;">
+<tr class="hcp3">
+<td style="border: Solid 1px #000000;width: 15.588%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp4">[Translate]</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 84.412%; padding-right: 10px; padding-left: 10px;">
+<p>Permet d'associer les noms de commande aux séquences d'échappement Harmony.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:15.588%;" class="hcp5">
+<p class="hcp4">[Cmd]</p>
+</td>
+<td style="width:84.412%;" class="hcp6">
+<p>Permet d'associer les séquences d'échappement matérielles aux noms de commandes.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:15.588%;" class="hcp5">
+<p class="hcp4">[Stack]</p>
+</td>
+<td style="width:84.412%;" class="hcp6">
+<p>Permet de définir la taille de police à utiliser pour les modes "Normal", "Comprimé", "Expansé", "Elite", etc. ainsi que les règles en cas de changement de tailles en cascade.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:15.588%;" class="hcp5">
+<p class="hcp4">[Options]</p>
+</td>
+<td style="width:84.412%;" class="hcp6">
+<p>Permet de définir des options (actuellement, uniquement le jeu de caractères).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Chapitre [Translate]</p>
+<p class="Body-Text">Ce chapitre permet d'associer un nom de commande à chaque séquence d'échappement Harmony. Si une séquence ne précise aucune commande, rien ne sera envoyé à l'imprimante à la rencontre de cette séquence.</p>
+<p class="Body-Text"><span class="hcp1">Exemple</span> :</p>
+<p class="Body-Text" style="margin-left: 48px;">[Translate]</p>
+<p class="Source">$1b $e0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;NormalBegin<br>
+$1b $e1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;NormalEnd<br>
+$1b $e2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PrintBegin<br>
+$1b $e3 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PrintEnd<br>
+$1b $e4 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;BoldBegin<br>
+...<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp1">Remarques</span> :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Le premier caractère d'une ligne significative doit être en position 1.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un ";" en position 1 indique une ligne de commentaire.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La casse des noms de commande n'est pas significative.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un nom de commande est limité à 32 caractères et peut être choisi librement.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Certaines séquences Harmony sont stockées dans des champs de l'enregistrement System : voir la rubrique <a href="Codes_d_attribut_d_impression_pr&eacute;d&eacute;finis.htm">Codes d'attribut d'impression prédéfinis</a>.</p>
+</li>
+</ul>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold; font-size: 11pt;">Chapitre [Cmd]</span></p>
+<p class="Body-Text">Ce chapitre permet d'associer la chaîne de caractères à envoyer à l'imprimante à chaque nom de commande. Une chaîne est composée de texte(s) délimité(s) par des apostrophes ou des guillemets et/ou de caractères hexadécimaux au format $XX et/ou de noms de commande.</p>
+<p class="Body-Text"><span class="hcp1">Exemple</span> :</p>
+<p class="Source">[Cmd]<br>
+Pica5 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;$1B $57 ‘0’ $1B $50 $12 $1B $57 $31<br>
+Pica12 &#160;&#160;&#160;&#160;&#160;&#160;&#160;$1B $57 "0" $1B $4D<br>
+BoldBegin &#160;&#160;&#160;&#160;$1B $45<br>
+BoldEnd &#160;&#160;&#160;&#160;&#160;&#160;$1B $46<br>
+...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp1">Remarques</span> :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Un nom de commande doit commencer en position 1 et est limité à 32 caractères.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un ";" en position 1 indique une ligne de commentaire.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La casse des noms de commande n'est pas significative.<br>
+Mais attention, celle des ordres à envoyer à l’imprimante doit être respectée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La taille d'une commande à envoyer à l'imprimante est limitée à 64 caractères.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Une commande peut être "vide", indiquant qu’il n’y a rien a envoyer.<br>
+Exemple :<br>
+PrintEnd</p>
+</li>
+</ul>
+&#160;
+<p class="body-text"><span class="hcp1">A titre indicatif</span>, voici une liste des noms de commande que vous trouverez dans les fichiers descriptifs standard :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Pica5 / Pica10 / Pica12 / Pica17 / Pica20 / Pica85 (tailles de police)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">BoldBegin / <span class="hcp7">BoldEnd (style gras)</span></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">ItalicBegin / ItalicEnd (style italique)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">UnderlineBegin / UnderlineEnd (attribut souligné)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">SuperScriptBegin / SuperScriptEnd (attribut exposant)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">SubScriptBegin / SubScriptEnd (attribut indice)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">StrikeThroughBegin / StrikeThroughEnd (attribut barré)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">OtherBegin / OtherEnd (autre attribut)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Landscape / Portrait (orientation)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lpi6 / <span class="hcp7">Lpi8 (nombres de lignes par pouce)</span></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">BlackFont / BlueFont / GreenFont / CyanFont / RedFont / MagentaFont / YellowFont / WhiteFont (couleurs des caractères)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">BlackBackGround / BlueBackGround / GreenBackGround / CyanBackGround / RedBackGround / MagentaBackGround / YellowBackGround / WhiteBackGround (couleurs du fond)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">PrintBegin / PrintEnd (initialisation et fin d'impression)</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Chapitre [Stack]</p>
+<p class="Body-Text">Ce chapitre permet de définir la taille de police à utiliser pour les modes "Normal", "Comprimé", "Expansé", "Elite", etc. ainsi que les règles en cas de changement de tailles en cascade. Vous pouvez en effet envoyer une commande de changement de taille dépendant de la taille de police courante. Par exemple, la commande de passage en caractères expansés peut avoir pour résultat deux tailles différentes, selon que la taille courante est normale ou comprimée.</p>
+<p class="Body-Text">Dans ce chapitre, figurent également des noms de commande mais <span class="hcp1">celles-ci ne sont pas directement associées à une séquence à envoyer à l'imprimante</span>. Elles font par contre appel aux commandes de changement de taille proprement dites (en standard : Pica5, Pica12, etc.) qui elles sont dans le chapitre [Cmd].<br>
+Exemple : NormalBegin/NormalEnd &#160;&#160;&#160;&#160;&#160;* PICA10</p>
+<p class="Body-Text">Une commande du chapitre [Stack] doit respecter les règles syntaxiques suivantes :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">En colonne 1, doit figurer le nom de la <span class="hcp1">commande "début de mode"</span> suivi d'un <span class="hcp1">"/"</span> suivi du nom de la <span class="hcp1">commande "fin de mode"</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Derrière, on indiquera zéro, un ou plusieurs <span class="hcp1">couples de noms de commande</span> de taille indiquant la taille à utiliser en fonction de la taille en cours.<br>
+Le second nom du couple spécifie la taille de police à envoyer SI la taille de police en cours correspond au premier nom du couple.<br>
+Les 2 noms d'un couple doivent être séparés simplement par un espace, les différents couples par une virgule. Une virgule doit également suivre le dernier couple pour le séparer du nom de commande de taille par défaut (voir paragraphe suivant).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Derrière, doit <span class="hcp1">toujours</span> figurer le nom d'une <span class="hcp1">commande de taille "par défaut"</span> précédée de <span class="hcp1">"* "</span>.<br>
+Cette taille sera envoyée si la taille de police courante n'apparaît pas en premier dans l'un des couples précédents (ou si aucun couple de noms n'est spécifié).</p>
+</li>
+</ul>
+<p class="Body-Text"><span class="hcp1">Exemple</span> :</p>
+<p class="Source">[Stack]<br>
+NormalBegin/NormalEnd &#160;&#160;&#160;&#160;&#160;&#160;* PICA10<br>
+ExpandedBegin/ExpandedEnd &#160;&#160;PICA10 PICA5,PICA17 PICA85,PICA85 PICA85, *PICA5<br>
+...<br>
+&#160;</p>
+<p class="Body-Text" style="margin-left: 48px;">Dans cette exemple, la commande NormalBegin enverra la commande PICA10 dans tous les cas ;<br>
+l<span class="hcp7">a commande ExpandedBegin enverra la commande PICA5 si la taille en cours est PICA10, la taille PICA85 (8,5 caractères/pouce) si la taille en cours est PICA17 ou déjà PICA85, la taille PICA5 dans tous les autres cas.</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp1">Remarques</span> :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">A la rencontre de la commande de "début de mode", Harmony envoie donc la taille demandée dans ce chapitre et "empile" la nouvelle taille.<br>
+A la rencontre de la commande de "fin de mode", Harmony "désempile" la taille en cours, calcule et envoie la commande permettant de retrouver la taille précédente.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En principe, ce chapitre peut rester inchangé dans un fichier personnalisé car il ne dépend pas, à priori, du matériel.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text"><span class="hcp1">A titre indicatif</span>, voici une liste des noms de commande que vous trouverez dans les fichiers descriptifs standard :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">NormalBegin/NormalEnd</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">CompressedBegin/CompressedEnd</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">ExpandedBegin/ExpandedEnd</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">EliteBegin/EliteEnd</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Chapitre [Options]</p>
+<p class="Body-Text" style="font-weight: normal;">Contient une clé qui indique le jeu de caractères de l’imprimante (<span class="hcp1">ANSI</span> ou <span class="hcp1">PC8</span>).</p>
+<p class="Body-Text" style="font-size: 10pt; font-weight: normal;">Exemple :<br>
+[Options]<br>
+ANSI</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Fonctions avancées</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Tests dans le chapitre [Cmd]</span>.<br>
+Une commande du chapitre [Cmd] peut effectuer un test simple sur le taille de la police en cours et envoyer une commande si le test est positif (voir un exemple réel dans le fichier fihlj2.txt), en écrivant par exemple :</p>
+</li>
+</ul>
+<p class="Source">;si on est en PICA5, passer en PICA5B pour rectifier les caractères<br>
+if(PICA5 PICA5B)</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Tracés de cadre</span>.<br>
+Les noms de commande <span class="hcp1">FrameBegin</span> et <span class="hcp1">FrameEnd</span> sont figés.<br>
+Ces commandes sont <span class="hcp1">automatiquement</span> programmées par Harmony en cas d'impression d'un cadre (masque Xwin caractères).<br>
+A ajouter au fichier descriptif de votre imprimante si celle-ci possède une police permettant d’imprimer des cadres (mais non traités dans les fichiers standard).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Traitement de la couleur</span>.<br>
+La couleur des caractères et la couleur de fond font l'objet d'un traitement particulier. Pour envoyer ces couleurs, un programme doit émettre :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">La séquence $1B $EA (par exemple), à traduire dans le fichier descriptif par la <span class="hcp1">commande de nom</span> <span class="hcp8">figé</span> <span class="hcp1">COLOR</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Immédiatement suivie de la <span class="hcp1">couleur de caractères</span> et de la <span class="hcp1">couleur de fond</span> (<span class="hcp1">valeurs numériques toutes deux comprises entre "1" et "8"</span>) :<br>
+La valeur "1" correspond à la couleur Noire (noms de commande <span class="hcp8">figés</span> <span class="hcp1">BlackFont</span> et <span class="hcp1">BlackBackGround</span>).<br>
+La valeur "2" correspond à la couleur Bleue (noms de commande <span class="hcp8">figés</span> <span class="hcp1">BlueFont</span> et <span class="hcp1">BlueBackGround</span>).<br>
+La valeur "3" correspond à la couleur Verte (noms de commande <span class="hcp8">figés</span> <span class="hcp1">GreenFont</span> et <span class="hcp1">GreenBackGround</span>).<br>
+La valeur "4" correspond à la couleur Cyan (noms de commande <span class="hcp8">figés</span> <span class="hcp1">CyanFont</span> et <span class="hcp1">CyanBackGround</span>).<br>
+La valeur "5" correspond à la couleur Rouge (noms de commande <span class="hcp8">figés</span> <span class="hcp1">RedFont</span> et <span class="hcp1">RedBackGround</span>).<br>
+La valeur "6" correspond à la couleur Magenta (noms de commande <span class="hcp8">figés</span> <span class="hcp1">MagentaFont</span> et <span class="hcp1">MagentaBackGround</span>).<br>
+La valeur "7" correspond à la couleur Jaune (noms de commande <span class="hcp8">figés</span> <span class="hcp1">YellowFont</span> et <span class="hcp1">YellowBackGround</span>).<br>
+La valeur "8" correspond à la couleur Blanche (noms de commande <span class="hcp8">figés</span> <span class="hcp1">WhiteFont</span> et <span class="hcp1">WhiteBackGround</span>).</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Début et fin d'impression</span>.<br>
+Au début de l’impression, Harmony envoie automatiquement la séquence ($1B $E2), traduite en standard par la commande PrintBegin.<br>
+A la fin de l’impression, Harmony envoie automatiquement la séquence $1B $E3, traduite en standard par la commande PrintEnd.<br>
+Ces commandes peuvent être utilisées par exemple pour sélectionner un bac d'alimentation au début de l’impression et rétablir le bac par défaut à la fin de l’impression.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,76 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>UTCGetBiasDate</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>UTCGetBiasDate <a href="ListedesfonctionsdeDateetHeure.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font 
+	 style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a 
+	 href="Fonctionsdedateetheure.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p class="Body-Text">La fonction UTCGetBiasDate retourne le bias-date en 
+ minutes a partir d'une date locale au format AAAAMMJJHHMMSS</p>
+<p class="Body-Text">Le bias-date indique le nombre de minutes a ajouter 
+ à la date locale pour la transformer en date UTC.</p>
+<p class="Body-Text">Il est dépendant de la date qu'on lui passe en paramètre 
+ à cause du décalage de l'heure d'été.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">int UTCGetBiasDate</span> 
+ (dth, ModeServeur, TimeZoneName)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font style="font-style: italic;">Dth</font></p>
+<p class="decalage05">Date+heure origine au format AAAAMMJJhhmmss.</p>
+<p class="Body-Text" style="font-style: italic;">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">ModeServeur</p>
+<p class="decalage05" style="font-style: normal;">TRUE : Les paramètres 
+ de calcul sont pris sur l'ordinateur serveur (celui qui exécute xrtdiva)</p>
+<p class="decalage05" style="font-style: normal;">FALSE : Les paramètres 
+ de calcul sont pris sur le poste client</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0; font-style: italic;">TimeZoneName</p>
+<p class="decalage05">Par défaut, les paramètres sont pris pour la time 
+ zone du poste client ou du serveur.</p>
+<p class="decalage05">Ce paramètre permet de préciser la time zone à utiliser.</p>
+<p class="decalage05">Ex : &quot;Central Standard Time&quot; (US &amp; 
+ Canada)</p>
+<p class="decalage05">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&quot;Romance 
+ Standard Time&quot; &#160;(Paris)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction retourne le décalage (positif ou négatif) 
+ en minutes à appliquer sur la date pour la transformer en date UTC</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">&#160;</p>
+<p class="Source">1 decalage 10,0 </p>
+<p class="Source">main</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;; résultats différents à cause du passage 
+ en heure d'été</p>
+<p class="Source">&#160;&#160;&#160;decalage = UTCGetBiasDate(&quot;20230101101112&quot;) 
+ &#160;&#160;; --&gt; -60</p>
+<p class="Source">&#160;&#160;&#160;decalage = UTCGetBiasDate(&quot;20230601101112&quot;) 
+ &#160;&#160;; --&gt; -120</p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text"><a href="ConvertLocalDateToUTCDate.htm">ConvertLocalDateToUTCDate</a>, 
+ <a href="ConvertUTCDateToLocalDate.htm">ConvertUTCDateToLocalDate</a>,<a 
+	 href="UTCGetValue.htm">UTCGetValue</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

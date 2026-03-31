@@ -1,0 +1,56 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZipArchiveCreate</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>ZipArchiveCreate <a href="Liste_des_fonctions_de_gestion_des_archives.htm">Famille</a> <a href="Introduction_archive.htm">Thème</a></h1>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Création d'une archive au format zip et ajout d'un fichier.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Bool</font> <span class="hcp2">ZipArchiveCreate</span>( ZipArchivePath, PathFilename [, <span style="font-style: italic;">ZipPathFilename</span>], [ZipPassword] )</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">ZipArchivePath</p>
+<p class="decalage05">Chemin vers le fichier zip à créer</p>
+<p class="Body-Text" style="font-style: italic;">PathFilename</p>
+<p class="decalage05">Chemin vers le fichier à ajouter à l'archive</p>
+<p class="Body-Text" style="font-style: italic;">ZipPathFilename</p>
+<p class="decalage05">Chemin dans l'archive zip où le fichier doit être ajouté. Ce paramètre est facultatif. S'il n'est pas spécifié, alors sa valeur sera le nom du fichier donné par 'PathFilename'</p>
+<p class="Body-Text" style="font-style: italic;">ZipPassword</p>
+<p class="decalage05">Mot de passe pour les fichiers chiffrés dans l'archive zip</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<p class="Body-Text">La fonction renvoie 1 en cas de succès, 0 sinon. Pour avoir plus d'informations sur l'erreur en cas d'échec, utiliser la fonction <a href="ZipArchiveGetLastErrorCode.htm">ZipArchiveGetLastErrorCode</a>()</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques</font></p>
+<p class="Body-Text">Si le fichier n'existe pas, il est crée. S'il existe, son contenu est écrasé.</p>
+<p class="Body-Text">Le nom peut contenir le chemin complet vers le fichier, le chemin relatif ou juste le nom du fichier.</p>
+&#160;
+<p class="Body-Text" style="font-weight: bold;">Exemples</p>
+<p class="Code-Base">; Création de l'archive test.zip contenant le fichier myFile.txt</p>
+<p class="Code-Base">&#160;&#160;<span class="hcp2">r</span>etVal = ZipArchiveCreate("C:/test.zip", "C:/myFile.txt");</p>
+<p class="Code-Base">&#160;&#160;if retVal = 0</p>
+<p class="Code-Base"><span class="hcp3">&#160;&#160;&#160;&#160;errorCode = ZipArchiveGetLastErrorCode()</span></p>
+<p class="Code-Base"><span class="hcp3">&#160;&#160;&#160;&#160;</span>errorMessage = ZipArchiveGetLastErrorMessage()</p>
+<p class="Code-Base"><span class="hcp3">&#160;&#160;&#160;&#160;</span>;à faire: traiter l'erreur</p>
+<p class="Code-Base">&#160;&#160;endif</p>
+<p class="Body-Text">&#160;</p>
+<p class="Code-Base">; Création de l'archive test.zip contenant le fichier myFile.txt renommé myFileRenamed.txt</p>
+<p class="Code-Base">&#160;&#160;<span class="hcp2">r</span>etVal = ZipArchiveCreate("C:/test.zip", "C:/myFile.txt", "myFileRenamed.txt");</p>
+<p class="Code-Base">&#160;</p>
+</body>
+</html>

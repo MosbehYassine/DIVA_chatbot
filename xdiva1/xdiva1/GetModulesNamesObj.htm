@@ -1,0 +1,137 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>GetModulesNamesObj</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+p.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+span.hcp4 { font-style:italic;
+font-weight:normal; }
+font.hcp5 { font-style:italic; }
+p.hcp6 { font-weight:normal; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>GetModulesNamesObj&#160;&#160;<a href="InstructionsdeModulesetProgrammes.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font 
+	 style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a 
+	 href="G_n_ralit_s1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p>&#160;</p>
+<p>La fonction GetModulesNamesObj retourne une chaîne HMP contenant la 
+ liste de tous les modules susceptibles d'être chargés par un programme/module.</p>
+<p>Attention, la liste des modules pouvant être chargés est très grande 
+ (environ 1000 modules pour un programme). </p>
+<p>Contrairement à GetModulesNames qui donne la liste des modules chargés 
+ à un instant T, GetModulesNamesObj recherche récursivement tous les modules 
+ qui pourraient être appelés.</p>
+<p>Si les fichiers objets se trouvent sur un serveur xlan, cette fonction 
+ peut être très longue à s'exécuter (plusieurs dizaines de secondes).</p>
+<p>&#160;</p>
+<p class="hcp2">Char GetModulesNamesObj <span class="hcp3">( 
+ </span><span class="hcp4">[module]</span><span class="hcp3"> , </span><span class="hcp4">[récursif]</span><span class="hcp3"> )</span></p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp5">Module</font></p>
+<p class="decalage05">Nom du module pour débuter la recherche.</p>
+<p class="decalage05">Si ce paramètre est omis, la recherche se fait à 
+ partir du programme courant.</p>
+<p class="Body-Text"><font class="hcp5">Récursif</font></p>
+<p class="decalage05">TRUE = la recherche des modules utilisés se fait 
+ de manière récursive dans tous les modules trouvés.</p>
+<p class="decalage05">FALSE = la recherche ne se fait qu'à un seul niveau 
+ avec les éventuelles surcharges. C'est la valeur par défaut.</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp2">Retour</p>
+<p class="hcp6">La fonction retourne une chaîne Hmp avec 
+ les paramètres suivants :</p>
+<table cellspacing="0" width="100%">
+	<col style="width: 19.706%;">
+	<col style="width: 80.294%;">
+	<tr>
+		<td><p class="hcp2">Module</p></td>
+		<td><p>Nom du module</p></td>
+	</tr>
+	<tr>
+		<td><p class="hcp2">Infos</p></td>
+		<td><p>Liste des informations positionnées par la pseudo SetModuleInf. 
+		 Les lignes sont séparées par le caractère |</p></td>
+	</tr>
+	<tr>
+		<td><p class="hcp2">VersionModule</p></td>
+		<td><p>Version du module</p></td>
+	</tr>
+	<tr>
+		<td><p class="hcp2">Pack</p></td>
+		<td><p>Version du service pack</p></td>
+	</tr>
+	<tr>
+		<td><p class="hcp2">NumApplic</p></td>
+		<td><p>Numéro d'application (pour la prise de licence)</p></td>
+	</tr>
+</table>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Exemple</p>
+<p class="Source" style="font-weight: bold;">Procedure affiche(chaine)</p>
+<p class="Source">1 chaine A</p>
+<p class="Source">1 cle S</p>
+<p class="Source">1 valeur S</p>
+<p class="Source">1 cpt 10,0</p>
+<p class="Source">1 infos L</p>
+<p class="Source">1 uneInfo S</p>
+<p class="Source">beginp</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;GetBegin</p>
+<p class="Source">&#160;&#160;&#160;Loop hmpread(chaine,cle,valeur) = 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;switch (cle)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;case &quot;MODULE&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display 
+ valeur ; nom du module</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if 
+ GetChar() &lt;&gt; $00 | Loop GetChar() = $00 | endloop | endif</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;cpt++</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;case &quot;INFOS&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;infos 
+ = SplitList(valeur,&quot;&quot;,&quot;&quot;,&quot;|&quot;)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ListBegin(infos)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Loop 
+ ListNext(infos,uneInfo) not in (0,-1)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display 
+ [ &quot; &#160;&#160;&#160;&#160;&quot; uneInfo ]</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;endloop</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ListDestroy(infos)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;case &quot;VERSIONMODULE&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ valeur contient le numéro de version</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;case &quot;PACK&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ valeur contient le numéro de pack</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;case &quot;NUMAPPLIC&quot;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ valeur contient le numéro d'application pour les protections</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;endswitch</p>
+<p class="Source">&#160;&#160;&#160;endloop</p>
+<p class="Source">&#160;&#160;&#160;display cpt</p>
+<p class="Source">&#160;&#160;&#160;GetEnd</p>
+<p class="Source">endp</p>
+<p class="hcp2">&#160;</p>
+<p class="Source"><span style="font-weight: bold;">Main</span></p>
+<p class="Source">&#160;&#160;&#160;Affiche(GetModulesNamesObj(&quot;ia.dhop&quot;))</p>
+<p class="Source">&#160;&#160;&#160;programExit</p>
+<p class="Source">&#160;</p>
+<p class="hcp2">Voir</p>
+<p class="hcp6"><a href="ModuleInfo.htm">ModuleInfo</a>, 
+ <a href="SetModuleInfo.htm">SetModuleInfo</a>, <a href="GetDivaModules.htm">GetDivaModules</a>, 
+ <a href="GetModulesNames.htm">GetModulesNames</a></p>
+</body>
+</html>

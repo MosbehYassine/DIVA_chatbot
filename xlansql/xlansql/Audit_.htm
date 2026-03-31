@@ -1,0 +1,32 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Audit.</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Audit</h3>
+<p class="Body-Text">La fonction <font class="hcp1">d'audit</font> doit être utilisée principalement lors du paramétrage d'un <font class="hcp1">nouveau fichier</font> à transférer dans la base SQL. Cette fonction effectue de nombreuses opérations de test, notamment de <font class="hcp1">connexion</font> à la base et de <font class="hcp1">cohérence</font> de la description du fichier dans le dictionnaire. Elle n'effectue <font class="hcp1">pas</font> de mise à jour de la base de données. On exécutera ce choix <font class="hcp1">fichier par fichier</font> plutôt que pour une application complète.</p>
+<p class="Body-Text" style="text-align: justify;"><font class="hcp1">Les tests effectués par l'audit&#160;:</font></p>
+<p class="Body-Text" style="text-align: justify;">La validation du choix de l'audit déroule les tests suivants, soit pour <font class="hcp1">un seul</font> fichier (<font class="hcp1">choix conseillé</font>), soit pour tous les fichiers d'une application.</p>
+<p class="Body-Text" style="text-align: justify;">Pour chaque enregistrement d'un fichier&#160;:</p>
+<p class="Body-Text" style="text-align: justify;"><font class="hcp1">Test des chevauchements de données&#160;:</font></p>
+<p class="Body-Text">XPSQL vérifie dans le dictionnaire de données s'il y a des chevauchements de données (<font class="hcp1">redéfinition</font> ou <font class="hcp1">découpage</font>). Pour chaque donnée concernée, il indique quelle donnée est chevauchée.</p>
+<p class="Body-Text" style="text-align: justify;"><font class="hcp1">Index&#160;:</font></p>
+<p class="Body-Text">XPSQL contrôle que la description des clés du dictionnaire correspond effectivement aux clés du fichier. Pour cela XPSQL compare la description des clés du dictionnaire avec les clés réelles du fichier sous Harmony. Le paramètre "Chemin du fichier de référence pour la comparaison des clés" permet d'indiquer le chemin où se trouve le fichier Harmony. Il est indispensable d'indiquer ce chemin.</p>
+<p class="Body-Text" style="text-align: justify;"><font class="hcp1">Enregistrement et données&#160;:</font></p>
+<p class="Body-Text" style="text-align: justify;">XPSQL contrôle que les noms de données ne correspondent pas à des mots réservés du langage SQL.</p>
+</body>
+</html>

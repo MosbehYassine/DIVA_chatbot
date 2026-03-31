@@ -1,0 +1,59 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mise en route de la trace des instructions exécutées</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { text-decoration:underline; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Mise en route de la trace des instructions exécutées</h3>
+&#160;
+<p>Pour produire des informations de couverture du code, vous devez configurer Xwin pour que le débogueur trace les instructions qu'il exécute.</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold; text-decoration: underline;">Cette trace s'applique uniquement aux sources</span> :</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Compilés en mode "Débogueur" et en mode "Couverture du code"</span>.<br>
+<br>
+Ces deux options de compilation se choisissent dans les propriétés de votre <span class="hcp3">profil</span> courant : pour les <span class="hcp3">activer</span>, cochez les cases "<span class="hcp3">Option Debug</span>" et "<span class="hcp3">Option Couverture du code</span>".<br>
+<br>
+La deuxième option demande au compilateur de générer les informations nécessaires à la couverture du code. Les sources compilés sans cette option ne sont pas "tracés".<span class="hcp3"><br>
+<br>
+Attention</span> : la compilation en mode "débogueur" et en mode "couverture du code" génère des informations spécifiques. Il en résulte une augmentation de la taille du code généré et, accessoirement, un possible ralentissement de l'exécution. En conséquence, lorsque votre programme est validé, n'oubliez pas de le recompiler en mode "normal" et utilisez la version correspondante du programme objet en exploitation.<br>
+&#160;</p>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Du Sous-Projet courant</span>.<br>
+<br>
+Il faut donc être en <span class="hcp3">mode Projet</span>.<br>
+<br>
+Les fichiers concernés sont les sources Diva et les traitements des masques et des dictionnaires (à l'exception des modules surchargés et des traitements de base des masques et des dictionnaires de surcharge qui ne sont jamais tracés).</p>
+</li>
+</ul>
+<p class="body-text">&#160;</p>
+<p class="body-text"><span class="hcp3">Remarque</span> : vous pouvez à tout instant demander au débogueur de stopper momentanément la trace puis de la redémarrer, grâce au choix <span class="hcp3">Tracer les instructions exécutées</span> du sous-menu <span class="hcp3">Couverture du code</span> (menu Déboguer ou menu contextuel de l'éditeur de textes) ou grâce au bouton <img src="../image/btn_tracer.bmp" style="border: none;" alt="" width="16" height="16" border="0"> de la barre d'outils de l'éditeur de textes (raccourci clavier <span class="hcp3">Maj+Ctrl+F9</span>).</p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également&#160;:</p>
+<p><a href="Interruption_de_la_trace_des_instructions_ex&eacute;cut&eacute;es.htm">Interruption de la trace des instructions exécutées</a></p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Procédures correspondantes :</p>
+<p class="Body-Text"><a href="Pour_obtenir_des_informations_de_couverture_du_code.htm">Pour obtenir des informations de couverture du code</a></p>
+<p class="body-text"><a href="Pour_stopper_ou_red&eacute;marrer_la_trace_des_instructions_ex&eacute;cut&eacute;es.htm">Pour stopper ou redémarrer la trace des instructions exécutées</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

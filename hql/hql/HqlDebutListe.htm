@@ -1,0 +1,74 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HqlDebutListe</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HqlDebutListe &#160;<a href="Listedeschapitres.htm"><font size="2" class="hcp1">Famille</font></a><font style="font-size: 10pt;" size="2">&#160;</font><a href="Introduction3.htm"><font size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Le chapitre HqlDebutListe est exécuté en début de programme, après l'ouverture du fichier principal.</p>
+<p class="Body-Text">Ce chapitre peut être utilisé pour</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">effectuer la saisie d'un masque écran.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">positionner la clé du fichier principal.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">indiquer les critères de tri par la procédure <a href="Tri.htm">HqlTri</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">indiquer les critères de rupture de début et de fin par la procédure <a href="Ruptures.htm">HqlRupture</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">indiquer les champs à totaliser par les procédures <a href="HqlTotal.htm">HqlTotal</a>, <a href="HqlTotalGeneral.htm">HqlTotalGeneral</a>, <a href="HqlMoyenne.htm">HqlMoyenne</a> ou <a href="HqlPourcentage.htm">HqlPourcentage</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Forcer certains paramètres figés qui ne sont pas passés par le programme appelant dans <a href="L_enregistrementHql.htm">l'enregistrement Hql</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Déclarer les enregistrements à sauvegarder pour les traitements de rupture de fin par <a href="HqlRecord.htm">HqlRecord</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Abandonner l'exécution du programme en positionnant la variable Hql.Ok à la valeur 'I' ou 'N'. Le chapitre HqlAbandon n'est alors pas exécuté.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source"><font color="#0000FF">Procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;Xinput &#160;</p>
+<p class="Source">&#160;Hql.Cle = "A" <font color="#0000FF">&amp;</font> arti<font color="#000000">cle</font>.codart</p>
+<p class="Source" style="color: #0000ff;">endp</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-left: 8px; font-weight: bold; font-family: Arial, sans-serif; font-size: 12pt;">Index nommé</p>
+<p class="Source" style="margin-left: 8px; font-family: Arial, sans-serif;">&#160;</p>
+<p class="Source" style="margin-left: 8px; font-family: Arial, sans-serif;">En cas d'utilisation d'un index nommé, il faut néanmoins positionner Hql.Cle avec la lettre clé. Pour cela on utilise la fonction <span style="font-weight: bold;">GetKeyByName</span> qui convertit un nom d'index en la lettre clé correspondante. Le premier paramètre de la fonction GetKeyByName est la TDF du fichier de base qui correspond à la TDF publique FIC.</p>
+<p style="font-family: Arial, sans-serif;">&#160;</p>
+<p style="font-weight: bold;">Exemple</p>
+<p class="Source"><font color="#0000FF">Procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;Xinput &#160;</p>
+<p class="Source">&#160;Hql.Cle = <span style="color: #0000ff;">GetKeyByName</span>(Fic,"ParEAN")<font color="#0000FF">&amp;</font> article.codart</p>
+<p class="Source" style="color: #0000ff;">endp</p>
+<p class="Source">&#160;</p>
+<p class="source">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Xinput.htm">Xinput</a></p>
+</body>
+</html>

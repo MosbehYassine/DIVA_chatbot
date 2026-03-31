@@ -1,0 +1,106 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListSetScrollBar</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListSetScrollBar &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">(Ré)affichage de l'ascenseur vertical d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+XmeListSetScrollBar</font> (<font class="hcp3">Identifiant, Ascenseur</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Ascenseur</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Adresse de la zone structurée contenant les nouvelles informations de gestion de l'ascenseur vertical du tableau (on utilisera l'enregistrement standard <font class="hcp2">ScrollBar32</font> du dictionnaire système DDSYS.dhsd).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La procédure <font class="hcp2">XmeListSetScrollBar</font> actualise à l'écran l'<a href="Ascenseurverticald_untableau.htm">ascenseur vertical du tableau</a> dont l'identifiant est fourni en paramètre.<br>
+Pour ce faire, elle utilise les <a href="YMEG2.chm::/Ymeg2/D_clarationd_unascenseurWindows.htm">informations de gestion</a> placées dans la zone <font style="font-weight: bold; font-style: italic;">Ascenseur</font>&#160;; cette zone doit respecter la structure de l'enregistrement standard <span><font class="hcp2">ScrollBar32</font></span> du dictionnaire système DDSYS.dhsd.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Attention</font>, XmeListSetScrollBar NE peut être appelée QUE si la page de masque contenant le tableau est la page courante (ou une de ses pages panels).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques&#160;:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Le premier appel à XmeListSetScrollBar affiche l'ascenseur à l'écran.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Sauf traitements particuliers, la procédure standard <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> gère entièrement l'ascenseur vertical du tableau suite à un <a href="XmeListConsult.htm">XmeListConsult</a> (en dehors de son initialisation qui s'obtient en appelant la procédure standard XmeListScrollBarInit).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Même si vous n'utilisez pas XmeListConsultDefault, <font class="hcp2">vous pourrez dans la plupart des cas faire appel à la procédure standard</font> <a href="XmeListScrollBarInit.htm">XmeListScrollBarInit</a> <font class="hcp2">pour (re)calculer les informations de gestion A VOTRE PLACE et (ré)afficher l'ascenseur</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Rappel : vous pouvez griser l'ascenseur par <a href="XmeListDisableScrollBar.htm">XmeListDisableScrollBar</a> lorsqu'il n'est pas traité par votre programme, puis le dégriser par <a href="XmeListEnableScrollBar.htm">XmeListEnableScrollBar</a> lorsqu'il est à nouveau traité.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Effacement de l'ascenseur vertical de l'écran</font></p>
+<p class="Body-Text">Pour annuler l'affichage de l'ascenseur, appelez la procédure XmeListSetScrollBar avec <font class="hcp3">Ascenseur</font>.PositionMin et <font class="hcp3">Ascenseur</font>.PositionMax à la valeur 0.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ScrollBar32</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Exemple d'initialisation d'un ascenseur vertical</p>
+<p class="Source">ScrollBar32.PositionMin = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;valeur début</p>
+<p class="Source">ScrollBar32.PositionMax = MAX (XmeListCount (Ident),1) ;valeur fin</p>
+<p class="Source">ScrollBar32.LineStep = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;pas "flèche"</p>
+<p class="Source">ScrollBar32.PageStep = MIN (XmeListScreenCount (Ident), \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ScrollBar32.PositionMax) &#160;&#160;;pas "page"&#160;</p>
+<p class="Source">ScrollBar32.CurrentPosition = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;position de départ</p>
+<p class="Source">XmeListSetScrollBar (Ident, ScrollBar32)</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Exemple de mise à jour suite à un scrolling</p>
+<p class="Source">;ayant modifié RangPremierElementAffiche</p>
+<p class="Source">XmeListSetOffset (Ident, RangPremierElementAffiche)</p>
+<p class="Source">XmeListDisplay (Ident)</p>
+<p class="Source">ScrollBar32.CurrentPosition = RangPremierElementAffiche &#160;;position courante</p>
+<p class="Source">XmeListSetScrollBar (Ident, ScrollBar32)</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeListGetScrollBar.htm">XmeListGetScrollBar</a></p>
+<p class="Body-Text"><a href="XmeListScrollBarInit.htm">XmeListScrollBarInit</a></p>
+</body>
+</html>

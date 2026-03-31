@@ -1,0 +1,50 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Configration du service DhsDivaAgent</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { text-decoration:underline; }
+img.hcp4 { border:none; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Configuration du service DhsDivaAgent</h3>
+<p>&#160;</p>
+<ul class="hcp1">
+<li class="p">
+<p>Les applications Diva lancées depuis le client léger sont exécutées, sur le serveur d’applications, par le service <span class="hcp2">DhsDivaAgent</span> (<span class="hcp3">qui doit donc être démarré sur le serveur</span>) :<br>
+<br>
+<img src="../image/Agent_diva_service.gif" alt="" width="429" height="118" border="0" class="hcp4"><br>
+&#160;</p>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p">
+<p>Avant d’exécuter un programme, ce service s’impersonne avec le compte de l’utilisateur Windows du client. Le programme Diva s’exécute donc sous ce compte utilisateur et en hérite les droits. <span class="hcp3">C’est pourquoi le compte Windows et son mot de passe doivent être renseignés dans les options avancées de connexion</span>.<br>
+<br>
+Le compte peut-être un compte local au serveur ou un compte du Domaine (dans ce cas, on écrit User@Domaine) :<br>
+<br>
+<img src="../image/utilisateur_windows.gif" alt="" width="414" height="69" border="0" class="hcp4"><br>
+<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Attention</span> : Pour réaliser l’opération d’impersonnation, le <span class="hcp3">service DhsDivaAgent doit être autorisé à interagir avec le bureau</span> :<br>
+<br>
+<img src="../image/interaction_bureau.gif" alt="" width="631" height="225" border="0" class="hcp4"><br>
+&#160;</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

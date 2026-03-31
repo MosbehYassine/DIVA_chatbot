@@ -1,0 +1,101 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Options - Environnement - Compilation, exécution hors projet</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Options - Environnement - Compilation, exécution hors projet</h1>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Cette rubrique ne concerne pas les applications exécutées dans le cadre des projets de Xwin.</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Options de compilation <span class="hcp2">(</span><span style="font-weight: bold; text-decoration: underline;">hors projet</span><span class="hcp2">)</span><br>
+&#160;<br>
+Compilation en mode</font>&#160;: Choisissez l'option&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Débogueur</font> pour bénéficier des fonctions du débogueur en phase de mise au point de vos programmes.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Normal</font> pour générer les codes objet utilisés en exploitation.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Source à compiler</font>&#160;: Deux options sont possibles&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Paramètre à espace</font>&#160;: Xwin compilera le programme <font class="hcp1">source</font> <font class="hcp1">situé</font> dans la <font class="hcp1">fenêtre active</font> au moment où vous lancerez la compilation. Cette solution est intéressante lorsque vous êtes amené à développer plusieurs programmes en même temps.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Paramètre renseigné</font>&#160;: Xwin compilera toujours le programme dont le <font class="hcp1">nom de source</font> est <font class="hcp1">indiqué ici</font>, et ce, quelque soit la fenêtre active au moment où vous lancerez la compilation. Cette solution est très pratique lorsque vous développez un programme unique faisant référence à des fichiers "Include"&#160;: vous pouvez travailler dans une fenêtre contenant un fichier Include et lancer la compilation du programme principal sans quitter cette fenêtre.</p>
+</li>
+</ul>
+<p class="Body-Text">Remarque&#160;: Ce paramètre <font class="hcp1">ne concerne pas les compilations de masque</font>&#160;: pour compiler un masque, il faut toujours que la fenêtre correspondante soit active au moment de lancer la compilation.<br>
+&#160;<font class="hcp1"><br>
+Options de compilation</font>&#160;: Si vous désirez générer un listing de compilation et/ou un journal des comptes rendus d'erreur, indiquez ici une ou plusieurs des commandes suivantes, séparées entre elles par des espaces&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">L</font>fic (lettre L suivie d'un nom de fichier)&#160;: Demande la génération d'un listing de compilation dans le fichier "fic".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Z</font>fic (lettre Z suivie d'un nom de fichier)&#160;: Demande aussi la génération d'un listing de compilation dans le fichier "fic" mais le listing contiendra en supplément le code généré par le compilateur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">C</font>fic (lettre C suivie d'un nom de fichier)&#160;: Demande au compilateur d'écrire un compte rendu global de la compilation (nombre d'erreurs et d'avertissements) dans le fichier journal "fic".</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">&#160;</font><font class="hcp1"><br>
+Dossier des fichiers objet</font>&#160;: Deux options sont possibles&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Paramètre renseigné</font>&#160;: Xwin stockera toujours les fichiers <font class="hcp1">objet</font> dans le <font class="hcp1">dossier indiqué ici</font>. Les fichiers objet qui n'existent pas encore dans ce dossier seront automatiquement créés.<br>
+Si le nom du source ne comporte pas d'extension, le <font class="hcp1">nom de l'objet</font> est <font class="hcp1">déduit</font> du <font class="hcp1">nom du source</font> en lui ôtant son premier caractère (exemple&#160;: SPROG =&gt; PROG)&#160;; sinon, l'extension .dhsp est remplacée par .dhop (exemple&#160;: PROG.dhsp =&gt; PROG.dhop).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Paramètre à espace</font>&#160;: Xwin ne créera aucun fichier objet de manière automatique. Il ouvrira une boîte de dialogue vous demandant de <font class="hcp1">choisir</font> le dossier de stockage.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Options d'exécution</font> <span class="hcp2">(hors projet)</span><br>
+&#160;<font class="hcp1"><br>
+Nom du programme à exécuter</font>&#160;: Indiquez ici le nom du programme <font class="hcp1">objet</font> que Xwin devra lancer lorsque vous commanderez une exécution. Si ce champ est laissé <font class="hcp1">vide</font>, Xwin lancera l'objet correspondant au programme source <font class="hcp1">en cours</font> d'édition.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque</font>&#160;: Il est possible de nommer ici le programme Y (qui appelle ou chaîne au programme X) alors que c'est le programme X que vous voulez déboguer&#160;; par exemple&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Le programme Y appelle le programme X à déboguer en lui passant des paramètres et vous voulez vérifier ce passage de paramètres.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le programme X à déboguer doit être lancé depuis le menu Y de l’application (cas, par exemple, des applications Divalto).</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Procédures correspondantes :</p>
+<p class="Body-Text"><a href="Pourparam_trerlescompilations.htm">Pour paramétrer les compilations</a></p>
+<p class="Body-Text"><a href="Pourparam_trerlesex_cutionsdeprogrammeDiva.htm">Pour paramétrer les exécutions de programme Diva</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Hors projet :</p>
+<p class="Body-Text"><a href="Pourcompilervosprogrammesetmasquesenmodenormal.htm">Pour compiler vos programmes et masques en mode normal</a></p>
+<p class="Body-Text"><a href="Pourcompilervosprogrammesetmasquesenmoded_bogueur.htm">Pour compiler vos programmes et masques en mode débogueur</a></p>
+<p class="Body-Text"><a href="Poursp_cifierlenomduprogrammesource_compiler.htm">Pour spécifier le nom du programme source à compiler</a></p>
+<p class="Body-Text"><a href="Poursp_cifierlesoptionsducompilateurDiva.htm">Pour spécifier les options du compilateur Diva</a></p>
+<p class="Body-Text"><a href="Poursp_cifierledossierdestockagedesfichiersobjet.htm">Pour spécifier le dossier de stockage des fichiers objet</a></p>
+<p class="Body-Text"><a href="Poursp_cifierlenomduprogrammeDiva_ex_cuter.htm">Pour spécifier le nom du programme Diva à exécuter</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

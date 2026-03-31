@@ -1,0 +1,145 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Caractéristiques et paramétrage d'un accordéon</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+li.hcp3 { list-style:none;
+display:inline; }
+p.hcp4 { margin-left:48px; }
+span.hcp5 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Caractéristiques et paramétrage d'un accordéon</h3>
+<p>&#160;</p>
+<ul class="hcp1">
+<li class="p">
+<p>Un accordéon regroupe deux ou plusieurs pages Xwin dans une page parente. Chaque page est affichée surmontée d’un titre (libellé d’en-tête). L’utilisateur peut fermer et rouvrir n’importe quel pan de l’accordéon en cliquant sur une icône en forme de flèche affichée à gauche du titre <span class="hcp2">(*)</span>. Lorsqu’un pan de l’accordéon est fermé, la page correspondante disparaît de l’écran et seul son titre reste affiché. L'utilisateur choisit ainsi la ou les pages affichées parmi l’ensemble des pages incluses dans l’accordéon.<span class="hcp2"><br>
+<br>
+(*)</span> Une option dans Xwin rend l’affichage de la flèche d’ouverture / fermeture de chaque pan d’accordéon paramétrable. Le but est d'interdire la fermeture de certains pans. Par exemple, dans une page qui affiche un en-tête, un tableau et un pied, la fermeture du pan contenant le tableau n’a le plus souvent pas d'intérêt pratique.<br>
+<br>
+Deux modes de fonctionnement sont possibles :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p">
+<p>Les en-têtes des pans de l’accordéon sont affichés en permanence, que les pages soient visibles ou escamotées.</p>
+</li>
+<li class="p">
+<p>Les en-têtes ne sont affichés que pour les pages escamotées. Ce mode permet de ne perdre aucune place dans le cas d’un masque particulièrement chargé.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp4">Seuls les accordéons "<span class="hcp2">verticaux</span>" sont gérés (pour escamoter une page "horizontalement", on utilisera plutôt le <a href="Caract&eacute;ristiques_et_param&eacute;trage_d_un_volet.htm">volet</a>).</p>
+<ul class="hcp1">
+<li class="p">
+<p>L’accordéon n’est pas un objet de Xwin.<br>
+Il <span class="hcp2">s'obtient</span> simplement en adaptant les <a href="Page.htm">propriétés de la page</a> Xwin <span style="font-weight: bold; text-decoration: underline;">parente</span> (dans le <span class="hcp2">cadre "Accordéon"</span> : cases à cocher "Accordéon" et "Invisible", champ "Pages incluses"). Une fois défini, l'accordéon est entièrement géré côté client.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Pour chaque page incluse</span>, il faut <span class="hcp2">garnir</span> le champ <span class="hcp2">"En-tête pan accordéon"</span> avec le texte de l'en-tête dans les propriétés de la page.<br>
+Si le pan doit rester affiché en permanence, cochez la case "<span class="hcp2">Pan non escamotable</span>".<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Un accordéon <span class="hcp2">occupe tout l’espace disponible</span> dans la page parente. Si cette page comporte un onglet, l’accordéon "démarre" immédiatement sous l’en-tête de l’onglet (les onglets multi-lignes ne sont pas gérés).<span class="hcp5"><br>
+Une page paramétré avec un accordéon ne peut donc contenir aucun objet</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La <span class="hcp5">taille</span> paramétrée dans Xwin pour la <span class="hcp5">page parente doit tenir compte des en-têtes des pans de l’accordéon</span>.<br>
+Compter DEUX lignes d’en-tête pour chaque pan.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La <span class="hcp5">taille</span> paramétrée dans Xwin pour les <span class="hcp5">pages incluses ne doit pas tenir compte de la zone d’en-tête</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les <span class="hcp5">offsets Colonne des pages incluses</span> s'expriment <span class="hcp5">relativement</span> à la position occupée par la page parente et sont totalement significatifs.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les <span class="hcp5">offsets Ligne des pages incluses</span> s'expriment <span class="hcp5">relativement</span> à la position occupée par la page parente mais <span class="hcp5">ne sont que partiellement significatifs</span>.<br>
+<br>
+En effet, les pages incluses dans un accordéon sont automatiquement "empilées" les unes sous les autres.<br>
+L'<span class="hcp2">ordre d'affichage</span> des pans de l'accordéon est déterminé par les <span class="hcp2">valeurs respectives des offsets Ligne</span> des différentes pages incluses mais le client ne tient pas compte des valeurs exactes pour positionner les pages dans la page parente.<span class="hcp2"><br>
+Exemple</span> : L'accordéon de la page parente A inclut les pages A1, A2 et A3, à afficher dans cet ordre. Pour que l'ordre voulu soit respecté, il faut et il suffit que les offsets Ligne respectifs de ces trois pages soient croissants (par exemple 0, 10, 20).</p>
+</li>
+</ul>
+<p class="hcp4"><span class="hcp5">L'offset Ligne est aussi utilisé par le client</span> pour détecter qu'une page doit en <span class="hcp2">remplacer</span> une autre <span class="hcp2">dans un même pan</span> de l'accordéon.<span class="hcp2"><br>
+Exemple</span> : En fonction du contexte, le programme affiche soit la page A11, soit la page A12 dans le même pan d'accordéon. Il faut dans ce cas que les offsets et les tailles des pages A11 et A12 soit identiques afin d'assurer une gestion correcte des effacements.<br>
+<br>
+A titre indicatif, les pages incluses dans un accordéon VISIBLE sont précédées chacune d'un en-tête de deux lignes. On en tiendra compte si l'on désire calculer la valeur exacte de leur offset Ligne (conventionnellement, l'offset Ligne d'une page incluse tient compte des en-têtes des pages précédentes mais omet l'en-tête de la page elle-même).<br>
+&#160;</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Attention</span> :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p">
+<p>Un pan d’accordéon <span class="hcp5">ne peut contenir qu’une page Xwin unique</span>. Si cette page doit en "contenir" d’autres, il faut impérativement qu’il s’agisse soit d’une page avec elle-même un (sous-)accordéon, soit d’une page avec une grille et des pages panels.</p>
+</li>
+<li class="p">
+<p>Un accordéon <span class="hcp5">ne doit pas être inclus dans un masque multi-écran</span> (pages chaînées), pour la raison suivante :<br>
+L'affichage des pages incluses dans un accordéon est toujours à la charge du programme. Mais dans un masque multi-écran, le passage d'une page à une autre est transparent pour le programme. Ce dernier n'étant pas averti du changement de page, il ne peut donc procéder à l'affichage des pages incluses. Vous pouvez toutefois contourner ce problème en remplaçant le masque multi-écran par des pages <span class="hcp2">non chaînées</span>, avec programmation explicite des changements de page.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Attention à paramétrer correctement les <a href="Attachementdespages.htm">attachements</a> des différentes pages. En général, les pages placées dans un pan d'accordéon seront au minimum en "Hauteur variable".<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Il est possible d’avoir plusieurs accordéons sur un même écran et de les imbriquer (attention toutefois à les paramétrer de manière cohérente).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les objets dessinés par Ygraph ne sont pas affichables dans une page escamotable.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp2">Remarques concernant la programmation Diva</span> :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Il est <span class="hcp5">impératif d'afficher la page parente AVANT les pages incluses</span> dans l'accordéon.<br>
+<br>
+Attention aux effets de bord potentiels. L'exemple suivant ne fonctionnera pas :<br>
+- Affichage de la page parente A incluant l'accordéon (mais vide d'objet).<br>
+- Affichage en mode GOSUB d’une AUTRE page avec effacement de la page A.<br>
+- XmeRet : La page A, bien qu'effacée, redevient la page courante pour Ywpf. Comme elle ne contient pas d’objet, visuellement tout semble correct.<br>
+- Affichage des pages incluses dans l’accordéon.<br>
+Attention donc à ne pas effacer la page qui définit l'accordéon avec une autre page en mode GOSUB ou bien réafficher EXPLICITEMENT la page par <span class="hcp5">XmeDisp</span> après le XmeRet.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Lorsqu'une page escamotée par l'utilisateur fait l'objet d'une consultation par Xme(List)Consult ou d'une saisie par Xme(List)Input, le client rouvre le pan d'accordéon de manière automatique.<span class="hcp2"><br>
+Attention à cette conséquence</span> : La fermeture du pan est refusé à l'utilisateur (sans aucun avertissement) si la page concernée est en cours de consultation ou de saisie.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>L'instruction Diva <span class="hcp2">XmeSetPageOptions</span> permet d'affecter par programme le <span class="hcp2">libellé des en-têtes de pan</span> d'accordéon.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p style="font-weight: bold;">Interopérabilité avec les onglets, les volets et les grilles</p>
+<p style="font-weight: normal;">Dans un accordéon : onglets, sous-accordéon et grille ok ; pas de volet.<br>
+Accordéon dans une page à onglet <span class="hcp5">non chaînée</span> : ok.</p>
+<p>Aucun contrôle n’est effectué sur ce point (ni à la compilation ni à l’exécution).</p>
+<p>&#160;</p>
+</body>
+</html>

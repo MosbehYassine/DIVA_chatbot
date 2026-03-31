@@ -1,0 +1,70 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>La fenêtre d'erreurs</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>La fenêtre d'erreurs</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La fenêtre d'erreur standard affiche les éléments suivants&#160;:<br>
+&#160;</p>
+<p class="Body-Text"><img src="../image/help0011.gif" alt="image\help0011.gif" title="image\help0011.gif" width="482" height="251" border="0"></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Titre</font></p>
+<p class="decalage05">Le bandeau de la fenêtre contient l'icone Harmony, un texte facultatif fourni par le programme appelant suivi du numéro de tâche et de la version d'Harmony.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Icone et texte de l'erreur</p>
+<p class="decalage05">Si l'erreur est fatale, l'icone "Stop" est affichée. Si l'erreur n'est pas fatale, l'icone "Point d'exclamation" est affichée.</p>
+<p class="decalage05">En regard de l'icône, est affiché un texte explicitant l'erreur. Ce texte est généralement composé automatiquement par Harmony en interprétant les codes d'erreur.&#160;Il peut également être composé totalement ou partiellement (dans ce cas, les codes sont toujours interprétés) par le programme appelant.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Programme<span style="font-weight: bold;">, module et date</span></font></p>
+<p class="decalage05">Ensuite, sont affichés le nom du programme principal, le nom du module courant, plus la date et l'heure (zones garnies automatiquement).</p>
+<p class="decalage05">Si le module courant est le programme lui-même, son nom n'apparaît pas.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Codes d'erreur</font></p>
+<p class="decalage05">Ensuite, sont affichés trois codes d'erreurs, un code de lieu et une adresse. Voir plus loin le détail concernant ces valeurs.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Bouton Détails</font></p>
+<p class="decalage05">Ce bouton permet d'afficher le contenu de la pile des fonctions.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp1">Valeurs des codes d'erreur</font></p>
+<p class="Body-Text">Si un code d'erreur est automatiquement interprété, la valeur est affichée dans un cadre en orange.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Erreur</font></p>
+<p class="decalage05">Code "application" de l'erreur (en hexadécimal). Ce code est un code spécifique à l'application (ou au module système) qui affiche l'erreur.<br>
+Exemple : 0Axx pour les erreurs réseau, 16xx pour les erreurs Diva, …<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Code système</font></p>
+<p class="decalage05">Ce code hexadécimal est utilisé en complément de <font class="hcp2">Erreur</font>. <font class="hcp2">Erreur</font> indique l'application et <font class="hcp2">Code système</font> est la valeur renvoyée par la fonction Harmony de base. Si l'application n'a pas de code <font class="hcp2">Erreur</font> spécifique, on placera le valeur de retour de la fonction Harmony directement dans <font class="hcp2">Erreur</font> et on laissera <font class="hcp2">Code</font> <font class="hcp2">système</font> à 0.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Code complémentaire</font></p>
+<p class="decalage05">Ce code contient l'erreur rendue par le système d'exploitation (Windows, Unix, ...). Il peut être récupéré par la fonction GetErrno.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Lieu</font></p>
+<p class="decalage05">Ce code est utilisé pour localiser exactement l'erreur. En effet, une même erreur peut se produire à différents endroits d'un même programme. En affichant un code <font class="hcp2">Lieu</font> différent à chaque fois, la localisation de l'erreur est simplifiée.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Adresse</font></p>
+<p class="decalage05">Cette zone est automatiquement garnie et représente l'adresse dans le programme Diva. Pour retrouver la ligne correspondante dans le source, il faut compiler le source avec l'option L.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Interprétation des codes d'erreur</font></p>
+<p class="Body-Text">Les codes d'erreur standard d'Harmony (et uniquement ceux-ci) peuvent être automatiquement interprétés pour donner le texte d'une erreur. Par exemple, l'erreur 0x0014 génère le texte&#160;"Fichier …. absent ou inaccessible".</p>
+<p class="Body-Text">Un seul code d'erreur est interprété à la fois. On tente tout d'abord d'interpréter le <font class="hcp2">Code système</font> ; en cas d'échec on tente d'interpréter le <font class="hcp2">code Erreur</font> ; en cas de nouvel échec, on affiche le texte "Erreur xxxx" (où xxxx est le <font class="hcp2">code Erreur</font>).</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

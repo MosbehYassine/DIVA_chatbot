@@ -1,0 +1,383 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinCreateFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-weight:bold; }
+font.hcp5 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinCreateFile &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinCreateFile permet de créer, d'ouvrir, d'effacer un fichier, un tube nommé (pipe), un port de communication. Elle renvoie un ticket (Handle) qui peut être utilisé pour accéder à l'objet ouvert.</p>
+<table cellspacing="0" width="436">
+<tr class="hcp2">
+<td style="width:37.88%;" class="hcp3">
+<p class="Body-Text"><font class="hcp4">Long</font> <font class="hcp4">WinCreateFile</font></p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="Body-Text">(<font class="hcp5">Nom</font>,</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:37.88%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;"><font class="hcp5">Accès</font>,</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:37.88%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;"><font class="hcp5">Partage,</font></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:37.88%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;"><font class="hcp5">Sécurité</font>,</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:37.88%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;"><font class="hcp5">CreationDistribution</font>,</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:37.88%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;"><font class="hcp5">Flags</font>,</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:37.88%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 0.00pt;"><font class="hcp5">Template</font>)</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp5">Nom</font></p>
+<p class="decalage05">Spécifie le nom du fichier, du tube nommé, d'une voie de communication à créer, ouvrir ou effacer..</p>
+<p class="Body-Text"><font class="hcp5">Accès</font></p>
+<p class="decalage05">Spécifie le type de l'accès au fichier ou aux autres objets. Vous pouvez combiner les valeurs suivantes (par des additions) pour construire la valeur de ce paramètre. GENERIC_READ et GENERIC_WRITE doivent être positionnés pour obtenir un accès en lecture et en écriture.</p>
+<table cellspacing="0" width="474">
+<tr class="hcp2">
+<td style="width:28.89%;" class="hcp3">
+<p class="decalage05">0</p>
+</td>
+<td style="width:71.11%;" class="hcp3">
+<p class="decalage05">Permet de vérifier l'existence d'un fichier ou d'une voie de communication sans y accéder ultérieurement.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:28.89%;" class="hcp3">
+<p class="decalage05">GENERIC_READ</p>
+</td>
+<td style="width:71.11%;" class="hcp3">
+<p class="decalage05">Spécifie un accès en lecture du fichier. Le fichier peut être lu et le pointeur du fichier déplacé.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:28.89%;" class="hcp3">
+<p class="decalage05">GENERIC_WRITE</p>
+</td>
+<td style="width:71.11%;" class="hcp3">
+<p class="decalage05">Spécifie un accès en écriture du fichier. Des données peuvent être écrites dans le fichier et le pointeur peut être déplacé.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp5">Partage</font></p>
+<p class="decalage05">Spécifie le mode de partage du fichier. Ce paramètre est une combinaison des valeurs suivantes :</p>
+<table cellspacing="0" width="474">
+<tr class="hcp2">
+<td style="width:28.89%;" class="hcp3">
+<p class="Body-Text">0&#160;</p>
+</td>
+<td style="width:71.11%;" class="hcp3">
+<p class="Body-Text">Mode réservé. Le fichier n'est pas partagé.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:28.89%;" class="hcp3">
+<p class="Body-Text">FILE_SHARE_READ</p>
+</td>
+<td style="width:71.11%;" class="hcp3">
+<p class="Body-Text">Permet à d'autres programmes d'accéder au fichier en lecture.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:28.89%;" class="hcp3">
+<p class="Body-Text">FILE_SHARE_WRITE</p>
+</td>
+<td style="width:71.11%;" class="hcp3">
+<p class="Body-Text">Permet à d'autres programmes d'accéder au fichier en écriture.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp5">Sécurité</font></p>
+<p class="decalage05">Ce paramètre n'est pas utilisé. Il doit être positionné à la valeur nulle.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp5">CréationDistribution</font></p>
+<p class="decalage05">Spécifie l'action à effectuer si le fichier existe déjà et l'action à effectuer si le fichier n'existe pas. Pour plus d'informations voir les remarques. Ce paramètre doit être l'une des valeurs suivantes :</p>
+<table cellspacing="0" width="474">
+<tr class="hcp2">
+<td style="width:34.86%;" class="hcp3">
+<p class="Body-Text">CREATE_NEW</p>
+</td>
+<td style="width:65.14%;" class="hcp3">
+<p class="Body-Text">Crée un nouveau fichier. La fonction retourne une erreur si le fichier existe déjà.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.86%;" class="hcp3">
+<p class="Body-Text">CREATE_ALWAYS</p>
+</td>
+<td style="width:65.14%;" class="hcp3">
+<p class="Body-Text">Crée toujours le fichier. S'il existe déjà il est écrasé.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.86%;" class="hcp3">
+<p class="Body-Text">OPEN_EXISTING</p>
+</td>
+<td style="width:65.14%;" class="hcp3">
+<p class="Body-Text">Ouvre un fichier existant. S'il n'existe pas la fonction retourne une erreur.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.86%;" class="hcp3">
+<p class="Body-Text">OPEN_ALWAYS</p>
+</td>
+<td style="width:65.14%;" class="hcp3">
+<p class="Body-Text">Ouvre le fichier s'il existe. Si le fichier n'existe pas il est créé.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.86%;" class="hcp3">
+<p class="Body-Text">TRUNCATE_EXISTING</p>
+</td>
+<td style="width:65.14%;" class="hcp3">
+<p class="Body-Text">Ouvre le fichier puis le fichier est effacé. L'accès GENERIC_WRITE doit être spécifié sinon la fonction retourne une erreur.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp5">Flags</font></p>
+<p class="Body-Text">Spécifie les attributs et les flags pour le fichier.</p>
+<p class="Body-Text">Toute combinaison des valeurs suivantes est possible. Si aucun attribut ne doit être positionné, utilisez FILE_ATTRIBUTE_NORMAL.</p>
+<table cellspacing="0" width="474">
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_ATTRIBUTE_ARCHIVE</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Le fichier est un fichier d'archive. Utilisez ce flag pour marquer un fichier pour les sauvegardes ou les épurations. l.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_ATTRIBUTE_COMPRESSED</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Le fichier ou le répertoire est compressé. Pour un fichier, cela signifie que les données sont compressées. Pour un répertoire, cela signifie que tous les fichiers et sous répertoires seront créés avec cet attribut par défaut.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_ATTRIBUTE_NORMAL</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Le fichier n'a pas d'attributs particuliers. Ce flag n'a de sens que s'il est utilisé seul.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_ATTRIBUTE_HIDDEN</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Le fichier est caché. Il n'apparaîtra pas dans la liste des fichiers du répertoire.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_ATTRIBUTE_READONLY&#160;</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Le fichier est en lecture seule. Il est possible de lire le fichier mais l'écriture ou la suppression sont interdites.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_ATTRIBUTE_SYSTEM</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Le fichier fait partie du système ou est exclusivement utilisé par le système.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="474">
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_FLAG_WRITE_THROUGH</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Non documenté, référez-vous à la documentation Windows</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_FLAG_OVERLAPPED</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Non documenté, référez-vous à la documentation Windows</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_FLAG_NO_BUFFERING</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Non documenté, référez-vous à la documentation Windows</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_FLAG_RANDOM_ACCESS</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Indique que le fichier n'est pas accédé de façon séquentielle. Windows utilise ce flag pour optimiser le cache disque.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_FLAG_SEQUENTIAL_SCAN</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Indique que le fichier est accédé séquentiellement du début à la fin. Windows utilise ce flag pour optimiser le cache disque. Si l'application déplace le pointeur du fichier, l'optimisation du cache disque n'est plus faite mais l'opération se fait correctement.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_FLAG_DELETE_ON_CLOSE</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Indique que le système doit supprimer le fichier lorsqu'il n'est plus utilisé..</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_FLAG_BACKUP_SEMANTICS</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Non documenté, référez-vous à la documentation Windows</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:46.80%;" class="hcp3">
+<p class="Body-Text">FILE_FLAG_POSIX_SEMANTICS</p>
+</td>
+<td style="width:53.20%;" class="hcp3">
+<p class="Body-Text">Non documenté, référez-vous à la documentation Windows</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp5">Template</font></p>
+<p class="decalage05">Spécifie un ticket d'un fichier ouvert avec l'accès GENERIC_READ. Les attributs de ce fichier sont pris pour la création du fichier.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Retour</font></p>
+<table cellspacing="0" width="474">
+<tr class="hcp2">
+<td style="width:16.94%;" class="hcp3">
+<p class="Body-Text">-1</p>
+</td>
+<td style="width:83.06%;" class="hcp3">
+<p class="Body-Text">Erreur. Appelez la fonction <a href="WinGetLastError.htm">WinGetLastError</a> pour connaître le détail de l'erreur.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.94%;" class="hcp3">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:83.06%;" class="hcp3">
+<p class="Body-Text">Ticket. Ce ticket est passé en premier paramètre de toutes les fonctions d'accès au fichier ouvert.<br>
+Si le fichier existe avant l'appel de la fonction et que <font class="hcp5">CreationDistribution</font> vaut CREATE_ALWAYS ou OPEN_ALWAYS, l'appel à WinGetLastError renvoie la valeur ERROR_ALREADY_EXISTS (bien que le fichier soit ouvert). Si le fichier n'existe pas avant l'appel, WinGetLastError retourne 0</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Remarques</font></p>
+<p class="Body-Text">Lors de la création d'un nouveau fichier la fonction réalise les actions suivantes&#160;:&#160;</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Elle combine les <font class="hcp5">Flags</font> spécifiés avec FILE_ATTRIBUTE_ARCHIVE.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Elle met la taille du fichier à 0.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Elle copie les attributs du fichier ouvert dont le ticket est précisé par <font class="hcp5">Template</font> si ce paramètre est spécifié (différent de 0).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lors de l'ouverture d'un fichier existant la fonction WinCreateFile réalise les actions suivantes :</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Elle combine les paramètres spécifiés avec les attributs du fichier existants. WinCreateFile ignore les attributs précisés par <font class="hcp5">Flags</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Elle positionne la taille du fichier en fonction de la valeur de <font class="hcp5">CreationDistribution</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Elle ignore le paramètre <font class="hcp5">Template.</font></p>
+</li>
+</ul>
+<p class="Body-Text">WinCreateFile peut ouvrir une voie de communication comme un port série (Com1 par exemple). Pour les voies de communication, le paramètre <font class="hcp5">CreationDistribution</font> doit être OPEN_EXISTING, et la paramètre <font class="hcp5">Template</font> doit être nul. Les accès en lecture et/ou écriture peuvent être spécifiés.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Exemple</font></p>
+<p class="Body-Text">Ouverture du fichier Stest en lecture et en mode partage.</p>
+<p class="Source">fic = WinCreateFile("d:\Divalto\sys\stest", \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;GENERIC_READ, \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FILE_SHARE_READ, \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0, \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;OPEN_EXISTING,0,0)</p>
+<p class="Source">if fic = -1</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox ("Erreur " &amp; bindec(ldxl(WinGetLastError)), "erreur")&#160;</p>
+<p class="Source">endif</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Voir</font></p>
+<p class="Body-Text"><a href="WinCloseHandle.htm">WinCloseHandle</a>, <a href="WinReadFile.htm">WinReadFile</a>, <a href="WinReadFileRecord.htm">WinReadFileRecord</a>, <a href="WinWriteFile.htm">WinWriteFile</a>, <a href="WinFlushFileBuffers.htm">WinFlushFileBuffers</a>, <a href="WinSetEndOfFile.htm">WinSetEndOfFile</a>, <a href="WinGetFileSize.htm">WinGetFileSize</a>, <a href="WinSetFilePointer.htm">WinSetFilePointer</a>, <a href="WinDeleteFile.htm">WinDeleteFile</a>, <a href="WinLockFile.htm">WinLockFile</a>, <a href="WinUnLockFile.htm">WinUnLockFile</a>, <a href="WinGetCurrentDirectory.htm">WinGetCurrentDirectory</a>, <a href="WinSetCurrentDirectory.htm">WinSetCurrentDirectory</a>, <a href="WinGetWindowsDirectory.htm">WinGetWindowsDirectory</a>, <a href="WinGetSystemDirectory.htm">WinGetSystemDirectory</a>, <a href="GetHarmonyDirectory.htm">GetHarmonyDirectory</a>, <a href="WinGetLastError.htm">WinGetLastError</a></p>
+</body>
+</html>

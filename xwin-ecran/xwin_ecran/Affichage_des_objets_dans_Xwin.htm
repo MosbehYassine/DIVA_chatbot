@@ -1,0 +1,40 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Affichage des objets dans Xwin</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Affichage des objets dans Xwin</h3>
+<p>Xwin utilise l’interface Win32 pour afficher les masques dessinés par le développeur.</p>
+<p>Autant que faire se peut, le design dans Xwin a été adapté pour s’approcher au maximum du rendu obtenu à l’exécution avec le client léger (Wpf ou Html). Malheureusement, Win32 ne permet pas de modifier certaines propriétés pour certains types d’objet (*). De plus, les caractères d’une même police ne sont pas toujours dessinés à l’identique.</p>
+<p><span style="font-weight: bold;">Il en résulte parfois un rendu dans Xwin non wysiwyg par rapport à celui obtenu à l'exécution</span>.</p>
+<p>&#160;</p>
+<p>(*) Citons par exemple :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>La couleur de fond des boutons "texte" est ignorée en Win32.</p>
+</li>
+<li class="p">
+<p>La couleur de fond des objets Case à cocher, Groupe de radio-boutons et Bouton radio n'est pas interprétée de la même manière.</p>
+</li>
+<li class="p">
+<p>En Win32, il n'est pas possible d'appliquer au titre des groupes radio le padding horizontal de 4+4 pixels appliqué à l'exécution.</p>
+</li>
+<li class="p">
+<p>Le dessin des en-têtes des onglets dans Xwin n'est pas wysiwyg (différence de centrage dû à la prise en compte des paddings ; en particulier en cas de padding nul ou faible et / ou de très petite police, le texte et la bitmap peuvent apparaître tronqués dans Xwin).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Toutefois, les boîtes ayant la même taille dans Xwin et à l’exécution, la disposition relative des objets dans Xwin respecte parfaitement celle obtenue en final.</p>
+<p>&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir aussi</p>
+<p><a href="Styles_par_d&eacute;faut.htm">Styles par défaut</a></p>
+<p><a href="Policedecaract_res.htm">Police de caractères</a></p>
+</body>
+</html>

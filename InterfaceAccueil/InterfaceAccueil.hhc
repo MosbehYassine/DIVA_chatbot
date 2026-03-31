@@ -1,0 +1,61 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Interface d'accueil">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Introduction">
+      <param name="Local" value="ia/Introduction.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fonctionnement général de l'interface d'accueil">
+      <param name="Local" value="ia/Fonctionnement.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Développement d'un widget">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Principes généraux du développement d'un widget">
+        <param name="Local" value="ia/Principes_g&eacute;n&eacute;raux.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Widget Feu et Jauge">
+        <param name="Local" value="ia/Widget_Feu_et_Jauge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Widget Office">
+        <param name="Local" value="ia/Widget_Office.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Widget Liste">
+        <param name="Local" value="ia/Widget_Liste.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Widget BI">
+        <param name="Local" value="ia/Widget_BI.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Widget ne nécessitant pas de programmation">
+        <param name="Local" value="ia/Widget_ne_n&eacute;ssitant_pas_de_programmation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Widget Flux RSS">
+        <param name="Local" value="ia/Flux_RSS.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Widget Graphique">
+        <param name="Local" value="ia/Widget_Graphique.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

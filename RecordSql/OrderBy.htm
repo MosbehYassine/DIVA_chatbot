@@ -1,0 +1,126 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>&lt;OrderBy&gt;</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { margin-left:48px; }
+span.hcp3 { font-style:italic; }
+p.hcp4 { margin-left:88px; }
+ul.hcp5 { list-style:disc; }
+p.hcp6 { font-weight:bold; }
+p.hcp7 { margin-left:8px;
+font-weight:bold; }
+p.hcp8 { margin-left:8px;
+font-weight:normal; }
+span.hcp9 { font-weight:bold;
+font-style:italic; }
+p.hcp10 { font-weight:normal; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>OrderBy <span style="font-family: Arial, sans-serif;">&#160;&#160;</span><span 
+	 style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a 
+	 href="Liste_des_balises_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>La balise OrderBy permet de définir des critères de tri. Elle ne comporte 
+ pas d’attributs.</p>
+<p>&#160;</p>
+<p>&lt;<span class="hcp1">OrderBy</span>&gt;</p>
+<p class="hcp2"><span class="hcp1">case</span> 
+ <span class="hcp3">OrderByName</span>_1 &#160;&#160;&#160;&#160;&#160;[<span class="hcp3">Commentaire</span>] [<span class="hcp3">Dependencies=&quot;T1;Alias2&quot;</span>] 
+ [<span class="hcp3">ColumnNames=&quot;nom1;nom2&quot;</span>] 
+ [<span class="hcp3">NoCheckOrderBy</span>]</p>
+<p class="hcp4">Liste_des_colonnes</p>
+<p class="hcp2"><span class="hcp1">case</span> 
+ <span class="hcp3">OrderByName</span>_2 &#160;&#160;&#160;&#160;&#160;[<span class="hcp3">Commentaire</span>] [<span class="hcp3">Dependencies=&quot;T1;Alias2&quot;</span>] 
+ [<span class="hcp3">ColumnNames=&quot;nom1;nom2&quot;</span>]</p>
+<p class="hcp4">Liste_des_colonnes</p>
+<p>&#160;</p>
+<p>Chaque critère est identifié par un nom unique qui lui permet d'être 
+ sélectionné par le programme Diva.</p>
+<ul class="hcp5">
+	<li class="p"><p><span class="hcp3">Commentaire</span> 
+	 : Ce libellé facultatif apparaît, dans le ZoomSQL, dans le multichoix 
+	 permettant de sélectionner des critères de tri prédéfinis.<br>
+	&#160;</p></li>
+	<li class="p"><p><span class="hcp3">Dependencies</span> 
+	 : Cet attribut permet d'indiquer la ou les jointures nécessaires à 
+	 l'exécution du tri. Son fonctionnement est le même que l'attribut 
+	 <a href="Join.htm">Dependencies</a> de la jointure.<br>
+	&#160;</p></li>
+	<li class="p"><p><span class="hcp3">ColumnNames</span> 
+	 : Cet attribut permet d'indiquer les noms des champs pour faire le 
+	 lien avec les champs du Select, séparés par des points-virgules.</p></li>
+</ul>
+<ul class="hcp5">
+	<li class="p"><p style="font-style: italic;">NoCheckOrderBy : <span 
+	 style="font-style: normal;">Voir le paragraphe ci-dessous sur les 
+	 contraintes de l'ordre de tri.</span></p></li>
+</ul>
+<p class="hcp6">Liste des colonnes</p>
+<p>A partir de la ligne suivant le case, on trouve la liste des colonnes, 
+ du critère majeur vers le critère mineur. L’option ASC (par défaut) indique 
+ que l’on souhaite un tri croissant sur la colonne, l’option DESC un tri 
+ décroissant.</p>
+<p class="hcp2">{ table | alias }.columnName { <span class="hcp1">ASC</span> 
+ | <span class="hcp1">DESC</span> }</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp7">Contraintes de l'ordre 
+ de tri</p>
+<p class="hcp8">Le compilateur vérifie 
+ que </p>
+<ul class="hcp5">
+	<li><p class="hcp8">si un critère 
+	 est en mode DESC, tous les critères doivent être en mode DESC. Si 
+	 cela n'est pas le cas, le serveur SQL risque de répondre avec des 
+	 temps de réponse dégradés.</p></li>
+	<li><p class="hcp8">si un critère 
+	 est en mode DESC, le champ _ID doit impérativement être présent dans 
+	 la liste des critères.</p></li>
+</ul>
+<p class="hcp8">Pour que la vérification 
+ soit effectuée il faut positionner l'option <span class="hcp1">G</span><span class="hcp9">CheckOrderBy </span>dans 
+ les options de compilation</p>
+<p class="hcp8">Cette vérification peut 
+ être ignorée pour un OrderBy en ajoutant le mot clé <span class="hcp9">NoCheckOrderBy</span></p>
+<p>&#160;</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp7">Exemple</p>
+<p class="Source"><span class="hcp1">&lt;OrderBy&gt;</span></p>
+<p class="Source" style="font-weight: bold; margin-left: 88px;">Case Par_Telephone</p>
+<p class="Source" style="margin-left: 88px;">VRP.Dos,</p>
+<p class="Source" style="margin-left: 88px;">VRP.Ce1,</p>
+<p class="Source" style="margin-left: 88px;">VRP.Tel</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="hcp2">En diva :</p>
+<p class="Source" style="margin-left: 88px;">Rec.OrderBy.Par_Telephone()</p>
+<p>&#160;</p>
+<p class="hcp6">Remarques</p>
+<ul class="hcp5">
+	<li class="p"><p class="hcp10">Dans une surcharge, il 
+	 est possible de surcharger un tri. Dans ce cas, les nouveaux critères 
+	 sont ajoutés aux anciens.</p></li>
+	<li class="p"><p class="hcp10">Pour des raisons de performances, 
+	 il est conseillé de faire correspondre les critères de tri à un index 
+	 de la base.</p></li>
+</ul>
+<p class="hcp6">&#160;</p>
+<p class="hcp6">Voir</p>
+<p class="hcp10"><a href="R&eacute;sum&eacute;_de_la_syntaxe.htm"><span 
+	 style="font-weight: normal;">Résumé de la syntaxe</span></a></p>
+<p class="hcp10"><a href="Liste_des_balises_RecordSql.htm" 
+									 style="font-weight: normal;">Liste 
+ des balises RecordSql</a></p>
+<p><a href="OrderBy_methode.htm">RecordSql.OrderBy</a></p>
+</body>
+</html>

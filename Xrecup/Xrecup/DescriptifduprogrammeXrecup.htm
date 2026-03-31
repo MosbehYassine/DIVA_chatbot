@@ -1,0 +1,70 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Descriptif du programme xRepair</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { text-decoration:underline; }
+ul.hcp3 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Descriptif du programme xRepair</h2>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp1">xRepair</font> permet de vérifier la cohérence interne des fichiers de données au format Harmony (fichier de type N(ormal) ou fichier des données d’un fichier séquentiel indexé) et éventuellement de corriger les erreurs 001A (longueur d'enregistrement incorrecte).<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp1">Attention</font>&#160;: xRepair élimine les erreurs 001A mais le contenu des enregistrements erronés est perdu. A la fin du programme, n'oubliez pas, le cas échéant, de régénérer les clés du fichier séquentiel-indexé par Xreof.<br>
+&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Mise en oeuvre du programme</font></p>
+<p class="Body-Text">Le principe de fonctionnement de xRepair est le suivant&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">xRepair lit séquentiellement le fichier des données indiqué en entrée (attention&#160;: entrez le nom du fichier des clés s’il s’agit d’un séquentiel-indexé) et vérifie la <a href="StructuredesfichiersdetypeN.htm">longueur de chaque enregistrement lu</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">On utilise le dictionnaire des données pour rechercher la longueur des enregistrements (cas d'un fichier à tailles d'enregistrement variables) ; si on trouve pas, on la cherche dans le <a href="Lefichierparam_tresXrecupf_txt.htm">fichier paramètres</a> portant le nom <font class="hcp1">xRepairF.TXT</font>. Ce fichier peut contenir la "description" d'un ou plusieurs fichiers et peut être garni soit manuellement (avant d'appeler xRepair), soit automatiquement par le programme.<br>
+Rappel : Xtools permet d'indiquer, dans l'en tête d'un fichier physique, le nom du dictionnaire et le mnémonique du fichier dans le dictionnaire.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chaque fichier déclaré dans xRepair peut être marqué "Complet" (ce qui signifie que toutes les longueurs d'enregistrement possibles sont indiquées) ou "Non complet" (ce qui signifie que certaines longueurs d'enregistrement peuvent manquer).<font class="hcp1"><br>
+Attention</font>&#160;: xRepair n'autorise le mode de correction automatisée que sur un fichier marqué "Complet".<font class="hcp1"><br>
+Remarque</font>&#160;: il peut être intéressant de passer xRepair une première fois sur tous les fichiers (intègres) de vos applications, afin de constituer (définitivement) le fichier xRepairf.txt. Un fichier xRepairf.txt entièrement constitué est d'ailleurs nécessaire si vous désirez piloter régulièrement l'utilitaire <a href="UTILITAIRES.chm::/UTILITAIRES/XVERIF_Contr_led_int_grit_desfichiersd_undossier.htm">Xverif</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque xRepair rencontre une <font class="hcp1">longueur d'enregistrement non spécifiée</font> dans xRepairf.txt <font class="hcp1">ET</font> que le fichier traité est marqué <font class="hcp1">"non complet"</font>, il demande si cette <font class="hcp1">longueur doit être ajoutée</font> au fichier paramètres. En cas de réponse positive, il complète xRepairf.txt avec cette nouvelle longueur et poursuit la lecture.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le fichier traité est marqué "complet" ou en cas de réponse négative, xRepair considère que l'enregistrement lu est incorrect et que le fichier doit être corrigé.<font class="hcp1"><br>
+Remarque</font>&#160;: si la question n'est pas posée (fichier marqué "complet"), vérifiez la longueur et le contenu de l'enregistrement affiché par xRepair et supposé erroné (au cas où cette longueur aurait été "oubliée" dans xRepairf.txt)&#160;; <font class="hcp1">si la longueur s'avère finalement correcte</font>, abandonnez le programme, <a href="Lefichierparam_tresXrecupf_txt.htm">rajoutez manuellement cette longueur</a> dans le fichier xRepairf.txt et relancez xRepair.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Correction des erreurs</font></p>
+<p class="Body-Text">La correction d'une erreur peut se faire de trois manières&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Correctionautomatis_e.htm">Correction automatisée</a>.<br>
+Avec cette méthode, xRepair invalide automatiquement les caractères n'appartenant pas à des enregistrements corrects.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Correctionsemi_automatiqueparpointage.htm">Correction semi-automatique par pointage</a>.<br>
+Cette méthode consiste à repérer "visuellement" le premier enregistrement correct qui suit l'erreur et à se positionner sur sa longueur. Après validation, xRepair corrige automatiquement le fichier en invalidant les octets compris entre l'erreur et l'enregistrement pointé (il crée un ou plusieurs enregistrements à espace).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Correctionmanuelle.htm">Correction manuelle</a>.<br>
+Cette méthode permet de modifier directement le contenu du fichier (y compris les <a href="StructuredesfichiersdetypeN.htm">octets "&#160;système&#160;"</a>).</p>
+</li>
+</ul>
+</body>
+</html>

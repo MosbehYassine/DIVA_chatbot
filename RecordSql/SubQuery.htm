@@ -1,0 +1,56 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>SubQuery</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { font-weight:bold; }
+p.hcp3 { margin-left:48px; }
+p.hcp4 { margin-left:8px; }
+p.hcp5 { margin-left:88px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>SubQuery <span style="font-family: Arial, sans-serif;">&#160;&#160;</span><span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_balises_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>L'objet RecordSQL permet de coder des sous-requêtes dans la section &lt;SubQuery&gt;. Cette section inclut <span class="hcp1">toutes</span> les sous-requêtes, chacune identifiée par un Case. Les sous-requêtes peuvent accepter des paramètres.</p>
+<p>Les sous-requêtes peuvent être utilisées dans les sections &lt;Select&gt;, &lt;Join&gt; et &lt;Where&gt;.</p>
+<p>&#160;</p>
+<p>L'appel d'une sous-requête s'effectue via le mot clé "SubQuery.NomDeLaSousRequête(paramètres)".</p>
+<p>L'ancienne syntaxe est dépréciée (elle compile, mais ne dispose pas de l'aide à la saisie dans Xwin) &#160;: "SubQuery(NomDeLaSousRequete, paramètres)".</p>
+<p>&#160;</p>
+<p class="hcp2">Remarque :</p>
+<p>Pour des raisons de compatibilité avec la base DB2, si l'on désire récupérer uniquement la première ligne, il faut utiliser les mots-clés "<span class="hcp1">#TOP1</span>" et "<span class="hcp1">#FETCH1</span>".</p>
+<p>A l'exécution, ces deux jokers seront remplacés par le code SQL correspondant à la base de données cible.</p>
+<p>#TOP1 doit être placé directement après le Select.</p>
+<p>#FETCH1 doit être placé tout à la fin de la requête.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Exemple :</p>
+<p>&lt;RecordSql Name="exemple"&gt;</p>
+<p>&lt;Select&gt;</p>
+<p class="hcp3">Art.*</p>
+<p class="hcp3">SubQuery.MaSousRequete as monChamp(10)</p>
+<p class="hcp4">&lt;From&gt;</p>
+<p class="hcp3">Art</p>
+<p class="hcp4">&lt;Where&gt;</p>
+<p class="hcp3">case MonWhere (char param1)</p>
+<p class="hcp5">Art.Dos = SubQuery.MaSousRequete2(param1)</p>
+<p class="hcp4">&lt;SubQuery&gt;</p>
+<p class="hcp3">case MaSousRequete</p>
+<p class="hcp5">Select Art.Dos From Art Where Art.Dos = 1</p>
+<p class="hcp3">case MaSousRequete2 (char param1)</p>
+<p class="hcp5">Select Art.Dos From Art Where Art.Dos = param1</p>
+<p class="hcp3">case MaSousRequete3</p>
+<p class="hcp4">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Select #TOP1 Art.Dos From Art #FETCH1</p>
+<p class="hcp3">&#160;</p>
+</body>
+</html>

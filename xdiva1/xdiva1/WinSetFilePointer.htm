@@ -1,0 +1,113 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinSetFilePointer</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinSetFilePointer &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinSetFilePointer déplace le pointeur d'un fichier ouvert.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Long</font> <font class="hcp2">WinSetFilePointer</font>(<font class="hcp3">ticket</font>, <font class="hcp3">Distance</font>, <font class="hcp3">PoidsFortsDistance</font> , <font class="hcp3">Méthode</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Ticket</font></p>
+<p class="decalage05">Identifie le fichier dont on veut déplacer le pointeur. Le fichier doit être ouvert avec l'accès GENERIC_READ ou GENERIC_WRITE.</p>
+<p class="Body-Text"><font class="hcp3">Distance</font></p>
+<p class="Body-Text">Spécifie le nombre d'octets pour le déplacement.</p>
+<p class="Body-Text"><font class="hcp3">PoidsFortsDistance</font></p>
+<p class="decalage05">Donnée de type L contenant les poids forts de la distance. Ce paramètre reçoit en retour les poids forts de la nouvelle position du pointeur de fichier.</p>
+<p class="Body-Text"><font class="hcp3">Méthode</font></p>
+<p class="decalage05">Précise le point de départ du déplacement dans le fichier. Ce paramètre peut être une des valeurs suivantes</p>
+<table cellspacing="0" width="474">
+<tr class="hcp4">
+<td style="width:28.89%;" class="hcp5">
+<p class="Body-Text">FILE_BEGIN&#160;</p>
+</td>
+<td style="width:71.11%;" class="hcp5">
+<p class="Body-Text">Le point de départ est 0 (début du fichier). Si FILE_BEGIN est spécifié, <font class="hcp3">Distance</font> est interprété comme une valeur non signée.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:28.89%;" class="hcp5">
+<p class="Body-Text">FILE_CURRENT</p>
+</td>
+<td style="width:71.11%;" class="hcp5">
+<p class="Body-Text">La valeur courante du pointeur est la position de départ.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:28.89%;" class="hcp5">
+<p class="Body-Text">FILE_END</p>
+</td>
+<td style="width:71.11%;" class="hcp5">
+<p class="Body-Text">La fin du fichier est la position de départ.</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="474">
+<tr class="hcp4">
+<td style="width:18.93%;" class="hcp5">
+<p class="Body-Text">-1</p>
+</td>
+<td style="width:81.07%;" class="hcp5">
+<p class="Body-Text">Erreur. Appelez la fonction <a href="WinGetLastError.htm">WinGetLastError</a> pour connaître le détail de l'erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.93%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:81.07%;" class="hcp5">
+<p class="Body-Text">La fonction retourne les poids faibles de la nouvelle position du pointeur et <font class="hcp3">PoidsFortsDistance</font> contient les poids forts de la nouvelle position.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp2">Remarques</font></p>
+<p class="Body-Text">WinSetFilePointer ne peut être utilisée avec des tubes nommés ou des voies de communication.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Body-Text">Ouverture d'un fichier, positionnement en fin de fichier et écriture d'un enregistrement.</p>
+<p class="Source">1 fic L</p>
+<p class="Source">1 pf L</p>
+<p class="Source">1 st L</p>
+<p class="Source">1 nbecr L&#160;</p>
+<p class="Source">fic = WinCreateFile("d:\Divalto\sys\stest",</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;GENERIC_READ + GENERIC_WRITE,&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FILE_SHARE_READ + FILE_SHARE_WRITE,&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,0)&#160;</p>
+<p class="Source">; ... test d'une éventuelle erreur ...</p>
+<p class="Source">pf = 0</p>
+<p class="Source">st = WinSetFilePointer(fic,0,pf,FILE_END)</p>
+<p class="Source">; ... test d'une éventuelle erreur ...</p>
+<p class="Source">st = WinWriteFile(fic, "nouvel enregistrement" &amp; $0d0a,nbecr)</p>
+<p class="Source">; ... test d'une éventuelle erreur ...</p>
+<p class="Source">st = WinCloseHandle(fic)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="WinCreateFile.htm">WinCreateFile</a>, <a href="WinReadFile.htm">WinReadFile</a>, <a href="WinWriteFile.htm">WinWriteFile</a>, <a href="WinSetEndOfFile.htm">WinSetEndOfFile</a>, <a href="WinGetFileSize.htm">WinGetFileSize</a>, <a href="WinGetLastError.htm">WinGetLastError</a></p>
+</body>
+</html>

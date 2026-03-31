@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<title>ReceiveProgramMessage</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css" />
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js"></script>
+
+<h1>ReceiveProgramMessage <a href="InstructionsdeModulesetProgrammes.htm"><font 
+	 style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font 
+	 style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a 
+	 href="G_n_ralit_s1.htm"><font style="font-family: 'MS Sans Serif'; 
+									 font-weight: normal;" face="MS Sans Serif">Thème</font></a></h1>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction ReceiveProgramMessage permet de lire les 
+ messages qui ont été déposés par <a href="SendProgramMessage.htm">SendProgramMessage</a>.</p>
+<p class="Body-Text">Une fois que les messages sont lus, ils sont effacés.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">int ReceiveProgramMessage</span> 
+ <font style="font-style: italic;">( &amp;liste )<br />
+</font></p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètre</font></p>
+<p class="Body-Text" style="font-style: italic;">Liste</p>
+<p class="decalage05">Donnée numérique qui va recevoir un identifiant de 
+ liste. Cette liste contient les différents messages.</p>
+<p class="decalage05">Si <span style="font-style: italic;">liste</span> 
+ est un descripteur de liste valide c'est cette liste qui va être utilisée.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Retour</font></p>
+<table cellspacing="0" width="436">
+	<tr style="vertical-align: top;">
+		<td style="width: 16.24%; padding-left: 1px; padding-top: 1px; 
+			 padding-right: 1px; padding-bottom: 1px;"><p class="Body-Text">0</p></td>
+		<td style="width: 83.76%; padding-left: 1px; padding-top: 1px; 
+			 padding-right: 1px; padding-bottom: 1px;"><p class="Body-Text">Pas 
+		 d'erreur</p></td>
+	</tr>
+	<tr style="vertical-align: top;">
+		<td style="width: 16.24%; padding-left: 1px; padding-top: 1px; 
+			 padding-right: 1px; padding-bottom: 1px;"><p class="Body-Text">Autre</p></td>
+		<td style="width: 83.76%; padding-left: 1px; padding-top: 1px; 
+			 padding-right: 1px; padding-bottom: 1px;"><p class="Body-Text">Erreur 
+		 système.</p></td>
+	</tr>
+</table>
+<p class="decalage05" style="font-weight: bold;"><br />
+</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Exemple 
+ </p>
+<p class="Source">&#160;</p>
+<p class="Source" style="font-weight: normal;">; envoi de deux messages 
+ à tout le monde</p>
+<p class="Source" style="font-weight: normal;">sendprogrammessage(&quot;message1&quot;,&quot;&quot;)</p>
+<p class="Source">sendprogrammessage(&quot;message2&quot;,&quot;&quot;)</p>
+<p class="Source">&#160;</p>
+<p class="Source">; lecture des messages</p>
+<p class="Source">ReceiveProgramMessage(liste) &#160;; --&gt; 2 éléments 
+ dans la liste</p>
+<p class="Source">ReceiveProgramMessage(liste) &#160;; --&gt; liste vide</p>
+</body>
+</html>

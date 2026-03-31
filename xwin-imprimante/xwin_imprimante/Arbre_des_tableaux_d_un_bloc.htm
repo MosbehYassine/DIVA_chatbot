@@ -1,0 +1,439 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Arbre des tableaux d'un bloc</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { text-decoration:underline; }
+p.hcp3 { font-weight:bold;
+font-size:11pt; }
+ol.hcp4 { list-style:decimal; }
+ul.hcp5 { list-style:disc; }
+li.hcp6 { list-style:none;
+display:inline; }
+span.hcp7 { font-weight:bold;
+text-decoration:underline; }
+span.hcp8 { font-weight:bold;
+font-size:11pt; }
+p.hcp9 { margin-left:48px; }
+p.hcp10 { margin-left:8px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Arbre des tableaux d'un bloc</h2>
+<p>&#160;</p>
+<p>La fenêtre <span class="hcp1">Arbre des tableaux d'un bloc</span> est associée à l’<span class="hcp1">onglet Tableaux</span> de la barre d'onglets verticaux de Xwin. Elle n'est présente que si la fenêtre MDI active est de type "Masque d'imprimante graphique".<br>
+&#160;</p>
+<p>Cette fenêtre affiche, sous forme arborescente, chaque <a href="Objet_Tableau.htm" style="font-weight: normal; text-decoration: underline;">objet Tableau</a> dessiné dans le <span class="hcp1">bloc courant</span> du masque, ainsi que les <span class="hcp1">blocs inclus dans ce tableau</span>. <span class="hcp2">Elle est très importante</span> car de nombreuses fonctionnalités applicables aux tableaux se commandent depuis cette fenêtre (par exemple, l'insertion de blocs dans un <a href="Les_tableaux.htm">tableau</a>).<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Afficher la fenêtre Arbre des tableaux d'un bloc</p>
+<p>Si la fenêtre est cachée, sélectionnez le choix <span class="hcp1">Tableaux</span> du menu <span class="hcp1">Fenêtre</span> (raccourci clavier : <span class="hcp1">Alt+4</span>) ou cliquez sur l’onglet vertical <span class="hcp1">Tableaux</span>. Pour que la fenêtre reste affichée en permanence, épinglez-là.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Structure de l'arbre</p>
+<p>La structure de l'arbre est la suivante :</p>
+<ol>
+<li style="list-style: decimal;" class="p">
+<p><span class="hcp1">Objet Tableau</span>.<br>
+Chaque objet Tableau présent dans le bloc courant du masque est affiché sur une ligne de <span class="hcp1">niveau 1</span>.<br>
+Le libellé affiché correspond à sa propriété "<span class="hcp1">Nom du tableau</span>".<br>
+Une <span class="hcp1">bulle d'information</span> est affichée au survol des lignes de niveau 1. Elle présente un récapitulatif des <span class="hcp1">positions et tailles du tableau concerné</span>.<br>
+&#160;</p>
+<ol start="2">
+<li style="list-style: decimal;" class="p">
+<p><span class="hcp1">Bloc de type Tableau</span>.<br>
+Chaque bloc de type Tableau inclus dans le tableau est affiché sur une ligne de <span class="hcp1">niveau 2</span>.<br>
+Le libellé affiché correspond au <span class="hcp1">Numéro</span> du bloc, suivi de sa propriété <span class="hcp1">Libellé</span>.<br>
+La case à cocher située à gauche du libellé indique si le bloc doit ou non être affiché dans la fenêtre d'édition du masque.<br>
+&#160;</p>
+<ol start="3" class="hcp4">
+<li class="p">
+<p><span class="hcp1">Propriétés du bloc de type Tableau</span>.<br>
+La ligne de <span class="hcp1">niveau 3</span> affiche quelques propriétés du bloc qui précède :<span class="hcp1"><br>
+Dbr:</span> suivi du numéro du bloc de débordement, s'il existe.<span class="hcp1"><br>
+Chn:</span> suivi du numéro du bloc de chaînage, s'il existe.<span class="hcp1"><br>
+Trt</span> si le bloc présente au moins un traitement dans le cadre Traitements de ses caractéristiques.<span class="hcp1"><br>
+N:</span> suivi du nombre de lignes du bloc.<span class="hcp1"><br>
+D:</span> suivi de la position Début du bloc.<span class="hcp1"><br>
+F:</span> suivi de la position Fin du bloc.</p>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p style="margin-left: 88px;">Une <span class="hcp1">bulle d'information</span> est affichée au survol des lignes de niveaux 2 et 3. Elle présente un récapitulatif des <span class="hcp1">caractéristiques principales du bloc concerné</span>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Opérations disponibles à partir de l'arbre</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Menu contextuel</span>.<br>
+Tout d'abord, le menu contextuel obtenu en <span class="hcp1">cliquant droit sur une ligne de l'arbre</span> propose les choix suivants :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Propriétés du bloc</span> (raccourci clavier <span class="hcp1">Entrée</span>, <span class="hcp1">double clic</span> à la souris).<br>
+Affiche la boîte des caractéristiques du bloc correspondant à la ligne cliquée.<br>
+A partir de là, <span class="hcp1">la navigation par les boutons &#160;&gt;&gt; et &lt;&lt;</span> de cette boîte <span class="hcp1">est limitée aux seuls blocs inclus dans le tableau</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Editer le bloc</span>.<br>
+Edite le bloc correspondant à la ligne cliquée.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Insérer un nouveau bloc</span> (raccourci clavier <span class="hcp1">Inser</span>).<br>
+Crée un <span class="hcp1">nouveau</span> bloc (de type Tableau) et l'insère immédiatement dans le tableau. La boîte des caractéristiques du nouveau bloc est ouverte pour permettre de les modifier. Dans l'arbre, le bloc est inséré derrière le bloc cliqué (clic sur une ligne de niveau 2 ou 3) ou en tant que premier bloc du tableau (clic sur une ligne de niveau 1).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Insérer des blocs existants</span>.<br>
+Ouvre une boîte de dialogue proposant la liste de tous les blocs <span class="hcp1">déjà présents</span> dans le masque et susceptibles d'être insérés dans le tableau. Sélectionnez un ou plusieurs éléments de la liste à la manière habituelle puis validez. Dans l'arbre, les blocs sélectionnés sont insérés derrière le bloc cliqué (clic sur une ligne de niveau 2 ou 3) ou en tant que premiers blocs du tableau (clic sur une ligne de niveau 1).<br>
+<br>
+Un bloc inséré de type Mobile est transformé en bloc de type Tableau et ses bornes d'impression, initialement relatives à la page, sont automatiquement converties pour devenir relatives au corps du tableau. Un bloc inséré qui est déjà de type Tableau n'est pas modifié.<br>
+<br>
+Utilisez en particulier ce choix pour <span class="hcp7">faire évoluer un masque conçu au départ sans objet Tableau</span> (voir la rubrique <a href="Inclure_un_tableau_dans_un_masque_existant.htm">Inclure un tableau dans un masque existant</a>).<span class="hcp7"><br>
+<br>
+Remarque importante</span> : Il est <span class="hcp1">fortement conseillé</span> de prendre connaissance du paragraphe <span class="hcp1">Insertion dans un tableau de blocs déjà existants</span> avant d'exécuter ce choix. Y sont en particulier détaillées les <span class="hcp7">conditions requises pour une conversion correcte des bornes d'impression</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Retirer le bloc</span> (raccourci clavier <span class="hcp1">Suppr</span>).<br>
+Le bloc correspondant à la ligne cliquée est retiré du tableau. Il est transformé en bloc de type Mobile, avec une conversion automatique des bornes d'impression inverse de celle effectuée lors d'une insertion de bloc existant (voir choix précédent) : les positions relatives au tableau sont (re)converties en positions relatives à la page. Voir aussi le paragraphe <span class="hcp1">En cas de suppression d'un objet Tableau</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Déplacer le bloc vers le haut</span> (raccourci clavier <span class="hcp1">Maj+Flèche en haut</span>).<br>
+Déplace le bloc correspondant à la ligne cliquée dans l'arbre d'une position vers le haut.<br>
+L'ordre dans l'arbre détermine également l'ordre d'affichage des blocs à l'intérieur du tableau dans la fenêtre d'édition du masque.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Déplacer le bloc vers le bas</span> (raccourci clavier <span class="hcp1">Maj+Flèche en bas</span>).<br>
+Déplace le bloc correspondant à la ligne cliquée dans l'arbre d'une position vers le bas.<br>
+L'ordre dans l'arbre détermine également l'ordre d'affichage des blocs à l'intérieur du tableau dans la fenêtre d'édition du masque.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Afficher à partir de ce bloc</span> (raccourci clavier <span class="hcp1">Maj+Clic</span>).<br>
+Permet de choisir le bloc qui sera <span class="hcp1">affiché en premier</span> à l'intérieur du tableau dans la fenêtre d'édition du masque.<span class="hcp7"><br>
+<br>
+Ce choix est particulièrement important</span> lorsque la boîte qui inclut l'objet tableau est insuffisamment haute pour permettre l'affichage de tous les blocs du tableau. Vous disposez de trois méthodes pour visualiser les blocs qui débordent : masquer certains blocs précédents, changer ici le bloc présenté en tête de liste ou changer l'ordre des blocs dans l'arbre (voir le paragraphe <span class="hcp1">Affichage des blocs dans la fenêtre d'édition du masque</span>).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Masquer / Démasquer</span>.<br>
+Permet respectivement de masquer ou de rendre potentiellement (*) visible le bloc correspondant à la ligne cliquée.<br>
+Ce choix équivaut respectivement à décocher ou cocher la case placée à gauche du libellé du bloc dans l'arbre.<br>
+<br>
+(*) En effet, même déclaré comme étant visible, un bloc peut ne pas apparaître à l'intérieur du tableau dans la fenêtre d'édition du masque : voir le choix <span class="hcp1">Afficher à partir de ce bloc</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Masquer tous les autres blocs</span>.<br>
+Masque tous les blocs, sauf celui correspondant à la ligne cliquée.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Démasquer tous les blocs</span>.<br>
+Rend tous les blocs potentiellement visibles.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Barres d'outils de la fenêtre Tableaux</span>.</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Bouton <span class="hcp1">Aide</span>.<br>
+Affiche la présente rubrique de la documentation.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Bouton <span class="hcp1">Propriétés du bloc</span>.<br>
+Affiche la boîte des caractéristiques du bloc couramment sélectionné dans l'arbre.<br>
+A partir de là, <span class="hcp1">la navigation par les boutons &#160;&gt;&gt; et &lt;&lt;</span> de cette boîte <span class="hcp1">est limitée aux seuls blocs inclus dans le tableau</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Bouton <span class="hcp1">Déplacer le bloc vers le haut</span>.<br>
+Déplace le bloc couramment sélectionné dans l'arbre d'une position vers le haut.<br>
+L'ordre dans l'arbre détermine également l'ordre d'affichage des blocs à l'intérieur du tableau dans la fenêtre d'édition du masque.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Bouton <span class="hcp1">Déplacer le bloc vers le bas</span>.<br>
+Déplace le bloc couramment sélectionné dans l'arbre d'une position vers le bas.<br>
+L'ordre dans l'arbre détermine également l'ordre d'affichage des blocs à l'intérieur du tableau dans la fenêtre d'édition du masque.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Bouton <span class="hcp1">Réduire tous les éléments de l'arbre</span>.<br>
+Réduit tous les éléments de l'arbre.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Bouton <span class="hcp1">Expanser tous les éléments de l'arbre</span>.<br>
+Expanse tous les éléments de l'arbre.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp3">Affichage des blocs dans la fenêtre d'édition du masque</p>
+<p>Par défaut, les blocs inclus dans un tableau sont présentés à l'intérieur du tableau, dans l'ordre où ils apparaissent dans l'arbre. <span class="hcp1">Mais le nombre de blocs affichés à l'intérieur du tableau est</span> <span class="hcp7">limité</span> <span class="hcp1">par la taille de la boîte de l'objet Tableau</span>. Il est donc possible que l'ensemble des blocs du tableau ne puisse être affiché simultanément.<br>
+&#160;</p>
+<p><span class="hcp1">Le libellé des blocs actuellement visibles est affiché en gras dans l'arbre</span>.</p>
+&#160;
+<p>Vous disposez de trois méthodes pour déterminer les blocs à visualiser :</p>
+<ol class="hcp4">
+<li class="p">
+<p><span class="hcp1">Masquer les blocs que vous ne voulez pas voir</span>.<br>
+Pour cela, utilisez les choix <span class="hcp1">Masquer</span> et <span class="hcp1">Masquer tous les autres blocs</span> du menu contextuel de l'arbre ou <span class="hcp1">décochez les cases</span> situées à gauche du libellé des blocs à masquer.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Changer le bloc affiché en premier à l'intérieur du tableau</span>.<br>
+Pour cela, utilisez le choix <span class="hcp1">Afficher à partir de ce bloc</span> du menu contextuel de l'arbre.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Changer l'ordre d'affichage des blocs</span>.<br>
+Pour cela, utilisez les choix <span class="hcp1">Déplacer le bloc vers le haut / vers le bas</span> du menu contextuel de l'arbre ou <span class="hcp1">cliquez sur les boutons correspondants</span> de la barre d'outils de la fenêtre Tableaux.</p>
+</li>
+</ol>
+<p>&#160;</p>
+<p class="hcp3"><span class="hcp8">Sélection d'un bloc dans l'arbre ou dans la fenêtre d'édition du masque</span></p>
+<p>Si vous sélectionnez un bloc dans l'arbre, il est également "sélectionné" dans la fenêtre d'édition du masque (s'il est présent) : le trait horizontal en haut du bloc passe en rouge, de même que les traits obliques affichés en marge du bloc.</p>
+<p>Réciproquement, si vous cliquez à l'intérieur d'un bloc de type Tableau dans la fenêtre d'édition du masque, il est sélectionné dans l'arbre.<br>
+<br>
+De plus, si vous sélectionnez l'objet tableau ou l'un des objets placés dans l'en-tête du tableau dans la fenêtre d'édition du masque, le tableau est sélectionné dans l'arbre.</p>
+&#160;
+<p>&#160;</p>
+<p class="hcp3">Insertion dans un tableau de blocs déjà existants</p>
+<p>Le choix <span class="hcp1">Insérer des blocs existants</span> du menu contextuel permet de sélectionner un ou plusieurs blocs déjà présents dans le masque, dans le but de les transférer dans un tableau. Ce choix est particulièrement intéressant pour faire évoluer un ancien masque (sans objet Tableau) vers une version de ce masque incluant l'objet Tableau.</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Blocs éligibles</span>.<br>
+Tous les blocs du masque ne sont pas susceptibles d'être inclus dans le tableau. La liste des blocs ne propose donc que les blocs éligibles. En sont exclus :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Les blocs de type Fixe ou de type Fond.</p>
+</li>
+<li class="p">
+<p>Les blocs contenant eux-mêmes un tableau. En effet, l'imbrication de tableaux n'est pas autorisée.</p>
+</li>
+<li class="p">
+<p>Les blocs de type Tableau déjà inclus dans un autre tableau. En effet, un même bloc ne peut pas appartenir à plusieurs tableaux.</p>
+</li>
+<li class="p">
+<p>Les blocs auxquels on a associé un <a href="Bloc_auxiliaire.htm">bloc auxiliaire</a>. En effet, un bloc Tableau ne peut pas avoir de bloc auxiliaire.</p>
+</li>
+<li class="p">
+<p>Les blocs auxiliaires.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Conversions en bloc de type Tableau</span> :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Les blocs initialement de type Tableau ne sont pas modifiés.</p>
+</li>
+<li class="p">
+<p>Les blocs <span class="hcp1">initialement de type Mobile</span> sont transformés en bloc de type Tableau.<br>
+De plus, les valeurs des <span class="hcp1">bornes d'impression</span> (Position Début et Fin), initialement relatives à la page, <span class="hcp1">sont converties pour devenir relatives au</span> <span class="hcp7">corps</span> <span class="hcp1">du tableau</span>.<br>
+<br>
+Les conversions effectuées sur les valeurs des positions en <span class="hcp1">conservent le signe</span> :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Une position initialement <span class="hcp1">positive</span> (exprimée relativement au <span class="hcp1">début de la page</span>) reste positive (exprimée relativement au <span class="hcp1">début du tableau</span>).<br>
+La <span class="hcp1">position 1 signifie que le bloc s'imprime sur la 1ère ligne</span> (de la page ou du corps du tableau).</p>
+</li>
+<li class="p">
+<p>Une position initialement <span class="hcp1">négative ou nulle</span> (exprimée relativement à la <span class="hcp1">fin de la page</span>) reste négative (exprimée relativement à la <span class="hcp1">fin du tableau</span>).<span style="margin-left: 88px;"><br>
+La</span> <span class="hcp1">position 0 signifie que le bloc s'imprime sur la dernière ligne</span> (de la page ou du corps du tableau).</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Conditions préalables à une conversion correcte des bornes d'impression</span>.<span class="hcp7"><br>
+Ce point est très important</span> pour produire, après l'introduction de l'objet Tableau dans le masque, <span class="hcp2">un état imprimé qui se rapproche au plus près de l'état précédemment obtenu sans l'objet Tableau</span> (en particulier pour que la page avec tableau présente exactement les mêmes blocs que la page sans tableau).<br>
+<br>
+Il est impératif qu'au moment d'exécuter les insertions :<br>
+&#160;</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>La propriété <span class="hcp1">Nombre de lignes</span> (de la page) <span class="hcp1">soit correctement renseignée</span> dans les paramètres généraux du masque.<br>
+En effet, tous les calculs effectués sur les bornes <span class="hcp1">négatives ou nulles</span> (exprimées relativement à la <span class="hcp1">fin</span> de la page) se basent sur la valeur de ce paramètre.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Le <span class="hcp1">corps du tableau soit correctement dimensionné et positionné</span> dans son bloc.<span class="hcp2"><br>
+En pratique, il faut que la première et la dernière ligne du</span> <span class="hcp7">corps</span> <span class="hcp2">du tableau soient précisément placées à l'endroit où étaient imprimées la première et la dernière lignes détail dans l'édition sans tableau</span>.<span class="hcp7"><br>
+<br>
+Attention aux alignements sur une frontière de ligne</span> :<br>
+Une page est conventionnellement découpée en lignes (de 9 orteils en standard). Un bloc est toujours <span class="hcp1">imprimé sur une frontière de ligne</span> et <span class="hcp1">occupe toujours une nombre entier de lignes</span>. Les blocs de type Tableau ne font pas exception à la règle et il faut en tenir compte pour déterminer les limites d'impression effectives de ces blocs à l'intérieur du tableau. Prenons un exemple :<br>
+<br>
+<img src="../image1.gif" style="border: none;" alt="" width="920" height="82" border="0"><br>
+<br>
+Globalement, le tableau occupe ici 33 orteils (*). L'en-tête (en gris) occupe 15 orteils et le corps (en vert) 18 orteils, soit exactement deux lignes. Toutefois, la place réellement disponible à l'intérieur du tableau (en orange) pour l'impression des blocs de type Tableau n'est que de 1 ligne car le <span class="hcp1">corps utile du tableau démarre et finit sur une frontière de ligne</span> (donc en ligne 3 : la fin de la ligne 2 et le début de la ligne 4 sont "perdus") !<br>
+<br>
+(*) <span class="hcp7">Attention aussi à la hauteur des objets indiquée dans Xwin</span> (Taille Y dans le cadre Coordonnées des propriétés du tableau) :<br>
+Pour des raisons historiques, <span class="hcp2">cette taille est augmentée de 1 orteil par rapport à la taille réelle</span> (dans l'exemple, la hauteur réelle n'est que de 33 orteils et non 34).<br>
+<br>
+<br>
+Pour vous aider à bien positionner le corps du tableau :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Activez l'option <span class="hcp1">Affichage des grilles</span> (menu <span class="hcp1">Outils</span> : <span class="hcp1">Options</span>, volet <span class="hcp1">Editeurs de masques</span>).<br>
+Cette option demande l'affichage d'une grille quadrillant l'écran en lignes et colonnes. A droite de la clip grille, apparaissent aussi 4 colonnes de valeurs :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>La première colonne affiche les <span class="hcp1">ordonnées (positives)</span> des lignes relativement au <span class="hcp1">début de la page</span> (début à 1).<br>
+La valeur affichée en première ligne correspond à la <span class="hcp1">Position Début du bloc</span> (spécifiée dans les caractéristiques du bloc courant).</p>
+</li>
+<li class="p">
+<p>La seconde colonne affiche ces mêmes <span class="hcp1">ordonnées (négatives ou nulle)</span> exprimées relativement à la <span class="hcp1">fin de la page</span>.</p>
+</li>
+<li class="p">
+<p>En face des tableaux, la troisième colonne affiche les <span class="hcp1">ordonnées (positives)</span> des lignes relativement au <span class="hcp1">début du tableau</span> (début à 1).</p>
+</li>
+<li class="p">
+<p>En face des tableaux, la quatrième colonne affiche ces mêmes <span class="hcp1">ordonnées (négatives ou nulle)</span> exprimées relativement à la <span class="hcp1">fin du tableau</span>.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Le cadre Coordonnées des propriétés du tableau contient les informations suivantes :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Début du corps</span> : numéro de la ligne (début à 1) où démarre la partie utile du corps du tableau.<br>
+Entre parenthèses, le nombre d’orteils "perdus" en haut après l'en-tête.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Fin du corps</span> : numéro de la ligne (incluse) où finit la partie utile du corps du tableau.<br>
+Entre parenthèses, le nombre d’orteils "perdus" en bas.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Taille du corps</span> : taille utile du corps du tableau en nombre de lignes.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Vous pouvez aussi forcer un pas de déplacement vertical des objets à la souris (option <span class="hcp1">Déplacement de la souris - Vertical</span> au menu <span class="hcp1">Outils</span> : <span class="hcp1">Options</span>, volet <span class="hcp1">Editeurs de masques</span>).<br>
+Exemple : un pas vertical de 9 orteils permet de cadrer tous les objets sur une frontière de ligne.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Mise en oeuvre de l'insertion d'un ou plusieurs blocs</span>.<br>
+Dans ce paragraphe, on partira du principe que plusieurs blocs ont été sélectionnés pour être insérés dans un tableau et qu'il s'agit de blocs de type Mobile dont les bornes d'impression (positions Début et Fin dans la boîte de dialogue des caractéristiques du bloc) doivent être converties. Xwin procède à l'opération d'insertions en deux phases :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Xwin contrôle d'abord, bloc par bloc, la cohérence des bornes converties.<br>
+En cas de problème, un message est affiché dans une boîte de message. S'il s'agit d'une erreur, le bloc ne sera pas traité. S'il s'agit d'un simple avertissement, l'insertion du bloc peut être confirmée ou invalidée. Dans tous les cas, l'opération peut être entièrement abandonnée (bouton Annuler).</p>
+</li>
+<li class="p">
+<p>Si l'opération n'a pas été globalement annulée, Xwin réalise les insertions qui n'ont pas fait l'objet d'un message ou qui ont été confirmées. Un récapitulatif des conversions est présenté dans la fenêtre des Messages (en bas de l'écran de Xwin).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp9">Deux types de problème peuvent survenir lors d'une conversion :</p>
+<ol style="list-style: disc;">
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Les bornes converties sont erronées</span>.<br>
+Les bornes d'impression recalculées relativement au tableau placent le bloc en dehors des limites du corps du tableau (les valeurs converties sont extérieures au corps du tableau ou le bloc déborde du corps du tableau, ...). L’insertion du bloc est invalidée, avec affichage d'un message d'<span class="hcp1">erreur</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Les bornes converties sont potentiellement incorrectes</span>.<br>
+Tout en restant valides, les nouvelles bornes d'impression <span class="hcp1">ne correspondent pas</span> <span class="hcp7">exactement</span> <span class="hcp1">aux bornes qui prévalaient sans l'objet tableau</span>.<br>
+Pour effectuer ce contrôle, Xwin convertit d'abord les bornes initiales relatives à la page en bornes relatives au tableau puis effectue la conversion inverse. Si les dernières valeurs calculées ne sont pas <span class="hcp1">strictement identiques</span> aux valeurs initiales, Xwin signale un problème potentiel en affichant un message d'<span class="hcp1">avertissement</span>. L'insertion peut alors être confirmée ou refusée.<span class="hcp1"><br>
+<br>
+Remarque</span> :<br>
+&#160;</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Cet avertissement ne doit pas arriver lorsque les positions Début et Fin initiales délimitent exactement (*) les bornes d'impression du bloc dans la page et si le tableau est parfaitement positionné et dimensionné. Le contrôle permet de s'assurer que l'état obtenu avec le tableau sera identique à celui préexistant sans le tableau.<br>
+<br>
+(*) L'avertissement peut ne pas être significatif, en particulier parce qu'il n’est pas obligatoire que la borne Début d'impression soit initialement "exacte". Prenons l'exemple d'un bloc Mobile imprimé pour la première fois dans la page derrière un bloc Fixe de 5 lignes. Normalement, la borne Début devrait valoir 6. Toutefois, rien n'interdit de spécifier une valeur positive quelconque inférieure à 6, avec un état imprimé identique. Dans ce cas, un avertissement aura lieu car une anomalie potentielle sera détectée par Xwin.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Dans certains cas, il est possible de ne pas tenir compte de cet avertissement et de confirmer l'insertion. Xwin limitera les bornes converties de manière à confiner l'impression du bloc à l’intérieur du corps du tableau. Par contre, l'état avec tableau pourra différer légèrement de l'état sans tableau. Par exemple, le nombre de lignes détail imprimées sera réduit de 1 si l'en-tête du tableau (cadré sur une frontière de ligne) est agrandi de une ligne par rapport au cadre d'en-tête initial.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p class="hcp9"><span class="hcp7">Conseil</span> :</p>
+<p class="hcp9">Dès qu'un message est affiché en phase un, il se peut que le corps du tableau ne soit pas parfaitement dimensionné ou positionné dans le bloc (voir le paragraphe <span class="hcp1">Conditions préalables à une conversion correcte des bornes d'impression</span>). En cas de doute, abandonnez globalement les insertions (bouton Annuler) et vérifiez le dessin du tableau avant de relancer l'opération.</p>
+<ul class="hcp5">
+<li class="p">
+<p class="hcp10"><span class="hcp1">Exemples</span> :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p class="hcp10">Un exemple détaillé d'inclusion de blocs existants dans un tableau est donné à la rubrique <a href="Inclure_un_tableau_dans_un_masque_existant.htm">Inclure un tableau dans un masque existant</a>.</p>
+</li>
+<li class="p">
+<p class="hcp10">Un exemple ne respectant pas les <span class="hcp1">Conditions préalables à une conversion correcte des bornes d'impression</span> est donné dans cette même rubrique, au paragraphe <span class="hcp1">Si l'objet Tableau diffère du cadre du masque d'origine</span>.<span style="margin-left: 8px;"><br>
+&#160;</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><span class="hcp8">En cas de suppression d'un objet Tableau</span></p>
+<p>Lorsqu'un objet Tableau est supprimé (suppression proprement dite, Couper d'un tableau, suppression d'un bloc contenant un tableau), chaque bloc inclus dans ce tableau est transformé en bloc de type Mobile et ses bornes d'impression relatives au tableau sont automatiquement reconverties en positions relatives à la page.</p>
+<p>Attention, si les valeurs initiales relatives au tableau ou si les positions du bloc contenant le tableau sont incorrectes au départ, le calcul des positions relatives à la page donnera des résultats erronés (par exemple, une position en dehors des limites effectives de la page). Les anomalies ne sont pas ici signalées par une boîte de message mais un récapitulatif des conversions est affiché dans la fenêtre des Messages de Xwin.</p>
+&#160;
+</body>
+</html>

@@ -1,0 +1,105 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Appel d'un Zoom Sql en saisie de donnée</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ol.hcp2 { list-style:decimal; }
+ol.hcp3 { list-style:lower-alpha; }
+span.hcp4 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Appel d'un Zoom en saisie de donnée</h3>
+<p>&#160;</p>
+<p class="Body-Text">L'utilisateur peut appeler un Zoom en cours de saisie d'un masque ou d'une ligne de tableau. Habituellement, la touche lui permettant d'appeler un Zoom est la touche <span class="hcp1">F9</span>.</p>
+<p class="Body-Text">Dans un masque d'écran Xwin, les objets Champ et Multi-choix disposent de plus de la propriété "<span class="hcp1">Table associée</span>" (famille Saisie). Celle-ci signifie qu'une table est associée à l'objet et que vous voulez que l'utilisateur ait accès à cette table. Lorsque cette propriété est positionnée à "Oui" :</p>
+<ol class="hcp2">
+<li class="p-body-text">
+<p class="body-text">Un <span class="hcp1">bouton en forme de loupe</span> est affiché automatiquement à la droite de l'objet lorsque ce dernier prend le focus en saisie de masque. Ce bouton <span class="hcp1">simule la frappe de la touche F8</span> et sert habituellement à ouvrir la <a href="Zoom_classique_et_Zoom_combo.htm">fenêtre de consultation de la Liste des fiches</a> de la table ou, <span class="hcp1">à défaut, à appeler le Zoom</span> associée à la table.</p>
+</li>
+<li class="p-body-text">
+<p class="body-text">Si l'utilisateur frappe la touche <span class="hcp1">Ctrl+F</span> en cours de saisie de l'objet, Ywpf ne génère pas la valeur "normale" K_CTRL_F de la variable Harmony.Key mais la valeur <span class="hcp1">K_F8</span> (comme si la touche F8 avait été tapée). Ctrl+F sert habituellement à appeler le zoom en "mode Search".</p>
+</li>
+<li class="p-body-text">
+<p class="body-text">Si l'utilisateur frappe la touche <span class="hcp1">F9</span> en cours de saisie de l'objet, Ywpf ne génère pas la valeur "normale" K_F9 de la variable Harmony.Key mais la valeur <span class="hcp1">K_F8</span> (comme si la touche F8 avait été tapée). F9 sert habituellement à appeler le zoom de manière tout à fait classique.</p>
+</li>
+</ol>
+<p class="body-text"><span class="hcp1">Remarque</span> : En saisie dans un tableau, la loupe n'est pas disponible mais l'utilisateur doit avoir accès à cette même fonctionnalité via les raccourcis clavier F8, F9 ou Ctrl+F.<br>
+&#160;</p>
+<p class="body-text">&#160;</p>
+<p style="font-weight: bold; font-size: 11pt;">Programmation de l'appel</p>
+<p>L'appel au zoom (classique, "Search" ou "Liste") est à la charge du programme Diva appelant.<span class="hcp1"><br>
+<br>
+Il est important de savoir</span> :</p>
+<ol class="hcp2">
+<li class="p">
+<p>Que les actions possibles de l'utilisateur (clic sur la loupe ou frappe de la touche F8, frappe de la touche F9 ou Ctrl+F) génèrent <span class="hcp1">la même valeur K_F8 de Harmony.Key</span>.<br>
+Ceci pour simplifier le paramétrage dans Xwin et la programmation Diva. En effet, seule la touche F8 a besoin d'être piégée dans Xwin et seule la valeur de Harmony.Key K_F8 a besoin d'être testée par les programmes.<br>
+<br>
+Pour vous permettre de <span class="hcp1">différencier les types d'action</span> :</p>
+<ol class="hcp3">
+<li class="p">
+<p>Clic sur la loupe et touche F8 positionnent <span class="hcp1">en supplément</span> le drapeau <span class="hcp1">Harmony.KeyZoomCombo à TRUE</span>.</p>
+</li>
+<li class="p">
+<p>La touche Ctrl+F positionne <span class="hcp1">en supplément</span> le drapeau <span class="hcp1">Harmony.KeyZoomSearch à TRUE</span>.</p>
+</li>
+<li class="p">
+<p>La touche F9 laisse Harmony.KeyZoomCombo et Harmony.KeyZoomSearch à FALSE.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p style="margin-left: 48px;">Ceci assure de plus la <span class="hcp1">compatibilité avec les programmes antérieurs à la version 7.1b</span> d'Harmony qui testent uniquement la valeur K_F8 de Harmony.Key : quelque soit l'action de l'utilisateur sur la loupe ou au clavier, le Zoom sera bien appelé.<br>
+Quant aux programmes postérieurs à la version 7.1b qui ne désirent pas implémenter l'appel à la "Fenêtre liste" ou le traitement de la touche Ctrl+F, il peuvent eux-aussi tester uniquement la valeur K_F8 de Harmony.Key et ignorer la valeur de Harmony.KeyZoomCombo et Harmony.KeyZoomSearch.</p>
+<ol start="2">
+<li style="list-style: decimal;" class="p">
+<p><span style="font-weight: bold; text-decoration: underline;">Qu'ATTENTION</span> :</p>
+<ol class="hcp3">
+<li class="p">
+<p>Les touches F9 et Ctrl+F génèrent K_F8 <span class="hcp4">UNIQUEMENT</span> en <span class="hcp4">SAISIE</span> d'une donnée ayant sa <span class="hcp4">propriété "Table associée" activée</span> dans Xwin (en dehors de cet unique cas, ces touches génèrent respectivement K_F9W et K_CTRL_F).<br>
+Remarquez aussi que ces touches <span class="hcp4">ne peut donc pas être piégées</span> pour une donnée ayant cette propriété.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La valeur des drapeaux Harmony.KeyZoomCombo et Harmony.KeyZoomSearch est <span class="hcp4">valide</span> UNIQUEMENT en SAISIE d'une donnée AVEC la propriété "Table associée" ET lorsque Harmony.Key vaut K_F8 (sinon, leur valeur n'est pas significative).</p>
+</li>
+</ol>
+</li>
+</ol>
+&#160;
+<p class="Body-Text"><span class="hcp1">De plus, on pourra positionner Zoom.TableAssociee avant l'appel du zoom</span> (voir la rubrique <a href="Zoom.TableAssociee.htm">Zoom.TableAssociee</a> et l'exemple).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p style="font-weight: bold;">Exemple :<br>
+&#160;</p>
+<p class="Source">;séquence exécutée suite à un Xme(List)Input</p>
+<p class="Source">;l'affectation de Zoom.TableAssociee détermine le fonctionnement du double clic en mode liste</p>
+<p class="Source">&#160;</p>
+<p class="Source">if Harmony.Key = K_F8 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;clic sur la loupe, touche F8, F9 ou Ctrl+F</p>
+<p class="Source">&#160;&#160;&#160;if Harmony.KeyZoomCombo</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;ZoomCombo (...) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;clic ou F8 : appel de la "Fenêtre liste"</p>
+<p class="Source">&#160;&#160;&#160;elsif Harmony.KeyZoomSearch</p>
+<p class="Source" style="margin-left: 88px;">&#160;Zoom.TableAssociee = Harmony.DataTableAssociee</p>
+<p class="Source"><span style="margin-left: 88px;">&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Ctrl+F : appel du zoom en mode Search</span></p>
+<p class="Source">&#160;&#160;&#160;else</p>
+<p class="Source" style="margin-left: 88px;">&#160;Zoom.TableAssociee = Harmony.DataTableAssociee</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;ZoomSql (...) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;F9 : appel du Zoom</p>
+<p class="Source">&#160;&#160;&#160;endif</p>
+<p class="Source">endif</p>
+<p class="body-text"><br>
+&#160;</p>
+<p class="body-text"><span class="hcp1">Voir également</span> :</p>
+<p class="body-text">Les rubriques "Appel d'un Zoom ou Consultation de la Liste des fiches d'une table" et "Appel personnalisé d'un Zoom par la touche Ctrl+F" de la documentation consacrée à l'exécuteur de masques Ywpf.</p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

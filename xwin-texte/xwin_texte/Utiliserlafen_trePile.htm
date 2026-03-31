@@ -1,0 +1,80 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Utiliser la fenêtre Pile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Utiliser la fenêtre Pile</h3>
+<p class="Body-Text">L'<a href="L__crandeXwin1.htm">écran de Xwin</a> contient une <a href="Barre_d_onglets_Comptes_rendus_de_XwinWeb.htm">barre d'onglets Comptes rendus</a>, située sous la zone d'affichage des fenêtres MDI. En phase de mise au point, le volet <font class="hcp1">Pile</font> montre la liste des <font class="hcp1">procédures et fonctions qui ont été appelées en cascade</font> avant que le programme soit interrompu. Cette liste vous renseigne sur le "&#160;chemin&#160;" emprunté par le programme pour arriver sur l'instruction courante.</p>
+<p class="Body-Text">La liste est présentée dans l'<font class="hcp1">ordre inverse des appels</font>&#160;: la première ligne correspond à la fonction courante (celle appelée en dernier), la dernière ligne correspond au programme principal (main).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Afficher la fenêtre Pile</font></p>
+<p class="Body-Text">Pour faire apparaître la fenêtre "&#160;Pile&#160;" à l'écran, en phase de mise au point&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Cliquez sur l'<font class="hcp1">onglet Pile</font>. Si cet onglet n’apparaît pas, la fenêtre est ancrée et donc déjà affichée.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ou sélectionnez le choix <font class="hcp1">Pile</font> du menu <font class="hcp1">Déboguer&#160;: Fenêtres du débogueur</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ou <font class="hcp1">cliquez</font> sur le bouton <img src="../image/btn_dbg_onglet_pile.bmp" alt="" width="16" height="16" border="0"> de la barre d'outils du débogueur.</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: bold;"><span style="font-weight: bold;">Nota&#160;: <span style="font-weight: normal;">Vous disposez de nombreuses possibilités pour afficher cette fenêtre à votre convenance&#160;: ancrage permanent, déplacement à l’écran, ajustement de sa taille, etc. Pour plus de détails, consultez la rubrique <a href="Barre_d_onglets_Comptes_rendus_de_XwinWeb.htm">barre d'onglets Comptes rendus</a>.</span></span></p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Consulter le source d'une fonction nommée dans la pile</font></p>
+<p class="Body-Text">Si vous <font class="hcp1">double-cliquez</font> sur un <font class="hcp1">élément de la liste</font>, vous activez le source contenant la fonction correspondante et vous placez le curseur sur l'instruction en cours d'exécution dans cette fonction. Pour vous permettre de repérer facilement l'instruction, le débogueur affiche une icone en forme de flèche en marge de la ligne concernée.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Afficher les données contextuelles d'une procédure ou d'une fonction</font></p>
+<p class="Body-Text">Pour visualiser les données nommées par l'instruction pointée dans la pile (plus les deux instructions précédentes et l'instruction suivante), vous devez afficher la <a href="Utiliserlafen_treContexte.htm">fenêtre Contexte</a> (cliquez pour cela sur l'onglet Contexte). Sans sélection particulière dans la fenêtre Pile, vous obtiendrez les données contextuelles à l'instruction où le programme est arrêté à cet instant.</p>
+<p class="Body-Text">Pour afficher les données contextuelles à la dernière instruction exécutée dans une procédure ou une fonction appelée auparavant&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Affichez d'abord la fenêtre Pile.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Sélectionnez le nom de la procédure ou de la fonction dans la liste.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Affichez ensuite la fenêtre Contexte.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Afficher les données locales à une procédure ou à une fonction</font></p>
+<p class="Body-Text">Pour visualiser les données locales à une procédure ou à une fonction, vous devez afficher la <a href="Utiliserlafen_treLocales.htm">fenêtre Locales</a> (cliquez pour cela sur l'onglet Locales). Sans sélection particulière dans la fenêtre Pile, vous obtiendrez les données locales à la procédure ou à la fonction dans laquelle le programme est arrêté à cet instant.</p>
+<p class="Body-Text">Pour afficher les données locales à une procédure ou à une fonction appelée auparavant&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Affichez d'abord la fenêtre Pile.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Sélectionnez le nom de la procédure ou de la fonction dans la liste.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Affichez ensuite la fenêtre Locales.</p>
+</li>
+</ul>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Procédures correspondantes :</p>
+<p class="Body-Text"><a href="Pourafficherlafen_trePile.htm">Pour afficher la fenêtre Pile</a></p>
+<p class="Body-Text"><a href="Pourafficherlesdonn_escontextuellesd_unefonctionoud_uneproc_dure.htm">Pour afficher les données contextuelles d'une fonction ou d'une procédure</a></p>
+<p class="Body-Text"><a href="Pourafficherlesdonn_eslocalesd_unefonctionoud_uneproc_dure.htm">Pour afficher les données locales d'une fonction ou d'une procédure</a></p>
+<p class="Body-Text"><a href="Pourafficherlesourced_unefonctionnomm_edanslapile.htm">Pour afficher le source d'une fonction nommée dans la pile</a></p>
+</body>
+</html>

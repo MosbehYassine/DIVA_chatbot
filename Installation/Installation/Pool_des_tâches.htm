@@ -1,0 +1,50 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Pool des tâches</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Pool des tâches</h2>
+<p>&#160;</p>
+<p>Le pool de tâches est une fonctionnalité d’Harmony qui permet de <span class="hcp1">réduire notablement le temps de chargement des programmes</span>.</p>
+<p>&#160;</p>
+<p>Le principe général est le suivant : Des tâches (xRtDiva.exe côté serveur et xWpf.exe côté client) restent résidentes en mémoire après la fin des programmes. Elles sont ainsi immédiatement disponibles lorsque l'utilisateur relance de nouveaux programmes. De plus, Harmony anticipe un lancement ultérieur de manière à toujours conserver au moins une tâche libre en avance dans le pool.</p>
+<p>&#160;</p>
+<p>Exemple schématique :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>L'exécution de l'interface d'accueil charge xRtDiva pour ses propres besoins.</p>
+</li>
+<li class="p">
+<p>Un deuxième xRtDiva est immédiatement chargé et placé dans le pool des tâches en attente.</p>
+</li>
+<li class="p">
+<p>L'appel d’un zoom à partir de l'IA ne charge pas xRtDiva mais utilise la tâche libre du pool.</p>
+</li>
+<li class="p">
+<p>A la sortie du zoom, xRtDiva reste chargé en mémoire et est replacé dans la liste des tâches en attente.</p>
+</li>
+<li class="p">
+<p>Un nouvel appel de zoom (ou d'un autre programme) à partir de l'IA ré-utilise la tâche libérée précédemment.</p>
+</li>
+</ul>
+&#160;
+<p>Un nouveau pool est créé à chaque appel de l'IA. Tous les programmes ou zooms appelés ensuite depuis cet IA sont rattachés à ce pool.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque</span> : Un pool est identifié de manière unique. xConsole permet de visualiser les tâches inactives (si l’option "Filtrer les tâches inactives des pools" est désactivée). La colonne "Pool Id" indique le numéro du pool, la colonne "Pool en attente" affiche "A" pour les tâches du pool en attente.</p>
+<p>&#160;</p>
+<p>Pour améliorer encore les temps de chargement, il est possible de paramétrer les pools de tâches : voir la rubrique suivante <a href="Param&eacute;trage_du_pool_des_t&acirc;ches.htm">Paramétrage du pool des tâches</a>.</p>
+<p>&#160;</p>
+</body>
+</html>

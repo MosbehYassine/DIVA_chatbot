@@ -1,0 +1,48 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Traitement Champ virtuel</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:normal; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Traitement Champ virtuel</h1>
+<p>&#160;</p>
+<p class="hcp1">Le traitement local (obligatoire) <span class="hcp2">"A chaque accès"</span>, associé à un <span class="hcp2">champ virtuel</span> d'une table, est automatiquement exécuté à chaque accès (affichage, impression, mention dans une expression Diva, etc.) au champ.<span style="font-weight: normal;"><br>
+<br>
+Il sert à calculer la valeur du champ virtuel.<br>
+&#160;</span></p>
+<p class="hcp1">Il s'agit d'une <span class="hcp2">fonction dont le type dépend de la nature du champ</span> et ayant le paramètre suivant :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp1"><span class="hcp2">table</span><br>
+Instance de la table contenant le champ virtuel à calculer (passée par adresse).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Exemple d'un squelette de fonction généré par Xwin (donnée virtuelle de nature numérique ==&gt; type Int) :<br>
+&#160;</p>
+<p class="source">;*</p>
+<p class="source">Public Function Int Champ_MaTable_MonChampNumerique_Val (&amp;MaTable)</p>
+<p class="source">;</p>
+<p class="source">Record "MonDico.dhsd" MaTable</p>
+<p class="source">Beginf</p>
+<p class="source"><span style="margin-left: 128px;">&#160;&#160;&#160;</span></p>
+<p class="source">&#160;&#160;&#160;Freturn (0)</p>
+<p class="source">Endf</p>
+<p>&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p><a href="Description_g&eacute;n&eacute;rale_des_traitements_du_dictionnaire.htm">Description générale des traitements du dictionnaire</a></p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Diva et les masques graphiques</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Diva et les masques graphiques</h2>
+<p class="Body-Text"><font class="hcp1">Lien avec les enregistrements du programme</font></p>
+<p class="Body-Text">Dans la boite de dialogue des enregistrements de Xwin, la saisie du préfixe est remplacée par la saisie du nom de la variable. Le lien entre le programme et le masque est fait d'après ce nom.</p>
+<p class="Body-Text">Exemple :</p>
+<p class="Body-Text">Si dans le programme se trouve la déclaration suivante :</p>
+<p class="Body-Text">&#160;Public Record xxfdd Client EnregClient</p>
+<p class="Body-Text">il faut ajouter la ligne suivante aux enregistrements du masque :<br>
+Dictionnaire&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;xxfdd<br>
+Enregistrement&#160;&#160;:&#160;&#160;client<br>
+Variable &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;:&#160;&#160;enregclient.</p>
+<p class="Body-Text">L'enregistrement doit être déclaré <font class="hcp1">Public</font> dans le programme pour que le masque et les données travaillent sur les mêmes données.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Déclarations et traitements initiaux</font></p>
+<p class="Body-Text">Il est possible de déclarer des variables locales au masque qui sont visibles dans tous les traitements du masque. De même, il est possible de déclarer des modules externes qui sont utilisés dans les traitements liés aux données.</p>
+<p class="Body-Text">Des traitements initiaux peuvent être programmés dans la boite de dialogue "Paramètres masque --&gt; Traitement initial". Ces instructions sont exécutées une seule fois au chargement du masque.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Instructions</font></p>
+<p class="Body-Text">Les traitements (avant/après la saisie, avant/après l'impression d'un bloc etc.) sont saisis directement dans la fenêtre des traitements du masque.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

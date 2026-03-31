@@ -1,0 +1,23 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Choix du fichier Xlogf (hors serveur Xlan sécurisé)">
+    <param name="Name" value="Choix du fichier Xlogf (hors serveur Xlan sécurisé)">
+    <param name="Local" value="Xlog1/ChoixdufichierXlogf_horsserveurXlans_curis__.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déclaration des utilisateurs d'un réseau Xlan">
+    <param name="Name" value="Déclaration des utilisateurs d'un réseau Xlan">
+    <param name="Local" value="Xlog1/D_clarationdesutilisateursd_unr_seauXlan.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramètres d un utilisateur">
+    <param name="Name" value="Paramètres d'un utilisateur">
+    <param name="Local" value="Xlog1/Param_tres_d_un_utilisateur.htm">
+  </object>
+</ul>
+</html>

@@ -1,0 +1,144 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mise en oeuvre</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+img.hcp3 { border:none; }
+li.hcp4 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Mise en oeuvre</h1>
+<p>&#160;</p>
+<p>Avant de lancer le traitement de synchronisation, il faut :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Avoir correctement configuré la connexion à la base dans XPSQL (base de données, type de base). Ceci est normalement le cas puisque la synchronisation concerne des bases existantes.</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Déconnecter tous les utilisateurs</span>. En effet le traitement ouvre les fichiers concernés par la synchronisation en mode « réservé ».</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Avoir fait une sauvegarde complète de la base de données</span>. En effet, s’il se produit une erreur ou une interruption au cours de la synchronisation, il y a un risque d’incohérence entre le dictionnaire de données et le schéma de la base. L’ensemble des tables ne sera probablement pas au même niveau de mise à jour.</p>
+</li>
+</ul>
+<p>Le bouton « <span class="hcp2">Synchroniser le schéma SQL</span> » (ainsi que le sous-menu « Schéma SQL » du menu « Synchronisation ») permet de lancer l’utilitaire de synchronisation du schéma SQL existant avec une nouvelle version de ce schéma. L'utilitaire demande le chemin du ou des nouveaux dictionnaires. Seuls les fichiers marqués comme « valides » dans XPSQL seront traités.</p>
+<p>Le traitement commence par mettre à jour le fichier paramètres FHSQL.dhfi en ajoutant les nouveaux fichiers à partir du modèle (FhsqlDivalto.dhfi).</p>
+<p>&#160;</p>
+<p><span class="hcp2">On peut choisir de voir au préalable les changements détectés</span> durant l’analyse des dictionnaires, avant de confirmer la mise à jour de la base de données (choix par défaut).</p>
+<p>&#160;</p>
+<p><img src="../image17.jpg" alt="" width="736" height="517" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p>Chaque ligne représente une action. On y trouve le dictionnaire concerné, le type d’action (suppression, modification, création), le type d’objet concerné (fichier, table, champ, index) et le détail :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Pour le fichier, le détail se résume au nom du fichier.</p>
+</li>
+<li class="p">
+<p>Pour une table, on a &lt;nom du fichier&gt;, &lt;nom de la table&gt;.</p>
+</li>
+<li class="p">
+<p>Pour un champ, on a &lt;nom du fichier&gt;, &lt;nom de la table&gt;, &lt; nom du champ&gt;.</p>
+</li>
+<li class="p">
+<p>Pour un index, on a &lt;nom du fichier&gt;, &lt;nom de la table&gt;, &lt;nom de l’index&gt; (&lt;type d’index&gt;).</p>
+</li>
+</ul>
+<p>Les actions sont classées par dictionnaire et par ordre d’exécution.</p>
+<p><span class="hcp2">Note</span> :</p>
+<p>Les actions nécessitant plusieurs traitements sont résumées en une seule ligne dans le tableau. Par exemple, pour une modification du type d’un champ utilisé dans un index, on verra l’action « Modification – Champ – &lt;fichier&gt;, &lt;table&gt;, &lt;champ&gt; » mais pas les actions de suppression, de recréation de l’index concerné et de garnissage de l’index.</p>
+<p>&#160;</p>
+<p>Pendant la mise à jour de la base SQL, il n’y a aucun moyen d’arrêter la progression. Si une erreur se produit durant l’analyse des dictionnaires, une fenêtre vous en avertira. Pour avoir des précisions sur l’erreur, il faut regarder dans le journal d’erreurs.</p>
+<p>&#160;</p>
+<p>Après une synchronisation réussie :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Les versions des fichiers sont mises à jour dans la liste.</p>
+</li>
+<li class="p">
+<p>Si un fichier a été supprimé, il est retiré de la liste.</p>
+</li>
+<li class="p">
+<p>Les anciens dictionnaires de données sont archivés dans le sous-répertoire /divalto/ « nom de base sql &#160;» /back.</p>
+</li>
+<li class="p">
+<p>Les nouveaux dictionnaires de données sont copiés dans le répertoire /divalto/ « nom de base sql &#160;».</p>
+</li>
+</ul>
+<p>Une fois la synchronisation terminée, le cache des dictionnaires du serveur est automatiquement vidé.</p>
+<p>&#160;</p>
+<p>Il y a trois types d’échec :</p>
+<ul class="hcp1">
+<li class="p">
+<p>La synchronisation n'a pas pu démarrer car au moins des fichiers concerné n'a pu être réservé.<br>
+Pour ce type d’erreur :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp1">
+<li class="p">
+<p>La mise à niveau n'est pas effectuée ;</p>
+</li>
+<li class="p">
+<p>Le programme de synchronisation affiche un message.</p>
+</li>
+<li class="p">
+<p>Avant de relancer la synchronisation, il faudra déconnecter tous les utilisateurs.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p">
+<p>Une erreur fatale au niveau du serveur SQL.<br>
+Pour ce deuxième &#160;type d’erreur :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp1">
+<li class="p">
+<p>La mise à niveau est stoppée ;</p>
+</li>
+<li class="p">
+<p>L’erreur est journalisée dans le fichier ferror.log, consultable à partir de la console d’administration ;</p>
+</li>
+<li class="p">
+<p>Avant de relancer la synchronisation, il faudra restaurer la base.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Une erreur SQL au moment du transfert des données existantes vers les nouvelles tables (lors de la modification d’un champ, par exemple).<br>
+Pour ce troisième type d’erreur :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp1">
+<li class="p">
+<p>La mise à niveau n’est pas stoppée ;</p>
+</li>
+<li class="p">
+<p>Les tables concernées sont vides ou partiellement garnies;</p>
+</li>
+<li class="p">
+<p>Le schéma est cohérent avec le dictionnaire ;</p>
+</li>
+<li class="p">
+<p>Un récapitulatif des tables concernées est affiché :</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;<img src="../image16.jpg" alt="" width="729" height="509" border="0" class="hcp3"></p>
+<p>&#160;</p>
+</body>
+</html>

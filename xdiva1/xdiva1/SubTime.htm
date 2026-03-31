@@ -1,0 +1,128 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>SubTime</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-family:Courier New;
+font-size:9pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>SubTime &#160;<a href="ListedesfonctionsdeDateetHeure.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Fonctionsdedateetheure.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Subtime calcule l'heure obtenue en retranchant à une heure de départ un temps donné.<br></p>
+<p class="Body-Text"><font class="hcp2">Heure</font> = <font class="hcp2">Subtime</font> (<font class="hcp3">heure</font>_<font class="hcp3">départ</font> , <font class="hcp3">temps</font>)</p>
+<p class="Body-Text"><br>
+<font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Heure</font>_<font class="hcp3">départ</font></p>
+<p class="decalage05">Heure au format HHMMSS.</p>
+<p class="Body-Text"><font class="hcp3">Temps</font></p>
+<p class="decalage05">Temps au format HHMMSS à retrancher à <font class="hcp3">heure</font>_<font class="hcp3">départ</font>.</p>
+<p class="Body-Text"><br>
+<font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction Subtime renvoie une chaîne de 8 caractères, les 6 premières positions contenant l'heure résultant de la soustraction de <font class="hcp3">heure</font>_<font class="hcp3">départ</font> et <font class="hcp3">temps</font>. Les 2 dernières positions contiennent le nombre de jours sautés, soit par exemple 0 si la soustraction n'a pas provoqué un changement de jour, -1 si la soustraction a provoqué un changement de jour.</p>
+<p class="Body-Text"><br>
+<font class="hcp2">Exemples</font></p>
+<table cellspacing="0" width="439">
+<tr class="hcp4">
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text">&#160;<font class="hcp2">h1</font></p>
+</td>
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">h2</font></p>
+</td>
+<td style="width:48.40%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Subtime (h1 , h2)</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">10h 02' 05"</p>
+</td>
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">10h 03' 06"</p>
+</td>
+<td style="width:48.40%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp6">23h 58' 59" -1j</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">10h 02' 05"</p>
+</td>
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">15h 03' 05"</p>
+</td>
+<td style="width:48.40%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp6">18h 59' 0" -1j</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">23h 59' 45"</p>
+</td>
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">00h 00' 02"</p>
+</td>
+<td style="width:48.40%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp6">23h 59' 43" 0j</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">15h 00' 00"</p>
+</td>
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">14h 00' 00"</p>
+</td>
+<td style="width:48.40%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp6">1h 0' 0" 0j</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">14h 00' 00"</p>
+</td>
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">15h 00' 00"</p>
+</td>
+<td style="width:48.40%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp6">23h 0' 0" -1j</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">00h 00' 00"</p>
+</td>
+<td style="width:25.80%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">99h 00' 00"</p>
+</td>
+<td style="width:48.40%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp6">21h 0' 0" -4j</font></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><br>
+<font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Timeval.htm">Timeval</a>, <a href="Valtime.htm">Valtime</a>, <a href="Diftime.htm">Diftime</a>, <a href="Addtime.htm">Addtime</a>, <a href="WinGetTickCount.htm">WinGetTickCount</a> , <a href="DHAddSeconds.htm">DHAddSeconds</a></p>
+</body>
+</html>

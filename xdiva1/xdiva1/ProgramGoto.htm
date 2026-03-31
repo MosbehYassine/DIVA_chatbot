@@ -1,0 +1,82 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ProgramGoto</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-right:10px;
+padding-left:10px; }
+p.hcp6 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ProgramGoto &#160;<a href="InstructionsdeModulesetProgrammes.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="G_n_ralit_s1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Instruction d'enchaînement de programmes.</p>
+<p class="Body-Text"><font class="hcp2">ProgramGoto</font> <font class="hcp3">nom</font></p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Nom</font></p>
+<p class="decalage05">Nom du programme à enchaîner.</p>
+<p class="Body-Text">Le programme en cours est remplacé par le programme spécifié. Les données à passer au programme appelé doivent être préalablement placées dans le tunnel par l'instruction Ping.</p>
+<p class="Body-Text">ProgramGoto peut enchaîner soit à un programme Diva soit à un programme Hql. Les données à passer au programme Hql doivent être placées dans la donnée Zechange.</p>
+<p class="Body-Text">Un programme ayant été lancé par ProgramCall ne peut enchaîner qu'à un programme Diva.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Enchaînement à un programme de l'ERP Divalto</p>
+<p class="Body-Text" style="font-weight: normal;">Les programmes de l'ERP Divalto ne peuvent être lancés que en passant par le menu Divalto.Dhop.</p>
+<p class="Body-Text" style="font-weight: bold;"><span style="font-weight: normal;">Si un programme que vous avez développé doit lancer un programme de l'ERP, il doit enchaîner au menu en passant des paramètres dans le tunnel. Ces paramètres vont provoquer le lancement du programme désiré.</span></p>
+&#160;
+<p class="Body-Text" style="font-weight: normal;">Ces paramètres sont :</p>
+<table style="vertical-align: top;" cellspacing="0" width="67.883%">
+<col style="width: 38.037%;">
+<col style="width: 61.963%;">
+<tr class="hcp4">
+<td style="width:38.037%;" class="hcp5">
+<p class="hcp6">_LIBELLEREGROUPEMENTDEBUG</p>
+</td>
+<td style="width:61.963%;" class="hcp5">
+<p>Nom du regroupement</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:38.037%;" class="hcp5">
+<p class="hcp6">_NUMEROCHOIXDEBUG</p>
+</td>
+<td style="width:61.963%;" class="hcp5">
+<p>Numéro du choix</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:38.037%;" class="hcp5">
+<p class="hcp6">_APPLICATIONDEBUG</p>
+</td>
+<td style="width:61.963%;" class="hcp5">
+<p>Nom de l'application</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+&#160;&#160;<span style="font-weight: bold;">Exemple</span>
+<p class="Source">Ping("_LIBELLEREGROUPEMENTDEBUG","FIC")</p>
+<p class="Source">Ping("_NUMEROCHOIXDEBUG",10)</p>
+<p class="Source">Ping("_APPLICATIONDEBUG","G3")</p>
+<p class="Source">ProgramGoto("Divalto.dhop")</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Ping_Pong_PingLocal.htm">Ping - Pong - PingLocal</a>, <a href="ProgramCall.htm">ProgramCall</a>, <a href="ProgramCallMode.htm">ProgramCallMode</a></p>
+</body>
+</html>

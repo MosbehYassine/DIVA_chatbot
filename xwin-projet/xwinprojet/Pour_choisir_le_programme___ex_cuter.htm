@@ -1,0 +1,158 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Pour choisir le programme à exécuter</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-top:0;
+margin-bottom:0; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-weight:bold; }
+span.hcp5 { font-weight:bold; }
+ul.hcp6 { list-style:square; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Pour choisir le programme à exécuter</h3>
+<p>&#160;</p>
+<p>Pour démarrer une exécution, Xwin a besoin de connaître le nom du programme objet que vous désirez lancer. En effet, d'une part l'éditeur de textes vous permet de charger plusieurs sources de programme exécutable, d'autre part, il n'est pas interdit de déboguer un programme lancé indirectement (par exemple depuis un menu).</p>
+<p>Le nom du programme objet à lancer peut être spécifié dans les paramètres du projet ou dans les paramètres du sous-projet.</p>
+<p>Pour lancer une application Web, vous devez préciser le Mode (Page Html) et la page à lancer dans le navigateur.</p>
+<p>Que ce soit au niveau du projet ou du sous-projet, vous pouvez garnir les paramètres suivants :</p>
+<p class="hcp1">&#160;</p>
+<table cellspacing="0" width="814">
+<col style="width: 16.239%;">
+<col style="width: 83.761%;">
+<tr class="hcp2">
+<td style="width:16.239%;" class="hcp3">
+<p class="footnote-text"><font class="hcp4">Mode</font></p>
+</td>
+<td style="width:83.761%;" class="hcp3">
+<p class="Body-Text">Type de programme à lancer.</p>
+<p class="Body-Text"><span class="hcp5">Normal</span>&#160;:&#160;pour exécuter un programme Diva avec des masques en version 6</p>
+<p class="Body-Text"><span class="hcp5">Page Html</span> :&#160;&#160;Xwin lance alors le navigateur par défaut avec comme paramètre le nom de la page.</p>
+<p class="Body-Text"><span class="hcp5">Service Web</span> :&#160;&#160;Xwin lance alors le programme qui appelle le service web.</p>
+<p class="Body-Text"><span class="hcp5">Client léger</span> : pour exécuter un programme Diva avec des masques en version 7.</p>
+<p class="Body-Text"><span class="hcp5">Client léger Web</span> : pour exécuter un programme Diva en utilisant un navigateur internet (html5).<br>
+&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Voir <a href="Identification_en_mode_client_l&eacute;ger_Web.htm">Identification en mode client léger Web</a>.</p>
+<p class="Body-Text" style="margin-left: 74.45pt; text-indent: -74.45pt;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.239%;" class="hcp3">
+<p class="footnote-text">Type de transport</p>
+</td>
+<td style="width:83.761%;" class="hcp3">
+<p class="Body-Text"><span class="hcp5">DhsTerminalServer</span> : transport par socket TCP.</p>
+<p class="Body-Text"><span class="hcp5">Service Web</span> : transport utilisant les services web de IIS.</p>
+<p class="Body-Text"><span class="hcp5">Local</span> : appelé aussi client lourd.</p>
+<p class="Body-Text">Ce paramètre n'est pas utilisé en mode Client léger Web.</p>
+<p class="Body-Text">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.239%;" class="hcp3">
+<p class="footnote-text">Url du service web</p>
+<p class="footnote-text">&#160;</p>
+</td>
+<td style="width:83.761%;" class="hcp3">
+<p class="Body-Text">Url pour accéder au service web (en mode Service web)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.239%;" class="hcp3">
+<p class="footnote-text"><font class="hcp4">Programme à exécuter</font></p>
+<p class="footnote-text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:83.761%;" class="hcp3">
+<p class="Body-Text">Nom du programme a exécuter lors du debug ou page à lancer en mode Page Html ou Client léger Web.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.239%;" class="hcp3">
+<p class="footnote-text"><font class="hcp4">Application, libellé de regroupement<br>
+et Numéro</font></p>
+</td>
+<td style="width:83.761%;" class="hcp3">
+<p class="Body-Text">Si le programme à exécuter est un menu, ces trois paramètres permettent d'exécuter automatiquement un choix du menu.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.239%;" class="hcp3">
+<p class="footnote-text">Avec analyseur de performances</p>
+</td>
+<td style="width:83.761%;" class="hcp3">
+<p class="Body-Text">Lancement avec l'analyseur de performances. Voir le livre consacré à ce sujet dans le manuel de référence d'Harmony.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.239%;" class="hcp3">
+<p class="footnote-text">Garder les numéros de ligne</p>
+</td>
+<td style="width:83.761%;" class="hcp3">
+<p class="Body-Text">Garder les numéros de ligne pour les piles lors de l'analyse de performances.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.239%;" class="hcp3">
+<p class="footnote-text">Nombre de niveaux de la pile à garder</p>
+</td>
+<td style="width:83.761%;" class="hcp3">
+<p class="Body-Text">Nombre de niveaux de la pile à garder lors de l'analyse de performances.</p>
+</td>
+</tr>
+</table>
+<p class="hcp1">&#160;</p>
+<p>Lors de l'exécution, Xwin recherche le nom du programme à exécuter :</p>
+<ul class="hcp6">
+<li style="font-size: 8pt;" class="p">
+<p>d'abord dans les paramètres du sous-projet courant,</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>puis dans les paramètres du projet</p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p>Après avoir déterminé le nom du programme a exécuter, Xwin procède de la même façon pour le choix du menu.</p>
+<ul class="hcp6">
+<li style="font-size: 8pt;" class="p">
+<p>si les paramètres du sous-projet précisent un choix de menu, c'est ce choix qui sera automatiquement lancé (il est possible de préciser uniquement les paramètres du menu au niveau du sous-projet, le programme étant pris au niveau du projet).</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>sinon ce sont les paramètres du projet qui seront pris.</p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p><font class="hcp4">Remarques</font></p>
+<ul class="hcp6">
+<li style="font-size: 8pt;" class="p">
+<p>Si aucun nom de fichier n'est précisé, Xwin tente d'exécuter le fichier courant en remplaçant l'extension du source courant par l'extension "dhop".</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>En mode Page Html, Xwin lance le navigateur par défaut. Vous pouvez choisir un autre navigateur que le navigateur par défaut en ajoutant la ligne suivante dans le chapitre Internet de Divalto.ini (avec l'utilitaire xDivaltoMajIni)&#160;:<br>
+[<font style="font-family: 'Courier New'; font-size: 11pt;" face="Courier New" size="2">internet]<br>
+nav_debug=chemin du navigateur</font></p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>Xwin ajoute au chemin du navigateur la page à afficher. Certains navigateurs ne traitent pas ce paramètre. Dans ce cas, vous devez préciser le chemin de la page à lancer dans les options du navigateur (page par défaut).</p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p class="voir" style="border-top: 0.50pt solid #000000;">Voir également :</p>
+<p><a href="Param_tres_des_sous_projets.htm">Paramètres des sous-projets</a></p>
+<p><a href="Param_tres_du_projet.htm">Paramètres du projet</a></p>
+<p><a href="Identification_en_mode_client_l&eacute;ger_Web.htm">Identification en mode client léger Web</a></p>
+</body>
+</html>

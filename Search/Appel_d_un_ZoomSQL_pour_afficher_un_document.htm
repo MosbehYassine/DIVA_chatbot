@@ -1,0 +1,74 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Appel d'un ZoomSQL pour afficher un document</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { background-color:#00ff00;
+color:#000000; }
+span.hcp2 { color:#0000ff; }
+p.hcp3 { color:#0000ff; }
+p.hcp4 { margin-left:48px; }
+p.hcp5 { color:#008000;
+margin-left:48px; }
+p.hcp6 { margin-left:88px; }
+p.hcp7 { color:#0000ff;
+margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Appel d'un ZoomSQL pour afficher un document</h1>
+<p>Le ZoomSQL peut être un choix judicieux pour afficher un document résultat d'une recherche.</p>
+<p>Le ZoomSQL a été spécialement adapté pour gérer cette nouvelle fonctionnalité, en effet dans ce mode, le zoom n'affiche qu'une seule fiche.</p>
+<p>Pour indiquer au ZoomSQL qu’il est appelé par Divalto Power Search, il convient de lui envoyer l’id de la ligne concernée sous le label <span style="font-weight: bold; font-style: italic;">«&#160;DivaltoSearch&#160;»</span> par la fonction <span style="font-weight: bold;">Ping</span>.</p>
+<p>L’id est une donnée en 10,0</p>
+<p><img src="image17.jpg" style="border: none;" alt="" width="576" height="83" border="0"></p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Exemple complet</p>
+<p>&#160;</p>
+<p class="hcp1">; Domaine Paie</p>
+<p class="hcp1">; Module pour l'appel des applications en charge de documents de Divalto Power Search</p>
+<p><span class="hcp2">Module</span> pppmbas000.dhop</p>
+<p><span class="hcp2">Module</span> pppmficsql.dhop</p>
+<p><span class="hcp2">Public Record</span> a5dd.dhsd MZ MZ</p>
+<p>&#160;</p>
+<p><span style="color: #008000;">; Document DPaie_sd:Bulletin</span></p>
+<p><span class="hcp2">Public Procedure</span> search_Bulletin(param)</p>
+<p>1 param S</p>
+<p>1 dos &#160;&#160;&gt;GTFDD.DHSD DOS</p>
+<p>1 etb &#160;&#160;&gt;GTFDD.DHSD ETB</p>
+<p>1 id &#160;10,0</p>
+<p><span class="hcp2">Record</span> A5DD.dhsd MZ SV_MZ</p>
+<p><span class="hcp2">RecordSql</span> 'pprsppbul.dhoq' bulletin</p>
+<p>&#160;</p>
+<p class="hcp3">beginp</p>
+<p style="color: #008000;">; on récupère le dossier et l'id dans la base ERP</p>
+<p class="hcp4">dos = <span class="hcp2">HmpSeek</span>(param,"dossier" ,0)</p>
+<p class="hcp4">etb = &#160;<span class="hcp2">HmpSeek</span>(param,"etablissement" ,0)</p>
+<p class="hcp4">Id &#160;= &#160;&#160;<span class="hcp2">HmpSeek</span>(param,"search_id" ,0)</p>
+<p class="hcp4"><span class="hcp2">if</span> dos &lt;&gt; 0 and Id &lt;&gt; 0</p>
+<p class="hcp5">; sauvegarde de MZ puis mise en place des paramètres</p>
+<p class="hcp4">&#160;&#160;&#160;SV_MZ = MZ</p>
+<p class="hcp4">&#160;&#160;&#160;MZ.Dos = dos</p>
+<p class="hcp4">&#160;&#160;&#160;MZ.Etb = etb</p>
+<p class="hcp4">&#160;&#160;&#160;MZ.ETBP3 = MZ.ETB</p>
+<p class="hcp5">; on vérifie qu'il existe encore</p>
+<p class="hcp4">&#160;&#160;&#160;bulletin.<span class="hcp2">where</span>.id(id)</p>
+<p class="hcp4"><span class="hcp2">&#160;&#160;&#160;if</span> select_bulletin(bulletin) = 0</p>
+<p class="hcp5">; on appelle le Zoom</p>
+<p class="hcp6"><span class="hcp2">ping</span>('DivaltoSearch',id)</p>
+<p class="hcp6">P3_Zoom_Call(25020)</p>
+<p class="hcp7">&#160;&#160;&#160;endif</p>
+<p class="hcp5">; Restauration de MZ</p>
+<p class="hcp4">MZ = SV_MZ</p>
+<p class="hcp7">endif</p>
+<p class="hcp3">endp</p>
+</body>
+</html>

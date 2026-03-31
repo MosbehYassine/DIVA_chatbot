@@ -1,0 +1,71 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListDisplay</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListDisplay &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Affichage des données d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+XmeListDisplay</font> (<font class="hcp3">Identifiant</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:16.93%;" class="hcp4">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:83.07%;" class="hcp4">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure <font class="hcp2">XmeListDisplay</font> affiche les lignes du tableau dont l'identifiant est fourni en paramètre. Elle n'affiche pas le cadre du tableau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListDisplay <font class="hcp2">NE peut être appelée QUE</font> si la page de masque contenant le tableau est la page courante (ou une de ses pages panels). Les fonctions d'affichage de la page (XmeDisp, XmeDispv, etc.) affichent le cadre du tableau mais pas ses données.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Remarque importante&#160;:</font></p>
+<p class="Body-Text">L'affichage des lignes du tableau est optimisé de telle manière que seuls les champs modifiés sont actualisés à l'écran. En conséquence, il <font class="hcp2">n'existe pas</font> de <font class="hcp2">fonction permettant d'afficher une ligne ou une donnée isolée</font> du tableau.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">...</p>
+<p class="Source">XmeLoad ("EOBJTAB")</p>
+<p class="Source"><font class="hcp2">X</font>meInfoPage ("EOBJTAB",1)</p>
+<p class="Source">XmeSetWindowSize ("EOBJTAB",1,Harmony.Opara3,Harmony.Opara4)</p>
+<p class="Source">&#160;</p>
+<p class="Source">Ident = XmeListGetId ("EOBJTAB",1,"TABLEAU",Ligne)</p>
+<p class="Source">...</p>
+<p class="Source">XmeDispv ("EOBJTAB",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;;page courante=page tableau</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;&amp; affiche cadre du tableau&#160;</p>
+<p class="Source">XmeListDisplay (Ident) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche les lignes</p>
+<p class="Source">...</p>
+</body>
+</html>

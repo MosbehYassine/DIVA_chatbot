@@ -1,0 +1,183 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Création et configuration manuelles d'une application IIS sur le serveur de clients légers Web</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+li.hcp4 { list-style:none;
+display:inline; }
+p.hcp5 { margin-left:48px; }
+span.hcp6 { font-weight:bold;
+text-decoration:underline; }
+span.hcp7 { text-decoration:underline; }
+span.hcp8 { font-weight:bold;
+font-size:11pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Création et configuration manuelles d'une application IIS sur le serveur de clients légers Web</h3>
+<p>&#160;</p>
+<p>Après l'<a href="Installation_de_IIS_sur_le_serveur_de_clients_l&eacute;gers_Web.htm">installation et la configuration de IIS</a>, tous les paramétrages le concernant s'effectuent par le Gestionnaire des Services Internet (IIS), accessible depuis le panneau de configuration, outils d'administration. Le client léger Harmony Web nécessite la création d'une application dans un site Web, attachée à un pool d'applications.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Pool d'applications IIS</p>
+<p>Une application IIS appartient toujours à un pool d'applications. Il est possible d'utiliser l'un des pools proposés par défaut mais il est plutôt <span class="hcp2">conseillé de créer un pool d'applications dédié</span>, de manière à ne pas interférer avec d'autres applications Web. Pour créer et configurer un pool d'applications :</p>
+<ul class="hcp3">
+<li class="p">
+<p>Cliquez avec le bouton droit de la souris sur la ligne Pools d'applications dans l'arbre des Connexions.<br>
+Sélectionnez <span class="hcp2">Ajouter un pool d'applications</span>...</p>
+</li>
+<li class="p">
+<p>Entrez le <span class="hcp2">nom du pool</span>, sélectionnez la version 4 du CLR.NET et le <span class="hcp2">mode pipeline Intégré</span>.<br>
+Exemple de nom de pool : DivaltoLcweb.</p>
+</li>
+<li class="p">
+<p>Dans la fenêtre <span class="hcp2">Pools d'applications</span> (au centre de l'écran), sélectionnez le nouveau pool puis éditez ses <span class="hcp2">paramètres avancés</span>.<br>
+Les options suivantes sont impératives :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp2">Activer les applications 32 bits</span> : <span class="hcp2">True</span> (si votre système Windows est un système 64 bits).</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Mode Pipeline géré</span> : <span class="hcp2">Integrated</span> (Intégré).</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Version du CLR.NET</span> (Framework) : <span class="hcp2">4.0 minimum</span>.</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Identité</span>.<br>
+L'identité à spécifier ici dépend du type d'utilisation :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp2">Sur un serveur Web qui est aussi serveur de données</span> (par exemple sur un ordinateur de développement), le plus simple est de prendre l'identité <span class="hcp2">LocalSystem</span>.</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Sinon, on utilisera un compte de service dédié</span>.<span class="hcp2"><br>
+Attention</span>, il faut donner à ce compte les <span class="hcp2">droits d'accès</span> au dossier <span class="hcp2">c:\Windows\Temp</span> et aux <span class="hcp2">répertoires des pièces jointes</span> de l'ERP.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p style="font-weight: normal;">&#160;</p>
+<p class="hcp1">Création de l'application IIS</p>
+<p>Pour qu’une page (par exemple, ia.aspx) de votre serveur soit accessible par un client léger Web, il faut créer une application IIS 32 bits pointant le répertoire contenant cette page. On crée ainsi un répertoire virtuel, alias d'un chemin dans l’arborescence des fichiers du serveur. Pour créer une application IIS :</p>
+<ul class="hcp3">
+<li class="p">
+<p>Développez la branche de l’arbre correspondant au site Web souhaité.<br>
+Remarque : vous pouvez utiliser le site par défaut ("Default Web Site") ou, si le système d'exploitation le permet, un site Web dédié.</p>
+</li>
+<li class="p">
+<p>Cliquez avec le bouton droit de la souris sur le nom du site et sélectionnez le choix du menu "<span class="hcp2">Ajouter une application...</span>".<br>
+Attention à bien exécuter ce choix et non le choix "Ajouter un répertoire virtuel...". Si vous avez créé par erreur un répertoire virtuel, vous pouvez toutefois le convertir en application (clic droit sur le répertoire, choix "Convertir en application").</p>
+</li>
+<li class="p">
+<p>Entrez le <span class="hcp2">nom de l’alias</span> et le <span class="hcp2">Chemin d'accès physique</span> pointant la page ia.aspx.<br>
+Spécifiez aussi le <span class="hcp2">pool d'applications</span> créé précédemment (bouton Sélectionner ...).</p>
+</li>
+</ul>
+<p class="hcp5"><span class="hcp6">Attention</span> : &#160;<span class="hcp7">En cas d'utilisation du chemin standard</span> <span class="hcp6">x:\Divalto\Internet\Lcweb</span><span class="hcp7">, il est impératif que</span> <span class="hcp6">l'alias porte le nom "Lcweb"</span>.</p>
+<p style="margin-left: 120px;">(Voir aussi le paragraphe "Installation de plusieurs serveurs de clients légers Web sur un même ordinateur" ci-dessous.)</p>
+&#160;
+<p class="hcp5">Exemple :<br>
+Alias : Lcweb.<br>
+Chemin d'accès physique : c:\Divalto\Internet\Lcweb.<br>
+Pool d'applications : DivaltoLcweb.<br>
+<br>
+Avec ces valeurs, pour accéder à l'interface d'accueil du client léger Harmony Web, l'utilisateur devra spécifier une url du type "http://www.monserveur.fr/lcweb/ia.aspx". Nous verrons au paragraphe "Déclaration d'une page à charger par défaut" comment se passer du nom de la page aspx dans l'url.</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp8">Configuration de l'application IIS</span></p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp2">Authentifications</span>.<span class="hcp7"><br>
+ATTENTION</span>, il est impératif de modifier les authentifications configurées par défaut de la manière suivante et <span class="hcp2">dans l'ordre</span> (*) :<br>
+&#160;</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp2">Application Web elle-même</span>.<br>
+Il faut <span class="hcp7">désactiver</span> l'authentification <span class="hcp7">Anonyme</span> et <span class="hcp7">activer</span> l'authentification par <span class="hcp7">formulaire</span>.<br>
+Pour accéder aux paramètres d'authentification de l'application, cliquez sur son nom dans l'arbre des Connexions pour la sélectionner puis sur le bouton "<span class="hcp2">Authentification</span>" (dans la zone IIS en bas de la partie centrale de l'écran).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Sous-dossier login</span>.<br>
+Il faut <span class="hcp7">(ré)activer</span> (*) l'authentification <span class="hcp7">Anonyme</span>.<br>
+Pour accéder aux paramètres d'authentification du dossier login, ouvrez l'arborescence de l'application en cliquant sur la flèche à gauche de son nom dans l'arbre des Connexions. Cliquez ensuite sur le dossier <span class="hcp2">login</span> pour le sélectionner. Cliquez enfin sur le bouton "<span class="hcp2">Authentification</span>" (dans la zone IIS en bas de la partie centrale de l'écran).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp5">(*) La désactivation de l'authentification anonyme au niveau de l'application est automatiquement reportée à tous ses enfants. Après cette opération, le sous-dossier login a donc perdu cette authentification !</p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp2">Déclaration d'une page à charger par défaut</span>.<br>
+Un paramètre IIS permet d'éviter à l'utilisateur de spécifier le nom de la page (ia.aspx) à charger dans l'url de son navigateur.<br>
+Pour ce faire, cliquez sur le nom de l'application dans l'arbre des Connexions pour la sélectionner puis sur le bouton "<span class="hcp2">Document par défaut</span>" (dans la zone IIS en bas de la partie centrale de l'écran).<br>
+Ajoutez un nouveau document (bouton <span class="hcp2">Ajouter...</span> à droite de l'écran) en le nommant <span class="hcp2">ia.aspx</span>.<br>
+Assurez-vous que son nom est bien positionné en tête de liste des documents par défaut.<br>
+<br>
+En reprenant l'exemple précédent et avec ce paramétrage, pour accéder à l'interface d'accueil du client léger Harmony Web, l'utilisateur pourra maintenant spécifier une url du type "http://www.monserveur.fr/lcweb".</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp8">Mise en oeuvre d'une compression des trames</span></p>
+<p>Voir la rubrique <a href="Compression_des_trames_pour_un_client_l&eacute;ger_Web.htm">Compression des trames pour un client léger Web</a>.</p>
+<p>&#160;</p>
+<p class="hcp1">Installation de plusieurs serveurs de clients légers Web sur un même ordinateur</p>
+<p>Un même ordinateur serveur peut héberger plusieurs sites Web, par exemple en mode ASP si l'on souhaite que chaque client dispose de son propre chemin d'accès physique (*). Pour ce faire :</p>
+<ul class="hcp3">
+<li class="p">
+<p>Au besoin, créez autant de pools d'applications que de sites. En général toutefois, les paramètres du pool servant aux applications du client léger Harmony Web seront identiques et le même pool pourra être utilisé pour tous les sites.</p>
+</li>
+<li class="p">
+<p>Créez et configurez une application IIS par site (avec les mêmes paramètres en dehors du nom de l'alias et du chemin d'accès physique).</p>
+</li>
+<li class="p">
+<p>Il faut ensuite copier le contenu complet du dossier /Divalto/Internet/Lcweb dans chaque répertoire d'accès physique paramétré pour les différentes applications IIS.<span class="hcp6"><br>
+<br>
+Mais attention, une simple copie manuelle des fichiers ne suffit pas</span>.</p>
+</li>
+</ul>
+<p class="hcp5"><span class="hcp6">Pour effectuer cette copie</span><span class="hcp7">,</span> <span class="hcp6">utilisez le programme d'installation</span> <span class="hcp2"><a href="Installation_automatis&eacute;e_du_serveur_de_clients_l&eacute;gers_Web.htm">xLcwebInstall.dhop</a></span> (à lancer à partir du menu Harmony <span class="hcp2">Paramétrage : Installation serveur client léger Web</span>).</p>
+<ul class="hcp3">
+<li class="p">
+<p style="margin-left: 8px;"><span class="hcp6">Attention aussi en cas de mise à jour du runtime d'Harmony</span> <span class="hcp7">(et donc des fichiers du dossier Lcweb)</span> <span class="hcp6">car il est impératif d'actualiser les copies</span> (toujours à l'aide de xLcwebInstall.dhop, onglet Mise à jour).</p>
+</li>
+</ul>
+<p>(*) On aura par exemple besoin que les différents clients disposent de leur propre chemin d'accès si des images spécifiques à chaque client sont affichées par les programmes d'application : voir la rubrique <a href="Installation_des_images_sur_le_serveur_de_clients_l&eacute;gers_Web.htm">Installation des images sur le serveur de clients légers Web</a>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Paramétrages complémentaires</p>
+<ul class="hcp3">
+<li class="p">
+<p>Pour des raisons de sécurité, Windows interdit par défaut la saisie par l'utilisateur des caractères "&lt;" et "&gt;" (car ces caractères servent de délimiteurs dans un source HTML). Pour pallier cet inconvénient et éviter un arrêt brutal du programme, le fichier default.aspx livré en standard contient sur la première ligne (&lt;%@ Page ...) le paramètre validateRequest="false", qui permet de passer outre à cette interdiction. Mais attention, la présence de ce paramètre peut constituer une faille de sécurité : il suffit de le retirer du fichier .aspx pour retrouver le fonctionnement par défaut de Windows.</p>
+</li>
+<li class="p">
+<p>Il est possible de paramétrer un site Web IIS par l’intermédiaire du fichier Web.Config (situé au même niveau que la page ia.aspx).<br>
+Le paramètre "timeout" de la balise &lt;SessionState&gt; permet de préciser le délai au terme duquel une session inactive est stoppée côté serveur. Lorsque le serveur arrête une session, le programme Diva est automatiquement interrompu.<br>
+<br>
+Remarque : Lorsque le poste client est "actif", le client léger Harmony Web envoie régulièrement des messages au serveur pour assurer que ce dernier ne referme pas la session intempestivement (et ce, même si l'utilisateur reste lui totalement inactif sur cette session). Toutefois, ce dialogue peut être interrompu, par exemple si le poste client est mis en veille par l'utilisateur.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Voir aussi : <a href="Gestion_des_utilisateurs_en_client_l&eacute;ger_Web.htm">Gestion des utilisateurs en client léger Web</a>.</p>
+</body>
+</html>

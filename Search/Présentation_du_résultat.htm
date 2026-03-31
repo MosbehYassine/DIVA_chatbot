@@ -1,0 +1,61 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Présentation du résultat</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold;
+font-style:italic; }
+ul.hcp2 { list-style:disc; }
+p.hcp3 { font-weight:normal;
+font-style:normal; }
+p.hcp4 { font-weight:bold;
+font-style:italic; }
+span.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Présentation du résultat</h1>
+<p>La balise <span class="hcp1">&lt;Presentation&gt;</span> du fichier Search_CommunFields.xml décrit le contenu des lignes de résultat :</p>
+<ul class="hcp2">
+<li class="p">
+<p style="color: #0000ff;">Ligne bleu : le sujet</p>
+</li>
+<li class="p">
+<p style="color: #008000;">Ligne verte : les informations «&#160;techniques&#160;»</p>
+</li>
+<li class="p">
+<p><span style="color: #808080;">Ligne grise (facultative) : les pièces jointes</span></p>
+</li>
+</ul>
+<p>La présentation du résultat peut être modifiée pour un document particulier dans la section <span class="hcp1">&lt;Presentation&gt;</span> de la description du document.</p>
+<p>&#160;</p>
+<p>La balise xml <span class="hcp1">&lt;![CDATA[</span> permet de banaliser du texte pour insérer une valeur &#160;comportant des signes xml réservés comme &lt; et &gt;</p>
+<p class="hcp3">La balise fermante correspondante est <span class="hcp1">]]&gt;. Elle encadre obligatoirement la description des lignes de résultat.</span></p>
+<p class="hcp3">&#160;</p>
+<p class="hcp4"><img src="image6.gif" style="border: none;" alt="" width="1073" height="373" border="0"></p>
+<p class="hcp4">&#160;</p>
+<p style="font-style: normal; font-weight: bold;">Le texte peut contenir :</p>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp3">Un <span class="hcp5">nom de field</span> «&#160;stored&#160;» (par exemple DateCreation)</p>
+</li>
+<li class="p">
+<p class="hcp3">Des <span class="hcp5">constantes</span> entre simple quote &#160;(par exemple ' du ' )</p>
+</li>
+<li class="p">
+<p class="hcp3">Les <span class="hcp5">textes entre [ ]</span> n’apparaissent pas dans le résultat si le field contient une valeur nulle.</p>
+</li>
+<li class="p">
+<p class="hcp3">La <span class="hcp5">"fonction" date</span> pour l’affichage des dates.</p>
+</li>
+</ul>
+</body>
+</html>

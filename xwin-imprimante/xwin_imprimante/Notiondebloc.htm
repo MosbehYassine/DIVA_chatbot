@@ -1,0 +1,63 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Notion de bloc</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Notion de bloc</h2>
+<p class="Body-Text">Pour aborder la conception d'un masque d'imprimante, nous allons examiner un état réalisé avec Xwin ainsi que le programme Diva qui utilise ce masque. Bien que l'interface entre les masques d'imprimante et le langage Diva soit abordée en détail dans un autre livre (Ymig), l'examen rapide de ce programme type vous permettra de bien comprendre la réalisation du masque.</p>
+<p class="Body-Text">En général, nous retrouvons toujours le même type d'éléments dans un état, à savoir :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Un en-tête de page ;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">des lignes détail ;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">une ligne récapitulative des lignes détails (par exemple un sous-total) ;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">un pied de page.</p>
+</li>
+</ul>
+<p class="Body-Text">Chaque élément d'un état se nomme un <span style="font-weight: bold;">bloc</span>. Un masque d'impression est donc composé de blocs, comprenant&#160;des textes, des données, des cadres, des images, etc.</p>
+&#160;
+<p class="Body-Text">Voici un exemple d'état :</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><img src="../image/help0002.gif" alt="" width="432" height="330" border="0"></p>
+<p class="Body-Text"><img src="../image/help0003.gif" alt="" width="431" height="329" border="0"></p>
+<p class="Body-Text">Bloc numéro 1 : en-tête de page (10 lignes imprimées de la ligne 1 à la ligne 10).<br>
+Bloc numéro 2 : détail (1 ligne imprimée entre les lignes 11 et 61).<br>
+Bloc numéro 3 : récapitulatif (1 ligne imprimée ici derrière la dernière ligne détail de chaque page).<br>
+Bloc numéro 4 : pied de page (4 lignes imprimées de la ligne 63 à la ligne 66).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Et voici le corps du programme Diva qui a été exécuté :</p>
+<p class="Source">XmiPrint Harmony.Imasque 1 &#160;&#160;&#160;&#160;&#160;&#160;;<span class="hcp1">premier</span> bloc d'en-tête</p>
+<p class="Source">&#160;</p>
+<p class="Source">Loop Hread (Fcomp, Cpenr) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;<span class="hcp1">boucle de lecture et d'impression</span></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmiPrint Harmony.Imasque 2 &#160;&#160;&#160;;des blocs détail&#160;</p>
+<p class="Source">Endloop</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;<span class="hcp1">dernier</span> bas de page :</p>
+<p class="Source">XmiPrint1 Harmony.Imasque 3 0 \ &#160;;récapitulatif final</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Ideborde \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.IsautAvant \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.IsautApres</p>
+<p class="Source">XmiPrint Harmony.Imasque 4 &#160;&#160;&#160;&#160;&#160;&#160;;pied</p>
+<p class="Source">&#160;</p>
+</body>
+</html>

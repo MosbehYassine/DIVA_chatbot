@@ -1,0 +1,100 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Pages du mode fiche</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+span.hcp4 { font-weight:bold;
+text-decoration:underline; }
+li.hcp5 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Pages du mode fiche</h3>
+<p>&#160;</p>
+<p class="Body-Text">Le mode fiche permet notamment à l'utilisateur de consulter, modifier, créer un élément de la table sous forme de fiche.</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Page 11&#160;:</font> Facultative, <span class="hcp2">sauf</span> en cas de mode d'affichage mixte.<span class="hcp2"><br>
+Page 12 et suivantes</span> : Facultatives.</p>
+<p class="Body-Text"><font class="hcp1">Type de pages&#160;:</font> Pages avec <span class="hcp2">effacement partiel</span>.</p>
+<p class="Body-Text"><span class="hcp2">Nombre de colonnes</span> : Influe sur le mode d'affichage du zoom (voir le paragraphe <span class="hcp2">Détermination du mode d'affichage</span> en fin de rubrique).<span class="hcp2"><br>
+Offsets ligne et colonne</span> : 0.</p>
+<p class="Body-Text"><font class="hcp1">Données en saisie :</font> Champs de la table.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp1">Particularités :</font></p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp4"><font class="hcp1">Attention :</font> Il est interdit de ressaisir en page 11 les champs constituant l'index principal</span> (ceux saisis en page 2), que ce soit en création ou en modification. Si vous faites figurer ces champs dans une page du mode fiche, déclarez-les <span class="hcp4">en affichage</span> et non en saisie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp2">Chaînez les différentes pages du mode fiche</span> (masque multi-écran).<br>
+Les pages 12 et suivantes sont réservées au cas où plusieurs écrans sont nécessaires pour présenter le mode fiche. N'oubliez pas alors de les chaîner entre elles en déclarant pour <span class="hcp2">chaque page</span> les liens adéquats (propriétés de la page <span class="hcp2">&lt;Page précédente&gt;</span> et <span class="hcp2">&lt;Page suivante&gt;</span>).<br>
+Les pages du mode fiche peuvent de plus utiliser un onglet.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Toutes les pages du mode fiche doivent avoir la <span class="hcp2">même taille</span>.<br>
+(Cette taille doit aussi être identique à celle de la page du mode liste lorsque les deux modes sont séparés.)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Attributs dynamiques</font> : Si vous affectez le nom d'objet "ZoomCache" ou "ZoomIllisible" à un objet placé dans une page du mode fiche, celui-ci sera automatiquement caché ou rendu illisible.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous souhaitez que la taille du tableau du mode liste s'adapte au changement de taille de la fenêtre, il faudra :</p>
+</li>
+<li class="hcp5">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">En <span class="hcp2">mode non mixte</span> : Cocher les cases "Largeur variable" et/ou "Hauteur variable" (en général, on cochera les deux cases, de manière à étendre le tableau à la fois en largeur et en hauteur), pour chaque page du mode fiche et pour la page du mode liste.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En <span class="hcp2">mode mixte</span> :</p>
+</li>
+<li class="hcp5">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Si le tableau est extensible en largeur, cocher la case "Largeur Variable" pour la page du mode liste et la case "Attaché à droite" pour chaque page du mode fiche.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le tableau est extensible en hauteur, cocher les cases "Hauteur variable" pour chaque page du mode fiche et pour la page du mode liste.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;">Le cas échéant, pensez à adapter les attachements des onglets associés aux pages du mode fiche.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Exemple en mode d'affichage mixte :</p>
+<p class="Body-Text"><img src="../image/zoom_page_onze.png" alt="image\ZoomPage3.gif" title="image\ZoomPage3.gif" width="570" height="529" border="0"></p>
+&#160;
+<p class="body-text">&#160;</p>
+<p class="Body-Text" style="font-style: italic; font-weight: bold; font-size: 11pt;">Détermination du mode d'affichage</p>
+<p class="Body-Text">Le mode d'affichage du zoom (mixte ou non) est déterminé de manière automatique, suivant la règle suivante :</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp2">Mode mixte</span> si le <span class="hcp2">nombre de colonnes de la page de la fiche</span> est <span class="hcp2">différent du nombre de colonnes de la page de fond</span>.<span class="hcp2"><br>
+<br>
+Attention</span> : <span style="text-decoration: underline;">Ne spécifiez pas d’offset colonne</span> pour les pages du mode fiche car Xzoom7 le calcule automatiquement (nombre de colonnes du mode liste).<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp2">Mode non mixte</span> sinon.<br>
+En mode non mixte, les pages de la liste et des fiches doivent avoir la même taille.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

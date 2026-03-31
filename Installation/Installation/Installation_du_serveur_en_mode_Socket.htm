@@ -1,0 +1,51 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Installation du serveur en mode Socket</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+img.hcp2 { border:none; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Installation du serveur en mode Socket</h3>
+<p>&#160;</p>
+<p>On privilégiera le <span class="hcp1">mode Socket</span> pour des connexions dans un <span class="hcp1">réseau local d’entreprise</span> ou dans le cadre d’un <span class="hcp1">réseau virtuel privé</span>, réseaux pour lesquels l’ouverture d’un port de communication particulier n’est généralement pas un problème. En effet :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Le protocole de communication (TCP/IP) est plus simple que les Services Web.</p>
+</li>
+<li class="p">
+<p>Il ne nécessite pas la mise en œuvre d’un serveur IIS.</p>
+</li>
+</ul>
+<p>Pour les connexions par sockets TCP/IP, le service <span class="hcp1">DhsTerminalServer</span> doit être démarré sur le serveur d’applications. C’est ce service qui attend les connexions des postes client :<br>
+<br>
+<img src="../image/DhsTerminalServer_service.gif" alt="" width="514" height="137" border="0" class="hcp2"></p>
+<p>&#160;</p>
+<p>Ce type de connexion <span style="font-weight: bold; text-decoration: underline;">nécessite l’ouverture d’un port de communication TCP/IP</span> entre le client et le serveur au niveau des Firewalls. Par défaut, le serveur écoute le port 1246.</p>
+<p>&#160;</p>
+<p style="font-size: 11pt; font-weight: bold; font-style: italic;">Paramétrage du port</p>
+<p>Si le port 1246 n’est pas disponible ou ne convient pas, il peut être changé dans la base de registre globale du serveur (HKEY_LOCAL_MACHINE), par l’utilitaire XDivaltoMajini. Le choix de la section de la base de registre à traiter s’effectue à partir du menu « <span class="hcp1">Lecture</span> » de cet utilitaire.<br>
+<br>
+<img src="../image/Port_tcpip.gif" alt="" width="281" height="247" border="0" class="hcp2"></p>
+<p>&#160;</p>
+<p>Le port du client doit évidemment être en adéquation avec celui du serveur : le paramétrage du port coté client se trouve dans le profil de connexion.</p>
+<p><br>
+&#160;</p>
+<p><span style="font-weight: bold; font-size: 11pt; font-style: italic;">Redémarrage automatique du service DhsTerminalServer en cas de défaillance</span><br>
+&#160;</p>
+<p>Le gestionnaire des services de Windows permet de spécifier le comportement d'un service en cas de défaillance (onglet Récupération de la boîte des propriétés du service). Les options de redémarrage automatique peuvent être appliquées au service DhsTerminalServer pour autoriser ce dernier à redémarrer s'il s'avère défaillant :<br>
+&#160;</p>
+<p><img src="../image/Defaillance.gif" alt="" width="420" height="517" border="0" class="hcp2"></p>
+<p>&#160;</p>
+</body>
+</html>

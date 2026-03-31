@@ -1,0 +1,47 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Algorithme de l'impression en mode fiche</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Algorithme de l'impression en mode fiche</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le zoom réalise les opérations suivantes lors d'une impression en mode fiche&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Avant l'appel de ZoomDebut, initialisation de Zoom.Nobloc à 5.<br>
+Cette valeur peut être modifiée dans la procédure ZoomDebut ; une valeur nulle provoque la désactivation du choix du menu et du bouton d'impression en mode fiche.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Réservation de l'imprimante (début d'état).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appel de la procédure <a href="ZoomDebutListe.htm">ZoomDebutListe</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chargement du masque d'impression (Zoom.MsqImp).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Initialisation des données Zoom.Date, Zoom.Heure.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Impression du bloc Zoom.Nobloc.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appel de la procédure <a href="ZoomFinListe.htm">ZoomFinListe</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Libération de l'imprimante (fin d'état).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

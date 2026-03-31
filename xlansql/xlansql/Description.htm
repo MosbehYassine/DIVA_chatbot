@@ -1,0 +1,153 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Description</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+li.hcp3 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Description</h1>
+<p>&#160;</p>
+<p>La synchronisation du schéma de la base est un nouveau choix (à partir de la version 6.3 d'Harmony) de l’<a href="XPSQLutilitaire.htm">utilitaire Xpsql.dhop</a>, qui gère la création des tables Harmony dans une base de données. XPSQL affiche la liste des fichiers pouvant être gérés dans la base SQL. La synchronisation concerne tous les fichiers dont la fiche paramètre est « valide » et <span class="hcp1">dont le numéro de version est renseigné</span>. L’utilitaire permet également de migrer une version de l’ERP à une autre.</p>
+<p>&#160;</p>
+<p>L’utilitaire compare le schéma des fichiers « valides » existants avec celui d’un nouveau dictionnaire.</p>
+<p>&#160;</p>
+<p>Les différences repérées sont :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Fichier :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp2">
+<li class="p">
+<p>Création</p>
+</li>
+<li class="p">
+<p>Suppression (1)<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Table :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp2">
+<li class="p">
+<p>Création</p>
+</li>
+<li class="p">
+<p>Suppression (1)</p>
+</li>
+<li class="p">
+<p>Déplacement d’une table vers un autre fichier<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Champ :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp2">
+<li class="p">
+<p>Création</p>
+</li>
+<li class="p">
+<p>Suppression (4)</p>
+</li>
+<li class="p">
+<p>Changement de nature (2)</p>
+</li>
+<li class="p">
+<p>Changement de taille (2)</p>
+</li>
+<li class="p">
+<p>Attribut « Masqué dans SQL » (2)</p>
+</li>
+<li class="p">
+<p>Changement du nombre de dimensions d’un champ tableau</p>
+</li>
+<li class="p">
+<p>Changement du nombre d’éléments des dimensions d’un champ tableau<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Index :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp2">
+<li class="p">
+<p>Ajout</p>
+</li>
+<li class="p">
+<p>Suppression</p>
+</li>
+<li class="p">
+<p>Changement de type (3)</p>
+</li>
+<li class="p">
+<p>Changement de lettre clé</p>
+</li>
+<li class="p">
+<p>Changement de code condition, de condition et de la valeur de la condition</p>
+</li>
+<li class="p">
+<p>Ajout de champ</p>
+</li>
+<li class="p">
+<p>Suppression de champ.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 48px;">Une modification d’un index entraîne sa suppression et sa recréation.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Les nouveaux champs dont l’attribut « Valeur Initiale Moulinette » du dictionnaire est renseigné seront initialisés avec cette valeur dans la base de données.</p>
+<p>&#160;</p>
+<p>La détection de nouvelles applications ou d'applications supprimées est également gérée :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Pour les nouveaux applications, il suffit d'indiquer sur les fiches des produits que ces dernières sont valides et avoir le dictionnaire correspondant dans le répertoire des nouveaux dictionnaires.</p>
+</li>
+<li class="p">
+<p>Pour les applications supprimées, les fiches des produits doivent également être marquées comme « valides » mais dans le répertoire des nouveaux dictionnaires, le dictionnaire de cette application <span class="hcp1">ne doit pas y figurer</span>. Les fiches des produits seront alors automatiquement retirées du fichier paramètre FHSQL.dhfi.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp1">Notes</span> :</p>
+<p>(1) Les tables supprimées ainsi que celles d’un fichier supprimé ne sont pas réellement supprimées dans la base : en réalité, elle sont renommées en &lt;nom&gt;_old . Par contre, les index, triggers et tables liées sont effectivement supprimées.</p>
+<p>&#160;</p>
+<p>(2) Si le champ est utilisé dans un index, cet index sera supprimé et recréé.</p>
+<p>&#160;</p>
+<p>(3) Le changement de type d’un index est vu comme une suppression et une création.</p>
+<p>&#160;</p>
+<p>(4) Les champs supprimés d’une table sont conservés (avec les données) dans une table &lt;nom_de_la_table&gt;_oldchamp.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Attention</span> :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Le changement de nom n’est pas détecté en tant que tel : il sera vu comme une suppression de l’élément portant l’ancien nom et d’une création de l’élément portant le nouveau nom.</p>
+</li>
+<li class="p">
+<p>Si un changement de nature d’un champ intervient et si le nouveau type est incompatible avec l’ancien, les données sont perdues (par exemple, lorsqu'un champ alphanumérique devient numérique). Cependant, les données sont toujours présentes dans la table &lt;nom&gt;_old.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XHQL</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XHQL</h3>
+<p class="Body-Text">Le source du module des chapitres peut être saisi à l'aide de l'éditeur Xwin ou de tout autre éditeur de textes standard.</p>
+<p class="Body-Text">Les masques sont saisis et compilés à l'aide de Xwin. Utilisez comme modèles les masques types livrés avec Harmony.</p>
+<p class="Body-Text">La fonction XHQL permet de lancer le moteur HQL. Il s'exécute dans un espace mémoire distinct de celui du programme appelant. Les paramètres d'appel de la fonction sont stockés dans l'enregistrement HQL qui est transmis au moteur au travers du tunnel. Les paramètres les plus courants sont des paramètres formels de la fonction, alors que des paramètres plus particuliers doivent être positionnés dans l'enregistrement HQL.</p>
+<p class="Body-Text"><font class="hcp1">XHql</font> (<font class="hcp2">Hql,[Fichier],[Enreg],[ModuleChapitre],[MasqueEcran],[MasqueImp])</font></p>
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Hql</font></p>
+<p class="decalage05">est l'enregistrement qui contient les paramètres du moteur Hql. C'est le seul paramètre obligatoire de la fonction. Les autres paramètres sont facultatifs, ils permettent néanmoins d'appeler le moteur en une seule instruction dans la plupart des cas.</p>
+<p class="Body-Text"><font class="hcp2">[Fichier]</font></p>
+<p class="decalage05">est le nom du fichier disque. Il correspond à la donnée Hql.fichier.</p>
+<p class="Body-Text"><font class="hcp2">[Enreg]</font></p>
+<p class="decalage05">est le nom de l'enregistrement. Il doit être déclaré public dans le module des chapitres. Il correspond à la donnée Hql.Enreg.</p>
+<p class="Body-Text"><font class="hcp2">[ModuleChapitre]</font></p>
+<p class="decalage05">est le nom de l'objet du module des chapitres. Il correspond à la donnée Hql.ModTrait.</p>
+<p class="Body-Text"><font class="hcp2">[MasqueEcran]</font></p>
+<p class="decalage05">est le nom de l'objet du masque d'écran. Il correspond à la donnée Hql.MsqEcran. Par défaut le nom du masque écran est déduit du nom du module des chapitres en changeant l'extension .dhop en .dhoe.</p>
+<p class="Body-Text"><font class="hcp2">[MasqueImp]</font></p>
+<p class="decalage05">est le nom de l'objet du masque d'impression. Il correspond à la donnée Hql.MsqImp. Par défaut le nom du masque imprimante est déduit du nom du module des chapitres en changeant l'extension .dhop en .dhoi.</p>
+<p class="Body-Text"><font class="hcp1">Quelques paramètres de l'enregistrement Hql</font></p>
+<p class="Body-Text"><font class="hcp2">Hql.cle</font></p>
+<p class="decalage05">permet d'indiquer la clé de lecture du fichier de base. Le fichier de base sera lu à partir de la valeur de cette donnée si Hql.Clemin et Hql.Clemax ne sont pas positionnés.</p>
+<p class="Body-Text"><font class="hcp2">Hql.CleMin et Hql.CleMax</font></p>
+<p class="decalage05">Permettent de borner la clé de lecture du fichier de base. Le fichier de base sera lu à partir Hql.CleMin si le sens de lecture du fichier est normal et à partir de Hql.CleMax si le sens de lecture est inverse.</p>
+<p class="Body-Text"><font class="hcp2">Hql.Sens</font></p>
+<p class="decalage05">Permet d'indiquer le sens de lecture du fichier de base. La valeur ZOOM_SENS_NORMAL indique un sens de lecture normal alors que la valeur ZOOM_SENS_INVERSE indique le sens de lecture inverse.</p>
+<p class="Body-Text">Voir <a href="L_enregistrementHql.htm">l'enregistrement Hql</a> pour la description de tous les paramètres possibles.</p>
+</body>
+</html>

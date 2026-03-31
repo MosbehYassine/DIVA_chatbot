@@ -1,0 +1,130 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple de programmation de positionnement souris en consultation de masque</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Exemple de programmation de positionnement souris en consultation de masque</h3>
+<p class="Body-Text">Reprenons l'exemple donné à la rubrique <a href="Exempledeprogrammationdupointd_arr_t_Demandedesaisie_.htm">Exemple de programmation du point d'arrêt "Demande de saisie"</a> et adaptons la programmation au cas de la consultation&#160;:<br>
+&#160;</p>
+<p class="Source">;Schéma de programmation de positionnement souris,</p>
+<p class="Source">;en consultation de masque par XmeConsult</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Efact &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;enregistrement en-tête</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Pfact &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;pied</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 Etat X</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Fonction : SaisieEntete</p>
+<p class="Source">;Type : Int</p>
+<p class="Source">;Description&#160;: Saisie de l'en-tête</p>
+<p class="Source">;En entrée : seq = point de séquence de la donnée où faire</p>
+<p class="Source">; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;débuter la saisie</p>
+<p class="Source">&#160;</p>
+<p class="Source">FUNCTION INT SaisieEntete (seq)</p>
+<p class="Source">1 seq X</p>
+<p class="Source">1 fini X</p>
+<p class="Source">&#160;</p>
+<p class="Source">BEGINF</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;fini = 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeInput ("EDEMAND",1,seq,XME_MODE_GOTO) &#160;&#160;&#160;&#160;;-&gt; directement sur&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;DO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;la donnée cliquée&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;SWITCH Harmony.Arret</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;WHILE NOT fini&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;XMENEXT (Harmony.Retour, Harmony.CplRetour)</p>
+<p class="Source">&#160;&#160;&#160;WEND</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;FRETURN (fini)&#160;</p>
+<p class="Source">ENDF</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Fonction : SaisiePied</p>
+<p class="Source">;Type : Int</p>
+<p class="Source">;Description&#160;: Saisie du pied</p>
+<p class="Source">;En entrée : seq = point de séquence de la donnée où faire</p>
+<p class="Source">; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;débuter la saisie</p>
+<p class="Source">&#160;</p>
+<p class="Source">FUNCTION INT SaisiePied (seq)</p>
+<p class="Source">1 seq X</p>
+<p class="Source">1 fini X</p>
+<p class="Source">&#160;</p>
+<p class="Source">BEGINF</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;fini = 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeInput ("EDEMAND",2,seq,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;;-&gt; directement sur&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;DO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;la donnée cliquée&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;SWITCH Harmony.Arret</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;WHILE NOT fini&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;XMENEXT (Harmony.Retour, Harmony.CplRetour)</p>
+<p class="Source">&#160;&#160;&#160;WEND</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;FRETURN (fini)&#160;</p>
+<p class="Source">ENDF</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Fonction : CONSULTATION</p>
+<p class="Source">;Type : Int</p>
+<p class="Source">;En sortie : 2&#160;= abandon</p>
+<p class="Source">; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1&#160;= demande de saisie</p>
+<p class="Source">&#160;</p>
+<p class="Source">FUNCTION INT Consultation</p>
+<p class="Source">1 fini X</p>
+<p class="Source">BEGINF</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;fini = 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeConsult ("EDEMAND",1,XME_MODE_GOTO)</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;REPEAT&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;SWITCH Harmony.Key&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;fini = 2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;abandon&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.SourisPage &lt;&gt; 0 AND \ &#160;&#160;&#160;&#160;&#160;;donnée en saisie</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.SourisSeq &lt;&gt; 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;fini = 1&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;etc.</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;UNTIL fini &lt;&gt; 0&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;FRETURN (fini)</p>
+<p class="Source">ENDF&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Programme principal</p>
+<p class="Source">&#160;</p>
+<p class="Source">MAIN</p>
+<p class="Source">Efact = " "</p>
+<p class="Source">Pfact = " "</p>
+<p class="Source">XMELOAD ("EDEMAND") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement masque</p>
+<p class="Source">XmeInfoPage ("EDEMAND",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("EDEMAND",1,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source">...</p>
+<p class="Source">XMEDISPV ("EDEMAND",1,XME_MODE_GOTO)</p>
+<p class="Source">XMEDISPV ("EDEMAND",2,XME_MODE_GOTO)</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">Etat = Consultation &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation du masque</p>
+<p class="Source">IF Etat = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;demande de saisie :</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;IF Harmony.SourisPage = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;donnée de la page en-tête&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;SaisieEntete (Harmony.SourisSeq)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ELSIF Harmony.SourisPage = 2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;donnée de la page pied&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;SaisiePied (Harmony.SourisSeq)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDIF&#160;</p>
+<p class="Source">ENDIF</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+</body>
+</html>

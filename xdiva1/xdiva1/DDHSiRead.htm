@@ -1,0 +1,171 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DDHSiRead</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+font.hcp3 { font-weight:bold; }
+font.hcp4 { font-style:italic; }
+table.hcp5 { margin-left:32.50pt; }
+tr.hcp6 { vertical-align:top; }
+td.hcp7 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DDHSiRead &#160;<a href="Listedesinstructionsd_acc_saudictionnairedesdonn_es.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Acc_saudictionnairededonn_es.htm"><font class="hcp1">Thème</font></a></h3>
+<p class="Definition" style="margin-top: 4.00pt;">La fonction DDHsiRead permet de lire les caractéristiques d’un fichier dans un dictionnaire.</p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Long</font> <font class="hcp3">DDHsiRead</font> (<font class="hcp4">dictionnaire, fichier, clés, complément, message_erreur, [abort]</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp3">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp4">Dictionnaire</font></p>
+<p class="decalage05">Nom du dictionnaire de données. L’extension hsd est obligatoire.</p>
+<p class="Body-Text"><font class="hcp4">Fichier</font></p>
+<p class="decalage05">Nom du fichier.</p>
+<p class="Body-Text"><font class="hcp4">Clés</font></p>
+<p class="decalage05">Zone qui reçoit en retour la description des clés du fichier.</p>
+<p class="decalage05">Ce paramètre doit être une instance de l'enregistrement Cles du dictionnaire ddsys.dhsd.</p>
+<p class="decalage05"><font class="hcp3">L'enregistrement Cles contenant la description des clés est un tableau de 256 cases pour les clés.</font></p>
+<table cellspacing="0" width="459" class="hcp5">
+<tr class="hcp6">
+<td style="width:30.88%;" class="hcp7">
+<p class="Body-Text">LettreCle</p>
+</td>
+<td colspan="2" style="width:69.12%;" class="hcp7">
+<p class="Body-Text">Lettre clé.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:30.88%;" class="hcp7">
+<p class="Body-Text">PositionCe</p>
+</td>
+<td colspan="2" style="width:69.12%;" class="hcp7">
+<p class="Body-Text">Position du code enregistrement.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:30.88%;" class="hcp7">
+<p class="Body-Text">ValeurCe</p>
+</td>
+<td colspan="2" style="width:69.12%;" class="hcp7">
+<p class="Body-Text">Valeur du code enregistrement.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:30.88%;" class="hcp7">
+<p class="Body-Text">TestCe</p>
+</td>
+<td colspan="2" style="width:69.12%;" class="hcp7">
+<p class="Body-Text">Test à effectuer sur le code enregistrement</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:30.88%;" height="72" class="hcp7">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:10.45%;" height="72" class="hcp7">
+<p class="Body-Text">0 =<br>
+1 &lt;&gt;<br>
+2 &lt;<br>
+3 &gt;<br>
+4 &lt;=<br>
+5 &gt;=<br>
+6 &amp;</p>
+</td>
+<td style="width:58.66%;" height="72" class="hcp7">
+<p class="Body-Text">égal<br>
+différent<br>
+inférieur<br>
+supérieur<br>
+inférieur ou égal<br>
+supérieur ou égal<br>
+et logique</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="decalage05"><font class="hcp3">Pour chaque clé, on trouve ensuite un tableau de 16 éléments décrivant les données qui composent la clé :</font></p>
+<table cellspacing="0" width="484" class="hcp5">
+<tr class="hcp6">
+<td style="width:28.43%;" class="hcp7">
+<p class="Body-Text">PosCle</p>
+</td>
+<td style="width:71.57%;" class="hcp7">
+<p class="Body-Text">Position d'un fragment de clé.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:28.43%;" class="hcp7">
+<p class="Body-Text">LgCle</p>
+</td>
+<td style="width:71.57%;" class="hcp7">
+<p class="Body-Text">Longueur d'un fragment de clé.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Complément</font></p>
+<p class="decalage05">Zone qui reçoit en retour les autres caractéristiques de la base. Ce paramètre doit être une instance de <a href="EParamSI.htm">EparamSI</a> du dictionnaire ddsys.dhsd.</p>
+<p class="Body-Text"><font class="hcp4">Message_erreur</font></p>
+<p class="decalage05">Zone qui reçoit en retour un éventuel message d’erreur.</p>
+<p class="Body-Text"><font class="hcp4">Abort</font></p>
+<p class="decalage05">Boolen qui indique si le programme doit être interrompu en cas d’erreur. (FALSE par défaut).</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp6">
+<td style="width:14.09%;" class="hcp7">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:85.91%;" class="hcp7">
+<p class="Body-Text">Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:14.09%;" class="hcp7">
+<p class="Body-Text">2</p>
+</td>
+<td style="width:85.91%;" class="hcp7">
+<p class="Body-Text">Fin de champs de l'enregistrement</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:14.09%;" class="hcp7">
+<p class="Body-Text">Autres</p>
+</td>
+<td style="width:85.91%;" class="hcp7">
+<p class="Body-Text">Erreur. Voir la zone <font class="hcp4">message_erreur</font></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Remarque</font></p>
+<p class="Body-Text">La fonction <a href="HSiRead.htm">HSiRead</a> permet de lire les paramètres séquentiel-indexé d’un fichier (il s’agit d’une lecture des paramètres depuis la base physique), alors que DDHSiRead lit les paramètres depuis le dictionnaire.</p>
+<p class="Body-Text">&#160;<font class="hcp3"><br>
+Exemple</font></p>
+<p class="Source">record ddsys.dhsd cles</p>
+<p class="Source">record ddsys.dhsd eparamsi compl</p>
+<p class="Source">main</p>
+<p class="Source">1 err 200</p>
+<p class="Source">&#160;DDHSiRead("odfdd.dhsd","odfic",cles,compl,err,true)</p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Voir</font></p>
+<p class="Body-Text"><a href="EParamSI.htm">EparamSI</a> <a href="HSiRead.htm">HSiRead</a></p>
+</body>
+</html>

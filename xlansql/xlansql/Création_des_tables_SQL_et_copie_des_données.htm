@@ -1,0 +1,91 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Création des tables SQL et copie des données</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Création des tables SQL et copie des données</h1>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Avant propos.</p>
+<p class="Body-Text">Dans ce paragraphe, nous verrons la démarche à suivre pour transférer des fichiers dans la base SQL. Ce transfert s'effectue avec l'utilitaire <font class="hcp1">XPSQL.dhop</font>. Les paramètres pour le transfert des applications Divalto disponibles sous SQL sont fournis en standard.</p>
+<p class="Body-Text">Le chapitre <a href="XPSQLutilitaire.htm">XPSQL</a> traite de manière détaillée les fonctionnalités de cet utilitaire. Il permet de créer les paramètres pour vos propres applications, de tester la cohérence de vos descriptions de données, de créer et de transférer les informations vers les tables SQL. Il est <font class="hcp1">conseillé de lire le chapitre consacré à XPSQL avant l'utilisation du logiciel</font>.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Choix de la base SQL.</font><br>
+Le bouton «&#160;Base SQL&#160;» permet de choisir la base SQL et le serveur IBM i. Il est grisé lorsqu’une seule base et un seul serveur ont été configurés dans la table des serveurs.<span style="margin-top: 0; margin-bottom: 0;"><br>
+Dans la liste des serveurs, ne sont proposés que les serveurs dont le système d'exploitation est IBM iSeries.<br>
+&#160;</span></p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Choix du type de serveur SQL.</font><br>
+Le bouton «&#160;Serveur SQL&#160;» permet de choisir le type de base de données. On positionnera ce choix à « IBM DB2».<br>
+Ce choix permet également de visualiser (voire de modifier) la chaîne de connexion ODBC à la base de données, ainsi que la <a href="Param&eacute;trage_de_la_cha&icirc;ne_de_connexion_CLI.htm">chaîne de connexion CLI</a>.<br>
+&#160;</p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Fichier par fichier.</font><br>
+Le choix du transfert des informations dans la base SQL se fait <font class="hcp1">fichier Harmony par fichier Harmony</font>. Par exemple, pour une application comme "Divalto Comptabilité", on peut décider de ne transférer que le fichier des statistiques, et de conserver les autres fichiers sous HARMONY. Dans cet exemple, toutes les tables du fichier CCFTSC.dhfi seront transférées dans la base SQL.<br>
+&#160;</p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Paramètres d'un fichier Harmony.</font><br>
+A chaque fichier Harmony que l'on souhaite transférer et gérer dans la base SQL, est associé un <a href="Param_tresd_unfichier_.htm">enregistrement paramètre</a>.<br>
+&#160;</p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Application.</font><br>
+Dans la fiche paramètres, on précisera l'application à laquelle appartient le fichier Harmony. Cette information permet de <font class="hcp1">regrouper</font> tous les fichiers d'une application. Les boutons d'action "<font class="hcp1">par application</font>" de l'utilitaire XPSQL permettent d'effectuer les opérations <font class="hcp1">pour une application complète</font> et non plus fichier par fichier. Dans ce cas, le paramètre "<font class="hcp1">Valide</font>" de la fiche paramètres indique si ce fichier doit être ou non pris en compte.<br>
+&#160;</p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Création des tables et copie des données.</font><br>
+L'utilitaire <a href="XPSQLutilitaire.htm">XPSQL</a> permet d'effectuer la création des tables et le transfert des données dans la base. Pour le paramétrage de nouveaux fichiers et le fonctionnement détaillé de cet utilitaire, <a href="XPSQLutilitaire.htm">reportez-vous au chapitre XPSQL</a>.<br>
+<br>
+Pour une application donnée, <font class="hcp1">sélectionnez les fichiers</font> que vous souhaitez transférer en activant le paramètre "Valide". Ce paramètre de chaque fiche indique si le fichier doit être ou non pris en compte.<br>
+<br>
+Le choix "<a href="Mise_jourdestables_.htm">Création Tables</a>" de la barre de boutons "par application" permet d'effectuer la création des tables et le <a href="Copiedesfichiers_.htm">transfert des fichiers</a>. <font class="hcp1">Avant</font> d'activer ce choix, <font class="hcp1">assurez-vous</font> que vous utilisez le <font class="hcp1">code d'utilisateur</font> <font class="hcp1">correspondant au schéma de la base (par exemple «&#160;ERPDivalto&#160;»)<span style="font-weight: normal;">.</span><br>
+&#160;</font></p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Connexion au serveur.</font><br>
+La plupart des actions de XPSQL nécessitent une connexion avec le serveur SQL. Lors de sa première connexion au serveur, XPSQL stocke les paramètres de connexion dans le fichier FHSQL.<font color="#0000FF" class="hcp1"><br>
+<br>
+Voir également&#160;:</font> <a href="ConnexionauserveurSQL.htm">Connexion au serveur</a>.<br>
+&#160;</p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Erreurs de transfert.</font><br>
+Les erreurs lors de la création des tables ou lors du transfert des informations sont affichées dans la zone de texte enrichi de la fiche en cours. Vous trouverez les explications des <a href="Erreurslespluscourantes.htm">erreurs les plus couramment rencontrées</a> dans le chapitre concernant XPSQL.<font color="#0000FF" class="hcp1"><br>
+<br>
+Voir également&#160;:</font> <a href="Erreurs.htm">Les erreurs</a>.</p>
+</li>
+</ul>
+<p class="body-text">&#160;</p>
+</body>
+</html>

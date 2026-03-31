@@ -1,0 +1,25 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctions DVBuffer</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Fonctions DVBuffer</h1>
+<p>Le DVBuffer est un objet fréquemment &#160;utilisé dans Harmony pour transférer des données entre processus. Il permet de sérialiser et désérialiser rapidement des données.</p>
+<p>Il est utilisé entre autres pour le dialogue entre le client léger et le serveur, pour le dialogue avec le serveur Power Search.</p>
+<p>&#160;</p>
+<p>Le DVBuffer est une zone tampon dans laquelle l'écrivain place les données. Ces données doivent être lues par le lecteur dans le même ordre qu'elles ont été écrites. La taille du DVBuffer s'étend automatiquement en fonction des besoins.</p>
+<p>&#160;</p>
+<p>La création d'un DVBuffer se fait par la fonction <a href="DVBufferGetId.htm">DVBufferGetId</a> qui renvoie un identifiant utilisé ensuite par les autres fonctions.</p>
+<p>L'écriture dans le DVBuffer se fait par la fonction <a href="DVBufferPut.htm">DVBufferPut</a>. Les données écrites varient en fonction du type de la donnée. L'écriture d'une chaîne de caractères dans un DVBuffer place la longueur (sur 4 octets) suivie des caractères de la chaîne.</p>
+<p>&#160;</p>
+<p>La lecture dans le DVBuffer se fait par la fonction <a href="DVBufferGet.htm">DVBufferGet</a>. La variable réceptrice doit être de même type que la variable qui a été écrite dans le DVBuffer.</p>
+<p>&#160;</p>
+</body>
+</html>

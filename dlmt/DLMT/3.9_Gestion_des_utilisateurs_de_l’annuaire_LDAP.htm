@@ -1,0 +1,59 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion des utilisateurs de l’annuaire LDAP</title>
+<link rel="StyleSheet" href="../default.css" type="text/css">
+ <link rel="StyleSheet" href="../default.css" type="text/css">
+</head>
+
+<body>
+ <p style="text-align:right"> <a href="1_Introduction.htm">Accueil</a> &nbsp;|&nbsp; <a href="1_Introduction.htm">DLMT - Gestion des licences nommées</a> &nbsp;|&nbsp; <a href="3_Divalto_Licences_Management_Tool.htm">Divalto Licences Management Tool (DLMT)</a> &nbsp;|&nbsp; Gestion des utilisateurs de l’annuaire LDAP</p>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Gestion des utilisateurs de l’annuaire LDAP</h1>
+<p>DLMT propose la gestion des utilisateurs et des groupes d’un annuaire 
+ LDAP. Les opérations prises en compte sont l’ajout, la suppression et 
+ la modification. L’utilisateur souhaitant effectuer ces opérations depuis 
+ DLMT devra avoir les droits d’accès définis au niveau de l’annuaire.</p>
+<p>Le choix «&#160;Gestion&#160;» affiche la liste des utilisateurs de 
+ l’O.U. précisée comme filtre de base&#160;:</p>
+<p><img src="image015.jpg" alt="" width="537" height="617" border="0"></p>
+<p>&#160;</p>
+<p>Les boutons d’action situés en bas de l’écran permettent de créer, supprimer 
+ ou modifier un utilisateur, et de réactualiser la liste.</p>
+<p><img src="image017.jpg" alt="" width="465" height="534" border="0">&#160;</p>
+<p>La fiche d’un utilisateur comporte trois parties&#160;:</p>
+<ol>
+	<li>« <span style="font-weight: bold;">Général</span> » contient des 
+	 propriétés standard de l’annuaire. En particulier, on y trouve l’identifiant 
+	 de l’utilisateur qui lui servira à s’identifier lors de l’ouverture 
+	 de session ou de l’accès à l’ERP Divalto. <span style="font-weight: bold;">C’est 
+	 cet identifiant qui sera associé aux profils ou aux options</span>. 
+	 </li>
+	<li>« <span style="font-weight: bold;">Autres attributs</span> » comporte 
+	 une liste de propriétés paramétrables de l’annuaire LDAP que l’on 
+	 souhaite gérer avec DLMT. Cette liste est stockée dans le fichier 
+	 paramètre « <span style="font-weight: bold;">DlmtLdapProperties.txt</span> 
+	 » :<br>
+	<br>
+	<img src="image019.jpg" alt="" width="448" height="245" border="0"><br>
+	La balise &lt;<b>name</b>&gt; permet d’indiquer le <b>libellé</b> qui 
+	 apparaît dans le masque de <b>saisie</b> de l’utilisateur.<br>
+	La balise &lt;<b>Propertie</b>&gt; contient le <b>nom de la propriété</b> 
+	 dans l’annuaire.<br>
+	Un point-virgule en colonne 1 permet de mettre la propriété en commentaire. 
+	 Dans ce cas, elle n’apparaîtra plus dans l’interface de saisie.<br>
+	<br>
+	Ces propriétés doivent préexister dans l’annuaire LDAP. Les propriétés 
+	 spécifiques comme DIVALTOPROFILE, DIVALTOOPTIONS ou DIVALTOALIAS devront 
+	 être ajoutées dans l’annuaire LDAP par son administrateur.</li>
+	<li>« <span style="font-weight: bold;">Groupes de l’utilisateur</span> 
+	 » permet d’associer l’utilisateur à des groupes.</li>
+</ol>
+<p class="ListParagraphCxSpFirst" style="text-indent: -18.0pt;"><span style="font-family: Symbol;">·<span 
+	 style="font: 7.0pt 'Times New Roman';">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span></span></p>
+</body>
+</html>

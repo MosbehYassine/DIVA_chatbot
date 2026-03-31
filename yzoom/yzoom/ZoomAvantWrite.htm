@@ -1,0 +1,84 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZoomAvantWrite</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt; }
+font.hcp2 { font-size:10pt;
+font-weight:normal; }
+font.hcp3 { font-weight:bold; }
+ul.hcp4 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ZoomAvantWrite &#160;&#160;&#160;&#160;&#160;<font size="2" class="hcp1">&#160;</font><a href="Tableaur_capitulatifdess_quences.htm"><font size="2" class="hcp2">Famille</font></a> <font size="2" class="hcp1">&#160;</font><a href="ModuleDivaduZoom.htm"><font size="2" class="hcp2">Thème</font></a></h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Objet&#160;:</font> Traitements avant écriture.</p>
+<p class="Body-Text"><font class="hcp3">Procédure&#160;:</font> Facultative.</p>
+<p class="Body-Text"><font class="hcp3">Exécutée :</font> Avant l'écriture d'une nouvelle fiche.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La procédure ZoomAvantWrite est appelée après la validation d'une création ou d'une duplication et avant l'écriture du nouvel enregistrement dans la base.</p>
+<p class="Body-Text">Elle peut être utilisée pour :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Interdire la création sous certaines conditions.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Compléter l'enregistrement créé avec des données non saisies (par exemple, le code utilisateur, la date de création).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Revenir à la saisie si une anomalie est détectée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Affecter les données composant l'index principal si la page 2 n'est pas saisie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Changer le titre variable de la fenêtre en mode fiche en garnissant la donnée Zoom.TitreVar.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp3">Au retour</font> de la procédure ZoomAvantWrite, le zoom se poursuit normalement si la donnée Zoom.Ok est positionnée à 'O' (valeur par défaut).</p>
+<p class="Body-Text">Positionnez Zoom.Ok à la valeur :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">'N' pour interdire la création, avec affichage du message "Création interdite".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">'I' pour interdire la création, sans affichage du message.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">'S' pour forcer le retour à la saisie.<br>
+Sans précision contraire, la saisie reprendra sur la donnée en cours au moment de la validation du masque mais vous pouvez choisir le point de retour en positionnant Harmony.Retour et Harmony.CplRetour à la manière habituelle.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple 1 :</p>
+<p class="Body-Text">Ajout de la date de création.</p>
+<p class="Body-Text"><font class="hcp3">Public Procedure ZoomAvantWrite</font></p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source">&#160;&#160;&#160;Article.DateCrea = <font color="#0000FF">Today</font></p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple 2 :</p>
+<p class="Body-Text">Vérification d'une donnée saisie. Si la donnée X est erronée, on revient dans le masque sur cette donnée. A cet effet, on affecte à cette dernière le point de séquence numéro 100.</p>
+<p class="Body-Text"><font class="hcp3">Public Procedure ZoomAvantWrite</font></p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source">&#160;&#160;&#160;<font color="#0000FF">If</font> &lt;condition non réalisée sur la donnée X&gt;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">MessageBox</font> ("Donnée X incorrecte","Message",<font color="#0000FF">MB_OK</font> + <font color="#0000FF">MB_ICONEXCLAMATION</font>)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Zoom.Ok = 'S'</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = <font color="#0000FF">XMENEXT_POINT_SEQUENCE</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.CplRetour = 100</p>
+<p class="Source">&#160;&#160;&#160;<font color="#0000FF">Endif</font></p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+</body>
+</html>

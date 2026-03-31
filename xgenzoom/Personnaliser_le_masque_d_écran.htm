@@ -1,0 +1,241 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Personnaliser le masque d'écran</title>
+<link rel="StyleSheet" href="default.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-size:11pt; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { font-weight:bold; }
+li.hcp4 { list-style:none;
+display:inline; }
+p.hcp5 { margin-left:48px; }
+span.hcp6 { text-decoration:underline; }
+p.hcp7 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Personnaliser le masque d'écran</h3>
+<p>Cette rubrique détaille les différentes possibilités qui vous sont proposées pour influer sur le rendu du masque, en particulier en cas de génération d'un zoom exécuté dans l'environnement de l'ERP Divalto.<br>
+<br>
+<br>
+&#160;</p>
+<p class="hcp1">Répartition des champs de la table sur les différentes pages du mode Fiche</p>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp3">Répartition "standard"</span>.<br>
+Les champs, précédés de leur libellé respectif, sont rangés <span class="hcp3">en colonne</span> sur la page 3 du masque. Si la place en page 3 est insuffisante pour contenir tous les champs, la répartition se poursuit sur les pages suivantes.<br>
+<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Paramétrage de la répartition au niveau du dictionnaire de données</span>.<br>
+Lorsque les champs de la table doivent être répartis sur plusieurs pages, on positionne généralement des onglets pour simplifier la navigation entre les pages. Vous pouvez agir sur la répartition des champs dans les différentes onglets avec les paramètres suivants du dictionnaire des données :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p>Dans la propriété des tables <span class="hcp3"><a href="Param&eacute;trage_au_niveau_de_la_Table.htm">Titre des onglets</a></span>, vous pouvez saisir une liste de "titres d'onglet" (séparés par des virgules). Dans ce cas, le masque généré inclura les onglets indiqués, en pages 3, 4, 5, etc. Les textes saisis seront affichés comme titre des onglets correspondants.</p>
+</li>
+<li class="p">
+<p>Dans la propriété des champs <span class="hcp3"><a href="Param&eacute;trage_au_niveau_des_champs.htm">Regroupement dans zoom</a></span>, vous pouvez préciser à quel onglet chaque champ devra appartenir.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp5"><span class="hcp3">Attention</span> : Si la table spécifie deux (ou plusieurs) titres d'onglet, <span class="hcp6">seuls les champs dont la propriété de regroupement dans zoom est renseigné</span> seront placés dans l'onglet correspondant (à partir du second). Les champs ayant cette propriété à espace seront d'abord placés dans le premier onglet (en page 3) ; si la place en page 3 est insuffisante, les champs restants seront placés dans des onglets générés <span class="hcp6">après</span> les onglets spécifiés dans la table.<br>
+&#160;</p>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp3">Personnalisation de la répartition suivant la page 3 du <a href="Utiliser_un_mod&egrave;le_de_masque_ou_de_traitement.htm">masque modèle</a></span>.<br>
+Placez un onglet sur la page 3 du masque modèle (titre quelconque). La répartition des champs peut être réalisée de trois manières :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p>La page 3 du masque modèle contient un <span class="hcp3">objet cadre unique</span> (Cf. <span class="hcp3">ModeleZoom</span>.dhse).<br>
+Les champs sont alors rangés <span class="hcp3">en colonne</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La page 3 du masque modèle contient <span class="hcp3">deux objets cadres</span> (un à gauche, l'autre à droite) (Cf. <span class="hcp3">ModeleZoom1</span>.dhse).<br>
+Les champs sont alors placés d'abord dans la première colonne puis, lorsque celle-ci est pleine, dans la seconde.<br>
+Exemple :<br>
+<br>
+| &#160;champ_1 &#160;&#160;| &#160;&#160;champ_14 &#160;|<br>
+| &#160;champ_2 &#160;&#160;| &#160;&#160;champ_15 &#160;|<br>
+. &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.<br>
+. &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.<br>
+| &#160;champ_13 &#160;| &#160;champ_26 &#160;|<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Comme précédemment, la page 3 du masque modèle contient <span class="hcp3">deux objets cadres</span> et, de plus, le <span class="hcp3">libellé</span> de cette page (F3, champ "Libellé") contient le texte "<span class="hcp3">Colonne</span>". (Cf. <span class="hcp3">ModeleZoom2</span>.dhse).<br>
+Les champs sont alors alternés entre les deux colonnes (en Z).<br>
+Exemple :<br>
+<br>
+| &#160;champ_1 &#160;&#160;| &#160;&#160;champ_2 &#160;&#160;|<br>
+| &#160;champ_3 &#160;&#160;| &#160;&#160;champ_4 &#160;&#160;|<br>
+. &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.<br>
+. &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;.<br>
+| &#160;champ_25 &#160;| &#160;champ_26 &#160;|</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp5"><span class="hcp3">Remarques</span> :</p>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp5"><span class="hcp3">Le ou les cadres servent aussi à délimiter la zone de rangement des champs</span>.<br>
+Ils ne sont pas reportés dans le zoom généré.</p>
+</li>
+<li class="p">
+<p class="hcp5">En cas de débordement, le modèle d'onglet de la page 3 est utilisé pour toutes les pages nécessaires au mode Fiche.<br>
+<br>
+<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Ajout d'onglets modèles dans le <a href="Utiliser_un_mod&egrave;le_de_masque_ou_de_traitement.htm">masque modèle</a></span>.<br>
+Vous pouvez dessiner un ou plusieurs onglets modèles <span class="hcp6">à partir de la page 4</span> du masque modèle. Un tel onglet fait l'objet du traitement particulier suivant :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p>Son texte fait référence à la liste des "titres d'onglet" de la table (propriété des tables <span class="hcp3"><a href="Param&eacute;trage_au_niveau_de_la_Table.htm">Titre des onglets</a></span>).<br>
+Si ce texte est dans la liste, l’onglet modèle sera copié dans la page correspondante du masque généré.</p>
+</li>
+<li class="p">
+<p>Les champs de la table dont le nom correspond à une donnée présente dans l'onglet modèle seront placés dans cet onglet (voir le paragraphe "Dessin d'un onglet modèle" ci-dessous).</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Exemple pratique - cas de l'onglet "Identifiants"</span> :<br>
+Les zooms de Divalto incluent souvent l'onglet "Identifiants" (Cf. page 4 du masque <span class="hcp3">ModeleZoom</span>.dhse). Cet onglet affiche des données "communes" à de nombreuses tables (codes enregistrements, notes, fichiers joints, dates de création, de dernière modification, de dernière opération, ...). Pour inclure cet onglet dans le zoom généré, ajoutez le titre "Identifiants" dans la propriété "Titre des onglets" de la table.<span class="hcp3"><br>
+<br>
+Remarque</span> : Si la table ne spécifie aucun titre d'onglet, si l'onglet "Identifiants" est présent dans le masque modèle et si la table contient au moins un champ concerné, cet onglet sera automatiquement ajouté, en dernier (mais attention, <span class="hcp6">cette remarque ne s'applique qu'à l'onglet modèle de nom imposé "Identifiants"</span>).<span class="hcp3"><br>
+<br>
+Remarque</span> : Si la table spécifie des titres d'onglet qui ne sont pas des onglets modèles, la répartition dans ces onglets sera basée sur le dessin de la page 3 du masque modèle (comme indiqué au paragraphe "Personnalisation de la répartition suivant la page 3 du masque modèle").<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp5"><span class="hcp3">Dessin d'un onglet modèle</span> :<br>
+Un onglet modèle inclut des cadres, des libellés, des données (champs, multi-choix, ...). Tous ces objets ne sont toutefois pas systématiquement conservés dans le masque généré. En effet, on souhaite que les modèles d'onglet soient les plus généraux possibles et qu'ils s'adaptent immédiatement à des tables qui n'en sont que des sous-ensembles.<br>
+<br>
+Prenons l'exemple de l'onglet modèle "Identifiants" : celui-ci contient tous les codes enregistrements possibles (Ce1, Ce2, ..., Ce9, Cea) alors que les tables à générer ne contiendront le plus souvent qu'une partie de ces codes. Ainsi, si une table ne contient par exemple que les codes Ce1 et Ce2, on souhaite évidemment que le zoom généré présente uniquement ces deux codes ; si la table ne contient aucun code, on souhaite non seulement n'afficher aucun des champs codes mais également ne pas afficher le cadre "Codes enregistrements".<br>
+<br>
+Voici le mécanisme adopté par le générateur pour supprimer du zoom généré les objets non concernés pour une table donnée :</p>
+<ol style="list-style: disc;">
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp3">Cas des données</span> (Champs, Multi-choix, etc.).<br>
+Dans le modèle, les données peuvent appartenir à une table quelconque. Seul le nom importe : Si la table à générer contient une donnée de <span style="font-weight: bold; text-decoration: underline;">même</span> nom, la donnée correspondante du modèle sera conservée dans le masque généré (bien entendu, après substitution du nom du modèle par le "vrai" nom) ; dans le cas contraire, cette donnée du modèle sera ignorée.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp3">Cas des autres types d'objet</span> (Texte, Cadre, ...).<br>
+Pour un autre type d'objet, on établit un "lien" entre cet objet et une donnée, en <span class="hcp3">plaçant le nom de la donnée dans sa propriété "Noms de l'objet"</span> (remarque : on pourra attribuer plusieurs noms d'objet à un même objet afin de le lier à plusieurs données) :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p>Un objet sans nom d'objet (zone "Noms de l'objet" à blanc) sera conservé.</p>
+</li>
+<li class="p">
+<p>Un objet dont un des noms d'objet correspond à une donnée de la table sera aussi conservé.</p>
+</li>
+<li class="p">
+<p>Un objet dont aucun des noms d'objet ne correspond à une donnée de la table sera éliminé.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp3">Résumé de l'algorithme utilisé pour la répartition des champs en mode Fiche</span>.</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p>On considère tous les champs non masqués de la table et on leur attribue un numéro d’onglet (en utilisant le cas échéant leur propriété Regroupement dans zoom).</p>
+</li>
+<li class="p">
+<p>Pour chaque onglet, on vérifie s'il est référencé dans la liste des titres d'onglet de la table et si le titre correspond à un onglet modèle :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p>Si l'onglet modèle n'existe pas, on génère l’onglet et on y place les champs de la table, en appliquant les règles de positionnement déduites du dessin de la page 3 du masque modèle.</p>
+</li>
+<li class="p">
+<p>Si l'onglet modèle existe, on balaye tous les objets de l’onglet modèle :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp2">
+<li class="p">
+<p>On recopie une donnée si elle appartient à la table (et n'y est pas masquée).</p>
+</li>
+<li class="p">
+<p>On recopie un autre type d'objet si sa propriété "Noms de l’objet" est à espace ou si l'un des noms correspond à un nom de champ de la table (non masqué).</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Ordre des modes liste</p>
+<p class="hcp7">L'ordre des modes listes dépend de la <a href="Param&eacute;trage_au_niveau_des_index.htm">propriété des index</a> "<span class="hcp3">No du mode Liste</span>" dans le dictionnaire des données. Un index portant le numéro 0 ne génère pas de mode liste, SAUF si TOUS les index ont leur No du mode Liste à 0, auquel cas toutes les clés génèreront un mode Liste, en suivant l’ordre des index dans le dictionnaire.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Pour qu'un champ n'apparaisse pas dans le masque</p>
+<p class="hcp7">Dans les <a href="Param&eacute;trage_au_niveau_des_champs.htm">paramètres des champs dans le dictionnaire</a>, mettez la propriété <span class="hcp3">Masqué dans le masque zoom</span> de la famille <span class="hcp3">Avancé</span> à la valeur <span class="hcp3">Oui</span>.</p>
+<p class="hcp7">&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Présentation des objets</p>
+<p class="hcp7">La présentation des objets du masque dépend :</p>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp7">Globalement, de la <span class="hcp3">feuille de styles</span> et du <span class="hcp3">modèle de présentation</span> (<a href="Param&eacute;trage_au_niveau_du_projet.htm">paramètres du projet</a>).<br>
+Dans les <a href="Param&eacute;trage_au_lancement_de_la_g&eacute;n&eacute;ration.htm">paramètres saisis au lancement</a> de la génération, la case à cocher "<span class="hcp3">Taille des boîtes des champs par palier</span>" permet d'influer sur la <span class="hcp3">taille des boîtes de saisie des champs</span>.</p>
+</li>
+<li class="p">
+<p class="hcp7">Pour chaque <span class="hcp3">champ</span>, des paramètres de la famille <span class="hcp3">Présentation</span> (<a href="Param&eacute;trage_au_niveau_des_champs.htm">paramètres des champs dans le dictionnaire</a>).<br>
+Toujours au niveau de chaque champ, le <span class="hcp3">titre de l'en-tête des colonnes</span> des modes Liste peut être paramétré dans la propriété &#160;"<span class="hcp3">Nom de colonne dans zoom</span>" et la propriété "<span class="hcp3">No de colonne dans zoom</span>" peut être utilisé pour placer le champ dans une <span class="hcp3">colonne affichée de manière permanente</span>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp1">Tables liées</p>
+<p class="hcp7">Pour qu'une table liée soit prise en compte par le générateur :</p>
+<ul class="hcp2">
+<li class="p">
+<p class="hcp7">Créez l'index et le lien dans le dictionnaire de données.</p>
+</li>
+<li class="p">
+<p class="hcp7">Dans les <a href="Param&eacute;trage_au_niveau_de_la_Table.htm">propriétés de la table</a> liée dans le dictionnaire, <span class="hcp3">renseignez</span> la propriété "<span class="hcp3">Libellé</span>" de la famille "Générateur de zoom".<br>
+Si le lien doit apparaître en mode Liste, positionnez aussi la propriété "<span class="hcp3">Aff. libellé mode Liste</span>" à <span class="hcp3">Oui</span>.</p>
+</li>
+<li class="p">
+<p class="hcp7">Lorsque le tableau des tables liées est affiché (à l'exécution de la génération), n'oubliez pas de <span class="hcp3">cocher la ligne</span> affichant la table à générer avant de valider.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

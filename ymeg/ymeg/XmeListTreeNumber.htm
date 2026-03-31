@@ -1,0 +1,57 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListTreeNumber</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListTreeNumber &#160;<a href="Lister_capitulativedesfonctionsdegestiondesarbres.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Arbres.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Lecture du rang dans l'arbre de l'élément courant</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Long XmeListTreeNumber</font> (<font class="hcp3">Identifiant</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:19.42%;" class="hcp4">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp4">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font> Rang <font class="hcp2">dans l'arbre</font> de l'élément courant.<br>
+0 si l'élément courant n'existe pas ou n'est pas affiché (car c'est un sous-niveau d'un élément réduit).</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction <font class="hcp2">XmeListTreeNumber</font> est semblable à la fonction "tableau" <a href="XmeListNumber.htm">XmeListNumber</a> à ceci près que cette dernière comptabilise tous les éléments et délivre le rang <font class="hcp2">absolu</font> de l'élément courant dans la <font class="hcp2">liste</font> alors que XmeListTreeNumber <font class="hcp2">ne</font> comptabilise <font class="hcp2">que</font> les éléments <font class="hcp2">"affichables"</font> (éléments qui ne sont pas des sous-niveaux d'élément réduit) et délivre le rang dans l'<font class="hcp2">arbre</font> de l'élément courant.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque :</font> La fonction XmeListTreeNumber <font class="hcp2">NE peut être appelée QUE</font> si la page de masque contenant le tableau est la page courante (ou l'une de ses pages panels).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">Rang = XmeListTreeNumber (Ident)</p>
+</body>
+</html>

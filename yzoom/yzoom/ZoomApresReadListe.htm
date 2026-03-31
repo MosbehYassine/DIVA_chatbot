@@ -1,0 +1,39 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZoomApresReadListe</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt; }
+font.hcp2 { font-size:10pt;
+font-weight:normal; }
+font.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ZoomApresReadListe &#160;&#160;&#160;&#160;&#160;<font size="2" class="hcp1">&#160;</font><a href="Tableaur_capitulatifdess_quences.htm"><font size="2" class="hcp2">Famille</font></a> <font size="2" class="hcp1">&#160;</font><a href="ModuleDivaduZoom.htm"><font size="2" class="hcp2">Thème</font></a></h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Objet&#160;:</font> Traitement après lecture.</p>
+<p class="Body-Text"><font class="hcp3">Procédure&#160;:</font> Facultative.</p>
+<p class="Body-Text"><font class="hcp3">Exécutée :</font> Après la lecture de la fiche courante.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Uniquement appelée si le paramètre ZoomOptimize du RecordSql est positionné à 1.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le mode liste et le mode fiche du ZoomSql étant séparé, toutes les opérations effectuées dans ZoomApresRead ne sont pas forcément nécessaires pour le garnissage de la liste. Pour optimiser le remplissage du tableau, on n'effectuera dans cette procédure uniquement les opérations nécessaires.</p>
+<p class="Body-Text">De plus, étant donné que le Zoom ne récupère que les données qui sont affichées dans le tableau ou marquée comme étant obligatoires (chapitre &lt;MandatoryColumns&gt; du RecordSql), certains champs ne seront pas initialisés.</p>
+&#160;
+<p class="Body-Text">Le zoom termine toujours la lecture de la table en mode liste par une relecture de la fiche courante en appelant ZoomApresRead.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">En entrée de la procédure ZoomApresReadListe, <font class="hcp3">Zoom.ModeLF</font> indique si le zoom est en mode fiche (ZOOM_MODE_FICHE) ou en mode liste (ZOOM_MODE_LISTE).</p>
+<p class="Body-Text"><span style="font-weight: bold;">Remarque</span> : En mode d'affichage mixte, Zoom.ModeLF est ponctuellement positionnée à ZOOM_MODE_FICHE lors de la (re)lecture de la ligne / fiche courante.</p>
+<p class="Body-Text">&#160;</p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

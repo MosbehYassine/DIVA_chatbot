@@ -1,0 +1,40 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Indexation</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Indexation</h1>
+<p>&#160;</p>
+<p>Les documents Search sont créés à partir de la base de données de l’ERP. L'opération qui consiste à ajouter un document à la base Search est appelée l'indexation du document. Elle est réalisé par le serveur Search.</p>
+<p>Celui-ci indexe les documents selon 2 modalités :</p>
+<ul class="hcp1">
+<li class="p">
+<p>&#160;<span class="hcp2">Presque en temps réel</span></p>
+</li>
+</ul>
+<p class="hcp3">La ou les applications qui créent, modifient ou suppriment des données de l'ERP associées à un document Search en informent le serveur Search au moment où elles réalisent l'opération. La demande d'indexation s'inscrit dans une file d'attente des traitements à réaliser par le serveur. Celui-ci indexe le document concerné généralement dans les secondes qui suivent la demande.</p>
+<ul class="hcp1">
+<li class="p">
+<p>&#160;<span class="hcp2">Par lot</span></p>
+</li>
+</ul>
+<p class="hcp3">Les documents sont créés dans la base Search en temps différé, par exemple tous les soirs. Les traitements périodiques permettent de définir la fréquence et la liste des indexations à effectuer. Les <span class="hcp2">stratégies d'indexation</span> définissent l'algorithme de réindexation des documents déjà existants dans la base Search.</p>
+<p class="hcp3">&#160;</p>
+<p style="margin-left: 8px; font-weight: bold;">Architecture client serveur</p>
+<p style="margin-left: 8px;">Le serveur s’occupe de l’indexation et de la recherche des documents dans la base Search. Les clients interrogent le serveur ou lui donnent l’ordre d’indexer un nouveau document créé dans l’ERP. L’opération d’indexation est effectuée sur le serveur, elle n’impacte pas l’application qui crée le document dans l’ERP (par exemple, la saisie des factures, des événements de C.R.M ou le zoom Clients).</p>
+</body>
+</html>

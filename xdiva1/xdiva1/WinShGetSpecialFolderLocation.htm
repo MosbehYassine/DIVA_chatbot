@@ -1,0 +1,189 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinShGetSpecialFolderLocation</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinShGetSpecialFolderLocation &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinShGetSpecialFolderLocation permet d'obtenir l'emplacement d'un dossier "spécial" de Windows.</p>
+<p class="Body-Text"><font class="hcp2">Alpha</font> <font class="hcp2">WinShGetSpecialFolderLocation</font> (<font class="hcp3">Numéro</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Numéro</font></p>
+<p class="Body-Text">Valeur indiquant le chemin demandé. Ce paramètre peut être l'une des valeurs suivantes :</p>
+<table cellspacing="0" width="474">
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_BITBUCKET&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Spécifie le chemin de la corbeille. L'emplacement de ce répertoire n'est pas dans le registre ; il a les attributs caché et système pour éviter que l'utilisateur le déplace ou le détruise.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_CONTROLS&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Dossier du panneau de contrôle.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_DESKTOP&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Dossier du bureau de Windows.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_DESKTOPDIRECTORY&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Répertoire utilisé pour le stockage physique des objets du bureau. Ne doit pas être confondu avec le dossier du bureau.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_DRIVES</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Dossier Poste de travail. Contient tous les éléments de l'ordinateur (disques, imprimantes, panneau de contrôle).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_FONTS&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Dossier virtuel contenant les fontes de caractères.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_NETHOOD&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Répertoire contenant les objets qui apparaissent dans le Voisinage Réseau.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_NETWORK</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Dossier virtuel du voisinage réseau représentant le sommet de la hiérarchie du réseau.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_PERSONAL</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Répertoire servant de stockage aux documents personnels (Mes documents).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_PRINTERS</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Dossier contenant les imprimantes installées.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_PROGRAMS</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Répertoire contenant les groupes de programmes du menu Démarrer.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_RECENT&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Répertoire contenant les documents récemment modifiés.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_SENDTO&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Répertoire contenant les destinations pour la fonction Envoyer Vers.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_STARTMENU&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Répertoire contenant le menu démarrer.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.82%;" class="hcp5">
+<p class="Body-Text">CSIDL_STARTUP&#160;</p>
+</td>
+<td style="width:57.18%;" class="hcp5">
+<p class="Body-Text">Répertoire contenant les fichiers du groupe de démarrage.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="474">
+<tr class="hcp4">
+<td style="width:20.93%;" class="hcp5">
+<p class="Body-Text">Espaces</p>
+</td>
+<td style="width:79.07%;" class="hcp5">
+<p class="Body-Text">Erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.93%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:79.07%;" class="hcp5">
+<p class="Body-Text">Chemin demandé.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">Le fonction ne renvoie pas toujours une valeur pour chacune des constantes CSIDL. Cela dépend du système d'exploitation ainsi que de la version.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Body-Text">Affichage du chemin du répertoire servant au stockage aux documents personnels (Mes documents).</p>
+<p class="Source"><br>
+&#160;display WinShGetSpecialFolderLocation(CSIDL_PERSONAL)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="WinGetCurrentDirectory.htm">WinGetCurrentDirectory</a>, <a href="WinSetCurrentDirectory.htm">WinSetCurrentDirectory</a>, <a href="WinGetWindowsDirectory.htm">WinGetWindowsDirectory</a>, <a href="WinGetSystemDirectory.htm">WinGetSystemDirectory</a>, <a href="GetHarmonyDirectory.htm">GetHarmonyDirectory</a>, <a href="WinFindExecutable.htm">WinFindExecutable</a>, <a href="WinShellExecute.htm">WinShellExecute</a></p>
+</body>
+</html>

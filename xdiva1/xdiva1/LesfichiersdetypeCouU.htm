@@ -1,0 +1,148 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Les fichiers de type C ou U</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Les fichiers de type C ou U</h3>
+<p class="Body-Text">Les fichiers de type C ou U sont destinés à contenir du texte (sources de programmes, textes d'aides,...). Leur structure simple leur permet d'être manipulés par les éditeurs standards des systèmes.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Les fichiers de type U</font></p>
+<p class="Body-Text">Les enregistrements sont de taille variable, la taille étant limitée à 32 K.</p>
+<p class="Body-Text">Ces fichiers n'ont pas de structure particulière, les enregistrements étant délimités par un séparateur :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">sous <font>u</font>nix, le séparateur d'enregistrement est le caractère hexa $0A,</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">sous <font>w</font>indows, le séparateur d'enregistrement est représenté par la suite des caractères hexa $0D et $0A.</p>
+</li>
+</ul>
+<p class="Body-Text">Ces fichiers peuvent être saisis par tout éditeur de textes (vi, edit, xwin, ...).</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Méthode d'accès :</font></p>
+<p class="Body-Text">L'accès aux fichiers de type C ou U est purement séquentiel.</p>
+<p class="Body-Text">Pour lire un enregistrement précis, il faut avoir préalablement lu tous les enregistrements précédents (fonction <font>f</font>read).</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Opérations possibles sur les fichiers de type C ou U</font></p>
+<table cellspacing="0" width="560">
+<tr class="hcp2">
+<td style="width:21.27%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Fonction évoluée</font></p>
+</td>
+<td style="width:22.10%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Fonction de base</font></p>
+</td>
+<td style="width:56.63%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Opération</font> <font class="hcp1">réalisée</font></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.27%;" class="hcp3">
+<p class="Body-Text"><a href="Hopen.htm">Hopen</a></p>
+</td>
+<td style="width:22.10%;" class="hcp3">
+<p class="Body-Text"><a href="Fopen.htm">Fopen</a></p>
+</td>
+<td style="width:56.63%;" class="hcp3">
+<p class="Body-Text">ouverture du fichier</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.27%;" class="hcp3">
+<p class="Body-Text"><a href="Hclose.htm">Hclose</a></p>
+</td>
+<td style="width:22.10%;" class="hcp3">
+<p class="Body-Text"><a href="Fclose.htm">Fclose</a></p>
+</td>
+<td style="width:56.63%;" class="hcp3">
+<p class="Body-Text">fermeture du fichier</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.27%;" class="hcp3">
+<p class="Body-Text"><a href="Hpclose.htm">Hpclose</a></p>
+</td>
+<td style="width:22.10%;" class="hcp3">
+<p class="Body-Text"><a href="Fpclose.htm">Fpclose</a></p>
+</td>
+<td style="width:56.63%;" class="hcp3">
+<p class="Body-Text">fermeture partielle</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.27%;" class="hcp3">
+<p class="Body-Text"><a href="Herase.htm">Herase</a></p>
+</td>
+<td style="width:22.10%;" class="hcp3">
+<p class="Body-Text"><a href="Ferase.htm">Ferase</a></p>
+</td>
+<td style="width:56.63%;" class="hcp3">
+<p class="Body-Text">effacement</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.27%;" class="hcp3">
+<p class="Body-Text"><a href="Hread.htm">Hread</a></p>
+</td>
+<td style="width:22.10%;" class="hcp3">
+<p class="Body-Text"><a href="Fread.htm">Fread</a></p>
+</td>
+<td style="width:56.63%;" class="hcp3">
+<p class="Body-Text">lecture séquentielle</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.27%;" class="hcp3">
+<p class="Body-Text"><a href="Hwrite.htm">Hwrite</a></p>
+</td>
+<td style="width:22.10%;" class="hcp3">
+<p class="Body-Text"><a href="Fwrite.htm">Fwrite</a></p>
+</td>
+<td style="width:56.63%;" class="hcp3">
+<p class="Body-Text">écriture à la fin du fichier</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.27%;" class="hcp3">
+<p class="Body-Text"><a href="HCreateFile.htm">HcreateFile</a></p>
+</td>
+<td style="width:22.10%;" class="hcp3">
+<p class="Body-Text"><a href="HCreateFile.htm">HcreateFile</a></p>
+</td>
+<td style="width:56.63%;" class="hcp3">
+<p class="Body-Text">création d'un fichier</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.27%;" class="hcp3">
+<p class="Body-Text"><a href="HDeleteFile.htm">HDeleteFile</a></p>
+</td>
+<td style="width:22.10%;" class="hcp3">
+<p class="Body-Text"><a href="HDeleteFile.htm">HDeleteFile</a></p>
+</td>
+<td style="width:56.63%;" class="hcp3">
+<p class="Body-Text">suppression d'un fichier</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

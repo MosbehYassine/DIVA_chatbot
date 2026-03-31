@@ -1,0 +1,96 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Noms de fichier en réseau poste à poste</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { text-decoration:underline; }
+ul.hcp2 { list-style:disc; }
+font.hcp3 { font-weight:bold; }
+span.hcp4 { font-weight:bold; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp7 { font-size:10pt;
+font-weight:bold; }
+font.hcp8 { font-style:italic; }
+font.hcp9 { font-weight:bold;
+font-style:italic; }
+span.hcp10 { font-family:Arial, sans-serif; }
+font.hcp11 { font-family:Arial, sans-serif; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Noms de fichier en réseau Windows</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Sous Harmony, ce type de réseau sert uniquement à accéder à des fichiers purement Windows, hors Xlan (donc, en particulier, sans gestion de réservations "Harmony"). Pour accéder à un fichier Windows, Harmony passe également par la <a href="D_clarationdesserveursetdesunit_slogiques.htm">table des serveurs</a>. Mais ici, l'adresse du serveur précise l'ordinateur concerné et, éventuellement, un dossier "de départ" sur cet ordinateur&#160;: les fichiers pourront alors se situer soit directement dans ce dossier de départ, soit dans un sous-dossier.</p>
+<p class="Body-Text">Précisément, l'adresse du serveur est ici un <font class="hcp1">chemin d'accès réseau</font> <font style="font-weight: bold; text-decoration: underline;">standard</font> menant au dossier de départ. Windows permet deux écritures&#160;</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">La première (conseillée) <font class="hcp3">débute</font> par le <font class="hcp3">nom NetBios</font> de l'ordinateur <font class="hcp3">suivi</font> du <font class="hcp3">nom d'un partage</font> sur cet ordinateur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La seconde <font class="hcp3">débute</font> par une <font class="hcp3">lettre</font> identifiant un <font class="hcp3">lecteur réseau connecté</font>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp4">Exemple :</span><br>
+&#160;</p>
+<table cellspacing="0" width="614">
+<tr class="hcp5">
+<td style="width:15.39%;" class="hcp6">
+<p class="Body-Text"><font size="2" color="#000000" class="hcp7">SerCompta</font></p>
+</td>
+<td style="width:84.61%;" class="hcp6">
+<p class="Body-Text">//<span class="hcp4">S</span><font class="hcp3">erveurCompta</font>/<span style="font-weight: bold; font-style: italic;">Divalto</span>/C<font class="hcp8">omptabilité</font> &#160;&#160;&#160;&#160;où&#160;:<br>
+– <font class="hcp3">ServeurCompta</font> est le nom NetBios du serveur.<br>
+– <font class="hcp9">Divalto</font> est le nom d'un partage (&lt;=&gt; par exemple au dossier c:/divalto du serveur).<br>
+– <font class="hcp8">Comptabilité</font> est le nom d'un sous-dossier de c:/divalto.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:15.39%;" class="hcp6">
+<p class="Body-Text"><font size="2" color="#000000" class="hcp7">Serveur</font></p>
+</td>
+<td style="width:84.61%;" class="hcp6">
+<p class="Body-Text"><font class="hcp3">f:</font>/<span style="font-style: italic;">divalto</span> &#160;&#160;&#160;&#160;où&#160;:<font class="hcp3"><br>
+– f:</font> est un lecteur réseau.<br>
+– <font class="hcp8">divalto</font> est le nom d'un dossier racine sur ce lecteur.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le nom d'un fichier situé sur un serveur Windows doit <font class="hcp1">commencer par "//" suivi du nom du serveur</font> dans la table des serveurs Harmony&#160;: ce nom sera remplacé par le chemin correspondant pour donner le nom de fichier complet. Dans l'exemple&#160;précédent :<br>
+&#160;<br>
+//<font class="hcp3">SerCompta</font>/compta.dhfi &#160;==&gt; &#160;//<font class="hcp3">ServeurCompta/</font><font class="hcp9">Divalto</font><font class="hcp3">/</font><font class="hcp8">Comptabilité</font>/compta.dhfi</p>
+<p class="Body-Text">//<font class="hcp3">Serveur</font>/sys/xtools.dhop &#160;==&gt; &#160;<font class="hcp3">f:/</font><font class="hcp8">divalto</font>/sys/xtools.dhop</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-family: Arial, sans-serif;">&#160;</p>
+<p class="Body-Text"><font class="hcp3"><span class="hcp4">R</span>emarques&#160;:</font></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Le passage par la table des serveurs est obligatoire en réseau Windows comme en réseau Xlan.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous utilisez la méthode du lecteur réseau, ce dernier doit être <font class="hcp3">préalablement</font> connecté (fonction "Connecter un lecteur réseau" de l'explorateur).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il est possible de déclarer sur un poste client un chemin Harmony faisant référence à un serveur Windows et d'utiliser ensuite ce chemin pour accéder à un fichier réseau. Par exemple, un fichier pourra s'appeler <font class="hcp3">/sys/xtools.dhop</font> avec le chemin Harmony <font class="hcp3">sys</font> déclaré localement&#160;:<font class="hcp3"><span class="hcp10"><br>
+Sys</span></font> <span class="hcp10"><font face="Arial" class="hcp11">pour //</font><font style="font-weight: bold; font-family: Arial, sans-serif;" face="Arial">Serveur</font><font face="Arial" class="hcp11">/sys (==&gt; nom final&#160;: f:/divalto/sys/xtools.dhop)</font></span></p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>
