@@ -136,14 +136,14 @@ if __name__ == "__main__":
     print(f"Loaded {len(docs)} documents.")
     
     if docs:
-        print("\n--- MODE TEST : ÉCHANTILLONNAGE ACTIVÉ (Documents significatifs) ---")
+        print("\n--- TRAITEMENT DE TOUS LES DOCUMENTS ---")
         # On filtre les pages vides ou de pure mise en page
         valid_docs = [d for d in docs if len(d.page_content.strip()) > 300]
-        docs = valid_docs[:30] # On prend 30 documents valides
-        print(f"Limitation à {len(docs)} documents pertinents pour le test.")
+        docs = valid_docs
+        print(f"Documents valides après filtrage: {len(docs)}")
         
         chunks = chunk_documents(docs)
-        print(f"Création de {len(chunks)} chunks à partir de l'échantillon.")
+        print(f"Création de {len(chunks)} chunks à partir de tous les documents valides.")
         
         create_vector_store(chunks)
         print("Ingestion complete!")

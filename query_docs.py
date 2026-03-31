@@ -1,73 +1,38 @@
 import os
 import pickle
 from langchain_community.graphs.networkx_graph import NetworkxEntityGraph
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from langchain_openai import ChatOpenAI
 import re
 
-# Hugging Face Hub (Windows): éviter les timeouts trop agressifs + log plus propre.
-os.environ.setdefault("HF_HUB_DOWNLOAD_TIMEOUT", "300")
-os.environ.setdefault("HF_HUB_ETAG_TIMEOUT", "60")
-os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")
-
+# Charger les variables d'environnement depuis .env si le fichier existe
 try:
-    import torch
-except Exception:  # pragma: no cover
-    torch = None
-
-try:
-    from transformers import BitsAndBytesConfig
-except Exception:  # pragma: no cover
-    BitsAndBytesConfig = None
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass  # python-dotenv n'est pas installé, continuer sans
 
 # Configuration (fichier du graphe sauvegardé par ingest_docs.py)
 DB_DIR = "networkx_graph.pkl"
-# Modèles possibles (du + "ultra" au + léger). Le script choisit le meilleur qui passe.
-# Astuce: tu peux forcer via l'env var LOCAL_MODEL_NAME.
-MODEL_CANDIDATES = [
-    # Bon compromis sur une machine 16 Go + GPU: bien meilleur que 0.5B, téléchargement plus raisonnable.
-    "Qwen/Qwen2.5-1.5B-Instruct",
-    "Qwen/Qwen2.5-3B-Instruct",
-    "Qwen/Qwen2.5-0.5B-Instruct",
-]
 
-# Modèle "ultra" optionnel (à forcer via env var LOCAL_MODEL_NAME si tu veux vraiment).
-ULTRA_MODEL = "Qwen/Qwen2.5-7B-Instruct"
+# OpenRouter configuration
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+if not OPENROUTER_API_KEY:
+    raise ValueError("OPENROUTER_API_KEY environment variable is required. Please set it in your environment variables or create a .env file.")
+
+# Modèle OpenRouter (Qwen recommandé pour la compatibilité)
+MODEL_NAME = "qwen/qwen-2.5-72b-instruct"
 
 
-def _load_llm(model_name: str):
-    hf_token = os.getenv("HF_TOKEN")  # optionnel
-    tokenizer = AutoTokenizer.from_pretrained(model_name, token=hf_token) if hf_token else AutoTokenizer.from_pretrained(model_name)
-
-    # Priorité: GPU + 4-bit si possible (tient mieux sur 16 Go).
-    # Sur Windows, la quantification bitsandbytes peut ne pas être dispo selon l'install.
-    quant_ok = BitsAndBytesConfig is not None
-    use_cuda = torch is not None and torch.cuda.is_available()
-
-    if use_cuda and quant_ok:
-        qconf = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_use_double_quant=True,
-            bnb_4bit_compute_dtype=torch.float16,
-        )
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            token=hf_token,
-            device_map="auto",
-            quantization_config=qconf,
-            torch_dtype="auto",
-        )
-    else:
-        # Fallback: chargement standard (peut être plus lent / gourmand).
-        model = AutoModelForCausalLM.from_pretrained(
-            model_name,
-            token=hf_token,
-            device_map="auto" if use_cuda else None,
-            torch_dtype="auto" if use_cuda else None,
-        )
-
-    model.eval()
-    return tokenizer, model
+def _load_llm():
+    """Initialize OpenRouter LLM"""
+    llm = ChatOpenAI(
+        model=MODEL_NAME,
+        openai_api_key=OPENROUTER_API_KEY,
+        openai_api_base="https://openrouter.ai/api/v1",
+        temperature=0.1,  # Low temperature for more consistent responses
+        max_tokens=200,
+    )
+    return llm
 
 def query_vector_store(query):
     if not os.path.exists(DB_DIR):
@@ -127,22 +92,10 @@ def query_vector_store(query):
     # llm = ChatOpenAI(model="gpt-4o-mini")
     # ...
 
-    # === Version HuggingFace locale (Qwen Instruct) ===
+    # === Version OpenRouter (remplace les modèles locaux) ===
     try:
-        forced = os.getenv("LOCAL_MODEL_NAME")
-        candidates = [forced] if forced else MODEL_CANDIDATES
-
-        last_err = None
-        for name in candidates:
-            try:
-                tokenizer, model = _load_llm(name)
-                print(f"Modèle chargé: {name}")
-                break
-            except Exception as e:
-                last_err = e
-                continue
-        else:
-            raise RuntimeError(f"Impossible de charger un modèle parmi {candidates}. Dernière erreur: {last_err}")
+        llm = _load_llm()
+        print(f"Modèle OpenRouter chargé: {MODEL_NAME}")
 
         system_msg = (
             "Tu es un assistant RAG. Tu réponds en français.\n"
@@ -154,30 +107,15 @@ def query_vector_store(query):
         )
         user_msg = f"CONTEXTE:\n{texte_contexte}\n\nQUESTION:\n{query}\n"
 
-        # Qwen Instruct suit beaucoup mieux le format chat
-        messages = [{"role": "system", "content": system_msg}, {"role": "user", "content": user_msg}]
-        prompt = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        from langchain_core.prompts import ChatPromptTemplate
+        prompt = ChatPromptTemplate.from_messages([
+            ("system", system_msg),
+            ("human", user_msg)
+        ])
 
-        inputs = tokenizer(
-            prompt,
-            return_tensors="pt",
-            truncation=True,
-            max_length=1024,
-        )
-        outputs = model.generate(
-            **inputs,
-            max_new_tokens=160,
-            do_sample=False,          # sortie plus stable, moins d'hallucinations
-            repetition_penalty=1.15,
-            eos_token_id=tokenizer.eos_token_id,
-            pad_token_id=tokenizer.eos_token_id,
-        )
-
-        # On ne décode que les nouveaux tokens générés (sans le prompt)
-        generated_ids = outputs[0]
-        prompt_length = inputs["input_ids"].shape[-1]
-        generated_answer_ids = generated_ids[prompt_length:]
-        answer = tokenizer.decode(generated_answer_ids, skip_special_tokens=True).strip()
+        chain = prompt | llm
+        response = chain.invoke({})
+        answer = response.content.strip()
 
         # Post-traitement léger: supprimer listes/numérotation et garder 3–5 phrases max.
         answer = re.sub(r"(?m)^\s*[\-\*\d]+\s*[\)\.\-]?\s*", "", answer).strip()
@@ -271,7 +209,7 @@ def query_vector_store(query):
         print("===============\n")
         return answer
     except Exception as e:
-        print(f"Erreur lors de l'exécution de la requête (modèle local) : {e}")
+        print(f"Erreur lors de l'exécution de la requête (OpenRouter) : {e}")
         return None
 
 if __name__ == "__main__":

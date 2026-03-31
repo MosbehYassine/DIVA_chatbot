@@ -11,3 +11,4 @@ langchain-huggingface
 langchain-experimental
 networkx
 pyvis
+python-dotenv
