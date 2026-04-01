@@ -1,0 +1,80 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Modification de la taille d'un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { text-decoration:underline; }
+ul.hcp4 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Modification de la taille d'un tableau</h3>
+<p class="Body-Text"><font><span class="hcp1">Si</span></font> <span class="hcp1">l’option <font class="hcp2">Hauteur variable</font></span> <span class="hcp1">est activée</span> dans les propriétés de l'objet tableau (cadre Attachements), le <font class="hcp2">nombre de lignes</font> affichées à l'écran est susceptible de <font class="hcp2">varier</font>.</p>
+<p class="Body-Text">Dans ce cas en effet, la taille du tableau s'adapte automatiquement à la taille de la fenêtre. Par exemple, si l'utilisateur agrandit la fenêtre ou la maximise, le nombre de lignes affichées augmentera en conséquence.<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp3">Le programme appelant a la charge d'effectuer les traitements nécessités par la variation du nombre de lignes</span> : réaffichage du contenu du tableau, modification éventuelle de la première ligne affichée à l'écran afin que la <a href="Lignecouranted_untableau.htm">ligne courante</a> reste visible, repositionnement éventuel de l'<a href="Ascenseurverticald_untableau.htm">ascenseur vertical</a>, reconstitution de la <a href="Gestiondelalisteassoci_e_untableau.htm">liste des éléments du tableau</a> si vous avez opté pour la méthode où seules les lignes affichées sont résidentes en mémoire, …<br>
+<br>
+A cet effet, le programme est averti de tout changement du nombre de lignes affichées par le <a href="Ev_nementssourisli_s_l_objettableau.htm">message spécifique "tableau"</a> <span class="hcp1">LIST_HEIGHT_CHANGING</span>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Voyons d'abord le cas d'un <span class="hcp1">tableau unique en cours de consultation</span> par <a href="XmeListConsult.htm">XmeListConsult</a> :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Si le tableau est géré de manière standard</span>, faites simplement appel à la procédure <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> pour traiter le message LIST_HEIGHT_CHANGING. Cette procédure se chargera des traitements standard nécessités par le changement du nombre de lignes.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Sinon</span>, on utilisera la procédure <a href="XmeListScreenCount.htm">XmeListScreenCount</a> pour récupérer le nombre de lignes nouvellement affichées à l'écran, avant d'effectuer les traitements nécessaires.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text"><font style="font-weight: bold; text-decoration: underline;">Attention</font> :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp3">Le message LIST_HEIGHT_CHANGING peut arriver dès qu'un tableau est affiché à l'écran</span>.<br>
+Pensez à le traiter dans toutes les fonctions de saisie et de consultation (XmeInput ou XmeConsult par exemple).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En cours de saisie d'un tableau (fonction XmeListInput), le message LIST_HEIGHT_CHANGING n'est pas transmis.<br>
+En général et lorsque le tableau est géré de manière standard, le programme repart sur un XmeListConsult en fin de saisie et la mise à jour du tableau se fera automatiquement. Sinon, il faudra vérifier si le nombre de lignes affichées a changé et réagir en conséquence.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp1">Si deux ou plusieurs tableaux sont affichés simultanément à l'écran (hors pages panels et accordéons)</span> :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">En cours de consultation d'un des tableaux par XmeListConsult, un seul message LIST_HEIGHT_CHANGING est normalement transmis et le numéro de point d'arrêt récupéré sera celui du tableau consulté.<br>
+Hors consultation par XmeListConsult, un seul message LIST_HEIGHT_CHANGING est normalement transmis mais le numéro de point d'arrêt récupéré sera celui de l'un <font class="hcp2">quelconque</font> des tableaux.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> appelée pour le tableau consulté n'actualise bien entendu que ce tableau.<br>
+La mise à jour des <span class="hcp1">autres</span> tableaux reste donc à la charge du programme.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp1">Si deux ou plusieurs tableaux sont affichés simultanément à l'écran (<a href="Les_grilles_et_les_panels_pages.htm">pages panels</a> et <a href="Programmation_d_un_accord&eacute;on.htm">accordéons</a>)</span> :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">En cours de consultation d'un des tableaux par XmeListConsult, deux messages LIST_HEIGHT_CHANGING peuvent survenir. Le numéro de point d'arrêt récupéré sera à chaque fois celui du tableau consulté.<br>
+Hors consultation par XmeListConsult, deux messages LIST_HEIGHT_CHANGING peuvent survenir. Le numéro de point d'arrêt récupéré sera à chaque fois celui de l'un <font class="hcp2">quelconque</font> des tableaux (mais pas deux fois le même).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> appelée pour le tableau consulté n'actualise bien entendu que ce tableau.<br>
+La mise à jour des <span class="hcp1">autres</span> tableaux reste donc à la charge du programme.<br>
+Remarque : Si deux messages surviennent, la mise à jour aura lieu à deux reprises, mais ce n'est pas gênant.</p>
+</li>
+</ul>
+<p class="body-text">&#160;</p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

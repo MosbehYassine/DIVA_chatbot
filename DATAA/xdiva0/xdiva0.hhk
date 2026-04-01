@@ -1,0 +1,103 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Appel de fonctions par le nom">
+    <param name="Name" value="Appel de fonctions par le nom">
+    <param name="Local" value="xdiva0/Appeldefonctionsparlenom.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Appels de programmes">
+    <param name="Name" value="Appels de programmes">
+    <param name="Local" value="xdiva0/Appelsdeprogrammes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Chargement de module">
+    <param name="Name" value="Chargement de module">
+    <param name="Local" value="xdiva0/Chargementdemodule.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="controler">
+    <param name="Name" value="Arbitrage de l'ordre d'appel des fonctions">
+    <param name="Local" value="xdiva0/Arbitrage_de_l_ordre_d_appel_des_fonctions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Données publiques ou privées">
+    <param name="Name" value="Données publiques ou privées">
+    <param name="Local" value="xdiva0/Donn_espubliquesoupriv_es.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Enchaînement de programmes">
+    <param name="Name" value="Enchaînement de programmes">
+    <param name="Local" value="xdiva0/Encha_nementdeprogrammes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fonctions/procédures publiques ou privées">
+    <param name="Name" value="Fonctions/procédures publiques ou privées">
+    <param name="Local" value="xdiva0/Fonctions_proc_durespubliquesoupriv_es.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Lancement de programmes Windows">
+    <param name="Name" value="Lancement de programmes Windows">
+    <param name="Local" value="xdiva0/LancementdeprogrammesWindows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modules et programme">
+    <param name="Name" value="Modules et programme">
+    <param name="Local" value="xdiva0/Modulesetprogramme.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="multiple">
+    <param name="Name" value="Introduction à la surcharge multiple des fonctions">
+    <param name="Local" value="xdiva0/Introduction_&agrave;_la_surcharge_multiple_des_fonctions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Noms des fonctions/procédures">
+    <param name="Name" value="Noms des fonctions/procédures">
+    <param name="Local" value="xdiva0/Nomsdesfonctions_proc_dures.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Notation pointée">
+    <param name="Name" value="Notation pointée">
+    <param name="Local" value="xdiva0/Notationpoint_e.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Notion de module">
+    <param name="Name" value="Notion de module">
+    <param name="Local" value="xdiva0/Notiondemodule.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Passage des données lors de l'enchaînement de programmes">
+    <param name="Name" value="Passage des données lors de l'enchaînement de programmes">
+    <param name="Local" value="xdiva0/Passagedesdonn_eslorsdel_encha_nementdeprogrammes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Programme">
+    <param name="Name" value="Programme">
+    <param name="Local" value="xdiva0/Programme.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="surcharge">
+    <param name="Name" value="Introduction à la surcharge multiple des fonctions">
+    <param name="Local" value="xdiva0/Introduction_&agrave;_la_surcharge_multiple_des_fonctions.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Surcharge des fonctions/procédures">
+    <param name="Name" value="Surcharge des fonctions/procédures">
+    <param name="Local" value="xdiva0/Surchargedesfonctions_proc_dures.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Tunnel local">
+    <param name="Name" value="Tunnel local">
+    <param name="Local" value="xdiva0/Tunnellocal.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Tunnels">
+    <param name="Name" value="Tunnels">
+    <param name="Local" value="xdiva0/Tunnels.htm">
+  </object>
+</ul>
+</html>

@@ -1,0 +1,179 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeNext</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp6 { list-style:disc; }
+font.hcp7 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeNext &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Reprise de la saisie du masque</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeNext</font> (<font class="hcp3">Code de retour principal</font>, <font class="hcp3">Code de retour complémentaire</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:27.70%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Code de retour principal</font><br>
+(Harmony.Retour)</p>
+</td>
+<td style="width:72.30%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.70%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Code de retour complémentaire</font><br>
+(Harmony.CplRetour)</p>
+</td>
+<td style="width:72.30%;" class="hcp5">
+<p class="Body-Text">Valeurs des codes de retour principal et complémentaire (voir texte).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">Ywpf interrompt la saisie du masque pour <font class="hcp2">rendre le contrôle au programme appelant</font> en de nombreuses occasions&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> <font class="hcp2">Points d'arrêt</font>.<font face="Symbol" class="hcp7"><br>
+-</font> <font class="hcp2">Pièges de touche</font>.<font face="Symbol" class="hcp7"><br>
+-</font> <font class="hcp2">Fin de la saisie</font>.<br>
+Cette dernière se produit lorsque l'utilisateur&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> Abandonne la saisie (touche Echap ou bouton équivalent).<font face="Symbol" class="hcp7"><br>
+-</font> Valide la saisie (touche Entrée ou bouton équivalent, onglet).<font face="Symbol" class="hcp7"><br>
+-</font> Tape Flèche en bas ou Tab sur la dernière donnée du masque.<font face="Symbol" class="hcp7"><br>
+-</font> Tape Flèche en haut ou Back-Tab sur la première donnée du masque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Après avoir traité l'interruption, le programme peut demander la <font class="hcp2">reprise de la saisie</font> du masque. Il le fait en appelant la fonction XmeNext avec les <font style="font-weight: bold; font-style: italic;">Codes de retour</font> appropriés (voir plus loin).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Attention</font> :<font class="hcp2"><br>
+XmeNext ne doit pas être utilisée pour LANCER la saisie</font> du masque&#160;: il faut pour cela appeler la fonction <a href="XmeInput.htm">XmeInput</a>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">La saisie d'une donnée</font> <font style="font-family: Symbol; font-weight: bold;" face="Symbol">-</font> <font class="hcp2">principes généraux&#160;:</font></p>
+<p class="Body-Text">Pour Ywpf, la "saisie" d'une donnée ne se résume pas à la simple frappe d'une valeur au clavier. Elle <font class="hcp2">comporte en réalité de nombreuses étapes</font>&#160;: points d'arrêt et de traitement "Avant", saisie par l'utilisateur (input), test des boutons, menus, ascenseurs, pièges de touche, …, points de traitement et d'arrêt "Après", etc.</p>
+<p class="Body-Text">Pour prendre en compte toutes ces étapes, Ywpf <font class="hcp2">exécute</font> un <a href="Algorithmedesaisiedesdonn_es.htm">algorithme de saisie des données</a> très précis. Cet algorithme <font class="hcp2">s'interrompt</font> chaque fois que <font class="hcp2">le contrôle est rendu au programme appelant</font> (voir les différents cas ci-dessus).</p>
+<p class="Body-Text">Après le traitement de l'interruption, il faudra très souvent <font class="hcp2">poursuivre la saisie du masque</font>. Suivant les cas, la reprise se fera&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> Sur la donnée qui était en cours de saisie par l'utilisateur au moment où l'interruption a eu lieu (cas par exemple où une erreur de saisie a été détectée).<font face="Symbol" class="hcp7"><br>
+-</font> Sur la donnée suivante (cas où la saisie courante s'est normalement terminée).<font face="Symbol" class="hcp7"><br>
+-</font> Ou éventuellement ailleurs dans le masque.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour à la saisie du masque&#160;:</font></p>
+<p class="Body-Text">En pratique, un <font class="hcp2">point de reprise est défini à chaque étape</font> de l'algorithme de saisie d'une donnée. D'autres points de reprise sont également prévus pour sauter la donnée courante ou se rendre sur la première, la dernière ou n'importe quelle autre donnée du masque.</p>
+<p class="Body-Text"><font class="hcp2">Pour préciser le point de reprise</font>, le programme doit appeler la fonction XmeNext avec les <font class="hcp2">codes de retour</font> appropriés. Vous trouverez la liste complète des valeurs possibles, accompagnée d'exemples, à la rubrique <a href="Pointsdereprisedanslasaisiedumasque.htm">Points de reprise dans la saisie du masque</a>.</p>
+<p class="Body-Text">Lorsque le contrôle est rendu au programme appelant, Harmony.Retour et Harmony.CplRetour <font class="hcp2">valent 0</font>. Si vous laissez ces <font class="hcp2">valeurs inchangées</font>, la saisie reprendra <font class="hcp2">par défaut</font> sur la donnée courante&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> <font class="hcp2">En séquence dans l'algorithme</font>, suite à un point d'arrêt Avant ou Après.<font face="Symbol" class="hcp7"><br>
+-</font> <font class="hcp2">Au niveau de l'input</font>, suite à l'abandon de la saisie, à un piège de touche, à un point d'arrêt généré par un bouton, un menu, un tableau ou un clic souris.<font face="Symbol" class="hcp7"><br>
+-</font> Au <font class="hcp2">début de l'algorithme</font> dans les autres cas (validation, point d'arrêt généré par un onglet, etc.).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Body-Text">Dans l'exemple qui suit, nous traiterons cinq cas de sortie du masque :</p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Abandon de la saisie par la touche Echap</font>.<br>
+Après la frappe de Echap, on demande confirmation. Si l'utilisateur confirme l'abandon, on quitte définitivement le masque. Sinon, on revient à l'input de la donnée qui était en cours de saisie au moment de la frappe (ce dernier cas ne nécessite pas la modification du paramètre Harmony.Retour).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Point d'arrêt après saisie</font>.<br>
+Un point d'arrêt "Après", placé sur la donnée "Code client", provoque le retour au programme après la saisie de ce code. Le point d'arrêt servira ici à vérifier l'existence du code client dans le fichier clients. En cas d'absence, le programme revient à l'input du code (ce cas nécessite le positionnement de Harmony.Retour à la valeur 3 = XMENEXT_RESSAISIE).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Piège de touche</font>.<br>
+La frappe de la touche piégée F1 provoque aussi le retour au programme appelant. Ce piège permettra ici d'afficher un piano (fenêtre rappelant succinctement la signification des touches de fonction). La touche tapée par l'utilisateur dans la fenêtre piano est renvoyée à Ywpf lors du retour au masque (ce cas nécessite de positionner Harmony.Retour à la valeur 11 = XMENEXT_SIMULATION_TOUCHE et Harmony.CplRetour à la valeur de la donnée <a href="YMEG2.chm::/Ymeg2/System_Statin.htm">Harmony.Key</a> <font face="Symbol" class="hcp7">-</font>code de retour de l'input clavier<font face="Symbol" class="hcp7">-</font>&#160;(voir aussi la rubrique <a href="Exemple3dereprisedesaisie__XMENEXT_SIMULATION_TOUCHE.htm">Exemple 3 de reprise de saisie&#160;: XMENEXT_SIMULATION_TOUCHE</a>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Frappe de Flèche en haut ou Back-Tab sur la première donnée du masque</font>.<br>
+Ce cas, rappelons-le, interrompt la saisie. Il ne nécessite aucun traitement particulier pour la grande majorité des masques. Le plus souvent, on demandera en effet le retour à la saisie pour interdire ce type de sortie (ce cas ne nécessite pas la modification de Harmony.Retour).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Validation de la saisie</font>.<br>
+Après la frappe de Entrée (ou de Tab ou Flèche en bas sur la dernière donnée du masque).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Source">;Schéma de reprise de la saisie d'un masque</p>
+<p class="Source">...</p>
+<p class="Source">fini = 0</p>
+<p class="Source">XmeInput ("MASQUE",1,0,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lance la saisie (page 1)</p>
+<p class="Source">DO</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tests des causes&#160;</p>
+<p class="Source">&#160;&#160;&#160;SWITCH Harmony.Arret &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;de l'interruption</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.Key = K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;abandon&#160;:</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;IF MessageBox ("Confirmez-vous l'abandon ?","Message", \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MB_YESNO) = IDYES</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;fini = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fin si confirmation</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ENDIF &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;retour à l'input sinon</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(Retour=0 par défaut)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE 100 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;point d'arrêt "Après"&#160;:</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;IF HSEEK (...) &lt;&gt; 0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;recherche du code client</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MessageBox ("Client inexistant", "Exemple", MB_OK)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMENEXT_RESSAISIE &#160;;retour input si absent</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ENDIF&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;etc.&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;après les points d'arrêt&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.Key in (K_UP, K_BTAB) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;cas de la touche Flèche</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;en haut ou Back-Tab tapée sur</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;la 1ère donnée du masque&#160;:</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;on ne fait rien =&gt;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;retour à la saisie</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(Retour=0 par défaut)</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.Key in (K_RETURN, K_TAB, K_DOWN) ;validation ou sortie</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;fini = 2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;par Tab ou Flèche bas</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;sur la dernière donnée</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">&#160;</p>
+<p class="Source">WHILE fini = 0</p>
+<p class="Source">&#160;&#160;&#160;XmeNext (Harmony.Retour, Harmony.CplRetour) &#160;;suite saisie</p>
+<p class="Source">WEND</p>
+<p class="Source">...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque&#160;:</font></p>
+<p class="Body-Text">Vous remarquerez dans l'exemple qu'une seule instruction XmeNext a été programmée (et non autant de XmeNext que de cas de retour à la saisie). En effet, pour simplifier la procédure de saisie, on écrira généralement&#160;:<font class="hcp3"><br>
+XmeNext (Harmony.Retour, Harmony.CplRetour)</font><br>
+après avoir chargé Harmony.Retour (et dans certains cas Harmony.CplRetour) si une reprise de saisie particulière est nécessaire. Ces variables sont initialisées à 0 par Ywpf avant que la main soit rendue à votre programme après la saisie&#160;; leur chargement n'est donc pas requis en cas de retour "&#160;normal&#160;" à la saisie du masque.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeInput.htm">XmeInput</a></p>
+<p class="Body-Text"><a href="XmeGetSequence.htm">XmeGetSequence</a></p>
+<p class="Body-Text"><a href="Programmationdelasaisied_unmasque.htm">Programmation de la saisie d'un masque</a></p>
+<p class="Body-Text"><a href="Appel_d_un_menu_surgissant_en_regard_de_la_donn_e_en_cours_de_saisie.htm">Appel d'un menu surgissant en regard de la donnée en cours de saisie</a></p>
+<p class="Body-Text"><a href="Appel_d_un__Zoom__ou_de_la_fen&ecirc;tre__Combo_zoom_.htm">Appel d'un Zoom ou Consultation de la Liste des fiches d'une table</a></p>
+<p class="Body-Text"><a href="Appel_personnalis&eacute;_d_un_Zoom_par_la_touche_Ctrl+F.htm">Appel personnalisé d'un Zoom par la touche Ctrl+F</a></p>
+<p class="Body-Text"><a href="Les_grilles_et_les_panels_pages.htm">Grilles et pages panels</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

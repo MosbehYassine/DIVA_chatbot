@@ -1,0 +1,93 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Configuration du site Web</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:12pt;
+font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { text-decoration:underline; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Configuration du site Web</h3>
+&#160;
+<p class="Body-Text"><font size="4" class="hcp1">Paramètres IIS</font></p>
+<p class="Body-Text">Il est possible de paramétrer un site Web IIS par l’intermédiaire du fichier Web.Config situé au même niveau que la page aspx. Deux paramètres particuliers de Web.Config&#160;(au format Xml) :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp2">CustomErrors</font><br>
+Ce paramètre permet de configurer la gestion des erreurs. Il est possible de spécifier une page à envoyer au client pour chaque type d’erreur (pour plus de précisions, voir les commentaires qui se trouvent dans le fichier).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp2">SessionState / Timeout</font><br>
+Ce paramètre permet de préciser le délai au terme duquel une session inactive est stoppée. Lorsque le serveur arrête une session, le programme Diva est automatiquement interrompu.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp2">SessionState / cookieless</font></p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 42.55pt;">Ce paramètre indique que le numéro de session géré par IIS est soit transféré sous forme de cookie, soit transféré dans les paramètres de l’URL. La valeur par défaut est false&#160;; attention, dans ce cas, rien ne fonctionne si le navigateur n’accepte pas les cookies. Voir <a href="Tester_si_le_navigateur_accepte_les_cookies.htm">Tester si le navigateur accepte les cookies</a> .</p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text">Vous trouverez la description détaillée des paramètres de configuration IIS à l’adresse suivante&#160;:</p>
+<p class="Body-Text"><font color="#0000FF" class="hcp3">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/cpgenref/html/gngrfASPNETConfigurationSectionSchema.asp</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font size="4" class="hcp1">Paramètres Harmony</font></p>
+<p class="Body-Text">Le chapitre [Internet] de Divalto.ini peut contenir les paramètres suivants&#160;:</p>
+<ul>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp2">XwebVisible=</font></p>
+</li>
+<li style="list-style: none; display: inline">
+<table style="margin-left: 42.55pt;" cellspacing="0" width="559">
+<col style="width: 7.314%;">
+<col style="width: 92.686%;">
+<tr class="hcp4">
+<td style="width:7.314%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">0</font></p>
+</td>
+<td style="width:92.686%;" class="hcp5">
+<p class="Body-Text">La fenêtre du programme Diva est cachée.<br>
+Le programme ne doit en aucun cas faire d’entrée clavier. Ses éventuels affichages sont «&#160;perdus&#160;».</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:7.314%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">1</font></p>
+</td>
+<td style="width:92.686%;" class="hcp5">
+<p class="Body-Text" style="margin-right: 8.75pt;">La fenêtre du programme Diva est ouverte en mode normal.<br>
+Si le programme effectue des affichages, ils seront visibles à l’écran. Ce paramètre peut être positionné en phase de mise au point, le programme pouvant alors interagir avec le bureau.<br>
+Attention&#160;: pour cela, il faut que le service <font class="hcp2">Divalto Agent Diva</font> soit <font class="hcp3">autorisé à interagir avec le bureau</font>.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp2">Nav_Debug=</font><br>
+Ce paramètre permet de spécifier le navigateur à utiliser pour le débogage depuis Xwin.<br>
+Par défaut, Xwin lance le navigateur déclaré par défaut sur votre ordinateur. Si vous désirez déboguer votre application avec un autre explorateur, spécifiez ici le chemin complet d’accès à ce dernier.<font class="hcp2"><br>
+<br>
+Remarque&#160;:</font> Xwin lance le navigateur en lui passant le nom de la page aspx en paramètre sur la ligne de commande, mais certains navigateurs n’acceptent pas ce paramètre. Si la page aspx ne s’affiche pas, indiquez l’URL de votre page aspx comme page de démarrage du navigateur.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 11.75pt;">&#160;</p>
+</body>
+</html>

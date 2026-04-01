@@ -1,0 +1,50 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Index</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Index</h3>
+<p class="Body-Text">Au moins un index doit être défini pour accéder à une table.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Type d’index SQL</p>
+<p class="Body-Text">Lorsque le driver ODBC est amené à choisir un index pour la lecture de la table, il ne prend en compte que les index de type «&#160;<font class="hcp1">Normal</font>&#160;», «&#160;<font class="hcp1">avec Identifiant</font>&#160;» et «&#160;<font class="hcp1">Multi-table</font>&#160;».</p>
+<p class="Body-Text">La lecture par un index de type «&#160;Multi-Table&#160;» <font class="hcp1">filtre</font> les lignes ne correspondant pas à la table sélectionnée.</p>
+<p class="Body-Text">En particulier, il n’utilisera pas les index de type «&#160;<font class="hcp1">Conditionnel</font>&#160;» qui ne délivrent pas toutes les lignes d’une table, ni les index de type «&#160;<font class="hcp1">Multi-description</font>&#160;» qui peuvent délivrer plusieurs fois la même ligne d’une table.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Vues</p>
+<p class="Body-Text">Lorsqu’un index est précisé au niveau de la vue, il est utilisé par le driver <font class="hcp1">quel que soit son type</font>.</p>
+<p class="footnote-text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Clé Primaire</p>
+<p class="Body-Text">La clé primaire correspond à un index qui identifie de manière unique chaque ligne d’une table. Une table ne peut comporter qu’<font class="hcp1">une seule clé primaire</font> (même s’il existe plusieurs clés uniques, dans ce cas il faudra choisir laquelle est la clé primaire).</p>
+<p class="Body-Text">Cette information est utilisée dans les cas suivants :</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">A l'exécution d'une requête, si l’optimiseur de la requête n’a pas trouvé d’index favorable, le driver lit le fichier par la clé primaire. Si elle n’existe pas il prend le premier index défini.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">En cas de création par une requête INSERT, le driver ODBC interdit la création de doublons sur la clé primaire.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">La compilation d'une requête UPDATE interdit de modifier les données de la clé primaire.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Certains clients ODBC utilisent cette information pour établir des liens entre les tables en recherchant une correspondance entre les noms de champs de la clé primaire d’une table et les autres tables de la requête. Les outils plus évolués interrogent le driver pour connaître les liens entre les tables.</p>
+</li>
+</ul>
+<p style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p><a href="Optimisation_des_acc_s.htm"><font class="hcp1">Optimisation des accès grâce aux index</font></a></p>
+</body>
+</html>

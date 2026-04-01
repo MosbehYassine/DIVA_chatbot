@@ -1,0 +1,29 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Affichage et exécution d'un traitement Diva simultanés</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Affichage et exécution d'un traitement Diva simultanés</h3>
+<p>L'exécution d'un programme Diva et les affichages effectués par ce programme sont réalisés par <span class="hcp1">deux processus différents</span> : XrtDiva.Exe côté serveur d'applications, Xwpf.exe (ou Xhtml5.dll en client léger Html) côté poste client. De manière générale, ces deux processus dialoguent entre eux de manière totalement <span class="hcp1">synchrone</span> : lorsque XrtDiva donne un ordre au client, il attend que ce dernier ait réalisé l'opération avant de reprendre son exécution. Par exemple, lorsque le programme Diva affiche un masque, il s'interrompt le temps que le client procède à l'affichage.</p>
+<p>&#160;</p>
+<p>Comme le temps d'affichage d'un masque d'écran n'est pas toujours négligeable, il peut être intéressant que le programme Diva puisse poursuivre son exécution <span class="hcp1">sans attendre</span> que le client ait effectivement terminé son traitement. Il en résulterait une amélioration des performances du fait que les deux processus <span class="hcp1">s'exécutent en parallèle</span> (et ce, même sur un poste client "lourd" disposant d'un processeur multi-coeur : les deux processus s'exécutent alors sur le même ordinateur mais dans deux unités de calcul distinctes).<br>
+&#160;</p>
+<p>Pour ce faire, utilisez l'instruction <a href="XmeFlushAsync.htm" style="font-weight: bold;">XmeFlushAsync</a>, qui force le rafraîchissement de l'écran (Cf. rubrique <a href="Affichages_de_masque_et_rafra&icirc;chissemnt_de_l_&eacute;cran.htm">Rafraîchissement de l'écran</a>) sans interrompre l'exécution du programme Diva (vous trouverez un exemple à la rubrique consacrée à cette instruction).</p>
+<p>&#160;</p>
+<p><span class="hcp1">Exemple :</span><br>
+<br>
+Pour fixer les idées, voyons le cas du programme Diva xZoom. Au chargement du Zoom, celui-ci exécute une requête SQL pour lire les informations destinées à garnir le tableau du mode liste. Si cette lecture s'effectue en parallèle avec l'affichage du masque du zoom, il en résultera une accélération du chargement initial (voir cet exemple à la rubrique consacrée à la fonction <a href="XmeListScreenCountAsync.htm">XmeListScreenCountAsync</a>).</p>
+</body>
+</html>

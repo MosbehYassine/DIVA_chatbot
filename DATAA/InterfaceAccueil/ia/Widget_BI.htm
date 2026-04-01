@@ -1,0 +1,33 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Widget BI</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:"Courier New"  , monospace; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Widget BI</h1>
+<p>&#160;</p>
+<p>Le widget BI est très simple : il ne demande que l'url du rapport à afficher.</p>
+<p>&#160;</p>
+<p>La fonction d'initialisation doit renvoyer le lien du rapport avec la balise &lt;URL&gt;.</p>
+<p>&#160;</p>
+<p>Par exemple, si l'adresse est renseignée dans les paramètres du widget, la fonction d'initialisation ressemble à :</p>
+<p>&#160;</p>
+<p class="hcp1">Function String InitBi (&amp;Widget)</p>
+<p class="hcp1">record a5dd.dhsd MWidget Widget</p>
+<p class="hcp1">beginf</p>
+<p class="hcp1">&#160;&#160;&#160;&#160;freturn "&lt;URL&gt;" &amp; left(Widget.MSG)</p>
+<p class="hcp1">endf</p>
+<p class="hcp1">&#160;</p>
+</body>
+</html>

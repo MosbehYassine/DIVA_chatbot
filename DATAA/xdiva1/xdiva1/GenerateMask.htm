@@ -1,0 +1,91 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>GenerateMask</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+p.hcp4 { font-style:italic; }
+td.hcp5 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp6 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>GenerateMask</h3>
+<p>&#160;</p>
+<p>Le fonction Diva <span class="hcp1">GenerateMask</span> <a href="G&eacute;n&eacute;ration_de_masque_par_programme.htm">génère un masque d’écran simple</a> par programme. Elle produit un fichier objet (.dhof) exécutable par le gestionnaire de masques Ywpf. Pour l'appeler, le programme doit déclarer le module <span class="hcp1">yMaskGenerator.dhop</span>.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Int</span> GenerateMask (<span class="hcp2">maskToGenerateFile</span>, <span class="hcp2">modelFile</span>, <span class="hcp2">idObjects</span>)</p>
+<p>&#160;</p>
+<p><span class="hcp1">Paramètres</span> :</p>
+<p>&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 18.148%;">
+<col style="width: 81.852%;">
+<tr class="hcp3">
+<td style="border: Solid 1px #000000;width: 18.148%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp4">maskToGenerateFile</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 81.852%; padding-right: 10px; padding-left: 10px;">
+<p>Nom du fichier masque à générer.<br>
+Les extensions dhof et dhsf sont valides.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:18.148%;" class="hcp5">
+<p class="hcp4">modelFile</p>
+</td>
+<td style="width:81.852%;" class="hcp6">
+<p>Nom du fichier source du masque modèle.<br>
+Préciser l’extension n’est pas nécessaire.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:18.148%;" class="hcp5">
+<p class="hcp4">idObjects</p>
+</td>
+<td style="width:81.852%;" class="hcp6">
+<p>Identifiant de la liste des objets à générer.<br>
+Cette liste est constituée d'enregistrements de type MaskGenObjDesc du dictionnaire ddsys.dhsd, chaque enregistrement décrivant un objet à ajouter.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp1">Retour</span> :</p>
+<p>La fonction retourne 0 en cas de succès.<br>
+Sinon, la fonction renvoie un code erreur explicité dans le fichier zMaskGenerator.dhsp.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Remarques</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p><span class="hcp1">Attention à ne pas éditer le fichier source du masque modèle ou du masque à générer dans Xwin</span> au moment de lancer le programme de génération. En effet, Xwin réserve les masques en cours d'édition, ce qui provoquera l'échec de la génération.</p>
+</li>
+<li class="p">
+<p>Le fichier source du masque généré est créé dans le répertoire du fichier source du masque modèle.</p>
+</li>
+<li class="p">
+<p>Le fichier objet du masque généré est créé dans le répertoire du fichier objet du masque modèle ou, à défaut, dans le répertoire du fichier source du masque modèle.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

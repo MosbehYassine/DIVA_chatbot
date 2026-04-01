@@ -1,0 +1,38 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Introduction aux fonctions EvFolder...</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:11.75pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Introduction aux fonctions EvFolder...</h3>
+<p>Les instructions EvFolder permettent de «&#160;surveiller&#160;» un répertoire et d’avertir le programme Diva en cas de création, suppression, changement de nom d’un fichier.</p>
+<p>Le répertoire à surveiller peut être local ou sur une autre machine via le réseau (sauf répertoire réseau d’une machine 95, 98 ou Millenium).</p>
+<p>Les instructions EvFolder utilisent le module ysystemex.dhop et la dll dhEventFolder.dll.</p>
+<p>La fonction <a href="EvFolderOpen.htm">EvFolderOpen</a> initialise la surveillance des répertoires.</p>
+<p>Puis la fonction <a href="EvFolderStart.htm">EvFolderStart</a> &#160;(ou <a href="EvFolderStartFilter.htm">EvFolderStartFilter</a>) permet de spécifier un répertoire à surveiller. Elle peut être appelée plusieurs fois pour surveiller plusieurs répertoires.</p>
+<p>Lorsqu’une modification (création, suppression, changement de nom) intervient dans un des répertoires surveillés, le programme est averti et appelle la fonction <a href="EvFolderGet.htm">EvFolderGet</a> qui lui indique quel est le répertoire qui a été modifié.</p>
+<p>Enfin, <a href="EvFolderClose.htm">EvFolderClose</a> ferme la surveillance des répertoires.</p>
+<p style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Voir</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p">
+<p class="hcp1">le sous-projet EvFolder du projet exemples.dhpt qui contient un exemple complet de surveillance de répertoire et de traitement des fichiers.</p>
+</li>
+<li style="font-size: 10pt;" class="p">
+<p class="hcp1">Les fonctions <a href="Introduction_fermeture_sesssion.htm">WinEndSession</a> qui permettent de ne pas être interrompu pendant le traitement d’un fichier par la fermeture de la sesssion Windows.</p>
+</li>
+</ul>
+</body>
+</html>

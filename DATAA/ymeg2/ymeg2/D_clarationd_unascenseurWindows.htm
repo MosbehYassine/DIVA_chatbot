@@ -1,0 +1,65 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Déclaration d'un ascenseur Windows</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Déclaration d'un ascenseur</h3>
+<p class="Body-Text">Un ascenseur Windows est défini par&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Une "fourchette" indiquant les limites de la liste</font>.<br>
+Il s'agit d'un couple de valeurs représentant le "début" et la "fin" de la liste. On prendra généralement la valeur <font class="hcp2">1</font> comme valeur de <font class="hcp2">début</font> et le <font class="hcp2">nombre total d'éléments</font> de la liste comme valeur de <font class="hcp2">fin</font> (mais ce n'est pas une obligation&#160;: l'important est que la différence entre les valeurs fin et début "représentent" bien le nombre d'éléments).<br>
+Dans notre exemple&#160;: <font class="hcp2">[1,23]</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Deux "pas" de déplacement</font>.<br>
+Le <font class="hcp2">premier pas</font> représente le <font class="hcp2">défilement</font> commandé par un clic souris sur l'une des <font class="hcp2">flèches</font> de l'ascenseur. La valeur la plus courante affectée à ce pas est la valeur <font class="hcp2">1</font>.<br>
+Le <font class="hcp2">second pas</font> représente le <span><font class="hcp2">défilement</font></span> commandé par un clic souris dans l'une des <font class="hcp2">zones de déplacement "page"</font>. La valeur la plus courante affectée à ce pas est égale au <font class="hcp2">nombre de lignes affichées par page</font> (<font class="hcp2">5</font> dans notre exemple). Elle ne devra pas dépasser le nombre total d'éléments.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Une valeur indiquant la position courante du curseur</font>.<br>
+Cette valeur doit appartenir à l'intervalle&#160;:<br>
+[<font class="hcp3">début</font>, <font class="hcp3">fin - taille de la page + 1</font>].<br>
+Dans notre exemple&#160;: <font class="hcp2">[1,19 (= 23-5+1)]</font>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Déclaration d'un ascenseur sous Harmony</font></p>
+<p class="Body-Text">Pour déclarer un ascenseur, utilisez l'enregistrement standard <font class="hcp2">ScrollBar32</font> du dictionnaire système DDSYS.dhsd.<br>
+Il contient la donnée de même nom, qui se <font class="hcp2">décompose en 5 données de type L</font>&#160;:</p>
+<p class="Source">1. ScrollBar32 20</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2. PositionMin &#160;&#160;&#160;&#160;L &#160;&#160;&#160;&#160;&#160;&#160;;valeur début</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2. PositionMax &#160;&#160;&#160;&#160;L &#160;&#160;&#160;&#160;&#160;&#160;;valeur fin</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2. LineStep &#160;&#160;&#160;&#160;&#160;&#160;&#160;L &#160;&#160;&#160;&#160;&#160;&#160;;pas &lt;=&gt; flèche</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2. PageStep &#160;&#160;&#160;&#160;&#160;&#160;&#160;L &#160;&#160;&#160;&#160;&#160;&#160;;pas &lt;=&gt; page</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2. CurrentPosition L &#160;&#160;&#160;&#160;&#160;&#160;;position courante</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Attention</font>&#160;: <span style="margin-left: 17.85pt; text-indent: -17.85pt;"><font class="hcp2">la valeur attribuée au pas de déplacement "page"</font> (sous-donnée PageStep) <font class="hcp2">ne doit pas dépasser le nombre total d'éléments</font> (sous-donnée PositionMax).</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font>&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous ne connaissez pas au départ le nombre total d'éléments ou si la liste est vide, initialisez les cinq valeurs à 1.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque le nombre total d'éléments ne dépasse pas le nombre d'éléments affichés par page, le curseur de l'ascenseur occupe toute la surface de ce dernier. Les déplacements sont alors impossibles.</p>
+</li>
+</ul>
+</body>
+</html>

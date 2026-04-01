@@ -1,0 +1,109 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeCalendarAddAssociateResource</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+p.hcp5 { font-style:italic; }
+td.hcp6 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp8 { text-decoration:underline; }
+span.hcp9 { font-weight:normal;
+font-style:normal;
+text-decoration:none; }
+font.hcp10 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeCalendarAddAssociateResource <span style="font-weight: normal;">&#160;</span><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_agendas.htm"><span class="hcp1">Famille</span></a> <span class="hcp1"><a href="Agendas.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p style="font-weight: bold;"><span class="hcp2">Association d'une ressource à un rendez-vous</span></p>
+<p>&#160;</p>
+<p><span class="hcp2">Long XmeCalendarAddAssociateResource</span> (<span class="hcp3">Identifiant</span>, <span class="hcp3">Rendez_vous</span>, <span class="hcp3">Nom</span>)</p>
+<p>&#160;</p>
+<p><span class="hcp2">Paramètres</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 12.445%;">
+<col style="width: 87.555%;">
+<tr class="hcp4">
+<td style="border: Solid 1px #000000;width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">Identifiant</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Enregistrement identifiant l'agenda rendu par la fonction XmeCalendarGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">Rendez_vous</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Identifiant du rendez-vous retourné par la fonction <a href="XmeCalendarNewAppointment.htm">XmeCalendarNewAppointment</a>.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:12.445%;" class="hcp6">
+<p class="hcp5">Nom</p>
+</td>
+<td style="width:87.555%;" class="hcp7">
+<p>Nom de la <a href="Ressources_d_un_agenda.htm">ressource</a> (32 caractères maximum), précédemment fourni à la fonction <a href="XmeCalendarNewResource.htm">XmeCalendarNewResource</a>.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp2">Valeur rendue par la fonction</span> :</p>
+<p>-1 : ticket invalide.</p>
+<p>Autre : Adresse de la ressource dans la <a href="Gestion_des_listes_associ&eacute;es_&agrave;_un_agenda.htm">liste des ressources</a> associées au rendez-vous.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Description de la fonction</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>La fonction XmeCalendarAddAssociateResource associe une ressource à un <a href="Rendez-vous_d_un_agenda.htm">rendez-vous</a>.</p>
+</li>
+<li class="p">
+<p>Les ressources d'un rendez-vous sont stockées dans une <a href="Gestion_des_listes_associ&eacute;es_&agrave;_un_agenda.htm">liste spécifique attachée au rendez-vous</a>. Vous trouverez son identifiant dans le champ <span class="hcp3">rv</span>.IdResource, où <span class="hcp3">rv</span> est l'instance de l'enregistrement ObjectAppointment concerné.</p>
+</li>
+<li class="p">
+<p>Pour un rendez-vous donné, le premier appel à XmeCalendarAddAssociateResource crée cette liste.</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Attention</span> : En cas de <span class="hcp8">suppression du rendez-vous</span>, vous <span class="hcp8">devez détruire la liste de ses ressources associées</span> en appelant la fonction ListDestroy (<span class="hcp3">rv</span>.IdResource).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp2">Exemple</span> :<br>
+&#160;</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;"><span class="hcp9">XmeCalendarNewResourceType (<font class="hcp10">Id</font><span class="hcp3">Cal</span>,4,"PARTICIPANT","Participant à une réunion",,,"BLEU")</span></p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResourceType (<font class="hcp10">Id</font><span class="hcp3">Cal</span>,5,"SALLE","Salle de réunion",FALSE,,"VERT")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">&#160;</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResource (<font class="hcp10">Id</font><span class="hcp3">Cal</span>,4,"NOM1","Pierre Dupont")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResource (<font class="hcp10">Id</font><span class="hcp3">Cal</span>,4,"NOM2","Paul Durand")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResource (<font class="hcp10">Id</font><span class="hcp3">Cal</span>,5,"SALLE1","Salle de réunion Un","IMAGE_SALLE1")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarNewResource (<font class="hcp10">Id</font><span class="hcp3">Cal</span>,5,"SALLE2","Salle de réunion Deux","IMAGE_SALLE2","ROUGE")</p>
+<p class="source">&#160;</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;"><span class="hcp3">IdRv</span> = XmeCalendarNewAppointment (<font class="hcp10">Id</font><span class="hcp3">Cal</span>,"Rendez-vous",DateDebut,DateFin)</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarAddAssociateResource &#160;(<font class="hcp10">Id</font><span class="hcp3">Cal</span>,<span class="hcp3">IdRv</span>,"NOM1")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;">XmeCalendarAddAssociateResource &#160;(<font class="hcp10">Id</font>Cal,IdRv,"NOM2")</p>
+<p class="Source" style="font-weight: normal; font-style: normal; text-decoration: none;"><span class="hcp9">XmeCalendarAddAssociateResource &#160;(<font class="hcp10">Id</font>Cal,IdRv,"SALLE2")</span></p>
+<p>&#160;</p>
+</body>
+</html>

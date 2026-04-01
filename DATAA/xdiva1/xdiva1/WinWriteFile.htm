@@ -1,0 +1,86 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinWriteFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinWriteFile &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinWriteFile écrit des données dans un fichier. L'écriture se fait à partir de la position courante indiquée par le pointeur du fichier. Après l'écriture, le pointeur est avancé du nombre d'octets écrits et la taille du fichier est mise à jour.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Long</font> <font class="hcp2">WinWriteFile</font> (<font class="hcp3">Ticket</font>, <font class="hcp3">Article</font>, <font class="hcp3">TailleEcrits</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Ticket</font></p>
+<p class="decalage05">Identifie le fichier. Le fichier doit être ouvert avec l'accès GENERIC_WRITE.</p>
+<p class="Body-Text"><font class="hcp3">Article</font></p>
+<p class="decalage05">Zone contenant les données à écrire dans le fichier. L'écriture se fait d'après la taille de cette zone.</p>
+<p class="Body-Text"><font class="hcp3">TailleEcrits</font></p>
+<p class="decalage05">Donnée de type L qui reçoit en retour de la fonction le nombre d'octets réellement écrits.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="474">
+<tr class="hcp4">
+<td style="width:20.93%;" class="hcp5">
+<p class="Body-Text">TRUE</p>
+</td>
+<td style="width:79.07%;" class="hcp5">
+<p class="Body-Text">Pas d'erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.93%;" class="hcp5">
+<p class="Body-Text">FALSE</p>
+</td>
+<td style="width:79.07%;" class="hcp5">
+<p class="Body-Text">Erreur. Appelez la fonction <a href="WinGetLastError.htm">WinGetLastError</a> pour connaître le détail de l'erreur.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Remarques</font></p>
+<p class="Body-Text">Si une partie du fichier est verrouillée par un autre processus et que l'écriture chevauche la zone verrouillée, la fonction sort en erreur.</p>
+<p class="Body-Text">Pour écrire dans un fichier texte, vous devez ajouter le séparateur d'enregistrement $0d0a à la fin des données à écrire.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Body-Text">Saisie et écriture d'enregistrements dans un fichier.</p>
+<p class="Source">fic = WinCreateFile("d:\Divalto\sys\stest",</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;GENERIC_READ + GENERIC_WRITE,&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FILE_SHARE_READ + FILE_SHARE_WRITE,&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0,&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;OPEN_EXISTING,&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FILE_ATTRIBUTE_NORMAL,0)&#160;</p>
+<p class="Source">do</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;input " " art&#160;</p>
+<p class="Source">while Harmony.Key &lt;&gt; K_ESCAPE</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = WinWriteFile(fic, left(art) &amp; $0d0a,nbecr)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;if st = FALSE&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;MessageBox ("Erreur " &amp; bindec(ldxl(WinGetLastError))," ")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;endif&#160;</p>
+<p class="Source">wend&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="WinCreateFile.htm">WinCreateFile</a>, <a href="WinFlushFileBuffers.htm">WinFlushFileBuffers</a>, <a href="WinSetEndOfFile.htm">WinSetEndOfFile</a>, <a href="WinSetFilePointer.htm">WinSetFilePointer</a>, <a href="WinGetLastError.htm">WinGetLastError</a></p>
+</body>
+</html>

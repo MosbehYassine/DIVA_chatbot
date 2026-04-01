@@ -1,0 +1,106 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Saisie d'un nom de traitement</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Saisie d'un nom de traitement</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Remarque préliminaire : les lignes de propriété affichant un nom de traitement disposent d'un menu contextuel (voir la rubrique <a href="Menus_contextuels_de_la_fen&ecirc;tre_Propri&eacute;t&eacute;s.htm">Menus contextuels de la fenêtre Propriétés</a>).<span style="margin-left: 23.65pt;"><br>
+Lorsque vous cliquez sur ce type de paramètre, vous passez en mode saisie normale et un bouton <img src="../image12.gif" style="border: none;" alt="" width="18" height="18" border="0"> apparaît.</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="margin-left: 23.65pt;"><span class="hcp1">a)</span> <span class="hcp1">Saisie manuelle du nom</span></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;"><span class="hcp1">Entrée d'un nom</span><br>
+L'<span class="hcp1">appel</span> au traitement est <span class="hcp1">simplement configuré</span> : aucune action n'est effectuée sur le code source des traitements.<br>
+Vous pouvez saisir le nom d'un traitement déjà codé ou déjà configuré par ailleurs.<br>
+La sélection d'un nom déjà existant est également possible par le choix <span class="hcp1">Sélectionner un traitement</span> du menu contextuel.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;"><span class="hcp1">Effacement du nom</span><br>
+L'<span class="hcp1">appel</span> au traitement est <span class="hcp1">simplement annulé</span> : aucune action n'est effectuée sur le code source des traitements.<br>
+Cette opération est également réalisée par le choix <span class="hcp1">Annuler l'appel au traitement</span> du menu contextuel.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 23.65pt;"><span class="hcp1">b)</span> <span class="hcp1">Clic sur le bouton zoom</span></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;"><span class="hcp1">Cas 1 : le nom du traitement n'est pas encore renseigné</span>.<br>
+Un nom est automatiquement <span class="hcp1">généré</span> ainsi que le squelette du code source correspondant. La fenêtre Mdi des traitements du masque est activée et le curseur est positionné sur le traitement créé (remarque : dans un masque de surcharge, la génération a lieu bien entendu dans le code de surcharge).<span class="hcp1"><br>
+<br>
+Remarque</span> : si le <span class="hcp1">même traitement existe déjà</span> dans le masque, un <span class="hcp1">nouveau</span> nom est généré avec un <span class="hcp1">nouveau code source</span>. Si vous souhaitez reprendre un traitement existant, il ne faut pas cliquer sur le bouton zoom mais utiliser le choix <span class="hcp1">Sélectionner un traitement</span> du menu contextuel (ou saisir son nom à la main).<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;"><span class="hcp1">Cas 2 : le nom du traitement est déjà renseigné mais le code source correspondant n'existe pas</span> (ni dans la base ni dans la surcharge).<br>
+Le squelette d'un traitement de ce nom est généré dans le code source des traitements. La fenêtre Mdi des traitements du masque est activée et le curseur est positionné sur le traitement créé (remarque : dans un masque de surcharge, la génération a lieu bien entendu dans le code de surcharge).<br>
+La génération du squelette du code est également réalisée par le choix <span class="hcp1">Générer le traitement</span> du menu contextuel.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;"><span class="hcp1">Cas 3 : le nom du traitement est déjà renseigné et le code source correspondant déjà créé</span> (dans la base et/ou la surcharge).<br>
+La fenêtre Mdi des traitements du masque est activée et le curseur est positionné sur ce traitement.<br>
+L'édition du code source du traitement est également possible par le choix <span class="hcp1">Editer le traitement</span> du menu contextuel.<span class="hcp1"><br>
+<br>
+Remarques concernant les masques de surcharge</span> :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;">Si le code du traitement de base ET du traitement de surcharge existent, c'est le traitement de surcharge qui est édité.<br>
+L'édition du traitement de surcharge est également possible par le choix <span class="hcp1">Editer le traitement de la surcharge</span> du menu contextuel.<br>
+Utilisez le choix <span class="hcp1">Editer le traitement de la base</span> du menu contextuel pour éditer le traitement de base.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;">Si le code du traitement de base existe mais pas celui du traitement de surcharge, le traitement de base est édité.<br>
+Utilisez le choix <span class="hcp1">Générer le traitement dans la surcharge</span> du menu contextuel pour générer un squelette du traitement de surcharge.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp1">Exemples</span> :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;">Vous insérez la donnée CodeArticle dans la page 1 du masque et vous voulez lui affecter un traitement "Après saisie" : cliquez dans la zone de saisie à droite de la ligne de propriété "Traitement après" (famille "Traitements") puis sur le <span class="hcp1">bouton zoom</span>. Xwin génère un nom pour ce traitement, génère le squelette du code source correspondant et passe directement en édition du code source nouvellement créé.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;">Vous insérez cette même donnée CodeArticle dans la page 2 du masque et vous voulez lui affecter un traitement "Après saisie" <span class="hcp3">différent</span> : opérez exactement de la même manière que précédemment.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;">Vous insérez à nouveau cette même donnée CodeArticle dans la page 3 du masque mais cette fois, vous voulez lui affecter un traitement "Après saisie" <span class="hcp3">identique</span> à l'un des traitements précédents : cliquez droit dans la zone de saisie à droite de la ligne de propriété "Traitement après", activez le choix <span class="hcp1">Sélectionner un traitement</span> du menu contextuel et sélectionnez le nom de traitement désiré.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;">Vous voulez créer un traitement de surcharge "Après saisie" pour la donnée CodeArticle : cliquez droit dans la zone de saisie à droite de la ligne de propriété "Traitement après" et activez le choix <span class="hcp1">Générer le traitement dans la surcharge</span> du menu contextuel.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;">Vous voulez consulter le traitement de base "Après saisie" de la donnée CodeArticle : cliquez droit dans la zone de saisie à droite de la ligne de propriété "Traitement après" et activez le choix <span class="hcp1">Editer le traitement de la base</span> du menu contextuel.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 23.65pt;">Vous voulez modifier le traitement de surcharge "Après saisie" de la donnée CodeArticle : cliquez droit dans la zone de saisie à droite de la ligne de propriété "Traitement après" et activez le choix <span class="hcp1">Editer le traitement de la surcharge</span> du menu contextuel OU cliquez gauche dans cette même zone puis cliquez sur le <span class="hcp1">bouton zoom</span>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="Traitements.htm">Traitements</a></p>
+<p class="Body-Text"><a href="Edition_des_traitements_du_masque.htm">Edition des traitements du masque</a></p>
+<p class="Body-Text"><a href="Codification_standard_des_noms_de_traitement.htm">Codification standard des noms de traitement</a></p>
+</body>
+</html>

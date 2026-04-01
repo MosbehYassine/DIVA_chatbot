@@ -1,0 +1,79 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Paramétrage du pool des tâches</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Paramétrage du pool des tâches</h3>
+<p>&#160;</p>
+<p>Dans le but d'optimiser les temps de chargement des programmes au moment où l'utilisateur y fait appel, il est possible de paramétrer le <a href="Pool_des_t&acirc;ches.htm">pool des tâches</a> sur les points suivants :</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Pré-ouverture de connexions à la base SQL</span>.<br>
+<br>
+Un programme d'application a besoin d'ouvrir une ou plusieurs connexions à la base SQL. Anticiper ces ouvertures au démarrage de la tâche qui va être mise en attente dans le pool peut améliorer les performances.<br>
+<br>
+Par défaut, cette fonctionnalité est désactivée. Pour la mettre en oeuvre, il faut saisir deux clés dans le chapitre System de la base de registre HKEY_LOCAL_MACHINE des serveurs d'applications (par xDivaltoMajIni.exe) :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">PoolNbSqlConnections</span> (string) : Nombre de connexions à ouvrir.</p>
+</li>
+<li class="p">
+<p><span class="hcp2">PoolSqlConnectionName</span> (string) : Nom de la connexion à utiliser (déclarée dans le fichier Connexions.xml de l’environnement courant).</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Pré-chargement de modules Diva</span>.<br>
+<br>
+Dans le même esprit, un programme d'application a souvent besoin de charger un ou plusieurs modules Diva. Anticiper ces chargements au démarrage de la tâche qui va être mise en attente dans le pool va améliorer les performances.<br>
+<br>
+Par défaut, cette fonctionnalité est désactivée. Pour la mettre en oeuvre, il faut créer le fichier xNopModules.txt et le mettre en ligne.<br>
+<br>
+<span class="hcp2">Format du fichier</span> (voir le fichier xNopModules-Modele.txt livré en exemple) :<br>
+<br>
+&lt;prefixes&gt;<br>
+p1<br>
+p2<br>
+...<br>
+&lt;/prefixes&gt;<br>
+<br>
+<br>
+&lt;modules&gt;<br>
+module1.dhop<br>
+module2.dhop<br>
+...<br>
+xxmod1.dhop<br>
+xxmod2.dhop<br>
+...<br>
+&lt;/modules&gt;<br>
+<br>
+Entre les balises &lt;prefixes&gt; et &lt;/prefixes&gt;, mentionnez une liste de préfixes (un préfixe par ligne).<br>
+<br>
+Entre les balises &lt;modules&gt; et &lt;/modules&gt;, mentionnez tous les modules Diva à charger (un nom de module par ligne).<br>
+Lorsque le nom commence par "xx", xx est successivement remplacé par chacun des préfixes de la liste des préfixes et chaque module obtenu est pré-chargé.<br>
+<br>
+<br>
+<span class="hcp2">Exemple</span> :<br>
+Si le fichier contient les lignes ci-dessus, les modules module1.dhop, module2.dhop, p1mod1, p2mod1, p1mod2 et , p2mod2 seront pré-chargés.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

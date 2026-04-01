@@ -1,0 +1,18 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage d'une unité V24">
+    <param name="Name" value="Paramétrage d'une unité V24">
+    <param name="Local" value="UnitesV24/Param_traged_uneunit_V24.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Voies V24 et imprimante parallèle">
+    <param name="Name" value="Voies V24 et imprimante parallèle">
+    <param name="Local" value="UnitesV24/VoiesV24etimprimanteparall_le.htm">
+  </object>
+</ul>
+</html>

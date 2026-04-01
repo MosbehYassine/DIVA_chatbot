@@ -1,0 +1,89 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Personnaliser le module de traitements</title>
+<link rel="StyleSheet" href="default.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-size:11pt;
+font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { text-decoration:underline; }
+p.hcp4 { font-size:11pt;
+font-weight:bold; }
+span.hcp5 { font-weight:bold; }
+p.hcp6 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Personnaliser le module de traitements</h3>
+<p>&#160;</p>
+<p><span class="hcp1">Remplacement de la chaîne de réservation par un Define Diva</span></p>
+<p>Dans le modèle de traitements, vous pouvez faire figurer la ligne :</p>
+<p>Define Xxxx = $res$</p>
+<ul class="hcp2">
+<li class="p">
+<p>Si ce Define n'est pas dans le modèle, la ligne de code Zoom.Res = &lt;chaîne à réserver&gt; est générée dans toutes les procédures concernées.</p>
+</li>
+<li class="p">
+<p>Si ce Define se trouve dans le modèle, <span class="hcp3">ces lignes ne sont plus générées</span>. Le générateur remplace simplement "$res$" par la chaîne à réserver. <span class="hcp3">Il faut alors que le modèle contienne la ligne Zoom.Res = Xxxx dans toutes les procédures concernées</span>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp4">Gestion des notes et des fichiers joints</p>
+<p>Le zoom généré gère les notes et/ou les fichiers joints à condition :</p>
+<ul class="hcp2">
+<li class="p">
+<p>D'avoir coché la case <span class="hcp5">Générer le zoom dans l'environnement ERP Divalto</span> dans la <a href="Param&eacute;trage_au_lancement_de_la_g&eacute;n&eacute;ration.htm">boîte de paramétrage affiché après le lancement du générateur</a>.</p>
+</li>
+<li class="p">
+<p>Que le <a href="Utiliser_un_mod&egrave;le_de_masque_ou_de_traitement.htm">modèle de traitements</a> le prévoit.</p>
+</li>
+<li class="p">
+<p>Que la table concernée contienne les champs <span class="hcp5">Note</span> et/ou <span class="hcp5">Joint</span>.</p>
+</li>
+</ul>
+<p>Dans les modèles, faites commencer par #NOTE (resp. #JOINT) les lignes de code spécifiques aux Notes (resp. aux &#160;Fichiers joints). Ainsi, ces lignes ne seront pas générées si la table n'est pas concernée.</p>
+&#160;
+<p>Exemple (Cf. modèles livrés en standard) :</p>
+<p>#NOTE XmeMenuEnableItem(Zoom.Idmenu,'NOTE',True)</p>
+<p>#JOINT XmeMenuEnableItem(Zoom.Idmenu,'JOINT',True)</p>
+<p>&#160;</p>
+&#160;
+<p><span class="hcp1">Généralisation à n'importe quel champ</span></p>
+<p>Ce principe peut être généralisé.</p>
+<p>Si vous faites commencer une ligne de code du modèle de traitements par #Xxxxx, cette ligne ne sera générée que si la table concernée contient un champ de nom Xxxxx.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp4">Lignes de code conditionnelles</p>
+<p>Dans le but d'utiliser le même modèle pour toutes les applications tout en générant des traitements spécifiques à chacune, il est possible de rendre conditionnelle la génération de certaines lignes de code du modèle. Pour ce faire :</p>
+<ul class="hcp2">
+<li class="p">
+<p>"Marquer" les lignes concernées en les faisant commencer par le caractère "&gt;" suivi d’un "mot clé".<br>
+Il est bien entendu possible d'utiliser plusieurs mots clés dans un même source, comme le montre l'exemple suivant (Cf. modèles livrés en standard) :<br>
+<br>
+&gt;COMMUN Include "A5TCZ000.dhsp"<br>
+&gt;DCPT Include "CCTCZ000.dhsp"<br>
+&gt;DAV Include "GTTCZ00.dhsp"<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Au niveau des <a href="Param&eacute;trage_au_niveau_du_projet.htm">paramètres du projet</a> (le projet étant généralement lié à une application), saisissez une liste de mots-clés (séparés par un point-virgule) dans la zone <span class="hcp5">Paramètres</span>. Parmi les lignes conditionnelles, ne seront générées que celles débutant par un mot-clé faisant partie de cette liste de paramètres.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp4">Clé d'accès auto-incrémentable</p>
+<p class="hcp6">Si vous désirez que la clé principale du zoom soit auto-incrémentable, positionnez la propriété "<span class="hcp5">Auto-incrémentable</span>" à <span class="hcp5">Oui</span> et renseignez la propriété "<span class="hcp5">Valeur initiale</span>" dans les <a href="Param&eacute;trage_au_niveau_des_index.htm">propriétés des index</a> du dictionnaire.</p>
+<p class="hcp6">&#160;</p>
+<p>&#160;</p>
+<p class="hcp4">Garnissage automatique d'une clé</p>
+<p class="hcp6">Pour qu'une clé soit automatiquement garnie, renseignez la propriété "<span class="hcp5">Garnissage</span>" dans les <a href="Param&eacute;trage_au_niveau_des_champs_des_index.htm">propriétés des champs d'index</a> du dictionnaire.</p>
+<p>&#160;</p>
+</body>
+</html>

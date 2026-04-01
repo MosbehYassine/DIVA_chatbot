@@ -1,0 +1,102 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Paramétrer les compilations (hors projet)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+li.hcp4 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Paramétrer les compilations</h3>
+<p class="Body-Text" style="font-weight: normal;">Si vous compilez vos sources dans le cadre d'un <span class="hcp1">projet</span> Xwin, le paramétrage des compilations s'effectue au niveau des propriétés des <a href="xwin-projet.chm::/xwinprojet/Profil.htm">profils</a>.</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span style="text-decoration: underline;">La suite de cette rubrique concerne uniquement les applications exécutées HORS cadre d'un projet de Xwin</span>.</p>
+<p class="Body-Text">Si vous désirez, par exemple, opter pour une compilation en mode "normal" ou une compilation en mode "débogueur", vous devez l'indiquer dans les paramètres de compilation.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Pour ouvrir la boîte de dialogue des paramètres et accéder aux options de compilation Diva&#160;:</font></p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Sélectionnez le choix <font class="hcp2">Options</font> du menu <font class="hcp2">Outils</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2"><span style="font-weight: normal;">Dans la liste des chapitres,</span> cliquez</font> sur <font class="hcp2">Compilation, exécution hors projet</font> pour afficher le volet présentant les options de compilation.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Les compilations Diva sont paramétrables sur les points suivants&#160;:</font></p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Mode de compilation</font> :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Le mode <font class="hcp2">"débogueur"</font> vous permet de bénéficier des fonctions du débogueur lorsque vous mettrez au point vos programmes.<br>
+Remarque : la fonction de couverture du code n'est disponible que dans le cadre d'un projet.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le mode <font class="hcp2">"normal"</font> vous permet de générer les codes objet utilisés en exploitation.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Nom du source de programme à compiler</font>.</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous laissez ce paramètre à <font class="hcp2">espace</font>, est <font class="hcp2">compilé</font> le <font class="hcp2">programme situé</font> dans la <font class="hcp2">fenêtre active</font> au moment où vous lancez la compilation. Cette solution est intéressante lorsque vous êtes amené à développer plusieurs programmes en même temps.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous <font class="hcp2">renseignez</font> ce paramètre, est <font class="hcp2">toujours compilé</font> le <font class="hcp2">programme</font> dont le <font class="hcp2">nom de source est indiqué ici</font>, et ce, quelque soit la fenêtre active au moment où vous lancez la compilation. Cette solution est très pratique lorsque vous développez un programme unique faisant référence à des fichiers "Include"&#160;: vous pouvez travailler dans une fenêtre contenant un fichier Include et lancer la compilation du programme principal sans quitter cette fenêtre.<br>
+Remarque&#160;: Ce paramètre <font class="hcp2">ne concerne pas les masques</font>&#160;; pour compiler un masque, il faut toujours que la fenêtre correspondante soit active au moment de lancer la compilation.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Options de compilation</font>.<br>
+Voir la rubrique "<span class="hcp1">Options du compilateur</span>" de la documentation de programmation de Xwin.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Dossier des fichiers objet</font>.</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous <font class="hcp2">renseignez</font> ce paramètre, les <font class="hcp2">fichiers objet</font> sont toujours <font class="hcp2">stockés</font> dans le dossier indiqué ici. Les fichiers objet qui n'existent pas encore dans ce dossier sont automatiquement créés, <font class="hcp2">sans demande de confirmation</font>.<br>
+Si le nom du source ne comporte pas d'extension, le <font class="hcp2">nom de l'objet</font> est <font class="hcp2">déduit</font> du <font class="hcp2">nom du source</font> en lui ôtant son premier caractère (exemple&#160;: STEST =&gt; TEST)&#160;; sinon, l'extension .dhsp est remplacée par .dhop (exemple&#160;: TEST.dhsp =&gt; TEST.dhop).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si vous laissez ce paramètre à <font class="hcp2">espace</font>, les fichiers objet ne sont pas automatiquement créés. Xwin ouvre une boîte de dialogue vous demandant de <font class="hcp2">choisir</font> le <font class="hcp2">dossier de stockage</font>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Procédures correspondantes (hors projet) :</p>
+<p class="Body-Text"><a href="Pourparam_trerlescompilations.htm">Pour paramétrer les compilations (hors projet)</a></p>
+<p class="Body-Text"><a href="Pourcompilervosprogrammesetmasquesenmodenormal.htm">Pour compiler vos programmes et masques en mode normal (hors projet)</a></p>
+<p class="Body-Text"><a href="Pourcompilervosprogrammesetmasquesenmoded_bogueur.htm">Pour compiler vos programmes et masques en mode débogueur (hors projet)</a></p>
+<p class="Body-Text"><a href="Poursp_cifierlenomduprogrammesource_compiler.htm">Pour spécifier le nom du programme source à compiler (hors projet)</a></p>
+<p class="Body-Text"><a href="Poursp_cifierlesoptionsducompilateurDiva.htm">Pour spécifier les options du compilateur Diva (hors projet)</a></p>
+<p class="Body-Text"><a href="Poursp_cifierledossierdestockagedesfichiersobjet.htm">Pour spécifier le dossier de stockage des fichiers objet (hors projet)</a></p>
+</body>
+</html>

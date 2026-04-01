@@ -1,0 +1,36 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Harmony.Key</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Harmony.Key</h3>
+<p class="Body-Text">Lorsqu’une touche du clavier (ou une touche combinée aux touches Maj et/ou Ctrl) est tapée, un code spécifique "Harmony" est stocké dans la variable <span class="hcp1">Harmony.Key</span> (*)&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">En <a href="Principedesentr_esclavier_inputs_.htm">Input</a>, <span class="hcp1">SI</span> la touche tapée termine la saisie de la donnée (Tab, Entrée, Echap, ...) <span class="hcp1">ET</span> si votre programme récupère la main, il peut identifier la touche concernée en testant la valeur de Harmony.Key. Ceci permet par exemple de détecter si l'utilisateur a abandonné ou validé la saisie du masque, s'il veut faire appel à un zoom, etc.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En <a href="Principedesentr_esclavier_inputs_.htm">consultation clavier</a>, toutes les touches (à quelques rares exceptions près) rendent la main au programme appelant en positionnant Harmony.Key. Testez cette variable pour identifier la touche tapée.</p>
+</li>
+</ul>
+<p class="Body-Text">Harmony.Key est une donnée de type X (mot binaire). Sa déclaration dans le programme Diva est implicite.</p>
+<p class="Body-Text">Vous trouverez la liste des valeurs que peut prendre Harmony.Key à la rubrique <a href="Codesderetourdesentr_esclavier_System_Statin_.htm">Codes de retour des entrées clavier (Harmony.Key)</a>.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">(*) Attention, il ne s’agit pas du code ANSI de la touche.</p>
+</body>
+</html>

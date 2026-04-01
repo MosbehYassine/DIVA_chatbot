@@ -1,0 +1,269 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListSetColumn</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-weight:bold;
+font-style:italic; }
+font.hcp7 { font-family:Symbol; }
+span.hcp8 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListSetColumn &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Modification des propriétés d'une colonne d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+XmeListSetColumn</font> (<font class="hcp3">Identifiant, Numéro de colonne, Informations</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 13.814%;">
+<col style="width: 86.186%;">
+<tr class="hcp4">
+<td style="width:13.814%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:86.186%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.814%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Numéro de colonne</font></p>
+</td>
+<td style="width:86.186%;" class="hcp5">
+<p class="Body-Text">Numéro de la colonne à modifier (0 pour modifier la colonne d'état).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.814%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Informations</font></p>
+</td>
+<td style="width:86.186%;" class="hcp5">
+<p class="Body-Text">Adresse de la zone structurée contenant les nouveaux attributs de la colonne (on utilisera l'enregistrement standard <font class="hcp2">ColumnInfo</font> du dictionnaire système DDSYS.dhsd).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure <font class="hcp2">XmeListSetColumn</font> permet de modifier certaines propriétés d'une colonne de tableau. La colonne est identifiée par son <font class="hcp6">Numéro de colonne</font>, le tableau par son <font class="hcp6">Identifiant</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les nouveaux attributs doivent être placés dans la zone <font class="hcp6">Informations</font>&#160;; cette zone doit respecter la structure de l'enregistrement standard <font class="hcp2">ColumnInfo</font> du dictionnaire système DDSYS.dhsd. Tous les champs modifiables de la structure sont significatifs&#160;: en conséquence, <font class="hcp2">il est conseillé</font> d'exécuter la procédure <a href="XmeListGetColumn.htm">XmeListGetColumn</a> (pour lire les attributs actuels de la colonne et ainsi initialiser la structure avec les attributs que l'on ne désire pas changer) avant de modifier les attributs voulus (et uniquement ceux-ci) puis d'appeler XmeListSetColumn.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le paramètre <font class="hcp3">Numéro de colonne</font> est le <font class="hcp2">numéro d'ordre</font> de la colonne dans le tableau, <font class="hcp2">l'ordre à considérer étant celui défini dans Xwin</font>. Les numéros sont calculés à la compilation du masque&#160;: ils n'évoluent pas en exploitation, même si l'utilisateur intervertit des colonnes.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: bold;">Attention&#160;: XmeListSetColumn NE peut être appelée QUE si la page de masque contenant le tableau est la page courante (ou une de ses pages panels)<span style="font-weight: normal;">. De plus, les <font style="font-weight: normal;">nouveaux attributs ne sont pas sauvegardés</font> et sont perdus dès que la page est recréée (le tableau est alors redessiné avec les attributs définis dans Xwin et il faudra réexécuter XmeListSetColumn pour retrouver les attributs modifiés).</span></p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les champs modifiables de ColumnInfo sont les suivants :</p>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 11.443%;">
+<col style="width: 88.557%;">
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Libelle</font></p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Texte du titre de la colonne (256 caractères).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Bulle</font></p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Texte d'une bulle à attacher à la colonne (256 caractères).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Bitmap1</font> (1)</p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Nom dans le feuille de styles d'une image bitmap à dessiner devant le titre de la colonne (32 caractères).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Bitmap2</font> (1)</p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Nom dans le feuille de styles d'une image bitmap à dessiner derrière le titre de la colonne (32 caractères).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">CoulEntete</font> (2)</p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Nom dans le feuille de styles de la couleur de l'en-tête de la colonne (32 caractères).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">PolEntete</font> (2)</p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Nom dans le feuille de styles de la police de caractères à utiliser pour le titre de la colonne (32 caractères).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">CoulCol</font> (2)</p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Nom dans le feuille de styles de la couleur de fond de la colonne (32 caractères).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">CoulSelec</font></p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Indicateur sur la couleur de la colonne&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> TRUE si la colonne doit être affichée avec la couleur de sélection (cette couleur est prioritaire sur celle indiquée dans CoulCol et dépend du thème de couleurs choisi).<font face="Symbol" class="hcp7"><br>
+-</font> FALSE sinon.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text" style="font-weight: bold;">ImageFiltre</p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Affectez à ce champ la valeur TRUE pour afficher, dans l'en-tête, une image indiquant que la colonne fait l’objet d’un filtre.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text" style="font-weight: bold;">ImageTri</p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">Affectez à ce champ la valeur TRUE pour afficher, dans l'en-tête, une image indiquant que la colonne fait l’objet d’un tri.<br>
+Vous devez alors positionner deux informations complémentaires :</p>
+<p class="Body-Text"><span class="hcp8">ImageTriNumeroOrdre</span> : numéro d’ordre du tri (2 chiffres maximum).</p>
+<p class="Body-Text"><span class="hcp8">ImageTriSens</span> : 1 (sens ascendant) ou 2 (sens descendant).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.443%;" class="hcp5">
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp8">CodePageEntete</span></p>
+<p class="Body-Text" style="font-weight: bold;">CodePageBulle</p>
+</td>
+<td style="width:88.557%;" class="hcp5">
+<p class="Body-Text">XmeListSetColumn applique les codes page fournis ici respectivement à l'en-tête et à la bulle de la colonne.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp2">(1)</font> Pour effacer une image bitmap précédemment affichée, mettez son nom à espace.</p>
+<p class="Body-Text"><font class="hcp2">(2)</font> Pour rétablir l'attribut défini au niveau de Xwin, mettez son nom à espace.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Cas particulier de la colonne d'état</font></p>
+<p class="Body-Text">XmeListSetColumn peut être appelée pour modifier certains attributs de la <a href="Colonned__tatd_untableau.htm">colonne d'état</a>. Conventionnellement, il faut pour cela positionner le paramètre <font class="hcp3">Numéro de colonne</font> <font class="hcp2">à la valeur 0</font>.</p>
+<p class="Body-Text">Les champs modifiables de ColumnInfo sont alors les suivants&#160;:</p>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 10.619%;">
+<col style="width: 89.381%;">
+<tr class="hcp4">
+<td style="width:10.619%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Bulle</font></p>
+</td>
+<td style="width:89.381%;" class="hcp5">
+<p class="Body-Text">Texte d'une bulle à attacher au « bouton » d'en-tête de la colonne d'état (256 caractères).<span class="hcp8"><br>
+Remarque</span> : XmeListSetColumn change la bulle de l’<span class="hcp8">en-tête</span> mais <span class="hcp8">pas celle du reste de la colonne d'état</span> (le texte de la bulle affiché en dehors de l'en-tête reste celui saisi dans Xwin au niveau des propriétés globales de l'objet tableau).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:10.619%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Bitmap1</font></p>
+</td>
+<td style="width:89.381%;" class="hcp5">
+<p class="Body-Text">Nom dans le feuille de styles d'une image bitmap à dessiner dans l'en-tête de la colonne d'état (32 caractères).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:10.619%;" class="hcp5">
+<p class="Body-Text" style="font-weight: bold;">CodePageBulle</p>
+</td>
+<td style="width:89.381%;" class="hcp5">
+<p class="Body-Text">Code page de la bulle de la colonne.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">XmeListSetColumn est ici par exemple utilisée dans les zooms pour afficher une marque dans l'en-tête de la colonne d'état, dès que l'utilisateur a défini un filtre quelconque, et pour placer le texte du ou des filtres posés dans la bulle attachée à la colonne.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 1&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Colorer une colonne en rouge puis rétablir la couleur initiale</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ColumnInfo</p>
+<p class="Source">...</p>
+<p class="Source">XmeListGetColumn (Ident, Col, ColumnInfo) ;lecture attributs</p>
+<p class="Source">ColumnInfo.CoulCol = "ROUGE" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;couleur colonne ROUGE</p>
+<p class="Source">XmeListSetColumn (Ident, Col, ColumnInfo) ;modification attributs</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">XmeListGetColumn (Ident, Col, ColumnInfo) ;lecture attributs</p>
+<p class="Source">ColumnInfo.CoulCol = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;couleur colonne XWIN</p>
+<p class="Source">XmeListSetColumn (Ident, Col, ColumnInfo) ;modification attributs</p>
+<p class="Source">...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 2&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Signaler que la colonne fait l'objet d'un filtre</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ColumnInfo</p>
+<p class="Source">...</p>
+<p class="Source">XmeListGetColumn (Ident, Col, ColumnInfo) ;lecture attributs</p>
+<p class="Source">ColumnInfo.ImageFiltre = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;présence d'un filtre</p>
+<p class="Source">XmeListSetColumn (Ident, Col, ColumnInfo) ;modification attributs</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 3&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Signaler que la colonne fait l'objet d'un tri</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ColumnInfo</p>
+<p class="Source">...</p>
+<p class="Source">XmeListGetColumn (Ident, Col, ColumnInfo) ;lecture attributs</p>
+<p class="Source">ColumnInfo.ImageTri = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;présence d'un tri</p>
+<p class="Source" style="font-weight: normal;">ColumnInfo.ImageTriNumeroOrdre = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;;numéro d’ordre du tri<br>
+ColumnInfo.ImageTriSens = 2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;sens descendant</p>
+<p class="Source">XmeListSetColumn (Ident, Col, ColumnInfo) ;modification attributs</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 4&#160;:</font> Voir la rubrique <a href="Gestiondelalisteassoci_e_untableau.htm">Gestion de la liste associée à un tableau</a><span style="border-bottom: 1.50pt solid #000000;">.</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeListGetColumn.htm">XmeListGetColumn</a></p>
+</body>
+</html>

@@ -1,0 +1,215 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>&lt;Join&gt;</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:48px; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+p.hcp4 { font-weight:bold; }
+p.hcp5 { margin-left:8px;
+font-weight:bold; }
+p.hcp6 { margin-left:8px; }
+p.hcp7 { font-weight:normal; }
+span.hcp8 { font-weight:normal; }
+p.hcp9 { font-weight:normal;
+font-style:normal; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Join LeftJoin RightJoin FullJoin CrossJoin <span style="font-family: Arial, sans-serif;">&#160;&#160;</span><span 
+	 style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a 
+	 href="Liste_des_balises_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>Ces balises servent à définir les jointures vers d’autres tables. Elles 
+ correspondent aux différents types de jointure qui existent en SQL.</p>
+<p>On trouvera donc :</p>
+<p class="hcp1"><span class="hcp2">&lt;Join&gt;</span> 
+ pour le <span class="hcp3">inner join</span> de SQL,</p>
+<p class="hcp1"><span class="hcp2">&lt;LeftJoin&gt;</span> 
+ pour le <span class="hcp3">left join</span> de SQL,</p>
+<p class="hcp1"><span class="hcp2">&lt;RightJoin&gt;</span> 
+ pour le <span class="hcp3">right join</span> de SQL,</p>
+<p class="hcp1"><span class="hcp2">&lt;FullJoin&gt;</span> 
+ pour le <span class="hcp3">full join</span> de SQL,</p>
+<p class="hcp1"><span class="hcp2">&lt;CrossJoin&gt;</span> 
+ pour le <span class="hcp3">cross join</span> de SQL.</p>
+<p>&#160;</p>
+<p>De plus, il existe la balise <a href="Join01.htm">&lt;Join01&gt;</a>, 
+ avec exactement la même syntaxe qu’une balise &lt;Join&gt;, mais qui ne 
+ correspond pas à une jointure SQL.</p>
+<p>&#160;</p>
+<p class="hcp4">Syntaxe :</p>
+<p class="hcp4">&#160;</p>
+<p>&lt;<span class="hcp2">xxxJoin</span> [ <span class="hcp3">Database=&quot;value&quot;</span> 
+ ] &#160;[ <span class="hcp3">GlobalConf={ yes | no }</span> 
+ &#160;] &#160;[ <span class="hcp3">Name=&quot;value&quot;</span> 
+ ] [ <span class="hcp3">ColumnNames=&quot;values&quot;</span> 
+ ] [ <span class="hcp3">Dependencies=&quot;values&quot;</span> 
+ ] [ <span class="hcp3">NoActivate</span> ] [ <span class="hcp3">NoCheck</span> 
+ ] [<span class="hcp3">WithId</span>]&gt;</p>
+<p class="hcp1">[ DictionaryName ] table [ as uniqueAlias 
+ ]</p>
+<p class="hcp1">[Case variante]</p>
+<p class="hcp1">ON conditionDeJointure</p>
+<ul style="list-style: disc;">
+	<li class="p"><p>Name : Noms de la jointure, séparés par des points-virgules.</p></li>
+	<li class="p"><p>Dependencies : Noms des jointures dépendantes, séparés 
+	 par des points-virgules.</p></li>
+	<li class="p"><p>ColumnNames : Noms des champs pour faire le lien avec 
+	 les champs du Select, séparés par des points-virgules.</p></li>
+	<li class="p"><p>NoActivate : Indique que cette jointure sera désactivée 
+	 par défaut.</p></li>
+	<li class="p"><p>NoCheck : Demande que XRecordSQLCheck ne vérifie pas 
+	 que cette jointure utilise des colonnes correspondant à un index de 
+	 la table jointe.</p></li>
+	<li class="p"><p>WithId : Un champ table_Id est ajouté aux champs calculés 
+	 du RecordSql. Ce champ contient l'Id de la ligne jointe.</p></li>
+	<li class="p"><p>Case : permet de définir des variantes de la condition</p></li>
+</ul>
+<p>&#160;</p>
+<p>Une jointure contient :</p>
+<p class="hcp1">• Le nom de la table, sous la forme (voir 
+ la balise &lt;<a href="From.htm">From</a>&gt;) :</p>
+<p style="margin-left: 88px;">[DictionaryName] table [as uniqueAlias] &#160;&#160;(<a 
+	 href="From.htm">voir les remarques sur les alias</a>)</p>
+<p class="hcp1">• L’expression SQL de la jointure entre les 
+ tables. Cette expression commence par le mot-clé Sql ON.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp5">Exemple de jointure « simple 
+ » :</p>
+<p class="Source">&lt;LeftJOIN&gt;</p>
+<p class="Source">STC as STC</p>
+<p class="Source">ON STC.Dos = CLI.Dos And STC.TiCod = 'C' And STC.Tiers 
+ = CLI.Tiers</p>
+<p class="hcp6">&#160;</p>
+<p class="hcp5">Exemple de jointure conditionnelle 
+ :</p>
+<p class="hcp6">En fonction du paramétrage, jointure vers 
+ la table commune ou vers la table du dossier.</p>
+<p class="Source">&lt;LeftJOIN&gt;</p>
+<p class="Source">&#160;&#160;&#160;T001 as LibFamTarif</p>
+<p class="Source"><span style="margin-left: 88px;">&#160;&#160;&#160;ON 
+ LibFamTarif.CeBin = 1 AND LibFamTarif.TiCod = 'C' AND LibFamTarif.TaFam 
+ = CLI.TaFam</span></p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;AND LibFamTarif.Dos 
+ = CASE WHEN T000.TabTyp(1) = 2 THEN 999 ELSE MZ.Dos END</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="hcp4">Confidentialités</p>
+<p class="hcp7">Par défaut, si l'utilisateur ne dispose 
+ pas des droits pour accéder à une table liée, les champs de cette table 
+ liée sont mis à espace mais la ligne lue dans la table de base est tout 
+ de même délivrée.</p>
+<p class="hcp7">L'attribut GlobalConf= {yes|no} fait remonter 
+ au niveau principal le fait que l'utilisateur ne dispose pas des droits. 
+ <span class="hcp8">Autrement dit, si l'utilisateur n'a 
+ pas les droits pour lire une table liée marquée GlobalConf=yes, la ligne 
+ de la table principale est masquée pour cet utilisateur.</span></p>
+<p class="hcp7">&#160;</p>
+<p class="hcp4">Jointure dynamique</p>
+<p class="hcp7">Il peut être intéressant de désactiver 
+ momentanément une ou plusieurs jointures. <span class="hcp8">Pour 
+ cela, il faut les nommer et utiliser les instructions <a href="Join_Activate.htm">RecordSql.Join.Activate</a> 
+ et <a href="Join_Deactivate.htm">RecordSql.Join.Deactivate</a>.</span></p>
+<p class="hcp7">L'attribut Name=value permet de donner 
+ un ou plusieurs noms à une jointure. Les différents noms doivent être 
+ séparés par le caractère ; (point-virgule).</p>
+<p class="hcp7">Par défaut, toutes les jointures possèdent 
+ un nom qui correspond au nom de la table (ou de l'alias).</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp4">L'attribut &quot;ColumnNames&quot;</p>
+<p class="hcp7">Dans les champs du Select, il est possible 
+ d'associer un &quot;Name&quot; aux expressions. Ce &quot;Name&quot; correspond 
+ à un &quot;ColumnName&quot; de jointure. <span class="hcp8">Une 
+ jointure peut avoir plusieurs &quot;ColumnNames&quot; (noms séparés par 
+ un point-virgule).</span></p>
+<p class="hcp7">Ce lien est utilisé par le zoom pour désactiver 
+ les jointures qui deviennent inutiles lorsque des champs sont retirés 
+ du Select.</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp4"><span class="hcp2">L'attribut 
+ &quot;Dependencies&quot;</span></p>
+<p class="hcp7">Cet attribut permet de définir des dépendances 
+ entre les jointures. <span class="hcp8">Une jointure doit 
+ en effet déclarer les autres jointures qui doivent obligatoirement être 
+ activées si elle-même est active.</span></p>
+<p class="hcp7">Pour déclarer une dépendance, il convient 
+ de renseigner l'attribut &quot;Dependencies&quot; avec le nom de la table 
+ de jointure utilisée en dépendance. Si cette table possède un alias, c'est 
+ cet alias qu'il faut utiliser.</p>
+<p class="hcp7">Une jointure peut avoir plusieurs dépendances. 
+ Dans ce cas, il convient de séparer les différents noms par un point-virgule.</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp4">Champ Id</p>
+<p class="hcp9">Le compilateur génère 
+ un champ correspondant à l'identifiant de la ligne lue dans la table (version 
+ cible du profil supérieure ou égale à 7.5).</p>
+<p class="hcp9">Ce champ est visible 
+ en Diva, sous le nom alias_table_ID.</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp4">Variantes</p>
+<p class="hcp7">Il est possible pour une même jointure 
+ d'avoir plusieurs ON ou USING, chacun étant appelé une Variante.</p>
+<p class="hcp7">Le RecordSql doit être noactivate pour 
+ autoriser les variantes.</p>
+<p class="hcp7">La version cible du compilateur doit être 
+ supérieure à 2023-410a.</p>
+<p class="hcp7">Pour sélectionner une variante, il faut 
+ utiliser l'instruction Join.<span class="hcp2">ActivateCase</span>.qui 
+ active la jointure et sélectionne la variante désirée.</p>
+<p class="hcp7">Attention : si la jointure est activée 
+ par Join.Activate il faut impérativement sélectionner la variante, sinon 
+ il y aura une erreur lors de l'exécution de la requête.</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp7"><span class="hcp2">Exemple</span> 
+ :</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp7">&lt;Select&gt;</p>
+<p class="hcp1">ART.*</p>
+<p class="hcp1">ClientImportant.Nom</p>
+<p class="hcp1">COALESCE(Chemin1.Chemin, Chemin2.Chemin) 
+ as CheminConfigurateur (&gt;A5DD.dhsd Chemin) Name=&quot;chemin&quot;</p>
+<p class="hcp7">&lt;From&gt;</p>
+<p style="margin-left: 48px; font-weight: normal;">gtfdd.dhsd ART</p>
+<p class="hcp6">&lt;LeftJoin Name=&quot;Zoom&quot;&gt;</p>
+<p class="hcp1">gtfdd.dhsd STB as STB</p>
+<p class="hcp1">ON ...</p>
+<p class="hcp6">&lt;LeftJoin Name=&quot;Zoom&quot; Dependencies=&quot;STB&quot;&gt;</p>
+<p class="hcp1">gtfdd.dhsd CLI as ClientImportant</p>
+<p class="hcp1">ON STB.TIERS = ClientImportant.Tiers</p>
+<p class="hcp6">&lt;LeftJoin Name=&quot;Zoom&quot; ColumnNames=&quot;chemin&quot;&gt;</p>
+<p class="hcp1">A5DD.dhsd MCHEMIN as Chemin1</p>
+<p class="hcp1">ON ...</p>
+<p class="hcp6">&lt;LeftJoin Name=&quot;Zoom&quot; ColumnNames=&quot;chemin&quot;&gt;</p>
+<p class="hcp1">A5DD.dhsd MCHEMIN as Chemin2</p>
+<p class="hcp1">ON ...</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp7">Dans cet exemple, l'activation du champ 
+ &quot;ClientImportant.Nom&quot; va déclencher l'activation de la jointure 
+ &quot;CLI&quot;, qui elle-même va déclencher ses dépendances, à savoir 
+ &quot;STB&quot;.</p>
+<p class="hcp7">L'activation du champ &quot;CheminConfigurateur&quot; 
+ va déclencher l'activation des jointures dont le Name=&quot;chemin&quot; 
+ est contenu dans la liste &quot;ColumnNames&quot;, à savoir &quot;Chemin1&quot; 
+ et &quot;Chemin2&quot;.</p>
+<p class="hcp7">&#160;</p>
+<p class="Source">&#160;</p>
+<p><span class="hcp2">Voir</span></p>
+<p class="hcp7"><a href="R&eacute;sum&eacute;_de_la_syntaxe.htm"><span class="hcp8">Résumé de la syntaxe</span></a></p>
+<p class="hcp7"><a href="Liste_des_balises_RecordSql.htm" 
+									 style="font-weight: normal;">Liste 
+ des balises RecordSql</a></p>
+<p class="hcp7"><a href="Join01.htm">Join01</a></p>
+<p>&#160;</p>
+</body>
+</html>

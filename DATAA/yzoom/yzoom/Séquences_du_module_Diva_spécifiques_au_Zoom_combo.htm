@@ -1,0 +1,105 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Séquences du module Diva spécifiques au Zoom liste</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp3 { font-weight:bold; }
+p.hcp4 { color:#0000ff; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Séquences du module Diva spécifiques au Zoom liste</h2>
+<p>&#160;</p>
+<p>Le Zoom liste n'appelle que quatre séquences de traitements qui peuvent être soit les <a href="ModuleDivaduZoom.htm">séquences habituelles du Zoom</a>, soit des séquences de substitution spécifiques :</p>
+<p>&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 12.468%;">
+<col style="width: 40.204%;">
+<col style="width: 47.328%;">
+<tr class="hcp1">
+<td style="width:12.468%;" class="hcp2">
+<p style="font-weight: bold;">Phase</p>
+</td>
+<td style="width:40.204%;" class="hcp2">
+<p><font class="hcp3">Commentaire</font></p>
+</td>
+<td style="width:47.328%;" class="hcp2">
+<p><font class="hcp3">Nom de la procédure</font></p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.468%;" class="hcp2">
+<p><font color="#0000FF">Initialisation</font></p>
+</td>
+<td style="width:40.204%;" class="hcp2">
+<p>Exécutée une seule fois à l'entrée dans le zoom liste.</p>
+</td>
+<td style="width:47.328%;" class="hcp2">
+<p><a href="ZoomComboDebut.htm">ZoomComboDebut</a><br>
+(ou, à défaut, <a href="ZoomDebut.htm">ZoomDebut</a>)</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.468%;" class="hcp2">
+<p class="hcp4">Fin</p>
+</td>
+<td style="width:40.204%;" class="hcp2">
+<p>Exécutée une seule fois à la sortie du zoom liste.</p>
+</td>
+<td style="width:47.328%;" class="hcp2">
+<p><a href="ZoomComboFinFin.htm">ZoomComboFin</a><br>
+(ou, à défaut, <a href="ZoomFin.htm">ZoomFin</a>)</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.468%;" class="hcp2">
+<p class="hcp4">Validation</p>
+</td>
+<td style="width:40.204%;" class="hcp2">
+<p>Exécutée après validation du zoom liste.<br>
+Attention, cette séquence n'est pas appelée si vous garnissez le paramètre Zoom.ZoomComboRetour dans ZoomComboDebut.</p>
+</td>
+<td style="width:47.328%;" class="hcp2">
+<p><a href="ZoomComboFin.htm">ZoomComboValidation</a><br>
+(ou, à défaut, <a href="ZoomValidation.htm">ZoomValidation</a>)</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:12.468%;" class="hcp2">
+<p><font color="#0000FF">Lecture</font></p>
+</td>
+<td style="width:40.204%;" class="hcp2">
+<p>Exécutée après la lecture d'un enregistrement.</p>
+</td>
+<td style="width:47.328%;" class="hcp2">
+<p><a href="ZoomComboApresRead.htm">ZoomComboApresRead</a><br>
+(ou, à défaut, <a href="ZoomApresRead.htm">ZoomApresRead</a>)</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">Remarques</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Le module de traitements Diva est commun au Zoom liste et au Zoom classique. Si vous avez besoin de connaître le type du zoom exécuté dans un traitement, consultez la rubrique "<a href="Param&egrave;tres_des_proc&eacute;dures_de_traitement_du_Zoom_combo.htm">Paramètres des procédures de traitement du Zoom liste</a>".</p>
+</li>
+<li class="p">
+<p>Les instructions exécutées par ces séquences et qui concernent les masques Xwin du Zoom classique sont purement et simplement ignorées (par exemple, les instructions accédant à l'objet tableau, au menu ou à la barre d'outils) : voir la rubrique "<a href="Fonctionnement_d_un_Zoom_combo.htm">Fonctionnement d'un Zoom liste</a>".</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

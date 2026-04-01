@@ -1,0 +1,82 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ErrorFatal</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+span.hcp4 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ErrorFatal &#160;<a href="Listedesfonctionsdegestiondeserreurs.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondeserreurs.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Cette intruction permet d'afficher la fenêtre des erreurs d'Harmony avec l'icone Stop. Le programme est ensuite interrompu.</p>
+<p class="Body-Text"><font class="hcp2">Le contenu de la fenêtre d'erreur est décrit dans :</font> <a href="Lafen_tred_erreurs.htm"><font class="hcp2">La fenêtre d'erreurs</font></a><font class="hcp2">.</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">ErrorFatale</font> (<font class="hcp3">code, [param], [texte] , [titre], [ErreurSysteme] ,[codecompl] , [lieu])</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Code</font></p>
+<p class="decalage05">Code d'erreur "application". Voir <a href="Lafen_tred_erreurs.htm">La fenêtre d'erreurs</a>.</p>
+<p class="Body-Text"><font class="hcp3">Param</font></p>
+<p class="decalage05">Donnée alphanumérique (espace par défaut) qui est incorporée au texte du message (par exemple un nom de fichier).</p>
+<p class="decalage05">Ce champ n'a de sens que si un code d'erreur est interprété et que le code interprété possède un paramètre. Pour savoir si un code d'erreur contient un paramètre, utilisez le choix "Code erreur" du programme Xtools.dhop : le texte affiché contient la chaîne XXXXX en lieu et place du paramètre.</p>
+<p class="Body-Text"><font class="hcp3">Texte</font></p>
+<p class="decalage05">Si ce paramètre est à espace (valeur par défaut), un code d'erreur (<font class="hcp3">Code</font> ou <span class="hcp4">ErreurSysteme</span>) est automatiquement interprété pour donner le texte affiché.</p>
+<p class="decalage05">Ce texte est affiché dans la fenêtre des erreurs. S'il contient la chaîne %s, cette chaîne est remplacée par l'interprétation d'un code d'erreur.</p>
+<p class="decalage05">Le caractère | permet de forcer le passage à la ligne suivante.</p>
+<p class="Body-Text"><font class="hcp3">Titre</font></p>
+<p class="decalage05">Texte affiché dans la barre de titre de la fenêtre d'erreur (espace par défaut). Si <font class="hcp3">Titre</font> est à espace, on affiche "Erreur".</p>
+<p class="Body-Text"><span class="hcp4">ErreurSysteme</span></p>
+<p class="decalage05">Code d'erreur système (0 par défaut).</p>
+<p class="Body-Text"><font class="hcp3">Codecompl</font></p>
+<p class="decalage05">Code d'erreur complémentaire (0 par défaut).</p>
+<p class="decalage05">Si <font class="hcp3">Codecompl</font> vaut –1, la valeur de errno (GetLastError) est affichée.</p>
+<p class="decalage05">Cette valeur peut être lue par la fonction GetErrno.</p>
+<p class="Body-Text"><font class="hcp3">Lieu</font></p>
+<p class="decalage05">Lieu de l'erreur (0 par défaut).</p>
+<p class="decalage05">-1 permet d'afficher le lieu interne de la dernière fonction Harmony appelée.</p>
+<p class="decalage05">Cette valeur peut être lue par la fonction ErrorCmpl.</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font></p>
+<p class="Body-Text">L'instruction <a href="Ferror.htm">Ferror</a> permet d'appeler plus simplement la fenêtre d'erreur pour les fichiers.</p>
+<p class="Body-Text">L'instruction <a href="ErrorWarning.htm">ErrorWarning</a> affiche la même fenêtre sans interrompre l'exécution du programme.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 1</font></p>
+<p class="Source">tdf.name = &#160;"Fprinters"</p>
+<p class="Source">st = fopen(tdf,"R") ; ouverture en mode réservé</p>
+<p class="Source">if st &lt;&gt; 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ErrorFatal(st,tdf.name,Codecompl=-1,lieu=-1)&#160;</p>
+<p class="Source">endif</p>
+<p class="Source">Si le fichier est en lecture seule, le message affiché est :</p>
+<p class="Source">Erreur système (open) à l'ouverture du fichier /Divalto/sys/Fprinters</p>
+<p class="Source">Erreur = 2102 Code Complémentaire=10005</p>
+<p class="Body-Text"><font class="hcp2">Exemple 2</font></p>
+<p class="Source">tdf.name = &#160;"Fprinters"</p>
+<p class="Source">st = fopen(tdf,"R") ; ouverture en mode réservé</p>
+<p class="Source">if st &lt;&gt; 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ErrorFatal(st,tdf.name, \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"Erreur d'ouverture du fichier des modèles|%s", \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">Codecompl=-1,lieu=-1)&#160;</p>
+<p class="Source">endif</p>
+<p class="Source">Si le fichier est en lecture seule, le message affiché est :</p>
+<p class="Source">Erreur d'ouverture du fichier des modèles</p>
+<p class="Source">Erreur système (open) à l'ouverture du fichier /Divalto/sys/Fprinters</p>
+<p class="Source">Erreur = 2102 Code Complémentaire=10005</p>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Lafen_tred_erreurs.htm">La fenêtre d'erreurs</a>, <a href="ErrorWarning.htm">ErrorWarning</a>, <a href="ErrorGetText.htm">ErrorGetText</a>, <a href="Ferror.htm">Ferror</a>, <a href="ErrorCmpl.htm">ErrorCmpl</a>, <a href="GetErrno.htm">GetErrno</a>, <a href="ErrorGetLocation.htm">ErrorGetLocation</a></p>
+</body>
+</html>

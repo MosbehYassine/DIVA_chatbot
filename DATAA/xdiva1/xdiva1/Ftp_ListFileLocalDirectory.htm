@@ -1,0 +1,70 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Ftp_ListFileLocalDirectory</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+td.hcp2 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Ftp_ListFileLocalDirectory <a href="Liste_des_fonctions_Ftp___Sftp.htm">Famille</a> 
+ <a href="Fonctions_Ftp___Sftp.htm">Thème</a></h1>
+<p>&#160;</p>
+<p>Fonction qui permet de lister les fichiers d'un dossier local.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Module</span> &quot;yftp.dhop&quot;</p>
+<p><span class="hcp1">int Ftp_ListFileLocalDirectory </span><span 
+	 style="font-style: italic;">([localDirectory], patternLocalFile, &amp;pListe)</span></p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">LocalDirectory</p>
+<p class="decalage05">Directory sur le FTP</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>patternLocalFile</span></p>
+<p class="decalage05">Pattern des fichiers à télécharger (ex: *.xml)</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>pListe</span></p>
+<p class="decalage05">Liste de fichiers disponibles sur le FTP. L'appelant 
+ devra détruire la liste après utilisation.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Retour</p>
+<p class="decalage05" style="margin-left: 0px;">La fonction retourne un 
+ entier.</p>
+<table style="vertical-align: top;" cellspacing="0" width="66.667%">
+	<col style="width: 11.115%;">
+	<col style="width: 88.884%;">
+	<tr style="vertical-align: top;">
+		<td style="width:11.115%;" class="hcp2"><p>Status</p></td>
+		<td style="width:88.884%;" class="hcp2"><p>0 
+		 = OK &#160;&#160;1 = Erreur</p></td>
+	</tr>
+</table>
+<p class="decalage05" style="margin-left: 0px;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px;">Le détail est disponible 
+ est une structure FtpResult récupérable par Ftp_Get_LastFtpResult.</p>
+<p class="decalage05" style="margin-left: 0px;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Remarques</p>
+<ul style="list-style: disc;">
+	<li class="p-decalage05"><p class="decalage05" style="margin-left: 0px; 
+								 font-weight: normal;">De nombreux serveurs 
+	 Ftp / Sftp sont sous Unix ou Linux. Sur ces systèmes d'exploitation, 
+	 les noms de fichiers sont sensibles à la casse.<br>
+	Le paramètre RemoteFile doit donc avoir la casse exacte.</p></li>
+	<li class="p-decalage05"><p class="decalage05" style="margin-left: 0px; 
+								 font-weight: normal;">En fonction de la 
+	 configuration du serveur, il se peut que les caractères spéciaux et 
+	 accentués posent problème.</p></li>
+</ul>
+</body>
+</html>

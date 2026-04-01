@@ -1,0 +1,52 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Démarrage du serveur</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:normal; }
+p.hcp2 { font-weight:normal;
+font-style:italic; }
+p.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Démarrage du serveur XLAN</h1>
+<p class="hcp1">Pour lancer le module de contrôle d’accès aux bases (XLAN), utiliser l’une des deux commandes suivantes :</p>
+<p class="hcp2">XLAN/STRXLAN</p>
+<p class="hcp1">ou</p>
+<p class="hcp2">SBMJOB &#160;CMD(CALL PGM(XLAN/XLAN)) &#160;JOB(XLAN) &#160;JOBD(XLAN/XLAN) USER(*JOBD) &#160;RTGDTA(*JOBD) &#160;&#160;INLLIBL(*JOBD)</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp1">Le profil utilisateur qui lance XLAN doit disposer du droit *USE sur le profil XLAN.</p>
+<p class="hcp1">Si le profil U1 &#160;lance XLAN la commande sera :</p>
+<p class="hcp2">GRTOBJAUT OBJ(QSYS/XLAN) OBJTYPE(*USRPRF) USER(U1) AUT(*USE)</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">Un travail du nom de XLAN doit s’activer dans le sous-système QUSRWRK. Le profil en cours doit être XLAN. &#160;</p>
+<p class="hcp1">Chaque client DIVALTO qui se connecte lance un thread dans le travail XLAN. Ce sont ces threads qui se connectent aux différentes bases de DIVALTO, avec un profil utilisateur du nom de la base, via les travaux QSQSRVR. Ces derniers tournent dans le sous-système QSYSWRK.</p>
+<p>&#160;</p>
+<p style="font-weight: bold; font-size: 12pt;">Arrêt du serveur XLAN</p>
+<p class="hcp1">Pour arrêter le module de contrôle d’accès aux bases (XLAN), vous pouvez :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp1">utiliser l'action "Arrêter le serveur" de l'utilitaire xconsole.dhop</p>
+</li>
+<li class="p">
+<p class="hcp1">ou utiliser la commande XLAN/ENDXLAN</p>
+</li>
+<li class="p">
+<p class="hcp1">ou, par le System i Navigator, par le choix "Arrêt/Suppression" option "Arrêt contrôlé" du travail XLAN.</p>
+</li>
+</ul>
+<p class="hcp3">Attention :</p>
+<p class="hcp1">Cette opération est exceptionnelle. Il vaut mieux s'assurer que tous les utilisateurs sont déconnectés (voir les actions de l'utilitaire xconsole.dhop). L'arrêt "brutal" du service XLAN provoquera la déconnexion des utilisateurs ayant encore une session ouverte avec le serveur. Une perte des informations en cours d'écriture sur le serveur est probable.</p>
+<p class="hcp3">NB : <span style="font-weight: normal;">Après un arrêt de XLAN, il faut attendre 2 minutes avant de relancer XLAN.</span></p>
+<p>&#160;</p>
+</body>
+</html>

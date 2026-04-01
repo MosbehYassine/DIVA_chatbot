@@ -1,0 +1,228 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Aides utilisateur">
+    <param name="Name" value="Aides utilisateur">
+    <param name="Local" value="Miseenoeuvre/Aidesutilisateur.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Aperçus avant impression">
+    <param name="Name" value="XHARVIEW: aperçus avant impression">
+    <param name="Local" value="Miseenoeuvre/XHARVIEW__aper_usavantimpression.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Arbres">
+    <param name="Name" value="Arbres">
+    <param name="Local" value="Miseenoeuvre/Arbres.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Ascenseurs">
+    <param name="Name" value="Ascenseurs">
+    <param name="Local" value="Miseenoeuvre/Ascenseurs.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Barre des tâches de Windows">
+    <param name="Name" value="Harmony et la barre des tâches de Windows">
+    <param name="Local" value="Miseenoeuvre/Harmony_et_la_barre_des_t&acirc;ches_de_Windows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Boutons">
+    <param name="Name" value="Boutons">
+    <param name="Local" value="Miseenoeuvre/Boutons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Choix de l'environnement de travail">
+    <param name="Name" value="Choix de l'environnement de travail">
+    <param name="Local" value="Miseenoeuvre/Choix_de_l_environnement_de_travail.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Choix de la langue">
+    <param name="Name" value="Choix de la langue">
+    <param name="Local" value="Miseenoeuvre/Choix_de_la_langue.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Découvrez Harmony">
+    <param name="Name" value="Découvrez Harmony">
+    <param name="Local" value="Miseenoeuvre/D_couvrezHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Déplacements dans un masque d'écran">
+    <param name="Name" value="Déplacements dans un masque d'écran">
+    <param name="Local" value="Miseenoeuvre/D_placementsdansunmasqued__cran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="DIVA">
+    <param name="Name" value="DIVA: langage de programmation">
+    <param name="Local" value="Miseenoeuvre/DIVA__langagedeprogrammation.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="langage de programmation">
+      <param name="Name" value="DIVA: langage de programmation">
+      <param name="Local" value="Miseenoeuvre/DIVA__langagedeprogrammation.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Environnement Harmony">
+    <param name="Name" value="Choix de l'environnement de travail">
+    <param name="Local" value="Miseenoeuvre/Choix_de_l_environnement_de_travail.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Erreurs de saisie">
+    <param name="Name" value="Erreurs de saisie">
+    <param name="Local" value="Miseenoeuvre/Erreursdesaisie.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Harmony et la barre des tâches de Windows">
+    <param name="Name" value="Harmony et la barre des tâches de Windows">
+    <param name="Local" value="Miseenoeuvre/Harmony_et_la_barre_des_t&acirc;ches_de_Windows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="HMENU">
+    <param name="Name" value="HMENU: gestionnaire de menus">
+    <param name="Local" value="Miseenoeuvre/HMENU__gestionnairedemenus.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="gestionnaire de menus">
+      <param name="Name" value="HMENU: gestionnaire de menus">
+      <param name="Local" value="Miseenoeuvre/HMENU__gestionnairedemenus.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Icones Divalto dans la zone de notification">
+    <param name="Name" value="Icones Divalto dans la zone de notification">
+    <param name="Local" value="Miseenoeuvre/Icones_Divalto_dans_la_zone_de_notification.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Les buts visés par Harmony">
+    <param name="Name" value="Les buts visés par Harmony">
+    <param name="Local" value="Miseenoeuvre/Lesbutsvis_sparHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Les composants d'Harmony">
+    <param name="Name" value="Les composants d'Harmony">
+    <param name="Local" value="Miseenoeuvre/Lescomposantsd_Harmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menu Windows des fenêtres Harmony">
+    <param name="Name" value="Menu Windows des fenêtres Harmony">
+    <param name="Local" value="Miseenoeuvre/Menu_Windows_des_fen&ecirc;tres_Harmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Menus">
+    <param name="Name" value="Menus">
+    <param name="Local" value="Miseenoeuvre/Menus.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mise en oeuvre d'une application Harmony">
+    <param name="Name" value="Mise en oeuvre d'une application Harmony">
+    <param name="Local" value="Miseenoeuvre/Miseenoeuvred_uneapplicationHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Outils">
+    <param name="Name" value="Outils, règles et conventions">
+    <param name="Local" value="Miseenoeuvre/Outils_r_glesetconventions.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="règles et conventions">
+      <param name="Name" value="Outils, règles et conventions">
+      <param name="Local" value="Miseenoeuvre/Outils_r_glesetconventions.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Présentation d'Harmony">
+    <param name="Name" value="Présentation d'Harmony">
+    <param name="Local" value="Miseenoeuvre/Pr_sentationd_Harmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Question Programme">
+    <param name="Name" value="Question Programme">
+    <param name="Local" value="Miseenoeuvre/QuestionProgramme.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Redimensionnement des tableaux à l'écran">
+    <param name="Name" value="Redimensionnement des tableaux à l'écran">
+    <param name="Local" value="Miseenoeuvre/Redimensionnement_des_tableaux_&agrave;_l_&eacute;cran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie d'un champ">
+    <param name="Name" value="Saisie d'un champ">
+    <param name="Local" value="Miseenoeuvre/Saisied_unchamp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie d'un groupe de radio-boutons">
+    <param name="Name" value="Saisie d'un groupe de radio-boutons">
+    <param name="Local" value="Miseenoeuvre/Saisied_ungroupederadio_boutons.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie d'un multi-choix">
+    <param name="Name" value="Saisie d'un multi-choix">
+    <param name="Local" value="Miseenoeuvre/Saisied_unmulti_choix.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie d'un texte riche">
+    <param name="Name" value="Saisie d'un texte riche">
+    <param name="Local" value="Miseenoeuvre/Saisied_untexteriche.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie d'une case à cocher">
+    <param name="Name" value="Saisie d'une case à cocher">
+    <param name="Local" value="Miseenoeuvre/Saisied_unecase_cocher.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie des données">
+    <param name="Name" value="Saisie des données">
+    <param name="Local" value="Miseenoeuvre/Saisiedesdonn_es.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisies et déplacements à l'écran">
+    <param name="Name" value="Saisies et déplacements à l'écran">
+    <param name="Local" value="Miseenoeuvre/Saisiesetd_placements_l__cran.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Tableaux">
+    <param name="Name" value="Tableaux">
+    <param name="Local" value="Miseenoeuvre/Tableaux.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Validation ou abandon de la saisie d'un masque">
+    <param name="Name" value="Validation ou abandon de la saisie d'un masque">
+    <param name="Local" value="Miseenoeuvre/Validationouabandondelasaisied_unmasque.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="XWIN">
+    <param name="Name" value="XWIN: atelier de développement">
+    <param name="Local" value="Miseenoeuvre/XWIN__atelierded_veloppement.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="atelier de développement">
+      <param name="Name" value="XWIN: atelier de développement">
+      <param name="Local" value="Miseenoeuvre/XWIN__atelierded_veloppement.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="ZOOM">
+    <param name="Name" value="ZOOM: gestionnaire généralisé de fichiers">
+    <param name="Local" value="Miseenoeuvre/ZOOM__gestionnaireg_n_ralis_defichiers.htm">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="gestionnaire généralisé de fichiers">
+      <param name="Name" value="ZOOM: gestionnaire généralisé de fichiers">
+      <param name="Local" value="Miseenoeuvre/ZOOM__gestionnaireg_n_ralis_defichiers.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Zooms">
+    <param name="Name" value="Zooms">
+    <param name="Local" value="Miseenoeuvre/Zooms.htm">
+  </object>
+</ul>
+</html>

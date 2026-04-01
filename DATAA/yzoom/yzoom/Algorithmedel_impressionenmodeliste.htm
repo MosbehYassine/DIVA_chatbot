@@ -1,0 +1,94 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Algorithme de l'impression en mode liste</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Algorithme de l'impression en mode liste</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le zoom réalise les opérations suivantes lors d'une impression en mode liste&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Appel de la procédure <a href="ZoomInitListe.htm">ZoomInitListe</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si Zoom.Ok = 'N', abandon de l'impression.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Réservation de l'imprimante (début d'état).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si Zoom.Ok &lt;&gt; 'A', impression détaillée ou standard (si Zoom.NoBloc &lt;&gt; 0) et complète ou partielle (tout, du début, à la fin).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appel de la procédure <a href="ZoomDebutListe.htm">ZoomDebutListe</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chargement du masque d'impression (Zoom.MsqImp).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Initialisation des données Zoom.Date, Zoom.Heure et Zoom.NbFiches.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si impression standard, impression du bloc 1.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Boucle d'impression des lignes détails avec&#160;:</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Incrémentation du nombre de fiches (Zoom.NbFiches).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appel de la procédure <a href="ZoomAvantDetail.htm">ZoomAvantDetail</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si impression standard, Impression du bloc 2.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Sinon, impression détaillée du bloc Zoom.Nobloc.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appel de la procédure <a href="ZoomApresDetail.htm">ZoomApresDetail</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Test de l'interruption de la liste par l'opérateur (Echap).</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appel de la procédure <a href="ZoomAvantBlocFin.htm">ZoomAvantBlocFin</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Impression du bloc 4.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appel de la procédure <a href="ZoomApresBlocFin.htm">ZoomApresBlocFin</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Appel de la procédure <a href="ZoomFinListe.htm">ZoomFinListe</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Déchargement du masque (fonction 12 Ymig).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Libération de l'imprimante (fin d'état).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

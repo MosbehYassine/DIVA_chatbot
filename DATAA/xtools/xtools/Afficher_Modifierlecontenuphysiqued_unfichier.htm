@@ -1,0 +1,36 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Afficher / Modifier le contenu physique d'un fichier</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Afficher / Modifier le contenu physique d'un fichier</h4>
+<p class="Body-Text">Cette fonction est appelée par&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">La touche <font class="hcp1">Ctrl+C</font> sur le fichier à afficher.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le choix du menu &lt;<font class="hcp1">Fichier</font> <font style="font-family: Symbol; font-weight: bold;" face="Symbol">®</font> <font class="hcp1">Afficher / Modifier (fichier physique)</font>&gt;.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<br>
+Elle lit le fichier sans tenir compte de la structure Harmony des enregistrements, c'est à dire qu'elle lit le contenu du fichier tel qu'il est écrit sur le disque (en-tête Harmony excepté).<br>
+Xtools lit le fichier par paquets de <font class="hcp1">400 octets</font>. La modification du fichier est possible mais il faut faire attention à ne pas modifier les longueurs d'enregistrement.</p>
+<p class="Body-Text">Si le choix est appelé par le menu, Xtools demande le nom du fichier ainsi que le numéro d'octet à partir duquel il faut démarrer l'affichage. L'appel par la touche Ctrl+C provoque l'affichage à partir du début du fichier.</p>
+<p class="Body-Text">Le fichier est affiché en mode liste dans un tableau par tranches de 400 octets divisées en colonnes de 50 octets. La première colonne du tableau affiche le numéro d'octet correspondant au début des 400 octets. Les touches traitées sont les mêmes que pour le choix <a href="Afficher_Modifierlecontenud_unfichier.htm">Afficher / Modifier le contenu d'un fichier</a>.</p>
+</body>
+</html>

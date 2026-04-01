@@ -1,0 +1,77 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation d'un graphique</title>
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:Arial, sans-serif;
+font-size:10pt; }
+span.hcp2 { font-weight:bold;
+text-decoration:underline; }
+ul.hcp3 { list-style:disc; }
+span.hcp4 { font-family:Arial, sans-serif;
+font-size:10pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2 style="font-family: Arial, sans-serif; font-size: 16pt;">Programmation d'un graphique</h2>
+<p class="hcp1">Les fonctions de programmation des graphiques sont regroupées dans le module <span class="hcp2">yChart.dhop</span> qui devra être référencé par les programmes appelant. Ceux-ci devront aussi inclure le fichier <span class="hcp2">zChart.dhsp</span> qui contient les définitions des constantes utilisées par de nombreuses fonctions des graphiques.</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">module "yChart.dhop"</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">include "zChart.dhsp"</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">La structure logique d'un objet graphe est constituée par un enregistrement IdChart du dictionnaire de donnée ddsys.dhsd.</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">La structure de cet enregistrement est la suivante :</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px;">IdChart</p>
+<ul class="hcp3">
+<li class="p-Source">
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px;">IdOptions</p>
+</li>
+<li class="p-Source">
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px;">IdSeries</p>
+</li>
+<li class="p-Source">
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px;">IdDataPoints</p>
+</li>
+<li class="p-Source">
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px;">IdAxis</p>
+</li>
+<li class="p-Source">
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt; margin-left: 40px;">IdAnnotations</p>
+</li>
+</ul>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">Les champs de l'enregistrement contiennent les identifiants des listes associées au graphe. Ces listes sont initialisées par la fonction <a href="XmeChartGetId_.htm">XmeChartGetId</a>.</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">Les options du graphe sont affectées grâce à la fonction <a href="XmeChartSetOption_.htm">XmeChartSetOption</a>.</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">Les autres listes se manipulent avec les fonctions de liste usuelles.</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">Les éléments des différentes listes sont des chaînes hmp décrivant un point, une série, ou un axe. Ils sont à construire grâce aux fonctions du module yChart.dhop (voir la <a href="Liste_r&eacute;capitulative_des_fonctions_du_graphe.htm">Liste récapitulative des fonctions du graphe</a>).</p>
+<p class="Source" style="font-family: Arial, sans-serif; font-size: 10pt;">&#160;</p>
+<h5><span class="hcp4">Actions utilisateurs</span></h5>
+<span class="hcp4">Il est possible de traiter les clics de l'utilisateur sur un point ou sur une série d'un graphique.</span> <br><span class="hcp4">Pour cela, il faut traiter le point d'arrêt associé au graphe et qui est levé de manière systématique quand un événement survient sur ce graphe.</span> <br>&#160; <br><span class="hcp4">La donnée Harmony.ChartClic permet de distinguer le lieu du clic et peut prendre les valeurs :</span>
+<ul class="hcp3">
+<li class="kadov-p"><span class="hcp4">CHART_CLICK_SERIES : clic sur une série (soit clic sur la ligne ou dans la surface d'une série en ligne ou série surface, soit clic sur un point qui n'a pas d'identifiant de point).</span></li>
+<li class="kadov-p"><span class="hcp4">CHART_CLICK_POINT : clic dans un point. Pour que cette option soit utilisable, il faut que le point source de l'événement dispose d'un identifiant de point explicitement défini.</span></li>
+</ul>
+<span class="hcp4">Pour identifier le point et/ou la série à l'origine de l'événement, il faut scruter les données :</span>
+<ul class="hcp3">
+<li class="kadov-p"><span class="hcp4">harmony.ChartSeriesId : identifiant de la série (celui-ci est toujours remonté).</span></li>
+<li class="kadov-p"><span class="hcp4">harmony.Chart¨PointId : identifiant du point (celui-ci n'est remonté que si le clic est sur un point dont l'identifiant a été défini).</span></li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><span style="font-weight: bold;">Remarques</span> :</p>
+<ul class="hcp3">
+<li class="p">
+<p class="hcp1">L'ordre dans lequel sont ajoutées les séries à la liste des séries est important car c'est l'ordre dans lequel ces séries seront rendues à l'écran/l'impression et une mauvaise gestion de cet ordre pourra conduire à des séries partiellement ou totalement masquées par les séries suivantes.</p>
+</li>
+<li class="p">
+<p class="hcp1">Rien n'interdit d'écrire les chaînes hmp décrivant les éléments du graphe "à la main", cependant il est fortement recommandé d'utiliser les fonctions du module yChart.dhop qui offre une garantie quand à la validité des chaînes hmp produites.</p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+</body>
+</html>

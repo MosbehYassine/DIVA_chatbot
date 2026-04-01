@@ -1,0 +1,162 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DD_TABLE_xxxx</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+font.hcp4 { font-size:12pt;
+font-weight:bold; }
+table.hcp5 { margin-left:24.85pt; }
+tr.hcp6 { vertical-align:top; }
+td.hcp7 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DD_TABLE_xxxx &#160;<a href="Listedesinstructionsd_acc_saudictionnairedesdonn_es.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Acc_saudictionnairededonn_es.htm"><font class="hcp1">Thème</font></a></h3>
+<p><font class="hcp2">Long</font> <a href="DDInterface.htm"><font class="hcp2">DDInterface</font></a> (<font class="hcp3">Commande , &amp;ticket , [paramètres] , retour, [niveau]</font>)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font size="4" color="#FF0000" class="hcp4">DD_TABLEBEGIN</font></p>
+<p class="Body-Text"><font size="4" color="#FF0000" class="hcp4">DD_TABLEBEGIN_DD</font></p>
+<p class="decalage05" style="margin-left: 28.35pt;">La commande DD_TABLEBEGIN permet de se positionner sur la première table du fichier en cours. Il faut donc avoir préalablement lu un fichier par une commande <a href="DD_FILE_xxxx.htm">DD_FILE_xxxx</a>.</p>
+<p class="decalage05" style="margin-left: 28.35pt;">La commande DD_TABLEBEGIN_DD permet de se positionner sur la première table du dictionnaire.</p>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp3">Retour</font> contient les caractéristiques de la table. Voir <a href="DDInterface_Tables.htm">DDInterface : Tables</a> .</p>
+<p class="decalage05" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="435" class="hcp5">
+<tr class="hcp6">
+<td style="width:23.88%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">0</p>
+</td>
+<td style="width:76.12%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">pas d’erreur.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:23.88%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">2</p>
+</td>
+<td style="width:76.12%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">Pas de table dans le fichier (dictionnaire).</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:23.88%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">autre</p>
+</td>
+<td style="width:76.12%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">Erreur. Voir <a href="DD_GETERROR.htm">DD_GETERROR</a></p>
+</td>
+</tr>
+</table>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;ticket&#160;L&#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;reponse&#160;8096 &#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;sttable X</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">sttable = DDInterface(DD_TABLEBEGIN,ticket,,reponse)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font size="4" color="#FF0000" class="hcp4">DD_TABLEFIND</font></p>
+<p class="Body-Text"><font size="4" color="#FF0000" class="hcp4">DD_TABLEFIND_DD</font></p>
+<p class="decalage05" style="margin-left: 28.35pt;">La commande DD_TABLEFIND permet de rechercher une table appartenant au fichier en cours. Il faut donc avoir préalablement lu un fichier par une commande <a href="DD_FILE_xxxx.htm">DD_FILE_xxxx</a>.</p>
+<p class="decalage05" style="margin-left: 28.35pt;">La commande DD_TABLEFIND_DD permet de rechercher une table dans le dictionnaire tout entier. Cela permet par exemple de rechercher une table mémoire.</p>
+<p class="decalage05" style="margin-left: 28.35pt;">&#160;</p>
+<p class="decalage05" style="margin-left: 28.35pt;"><font class="hcp3">Paramètres</font> doit contenir le nom de la table à chercher.</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp3">Retour</font> contient les caractéristiques de la table. Voir <a href="DDInterface_Tables.htm">DDInterface : Tables</a> .</p>
+<p class="decalage05" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="435" class="hcp5">
+<tr class="hcp6">
+<td style="width:23.88%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">0</p>
+</td>
+<td style="width:76.12%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">pas d’erreur.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:23.88%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">2</p>
+</td>
+<td style="width:76.12%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">Table non trouvée.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:23.88%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">autre</p>
+</td>
+<td style="width:76.12%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">Erreur. Voir <a href="DD_GETERROR.htm">DD_GETERROR</a></p>
+</td>
+</tr>
+</table>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;ticket&#160;L&#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;reponse&#160;8096 &#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;sttable X</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">sttable = DDInterface(DD_TABLEFIND,ticket,"article",reponse)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font size="4" color="#FF0000" class="hcp4">DD_TABLENEXT</font></p>
+<p class="Body-Text"><font size="4" color="#FF0000" class="hcp4">DD_TABLENEXT_DD</font></p>
+<p class="decalage05" style="margin-left: 28.35pt;">La commande DD_TABLENEXT permet de lire la table suivante appartenant au fichier en cours. Il faut donc avoir préalablement lu une table par DD_TABLEBEGIN ou DD_TABLEFIND. La commande DD_TABLENEXT_DD permet de lire la table suivante dans le dictionnaire tout entier. Cela permet par exemple de balayer les tables mémoire.</p>
+<p class="decalage05" style="margin-left: 28.35pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp3">Retour</font> contient les caractéristiques de la table. Voir <a href="DDInterface_Tables.htm">DDInterface : Tables</a> .</p>
+<p class="decalage05" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="435" class="hcp5">
+<tr class="hcp6">
+<td style="width:23.88%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">0</p>
+</td>
+<td style="width:76.12%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">pas d’erreur.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:23.88%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">2</p>
+</td>
+<td style="width:76.12%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">Plus de table dans le fichier (dictionnaire).</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:23.88%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">autre</p>
+</td>
+<td style="width:76.12%;" class="hcp7">
+<p class="decalage05" style="text-indent: 14.15pt;">Erreur. Voir <a href="DD_GETERROR.htm">DD_GETERROR</a></p>
+</td>
+</tr>
+</table>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;ticket&#160;L&#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;reponse&#160;8096 &#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;sttable X</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">sttable = DDInterface(DD_TABLENEXT,ticket,"article",reponse)</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="DDInterface.htm">DDInterface</a></p>
+<p class="Body-Text"><a href="DD_GETERROR.htm"><font color="#008000">DD_GETERROR</font></a></p>
+<p class="Body-Text"><a href="DDInterface_Tables.htm">DDInterface : Tables</a></p>
+<p class="Body-Text"><a href="DD_FILE_xxxx.htm"><font color="#008000">DD_FILE_xxxx</font></a></p>
+<p class="Body-Text"><a href="DD_DATA_xxx.htm">DD_DATA_xxx</a></p>
+</body>
+</html>

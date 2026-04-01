@@ -1,0 +1,84 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListInputNext</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListInputNext &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Reprise de la saisie d'une ligne d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+XmeListInputNext</font> (<font class="hcp3">Identifiant, Code retour, Code complémentaire</font>)</p>
+<p class="Body-Text">On écrira généralement&#160;:<font class="hcp2"><br>
+XmeListInputNext</font> (<font class="hcp3">Identifiant,</font> Harmony.Retour, Harmony.CplRetour)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Code retour</font></p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Code de retour principal.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.32%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Code complémentaire</font></p>
+</td>
+<td style="width:77.68%;" class="hcp5">
+<p class="Body-Text">Code de retour complémentaire.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">Après une interruption de la saisie d'une ligne de tableau (dont l'identifiant est indiqué en paramètre), suite à un point d'arrêt ou à un piège de touche, le programme peut demander la <font class="hcp2">reprise de la saisie</font>, en appelant la procédure <font class="hcp2">XmeListInputNext</font> avec les <font style="font-weight: bold; font-style: italic;">Codes de retour</font> appropriés (exactement comme un XmeNext poursuit une saisie lancée par XmeInput).<br>
+Une saisie de ligne de tableau diffère peu d'une saisie habituelle de page de masque. Pour tous renseignements complémentaires, consultez le chapitre <a href="Programmationdelasaisied_unmasque.htm">Programmation de la saisie d'un masque</a> et la rubrique consacrée à la procédure <a href="XmeNext.htm">XmeNext</a>.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Attention :</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListInputNext <font class="hcp2">ne doit pas être utilisée pour LANCER la saisie</font> de la ligne&#160;: il faut pour cela appeler la procédure XmeListInput.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListInputNext n'actualise pas les lignes du tableau à l'écran.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font> Cf. exemple de la rubrique <a href="XmeListInput.htm">XmeListInput</a></p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="Appel_d_un_menu_surgissant_en_regard_de_la_donn_e_en_cours_de_saisie.htm">Appel d'un menu surgissant en regard de la donnée en cours de saisie</a></p>
+<p class="Body-Text"><a href="XmeListGetSequence.htm">XmeListGetSequence</a></p>
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZoomArret</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt; }
+font.hcp2 { font-size:10pt;
+font-weight:normal; }
+font.hcp3 { font-weight:bold; }
+ul.hcp4 { list-style:disc; }
+span.hcp5 { color:#0000ff; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ZoomArret &#160;&#160;&#160;&#160;&#160;<font size="2" class="hcp1">&#160;</font><a href="Tableaur_capitulatifdess_quences.htm"><font size="2" class="hcp2">Famille</font></a> <font size="2" class="hcp1">&#160;</font><a href="ModuleDivaduZoom.htm"><font size="2" class="hcp2">Thème</font></a></h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Objet&#160;:</font> Traitement après un point d'arrêt en saisie.</p>
+<p class="Body-Text"><font class="hcp3">Procédure&#160;:</font> Facultative.</p>
+<p class="Body-Text"><font class="hcp3">Exécutée :</font> Après un point d'arrêt en saisie quelconque.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La procédure ZoomArret est appelée lorsqu'un point d'arrêt est déclenché à l'occasion de la saisie :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">D'une fiche (saisie de fiche en mode fiche) ou d'une ligne de tableau (saisie de fiche en mode liste).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">De la clé de départ.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">De la clé en création.</p>
+</li>
+</ul>
+<p class="Body-Text">Elle peut être utilisée pour centraliser les traitements des données des masques de saisie dans le module du zoom.</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text">En entrée, la donnée <span style="font-weight: bold;">Harmony.Arret</span> contient le numéro du point d'arrêt.</p>
+<p class="Body-Text"><font class="hcp3">En sortie</font>, le zoom retourne à la saisie. Vous pouvez positionner Harmony.Retour et Harmony.CplRetour à la manière habituelle.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Exemple&#160;:</font></p>
+<p class="Body-Text">Appel d'un deuxième zoom sur les données en saisie d'un masque. Vous avez développé la fonction AppelerZoom, qui permet d'appeler un zoom en fonction du numéro du point d'arrêt déclenché (ici, les points d'arrêt compris entre 9000 et 9999 correspondent à des appels de zoom). Pour appeler un zoom sur une donnée du masque, il suffit de piéger la touche F8 avec le numéro du point d'arrêt correspondant au zoom à appeler.</p>
+<p class="Body-Text">AppelerZoom renvoie :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">TRUE si l'appel s'est bien passé : on poursuit alors le traitement normal de la donnée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">FALSE dans le cas contraire : on demande alors à ressaisir la donnée (retour par défaut après un piège de touche).</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp3">Public procedure ZoomArret</font></p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source">&#160;&#160;&#160;<font color="#0000FF">Switch</font> Harmony.Arret</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">Case</font> Harmony.Arret &gt;= 9000 <font color="#0000FF">and</font> Harmony.Arret &lt; 10000</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">If</font> AppelerZoom (Harmony.Arret)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = <font color="#0000FF">XMENEXT_TRAITEMENT_APRES</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span class="hcp5">E</span><font color="#0000FF">ndif</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;<span class="hcp5">D</span><font color="#0000FF">efault</font></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<span style="color: #000000;">...</span></font></p>
+<p class="Source">&#160;&#160;&#160;<span class="hcp5">E</span><font color="#0000FF">ndswitch</font></p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+</body>
+</html>

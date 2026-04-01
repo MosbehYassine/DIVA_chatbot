@@ -1,0 +1,83 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Types de ressource d'un agenda</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { text-decoration:underline; }
+ol.hcp4 { list-style:decimal; }
+span.hcp5 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Types de ressource</h3>
+<p>&#160;</p>
+<p>Toute <a href="Ressources_d_un_agenda.htm">ressource</a> fait référence à un <span class="hcp1">type de ressource</span>. &#160;Chaque type de ressource possède :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Une <span class="hcp1">couleur</span> (nom de couleur dans la feuille de styles), qui servira de couleur par défaut pour les ressources concernées.</p>
+</li>
+<li class="p">
+<p>Une <span class="hcp1">image</span> (nom d'image dans la feuille de styles ou nom d'un fichier image : .bmp, .png, ...), qui servira d'image par défaut pour les ressources concernées</p>
+</li>
+<li class="p">
+<p>Un <span class="hcp1">libellé</span>.<br>
+&#160;</p>
+</li>
+</ul>
+<p><span class="hcp1">Trois types de ressource sont pré-définis</span> :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Le type <span class="hcp1">Personne</span> (CAL_MANPOWER).</p>
+</li>
+<li class="p">
+<p>Le type <span class="hcp1">Matériel</span> (CAL_MATERIAL).</p>
+</li>
+<li class="p">
+<p>Le type <span class="hcp1">Lieu</span> (CAL_LOCATION).</p>
+</li>
+</ul>
+<p>Il est possible, par programme, de <span class="hcp1">personnaliser un type pré-défini</span> et / ou d'<span class="hcp1">ajouter de</span> <span class="hcp1">nouveaux</span> types de ressource :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Pour créer un nouveau type de ressource, faites appel à la fonction <a href="XmeCalendarNewResourceType.htm">XmeCalendarNewResourceType</a>.<span class="hcp3"><br>
+Attention</span>, il faut affecter au nouveau type un identifiant numérique unique <span class="hcp3">de valeur strictement supérieure à 3</span> (sinon il s'agira d'une personnalisation d’un type pré-défini).</p>
+</li>
+<li class="p">
+<p>Pour personnaliser un type pré-défini, appelez cette même fonction en lui passant en paramètre l'identifiant concerné (CAL_MANPOWER, CAL_MATERIAL ou CAL_LOCATION).</p>
+</li>
+</ul>
+<p>Le type de ressource est un paramètre de la fonction de création d'une ressource.</p>
+<p>L'<a href="Interface_de_programmation_d_un_agenda.htm">enregistrement descriptif d'un type de ressource</a> dans le dictionnaire ddCalendar.dhsd est <span class="hcp1">ObjectResourceType</span>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp1">Exemples</span> :</p>
+<ol class="hcp4">
+<li class="p">
+<p><span class="hcp1">Personnaliser le type de ressource "Personne"</span> :</p>
+</li>
+</ol>
+<p class="Source">;affecter à chaque ressource de type Personne</p>
+<p class="Source">;le libellé de type de ressource "Personnel de l’entreprise"</p>
+<p class="Source">XmeCalendarNewResourceType (<span class="hcp5">IdCal</span>,CAL_MANPOWER,,"Personnel de l’entreprise")</p>
+<ol start="2" class="hcp4">
+<li class="p">
+<p><span class="hcp1">Créer le nouveau type de ressource "Ressource de l’entreprise"</span> :</p>
+</li>
+</ol>
+<p class="Source">XmeCalendarNewResourceType (<span class="hcp5">IdCal</span>,4,"Ress_ent","Ressource de l’entreprise")</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Les ressources déclarées avec le même type de ressource peuvent faire l'objet d'un <a href="Regroupements.htm">regroupement</a>.</p>
+<p>&#160;</p>
+</body>
+</html>

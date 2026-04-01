@@ -1,0 +1,55 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple 4 de reprise de saisie: XMENEXT_SAUT_DONNEE</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Exemple 4 de reprise de saisie&#160;: XMENEXT_SAUT_DONNEE</h3>
+<p class="Body-Text">La valeur de retour Harmony.Retour = 13 (XMENEXT_SAUT_DONNEE) s'utilise dans un <font class="hcp1">point d'arrêt ou un point de traitement Avant</font>. Elle demande à Ywpf d'<font class="hcp1">ignorer la donnée courante</font>. L'input de cette donnée (ainsi que les autres étapes de l'<a href="Algorithmedesaisiedesdonn_es.htm">algorithme de saisie de Ywpf</a>) est alors annulé, comme si la variable était déclarée "&#160;en affichage&#160;".</p>
+<p class="Body-Text">Remarque&#160;: Plusieurs données peuvent être ignorées successivement en utilisant cette méthode.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Prenons l'exemple suivant. On veut autoriser la saisie d'une donnée lors de la création d'une fiche mais pas lors de sa modification (nous supposerons que la variable MODE contient la valeur 1 en création et la valeur 2 en modification). Au niveau du masque Xwin, affectez à la donnée un point d'arrêt Avant et programmez la séquence suivante&#160;:</p>
+<p class="Source">...</p>
+<p class="Source">fini = 0</p>
+<p class="Source">XmeInput ("MASQUE",1,0,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lancement de la saisie</p>
+<p class="Source">DO</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Arret&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE 100 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;point d'arrêt Avant&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;IF Mode = 2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;en modification&#160;:&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMENEXT_SAUT_DONNEE &#160;&#160;&#160;;sauter la donnée&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;ENDIF</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source">WHILE fini = 0</p>
+<p class="Source">&#160;&#160;&#160;XmeNext (Harmony.Retour, Harmony.CplRetour) &#160;&#160;;suite saisie</p>
+<p class="Source">WEND</p>
+<p class="Source">...</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Une séquence de traitement correspondante&#160;(point de traitement Avant)&#160;:</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;IF Mode = 2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;en modification&#160;:&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMENEXT_SAUT_DONNEE &#160;&#160;&#160;&#160;&#160;&#160;;sauter la donnée&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDIF&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque&#160;:</font></p>
+<p class="Body-Text">Cette méthode est PREFERABLE à l'utilisation du <a href="Exemple2dereprisedesaisie__XMENEXT_POINT_SEQUENCE.htm">code retour 10</a> (XMENEXT_POINT_SEQUENCE) ou du code retour 7 (XMENEXT_DONNEE_SUIVANTE) pour passer à la variable suivante.</p>
+<p class="Body-Text">Prenons le cas de trois données consécutives A, B et C. Pour "&#160;sauter&#160;" la donnée B, nous déclarons sur B un point d'arrêt (ou de traitement) Avant saisie. Dans le programme associé, nous positionnons <font face="Symbol" class="hcp2">-</font> par exemple <font face="Symbol" class="hcp2">-</font> Harmony.Retour à XMENEXT_DONNEE_SUIVANTE.</p>
+<p class="Body-Text">Supposons maintenant que l'utilisateur tape Flèche en Haut ou Back-Tab sur la donnée C. Le point d'arrêt (ou de traitement) Avant saisie de B est exécuté et la fonction de retour XMENEXT_DONNEE_SUIVANTE renvoie immédiatement le curseur sur la donnée suivante, à savoir la donnée C, où l'utilisateur se trouve déjà&#160;! Il lui est donc impossible de remonter (au clavier) sur la donnée A. Si vous utilisez la fonction de retour XMENEXT_SAUT_DONNEE, cette remontée fonctionnera parfaitement.</p>
+</body>
+</html>

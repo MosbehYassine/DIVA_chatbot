@@ -1,0 +1,51 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HFile</h3>
+<p class="Body-Text">L'instruction HFile permet de déclarer un fichier défini dans un dictionnaire de données. Les enregistrements doivent être déclarés par l'instruction Record.</p>
+<p class="Body-Text"><font class="hcp1">[public | protected] HFile</font> <font class="hcp2">dico mnémo vartdf</font> [<font class="hcp2">nom</font>] <font class="hcp1">[noopen] [openonuse] [noshare] [noversioncheck]</font></p>
+<p class="Body-Text"><font class="hcp2">Public</font></p>
+<p class="decalage05">Spécifie que la variable <font class="hcp2">Vartdf</font> est publique. Si plusieurs modules déclarent la même variable publique, elle est allouée une seule fois à l'exécution.</p>
+<p class="Body-Text"><font class="hcp2">Protected</font></p>
+<p class="decalage05">Spécifie que la variable <font class="hcp2">Vartdf</font> est protégée. Une nouvelle instance de <font class="hcp2">Vartdf</font> est allouée.</p>
+<p class="Body-Text"><font class="hcp2">Dico</font></p>
+<p class="decalage05">Nom du dictionnaire de données.</p>
+<p class="Body-Text"><font class="hcp2">Mnémo</font></p>
+<p class="decalage05">Nom du fichier défini dans le dictionnaire.</p>
+<p class="Body-Text"><font class="hcp2">Vartdf</font></p>
+<p class="decalage05">Variable qui identifie la Tdf.</p>
+<p class="Body-Text"><font class="hcp2">Nom</font></p>
+<p class="decalage05">Nom physique du fichier à ouvrir si ce n'est pas le nom précisé dans le dictionnaire. Ce nom doit être une constante entourée de quotes.</p>
+<p class="Body-Text"><font class="hcp2">Noopen</font></p>
+<p class="decalage05">Le fichier ne doit pas être ouvert automatiquement lors du chargement du module. Par défaut, le fichier est ouvert avec le nom précisé dans le dictionnaire de données.</p>
+<p class="Body-Text"><font class="hcp2">Openonuse</font></p>
+<p class="decalage05">Indique que le fichier ne doit pas être ouvert lors du chargement du module mais lors de la première utilisation.</p>
+<p class="Body-Text"><font class="hcp2">Noshare</font></p>
+<p class="decalage05">Indique que le fichier doit être ouvert en mode réservé. Par défaut, le fichier est ouvert en mode partagé.</p>
+<p class="Body-Text"><font class="hcp2">Noversioncheck</font></p>
+<p class="decalage05">Indique que le système ne doit pas vérifier la version interne du fichier. Par défaut, le système vérifie que la version courante du fichier correspond bien avec la version spécifiée dans le dictionnaire.</p>
+<p class="decalage05">Voir <a href="Version_des_fichiers.htm">Version des fichiers</a></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="decalage05"><a href="Tableded_finitiondefichier_TDF_.htm">Table de définition de fichier (TDF)</a> , <a href="Public.htm">Public</a>, <a href="Protected.htm">Protected</a>, <a href="Extern.htm">Extern</a>, <a href="Record.htm">Record</a>, <a href="Version_des_fichiers.htm">HTmpFile, Version des fichiers</a> , <a href="HFileVersion.htm">HFileVersion</a> <a href="xwin-texte.chm::/xwin_texte/Insertion_de_commentaires_dans_le_code.htm">Insertion de commentaires dans le code</a>.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

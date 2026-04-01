@@ -1,0 +1,79 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>AssemblyMethodInvoke</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>AssemblyMethodInvoke&#160;<a href="Liste_des_fonctions_Assembly.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Fonctions_Assembly_.net.htm"><font class="hcp1">Thème</font></a></h1>
+<p class="Body-Text">La fonction AssemblyMethodInvoke permet d'exécuter une méthode de l'assembly.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Long &#160;</font><span style="font-weight: bold;">AssemblyMethodInvoke</span> &#160;( <span class="hcp3">IdAssembly , IdMéthode , entree, &amp;sortie</span> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><span class="hcp3">IdAssembly</span></p>
+<p class="decalage05">Identifiant de l'assembly obtenu par AssemblyLoad.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><span class="hcp3">IdMéthode</span></p>
+<p class="decalage05">Identifiant de la méthode obtenu par AssemblyGetMethod.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Entrée</p>
+<p class="decalage05">Variable alphanumérique contenant les paramètres de la méthode.</p>
+<p class="Body-Text" style="font-style: italic;">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Sortie</p>
+<p class="decalage05">Variable alphanumérique recevant le résultat de la fonction.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<table style="vertical-align: top;" cellspacing="0" width="82.422%">
+<col style="width: 4.844%;">
+<col style="width: 93.333%;">
+<tr class="hcp4">
+<td style="width:4.844%;" class="hcp5">
+<p>0</p>
+</td>
+<td style="width:93.333%;" class="hcp5">
+<p>Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:4.844%;" class="hcp5">
+<p>Autre</p>
+</td>
+<td style="width:93.333%;" class="hcp5">
+<p>Erreur. Appelez <a href="AssemblyGetError.htm">AssemblyGetErro</a>r. pour en connaître le détail.<br>
+<br>
+Erreurs de programmation Diva à l'appel de la méthode :<br>
+Identifiant de l'assembly erroné : 0x167d.<br>
+Identifiant de la méthode erroné : 0x167e.</p>
+<p>Les autres erreurs concernent le code de l'assembly elle-même.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;</font></p>
+<p class="decalage05">Voir <a href="Exemple_d_utilisation_des_fonctions_Assembly.htm">Exemple d'utilisation des fonctions Assembly</a></p>
+&#160;
+<p style="font-weight: bold;">Voir</p>
+<p style="font-weight: normal;"><a href="AssemblyMethodInvokeCP.htm"><span style="font-weight: normal;">AssemblyMethodInvokeCP</span></a></p>
+<p><a href="LCAssemblyMethodInvoke.htm">LCAssemblyMethodInvoke</a></p>
+</body>
+</html>

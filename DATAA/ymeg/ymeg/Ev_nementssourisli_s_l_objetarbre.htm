@@ -1,0 +1,91 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Evénements souris liés à l'objet arbre</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Evénements souris liés à l'objet arbre</h3>
+<p class="Body-Text">Nous nous intéressons ici plus particulièrement aux deux événements souris propres à l'objet arbre et générant une valeur spécifique de <font class="hcp1">Harmony.TabClic</font>.</p>
+<p class="Body-Text">Pour tous renseignements complémentaires sur les principes généraux, gouvernant le traitement des événements souris liés au tableau, et sur les événements purement "&#160;tableau&#160;" eux-mêmes, consultez la rubrique <a href="Ev_nementssourisli_s_l_objettableau.htm">Evénements souris liés à l'objet tableau</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Table des événements souris liés à l'objet arbre</font> (valeurs de Harmony.TabClic)&#160;:<br>
+&#160;</p>
+<table cellspacing="0" width="614">
+<tr class="hcp2">
+<td style="width:35.39%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_TREE_CONTROL</font></p>
+</td>
+<td style="width:64.61%;" class="hcp3">
+<p class="Body-Text">Interruption due à un clic souris sur un <font class="hcp1">signe</font> <font class="hcp1">+</font> ou sur un <font class="hcp1">signe</font> <font class="hcp1">–</font> , dans la colonne affichant l'arborescence.<br>
+Le numéro de la ligne (1) concernée est rendu dans la variable <font class="hcp1">Harmony.SourisPosY</font>.<br>
+En standard, XmeListConsultDefault considère cet événement comme une demande d'<font class="hcp1">expansion</font> (signe +) ou de <font class="hcp1">réduction</font> (signe –) de l'élément situé sur la ligne cliquée (Cf. rubrique <a href="Expansionour_ductiond_un_l_mentd_arbre.htm">Expansion ou réduction d'un élément d'arbre</a>).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:35.39%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_TREE_CURSOR</font></p>
+</td>
+<td style="width:64.61%;" class="hcp3">
+<p class="Body-Text">Interruption due à un clic souris sur le <a href="Descriptiond_unarbre.htm">curseur de création</a>.<br>
+Le niveau du curseur est rendu dans la variable <font class="hcp1">Harmony.SourisPosX</font>.<br>
+En standard, XmeListConsultDefault considère cet événement comme une demande de modification du niveau de création courant (Cf. rubrique <a href="Cr_ationd_un_l_mentd_arbre.htm">Création d'un élément d'arbre</a>).<br>
+Remarque&#160;: cet événement ne peut avoir lieu qu'à l'occasion d'un XmeListConsult car le curseur de création n'est pas affiché à l'écran hors de cette fonction.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">(1) Le numéro de ligne rendu est un numéro de <font class="hcp1">ligne à l'écran</font> (exemple&#160;: si Harmony.SourisPosY vaut 4, cela signifie que le clic souris a eu lieu sur la quatrième ligne du tableau, affichée à l'écran à cet instant). La fonction <a href="XmeListGetOffset.htm">XmeListGetOffset</a> permet au besoin de connaître l'élément affiché en première ligne.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:</font></p>
+<p class="Source"><font class="hcp4">Fini</font> = FALSE</p>
+<p class="Source">DO</p>
+<p class="Source"><font class="hcp4">&#160;&#160;&#160;</font>XmeListConsult (<font class="hcp4">Ident</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Key&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fin&#160;</p>
+<p class="Source"><font class="hcp4">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini</font> = TRUE</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.DataArret = <font class="hcp4">xxx</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;point d'arrêt tableau</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SWITCH2 Harmony.TabClic &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;test type de clic&#160;:</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE LIST_CLICK_TREE_CONTROL &#160;&#160;&#160;&#160;&#160;;expansion/réduction</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE LIST_CLICK_TREE_CURSOR &#160;&#160;&#160;&#160;&#160;&#160;;curseur de création&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE LIST_CLICK_xxx &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autre clic "tableau"&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres clics&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (<font class="hcp4">Ident</font>, <font class="hcp4">Ligne</font>, <font class="hcp4">ScrollBar32</font>)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autre événement traité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres événements&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (<font class="hcp4">Ident</font>, <font class="hcp4">Ligne</font>, <font class="hcp4">ScrollBar32</font>)</p>
+<p class="Source">&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE <font class="hcp4">Fini</font> = FALSE</p>
+<p class="Source">WEND</p>
+</body>
+</html>

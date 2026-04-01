@@ -1,0 +1,150 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Constantes</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Constantes</h3>
+<p>Extrait du fichier source C de définition des constantes de l’interface Socket.</p>
+<p style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">/*</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* Options for use with [gs]etsockopt at the IP level.&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">*/&#160;</p>
+<p class="source">#define IP_OPTIONS 1 /* set/get IP per-packet options */</p>
+<p class="source">#define IP_MULTICAST_IF 2 /* set/get IP multicast interface */</p>
+<p class="source">#define IP_MULTICAST_TTL 3 /* set/get IP multicast timetolive */</p>
+<p class="source">#define IP_MULTICAST_LOOP 4 /* set/get IP multicast loopback */</p>
+<p class="source">#define IP_ADD_MEMBERSHIP 5 /* add an IP group membership */</p>
+<p class="source">#define IP_DROP_MEMBERSHIP 6 /* drop an IP group membership */</p>
+<p class="source">#define IP_TTL 7 /* set/get IP Time To Live */</p>
+<p class="source">#define IP_TOS 8 /* set/get IP Type Of Service */</p>
+<p class="source">#define IP_DONTFRAGMENT 9 /* set/get IP Don't Fragment flag */</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">/*</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* This is used instead of -1, since the&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* SOCKET type is unsigned.&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">*/&#160;</p>
+<p class="source">#define INVALID_SOCKET (SOCKET)(~0)</p>
+<p class="source">#define SOCKET_ERROR (-1)</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">/*</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* Types&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">*/&#160;</p>
+<p class="source">#define SOCK_STREAM 1 /* stream socket */</p>
+<p class="source">#define SOCK_DGRAM 2 /* datagram socket */</p>
+<p class="source">#define SOCK_RAW 3 /* raw-protocol interface */</p>
+<p class="source">#define SOCK_RDM 4 /* reliably-delivered message */</p>
+<p class="source">#define SOCK_SEQPACKET 5 /* sequenced packet stream */</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">/*</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* Option flags per-socket.&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">*/&#160;</p>
+<p class="source">#define SO_DEBUG 0x0001 /* turn on debugging info recording */</p>
+<p class="source">#define SO_ACCEPTCONN 0x0002 /* socket has had listen() */</p>
+<p class="source">#define SO_REUSEADDR 0x0004 /* allow local address reuse */</p>
+<p class="source">#define SO_KEEPALIVE 0x0008 /* keep connections alive */</p>
+<p class="source">#define SO_DONTROUTE 0x0010 /* just use interface addresses */</p>
+<p class="source">#define SO_BROADCAST 0x0020 /* permit sending of broadcast msgs */</p>
+<p class="source">#define SO_USELOOPBACK 0x0040 /* bypass hardware when possible */</p>
+<p class="source">#define SO_LINGER 0x0080 /* linger on close if data present */</p>
+<p class="source">#define SO_OOBINLINE 0x0100 /* leave received OOB data in line */</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">#define SO_DONTLINGER (u_int)(~SO_LINGER)</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">/*</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* Additional options.&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">*/&#160;</p>
+<p class="source">#define SO_SNDBUF 0x1001 /* send buffer size */</p>
+<p class="source">#define SO_RCVBUF 0x1002 /* receive buffer size */</p>
+<p class="source">#define SO_SNDLOWAT 0x1003 /* send low-water mark */</p>
+<p class="source">#define SO_RCVLOWAT 0x1004 /* receive low-water mark */</p>
+<p class="source">#define SO_SNDTIMEO 0x1005 /* send timeout */</p>
+<p class="source">#define SO_RCVTIMEO 0x1006 /* receive timeout */</p>
+<p class="source">#define SO_ERROR 0x1007 /* get error status and clear */</p>
+<p class="source">#define SO_TYPE 0x1008 /* get socket type */</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">/*</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* Options for connect and disconnect data and options. Used only by&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* non-TCP/IP transports such as DECNet, OSI TP4, etc.&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">*/&#160;</p>
+<p class="source">#define SO_CONNDATA 0x7000</p>
+<p class="source">#define SO_CONNOPT 0x7001</p>
+<p class="source">#define SO_DISCDATA 0x7002</p>
+<p class="source">#define SO_DISCOPT 0x7003</p>
+<p class="source">#define SO_CONNDATALEN 0x7004</p>
+<p class="source">#define SO_CONNOPTLEN 0x7005</p>
+<p class="source">#define SO_DISCDATALEN 0x7006</p>
+<p class="source">#define SO_DISCOPTLEN 0x7007</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">/*</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* TCP options.&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">*/&#160;</p>
+<p class="source">#define TCP_NODELAY 0x0001</p>
+<p class="source">#define TCP_BSDURGENT 0x7000</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">#define SOL_SOCKET 0xffff /* options for socket level */</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">#define WSABASEERR 10000</p>
+<p class="source">/*</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* Windows Sockets definitions of regular Microsoft C error constants&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">*/&#160;</p>
+<p class="source">#define WSAEINTR (WSABASEERR+4)</p>
+<p class="source">#define WSAEBADF (WSABASEERR+9)</p>
+<p class="source">#define WSAEACCES (WSABASEERR+13)</p>
+<p class="source">#define WSAEFAULT (WSABASEERR+14)</p>
+<p class="source">#define WSAEINVAL (WSABASEERR+22)</p>
+<p class="source">#define WSAEMFILE (WSABASEERR+24)</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">/*</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">* Windows Sockets definitions of regular Berkeley error constants&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">*/&#160;</p>
+<p class="source">#define WSAEWOULDBLOCK (WSABASEERR+35)</p>
+<p class="source">#define WSAEINPROGRESS (WSABASEERR+36)</p>
+<p class="source">#define WSAEALREADY (WSABASEERR+37)</p>
+<p class="source">#define WSAENOTSOCK (WSABASEERR+38)</p>
+<p class="source">#define WSAEDESTADDRREQ (WSABASEERR+39)</p>
+<p class="source">#define WSAEMSGSIZE (WSABASEERR+40)</p>
+<p class="source">#define WSAEPROTOTYPE (WSABASEERR+41)</p>
+<p class="source">#define WSAENOPROTOOPT (WSABASEERR+42)</p>
+<p class="source">#define WSAEPROTONOSUPPORT (WSABASEERR+43)</p>
+<p class="source">#define WSAESOCKTNOSUPPORT (WSABASEERR+44)</p>
+<p class="source">#define WSAEOPNOTSUPP (WSABASEERR+45)</p>
+<p class="source">#define WSAEPFNOSUPPORT (WSABASEERR+46)</p>
+<p class="source">#define WSAEAFNOSUPPORT (WSABASEERR+47)</p>
+<p class="source">#define WSAEADDRINUSE (WSABASEERR+48)</p>
+<p class="source">#define WSAEADDRNOTAVAIL (WSABASEERR+49)</p>
+<p class="source">#define WSAENETDOWN (WSABASEERR+50)</p>
+<p class="source">#define WSAENETUNREACH (WSABASEERR+51)</p>
+<p class="source">#define WSAENETRESET (WSABASEERR+52)</p>
+<p class="source">#define WSAECONNABORTED (WSABASEERR+53)</p>
+<p class="source">#define WSAECONNRESET (WSABASEERR+54)</p>
+<p class="source">#define WSAENOBUFS (WSABASEERR+55)</p>
+<p class="source">#define WSAEISCONN (WSABASEERR+56)</p>
+<p class="source">#define WSAENOTCONN (WSABASEERR+57)</p>
+<p class="source">#define WSAESHUTDOWN (WSABASEERR+58)</p>
+<p class="source">#define WSAETOOMANYREFS (WSABASEERR+59)</p>
+<p class="source">#define WSAETIMEDOUT (WSABASEERR+60)</p>
+<p class="source">#define WSAECONNREFUSED (WSABASEERR+61)</p>
+<p class="source">#define WSAELOOP (WSABASEERR+62)</p>
+<p class="source">#define WSAENAMETOOLONG (WSABASEERR+63)</p>
+<p class="source">#define WSAEHOSTDOWN (WSABASEERR+64)</p>
+<p class="source">#define WSAEHOSTUNREACH (WSABASEERR+65)</p>
+<p class="source">#define WSAENOTEMPTY (WSABASEERR+66)</p>
+<p class="source">#define WSAEPROCLIM (WSABASEERR+67)</p>
+<p class="source">#define WSAEUSERS (WSABASEERR+68)</p>
+<p class="source">#define WSAEDQUOT (WSABASEERR+69)</p>
+<p class="source">#define WSAESTALE (WSABASEERR+70)</p>
+<p class="source">#define WSAEREMOTE (WSABASEERR+71)</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">#define WSAEDISCON (WSABASEERR+101)</p>
+</body>
+</html>

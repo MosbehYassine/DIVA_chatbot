@@ -1,0 +1,64 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ToHexa</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ToHexa &#160;<a href="Listedesfonctionsdeconversion.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction ToHexa permet de convertir en hexadécimal n'importe quel type de données. Les données de type L et X sont automatiquement mis dans l'ordre poids forts – poids faibles.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Alpha</font> <font class="hcp1">ToHexa</font> (<font class="hcp2">variable , [format])</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètre</font></p>
+<p class="Body-Text"><font class="hcp2">Variable</font></p>
+<p class="decalage05">Donnée à afficher en hexadécimal.<br>
+Les données de type X ou L sont tout d'abord retournées au format poids forts – poids faibles.</p>
+<p class="decalage05">Les données de type numérique sont tout d'abord traduites en type L.</p>
+<p class="decalage05">Les données des autres types sont converties telles quelles.</p>
+<p class="Body-Text"><font class="hcp2">Format</font></p>
+<p class="decalage05">Donnée numérique pouvant prendre les valeurs de 0 à 3.</p>
+<p class="List" style="margin-left: 17.85pt; text-indent: -17.85pt;">-&#160;0 : aucun formatage sur la donnée</p>
+<p class="List" style="margin-left: 17.85pt; text-indent: -17.85pt;">-&#160;1 : un préfixe est ajouté devant la valeur hexadécimale (0L, 0x, $)</p>
+<p class="List" style="margin-left: 17.85pt; text-indent: -17.85pt;">-&#160;2 : la valeur hexadecimale est formatée avec un espace après chaque groupe de deux caractères.</p>
+<p class="List" style="margin-left: 17.85pt; text-indent: -17.85pt;">-&#160;3 : Combinaison de 1 (préfixe) et formatage avec des espaces (2).</p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Retour</font></p>
+<p class="Body-Text">La fonction retourne une chaîne de caractères hexadécimale.</p>
+<p class="Body-Text"><font class="hcp1">Exemples</font></p>
+<p class="Source">1 ilong &#160;L = 2</p>
+<p class="Source">1 inumer 12,2 = 65535</p>
+<p class="Source">1 ibin&#160;&#160;&#160;B = 33</p>
+<p class="Source">1 chaine 2 = "AB"</p>
+<p class="Source">display tohexa(ilong) &#160;&#160;; --&gt; 00000002</p>
+<p class="Source">display tohexa(ilong,1) ; --&gt; 0L00000002</p>
+<p class="Source">display tohexa(ilong,2) ; --&gt; 00 00 00 02</p>
+<p class="Source">display tohexa(ilong,3) ; --&gt; 0L00 00 00 02</p>
+<p class="Source">&#160;</p>
+<p class="Source">display tohexa(inumer+1,1) ; --&gt; 0L00010000</p>
+<p class="Source">&#160;</p>
+<p class="Source">display tohexa(ibin) &#160;&#160;&#160;&#160;; --&gt; 21</p>
+<p class="Source">&#160;</p>
+<p class="Source">display tohexa(chaine,0) ; --&gt; 4142</p>
+<p class="Source">display tohexa(chaine,1) ; --&gt; $4142</p>
+<p class="Source">display tohexa(chaine,2) ; --&gt; 41 42</p>
+<p class="Source">display tohexa(chaine,3) ; --&gt; $41 42</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Hexabin.htm">Hexabin</a>, <a href="Binhexa.htm">Binhexa</a>, <a href="ToString.htm">ToString</a></p>
+</body>
+</html>

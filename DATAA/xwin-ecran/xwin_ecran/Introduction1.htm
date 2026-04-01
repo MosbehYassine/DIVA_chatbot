@@ -1,0 +1,107 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Masques écran : concepts généraux - Introduction</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+li.hcp2 { list-style:none;
+display:inline; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Introduction</h2>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les masques d’écran Harmony sont basés sur l'interface Wpf (Window Presentation Foundation) de Microsoft (le client léger Html respecte en majeure partie cette même interface).</p>
+<p class="Body-Text">L'affichage et la saisie des masques d'écran sont assurés par un "exécuteur d'écran" (Ywpf), afin de décharger les programmes applicatifs d'une partie importante de l'interface utilisateur. La gestion d'écran sous Harmony se caractérise essentiellement par un bon compromis entre simplicité de mise en œuvre (aussi bien pour l'utilisateur que pour le développeur) et souplesse de paramétrage. Citons quelques fonctionnalités :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px;">Un masque est mono ou multi-écran et, dans ce dernier cas, l'enchaînement des pages est automatiquement géré par Ywpf. Des onglets peuvent être associés aux différentes pages du masque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px;">Les objets disposent de nombreuses propriétés. En particulier :</p>
+</li>
+<li class="hcp2">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px;">Types d'objet : libellé, champ simple, multi-choix, case à cocher, radio-boutons, texte riche, graphique, tableau, arbre, bouton texte, bouton graphique, cadre et trait, etc.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px;">Attributs de présentation : couleurs de caractère et de fond, police, bordure, paddings, ...<br>
+Les attributs sont enregistrés dans une feuille de styles (ce qui simplifie leur saisie et autorise leur modification par les utilisateurs). Le concepteur du masque peut aussi personnaliser tout élément de la feuille de style pour un objet particulier (ce qui apporte une grande souplesse au développement).<br>
+Des modèles de présentation peuvent être enregistrés puis automatiquement appliqués aux objets créés (ce qui assure une grande unicité visuelle aux différents masque d'une application). Chaque type d'objet (par exemple les libellés, les données en saisie, celles en affichage, celles placées dans un tableau) dispose de son propre modèle de présentation.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px;">Fonctions de mise en forme (cadrage, conversion, formatage, etc.).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px;">Donnée en "Affichage" ou en "Saisie". <span style="margin-left: 12px;">Notion d'obligation de saisie.</span></p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px;">Les données peuvent être de nature alphanumérique, numérique, date, heure, date+heure, date mensuelle, durée. Elles sont automatiquement contrôlées et formatées par Ywpf. Le nombre de décimales des données numériques peut être fixe ou variable.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px;">Une aide à la saisie contextuelle est associée à chaque donnée du masque :</p>
+</li>
+<li class="hcp2">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px; text-indent: 0px;">Une aide de premier niveau, présentée sous forme de bulle.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px; text-indent: 0px;">Une aide plus détaillée, obtenue en cours de saisie par la frappe de la touche Maj+F1 et présentée dans une fenêtre d'aide Windows classique.</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px;">Des contrôles et des traitements peuvent être effectués avant et/ou après l'entrée de chaque donnée, pour vérifier la valeur introduite, faire une recherche dans un fichier annexe, influer sur le déroulement de la saisie, appeler un zoom, etc. Ils sont déclenchés par :</p>
+</li>
+<li class="hcp2">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px; text-indent: 0px;">Des "points de traitement" qui donnent le contrôle à une séquence de programme Diva stockée dans le masque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px; text-indent: 0px;">Des "points d'arrêt" qui rendent ponctuellement le contrôle au programme Diva à l'origine de la saisie du masque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px; text-indent: 0px;">Des "pièges de touche" qui redonnent la main au programme appelant lorsque l'utilisateur frappe une touche de fonction ou une touche de contrôle particulière.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px; text-indent: 0px;">Des traitements et arrêts peuvent être également déclenchés par l'appui sur un bouton, par le début ou la fin de la saisie du masque, par une action à la souris, par une opération sur un tableau, par la sélection d'un choix du menu ou l'appui sur un bouton de barre d'outils, etc.</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px; text-indent: 0px;">L'ordre de saisie des données est déterminé à la conception du masque mais il peut être modifié par programme, notamment grâce aux "points de séquence".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 12px; text-indent: 0px;">Les "attributs dynamiques" permettent de modifier les propriétés de présentation ou la visibilité d’un objet lors de l’exécution du programme.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 12px; text-indent: 0px;">Le dessin des <span class="hcp3">masques d'écran</span> fait appel à l'éditeur de masques <span class="hcp3">Xwin</span>. L’éditeur permet également de saisir des ressources (menus et des barres d’outils).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Remarques</font> &#160;&#160;</p>
+<ul>
+<li class="p-List">
+<p class="List">L'utilitaire Xwin gère également la saisie des codes sources Diva, des masques d'impression graphiques ou caractères, des masques Web, des dictionnaires de données. Ces fonctionnalités font chacune l'objet d'un ou plusieurs livres de cette documentation.</p>
+</li>
+<li class="p-List">
+<p class="List">Les rubriques qui suivent abordent peu (parfois pas du tout) l'aspect "programmation" : l'interface entre le gestionnaire d'écran et Ywpf est décrite dans le livre "Ywpf - Exécuteur de masque d'écran" de la documentation consacrée à la programmation.</p>
+</li>
+</ul>
+<p class="List">&#160;</p>
+</body>
+</html>

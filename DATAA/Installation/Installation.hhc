@@ -1,0 +1,910 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Installation et configuration d'Harmony">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Installation d'Harmony">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation d'Harmony">
+        <param name="Local" value="Installation/Installationdurun_timed_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Vérification des produits disponibles">
+        <param name="Local" value="Installation/V&eacute;rification_des_produits_disponibles.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation d'un serveur d'applications">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation d'un serveur d'applications">
+          <param name="Local" value="Installation/LeprogrammeINSTALL_exe.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation de Harmony Power Foundation">
+          <param name="Local" value="Installation/Installation_de_Harmony_Power_Foundation.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Opérations réalisées par l'installateur">
+          <param name="Local" value="Installation/Op_rationsr_alis_esparl_installateur.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation du serveur en mode Socket">
+          <param name="Local" value="Installation/Installation_du_serveur_en_mode_Socket.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation du serveur en mode Service Web">
+          <param name="Local" value="Installation/Installation_du_serveur_en_mode_Service_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Configuration du service DhsDivaAgent">
+          <param name="Local" value="Installation/Configration_du_service_DhsDivaAgent.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation du client léger Wpf">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation du client léger Wpf">
+          <param name="Local" value="Installation/Installation_du_client_l&eacute;ger.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation du client léger (Msi)">
+        </object>
+        <ul>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Installation du client léger (Msi)">
+            <param name="Local" value="Installation/Installation_du_client_l&eacute;ger_(Msi).htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Installation de Microsoft Orca">
+            <param name="Local" value="Installation/Installation_de_Microsoft_Orca.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Paramétrage du fichier (.msi) d'installation du client léger">
+            <param name="Local" value="Installation/Edition_et_param&eacute;trage_du_fichier_(.msi)_d_installation_du_client_l&eacute;ger.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Déploiement du client léger (Msi)">
+            <param name="Local" value="Installation/D&eacute;ploiement_du_client_l&eacute;ger.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Installation du client léger sur un poste client (Msi)">
+            <param name="Local" value="Installation/Installation_du_client_l&eacute;ger_par_l_utilisateur.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Installation du .msi en ligne de commande">
+            <param name="Local" value="Installation/Installation_du_.msi_en_ligne_de_commande.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Mise à jour du client léger (Msi)">
+            <param name="Local" value="Installation/Mise_&agrave;_jour_du_client_l&eacute;ger_(Msi).htm">
+          </object>
+          </ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation du client léger (Divalto Web Access)">
+        </object>
+        <ul>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Installation du client léger (Divalto Web Access)">
+            <param name="Local" value="Installation/Installation_du_client_l&eacute;ger_(Divalto_Web_Access).htm">
+          </object>
+          </ul>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation d’un serveur de données (ou d'un poste autonome)">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation d'un serveur de données (ou d'un poste autonome)">
+          <param name="Local" value="Installation/Installation_d_un_serveur_de_donn&eacute;es_ou_d_un_poste_autonome.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation du serveur SQL">
+          <param name="Local" value="Installation/Installation_du_serveur_SQL.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation du serveur de données">
+          <param name="Local" value="Installation/Installation_d’un_serveur_de_fichiers_(ou_d’un_poste_autonome).htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Connecteur SQL">
+          <param name="Local" value="Installation/Connecteur_SQL.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Fichier paramètres des connexions">
+          <param name="Local" value="Installation/Fichier_param&egrave;tres_des_connexions.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Fichier paramètre des implicites SQL">
+          <param name="Local" value="Installation/Fichier_param&egrave;tre_des_implicites_SQL.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="RecordSQL et DataBase">
+          <param name="Local" value="Installation/RecordSQL_et_DataBase.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation de Divalto Business Intelligence">
+          <param name="Local" value="Installation/Installation_de_Divalto_Business_Intelligence.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Base de données Microsoft Sql Server - Particularités">
+          <param name="Local" value="Installation/Microsoft_Sql_Server_-_Particularit&eacute;s.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Complément d'installation d’un poste client lourd">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Complément d'installation d’un poste client lourd">
+          <param name="Local" value="Installation/Installation_d’un_poste_client_lourd.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation des fichiers d'aides">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation standard des aides utilisateur Harmony et de l'ERP Divalto">
+          <param name="Local" value="Installation/Installation_des_fichiers_d_aides.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Configuration des serveurs d’aides et d’applications">
+          <param name="Local" value="Installation/Configuration_des_serveurs_d’aides_et_d’applications.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Centralisation des fichiers d'aides de la version 6">
+          <param name="Local" value="Installation/Centralisation_des_fichiers_d_aides.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation des aides sur un site multi-environnement">
+          <param name="Local" value="Installation/Installation_des_aides_sur_un_site_multi-environnement.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation des aides sur un site multi-langue">
+          <param name="Local" value="Installation/Installation_des_aides_sur_un_site_multi-langue.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation d'un serveur multi-bases">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation d'un serveur multi-bases">
+          <param name="Local" value="Installation/Installation_d_un_serveur_multi-bases.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation sous Windows Terminal Serveur">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation sous Windows Terminal Serveur">
+          <param name="Local" value="Installation/InstallationsousWindowsNTTerminalServeur.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Qu'est-ce que Terminal Serveur ?">
+          <param name="Local" value="Installation/Qu_est_cequeNTTerminalServeur_.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Licences concurrentes Divalto pour TSE">
+          <param name="Local" value="Installation/LicencesInterlogicielpourTSE.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Architectures TSE">
+          <param name="Local" value="Installation/ArchitecturesTSE.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation d'Harmony pour TSE">
+        </object>
+        <ul>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Installation d'Harmony pour TSE">
+            <param name="Local" value="Installation/Installationd_HarmonypourTSE.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Profils d'utilisateur Windows">
+            <param name="Local" value="Installation/Profilsd_utilisateur.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Installation d'Harmony sous plusieurs comptes / profils utilisateur">
+            <param name="Local" value="Installation/Installation_d_Harmony_sous_plusieurs_comptes___profils_utilisateur.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Code utilisateur par défaut">
+            <param name="Local" value="Installation/Codeutilisateurpard_faut.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Nombre de tâches">
+            <param name="Local" value="Installation/Nombredet_ches.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Redémarrage de Windows">
+            <param name="Local" value="Installation/Red_marragedeWindows.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Configuration des imprimantes sous TSE">
+            <param name="Local" value="Installation/Configurationdesimprimantes.htm">
+          </object>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Installation sur un site comportant plusieurs serveurs TSE">
+            <param name="Local" value="Installation/Installation_sur_un_site_comportant_plusieurs_serveurs_TSE.htm">
+          </object>
+          </ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Arrêt et redémarrage automatisés">
+        </object>
+        <ul>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Arrêt et redémarrage automatisés">
+            <param name="Local" value="Installation/Arr_tetred_marrageautomatis_s.htm">
+          </object>
+          </ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Ajout d'un nouvel utilisateur">
+        </object>
+        <ul>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Ajout d'un nouvel utilisateur">
+            <param name="Local" value="Installation/Ajoutd_unnouvelutilisateur.htm">
+          </object>
+          </ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Ajout d'une nouvelle application">
+        </object>
+        <ul>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Ajout d'une nouvelle application">
+            <param name="Local" value="Installation/Ajoutd_unenouvelleapplication.htm">
+          </object>
+          </ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Modification de Divalto.ini">
+        </object>
+        <ul>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Modification de Divalto.ini">
+            <param name="Local" value="Installation/ModificationdesfichiersHarmony_ini.htm">
+          </object>
+          </ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Utilisation de la base de registres de Windows">
+        </object>
+        <ul>
+          <li><object type="text/sitemap">
+            <param name="Name" value="Utilisation de la base de registres de Windows">
+            <param name="Local" value="Installation/UtilisationdelabasederegistresdeWindows.htm">
+          </object>
+          </ul>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation d'Harmony Web">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation Harmony Web">
+          <param name="Local" value="Installation/Installation_Harmony_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Architecture Harmony Web">
+          <param name="Local" value="Installation/Architecture_Harmony_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation du serveur Web IIS">
+          <param name="Local" value="Installation/Installation_du_serveur_Web_IIS.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Création d'une application IIS sur le serveur Web">
+          <param name="Local" value="Installation/Cr_ation_d_un_r_pertoire_virtuel_IIS.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Configuration du site Web">
+          <param name="Local" value="Installation/Configuration_du_site_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation de services Web">
+          <param name="Local" value="Installation/Installation_de_services_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Choix du compte utilisateur Windows pour les programmes Web">
+          <param name="Local" value="Installation/Choix_du_compte_utilisateur_Windows_pour_les_programmes_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Choix de l'environnement pour les services web">
+          <param name="Local" value="Installation/Choix_de_l_environnement_pour_les_services_web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Développement d'applications Web : paramétrages complémentaires">
+          <param name="Local" value="Installation/D_veloppement_d_applications_Web_param_trages_compl_mentaires.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Création d'un site Harmony Web">
+          <param name="Local" value="Installation/Cr_ation_d_un_site_Harmony_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation d'un site Web multilingue">
+          <param name="Local" value="Installation/Installation_d_un_site_multi-langue.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Tester si le navigateur accepte les cookies">
+          <param name="Local" value="Installation/Tester_si_le_navigateur_accepte_les_cookies.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Licence d'utilisation d'Harmony">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Licence d'utilisation d'Harmony">
+        <param name="Local" value="Installation/Licenced_utilisationd_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Licences nommées">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Licences nommées">
+          <param name="Local" value="Installation/Licences_nomm&eacute;es.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Licences concurrentes">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Licences concurrentes">
+          <param name="Local" value="Installation/Licences_concurrentes.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Principes du système de licences concurrentes">
+          <param name="Local" value="Installation/Principesdusyst_medelicences.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Mise en oeuvre du système de licences concurrentes">
+          <param name="Local" value="Installation/Miseenoeuvredusyst_medelicences.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Licences concurrentes temporelles">
+          <param name="Local" value="Installation/Licences_temporelles.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Licences concurrentes de secours">
+          <param name="Local" value="Installation/Licenses_de_secours.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Saisie manuelle du code d'utilisation">
+          <param name="Local" value="Installation/Saisieducoded_utilisation.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Désinstallation des licences concurrentes">
+          <param name="Local" value="Installation/D&eacute;sinstallation_des_licences.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Client léger Harmony Wpf">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Présentation du client léger Harmony Wpf">
+        <param name="Local" value="Installation/Client_l&eacute;ger_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Options de connexion avancées">
+        <param name="Local" value="Installation/Options_de_connexion_avanc&eacute;es.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Conseils de mise en place d'une stratégie de sécurité Divalto">
+        <param name="Local" value="Installation/Conseils_de_mise_en_place_d_une_strat&eacute;gie_de_s&eacute;curit&eacute;_Divalto.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Raccourcis vers l'application">
+        <param name="Local" value="Installation/Raccourcis_vers_l_application.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Outils du client léger Harmony">
+        <param name="Local" value="Installation/Outils_du_client_l&eacute;ger_Harmony.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Client léger Harmony Web">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Client léger Harmony Web">
+        <param name="Local" value="Installation/Client_l&eacute;ger_Harmony_Web.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation et paramétrage d'un serveur de clients légers Web">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation et paramétrage d'un serveur de clients légers Web">
+          <param name="Local" value="Installation/Installation_et_param&eacute;trage_du_serveur_d_un_client_l&eacute;ger_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation automatisée du serveur de clients légers Web">
+          <param name="Local" value="Installation/Installation_automatis&eacute;e_du_serveur_de_clients_l&eacute;gers_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation manuelle de IIS sur le serveur de clients légers Web">
+          <param name="Local" value="Installation/Installation_de_IIS_sur_le_serveur_de_clients_l&eacute;gers_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Création et configuration manuelles d'une application IIS sur le serveur de clients légers Web">
+          <param name="Local" value="Installation/Cr&eacute;ation_d_une_application_IIS_sur_le_serveur_de_clients_l&eacute;gers_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Compression des trames pour un client léger Web">
+          <param name="Local" value="Installation/Compression_des_trames_pour_un_client_l&eacute;ger_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation des images sur le serveur de clients légers Web">
+          <param name="Local" value="Installation/Installation_des_images_sur_le_serveur_de_clients_l&eacute;gers_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation des aides sur le serveur de clients légers Web">
+          <param name="Local" value="Installation/Installation_des_aides_sur_le_serveur_de_clients_l&eacute;gers_Web.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Gestion des utilisateurs en client léger Web">
+          <param name="Local" value="Installation/Gestion_des_utilisateurs_en_client_l&eacute;ger_Web.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Configuration d'un client léger Web et connexion au serveur">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Configuration du navigateur pour le client léger Web">
+          <param name="Local" value="Installation/Configuration_du_client_l&eacute;ger_Html.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Connexion au serveur de clients légers Web">
+          <param name="Local" value="Installation/Connexion_au_serveur_de_clients_l&eacute;gers_Html.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Enregistrement des paramètres de l’utilisateur">
+          <param name="Local" value="Installation/Enregistrement_des_param&egrave;tres_de_l’utilisateur.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Restrictions d'utilisation du client léger Web par rapport au client léger Wpf">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Restrictions d'utilisation du client léger Web par rapport au client léger Wpf">
+          <param name="Local" value="Installation/Restrictions_d_utilisation_du_client_l&eacute;ger_Web_par_rapport_au_client_l&eacute;ger_Wpf.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Configuration et paramétrage d'Harmony">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Configuration et paramétrage d'Harmony">
+        <param name="Local" value="Installation/Configurationetparam_traged_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu d'Harmony">
+        <param name="Local" value="Installation/Menud_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fichiers de configuration des serveurs et des chemins Harmony">
+        <param name="Local" value="Installation/Fichiers_de_configuration_des_serveurs_et_des_chemins_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Serveurs de données">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Déclaration des serveurs de données">
+          <param name="Local" value="Installation/D_clarationdesserveurs_etunit_slogiques_.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Chemins Harmony et chemins implicites">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Chemins implicites">
+          <param name="Local" value="Installation/Chemins_etbiblioth_ques_unit_s_implicites.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Déclaration des chemins Harmony">
+          <param name="Local" value="Installation/D_clarationdescheminsHarmony.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Déclaration des chemins implicites">
+          <param name="Local" value="Installation/D_clarationdeschemins_etbiblioth_ques_unit_s_implicites.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Fichiers de chemins implicites et utilisateurs">
+          <param name="Local" value="Installation/Fichiersdecheminsimplicitesetutilisateurs.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Implantation des fichiers d'implicites sur un réseau client-serveur Harmony">
+          <param name="Local" value="Installation/Implantationdesfichiersd_implicitessurunr_seauclient_serveurHarmony.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Utilisateurs d'Harmony">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Utilisateurs d'Harmony">
+          <param name="Local" value="Installation/Utilisateursd_Harmony.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Déclaration des utilisateurs">
+          <param name="Local" value="Installation/D_clarationdesutilisateurs.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Identification automatique au lancement d'une tâche Harmony (version 6)">
+          <param name="Local" value="Installation/Identificationautomatiqueaulancementd_unet_cheHarmony.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Gestion des mots de passe Harmony">
+          <param name="Local" value="Installation/GestiondesmotsdepasseHarmony.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Déclaration des utilisateurs d'un réseau Harmony">
+          <param name="Local" value="Installation/D_clarationdesutilisateursd_unr_seauHarmony.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Utilisateur par défaut pour Odbc">
+          <param name="Local" value="Installation/Utilisateur_par_d&eacute;faut_pour_Odbc.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Profils de connexion">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Profils de connexion">
+          <param name="Local" value="Installation/Profils_de_connexion.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Gestion des profils de connexion">
+          <param name="Local" value="Installation/Gestion_des_profils_de_connexion.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Profils utilisateur">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Profils utilisateur">
+          <param name="Local" value="Installation/Profils_utilisateur.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation multi-environnement">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation multi-environnement">
+          <param name="Local" value="Installation/Installation_multi-environnement.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Gestion des environnements">
+          <param name="Local" value="Installation/Gestion_des_environnements.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déclaration des unités imprimante et V24">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Déclaration des unités imprimante et V24">
+          <param name="Local" value="Installation/D_clarationdesunit_simprimanteetV24.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pool de tâches">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Pool des tâches">
+          <param name="Local" value="Installation/Pool_des_t&acirc;ches.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage du pool des tâches">
+          <param name="Local" value="Installation/Param&eacute;trage_du_pool_des_t&acirc;ches.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Divalto.ini">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Divalto.ini">
+          <param name="Local" value="Installation/Harmony_ini.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Gestion de Divalto.ini">
+          <param name="Local" value="Installation/GestiondufichierHarmony_ini.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Structure de Divalto.ini">
+          <param name="Local" value="Installation/StructuredufichierHarmony_ini.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Configuration de la mémoire commune">
+          <param name="Local" value="Installation/Configurationdelam_moirecommune.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Résumé et conseils pratiques">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Résumé et conseils pratiques">
+        <param name="Local" value="Installation/R_sum_etconseilspratiques.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Résumé de la procédure d'installation (serveur d'applications ou client en mode local)">
+        <param name="Local" value="Installation/R_sum_delaproc_dured_installation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Conseils d'installation pratiques">
+        <param name="Local" value="Installation/Conseilsd_installationpratiques.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Désinstallation d'Harmony">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Désinstallation d'Harmony">
+        <param name="Local" value="Installation/D_sinstallationd_Harmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Comment désinstaller Harmony">
+        <param name="Local" value="Installation/Commentd_sinstallerHarmony.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Opérations effectuées par le désinstallateur">
+        <param name="Local" value="Installation/Op_rationseffectu_esparled_sinstallateur.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Installation d'une application">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation d'une application">
+        <param name="Local" value="Installation/Installationd_uneapplication.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Traduction des applications">
+        <param name="Local" value="Installation/Traduction_des_applications.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Connecteur Divalto pour Outlook versions 2010 ou supérieures">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Connecteur Divalto pour Outlook">
+        <param name="Local" value="Installation/Connecteur_Harmony_pour_Outlook_2010.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Composants nécessaires à l'installation du connecteur pour Outlook">
+        <param name="Local" value="Installation/Composants_n&eacute;cessaires_&agrave;_l_installation_du_connecteur_pour_Outlook_2010.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation du connecteur Divalto pour Outlook">
+        <param name="Local" value="Installation/Installation_du_connecteur_Harmony_pour_Outlook_2010.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Installation du connecteur Divalto pour Outlook sur un poste client léger">
+        <param name="Local" value="Installation/Installation_du_connecteur_Divalto_pour_Outlook_2010_sur_un_poste_client_l&eacute;ger.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Désinstallation du connecteur Divalto pour Outlook">
+        <param name="Local" value="Installation/D&eacute;sinstallation_du_connecteur_Divalto_pour_Outlook_2010.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Si le connecteur Divalto pour Outlook ne fonctionne pas">
+        <param name="Local" value="Installation/Si_le_connecteur_Divalto_pour_Outlook_2010_ne_fonctionne_pas.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Description des boutons Divalto">
+        <param name="Local" value="Installation/Description_des_boutons_Divalto.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Boutons paramétrables dans Outlook">
+        <param name="Local" value="Installation/Boutons_param&eacute;trables_dans_Outlook.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Connecteur Outlook pour un client léger Html5">
+        <param name="Local" value="Installation/Connecteur_Outlook_pour_un_client_l&eacute;ger_Html5.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Connecteur Harmony pour Lotus Notes">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Connecteur Harmony pour Lotus Notes">
+        <param name="Local" value="Installation/Connecteur_Harmony_pour_Lotus_Notes.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Configuration et paramétrage du CTI">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Configuration et paramétrage du CTI">
+        <param name="Local" value="Installation/Configuration_et_param&eacute;trage_du_CTI.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Connecteur Divalto pour TAPI 2.0 (montée de fiche)">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Connecteur Divalto pour TAPI 2.0 (montée de fiche)">
+          <param name="Local" value="Installation/Connecteur_Divalto_pour_TAPI_2.0_(mont&eacute;e_de_fiche).htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Composants nécessaires à l'installation du connecteur Divalto pour TAPI">
+          <param name="Local" value="Installation/Composants_n&eacute;cessaires_&agrave;_l_installation_du_connecteur_Divalto_pour_TAPI.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Installation et paramétrage du connecteur Divalto pour TAPI">
+          <param name="Local" value="Installation/Installation_du_connecteur_Divalto_pour_TAPI.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Désinstallation du connecteur Divalto pour TAPI">
+          <param name="Local" value="Installation/D&eacute;sinstallation_du_connecteur_Divalto_pour_TAPI.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Mise en oeuvre du CTI dans Divalto">
+          <param name="Local" value="Installation/Mise_en_oeuvre_du_CTI_dans_Divalto.htm">
+        </object>
+        </ul>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Paramétrage de la liaison avec G Suite">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Introduction">
+        <param name="Local" value="Installation/introduction.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage du projet">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Création/Sélection d'un projet">
+          <param name="Local" value="Installation/cr&eacute;ation_s&eacute;lection_d_un_projet.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage du compte de service">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Principe">
+          <param name="Local" value="Installation/principe.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Création d'un compte de service">
+          <param name="Local" value="Installation/cr&eacute;ation_d_un_compte_de_service.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Activation de l'accès aux API">
+          <param name="Local" value="Installation/activation_de_l_acc&egrave;s_aux_api.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Autorisations du compte de service">
+          <param name="Local" value="Installation/autorisations_du_compte_de_service.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Autorisation et activation des API">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Activation des API">
+          <param name="Local" value="Installation/activation_des_api.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Autorisation des utilisateurs du domaine">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Contexte">
+          <param name="Local" value="Installation/contexte.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Création et affectation d'un rôle d'administrateur">
+          <param name="Local" value="Installation/cr&eacute;ation_d_un_r&ocirc;le_d_administrateur.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramétrage du lien avec G Suite dans Harmony et DivaltoViewer">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage du serveur d'application.">
+          <param name="Local" value="Installation/param&eacute;trage_du_serveur_d_application.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage de DivaltoViewer.">
+          <param name="Local" value="Installation/param&eacute;trage_de_divaltoviewer..htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Saisie des comptes G Suite des utilisateurs.">
+          <param name="Local" value="Installation/saisie_des_comptes_g_suite_des_utilisateurs.htm">
+        </object>
+        </ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sécurisation des comptes G Suite">
+      </object>
+      <ul>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Préambule.">
+          <param name="Local" value="Installation/Pr&eacute;ambule.htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Création d'un attribut personnalisé pour les comptes G Suite.">
+          <param name="Local" value="Installation/Cr&eacute;ation_d_un_attribut_personnalis&eacute;_pour_les_comptes_G_Suite..htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Attribution des comptes Windows aux comptes G Suite.">
+          <param name="Local" value="Installation/Attribution_des_comptes_Windows_aux_comptes_G_Suite..htm">
+        </object>
+        <li><object type="text/sitemap">
+          <param name="Name" value="Paramétrage des serveurs Harmony.">
+          <param name="Local" value="Installation/Param&eacute;trage_des_serveurs_Harmony..htm">
+        </object>
+        </ul>
+      </ul>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Téléchargement des masters et des correctifs Divalto">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Téléchargement des masters et des correctifs Divalto">
+      <param name="Local" value="Installation/T&eacute;l&eacute;chargement_des_masters_et_des_correctifs_Divalto.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Vérification des masters et hotfix disponibles à l’installation">
+      <param name="Local" value="Installation/V&eacute;rification_des_masters_et_hotfix_disponibles_&agrave;_l’installation.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Téléchargement d'un master ou d’un hotfix">
+      <param name="Local" value="Installation/T&eacute;l&eacute;chargement_d_un_master_ou_d’un_hotfix.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Vérification des services packs et hotfix disponibles pour une version déjà installée">
+      <param name="Local" value="Installation/V&eacute;rification_des_masters_et_hotfix_disponibles_pour_une_version_d&eacute;j&agrave;_install&eacute;e.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Installation d’un hotfix">
+      <param name="Local" value="Installation/Installation_d’un_hotfix.htm">
+    </object>
+    </ul>
+</ul>
+</html>

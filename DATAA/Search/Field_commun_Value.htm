@@ -1,0 +1,64 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Field commun Value</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold;
+font-style:italic; }
+p.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+span.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Field commun Value</h1>
+<p>&#160;</p>
+<p>Les fields communs ont deux origines, la description du document ou bien la base de données ERP. L'attribut <span class="hcp1">Value</span> prend donc deux formes différentes :</p>
+<p class="hcp2">Pour les fields «&#160;document&#160;» on écrit</p>
+<ul class="hcp3">
+<li class="p">
+<p><span style="margin-left: 48px;">Document.Domain pour le domaine</span></p>
+</li>
+<li class="p">
+<p>Document.Family pour la famille</p>
+</li>
+<li class="p">
+<p>Document.Title pour le titre</p>
+</li>
+</ul>
+<p class="hcp2">Pour les fields «&#160;Erp&#160;» on écrit</p>
+<p>RecordSQL.Champ qui correspond au nom du champ dans le RecordSQL de base du document.</p>
+<p>&#160;</p>
+<p class="hcp2">Sujet</p>
+<p>Le sujet du document apparaît en bleu dans le résultat de la recherche. C'est généralement un champ calculé du RecordSQL qui permet à l'utilisateur d'identifier le document trouvé.</p>
+<p>&#160;</p>
+<p class="hcp2">DateCreation et DateModif</p>
+<p>La date de création correspond par défaut au champ <span class="hcp1">UserCrDh</span> et la date de modification au champ <span class="hcp1">UserMoDh</span>. Si ces champs n'existent pas dans la table concernée ou s'il existe d'autres champs plus significatifs, ils peuvent être redéfinis dans la section <span class="hcp1">&lt;CommonFieds&gt;</span> du document.</p>
+<p>Ces champs ont de plus 2 fonctions particulières :</p>
+<ul class="hcp3">
+<li class="p">
+<p>Ces dates permettent de déterminer s'il s'agit d'un document <span class="hcp4">récent</span> lors d'une recherche.</p>
+</li>
+<li class="p">
+<p>Ces dates permettent d'optimiser l<span class="hcp4">'indexation des documents existant</span>s dans la base Search. Lors de l'indexation par lot d'un document, si la base Search contient déjà des instances de ce document, le moteur ne sélectionne que les champs correspondants aux fields <span class="hcp1">DateCreation</span> et <span class="hcp1">DateModif</span> dans la base ERP afin <a href="Introduction.htm">d'appliquer les stratégies d'indexation des documents existants.</a></p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp2">DateHS</p>
+<p>La date de péremption permet de filtrer les <span class="hcp4">documents "actifs"</span> lors d'une recherche. Elle correspond par défaut au champ <span class="hcp1">HsDt</span> de la table. Si la date de péremption du document est supérieure à la date du jour, le document est <span class="hcp4">actif</span>. La notion de date de péremption n'existe pas forcément pour tous les documents, c'est pourquoi ce field a une valeur par défaut au 31-12-9999. Elle s'applique aux documents pour lesquels les champs correspondants au <span class="hcp1">field DateHs</span> n'existe pas ou renvoie une valeur nulle.</p>
+<p>Certaines tables gèrent un simple indicateur d'état (actif ou non actif). Il conviendra, dans le RecordSQL associé au document, de convertir l'indicateur en une date de péremption.</p>
+<p>&#160;</p>
+<p class="hcp2">Exemple SQL pour transformer un indicateur périmé en date de péremption</p>
+<p>case When EVTTIERS.CE2 = 2 THEN &#160;&#160;cast('9999-12-31' as date) ELSE &#160;cast('0001-01-01' as date) END as Hsdt(&gt;gtfdd.dhsd Hsdt)</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

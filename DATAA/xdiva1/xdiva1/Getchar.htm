@@ -1,0 +1,104 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Getchar</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold;
+text-decoration:underline; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-weight:bold; }
+span.hcp4 { font-style:italic;
+font-weight:normal; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-right:10px;
+padding-left:10px; }
+p.hcp7 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Getchar &#160;<a href="Listedesinstructionsd_entr_es_sorties.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Getchar permet de consulter le clavier. Cette fonction n'est pas bloquante, c'est à dire que le programme continue son exécution même si aucun caractère n'a été tapé.</p>
+<p class="Body-Text"><span class="hcp1">Attention, Getchar ne fonctionne pas toute seule</span> : il est <span class="hcp1">impératif</span> de l’<span class="hcp1">encadrer des instructions GetBegin et GetEnd</span>.<br>
+<br>
+Plus exactement, en cas de <span class="hcp2">boucle</span> incluant un Getchar, il faut <span class="hcp2">encadrer la boucle</span> de GetBegin et GetEnd (voir l'exemple).</p>
+&#160;
+<p class="Body-Text">GetBegin demande à l'exécutable qui tourne sur le poste "client léger" de démarrer une procédure d'attente d'un événement clavier. A défaut, les caractères tapés sont "perdus".<br>
+GetEnd demande au client d'arrêter cette procédure. A défaut, la procédure risque d'intercepter des caractères qui ne lui sont plus destinés.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Bin</font> = <font class="hcp3">getchar <span style="font-weight: bold; font-style: italic;">&#160;</span><span class="hcp4">(</span></font> <span class="hcp4">AvecHarmonyKey</span> )</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;">AvecHarmonyKey</p>
+<table style="vertical-align: top; left: 0px; top: 160px; height: 66px; margin-left: 36px;" cellspacing="0" width="100%">
+<col style="width: 10.361%;">
+<col style="width: 89.639%;">
+<tr class="hcp5">
+<td style="width:10.361%;" class="hcp6">
+<p class="hcp7">TRUE</p>
+</td>
+<td style="width:89.639%;" class="hcp6">
+<p>La fonction positionne Harmony.key. Il est conseillé d'utiliser ce mode.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:10.361%;" class="hcp6">
+<p class="hcp7">FALSE</p>
+</td>
+<td style="width:89.639%;" class="hcp6">
+<p>La fonction ne modifie pas Harmony.Key (valeur par défaut).<br>
+Ce mode permet d'assurer la compatibilité avec la fonction GetChar de la version 5 d'Harmony.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Retour</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">$00 (0 binaire) si aucun caractère n'a été tapé.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Sinon :<br>
+Pour les caractères "normaux", il s'agit du code ANSI du caractère. Pour les touches spéciales, il s'agit de leur ancien code PC8 (Cf. Defines F_xxx de Zdiva), pour assurer la compatibilité des programmes conçus en versions 5 ou antérieures d'Harmony.<br>
+<span class="hcp2"><br>
+Il est conseillé d'ignorer cette valeur et de plutôt tester Harmony.Key pour identifier la touche tapée</span> (ne pas oublier de positionner le paramètre <span style="font-style: italic;">AvecHarmonyKey</span> à TRUE).<br>
+En effet, toutes les touches et combinaisons de touches génèrent une valeur différente de Harmony.Key, y compris les touches "normales" (lettres, chiffres, etc.) qui génèrent la valeur K_ANSIKEY_OFFSET+nnn, où nnn est le code ANSI de la touche.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarque importante :</p>
+<p class="Body-Text">Une boucle sur la fonction Getchar fait monter considérablement l'utilisation du processeur. Dans une telle boucle, il est donc conseillé d'utiliser la fonction <a href="Sleep.htm">Sleep</a> pour rendre la main au système.</p>
+<p class="Body-Text">Voir également la fonction <a href="Getbchar.htm">Getbchar</a> qui est bloquante et ne pénalise pas le système.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Exemple :</font></p>
+<p class="Body-Text">Attendre qu'un caractère soit tapé pour passer à la suite et traiter le caractère tapé :</p>
+<p class="Body-Text">&#160;</p>
+<p class="Source">GetBegin</p>
+<p class="Source">loop getchar(TRUE) = $00</p>
+<p class="Source">&#160;&#160;&#160;Sleep(100) ; attente 100 milli-secondes &#160;</p>
+<p class="Source">endloop</p>
+<p class="Source">GetEnd</p>
+<p class="source">&#160;</p>
+<p class="Source">switch Harmony.key</p>
+<p class="Source">case K_F1</p>
+<p class="Source">&#160;&#160;&#160;display "F1"</p>
+<p class="Source">case K_SF1</p>
+<p class="Source">&#160;&#160;&#160;display "Maj+F1"</p>
+<p class="Source">case K_CTRL_SINSERT</p>
+<p class="Source">&#160;&#160;&#160;display "Maj+Ctrl+Insert"</p>
+<p class="Source">endswitch</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Voir</font></p>
+<p class="Body-Text"><a href="Getbchar.htm">Getbchar</a>, <a href="Sleep.htm">Sleep</a></p>
+</body>
+</html>

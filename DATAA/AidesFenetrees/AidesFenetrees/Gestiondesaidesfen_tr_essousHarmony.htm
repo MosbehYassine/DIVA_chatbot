@@ -1,0 +1,47 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion des aides fenêtrées sous Harmony</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Gestion des aides fenêtrées sous Harmony</h2>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Xwin permet d'associer une aide fenêtrée à chaque donnée d'un masque.<br>
+Pour afficher l'aide affectée à une donnée, l'utilisateur doit taper la touche Maj+F1 en cours de saisie de cette donnée.<br>
+<br>
+Une aide fenêtrée peut aussi être associée au menu Divalto, aux zooms ou à vos programmes (instruction Diva XmeHelp).<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les rubriques d’aide d’une application sont regroupées dans un ou plusieurs "fichiers d’aides".<br>
+Pour afficher une rubrique, il faut fournir le <span class="hcp1">nom du fichier d’aides</span> (<span style="text-decoration: underline;">sans préciser d'extension</span>) plus le <span class="hcp1">numéro de la rubrique</span> dans ce fichier. Conventionnellement, les numéros <font class="hcp2">65534 <span style="font-weight: normal;">et</span> <span class="hcp1">65535</span></font> demandent non pas l'affichage d'une rubrique d'aide précise, mais l'affichage du <font class="hcp2">sommaire</font> de l'aide.<span class="hcp1"><br>
+<br>
+Exemple</span> d’une aide contextuelle paramétrée dans Xwin pour une donnée en saisie :<br>
+Fichier : monaide ; Numéro : 1407.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Pour les applications s'exécutant en mode client léger, les aides doivent être obligatoirement <a href="Saisieetconstitutiond_unfichierd_aidesWindows.htm">générées au format WebHelp</a></span> (.htm).<span class="hcp1"><br>
+<br>
+Remarque</span> :<br>
+Contrairement aux formats Html Help et WinHelp, pour lesquels un "fichier d'aides" est effectivement un simple fichier (d'extensions respectives .chm et .hlp), les constituants d'une aide au format WebHelp sont regroupés dans un dossier incluant toute une batterie de sous-répertoires et de fichiers. Dans ce cadre, le "nom du fichier d'aides" est en réalité le nom de ce dossier. De plus, ce dossier doit lui-même contenir une "page de lancement" de même nom et d'extension .htm. Par exemple, le dossier gtfaide contient les aides de l’application "Commerce et logistique" et inclut la page de lancement gtfaide.htm.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

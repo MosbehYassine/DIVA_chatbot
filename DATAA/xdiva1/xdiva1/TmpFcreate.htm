@@ -1,0 +1,95 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>TmpFcreate</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>TmpFcreate &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction TmpFcreate permet de créer un fichier temporaire.</p>
+<p class="Body-Text">En utilisation 'standard', les fichiers temporaires sont créés automatiquement lors du chargement du module. Dans ce cas, il n'y a pas besoin d'utiliser la fonction TmpFcreate.</p>
+<p class="Body-Text">La fonction TmpFcreate permet de créer un fichier temporaire si ce dernier a été déclaré par une instruction HTmpFile &#160;avec le paramètre NOOPEN et sans le paramètre OpenOnUse.</p>
+<p class="Body-Text">Il est plus simple d'utiliser l'option OpenOnUse de <a href="HTmpFile.htm">HTmpFile</a> qui créé les fichiers lors de leur utilisation.</p>
+<p class="Body-Text">TmpFcreate permet également de créer un fichier temporaire de type N en utilisant une Tdf quelconque (non déclarée par HTmpFile). Ces fichiers ne seront pas supprimés automatiquement en fin de programme.</p>
+<p class="Body-Text"><font class="hcp2">Numer</font> = <font class="hcp2">T</font><font class="hcp2">mp</font><font class="hcp2">f</font><font class="hcp2">create</font> (<font class="hcp3">Tdf , [mode] , [ taille_enreg]</font>)</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Tdf du fichier temporaire.</p>
+<p class="Body-Text"><font class="hcp3">Mode</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:5.43%;" class="hcp5">
+<p class="Body-Text" style="margin-left: 3.60pt;">1</p>
+</td>
+<td style="width:94.57%;" class="hcp5">
+<p class="Body-Text">Mode automatique (valeur par défaut). Le fichier est créé avec les caractéristiques (fichiers et clés) du dictionnaire de données. La tdf doit obligatoirement avoir été déclarée par l'instruction HTmpFile.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:5.43%;" class="hcp5">
+<p class="Body-Text" style="margin-left: 3.60pt;">0</p>
+</td>
+<td style="width:94.57%;" class="hcp5">
+<p class="Body-Text">Mode non automatique. Dans ce cas, la fonction crée un fichier temporaire de type N avec la taille d'enregistrement précisée par le paramètre <font class="hcp3">taille_enreg</font>.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:5.43%;" class="hcp5">
+<p class="Body-Text" style="margin-left: 3.60pt;">2</p>
+</td>
+<td style="width:94.57%;" class="hcp5">
+<p class="Body-Text">Le fichier temporaire est créé en type U.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp3">Taille_enreg</font></p>
+<p class="decalage05">Taille des enregistrements pour une création en mode non automatique.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">Si la Tdf a été déclarée avec l'option DeleteOnExit, le fichier sera automatiquement supprimé en fin de programme.</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text">Pas d'erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Toutes les erreurs provoquent l'arrêt du programme.</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="HTmpFile.htm">HTmpFile</a>, <a href="HSiCreate.htm">HSiCreate</a>, <a href="HSiMod.htm">HSiMod</a> , <a href="GetTempPath.htm">GetTempPath</a></p>
+</body>
+</html>

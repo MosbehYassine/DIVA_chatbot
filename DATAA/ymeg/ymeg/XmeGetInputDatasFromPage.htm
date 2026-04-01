@@ -1,0 +1,163 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeGetInputDatasFromPage</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+font.hcp4 { font-weight:bold; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp7 { list-style:disc; }
+td.hcp8 { vertical-align:Top; }
+font.hcp9 { font-family:Symbol; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>XmeGetInputDatasFromPage <a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; 
+															 font-size: 10pt;" 
+															 face="MS Sans Serif" 
+															 size="2">&#160;</font><a 
+	 href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h1>
+<p class="Body-Text"><span class="hcp2">Obtenir la liste 
+ des données en saisie d'une page</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp2">Int XmeGetInputDatasFromPage 
+ </span>(<font class="hcp3">Nom du fichier masque</font>, 
+ <font class="hcp3">Numéro de page)</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+	<tr class="hcp5">
+		<td style="width:26.16%;" class="hcp6"><p class="Body-Text"><font class="hcp3">Nom du fichier masque</font><br>
+		(Harmony.Masque)</p></td>
+		<td style="width:73.84%;" class="hcp6"><p class="Body-Text">Nom 
+		 du fichier masque.</p></td>
+	</tr>
+	<tr class="hcp5">
+		<td style="width:26.16%;" class="hcp6"><p class="Body-Text"><font class="hcp3">Numéro de page</font><br>
+		(Harmony.Page)</p></td>
+		<td style="width:73.84%;" class="hcp6"><p class="Body-Text">Numéro 
+		 de la page.</p></td>
+	</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Valeur rendue par 
+ la fonction&#160;:</font> Ticket identifiant une liste contenant la description 
+ des champs en saisie.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Description de la fonction&#160;:</p>
+<ul class="hcp7">
+	<li><p class="Body-Text">Cette fonction retourne une liste d'éléments.<br>
+	La description de ces éléments correspond à la table InputField du 
+	 dictionnaire ddsys.dhsd. (Record ddsys.dhsd InputField)</p></li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;">Quelques remarques concernant 
+ les champs de InputField :</p>
+<table style="margin-left: 40px;" cellspacing="0" width="100%">
+	<col style="width: 17.841%;">
+	<col style="width: 82.159%;">
+	<tr>
+		<td class="hcp8"><p class="Body-Text"><span class="hcp2">Expression</span></p></td>
+		<td class="hcp8"><p class="Body-Text">Expression 
+		 contient instance.champ(indices). Cela permet de faire un DataDescriptor 
+		 pour récupérer la valeur du champ.</p></td>
+	</tr>
+	<tr>
+		<td class="hcp8"><p class="Body-Text"><span class="hcp2">LibelleDansMasque</span></p></td>
+		<td class="hcp8"><p class="Body-Text">Il s'agit 
+		 du texte se trouvant à gauche de la zone en saisie dans la page.</p></td>
+	</tr>
+	<tr>
+		<td class="hcp8"><p class="Body-Text"><span class="hcp2">MnemoRecordDictionnaire</span></p></td>
+		<td class="hcp8"><p class="Body-Text">Nom de l'enregistrement 
+		 dans le dictionnaire dhsd. Dans le cas des recordSql le nom de 
+		 la table peut être un alias et ne permet pas de retrouver le nom 
+		 de la table dans le dictionnaire.</p></td>
+	</tr>
+	<tr class="hcp5">
+		<td style="width:22.476%;" class="hcp6"><p class="Body-Text"><font class="hcp4">TypeObjet</font></p></td>
+		<td style="width:77.524%;" class="hcp6"><p class="Body-Text">Type 
+		 de l'objet :<font face="Symbol" class="hcp9"><br>
+		-</font> 2 = objet &quot;Champ&quot;.<font face="Symbol" class="hcp9"><br>
+		-</font> 3 = objet &quot;Multi-choix&quot;.<font face="Symbol" class="hcp9"><br>
+		-</font> 9 = objet &quot;Bitmap variable&quot;.<font face="Symbol" class="hcp9"><br>
+		-</font> 17 = objet &quot;Arbre&quot;.</p></td>
+	</tr>
+	<tr class="hcp5">
+		<td style="width:22.476%;" class="hcp6"><p class="Body-Text"><font class="hcp4">Cadrage</font></p></td>
+		<td style="width:77.524%;" class="hcp6"><p class="Body-Text">Objet 
+		 &quot;Champ&quot; ou &quot;Graphique&quot;&#160;:<font face="Symbol" class="hcp9"><br>
+		-</font> 1 = Aucun.<font face="Symbol" class="hcp9"><br>
+		-</font> 2 = Gauche.<font face="Symbol" class="hcp9"><br>
+		-</font> 3 = Droite.<font face="Symbol" class="hcp9"><br>
+		-</font> 4 = Centré.<br>
+		Autres objets&#160;: 0.</p></td>
+	</tr>
+	<tr class="hcp5">
+		<td style="width:22.476%;" class="hcp6"><p class="Body-Text"><font class="hcp4">Nature</font></p></td>
+		<td style="width:77.524%;" class="hcp6"><p class="Body-Text">Nature 
+		 de la donnée (type X)&#160;:<br>
+		1 = Numérique (décimales variables).<br>
+		2 = Numérique (décimales fixes).<br>
+		3 = Alphanumérique.<br>
+		4 = Date.<br>
+		6 = Type B.<br>
+		7 = Type X.<br>
+		9 = Type L.<br>
+		10 = Heure.<br>
+		11 = Date mensuelle.<br>
+		12 = Date + heure<br>
+		13 = Durée.</p></td>
+	</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<ul class="hcp7">
+	<li class="p-Body-Text"><p class="Body-Text"><span class="hcp2">Remarques</span> 
+	 : </p></li>
+	<ul class="hcp7">
+		<li class="p-Body-Text"><p class="Body-Text">Après usage, il faut 
+		 détruire la liste par ListDestroy.</p></li>
+		<li class="p-Body-Text"><p class="Body-Text">Pour les données de 
+		 type Multi-Choix et Groupe-Radio, la liste des choix (ou des noms 
+		 de boutons) est placée dans la première propriété associée à l'élément 
+		 de la liste. Utiliser ListGetProp pour lire cette propriété.</p></li>
+	</ul>
+</ul>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp4">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">1 liste L</p>
+<p class="Source">Record ddsys.dhsd InputField </p>
+<p class="Source">&#160;</p>
+<p class="Source">main</p>
+<p class="Source">&#160;&#160;&#160;xmeLoad(&quot;gtez000_sql.dhof&quot;)</p>
+<p class="Source">&#160;&#160;&#160;liste = XmeGetInputDatasFromPage(harmony.masque,11)</p>
+<p class="Source">&#160;&#160;&#160;ListBegin(liste)</p>
+<p class="Source">&#160;&#160;&#160;Loop ListNext(liste,InputField ) &lt;&gt; 
+ 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;display InputField 
+ .LibelleDansMasque &amp;&amp; &quot; &quot; &amp; InputField .expression 
+ </p>
+<p class="Source">&#160;&#160;&#160;endloop</p>
+<p class="Source">&#160;&#160;&#160;ListDestroy(liste)</p>
+<p class="Source">&#160;&#160;&#160;ProgramExit</p>
+<p>&#160;</p>
+</body>
+</html>

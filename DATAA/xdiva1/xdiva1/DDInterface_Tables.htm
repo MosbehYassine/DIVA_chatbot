@@ -1,0 +1,225 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DDInterface : Tables</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+table.hcp3 { margin-left:21.30pt;
+border-collapse:separate; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { border-top:0.50pt solid #000000;
+border-bottom:0.50pt solid #000000;
+border-left:0.50pt solid #000000;
+border-right:0.50pt solid #000000;
+padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DDInterface : Tables &#160;<a href="Listedesinstructionsd_acc_saudictionnairedesdonn_es.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Acc_saudictionnairededonn_es.htm"><font class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">Les commandes de lecture de tables renvoient les valeurs suivantes&#160;:</p>
+<p class="Body-Text"><font class="hcp2">Pour le niveau 1&#160;:</font></p>
+<table cellspacing="0" width="656" border="1" class="hcp3">
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">Nom</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Nom du champ en majuscules.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">NomSaisi</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Nom avec minuscules et majuscules.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">Libelle</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Commentaire.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">LgTable</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Taille des enregistrements dans le fichier.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">LgTableMemoire</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Taille de l’enregistrement en mémoire.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">PositionPack</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Position de la zone packée.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">LgPack</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Taille de la zone packée.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">ChampCe</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Champ utilisé comme code enregistrement.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">PositionCe</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Position du code enregistrement</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">NatureCe</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Nature du champ servant de code enregistrement. Voir <a href="DDInterface_Champs.htm">DDInterface : Champs</a> .</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.70%;" class="hcp5">
+<p class="Body-Text">ValeurCe</p>
+</td>
+<td style="width:68.30%;" class="hcp5">
+<p class="Body-Text">Valeur du code enregistrement. Attention, cette valeur est transmise en décimal et doit être convertie en binaire.</p>
+<p class="source">1 Dico_ValeurCe&#160;1</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">2 Dico_ValeurCeBin b&#160;</p>
+<p class="source">1 valnum 3,0</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">valnum = HmpSeek(reponse,"ValeurCe")&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">Dico_ValeurCeBin = valnum&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Pour le niveau 2&#160;:</font></p>
+<table cellspacing="0" width="656" border="1" class="hcp3">
+<tr class="hcp4">
+<td style="width:31.36%;" class="hcp5">
+<p class="Body-Text">DateCreation</p>
+</td>
+<td style="width:68.64%;" class="hcp5">
+<p class="Body-Text">Date de création de l’élément.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.36%;" class="hcp5">
+<p class="Body-Text">UtilisateurCreation</p>
+</td>
+<td style="width:68.64%;" class="hcp5">
+<p class="Body-Text">Utilisateur qui a créé l’élément.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.36%;" class="hcp5">
+<p class="Body-Text">DateModif</p>
+</td>
+<td style="width:68.64%;" class="hcp5">
+<p class="Body-Text">Date de dernière modification de l’élément.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.36%;" class="hcp5">
+<p class="Body-Text">UtilisateurModif</p>
+</td>
+<td style="width:68.64%;" class="hcp5">
+<p class="Body-Text">Utilisateur qui a effectué la dernière modification.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.36%;" class="hcp5">
+<p class="Body-Text">NumeroCommentaire</p>
+</td>
+<td style="width:68.64%;" class="hcp5">
+<p class="Body-Text">Numéro de commentaire général dans le fichier des commentaires.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:31.36%;" class="hcp5">
+<p class="Body-Text">NumeroCommentaireLocal</p>
+</td>
+<td style="width:68.64%;" class="hcp5">
+<p class="Body-Text">Numéro de commentaire local.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_Nom &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;32</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_NomSaisi &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;32</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_Libelle &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;80</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_DateCreation &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;8</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_UtilisateurCreation &#160;&#160;&#160;20</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_DateModif &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;8</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_UtilisateurModif &#160;&#160;&#160;&#160;&#160;&#160;20</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_NumeroCommentaire &#160;&#160;&#160;&#160;&#160;6,0</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_NumeroCommentaireLocal 6,0</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_LgTable &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0 ;taille des enregistrements</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_LgTableMemoire&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0 ;taille en memoire</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_PositionPack&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0 ;position de la zone packee</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_LgPack&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0 ;taille de la zone packee</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_ChampCe&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;32 ;nom de la donnee identifiant ( ce )</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_PositionCe&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;6,0 ;position de l'identifiant</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_NatureCe&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2,0 ;nature de l'identifiant</p>
+<p class="source" style="margin-left: 5.75pt;">1 Dico_ValeurCe&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1 ;valeur de l'identifiant</p>
+<p class="source" style="margin-left: 5.75pt;">2 Dico_ValeurCeBin &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;b&#160;</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;</p>
+<p class="source" style="margin-left: 5.75pt;">1 reponse &#160;&#160;&#160;&#160;4096</p>
+<p class="source" style="margin-left: 5.75pt;">1 valeurnum3 &#160;&#160;&#160;3,0</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_Nom&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"Nom")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_NomSaisi &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"NomSaisi")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_Libelle &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"Libelle")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_DateCreation &#160;&#160;&#160;&#160;= HmpSeek(reponse,"DateCreation")&#160;</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_UtilisateurCreation = HmpSeek(reponse,"UtilisateurCreation")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_DateModif &#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"DateModif")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_UtilisateurModif = HmpSeek(reponse,"UtilisateurModif")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_NumeroCommentaire= HmpSeek(reponse,"NumeroCommentaire")&#160;</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_NumeroCommentaireLocal = HmpSeek(reponse,"NumeroCommentaireLocal")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_LgTable&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"LgTable")&#160;</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_LgTableMemoire&#160;= HmpSeek(reponse,"LgTableMemoire")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_PositionPack&#160;&#160;&#160;= HmpSeek(reponse,"PositionPack")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_LgPack&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"LgPack")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_ChampCe&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"ChampCe")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_PositionCe&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"PositionCe")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_NatureCe&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"NatureCe")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;valeurnum3 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;= HmpSeek(reponse,"ValeurCe")</p>
+<p class="source" style="margin-left: 5.75pt;">&#160;Dico_ValeurCeBin &#160;&#160;&#160;= valeurnum3</p>
+</body>
+</html>

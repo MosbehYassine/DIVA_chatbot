@@ -1,0 +1,120 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListGetId</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-weight:bold;
+font-style:italic; }
+ul.hcp7 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListGetId &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Identification et initialisation d'un tableau<br>
+Lecture de l'identifiant d'un tableau</font><br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Long XmeListGetId</font> (<font class="hcp3">Masque, Page, Tableau, Ligne</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="434">
+<tr class="hcp4">
+<td style="width:21.75%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Masque</font></p>
+</td>
+<td style="width:78.25%;" class="hcp5">
+<p class="Body-Text">Nom du fichier masque.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:21.75%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Page</font></p>
+</td>
+<td style="width:78.25%;" class="hcp5">
+<p class="Body-Text">Numéro de page.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:21.75%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Tableau</font></p>
+</td>
+<td style="width:78.25%;" class="hcp5">
+<p class="Body-Text">Nom du tableau.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:21.75%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Ligne</font></p>
+</td>
+<td style="width:78.25%;" class="hcp5">
+<p class="Body-Text">Enregistrement "&#160;ligne du tableau&#160;".</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font> <font class="hcp6">Identifiant</font> du tableau, à passer en paramètre de toutes les fonctions référençant le tableau et appelées ultérieurement par le programme.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Au <font class="hcp2">premier appel</font>, la fonction <font class="hcp2">XmeListGetId</font> crée et initialise la <font class="hcp2">liste</font> associée au tableau. A cette occasion, Ywpf calcule une valeur, rendue par XmeListGetId, qui servira à identifier le tableau de manière unique.<font class="hcp2"><br>
+Aucune fonction</font> gérant le tableau <font class="hcp2">ne peut être appelée AVANT</font> XmeListGetId car l'<font class="hcp2">identifiant</font> renvoyé doit être passé en paramètre de toutes les fonctions concernant le tableau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lors des <font class="hcp2">appels suivants</font>, la fonction XmeListGetId renvoie simplement l'identifiant du tableau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le tableau est identifié par le <font class="hcp6">Nom du fichier masque</font> plus le <font class="hcp6">Numéro de page</font> où il a été dessiné et par le <font class="hcp6">Nom de tableau</font> qui lui a été attribué dans Xwin (une même page de masque peut contenir plusieurs tableaux&#160;; des tableaux portant le même nom peuvent être dessinés dans des pages différentes).<br>
+L'enregistrement <font class="hcp6">Ligne</font> qui sera stocké dans les éléments de la liste doit aussi être passé en paramètre (mais ici, son contenu n'est pas significatif).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Remarques&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Le masque doit être préalablement chargé par XmeLoad.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Cette fonction nomme la liste afin de faciliter sa reconnaissance dans le débogueur de Xwin.<br>
+Le nom est calculé en concaténant <span style="margin-left: 17.85pt; text-indent: -17.85pt;">nom du masque (sans l'extension), numéro de la page et nom du tableau (en séparant les éléments par un _).</span></p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Ligne &#160;&#160;&#160;&#160;&#160;;enregistrement ligne de tableau</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 Ident L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;identifiant du tableau</p>
+<p class="Source">...</p>
+<p class="Source">XmeLoad ("EOBJTAB") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font class="hcp2">X</font>meInfoPage ("EOBJTAB",1)</p>
+<p class="Source">XmeSetWindowSize ("EOBJTAB",1,Harmony.Opara3,Harmony.Opara4)</p>
+<p class="source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;init du tableau de nom TABLEAU&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;situé dans la page 1 du masque&#160;</p>
+<p class="Source">Ident = XmeListGetId ("EOBJTAB",1,"TABLEAU",Ligne)</p>
+<p class="Source">...</p>
+<p class="Source">XmeListAddEnd (Ident, Ligne) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;fonction sur le tableau :</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Ident est passé en paramètre&#160;</p>
+<p class="Source">...</p>
+</body>
+</html>

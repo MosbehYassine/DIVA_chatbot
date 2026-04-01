@@ -1,0 +1,105 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Modifier les paramètres de mise en retrait et de tabulation</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-weight:bold; }
+span.hcp4 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Modifier les paramètres de mise en retrait et de tabulation</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Dans l'éditeur de texte, la taille des tabulations ainsi que le mode et la taille des mises en retrait automatiques sont paramétrables.</p>
+&#160;
+<p class="Body-Text">La taille des tabulations intervient :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Lors de la frappe des touches Tab et Maj+Tab.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dans les commandes d'édition <a href="Indenterleslignesdevotreprogramme.htm">Indenter et Désindenter</a>.</p>
+</li>
+</ul>
+<p class="Body-Text">Les paramètres de mise en retrait s'appliquent :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Lors de la frappe de la <span class="hcp2">touche Entrée</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lors de l<a href="Insertion_d_une_structure_de_contr&ocirc;le_standard_du_langage_Diva.htm">'insertion d'une structure Diva</a> ou d'un <a href="Insertion_d_un_fichier_d_extrait_de_code_personnalis&eacute;.htm">extrait de code</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lors de la génération d'un traitement de masque ou de dictionnaire.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp2">Pour modifier ces paramètres</span>&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Sélectionnez le choix <font class="hcp3">Options</font> du menu <font class="hcp3">Outils</font> pour appeler la boîte de dialogue "Options".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp3"><span class="hcp4">Dans la liste des chapitres,</span> cliquez</font> sur <font class="hcp3">Editeur de texte : Tabulations / Espace virtuel</font>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Faites ensuite votre choix parmi les options suivantes :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: bold;">Mise en retrait<span class="hcp4"><br>
+&#160;</span></p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: bold;">Bloc<span class="hcp4"><br>
+Touche Entrée : la nouvelle ligne est en général alignée sur le premier caractère significatif de la ligne courante.<br>
+<br>
+Insertion d'une structure Diva ou d'un extrait de code : le bout de code généré est aligné sur le premier caractère significatif de la première ligne non blanche qui précède.</span><br>
+<br>
+Remarque <span class="hcp4">: Le mode "Intelligente" est introduit en version 6.2. Pour conserver le fonctionnement des versions antérieures, sélectionnez le mode "Bloc".<br>
+&#160;</span></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: bold;">Intelligente<span class="hcp4"><br>
+Les nouvelles lignes sont automatiquement mises en retrait de manière à s'adapter au contexte existant. Par exemple, les lignes situées à l'intérieur d'une structure de contrôle (if, loop, ...) sont décalées par rapport à cette dernière du nombre d'espaces spécifié dans le paramètre Taille du retrait.<br>
+<br>
+Touche Entrée : afin de faciliter la "saisie kilométrique", l'éditeur traite aussi la ligne courante si celle-ci débute par un milieu ou une fin de structure Diva (else, elsif, while, case, default ; endif, endloop, …, endp, endf). Par exemple, Entrée tapée derrière l'instruction If crée une nouvelle ligne et y positionne le curseur en retrait par rapport au If ; si Endif est tapé (donc décalé par rapport au If), suivi de Entrée, l'éditeur recadrera automatiquement le Endif sur le If.</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px; font-weight: normal;"><span class="hcp2">Exception</span> : Les procédures et les fonctions sont toujours générées en colonne 1.<br>
+&#160;</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp3">Taille des tabulations</font><br>
+Définit la distance en espaces entre les taquets de tabulation (3 par défaut).<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp3">Taille du retrait</font><br>
+Définit la taille en espaces d'une mise en retrait automatique. Des tabulations, complétées le cas échéant par des espaces, seront insérées pour occuper la taille spécifiée.<span class="hcp2"><br>
+<br>
+Remarque</span> : La taille du retrait est introduite en version 6.2. Pour conserver le fonctionnement des versions antérieures, saisissez comme taille de retrait la même valeur que la taille des tabulations (valeur conseillée).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Procédure correspondante :</p>
+<p class="Body-Text"><a href="Pourmodifierlavaleurdestabulations.htm">Pour modifier les paramètres de mise en retrait et de tabulation</a></p>
+</body>
+</html>

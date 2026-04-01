@@ -1,0 +1,146 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Personnaliser un extrait de code</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold;
+text-decoration:underline; }
+ul.hcp3 { list-style:disc; }
+li.hcp4 { list-style:none;
+display:inline; }
+p.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Saisie et personnalisation d'un fichier d'extrait de code</h3>
+<p>Les extraits de code doivent être écrits dans un fichier d'<span class="hcp1">extension .dhsp</span> et <span class="hcp2">doivent</span> <span class="hcp2">respecter</span> <span class="hcp1">le format</span> suivant :</p>
+<ul class="hcp3">
+<li class="p">
+<p>La <span class="hcp1">première ligne</span> du fichier doit être <span class="hcp1">impérativement</span> :<br>
+&lt;Extrait de code Diva&gt;</p>
+</li>
+<li class="p">
+<p>Les lignes suivantes sont au format <span class="hcp1">HMP</span>, avec <span class="hcp1">un seul paramètre par ligne</span> (l'ordre des paramètres est quelconque, hormis &lt;Code&gt; qui doit être en dernier) :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p">
+<p>&lt;<span class="hcp1">Version</span>&gt;1.1 (paramètre et valeur <span class="hcp1">obligatoires</span>).</p>
+</li>
+<li class="p">
+<p>&lt;<span class="hcp1">Ident</span>&gt;<span style="font-style: italic;">xxxxxx</span> (paramètre <span class="hcp1">obligatoire</span>).<br>
+La valeur indiquée ici identifie l'extrait. C'est cet identifiant qui apparaîtra dans la liste présentée par le sélecteur d'extraits de code et qui pourra servir de raccourci clavier lors de la sélection.</p>
+</li>
+<li class="p">
+<p>&lt;<span class="hcp1">Auteur</span>&gt;aaaaaa (paramètre facultatif).<br>
+Indiquez ici la personne responsable de l'extrait de code.</p>
+</li>
+<li class="p">
+<p>&lt;<span class="hcp1">Curseur</span>&gt;cccccc (paramètre facultatif, <span class="hcp1">$C$</span> par défaut).<br>
+Chaîne de reconnaissance pour le positionnement du curseur (voir paragraphe "Positionnement du curseur dans le code inséré" ci-après). Attention, la casse est ici significative.</p>
+</li>
+<li class="p">
+<p>&lt;<span class="hcp1">Date</span>&gt;dddddd (paramètre facultatif, <span class="hcp1">$D$</span> par défaut).<br>
+Chaîne de reconnaissance pour l'insertion de la date (voir paragraphe "Placement de la date dans le code inséré" ci-après). Attention, la casse est ici significative.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 48px;">Pour les deux paramètres suivants, <span class="hcp1">le contenu débute</span> sur la ligne qui <span class="hcp1">suit</span> le mot clé (un texte situé immédiatement derrière le mot clé est ignoré) et <span class="hcp1">peut comporter plusieurs lignes</span> :</p>
+<ul class="hcp3">
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p">
+<p>&lt;<span class="hcp1">Description</span>&gt; (paramètre et contenu <span class="hcp1">obligatoires</span>).<br>
+Saisissez ici un court descriptif de l'extrait. Celui-ci apparaîtra en tête de la fenêtre d'information rapide, lors de la sélection de l'extrait dans la liste des extraits disponibles.</p>
+</li>
+<li class="p">
+<p>&lt;<span class="hcp1">Code</span>&gt; (en <span class="hcp2">DERNIER</span>, paramètre et contenu <span class="hcp1">obligatoires</span>).<br>
+Saisissez ici le code source à insérer.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp5">Positionnement du curseur dans le code inséré</p>
+<p>Vous pouvez demander à ce que le curseur soit positionné à un endroit précis de votre code, après son insertion.<br>
+Pour ce faire, faites figurer la chaîne "$C$" (attention, la casse est significative) n'importe où dans votre code source : le curseur sera positionné à l'endroit où figure cette chaîne et cette dernière sera supprimée du code effectivement généré.<br>
+Si la chaîne par défaut "$C$" ne convient pas, vous pouvez spécifier une autre valeur derrière le paramètre &lt;<span class="hcp1">Curseur</span>&gt;.<span class="hcp1"><br>
+&#160;</span></p>
+<p>&#160;</p>
+<p class="hcp5">Placement de la date dans le code inséré</p>
+<p>Vous pouvez demander à insérer la date du jour dans votre code.</p>
+<p>Pour ce faire, faites figurer la chaîne "$D$" (attention, la casse est significative) n'importe où dans votre code source. La date insérée est au format JJ/MM/AAAA.</p>
+<p>Si la chaîne par défaut "$D$" ne convient pas, vous pouvez spécifier une autre valeur derrière le paramètre &lt;Date&gt;.</p>
+&#160; <br>&#160; <br>&#160;
+<p class="hcp5">Exemple</p>
+&#160;
+<p class="Source">&lt;Extrait de code Diva&gt;</p>
+<p class="Source">&lt;Version&gt;1.1</p>
+<p class="Source">&lt;Ident&gt;XmeInput</p>
+<p class="Source">&lt;Auteur&gt;Divalto</p>
+<p class="Source">&lt;Curseur&gt;$C$<br>
+&#160;</p>
+<p class="Source">&lt;Description&gt;</p>
+<p class="Source">Boucle de saisie d'une page de masque écran<br>
+(mode Goto)<br>
+&#160;</p>
+<p class="Source">&lt;Code&gt;</p>
+<p class="Source">fini = 0</p>
+<p class="Source">XmeInput ("$C$&lt;masque&gt;.dhof",&lt;page&gt;,0,XME_MODE_GOTO) &#160;;lance la saisie</p>
+<p class="Source">do</p>
+<p class="Source">&#160;&#160;&#160;switch Harmony.Arret &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tests des causes de l'interruption</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;case Harmony.Key = K_F9 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;abandon</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;fini = 1<br>
+&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;case Harmony.Key in (K_UP,K_BTAB) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Flèche en haut ou Maj+Tab</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tapée sur la 1ère donnée du masque<br>
+&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;case Harmony.Key in (K_F10,K_TAB,K_DOWN) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;validation ou sortie par Tab ou Flèche en bas<br>
+fini = 2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;sur la dernière donnée du masque</p>
+<p class="Source">&#160;&#160;&#160;endswitch<br>
+&#160;</p>
+<p class="Source">while fini = 0</p>
+<p class="Source">&#160;&#160;&#160;XmeNext (Harmony.Retour,Harmony.CplRetour) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;poursuite de la saisie</p>
+<p class="Source">wend<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp5">Si un fichier d'extrait est erroné</p>
+<p>Lorsque Xwin détecte une erreur dans un fichier d'extrait de code (à l'ouverture du gestionnaire d'extraits de code ou lors d'une demande d'insertion), il ne présente pas ce fichier dans la liste des extraits disponibles. Afin que vous puissiez remédier au problème, il édite l'erreur dans l'<span class="hcp1">onglet Messages</span>. <span class="hcp2">Attention</span> : Xwin continue de garnir cet onglet tant que l'erreur n'est pas corrigée. Après correction, vous pouvez effacer le contenu de l'onglet Messages en cliquant droit dans la barre de titre de l'onglet et en sélectionnant le choix <span class="hcp1">Effacer</span> du menu contextuel.<span class="hcp1"><br>
+<br>
+<br>
+<br>
+Rappel</span> :</p>
+<ul class="hcp3">
+<li class="p">
+<p>Pour être pris en compte par Xwin, vous devez répertorier les dossiers dans lesquels vous avez stocké vos fichiers d'extrait, à l'aide du <a href="Gestionnaire_d_extraits_de_code.htm">Gestionnaire d’extraits de code</a> (accessible à partir du menu Outils).</p>
+</li>
+<li class="p">
+<p>Des exemples d'extrait sont livrés dans le dossier /Divalto/Exemples/Extraits.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp1">Conseils</span> :</p>
+<ul class="hcp3">
+<li class="p">
+<p>Pour améliorer les performances, <span class="hcp1">stockez uniquement des fichiers d'extrait de code</span> dans les dossiers que vous avez spécifiés avec le gestionnaire d'extraits de code.</p>
+</li>
+<li class="p">
+<p>Pour saisir vos fichiers, utilisez l'éditeur de textes de Xwin, <span class="hcp1">créez un projet spécifique</span> (avec un ou plusieurs sous-projets) et <span class="hcp1">"rangez" les fichiers source dans le dossier</span> <span class="hcp1">Divers</span> (afin d'éviter les inévitables erreurs de compilation).</p>
+</li>
+<li class="p">
+<p>Depuis le <a href="Gestionnaire_d_extraits_de_code.htm">Gestionnaire d'extraits de code</a>, vous pouvez aussi charger le fichier couramment sélectionné dans Xwin en cliquant sur le bouton <span class="hcp1">Editer</span>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

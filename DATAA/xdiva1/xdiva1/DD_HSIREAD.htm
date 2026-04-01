@@ -1,0 +1,72 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DD_HSIREAD</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DD_HSIREAD &#160;<a href="Listedesinstructionsd_acc_saudictionnairedesdonn_es.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Acc_saudictionnairededonn_es.htm"><font class="hcp1">Thème</font></a></h3>
+<p><font class="hcp2">Long</font> <a href="DDInterface.htm"><font class="hcp2">DDInterface</font></a> (<font class="hcp3">Commande , &amp;ticket , [paramètres] , retour, [niveau]</font>)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font style="font-size: 12pt; font-weight: bold;" size="4" color="#FF0000">DD_HSIREAD</font></p>
+<p class="decalage05" style="margin-left: 28.35pt;">La commande DD_HSIREAD permet de lire les index du fichier courant dans la table <font class="hcp2">cles</font> de ddsys.dhsd. Cette structure est utilisée par les instructions <a href="HSiCreate.htm">HSiCreate</a> , <a href="HSiRead.htm">HSiRead</a> , <a href="HSiMod.htm">HSiMod</a> .</p>
+<p class="decalage05" style="margin-left: 28.35pt;">Il est donc possible de lire la structure des clés par DD_HSIREAD et de créer le fichier ayant cette description de clés.</p>
+<p class="decalage05" style="margin-left: 28.35pt;">Il faut avoir préalablement lu un fichier du dictionnaire avec une commande <a href="DD_FILE_xxxx.htm">DD_FILE_xxxx</a> .</p>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp3">Retour</font> contient la description des clés au format cles de ddsys.dhsd.</p>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;">Voir <a href="DDInterface_Index.htm">DDInterface : Index</a></p>
+<p class="decalage05" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Retour</font></p>
+<table style="margin-left: 24.85pt;" cellspacing="0" width="435">
+<tr class="hcp4">
+<td style="width:23.88%;" class="hcp5">
+<p class="decalage05" style="text-indent: 14.15pt;">0</p>
+</td>
+<td style="width:76.12%;" class="hcp5">
+<p class="decalage05" style="text-indent: 14.15pt;">pas d’erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:23.88%;" class="hcp5">
+<p class="decalage05" style="text-indent: 14.15pt;">autre</p>
+</td>
+<td style="width:76.12%;" class="hcp5">
+<p class="decalage05" style="text-indent: 14.15pt;">Erreur. Voir <a href="DD_GETERROR.htm">DD_GETERROR</a></p>
+</td>
+</tr>
+</table>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;ticket&#160;L&#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;stindex X</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">record ddsys.dhsd cles &#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">stindex = DDInterface(DD_HSIREAD,ticket,,cles)</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="DDInterface.htm">DDInterface</a></p>
+<p class="Body-Text"><a href="DD_KEY_xxxx.htm">DD_KEY_xxxx</a></p>
+<p class="Body-Text"><a href="DD_FILE_xxxx.htm">DD_FILE_xxxx</a></p>
+<p class="Body-Text"><a href="HSiCreate.htm">HSiCreate</a> , <a href="HSiRead.htm">HSiRead</a> , <a href="HSiMod.htm">HSiMod</a> .</p>
+</body>
+</html>

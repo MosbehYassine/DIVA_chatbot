@@ -1,0 +1,41 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Méthode de sélection de l'imprimante</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Méthode de sélection de l'imprimante</h4>
+<p class="Body-Text">Harmony emploie la méthode suivante pour sélectionner une imprimante&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Si le modèle <font class="hcp1">précise un format d'impression</font> (format pour le spool), Harmony recherche un chapitre <font class="hcp1">[Printer-xxxx]</font> référençant ce format. On associe ainsi <font class="hcp1">une imprimante</font> à <font class="hcp1">chaque format</font>&#160;:<br>
+[Printer-xxxx]<br>
+device=...<br>
+[Printer-yyyy]<br>
+device=...</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le modèle <font class="hcp1">ne précise pas de format</font> ou si le format n'est pas référencé comme indiqué ci-dessus, Harmony recherche le chapitre générique <font class="hcp1">[Printer]</font>. On associe ainsi <font class="hcp1">une imprimante</font> aux <font class="hcp1">impressions caractères sans format</font>&#160;:<br>
+[Printer]<br>
+device=...</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Enfin, si aucun de ces chapitres n'est présent dans Divalto.ini, c'est l'imprimante par défaut de Windows qui est utilisée.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">Remarque</font>&#160;: aucune différence n'est faite au niveau du format entre lettres minuscules et majuscules.</p>
+</body>
+</html>

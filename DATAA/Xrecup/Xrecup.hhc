@@ -1,0 +1,40 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="xRepair : Vérification de la structure des fichiers">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Descriptif du programme xRepair">
+      <param name="Local" value="Xrecup/DescriptifduprogrammeXrecup.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Correction automatisée">
+      <param name="Local" value="Xrecup/Correctionautomatis_e.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Correction manuelle">
+      <param name="Local" value="Xrecup/Correctionmanuelle.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Le fichier paramètres xRepair.txt">
+      <param name="Local" value="Xrecup/Lefichierparam_tresXrecupf_txt.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Correction semi-automatique par pointage">
+      <param name="Local" value="Xrecup/Correctionsemi_automatiqueparpointage.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Structure des fichiers de type N">
+      <param name="Local" value="Xrecup/StructuredesfichiersdetypeN.htm">
+    </object>
+    </ul>
+</ul>
+</html>

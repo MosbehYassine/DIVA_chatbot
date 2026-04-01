@@ -1,0 +1,41 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>xMajSession : Mise à jour du paramétrage sur un poste TSE</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>xMajSession : Mise à jour du paramétrage sur un poste TSE</h2>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Cet utilitaire ne concerne que les tâches Harmony s'exécutant sous Windows Terminal Serveur Edition (TSE).</p>
+<p class="Body-Text">Lorsque vous effectuez des modifications de paramétrage (par exemple, par xDivaltoPrinters) portant sur Divalto.ini et générales à tous les utilisateurs d'un serveur TSE, les modifications ne sont pas partout prises en compte immédiatement. Pour que les modifications soient effectives pour un <span class="hcp1">autre utilisateur</span> que celui pour lequel la modification a été effectuée au départ, il faut ensuite&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Redémarrer l'ordinateur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">OU fermer puis rouvrir la session pour cet utilisateur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">OU lancer le programme <span class="hcp1">xMajSession.exe</span> sur le poste de cet utilisateur.</p>
+</li>
+</ul>
+<p class="Body-Text"><font style="font-weight: bold;">Remarque</font>&#160;: l'ouverture d'une session par un utilisateur non connecté provoquera automatiquement la mise à jour de son Divalto.ini.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Lancement en mode invisible</p>
+<p class="Body-Text" style="font-weight: normal;">Le paramètre /Silent permet de lancer le programme sans affichage de fenêtre :</p>
+<p class="Body-Text" style="font-weight: normal;">xMajSession.exe /Silent</p>
+</body>
+</html>

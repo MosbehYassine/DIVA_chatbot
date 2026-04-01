@@ -1,0 +1,48 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Chr</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Chr</h3>
+<p class="Body-Text">La fonction Chr retourne le caractère correspondant à un code ANSI. Elle est l'inverse de la fonction <a href="Asc.htm">Asc</a>.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Alpha</font> = <font class="hcp1">c</font><font class="hcp1">hr</font> ( <font class="hcp2">code</font>_<font class="hcp2">ANSI</font> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètre</font></p>
+<p class="Body-Text"><font class="hcp2">Code</font>_<font class="hcp2">ANSI</font></p>
+<p class="decalage05">Valeur numérique correspondant à un code ANSI (entre 0 et 255).</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La fonction revoie une donnée alphanumérique sur une position contenant le caractère correspondant au code ANSI.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="Body-Text">Ajouter 1 à tous les caractères d'une chaîne.</p>
+<p class="Source">1 ch 40</p>
+<p class="Source">1 i x</p>
+&#160;
+<p class="Source">input 'donnez la chaîne : ' ch</p>
+<p class="Source">for i=1 to length(ch)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;mid(ch,i,1) = chr (asc(mid(ch,i,1)) + 1)&#160;</p>
+<p class="Source">next</p>
+<p class="Source">display ch</p>
+&#160;
+<p class="Body-Text">Exécution :</p>
+<p class="Body-Text">LE LANGAGE DIVA EST SUPER</p>
+<p class="Body-Text">MF!MBOHBHF!EJWB!FTU!TVQFS</p>
+</body>
+</html>

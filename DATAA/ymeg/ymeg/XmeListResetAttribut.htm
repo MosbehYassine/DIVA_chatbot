@@ -1,0 +1,206 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListResetAttribut</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-weight:bold;
+font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListResetAttribut &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Restauration des attributs d'affichage d'une ou plusieurs cellules de&#160;tableau&#160;;<br>
+Démasquage d’un ou plusieurs choix de cellules de type multi-choix</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeListResetAttribut</font> (<font class="hcp3">Nom des lignes</font>, <font class="hcp3">Nom des objets</font>, <font class="hcp3">Attribut</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:22.60%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Nom des lignes</font></p>
+</td>
+<td style="width:77.40%;" class="hcp5">
+<p class="Body-Text" style="margin-left: 5.80pt;">Nom de la ou des lignes concernées (32 caractères maximum).<br>
+Si ce nom est à espace, la fonction s'appliquera à toutes les lignes, quelque soit leur nom&#160;; autrement dit, toutes les modifications faites précédemment par XmeListSetAttribut et concernant le ou les objets et le ou les attributs indiqués seront annulées.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.60%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Nom des objets</font></p>
+</td>
+<td style="width:77.40%;" class="hcp5">
+<p class="Body-Text">Nom du ou des objets concernés.<br>
+Si ce nom est à espace, la fonction s'appliquera à tous les objets, quelque soit leur nom&#160;; autrement dit, toutes les modifications faites précédemment par XmeListSetAttribut et concernant le ou les attributs et la ou les lignes indiqués seront annulées.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.60%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Attribut</font></p>
+</td>
+<td style="width:77.40%;" class="hcp5">
+<p class="Body-Text">Identificateur de l'attribut à restaurer<br>
+(Define de Zdiva de la forme AN_XXXX).<br>
+&#160;<br>
+Si ce paramètre vaut AN_TOUS_ATTRIBUTS, la fonction s'appliquera à tous les attributs&#160;; autrement dit, toutes les modifications faites précédemment par XmeListSetAttribut et concernant le ou les objets et la ou les lignes indiqués seront annulées.<br>
+En particulier, si ce paramètre vaut AN_TOUS_ATTRIBUTS <font class="hcp2">ET</font> si les paramètres <font class="hcp3">Nom des lignes</font> et <font class="hcp3">Nom des objets</font> valent espace, la liste complète des modifications faites précédemment par XmeListSetAttribut sera effacée.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">La fonction XmeListResetAttribut permet de restaurer les attributs d'origine (ceux déclarés au niveau du masque Xwin) d'un ou plusieurs objets, préalablement modifiés par XmeListSetAttribut. On trouvera la liste des attributs concernés à la rubrique précédente consacrée à <a href="XmeListSetAttribut.htm">XmeListSetAttribut</a>.</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;">Plus précisément, XmeListResetAttribut supprime un ou plusieurs items de la liste constituée par les appels précédents à XmeListSetAttribut. Suivant les paramètres qui lui sont passés, on distingue les types de suppression&#160;suivants :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul style="list-style: circle;">
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 60.00pt;">(<font class="hcp2">" ", " ", AN_TOUS_ATTRIBUTS</font>)&#160;: suppression de la liste actuelle complète (voir exemple 1).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 60.00pt;">(<font class="hcp2">" ", "</font><font class="hcp6">NomObjet</font><font class="hcp2">", AN_TOUS_ATTRIBUTS</font>)&#160;: suppression de toutes les références aux objets de nom <font class="hcp3">NomObjet</font> dans la liste actuelle (voir exemple 2).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 60.00pt;">(<font class="hcp2">"</font><font class="hcp6">NomLigne</font><font class="hcp2">", " ", AN_TOUS_ATTRIBUTS</font>)&#160;: suppression de toutes les références à tous les objets des lignes nommées <font class="hcp3">NomLigne</font> dans la liste actuelle (voir exemple 3).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 60.00pt;">(<font class="hcp2">"</font><font class="hcp6">NomLigne</font><font class="hcp2">", "</font><font class="hcp6">NomObjet</font><font class="hcp2">", AN_TOUS_ATTRIBUTS</font>)&#160;: suppression de toutes les références aux objets des lignes nommées <font class="hcp3">NomLigne</font> de nom <font class="hcp3">NomObjet</font> dans la liste actuelle (voir exemple 4).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 60.00pt;">(<font class="hcp2">" ", " ",</font> <font class="hcp6">Attribut</font>)&#160;: suppression de toutes les références à l'attribut <font class="hcp3">Attribut</font> dans la liste actuelle (voir exemple 5).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 60.00pt;">(<font class="hcp2">" ", "</font><font class="hcp6">NomObjet</font><font class="hcp2">",</font> <font class="hcp6">Attribut</font>)&#160;: suppression des références à l'attribut <font class="hcp3">Attribut</font> pour tous les objets de nom <font class="hcp3">NomObjet</font> dans la liste actuelle (voir exemple 6).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 60.00pt;">(<font class="hcp2">"</font><font class="hcp6">NomLigne</font><font class="hcp2">", " ",</font> <font class="hcp6">Attribut</font>)&#160;: suppression des références à l'attribut <font class="hcp3">Attribut</font> pour tous les objets des lignes nommées <font class="hcp3">NomLigne</font> dans la liste actuelle (voir exemple 7).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 60.00pt;">(<font class="hcp2">"</font><font class="hcp6">NomLigne</font><font class="hcp2">", "</font><font class="hcp6">NomObjet</font><font class="hcp2">",</font> <font class="hcp6">Attribut</font>)&#160;: suppression de la référence précise au triplet (<font class="hcp3">Attribut</font>, "<font class="hcp3">NomLigne</font>", "<font class="hcp3">NomObjet</font>") dans la liste actuelle (voir exemple 8).</p>
+</li>
+</ul>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;"><font class="hcp2">Attention</font>, XmeListResetAttribut <font class="hcp2">N'actualise PAS immédiatement</font> les objets modifiés à l'écran&#160;: les règles de réaffichage sont identiques à celles s'appliquant à XmeListSetAttribut (voir le paragraphe <font class="hcp2">Prise en compte des nouveaux attributs à l'affichage</font> de la rubrique précédente).</p>
+</li>
+<li style="font-size: 8pt;" class="p-List">
+<p class="List" style="margin-left: 24.00pt;"><font class="hcp2">Remarque</font>&#160;: un appel à XmeListResetAttribut n'implique pas forcément une restauration d'attribut initial. Prenons par exemple le cas suivant&#160;: un même objet porte les noms A1 et A2 et l'un de ses attributs est modifié une première fois sous le nom A1, puis une seconde fois sous le nom A2&#160;; suivant la règle&#160;: «&#160;Le dernier a gagné&#160;», la deuxième modification l'emporte à cet instant&#160;; si maintenant on supprime cette seconde modification par XmeListResetAttribut, la première modification (nom A1) l'emportera à nouveau&#160;: pour redonner son attribut initial à l'objet, il faut supprimer les deux modifications.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 1&#160;:</font></p>
+<p class="Source">XmeListSetAttribut ("L1", " " , AN_COULEUR_FOND, "VERT")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom3", AN_COULEUR_FOND, "BLEU")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom2", AN_POLICE, "Arial8gi")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom1", AN_POLICE, "Arial8i")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_POLICE, "Arial8")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_VISIBILITE, AV_GRISE)</p>
+<p class="Source">...</p>
+<p class="Source">;Raz complet&#160;:</p>
+<p class="Source">XmeListResetAttribut (" ", " ", AN_TOUS_ATTRIBUTS)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 2&#160;:</font></p>
+<p class="Source">XmeListSetAttribut ("L1", " " , AN_COULEUR_FOND, "VERT")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom3", AN_COULEUR_FOND, "BLEU")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom2", AN_POLICE, "Arial8gi")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom1", AN_POLICE, "Arial8i")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_POLICE, "Arial8")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_VISIBILITE, AV_GRISE)</p>
+<p class="Source">...</p>
+<p class="Source">;Raz de tous les attributs pour les objets <font class="hcp3">Nom1</font> (toutes lignes):</p>
+<p class="Source">XmeListResetAttribut (" ", "Nom1", AN_TOUS_ATTRIBUTS)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 3&#160;:</font></p>
+<p class="Source">XmeListSetAttribut ("L1", " " , AN_COULEUR_FOND, "VERT")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom3", AN_COULEUR_FOND, "BLEU")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom2", AN_POLICE, "Arial8gi")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom1", AN_POLICE, "Arial8i")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_POLICE, "Arial8")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_VISIBILITE, AV_GRISE)</p>
+<p class="Source">...</p>
+<p class="Source">;Raz de tous les attributs pour tous les objets des lignes <font class="hcp3">L2</font> :</p>
+<p class="Source">XmeListResetAttribut ("L2", " ", AN_TOUS_ATTRIBUTS)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 4&#160;:</font></p>
+<p class="Source">XmeListSetAttribut ("L1", " " , AN_COULEUR_FOND, "VERT")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom3", AN_COULEUR_FOND, "BLEU")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom2", AN_POLICE, "Arial8gi")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom1", AN_POLICE, "Arial8i")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_POLICE, "Arial8")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_VISIBILITE, AV_GRISE)</p>
+<p class="Source">...</p>
+<p class="Source">;Raz de tous les attributs pour les objets <font class="hcp3">Nom2</font> des lignes <font class="hcp3">L2</font> :</p>
+<p class="Source">XmeListResetAttribut ("L2", "NOM2", AN_TOUS_ATTRIBUTS)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 5&#160;:</font></p>
+<p class="Source">XmeListSetAttribut ("L1", " " , AN_COULEUR_FOND, "VERT")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom3", AN_COULEUR_FOND, "BLEU")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom2", AN_POLICE, "Arial8gi")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom1", AN_POLICE, "Arial8i")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_POLICE, "Arial8")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_VISIBILITE, AV_GRISE)</p>
+<p class="Source">...</p>
+<p class="Source">;Raz de l’attribut AN_POLICE&#160;(tous objets, toutes lignes) :</p>
+<p class="Source">XmeListResetAttribut (" ", " ", AN_POLICE)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 6&#160;:</font></p>
+<p class="Source">XmeListSetAttribut ("L1", " " , AN_COULEUR_FOND, "VERT")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom3", AN_COULEUR_FOND, "BLEU")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom2", AN_POLICE, "Arial8gi")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom1", AN_POLICE, "Arial8i")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_POLICE, "Arial8")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_VISIBILITE, AV_GRISE)</p>
+<p class="Source">...</p>
+<p class="Source">;Raz de l'attribut AN_POLICE pour les objets <font class="hcp3">Nom2</font> (toutes lignes):</p>
+<p class="Source">XmeListResetAttribut (" ", "Nom2", AN_POLICE)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 7&#160;:</font></p>
+<p class="Source">XmeListSetAttribut ("L1", " " , AN_COULEUR_FOND, "VERT")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom3", AN_COULEUR_FOND, "BLEU")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom2", AN_POLICE, "Arial8gi")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom1", AN_POLICE, "Arial8i")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_POLICE, "Arial8")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_VISIBILITE, AV_GRISE)</p>
+<p class="Source">...</p>
+<p class="Source">;Raz de l'attribut AN_POLICE pour tous les objets des lignes <font class="hcp3">L2</font> :</p>
+<p class="Source">XmeListResetAttribut ("L2", " ", AN_POLICE)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 8&#160;:</font></p>
+<p class="Source">XmeListSetAttribut ("L1", " " , AN_COULEUR_FOND, "VERT")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom3", AN_COULEUR_FOND, "BLEU")</p>
+<p class="Source">XmeListSetAttribut ("L1", "Nom2", AN_POLICE, "Arial8gi")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom1", AN_POLICE, "Arial8i")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_POLICE, "Arial8")</p>
+<p class="Source">XmeListSetAttribut ("L2", "Nom2", AN_VISIBILITE, AV_GRISE)</p>
+<p class="Source">...</p>
+<p class="Source">;Raz de l'attribut AN_POLICE pour les objets <font class="hcp3">Nom2</font> des lignes <font class="hcp3">L2</font> :</p>
+<p class="Source">XmeListResetAttribut ("L2", "NOM2", AN_POLICE)</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeResetAttribut.htm">XmeResetAttribut</a></p>
+</body>
+</html>

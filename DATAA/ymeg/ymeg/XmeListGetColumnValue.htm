@@ -1,0 +1,66 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListGetColumnValue</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-weight:bold;
+font-style:italic; }
+span.hcp7 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListGetColumnValue &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Lecture de la valeur courante de la donnée associée à une colonne de tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+? &#160;XmeListGetColumnValue</font> (<font class="hcp3">Identifiant, Numéro de colonne</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="623">
+<tr class="hcp4">
+<td style="width:19.12%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.88%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.12%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Numéro de colonne</font></p>
+</td>
+<td style="width:80.88%;" class="hcp5">
+<p class="Body-Text">Numéro de la colonne.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction <font class="hcp2">XmeListGetColumnValue</font> délivre la valeur courante de la donnée correspondant à une colonne de tableau. La colonne est identifiée par son <font class="hcp6">Numéro de colonne</font>, le tableau par son <font class="hcp6">Identifiant</font>. Cette fonction délivre aussi bien les données "normales" que les données virtuelles.</p>
+<p class="Body-Text">Le paramètre <font class="hcp3">Numéro de colonne</font> est le <font class="hcp2">numéro d'ordre</font> de la colonne dans le tableau, <font class="hcp2">l'ordre à considérer étant celui défini dans Xwin</font>. Les numéros sont calculés à la compilation du masque&#160;: ils n'évoluent pas en exploitation, même si l'utilisateur intervertit des colonnes.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Valeur rendue par la fonction&#160;:</font></p>
+<p class="Body-Text">Attention, il s'agit de la <span class="hcp7">valeur actuelle de la donnée dans son enregistrement</span>. Si la donnée est virtuelle, elle est recalculée (à partir de l'enregistrement courant).</p>
+<p class="Body-Text">La fonction est de type indéfini : son résultat peut être stocké dans n'importe quelle variable de type compatible avec le type de la donnée lue.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarque :</p>
+<p class="Body-Text"><span class="hcp7">Cette fonction a été développée pour xZoom</span>. Elle n'a en effet d'intérêt que si le programme appelant ne sait pas déclarer l'enregistrement stocké dans la liste du tableau.</p>
+</body>
+</html>

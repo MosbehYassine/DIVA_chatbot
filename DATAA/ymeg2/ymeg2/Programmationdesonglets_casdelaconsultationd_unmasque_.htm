@@ -1,0 +1,67 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation des onglets (cas de la consultation d'un masque)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Programmation des onglets (cas de la consultation d'un masque)</h3>
+<p class="Body-Text">Dès que l'utilisateur actionne l'un des onglets, le programme récupère le contrôle (comme si une touche du clavier était tapée).<br>
+Il a alors accès aux renseignements suivants&#160;:<br>
+&#160;</p>
+<table style="margin-left: 48px;" cellspacing="0" width="100%">
+<col style="width: 20.313%;">
+<col style="width: 79.688%;">
+<tr class="hcp1">
+<td style="width:20.313%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Harmony.Dataarret (*)</p>
+</td>
+<td style="width:79.688%;" class="hcp2">
+<p class="Body-Text">Numéro du point d'arrêt "onglets".</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:20.313%;" class="hcp2">
+<p class="Body-Text"><font class="hcp3">Harmony.SourisPosX</font></p>
+</td>
+<td style="width:79.688%;" class="hcp2">
+<p class="Body-Text">Numéro de la page demandée, correspondant à l'onglet cliqué.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:20.313%;" class="hcp2">
+<p class="Body-Text"><font class="hcp3">Harmony.SourisPosY</font></p>
+</td>
+<td style="width:79.688%;" class="hcp2">
+<p class="Body-Text">Numéro de la page de départ, correspondant à l'onglet couramment actif.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-left: 48px;">&#160;</p>
+<p class="Body-Text">En particulier, Harmony.DataArret est chargé avec le numéro de point d'arrêt affecté au groupe d'onglets dans Xwin. Il peut donc être testé pour savoir si la sortie du XmeConsult ou du XmeListConsult a été provoquée par la frappe d'une touche (Harmony.DataArret = 0) ou par un clic onglet (Harmony.DataArret = numéro de point d'arrêt onglets et Harmony.Key = 0).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">(*) Comme il n'y a pas de point d'arrêt à proprement parler, Harmony.Arret n'est pas positionné.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="YMEG.chm::/Ymeg/Pages_panels_à_onglets.htm">Page mère et pages panels à onglets</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

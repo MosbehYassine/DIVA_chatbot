@@ -1,0 +1,80 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Création d'une application IIS sur le serveur Web</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+img.hcp3 { border:none; }
+ul.hcp4 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Création d'une application IIS sur le serveur Web</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Pour qu’une page (fichier .aspx, .asmx ou .html) de votre serveur soit accessible depuis le Web, il faut créer une <span class="hcp1">application IIS 32 bits</span> pointant le répertoire contenant cette page. On crée ainsi un répertoire virtuel, alias&#160;d'un chemin dans l’arborescence des fichiers du serveur.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font><br>
+Pour accéder à votre application via l'URL <font style="text-decoration: underline;" color="#0000FF">http://www.monserveur.fr/magasin/commande.aspx</font>, créez sur le serveur une application IIS nommée "Magasin" et pointant (par exemple) le répertoire "c:\Divalto\Internet\WebServeur"&#160;; placez dans ce répertoire la page Commande.aspx (créée à partir de la page générique fournie par Divalto).<br>
+&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0; font-weight: bold; font-size: 11pt;"><span>Pool d'applications IIS</span></p>
+<p class="Body-Text">Une application IIS appartient toujours à un <span class="hcp1">pool d'applications</span>. Il est possible de créer son propre pool d'applications ou utiliser l'un des pools proposés par Windows :</p>
+<p class="Body-Text"><img src="../image/Pools_applics_IIS.gif" alt="" width="1028" height="333" border="0" class="hcp3"></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0; font-weight: bold; font-size: 11pt;">Configurer le pool d'applications</p>
+<p>Cliquez sur la ligne <span class="hcp1">Pools d'applications</span> dans l'<span class="hcp1">arbre des Connexions</span>.<br>
+Dans la fenêtre Pools d'applications (à droite de l'écran), sélectionnez le pool choisi pour votre application puis éditez ses paramètres avancés. Les options suivantes sont impératives :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><span style="font-weight: bold; text-decoration: underline;">Activer les applications 32 bits</span> (si votre système Windows est un système 64 bits) : <span class="hcp1">True</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Mode Pipeline géré : <span class="hcp1">Integrated</span> (Intégré).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Version du .Net Framework : 4.0 minimum.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Identité : <span class="hcp1">LocalSystem</span>.<span style="margin-top: 0; margin-bottom: 0;"><br>
+<br>
+<img src="../image/Params_Pools_applics_IIS.gif" alt="" width="504" height="311" border="0" class="hcp3"></span></p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Créer l'application IIS</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Développez la branche de l’arbre correspondant au site Web souhaité (remarque&#160;: sous certains systèmes, il ne peut exister qu’un seul site Web, nommé "Default Web Site" - "Site Web par défaut").</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Cliquez avec le bouton droit de la souris sur le nom du site et sélectionnez le choix du menu "<span class="hcp1">Ajouter une application...</span>" :<br>
+<br>
+<img src="../image/Creer_Applic_iis.gif" alt="" width="454" height="308" border="0" class="hcp3"><span class="hcp1"><br>
+<br>
+Attention</span> : il est impératif de créer une "<span class="hcp1">Application</span>" et non pas un "Répertoire virtuel". Si vous avez créé par erreur un répertoire virtuel, vous pouvez toutefois le convertir en application (clic droit sur le répertoire, choix "Convertir en application").<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Entrez le nom de l’<span class="hcp1">alias</span> (Magasin dans notre exemple), pointez le <span class="hcp1">répertoire physique</span> (c:\Divalto\Internet\WebServeur dans notre exemple)&#160;qui contiendra la page aspx (Commande.aspx dans notre exemple) et spécifiez le <span class="hcp1">pool d'applications</span> choisi :<br>
+<br>
+<img src="../image/Params_applic_IIS_magasin.gif" alt="" width="532" height="368" border="0" class="hcp3"></p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque&#160;:</font> Vous pouvez créer autant d'applications IIS que vous le souhaitez.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

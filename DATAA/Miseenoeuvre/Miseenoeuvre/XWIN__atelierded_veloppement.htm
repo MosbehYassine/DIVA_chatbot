@@ -1,0 +1,371 @@
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+
+<html>
+
+<head>
+<title>XWIN: atelier de développement</title>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<meta name="generator" content="RoboHelp by eHelp Corporation www.ehelp.com">
+<link rel="StyleSheet" href="../Docs.css"><script LANGUAGE="JavaScript" TITLE="BSSC Special Effects" src="../ehlpdhtm.js"></script>
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; font-style:italic; }
+font.hcp2 { font-family:Courier New; font-size:9pt; }
+ul.hcp3 { list-style:disc; }
+font.hcp4 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<h3>XWIN&nbsp;: atelier de développement</h3>
+
+<p class=Body-Text>L'atelier de développement d'Harmony est un ensemble 
+ d'outils intégrés s'exécutant sous système Windows. Il permet de créer, 
+ tester et mettre au point des applications depuis un programme unique&nbsp;: 
+ Xwin.</p>
+
+<p class=Body-Text>Xwin inclut un dictionnaire de données, un éditeur de 
+ textes source, un éditeur de masques graphiques (écran, Web et imprimante), 
+ un éditeur de ressources (menus et barres d’outils), un gestionnaire de 
+ projets, un gestionnaire de contrôles et de traitements, un compilateur 
+ de programmes (langage Diva), un navigateur et un débogueur intégré.</p>
+
+<p class=Body-Text>L'environnement est familier pour tout utilisateur de 
+ Windows&nbsp;: Xwin propose en effet menus, barres d'outils, barres de 
+ titre et d'état, raccourcis clavier, boîtes de dialogue standard, aide 
+ en ligne, etc.</p>
+
+<p class=Body-Text
+	style="margin-top: 0; margin-bottom: 0;">&nbsp;</p>
+
+<p class=Body-Text><font class="hcp1">Le 
+ dictionnaire de données</font></p>
+
+<p class=Body-Text>Il centralise la définition des bases, tables et champs 
+ utilisés par les applications. Tous les modules d'Harmony y accèdent pour 
+ en extraire leurs déclarations. Les objets s’y présentent sous forme hiérarchisée&nbsp;:</p>
+
+<p class=Body-Text><font face="Courier New" size="2" class="hcp2">1. Base</font></p>
+
+<p class=Body-Text><font face="Courier New" size="2" class="hcp2">&nbsp;&nbsp;&nbsp;2. 
+ Table </font></p>
+
+<p class=Body-Text><font face="Courier New" size="2" class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. 
+ Champ</font></p>
+
+<p class=Body-Text><font face="Courier New" size="2" class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. 
+ Sous-champ</font></p>
+
+<p class=Body-Text><font face="Courier New" size="2" class="hcp2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5. 
+ Etc.</font></p>
+
+<p class=Body-Text>&nbsp;</p>
+
+<p class=Body-Text>Le dictionnaire est &quot;généralisé&quot; car une même 
+ définition peut être utilisée plusieurs fois, sans être répétée.</p>
+
+<p class=Body-Text>Les principaux types de champs gérés sont les types 
+ numérique, alphanumérique, date, date mensuelle, heure, date+heure. Les 
+ variables peuvent être structurées en tableaux (jusqu'à 4 dimensions). 
+ La définition de variables numériques packées est également possible, 
+ pour réduire la place occupée physiquement par ces champs dans les bases.</p>
+
+<p class=Body-Text>Xwin permet de définir les méthodes d'accès aux fichiers. 
+ Il sait gérer un nombre quelconque de dictionnaires.</p>
+
+<p class=Body-Text>&nbsp;</p>
+
+<p class=Body-Text><font class="hcp1">L'éditeur 
+ de textes</font></p>
+
+<p class=Body-Text>L'éditeur de textes est l'outil d'édition et d'impression 
+ des fichiers sources de programme Diva. Voici ses principales fonctionnalités&nbsp;:</p>
+
+<ul type="disc" class="hcp3">
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Edition simultanée 
+ de plusieurs sources (interface standard multi-documents MDI).</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Fonctions de recherche 
+ et remplacement de mot ou de chaîne.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Commandes Annuler et 
+ Recommencer (undo et redo) sans limite de niveaux.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Coloration spécifique 
+ et paramétrable des éléments syntaxiques du langage Diva.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Tabulation paramétrable.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Indentation (et désindentation) 
+ semi-automatique.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Fonctions permettant 
+ de repérer le début ou la fin d'une structure de contrôle Diva.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Barres d'outils et 
+ raccourcis clavier pour une large majorité des commandes.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Gestion de marques 
+ pour des déplacements rapides dans les fichiers.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Conversions minuscules 
+ - majuscules.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Aide en ligne et aide 
+ contextuelle depuis le texte sur les mots clé du langage Diva.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Multi-fenêtrage (fenêtre 
+ Compte-rendu pour l'affichage des erreurs de compilation, fenêtres Variables, 
+ Locales, Pile, Contexte et Listes pour l'affichage des informations en 
+ phase de mise au point des programmes, fenêtre Fichiers pour l'affichage 
+ du résultat des recherches multi-fichier, fenêtre de navigation dans les 
+ sources).</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Menu surgissant contextuel&nbsp;: 
+ par exemple, si la souris pointe sur l'instruction &quot;Include&quot; 
+ ou &quot;Module&quot;, un choix permet d'ouvrir le source du fichier indiqué&nbsp;; 
+ des commandes sont ajoutées par le débogueur en phase de mise au point.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Etc.</p></li>
+</ul>
+
+<p class=Body-Text>&nbsp;</p>
+
+<p class=Body-Text><font class="hcp1">L'éditeur 
+ de masques d'écran</font></p>
+
+<p class=Body-Text>Cet éditeur permet la création et la mise à jour des 
+ masques de saisie graphiques. Il se caractérise par une large souplesse 
+ de paramétrage et une grande simplicité d'utilisation. Voici quelques 
+ unes de ses fonctionnalités&nbsp;:</p>
+
+<ul type="disc" class="hcp3">
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Edition simultanée 
+ de plusieurs masques (interface standard multi-documents MDI).</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Liste de polices, couleurs, 
+ images et boutons graphiques prédéfinis (feuille de styles).</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Pas de la souris paramétrables.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Modification groupée 
+ de la présentation des objets (police, couleurs, encadrement, taille des 
+ boîtes, cadrage, …).</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Copier, couper, coller 
+ entre masques différents.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Menu (général et contextuel), 
+ barre d'outils et raccourcis clavier.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Aide en ligne.</p></li>
+</ul>
+
+<p class=Body-Text>&nbsp;</p>
+
+<p class=Body-Text>Chaque masque peut être mono ou multi-écran et comporter 
+ en particulier&nbsp;:</p>
+
+<ul type="disc" class="hcp3">
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Des données fixes&nbsp;: 
+ textes, cadres, boutons, images, …</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Des champs variables&nbsp;: 
+ leurs caractéristiques sont extraites du dictionnaire&nbsp;; en plus des 
+ attributs (police de caractères, couleurs des caractères et du fond, encadrement), 
+ de nombreuses fonctions sont paramétrables&nbsp;:<br>
+	- Formatage.<br>
+	- Conversion minuscules – majuscules.<br>
+	- Valeur par défaut à la première saisie.<br>
+	- Obligation de saisie.<br>
+	- Saisie simple (champs alphanumériques, numériques, dates et heures) 
+ ou guidée (multi-choix, cases à cocher, groupes de radio-boutons).</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Des graphiques et des 
+ textes riches.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Des tableaux et des 
+ arbres.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Des textes d'assistance&nbsp;: 
+ deux niveaux d'aides sont offerts à l'utilisateur, pour chaque donnée 
+ saisie : une aide simple, affichée automatiquement au bas de l'écran ou 
+ sous forme de bulle et une aide fenêtrée plus complète, affichée sur demande.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Des contrôles et traitements 
+ liés aux données&nbsp;ou au masque : écrits en langage Diva, ils peuvent 
+ être appelés avant et après l'entrée d'une donnée, avant l'affichage d'un 
+ masque, en fin de saisie, sur une action souris, etc. Ils sont très utiles 
+ pour vérifier les valeurs introduites ou faire des recherches dans des 
+ fichiers annexes, et permettent d'influer sur le déroulement de la saisie.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Des points d'arrêt&nbsp;: 
+ ils&nbsp;redonnent le contrôle au programme appelant&nbsp;et peuvent être 
+ exécutés avant et après l'entrée de la donnée ou être déclenchés par la 
+ frappe d'une touche de fonction, l'appui sur un bouton ou par une action 
+ à la souris.</p></li>
+</ul>
+
+<p class=Body-Text>Grâce à la notion de &quot;feuille de styles&quot;, 
+ les couleurs et les polices de caractères utilisées pour les constituants 
+ du masque (textes, cadres, données, fonds de fenêtre, ...) peuvent être 
+ choisies par l'utilisateur lui-même.</p>
+
+<p class=Body-Text>&nbsp;</p>
+
+<p class=Body-Text><font class="hcp1">L'éditeur 
+ de masques Web</font></p>
+
+<p class=Body-Text>Cet éditeur permet la création et la mise à jour de 
+ masques Web. Ses fonctionnalités sont en grande partie similaires à celles 
+ de l'éditeur de masques d'écran.</p>
+
+<p class=Body-Text>&nbsp;</p>
+
+<p class=Body-Text><font class="hcp1">L'éditeur 
+ de masques d'impression</font></p>
+
+<p class=Body-Text>L'éditeur de masques d'impression gère deux types de 
+ masque&nbsp;: les masques &quot;&nbsp;graphiques&nbsp;&quot; (amélioration 
+ de la présentation) et les masques &quot;&nbsp;caractères&nbsp;&quot; 
+ (amélioration des performances).</p>
+
+<p class=Body-Text>Un masque d'impression est composé de blocs, dont l'enchaînement 
+ est en général assuré de manière automatique (mais chaque bloc peut aussi 
+ être édité séparément).</p>
+
+<p class=Body-Text>Les blocs sont classés en 3 catégories : les blocs fixes, 
+ les blocs mobiles et les blocs &quot;&nbsp;de fond&nbsp;&quot;. Les blocs 
+ fixes (hauts et bas de page, par exemple) sont imprimés à un endroit précis 
+ de la page tandis que les blocs mobiles (lignes détail et ruptures) peuvent 
+ être répétés plusieurs fois par page.</p>
+
+<p class=Body-Text>La mise en œuvre de l'éditeur de masques d'imprimante 
+ est identique à celle de l'éditeur de masques d'écran. Tout comme ce dernier, 
+ il offre de nombreuses possibilités de paramétrage&nbsp;: choix des polices, 
+ formatage, points d'arrêt et de traitement, etc.</p>
+
+<p class=Body-Text>Les objets suivants peuvent être imprimés&nbsp;: textes, 
+ cadres, images, champs, multi-choix, cases à cocher, textes riches, codes 
+ barre, graphiques.</p>
+
+<p class=Body-Text>Les impressions peuvent être redirigées vers un fax, 
+ une messagerie locale, Internet, etc.</p>
+
+<p class=Body-Text>&nbsp;</p>
+
+<p class=Body-Text><font class="hcp1">L'éditeur 
+ de ressources</font></p>
+
+<p class=Body-Text>Xwin intègre un éditeur de menus et de barres d’outils. 
+ Les choix et les boutons peuvent générer des traitements, des points d’arrêt, 
+ des touches de fonction et peuvent être l’objet d’un grisage contextuel 
+ automatique.</p>
+
+<p class=Body-Text>&nbsp;</p>
+
+<p class=Body-Text><font class="hcp1">L'éditeur 
+ de projets</font></p>
+
+<p class=Body-Text>Les projets simplifient considérablement la vie du développeur&nbsp;:</p>
+
+<ul type="disc" class="hcp3">
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Un projet regroupe 
+ l’ensemble des sources d’une application (dictionnaires, programmes, masques, 
+ etc.). La fenêtre «&nbsp;projet&nbsp;» de Xwin affiche et donne immédiatement 
+ accès à tous ses constituants.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Certaines applications 
+ complexes comportent plusieurs centaines de sources et sont souvent développées 
+ en simultanéité par plusieurs personnes. Xwin permet de décomposer un 
+ projet en sous-projets de <font style="font-weight: bold;">taille réduite</font> 
+ (avec pour conséquence immédiate une maintenance simplifiée). Chaque sous-projet 
+ regroupera par exemple les sources traitant une fonctionnalité donnée 
+ de l’application et développés par une personne en particulier.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>La compilation des 
+ sources déclarés dans un projet ou un sous-projet est entièrement automatisée, 
+ Xwin gérant les dépendances à tous les niveaux&nbsp;: dictionnaires, fichiers 
+ «&nbsp;include&nbsp;», modules externes, multi-choix. Ainsi, après une 
+ modification quelconque effectuée dans le dictionnaire ou dans un source, 
+ une simple touche relance immédiatement et automatiquement la recompilation 
+ de tous les programmes et masques concernés.<br>
+	Deux fonctions du menu permettent aussi de reconstruire intégralement 
+ un sous-projet ou un projet&nbsp;en totalité. La deuxième est particulièrement 
+ intéressante avant la livraison de l’application&nbsp;!</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>La navigation dans 
+ les sources (programmes et masques) permet de retrouver et d’afficher 
+ instantanément la définition d’une donnée, d’une procédure ou d’une fonction 
+ ainsi que toutes ses utilisations, et ce, dans un sous-projet ou dans 
+ le projet en totalité.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Lorsqu’un sous-projet 
+ est chargé, l’environnement de travail adapté (fichier de chemins implicites, 
+ programme à exécuter, …) est automatiquement mis en place&nbsp;: le passage 
+ d’un sous-projet à un autre ne nécessite plus aucun paramétrage.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Enfin, les profils&nbsp;permettent 
+ de définir plusieurs environnements de travail&nbsp;pour un même projet 
+ : le développeur peut ainsi basculer instantanément d’un environnement 
+ à un autre (par exemple, d’un environnement personnel de mise au point 
+ des programmes <font face="Symbol" class="hcp4">-</font>avec répertoires de fichiers 
+ objet locaux et compilations en mode débogueur avec génération des informations 
+ de navigation<font face="Symbol" class="hcp4">-</font> à un environnement global de fabrication 
+ <font face="Symbol" class="hcp4">-</font>avec répertoires de fichiers objet partagés 
+ sur le réseau par l’ensemble des développeurs et compilations en mode 
+ publication<font face="Symbol" class="hcp4">-</font>).</p></li>
+</ul>
+
+<p class=Body-Text
+	style="margin-top: 0; margin-bottom: 0;">&nbsp;</p>
+
+<p class=Body-Text><font class="hcp1">Le 
+ gestionnaire de contrôles et de traitements</font></p>
+
+<p class=Body-Text>Des contrôles (par exemple, des vérifications sur les 
+ valeurs saisies) et des traitements (par exemple, des recherches dans 
+ des fichiers externes), écrits en langage Diva, peuvent être appelés directement 
+ depuis un masque.</p>
+
+<p class=Body-Text>Il est en particulier possible de travailler sur des 
+ données dont le programme ignore totalement l'existence&nbsp;: ceci confère 
+ à l'application une grande souplesse de paramétrage et de personnalisation.</p>
+
+<p class=Body-Text>&nbsp;</p>
+
+<p class=Body-Text><font class="hcp1">Le 
+ débogueur</font></p>
+
+<p class=Body-Text>Pour mettre au point vos programmes, Xwin intègre un 
+ débogueur, dont voici les principales fonctionnalités&nbsp;:</p>
+
+<ul type="disc" class="hcp3">
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Points d'arrêt sur 
+ instruction et sur modification de la valeur d'une donnée.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Exécution en pas à 
+ pas (avec ou sans entrée dans les fonctions) et exécution jusqu'à la ligne 
+ pointée par le curseur.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Visualisation des données 
+ (ponctuelle, permanente ou contextuelle) et des listes.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Modification d'une 
+ donnée en cours d'exécution.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Affichage de la pile 
+ et des variables locales.</p></li>
+	
+	<li class=kadov-p-CBody-Text><p class=Body-Text>Historique des instructions 
+ déjà exécutées.</p></li>
+</ul>
+
+</body>
+</html>

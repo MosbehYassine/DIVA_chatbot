@@ -1,0 +1,374 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Objet Tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+table.hcp1 { vertical-align:top; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { border:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp4 { font-weight:bold;
+font-size:11pt; }
+td.hcp5 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp6 { font-weight:bold; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+ul.hcp8 { list-style:disc; }
+span.hcp9 { font-weight:bold; }
+span.hcp10 { font-weight:bold;
+font-size:11pt; }
+p.hcp11 { margin-left:48px; }
+span.hcp12 { font-size:10pt;
+font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Objet Tableau</h3>
+<p>Les paramètres spécifiques à saisir pour un <a href="Les_tableaux.htm">tableau</a> sont :<br>
+&#160;</p>
+<table cellspacing="0" width="100%" class="hcp1">
+<col style="width: 22.292%;">
+<col style="width: 77.708%;">
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp3">
+<p class="hcp4">Famille Tableau</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Nom du tableau</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Identifiant du tableau, qui sera affiché dans le fenêtre <a href="Arbre_des_tableaux_d_un_bloc.htm">Arbre des tableaux d'un bloc</a>.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp5">
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Famille Présentation</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Imprimer les éléments de présentation</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Valide ou invalide globalement l'impression de tous les éléments de présentation (zonage, cadre et traits, couleurs, ...). Sélectionnez l'option Non en particulier en cas d'impression sur du papier pré-imprimé.<br>
+<br>
+Pour invalider un élément particulier, voir les propriétés suivantes.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Zonage</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Le zonage consiste à alterner la couleur de fond des blocs du tableau, pour en améliorer la lisibilité. Un bloc sur deux est coloré avec la couleur de zonage, l'autre non. La couleur utilisée pour le zonage est la suivante :</p>
+<ul class="hcp8">
+<li class="p">
+<p>Si elle existe, la couleur de la feuille de styles ZONAGE_TABLEAU_IMP.</p>
+</li>
+<li class="p">
+<p>Sinon, si elle existe, la couleur de la feuille de styles ZOOM_ZONAGE_2.</p>
+</li>
+<li class="p">
+<p>Sinon, une couleur de fond standard (gris foncé).</p>
+</li>
+</ul>
+<p><span class="hcp9">Remarque</span> : Pour les blocs colorés avec la couleur de zonage, cette couleur prime sur une éventuelle couleur de fond&#160;de la colonne. Pour les blocs non colorés avec la couleur de zonage, la couleur de fond de la colonne reste utilisée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Hauteur de l'en-tête</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Hauteur de l'en-tête, en orteils. Cette hauteur peut être saisie ici ou changée à la souris dans la fenêtre d'édition du masque.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Avec un cadre</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Valide ou invalide l'impression du cadre du tableau.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Avec les coins arrondis / Valeur de l'arrondi</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Spécifie si les coins du cadre du tableau doivent ou non être arrondis.<br>
+Si vous répondez Oui, spécifiez aussi la valeur de l'arrondi.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Avec traits entre les colonnes</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Valide ou invalide l'impression des traits de séparation des colonnes.<br>
+Il s'agit d'une valeur par défaut qui peut être modifiée colonne par colonne.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Avec traits entre les en-têtes</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Valide ou invalide l'impression des traits de séparation des en-têtes de colonne.<br>
+Il s'agit d'une valeur par défaut qui peut être modifiée colonne par colonne.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Epaisseur des traits</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Epaisseur en pixels du cadre du tableau et des traits de séparation des colonnes et des en-têtes de colonne.<br>
+Pour les traits de séparation, il s'agit d'une valeur par défaut qui peut être modifiée colonne par colonne.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Couleur des traits</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Couleur dans la feuille de styles du cadre du tableau et des traits de séparation des colonnes et des en-têtes de colonne.<br>
+Pour les traits de séparation, il s'agit d'une valeur par défaut qui peut être modifiée colonne par colonne.<br>
+Cette couleur peut être personnalisée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Fond des en-têtes</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Couleur dans la feuille de styles du fond des en-têtes de colonne.<br>
+Il s'agit d'une valeur par défaut qui peut être modifiée colonne par colonne.<br>
+Cette couleur peut être personnalisée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Fond des colonnes</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Couleur dans la feuille de styles du fond des colonnes.<br>
+Il s'agit d'une valeur par défaut qui peut être modifiée colonne par colonne.<br>
+Cette couleur peut être personnalisée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp5">
+<p>&#160;</p>
+<p class="Body-Text" style="font-size: 10pt; font-weight: normal;"><span class="hcp10">Famille Coordonnées</span> : Les propriétés suivantes sont affichées, en plus des valeurs habituelles :</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6">Début du corps</p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Position (en lignes) du début effectif du corps du tableau.<br>
+Entre parenthèses, le nombre d’orteils "perdus" en haut, après l'en-tête. Si aucune valeur n'apparaît, cela signifie que le début du corps coïncide avec la fin de l'en-tête.<br>
+<br>
+Remarque : Cette position est alignée sur une frontière de ligne.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6"><span class="hcp9">Fin du corps</span></p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Position (en lignes) de la fin effective du corps du tableau.<br>
+Entre parenthèses, le nombre d’orteils "perdus" en bas, avant la fin du tableau. Si aucune valeur n'apparaît, cela signifie que la fin du corps coïncide avec la fin du tableau.<br>
+<br>
+Remarque : Cette position est alignée sur une frontière de ligne.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.292%;" class="hcp5">
+<p class="hcp6"><span class="hcp9">Taille du corps</span></p>
+</td>
+<td style="width:77.708%;" class="hcp7">
+<p>Taille effective en lignes du corps du tableau.<br>
+<br>
+Ces trois valeurs correspondent à la zone <span class="hcp9">effectivement disponible pour l'impression des blocs situés à l'intérieur du tableau</span>.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p style="margin-left: 8px;"><span class="hcp9">Remarque</span> :</p>
+<ul class="hcp8">
+<li style="margin-left: -20px;" class="p">
+<p class="hcp11">Plusieurs tableaux peuvent être placés dans un bloc de type Fixe ou Fond mais un bloc de type Mobile ne peut contenir qu’un unique objet Tableau (si la page imprimée doit contenir d'autres tableaux, placez-les dans autant d'autres blocs). Si deux ou plusieurs tableaux sont inclus dans un même bloc Mobile, une erreur est détectée à la compilation du masque.</p>
+</li>
+<li style="margin-left: -20px;" class="p">
+<p class="hcp11">Dans un même bloc, il n'est pas possible de faire figurer simultanément un objet Tableau et un objet Rich-Edit, <span class="hcp9">avec l'option "Répéter si impression d'un rich-edit"</span> (interdiction vérifiée à la compilation du masque) : voir la rubrique <a href="Programmation_d_un_objet_Tableau.htm">Programmation d'un objet Tableau</a>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold; font-size: 12pt;">Colonnes de tableau</p>
+<p class="Body-Text">Les paramètres à saisir pour une colonne de tableau sont :</p>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="100%" class="hcp1">
+<col style="width: 22.338%;">
+<col style="width: 77.662%;">
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp3">
+<p class="hcp4">Famille Colonne</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.338%;" class="hcp5">
+<p class="hcp6">Nom</p>
+</td>
+<td style="width:77.662%;" class="hcp7">
+<p>Identifiant de la colonne.<br>
+Utilisé lors de l'affectation d'un objet à une colonne.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp5">
+<p>&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;"><span class="hcp10">Famille Présentation</span></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.338%;" class="hcp5">
+<p class="hcp6">Epaisseur des traits</p>
+</td>
+<td style="width:77.662%;" class="hcp7">
+<p>Epaisseur en pixels des traits de séparation des colonnes et des en-têtes de colonne.<br>
+Pour conserver la valeur par défaut, définie au niveau des propriétés générales du tableau, placez ici la valeur 0.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.338%;" class="hcp5">
+<p class="hcp6">Trait à droite de la colonne</p>
+</td>
+<td style="width:77.662%;" class="hcp7">
+<p>Valide ou invalide l'impression du trait de séparation placé à droite de cette colonne.<br>
+Sélectionnez Défaut pour conserver la valeur définie au niveau des propriétés générales du tableau.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.338%;" class="hcp5">
+<p class="hcp6">Trait à droite de l'en-tête</p>
+</td>
+<td style="width:77.662%;" class="hcp7">
+<p>Valide ou invalide l'impression du trait de séparation placé à droite de l'en-tête de cette colonne.<br>
+Sélectionnez Défaut pour conserver la valeur définie au niveau des propriétés générales du tableau.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.338%;" class="hcp5">
+<p class="hcp6">Fond de la colonne par défaut /</p>
+<p class="hcp6">Fond de la colonne</p>
+</td>
+<td style="width:77.662%;" class="hcp7">
+<p>Sélectionnez la valeur Oui pour conserver la couleur de fond des colonnes définie au niveau des propriétés générales du tableau.<br>
+Pour affecter une couleur de fond à cette colonne en particulier, sélectionnez la valeur Non et spécifiez le nom de la couleur choisie dans la feuille de styles.<br>
+Cette couleur peut être personnalisée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.338%;" class="hcp5">
+<p class="hcp6">Fond de l'en-tête par défaut /</p>
+<p class="hcp6">Fond de l'en-tête</p>
+</td>
+<td style="width:77.662%;" class="hcp7">
+<p>Sélectionnez la valeur Oui pour conserver la couleur de fond des en-têtes de colonne définie au niveau des propriétés générales du tableau.<br>
+Pour affecter une couleur de fond à l'en-tête de cette colonne en particulier, sélectionnez la valeur Non et spécifiez le nom de la couleur choisie dans la feuille de styles.<br>
+Cette couleur peut être personnalisée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.338%;" class="hcp5">
+<p class="hcp6">Couleur du trait de l'en-tête par défaut /</p>
+<p class="hcp6">Couleur du trait de l'en-tête</p>
+</td>
+<td style="width:77.662%;" class="hcp7">
+<p>Sélectionnez la valeur Oui pour conserver la couleur des traits définie au niveau des propriétés générales du tableau.<br>
+Pour affecter une couleur de trait à l'en-tête de cette colonne en particulier, sélectionnez la valeur Non et spécifiez le nom de la couleur choisie dans la feuille de styles.<br>
+Cette couleur peut être personnalisée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.338%;" class="hcp5">
+<p class="hcp6">Couleur du trait de la colonne par défaut /</p>
+<p class="hcp6">Couleur du trait de la colonne</p>
+</td>
+<td style="width:77.662%;" class="hcp7">
+<p>Sélectionnez la valeur Oui pour conserver la couleur des traits définie au niveau des propriétés générales du tableau.<br>
+Pour affecter une couleur de trait à cette colonne en particulier, sélectionnez la valeur Non et spécifiez le nom de la couleur choisie dans la feuille de styles.<br>
+Cette couleur peut être personnalisée.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td colspan="2" style="width:100%;" class="hcp5">
+<p>&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Famille Assistant de personnalisation <span class="hcp12">: voir <a href="Propri&eacute;t&eacute;s_des_colonnes_de_tableau_sp&eacute;cifiques_&agrave;_l_assistant.htm">Propriétés des colonnes de tableau spécifiques à l'assistant</a></span><span class="hcp12">.</span></p>
+<p class="body-text">&#160;</p>
+<p class="body-text" style="font-weight: bold; font-size: 11pt;">Famille Coordonnées</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:22.338%;" class="hcp5">
+<p class="hcp6">Largeur Colonne</p>
+</td>
+<td style="width:77.662%;" class="hcp7">
+<p>Largeur de la colonne, en orteils. Cette largeur peut être saisie ici ou changée à la souris dans la fenêtre d'édition du masque.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp9">Voir aussi</span> : les différentes rubriques du livre <a href="Les_tableaux.htm">Les tableaux</a>.</p>
+<p>&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="Commentaires.htm">Commentaires</a></p>
+<p class="Body-Text"><a href="Pr_sentation2.htm">Présentation</a></p>
+<p class="Body-Text"><a href="Propri&eacute;t&eacute;s_des_objets_sp&eacute;cifiques_&agrave;_l_assistant.htm">Propriétés des objets spécifiques à l'assistant</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

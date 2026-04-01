@@ -1,0 +1,111 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Journaux</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+font.hcp3 { font-family:Courier New; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Journaux</h2>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Harmony permet la <font class="hcp1">journalisation</font>&#160;:</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Des <font class="hcp1">erreurs</font> système</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Des <font class="hcp1">événements</font></p>
+</li>
+<li style="list-style: none; display: inline">
+<ul style="list-style: circle;">
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Démarrage du serveur</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Réorganisation ou régénération d’index par Xreof</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Libération de tâches inactives</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Arrêt d’une tâche</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Démarrage des services Divalto</p>
+</li>
+</ul>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Des <font class="hcp1">actions</font> demandées par la console</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font color="#000000">Les erreurs sont journalisées dans le fichier /Divalto/DivaltoLog/Ferror.log, les événements et les actions dans le fichier /Divalto/DivaltoLog/Fevent.log.</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Journalisation centralisée</font></p>
+<p class="Body-Text">Lorsque le paramètre ServeurLog&#160;est présent sur le poste client, la journalisation s’effectue à la fois en local et sur le serveur. Par défaut, les arrêts et les démarrages des postes client ne sont pas journalisés sur le serveur. Pour les journaliser également sur le serveur, il faut mettre la ligne «&#160;<font class="hcp1">ServeurLogStart&#160;=1</font>» dans le chapitre <font class="hcp1">[System] de Divalto.ini</font> du poste client.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Consultation de journaux</font></p>
+<p class="Body-Text">La console permet de consulter le journal des erreurs et le journal des événements avec des facilités de tris et de filtrages des informations.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Les filtres</font></p>
+<p class="Body-Text">Les filtres permettent de sélectionner les erreurs ou événements affichés selon des critères multiples. Les critères sont liés par un "&#160;Et&#160;logique&#160;", c'est-à-dire que tous les critères doivent être vrais simultanément pour qu’une fiche soit sélectionnée.</p>
+<p class="Body-Text">Les filtres sont valables pour le type de journal en cours. Chaque type de journal a ainsi des critères de sélection qui lui sont propres.</p>
+<p class="Body-Text">En mode liste, une étoile apparaît dans le coin supérieur gauche de la liste lorsqu'un filtre est actif. La bulle d'information associée affiche les critères de sélection. Une étoile apparaît également dans l'en-tête de chaque colonne filtrée.</p>
+<p class="Body-Text">Les filtres sont actifs pour la session de la console en cours. Si vous quittez la console les filtres disparaissent.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Saisie des filtres</font></p>
+<p class="Body-Text">La grille de saisie des filtres est accessible par la touche «&#160;F4&#160;», par le bouton ou par le menu «&#160;POPUP&#160;» affiché suite à un «&#160;clic droit&#160;» sur une ligne de la liste. A noter que ce même menu «&#160;POPUP&#160;» permet aussi de supprimer les filtres actifs et d’afficher la pile pour les erreurs dont la pile a été enregistrée dans le journal.</p>
+<p class="Body-Text">Lors de la saisie de la valeur dans les filtres, il est possible d’afficher la liste des valeurs par "&#160;F8&#160;" puis d’en sélectionner une.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Dans les événements, il est possible de filtrer rapidement par catégorie avec le choix «&#160;Filtrer Catégorie&#160;» du menu «&#160;POPUP&#160;» affiché suite à un «&#160;clic droit&#160;» sur une ligne de la liste. La coche devant le choix indique la présence du filtre. En cliquant sur le choix coché, on enlève le filtre sur la catégorie. A noter que ce filtre s’ajoute aux éventuelles filtres sur d’autres colonnes.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Information détaillée</font></p>
+<p class="Body-Text">La touche «&#160;return&#160;» ou le bouton «&#160;mode fiche&#160;» permet d’afficher le détail de l’erreur ou événement. Cela est particulièrement intéressant pour l’événement «&#160;Démarrage de DhsDivalto&#160;» car on peut consulter les paramètres systèmes qui ont été lus dans Divalto.ini lors du dernier démarrage du serveur dont la date et heure sont affichées au-dessus de la liste des événements.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Archivage de journaux</font></p>
+<p class="Body-Text">L’archivage des journaux permet d’épurer les journaux jusqu’à une date donnée, ceci accélère le chargement des journaux lorsqu’ils deviennent importants. Le journal archivé porte le nom du journal suffixé par la date du dernier événement qu’il contient. Un choix du menu permet de consulter un journal archivé.</p>
+<p class="Body-Text">L’archivage est interdit dans les cas suivants&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">L’option <font class="hcp2">«&#160;Utiliser un chemin HARMONY pour les journaux&#160;»</font> est cochée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L’option <font class="hcp2">«&#160;Consulter les journaux&#160;associés au serveur»</font> est cochée et un serveur de journal lui est associé dans «&#160;Divalto.ini&#160;»</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Importer FJSYS</font></p>
+<p class="Body-Text">Le journal FJSYS est le journal des erreurs système des versions précédentes d’Harmony. Il n’existe pas de programme spécifique pour la consultation de ce journal. Le choix <font class="hcp2">«&#160;Importer&#160;»</font> permet de récupérer l’historique des erreurs avant la version 5.6c dans le journal des erreurs. L’import importe toujours le fichier FJSYS local au poste. Si la journalisation centralisée est active, il demande, s’il convient de mettre à jour également le serveur central.</p>
+<p class="Body-Text">L’importation du journal FJSYS n’est autorisée que si la console surveille le serveur ‘Local’.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Consulter FJSYS</font></p>
+<p class="Body-Text">Ce choix permet de consulter un fichier de journalisation des erreurs des versions précédentes d’Harmony. Il est particulièrement intéressant pour consulter un fichier journal sur le site avec une version antérieure d’Harmony.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Serveur de journalisation associé à un serveur</font></p>
+<p class="Body-Text">Sur un site, on peut éventuellement être amené à dissocier le serveur de données du serveur de journalisation des erreurs. Afin de simplifier la supervision du serveur de données et d&#160;‘éviter de changer de serveur pour consulter les journaux, le paramètre «&#160;<font style="font-weight: bold; font-style: italic;">Journal_xxx=yyy</font>&#160;» du chapitre <font class="hcp1">[xconsole]</font> d’Divalto.ini permet de définir un serveur de journalisation associé au serveur à superviser. On indique pour le serveur à superviser (xxx) quel est le serveur de journalisation (yyy).</p>
+<p class="Body-Text">Exemple</p>
+<p class="Body-Text"><font face="Courier New" class="hcp3">[xconsole]</font></p>
+<p class="Body-Text"><font face="Courier New" class="hcp3">journal_SrvData=SrvBureau</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Consulter les journaux associés au serveur</font></p>
+<p class="Body-Text">Lorsque cette option est active et qu’un serveur associé a été défini, les journaux affichés sont ceux du serveur associé. Lorsque cette option n’est pas active, les journaux affichés sont ceux du serveur lui-même.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Utiliser un chemin Harmony pour les journaux</font></p>
+<p class="Body-Text">L’accès aux journaux se fait par défaut par la gestion de fichiers WINDOWS. Lorsque l’accès au répertoire \\serveur\DivaltoLog est refusé, la consultation des journaux est grisée. Il est possible d’utiliser la gestion de fichier HARMONY pour accéder aux journaux en cochant «&#160;Utiliser un chemin HARMONY pour les journaux&#160;» dans les «&#160;Options&#160;». Dans ce cas la console ouvre les journaux dans le répertoire //serveur/DivaltoLog. Il faut alors paramétrer le chemin «&#160;DivaltoLog&#160;» sur le serveur.</p>
+<p class="Body-Text">Ce choix peut servir à superviseur un serveur situé de l’autre coté d’un pare-feu (firewall) dont l’accès par la gestion de fichiers Windows n’est pas autorisé.</p>
+</body>
+</html>

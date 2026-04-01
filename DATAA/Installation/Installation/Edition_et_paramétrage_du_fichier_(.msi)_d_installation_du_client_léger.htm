@@ -1,0 +1,140 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Edition et paramétrage du fichier (.msi) d'installation du client léger</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold;
+color:#ff0000;
+text-decoration:underline; }
+ul.hcp3 { list-style:disc; }
+img.hcp4 { border:none; }
+span.hcp5 { color:#ff0000; }
+span.hcp6 { font-style:italic; }
+p.hcp7 { margin-left:8px;
+color:#000000; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Paramétrage du fichier (.msi) d'installation du client léger</h1>
+<p>&#160;</p>
+<p>Avant de distribuer le fichier d'installation du client léger, il est possible de le <span class="hcp1">personnaliser</span>, à l’aide du logiciel Microsoft <span class="hcp1">Orca</span>.</p>
+<p>La personnalisation va permettre de <span class="hcp1">pré-paramétrer l'installation</span>, afin de rendre le <span class="hcp1">poste client immédiatement utilisable</span>, en proposant un profil de connexion par défaut configuré de manière à autoriser une connexion immédiate au serveur d'applications.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Mais ATTENTION</span> : La personnalisation du fichier .msi <span class="hcp1">annule la signature numérique de l'installateur</span>. La signature confirme l’identité de l’auteur du code et garantit que ce code n’a pas été modifié ou corrompu depuis qu’il a été signé. Elle assure en particulier que les logiciels Antivirus <span class="hcp1">ne perturbent pas le lancement de l'installation</span>.</p>
+<p>&#160;</p>
+<ul class="hcp3">
+<li class="p">
+<p>Lancez le choix <span class="hcp1"><a href="Gestion_des_profils_de_connexion.htm">Gestion des Profils de connexion en client léger</a></span> du menu Harmony et saisissez le profil de connexion choisi pour être configuré dans Orca.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Le logiciel Orca se présente ainsi :<br>
+<img src="../image/Orca_fenetre.gif" alt="" width="585" height="358" border="0" class="hcp4"><br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Par « <span class="hcp1">File</span> &gt; <span class="hcp1">Open</span>… », ouvrez le fichier "<span class="hcp1">DivaltoSetup.msi</span>" à modifier.<br>
+Ce fichier est livré sur le CD Divalto (après avoir installé le produit "Harmony Power Foundation", vous le trouverez dans le répertoire x:\Divalto\Internet\LCWebService).<br>
+<br>
+<img src="../image/Orca_open.gif" alt="" width="345" height="245" border="0" class="hcp4"><br>
+<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La colonne de gauche présente la liste des tables composant le fichier "DivaltoSetup.msi". Dans cette liste, il vous faut trouver la table "<span class="hcp1">Registry</span>" :<br>
+<br>
+<img src="../image/Orca_registry.gif" alt="" width="356" height="169" border="0" class="hcp4"><br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La partie droite détaille les champs de la table et leur valeur pour chaque entrée. Trouvez l’entrée "<span class="hcp1">Sample</span>" dans la colonne "<span class="hcp1">Name</span>" :<br>
+<br>
+<img src="../image/Orca_sample.gif" alt="" width="580" height="128" border="0" class="hcp4"><br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Remplacez le nom "<span class="hcp1">Sample</span>" par le nom de votre <span class="hcp1">profil de connexion par défaut</span>.<span style="font-weight: bold; color: #ff0000;"><br>
+<br>
+Attention</span> <span class="hcp5">: Un profil nommé "Sample" est ignoré dans la boîte de connexion (il n’apparaîtrait donc pas dans la liste des profils).</span> <span class="hcp2">Il est donc impératif de le renommer</span><span class="hcp5">.</span><br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Lancez RegEdit, placez-vous sur le chapitre HKEY_CURRENT_USER\Software\Divalto\divalto.ini\<span class="hcp1">ProfilConnexion</span> et copiez la chaîne (telle quelle) contenue par la clé identifiée par le nom du profil choisi. Par exemple, si le profil a été nommé profil_defaut :<br>
+<br>
+<img src="../image/Orca_Registre_Profil_Connexion.png" alt="" width="505" height="23" border="0" class="hcp4"><br>
+<br>
+<br>
+Dans la colonne "<span class="hcp1">Value</span>", coller la chaîne précédemment copiée à la place de la valeur "<span class="hcp1">1,serverName</span>".<br>
+<br>
+A titre indicatif, cette valeur est organisée comme suit <span class="hcp5">(tout attaché, les champs sont séparés entre eux par une virgule, les champs entre crochets sont facultatifs)</span> :<br>
+&#160;</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Pour une connexion en mode Socket</span> (*) :<br>
+1,<span class="hcp6">nom_du_serveur</span>,[<span class="hcp6">adresse_ip</span>],[<span class="hcp6">port</span>],[<span class="hcp6">autres_paramètres</span>],[<span class="hcp6">type_utilisateur</span>],[<span class="hcp6">option_identification</span>],[<span class="hcp6">mot_de_passe</span>]<br>
+<br>
+Le "1" indique une connexion en mode Socket.<span class="hcp6"><br>
+nom_du_serveur</span> est le nom NETBIOS du serveur d'applications sur le réseau.<span class="hcp6"><br>
+adresse_ip</span> est son adresse IP (en général, il n'est pas utile de la préciser car elle est automatiquement détectée).<span class="hcp6"><br>
+port</span> est le numéro de port à utiliser (1246 par défaut).<span class="hcp6"><br>
+autres_paramètres</span> permet de spécifier des paramètres de connexion complémentaires.<span class="hcp6"><br>
+type_utilisateur</span> spécifie si l'utilisateur a ou non le droit d'accès total à la boîte des options de connexion avancées.<span class="hcp6"><br>
+option_identification</span> spécifie la stratégie de sécurité à employer pour se connecter à Divalto.<span class="hcp6"><br>
+mot_de_passe</span> est le mot de passe (crypté) à utiliser pour obtenir un accès total à la boîte des options de connexion avancées. <span class="hcp1"><br>
+<br>
+Exemple</span> : 1,ServeurApplications<br>
+<br>
+(*) Nécessite l’ouverture d’un port de communication TCP/IP entre le client et le serveur.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Pour une connexion en mode Service Web (*)</span> :<br>
+2,<span class="hcp6">url_du_serveur</span>,[<span class="hcp6">autres_paramètres</span>]<span style="color: #0000ff;">,</span>[<span class="hcp6">type_utilisateur</span>],[<span class="hcp6">option_identification</span>],[<span class="hcp6">mot_de_passe</span>]<br>
+<br>
+Le 2 indique une connexion en mode Service Web.<span class="hcp6"><br>
+url_du_serveur</span> est l'url d'accès au service Web sur le serveur d'applications (**).<span class="hcp6"><br>
+autres_paramètres</span> permet de spécifier des paramètres de connexion complémentaires.<span class="hcp6"><br>
+type_utilisateur</span> spécifie si l'utilisateur a ou non le droit d'accès total à la boîte des options de connexion avancées.<span class="hcp6"><br>
+option_identification</span> spécifie la stratégie de sécurité à employer pour se connecter à Divalto.<span class="hcp6"><br>
+mot_de_passe</span> est le mot de passe (crypté) à utiliser pour obtenir un accès total à la boîte des options de connexion avancées.<span class="hcp1"><br>
+<br>
+Exemple</span> : 2,http://divalto.societe.fr/Erp/DHTerminalServer.asmx<br>
+<br>
+(*) &#160;Nécessite d'installer le service IIS de Microsoft sur le serveur d'applications.<br>
+(**) Un modèle ("<span class="hcp1">DHTerminalServer.asmx</span>") de la page asmx à spécifier est fourni sur le CD Divalto (après avoir installé le produit "Harmony Power Foundation", vous la trouverez dans le répertoire <span class="hcp1">x:\Divalto\Internet\LCWebService</span>). Il est conseillé de faire pointer le répertoire virtuel IIS (Erp dans l'exemple) sur ce répertoire : il peut être changé mais dans ce cas, il ne faudra pas oublier de reprendre le modèle livré par Divalto en cas de mise à jour dans une version future d'Harmony.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p class="hcp7">Après avoir modifié la valeur, validez le fichier .msi par le choix « <span class="hcp1">Tools</span> &gt; <span class="hcp1">Validate</span>… » (Ctrl+L).<br>
+Dans la boîte de dialogue qui s’ouvre, cliquez sur le bouton <span class="hcp1">Go</span> :<br>
+<br>
+<img src="../image/Orca_go.gif" alt="" width="437" height="264" border="0" class="hcp4"><br>
+&#160;</p>
+</li>
+<li class="p">
+<p class="hcp7">Une fois la validation terminée, cliquez simplement sur "<span class="hcp1">close</span>" pour fermer la boîte de dialogue et refermez Orca en enregistrant le .msi si une boîte de dialogue vous le demande.</p>
+</li>
+</ul>
+<p>L’exécutable d’installation du client léger inclut maintenant les paramètres de connexion que vous avez choisis et le profil créé sera proposé à l’utilisateur dans sa boîte de connexion avancée au premier lancement du client léger. Tant que l'utilisateur ne change pas de profil, ce profil continuera à être proposé lors de ses connexions ultérieures.</p>
+&#160;
+<p>&#160;</p>
+<p><span style="font-weight: bold; text-decoration: underline;">Attention en cas d'utilisation du choix du menu "Save As..."</span> :</p>
+<p>Le fichier résultat renommé <span class="hcp1">ne sera pas correct</span> si vous <span class="hcp1">n'avez pas au préalable activé l'option "Copy Embedded streams during 'Save As'</span>" :<br>
+&#160;</p>
+<p><img src="../image/SaveAs.gif" alt="" width="818" height="502" border="0" class="hcp4"></p>
+<p>&#160;</p>
+</body>
+</html>

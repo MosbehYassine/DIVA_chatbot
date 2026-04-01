@@ -1,0 +1,96 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>PtrRecordSqlFromDescriptor</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>PtrRecordSqlFromDescriptor <span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a 
+	 href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> 
+ &#160;<a href="Introduction.htm">Thème</a></span></h1>
+<p class="Body-Text">L'instruction RecordSqlPtrFromDescriptor est uniquement 
+ utilisée dans le cas des fonctions à nombre de paramètres variables. Elle 
+ permet de convertir un descripteur de paramètre en pointeur de RecordSql</p>
+&#160;&#160;&#160;&#160;&#160; 
+<p class="Body-Text"><span class="hcp1">RecordSqlPtrFromDescriptor</span> 
+ &#160;(<span style="font-style: italic;">RecordSqlPtr, VoidPtr</span>)</p>
+&#160;&#160;&#160;&#160;&#160; 
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;">RecordSqlPtr</p>
+<p class="decalage05">Donnée de type RecordSqlPtr qui recevra le résultat.</p>
+<p class="Body-Text" style="font-style: italic;">VoidPtr</p>
+<p class="decalage05">Donnée de alpha (taille=50) qui contient une copie 
+ du pointeur..</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Source">&#160;</p>
+<p class="source">procedure proc_param_multi(*)</p>
+<p class="source">1 id &#160;&#160;&#160;&#160;X&#160;&#160;; id de la 
+ liste des paramètres</p>
+<p class="source">1 descripteur &#160;120 &#160;&#160;&#160;&#160;&#160;; 
+ descripteur du paramètre courant</p>
+<p class="source">1 valeur &#160;&#160;&#160;&#160;60&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ valeur obtenue lors du listnext</p>
+<p class="source">1 valeuralpha &#160;60&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ valeur si le type est alpha</p>
+<p class="source">1 valeurnumer 24,10&#160;&#160;&#160;&#160;&#160;; valeur 
+ si le type est numérique</p>
+<p class="source">1 type &#160;&#160;&#160;X&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ type du paramètre</p>
+<p class="source">1 lg &#160;&#160;&#160;&#160;&#160;X&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ taille</p>
+<p class="source">1 dec &#160;&#160;&#160;&#160;X&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ nombre de décimales</p>
+<p class="source">RecordSqlPtr ptSql &#160;&#160;&#160;&#160;&#160;; pointeur 
+ de RecordSql</p>
+<p class="source">beginp</p>
+<p class="source">&#160;id = ListParamGetId&#160;&#160;&#160;&#160;; récupération 
+ de la listedes paramètre</p>
+<p class="source">&#160;ListBegin(id)</p>
+<p class="source">&#160;loop ListNext(id,valeur)&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="source">&#160;&#160;ListDataDescriptor(id,descripteur)&#160;&#160;; 
+ descripteur du paramètre</p>
+<p class="source">&#160;&#160;type = datatype(datavalue(descripteur))&#160;; 
+ caractéristiques</p>
+<p class="source">&#160;&#160;lg = datasize(datavalue(descripteur))</p>
+<p class="source">&#160;&#160;dec = datadec (datavalue(descripteur))</p>
+<p class="source">&#160;&#160;if type = 3&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ alpha = 3</p>
+<p class="source">&#160;&#160;&#160;valeuralpha = datavalue(descripteur)&#160;</p>
+<p class="source">&#160;&#160;&#160;display valeuralpha</p>
+<p class="source">&#160;</p>
+<p class="source">&#160;&#160;elsif type = 101</p>
+<p class="source">&#160;&#160;&#160;&#160;&#160;PtrRecordSqlFromDescriptor(ptSql,datavalue(descripteur))</p>
+<p class="source">&#160;&#160;&#160;&#160;&#160;ptSql.ReaderNext(reader)</p>
+<p class="source">&#160;&#160;else</p>
+<p class="source">&#160;&#160;&#160;valeurnumer = datavalue(descripteur)</p>
+<p class="source">&#160;&#160;&#160;display valeurnumer</p>
+<p class="source">&#160;&#160;endif</p>
+<p class="source">&#160;endloop</p>
+<p class="source">endp</p>
+<p class="source" style="margin-bottom: 0px; margin-top: 0px;">&#160;</p>
+<p class="source">Main</p>
+<p class="source" style="margin-bottom: 0px; margin-top: 0px;">proc_param_multi(1,2,3,&quot;toto&quot;,12.3)&#160;</p>
+&#160;&#160;<span class="hcp1">Voir</span> 
+<p class="Body-Text"><a href="Pointeur_de_RecordSql.htm">Pointeur de RecordSql</a>, 
+ <a href="PtrRecordSql.htm">PtrRecordSql</a>, <a href="PtrRecordSqlModule.htm">PtrRecordSqlModule</a>, 
+ <a href="DuplicateInstance.htm">DuplicateInstance</a>, <a href="PtrRecordSqlNew.htm">PtrRecordSqlNew</a>, 
+ <a href="RecordSqlPtrToVoid.htm">RecordSqlPtrToVoid</a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

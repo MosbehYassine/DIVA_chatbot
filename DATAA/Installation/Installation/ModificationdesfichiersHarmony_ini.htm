@@ -1,0 +1,75 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Modification de Divalto.ini</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Modification de Divalto.ini</h3>
+&#160;
+<p class="Body-Text">Chaque utilisateur dispose de sa propre section <a href="Harmony_ini.htm">Divalto.ini</a> dans la base de registre. Les modifications qui y sont faites sont par défaut locales à cet utilisateur. Mais les utilitaires Harmony qui manipulent Divalto.ini (<a href="UTILITAIRES.chm::/UTILITAIRES/XTESTIMP_Configurationdesimprimantes.htm">xDivaltoPrinters</a>, <a href="UTILITAIRES.chm::/UTILITAIRES/XMAJINI_Mise_jourdufichierHarmony_ini.htm">xDivaltoMajIni</a>) permettent de répercuter les modifications pour tous les comptes d'utilisateur :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Lorsqu’on les quitte, ces utilitaires proposent de répercuter (*) les nouveautés vers les autres utilisateurs&#160;:<br>
+- <font class="hcp2">Non</font> : les modifications ne concerneront que l'utilisateur courant.<br>
+- <font class="hcp2">Oui</font> : les modifications seront reportées pour tous les utilisateurs (<span class="hcp3">localement</span>&#160;; pour une mise à jour de toutes les bases de registre dans une configuration multi-serveurs, voir le paragraphe «&#160;Report des modifications dans une configuration multi-serveurs TSE&#160;» ci-dessous).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font color="#000000">Chaque série de modifications est enregistrée dans un fichier .log (nom généré automatiquement à partir de la date). Les fichiers .log sont stockés dans le répertoire X:\Divalto\Installlog.</font></p>
+</li>
+</ul>
+<p class="Body-Text">(*) ATTENTION : cette fonctionnalité est uniquement disponible si vous lancez l'utilitaire par la commande &lt;Exécuter&gt; du menu Démarrer de Windows avec le paramètre <span class="hcp3">/propager</span>. Par exemple :</p>
+<p class="Body-Text">xDivaltoPrinters.exe /propager</p>
+<p class="body-text">&#160;</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Création du Divalto.ini d’un utilisateur</font><br>
+Lorsqu’un utilisateur se <font class="hcp2">connecte</font> pour la toute <font class="hcp2">première</font> fois, une section Divalto.ini est automatiquement créée dans la base de registre. Le cas échéant, lui sont appliquées toutes les modifications faites depuis l’installation du site (<span style="text-decoration: underline;">avec DivaltoMajIni ou xDivaltoPrinters</span>) pour lesquelles on a demandé répercussion vers tous les utilisateurs.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font color="#000000" class="hcp2">Report des modifications postérieures à la création</font> <font color="#000000"><br>
+Si la section Divalto.ini d’un utilisateur A est modifiée avec demande de répercussion, les sections Divalto.ini des autres utilisateurs seront modifiées avec ces</font> <font color="#000000" class="hcp2">dernières</font> <font color="#000000">nouveautés :</font></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">A la prochaine ouverture de session effectuée par l’utilisateur B, si B n’est pas connecté au moment où A est mis à jour.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font color="#000000">Si B est connecté au moment où A est mis à jour :<br>
+- Au redémarrage de l'ordinateur de B&#160;&#160;&#160;OU<br>
+- Après fermeture puis réouverture de la session de B &#160;&#160;OU<br>
+- Si B lance le programme xMajSession.exe.</font></p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font color="#000000" class="hcp2">Report des modifications dans une configuration multi-serveurs TSE</font></p>
+<p class="Body-Text">Par défaut, les modifications ne sont reportées que localement (sur l’ordinateur où est faite la modification). Dans le cas d’une installation sous TSE ou Citrix comportant <font class="hcp2">plusieurs serveurs</font> d’application, si vous voulez que les modifications soient aussi reportées sur les autres serveurs, procédez comme suit :</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Le fichier de journalisation des modifications de Divalto.ini doit être <font class="hcp2">commun</font> aux différents serveurs TSE. Créez un répertoire partagé (avec accès complet) sur un serveur.<br>
+Par exemple, créez le répertoire <span style="font-weight: bold; font-style: italic;">Installlog</span> (attention : TROIS L) sur le serveur de données (commun à tout le monde) et partagez-le sous le nom de partage «&#160;Installlog&#160;».</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Copiez-y le contenu du répertoire /Divalto/Installlog d’un des serveurs d’application.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Sur <font class="hcp2">chaque serveur</font> d’application, dans le répertoire /Divalto/Installlog, créez le fichier texte <font style="font-weight: bold; font-style: italic;">Indirection.txt</font> et garnissez-le avec une ligne indiquant le nom du chemin d’accès Windows au répertoire partagé.<br>
+Par exemple //ServeurData/Installlog</p>
+</li>
+</ul>
+<p>Il faut impérativement donner l'autorisation de lecture/écriture pour tous les utilisateurs au répertoire Installlog. Attention : sur le réseau, il y a deux niveaux : les droits de partage et les droits utilisateur. Il faut que tous les utilisateurs puissent lire, écrire et créer des fichiers.</p>
+<p>&#160;</p>
+</body>
+</html>

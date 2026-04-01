@@ -1,0 +1,598 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion de la liste associée à un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold;
+text-decoration:underline; }
+font.hcp3 { font-weight:bold;
+font-style:italic; }
+font.hcp4 { text-decoration:underline; }
+font.hcp5 { font-weight:bold;
+font-style:italic;
+text-decoration:underline; }
+font.hcp6 { font-style:italic; }
+font.hcp7 { font-family:Symbol; }
+tr.hcp8 { vertical-align:top; }
+td.hcp9 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp10 { font-family:"Courier New"  , monospace; }
+font.hcp11 { font-style:italic;
+font-family:"Courier New"  , monospace; }
+font.hcp12 { font-family:Courier New; }
+span.hcp13 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Gestion de la liste associée à un tableau</h3>
+<p class="Body-Text">Le contenu d'un tableau est géré comme une <font class="hcp1">liste</font> (un élément de la liste &lt;==&gt; une ligne du tableau), sur laquelle vous pouvez effectuer toutes les opérations prévues par la gestion des listes du langage Diva&#160;: positionnements, ajouts, modification, suppressions, tri, recherches, etc.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Deux méthodes</font> sont à considérer pour la <font class="hcp1">gestion de cette liste</font>&#160;:</p>
+<ol style="list-style: decimal;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Faire résider en mémoire la totalité du tableau</font>.<br>
+Avec cette méthode, <font class="hcp1">toutes</font> les lignes du tableau (donc tous les éléments de la liste) sont stockées en permanence en mémoire, même celles non présentes à l'écran.<font class="hcp2"><br>
+Cette méthode étant la plus simple à programmer</font> (grâce en particulier à la procédure standard <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a>), <font class="hcp2">on la choisira</font> dès que la taille maximale du tableau n'est pas trop importante (disons quelques milliers de lignes pour fixer les idées).<font class="hcp1"><br>
+Exemple</font>&#160;: Dans un programme de saisie de facture, on utilisera un objet tableau&#160;; toutes les lignes saisies seront dans un premier temps stockées en mémoire&#160;; on attendra la validation de la facture pour les recopier globalement sur le disque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Stocker en mémoire les seules lignes affichées</font>.<br>
+Lorsque la taille du tableau est trop importante ou n'est pas connue à priori, il est difficile d'envisager de stocker toutes ses lignes en mémoire (soit parce que la capacité mémoire risque d'être insuffisante, soit parce que les temps de chargement du tableau en mémoire sont trop longs).<br>
+Dans ce cas, on choisira plutôt de stocker en mémoire uniquement les lignes <font class="hcp1">présentes à l'écran</font>.<font class="hcp1"><br>
+Exemple</font>&#160;: Le zoom du fichier "Articles" utilisera un objet tableau&#160;; le nombre d'articles pourra être très important et il n'est pas envisageable de copier l'intégralité du fichier en mémoire&#160;; on gérera donc une liste limitée aux articles affichés&#160;; les opérations effectuées sur la liste seront répercutées sur le disque au coup par coup.</p>
+</li>
+</ol>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Contenu des éléments de la liste</font></p>
+<p class="Body-Text">Un élément de la liste est la <font class="hcp1">concaténation</font> de <font class="hcp1">trois</font> informations&#160;:<br>
+&#160;</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Une information "utilisateur"</font>.<br>
+On entend par information "utilisateur" une donnée ou un enregistrement "clé" que vous choisissez librement (au moins en théorie). <font class="hcp1">Cette zone sera passée en paramètre</font> ,nommé <font class="hcp3">Ligne</font> par la suite, à toutes les fonctions de lecture, création et modification d'un élément de la liste (vous devrez renseigner ce paramètre avant une création ou une modification et ce paramètre sera garni en retour par les fonctions de lecture).<font class="hcp1"><br>
+En pratique</font>, elle va dépendre de la méthode employée pour gérer la liste&#160;:<br>
+&#160;<font class="hcp1"><br>
+1.</font> <font class="hcp1">Tableau entièrement résident en mémoire</font>.<br>
+On y placera <font class="hcp2">au minimum</font> toutes les données affichées sur une ligne du tableau.<font class="hcp1"><br>
+Remarque&#160;:</font> La procédure standard <font class="hcp1">XmeListConsultDefault est alors utilisable</font>.<br>
+Examinons plus en détails les deux cas qui peuvent survenir&#160;:<br>
+&#160;<font class="hcp1"><br>
+1a.</font> Les données du tableau appartiennent à un <font class="hcp1">enregistrement unique</font>.<br>
+Exemple&#160;: La ligne d'un tableau présente uniquement des données de l'enregistrement "Ligne de facture".<br>
+On utilisera <font class="hcp1">l'enregistrement "Ligne de facture" lui-même</font>, <font class="hcp4">aussi bien lors de la déclaration des données du tableau dans Xwin que comme paramètre</font> <font class="hcp5">Ligne</font> (voir exemple 1).<br>
+&#160;<font class="hcp1"><br>
+1b.</font> Les données du tableau appartiennent à <font class="hcp1">deux ou plusieurs enregistrements</font>.<br>
+Exemple&#160;: La ligne du tableau présente toujours une ligne détails de facture mais elle affiche aussi le libellé et le prix unitaire de l'article, renseignements provenant du fichier "Articles".<br>
+On se ramènera au cas précédent en définissant dans le dictionnaire un <font class="hcp1">enregistrement de travail</font> spécifique, regroupant toutes les données affichées, et en l'utilisant <font class="hcp4">à la fois lors de la déclaration des données du tableau dans Xwin et comme paramètre</font> <font class="hcp5">Ligne</font> (voir exemple 2).<br>
+Bien entendu, le "groupage" / "dégroupage" de l'enregistrement de travail à partir des enregistrements de base reste à la charge du programme.<br>
+&#160;<font class="hcp1"><br>
+2.</font> <font class="hcp1">Tableau partiellement résident en mémoire</font>.<br>
+On placera généralement dans la zone "utilisateur" une clé permettant d'accéder aux informations stockées sur le disque.<font class="hcp1"><br>
+Attention&#160;:</font> Ici, la procédure standard <font class="hcp1">XmeListConsultDefault</font> <font class="hcp2">n'est plus</font> <font class="hcp1">utilisable</font>.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">La donnée de contrôle des lignes</font>.<br>
+Si vous avez paramétré une "Donnée de contrôle" des lignes dans Xwin (Cf. rubriques <a href="Marquagedeslignesd_untableau.htm">Marquage des lignes d'un tableau</a> et <a href="S_lectionmultipledeslignesd_untableau.htm">Sélection multiple des lignes d'un tableau</a>), son contenu est automatiquement ajouté à l'information précédente&#160;; il faut donc renseigner cette donnée, avant toute opération de création ou de modification d'un élément&#160;; les fonctions de lecture garnissent cette donnée avec les informations transmises à la création ou à la modification de l'élément lu (voir exemple 3).<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Les données affichées sur une ligne</font>.<br>
+Le contenu des données qui constituent la ligne à l'écran (<font class="hcp1">celles que vous avez placées dans le tableau du masque Xwin</font>) est automatiquement ajouté aux informations précédentes.<font class="hcp2"><br>
+Le(s) enregistrement(s) incluant ces données doit donc être renseigné</font><font class="hcp4">, avant toute opération de création ou de modification d'un élément dans la liste</font>.<br>
+Les fonctions de lecture NE garnissent PAS ces données (sauf bien entendu si elles font partie de l'enregistrement <font class="hcp6">Ligne</font>&#160;: voir remarque ci-dessous).<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp2">Remarque</font>&#160;: Dans les <font class="hcp1">cas</font> <font class="hcp1">1a</font> et <font class="hcp1">1b</font>, il n'y a qu'<font class="hcp2">un</font> enregistrement à renseigner avant une création ou une modification d'élément. En effet, <font class="hcp4">l'enregistrement à passer comme paramètre</font> <font class="hcp5">Ligne</font> <font class="hcp4">et l'enregistrement déclaré dans le masque Xwin</font> (qui contient les données affichées) sont <font class="hcp2">obligatoirement un seul et même enregistrement</font>.<font class="hcp1"><br>
+&#160;</font><font class="hcp2"><br>
+Attention</font>&#160;: Dans ces <font class="hcp1">cas</font> <font class="hcp1">1a</font> et <font class="hcp1">1b</font>, il est donc <font class="hcp2">interdit</font> d'écrire une séquence du type suivant&#160;:</p>
+<p class="Source">public record APPLI.dhsd LIGNE LIGNE &#160;&#160;;LIGNE est l'enregistrement</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;"tableau" déclaré dans le&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;masque Xwin&#160;</p>
+<p class="Source">public record APPLI.dhsd LIGNE WLIGNE &#160;;WLIGNE est un enregistrement</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;de travail&#160;</p>
+<p class="Source">...</p>
+<p class="Source"><font class="hcp1">WLIGNE</font> = <font class="hcp6">XXX</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;nouvel élément à ajouter à</p>
+<p class="Source">XmeListAddAfter (<font class="hcp6">Id</font>, <font class="hcp1">WLIGNE</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;la liste</p>
+<p class="Body-Text">Pourquoi&#160;?<br>
+Parce qu'il ne faut pas confondre information "utilisateur" et données affichées dans le tableau. Ici, WLIGNE est l'information "utilisateur"&#160;; les données <font class="hcp4">à afficher</font> sont elles cherchées (automatiquement) dans l'enregistrement <font class="hcp4">déclaré dans le masque</font>, c'est à dire LIGNE. Vous stockerez donc effectivement une nouvelle "clé" (WLIGNE) en liste mais à l'affichage vous verrez le contenu qu'avait l'enregistrement LIGNE au moment du XmeListAddAfter.<br>
+&#160;<br>
+Il faut donc toujours écrire&#160;:</p>
+<p class="Source">...</p>
+<p class="Source"><font class="hcp1">LIGNE</font> = <font class="hcp6">XXX</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;nouvel élément à ajouter à</p>
+<p class="Source">XmeListAddAfter (<font class="hcp6">Id</font>, <font class="hcp1">LIGNE</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;la liste</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Création de la liste</font></p>
+<p class="Body-Text">La <font class="hcp1">création</font> (et l'initialisation) de la liste s'obtient en appelant la fonction <a href="XmeListGetId.htm">XmeListGetId</a>. On exécutera cette fonction <font class="hcp1">après</font> avoir chargé (par XmeLoad) le masque contenant le tableau.</p>
+<p class="Body-Text">En retour, XmeListGetId délivre un <font class="hcp3">Identifiant</font> qui servira ensuite à adresser le tableau et la liste associée. <font class="hcp1">Aucune fonction "tableau" ne peut être appelée AVANT</font> XmeListGetId car l'identifiant renvoyé est passé en paramètre de toutes les fonctions concernant la liste ou le tableau.</p>
+<p class="Body-Text"><font class="hcp1">Exemple</font>&#160;:</p>
+<p class="Source">XmeLoad ("MASQUE") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font class="hcp6">Id</font> = XmeListGetId ("MASQUE",1,"TAB",<font class="hcp6">Ligne</font>) &#160;&#160;&#160;&#160;;création de la liste</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeListAddEnd (<font class="hcp6">Id</font>, <font class="hcp6">Ligne</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ajout en liste</p>
+<p class="Source">XmeListDisplay (<font class="hcp6">Id</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affichage du tableau</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Fonctions gérant la liste</font></p>
+<p class="Body-Text">Pour <font class="hcp1">chaque fonction Diva</font> de gestion de liste, il existe une <font class="hcp1">fonction "tableau"</font> équivalente. On déduit simplement le nom des fonctions "tableau" en ajoutant le préfixe <font class="hcp1">"Xme"</font> au nom des fonctions Diva.</p>
+<p class="Body-Text"><font class="hcp4">Exemples</font>&#160;:<br>
+ListAddAfter&#160;&lt;==&gt; XmeListAddAfter<br>
+ListBegin&#160;&lt;==&gt; XmeListBegin<br>
+ListCount&#160;&lt;==&gt; XmeListCount</p>
+<p class="Body-Text"><font class="hcp4">Exceptions</font>&#160;:<br>
+1. Trois fonctions Diva n'ont pas d'équivalent "tableau"&#160;:<br>
+ListCreate&#160;&#160;(remplacée par XmeListGetId)<br>
+ListDestroy&#160;&#160;(la liste est détruite automatiquement)<br>
+ListGetAdressContent</p>
+<p class="Body-Text">2. Deux fonctions "tableau" n'ont pas de fonctions Diva correspondantes&#160;:<br>
+XmeListDeleteAndNext<br>
+XmeListDeleteAndPrevious</p>
+<p class="Body-Text"><font class="hcp4">Paramètres des fonctions</font>&#160;:<br>
+Dans les fonctions "tableau", les paramètres <font class="hcp3">Ticket</font> et <font class="hcp3">Article</font> des fonctions Diva sont respectivement remplacés par l'<font class="hcp3">Identifiant</font> du tableau rendu par XmeListGetId et la zone <font class="hcp3">Ligne</font>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Effacement des lignes d'un tableau</font></p>
+<p class="Body-Text">Pour réinitialiser le contenu d'un tableau, utilisez la fonction&#160;:<a href="XmeListErase.htm"><br>
+XmeListErase</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Créations de ligne dans un tableau</font></p>
+<p class="Body-Text">Pour créer une ligne dans un tableau, utilisez une des fonctions d'ajout d'un élément dans la liste&#160;:<a href="XmeListAddAfter.htm"><br>
+XmeListAddAfter</a><a href="XmeListAddBefore.htm"><br>
+XmeListAddBefore</a><a href="XmeListAddBegin.htm"><br>
+XmeListAddBegin</a><a href="XmeListAddEnd.htm"><br>
+XmeListAddEnd</a><a href="XmeListInsert.htm"><br>
+XmeListInsert</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Modifications de ligne dans un tableau</font></p>
+<p class="Body-Text">Pour modifier une ligne d'un tableau, utilisez la fonction de modification d'un élément de la liste&#160;:<a href="XmeListModify.htm"><br>
+XmeListModify</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Suppressions de ligne(s) dans un tableau</font></p>
+<p class="Body-Text">Pour supprimer une ou plusieurs lignes d'un tableau, utilisez l'une des fonctions de suppression d'élément(s) de la liste&#160;:<a href="XmeListDelete.htm"><br>
+XmeListDelete</a><a href="XmeListDeleteAndNext.htm"><br>
+XmeListDeleteAndNext</a><a href="XmeListDeleteAndPrevious.htm"><br>
+XmeListDeleteAndPrevious</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Mouvements de lignes dans un tableau</font></p>
+<p class="Body-Text">Pour déplacer un groupe de lignes dans un tableau, utilisez la fonction de mouvement d'éléments dans la liste&#160;:<a href="XmeListMove.htm"><br>
+XmeListMove</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Lectures et déplacements dans un tableau</font></p>
+<p class="Body-Text">Pour vous déplacer dans un tableau et/ou lire une ligne de tableau, utilisez l'une des fonctions de déplacement dans la liste et/ou de lecture d'un élément de la liste&#160;:<a href="XmeListBegin.htm"><br>
+XmeListBegin</a><a href="XmeListEnd.htm"><br>
+XmeListEnd</a><a href="XmeListFirst.htm"><br>
+XmeListFirst</a><a href="XmeListLast.htm"><br>
+XmeListLast</a><a href="XmeListNext.htm"><br>
+XmeListNext</a><a href="XmeListPrevious.htm"><br>
+XmeListPrevious</a><a href="XmeListIndex.htm"><br>
+XmeListIndex</a><a href="XmeListCurrent.htm"><br>
+XmeListCurrent</a></p>
+<p class="Body-Text">De plus, la fonction <a href="XmeListNumber.htm">XmeListNumber</a> permet de récupérer le numéro d'ordre de l'élément courant dans la liste.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Ecriture, lecture et suppression de propriété pour un élément de tableau</font></p>
+<p class="Body-Text"><a href="XmeListSetProp.htm">XmeListSetProp</a> <a href="XmeListGetProp.htm"><br>
+XmeListGetProp</a> <a href="XmeListRemoveProp.htm"><br>
+XmeListRemoveProp</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Tri des lignes d'un tableau</font></p>
+<p class="Body-Text">Pour trier les lignes d'un tableau, utilisez la fonction de tri des éléments de la liste (voir exemple 4)&#160;:<a href="XmeListSort.htm"><br>
+XmeListSort</a></p>
+<p class="Body-Text">Remarque&#160;: Le <font class="hcp1">tri automatique</font> du tableau est une option commandée par la fonction <a href="XmeListMode.htm">XmeListMode</a>. Chaque élément ajouté par XmeListInsert ou modifié par XmeListModify est alors positionné automatiquement dans la liste suivant l'ordre paramétré.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Recherches dans un tableau</font></p>
+<p class="Body-Text">Pour faire des recherches de chaîne à l'intérieur d'un tableau, utilisez l'une des fonctions de recherche en liste&#160;:<a href="XmeListSeek.htm"><br>
+XmeListSeek</a><a href="XmeListSearch.htm"><br>
+XmeListSearch</a><a href="XmeListFind.htm"><br>
+XmeListFind</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Comptes des lignes d'un tableau</font></p>
+<p class="Body-Text">Pour connaître le nombre de lignes garnies d'un tableau, utilisez la fonction&#160;:<a href="XmeListCount.htm"><br>
+XmeListCount</a></p>
+<p class="Body-Text">Pour connaître le nombre de lignes <a href="Marquagedeslignesd_untableau.htm">marquées</a> ou <a href="S_lectionmultipledeslignesd_untableau.htm">sélectionnées</a> d'un tableau, utilisez la fonction&#160;:<a href="XmeListSelectionCount.htm"><br>
+XmeListSelectionCount</a></p>
+<p class="Body-Text">Pour connaître le nombre de lignes d'un tableau qu'il est possible d'afficher à l'écran, utilisez la fonction&#160;:<a href="XmeListScreenCount.htm"><br>
+XmeListScreenCount</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Saisie d'une ligne de tableau</font></p>
+<p class="Body-Text">La fonction spécifique "tableau" <a href="XmeListInput.htm">XmeListInput</a> permet de <a href="Saisied_unelignedetableau.htm">saisir l'élément courant</a> du tableau.<br>
+Au lancement de la saisie, Ywpf recharge les données affichées de la ligne courante (à partir des données stockées dans l'élément correspondant).<br>
+Au sortir de l'input, seules ces mêmes données ont été mises à jour (exactement comme, lors d'une saisie classique de masque, seules les données du masque sont modifiées)&#160;: si la saisie a été validée, l'éventuelle reconstitution du paramètre <font class="hcp6">Ligne</font> (voir le cas 2 du paragraphe "Contenu des éléments de la liste") et la <font class="hcp1">mise à jour de la liste</font> <font class="hcp1">restent à la charge du programme</font>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Schéma de liste et de tableau</font></p>
+<p class="Body-Text">Le schéma suivant montre un exemple de tableau et de liste résidente en mémoire à un instant donné&#160;:<br>
+&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;+-Colonne 1--Colonne 2--Colonne 3--Colonne 4-+&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">1 &#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &lt;-----------+&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 &#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">3 &#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Liste&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">4 &#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;complète&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">5 &#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;des&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">6 &#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;éléments&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">7 &#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;du tableau&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">8 &#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">9 &#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;*____________________________________________* &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;</p>
+<p class="Source">10 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &lt;--* &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">11 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">12 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| Eléments &#160;&#160;&#160;|</p>
+<p class="Source">13 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| présents &#160;&#160;&#160;|</p>
+<p class="Source">14 | xxxxxxxxx Ligne courante xxxxxxxxx &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;à &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">15 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| l'écran &#160;&#160;&#160;&#160;|</p>
+<p class="Source">16 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">17 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">18 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">19 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">20 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">21 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &lt;--* &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;*____________________________________________* &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|&#160;</p>
+<p class="Source">22 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">23 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">24 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">25 | &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &lt;-----------+</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;+--------------------------------------------+&#160;</p>
+<p class="Body-Text">Au total, ce tableau de quatre colonnes contient 25 éléments en liste. Les 12 éléments d'indices 10 à 21 sont affichés à l'écran. L'élément d'indice 14 est l'élément courant.</p>
+<p class="Body-Text">Pour cet exemple, voyons le résultat de quelques fonctions (non décrites ici)&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> <a href="XmeListGetColumnCount.htm">XmeListGetColumnCount</a> délivrera la valeur 4.<font face="Symbol" class="hcp7"><br>
+-</font> <a href="XmeListCount.htm">XmeListCount</a> délivrera la valeur 25.<font face="Symbol" class="hcp7"><br>
+-</font> <a href="XmeListScreenCount.htm">XmeListScreenCount</a> délivrera la valeur 12.<font face="Symbol" class="hcp7"><br>
+-</font> <a href="XmeListGetOffset.htm">XmeListGetOffset</a> délivrera la valeur 10.<font face="Symbol" class="hcp7"><br>
+-</font> <a href="XmeListNumber.htm">XmeListNumber</a> délivrera la valeur 14.<font face="Symbol" class="hcp7"><br>
+-</font> <a href="XmeListCurrent.htm">XmeListCurrent</a> lira l'élément 14.<br>
+&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 1&#160;: Stockage en liste de l'enregistrement réel</font></p>
+<p class="Body-Text">Dans un programme de facturation, on utilise un objet tableau pour la saisie des lignes détail d'une facture (schématisée)&#160;:</p>
+<p class="Source">+--------------+----------+------+</p>
+<p class="Source">+ Code article | Quantité | Prix |</p>
+<p class="Source">+--------------+----------+------+</p>
+<p class="Source">+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;+</p>
+<p class="Source">+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;+</p>
+<p class="Source">+--------------+----------+------+</p>
+&#160;
+<p class="Body-Text">Les données du tableau appartiennent exclusivement à l'enregistrement LIGNEFACT, dont voici la description (simplifiée) dans le dictionnaire&#160;:</p>
+<table cellspacing="0" width="436">
+<tr class="hcp8">
+<td style="width:27.30%;" class="hcp9">
+<p class="Body-Text">NUMERO</p>
+</td>
+<td style="width:72.70%;" class="hcp9">
+<p class="Body-Text">Numéro de facture (10,0).</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:27.30%;" class="hcp9">
+<p class="Body-Text">CODE</p>
+</td>
+<td style="width:72.70%;" class="hcp9">
+<p class="Body-Text">Code article (8).</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:27.30%;" class="hcp9">
+<p class="Body-Text">QUANTITE</p>
+</td>
+<td style="width:72.70%;" class="hcp9">
+<p class="Body-Text">Quantité (3,0).</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:27.30%;" class="hcp9">
+<p class="Body-Text">PRIX</p>
+</td>
+<td style="width:72.70%;" class="hcp9">
+<p class="Body-Text">Prix (12,2).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+1. Création du tableau dans Xwin</font></p>
+<p class="Body-Text">Commencez par créer l'objet tableau&#160;: validez le choix du menu &lt;Objets&#160;: Tableau&gt; ou cliquez sur le bouton correspondant de la barre d'outils.<br>
+Posez le tableau à l'endroit souhaité dans la page et donnez-lui sa taille définitive.<br>
+Nommez le tableau et affectez-lui un numéro de point d'arrêt.</p>
+<p class="Body-Text"><font class="hcp1">2. Déclaration de l'enregistrement dans Xwin</font></p>
+<p class="Body-Text">Déclarez l'enregistrement LIGNEFACT dans la liste des enregistrements du masque (choix du menu &lt;Paramètres&#160;: Enregistrements&gt;).</p>
+<p class="Body-Text"><font class="hcp1">3. Création des données du tableau dans Xwin</font></p>
+<p class="Body-Text">Créez un nouvel objet de type Champ correspondant au code article&#160;: validez le choix du menu &lt;Objets&#160;: Champ&gt; ou cliquez sur le bouton correspondant de la barre d'outils&#160;; sélectionnez la donnée CODE de l'enregistrement LIGNEFACT.<br>
+Posez l'objet à l'intérieur du tableau&#160;: une première colonne est créée.<br>
+Modifiez son paramétrage (titre, couleur, etc.) dans les propriétés de la donnée (famille "En-tête colonne").<br>
+Opérez de la même manière pour créer les deux autres colonnes en sélectionnant respectivement la donnée QUANTITE et la donnée PRIX de l'enregistrement LIGNEFACT. Déclarez la donnée PRIX en Affichage (elle sera calculée automatiquement).</p>
+<p class="Body-Text"><font class="hcp1">4. Déclaration de l'enregistrement dans le programme</font></p>
+<p class="Body-Text">Dans votre programme, déclarez l'enregistrement LIGNEFACT (et le fichier "Factures") comme suit&#160;:<font><span class="hcp10"><br>
+HFILE</span></font> <span class="hcp10"><font face="Courier New" class="hcp11">Dico.dhsd</font></span> <font face="Courier New" class="hcp12"><span class="hcp10">Ffact Ffact</span><span class="hcp10"><br>
+PUBLIC RECORD</span></font> <span class="hcp10"><font face="Courier New" class="hcp11">Dico.dhsd</font></span> <font style="font-family: 'Courier New', monospace;" face="Courier New"><span class="hcp10">LigneFact</span></font></p>
+<p class="Body-Text"><font class="hcp1">5. Création d'une ligne de tableau</font></p>
+<p class="Body-Text">Pour ajouter une ligne au tableau (si vous n'utilisez pas la procédure standard XmeListConsultDefault), écrivez par exemple&#160;:</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">LigneFact = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation données</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">Elem = XmeListAddEnd (Id, LigneFact) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ajout en fin de liste</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">XmeListSetAdressCurrent (Id, Elem) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;positionnement</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">XmeListScrollBarInit (Id, ScrollBar32) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;mise à jour ascenseur</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">SaisieLigne &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;appelle XmeListInput</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">IF NOT ok &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;saisie abandonnée&#160;:</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">&#160;&#160;&#160;XmeListDeleteAndPrevious (Id) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;annulation &amp; repositionnement</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">&#160;&#160;&#160;XmeListCurrent (Id, LigneFact) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lecture nouveau courant</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">&#160;&#160;&#160;XmeListScrollBarInit (Id, ScrollBar32)</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">ELSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;saisie validée&#160;:</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">&#160;&#160;&#160;XmeListModify (Id, LigneFact) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;mise à jour liste</p>
+<p class="Source" style="font-family: 'Courier New', monospace; font-style: normal;">ENDIF</p>
+<p class="Body-Text">On prévoira un point de traitement ou un point d'arrêt Après la saisie du code pour rechercher le prix unitaire de l'article en fonction du code saisi. On prévoira également un point de traitement ou un point d'arrêt Après la saisie de la quantité pour calculer la donnée PRIX.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">6. Ecriture des lignes de facture sur le disque</font></p>
+<p class="Body-Text">Lorsqu'il s'agira de copier une ligne de facture sur le disque, on lira l'élément correspondant du tableau et on écrira directement l'enregistrement LIGNEFACT lu sur le disque. L'exemple suivant fonctionne aussi bien en création qu'en modification de facture&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> si la facture modifiée contient plus de lignes, on remplace les lignes existantes (par HREWRITE) et on ajoute les lignes supplémentaires (par HWRITE). S'il s'agit d'une nouvelle facture, on écrit toutes les lignes par HWRITE&#160;;<font face="Symbol" class="hcp7"><br>
+-</font> si la facture modifiée contient moins de lignes, on remplace les premières lignes existantes (par HREWRITE) et on supprime les lignes restantes (par HDELETE)&#160;:</p>
+<p class="Source" style="font-style: normal;">Ffact.Key = "A" &amp; Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;exemple de clé</p>
+<p class="Source" style="font-style: normal;">Cr = HREAD (Ffact, LigneFact,, "F") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;1ère lecture ancienne facture</p>
+<p class="Source" style="font-style: normal;">WNumero = LigneFact.Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;sauve le numéro lu</p>
+<p class="Source" style="font-style: normal;">Elem = XmeListFirst (Id, LigneFact) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;1ère ligne en liste</p>
+<p class="Source" style="font-style: normal;">LOOP Elem &lt;&gt; 0 OR (Cr = 0 AND WNumero = Numero)</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;IF Cr = 0 AND WNumero = Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ancienne non terminée</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;IF Elem = 0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;DELETE si nouvelle terminée</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;HDELETE (Ffact, LigneFact)</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;ELSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;REWRITE sinon</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;LigneFact.Numero = Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;positionne la clé</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;HREWRITE (Ffact, LigneFact)</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;ENDIF</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;Cr = HREAD (Ffact, LigneFact,, "F") &#160;&#160;&#160;&#160;&#160;;suite ancienne facture</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;WNumero = LigneFact.Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;sauve le numéro lu</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;ELSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ancienne terminée : WRITE</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;LigneFact.Numero = Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;positionne la clé</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;HWRITE (Ffact, LigneFact)</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;ENDIF</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;IF Elem &lt;&gt; 0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne suivante en liste</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;&#160;Elem = XmeListNext (Id, LigneFact)</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;ENDIF</p>
+<p class="Source" style="font-style: normal;">ENDLOOP</p>
+<p class="Source" style="font-style: italic;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">7. Réaffichage des lignes de facture</font></p>
+<p class="Body-Text">Pour réafficher une facture, on relira les enregistrements sur le disque et on créera directement autant de lignes de tableau. Par exemple&#160;:</p>
+<p class="Source" style="font-style: normal;">XmeListErase (Id) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;réinitialisation liste</p>
+<p class="Source" style="font-style: normal;">Ffact.Key = "A" &amp; Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;exemple de clé</p>
+<p class="Source" style="font-style: normal;">LOOP HREAD (Ffact, LigneFact,, "F") = 0 \ &#160;&#160;&#160;&#160;&#160;&#160;;boucle de relecture</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;&#160;&#160;AND LigneFact.Numero = Numero</p>
+<p class="Source" style="font-style: normal;">&#160;&#160;&#160;XmeListAddEnd (Id, LigneFact) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;placement dans le tableau</p>
+<p class="Source" style="font-style: normal;">ENDLOOP</p>
+<p class="Source" style="font-style: normal;">XmeListFirst (Id, LigneFact) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;positionnement en tête</p>
+<p class="Source" style="font-style: normal;">Rang = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;de liste</p>
+<p class="Source" style="font-style: normal;">XmeListSetOffset (Id, Rang)</p>
+<p class="Source" style="font-style: normal;">XmeListScrollBarInit (Id, ScrollBar32) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;mise à jour ascenseur</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 2&#160;: Stockage en liste d'un enregistrement de travail</font></p>
+<p class="Body-Text">Par rapport à l'exemple précédent, on veut ajouter au tableau le libellé et le prix unitaire de l'article, renseignements provenant de l'enregistrement ARTICLE&#160;:</p>
+<p class="Source">+--------------+---------+----------+---------------+------+<br>
++ Code article | Libellé | Quantité | Prix unitaire | Prix |<br>
++--------------+---------+----------+---------------+------+<br>
++ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;+<br>
++ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;+ &#160;&#160;&#160;&#160;&#160;+<br>
++--------------+---------+----------+---------------+------+</p>
+<p class="Body-Text"><font class="hcp1">&#160;</font><br>
+On va maintenant travailler avec l'enregistrement de manoeuvre WDETAIL, regroupant toutes les données affichées et dont la description dans le dictionnaire suit&#160;:</p>
+<table cellspacing="0" width="436">
+<tr class="hcp8">
+<td style="width:27.30%;" class="hcp9">
+<p class="Body-Text">CODE</p>
+</td>
+<td style="width:72.70%;" class="hcp9">
+<p class="Body-Text">Code article (8).</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:27.30%;" class="hcp9">
+<p class="Body-Text">LIBELLE</p>
+</td>
+<td style="width:72.70%;" class="hcp9">
+<p class="Body-Text">Libellé de l'article (30).</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:27.30%;" class="hcp9">
+<p class="Body-Text">QUANTITE</p>
+</td>
+<td style="width:72.70%;" class="hcp9">
+<p class="Body-Text">Quantité (3,0).</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:27.30%;" class="hcp9">
+<p class="Body-Text">PRIXUNITE</p>
+</td>
+<td style="width:72.70%;" class="hcp9">
+<p class="Body-Text">Prix unitaire (9,2).</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:27.30%;" class="hcp9">
+<p class="Body-Text">PRIX</p>
+</td>
+<td style="width:72.70%;" class="hcp9">
+<p class="Body-Text">Prix (12,2).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+1. Création du tableau dans Xwin</font></p>
+<p class="Body-Text">Idem exemple 1.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">2. Déclaration de l'enregistrement dans Xwin</font></p>
+<p class="Body-Text">Déclarez l'enregistrement WDETAIL dans la liste des enregistrements du masque (choix du menu &lt;Paramètres&#160;: Enregistrements&gt;).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">3. Création des données du tableau dans Xwin</font></p>
+<p class="Body-Text">Procédez comme dans l'exemple 1 mais sélectionnez maintenant toutes les données dans l'enregistrement WDETAIL.<br>
+Créez deux colonnes pour le libellé et le prix unitaire et déclarez les données de WDETAIL LIBELLE et PRIXUNITE en Affichage (elle ne seront jamais saisies mais recherchées dans le fichier Articles en fonction du code).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">4. Déclaration des enregistrements dans le programme</font></p>
+<p class="Body-Text">Dans votre programme, déclarez les enregistrements (et les fichiers) comme suit&#160;:</p>
+<p class="Source" style="font-style: normal;">HFILE Dico.dhsd Ffact Ffact</p>
+<p class="Source" style="font-style: normal;">HFILE Dico.dhsd Farti Farti</p>
+<p class="Source" style="font-style: normal;">PUBLIC RECORD Dico.dhsd LigneFact</p>
+<p class="Source" style="font-style: normal;">PUBLIC RECORD Dico.dhsd Article</p>
+<p class="Source" style="font-style: normal;">PUBLIC RECORD Dico.dhsd Wdetail</p>
+<p class="Source" style="font-style: normal;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">5. Création d'une ligne de tableau</font></p>
+<p class="Body-Text">Pour ajouter une ligne au tableau (si vous n'utilisez pas la procédure standard XmeListConsultDefault), écrivez maintenant par exemple&#160;:</p>
+<p class="Source" style="font-style: normal;">Wdetail = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation données</p>
+<p class="Source" style="font-style: normal;">Elem = XmeListAddEnd (Id, Wdetail) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ajout en fin de liste</p>
+<p class="Source" style="font-style: normal;">XmeListSetAdressCurrent (Id, Elem) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;positionnement</p>
+<p class="Source" style="font-style: normal;">XmeListScrollBarInit (Id, ScrollBar32) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;mise à jour ascenseur</p>
+<p class="Source" style="font-style: normal;">SaisieLigne &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;appelle XmeListInput</p>
+<p class="Source" style="font-style: normal;">IF NOT ok &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;saisie abandonnée&#160;:</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>XmeListDeleteAndPrevious (Id) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;annulation &amp; repositionnement</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>XmeListCurrent (Id, Wdetail) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lecture nouveau courant</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>XmeListScrollBarInit (Id, ScrollBar32)</p>
+<p class="Source" style="font-style: normal;">ELSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;saisie validée&#160;:</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>XmeListModify (Id, Wdetail) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;mise à jour liste</p>
+<p class="Source" style="font-style: normal;">ENDIF</p>
+<p class="Body-Text">On prévoira un point de traitement ou un point d'arrêt Après la saisie du code pour rechercher le libellé et le prix unitaire de l'article en fonction du code saisi.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">6. Ecriture des lignes de facture sur le disque</font></p>
+<p class="Body-Text">Lorsqu'il s'agira de copier une ligne de facture sur le disque, on lira l'élément correspondant du tableau, on transférera les données concernées de l'enregistrement WDETAIL dans l'enregistrement LIGNEFACT et on écrira ce dernier sur le disque. L'exemple suivant fonctionne aussi bien en création qu'en modification de facture&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> si la facture modifiée contient plus de lignes, on remplace les lignes existantes (par HREWRITE) et on ajoute les lignes supplémentaires (par HWRITE). S'il s'agit d'une nouvelle facture, on écrit toutes les lignes par HWRITE&#160;;<font face="Symbol" class="hcp7"><br>
+-</font> si la facture modifiée contient moins de lignes, on remplace les premières lignes existantes (par HREWRITE) et on supprime les lignes restantes (par HDELETE)&#160;:</p>
+<p class="Source" style="font-style: normal;">Ffact.Key = "A" &amp; Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;exemple de clé</p>
+<p class="Source" style="font-style: normal;">Cr = HREAD (Ffact, LigneFact,, "F") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;1ère lecture ancienne facture</p>
+<p class="Source" style="font-style: normal;">Elem = XmeListFirst (Id, Wdetail) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;1ère ligne en liste</p>
+<p class="Source" style="font-style: normal;">LOOP Elem &lt;&gt; 0 OR (Cr = 0 AND LigneFact.Numero = Numero)</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>LigneFact.Code = Wdetail.Code</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>LigneFact.Quantite = Wdetail.Quantite</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>LigneFact.Prix = Wdetail.Prix</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>IF Cr = 0 AND LigneFact.Numero = Numero &#160;&#160;&#160;&#160;&#160;&#160;;ancienne non terminée</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;</span>IF Elem = 0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;DELETE si nouvelle terminée</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>DELETE (Ffact, LigneFact)</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;</span>ELSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;REWRITE sinon</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>REWRITE (Ffact, LigneFact)</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;</span>ENDIF</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;</span>Cr = HREAD (Ffact, LigneFact,, "F") &#160;&#160;&#160;&#160;&#160;&#160;&#160;;suite ancienne facture</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>ELSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ancienne terminée : WRITE</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;</span>LigneFact.Numero = Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;positionne la clé</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;</span>HWRITE (Ffact, LigneFact)</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;</span>LigneFact.Numero = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;pour test fin ancienne</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>ENDIF</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>IF Elem &lt;&gt; 0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne suivante en liste</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;&#160;</span>Elem = XmeListNext (Id, Wdetail)</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>ENDIF</p>
+<p class="Source" style="font-style: normal;">ENDLOOP</p>
+<p class="Source" style="font-style: normal;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">7. Réaffichage des lignes de facture</font></p>
+<p class="Body-Text">Pour réafficher une ancienne facture, on relira les lignes de facture sur le disque et, pour chaque ligne, on transférera les données concernées de l'enregistrement LIGNEFACT dans l'enregistrement WDETAIL, on recherchera le libellé et le prix unitaire de l'article que l'on transférera également dans l'enregistrement WDETAIL et on créera une nouvelle ligne de tableau. Par exemple&#160;:</p>
+<p class="Source" style="font-style: normal;">XmeListErase (Id) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;réinitialisation liste</p>
+<p class="Source" style="font-style: normal;">Ffact.Key = "A" &amp; Numero &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;exemple de clé</p>
+<p class="Source" style="font-style: normal;">LOOP HREAD (Ffact, LigneFact,, "F") = 0 \ &#160;&#160;&#160;&#160;&#160;&#160;&#160;;boucle de relecture</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;&#160;&#160;</span>AND LigneFact.Numero = Numero</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>Wdetail.Code = LigneFact.Code</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>Wdetail.Quantite = LigneFact.Quantite</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>Wdetail.Prix = LigneFact.Prix</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>Article = " "</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>HSEEK (Farti, Article, "A" &amp; LigneFact.Code, "F")</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>Wdetail.Libelle = Article.Libelle</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>Wdetail.PrixUnite = Article.PrixUnite</p>
+<p class="Source" style="font-style: normal;"><span class="hcp13">&#160;&#160;&#160;</span>XmeListAddEnd (Id, Wdetail) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;placement dans le tableau</p>
+<p class="Source" style="font-style: normal;">ENDLOOP</p>
+<p class="Source" style="font-style: normal;">XmeListFirst (Id, Wdetail) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;positionnement en tête</p>
+<p class="Source" style="font-style: normal;">Rang = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;de liste</p>
+<p class="Source" style="font-style: normal;">XmeListSetOffset (Id, Rang)</p>
+<p class="Source" style="font-style: normal;">XmeListScrollBarInit (Id, ScrollBar32) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;mise à jour ascenseur</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 3&#160;: Utilisation d'une donnée de contrôle des lignes</font></p>
+<p class="Body-Text"><font class="hcp1">1. Déclaration de l'enregistrement RowInfo dans Xwin</font></p>
+<p class="Body-Text">Déclarez l'enregistrement ROWINFO du dictionnaire système DDSYS.dhsd dans la liste des enregistrements du masque (choix du menu &lt;Paramètres&#160;: Enregistrements&gt;).</p>
+<p class="Body-Text"><font class="hcp1">2. Déclaration de la donnée de contrôle dans Xwin</font></p>
+<p class="Body-Text">Dans les propriétés du tableau, activez l’option «&#160;Avec donnée de contrôle des lignes&#160;».<br>
+Cliquez dans la colonne de droite de la ligne «&#160;Donnée de contrôle&#160;» puis sur le bouton d’ouverture de la fenêtre de sélection de la donnée. Sélectionnez la donnée ROWINFO de l'enregistrement ROWINFO et validez.</p>
+<p class="Body-Text"><font class="hcp1">3. Déclaration de l'enregistrement RowInfo dans le programme</font></p>
+<p class="Body-Text">Dans votre programme, déclarez l'enregistrement comme suit&#160;:<font face="Courier New" class="hcp12"><br>
+PUBLIC RECORD DDSYS.dhsd ROWINFO</font></p>
+<p class="Body-Text"><font class="hcp1">4. Exemple de création d'un élément non marqué</font></p>
+<p class="Body-Text">On affichera une image bitmap en colonne d'état des lignes marquées&#160;:</p>
+<p class="Source">RowInfo = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation de ROWINFO</p>
+<p class="Source">RowInfo.bitmap = "1" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;bitmap prédéfinie</p>
+<p class="Source">RowInfo.Couleur = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;pas de couleur</p>
+<p class="Source">RowInfo.CoulSelec = FALSE</p>
+<p class="Source">RowInfo.Selection = FALSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;indicateur = non marqué</p>
+<p class="Source">XmeListAddEnd (<font class="hcp6">Id</font>, <font class="hcp6">Ligne</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ajout en fin de liste</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text"><font class="hcp1">5. Exemple de marquage d'un élément</font></p>
+<p class="Source">XmeListCurrent (<font class="hcp6">Id</font>, <font class="hcp6">Ligne</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lecture de l'élément courant</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(<font class="hcp1">garnit aussi ROWINFO</font>)</p>
+<p class="Source">RowInfo.Selection = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;modification indicateur = marqué</p>
+<p class="Source">XmeListModify (<font class="hcp6">Id</font>, <font class="hcp6">Ligne</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;réécriture de l'élément</p>
+<p class="Source">XmeListDisplay (<font class="hcp6">Id</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;réaffichage de la ligne</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text"><font class="hcp1">6. Exemple de relecture de l'indicateur de marquage d'un élément</font></p>
+<p class="Source">XmeListCurrent (<font class="hcp6">Id</font>, <font class="hcp6">Ligne</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lecture de l'élément courant</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(<font class="hcp1">garnit aussi ROWINFO</font>)</p>
+<p class="Source">IF RowInfo.Selection = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;test de l'indicateur</p>
+<p class="Source"><span class="hcp13">&#160;&#160;&#160;</span>... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement si marqué</p>
+<p class="Source">ENDIF</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 4&#160;: Tri des lignes d'un tableau</font></p>
+<p class="Body-Text">L'exemple suivant montre un tri déclenché par un clic souris dans l'en-tête d'une colonne&#160;; les éléments sont alors affichés par ordre croissant sur la valeur de cette colonne et une image bitmap est affichée dans l'en-tête de cette colonne&#160;:</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ScrollBar32</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;RECORD DDSYS.dhsd ColumnInfo</p>
+<p class="Source">...</p>
+<p class="Source">1 Id L</p>
+<p class="Source">1 Rang L</p>
+<p class="Source">1 Colonne L=0</p>
+<p class="Source">1 PositionTri L</p>
+<p class="Source">1 AdrTri 16</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">FUNCTION LONG Tri (&amp;a1,&amp;a2) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fonction de tri</p>
+<p class="Source">1 a1 A</p>
+<p class="Source">1 a2 A</p>
+<p class="Source">BEGINF</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;IF MID (a1,PositionTri,ColumnInfo.Taille) = \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;MID (a2,PositionTri,ColumnInfo.Taille)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;FRETURN (2)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDIF&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;FRETURN (MID (a1,PositionTri,ColumnInfo.Taille) &lt; \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MID (a2,PositionTri,ColumnInfo.Taille))&#160;</p>
+<p class="Source">ENDF</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeListConsult (Id) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation</p>
+<p class="Source">SWITCH Harmony.Key</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE Harmony.TabClic = LIST_CLICK_COLUMN_CONTROL&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;IF Colonne &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;clic en-tête de colonne</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListGetColumn (Id, Colonne, ColumnInfo)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ColumnInfo.Bitmap2 = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;raz ancienne image bitmap&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListSetColumn (Id, Colonne, ColumnInfo)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ENDIF&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Colonne = Harmony.SourisPosX &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;colonne cliquée&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;XmeListGetColumn (Id, Colonne, ColumnInfo)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ColumnInfo.Bitmap2 = "4" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;image bitmap prédéfinie&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;XmeListSetColumn (Id, Colonne, ColumnInfo)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;PositionTri = ColumnInfo.Adresse - \ &#160;&#160;&#160;&#160;&#160;&#160;&#160;;position relative donnée&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;PTR (<font class="hcp6">Ligne</font>) + 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;à comparer (début en 1)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;GetAdressFunction (" ","Tri", AdrTri)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;XmeListSort (Id, AdrTri) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tri&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;XmeListFirst (Id, <font class="hcp6">Ligne</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;repositionnement en</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Rang = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tête de liste&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;XmeListSetOffset (Id, Rang)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;XmeListScrollBarInit (Id, ScrollBar32)&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autre événement traité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres événements&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Id, <font class="hcp6">Ligne</font>, ScrollBar32)</p>
+<p class="Source">ENDSWITCH</p>
+</body>
+</html>

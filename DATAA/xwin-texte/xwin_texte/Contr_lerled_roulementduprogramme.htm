@@ -1,0 +1,102 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Contrôler le déroulement du programme</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Contrôler le déroulement du programme</h3>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Lespointsd_arr_t1.htm">Les points d'arrêt</a>.<br>
+&#160;<br>
+Le débogueur peut <font class="hcp2">interrompre l'exécution</font> du programme aux endroits et aux conditions que vous choisissez. Ces endroits et conditions sont appelés <font class="hcp2">points d'arrêt</font>.<br>
+&#160;<br>
+Ainsi, pour utiliser le débogueur, vous positionnez un ou plusieurs points d'arrêt en faisant appel aux commandes <font class="hcp2">Poser / Annuler un point d'arrêt</font> ou <font class="hcp2">Points d'arrêt</font> puis vous lancez l'exécution en mode "débogueur" par la commande <font class="hcp2">Exécuter</font> (attention, il faut que le programme ait été compilé dans ce mode).<br>
+&#160;<br>
+A la rencontre d'une instruction pour laquelle un arrêt est demandé ou lorsqu'une condition d'arrêt est remplie, le débogueur stoppe l'exécution du programme. Vous disposez alors de tout votre temps pour vérifier que tout se déroule comme vous le souhaitez.<br>
+&#160;<br>
+Ces vérifications effectuées, vous pouvez demander la reprise de l'exécution du programme. Une première méthode consiste en une simple relance (rappel de la commande "Exécuter")&#160;: le cas échéant, le programme s'arrêtera à nouveau au point d'arrêt suivant.<br>
+&#160;</p>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Dirigerl_ex_cutionduprogramme.htm">Le mode pas à pas</a>.<br>
+&#160;<br>
+Une autre méthode consiste à poursuivre l'exécution du programme en <font class="hcp2">mode pas à pas</font>&#160;: sans qu'il soit nécessaire de poser d'autre point d'arrêt, vous pouvez demander un nouvel arrêt dès la prochaine instruction, sur l'instruction pointée par le curseur ou sur l'instruction suivant immédiatement l'appel de la procédure ou de la fonction en cours.<br>
+&#160;<br>
+Si vous optez pour une exécution instruction par instruction, vous pouvez choisir d'"entrer" ou non dans le corps des procédures et fonctions rencontrées&#160;: utilisez la fonctionnalité <font class="hcp2">Pas à pas avec entrée dans les fonctions</font> si vous voulez vérifier le bon déroulement de la procédure&#160;; utilisez au contraire la fonctionnalité <font class="hcp2">Pas à pas sans entrée dans les fonctions</font> si vous êtes sûr de son bon fonctionnement et si vous voulez gagner du temps.<br>
+&#160;<br>
+Toujours pour gagner du temps&#160;: utilisez la fonctionnalité <font class="hcp2">Exécuter jusqu'au curseur</font> pour sauter un morceau de programme (par exemple, une longue boucle)&#160;; utilisez la fonctionnalité <font class="hcp2">Sortir de la fonction</font> si vous ne vous intéressez plus au déroulement de la fonction ou de la procédure en cours.<br>
+<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Consulterl_historique.htm">Historique de l'exécution du programme</a>.<br>
+<br>
+Le débogueur de Xwin conserve l'<font class="hcp2">historique</font> des <font class="hcp2">500 dernières instructions</font> exécutées. A l'occasion d'un arrêt du programme, utilisez cet historique pour <font class="hcp2">vérifier "par où est passé"</font> votre programme avant son interruption.<br>
+&#160;</p>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Modifierlavaleurd_unedonn_e.htm">Modifier la valeur d'une donnée</a>.<br>
+&#160;<br>
+Une fois le programme interrompu, vous pouvez affecter une nouvelle valeur à une donnée, soit en appelant la boîte de dialogue <font class="hcp2">Consulter / Modifier une variable</font>, soit directement dans la <a href="Utiliser_la_fen&ecirc;tre_de_d&eacute;bogage_rapide.htm">fenêtre de débogage rapide</a> (fenêtre affichée à la manière d'une bulle au survol de la donnée par le curseur souris).<br>
+&#160;<br>
+Ceci peut vous permettre, dans un but de test, d'influer sur le déroulement actuel du programme, sans obligation de le recompiler&#160;: correction d'une affectation erronée, modification du résultat d'un test ultérieur, application d'une stratégie différente, etc.<br>
+&#160;</p>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Terminerouinterromprel_ex_cutionduprogramme.htm">Terminer ou interrompre l'exécution du programme</a>.<br>
+&#160;<br>
+Utilisez la commande <font class="hcp2">Terminer l'exécution</font> si vous désirez stopper définitivement la session du débogueur en cours.<br>
+&#160;<br>
+Utilisez la commande <font class="hcp2">Interrompre l'exécution</font> si votre programme "<font class="hcp2">boucle</font>"&#160;: il s'arrêtera sur l'instruction en cours d'exécution, comme si vous y aviez placé un point d'arrêt. Utilisez aussi cette commande pour arrêter le programme sur l'instruction qui suit l'entrée clavier en cours (évite la pose d'un point d'arrêt préalable).<br>
+&#160;</p>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Attacheroud_tacherunet_che.htm">Connecter ou déconnecter le débogueur d'un programme</a>.<br>
+&#160;<br>
+Utilisez la commande <font class="hcp2">Attacher une tâche</font> pour mettre en route le débogueur "sur" un programme dont l'exécution n'a pas été lancée depuis Xwin en mode débogueur. La commande <font class="hcp2">Attacher une tâche et interrompre l'exécution</font> met le débogueur en route et interrompt de suite l'exécution du programme.<br>
+&#160;<br>
+Utilisez la commande "<font class="hcp2">Détacher la tâche</font>" pour "déconnecter" le débogueur du programme en cours (l'exécution du programme se poursuit normalement).<br>
+&#160;</p>
+</li>
+</ul>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><a href="Contr&ocirc;le_de_code_source_couverture_du_code_ex&eacute;cut&eacute;.htm">Couverture du code exécuté</a>.<br>
+<br>
+Utilisez l'option de couverture du code pour mesurer l'efficacité de vos tests en surveillant les instructions exécutées. Au niveau du code source, les lignes concernées sont coloriées, partiellement ou en totalité. Ceci permet en particulier de repérer facilement les endroits où votre programme n’est jamais passé.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Nota</font>&#160;:</p>
+<p class="Body-Text">Les points d'arrêt que vous posez sont <font class="hcp2">mémorisés</font> entre deux sessions de Xwin ou du débogueur. Ainsi, lorsque vous quittez l'éditeur ou le débogueur (parce que le programme analysé se termine ou parce que vous avez utilisé la commande "&#160;Terminer l'exécution&#160;") et que vous y retournez par la suite, vous retrouvez les points d'arrêt précédemment définis.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également&#160;:</p>
+<p><a href="Contr&ocirc;le_de_code_source_couverture_du_code_ex&eacute;cut&eacute;.htm">Couverture du code exécuté</a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

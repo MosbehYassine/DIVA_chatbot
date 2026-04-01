@@ -1,0 +1,78 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Surcharge : Principe</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-top:0;
+margin-bottom:0; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Surcharge : Principe</h3>
+<p class="NormalG">Utilité de la surcharge</p>
+<p>Lorsque vous personnalisez (verticalisez) une application vous disposez 
+ bien évidemment des dictionnaires de l’application (ccfdd.dhsd pour Divalto 
+ Comptabilité par exemple). Vous êtes amené à faire des adaptations et 
+ certainement, vous aller ajouter de nouveaux champs dans les tables existantes. 
+ Si vous faites la saisie de ces nouveaux champs dans le dictionnaire d’origine, 
+ tous ces ajouts seront perdus lorsque vous installerez une nouvelle version 
+ de l’application.</p>
+<p class="Tip-Note-Heading" style="margin-left: 21.30pt; margin-top: 4.00pt;">La 
+ surcharge de dictionnaire vous permet de faire des ajouts dans un dictionnaire 
+ en assurant la pérennité de vos modifications tout en facilitant le passage 
+ d’une version à l’autre.</p>
+<p class="hcp1">&#160;</p>
+<p class="NormalG">Principe de la surcharge</p>
+<p>Lorsqu’un dictionnaire est surchargé, toutes les modifications que vous 
+ apportez à ce dictionnaire sont stockées dans un autre fichier, appelé 
+ «&#160;dictionnaire de surcharge&#160;».</p>
+<p>Le nom du dictionnaire de surcharge est déduit du nom du dictionnaire 
+ surchargé en ajoutant la lettre «&#160;u&#160;» au nom. Par exemple, la 
+ surcharge du dictionnaire ccfdd.dhsd est ccfddu.dhsd.</p>
+<p>Lorsque Xwin ou un compilateur charge un dictionnaire, il tente également 
+ de charger le dictionnaire de surcharge. La présence ou non du fichier 
+ de surcharge détermine donc le fait de savoir si le dictionnaire est surchargé 
+ ou non.</p>
+<p>Le dictionnaire de surcharge n’est pas forcément dans le même répertoire 
+ que le dictionnaire surchargé. Vous devez donc veiller à ce que le dictionnaire 
+ de surcharge soit accessible grâce aux chemins implicites liés à votre 
+ projet.</p>
+<p>Vous pouvez avoir plusieurs dictionnaires de surcharge. Prenons le cas 
+ classique d’un développeur qui personnalise Divalto Achats-Ventes pour 
+ la société Dupont et également pour la société Durand. Les deux développements 
+ sont distincts et le développeur crée un dictionnaire de surcharge pour 
+ chacune de ses applications. Lorsqu’il travaille sur le projet Dupont, 
+ il charge des chemins implicites qui donnent accès au dictionnaire de 
+ surcharge du projet Dupont et lorsqu’il travaille sur le projet Durand 
+ il charge d’autres implicites qui donnent accès au dictionnaire de surcharge 
+ de Durand.</p>
+<p><img src="../image/surcharge1.gif" alt="" width="547" height="325" border="0"></p>
+<p class="hcp1">&#160;</p>
+<p style="margin-top: 0; margin-bottom: 0; font-weight: bold;">Surcharges 
+ multiples</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">Harmony permet également de 
+ surcharger plusieurs fois un même dictionnaire, on parle alors de surcharges 
+ multiples. Cela permet à deux éditeurs différents de développer des Add-ons 
+ qui surchargent les mêmes enregistrements et de les installer tous les 
+ deux chez un client final.</p>
+<p class="hcp1">La gestion des surcharges multiples 
+ est décrite en détail dans la documentation Diva au chapitre : &lt;Techniques 
+ de programmation&gt;&lt;Surcharges multiples&gt;</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="voir" style="border-top: 0.50pt solid #000000;">Voir également 
+ :</p>
+<p><a href="Fusion_de_dictionnaires.htm">Fusion de dictionnaires</a></p>
+</body>
+</html>

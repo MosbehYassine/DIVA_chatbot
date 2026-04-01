@@ -1,0 +1,27 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Sélection multiple des lignes d'un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Sélection multiple des lignes d'un tableau</h3>
+<p class="Body-Text">Une fonction standard de <font class="hcp1">"Sélection multiple"</font> est proposée par la procédure <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a>, si vous donnez la valeur TRUE à son paramètre <font style="font-style: italic;">Sélection</font>.</p>
+<p class="Body-Text">Cette option autorise l'utilisateur à sélectionner simultanément plusieurs (groupes de) lignes puis à effectuer certaines opérations sur l'ensemble de la sélection (supprimer, copier dans le presse-papiers, etc.&#160;; pour plus de détails sur ces opérations, voir la rubrique <a href="Traitementsli_s_l_objettableau.htm">Traitements liés à l'objet tableau</a>).</p>
+<p class="Body-Text">Des <font class="hcp1">attributs d'affichage</font> particuliers peuvent être affectés aux lignes sélectionnées pour les différencier des autres lignes du tableau. Cette affectation utilise la méthode de <a href="Marquagedeslignesd_untableau.htm">marquage des lignes</a> décrite dans la rubrique précédente (le champ RowInfo.Selection étant alors géré par XmeListConsultDefault).</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Mais attention</font>&#160;: Puisque XmeListConsultDefault utilise la méthode de marquage des lignes pour mettre en œuvre la sélection multiple, il <font class="hcp1">n’est pas possible</font> de disposer <font class="hcp1">à la fois</font> de la <font class="hcp1">sélection multiple</font> et d’un <font class="hcp1">marquage des lignes</font> «&#160;personnel&#160;». Pour colorer globalement une ou plusieurs lignes du tableau tout en disposant de la sélection multiple, utilisez la fonction <a href="XmeListSetAttribut.htm">XmeListSetAttribut</a>.</p>
+</body>
+</html>

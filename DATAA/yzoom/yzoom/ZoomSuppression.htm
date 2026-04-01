@@ -1,0 +1,67 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZoomSuppression</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt; }
+font.hcp2 { font-size:10pt;
+font-weight:normal; }
+font.hcp3 { font-weight:bold; }
+ul.hcp4 { list-style:disc; }
+span.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ZoomSuppression &#160;&#160;&#160;&#160;&#160;<font size="2" class="hcp1">&#160;</font><a href="Tableaur_capitulatifdess_quences.htm"><font size="2" class="hcp2">Famille</font></a> <font size="2" class="hcp1">&#160;</font><a href="ModuleDivaduZoom.htm"><font size="2" class="hcp2">Thème</font></a></h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Objet&#160;:</font> Traitements avant l'entrée en suppression.</p>
+<p class="Body-Text"><font class="hcp3">Procédure&#160;:</font> Facultative.</p>
+<p class="Body-Text"><font class="hcp3">Exécutée :</font> Avant une suppression de fiche.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La procédure ZoomSuppression est appelée à la demande de suppression d'une fiche et avant la confirmation de la suppression.</p>
+<p class="Body-Text">Elle peut être utilisée pour :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">Interdire la suppression sous certaines conditions (même si l'utilisateur a le privilège requis).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp5">Réserver une entité</span>.<br>
+Le zoom réserve la chaîne que vous placez dans la donnée Zoom.Res. La réservation est activée à la fin de la procédure ZoomSuppression et désactivée à la fin de la procédure ZoomApresSuppression. Si une erreur de partage est détectée, le zoom affiche le message "Fiche réservée", annule la suppression et relit la fiche.<font class="hcp3"><br>
+<br>
+Remarque&#160;:</font><br>
+Zoom.Res ne doit pas commencer par un espace. Pour en savoir plus sur les réservations d'entité, consultez la rubrique consacrée à l'instruction hShare du langage Diva.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp5">Attention :</span></p>
+<p class="Body-Text" style="font-weight: normal;">Si le RecordSql du Zoom est optimisé (attribut ZoomOptimize=yes dans le RecordSql) ET si on entre directement en modification en mode fiche, alors la fiche n'a pas encore été relue intégralement et certains champs peuvent être à espace. Il faut donc s'assurer que les informations nécessaires à la réservation soient présentent en indiquant les champs dans la zone MandatoryColumns du RecordSql</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple :</p>
+<p class="Body-Text"><font class="hcp3">Public Procedure ZoomSuppression</font></p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;Zoom.Res = 'Article' &amp; Article.Reference</p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Au retour</font> de la procédure ZoomSuppression, le zoom se poursuit normalement si la donnée Zoom.Ok est positionnée à 'O' (valeur par défaut).</p>
+<p class="Body-Text">Positionnez Zoom.Ok à la valeur :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">'N' pour interdire la suppression, avec affichage du message "Suppression interdite".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">'I' pour interdire la suppression, sans affichage du message.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

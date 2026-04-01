@@ -1,0 +1,86 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Le fichier paramètres xRepair.txt</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Le fichier paramètres xRepair.txt</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le fichier paramètres xRepairf.txt est un fichier texte contenant&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.60pt;">Une ligne par fichier susceptible d’être contrôlé.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.60pt;">Lignes <font class="hcp1">précédées</font> d’une première ligne précisant la version du fichier xRepairf.txt lui-même.<br>
+En effet, xRepair <font class="hcp1">sait gérer les différentes versions d’un même fichier</font> à contrôler.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font style="font-weight: bold; text-decoration: underline;">Structure d’une ligne «&#160;fichier&#160;»</font></p>
+<p class="Body-Text"><font class="hcp2">Flag_complet</font>, <font class="hcp2">Nom_du_fichier</font>, <font class="hcp2">lg_enregistrement</font> [,<font class="hcp2">lg_enregistrement</font>]*<br>
+&#160;</p>
+<table cellspacing="0" width="604">
+<tr class="hcp3">
+<td style="width:21.88%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Flag_complet</font></p>
+</td>
+<td style="width:78.12%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">C</font> ou <font class="hcp1">c</font> indique que le fichier est marqué "complet", ce qui signifie que toutes les longueurs d'enregistrement possibles pour ce fichier sont indiquées.<font class="hcp1"><br>
+Tout autre caractère</font> indique que le fichier est marqué "non complet", ce qui signifie que certaines longueurs d'enregistrement peuvent encore manquer.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.88%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Version</font></p>
+</td>
+<td style="width:78.12%;" class="hcp4">
+<p class="Body-Text">Numéro de version du fichier.<br>
+Si l’on ne désire pas gérer le numéro de version, on laissera ce champ vide<br>
+(<font style="font-family: Wingdings;" face="Wingdings">ó</font> ,, ou ,&#160;,).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.88%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Nom_du_fichier</font></p>
+</td>
+<td style="width:78.12%;" class="hcp4">
+<p class="Body-Text">Nom du fichier (nom du fichier des clés s’il s’agit d’un séquentiel-indexé).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.88%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">lg_enregistrement</font></p>
+</td>
+<td style="width:78.12%;" class="hcp4">
+<p class="Body-Text">Longueur(s) d'enregistrement.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:</font></p>
+<p class="Body-Text">;XREPAIRF.TXT_VERSION 6.1<br>
+C,6.1,GTFAT.dhfi,300,400,550,1100&#160;(complet, version 6.1)<br>
+,,fichier1.dhfd,1000&#160;&#160;&#160;(non complet, pas de version)<br>
+N, ,fichier2.dhfi,500,120,250,800&#160;(non complet, pas de version)</p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Paramètres généraux de XPSQL</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { margin-top:0;
+margin-bottom:0; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Paramètres généraux de XPSQL</h3>
+<p>&#160;</p>
+<p><font class="hcp1">Choix du type de serveur</font></p>
+<p>XLANSQL est prévu pour accéder à divers type de serveurs. Le bouton "<span class="hcp2">Serveur SQL</span>" permet de choisir le <span class="hcp2">fournisseur du serveur</span>. La version actuelle traite les bases Microsoft SQL SERVER et Oracle. Voir les documentations commerciales pour les versions supportées. Ce bouton permet aussi, le cas échéant, de mettre en oeuvre l'<a href="Option_de_connexion_Mars.htm">Option de connexion Mars</a>.</p>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp1">Choix de la base SQL.</font></p>
+<p class="Body-Text">Le bouton «&#160;Base SQL&#160;» permet de choisir la base SQL. Il est grisé lorsqu’une seule base a été configurée dans la table des serveurs.</p>
+<p class="Body-Text">Pour chaque base de données, il faut sur le serveur sous le répertoire Harmony un répertoire portant le nom de la base de données avec&#160;:</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Obligatoirement</font> le fichier paramètre Fhsql.dhfi des fichiers sous SQL. S’il n’existe pas, ce fichier est crée automatiquement à partir du fichier modèle FhsqlDivalto.dhfi.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Les dictionnaires de données des fichiers à transférer sous SQL. (sauf dans le cas où un chemin absolu a été défini dans les paramètres des fichiers).</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Les originaux des fichiers à transférer sous SQL.</p>
+</li>
+</ul>
+<p class="hcp3">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Mettre à jour la liste des fichiers</font></p>
+<p>Ce bouton de la barre des boutons permet d’ajouter les fichiers susceptibles d’être exploités sous SQL dans le Fhsql.dhfi à partir du modèle FhsqlDivalto.dhfi.. Ce choix ne modifie pas les fichiers existants.</p>
+<p class="hcp3">&#160;</p>
+<p><font class="hcp1">Décimales variables.</font></p>
+<p>Harmony permet de définir des nombres de décimales variables pour les valeurs numériques. Par exemple, dans certains pays les montants s'expriment avec trois décimales, en gestion les quantités peuvent s'exprimer avec 0, 1, 2 ou n décimales selon la nature de l'objet.</p>
+<p>Diva peut gérer jusque 10 types de décimales variables. Cette définition s'effectue par classe (10 classes en tout). Pour chaque classe on indique le nombre de décimales pour les nombres de cette classe. Dans le dictionnaire de données, lors de la définition d'un champ de nature "Numérique,D" on indique à quelle classe il appartient.</p>
+<p>Le bouton "Décimales" de XPSQL permet de paramétrer le nombre de décimales pour chacune des classes dans la base SQL. Ce paramètre est pris en compte lors de la création des tables dans la base SQL.</p>
+<p>&#160;</p>
+<p><font class="hcp1">Attention</font></p>
+<p>Contrairement au fonctionnement avec un fichier Harmony, le nombre de décimales d'une classe est fixe pour une colonne donnée d'une table et sa valeur doit être connue lors de la création des tables.</p>
+<p><img src="../image3.jpg" style="border: none;" alt="" width="336" height="336" border="0"></p>
+</body>
+</html>

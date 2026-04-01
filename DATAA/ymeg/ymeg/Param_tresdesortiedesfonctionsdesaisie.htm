@@ -1,0 +1,418 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Paramètres de sortie des fonctions de saisie</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp5 { font-weight:bold; }
+font.hcp6 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Paramètres de sortie des fonctions de saisie</h3>
+<p class="Body-Text">Après une interruption de la saisie d'un masque due à&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">un <font class="hcp2">point d'arrêt</font>,</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">un <font class="hcp2">piège de touche</font>,</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">la <font class="hcp2">fin de la saisie</font>,</p>
+</li>
+</ul>
+<p class="Body-Text">le contrôle est rendu au programme appelant. Celui-ci a accès à un certain nombre d'informations, fournies par Ywpf et récapitulées ci-après.<br>
+Après une interruption de saisie provoquée par un <font class="hcp2">point de traitement</font>, la séquence de traitement concernée a également accès à la plupart de ces informations.</p>
+<p class="Body-Text">Celles-ci permettent en particulier&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">De connaître le point d'arrêt ou le piège de touche, cause de l'interruption (programme appelant).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">De connaître la touche tapée au clavier, cause de l'interruption.<br>
+Dans le programme appelant, vous pouvez par exemple utiliser cette information pour savoir si l'utilisateur a terminé la saisie en la validant ou en l'abandonnant (touches respectives Entrée ou Echap).<br>
+Dans la séquence de traitement après saisie d'une donnée, vous pouvez par exemple utiliser cette information pour savoir si l'utilisateur a tapé une touche particulière sur cette donnée (touche F8 commandant l'appel d'un zoom, par exemple).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">D'identifier la variable qui était en cours de saisie au moment de l'interruption, ce qui vous autorise par exemple à placer le même point d'arrêt et/ou de traitement sur toutes les éléments d'un tableau de données.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">D'identifier la variable sur laquelle l'utilisateur a cliqué avec la souris.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres accessibles uniquement depuis le programme appelant&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 21.262%;">
+<col style="width: 78.738%;">
+<tr class="hcp3">
+<td style="width:21.262%;" class="hcp4">
+<p class="Body-Text" style="font-weight: bold;">Harmony.Arret<br>
+Harmony.DataArret</p>
+</td>
+<td style="width:78.738%;" class="hcp4">
+<p class="Body-Text">Numéro du point d'arrêt courant, si la sortie a été provoquée par un point d'arrêt ou par un piège de touche (0 sinon).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.262%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.Seqencours</font></p>
+</td>
+<td style="width:78.738%;" class="hcp4">
+<p class="Body-Text">Voir <font class="hcp2">Harmony.DataSeq</font>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.262%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.Opara1</font></p>
+</td>
+<td style="width:78.738%;" class="hcp4">
+<p class="Body-Text">Voir <font class="hcp2">Harmony.DataNature</font>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.262%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.Opara3</font></p>
+</td>
+<td style="width:78.738%;" class="hcp4">
+<p class="Body-Text">Voir <font class="hcp2">Harmony.DataLg</font>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.262%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.Opara4</font></p>
+</td>
+<td style="width:78.738%;" class="hcp4">
+<p class="Body-Text">Voir <font class="hcp2">Harmony.DataDeci</font>.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres accessibles aussi bien depuis le programme appelant que depuis une séquence de traitement&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 21.157%;">
+<col style="width: 78.843%;">
+<tr class="hcp3">
+<td style="width:21.157%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.Key</font></p>
+</td>
+<td style="width:78.843%;" class="hcp4">
+<p class="Body-Text">Code de la dernière touche tapée (Cf. <a href="YMEG2.chm::/Ymeg2/Codesderetourdesentr_esclavier_System_Statin_.htm">Codes de retour des entrées clavier</a>).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.157%;" class="hcp4">
+<p class="Body-Text" style="font-weight: bold;">Harmony.ClicOuTabkey</p>
+</td>
+<td style="width:78.843%;" class="hcp4">
+<p class="Body-Text">Ce drapeau permet de différencier une interruption de saisie provoquée par la frappe de la touche TAB d’une interruption provoquée par un clic souris sur une autre donnée du masque ou de la ligne de tableau en cours de saisie (à partir de la version 7.3). Il peut prendre les valeurs suivantes :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">1 : L’interruption de saisie a été provoquée par la frappe de la touche Tab.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">2 : L’interruption de saisie a été provoquée par un clic souris sur une autre donnée de la page ou de la ligne de tableau en cours de saisie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">0 : L'interruption de saisie produite n'est pas concernée et ne positionne pas Harmony.ClicOuTabkey.</p>
+</li>
+</ul>
+<p class="Body-Text">Pour plus de détails, voir le paragraphe "Positionnement de la variable Harmony.ClicOuTabkey" en fin de rubrique.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.157%;" class="hcp4">
+<p class="Body-Text" style="font-weight: bold;">Harmony.KeyZoomCombo</p>
+</td>
+<td style="width:78.843%;" class="hcp4">
+<p class="Body-Text">Voir la rubrique <a href="Appel_d_un__Zoom__ou_de_la_fen&ecirc;tre__Combo_zoom_.htm">Appel d'un Zoom ou Consultation de la Liste des fiches d'une table</a>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.157%;" class="hcp4">
+<p class="Body-Text" style="font-weight: bold;">Harmony.KeyZoomSearch</p>
+</td>
+<td style="width:78.843%;" class="hcp4">
+<p class="Body-Text">Voir la rubrique <a href="Appel_personnalis&eacute;_d_un_Zoom_par_la_touche_Ctrl+F.htm">Appel personnalisé d'un Zoom par la touche Ctrl+F</a>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.157%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">System.Zquit</font></p>
+</td>
+<td style="width:78.843%;" class="hcp4">
+<p class="Body-Text">Voir la rubrique <a href="Fermetured_unefen_treparAlt_F4.htm">Fermeture d'une fenêtre par Alt+F4</a>.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 20.355%;">
+<col style="width: 79.645%;">
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataPage</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Numéro de la page Xwin courante.<br>
+En cas d'utilisation de pages panels, voir la rubrique <a href="Num&eacute;ros_de_page_transmis_dans_l’enregistrement_Harmony.htm">Numéros de page transmis dans l’enregistrement Harmony (pages panels)</a>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataSeq</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Numéro de <a href="Pointsdes_quence.htm">point de séquence</a> de la donnée courante.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataInd1</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">1er indice de la donnée (tableau) courante.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataInd2</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">2ème indice.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataInd3</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">3ème indice.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataInd4</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">4ème indice.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataVal</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Valeur de la donnée courante (256 caractères maximum)&#160;; les données binaires (type B, X ou L) sont converties en numérique.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataLg</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Taille de la donnée courante.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataType</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Type de la donnée courante&#160;:<br>
+"A" = alpha<br>
+"N" = numérique (inclut les durées et les données binaires)<br>
+"D" = date<br>
+"H" = heure<br>
+"M" = date mensuelle<br>
+"T" = date + heure.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataNature</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Nature de la donnée courante (type B)&#160;:<br>
+1 = numérique (décimales variables)<br>
+2 = numérique (décimales fixes)<br>
+3 = alphanumérique<br>
+4 = date<br>
+6 = type B<br>
+7 = type X<br>
+9 = type L.<br>
+10 = heure.<br>
+11 = date mensuelle.<br>
+12 = date + heure<br>
+13 = durée.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataDeci</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Nombre de décimales de la donnée numérique courante.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataAdr</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Adresse de la donnée courante (type L).<br>
+Sauf champ virtuel.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text" style="font-weight: bold;">Harmony.DataTableAssociee</p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Champ positionné à :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">2 si la donnée en cours de saisie possède la propriété "Table associée" dans Xwin.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">1 dans le cas contraire.</p>
+</li>
+</ul>
+<p class="Body-Text"><span class="hcp5">Attention</span> : La propriété "Table associée" peut être modifiée par attribut dynamique. Toutefois, ce champ reflète uniquement la valeur de la propriété définie dans Xwin. <span style="text-decoration: underline;">Il ne tient pas compte d'une modification par attribut dynamique</span>.</p>
+<p class="Body-Text">La valeur de ce champ peut être utilisée pour paramétrer le fonctionnement du double clic dans le mode liste du Zoom SQL. Voir la rubrique "Zoom.TableAssociee" du livre consacré à la programmation du Zoom SQL.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataModif</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Drapeau indiquant si la variable en cours de saisie a été modifiée&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> FALSE : Non<font face="Symbol" class="hcp6"><br>
+-</font> TRUE : Oui.<br>
+Ywpf compare le contenu actuel de la variable avec une sauvegarde faite avant l'input physique.<br>
+Ce drapeau n'est pas significatif si la variable est un "texte riche".</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.DataNotif</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Ce drapeau est positionné à TRUE lorsque la variable en cours de saisie est une donnée à choix multiples (case à cocher, groupe de radio-boutons ou multi-choix) qui a été <font class="hcp2">modifiée</font>, <font class="hcp2">sans que l'input ait été validé</font> par l'utilisateur (i.e. la donnée possède toujours le focus). Il est positionné à FALSE dans tous les autres cas.<br>
+Pour que ce drapeau puisse prendre la valeur TRUE, il faut avoir coché l'option <font class="hcp2">Notifier la modification</font> dans les propriétés de l'objet concerné dans Xwin.<br>
+Pour plus de détails, Cf. rubrique <a href="Notificationduchangementdevaleurd_unedonn_e_choixmultiples.htm">Notification du changement de valeur d'une donnée à choix multiples</a>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.Oblig</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Drapeau indiquant s'il reste des variables obligatoires non renseignées dans le masque&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> FALSE : Non<font face="Symbol" class="hcp6"><br>
+-</font> TRUE : Oui (dans ce cas, Harmony.ObligSeq et Harmony.ObligPage précisent la variable concernée <font face="Symbol" class="hcp6">-</font> voir ces données).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.ObligSeq</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Dans le cas où il reste des variables obligatoires non renseignées dans le masque (Harmony.Oblig = TRUE), contient le numéro de <a href="Pointsdes_quence.htm">point de séquence</a> de la première variable concernée (le numéro de la page Xwin où elle se trouve est placé dans Harmony.ObligPage)&#160;; vous pouvez utiliser Harmony.ObligSeq pour reprendre la saisie sur cette variable&#160;:<font face="Symbol" class="hcp6"><br>
+-</font> Code complémentaire du code de retour XMENEXT_POINT_SEQUENCE de la fonction <a href="XmeNext.htm">XmeNext</a> (Cf. <a href="Pointsdereprisedanslasaisiedumasque.htm">Points de reprise dans la saisie du masque</a>) OU<font face="Symbol" class="hcp6"><br>
+-</font> Paramètre <font style="font-style: italic;">Numéro de point de séquence</font> de la fonction <a href="XmeInput.htm">XmeInput</a> si la variable se trouve dans une autre page.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.ObligPage</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Dans le cas où il reste des variables obligatoires non renseignées dans le masque (Harmony.Oblig = TRUE), contient le numéro de la page Xwin où se trouve la première variable concernée (le numéro de point de séquence de cette variable est placé dans Harmony.ObligSeq). Attention, Harmony.ObligPage peut indiquer une page différente de la page courante (cas d'une donnée obligatoire non renseignée située dans une autre page d'un masque multi-écran).<br>
+En cas d'utilisation de pages panels, voir la rubrique <a href="Num&eacute;ros_de_page_transmis_dans_l’enregistrement_Harmony.htm">Numéros de page transmis dans l’enregistrement Harmony (pages panels)</a>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.ClicOnglet</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Ce paramètre n'est significatif que dans un point de TRAITEMENT APRES saisie d'une donnée. Si l'utilisateur a cliqué sur un onglet, il contiendra le numéro du point d'arrêt affecté à cet onglet dans Xwin, sinon, il contiendra la valeur 0.<br>
+Ce paramètre a été introduit pour vous permettre de sauter les contrôles sur la donnée en cours de saisie en cas de clic onglet.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><font class="hcp2">Harmony.Souris</font><font style="font-weight: bold; font-style: italic;">XXX</font></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Voir les chapitres consacrés aux <a href="Tableaux.htm">tableaux</a>, <a href="Arbres.htm">arbres</a>, <a href="YMEG2.chm::/Ymeg2/Onglets.htm">onglets</a>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:20.355%;" class="hcp4">
+<p class="Body-Text"><span class="hcp5">Harmony.AbandonRichedit</span></p>
+</td>
+<td style="width:79.645%;" class="hcp4">
+<p class="Body-Text">Cette variable est positionnée à TRUE en cas d'abandon de la saisie d'un objet "texte riche" par la touche Echap (pour plus de détails à ce sujet, reportez-vous à la rubrique "<a href="Saisiedesobjetsdetype__texteriche__.htm">Saisie des objets de type texte riche</a>").</p>
+</td>
+</tr>
+</table>
+&#160;
+<p>&#160;</p>
+&#160;
+<p><span style="font-size: 11pt; font-weight: bold;">Positionnement de la variable Harmony.ClicOuTabkey</span></p>
+<p>De manière générale, la plupart des interruptions de saisie dues à une action de l'utilisateur à la souris positionnent Harmony.Key à la valeur générique K_TAB. Il en résulte que Harmony.Key ne permet pas de faire la différence entre une telle action à la souris et la frappe de la touche TAB. A cette fin, on utilisera plutôt la variable Harmony.ClicOuTabkey :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Harmony.ClicOuTabkey peut prendre les <span class="hcp5">valeurs suivantes</span> :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp5">1</span> si l’interruption de saisie a été provoquée par la frappe de la <span class="hcp5">touche Tab</span>.<br>
+Attention : Ceci inclut l'activation d'un bouton ou d'un choix de menu générant la touche Tab, ainsi que la sortie de la saisie d'un objet Rich-edit au clavier (frappe de la touche Echap ou de Ctrl+Entrée qui génèrent la valeur K_TAB pour Harmony.Key).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp5">2</span> si l’interruption de saisie a été provoquée par un <span class="hcp5">clic souris sur une autre donnée de la page ou de la ligne de tableau en cours de saisie</span>.<br>
+Attention : Les autres types de clic souris ne sont pas concernés (même s'ils génèrent la valeur K_TAB pour Harmony.Key) et positionnent Harmony.ClicOuTabkey à 0.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp5">0</span> dans les autres cas.<span style="margin-left: 48px;"><br>
+On remarquera donc que si Harmony.Key ne vaut pas K_TAB, la valeur de Harmony.ClicOuTabkey est nulle et non significative et que si Harmony.Key vaut K_TAB, la valeur de Harmony.ClicOuTabkey n'est pas forcément significative.<br>
+&#160;</span></p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>La valeur de Harmony.ClicOuTabkey est remise à zéro chaque fois que la main est donnée à l'utilisateur (entrée en saisie d'une donnée, consultation de page, de tableau ou d'agenda, get bloquant, appel d'un menu popup).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La valeur de Harmony.ClicOuTabkey peut être testée en particulier à l’occasion d'un piège de touche, d'un traitement ou d'un arrêt Après saisie de la donnée en cours.<br>
+Remarque : Comme sa valeur n'est pas effacée avant la prochaine entrée utilisateur, elle reste disponible lors du traitement ou arrêt Avant saisie de la donnée à venir (donnée cliquée en cas d’action souris, donnée suivante dans l’ordre de saisie en cas de frappe de la touche Tab).</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

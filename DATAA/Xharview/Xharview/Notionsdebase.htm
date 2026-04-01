@@ -1,0 +1,63 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Notions de base</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Notions de base pour l'envoi de fax ou de message</h3>
+<p class="Body-Text">Pour envoyer un fax ou un message, un outil de messagerie a besoin de connaître les informations suivantes&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">L'adresse du destinataire</font>.<br>
+C'est par exemple son adresse Mail, son adresse Internet ou le numéro de son fax.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Le type de transport</font> à utiliser pour envoyer le message à cette adresse.<br>
+Le type de transport indique quel "driver" doit être utilisé pour envoyer le message. Il peut être différent d'un poste à un autre et ne doit donc pas être stocké avec l'adresse du destinataire. Il faut paramétrer localement DivaltoViewer pour que celui-ci sache faire le lien avec le bon "driver de message".<br>
+Ce lien est contenu dans ce que nous appellerons l'adresse finale du destinataire, qui va donc contenir l'adresse du destinataire proprement dite et le type de transport à utiliser.<br>
+&#160;<font class="hcp1"><br>
+<span class="hcp2">Exemple d'un</span></font> <span class="hcp2">envoi de fax par le gestionnaire de fax de Windows</span> :<br>
+Le gestionnaire utilise des adresses finales du type&#160;:<br>
+[FAX: numéro de téléphone du fax]<br>
+ou<br>
+[FAX: nom du destinataire @ numéro de téléphone du fax]<br>
+&#160;<br>
+Si nous voulons envoyer un fax au numéro "03 88 01 02 03" ou "paul@03 88 01 02 03", il faudra que DivaltoViewer construise une adresse finale du type&#160;:<br>
+[FAX:03 88 01 02 03]<br>
+ou<br>
+[FAX:paul@03 88 01 02 03]<br>
+&#160;<font class="hcp1"><br>
+<span class="hcp2">Exemple</span></font><span class="hcp2">&#160;d'un envoi de message à l'adresse "paul@wanadoo.fr" avec la messagerie Internet</span> :<br>
+Celle-ci utilise des adresses finales de type&#160;:<br>
+[SMTP: adresse Internet]<br>
+L'adresse finale sera ici&#160;:<br>
+[SMTP: paul@wanadoo.fr]<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Le nom du profil</font> de messagerie à utiliser ainsi que le mot de passe s'il existe.<br>
+Un client de messagerie comme Outlook permet généralement de créer plusieurs profils avec des paramètres différents.<font class="hcp1"><br>
+<br>
+Exemple</font>&#160;: Dans les paramètres du fax pour un profil, on peut indiquer si le fax doit être envoyé "Dès que possible" ou "A partir d'une certaine heure". On peut aussi envoyer ou non une "Page de garde" devant chaque fax.<br>
+On peut donc créer un profil dédié à DivaltoViewer, avec d'autres paramètres que le profil par défaut, demandant par exemple de ne pas envoyer de page de garde et/ou d'envoyer les fax Divalto à partir d'une certaine heure.</p>
+</li>
+</ul>
+<p class="Body-Text">DivaltoViewer permet de paramétrer ces informations afin de pouvoir construire l'adresse finale d'un destinataire et se connecter à la messagerie.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

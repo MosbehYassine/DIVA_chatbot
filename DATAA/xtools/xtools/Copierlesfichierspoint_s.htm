@@ -1,0 +1,190 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Copier les fichiers pointés</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { text-decoration:underline; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Copier les fichiers pointés</h4>
+<p class="Body-Text">La copie des fichiers pointés est appelé par&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">La touche <font class="hcp2">F8</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le bouton <font class="hcp2">Copie</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le choix du menu &lt;<font class="hcp2">Fichier</font> <font style="font-family: Symbol; font-weight: bold;" face="Symbol">®</font> <font class="hcp2">Copier</font>&gt;.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<br>
+Xtools demande le chemin destination qui désigne le dossier dans lequel il faut copier les fichiers. Le bouton <font class="hcp2">Parcourir</font> ouvre une boîte de dialogue qui permet de sélectionner un chemin en naviguant dans les dossiers ou en choisissant un chemin implicite. Si le dossier de destination n'existe pas, Xtools propose de le créer.</p>
+<p class="Body-Text">Xtools effectue une copie "&#160;physique&#160;" des fichiers (par paquet d'octets, et non une copie logique qui s'effectue enregistrement par enregistrement). Le type du fichier destination sera toujours égal à celui du fichier origine. Le fichier destination est toujours effacé avant la copie&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Fichier origine de type Séquentiel Indexé</font>.<br>
+Si vous demandez la copie d'un fichier paramètres et clés, le fichier destination est créé ou transformé dans le même type que le fichier paramètres et clés d'origine. Xtools effectue une copie complète (paramètres et clés)&#160;: une régénération des clés n'est donc pas nécessaire.<font style="font-size: 11pt; font-weight: bold;" size="2"><br>
+Attention</font>&#160;: le <font class="hcp2">nom du fichier des données</font> dans le fichier paramètres destination sera en final <font class="hcp3">identique</font> à celui dans le fichier origine.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Fichier origine de type Normal (N)</font>.<br>
+Le fichier destination est créé ou transformé en type N avec la même longueur d'enregistrements que le fichier d'origine.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Fichier origine de type U</font>.<br>
+Le fichier destination est créé ou transformé en type U.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<br>
+&#160;<font class="hcp3"><br>
+Déroulement de la copie</font></p>
+<p class="Body-Text">La création du fichier destination est effectuée après le message de confirmation suivant&#160;:</p>
+<p class="Body-Text">"&#160;Création du fichier /CHEMIN/FICHIER <font class="hcp2">O</font>ui, <font class="hcp2">N</font>on, <font class="hcp2">T</font>ous, <font class="hcp2">A</font>bandon, a<font class="hcp2">U</font>cun ?&#160;"</p>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="595">
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Oui</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Le fichier est créé et copié et une confirmation sera redemandée pour le prochain fichier à créer.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Non</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Le fichier n'est ni créé ni copié et une confirmation sera redemandée pour le prochain fichier à créer.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Tous</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Le fichier est créé et copié et les prochains fichiers à créer le seront sans demande de confirmation.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Abandon</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">La copie est arrêtée.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">AUcun</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Le fichier et les suivants ne seront pas créés. Seuls les fichiers déjà existants seront ensuite copiés.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Si le fichier destination existe déjà, son remplacement est effectué après le message de confirmation suivant&#160;:</p>
+<p class="Body-Text">"&#160;Remplacement du fichier /CHEMIN/FICHIER <font class="hcp2">O</font>ui, <font class="hcp2">N</font>on, <font class="hcp2">T</font>ous, <font class="hcp2">A</font>bandon, a<font class="hcp2">U</font>cun ?&#160;"</p>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="595">
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Oui</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Le fichier est remplacé et une confirmation de remplacement sera redemandée pour le prochain fichier destination existant déjà.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Non</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Le fichier n'est pas copié et une confirmation sera redemandée pour le prochain fichier à remplacer.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Tous</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Le fichier est remplacé et les prochains fichiers à remplacer le seront sans demande de confirmation.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Abandon</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">La copie est arrêtée.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">AUcun</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Le fichier et les suivants à remplacer ne sont pas copiés. Seuls les fichiers dont la destination n'existe pas encore sont copiés.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Pour effectuer la copie, Xtools ouvre le fichier source en mode réservé. Si le fichier est déjà ouvert par une autre tâche, Xtools pose la question suivante&#160;:</p>
+<p class="Body-Text">"&#160;Désirez-vous effectuer la copie en mode partagé&#160;?&#160;<font class="hcp2">O</font>ui, <font class="hcp2">N</font>on, <font class="hcp2">T</font>ous, <font class="hcp2">A</font>bandon".</p>
+<table cellspacing="0" width="595">
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Oui</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Xtools fait une tentative de copie en ouvrant le fichier source en mode partagé. Une confirmation sera redemandée pour le prochain fichier en erreur de partage. Si le fichier est ouvert en mode réservé par une autre tâche, Xtools affiche un message d'erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Non</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Le fichier n'est pas copié et une confirmation sera redemandée pour le prochain fichier en erreur de partage.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Tous</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">Xtools fait une tentative de copie en ouvrant le fichier source en mode partagé. Il fera de même pour tous les prochains fichiers en erreur de partage sans demande de confirmation.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.50%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Abandon</font></p>
+</td>
+<td style="width:86.50%;" class="hcp5">
+<p class="Body-Text">La copie est arrêtée.</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

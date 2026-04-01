@@ -1,0 +1,33 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>LicenseGetReadOnly</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>LicenseGetReadOnly</h3>
+<p>&#160;</p>
+<p>La fonction LicenseGetReadOnly renvoie TRUE lorsque le programme s’exécute en mode "Licence Consultation".</p>
+<p>&#160;</p>
+<p>La gestion des licences nommées propose le profil "Consultation uniquement". Lorsque qu’un utilisateur est identifié avec ce profil, ses programmes s’exécutent en mode licence consultation, c’est-à-dire que les opérations de création, modification et suppression sur les tables sont interdites. Si le programme tente néanmoins d’exécuter une fonction de mise à jour, celui-ci s’arrête avec une erreur fatale.</p>
+<p><br>
+Le mode licence consultation peut également se mettre en œuvre lors de l’exécution d’un zoom ou d’un programme avec un profil ne permettant pas d’accéder à cette fonctionnalité de l’ERP. Le programme s’exécute malgré tout dans un mode dégradé qui n’offre ses fonctionnalités qu’en consultation.</p>
+<p>Lorsqu’il s’agit d’un zoom, les choix de menu, les boutons de barre d’outils et les raccourcis clavier permettant l’accès aux fonctionnalités de mises à jour sont inopérants. S’il s’agit d’autres programmes, il revient au développeur d’interdire à l’utilisateur l’accès à ces fonctionnalités.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Rappel</span> :</p>
+<p>Les choix de menu et les boutons de barre d'outils disposent de la propriété "Licence consultation" (paramètre des boutons de la feuille de styles -cadre "Ressources"-, personnalisable au niveau d'un bouton particulier).</p>
+<p>Lorsque cette option est positionnée à la valeur Oui, le bouton est <span class="hcp1">automatiquement grisé</span> lorsque le programme s’exécute dans le mode "Licence Consultation". Le cas échéant, l'option invalide aussi automatiquement la touche affectée au bouton.</p>
+<p>On pourra donc activer cette option pour tous les boutons commandant une fonction de création, modification ou suppression dans la base. Aucune programmation complémentaire n'est nécessaire sur ce point.</p>
+<p>&#160;</p>
+</body>
+</html>

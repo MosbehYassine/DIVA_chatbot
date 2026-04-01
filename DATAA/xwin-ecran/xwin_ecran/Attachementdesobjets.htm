@@ -1,0 +1,98 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Attachement des objets</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp4 { font-weight:bold; }
+span.hcp5 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Attachement des objets</h3>
+<p class="Body-Text">L'attachement des objets permet de déterminer leur comportement lorsque la fenêtre/page qui les contient est agrandie par l'utilisateur.</p>
+<p class="Body-Text">Les objets peuvent soit :</p>
+<ul>
+<li class="p-List">
+<p class="List">Rester à la même place et ne pas changer de taille.</p>
+</li>
+<li class="p-List">
+<p class="List">Se déplacer proportionnellement à la page/fenêtre.</p>
+</li>
+<li class="p-List">
+<p class="List">S'étendre proportionnellement à la page/fenêtre.<br>
+C'est le cas typique de l'objet tableau qui peut afficher un plus grand nombre de lignes ou de colonnes en fonction de la taille de la page/fenêtre qui le contient.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="Body-Text">La fenêtre ci-dessous contient un tableau et des boutons. Les attachements des différents objets sont précisés.</p>
+<p class="Body-Text"><img src="../image/help0008.gif" alt="" width="295" height="231" border="0"></p>
+&#160;
+<p class="Body-Text">Après agrandissement de la fenêtre, le tableau s'est agrandi et les boutons se sont déplacés :</p>
+<p class="Body-Text"><img src="../image/help0009.gif" alt="" width="291" height="281" border="0"></p>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp1">Comment préciser les attachements des objets ?</font></p>
+<ul>
+<li class="p-List">
+<p class="List">Saisissez les attachements d'un objet particulier dans la fenêtre des propriétés de l'objet.</p>
+</li>
+<li class="p-List">
+<p class="List">Pour spécifier les attachements de plusieurs objets, sélectionnez d'abord les objets concernés puis opérez de même.</p>
+</li>
+</ul>
+<p class="Body-Text">Les propriétés concernant l'attachement des objets sont les suivantes :</p>
+<table cellspacing="0" width="100%">
+<col style="width: 14.964%;">
+<col style="width: 85.036%;">
+<tr class="hcp2">
+<td style="width:14.964%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Attachement droite</font></p>
+</td>
+<td style="width:85.036%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Attaché à droite</span> : spécifie que l'objet est attaché à la droite de la fenêtre/page, c'est à dire qu'il peut éventuellement être déplacé vers la droite en cas d'élargissement de la page/fenêtre.<font class="hcp1"><br>
+<br>
+Largeur variable <span class="hcp5">: s</span></font>pécifie que la largeur de l'objet est variable, c'est à dire qu'il peut être élargi en cas d'élargissement de la page/fenêtre.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:14.964%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Attachement bas</p>
+</td>
+<td style="width:85.036%;" class="hcp3">
+<p class="Body-Text"><span class="hcp4">Attaché au bas</span> : spécifie que l'objet est attaché au bas de la page, c'est à dire qu'il peut éventuellement être déplacé vers le bas en cas d'allongement de la page/fenêtre.<font class="hcp1"><br>
+<br>
+Hauteur variable <span class="hcp5">: s</span></font>pécifie que la hauteur de l'objet est variable, c'est à dire qu'il peut être agrandi en hauteur en cas d'allongement de la page/fenêtre.</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp1">Attention :</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Un type d'attachement défini pour une <span class="hcp4">page</span> est automatiquement répercuté <font class="hcp1">à l'exécution</font> à <span class="hcp4">tous les objets</span> contenus dans la page. Par exemple, si vous déclarez qu'une page est "Attachée en bas", tous ses objets auront cette propriété.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque vous définissez un type d'attachement pour un objet, il est <span class="hcp4">impératif de définir un type d'attachement compatible pour la page</span> contenant cet objet. Dans le cas contraire, une erreur est détectée à la compilation. Par exemple, si vous déclarez qu'un objet est "Attachée en bas", il faut aussi déclarer que la page est de "Hauteur variable" (la page peut aussi être déclarée "Attachée en bas" mais dans ce cas, il est redondant d'affecter cette propriété à l'objet - voir le paragraphe précédent).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="Attachementdespages.htm">Attachement des pages</a></p>
+</body>
+</html>

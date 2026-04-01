@@ -1,0 +1,49 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctions de gestion des arbres</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fonctions de gestion des arbres</h3>
+<p class="Body-Text">Les rubriques suivantes décrivent successivement les procédures et fonctions de Ywpf spécifiques aux arbres. Vous y trouverez une description complète de chaque procédure ou fonction avec ses paramètres d'entrée et de sortie.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les fonctions "arbre" sont proposées dans l'ordre suivant&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Fonctions de gestion des lignes et des colonnes.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Fonctions de gestion du curseur de création.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Fonctions liées à la sélection multiple.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Fonctions de lecture / écriture des options de fonctionnement.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Fonctions de comptage et de recherche d'éléments dans l'arbre.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">Remarque importante</span> :</p>
+<p class="Body-Text">Certaines de ces fonctions peuvent être appelées à tout moment. D'autres ne peuvent être exécutées que si le tableau se trouve dans la page courante (ou dans une page panel de la page courante). La rubrique qui la documente mentionne cette restriction pour chaque fonction du deuxième groupe.</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque TRES importante</font><font style="font-weight: bold;">&#160;:</font></p>
+<p class="Body-Text"><font class="hcp1">En pratique</font>, la plupart de ces fonctions <font class="hcp1">servent uniquement</font> à la fonction <font class="hcp1">XmeListConsultDefault</font> (seule XmeListTreeCursorInit est indispensable pour lancer le traitement du <a href="Cr_ationd_un_l_mentd_arbre.htm">curseur de création</a>&#160;; XmeListTreeIndex et XmeListTreeGetOffset peuvent aussi s'avérer nécessaires pour se positionner sur la cellule cliquée). En conséquence, elles ne vous seront généralement utiles que si vous décidez de reprogrammer les fonctionnalités mises en oeuvre en standard par XmeListConsultDefault (dont le source est fourni dans le fichier ZYDEFPRO.dhsp).</p>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Edition dans un dictionnaire surchargé</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:11.75pt; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+ul.hcp3 { list-style:disc; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Edition dans un dictionnaire surchargé</h3>
+<p>Lorsque vous éditez un dictionnaire surchargé vous pouvez&#160;:</p>
+<ul>
+	<li class="p" style="font-size: 8pt;"><p class="hcp1">créer 
+	 des sous-champs dans des champs existants,</p></li>
+	<li class="p" style="font-size: 8pt;"><p class="hcp1">créer 
+	 de nouveaux fichiers,</p></li>
+	<li class="p" style="font-size: 8pt;"><p class="hcp1">créer 
+	 de nouvelles tables,</p></li>
+	<li class="p" style="font-size: 8pt;"><p class="hcp1">créer 
+	 de nouveaux index,</p></li>
+	<li class="p" style="font-size: 8pt;"><p class="hcp1">créer 
+	 de nouveaux liens (voir <a href="Surcharge_des_liens.htm">Surcharge 
+	 des liens</a> ),</p></li>
+	<li class="p" style="font-size: 8pt;"><p class="hcp1">créer 
+	 de nouveaux champs virtuels.</p></li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p>Par contre, vous ne pouvez pas&#160;modifier les objets qui appartiennent 
+ au dictionnaire surchargé, ni ajouter de nouveaux champs aux tables existantes.</p>
+<p>Bien évidemment, les objets que vous avez ajouté dans le dictionnaire 
+ restent totalement modifiables.</p>
+<p class="hcp2">&#160;</p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Reconnaissance</p>
+<p>Les éléments qui appartiennent à la surcharge sont reconnaissables dans 
+ l’arbre du dictionnaire. L’icône qui les représente est bordée d’un trait 
+ vert. Les éléments ascendants sont également bordés de vert.</p>
+<p>Exemple&#160;:</p>
+<p>&#160;<img src="../image/surcharge2.gif" alt="" width="103" height="48" border="0"></p>
+<p class="hcp2">&#160;</p>
+<p class="NormalG">Ajout de champs à une table</p>
+<p>D’après ce qui vient d’être dit, il n’est pas possible de rajouter des 
+ champs à une table si le dictionnaire est surchargé. Or c’est bien évidemment 
+ ce que nous désirons faire.</p>
+<p>Pour ajouter des champs à une table, nous allons en fait créer des sous-champs 
+ dans un champ existant. Pour ce faire, il faut évidemment que le créateur 
+ du dictionnaire ait prévu un champ vide (suffisamment grand) dans lequel 
+ nous allons placer les nouveaux champs.</p>
+<p>Dans les applications Divalto, les tables contiennent toujours un champ 
+ prévu à cet effet. Son nom est celui de la table suffixé par le caractère 
+ «&#160;u&#160;» (la table c8 contient un champ c8u). </p>
+<p>La propriété &quot;Zone U&quot; est cochée pour ce type de donnée (dans 
+ ce cas elle sera extensible dans le contexte des surcharges multiples)</p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Exemple&#160;</p>
+<p><img src="../image/surcharge4.gif" alt="" width="402" height="321" border="0"></p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Remarques</p>
+<ul class="hcp3">
+	<li><p>Si la taille du champ prévu pour la surcharge est insuffisante 
+	 pour contenir tous les nouveaux champs, il faudra créer une nouvelle 
+	 table et la gérer en parallèle. Avec la notion de surcharges multiples, 
+	 cette contrainte disparaît, la zone U devenant extensible.</p></li>
+	<li><p>Dans le cas des surcharges multiples : &#160;(voir les détails 
+	 dans la documentation Diva au chapitre : &lt;Techniques de programmation&gt;&lt;Surcharges 
+	 multiples&gt;)</p></li>
+	<ul class="hcp3">
+		<li><p><span style="font-family: Arial, sans-serif;">le choix &lt;Outils&gt;&lt;Ne 
+		 voir que le dictionnaire principal&gt; permet de ne voir que le 
+		 dictionnaire de base sans aucune surcharge</span></p></li>
+		<li><p style="font-family: Arial, sans-serif; font-size: 10pt;">le 
+		 choix &lt;Outils&gt;&lt;Ne voir que le dictionnaire principal 
+		 et son premier niveau de surcharge&gt;<span style="font-family: Arial, sans-serif; 
+													 font-size: 10pt;"> 
+		 permet de voir le dictionnaire de base et la première surcharge 
+		 trouvée d'après les implicites.</span></p></li>
+	</ul>
+</ul>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">&#160;</p>
+<p class="voir" style="border-top: 0.50pt solid #000000;">Voir également 
+ :</p>
+<p><a href="Surcharge_des_liens.htm">Surcharge des liens</a></p>
+</body>
+</html>

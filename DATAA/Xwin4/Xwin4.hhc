@@ -1,0 +1,57 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Xwin - Atelier de développement Harmony - Editeurs">
+    <param name="Local" value="Xwin4/Xwin.htm">
+  </object>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="xwin-texte.chm::/xwin-texte.hhc">
+  <param name="Merge" value="xwin-texte.chm::/xwin-texte.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xwin-Dico.chm::/Xwin-Dico.hhc">
+  <param name="Merge" value="Xwin-Dico.chm::/Xwin-Dico.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="xwin-ecran.chm::/xwin-ecran.hhc">
+  <param name="Merge" value="xwin-ecran.chm::/xwin-ecran.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="xwin-imprimante.chm::/xwin-imprimante.hhc">
+  <param name="Merge" value="xwin-imprimante.chm::/xwin-imprimante.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="Xwin-ressources.chm::/Xwin-ressources.hhc">
+  <param name="Merge" value="Xwin-ressources.chm::/Xwin-ressources.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="xwin-projet.chm::/xwin-projet.hhc">
+  <param name="Merge" value="xwin-projet.chm::/xwin-projet.hhc">
+</object>
+<ul>
+</ul>
+<object type="text/sitemap">
+  <param name="Name" value="xwin-Migration.chm::/xwin-Migration.hhc">
+  <param name="Merge" value="xwin-Migration.chm::/xwin-Migration.hhc">
+</object>
+<ul>
+</ul>
+</html>

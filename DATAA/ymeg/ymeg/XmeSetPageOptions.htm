@@ -1,0 +1,235 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeSetPageOptions</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+font.hcp4 { font-weight:bold; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp7 { list-style:disc; }
+span.hcp8 { font-weight:bold;
+text-decoration:underline; }
+font.hcp9 { font-weight:bold;
+font-style:italic; }
+p.hcp10 { margin-left:48px; }
+span.hcp11 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeSetPageOptions &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="font-weight: bold;">Affectation d'options à une page de masque (Volet - Accordéon)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp2">XmeSetPageOptions</span> (<font class="hcp3">Nom du fichier masque</font>, <font class="hcp3">Numéro de page</font>, <font class="hcp3">Options</font>)</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="623">
+<tr class="hcp5">
+<td style="width:25.76%;" class="hcp6">
+<p class="Body-Text"><font class="hcp3">Nom du fichier masque</font></p>
+</td>
+<td style="width:74.24%;" class="hcp6">
+<p class="Body-Text">Nom du fichier masque.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:25.76%;" class="hcp6">
+<p class="Body-Text"><font class="hcp3">Numéro de page</font></p>
+</td>
+<td style="width:74.24%;" class="hcp6">
+<p class="Body-Text">Numéro de la page.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:25.76%;" class="hcp6">
+<p class="Body-Text"><span><font class="hcp3">Options</font></span></p>
+</td>
+<td style="width:74.24%;" class="hcp6">
+<p class="Body-Text">Liste des options (chaîne de caractères au format HMP).<br>
+Voir le paragraphe "Options disponibles" ci-dessous.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Description de la fonction&#160;:</font></p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text">Cette fonction permet d’affecter des options à une page de masque par programme.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp8">Attention (options "volet" uniquement)</span> : XmeSetPageOptions ne peut être appelée qu’une seule fois pour une page donnée et doit donc mentionner la <span class="hcp2">totalité des options volet choisies</span>. Il est impératif de l'appeler AVANT le PREMIER affichage de la page. <span style="text-decoration: underline;">Les éventuels appels suivants seront ignorés</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La page est identifiée par un <font class="hcp9">Nom de fichier masque</font> et par un <font class="hcp9">Numéro de page</font> dans ce fichier.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les options sont spécifiées dans une chaîne de caractères au format HMP (voir le paragraphe "Options disponibles" ci-dessous).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le masque doit être préalablement chargé par la fonction <a href="XmeLoad.htm">XmeLoad</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si la page concernée fait partie d'un <span class="hcp2">groupe de pages (chaînées ou non) liées par un onglet</span>, appelez l’instruction XmeSetPageOptions en spécifiant la <span class="hcp2">première</span> page du groupe (ne concerne pas l'option &lt;AccordionLabel&gt;).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp8">Attention</span> : Si la page concernée est affichée avec des <span class="hcp2">offsets programmés</span> (Harmony.Oligne, Harmony.Ocolonne : voir la rubrique <a href="D_placementd_unmasque_l__cran.htm">Déplacement d'un masque à l'écran</a>), il faut charger les <span class="hcp8">MÊMES</span> valeurs dans Harmony.Oligne et Harmony.Ocolonne avant l'appel à XmeSetPageOptions.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ywpf ne contrôle pas la cohérence des paramètres transmis. Par exemple, les options "volet" sont ignorées si la page n'a pas de volet !</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple&#160;:</p>
+<p class="Source" style="margin-left: 48px;">XmeSetPageOptions ("MASQUE",3,Options) &#160;;options sur la page 3 du masque MASQUE</p>
+&#160;
+<p>&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Options disponibles&#160;:</p>
+<ul class="hcp7">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp2">&lt;Collapsable&gt; (Volet)</span>.<br>
+<br>
+Cette clé HMP permet de spécifier que la page paramétrée dans l'instruction XmeSetPageOptions est escamotable et qu’elle doit comporter un <span class="hcp2">volet</span>. La valeur associée à cette clé fournit la <span class="hcp2">liste des numéros des pages autorisées à s'étendre</span> lorsque la page est escamotée. Les différents numéros doivent être séparés entre eux par un <span class="hcp2">; (point virgule)</span>.<br>
+<br>
+Syntaxe :<br>
+&lt;Collapsable&gt;no_page_extensible_1;no_page_extensible_2;...</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;"><font class="hcp4">Exemples&#160;:</font></p>
+<p class="hcp10">&lt;Collapsable&gt;4<br>
+&lt;Collapsable&gt;5;6;7</p>
+<p>&#160;</p>
+<p class="hcp10"><span class="hcp2">Remarques</span> :</p>
+<ul class="hcp7">
+<li style="list-style:none;display: inline">
+<ul style="list-style: circle;">
+<li class="p">
+<p>Les numéros des pages extensibles font référence à des pages Xwin du <span class="hcp2">même</span> fichier masque.<br>
+Quelques contrôles sont faits à l’exécution sur la liste fournie : numéro de page non nul et ne dépassant pas le nombre total de pages du masque, numéro de page différent du numéro de la page escamotable elle-même (y compris les pages liées par onglet).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Il est possible que votre programme affiche successivement des pages extensibles différentes en fonction du contexte. Dans ce cas, la liste doit mentionner <span class="hcp2">toutes</span> les pages autorisées à s'étendre au cours de la vie du programme. Elle peut donc comprendre des pages qui ne sont pas affichées simultanément : le client ignorera celles non affichées à un instant donné.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Si une <span class="hcp2">page extensible</span> fait partie d'un <span class="hcp2">groupe de pages (chaînées ou non) liées par un onglet</span>, spécifiez uniquement la <span class="hcp2">première</span> page du groupe dans la liste des pages extensibles. Les autres pages du groupe seront automatiquement ajoutées à la liste.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Attention</span> : Si des <span class="hcp2">pages extensibles</span> sont affichées avec des <span class="hcp2">offsets programmés</span> (Harmony.Oligne, Harmony.Ocolonne : voir la rubrique <a href="D_placementd_unmasque_l__cran.htm">Déplacement d'un masque à l'écran</a>), il faut indiquer ces offsets, pour les pages concernées, dans la liste des pages extensibles.<br>
+<br>
+Syntaxe avancée :<br>
+&lt;Collapsable&gt;no_page_extensible_1,off_lig_1,off_col_1;no_page_extensible_2,off_lig_2,off_col_2;...<span class="hcp11"><font class="hcp4"><br>
+<br>
+Exemple&#160;:</font></span><span class="hcp11"><br>
+&lt;Collapsable&gt;5,3,40;6,12,40;7</span><br>
+<br>
+ATTENTION, il s'agit bien ICI uniquement des offsets ajoutés par le programme Diva aux éventuels offsets spécifiés dans les propriétés de la page Xwin et PAS de ces offsets Xwin !<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Attention</span> : Le placement d’un volet n'a de sens que si la <span class="hcp2">page escamotable</span> est <span class="hcp2">attachée à droite</span>.<br>
+<br>
+La plupart du temps <span class="hcp2">(*)</span>, les <span class="hcp2">pages extensibles</span> seront définies en <span class="hcp2">largeur variable</span> et accolées à la page escamotable. S’il y en a plusieurs, elles seront placées les unes sous les autres.<span class="hcp2"><br>
+<br>
+(*)</span> Des montages plus complexes peuvent toutefois être réalisés. Par exemple, une page extensible A en largeur variable mais séparée de la page escamotable C par une page B attachée à droite. En fermant le volet, B est décalée jusqu’au bord de l'écran tandis que A s'étend jusqu'à la nouvelle position de B. Dans cet exemple, les pages A <span class="hcp8">et</span> B doivent être mentionnées dans la liste des pages extensibles.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Le cas échéant, XmeSetPageOptions <span class="hcp2">prime</span> sur les <span class="hcp2">paramètres "volet" configurés dans Xwin</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les objets dessinés par Ygraph ne sont pas affichables dans une page escamotable.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<ul class="hcp7">
+<li class="p">
+<p><span class="hcp2">&lt;I</span><span class="hcp8">s</span><span class="hcp2">PaneInvisible&gt; (Volet)</span>.<br>
+<br>
+Cette clé HMP permet de spécifier que la page escamotable paramétrée dans l'instruction XmeSetPageOptions doit rester <span class="hcp2">fermée</span> et que l'icône du volet doit rester <span class="hcp2">invisible</span>. Il est donc impossible à l'utilisateur d'ouvrir le volet. La page extensible associée occupe toute la place disponible (comme si le volet n'existait pas). Il n'y a pas de valeur associée à cette clé (ignorée si présente).<br>
+<br>
+Syntaxe :<br>
+&lt;IsPaneInvisible&gt;</p>
+</li>
+</ul>
+<p class="hcp10"><span class="hcp2">Remarque</span> : Le volet est réaffiché si la page escamotable est consultée ou saisie.</p>
+<p>&#160;</p>
+<ul class="hcp7">
+<li class="p">
+<p><span class="hcp2">&lt;I</span><span class="hcp8">s</span><span class="hcp2">PaneCollapsed&gt; (Volet)</span>.<br>
+<br>
+Cette clé HMP permet de spécifier que la page escamotable paramétrée dans l'instruction XmeSetPageOptions doit être <span class="hcp2">fermée</span> lorsqu'elle est <span class="hcp2">affichée pour la 1ère fois</span> par le programme. L'utilisateur peut ouvrir le volet. Il n'y a pas de valeur associée à cette clé (ignorée si présente).<br>
+<br>
+Syntaxe :<br>
+&lt;IsPaneCollapsed&gt;</p>
+</li>
+</ul>
+<p class="hcp10"><span class="hcp2">Remarque</span> : Au 1er affichage, le volet est toujours fermé, même si l'utilisateur l'a laissé ouvert lors de la précédente utilisation du programme.</p>
+<p>&#160;</p>
+<ul class="hcp7">
+<li class="p">
+<p><span class="hcp2">&lt;PaneTabOffset&gt; (Volet)</span>.<br>
+<br>
+Cette clé HMP permet de <span class="hcp2">modifier la position verticale de l'icône du volet</span> de la page escamotable paramétrée dans l'instruction XmeSetPageOptions.<br>
+La valeur associée à la clé spécifie un offset vertical (exprimé en orteil) qui sera ajouté à la position standard de l'icône.<br>
+<br>
+Syntaxe :<br>
+&lt;PaneTabOffset&gt;nn<font class="hcp4"><br>
+<br>
+Exemple&#160;:</font><br>
+&lt;PaneTabOffset&gt;20 &#160;&#160;&#160;&#160;&#160;--&gt; déplace l'icône de <span class="hcp11">40 pixels vers le bas par rapport à sa position verticale standard.</span></p>
+</li>
+</ul>
+<p>&#160;</p>
+<ul class="hcp7">
+<li class="p">
+<p><span class="hcp2">&lt;AccordionLabel&gt; (Accordéon)</span>.<br>
+(à partir de la version 2019-405 d'Harmony).<br>
+<br>
+Cette clé HMP permet de <span class="hcp2">modifier dynamiquement le libellé de l'en-tête du pan d'accordéon</span> affichant la page paramétrée dans l'instruction XmeSetPageOptions (propriété "En-tête pan accordéon" des caractéristiques de la page dans Xwin).<br>
+Si la valeur attribuée à cette clé est laissée à espace, le libellé spécifié dans Xwin est réaffiché (s'il est à blanc, le libellé du pan reste inchangé).<br>
+<br>
+Si le pan d'accordéon affiche un groupe d'onglets :<br>
+Le nouveau libellé <span class="hcp2">ne</span> concernera <span class="hcp2">que</span> la page paramétrée dans l'instruction XmeSetPageOptions.<br>
+Si la valeur attribuée à cette clé est laissée à espace, le libellé spécifié dans Xwin est réaffiché (à défaut, le libellé spécifié dans Xwin pour la 1ère page du groupe d'onglet est réaffiché ; à défaut, le libellé du pan reste inchangé).<br>
+<br>
+La modification du libellé sera prise en compte au prochain (ré)affichage de la page concernée.<br>
+<br>
+Syntaxe :<br>
+&lt;AccordionLabel&gt;aaaaaaaa<font class="hcp4"><br>
+<br>
+Exemples&#160;:</font><br>
+&lt;AccordionLabel&gt;Nouveau libellé &#160;&#160;--&gt; remplace le libellé spécifié dans Xwin par "Nouveau libellé"<br>
+&lt;AccordionLabel&gt; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;--&gt; restaure le libellé spécifié dans Xwin</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p><a href="Programmation_d_un_volet.htm">Programmation d'un volet</a></p>
+<p>Rubrique "<span class="hcp2">Caractéristiques et paramétrage d'un volet</span>" de la documentation consacrée à l'éditeur de masques Xwin.</p>
+<p>Rubrique "<span class="hcp2">Caractéristiques et paramétrage d'un accordéon</span>" de la documentation consacrée à l'éditeur de masques Xwin.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,119 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>LoadTableFields</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+span.hcp3 { font-family:"Courier New"  , monospace; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>LoadTableFields <span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a 
+	 href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> 
+ &#160;<a href="Introduction.htm">Thème</a></span></h1>
+<p>&#160;</p>
+<p>La fonction LoadTableFields permet d'obtenir très rapidement la liste 
+ des champs d'une table provenant d'un dictionnaire de données.</p>
+<p>Contrairement à la fonction DDInterface qui charge le fichier .dhsd, 
+ LoadTableFields envoie une requête au serveur xlan, qui a toutes les informations 
+ dans son cache.</p>
+<p>Par exemple, pour le dictionnaire gtfdd.dshd les temps passent de 1,2 
+ secondes à 30 millisecondes.</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Long</font> RecordSql<span class="hcp1">.LoadTableFields</span> <span class="hcp2">(liste, 
+ [ dictionnaire] , [table], options, message)</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span><span class="hcp1">Paramètre</span></span></p>
+<p style="font-style: italic;">Liste</p>
+<p class="Decalage05">Liste diva qui va recevoir le résultat, c'est à dire 
+ la liste des champs de la table.<br>
+Cette liste est créée par la fonction, et doit être détruite par votre 
+ programme.</p>
+<p class="Decalage05">Les éléments de la liste sont définis dans le dictionnaire 
+ ddsys :<br>
+<span class="hcp3">record ddsys.dhsd 
+ DDInterfaceDataField new</span></p>
+<p class="Decalage05" style="font-family: Arial, sans-serif;">Seuls les 
+ champs suivants sont renseignés :</p>
+<p class="Body-Text" style="margin-left: 48px;">FieldName </p>
+<p class="Body-Text" style="margin-left: 48px;">FieldPosition </p>
+<p class="Body-Text" style="margin-left: 48px;">FieldSize </p>
+<p class="Body-Text" style="margin-left: 48px;">FieldTypeNature </p>
+<p class="Body-Text" style="margin-left: 48px;">FieldNbdec </p>
+<p class="Body-Text" style="margin-left: 48px;">FieldNbdim </p>
+<p class="Body-Text" style="margin-left: 48px;">FieldDim </p>
+<p class="Body-Text" style="margin-left: 48px;">FieldEnj </p>
+<p class="Body-Text" style="margin-left: 48px;">FieldLibelle </p>
+<p class="Body-Text" style="margin-left: 48px;">FieldNatureInput</p>
+<p class="Body-Text">&#160;</p>
+<p class="Decalage05" style="margin-left: 0px;">&#160;<span class="hcp2">Dictionnaire</span></p>
+<p class="Decalage05">Nom du dictionnaire. Par défaut, c'est le nom du 
+ dictionnaire dhsd qui décrit la table From du recordSql</p>
+<p class="Decalage05" style="margin-left: 0px;"><span class="hcp2">&#160;</span><span class="hcp2">Table</span></p>
+<p class="Decalage05">Nom de la table. Par défaut, c'est le nom de la table 
+ From du recordSql&#160;</p>
+<p class="Decalage05" style="margin-left: 0px;"><span class="hcp2">&#160;Options</span></p>
+<p class="Decalage05">Chaîne HMP contenant les options.</p>
+<table cellspacing="0" width="100%" border="1">
+	<col style="width: 22.682%;">
+	<col style="width: 77.318%;">
+	<tr>
+		<td>&lt;FindNomSql&gt;1 ou 0</td>
+		<td>Spécifier que la recherche doit se faire également sur les 
+		 noms Sql</td>
+	</tr>
+	<tr>
+		<td><span>&lt;RecordSQL&gt;1 ou 0</span></td>
+		<td>Pour avoir les noms de données Sql</td>
+	</tr>
+	<tr>
+		<td><span>&lt;NatureExt&gt;1 ou 0</span></td>
+		<td>Les champs de type blob ne sont pas retournés comme des données 
+		 alpha.</td>
+	</tr>
+</table>
+<p class="Decalage05">&#160;</p>
+<p class="Decalage05" style="margin-left: 0px;"><span class="hcp2">&#160;Message</span></p>
+<p class="Decalage05">En cas d'erreur, contient la description de l'erreur.</p>
+<p class="Decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<p class="Body-Text">0 : Pas d'erreur</p>
+<p class="Body-Text">Autre : Voir le contenu de <span class="hcp2">Message</span>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple </p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;"><span class="hcp3">1 liste L</span></p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">1 st 
+ X</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">1 messErr 
+ S</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">record 
+ ddsys.dhsd DDInterfaceDataField new</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;"><br>
+st = article.LoadTableFields (liste, &quot;gtfdd.dhsd&quot;, &quot;art&quot;, 
+ &quot;&lt;FindNomSql&gt;1&quot;, messErr)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">if 
+ st &lt;&gt; 0</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">&#160;&#160;&#160;messageBox(messErr, 
+ &quot;Erreur LoadTableFiels : &quot; &amp; tostring(st))</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">&#160;&#160;&#160;programExit</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">endif</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">ListBegin(liste)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">Loop 
+ ListNext(liste, new) not in (0,-1)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">&#160;&#160;&#160;display 
+ [ new.FieldName &quot; &quot; new.FieldSql ]</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">endloop</p>
+<p class="Body-Text">&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

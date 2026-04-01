@@ -1,0 +1,302 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>xDivaltoRestart : Arrêt et redémarrage d'Harmony sous TSE</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold;
+font-style:italic; }
+ul.hcp3 { list-style:disc; }
+font.hcp4 { font-family:Symbol;
+font-weight:bold; }
+font.hcp5 { font-family:Symbol; }
+font.hcp6 { text-decoration:underline; }
+font.hcp7 { font-style:italic; }
+span.hcp8 { text-decoration:underline; }
+tr.hcp9 { vertical-align:top; }
+td.hcp10 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>xDivaltoRestart : Arrêt et redémarrage d'Harmony sous TSE</h2>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">xDivaltoRestart.exe est un service que vous pouvez utiliser sous Windows TSE pour arrêter et/ou redémarrer Harmony de manière <font class="hcp1">automatique</font>. L'arrêt peut être précédé de l'envoi d'un message d'avertissement à tous les utilisateurs connectés (hors client léger).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="text-decoration: underline;">1) Utilisation "ponctuelle" de xDivaltoRestart</p>
+<p class="Body-Text">Vous pouvez appeler directement le programme xDivaltoRestart, en mode commande (Démarrez : Exécutez) ou dans un raccourci, par&#160;:<font class="hcp1"><br>
+xDivaltoRestart.exe</font> <font class="hcp2">Commande</font> <font class="hcp1">[</font><font class="hcp2">Commande</font><font class="hcp1">]*</font></p>
+<p class="Body-Text">Le nom du programme doit être suivi d'une ou plusieurs commandes parmi les suivantes&#160;:</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Symbol" class="hcp4">-</font><font class="hcp1">stop</font><br>
+Demande l'arrêt d'Harmony (DhsDivalto, DhsXlanServer, DhSession, ...).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Symbol" class="hcp4">-</font><font class="hcp1">start</font><br>
+Demande le (re)démarrage d'Harmony (Harmony doit être arrêté).<font class="hcp1"><br>
+Exemple</font>&#160;(arrêt et redémarrage immédiat d'Harmony)&#160;:<br>
+xDivaltoRestart.exe <font face="Symbol" class="hcp5">-</font><font class="hcp1">stop</font> <font face="Symbol" class="hcp5">-</font><font class="hcp1">start</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Symbol" class="hcp4">-</font><font class="hcp1">reboot</font><br>
+Demande de rebooter la machine.<font class="hcp1"><br>
+Exemple</font>&#160;(arrêt d'Harmony suivi du reboot)&#160;:<br>
+xDivaltoRestart.exe <font face="Symbol" class="hcp5">-</font><font class="hcp1">stop</font> <font face="Symbol" class="hcp5">-</font><font class="hcp1">reboot</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Symbol" class="hcp4">-</font><font class="hcp1">show</font><br>
+Demande le passage du programme en mode visible (par défaut, xDivaltoRestart tourne en mode caché).<br>
+Exemple 1&#160;: xDivaltoRestart.exe <font face="Symbol" class="hcp5">-</font>show <font face="Symbol" class="hcp5">-</font>start <font face="Symbol" class="hcp5">-</font>stop<br>
+Exemple 2&#160;: xDivaltoRestart.exe <font face="Symbol" class="hcp5">-</font>show <font face="Symbol" class="hcp5">-</font>start <font face="Symbol" class="hcp5">-</font>reboot</p>
+</li>
+</ul>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text"><font face="Symbol" class="hcp4">-</font><font class="hcp1">flush</font><br>
+Demande le vidage du cache des modules Diva.<br>
+On exécutera cette commande après l'installation d'une nouvelle version de module opérée "à chaud" (sans re-démarrage de l'ordinateur ou des services Harmony), pour mettre cette nouvelle version à disposition des utilisateurs. A défaut, les utilisateurs continueront d'utiliser l'ancienne version jusqu'au prochain re-démarrage.<br>
+Exemple : xDivaltoRestart.exe <font face="Symbol" class="hcp5">-</font>flush</p>
+</li>
+</ul>
+<p class="Body-Text"><br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp6">2) Utilisation en mode automatique</font></p>
+<p class="Body-Text">Pour obtenir un fonctionnement automatisé, il faut (sur le serveur TSE)&#160;:</p>
+<ol style="list-style: lower-alpha;">
+<li class="p-Body-Text">
+<p class="Body-Text">Vous logger en mode administrateur et <font class="hcp1">écrire un script</font> dans le chapitre <font class="hcp1">[xDivaltoRestart]</font> de Divalto.ini.<br>
+&#160;<font class="hcp1"><br>
+Exemple 1</font> (sans reboot du serveur TSE)&#160;:<br>
+[xDivaltoRestart]<br>
+;attendre 22 heure 30 avant de lancer les commandes<br>
+1=waittime,22,30<br>
+;affichage d'un texte puis de la date, localement<br>
+2=texte,<font class="hcp7">Début de l'envoi des commandes</font><br>
+3=textedate<br>
+;idem sur les postes client<br>
+4=msg,<font class="hcp7">Arrêt dans 10 minutes, il faut sortir des tâches Harmony</font><br>
+5=msgdate<br>
+;attendre 10 minutes<br>
+10=wait,600000<br>
+20=msg,<font class="hcp7">Arrêt d'Harmony en cours</font><br>
+30=wait,5000<br>
+;stop<br>
+35=stop<br>
+40=wait,5000<br>
+;exécute un programme localement (sauvegarde)<br>
+45=run,ntbackup.exe <font class="hcp7">fichier_paramètre_de_backup</font><br>
+46=wait,5000<br>
+50=msg,<font class="hcp7">Redémarage d'Harmony</font><br>
+60=start<br>
+61=wait,10000<br>
+62=msg,<font class="hcp7">Redémarrage de DhSession</font><br>
+;exécute un programme sur les postes client<br>
+70=exec,DhSession.exe<br>
+;se remet en mode caché<br>
+75=hide<br>
+;retour au début<br>
+80=gotodebut<br>
+&#160;<font class="hcp1"><br>
+Exemple 2</font> (avec reboot du serveur TSE)&#160;:<br>
+[xDivaltoRestart]<br>
+1=waittime,22,30<br>
+2=texte,<font class="hcp7">Début de l'envoi des commandes</font><br>
+3=textedate<br>
+4=msg,<font class="hcp7">Arrêt dans 10 minutes, il faut sortir des tâches Harmony</font><br>
+5=msgdate<br>
+10=wait,600000<br>
+20=msg,<font class="hcp7">Arrêt d'Harmony en cours</font><br>
+30=wait,2000<br>
+35=stop<br>
+40=wait,2000<br>
+45=run,ntbackup.exe <font class="hcp7">fichier_paramètre_de_backup</font><br>
+46=wait,2000<br>
+50=msg,<font class="hcp7">L'ordinateur va redémarrer dans 10 minutes, il faut sortir de tout les programmes</font><br>
+60=wait,600000<br>
+70=reboot<br>
+&#160;<font class="hcp1"><br>
+Remarque</font>&#160;: les numéros de ligne peuvent être quelconques, à condition d'être croissants.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Créer le service</font> xDivaltoRestart par la commande&#160;:<br>
+xDivaltoRestart.exe <font face="Symbol" class="hcp5">-</font><font class="hcp1">create</font><br>
+Cet xDivaltoRestart sera "maître" et exécutera le script écrit dans Divalto.ini.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Demander le lancement</font> de xDivaltoRestart sur les postes clients en créant un raccourci sur x:\Divalto\Sys\xDivaltoRestart.exe et en mettant ce raccourci dans le menu "ALL USER" de Windows.<br>
+Ces xDivaltoRestart n'exécuteront pas de script et seront "esclaves" du xDivaltoRestart "maître".<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Rebooter</font> l'ordinateur.</p>
+</li>
+</ol>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp6">3) Interruption du service</font></p>
+<p class="Body-Text">Pour décharger tous les xDivaltoRestart (maître et esclaves), lancez la commande&#160;:</p>
+<p class="Body-Text">xDivaltoRestart.exe <font face="Symbol" class="hcp5">-</font><font class="hcp1">end</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp6">4) Annulation du service</font></p>
+<p class="Body-Text">Pour supprimer le lancement automatique de xDivaltoRestart, enlevez le raccourci sur le programme du groupe "ALL USER" de Windows et lancez la commande&#160;:</p>
+<p class="Body-Text">xDivaltoRestart.exe <font face="Symbol" class="hcp5">-</font><font class="hcp1">delete</font> pour supprimer le service.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp6">5) Compte-rendu d'exécution</font></p>
+<p class="Body-Text">Par défaut, lorsque xDivaltoRestart est en mode automatique et exécute des commandes, il écrit dans le fichier xDivaltoRestart.log (maître) ou xDivaltoRestartNNN.log (où NNN est un numéro – esclaves).</p>
+<p class="Body-Text">Si vous désirez invalider ces écritures, ajoutez <font face="Symbol" class="hcp5">-</font><font class="hcp1">nolog</font> à la suite des commandes, dans le raccourci "ALL USER" et au lancement du service.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp6"><span class="hcp8">6</span>) Liste des commandes du script dans Divalto.ini</font></p>
+<p class="Body-Text">Il faut distinguer deux types de commandes, celles qui sont uniquement exécutées par le xDivaltoRestart "&#160;maître&#160;" et celles qui sont transmises aux xDivaltoRestart "&#160;esclaves&#160;".<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp1">Liste des commandes "&#160;maître&#160;"</font>&#160;:</p>
+<table cellspacing="0" width="436">
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">waittime,hh,mm</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Attendre une heure/minute pour continuer à lire la suite des commandes.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">texte,</font><font class="hcp2">texte</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Afficher un texte (attention, un texte est obligatoire)&#160;; cette commande fait automatiquement passer xDivaltoRestart en mode show.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">textedate</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Afficher la date du jour&#160;; cette commande fait automatiquement passer xDivaltoRestart en mode show.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">wait,</font><font class="hcp2">tempo</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Attendre <font class="hcp7">tempo</font> milli-secondes.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">stop</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Arrêter Harmony.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">run,</font><font class="hcp2">prog</font> <font class="hcp2">param</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Lancer un programme et attendre la fin de son exécution.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">start</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Démarrer Harmony (DhsDivalto, DhsXlanServer et DhSession).</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">hide</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Passer en mode caché et envoyer la commande aux autres xDivaltoRestart.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">show</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Passer en mode visible et envoyer la commande aux autres xDivaltoRestart.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">reboot</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Redémarrer l'ordinateur.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">gotodebut</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Revenir au début du script.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Liste des commandes "&#160;esclaves&#160;"</font>&#160;:</p>
+<table cellspacing="0" width="436">
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">msg,</font><font class="hcp2">texte</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Afficher un texte (attention, un texte est obligatoire)&#160;; cette commande fait automatiquement passer xDivaltoRestart en mode show.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">msgdate</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Afficher la date du jour&#160;; cette commande fait automatiquement passer xDivaltoRestart en mode show.</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:27.30%;" class="hcp10">
+<p class="Body-Text"><font class="hcp1">exec,</font><font class="hcp2">prog</font></p>
+</td>
+<td style="width:72.70%;" class="hcp10">
+<p class="Body-Text">Lancer un programme sans attendre la fin de son exécution.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp6"><span class="hcp8">7</span>) Affichage des erreurs</font></p>
+<p class="Body-Text">Si une erreur se produit lors de l'exécution d'une commande, xDivaltoRestart se met automatiquement en mode visible et affiche cette erreur (même en mode service).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="text-decoration: underline;">8) Autres utilisations de xDivaltoRestart</p>
+<p class="Body-Text">On peut lancer plusieurs occurrences de xDivaltoRestart (pour exécuter d'autres tâches que celle d'arrêter ou de redémarrer Harmony). Pour ce faire, il faut lancer le programme par&#160;:<br>
+xDivaltoRestart.exe <font face="Symbol" class="hcp5">-</font><font class="hcp1">setN</font> (N = 2, 3, etc.)</p>
+<p class="Body-Text">Dans ce cas, xDivaltoRestart N lira ses commandes dans le chapitre <font class="hcp1">[xDivaltoRestartN]</font> de Divalto.ini.</p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Exemple&#160;:</font></p>
+<p class="Body-Text">[xDivaltoRestart2]<br>
+1=waittime,8,00<br>
+2=texte,<font class="hcp7">Lancement du programme prog.exe</font><br>
+3=textedate<br>
+4=run,<font class="hcp7">prog.exe</font><br>
+10=hide<br>
+20=gotodebut</p>
+</body>
+</html>

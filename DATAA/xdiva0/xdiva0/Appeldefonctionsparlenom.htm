@@ -1,0 +1,78 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Appel de fonctions par le nom</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-family:Courier New;
+font-size:9pt; }
+font.hcp5 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Appel de fonctions par le nom</h3>
+<p class="Body-Text">Diva offre la possibilité d'appeler une fonction/procédure dont le nom n'est pas connu à la compilation, mais uniquement à l'exécution.</p>
+<p class="Body-Text">L'appel se fait en deux temps :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">il faut d'abord récupérer l'adresse de la fonction/procédure par l'appel de GetAdressFunction ou GetAdressProcedure,</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">puis appeler la fonction/procédure dont on a récupéré l'adresse par FunctionCall ou ProcedureCall.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<table cellspacing="0" width="656">
+<tr class="hcp2">
+<td style="width:55.40%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Programme Principal</font></p>
+</td>
+<td style="width:44.60%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Module</font> "Modu.dhop"</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:55.40%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp4">main</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp4">1 adr 16</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;</p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp4">GetAdressProcedure("modu.dhop","affiche",adr)</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp4">ProcedureCall(adr,"bonjour")</font></p>
+</td>
+<td style="width:44.60%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp4">procedure affiche(&amp;chaine)</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp4">1 chaîne A</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp4">beginp</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp4">display chaîne</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font face="Courier New" size="2" class="hcp4">endp</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Le programme principal récupère dans <font class="hcp5">adr</font> l'adresse de la fonction <font class="hcp5">affiche</font> du module <font class="hcp5">modu</font> (GetAdressProcedure). Puis il appelle la fonction en lui passant "bonjour" comme paramètre.</p>
+<p class="Body-Text">Remarquez que le programme principal ne comporte pas d'instruction Module. Le module contenant la fonction à appeler est automatiquement chargé lors de l'appel à GetAdressProcedure.</p>
+<p class="Body-Text">Lors de l'appel, le programme principal doit empiler le nombre exact de paramètres de la fonction/procédure appelée.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Utilisation</font></p>
+<p class="Body-Text">La fonction GetAdressFunction est utilisée par Diva pour la fonction de tri de tableau. L'algorithme de tri est toujours le même quelque soit le tableau, ce qui change est l'ordre de tri. L'ordre de tri est spécifié par une fonction Diva qui compare deux éléments du tableau. Cette fonction est appelée par le tri à chaque fois qu'il doit comparer deux éléments. Voir Sort..</p>
+<p class="Body-Text">Cette méthode permet d'écrire des fonctions/procédures standards et de leur passer en paramètre le nom d'une fonction/procédure.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="XDIVA1.chm::/Xdiva1/GetAdressProcedure.htm">GetAdressProcedure</a>, <a href="XDIVA1.chm::/Xdiva1/GetAdressFunction.htm">GetAdressFunction</a>, <a href="XDIVA1.chm::/Xdiva1/ProcedureCall.htm">ProcedureCall</a>, <a href="XDIVA1.chm::/Xdiva1/FunctionCall.htm">FunctionCall</a></p>
+</body>
+</html>

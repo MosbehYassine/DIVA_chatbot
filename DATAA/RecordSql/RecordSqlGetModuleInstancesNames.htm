@@ -1,0 +1,95 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>RecordSqlGetModuleInstancesNames</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>RecordSqlGetModuleInstancesNames&#160;&#160;<span style="font-weight: normal; 
+														 font-family: 'Microsoft Sans Serif', sans-serif;"><a 
+	 href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> 
+ &#160;<a href="Introduction.htm">Thème</a></span></h1>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La fonction RecordSqlGetModuleInstancesNames permet 
+ de connaître la liste des instances de RecordSql déclarées dans un module.</p>
+&#160;&#160;&#160;&#160;
+<p class="Body-Text"><font class="hcp1">Long</font> <span class="hcp2">RecordSqlGetModuleInstancesNames </span>(r<span class="hcp3">ésultat, module, public, préfixe, premier</span>)</p>
+&#160;&#160;&#160;&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;">Résulat</p>
+<p class="decalage05">Variable alpha ou string qui contiendra la liste 
+ au format HMP</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span class="hcp3">Module</span></p>
+<p class="decalage05">Nom du module. Il est automatiquement chargé si nécessaire.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Public</p>
+<p class="decalage05">1 = que les instances publiques</p>
+<p class="decalage05">2 = que les instances privées</p>
+<p class="decalage05">3 = toutes les instances</p>
+<p class="Body-Text" style="font-style: italic;">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Préfixe</p>
+<p class="decalage05">Permet de filtrer les instances par un préfixe.</p>
+<p class="Body-Text" style="font-style: italic;">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Premier</p>
+<p class="decalage05">Délivrer uniquement le premier nom d'instance correspondant 
+ aux critères.</p>
+<p class="Body-Text">&#160;&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<table cellspacing="0" width="436">
+	<tr class="hcp4">
+		<td style="width:16.24%;" class="hcp5"><p class="Body-Text">0</p></td>
+		<td style="width:83.76%;" class="hcp5"><p class="Body-Text">Pas 
+		 d'erreur</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:16.24%;" class="hcp5"><p class="Body-Text">2</p></td>
+		<td style="width:83.76%;" class="hcp5"><p class="Body-Text">Module 
+		 non trouvé</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:16.24%;" class="hcp5"><p class="Body-Text">&#160;</p></td>
+		<td style="width:83.76%;" class="hcp5"><p class="Body-Text">Toutes 
+		 les autres erreurs interrompent le programme.</p></td>
+	</tr>
+</table>
+&#160;&#160;&#160;&#160;
+<br>La chaine HMP contient :
+<br><br>
+<table cellspacing="0" width="100%">
+	<col style="width: 11.746%;">
+	<col style="width: 88.254%;">
+	<tr>
+		<td><p class="Body-Text">&lt;INSTANCE&gt;</p></td>
+		<td><p class="Body-Text">Nom de l'instance</p></td>
+	</tr>
+	<tr>
+		<td><p class="Body-Text">&lt;PUBLIC&gt;</p></td>
+		<td><p class="Body-Text">1 si publique, 0 si privée</p></td>
+	</tr>
+</table>
+&#160;
+<br>&#160;
+<br>&#160;<span class="hcp2">Voir</span>
+<br><span class="hcp2">&#160;</span><a href="PtrRecordSqlModule.htm" 
+	 style="font-weight: normal;"><span style="font-weight: normal;">P</span>trRecordSqlModule</a>
+</body>
+</html>

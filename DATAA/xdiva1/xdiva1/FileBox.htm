@@ -1,0 +1,274 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FileBox</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>FileBox &#160;<a href="Listedesfonctionsavanc_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Cette fonction permet d'appeler la boîte de dialogue d'ouverture de fichiers d'Harmony.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Long</font> = <font class="hcp2">FileBox</font> (<font class="hcp3">StructureFileBox, FichierAOuvrir, [ FonctionFiltre ]</font>)</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">StructureFileBox</font></p>
+<p class="decalage05">Instance de l'enregistrement Efilebox du dictionnaire ddsys.dhsd. Cette structure contient tous les paramètres d'appels de la boîte de dialogue.</p>
+<p class="Body-Text"><font class="hcp3">FichierAOuvrir</font></p>
+<p class="decalage05">Variable alpha recevant en retour le nom du fichier sélectionné.</p>
+<p class="Body-Text"><font class="hcp3">FonctionFiltre</font></p>
+<p class="decalage05">Adresse d'une fonction (obtenue par <a href="GetAdressFunction.htm">GetAdressFunction</a>) qui permet de filtrer les fichiers à afficher. Avant d'ajouter un fichier à la liste, cette fonction est appelée et elle doit retourner TRUE pour que l'élément soit ajouté. La fonction doit impérativement retourner une valeur de type L. Cette fonction a un paramètre qui est une instance de eldir (voir <a href="DirRead.htm">DirRead</a>)</p>
+<p class="decalage05">Si cette fonction a besoin d'ouvrir le fichier, elle doit appeler la fonction <a href="FileBoxGetPath.htm">FileBoxGetPath</a> qui donne le chemin du fichier.</p>
+<p class="decalage05">Exemple :</p>
+<p class="Source">function long filtre(elt) ; filtre les fichiers modifiés</p>
+<p class="Source">record ddsys.dhsd eltdir elt ; entre 2001 et 2002</p>
+<p class="Source">beginf</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; si la fonction doit ouvrir le fichier</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; il faut ecrire tdf.name = FileBoxGetPath &amp; '/' &amp; elt.Nom</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;if (elt.datemod &gt; "2001" and elt.datemod &lt; "2002")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;freturn true&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;else | freturn FALSE&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;endif&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">endf</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">FALSE</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text">Pas de fichier sélectionné</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">TRUE</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Un fichier a été sélectionné. Son nom est dans <font class="hcp3">FichierAOuvrir</font>.</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp2">Structure EFileBox</font></p>
+<p class="Body-Text"><font class="hcp3">Fbtitre</font></p>
+<p class="decalage05">Titre de la boîte de dialogue.</p>
+<p class="Body-Text"><font class="hcp3">FbFiltre</font></p>
+<p class="decalage05">Donnée contenant des paires de filtres séparés par le caractère "|". Le premier membre de chaque paire décrit un filtre (par exemple, "Fichiers texte"), et le second membre spécifie le filtre à appliquer pour sélectionner ces fichiers (par exemple, "*.txt").<br>
+Plusieurs filtres peuvent être précisés pour une seule description en séparant les filtres par des points virgule. (par exemple, "*.dhsp;*.dhsf;*.dhsi").<br>
+Exemple : filtre = "Sources|*.dhsp;*.dhsf;*.dhsi|masques|*.dhsf;*.dhsi|diva|*.dhsp|*.*|*.*"</p>
+<p class="Body-Text"><font class="hcp3">Fbifiltre</font></p>
+<p class="decalage05">Numéro d'ordre du filtre sélectionné à l'ouverture de la boîte de dialogue.</p>
+<p class="Body-Text"><font class="hcp3">Fbficdep</font></p>
+<p class="decalage05">Fichier à proposer à l'utilisateur.</p>
+<p class="Body-Text"><font class="hcp3">Fbrepdep</font></p>
+<p class="decalage05">Répertoire de départ. La boîte de dialogue s'ouvre en affichant les fichiers de ce répertoire.</p>
+<p class="Body-Text"><font class="hcp3">Fbextdef</font></p>
+<p class="decalage05">Extension par défaut. Si l'utilisateur ne précise pas d'extension, cette extension est automatiquement ajoutée.</p>
+<p class="Body-Text"><font class="hcp3">Fbiimpli</font></p>
+<p class="decalage05">Indice dans la liste des chemins implicites de la tâche. Si Fbrepdep (répertoire de départ) n'est pas positionné, la boîte de dialogue s'ouvre en affichant les fichiers du répertoire implicite demandé.</p>
+<p class="Body-Text"><font class="hcp3">FbFlags</font></p>
+<p class="decalage05">Drapeaux (combinaison des valeurs suivantes par addition)</p>
+<table cellspacing="0" width="563">
+<tr class="hcp4">
+<td style="width:35.22%;" class="hcp5">
+<p class="Body-Text">HAR_NOCHANGEDIR</p>
+</td>
+<td style="width:64.78%;" class="hcp5">
+<p class="Body-Text">L'utilisateur n'a pas le droit de changer de répertoire. Le bouton permettant de remonter dans le répertoire parent est caché.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:35.22%;" class="hcp5">
+<p class="Body-Text">HAR_CHANGEIMPLIONLY</p>
+</td>
+<td style="width:64.78%;" class="hcp5">
+<p class="Body-Text">L'utilisateur peut changer de répertoire en utilisant uniquement les chemins implicites. Le bouton permettant de remonter dans le répertoire parent est caché.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:35.22%;" class="hcp5">
+<p class="Body-Text">HAR_FILEMUSTEXIST</p>
+</td>
+<td style="width:64.78%;" class="hcp5">
+<p class="Body-Text">Le fichier retourné par la fonction doit obligatoirement exister.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:35.22%;" class="hcp5">
+<p class="Body-Text">HAR_FILEMUSTNOTEXIST</p>
+</td>
+<td style="width:64.78%;" class="hcp5">
+<p class="Body-Text">Le fichier ne doit pas exister. Cette valeur doit être utilisée conjointement avec HAR_FOR_SAVE.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:35.22%;" class="hcp5">
+<p class="Body-Text">HAR_NOBUTTONIMPLI</p>
+</td>
+<td style="width:64.78%;" class="hcp5">
+<p class="Body-Text">Le bouton permettant de modifier les chemins implicites est caché.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:35.22%;" class="hcp5">
+<p class="Body-Text">HAR_BUTTONSEEK</p>
+</td>
+<td style="width:64.78%;" class="hcp5">
+<p class="Body-Text">Le bouton appelant la recherche de fichiers par xtools est affiché.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:35.22%;" class="hcp5">
+<p class="Body-Text">HAR_USERFILTER</p>
+</td>
+<td style="width:64.78%;" class="hcp5">
+<p class="Body-Text">Le champ Filtre et le bouton Actualiser sont affichés/</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:35.22%;" class="hcp5">
+<p class="Body-Text">HAR_ALLOWMULTISELECT</p>
+</td>
+<td style="width:64.78%;" class="hcp5">
+<p class="Body-Text">L'utilisateur peut sélectionner plusieurs fichiers.<br>
+En retour, la variable FichiersAOuvrir contient la liste des fichiers séparés par le caractère $00 et terminée par un double $00. Voir exemple ci-dessous.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp3">&#160;</font><font class="hcp3"><br>
+Fbop</font></p>
+<p class="decalage05">Opération.</p>
+<table cellspacing="0" width="571">
+<tr class="hcp4">
+<td style="width:32.24%;" class="hcp5">
+<p class="decalage05" style="margin-top: 2.00pt;">HAR_FOR_OPEN</p>
+</td>
+<td style="width:67.76%;" class="hcp5">
+<p class="decalage05" style="margin-top: 2.00pt;">Fonctionnement standard de la boîte de dialogue.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:32.24%;" class="hcp5">
+<p class="decalage05" style="margin-top: 2.00pt;">HAR_FOR_SAVE</p>
+</td>
+<td style="width:67.76%;" class="hcp5">
+<p class="decalage05" style="margin-top: 2.00pt;">Le bouton "Ouvrir" devient "Enregistrer".</p>
+<p class="decalage05" style="margin-top: 2.00pt;">De plus, si l'utilisateur sélectionne un fichier existant, une confirmation de remplacement est demandée.</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Fbtri</font></p>
+<p class="decalage05">Sens de tri de la liste des fichiers.</p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:42.19%;" class="hcp5">
+<p class="Body-Text">SORT_BY_NAME</p>
+</td>
+<td style="width:57.81%;" class="hcp5">
+<p class="Body-Text">Tri par nom</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.19%;" class="hcp5">
+<p class="Body-Text">SORT_BY_SIZE&#160;</p>
+</td>
+<td style="width:57.81%;" class="hcp5">
+<p class="Body-Text">Tri par taille</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.19%;" class="hcp5">
+<p class="Body-Text">SORT_BY_DATE</p>
+</td>
+<td style="width:57.81%;" class="hcp5">
+<p class="Body-Text">Tri par date de modification</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:42.19%;" class="hcp5">
+<p class="Body-Text">SORT_BY_TYPE</p>
+</td>
+<td style="width:57.81%;" class="hcp5">
+<p class="Body-Text">Tri par type (d'après l'extension)</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Fblike</font></p>
+<p class="decalage05">Filtre sur les noms de fichiers. Ce filtre peut contenir les caractères jocker * et $.</p>
+<p class="decalage05">Exemple : g*3.* = tous les fichiers dont le nom commence par g, se termine par 3 et avec une extension quelconque.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">1 aouvrir 256</p>
+<p class="Source">record 'ddsys.dhsd' efilebox ef</p>
+<p class="Source">main</p>
+<p class="Source">ef.fbtitre = "Ouverture de fichier"</p>
+<p class="Source">ef.fbfiltre = "Sources|*.dhsp;*.dhsf;*.dhsi|masques|*.dhsf;*.dhsi|diva|*.dhsp|*.*|*.*"</p>
+<p class="Source">ef.fbifiltre = 1 ; filtre sources par défaut</p>
+<p class="Source">ef.fbop = HAR_FOR_OPEN ; pour lecture</p>
+<p class="Source">ef.fbflags = HAR_FILEMUSTEXIST; le fichier doit exister</p>
+<p class="Source">ef.fbtri = SORT_BY_NAME ; tri par le nom</p>
+<p class="Source">ef.fbficdep = "sp.dhsp" ; fichier proposé</p>
+<p class="Source">ef.fbextdef = ".dhsp" ; extension par défaut</p>
+<p class="Source">ef.fbiimpli = 2 ; départ sur le 2ème chemin implic.</p>
+<p class="Source">if filebox(ef,aouvrir)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">display aouvrir&#160;</p>
+<p class="Source">endif</p>
+<p class="Source">&#160;</p>
+<p class="Source">;-------------------------------------------------------------------------------------</p>
+<p class="Source" style="font-weight: bold;">;Exemple avec multi-sélection</p>
+<p class="Source">1 aouvrir S</p>
+<p class="Source">1 pos &#160;&#160;&#160;&#160;L</p>
+<p class="Source">1 oldpos &#160;L</p>
+<p class="Source">record 'ddsys.dhsd' efilebox ef</p>
+<p class="Source">main</p>
+<p class="Source">ef.fbtitre = "Ouverture de fichier"</p>
+<p class="Source">ef.fbfiltre = "Sources|*.dhsp;*.dhsf;*.dhsi|masques|*.dhsf;*.dhsi|diva|*.dhsp|*.*|*.*"</p>
+<p class="Source">ef.fbifiltre = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; filtre sources par défaut</p>
+<p class="Source">ef.fbop = HAR_FOR_OPEN &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; pour lecture</p>
+<p class="Source">ef.fbflags = HAR_FILEMUSTEXIST + HAR_ALLOWMULTISELECT ; le fichier doit exister + multi sélection</p>
+<p class="Source">ef.fbtri = SORT_BY_NAME &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; tri par le nom</p>
+<p class="Source">ef.fbextdef = ".dhsp" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; extension par défaut</p>
+<p class="Source">ef.fbiimpli = 2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; départ sur le 2ème chemin implic.</p>
+<p class="Source">if filebox(ef,aouvrir) = TRUE</p>
+<p class="Source">&#160;&#160;&#160;pos = 0</p>
+<p class="Source">&#160;&#160;&#160;do &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; balayage des résultats</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;oldpos = pos + 1</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;pos = string($00,aouvrir, ++pos)</p>
+<p class="Source">&#160;&#160;&#160;while pos &lt;&gt; 0 and pos &lt;&gt; oldpos</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;display mid(aouvrir, oldpos, pos - oldpos)</p>
+<p class="Source">&#160;&#160;&#160;wend</p>
+<p class="Source">endif</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="FileBoxGetPath.htm">FileBoxGetPath</a>, <a href="DirectoryBox.htm">DirectoryBox</a>, <a href="WinGetOpenFileName.htm">WinGetOpenFileName</a><font class="hcp2">,</font> <a href="WinShBrowseForFolder.htm">WinShBrowseForFolder</a></p>
+</body>
+</html>

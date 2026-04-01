@@ -1,0 +1,153 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Configuration et paramétrage du CTI</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+img.hcp2 { border:none; }
+p.hcp3 { font-weight:bold;
+font-size:11pt; }
+ol.hcp4 { list-style:decimal; }
+span.hcp5 { font-weight:normal;
+font-size:10pt; }
+span.hcp6 { font-size:10pt; }
+p.hcp7 { font-weight:normal;
+font-size:10pt; }
+span.hcp8 { font-weight:normal; }
+span.hcp9 { text-decoration:underline; }
+span.hcp10 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Configuration et paramétrage du CTI</h2>
+<p>&#160;</p>
+<p><span class="hcp1">CTI</span> est un sigle signifiant <span class="hcp1">C</span>ouplage <span class="hcp1">T</span>éléphonie - <span class="hcp1">I</span>nformatique. Cette rubrique décrit la configuration et le paramétrage de l'interface entre Divalto et un appareillage téléphonique, cette interface étant assurée par le module YCTI :</p>
+<p style="margin-left: 128px;"><img src="../image/Shema_cti.png" alt="" width="297" height="350" border="0" class="hcp2"></p>
+&#160;
+<p>&#160;</p>
+<p class="hcp3">Choix du type d'interface</p>
+<p>Lancez le choix « Paramétrage : Paramètres CTI » du menu Harmony.dhop :<br>
+&#160;</p>
+<p><img src="../image/tapi_04_menu.png" alt="" width="421" height="505" border="0" class="hcp2"></p>
+<p>&#160;</p>
+<p>Puis sélectionnez le type d'interface en fonction du matériel téléphonique utilisé :<br>
+&#160;</p>
+<p><img src="../image/tapi_05_choix_interface.png" alt="" width="656" height="349" border="0" class="hcp2"></p>
+<p>&#160;</p>
+<ol class="hcp4">
+<li class="p">
+<p class="hcp3">Interface Alsatel<span class="hcp5"><br>
+<br>
+Remarque : Ce matériel nécessite l'installation préalable du composant AlsacallX sur votre ordinateur :</span><span class="hcp6"><br>
+<br>
+Produit</span> <span class="hcp5">: AlsaCallX de la société Alsatel (ocx basé sur le produit PIMphony d’Alcatel).<br>
+Alsatel, département ingénierie et réalisation, 11 rue Jean Monnet, bp 20, 67201 ECKBOLSHEIM Cedex 02.<br>
+<br>
+<br>
+Cliquez sur le bouton "</span><span class="hcp6">Configuration pour Alsatel</span><span class="hcp5">" et paramétrez le numéro de ligne téléphonique :<br>
+<br>
+<br>
+<img src="../image/2-ParametrageAlsatel.png" alt="" width="658" height="470" border="0" class="hcp2"><br>
+<br>
+<br>
+&#160;</span></p>
+</li>
+<li class="p">
+<p class="hcp3">Interface PhonePC<span class="hcp5"><br>
+<br>
+Remarque : Ce matériel nécessite l'installation préalable</span> <span class="hcp5">du produit PhonePC sur votre ordinateur :</span><span class="hcp6"><br>
+<br>
+Produit</span> <span class="hcp5">: PhonePC de la société Micro-Concept.<br>
+Micro-Concept, 6 rue Le Corbusier, 95198 Goussainville Cedex.<br>
+<br>
+L'installation de PhonePC installe également l'ocx utilisée par Harmony. Il n’y a d'ailleurs aucun paramétrage à faire dans Harmony (tout le paramétrage s'effectue dans PhonePC).<br>
+<br>
+<br>
+&#160;</span></p>
+</li>
+<li class="p">
+<p class="hcp3">Interface ISI-COM<span class="hcp5"><br>
+<br>
+Remarque : Ce matériel nécessite l'installation préalable</span> <span class="hcp5">du produit</span> <span class="hcp5">ISI-COM</span> <span class="hcp5">sur votre ordinateur :</span><span class="hcp6"><br>
+<br>
+Produit</span> <span class="hcp5">: pcb de la société ISI-Com.<br>
+ISI-Com, 21 Rue de la Morinerie, 37700 St Pierre des Corps, TOURS.<br>
+<br>
+<br>
+Après l'installation du produit de ISI-COM,</span> <span class="hcp5">installez le</span> <span class="hcp6">composant qu'utilise Harmony</span> <span class="hcp5">:</span></p>
+<ol style="list-style: lower-alpha;">
+<li class="p">
+<p class="hcp7">Copiez les fichiers qui se trouvent dans le répertoire ISI-COM du cdrom Harmony dans x:\Divalto\Sys.</p>
+</li>
+<li class="p">
+<p class="hcp7">Lancez InstallPcb.bat et InstallPcb.dhop.</p>
+</li>
+</ol>
+</li>
+</ol>
+<p style="font-weight: bold; margin-left: 48px; font-size: 10pt;"><span class="hcp8">En principe, il n’y a pas de paramétrage à faire dans le menu Harmony (tout le paramétrage s'effectue dans ISI-COM). Toutefois :</span><br>
+<br>
+<br>
+Remarque concernant la fonction de montée de fiche <span class="hcp8">: ISI-COM sait faire du transfert de fiche. Lorsqu’on transfère un appel à un autre correspondant, un bouton dans la fiche tiers permet de demander que le poste distant reçoive l’identifiant de la fiche du tiers en cours au lieu du numéro de téléphone de l’appelant. Ce mode fonctionne généralement sans paramétrage.</span><span class="hcp9"><br>
+<br>
+S'il ne fonctionne pas avec votre Pabx</span><span class="hcp8">, cochez la case ci-après (bouton</span> "Configuration pour la montée de fiche"<span class="hcp8">) :<br>
+<br>
+<br>
+<img src="../image/3-ParametrageISI-COM.png" alt="" width="931" height="503" border="0" class="hcp2"><br>
+<br>
+&#160;</span></p>
+<ol start="4" class="hcp4">
+<li style="font-size: 11pt; font-weight: bold;" class="p">
+<p class="hcp3">Interface TAPI<span class="hcp5"><br>
+<br>
+Voir le livre <a href="Connecteur_Divalto_pour_TAPI_2.0_(mont&eacute;e_de_fiche).htm">Connecteur Divalto pour TAPI 2.0</a> qui lui est consacré.</span></p>
+</li>
+</ol>
+<p class="hcp7">&#160;</p>
+<p class="hcp7">&#160;</p>
+<p style="font-weight: bold;"><span style="font-size: 11pt;">Autres paramétrages</span><br>
+&#160;</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p><span class="hcp1">Configuration de la montée de fiche</span> (bouton <span class="hcp1">"Configuration pour la montée de fiche"</span>) :<br>
+<br>
+<img src="../image/tapi_10_config_montee_fiche.png" alt="" width="656" height="348" border="0" class="hcp2"><br>
+<br>
+<br>
+Pour la montée de fiche, il existe deux méthodes de traitement dépendant de l'application :<br>
+&#160;</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul style="list-style: circle;">
+<li class="p">
+<p>Si l'application gère elle-même quand il faut monter la fiche, sélectionnez le bouton "<span class="hcp1">Laisser l'application gérer ce paramètre</span>".<span class="hcp1"><br>
+Remarque</span> : <span class="hcp9">La montée de fiche de</span> <span class="hcp10">l'</span><span class="hcp10">application</span> <span class="hcp10">Divalto</span> <span class="hcp9">est dans de cas</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Sinon, sélectionnez le <span class="hcp1">bouton correspondant à l'événement choisi</span> pour monter la fiche (à la sonnerie, au décroché, à la demande du CTI si l'interface l'autorise -par exemple, l'interface Alsatel ne le permet pas-).<br>
+<br>
+<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Ajout automatique d’un préfixe lors de la composition d’un appel</span> (bouton <span class="hcp1">"Configuration d'un préfixe pour sortir"</span>) :<br>
+<br>
+<img src="../image/tapi_11_config_prefixe.png" alt="" width="658" height="470" border="0" class="hcp2"><br>
+&#160;</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

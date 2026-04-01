@@ -1,0 +1,122 @@
+========================================================================
+DIVALTO HARMONY — SEMANTIC RAG EVALUATION
+Model   : intfloat/multilingual-e5-large
+Reranker: cross-encoder/ms-marco-MiniLM-L-6-v2
+Corpus  : 11228 chunks  |  40 gold questions
+========================================================================
+
+RETRIEVAL METRICS (semantic embeddings — real numbers)
+------------------------------------------------------------------------
+  recall@1   :  57.5%   (correct file is #1 result)
+  recall@3   :  90.0%   (correct file in top 3)   ← main KPI
+  recall@5   :  92.5%   (correct file in top 5)
+  recall@10  :  97.5%   (correct file in top 10)
+  MRR        : 0.7384   (mean reciprocal rank)
+  Grade      : A
+
+INTERPRETATION
+------------------------------------------------------------------------
+  GOOD. Chunking is solid. Small targeted fixes will push you over 90%.
+  Check per-module table below for which modules need attention.
+
+PER-MODULE RECALL@3
+------------------------------------------------------------------------
+  Installation        :  80.0%  ████████████████
+  RecordSql           :  80.0%  ████████████████
+  Administration      :  90.0%  ██████████████████
+  Erreurs             : 100.0%  ████████████████████
+  zoom                : 100.0%  ████████████████████
+  yzoom               : 100.0%  ████████████████████
+  ymeg2               : 100.0%  ████████████████████
+  ymeg                : 100.0%  ████████████████████
+
+PER-CATEGORY RECALL
+------------------------------------------------------------------------
+  direct    : @1=61.1%  @3=88.9%  (n=36)
+  indirect  : @1=25.0%  @3=100.0%  (n=4)
+  Note: 'indirect' questions (answer buried in doc, not in title) are harder.
+        If indirect recall@3 < direct recall@3 - 20%, add more context overlap.
+
+QUESTION BREAKDOWN
+------------------------------------------------------------------------
+  ✅🎯  [Administration ]  Comment accéder à un fichier réseau Windows avec son
+  ✅    [Administration ]  Comment créer ou modifier un modèle d'imprimante dan
+  ✅🎯  [Administration ]  Que fait la commande /Ga dans un fichier pilote ?
+  ✅    [Administration ]  Comment déclarer un chemin Harmony sur un serveur Xl
+  ✅    [Administration ]  Comment configurer l'imprimante par défaut de Window
+  ✅🎯  [Administration ]  Comment importer des utilisateurs depuis un annuaire
+  ✅🎯  [Administration ]  Quelle est la différence entre un modèle préconisé e
+  ✅🎯  [Administration ]  Comment lancer automatiquement une tâche de fond au 
+  ❌    [Administration ]  Comment configurer les chemins implicites sur un pos
+         Expected  : Cheminsd_acc_simplicites.htm
+         Got top-3 : ['Implantationdesfichiersd_implicites', 'Fichiersdecheminsimplicitesetutilis', 'Biblioth_quesdel_utilisateur_.htm']
+         Scores    : expected=0.8919  top1=0.8883
+  ✅    [Administration ]  Comment passer des paramètres à un programme Harmony
+  ✅    [Administration ]  Comment configurer une liaison entre un modèle et un
+  ✅    [Administration ]  Comment fonctionne le format spool dans un modèle d'
+  ✅🎯  [Administration ]  Comment iconiser une application Harmony version 6 ?
+  ✅    [Administration ]  Comment configurer le gestionnaire d'impression Wind
+  ✅    [Administration ]  Comment synchroniser les utilisateurs Harmony avec u
+  ✅🎯  [Administration ]  Quelles sont les règles de correspondance des propri
+  ✅🎯  [Administration ]  Comment paramétrer une icône pour une tâche de fond 
+  ❌    [Administration ]  Comment déclarer un serveur dans la table des serveu
+         Expected  : D_clarationdesserveursetdesunit_slogiques.htm
+         Got top-3 : ['Param_tragedesserveursHarmony.htm', 'D_clarationdesserveurs_etunit_slogi', 'D_clarationdesutilisateursd_unr_sea']
+         Scores    : expected=0.8818  top1=0.8763
+  ✅    [Administration ]  Comment déclarer un chemin dans la table des chemins
+  ✅🎯  [Administration ]  Comment accéder au fichier des utilisateurs Harmony 
+  ✅🎯  [Installation   ]  Comment installer le serveur Web Harmony ?
+  ✅🎯  [Installation   ]  Comment installer et paramétrer le service dhsTelnet
+  ✅🎯  [Installation   ]  Comment configurer la mémoire commune dans Harmony ?
+  ❌    [Installation   ]  Comment configurer le client léger HTML dans Harmony
+         Expected  : Configuration_du_client_léger_Html.htm  [resolved from: Configuration_du_client_l_ger_Html.htm]
+         Got top-3 : ['Client_léger_Harmony_Web.htm', 'Spécificités_de_développement_pour_', 'Client_léger_Harmony_Web.htm']
+         Scores    : expected=0.0000  top1=0.9066
+  ✅🎯  [Installation   ]  Comment activer la compression des trames pour le cl
+  ❌    [RecordSql      ]  Comment se connecter au serveur SQL depuis Harmony ?
+         Expected  : ConnexionauserveurSQL.htm
+         Got top-3 : ['Cr_ationdesutilisateursd_Harmony_.h', 'Configurationdel_unit_logiqueSQL_.h', 'D_clarationdesserveurs_etunit_slogi']
+         Scores    : expected=0.8755  top1=0.8701
+  ✅    [RecordSql      ]  Quelles sont les particularités de DB2 sur un serveu
+  ✅🎯  [RecordSql      ]  Comment désactiver le contexte d'utilisation par déf
+  ✅    [RecordSql      ]  Comment insérer et supprimer des objets dans Harmony
+  ✅🎯  [RecordSql      ]  Comment paramétrer un agent d'impression dans Harmon
+  ✅🎯  [Erreurs        ]  Quels sont les codes d'erreur Windows renvoyés par H
+  ✅    [zoom           ]  Comment fonctionne la sélection multiple dans le zoo
+  ✅🎯  [zoom           ]  Comment effectuer une consultation en mode fiche dan
+  ✅🎯  [yzoom          ]  Comment lancer un zoom depuis un menu dans Harmony ?
+  ✅🎯  [ymeg2          ]  Comment afficher un agenda dans Harmony ymeg2 ?
+  ✅🎯  [ymeg           ]  Comment programmer un tableau dans Harmony ymeg ?
+  ✅🎯  [ymeg2          ]  Quelles sont les restrictions imposées par les navig
+  ✅🎯  [ymeg           ]  Comment utiliser le drag and drop dans un tableau Ha
+  ✅🎯  [ymeg           ]  Comment gérer la liste associée à un tableau dans Ha
+  ✅    [ymeg           ]  Comment utiliser XmeListSetAttribut pour modifier le
+
+FAILURE ANALYSIS
+------------------------------------------------------------------------
+  4 questions failed recall@3. Patterns:
+
+  SCORE GAP > 0.05 (1 questions) — wrong file wins convincingly
+  → The expected chunk needs more distinctive content.
+    Options: (1) inject more title/section signal into chunk content
+             (2) the expected file may need a dedicated SHORT_ATOMIC chunk
+             with just its title + key terms as a 'dense retrieval anchor'
+    - Comment configurer le client léger HTML dans Harmony ?  gap=0.9066
+
+  SCORE GAP ≤ 0.05 (3 questions) — close miss, reranker would fix
+  → These are retrieval boundary cases.
+    A cross-encoder reranker (ms-marco-MiniLM-L-6-v2) will fix most of these.
+    - Comment configurer les chemins implicites sur un poste   gap=-0.0036
+    - Comment déclarer un serveur dans la table des serveurs   gap=-0.0055
+    - Comment se connecter au serveur SQL depuis Harmony ?  gap=-0.0054
+
+NEXT STEPS (priority order)
+------------------------------------------------------------------------
+
+  1. ADD HYBRID BM25 + VECTOR RETRIEVAL
+     pip install rank-bm25
+     BM25 catches exact technical terms (function names, error codes)
+     that embeddings sometimes miss.
+     Expected lift: +3 to +8% on technical/API questions.
+
+========================================================================

@@ -1,0 +1,49 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Erreurs signalées par Harmony">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Format d'affichage des erreurs Harmony">
+      <param name="Local" value="Erreurs/Formatd_affichagedeserreursHarmony.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Journalisation des erreurs">
+      <param name="Local" value="Erreurs/Journalisationdeserreurs.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Familles d'erreurs Harmony">
+      <param name="Local" value="Erreurs/Familles_des_erreurs_Harmony.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Valeurs de la variable errno">
+      <param name="Local" value="Erreurs/Valeursdelavariableerrno.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Erreurs signalées par Windows (10xxx)">
+      <param name="Local" value="Erreurs/10xxx_Erreurssignal_esparWindows.htm">
+    </object>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Interpréter un code d'erreur">
+      <param name="Local" value="Erreurs/Interpr&eacute;ter_un_code_d_erreur.htm">
+    </object>
+    </ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exception non gérée dans xrtDiva">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Exception non gérée dans xrtDiva">
+      <param name="Local" value="Erreurs/Exception_non_g&eacute;r&eacute;e_dans_xrtDiva.htm">
+    </object>
+    </ul>
+</ul>
+</html>

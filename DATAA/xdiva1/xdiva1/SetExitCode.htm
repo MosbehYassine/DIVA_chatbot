@@ -1,0 +1,126 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>SetExitCode</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>SetExitCode &#160;&#160;<a href="InstructionsdeModulesetProgrammes.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="G_n_ralit_s1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">SetExitCode permet de positionner le code de retour du processus Xrtdiva.</p>
+<p class="Body-Text">Ce code peut être testé dans les fichiers batch (.bat) pour savoir si le programme s'est correctement déroulé. La variable ERRORLEVEL contient le code positionné par SetExitCode. Si le programme s'est terminé normalement et que la fonction SetExitCode n'a pas été appelée, ERRORLEVEL vaut zéro.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Int SetExitCode <span style="font-style: italic; font-weight: normal;">( code )</span></p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><span style="font-style: italic;">Code</span></p>
+<p class="decalage05">Valeur qui sera retournée lorsque le processus xrtdiva se termine. Xrtdiva ajoute automatiquement la valeur 1000000 au code passé en paramètre. Cela permet de distinguer les codes positionnés par SetExitCode des codes systèmes.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p>La fonction renvoie l'ancienne valeur si la fonction SetExitCode a déjà été appelée.</p>
+<p>&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarques</p>
+<p class="Body-Text">Si le programme diva est lancé par Xwpf, ce code est transmis à Xwpf qui le positionne de son coté. Cela signifie que la variable ERRORLEVEL sera positionnée par la valeur de SetExitCode dans tous les cas.</p>
+<p class="Body-Text">Si un programme ne se termine pas normalement, ExitCode prend une des valeurs suivantes :</p>
+<table style="vertical-align: top;" cellspacing="0" width="61.033%">
+<col style="width: 8.795%;">
+<col style="width: 91.205%;">
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>2</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>Erreur interne Xrtdiva</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>3</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>Erreur interne Xrtdiva</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>4</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>Exception dans Xrtdiva (pointeur null par exemple)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>5</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>Erreur interne Xrtdiva</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>6</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>Erreur interne Xrtdiva</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>7</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>Erreur de connexion (xwpf)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>8</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>Exception dans Xwpf</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>9</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>La connexion est tombée</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>&lt;=1000000</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>Erreur système Harmony (20 = fichier absent par exemple)</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:8.795%;" class="hcp4">
+<p>&gt;1000000</p>
+</td>
+<td style="width:91.205%;" class="hcp4">
+<p>Code de retour positionné par le programme.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

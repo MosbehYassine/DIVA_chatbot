@@ -1,0 +1,171 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Constituants d'un objet Tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:8px; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { text-decoration:underline; }
+img.hcp4 { border:none; }
+ul.hcp5 { list-style:disc; }
+li.hcp6 { list-style:none;
+display:inline; }
+p.hcp7 { margin-left:48px; }
+span.hcp8 { font-weight:bold;
+text-decoration:underline; }
+span.hcp9 { color:#ff0000; }
+span.hcp10 { color:#ff0000;
+font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Constituants d'un objet Tableau</h3>
+<p>&#160;</p>
+<p class="hcp1">Un tableau est constitué de lignes et de <span class="hcp2">colonnes</span> et il est divisé en deux zones, l'<span class="hcp2">en-tête</span> et le <span class="hcp2">corps</span>, qu'il est <span class="hcp3">important de bien distinguer</span> :<br>
+<br>
+<img src="../image11.gif" alt="" width="448" height="154" border="0" class="hcp4"></p>
+<ul class="hcp5">
+<li class="p">
+<p style="font-weight: normal; font-size: 10pt;"><span class="hcp2">L'en-tête du tableau</span>.<span style="margin-left: 48px;"><br>
+Cette zone contient habituellement les titres des colonnes du tableau. Mais contrairement aux tableaux des masques d'écran, le titre d'une colonne n'est pas une de ses propriétés. Pour affecter un</span> <span class="hcp2">titre</span> à une colonne, il faut <span class="hcp2">créer un objet</span> (par exemple un objet Texte) et le <span class="hcp2">déposer à l'intérieur de la zone délimitant l'en-tête</span> :<br>
+<br>
+<img src="../image12.gif" alt="" width="388" height="36" border="0" class="hcp4"><span style="margin-left: 48px; font-weight: bold;"><br>
+<br>
+Remarques</span> :<br>
+Tous les types d'objets peuvent figurer dans la zone d'en-tête. Cela permet en particulier de placer le titre des colonnes dans un texte fixe ou dans un champ variable.<br>
+Le placement d'un objet dans un en-tête a certaines <span class="hcp2">conséquences</span> : par exemple, le déplacement et l'opération Copier / Couper / Coller d'un objet Tableau incluent automatiquement tous les objets situés dans son en-tête.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p class="hcp1"><span class="hcp2">Le corps du tableau</span>.<br>
+Le corps est la zone du tableau où vont s'imprimer les lignes qui le constituent.<br>
+On n'y déclare pas directement les données. En effet, le contenu du corps du tableau est en réalité constitué d'un ou plusieurs <a href="Notiondebloc.htm">blocs</a> (au sens habituel), qui <span class="hcp2">doivent d'abord être insérés dans le tableau</span> (voir la rubrique <a href="Etapes_de_la_cr&eacute;ation_d_un_tableau.htm">Etapes de la création d'un tableau</a>).<br>
+<br>
+Une fois le bloc inséré :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p class="hcp1">Il devient possible d'y placer des objets (en restant en édition du bloc contenant l'objet Tableau).</p>
+</li>
+<li class="p">
+<p style="margin-left: 8px; font-weight: normal;">Il devient visible dans l'<a href="Arbre_des_tableaux_d_un_bloc.htm">arbre des tableaux du bloc</a>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="font-weight: bold; margin-left: 48px;"><img src="../image1.jpg" alt="" width="562" height="62" border="0" class="hcp4"><br>
+&#160;</p>
+<ul class="hcp5">
+<li class="p">
+<p class="hcp1"><span class="hcp2">Les colonnes du tableau</span>.<br>
+Le découpage du tableau en colonnes décide de sa présentation. Mais contrairement à leurs homologues dans les tableaux des masques d'écran, les colonnes ne délimitent pas les objets qu'elles contiennent de manière figée : un objet peut en effet <span class="hcp2">déborder d'une colonne</span>, être <span class="hcp2">à cheval sur deux colonnes</span> ou <span class="hcp2">s'étendre sur plusieurs colonnes</span>. Ceci permet de faire figurer des blocs de contenus hétérogènes dans un même tableau (cas de nombreux états imprimés par l'ERP Divalto).<br>
+<br>
+Par exemple :<br>
+<br>
+<img src="../image13.gif" alt="" width="404" height="72" border="0" class="hcp4"><br>
+<br>
+<br>
+La valeur de la propriété <a href="Pr_sentation2.htm">Colonne</a> des objets situés dans un bloc de type Tableau permet de forcer la <span class="hcp2">colonne d'appartenance de l'objet</span> :<br>
+&#160;</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp2">Automatique</span> (valeur par défaut) :<br>
+La position de l'objet détermine automatiquement la colonne à laquelle il appartient, <span class="hcp2">s'il est entièrement inclus dans cette colonne</span>.</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Numéro d'une colonne</span> :<br>
+L'objet est considéré comme appartenant à cette colonne, quelque soit sa largeur et sa position dans le tableau.</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Aucune</span> :<br>
+L'objet n'appartient à aucune colonne précise.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp7">Dans Xwin <span class="hcp8">et</span> dans l'<a href="Assistant_de_personnalisation_des_masques_d_impression.htm">assistant de personnalisation des impressions</a>, cette propriété détermine la manière de considérer la colonne et les objets qui lui appartiennent, lors de certaines manipulations sur les colonnes du tableau. Par exemple :</p>
+<ul class="hcp5">
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Xwin n'autorise pas de réduire la largeur d'une colonne en dessous d'un certain seuil, dépendant de la taille des objets lui appartenant.</p>
+</li>
+<li class="p">
+<p>Un objet peut être automatiquement déplacé pour "suivre" sa colonne.</p>
+</li>
+<li class="p">
+<p>Un objet à cheval sur les colonnes C1,C2,... est déplacé lorsque la largeur de la colonne A est modifiée, <span class="hcp3">sauf</span> s'il appartient explicitement à la colonne C1.</p>
+</li>
+<li class="p">
+<p>La suppression d'une colonne ne supprime pas un objet qui ne lui appartient pas, même s'il est entièrement inclus dans cette colonne.</p>
+</li>
+<li class="p">
+<p><span class="hcp9">La valeur</span> <span class="hcp10">Aucune</span> <span class="hcp9">permet d</span><span class="hcp10">'assurer que l'objet sera toujours imprimé</span><span class="hcp9">, même si l'utilisateur de l'assistant de personnalisation</span> <span class="hcp10">masque la colonne</span> <span class="hcp9">qui le contient</span>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp7"><span class="hcp8">Conseil</span> :<br>
+<br>
+Afin d'<span class="hcp2">éviter des effets indésirables</span> lors des manipulations sur les colonnes du tableau, pensez à <span class="hcp2">figer la colonne d'appartenance</span> des objets <span class="hcp2">qui ne sont pas clairement situés à l'intérieur d'une colonne précise</span> (objets à cheval sur plusieurs colonnes) ou qui n'appartiennent pas réellement à la colonne où ils sont placés (tableau à blocs hétérogènes).<br>
+&#160;</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp2">Les blocs de type Tableau</span>.<br>
+La propriété <span class="hcp2">Type de bloc</span> des blocs insérés dans un tableau prend la valeur <span class="hcp2">Tableau</span>. Un bloc de ce type s'apparente à un bloc de type Mobile, avec quelques particularités :<br>
+&#160;</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp3">Un même bloc ne peut pas appartenir à plusieurs tableaux</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>L'imbrication de tableaux n'étant pas autorisée, il est interdit d'insérer dans un tableau un bloc contenant lui-même un tableau.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Son type ne peut plus être changé dans la boîte des caractéristiques du bloc, à moins de retirer le bloc du tableau (commande accessible depuis l'<a href="Arbre_des_tableaux_d_un_bloc.htm">arbre des tableaux du bloc</a>).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Ses <span class="hcp2">bornes d'impression</span> (paramètres <span class="hcp2">Positions début et fin</span>) deviennent <span class="hcp2">relatives</span> au <span class="hcp8">corps</span> du tableau (et non plus relatives à la page).<br>
+Voir la rubrique <a href="Positiondesblocs.htm">Positionnement des blocs</a> et l'exemple <a href="Inclure_un_tableau_dans_un_masque_existant.htm">Inclure un tableau dans un masque existant</a>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>A l'exécution, le mécanisme employé par l'exécuteur de masques d'impression Ymig pour imprimer les blocs Tableau à l'intérieur du corps du tableau est en tout point similaire à celui employé pour imprimer les blocs Mobiles à l'intérieur de la page. Simplement :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Le <span class="hcp2">débordement</span> d'un bloc Tableau est détecté lorsque la <span class="hcp2">place devient insuffisante pour son impression dans le corps du tableau</span> et non plus lorsque la place manque pour son impression dans la page (l'intervalle [Position début...Position fin] qui délimite la zone où le bloc est autorisé à s'imprimer est maintenant relatif au corps du tableau).</p>
+</li>
+<li class="p">
+<p>Un bloc Tableau <span class="hcp2">ne doit pas être imprimé sans impression préalable du bloc contenant le tableau</span>.<br>
+Dans le cas contraire, l'erreur "<span class="hcp2">L'impression du bloc Tableau numéro NN doit être précédée de celle du tableau correspondant</span>" est signalée au développeur, <span class="hcp8">si le programme est lancée depuis Xwin</span>. En exploitation, cette erreur n'est pas explicitement signalée ; le bloc de type Tableau est traité comme un bloc de type Mobile et, bien entendu, l'état imprimé ne sera pas correct.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp2">Voir aussi</span> :</p>
+<p><a href="Propri&eacute;t&eacute;s_des_colonnes_de_tableau_sp&eacute;cifiques_&agrave;_l_assistant.htm">Propriétés des colonnes de tableau spécifiques à l'assistant</a></p>
+<p><a href="Propri&eacute;t&eacute;s_des_blocs_de_type_Tableau_sp&eacute;cifiques_&agrave;_l_assistant.htm">Propriétés des blocs de type Tableau spécifiques à l'assistant</a></p>
+<p>&#160;</p>
+</body>
+</html>

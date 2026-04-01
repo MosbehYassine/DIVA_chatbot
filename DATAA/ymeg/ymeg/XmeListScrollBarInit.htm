@@ -1,0 +1,119 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListScrollBarInit</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp6 { list-style:disc; }
+font.hcp7 { font-family:Courier New; }
+font.hcp8 { font-family:Courier New;
+font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListScrollBarInit &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">(Re)calcul et (ré)affichage de l'ascenseur vertical d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+XmeListScrollBarInit</font> (<font class="hcp3">Identifiant, Ascenseur</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Ascenseur</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Adresse de l'enregistrement "ascenseur" (on utilisera l'enregistrement standard <font class="hcp2">ScrollBar32</font> du dictionnaire système DDSYS.dhsd)&#160;; au retour de la procédure, l'enregistrement est actualisé pour refléter l'état de l'<a href="Ascenseurverticald_untableau.htm">ascenseur vertical du tableau</a>.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure <font class="hcp2">XmeListScrollBarInit</font> "&#160;calcule&#160;" (et affiche) l'ascenseur vertical du tableau dont l'identifiant est fourni en paramètre, en fonction de son état actuel (nombre total d'éléments, nombre de lignes présentes à l'écran, rang du premier élément affiché, présence d'une "&#160;ligne de création&#160;").</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La zone <font style="font-weight: bold; font-style: italic;">Ascenseur</font> est un paramètre de sortie (sa valeur avant l'appel n'est pas significative), qui recevra les <a href="YMEG2.chm::/Ymeg2/D_clarationd_unascenseurWindows.htm">informations de gestion de l'ascenseur</a> actualisées. Elle doit respecter la structure de l'enregistrement standard <font class="hcp2">ScrollBar32</font> du dictionnaire système DDSYS.dhsd.</p>
+</li>
+</ul>
+<p class="Body-Text">Précisément, cette procédure standard (dont le source est fourni à titre d'exemple dans le fichier ZYDEFPRO.dhsp) effectue les opérations suivantes&#160;:</p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">Chargement de la <font class="hcp2">valeur début</font> à 1&#160;:<font face="Courier New" class="hcp7"><br>
+ScrollBar32.PositionMin = 1</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chargement de la <font class="hcp2">valeur fin</font> avec le nombre d'éléments présents dans le tableau (avec un minimum de 1)&#160;:<font face="Courier New" class="hcp7"><br>
+ScrollBar32.PositionMax = MAX (XmeListCount (</font><font face="Courier New" class="hcp8">Identifiant</font><font face="Courier New" class="hcp7">),1)</font><br>
+&#160;<br>
+Si vous autorisez la création d'un nouvel élément par un clic souris dans la <a href="Colonned__tatd_untableau.htm">colonne d'état "&#160;création&#160;"</a>, cette valeur est augmentée de 1 car un élément supplémentaire est compté pour la "&#160;ligne de création&#160;" (rappelons que cette méthode de création est optionnelle&#160;; pour la valider, appelez la procédure <a href="XmeListSetCreatingOption.htm">XmeListSetCreatingOption</a> avec le paramètre <font class="hcp3">Création</font> à TRUE)&#160;:<font face="Courier New" class="hcp7"><br>
+IF XmeListGetCreatingOption (</font><font face="Courier New" class="hcp8">Identifiant</font><font face="Courier New" class="hcp7">)<br>
+ScrollBar32.PositionMax ++<br>
+ENDIF</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chargement du <font class="hcp2">pas "&#160;flèche&#160;"</font> à 1&#160;:<font face="Courier New" class="hcp7"><br>
+ScrollBar32.LineStep = 1</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chargement du <font class="hcp2">pas "&#160;page&#160;"</font> avec le nombre de lignes présentes à l'écran (rappelons que ce pas ne doit toutefois pas dépasser la valeur fin)&#160;:<font face="Courier New" class="hcp7"><br>
+ScrollBar32.PageStep = MIN (XmeListScreenCount (</font><font face="Courier New" class="hcp8">Identifiant</font><font face="Courier New" class="hcp7">), ScrollBar32.PositionMax)</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chargement de la <font class="hcp2">position courante</font> avec le rang de l'élément affiché en première ligne&#160;:<font face="Courier New" class="hcp7"><br>
+ScrollBar32.CurrentPosition = XmeListGetOffset (</font><font face="Courier New" class="hcp8">Identifiant</font><font face="Courier New" class="hcp7">)</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Affichage</font> de l'ascenseur par <a href="XmeListSetScrollBar.htm">XmeListSetScrollBar</a>&#160;:<font face="Courier New" class="hcp7"><br>
+XmeListSetScrollBar (</font><font face="Courier New" class="hcp8">Identifiant, Ascenseur</font><font face="Courier New" class="hcp7">)</font></p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Attention&#160;:</font></p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListScrollBarInit NE peut être appelée QUE si la page de masque contenant le tableau est la page courante (ou une de ses pages panels).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le premier appel à XmeListScrollBarInit doit se faire, le cas échéant, APRES le garnissage initial du tableau et APRES l'appel à <a href="XmeListSetCreatingOption.htm">XmeListSetCreatingOption</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'initialisation de l'ascenseur vertical du tableau par XmeListScrollBarInit (ou une procédure équivalente) est obligatoire si vous utilisez la procédure standard XmeListConsultDefault.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font> Voir l'exemple de la rubrique <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a>.</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeListSetScrollBar.htm">XmeListSetScrollBar</a></p>
+</body>
+</html>

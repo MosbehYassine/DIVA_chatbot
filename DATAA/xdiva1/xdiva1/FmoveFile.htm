@@ -1,0 +1,104 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FmoveFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>FmoveFile &#160;<a href="Listedesfonctionsavanc_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">Cette fonction permet de renommer ou de déplacer un fichier.</p>
+<p class="Body-Text">Utilisez de préférence la fonction <a href="HMoveFile.htm">HMoveFile</a></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr = FmoveFile</font> (<font class="hcp3">ancien , nouveau , numéro_fichier_en_erreur )</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Ancien</font></p>
+<p class="decalage05">Nom du fichier à renommer.</p>
+<p class="Body-Text"><font class="hcp3">Nouveau</font></p>
+<p class="decalage05">Nouveau nom du fichier. Ce fichier ne doit pas exister.</p>
+<p class="decalage05">Si ce nom n'est pas un nom complet, le chemin du nouveau fichier est le même que le nom de l'ancien fichier.</p>
+<p class="Body-Text"><font class="hcp3">Numéro_fichier_en_erreur</font></p>
+<p class="decalage05">Variable alpha-numérique qui recoit "1" ou "2" pour indiquer quel fichier a provoqué une erreur (1&#160;=&#160;ancien,&#160;2&#160;=&#160;nouveau).</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Retour</font></p>
+<table cellspacing="0" width="619">
+<tr class="hcp4">
+<td style="width:9.94%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">0</p>
+</td>
+<td style="width:90.06%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:9.94%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">9</p>
+</td>
+<td style="width:90.06%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Le fichier <font class="hcp3">Nouveau</font> existe déjà.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:9.94%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Autres</p>
+</td>
+<td style="width:90.06%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Code d'erreur système.</p>
+<p class="Body-Text"><font class="hcp3">Numéro_fichier_en_erreur</font> indique le fichier en erreur</p>
+</td>
+</tr>
+</table>
+<p style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font>&#160;</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Le fichier ne peut pas être déplacé d'un serveur à un autre.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le fichier peut être déplacé d'un disque à un autre.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp2">Exemples</font></p>
+<p class="Source">1 num 1</p>
+<p class="Source">1 st X</p>
+<p class="Source">1 f1 32</p>
+<p class="Source">1 f2 32</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">f1 = "/Divalto/sys/test"</p>
+<p class="Source">f2 = "/Divalto/sys/test1"</p>
+<p class="Source">st = FmoveFile(f1,f2,num)</p>
+<p class="Source">if st &lt;&gt; 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;if num = '1'&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ErrorFatal(st,f1)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;else&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ErrorFatal(st,f2)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;endif&#160;</p>
+<p class="Source">endif</p>
+<p class="Source">programexit</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="HMoveFile.htm"><font color="#008000">HMoveFile</font></a> <a href="WinMoveFile.htm">WinMoveFile</a></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</body>
+</html>

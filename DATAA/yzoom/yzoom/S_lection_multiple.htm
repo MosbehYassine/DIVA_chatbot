@@ -1,0 +1,151 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Sélection multiple</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-style:italic;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+font.hcp4 { font-weight:bold; }
+p.hcp5 { margin-left:11.75pt; }
+p.hcp6 { margin-top:0;
+margin-bottom:0; }
+li.hcp7 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Sélection multiple</h3>
+<p>&#160;</p>
+<p>Le zoom permet à l'utilisateur de sélectionner plusieurs lignes du tableau et de leur appliquer un traitement. En standard, le zoom permet de supprimer, d'imprimer et d'exporter (par l'impression paramétrable) les lignes sélectionnées. Il permet également au programmeur d'appliquer un traitement personnalisé à ces lignes.</p>
+<p>&#160;</p>
+<p class="hcp1">Paramétrage du masque du zoom</p>
+<p class="Body-Text">Si l'on veut autoriser la sélection multiple des lignes du tableau, il faut associer à l'objet tableau du mode liste une <span class="hcp2">donnée de contrôle des lignes</span>. Pour ce faire :</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Déclarez, dans la liste des enregistrements du masque, l'enregistrement <span class="hcp2">RowInfo</span> du dictionnaire ddsys.dhsd, avec obligatoirement le <span class="hcp2">nom d'instance</span> <font class="hcp4">ZoomSelection</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dans les propriétés du tableau, positionnez le champ "Avec donnée de contrôle" à "Oui" et sélectionnez la donnée RowInfo de l'enregistrement ZoomSelection dans le champ "Donnée de contrôle".</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="hcp1">Paramétrage des attributs de la sélection</p>
+<p>Les attributs de la sélection peuvent être personnalisés dans la séquence ZoomDebut en positionnant la variable ZoomSelection. Par exemple :<br>
+&#160;</p>
+<p class="Source">ZoomSelection = ' '</p>
+<p class="Source">ZoomSelection.Bitmap = '1'</p>
+<p class="Source">ZoomSelection.Couleur = 'AFFOK'</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="hcp1">Suppression de la sélection</p>
+<p>Le zoom gère automatiquement la suppression des lignes sélectionnées. Lorsque l'opérateur supprime la sélection courante, le zoom affiche une boîte de dialogue avec les choix :</p>
+<ul>
+<li style="font-size: 10pt;" class="p">
+<p class="hcp5">Oui</p>
+</li>
+<li style="font-size: 10pt;" class="p">
+<p class="hcp5">Non</p>
+</li>
+<li style="font-size: 10pt;" class="p">
+<p class="hcp5">Tous</p>
+</li>
+<li style="font-size: 10pt;" class="p">
+<p class="hcp5">Aucun</p>
+</li>
+</ul>
+<p>Par défaut, les choix Oui et Non ne sont pas actifs. Pour les activer, il faut que la donnée Zoom.Titrevar soit différente d'espace. Elle contiendra généralement un texte permettant d'identifier chaque ligne à supprimer. Elle est positionnée dans la séquence <a href="ZoomApresRead.htm">ZoomApresRead</a>.</p>
+<p>&#160;</p>
+<p class="hcp6">&#160;</p>
+<p class="hcp1">Programmation</p>
+<ul class="hcp3">
+<li class="p">
+<p>La fonction <a href="ZoomTraiterSelection.htm">ZoomTraiterSelection</a> permet d'indiquer au zoom le nom de la procédure à exécuter afin de traiter chaque ligne sélectionnée :<br>
+<span class="hcp2"><br>
+Char ZoomTraiterSelection ("Nom_du_module", "Nom_de_la_procedure")<br></span><br>
+Ses paramètres sont :</p>
+</li>
+<li class="hcp7">
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Le nom du module où se trouve la fonction à exécuter.<br>
+Si le nom est à espace, le zoom cherche la fonction dans le module de traitement du zoom (Zoom.ModTrait).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Le nom de la procédure à exécuter pour chaque ligne sélectionnée.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;">ZoomTraiterSelection exécute la procédure dont le nom est passé en paramètre pour chaque ligne sélectionnée. Elle renvoie :</p>
+<ul class="hcp3">
+<li class="hcp7">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">'E' si la procédure n'existe pas.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Zoom.Ok, positionné par la procédure, après la dernière ligne traitée.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;">Pour chaque ligne, le zoom appelle la séquence ZoomApresRead avant l'appel à la procédure. Il positionne Zoom.Ok à 'O' avant l'appel et il interrompt le traitement si Zoom.Ok est différent de 'O' au retour de la procédure.<br>
+<br>
+Le zoom consulte le clavier pendant la lecture des lignes sélectionnées : si l'opérateur interrompt la lecture par la touche "Echap", le traitement est interrompu et Zoom.Ok est positionné à 'N'.</p>
+<p class="hcp6">&#160;</p>
+<ul class="hcp3">
+<li class="p">
+<p>La procédure <a href="ZoomViderSelection.htm">ZoomViderSelection</a> permet de désélectionner les lignes après le traitement. Par défaut, les lignes restent sélectionnées.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Si le traitement modifie des lignes susceptibles d'être affichées à l'écran, la procédure <a href="ZoomReactualiserListe.htm">ZoomReactualiserListe</a> ou <a href="ZoomReactualiserPage.htm">ZoomReactualiserPage</a> doit être appelée.</p>
+&#160;
+<p class="hcp6">&#160;</p>
+<p><font class="hcp4">Exemple :</font></p>
+<p>L'exemple consiste à renvoyer les lignes sélectionnées au programme appelant à travers le tunnel, suite à la frappe de la touche F12. Pour illustrer la possibilité d'abandon du traitement de la sélection, le nombre de lignes renvoyées est limité à 100.</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source"><font color="#0000FF">Module</font> "xzoom7.dhop"</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source"><font color="#0000FF">Public Procedure</font> ZoomConsultListe</p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source"><font color="#FF00FF">&#160;&#160;&#160;;renvoyer la sélection</font></p>
+<p class="Source">&#160;&#160;&#160;<font color="#0000FF">if <span style="color: #000000;">Harmony.Key =</span> K_F12</font> and Zoom.Select = <font color="#0000FF">ZOOM_OUI</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;NbLignes = 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;ZoomTraiterSelection (" ","RenvoyerUneLigne")</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">If</font> NbLignes &lt;&gt; 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">Pong</font> ("NbSelection",NbLignes)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">Endif</font></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;Endif</font></p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source"><font color="#0000FF">Public Procedure</font> RenvoyerUneLigne</p>
+<p class="Source">1&#160;&#160;rep&#160;&#160;X</p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;if</font> NbLignes &lt; 100</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">Pong</font> ("article" &amp; <font color="#0000FF">nospaces</font>(++NbLignes),Article.Reference)</p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;Else</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;rep = <font color="#0000FF">Messagebox</font> ("La sélection comprend plus de 100 lignes | " \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&amp; "Renvoyer ces lignes ou Annuler","Avertissement",<font color="#0000FF">MB_OKCANCEL</font>)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">If</font> rep = IDCANCEL</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;NbLignes = 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;<font color="#0000FF">Endif</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Zoom.Ok = 'F' &#160;&#160;&#160;<font color="#FF00FF">;pour arrêter le traitement de la sélection</font></p>
+<p class="Source"><font color="#0000FF">&#160;&#160;&#160;Endif</font></p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+</body>
+</html>

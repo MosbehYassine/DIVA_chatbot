@@ -1,0 +1,44 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Règles de correspondance des utilisateurs</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Règles de correspondance des utilisateurs</h3>
+<p>&#160;</p>
+<p>Les utilisateurs de l'annuaire LDAP sont importés dans la table des utilisateurs de l'ERP sur la base de règles permettant d'associer <span class="hcp1">groupes d'utilisateurs dans l'annuaire</span> et <span class="hcp1"><a href="Mod&egrave;les_d_utilisateur.htm">modèles d'utilisateurs</a> dans l'ERP</span>.</p>
+<p>&#160;</p>
+<p>Après avoir lancé la console d'administration LDAP, cliquez sur le bouton <span class="hcp1">Groupes</span>. Le tableau affiché permet de saisir les associations. Par exemple :</p>
+<p><img src="../image4.gif" style="border: none;" alt="" width="727" height="107" border="0"></p>
+<p>&#160;</p>
+<p><span class="hcp1">Attention</span> : <span class="hcp2">L’utilisateur de la console doit disposer du droit</span> <span style="font-weight: bold; text-decoration: underline;">HCO</span> <span class="hcp2">pour être autorisé à créer ou modifier ces associations</span>.</p>
+<p>&#160;</p>
+<p>A partir de là, tous les utilisateurs LDAP appartenant par exemple au groupe "Administratif&amp;Achat" seront importés dans la table des utilisateurs de l'ERP avec les paramètres du modèle "DIVALTO_ADV".</p>
+<p>&#160;</p>
+<p>Il est possible qu'un utilisateur appartienne à plusieurs groupes LDAP et qu'un conflit apparaisse pour le choix de son modèle. Dans ce cas :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Si la case "<span class="hcp1">Si conflit de modèle, prendre le premier</span>" est cochée, c'est la première règle d’association définie pour cet utilisateur qui sera appliquée.</p>
+</li>
+<li class="p">
+<p>Dans le cas contraire, l'utilisateur ne sera tout simplement pas importé. Au besoin, l’administrateur devra modifier les propriétés de l’utilisateur ou aménager les règles d’association.</p>
+</li>
+</ul>
+<p>Cette option est affichée dans le cadre <span class="hcp1">Conflit de groupe</span> en bas de l'écran.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Voir aussi : <a href="R&egrave;gles_de_correspondance_des_propri&eacute;t&eacute;s.htm">Règles de correspondance des propriétés de l'annuaire avec les champs de la fiche utilisateur de l'ERP</a>.</p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Conseils pour une intégration optimale avec SQL.</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Conseils pour une intégration optimale avec SQL</h3>
+<p class="Body-Text">Lors de la conception d'applications et notamment des structures du dictionnaire, ces quelques conseils vous permettront une intégration optimale avec une base de données SQL :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Définir une lettre clé différente</font> pour chaque type d'enregistrement d'un fichier.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Définir chaque lettre clé</font> d'un fichier avec une <font class="hcp1">description unique</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ne pas utiliser de <font class="hcp1">zones packées</font>. La gestion des données packées est prise en compte par XLANSQL pour la compatibilité des applications existantes, dans le cas d'une nouvelle application, il est préférable d'éviter l'utilisation de zones packées.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ne pas <font class="hcp1">découper</font> une donnée en sous-données. En effet dans une base de données, il n'existe pas de redéfinition ou de découpage de données. Dans le dictionnaire de données d'HARMONY, pour la compatibilité des applications existantes, au niveau de chaque donnée, une option permet d'indiquer si la donnée doit être masquée ou non dans SQL. Le choix "&#160;audit&#160;" de l'utilitaire XPSQL vérifie la cohérence du dictionnaire et notamment détecte les champs qui se recouvrent.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ne pas utiliser de <font class="hcp1">tableaux</font>. En effet la structure tableau n'existe pas dans les bases de données. Si un tableau est présent dans un enregistrement du dictionnaire, XPSQL créera autant de champs qu'il y a de cellules dans le tableau. Chaque nom de champ est suffixé par son ou ses indices dans le tableau. Par exemple le champ MT(12) donnera 12 champs MT_0001, MT_0002, … ,MT_0012.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ne pas utiliser de donnée de <font class="hcp1">type X</font> ou de <font class="hcp1">type L</font> dans les enregistrements.</p>
+</li>
+</ul>
+</body>
+</html>

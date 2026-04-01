@@ -1,0 +1,132 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fopen</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fopen &#160;<a href="Listedesfonctionsdebasedegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Introduction1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Fopen permet d'ouvrir un fichier "à la main". Par défaut les fichiers déclarés par l'instruction <a href="HFile.htm">HFile</a> sont automatiquement ouverts.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> <font class="hcp2">f</font><font class="hcp2">open</font> ( <font class="hcp3">tdf</font> <font class="hcp3">[,</font> <font class="hcp3">code</font>_<font class="hcp3">réservation ]</font> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Table de définition de fichier. Le nom du fichier à ouvrir doit être placé au préalable dans le champ name de la <font>t</font>df.</p>
+<p class="Body-Text"><font class="hcp3">Code_réservation</font></p>
+<p class="decalage05">Mode de partage du fichier ('R' par défaut).</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:24.89%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">0 &#160;</p>
+</td>
+<td style="width:75.11%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:24.89%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">$13 &#160;</p>
+</td>
+<td style="width:75.11%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Nom de fichier incorrect.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:24.89%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">$14 &#160;</p>
+</td>
+<td style="width:75.11%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Fichier absent.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:24.89%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">H_RESERVED &#160;</p>
+</td>
+<td style="width:75.11%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Erreur de partage.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:24.89%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">autres</p>
+</td>
+<td style="width:75.11%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Code d'erreur système.&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques :</font></p>
+<p class="Body-Text">Un fichier ouvert doit être fermé avant toute réouverture.</p>
+<p class="Body-Text">Sous Unix, les noms de fichiers doivent être en caractères minuscules. Harmony ne peut accéder à un fichier <font>u</font>nix dont le nom comprend un caractère majuscule. Le nom du fichier à ouvrir placé dans la <font>t</font>df est automatiquement convertit en caractères minuscules.</p>
+<p class="Body-Text">Si le fichier est de type I (séquentiel-indexé), la clé de la <font>t</font>df est initialisée à "A". Une lecture (<font>f</font>read) délivrera donc le premier enregistrement du fichier pour la clé A.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple :</font></p>
+<p class="Source">;________________________________________________________________</p>
+<p class="Source">; Fonction : F_OPEN</p>
+<p class="Source">; Type : int</p>
+<p class="Source">; Description : Ouvre le fichier "fic" en mode "par"</p>
+<p class="Source">;</p>
+<p class="Source">; Paramètres en sortie : 0 = ok 1 = absent 2 = réservé</p>
+<p class="Source">; 3 = erreur système</p>
+<p class="Source">;________________________________________________________________</p>
+<p class="Source">;</p>
+<p class="Source">Function int F_OPEN (fic , &amp;tdf , par , mes)</p>
+<p class="Source">1 fic A ; nom du fichier</p>
+<p class="Source">record * htdf tdf ; table définition fichier</p>
+<p class="Source">1 par A ; code partage</p>
+<p class="Source">1 mes A ; indic message si absent</p>
+<p class="Source">beginf</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;tdf.name = fic&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;cr = fopen (tdf,par)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;switch cr&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;case 0 ;ok&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;freturn (0)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;case $14 ;absent&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;if mes = 'O'&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;MessageBox("Fichier :" &amp; left(tdf.name) &amp; " absent"," ")</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;endif&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;freturn (1)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;case H_RESERVED ;réservé&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;MessageBox("Fichier : " &amp; left(tdf.name) &amp; " réservé"," ")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;freturn (2)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;default ;erreur système&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;MessageBox(Erreur système numéro " &amp; binhexa (stx (cr)) &amp; \&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" à l'ouverture du fichier " &amp; left(tdf.name)," ")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;freturn (3)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;endswitch&#160;</p>
+<p class="Source">endf</p>
+&#160;
+<p class="Body-Text" style="margin-top: 0.00pt;">Exemple d'appel :</p>
+<p class="Source">if f_open("fcomp",comp,"P",0) &lt;&gt; 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ProgramExit&#160;</p>
+<p class="Source">endif</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Hopen.htm">Hopen</a>, <a href="HFile.htm">HFile</a>, <a href="HTmpFile.htm">HTmpFile</a>, <a href="Fclose.htm">Fclose</a>, <a href="Fpclose.htm">Fpclose</a></p>
+</body>
+</html>

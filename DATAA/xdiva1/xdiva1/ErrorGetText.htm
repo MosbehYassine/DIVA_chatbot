@@ -1,0 +1,45 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ErrorGetText</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ErrorGetText &#160;<a href="Listedesfonctionsdegestiondeserreurs.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondeserreurs.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Cette fonction permet de récupérer le texte correspondant à une erreur.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+char ErrorGetText</font> (<font class="hcp3">code, [param])</font></p>
+<p class="Body-Text">&#160;<br>
+<font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Code</font></p>
+<p class="decalage05">Code d'erreur à interpréter.</p>
+<p class="Body-Text"><font class="hcp3">Param</font></p>
+<p class="decalage05">Donnée alphanumérique (espace par défaut) qui est incorporée au texte du message (par exemple un nom de fichier).</p>
+<p class="Body-Text"><br>
+<font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction retourne le texte de l'erreur.</p>
+<p class="Body-Text"><br>
+<font class="hcp2">Exemple</font></p>
+<p class="Source">display ErrorGetText(0x14,"monfichier")</p>
+<p class="Source">affiche : Fichier monfichier absent ou inaccessible</p>
+<p class="Body-Text"><br>
+<font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="ErrorFatal.htm">ErrorFatal</a>, <a href="ErrorWarning.htm">ErrorWarning</a>, <a href="Ferror.htm">Ferror</a>, <a href="ErrorCmpl.htm">ErrorCmpl</a>, <a href="GetErrno.htm">GetErrno</a></p>
+</body>
+</html>

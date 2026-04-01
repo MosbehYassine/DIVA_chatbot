@@ -1,0 +1,78 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion des paramètres généraux du menu</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Gestion des paramètres généraux du menu</h2>
+<p class="Body-Text">La touche <font class="hcp1">Shift+F4</font> donne accès au masque de saisie des paramètres généraux du menu.</p>
+<p class="Body-Text">Les paramètres "modifiables" sont&#160;:</p>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 21.635%;">
+<col style="width: 78.365%;">
+<tr class="hcp2">
+<td style="width:21.635%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Titre</font></p>
+</td>
+<td style="width:78.365%;" class="hcp3">
+<p class="Body-Text">Titre du menu.<br>
+Cette zone peut contenir les groupes de caractères (<font style="font-weight: bold; text-decoration: underline;">minuscules</font>) conventionnels suivants&#160;:<font class="hcp1"><br>
+uuuu</font> qui sera remplacé par le <font class="hcp1">code de l'utilisateur</font>.<font class="hcp1"><br>
+vvvv</font> qui sera remplacé par le <font class="hcp1">numéro de version</font> du menu (si la donnée Mh.Version a été garnie dans la séquence d'initialisation du menu).<font class="hcp1"><br>
+ttt</font> qui sera remplacé par le <font class="hcp1">numéro de la tâche</font> Harmony en cours.<font class="hcp1"><br>
+ppp</font> qui sera remplacé par le <font class="hcp1">nom du programme</font> chargé.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.635%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Enchaînement</font></p>
+</td>
+<td style="width:78.365%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Nom du programme</font> à enchaîner lorsque l'utilisateur quitte le menu.<br>
+En particulier :<br>
+Espace permet d'aller à la "Question Programme".<br>
+Xquit permet de refermer la fenêtre Harmony.</p>
+<p class="Body-Text">Le nom peut être suivi de paramètres, avec les mêmes règles syntaxiques que celles applicables à la question "Programme" ou lors d'un enchaînement de programmes Diva.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.635%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Modèle d'imprimante</font></p>
+</td>
+<td style="width:78.365%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1"><a href="Configuration_des_&eacute;ditions.htm">Modèle d'imprimante</a> par défaut</font>.<br>
+Si vous remplissez ce champ, le modèle indiqué ici sera chargé par défaut à chaque fois que l'utilisateur entrera dans un programme appelé par le menu (sauf s'il a imposé un modèle).<br>
+Remarque&#160;: si ce champ est laissé vide, c'est le modèle précisé au niveau du fichier Divalto.ini (clé ModeleDefaut du chapitre [System]) qui sera chargé&#160;; si cette clé est absente de Divalto.ini, c'est le modèle STD qui sera chargé.<br>
+En saisie de cette donnée, tapez F8 ou cliquez sur le bouton Zoom pour appeler le zoom des modèles.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:21.635%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Fichier à ouvrir pour le contrôle de confidentialité des choix</font></p>
+</td>
+<td style="width:78.365%;" class="hcp3">
+<p class="Body-Text">Si vous laissez cette zone à espace, les droits d’accès de l’utilisateur seront cherchés dans le fichier Xlogf ayant servi au Login de l’utilisateur. Sinon, indiquez ici le nom d’un fichier situé sur le serveur où Harmony doit rechercher les droits de l’utilisateur. Garnir cette zone assure une meilleure sécurité en forçant la recherche des droits sur le serveur et ce, même si l’utilisateur se logge à partir d’un fichier Xlogf local.</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

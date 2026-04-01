@@ -1,0 +1,108 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>SplitWord</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+span.hcp4 { font-style:italic; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-right:10px;
+padding-left:10px; }
+p.hcp7 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>SplitWord &#160;&#160;&#160;<a href="Fonctionsdetraitementdescha_nesdecaract_res.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h1>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction SplitWord permet de décomposer une chaîne de caractères en mots. Chaque appel de la fonction délivre le mot suivant et le mot lu est retiré de la chaîne de départ.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Alpha</font> = <span class="hcp2">SplitWord</span> (<font class="hcp3">chaîne </font><span class="hcp4">, [ séparateurs ] , [ séparateursPaire ] , [ séparateursNonRendus ] , [ quotes ] )</span></p>
+&#160; <br>&#160;&#160;
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text"><font class="hcp3">Chaîne</font></p>
+<p class="decalage05">Chaîne de caractères en entrée.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Séparateurs</font></p>
+<p class="decalage05">Chaîne de caractères contenant la liste des caractères séparateurs de mots.</p>
+<p class="decalage05">Cette chaîne peut être vide.</p>
+<p class="decalage05">Exemple : ":.()&amp;=+&lt;&gt;-/*, "</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp3">SéparateursPaire</font></p>
+<p class="decalage05">Chaîne de caractères contenant la liste des séparateurs de mots qui sont sur deux positions. Les paires doivent être séparées par un espace.</p>
+<p class="decalage05">Attention : les paires ne sont prises en compte que si le premier caractère se trouve également dans <span class="hcp4">Séparateurs</span>.</p>
+<p class="decalage05">Exemple : "&gt;= &lt;= .. += &amp;= &amp;&amp; := ++ --"</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text">SéparateursNonRendus</p>
+<p class="decalage05">Chaîne de caractères contenant les séparateurs simples qui ne seront pas rendus par la fonction.</p>
+<p class="decalage05">Par exemple, si nous voulons extraire une liste de paramètres entre virgules, la virgule elle même ne nous intéresse pas. On mettra donc la virgule dans <span class="hcp4">SéparateursNonRendus</span></p>
+<p class="decalage05">Le séparateur espace n'est jamais rendu.</p>
+<p class="decalage05">Les séparateurs non rendus ne doivent pas se trouver dans la liste <span class="hcp4">Séparateurs</span></p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span class="hcp4">Quotes</span></p>
+<table style="vertical-align: top; margin-left: 40px;" cellspacing="0" width="100%">
+<col style="width: 5.018%;">
+<col style="width: 94.982%;">
+<tr class="hcp5">
+<td style="width:5.018%;" class="hcp6">
+<p class="hcp7">1</p>
+</td>
+<td style="width:94.982%;" class="hcp6">
+<p>un mot entre quotes doit toujours être considéré comme un mot, indépendamment des séparateurs (valeur par défaut)</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:5.018%;" class="hcp6">
+<p class="hcp7">0</p>
+</td>
+<td style="width:94.982%;" class="hcp6">
+<p>un mot entre quotes n'est pas &#160;toujours être considéré comme étant un mot</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:5.018%;" class="hcp6">
+<p class="hcp7">2</p>
+</td>
+<td style="width:94.982%;" class="hcp6">
+<p>les quotes sont ignorées, c'est à dire quelles sont traitées comme des caractères ordinaires.</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La fonction renvoie le mot extrait de <span class="hcp4">chaîne</span>.</p>
+<p class="Body-Text">S'il n'y a plus de mots dans la chaîne, la fonction retourne $00.</p>
+<p class="Body-Text">Le mot lu est supprimé de <span class="hcp4">chaîne</span>.</p>
+&#160;
+<p class="Body-Text" style="font-weight: bold;">Exemple 1</p>
+<p class="Source" style="font-weight: normal;">chaine = "a = a + b"</p>
+<p class="Source" style="font-weight: normal;">loop (mot := SplitWord(chaine,"=+&lt;&gt;-/* ")) &lt;&gt; $00</p>
+<p class="Source" style="font-weight: normal;">&#160;&#160;&#160;display mot</p>
+<p class="Source" style="font-weight: normal;">endloop</p>
+<p class="Source" style="font-weight: normal;">display chaine &#160;; ici chaine est vide !</p>
+&#160;
+<p class="Body-Text" style="margin-left: 48px;"><span>La fonction affiche les mots suivants : &#160;</span></p>
+<p class="Body-Text" style="margin-left: 88px;">a<br>
+=<br>
+a<br>
++<br>
+b</p>
+&#160;
+<p class="Body-Text">&#160;<span class="hcp2">Autres exemples</span></p>
+<p style="margin-left: 40px;">Voir <a href="Split.htm">Split</a></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p>&#160;<a href="Split.htm">Split</a> , <a href="SplitList.htm">SplitList</a> ,<a href="HmpRead.htm">HmpRead</a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

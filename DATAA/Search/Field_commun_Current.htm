@@ -1,0 +1,34 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Field commun Current</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold;
+font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Field commun Current</h1>
+<p>Permet de proposer la valeur <span class="hcp1">[courant]</span> dans les valeurs de filtrage du mode Expert.</p>
+<p>&#160;</p>
+<p>Cette fonctionnalité est particulièrement intéressante pour les utilisateurs travaillant avec plusieurs dossiers ou établissements différents et souhaitant filtrer les recherches de Divalto Power Search au dossier ou à l'établissement courant de l'ERP.</p>
+<p>&#160;</p>
+<p>Pour que cette fonctionnalité soit opérationnelle, il est impératif que la recherche soit lancée depuis le menu Divalto ou d' un Zoom qui connaît la valeur de [Courant].</p>
+<p>Les valeurs courantes sont envoyées à l'interface de recherche par la <span class="hcp1">procédure Search_init()</span> du module <span class="hcp1">« a5tmsearch.dhop »</span></p>
+<p>&#160;</p>
+<p>L'interface de recherche récupère toutes les valeurs ayant l'attribut <span class="hcp1">Current</span> par la fonction <span class="hcp1">PingReceive</span> de la valeur de l'attribut.</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Exemple</p>
+<p>&lt;Field Name="Dossier" &#160;Value = "RecordSQL.Dos" Current="<span style="font-weight: bold;">Dossier</span>" Displayed="true" /&gt;</p>
+<p>&#160;</p>
+<p>Search récupère la valeur du dossier courant pour la fonction : <span style="color: #0000ff;">Pingreceive</span>("Dossier",DossierCourant)</p>
+</body>
+</html>

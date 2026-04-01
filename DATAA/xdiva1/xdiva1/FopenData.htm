@@ -1,0 +1,77 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FopenData</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>FopenData &#160;<a href="Listedesfonctionsavanc_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction FopenData permet d'ouvrir séparément le fichier des données d'un fichier séquentiel-indexé déjà ouvert.</p>
+<p class="Body-Text">Son utilisation est exeptionnelle. Elle est utilisée par exemple lors de la réorganisation des fichiers.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">F</font><font class="hcp2">openData</font> (<font class="hcp3">Tdf1 , Tdf2 , code</font>_<font class="hcp3">réservation</font>)</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf1</font></p>
+<p class="decalage05">Tdf d'un fichier séquentiel-indexé préalablement ouvert.</p>
+<p class="Body-Text"><font class="hcp3">Tdf2</font></p>
+<p class="decalage05">Tdf du fichier des données (en sortie).</p>
+<p class="Body-Text"><font class="hcp3">Code_réservation</font></p>
+<p class="decalage05">Mode de partage du fichier.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text">Pas d'erreur.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text">Autres</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Code d'erreur système.</p>
+</td>
+</tr>
+</table>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">;Balayage des enregistrements du fichier des données.</p>
+<p class="Source">record * htdf tdf1</p>
+<p class="Source">record * htdf tdf2</p>
+<p class="Source">1 art 50</p>
+<p class="Source">1 st X</p>
+<p class="Source">main</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">tdf1.name = "Fprinters.dhfi"&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">hopen(tdf1,"R")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">st = FOpenData(tdf1,tdf2,"P")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">loop hread(tdf2,art) = 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display art&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">endloop&#160;</p>
+</body>
+</html>

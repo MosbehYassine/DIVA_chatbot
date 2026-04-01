@@ -1,0 +1,41 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion de la liste associée à un arbre</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Gestion de la liste associée à un arbre</h3>
+<p class="Body-Text">Le contenu d'un arbre est représenté par une liste, exactement comme celui d'un tableau (Cf. rubrique <a href="Gestiondelalisteassoci_e_untableau.htm">Gestion de la liste associée à un tableau</a>).</p>
+<p class="Body-Text">Il faut toutefois distinguer tableau et arbre sur les points suivants&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">A un instant donné, dans un tableau, tous les éléments présents en liste sont susceptibles d'être affichés, alors que ce n'est pas le cas dans un arbre puisque les sous-niveaux des éléments réduits n'apparaissent pas à l'écran (Cf. rubrique <a href="Descriptiond_unarbre.htm">Description d'un arbre</a>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Tous les éléments d'un tableau doivent être présents en liste. Avec un arbre, un mécanisme particulier est prévu pour vous permettre de <font class="hcp1">ne pas stocker</font> <font style="font-weight: bold; text-decoration: underline;">initialement</font> <font class="hcp1">en liste les sous-niveaux des éléments réduits</font> (la rubrique <a href="Expansionour_ductiond_un_l_mentd_arbre.htm">Expansion ou réduction d'un élément d'arbre</a> explique comment, dans ce cas, compléter la liste au moment où l'utilisateur demande l'expansion d'un élément).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dans un tableau, tous les éléments se situent au même niveau et sont traités indépendamment les uns des autres&#160;; dans un arbre, ce n'est plus le cas du fait de la structure hiérarchisée des éléments. Par exemple (du moins en standard avec XmeListConsultDefault)&#160;:<font face="Symbol" class="hcp2"><br>
+-</font> La suppression ou la sélection d'un élément "&#160;père&#160;" supprime ou sélectionne automatiquement le père ET tous ses sous-niveaux.<font face="Symbol" class="hcp2"><br>
+-</font> Lors d'une création dans un tableau, le nouvel élément est inséré immédiatement derrière l'élément courant&#160;; lors d'une création dans un arbre, la position du nouvel élément relativement à celle de l'élément courant peut varier suivant leurs niveaux respectifs.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chaque ligne d'arbre dispose d'<font class="hcp1">attributs spécifiques</font> liés à la hiérarchisation&#160;: il faut en effet préciser le niveau de l'élément, indiquer s'il est réduit ou expansé, etc. Pour stocker ces attributs, nous utiliserons la <a href="Variabledecontr_led_unarbre.htm">variable de contrôle de l'arbre</a>, objet de la rubrique suivante.</p>
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Sélection dans plusieurs dossiers et recherche de fichiers</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Sélection dans plusieurs dossiers et recherche de fichiers</h3>
+<p class="Body-Text">Pour rechercher des fichiers et / ou pour sélectionner des fichiers dans plusieurs dossiers, utilisez le choix du menu &lt;<font class="hcp1">Rechercher</font>&gt;, qui ouvre la boîte de dialogue "&#160;Recherche de fichier&#160;".</p>
+<p class="Body-Text">Cette recherche tient compte de trois paramètres&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Le ou les chemins.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le <a href="Filtre.htm">filtre</a> (optionnel).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le <a href="Format.htm">format</a> (optionnel).</p>
+</li>
+</ul>
+<p class="Body-Text">La boîte de dialogue permet la saisie du filtre et / ou du format. Le ou les chemins sont à choisir parmi la liste des chemins paramétrés dans Harmony et proposés à l'écran dans un tableau en mode sélection multiple (avec possibilité d'ajouter temporairement des chemins dans ce tableau). La méthode pour effectuer des sélections dans un tel tableau est décrite dans la rubrique consacrée au pointage des fichiers sélectionnés.</p>
+<p class="Body-Text">L'ajout (temporaire) d'un chemin s'obtient par la touche <font class="hcp1">F3</font>, le bouton <font class="hcp1">Création</font> ou en cliquant sur la colonne d'état affichant une étoile. Comme la création n'est que temporaire, le programme saute la saisie du nom du chemin et propose de renseigner uniquement le chemin lui-même (<font class="hcp1">pour créer un chemin de façon permanente</font>, appelez le choix &lt;<font class="hcp1">Chemin</font> <font style="font-family: Symbol; font-weight: bold;" face="Symbol">®</font> <font class="hcp1">Changer les chemins Implicites</font>&gt; du menu - qui fait appel à Xpath - puis cliquez sur le bouton Chemins pour charger le zoom des chemins).</p>
+<p class="Body-Text">&#160;<br>
+Lorsqu'ici vous sélectionnez un chemin, sachez que vous sélectionnez également <font class="hcp1">tous les sous-dossiers du dossier choisi</font>.<br>
+&#160;<br>
+Après validation de la boîte de dialogue, Xtools affiche maintenant les <font class="hcp1">fichiers</font> (correspondant au filtre et au format indiqués) de <font class="hcp1">tous les dossiers ET sous-dossiers</font> choisis. Les sous-dossiers eux-mêmes n'apparaissent pas.</p>
+<p class="Body-Text">Chaque ligne de tableau affiche alors une colonne supplémentaire (par rapport au cas de la sélection dans un dossier unique décrite précédemment), qui présente le dossier contenant le fichier.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Attention</font>&#160;: Dans ce cas, la liste pourra contenir des fichiers portant le même nom. Si vous leur appliquez une fonction de copie, compression ou décompression, ces fichiers homonymes seront tous copiés dans le même fichier destination&#160;: le contenu final de ce dernier correspondra alors au dernier fichier copié.</p>
+</body>
+</html>

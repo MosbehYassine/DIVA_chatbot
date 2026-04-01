@@ -1,0 +1,535 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Restrictions d'utilisation du client léger Web par rapport au client léger Wpf</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:normal; }
+ol.hcp3 { list-style:decimal; }
+p.hcp4 { font-weight:bold;
+font-size:11pt; }
+ul.hcp5 { list-style:disc; }
+p.hcp6 { margin-left:48px; }
+li.hcp7 { list-style:none;
+display:inline; }
+tr.hcp8 { vertical-align:top; }
+td.hcp9 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp10 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Restrictions d'utilisation du client léger Web par rapport au client léger Wpf</h2>
+<p>&#160;</p>
+<p>Les clients légers Web et Wpf sont en grande partie iso-fonctionnels, aussi bien en ce qui concerne l’interface utilisateur que le développement d’applications. Toutefois, le client léger Web s’exécute dans un navigateur Web et certaines fonctionnalités, habituellement offertes par le système Windows et accessibles avec Xwpf, ne sont pas mises à disposition sur le Web (en particulier pour des raisons de sécurité). De plus, quelques autres fonctionnalités n'ont pas été implémentées ou sont utilisées différemment dans la version Web du client léger.</p>
+<p>&#160;</p>
+<p>Cette rubrique présente les <span class="hcp1">différences majeures</span> entre les deux clients légers.</p>
+&#160;
+<p style="font-weight: bold;"><span class="hcp2">Les</span> développeurs <span class="hcp2">trouveront le</span> détail <span class="hcp2">des spécificités et des restrictions concernant la programmation des applications Harmony dans la</span> documentation Xwin - Programmation<span class="hcp2">.</span></p>
+<p>&#160;</p>
+<ol class="hcp3">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp4">Grandes fonctionnalités indisponibles avec un navigateur</p>
+</li>
+</ol>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Interfaces OLE Automation et YOffice</span>.<br>
+Le <span class="hcp1">publipostage</span> avec un traitement de textes n'est plus disponible.<br>
+L'export tableur fonctionne, mais uniquement en passant par l’interface OpenXml.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Interface CTI</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Interface MAPI</span>.<br>
+L'envoi de fax par MAPI depuis le poste client n'est plus disponible.<br>
+Les autres fonctions de messagerie peuvent être mises en œuvre sur un site disposant d’un serveur Exchange, grâce aux fonctions d’interface avec Exchange Server. Le protocole standard MAILTO (schéma d'URI permettant de créer un lien hypertexte vers une adresse courriel) peut aussi être utilisé pour l’envoi de mails simplifiés (sans pièce jointe).<span style="margin-left: 0px;">&#160;<br>
+&#160;</span></p>
+</li>
+<li class="p">
+<p><span class="hcp1">Drag &amp; drop "Externe"</span> (c’est-à-dire d’une fenêtre de navigateur à une autre).</p>
+</li>
+</ul>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Quasi-totalité</span> des fonctions de <span class="hcp1">gestion de fichiers Windows</span>.<br>
+Voir le paragraphe "Copie, exécution et gestion de fichiers Windows".<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Exécution de programmes Windows sur le poste client</span> (fonction LcExec).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Fonctions de <span class="hcp1">gestion de la base de registres du client</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Fonctions de <span class="hcp1">gestion du presse-papiers</span>.<br>
+Ces fonctions s’exécutent sur le serveur et ne lisent donc pas le presse-papiers du client Web.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Affichage de fenêtre en mode caché et fonction WindowShow</span>.<br>
+Il est impossible de cacher la fenêtre d’un navigateur Web. Le mode SW_HIDE (WindowShow, ProgramCall, …) ne peut donc pas fonctionner.<br>
+La fonction WindowShow, qui permet de maximiser, minimiser ou cacher la fenêtre Harmony ne fonctionne pas en client léger Html.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>La <span class="hcp1">zone de notification (traybar)</span> n’est pas disponible.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Formats d'image interdits</span>.<br>
+Tous les formats d’images ne sont pas reconnus sur le Web. C’est le cas en particulier du format WMF (et attention, ceci concerne aussi les images placées par l’utilisateur dans un texte riche).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Touches interceptées par les navigateurs</span>.<br>
+Certaines touches (dépendant du navigateur) ne sont pas disponibles. Un tableau des touches interdites est donné dans la documentation Xwin - Programmation.<br>
+&#160;</p>
+</li>
+</ul>
+<ol start="2" class="hcp3">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp4">Fonctions non implémentées en Html</p>
+</li>
+</ol>
+<p class="hcp6">Citons en particulier :</p>
+<ul start="2">
+<li class="hcp7">
+<ul class="hcp5">
+<li class="p">
+<p>Les <span class="hcp1">objets graphiques :</span></p>
+</li>
+<li class="hcp7">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Hog</span>.<br>
+Concerne l’objet "Graphique" proprement dit mais aussi l’impossibilité de placer un hog dans un objet "Texte" ou dans un en-tête de colonne de tableau.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Graphiques générés par les fonctions du module</span> <span class="hcp1">Ygraph</span>.</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p>Les fonctions Diva <span class="hcp1">PlaySound</span> et <span class="hcp1">MessageBeep</span>.</p>
+</li>
+<li class="p">
+<p>L'attribut dynamique <span class="hcp1">AN_BITMAPS_ET_TITRE</span> (objet "Bouton").</p>
+</li>
+<li class="p">
+<p>Le <span class="hcp1">double clic droit</span>.</p>
+</li>
+<li class="p">
+<p>La non prise en compte des images provenant d’un exécutable (fichier .exe ou .dll - hors icones de xrtDiva.exe), ainsi que celle du paramètre "Petite icone" des images de la feuille de styles.</p>
+</li>
+<li class="p">
+<p>La propriété "Prendre la couleur de la colonne 1" de l’objet tableau.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<ol start="3" class="hcp3">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp4"><span style="font-weight: bold; font-size: 11pt;">Impressions</span></p>
+</li>
+</ol>
+<p class="hcp6">Les impressions génèrent des <span class="hcp1">fichiers au format PDF</span> qui sont téléchargés sur le poste client.<br>
+<br>
+Sauf si le paramétrage demande une impression sur le serveur (auquel cas, l’état est directement édité sur une imprimante du serveur), une impression génère toujours un fichier .dhvw, immédiatement converti au format PDF. Le fichier PDF est téléchargé par le navigateur Web.<br>
+&#160;</p>
+<p class="hcp6">Le client Web ne dispose pas de l’utilitaire DivaltoViewer (ni des commandes "Fermer tous les DivaltoViewer" et "Imprimer et fermer tous les DivaltoViewer").<br>
+<br>
+L’assistant de personnalisation des masques d’impression n’est pas disponible en Html.</p>
+<p>&#160;</p>
+<ol start="4" class="hcp3">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp4">Exports vers un tableur</p>
+</li>
+</ol>
+<p class="hcp6">Les <span class="hcp1">exports vers un tableur développés avec l’interface OpenXml</span> (proposés par exemple par les zooms) fonctionnent avec le client léger Web (le fichier au format .xlsx est téléchargé sur le poste client).</p>
+<p>&#160;</p>
+<ol start="5" class="hcp3">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp4">Messagerie</p>
+</li>
+</ol>
+<p class="hcp6">L’envoi de mail et la synchronisation avec le gestionnaire de messagerie du poste client (Outlook, …) par l'interface MAPI sont remplacés par des fonctions équivalentes de Microsoft Exchange Server (méthode également disponible avec le client léger Wpf). Bien entendu, ceci ne fonctionne que si le site est équipé d'un serveur Exchange.</p>
+<p class="hcp6">En client léger Html, une autre méthode est possible pour l’envoi de mails simplifiés (sans pièce jointe). Elle utilise le protocole standard MAILTO (schéma d'URI permettant de créer un lien hypertexte vers une adresse courriel) et doit être activée dans DivaltoViewer.</p>
+<p class="hcp6">&#160;</p>
+<ol start="6" class="hcp3">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp4">Copie, exécution et gestion de fichiers Windows</p>
+</li>
+</ol>
+<ul class="hcp5">
+<li class="p">
+<p class="hcp6">La fonction <span class="hcp1">LCWinDownload</span> (copie d'un fichier du serveur vers le client) télécharge le fichier sur le poste client et déclenche l’exécution de l’application associée (si elle est "connue" du navigateur). Par exemple, l'affichage d’une pièce jointe dans Divalto fonctionne.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p class="hcp6">La fonction <span class="hcp1">LCWinUpload</span> (copie d'un fichier du client vers le serveur) est utilisable dans deux cas précis :</p>
+</li>
+<li class="hcp7">
+<ul class="hcp5">
+<li class="p">
+<p class="hcp6">Après un <span class="hcp1">drag &amp; drop de fichiers</span> dans la fenêtre du navigateur.</p>
+</li>
+<li class="p">
+<p class="hcp6">Après appel à la fonction <span class="hcp1">WinGetOpenFileName</span>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 88px;">Les fichiers déposés ou sélectionnés sont placés dans un flux interne au navigateur, ce qui permet ensuite de les récupérer en appelant la fonction LCWinUpload.<span style="margin-left: 48px;"><br>
+Attention : Ce flux n’est valide que 15 minutes.<br>
+<br>
+Un appel « direct » à cette fonction en spécifiant un fichier quelconque du poste client n’est pas possible.</span></p>
+<ul class="hcp5">
+<li class="p">
+<p class="hcp6">La fonction <span class="hcp1">LCWinShellExecute</span> (exécution d'un programme associé à un fichier) peut être utilisée en particulier pour afficher une url Web ou un fichier .dhvw :</p>
+</li>
+<li class="hcp7">
+<ul class="hcp5">
+<li class="p">
+<p class="hcp6">Une url Web est transmise au navigateur du client, qui affiche cette url dans une fenêtre à part.</p>
+</li>
+<li class="p">
+<p class="hcp6">Un fichier .dhvw est considéré comme situé sur le serveur, il est converti en PDF et le fichier PDF résultant est téléchargé sur le navigateur du client. Le poste client pourra lire ce fichier avec Acrobat Reader.</p>
+</li>
+<li class="p">
+<p class="hcp6">Avec d’autres types de fichier, la fonction est difficilement utilisable car elle nécessite de connaître le chemin du fichier sur le poste client.</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp5">
+<li class="p">
+<p class="hcp6">La fonction <span class="hcp1">WinGetOpenFileName</span> ouvre la boîte de dialogue de sélection des fichiers de Windows (voir fonction LCWinUpload ci-dessus).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p class="hcp6">Les autres fonctions "Windows" soit ne sont pas fonctionnelles (LcWinGetFilesAttributes, LcWinSetFilesattributes, WinGetSaveFileName, WinShBrowseForFolder, …), soit attaquent le serveur (WinDirGetFile, FindExecutable, GetTempPath, WinCreateDirectory, LCWinShGetSpecialFolderLocation, …).</p>
+</li>
+</ul>
+<p class="hcp6">&#160;</p>
+<ol start="7" class="hcp3">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp4">Différences d'interface utilisateur</p>
+</li>
+</ol>
+<p class="hcp6">Ce paragraphe mentionne les différences entre les clients légers Wpf et Html concernant l’interface utilisateur :</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Fermeture du navigateur</span>.<br>
+En cliquant sur la croix de fermeture de la fenêtre du navigateur (ou en tapant Alt+F4), l’utilisateur a toujours la possibilité de refermer le navigateur (alors qu’en client léger Wpf, cette même opération demande à l’application de se terminer et c’est elle qui décide en dernier ressort d’accéder ou non à la demande de l’utilisateur).<br>
+Dans certains cas, une <span class="hcp1">demande de confirmation</span> est toutefois affichée. Il est alors conseillé de ne <span class="hcp1">jamais confirmer la fermeture</span>.<br>
+De manière générale, plutôt que de refermer la fenêtre du navigateur, il est conseillé de <span class="hcp1">quitter l’application en l’abandonnant</span> (bouton Abandon, choix équivalent du menu, frappe de la touche Echap).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Touches indisponibles pour l’utilisateur</span>.</p>
+</li>
+<li class="hcp7">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Alt+F4</span> ne peut pas être utilisée pour <span class="hcp1">refermer une sous-fenêtre Harmony</span>.<br>
+Contrairement à Wpf qui ouvre une nouvelle fenêtre Windows pour afficher une sous-fenêtre (par exemple, la fenêtre de choix d'un filtre dans les zooms), une sous-fenêtre s'affiche dans la fenêtre courante du navigateur. Alt+F4 refermera complètement le navigateur au lieu de simplement refermer la sous-fenêtre.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Ctrl+Tab</span> et <span class="hcp1">Maj+Ctrl+Tab</span> permettent habituellement le <span class="hcp1">passage à l’onglet suivant et précédent</span>.<br>
+Elles ne fonctionnent ni sous IE ni sous Chrome qui les interceptent. Les touches Ctrl+N restent disponibles pour activer directement l’onglet de rang N.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">En dehors de l'interface d'accueil, F11</span> n’est pas disponible pour maximiser la fenêtre du navigateur (elle est utilisée par Divalto).<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Signification des touches du clavier dans le calendrier (datepicker)</span>.<br>
+Lors de la saisie d’une date, le calendrier peut être ouvert en cliquant sur l’icône qui le représente (hors saisie dans un tableau) ou en tapant la touche Alt+Flèche en bas. Pour se déplacer dans le calendrier au clavier, on utilisera les touches suivantes :<br>
+<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 22.304%;">
+<col style="width: 77.696%;">
+<tr class="hcp8">
+<td style="border: Solid 1px #000000;width: 22.304%; padding-right: 10px; padding-left: 10px;">
+<p>Pg. Préc</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 77.696%; padding-right: 10px; padding-left: 10px;">
+<p>Mois précédent</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Pg. Suiv</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Mois suivant</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Ctrl+Pg. Préc</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Année précédente</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Ctrl+Pg. Suiv</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Année suivante</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Ctrl+Orig</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Mois courant</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Flèche à gauche</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Jour précédent</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Flèche à droite</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Jour suivant</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Flèche en haut</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Semaine précédente</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Flèche en bas</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Semaine suivante</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Entrée</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Valide la date couramment sélectionnée (*) et referme le calendrier</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Echap</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Referme le calendrier sans validation</p>
+</td>
+</tr>
+<tr class="hcp8">
+<td style="width:22.304%;" class="hcp9">
+<p>Ctrl+Fin</p>
+</td>
+<td style="width:77.696%;" class="hcp10">
+<p>Referme le calendrier et efface la date</p>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+<p class="hcp6"><span class="hcp1">(</span>*) Le survol d'un jour à la souris est prioritaire par rapport à la pré-sélection d'un jour au clavier : dès qu'un jour est survolé à la souris, le jour pré-sélectionné au clavier n'est plus visualisé (et ce, même si on change de jour au clavier).</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Sous-fenêtres</span>.<br>
+Une sous-fenêtre est une fenêtre popup complémentaire affichée par une application (par exemple, la sous-fenêtre proposée après la sélection du choix Filtrer / Trier d’un zoom) :</p>
+<ul class="hcp5">
+<li class="p">
+<p>Contrairement à Wpf qui affiche une "vraie" fenêtre Windows, Html simule ce type de fenêtre à l’intérieur de la fenêtre courante du navigateur.</p>
+</li>
+<li class="p">
+<p>Wpf invalide complètement la fenêtre précédente, alors que Html grise simplement le fond de l’écran précédent.</p>
+</li>
+<li class="p">
+<p>En Html, les sous-fenêtres de taille variable ne proposent pas les icônes de minimisation et maximisation.</p>
+</li>
+<li class="p">
+<p style="font-weight: normal;">Alt+F4 ne peut pas être utilisée pour refermer une sous-fenêtre.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Division des tableaux en deux parties</span>.<br>
+Certains tableaux font l'objet d'une séparation entre partie gauche et partie droite. En Wpf, la largeur de la partie gauche ne peut pas être réduite en deçà d’une valeur limite. Le tableau Html le permet et, le cas échéant, positionne un second ascenseur horizontal permettant de scroller cette partie gauche indépendamment de la partie droite.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">En-têtes de colonne de tableau</span>.<br>
+Contrairement à Wpf, un texte qui déborde dans un en-tête de colonne de tableau n’est pas centré mais cadré à gauche.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Texte riche</span>.<br>
+On notera quelques différences d’interface concernant la saisie des textes riches :</p>
+</li>
+<li class="hcp7">
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Barre d’outils et menu contextuel</span>.<br>
+La liste des boutons de la barre d’outils et des choix du menu contextuel est différente de celle proposée par Xwpf.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Choix des polices de caractères</span>.<br>
+Seul IE permet de récupérer la liste exhaustive des polices disponibles. Pour les autres navigateurs, le composant Rtf propose une liste réduite de quelques polices parmi les plus courantes.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Touches de tabulation</span>.<br>
+Les touches Tab et Maj+Tab restent sans effet. Utiliser les boutons de la barre d’outils pour indenter ou dés-indenter un paragraphe.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Tous les types d’image ne sont pas supportés</span> par tous les navigateurs.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Gestion des lignes blanches</span>.<br>
+Une anomalie (connue mais non actuellement corrigée) du composant gérant les fichiers Rtf provoque une gestion erronée des lignes blanches. Les effets dépendent du navigateur (interlignes erronés, résultat erroné en cas de suppression, insertion d’un espace, etc.).</p>
+</li>
+<li class="p">
+<p>Le drag &amp; drop d'une cellule de tableau vers un texte riche en saisie n’est pas disponible.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Onglets multi-ligne</span>.<br>
+Windows en général et Wpf en particulier placent toujours l’onglet actif sur la ligne du bas d’un groupe d’onglets affiché sur plusieurs lignes. Le cas échéant, il en résulte une inversion de l’ordre des lignes au changement d’onglet actif. Ce fonctionnement n’est pas reconduit en Html : l’ordre d’affichage des différentes lignes d’onglets reste inchangé, quel que soit l’onglet activé.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Images "Filtre" et "Tri"</span>.<br>
+Contrairement à Wpf, les images "Filtre" et "Tri" affichées dans un en-tête de colonne de tableau ne prennent pas la couleur de la police de cette colonne.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Sous-menus et menus contextuels</span>.<br>
+Le composant utilisé pour la gestion des menus présente quelques différences par rapport aux menus "standard Windows" de Wpf :</p>
+</li>
+<li class="hcp7">
+<ul class="hcp5">
+<li class="p">
+<p>De manière générale, <span class="hcp1">les éléments affichés dans un navigateur ne peuvent pas déborder de la fenêtre du navigateur</span>, contrairement à Wpf qui fait par exemple déborder un sous-menu, la fenêtre des choix d’un objet multi-choix, etc.<br>
+De plus, les <span class="hcp1">sous-menus ne disposent pas d’ascenseurs</span> en Html. Il est donc possible, si le nombre de choix est suffisamment important, qu’un sous-menu ne soit pas visible en totalité. Dans ce cas, la seule possibilité pour sélectionner un choix non visible est d’agrandir la taille de la fenêtre du navigateur.<br>
+Remarque : Pour limiter les cas d’occurrence de cet effet, l’interligne entre les choix d’un sous-menu a été diminué par rapport à Wpf.</p>
+</li>
+<li class="p">
+<p>Les <span class="hcp1">raccourcis clavier ne sont pas traités</span>.</p>
+</li>
+<li class="p">
+<p>Les <span class="hcp1">déplacements au clavier</span> ont un fonctionnement qui diffère du fonctionnement habituel sous Windows en plusieurs points. Citons par exemple : le curseur clavier s'arrête sur tous les choix, y compris les choix grisés et les séparateurs ; visuellement, la sélection au clavier est distincte de celle à la souris (deux choix peuvent se retrouver simultanément surlignés) ; la sélection d'une tête de sous-menu ne l'ouvre pas implicitement (il faut taper Flèche en bas ou à droite pour l’ouvrir), etc.</p>
+</li>
+<li class="p">
+<p>Un clic sur un choix non terminal referme le sous-menu s'il est déjà ouvert.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<ol start="8" class="hcp3">
+<li style="font-weight: bold; font-size: 11pt;" class="p">
+<p class="hcp4">Différences entre les agendas Wpf et Html</p>
+</li>
+</ol>
+<p class="hcp6">Le composant logiciel de base de l’objet agenda Divalto nous est fourni par la société TELERIK. Il existe toutefois quelques différences notables entre le composant Html et le composant Wpf. Nous détaillons ici ces différences :</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp1">Regroupements en vue semaine et semaine de travail</span>.<br>
+Avec un regroupement par ressource, il existe, pour les vues semaine et semaine de travail, une différence majeure. Alors que l’agenda Wpf priorise la date par rapport aux ressources, l’objet Html fait le contraire et ne laisse aucune possibilité de modifier la hiérarchie de regroupement.<br>
+<br>
+Exemple : Nos ressources se composent de trois personnes. Lorsque nous regroupons par personne en vue semaine (ou semaine de travail), nous obtenons en Wpf, pour chaque jour, une colonne par personne. En Html, on obtient en revanche, pour chaque ressource, une colonne par jour.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Zoom</span>.<br>
+Cette fonctionnalité n’est pas disponible avec le client Html.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Orientation</span>.<br>
+Cette fonctionnalité n’est pas disponible avec le client Html.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Jours de la semaine</span>.<br>
+Les jours de la semaine ne sont pas traités de la même manière en Html et en Wpf :</p>
+</li>
+<li class="hcp7">
+<ul class="hcp5">
+<li class="p">
+<p>En Wpf, il est possible de définir les jours de la semaine de manière individuelle et l’on peut ainsi définir par exemple une semaine de travail contenant uniquement les lundis, mercredis et jeudis.</p>
+</li>
+<li class="p">
+<p>La version Html impose l’utilisation du début et de la fin de semaine de travail. Cela exclut la possibilité de visualiser des semaines "discontinues" comme dans l’exemple précédent. Les paramètres de la fenêtre de personnalisation ont été mis à jour pour tenir compte de ces différences.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Séparateurs majeurs / mineurs</span>.<br>
+Il existe une légère différence de traitement des séparateurs entre Html et Wpf : en Html, les séparateurs mineurs n’existent pas mais sont remplacés par un &#160;nombre de ticks mineurs par graduation principale. Au niveau utilisateur, rien ne change car un traitement automatique effectue les calculs et conversions nécessaires. Cependant, il peut y avoir dans certains cas une différence à l’affichage.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Vue Chronologie</span>.<br>
+La vue chronologie Html diffère aussi légèrement de sa version Wpf. Contrairement à l’objet Wpf, la vue chronologie Html prend en compte les paramétrages utilisateur qui concernent les heures du jour et les jours de la semaine (début et fin de semaine de travail). Ainsi, la vue chronologie version html permet nativement de ne pas afficher les heures de la nuit et les deux jours du week-end.<br>
+<br>
+Par ailleurs, l’occupation de l’espace est moins naturelle en Html. La hauteur des lignes est fixe alors qu’en Wpf, la hauteur des lignes s’ajuste de manière à occuper tout l’espace disponible.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Langue</span>.<br>
+L’objet agenda du client Wpf utilise la langue de l’utilisateur Windows pour l’affichage des dates. Pour l’objet agenda Html, c’est la langue du navigateur qui est utilisée. Ces deux langues peuvent ne pas être les mêmes.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Rendu</span>.<br>
+Le rendu peut différer de manière assez importante entre les deux clients, notamment au niveau des largeurs de colonnes, des hauteurs de lignes et de l’apparition des ascenseurs.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

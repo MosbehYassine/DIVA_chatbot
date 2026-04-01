@@ -1,0 +1,89 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>RecordSql.PagingReaderSelect</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+p.hcp3 { font-weight:bold; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp5 { font-weight:bold;
+margin-left:8px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>RecordSql.PagingReaderSelect &#160;&#160;<span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>La méthode PagingReaderSelect exécute la requête SQL de manière paginée. Les filtres, les critères de tris etc. doivent être préalablement positionnés.</p>
+<p>La pagination permet de lire la table par bloc. Cela permet d’optimiser les performances sur un affichage de tableau par exemple.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Attention</span> : Cette fonctionnalité n’est pas supportée par DB2, ni par les versions de Microsoft SQL Server antérieures à la version 2012.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp1">Long</span> RecordSql.<span class="hcp1">PagingReaderSelect</span> ( [ <span class="hcp2">IdReader</span>] , <span class="hcp2">Offset , Count</span> )</p>
+<p>&#160;</p>
+<p class="hcp3"><span class="hcp1">Paramètre</span></p>
+<p style="font-style: italic;">IdReader</p>
+<p class="Decalage05">Si ce paramètre est omis, la méthode PagingReaderSelect retourne l'identifiant d'un nouveau Reader.<br>
+Si ce paramètre est précisé, la méthode PagingReaderSelect utilise le Reader passé en paramètre.</p>
+&#160;
+<p><span class="hcp2">Offset</span></p>
+<p class="Decalage05">Indique l’indice de départ de lecture</p>
+<p class="Decalage05">&#160;</p>
+<p><span class="hcp2">Count</span></p>
+<p class="Decalage05">Indique le nombre de lignes à lire</p>
+<p class="Decalage05">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Retour</font></p>
+<table style="left: 0px; top: 237px; height: 81px;" cellspacing="0" width="653">
+<tr style="vertical-align: top;">
+<td style="width:16.24%;" class="hcp4">
+<p class="Body-Text">&#160;</p>
+</td>
+<td style="width:83.76%;" class="hcp4">
+<p class="Body-Text">La méthode retourne l'identifiant du Reader.</p>
+<p class="Body-Text">Attention, même dans le cas ou IdReader est spécifié, il faut récupérer le résultat de la fonction, car ReaderSelect peut retourner une autre valeur.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Toutes les erreurs provoquent l'arrêt du programme</p>
+&#160;
+<p class="hcp3"><span class="hcp1">Exemple</span></p>
+<p style="margin-left: 48px;">Voir <a href="Les_Readers.htm" style="font-weight: normal;">Les Readers</a></p>
+<p class="Source">RecordSql gtrsart.dhoq Article</p>
+<p class="Source">1 idReader L</p>
+<p class="Source">1 offset L</p>
+<p class="Source">1 nbLu L</p>
+<p class="Source">&#160;</p>
+<p class="Source">nbLu = 50</p>
+<p class="Source">Offset = 0</p>
+<p class="Source">&#160;</p>
+<p class="Source">idReader = article.ReaderOpen()</p>
+<p class="Source">do while nbLu = 50</p>
+<p class="Source">&#160;&#160;&#160;nbLu = 0</p>
+<p class="Source">&#160;&#160;&#160;idReader = article.PagingReaderSelect(idreader, offset, 50)</p>
+<p class="Source">&#160;&#160;&#160;do while article.ReaderNext(idReader)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;nbLu++</p>
+<p class="Source">&#160;&#160;&#160;wend</p>
+<p class="Source">&#160;&#160;&#160;offset += nbLu</p>
+<p class="Source">wend</p>
+<p class="Source">&#160;</p>
+<p class="Source">article.ReaderClose(idReader)</p>
+<p class="Source">&#160;</p>
+<p class="hcp5">&#160;</p>
+<p class="hcp5">Voir</p>
+<p style="margin-left: 8px;"><a href="ReaderOpen.htm">ReaderOpen</a>, <a href="ReaderSelect.htm">ReaderSelect</a></p>
+<p style="font-weight: bold; margin-left: 48px;">&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

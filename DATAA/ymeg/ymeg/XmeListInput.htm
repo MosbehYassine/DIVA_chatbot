@@ -1,0 +1,220 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListInput</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp6 { list-style:disc; }
+font.hcp7 { font-family:Symbol; }
+span.hcp8 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListInput &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Lancement de la saisie d'une ligne d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+XmeListInput</font> (<font class="hcp3">Identifiant, Séquence</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="604">
+<tr class="hcp4">
+<td style="width:19.54%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.46%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.54%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Séquence</font></p>
+</td>
+<td style="width:80.46%;" class="hcp5">
+<p class="Body-Text">Numéro de <a href="Pointsdes_quence.htm">point de séquence</a> de la donnée sur laquelle vous voulez que la saisie commence, ou&#160;:<br>
+0 = début de saisie sur la première colonne<br>
+65535 = début de saisie sur la dernière colonne.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure <font class="hcp2">XmeListInput</font> lance la <font class="hcp2">saisie</font> de la <font class="hcp2">ligne courante</font> du tableau dont l'identifiant est fourni en paramètre.<br>
+Remarque&#160;: Les lignes du tableau sont automatiquement affichées si la procédure <a href="XmeListDisplay.htm">XmeListDisplay</a> n'a pas été appelée au préalable, ou actualisées si une modification a eu lieu depuis le dernier affichage.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'ordre normal de saisie suit le positionnement des colonnes dans le tableau. Mais vous pouvez faire <font class="hcp2">débuter</font> la saisie sur une donnée autre que celle placée en tête. Pour ce faire, attribuez un numéro de point de séquence à la donnée choisie (double-cliquez sur cette donnée dans le dessin du masque et renseignez la propriété <font class="hcp2">Point de séquence</font>) et placez ce numéro dans le paramètre <font style="font-weight: bold; font-style: italic;">Séquence</font>. Les valeurs que vous pouvez donner à ce paramètre sont&#160;:<font face="Symbol" class="hcp7"><br>
+-</font> <font class="hcp2">0</font>&#160;: la saisie débutera normalement, sur la donnée placée en première colonne.<font face="Symbol" class="hcp7"><br>
+-</font> <font class="hcp2">65535</font>&#160;: la saisie commencera sur la donnée placée en <font class="hcp2">dernière</font> colonne.<font face="Symbol" class="hcp7"><br>
+-</font> <font class="hcp2">Autre valeur</font>&#160;: la saisie débutera sur la donnée à laquelle vous avez attribué cette valeur comme numéro de point de séquence.<br>
+Au sujet des points de séquence, consultez aussi le chapitre <a href="Souris_Positionnementsensaisiedemasque.htm">Souris : Positionnements en saisie de masque</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Une saisie de ligne de tableau diffère peu d'une saisie habituelle de page de masque. Pour tous renseignements complémentaires, consultez le chapitre <a href="Programmationdelasaisied_unmasque.htm">Programmation de la saisie d'un masque</a>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Attention&#160;:</font></p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure XmeListInput <font class="hcp2">NE peut être appelée QUE</font> si la page de masque contenant le tableau est la page courante (ou une de ses pages panels).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Cette procédure s'appelle <font class="hcp2">uniquement</font> pour <font class="hcp2">démarrer</font> la saisie de la ligne. Pour poursuivre la saisie après un point d'arrêt ou un piège de touche, il faut appeler la procédure <a href="XmeListInputNext.htm">XmeListInputNext</a> (exactement comme un XmeNext poursuit une saisie lancée par XmeInput)&#160;: rappeler la procédure XmeListInput réinitialiserait complètement la saisie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp2">saisie d'une ligne</font> de tableau <font style="font-weight: bold; text-decoration: underline;">doit impérativement se terminer</font> par un <font class="hcp2">appel à la procédure</font> <a href="XmeListInputRet.htm">XmeListInputRet</a> (voir l'exemple).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font>&#160;:</p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">A l'occasion d'une saisie de masque classique, vous pouvez demander à Ywpf d'exécuter une séquence de traitement après la saisie du masque pour, par exemple, effectuer un <font class="hcp2">contrôle global</font> des données saisies (Cf. rubrique <a href="Traitementapr_ssaisiedumasque.htm">Traitement après saisie du masque</a>). De la même manière, vous pouvez demander à Ywpf d'exécuter une séquence de traitement après la saisie d'une ligne&#160;: dans Xwin, saisissez votre séquence dans la propriété du tableau intitulée <font class="hcp2">Traitement après saisie d'une ligne</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il n'est généralement pas souhaitable que la <font class="hcp2">saisie</font> d'une ligne de tableau puisse être interrompue par n'importe quel événement souris (par exemple, comment interpréter un déplacement dans la liste via l'ascenseur, en cours de création ou de modification d'une ligne&#160;?).<br>
+En conséquence, Ywpf <font class="hcp2">invalide</font> par défaut de nombreux <font class="hcp2">événements souris</font> pendant une saisie de ligne de tableau. En particulier&#160;:</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">Un clic sur un onglet.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un clic "tableau" quelconque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un clic sur une donnée en saisie, autre que celles situées dans la ligne en cours.<br>
+En particulier, les <a href="Programmationdupointd_arr_t_Demandedesaisie_.htm">points d'arrêt "Demande de saisie"</a> sont ignorés.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;">Par contre, les événements souris associés aux données saisies, aux boutons, boutons de barres d'outils et choix de menu sont traités à la manière habituelle.<br>
+<br>
+<br>
+Ce fonctionnement "normal" de la saisie des données d'un tableau peut toutefois être assoupli si vous positionnez, dans les propriétés de l'objet Tableau, l'option "<span class="hcp8">Arrêts en saisie de ligne</span>" à la valeur "<span class="hcp8">Autorisés</span>". Dans ce cas, pendant la saisie d'une ligne, les <span class="hcp8">points d’arrêt suivants rendent aussi la main au programme appelant</span> :</p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">Clic sur une <span class="hcp8">cellule d’une autre ligne du même tableau</span> (à condition que la cellule contienne un objet saisissable). Ceci autorise la saisie d’un tableau vu comme un objet "global" et non plus ligne par ligne.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">Clic sur une <span class="hcp8">donnée saisissable d’une page</span>, à condition que la page concernée soit paramétrée avec le <a href="Programmationdupointd_arr_t_Demandedesaisie_.htm">point d'arrêt "Demande de saisie"</a>. Ce point d’arrêt est obligatoire, <span style="text-decoration: underline;">même si la donnée se trouve dans la page contenant le tableau courant</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 48px;">Clic sur un <span class="hcp8">onglet</span>.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;"><span style="font-weight: bold; text-decoration: underline;">Mais attention</span> : cette option doit être utilisée en toute connaissance de cause car autoriser des points d’arrêt qui amènent à quitter la saisie en cours complique fortement la programmation de l’objet tableau. En particulier, on pensera à contrôler la cohérence des informations déjà entrées par l’opérateur sur la ligne dont la saisie est interrompue.</p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">Dans votre programmation des points d'arrêt et de traitement, tenez compte du fait que l'utilisateur a normalement la <font class="hcp2">possibilité d'intervertir l'ordre des colonnes</font> du tableau et donc l'ordre de saisie des données de la ligne. Mais si cela complique trop la programmation, vous pouvez interdire cette facilité&#160;: dans les propriétés du tableau, désactivez l'option <font class="hcp2">Colonnes déplaçables à partir de la colonne</font>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Schéma de programmation de saisie d'une ligne de tableau</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Ligne</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;RECORD DDSYS.dhsd Zoom&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 Ident L</p>
+<p class="Source">1 fini X</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Procédure : SAISIE</p>
+<p class="Source">;Description : Saisie de la ligne courante</p>
+<p class="Source">&#160;</p>
+<p class="Source">PROCEDURE Saisie</p>
+<p class="Source">BEGINP</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;fini = 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListInput (Ident,0) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lance la saisie&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;DO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tests des causes de&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;SWITCH Harmony.Arret &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;l'interruption&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.Key = K_ESCAPE</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;fini = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;abandon</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE 10 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;point d'arrêt</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE 20 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;piège de touche (appel de zoom)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ZOOMSQL (Zoom,"FOUR","FF90FO.dhof","FFY90FO.dhop", \&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Action = ZOOM_STANDARD, Recup = TRUE)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;IF Zoom.Status = E_ZOOM_OK &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;zoom validé ?</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;=&gt; donnée suivante</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMENEXT_TEST_ABANDON&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ENDIF &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;sinon ressaisie même donnée&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(Retour = 0)&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;après les points d'arrêt&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.key in (K_UP, K_BTAB) &#160;&#160;&#160;&#160;&#160;;flèche en haut ou Back-Tab</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;sur la 1ère colonne :</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;on ne fait rien =&gt;&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ressaisie (Retour=0)&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;validation ou sortie&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;par Tab ou Flèche bas&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;sur la dernière colonne&#160;:&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.Key in (K_RETURN, K_TAB, K_DOWN)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;fini = 2</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;WHILE fini = 0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;suite de la saisie&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;XmeListInputNext (Ident, Harmony.Retour, Harmony.CplRetour)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;WEND&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListInputRet (Ident) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;termine la saisie&#160;</p>
+<p class="Source">ENDP</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Schéma de programme principal</p>
+<p class="Source">&#160;</p>
+<p class="Source">MAIN&#160;</p>
+<p class="Source">...</p>
+<p class="Source">Ligne = " "</p>
+<p class="Source">XmeLoad ("EOBJTAB")</p>
+<p class="Source"><font class="hcp2">X</font>meInfoPage ("EOBJTAB",1)</p>
+<p class="Source">XmeSetWindowSize ("EOBJTAB",1,Harmony.Opara3,Harmony.Opara4)</p>
+<p class="Source">&#160;</p>
+<p class="Source">Ident = XmeListGetId ("EOBJTAB",1,"TABLEAU",Ligne)</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">XmeListAddEnd (Ident, Ligne)</p>
+<p class="Source">XmeListIndex &#160;(Ident, Ligne, 1)</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">XmeDispv ("EOBJTAB",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affichage page tableau</p>
+<p class="Source">Saisie &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;saisie ligne courante</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeInput.htm">XmeInput</a></p>
+<p class="Body-Text"><a href="Programmationdelasaisied_unmasque.htm">Programmation de la saisie d'un masque</a></p>
+<p class="Body-Text"><a href="XmeListGetSequence.htm">XmeListGetSequence</a></p>
+</body>
+</html>

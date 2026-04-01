@@ -1,0 +1,55 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Validité d'un groupe d'onglets</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Validité d'un groupe d'onglets</h3>
+<p class="Body-Text">Un groupe d'onglets n'est valide que s'il appartient à la fenêtre Harmony courante et si une saisie simple ou une consultation est demandée par le programme (<font class="hcp1">XmeInput</font>, <font class="hcp1">XmeConsult<span style="font-weight: normal;">,</span> XmeListConsult</font>). De plus :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">En consultation de tableau (<font class="hcp1">XmeListConsult</font>) :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Les onglets placés sur des pages non chaînées sont valides.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les onglets placés sur des <span class="hcp3">pages chaînées sont ignorés si la page en cours fait partie du groupe d'onglets</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les onglets avec point d'arrêt placés sur des pages chaînées sont valides, si la page en cours ne fait pas partie du groupe d'onglets.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Rappelons aussi la restriction indiquée dans la rubrique précédente : lorsque l'utilisateur clique sur un onglet <span class="hcp3">déjà actif</span>, Windows ne génère aucun événement.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un groupe d'onglets est toujours <font class="hcp1">invalidé</font> lors de la <font class="hcp1">saisie</font> d'une <font class="hcp1">ligne de tableau</font> (<font class="hcp1">XmeListInput</font>).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="YMEG.chm::/Ymeg/Pages_panels_à_onglets.htm">Page mère et pages panels à onglets</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,105 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Installation de XLAN sur le serveur i</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { font-weight:normal; }
+span.hcp4 { font-weight:normal; }
+p.hcp5 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Installation de XLAN sur le serveur IBM i</h1>
+<p>&#160;</p>
+<p class="hcp1">Attention</p>
+<p>Avant d'effectuer l'installation, veuillez lire le document Readme.doc à la racine du CD de XLAN for i, afin de vérifier les prérequis matériel et logiciel. Assurez-vous que votre serveur est compatible avec le produit XLAN for i et que les PTF nécessaires au bon fonctionnement de XLAN soient bien installées sur le serveur.</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2">Prérequis du poste client</span></p>
+<p>L'installation de XLAN sur le serveur IBM i s'effectue à partir d'un poste client. Le logiciel « <span class="hcp2">IBM System i Access for Windows</span> » doit être installé sur ce poste client.</p>
+<p>&#160;</p>
+<p class="hcp1">Attention : En cas de mise à jour du serveur, ne pas installer le répertoire /divalto/sys de l'IFS. Vous écraseriez vos fichiers de configuration.</p>
+<p>&#160;</p>
+<p class="hcp1">Installation à partir d'un PC par System i Navigator</p>
+<p class="hcp3">Toutes les commandes d'installation se trouvent dans le fichier InstallationXLAN.sql à la racine du CD.</p>
+<ol style="list-style: decimal;">
+<li style="font-weight: normal;" class="p">
+<p class="hcp3"><span class="hcp4">Ouvrir une session dans System i Navigator avec le profil QSECOFR ou un profil disposant du droit spécial *ALLOBJ.</span></p>
+</li>
+<li style="font-weight: normal;" class="p">
+<p class="hcp3">Choisir "Exécution d'un script SQL" dans System i Navigator et ouvrir le script InstallationXLAN.sql</p>
+</li>
+<li style="font-weight: normal;" class="p">
+<p class="hcp3"><span class="hcp4">Exécuter les 3 commandes de l'étape 1.</span></p>
+</li>
+<li style="font-weight: normal;" class="p">
+<p class="hcp3">Pou<span class="hcp4">r l'étape 2 FTP suivre les instructions du paragraphe "3.Transfert des fichiers vers l'IBM i par FTP" .</span></p>
+</li>
+<li style="font-weight: normal;" class="p">
+<p class="hcp3">Exécuter les commandes de l'étape 3.</p>
+</li>
+</ol>
+<p class="hcp1"><span class="hcp2">Installation par une session 5250</span></p>
+<p>Ouvrir une session 5250 avec le profil QSECOFR ou un profil disposant du droit spécial *ALLOBJ.</p>
+<p>&#160;</p>
+<p class="hcp1">1. Création du profil utilisateur XLAN pour l’application XLAN for i</p>
+<p>Créer le profil utilisateur XLAN avec la commande suivante :</p>
+<p class="hcp5">CRTUSRPRF USRPRF(XLAN) PASSWORD() CCSID(1147) SPCAUT(*SERVICE)</p>
+<p>Nb : le CCSID 1147 correspond au jeu de caractères pour une installation française.</p>
+<p>&#160;</p>
+<p class="hcp1">2. Création des fichiers de sauvegarde (SAVF)</p>
+<p>Créer deux fichiers de sauvegarde XLAN et DIVALTOSYS dans la bibliothèque QGPL, en utilisant les commandes suivantes :</p>
+<p class="hcp5">CRTSAVF QGPL/XLAN</p>
+<p class="hcp5">CRTSAVF QGPL/DIVALTOSYS</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2">3. Transfert des fichiers vers le serveur IBM i par FTP</span></p>
+<p>Transférer, en utilisant FTP, les fichiers XLAN.SAVF et DIVALTOSYS.SAVF de votre PC vers les fichiers de sauvegarde QGPL/XLAN et QGPL/DIVALTOSYS. Attention de ne pas oublier l'option bin.</p>
+<p>Exemple :</p>
+<p class="hcp5">C:\&gt;FTP STN523P2</p>
+<p class="hcp5">Connected to STN523P2.</p>
+<p class="hcp5">220-QTCP at STN523P2.</p>
+<p class="hcp5">220 Connection will close if idle more than 5 minutes.</p>
+<p class="hcp5">User (STN523P2:(none)): qsecofr</p>
+<p class="hcp5">331 Enter password.</p>
+<p class="hcp5">Password:</p>
+<p class="hcp5">230 QSECOFR logged on.</p>
+<p class="hcp5">ftp&gt; bin</p>
+<p class="hcp5">200 Representation type is binary IMAGE.</p>
+<p class="hcp5">FTP&gt;cd QGPL</p>
+<p class="hcp5">250 “QGPL” is current library</p>
+<p class="hcp5">ftp&gt; put xlan.savf xlan</p>
+<p class="hcp5">200 PORT subcommand request successful.</p>
+<p class="hcp5">150 Sending file to member XLAN in file XLAN in library QGPL.</p>
+<p class="hcp5">226 File transfer completed successfully.</p>
+<p class="hcp5">ftp: 11670912 bytes sent in 12,02Seconds 971,36Kbytes/sec.</p>
+<p class="hcp5">ftp&gt; put divaltosys.savf divaltosys</p>
+<p class="hcp5">200 PORT subcommand request successful.</p>
+<p class="hcp5">150 Sending file to member DIVALTOSYS in file DIVALTOSYS in library QGPL.</p>
+<p class="hcp5">226 File transfer completed successfully.</p>
+<p class="hcp5">ftp: 413952 bytes sent in 1,13Seconds 367,96Kbytes/sec.</p>
+<p class="hcp5">ftp&gt;quit</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2">4. Restauration de la bibliothèque XLAN</span></p>
+<p>Restaurer la bibliothèque XLAN à partir du fichier de sauvegarde <span style="font-style: italic;">QGPL/XLAN,</span> en utilisant la commande suivante :</p>
+<p class="hcp5">RSTLIB SAVLIB(XLAN) DEV(*SAVF) SAVF(QGPL/XLAN)</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2">5. Restauration du répertoire DIVALTO/SYS ( Attention : uniquement pour une première installation)</span></p>
+<p>Restaurer le répertoire DIVALTO/SYS, en utilisant la commande suivante :</p>
+<p class="hcp5">RST DEV('/QSYS.LIB/QGPL.LIB/DIVALTOSYS.FILE') OBJ(('/divalto')) CRTPRNDIR(*YES)</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2">6. Changement des droits du répertoire DIVALTO</span></p>
+<p>Donner toutes les autorisations à l'utilisateur XLAN sur le répertoire DIVALTO/SYS, en utilisant la commande suivante :</p>
+<p>CHGAUT OBJ('/Divalto') USER(XLAN) DTAAUT(*RWX) OBJAUT(*ALL) SUBTREE(*ALL)</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Structure des tables</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Structure des tables</h3>
+<p><font color="#000000">La structure des tables dans la base SQL correspond strictement à la description des tables dans le dictionnaire d&#160;'HARMONY. A une table du dictionnaire correspond une table dans la base. La table SQL porte le même nom que la table dans le dictionnaire.</font></p>
+<p><font color="#000000">Cependant avec</font> <font color="#000000" class="hcp1">trois particularités</font> <font color="#000000">:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font color="#000000">Une donnée appelée</font> <font style="font-weight: bold; font-style: italic;" color="#000000">table_id</font><font color="#000000" class="hcp2">,</font> <font color="#000000">où</font> <font color="#000000" class="hcp2">table</font> <font color="#000000">est le nom de la table, est ajoutée à chaque table. Cette donnée permet d'identifier de manière unique chaque ligne de la table. Dans SQL SERVER, elle a la propriété IDENTIFY. Sous Oracle, sa valeur est obtenu par une «&#160;séquence&#160;».</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font color="#000000">La redéfinition et les sous-découpages des données n'existent pas dans les bases de données. Un indicateur "&#160;</font><font color="#000000" class="hcp1">masquée dans SQL</font><font color="#000000">&#160;" du dictionnaire de données pour chaque donnée permet d'indiquer si la donnée doit être ou non dans la base SQL. Par exemple, le découpage des dates en sous-données ou le regroupement des données élémentaires d'une adresse dans un champ adresse complète seront masqués de cette manière.</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les <font class="hcp1">tableaux</font> n'existent pas dans les bases de données. Chaque élément du tableau devient une donnée élémentaire suffixée par son indice dans le tableau.</p>
+</li>
+</ul>
+</body>
+</html>

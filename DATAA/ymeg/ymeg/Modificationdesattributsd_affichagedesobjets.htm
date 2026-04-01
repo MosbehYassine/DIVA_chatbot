@@ -1,0 +1,56 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Modification des attributs d'affichage des objets</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+font.hcp3 { font-weight:bold;
+font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Modification des attributs d'affichage des objets</h2>
+<p class="Body-Text">Cf. fonctions <a href="XmeSetAttribut.htm">XmeSetAttribut</a> et <a href="XmeResetAttribut.htm">XmeResetAttribut</a>.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Cas particulier des objets affichés plusieurs fois simultanément dans une même fenêtre</font></p>
+<p class="Body-Text">Un même objet peut apparaître plusieurs fois dans une même fenêtre lorsque la page Xwin à laquelle il appartient est elle-même affichée plusieurs fois avec <font class="hcp1">différents offsets</font> (remarque&#160;: les objets inclus dans un tableau ne sont pas concernés).</p>
+<p class="Body-Text">Si, pour un tel objet, on désire affecter dynamiquement des <font class="hcp1">attributs différents à chaque occurrence</font> affichée (par exemple, colorer la première en bleu, la seconde en blanc et la troisième en rouge), il faut que ces occurrences portent toutes un <font class="hcp1">nom d’objet différent</font>.</p>
+<p class="Body-Text">La méthode suivante permet d’attribuer dynamiquement un nom à un objet :</p>
+<ol>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Dans le masque, concaténez au nom concerné la chaîne conventionnelle <font class="hcp1">$L$$C$</font>.<font class="hcp1"><br>
+Exemple</font>&#160;: <font class="hcp2">Bouton$L$$C$</font></p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Dans le paramètre <font class="hcp2">Nom des objets</font> des fonctions XmeSetAttribut et XmeResetAttribut applicables à une certaine occurrence de l’objet, concaténez au nom d’objet deux numéros (au format <font class="hcp3">LLLCCC</font> – attention, format <font class="hcp1">figé</font> sur <font class="hcp1">2x3 chiffres</font>&#160;: si un numéro est inférieur à 100, complétez-le avec un ou deux zéros – voir l’exemple ci-dessous), où&#160;:</p>
+</li>
+</ol>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 33.80pt;"><font class="hcp3">LLL</font> est l’offset ligne (Harmony.Oligne) avec lequel la page contenant cette occurrence a été affichée (Cf. rubrique <a href="D_placementd_unmasque_l__cran.htm">Déplacement d'un masque à l'écran</a>).</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 33.80pt;"><font class="hcp3">CCC</font> est l’offset colonne (Harmony.Ocolonne) avec lequel la page contenant cette occurrence a été affichée (Cf. rubrique <a href="D_placementd_unmasque_l__cran.htm">Déplacement d'un masque à l'écran</a>).</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 42.55pt;"><font class="hcp1">Exemple</font>&#160;:</p>
+<p class="Source" style="margin-left: 42.55pt;">;Nouvelle couleur de fond pour 3 occurrences de l’objet nommé <font class="hcp2">Bouton</font>&#160;:</p>
+<p class="Source" style="margin-left: 42.55pt;">;bleu&#160;&#160;: objet dans la page d’offsets ligne=8 , colonne=43</p>
+<p class="Source" style="margin-left: 42.55pt;">;blanc&#160;: objet dans la page d’offsets ligne=11, colonne=43</p>
+<p class="Source" style="margin-left: 42.55pt;">;rouge&#160;: objet dans la page d’offsets ligne=14, colonne=43</p>
+<p class="Source" style="margin-left: 42.55pt;">XmeSetAttribut ("<font class="hcp2">Bouton008043</font>", AN_COULEUR_FOND, "BLEU")</p>
+<p class="Source" style="margin-left: 42.55pt;">XmeSetAttribut ("<font class="hcp2">Bouton011043</font>", AN_COULEUR_FOND, "BLANC")</p>
+<p class="Source" style="margin-left: 42.55pt;">XmeSetAttribut ("<font class="hcp2">Bouton014043</font>", AN_COULEUR_FOND, "ROUGE")</p>
+</body>
+</html>

@@ -1,0 +1,53 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Introduction</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-size:12pt; }
+p.hcp2 { font-size:10pt;
+font-weight:normal; }
+p.hcp3 { font-size:10pt;
+font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Introduction</h1>
+<p>Harmony est une architecture 3 tiers, c'est à dire que la couche de présentation est séparée de la couche application métier. Le client léger est un processus distinct de l’exécuteur de programmes Diva (XrtDiva.exe). Ces deux processus peuvent s’exécuter sur le même ordinateur (dans ce cas l’installation s’apparente à une installation avec un client lourd) ou bien sur deux ordinateurs différents, c’est le mode « client léger ».</p>
+<p>Le fait que le client léger s'exécute sur un autre ordinateur ne change rien à la programmation. Toutefois, certaines opérations nécessitent des adaptations de programmes afin de fonctionner en mode client léger (lorsque la couche de présentation s’exécute sur un autre ordinateur que la couche métier de l’application).</p>
+<p>&#160;</p>
+<p>L’exemple qui illustre le mieux cette nécessité est la gestion des pièces jointes.</p>
+<p>Pour cette gestion, deux opérations de base sont effectuées :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>La copie des pièces du poste client vers le serveur pour ajouter une nouvelle pièce jointe.</p>
+</li>
+<li class="p">
+<p>La copie des pièces du serveur vers le poste client pour afficher la pièce.</p>
+</li>
+</ul>
+<p>Dans les versions antérieures à la version 7, ces opérations de copie étaient effectuées par la fonction WinCopyFile (voire la fonction HCopyFile s’il s’agit de fichiers Harmony). Or ces fonctions ne permettent pas de copier de fichiers du client léger vers le serveur ou inversement, ceux-ci n’étant pas forcément connectés au même réseau.</p>
+<p>La copie de ces fichiers doit donc transiter par le canal qui relie le client au serveur.</p>
+<p>Les copies entre le serveur et le client nécessitent donc de nouvelles fonctions ( LCWinUpload et LCWinDownload ) &#160;et il faut adapter les programmes pour remplacer WinCopyFile et HCopyFile par ces nouvelles fonctions.</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Attention</p>
+<p>Au passage des programmes en version 7, le remplacement doit être effectué avec discernement. Il ne s’agit pas de remplacer mécaniquement toutes les fonctions WinCopyFile ou HCopyFile par les nouvelles fonctions. L’utilisation des nouvelles fonctions ne concerne que les transferts entre le poste client et le serveur.</p>
+<p>&#160;</p>
+<p class="hcp1">Les fonctions LC</p>
+<p class="hcp2">Les nouvelles fonctions sont préfixées par LC. Elles correspondent généralement à des fonctions Windows existant déjà en Diva mais dont les fonctionnalités ont été adaptées aux exigences de fonctionnement en mode client léger.</p>
+<p class="hcp2">L’application peut s’exécuter indifféremment en mode local (le client léger s’exécute sur le serveur d’application) ou en mode client léger car les nouvelles fonctions LC prennent en charge le mode d’exécution.</p>
+<p class="hcp3">Le développeur n’a donc pas à se préoccuper de savoir dans quel mode le programme s'exécute<span style="font-weight: normal;">.</span></p>
+<p class="hcp3">&#160;</p>
+<p class="hcp1">Les fonctions LC en client léger Web</p>
+<p class="hcp2">Sauf mention contraire, ces fonctions ne sont pas disponibles en client léger Web (voir le livre "Spécificités de développement pour le client léger Web").</p>
+<p class="hcp2">&#160;</p>
+</body>
+</html>

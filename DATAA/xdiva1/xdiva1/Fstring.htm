@@ -1,0 +1,331 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fstring</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fstring &#160;<a href="Fonctionsdeformatage.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Fstring permet une mise en forme évoluée des chaînes de caractères.</p>
+<p class="Body-Text"><br>
+<font class="hcp1">Char</font> <font class="hcp1">Fstring</font> (<font class="hcp2">format</font> , <font class="hcp2">variable</font>)</p>
+<p class="Body-Text"><font class="hcp1"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Format</font></p>
+<p class="decalage05">Format à appliquer à <font class="hcp2">variable</font>. Le format est une chaîne de caractère comportant une ou plusieurs commandes. Les commandes sont collées les unes aux autres, sans qu'il soit nécessaire d'intercaler des caractères blancs. Les commandes sont exécutées successivement de la gauche vers la droite. L'ordre d'écriture est important car certains effets ne sont pas commutatifs.</p>
+<table cellspacing="0" width="436">
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Commande</font></p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Action</font></p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">L</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Cadrage à gauche</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">M</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Centrage</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">R</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Cadrage à droite</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">A</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Eliminer tous les blancs</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">B</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">N blancs --&gt; 1 blanc</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">0</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Remplacer les espaces par 0</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">*</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Remplacer les espaces par *</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">U</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Tout majuscules</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">l (L minus.)</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Tout minuscules</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">1</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Premier car. de la chaîne majuscule puis minuscule</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">E</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Premier mot à espace</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">C</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Ne conserve que le premier mot</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">I</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Inversion ( AZE ---&gt; EZA )</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">F</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Filtrage des caractères non affichables</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:21.64%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">D (d,f)</p>
+</td>
+<td style="width:78.36%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Suppression des caractères situés entre la position d et la position f incluses</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><br>
+<font class="hcp2">Variable</font></p>
+<p class="decalage05">Chaîne de caractères à mettre en forme.<br></p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La fonction renvoie la chaîne de caractères mise en forme.</p>
+<p class="Body-Text"><br>
+<font class="hcp1">Exemples</font><br></p>
+<table cellspacing="0" width="463">
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">D</font><font class="hcp1">épart</font></p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">f</font><font class="hcp1">ormat</font></p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">r</font><font class="hcp1">ésultat</font></p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text">INTERLOGICIEL</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">M</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text">INTERLOGICIEL</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text">INTERLOGICIEL</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">R</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text">INTERLOGICIEL</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">INTERLOGICIEL &#160;</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">L</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text">INTERLOGICIEL</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text">INTERLOGICIEL</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">IC</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text">LEICIGOLRETNI</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text">INTERLOGICIEL</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text">Interlogiciel</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text">LE SYSTEME WINDOWS</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">A</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text">LESYSTEMEWINDOWS</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text">DUPONT ALAIN</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">B</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text">DUPONT ALAIN</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text">DUPONT ALAIN</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">l</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text">dupont alain</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text">DUPONT ALAIN</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">RA</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text">DUPONTALAIN</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text">DUPONT ALAIN</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text">AR</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">DUPONTALAIN&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:40.81%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:16.33%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:42.86%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

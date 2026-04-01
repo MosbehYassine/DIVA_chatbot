@@ -1,0 +1,67 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Configuration de la base SQL dans la table des serveurs</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+img.hcp4 { border:none; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Configuration de la base SQL dans la table des serveurs</h1>
+<p class="Body-Text">Il convient de configurer la ou les bases SQL à deux endroits :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Dans la table des serveurs du serveur IBM i. Ce paramètre sera utilisé par XLAN.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dans la table des serveurs du poste client servant à l'installation. Ce paramètre servira à l'utilitaire de paramétrage XPSQL qui s'exécute sur le poste client.</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: bold; font-size: 12pt;">Dans la table des serveurs du serveur IBM i.</p>
+<p class="Body-Text">Sur le serveur, pour que XLAN puisse accéder à la base SQL, on crée une entrée de type «&#160;BaseSQL&#160;» dans la table des serveurs par le choix "Serveurs" du menu "Paramétrage" de Harmony.dhop. <span style="text-decoration: underline;">Il convient de sélectionner le serveur</span> par le bouton <span style="font-weight: bold; font-style: italic;">"Choix du serveur"</span>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">On garnira les champs suivants :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Nom de l'ordinateur:</font> C’est le nom de la base SQL. Par exemple ERPDivalto. Ce nom servira de chemin pour accéder au serveur SQL depuis le poste client. <a href="Biblioth_quesdel_utilisateur_.htm">(Voir Chemins implicites)<span style="text-decoration: none;">.</span></a></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Adresse: <span class="hcp3">&#160;C'est le nom de la base de donnée du serveur SQL. Il prend la même valeur que le paramètre Nom de l'ordinateur.</span></font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2"><span style="font-weight: bold;">Chemin SQL :</span> <span class="hcp3">(facultatif) Chemin Harmony ou se trouve le répertoire contenant les dictionnaires ainsi le fichier paramètres FHSQL.dhfi de la base. Exemple : /divalto/bases/erpdivalto.<br>
+Si non renseigné, le chemin est /divalto/"nom de la base".</span></font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Type:</font> doit être positionné à la valeur Base SQL.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Système d'exploitation:</font> Unix ou IBM iSeries</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><img src="../image14.jpg" alt="" width="657" height="356" border="0" class="hcp4"></p>
+<p>A la fin du paramétrage, une fenêtre demande la confirmation de la prise en compte immédiate des modifications sur le serveur.</p>
+<p>Ceci a pour effet de mettre à jour la table des serveurs dans la mémoire du serveur IBM i. En cas de réponse négative à cette question, il faudra redémarrer le travail XLAN pour que la modification soit prise en compte. (ou effectuer un nouveau passage en &#160;modification de la table des serveurs et répondre par l'affirmative à la question).</p>
+<p>&#160;</p>
+<p class="Body-Text"><img src="../image11.jpg" alt="" width="462" height="169" border="0" class="hcp4"></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 12pt;">Dans la table des serveurs du poste client servant au paramétrage du serveur.</p>
+<p class="Body-Text" style="font-weight: normal; font-size: 10pt;">Le bouton "Local" de la fenêtre "Choix du serveur" permet de configurer la table des serveurs du poste local.</p>
+<p class="Body-Text" style="font-weight: normal; font-size: 10pt;">On créera une entrée identique à celle de la table des serveurs du serveur IBM i sur le poste local servant au paramétrage du serveur.</p>
+<p class="Body-Text" style="font-size: 12pt; font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 12pt;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 12pt;">&#160;</p>
+</body>
+</html>

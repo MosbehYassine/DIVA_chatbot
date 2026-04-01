@@ -1,0 +1,30 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Introduction</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:41.75pt;
+text-indent:30.25pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Introduction aux fonctions WinEndSession</h3>
+<p>La plupart du temps, il n’y a pas besoin pour le programmeur Harmony de s’occuper de la fermeture de session Windows. Les programmes sont habituellement interactifs et l’utilisateur peut annuler la demande de fermeture de session.</p>
+<p>Il en va autrement pour les programmes qui tournent en tâche de fond ou qui sont des services Diva (Cf. manuel de référence d'Harmony).</p>
+<p>Ces programmes ne font aucun affichage et ils acceptent toujours de s’arrêter lorsque Windows le leur demande. Or, il se peut que l’arrêt d’un programme à n’importe quel moment de son exécution introduise des erreurs dans la logique du programme.</p>
+<p>Prenons par exemple, un programme qui scrute un répertoire et pour chaque fichier rencontré, copie le fichier dans un autre répertoire et le supprime du répertoire d’origine.</p>
+<p class="hcp1"><img src="../image/winend1.gif" alt="image\winend1.gif" title="image\winend1.gif" width="158" height="147" border="0"></p>
+<p>Si le programme est interrompu entre la copie et la suppression du fichier, ce fichier sera à nouveau traité lors du redémarrage du programme, alors qu’il ne devrait pas l’être.</p>
+<p>Les instructions <a href="WinEndSessionLock.htm">WinEndSessionLock</a> et <a href="WinEndSessionUnLock.htm">WinEndSessionUnLock</a> permettent de résoudre ce problème en introduisant une section critique qui ne peut être interrompue. Pendant que le code encadré par ces deux instructions s’éxécute, le programme refuse la fermeture de la tâche. Attention, cette section critique doit être la plus courte possible, car Windows n’attend pas indéfiniment. Au bout d’un certain temps, la tâche sera tuée par la système.</p>
+<p class="hcp1"><img src="../image/winend3.gif" alt="image\winend3.gif" title="image\winend3.gif" width="376" height="275" border="0"></p>
+</body>
+</html>

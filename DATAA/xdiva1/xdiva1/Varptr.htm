@@ -1,0 +1,53 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Varptr</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Varptr &#160;<a href="Listedesfonctionsd_adresses.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Introduction5.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Varptr permet de modifier l'adresse d'une variable. <font class="hcp2">Elle doit être utilisée avec précaution</font>.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Long</font> <font class="hcp2">Varptr</font> ( <font class="hcp3">variable</font> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Variable</font></p>
+<p class="decalage05">Donnée dont on veut modifier l'adresse.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction retourne une donnée de type L pointant sur l'adresse de <font class="hcp3">variable</font>. En modifiant cette adresse, il est possible de faire pointer la donnée sur une nouvelle adresse.</p>
+<p class="Body-Text">Le type et la taille de la donnée dont l'adresse est modifiée restent inchangés.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Body-Text">Ce programme balaye une chaîne de caractères et incrémente chaque caractère.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Source">1 donnee 10</p>
+<p class="Source">1 carb B</p>
+<p class="Source">1 i L</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">donnee = "abcdefghij"&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">Varptr(carb) = ptr(donnee) ; carb pointe sur le premier&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; caractère de donnee&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">for i = 1 to 10&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;carb ++ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; ajoute un au caractère&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Varptr(carb)++ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; carb pointe sur le suivant&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">next&#160;</p>
+<p class="Source">display donnee ; --&gt; bcdefghijk</p>
+</body>
+</html>

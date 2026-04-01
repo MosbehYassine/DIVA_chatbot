@@ -1,0 +1,123 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Touches traitées par l'input Ywpf</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Touches traitées par l'input Ywpf</h3>
+<p class="Body-Text">La <font class="hcp1">saisie d'un champ</font> dans un <font class="hcp1">masque d'écran Xwin</font> est <font class="hcp1">d'abord</font> traitée par Windows (voir la rubrique précédente) <font class="hcp1">PUIS par Ywpf</font>. Ywpf donne une signification particulière à un certain nombre de touches spéciales. Le tableau suivant récapitule les touches traitées en interne par Ywpf pour la saisie d'un champ (le cas des multi-choix, des cases à cocher, des boutons radio ou des textes riches n'est pas abordé ici)&#160;:</p>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 26.366%;">
+<col style="width: 73.634%;">
+<tr class="hcp2">
+<td style="width:26.366%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Tab, Flèche en bas</p>
+</td>
+<td style="width:73.634%;" class="hcp3">
+<p class="Body-Text">Passage à la donnée suivante.<br>
+Remarque : termine la saisie du masque sur la dernière donnée.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:26.366%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Back-Tab, Flèche en haut</p>
+</td>
+<td style="width:73.634%;" class="hcp3">
+<p class="Body-Text">Passage à la donnée précédente.<br>
+Remarque : termine la saisie du masque sur la première donnée.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:26.366%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Ctrl+Tab</font></p>
+</td>
+<td style="width:73.634%;" class="hcp3">
+<p class="Body-Text">Passage à la page suivante d'un masque multi-écran (pages chaînées).<br>
+Sans effet dans le cas contraire.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:26.366%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Maj+Ctrl+Tab</font></p>
+</td>
+<td style="width:73.634%;" class="hcp3">
+<p class="Body-Text">Passage à la page précédente d'un masque multi-écran (pages chaînées).<br>
+Sans effet dans le cas contraire.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:26.366%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Echap</font></p>
+</td>
+<td style="width:73.634%;" class="hcp3">
+<p class="Body-Text">Abandon de la saisie du masque.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:26.366%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Entrée</font></p>
+</td>
+<td style="width:73.634%;" class="hcp3">
+<p class="Body-Text">Validation de la saisie du masque.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:26.366%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Shift+F1</font></p>
+</td>
+<td style="width:73.634%;" class="hcp3">
+<p class="Body-Text">Appel de l'aide fenêtrée.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:26.366%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Ctrl+N</p>
+</td>
+<td style="width:73.634%;" class="hcp3">
+<p class="Body-Text">Sélection du Nième onglet d'un masque multi-écran.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">La touche Shift+F1 ne peut être NI traitée par votre programme NI piégée dans un masque Xwin</font>.<br>
+Idem pour les touches Ctrl+N.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La touche <font class="hcp1">Echap</font> <font class="hcp1">ne peut pas être piégée</font>. Elle peut toutefois être traitée puisqu'elle provoque l'abandon du masque avec positionnement de Harmony.Key et retour au programme appelant.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Outre les touches de contrôle Ctrl+C, Ctrl+V, Ctrl+X et Ctrl+Z (voire la rubrique précédente), les touches Ctrl+G à Ctrl+M ne peuvent pas être piégées (pour des raisons historiques).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Les autres touches spéciales</font> (citées ou non dans ce tableau et non traitées par Windows) <font class="hcp1">terminent l'input</font> de la donnée en cours, <font class="hcp1">avec positionnement de Harmony.Key</font>.<br>
+Remarque&#160;: les touches non citées dans ce tableau et non piégées dans le masque Xwin provoquent le passage à la donnée suivante, tout comme Tab.<font class="hcp1"><br>
+Toutes peuvent être traitées dans un programme et piégées dans un masque Xwin</font>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque&#160;:</font></p>
+<p class="Body-Text">Lorsque le programme appelant récupère la main après l'input d'une donnée d'un masque Xwin, il peut toujours tester le <a href="Codesderetourdesentr_esclavier_System_Statin_.htm">code de la dernière touche tapée</a>. Il peut aussi, dans le cas d'une touche piégée, tester le numéro du point d'arrêt associé (donnée Harmony.Arret ou Harmony.DataArret).</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

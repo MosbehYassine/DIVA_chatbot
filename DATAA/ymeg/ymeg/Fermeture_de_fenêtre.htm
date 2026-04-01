@@ -1,0 +1,47 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fermeture de fenêtre</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { text-decoration:underline; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Fermeture de fenêtre</h2>
+<p>&#160;</p>
+<p class="hcp1">Cas du client léger Wpf</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">L'utilisateur peut refermer une fenêtre Windows en sélectionnant le choix <font class="hcp2">Fermeture</font> du <font class="hcp2">menu système</font> (raccourci clavier&#160;: <font class="hcp2">Alt+F4</font>) ou en cliquant sur la croix de fermeture dans la barre de titre.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2"><span class="hcp3">Mais en aucun cas,</span> la fermeture d'une fenêtre par l'utilisateur ne referme automatiquement cette dernière</font>.<br>
+En effet, il est impératif que l'application conserve la maîtrise de son propre arrêt, de manière à assurer la cohérence des données.<br>
+&#160;</p>
+<p class="Body-Text">La fermeture d'une fenêtre par l'utilisateur est traitée par Ywpf&#160;comme un simple abandon. Ywpf interrompt donc la consultation ou la saisie en cours en <span class="hcp3">simulant la frappe par l'utilisateur de la touche Echap</span> (Harmony.Key est positionné à K_ESCAPE).<br>
+&#160;</p>
+<p class="Body-Text">Si vous voulez effectivement terminer votre application, vous devez le programmer explicitement en exécutant l'instruction ProgramExit ou ProgramGoto.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp3">Remarque</span> :</p>
+<p>La fermeture d'une <span class="hcp3">sous-fenêtre</span> par l'utilisateur est traitée exactement de la même manière que la fermeture de la fenêtre principale. Par sous-fenêtre, on entend ici une page Xwin de type "Fenêtre" affichée par votre application en mode GOSUB.</p>
+<p>Harmony permet de refermer par programme plusieurs fenêtres en cascade. La méthode est expliquée dans la rubrique <a href="Fermetured_unefen_treparAlt_F4.htm">Fermeture de fenêtres en cascade</a>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1"><span style="text-decoration: underline;">Cas du client léger Html</span></p>
+<p>&#160;</p>
+<p><span style="font-weight: bold; text-decoration: underline;">Important</span> : L'utilisateur peut refermer le navigateur Web comme il l'entend et cette contrainte peut nécessiter une adaptation des programmes Diva s'exécutant en mode Html. Des explications complètes sur ce point sont données à la rubrique <a href="ymeg2.chm::/ymeg2/Traitements_effectués_en_cas_de_fermeture_du_navigateur.htm">Traitements effectués en cas de fermeture du navigateur</a>.</p>
+<p>&#160;</p>
+<p class="Body-Text"><span class="hcp3">Remarque concernant les sous-fenêtres</span> :</p>
+<p>Contrairement à Wpf qui affiche une "vraie" fenêtre Windows, Html simule ce type de fenêtre à l’intérieur de la fenêtre courante du navigateur. Alors que Wpf invalide complètement la fenêtre "mère", Html grise simplement le fond de l’écran précédent. Les sous-fenêtres de taille variable ne proposent pas les icônes de minimisation et maximisation et Alt+F4 ne peut pas être utilisée pour refermer une sous-fenêtre. Ces différences sont sans effet côté programmation. Un clic sur la croix de fermeture de la sous-fenêtre est traité à la manière habituelle (simulation de la touche Echap).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

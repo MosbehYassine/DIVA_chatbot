@@ -1,0 +1,118 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exec</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-size:10pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Exec &#160;<a href="InstructionsdeModulesetProgrammes.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="G_n_ralit_s1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Exec permet d'exécuter un programme Windows.</p>
+<p class="Body-Text">Voir également les fonctions <a href="WinFindExecutable.htm">WinFindExecutable</a>, <a href="WinRegQueryKeyRun.htm">WinRegQueryKeyRun</a> et <a href="WinShellExecute.htm">WinShellExecute</a> qui permettent respectivement de trouver le chemin d'un exécutable, d'exécuter le programme associé à un fichier.</p>
+<p class="Body-Text"><font class="hcp2">Long Exec</font> (<font class="hcp3">programme , ligne , [ modeexec ] , [ modeaff ] )</font></p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">programme</font></p>
+<p class="decalage05">Nom du programme a exécuter. Si le chemin complet n'est pas précisé, la recherche de l'exécutable se fait dans l'ordre suivant :</p>
+<p class="List" style="margin-top: 0.00pt; text-indent: -17.85pt; margin-left: 64px;">-&#160;le répertoire courant,</p>
+<p class="List" style="margin-top: 0.00pt; text-indent: -17.85pt; margin-left: 64px;">-&#160;le répertoire System de Windows,</p>
+<p class="List" style="margin-top: 0.00pt; text-indent: -17.85pt; margin-left: 64px;">-&#160;le répertoire de Windows</p>
+<p class="List" style="margin-top: 0.00pt; text-indent: -17.85pt; margin-left: 64px;">-&#160;les répertoires précisés dans la variable d'environnement PATH.</p>
+<p class="Body-Text"><font class="hcp3">ligne</font></p>
+<p class="decalage05">Ligne de commande à passer au programme.</p>
+<p class="Body-Text"><font class="hcp3">modeexec</font></p>
+<p class="decalage05">Détermine le comportement du parent une fois que l'exécution du fils est commencée.</p>
+<table cellspacing="0" width="415">
+<tr class="hcp4">
+<td style="width:36.36%;" class="hcp5">
+<p class="TableHeading">Valeur</p>
+</td>
+<td style="width:63.64%;" class="hcp5">
+<p class="TableHeading">Action</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:36.36%;" class="hcp5">
+<p class="TableText"><font size="2" class="hcp6">EXEC_GOTO</font></p>
+</td>
+<td style="width:63.64%;" class="hcp5">
+<p class="TableText"><font size="2" class="hcp6">Mode Goto.<br>
+Le programme en cours se termine. Valeur par défaut</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:36.36%;" class="hcp5">
+<p class="TableText"><font size="2" class="hcp6">EXEC_GOSUB</font></p>
+</td>
+<td style="width:63.64%;" class="hcp5">
+<p class="TableText"><font size="2" class="hcp6">Mode Gosub sans attente.<br>
+Le programme en cours continue son exécution en même temps que le nouveau programme.</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:36.36%;" class="hcp5">
+<p class="TableText"><font size="2" class="hcp6">EXEC_GOSUB_WAIT</font></p>
+</td>
+<td style="width:63.64%;" class="hcp5">
+<p class="TableText"><font size="2" class="hcp6">Mode Gosub avec attente.<br>
+Le programme en cours attend la fin du nouveau programme pour continuer son exécution.</font></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp3">modeaff</font></p>
+<p class="decalage05">Détermine le comportement du programme lancé. La valeur par défaut est SW_SHOWNORMAL.</p>
+<table cellspacing="0" width="184">
+<tr class="hcp4">
+<td style="width:100.00%;" class="hcp5">
+<p class="Body-Text"><font class="hcp2">Valeur</font></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:100.00%;" class="hcp5">
+<p class="TOC-Base" style="margin-top: 5.00pt;">SW_HIDE</p>
+<p>SW_SHOWNORMAL</p>
+<p>SW_NORMAL</p>
+<p>SW_SHOWMINIMIZED</p>
+<p>SW_SHOWMAXIMIZED</p>
+<p>SW_MAXIMIZE SW_SHOWNOACTIVATE</p>
+<p>SW_SHOW</p>
+<p>SW_MINIMIZE</p>
+<p>SW_SHOWMINNOACTIVE</p>
+<p>SW_SHOWNA</p>
+<p>SW_RESTORE</p>
+<p>SW_SHOWDEFAULT</p>
+<p style="margin-bottom: 3.00pt;">SW_MAX</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction Exec renvoie la valeur –1 en cas d'échec du lancement du programme. En mode Goto avec attente, la fonction donne la valeur renvoyée par le programme. Dans les autres cas, la fonction renvoie 0.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">Exec("d:\Program Files\microsoft office\office\winword.exe" , \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;"monfichier", EXEC_GOSUB_WAIT)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="LCExec.htm">LCExec</a>, <a href="WinRegQueryKeyRun.htm">WinRegQueryKeyRun</a>, <a href="WinShellExecute.htm">WinShellExecute</a>, <a href="WinFindExecutable.htm">WinFindExecutable</a></p>
+</body>
+</html>

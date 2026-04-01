@@ -1,0 +1,176 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Debut</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Debut &#160;<a href="Listedeschapitres.htm"><font size="2" class="hcp1">Famille</font></a><font style="font-size: 10pt;" size="2">&#160;</font><a href="Introduction3.htm"><font size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Le chapitre rupture de début dont le nom est passée en paramètre à la procédure HQLRupture est exécuté lorsqu'une rupture est détectée sur la variable paramètre ou sur une variable de niveau supérieur dans le cas de ruptures imbriquées.</p>
+<p class="Body-Text">Il y a rupture sur une donnée lorsque son contenu change en passant d'un enregistrement au suivant. En particulier, une rupture de début est toujours détectée sur le premier enregistrement sélectionné.</p>
+<p class="Body-Text">Il est bien évident que les ruptures n'ont de sens que si les enregistrements sélectionnés sont triés suivant les critères de rupture (grâce à une clé d'accès ou un tri préalable adéquat).</p>
+<p class="Body-Text">Voir <a href="Ruptures.htm">HQLRupture</a></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarques</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Au moment d'une rupture de début, l'enregistrement courant contient déjà les <font class="hcp2">nouvelles</font> valeurs. Les ruptures de fin, où l'enregistrement courant contient encore les <font class="hcp2">anciennes</font> valeurs, se traitent dans le chapitre <font class="hcp2">Fin</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dans le cas de ruptures imbriquées, les chapitres <font class="hcp2">Début</font> des critères majeurs sont exécutés avant ceux des critères mineurs.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les ruptures sur les données complémentaires sont tout à fait possibles. Elles nécessitent toutefois une légère adaptation du programme (Cf. exemple 3 ci-dessous).</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple 1</font></p>
+<p class="Body-Text">Liste d'adresses classées par département. La clé B du fichier est définie sur le numéro de département.</p>
+<p class="Source"><font color="#0000FF">Procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;HqlRupture(Adr.Depart,"DebutDepartement")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Hql.Cle = "B"&#160;</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+<p class="Source"><font color="#0000FF">Procedure</font> DebutDepartement</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Xprint 6 ; impression bloc de rupture&#160;</p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Source"><font color="#0000FF">Procedure</font> HqlDetail</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;...&#160;</p>
+<p class="Body-Text"><font class="hcp3">Résultat de la requête :</font></p>
+<p class="Source">*** Adresses du département 01<br>
+...<br>
+...<br>
+*** Adresses du département 02<br>
+...<br>
+...<br>
+...<br>
+*** Adresses du département 95<br>
+...</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple 2</font></p>
+<p class="Body-Text">Cet exemple illustre l'importance de l'ordre de déclaration des critères de rupture imbriqués. On désire cette fois éditer une liste d'adresses classée par département puis par ville dans chaque département.</p>
+<p class="Body-Text">Si nous écrivons :</p>
+<p class="Source"><font color="#0000FF">Procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source"><font color="#000000">&#160;&#160;&#160;HqlTri(Adr.Depart)</font></p>
+<p class="Source">&#160;&#160;&#160;HqlTri(Adr.Ville)</p>
+<p class="Source">&#160;&#160;&#160;HqlRupture(Adr,Ville,"DebutVille")</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;HqlRupture(Adr.Depart,"DebutDepartement")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Hql.Cle = "B"&#160;</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+<p class="Source"><font color="#0000FF">Procedure</font> DebutDepartement</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Xprint 7 ; impression bloc "adresses du département"&#160;</p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Source"><font color="#0000FF">Procedure</font> DebutVille</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Xprint 6 ; impression bloc "adresses de la ville"&#160;</p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Source"><font color="#0000FF">Procedure</font> HqlDetail</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;...&#160;</p>
+<p class="Body-Text"><font class="hcp3">Le résultat n'est pas satisfaisant :</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville A&#160;</p>
+&#160;
+<p class="Source">*** Adresses du département 01</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville B&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville Z&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville A&#160;</p>
+&#160;
+<p class="Source">*** Adresses du département 02</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville B&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville Z&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville A&#160;</p>
+&#160;
+<p class="Body-Text">Par contre en inversant l'ordre des déclarations de rupture, du critère majeur vers le critère mineur</p>
+<p class="Source"><font color="#0000FF">Procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source">&#160;&#160;&#160;HqlTri(Adr.Depart)</p>
+<p class="Source">&#160;&#160;&#160;HqlTri(Adr.Ville)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;HqlRupture(Adr.Depart,"DebutDepartement")&#160;</p>
+<p class="Source">&#160;&#160;&#160;HqlRupture(Adr,Ville,"DebutVille")</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Hql.Cle = "B"&#160;</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+<p class="Body-Text"><font class="hcp3">nous obtenons un résultat correct</font> :</p>
+<p class="Source">*** Adresses du département 01</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville A&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville B&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville Z&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source">*** Adresses du département 02</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville C&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville D&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">+++ Adresses de la ville E&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarque importante</font></p>
+<p class="Body-Text">Pour les ruptures de fin, les chapitres de fin sont exécutés dans l'ordre inverse par rapport aux chapitres de rupture de début.</p>
+<p class="Body-Text"><font class="hcp2">Exemple 3</font></p>
+<p class="Body-Text">Rupture sur une donnée complémentaire.</p>
+<p class="Body-Text">Nous voulons maintenant éditer une liste d'adresses classées par région, avec rupture de début pour chaque région. Un fichier séquentiel indexé nous donne la correspondance entre un numéro de département et un nom de région.</p>
+<p class="Body-Text">Le tri doit donc s'effectuer sur le nom de la région. Dans HqlSelection (appelé pendant la phase de tri), nous devons rechercher la région correspondant à l'adresse en cours.</p>
+<p class="Body-Text">Pour que la rupture fonctionne sur la région, il faut à nouveau rechercher la région lors de la lecture du fichier trié. Comme le chapitre HqlSelection n'est plus appelé, il faut placer cette recherche dans le chapitre HqlLecture.</p>
+<p class="Source"><font color="#0000FF">Hfile</font> exodd freg tdfreg ; déclaration du fichier et de</p>
+<p class="Source"><font color="#0000FF">Public Record</font> exodd reg region ; l'enregistrement</p>
+<p class="Source"><font color="#0000FF">Procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source">&#160;&#160;&#160;HqlTri(Region.NomRegion)</p>
+<p class="Source">&#160;&#160;&#160;HqlTri(Adr.Departement)</p>
+<p class="Source">&#160;&#160;&#160;HqlRupture(Region.NomRegion,"DebutRegion")</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+&#160;
+<p class="Source"><font color="#0000FF">Procedure</font> HqlSelection ; recherche de la région pour le Tri</p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Hseek(tdfreg, region, "A" &amp; adr.departement)&#160;</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+&#160;
+<p class="Source"><font color="#0000FF">Procedure</font> HqlLecture ; recherche de la région pour la rupture</p>
+<p class="Source"><font color="#0000FF">Beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Hseek(tdfreg, region, "A" &amp; adr.departement)&#160;</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+<p class="Source"><font color="#0000FF">Procedure</font> DebutRegion</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Xprint 6 ; impression bloc début région&#160;</p>
+<p class="Source"><font color="#0000FF">Endp</font></p>
+<p class="Body-Text"><font class="hcp3">Résultat de la requête</font> :</p>
+<p class="Source">*** Adresses de la région A</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">*** Adresses de la région B</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">*** Adresses de la région Z</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+</body>
+</html>

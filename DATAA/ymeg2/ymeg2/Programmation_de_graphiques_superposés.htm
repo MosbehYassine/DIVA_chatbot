@@ -1,0 +1,113 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation de graphiques superposés</title>
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:Arial, sans-serif;
+font-size:10pt; }
+span.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+span.hcp4 { font-size:10pt;
+font-family:"Courier New"  , monospace; }
+li.hcp5 { list-style:none;
+display:inline; }
+span.hcp6 { font-weight:bold;
+font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1 style="font-family: Arial, sans-serif; font-size: 16pt;">Programmation de graphiques superposés</h1>
+<p class="hcp1">L'objet graphe offre désormais la possibilité de créer au sein d'un même objet Xwin un graphique scindé en deux. La partie supérieure et la partie inférieure (panneau supérieur et panneau inférieur) <span class="hcp2">partagent le même axe horizontal</span>.</p>
+<p class="hcp1"><span class="hcp2">Restrictions des graphiques superposés</span> :</p>
+<ul class="hcp3">
+<li class="p">
+<p class="hcp1">Ce mode de fonctionnement n'est valide <span class="hcp2">qu'avec des graphiques cartésiens</span>.</p>
+</li>
+<li class="p">
+<p class="hcp1">Comme l'axe horizontal est partagé entre les deux panneaux, les séries affichées doivent être homogènes (on ne pourra par exemple pas afficher des résultats mensuels sur le panneau du haut et des résultats par site sur le panneau du bas)</p>
+</li>
+<li class="p">
+<p class="hcp1">A l'initialisation du graphique il faudra déclarer, dans les options du graphique, que celui-ci sera un graphe scindé en deux panneaux. Si cette initialisation n'est pas faite, ou qu'elle est faite pour un graphique non cartésien ("camembert" ou radar), toutes les autres instructions utilisant le panneau inférieur seront inopérantes (normalement ignorées, mais pourront potentiellement engendrer des erreurs).</p>
+</li>
+<li class="p">
+<p class="hcp1">Si l'axe horizontal est catégoriel, les séries du panneau supérieur et celles du panneau inférieur <span class="hcp2">doivent utiliser les mêmes catégories, et dans le même ordre</span>!</p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><span class="hcp2">Étapes clés de la programmation de graphiques superposés</span> :</p>
+<ul class="hcp3">
+<li class="p">
+<p class="hcp1">Déclarer le graphique (cartésien) comme étant scindé :</p>
+</li>
+</ul>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;"><span class="hcp4">module ychart.dhop</span></p>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;">include zchart.dhsp</p>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;">...</p>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;">record ddsys.dhsd IdChart chartId &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;">...</p>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;">XmeLoad ("masque") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;">chartId = XmeChartGetId(masque, 1, "CartesianChart") &#160;&#160;;initialisation du graphique nommé CartesianChart et situé dans la page 1 du masque</p>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;">...</p>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;"><span class="hcp4">XmeChartSetOption(chartId, CHART_OPT_CHART_TYPE, CHART_OPTV_CHART_TYPE_CARTESIAN) &#160;&#160;;le graphique doit être cartésien!</span></p>
+<p class="Source" style="font-size: 10pt; font-family: 'Courier New', monospace; margin-left: 40px; margin-top: 0pt; margin-bottom: 0pt;">XmeChartSetOption(chartId, CHART_OPT_ISPANED, '1') &#160;&#160;;le graphique sera scindé (valeur de l'option : entier &gt;0, et convertie en alphanumérique)</p>
+<ul class="hcp3">
+<li class="p-Source">
+<p class="Source" style="margin-top: 0pt; margin-bottom: 0pt; margin-left: 0px; font-size: 10pt; font-family: Arial, sans-serif;">Le cas échéant, indiquer la hauteur du panneau du bas (par défaut l'espace est divisé en deux panneaux de même hauteur) :</p>
+</li>
+</ul>
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 40px; font-family: 'Courier New', monospace;"><span style="margin-left: 0px;">X</span>meChartSetOption(chartId, CHART_OPT_BOTTOM_PANE_HEIGHT, '75') &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;hauteur du panneau du bas en orteils</p>
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 0px; font-family: Arial, sans-serif;">&#160;</p>
+<ul class="hcp3">
+<li class="p-Source">
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 0px; font-family: Arial, sans-serif;">Spécifier le plus précisément possible l'axe horizontal (voir les remarques supplémentaires pour plus de détails) :</p>
+</li>
+<li class="hcp5">
+<ul class="hcp3">
+<li class="p-Source">
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 0px; font-family: Arial, sans-serif;">soit directement si axe temporel ou numérique (l'id de l'axe ne doit pas être spécifié, ou à "espace", car c'est l'axe principal!):</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; font-family: Arial, sans-serif; margin-left: 80px;">ListAddEnd(<span style="font-family: 'Courier New', monospace;">chartId</span>.IdAxis, XmeChartCreateAxisHmp(CHART_OPTV_AX_T_LINEAR, CHART_OPTV_AX_RL_HORIZONTALL,<span class="hcp2">min</span>,<span class="hcp2">max</span>,<span style="font-style: italic;">step</span>,'title',,,<span class="hcp2">axisId=""</span>))</p>
+<ol style="list-style: disc;">
+<li class="hcp5">
+<ul class="hcp3">
+<li class="p-Source">
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 0px; font-family: Arial, sans-serif;">soit indirectement si l'axe est catégoriel : les séries du panneau supérieur et celles du panneau inférieur <span class="hcp2">doivent</span> utiliser les <span class="hcp2">mêmes catégories</span> et <span class="hcp2">dans le même ordre</span><span>.</span></p>
+</li>
+</ul>
+</li>
+</ol>
+<ul class="hcp3">
+<li class="p-Source">
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 0px; font-family: Arial, sans-serif;">déclarer au moins un axe vertical secondaire en l'affectant au panneau du bas :</p>
+</li>
+</ul>
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 40px; font-family: 'Courier New', monospace;">ListAddEnd(chartId.IdAxis, XmeChartCreateAxisHmp(CHART_OPTV_AX_T_LINEAR, CHART_OPTV_AX_RL_VERTICAL,5,15,2,'une mesure',,,"<span class="hcp6">2ndAxis</span>",CHART_OPTV_AX_HLOC_RIGHT,,,2,,<span class="hcp6">CHART_OPTV_PANEL_BOTTOM</span>)) &#160;&#160;&#160;;description d'un axe vertical secondaire affecté au panneau inférieur</p>
+<ul class="hcp3">
+<li class="p-Source">
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 0px; font-family: Arial, sans-serif;">Lier les séries que l'on souhaiter positionner dans le panneau inférieur à l'axe secondaire que l'on vient de décrire :</p>
+</li>
+</ul>
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 40px; font-family: 'Courier New', monospace;">ListAddEnd(chartId.IdSeries, XmeChartCreateCartesianSeriesHmp(seriesId,CHART_OPTV_SR_T_POINTS,'série dans le panneau du bas','rouge',false,,,"<span class="hcp6">2ndAxis</span>"))</p>
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 40px; font-family: 'Courier New', monospace;">&#160;</p>
+<ul class="hcp3">
+<li class="p-Source">
+<p class="Source" style="font-size: 10pt; margin-top: 0pt; margin-bottom: 0pt; margin-left: 0px; font-family: Arial, sans-serif;">Si des annotations (lignes ou bandes horizontales) sont à positionner dans le panneau du bas, il faut aussi les lier à notre axe vertical secondaire :</p>
+</li>
+</ul>
+<p class="source" style="font-size: 10pt; margin-left: 40px; font-family: 'Courier New', monospace;">ListAddEnd(chartId.IdAnnotations, XmeChartCreateHorizontalAnnotation(ToString(11.35), "seuil à 11.35", "AFFerr","rouge","<span class="hcp6">2ndAxis</span>", CHART_OPTV_DASH_DASHDOT))</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><span class="hcp2">Remarques supplémentaires</span> :</p>
+<p class="hcp1">L'implantation de la fonctionnalité présentée ici se fait par la génération de deux graphiques (de manière totalement transparente pour l'utilisateur et le développeur) au sein du composant WPF, ce faisant la "synchronisation" des axes horizontaux (celui du panneau inférieur étant masqué) n'est pas triviale. Ceci nécessite le surplus d'attention concernant l'axe horizontal qui a été décrit plus tôt.</p>
+<p class="hcp1">&#160;</p>
+</body>
+</html>

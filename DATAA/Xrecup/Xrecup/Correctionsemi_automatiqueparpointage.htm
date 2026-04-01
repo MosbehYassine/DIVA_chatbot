@@ -1,0 +1,193 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Correction semi-automatique par pointage</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold;
+text-decoration:underline; }
+font.hcp3 { text-decoration:underline; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Correction semi-automatique par pointage</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La méthode de correction par pointage consiste à repérer "visuellement" le <font class="hcp1">premier enregistrement correct qui suit l'erreur</font> et à se positionner sur sa longueur. Si vous optez pour cette méthode, cliquez sur le bouton <font class="hcp1">Correction par pointage</font>.</p>
+<p class="Body-Text">Après détection de l'erreur, xRepair affiche le <a href="StructuredesfichiersdetypeN.htm">contenu physique du fichier</a>, par bloc de 256 caractères (à droite en Ansi, à gauche en Hexadécimal). Il se positionne au départ sur le <font class="hcp1">premier octet physique</font> du <font class="hcp1">dernier enregistrement correct</font>.</p>
+<p class="Body-Text">A partir de là&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Positionnez-vous sur l'enregistrement erroné</font> en cliquant sur le bouton <font class="hcp1">Pointer longueur suivante</font> (attention à ce que le curseur pointe bien le premier octet de la dernière <a href="StructuredesfichiersdetypeN.htm">longueur</a>&#160;correcte).<br>
+(Remarque&#160;: plus généralement, vous pouvez <font class="hcp1">progresser d'un enregistrement</font> dans le fichier en plaçant le curseur sur le premier octet de la longueur d'un enregistrement correct, puis en cliquant sur le bouton Pointer longueur suivante.)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Cet enregistrement va probablement contenir des caractères "anormaux" (espaces, zéros binaires, …). Vous devez maintenant parcourir la suite du fichier jusqu'à repérer "visuellement" un enregistrement qui vous semble correct par son contenu. Les touches de parcours sont listées ci-dessous.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsqu'un enregistrement correct est trouvé, <font class="hcp2">placez le curseur sur le premier octet de sa longueur</font>.<br>
+La valeur décimale correspondant à l'octet courant et à son suivant est affichée en haut à droite (zone <font class="hcp1">Longueur pointée</font>)&#160;: <font class="hcp1">assurez-vous que vous pointez bien la longueur de l'enregistrement, en vérifiant cette valeur</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Validez par F10</font>.<br>
+xRepair corrige automatiquement le fichier en invalidant les octets compris entre l'erreur et l'enregistrement pointé (il crée un ou plusieurs enregistrements à espace). Il poursuit ensuite à la recherche d'une éventuelle nouvelle erreur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Attention&#160;:</font><br>
+Si la <font class="hcp1">taille</font> des enregistrements du fichier est <font class="hcp1">fixe</font> (et si xRepair a été obligé de créer un enregistrement vide de longueur différente), le programme vous le signale&#160;: il est <font class="hcp1">conseillé</font> (impératif si vous faites des accès directs à ce fichier), après correction de toutes les erreurs, de <font class="hcp1">recopier le fichier dans un nouveau fichier</font> à même taille d'enregistrements fixe. Utilisez pour ce faire le choix de Xtools <font class="hcp1">Fichier : Copier un fichier</font>, en <font class="hcp2">renseignant les champs Premier et Dernier enregistrement</font>, afin de forcer la méthode de copie "partielle".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">A la fin du programme, n'oubliez pas de <font class="hcp1">régénérer les clés</font> du fichier par Xreof.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Touches de parcours du fichier</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Flèches</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Déplacement du curseur dans le bloc courant.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Home / End</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Début / Fin de bloc.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">F2</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Passage au bloc suivant.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Shift+F2</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Retour au bloc précédent.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">F7</font><br>
+ou bouton<font class="hcp1"><br>
+Pointer longueur suivante</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Positionnement sur la longueur du prochain enregistrement.<font class="hcp1"><br>
+Attention</font>&#160;: avant de taper F7, assurez-vous d'être placé sur une longueur d'enregistrement correcte. La valeur décimale correspondant à l'octet courant et à son suivant est affichée en haut à droite (zone <font class="hcp1">Longueur pointée</font>).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Shift+F8</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Retour sur le bloc affiché lors de la détection de l'erreur.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Autres touches</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Tabulation</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Zone Ansi &lt;=&gt; Zone Hexadécimale.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">F1</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Appel de l'aide.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">F9</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Abandon de l'opération.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">F10</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Validation du pointage.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Valeurs affichées</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Fichier</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Nom du fichier traité. Sous le nom du fichier, est indiqué son type (Normal fixe si la taille des enregistrements est fixe, Normal variable sinon).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Pos</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Position courante dans le bloc de 256 octets.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Octet</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Emplacement dans le fichier du premier des 256 octets du bloc affiché.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Taille enreg</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Taille des enregistrements du fichier (0 si taille variable).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text"><font class="hcp1">Longueur pointée</font></p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Valeur décimale correspondant à l'octet courant et à son suivant.</p>
+</td>
+</tr>
+</table>
+</body>
+</html>

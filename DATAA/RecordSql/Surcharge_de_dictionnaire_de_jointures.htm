@@ -1,0 +1,32 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Surcharge de dictionnaire de jointures</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:"Courier New"  , monospace; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Surcharge de dictionnaire de jointures</h3>
+<p>&#160;</p>
+<p>Le dictionnaire de jointures est surchargeable. Pour déclarer un dictionnaire de jointures de surcharge, spécifiez, dans la balise &lt;DictionaryJoinSql&gt;, l'attribut "Overwrite" avec le nom du dictionnaire à surcharger.</p>
+<p>&#160;</p>
+<p>Seul l'ajout de nouvelles jointures est autorisé (on ne peut pas surcharger les jointures existantes).</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold;">Exemple</span> :</p>
+<p class="hcp1">&lt;DictionaryJoinSql Overwrite="gtfdd.dhsj"&gt;</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&lt;JOIN Table=ART&gt;</p>
+<p style="margin-left: 48px; font-family: 'Courier New', monospace;">case NouvelleJointure</p>
+<p style="margin-left: 88px; font-family: 'Courier New', monospace;">ON $join.Dos = ART.Dos and $join.Ref = ART.TaRef</p>
+<p>&#160;</p>
+</body>
+</html>

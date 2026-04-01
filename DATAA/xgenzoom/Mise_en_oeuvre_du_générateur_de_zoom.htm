@@ -1,0 +1,67 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mise en oeuvre du générateur de zoom</title>
+<link rel="StyleSheet" href="default.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Mise en oeuvre du générateur de zoom</h2>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque préliminaire</span> : Les fonctions de Xwin associées au générateur de zoom nécessitent le <a href="Param&eacute;trage_du_g&eacute;n&eacute;rateur_de_zoom.htm">paramétrage préalable du générateur</a> (au niveau des propriétés du projet et du dictionnaire des données).</p>
+<p>&#160;</p>
+<p>Pour faire appel à ces fonctions :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Chargez le dictionnaire des données concerné.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Cliquez droit sur le nom de l'article</span> désiré dans l'arbre du dictionnaire (partie gauche de l'écran).<br>
+Un menu contextuel est ouvert, proposant en particulier les trois choix suivants (ces choix étant également disponibles au menu <span class="hcp1">Outils</span> du dictionnaire) :<br>
+&#160;</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp1">Générer le zoom</span>.<br>
+<br>
+Ce choix appelle le générateur de zoom. Après une <a href="Param&eacute;trage_au_lancement_de_la_g&eacute;n&eacute;ration.htm">dernière mise à jour des paramètres</a>, validez pour lancer la génération.<br>
+<br>
+Si la table fait référence à des tables liées, un tableau est affiché avec la liste de ces tables liées. <span style="font-weight: bold; text-decoration: underline;">Cochez les lignes des liens à générer</span> avant de valider.<br>
+<br>
+La génération crée les fichiers sources et met à jour la table des zooms du menu de l'application. Si une surcharge du fichier contenant la table des zooms (xxxxxU.dhfi) est en ligne, on enregistre le nouveau zoom dans la table de la surcharge ; sinon, on l’enregistre dans la table du fichier paramétré. Vous pouvez indifféremment paramétrer le menu de l'ERP Divalto (fichier A5f) ou un menu Harmony de type hMenu.<br>
+<br>
+Remarque : Il est possible de relancer plusieurs fois la génération d'un zoom. Ceci vous permet de faire des essais avec divers paramètres ou fichiers modèles de génération. Si le zoom a déjà été généré, vous avez le choix entre tout régénérer, régénérer uniquement le masque ou régénérer uniquement le module de traitements.<span class="hcp1"><br>
+<br>
+Attention</span> : Le générateur <span class="hcp1">NE compile PAS</span> automatiquement les sources générés ; cette opération reste à votre charge.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Mise à jour de la table des zooms</span>.<br>
+Ce choix vous permet une mise à jour à posteriori de la table des zooms du menu de l'application. Si le zoom existe déjà avec des paramètres différents, le générateur propose de les remplacer ; sinon, il ne fait rien.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Appeler le zoom</span>.<br>
+Ce choix vous permet d'exécuter le zoom généré (sous réserve que vous ayez compilé les sources générés). Il fait appel au programme <span class="hcp1">AppelZoom.dhop</span> dont le source et l'objet sont livrés dans /Divalto/Sys. Vous pouvez modifier ce programme si l'appel de vos zooms nécessite un traitement préalable spécifique.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp1">En cas d'erreur de compilation du module des traitements</span> :</p>
+<p>Attention, si vous utilisez un modèle de traitements standard et l'option "Générer le zoom dans l'environnement ERP Divalto", vous devez garnir la zone Paramètres des <a href="Param&eacute;trage_au_niveau_du_projet.htm">propriétés du projet</a> avec un des paramètres standard. A défaut, il manquera la génération d'un Include qui provoquera des erreurs de compilation.<br>
+Exemple : Pour un zoom lié à Achat-Vente, placez "DAV" dans la zone Paramètres.</p>
+<p>&#160;</p>
+</body>
+</html>

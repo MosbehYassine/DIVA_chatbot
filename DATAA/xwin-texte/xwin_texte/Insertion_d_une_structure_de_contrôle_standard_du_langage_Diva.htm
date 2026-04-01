@@ -1,0 +1,114 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Insertion d'une structure de contrôle standard du langage Diva</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { font-weight:bold; }
+span.hcp4 { font-family:"Courier New"  , monospace; }
+span.hcp5 { font-family:Arial, sans-serif; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Insertion d'une structure de contrôle standard du langage Diva</h3>
+<p>L'outil d'insertion d'extraits de code de Xwin permet d'insérer automatiquement dans votre programme un extrait de code correspondant :</p>
+<ul class="hcp1">
+<li class="p">
+<p>A l'une des structures de contrôle standard du langage Diva (do ou do while, for, if, loop, repeat, switch ou switch2, plus structure, beginp et beginf).<br>
+Par exemple, l'extrait de code &lt;for&gt; insère une boucle for vide.</p>
+</li>
+<li class="p">
+<p>A une procédure ou à une fonction (procedure, function).<br>
+Par exemple, l'extrait de code &lt;procedure&gt; insère une procédure avec un corps vide.</p>
+</li>
+<li class="p">
+<p>A un prototype de procédure ou de fonction (proto procedure, proto function).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p style="font-weight: bold; font-size: 10pt;">Afficher le sélecteur de structures</p>
+<ul class="hcp1">
+<li class="p">
+<p>Placez le <span class="hcp2">curseur</span> sur la ligne <span class="hcp2">derrière laquelle</span> vous voulez insérer l'extrait de code.<br>
+Remarque : La position du curseur dans la ligne (colonne) est sans importance. Xwin ne tient pas non plus compte d'une éventuelle sélection actuelle de texte.</p>
+</li>
+<li class="p">
+<p>Tapez <span class="hcp2">Maj+Ctrl+E</span> ou sélectionnez le choix <span class="hcp2">Insérer une structure Diva...</span> du <a href="Lemenucontextueldel__diteurdetextes.htm">menu contextuel</a> de l'éditeur de textes.<br>
+Ce choix fait appel au sélecteur de structures, composé du champ en saisie "Insérez la structure" et d'une boîte à liste présentant la liste des structures faisant l'objet d'un extrait de code standard.<br>
+Vous pouvez maintenant taper le nom d'une structure ou sélectionner une structure dans la liste.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp3"><span class="hcp2">Naviguer dans la Liste des structures</span></p>
+<ul class="hcp1">
+<li class="p">
+<p>Vous pouvez naviguer dans la liste en la faisant <span class="hcp2">défiler</span> (ascenseur ou molette) ou en utilisant les <span class="hcp2">touches de direction</span> (Flèche en Bas, Flèche en Haut, Page Up, Page Down, Ctrl+Page Up, Ctrl+Page Down).</p>
+</li>
+<li class="p">
+<p>La <span class="hcp2">sélection</span> dans la liste <span class="hcp2">« suit » les caractères tapés</span> dans le champ "Insérez la structure". Si vous connaissez les premières lettres de son nom, tapez-les pour atteindre directement la structure désirée dans la liste.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp3">Insérer une structure dans le code source</p>
+<p>Effectuez l'une des opérations suivantes :</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Sélectionnez</span> le nom de la structure (clic simple, touche de direction, ...) puis tapez <span class="hcp2">Tab</span> ou <span class="hcp2">Entrée</span>.</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Double-cliquez</span> sur son nom.</p>
+</li>
+<li class="p">
+<p>Sans nom sélectionné, tapez <span class="hcp2">Tab</span> ou <span class="hcp2">Ctrl+Entrée</span> pour insérer le code de l'élément de la liste qui a le <span class="hcp2">focus</span>.</p>
+</li>
+</ul>
+<p>L'extrait de code, correspondant à la structure validée, est <span class="hcp2">inséré</span> dans le document <span class="hcp2">derrière la ligne pointée par le curseur</span> clavier (cette ligne restant inchangée).<br>
+&#160;</p>
+<p>Remarquez les <span class="hcp2">cas particuliers</span> suivants :</p>
+<ul class="hcp1">
+<li class="p">
+<p>Le code généré pour <span class="hcp2">if</span> inclut toujours le membre <span class="hcp2">else</span> :<span class="hcp4"><br>
+<br>
+if &lt;t&gt;<br>
+<br>
+else<br>
+<br>
+endif</span><span style="font-family: Arial, sans-serif; font-weight: bold;"><br>
+<br>
+Si vous souhaitez une structure if sans else</span><span class="hcp5">,</span> <span style="font-family: Arial, sans-serif; font-weight: bold; text-decoration: underline;">tapez Ctrl+Z (commande Annuler) après l'insertion</span><span class="hcp5">.<br>
+Ceci éliminera uniquement le membre else du code généré pour ne conserver que :</span><span class="hcp4"><br>
+<br>
+if &lt;t&gt;<br>
+<br>
+endif</span><span class="hcp5"><br>
+&#160;</span></p>
+</li>
+<li class="p">
+<p>Le code généré pour <span class="hcp2">procedure</span>, <span class="hcp2">function</span>, <span class="hcp2">proto procedure</span> et <span class="hcp2">proto function</span> ne comporte pas de paramètre et n'inclut donc pas leur déclaration. Une <span class="hcp2">génération automatique de la déclaration des paramètres</span> est toutefois possible à posteriori (voir la rubrique <a href="Insertion_d_un_compl&eacute;ment_de_structure_de_contr&ocirc;le_standard_du_langage_Diva.htm">Insertion d'un complément de structure de contrôle standard du langage Diva</a>).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp3">Refermer le sélecteur de structures</p>
+<p>A tout moment, tapez <span class="hcp2">Echap</span> ou <span class="hcp2">cliquez dans l'éditeur</span>.</p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000; color: #0000ff;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="Insertion_d_un_compl&eacute;ment_de_structure_de_contr&ocirc;le_standard_du_langage_Diva.htm">Insertion d'un complément de structure de contrôle standard du langage Diva</a></p>
+<p><a href="Insertion_d_un_fichier_d_extrait_de_code_personnalis&eacute;.htm">Insertion d'un fichier d'extrait de code personnalisé</a></p>
+<p class="Body-Text"><a href="Modifierlavaleurdestabulations.htm">Modifier les paramètres de mise en retrait et de tabulation</a></p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000; color: #0000ff;">&#160;</p>
+<p class="RelatedHead">Procédure correspondante :</p>
+<p class="Body-Text"><a href="Pour_ins&eacute;rer_le_code_d_une_structure_de_contr&ocirc;le_Diva.htm">Pour insérer le code d'une structure de contrôle Diva</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

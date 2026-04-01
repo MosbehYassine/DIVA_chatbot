@@ -1,0 +1,48 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Optimisation des accès</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Optimisation des accès</h3>
+<p class="Body-Text">Lors de la préparation d’une requête avant son exécution, le driver ODBC recherche l’index le plus favorable en fonction des critères de sélection (clause <font class="hcp1">Where</font> et <font class="hcp1">Having</font>), des critères de regroupement (clause <font class="hcp1">Group by</font>) ou des critères de tri (clause <font class="hcp1">Order by</font>).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque</font></p>
+<p class="Body-Text">Lorsqu’un index est imposé pour une vue, le driver ODBC l’utilise quels que soient les critères de la requête. <a href="Cr_ation_d_une_vue.htm">Voir la création des vues</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Choix de l’index</font></p>
+<p class="Body-Text">Le choix de l’index s’effectue d’abord en fonction de critères de sélection, puis des critères de regroupement et enfin des critères de tri. Si aucun index ne convient ou si la requête ne comporte pas de critères particuliers, le driver utilise un index par défaut (la clé primaire si elle existe, sinon le premier index de la table).</p>
+<p style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemples:</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Select * from client where CodePostal BETWEEN '67000' and '68999'<br>
+lit le fichier client par l‘index comprenant le CodePostal pour les valeurs spécifiées.</p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Select CodeCli, sum(Montant), NomCli from Stat, Client<br>
+where Stat.CodeCli = Client.CodeCli<br>
+Group By CodeCli<br>
+utilise l'accès par le code client pour gérer le regroupement.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">FichierLog</font></p>
+<p class="Body-Text">Le paramètre FichierLog du chapitre [ODBC] de Divalto.ini permet d’indiquer le nom du fichier mouchard donnant des indications sur l’exécution des requêtes, en particulier l’index utilisé.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

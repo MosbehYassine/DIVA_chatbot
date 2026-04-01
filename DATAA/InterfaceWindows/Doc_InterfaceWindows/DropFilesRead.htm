@@ -1,0 +1,88 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DropFilesRead</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+font.hcp3 { font-weight:bold; }
+font.hcp4 { font-style:italic; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DropFilesRead &#160;<a href="Liste_des_fonctions_Drag_and_Drop.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Introduction.htm"><font class="hcp1">Thème</font></a></h3>
+<p>La fonction DropFilesRead permet de lire un nom de fichier qui a été déposé dans la fenêtre du programme en cours. Des appels successifs à DropFilesRead permettent de lire l’ensemble des fichiers déposés.</p>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">Int DropFilesRead</font> <font class="hcp4">(fichier)</font></p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Paramètre</font></p>
+<p class="Body-Text"><font class="hcp4">Fichier</font></p>
+<p>Variable alphanumérique qui reçoit le nom du fichier.</p>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="580">
+<tr class="hcp5">
+<td style="width:14.65%;" class="hcp6">
+<p>0</p>
+</td>
+<td style="width:85.35%;" class="hcp6">
+<p>Pas d’erreur. <font class="hcp4">Fichier</font> contient un nom de fichier.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:14.65%;" class="hcp6">
+<p>H_EOF</p>
+</td>
+<td style="width:85.35%;" class="hcp6">
+<p>Fin de la liste des fichiers atteinte.</p>
+</td>
+</tr>
+</table>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">Remarque</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p">
+<p style="margin-left: 11.75pt;">Harmony provoque un point d’arrêt pour indiquer au programme que l’utilisateur a déposé des fichiers dans la fenêtre du programme. Voir <a href="DropFilesOpen.htm">DropFilesOpen</a> .</p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">Exemple</font></p>
+<p style="text-indent: 30.25pt;">Voir dans le projet exemples.dhpt , le sous-projet DragFichier.</p>
+<p class="hcp2">&#160;</p>
+<p class="Source">1&#160;fichier &#160;260</p>
+<p class="Source">DropFilesOpen(<font class="hcp3">5000</font>) &#160;&#160;; active le drop files , celui ci générera</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; la point d'arrêt 5000</p>
+<p class="Source">...</p>
+<p class="Source">XmeInput(...)</p>
+<p class="Source">Do</p>
+<p class="Source">&#160;Switch Harmony.DataArret</p>
+<p class="Source">&#160;Case <font class="hcp3">5000</font></p>
+<p class="Source">&#160;&#160;Loop DropFilesRead(fichier) = 0</p>
+<p class="Source">&#160;&#160;&#160;...</p>
+<p class="Source">&#160;&#160;Endloop</p>
+<p class="Source">&#160;endif</p>
+<p class="Source">while (not fini)</p>
+<p class="Source">&#160;XmeNext(harmony.retour,harmony.CplRetour)</p>
+<p class="Source">wend</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">DropFilesClose &#160;; desactive le drop files</p>
+<p class="hcp2">&#160;</p>
+<p style="margin-right: 6.75pt;"><font class="hcp3">Voir</font></p>
+<p><a href="DropFilesOpen.htm">DropFilesOpen</a> , <a href="DropFilesClose.htm">DropFilesClose</a></p>
+</body>
+</html>

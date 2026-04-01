@@ -1,0 +1,151 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FtpRequestExecRequest</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>FtpRequestExecRequest <a href="Liste_des_fonctions_Ftp___Sftp.htm">Famille</a> <a href="Fonctions_Ftp___Sftp.htm">Thème</a></h1>
+<p>&#160;</p>
+<p>Exécution d'une commande.</p>
+<p>&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">int FtpRequestExecRequest &#160;</span>( <span style="font-style: italic;">Ticket , &amp;Retour, &amp;Description)</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">Ticket</p>
+<p class="decalage05">Identifiant de la requête obtenu par <a href="FtpRequestNew.htm">FtpRequestNew</a></p>
+&#160;
+<p class="Body-Text" style="font-style: italic;">Retour</p>
+<p class="decalage05">Données renvoyées par le serveur. Par exemple la taille d'un fichier ou la liste d'un répertoire.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Description</p>
+<p class="decalage05">Chaîne de caractères indiquant le stauts renvoyé par le serveur.</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Retour</p>
+<table style="vertical-align: top;" cellspacing="0" width="36.597%">
+<col style="width: 14.034%;">
+<col style="width: 85.966%;">
+<tr class="hcp1">
+<td style="width:14.034%;" class="hcp2">
+<p>0</p>
+</td>
+<td style="width:85.966%;" class="hcp2">
+<p>Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.034%;" class="hcp2">
+<p>1</p>
+</td>
+<td style="width:85.966%;" class="hcp2">
+<p>Ticket incorrect</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:14.034%;" class="hcp2">
+<p>2</p>
+</td>
+<td style="width:85.966%;" class="hcp2">
+<p>Exception. Voir <a href="FtpRequestGetError.htm">FtpRequestGetError</a></p>
+</td>
+</tr>
+</table>
+<p class="decalage05" style="margin-left: 0px; font-weight: normal;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Exemple</p>
+<p style="margin-left: 48px;">A titre d'exemple, le code source de la fonction FtpDownloadFile.</p>
+<p>&#160;</p>
+<p class="Source">;*</p>
+<p class="Source">Public Function String_FtpResult FtpDownloadFile(server, login, password, localFile, remoteFile, OpenHarmony, proxyServer, ProxyMode, proxyLogin, proxyPassword)</p>
+<p class="Source">; Téléchargement d'un fichier depuis un serveur FTP</p>
+<p class="Source">1 server &#160;&#160;&#160;&#160;&#160;&#160;&#160;S ; Adresse du serveur : ftp://ip[:port] &#160;ou &#160;sftp://ip[:port]</p>
+<p class="Source">1 login &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;S ; Identifiant sur le serveur. 'anonymous' si vide</p>
+<p class="Source">1 password &#160;&#160;&#160;&#160;&#160;S ; Mot de passe sur le serveur</p>
+<p class="Source">1 localFile &#160;&#160;&#160;&#160;S ; Chemin d'accès au fichier sur l'ordinateur local</p>
+<p class="Source">1 remoteFile &#160;&#160;&#160;S ; Chemin d'accès au fichier sur le serveur distant</p>
+<p class="Source">1 OpenHarmony &#160;&#160;1,0 = FALSE ; Ouverture du fichier en local en mode Harmony</p>
+<p class="Source">1 proxyServer &#160;&#160;S = ' ' ; Adresse du proxy</p>
+<p class="Source">1 ProxyMode &#160;&#160;&#160;&#160;1,0 = 1 ; Mode d'identification sur le proxy. 1 : Utiliser le proxy du système ; 2 : SSPI ; 3 : configuration manuelle</p>
+<p class="Source">1 proxyLogin &#160;&#160;&#160;S = ' ' ; Identifiant sur le serveur proxy</p>
+<p class="Source">1 proxyPassword S = ' ' ; Mot de passe sur le serveur proxy</p>
+<p class="Source">1 id L</p>
+<p class="Source">1 st L</p>
+<p class="Source">1 retour S</p>
+<p class="Source">1 desc S</p>
+<p class="Source">1 mess S</p>
+<p class="Source">1 ex S</p>
+<p class="Source">RecordDiva FtpResult</p>
+<p class="Source">&#160;</p>
+<p class="Source">BeginF</p>
+<p class="Source">&#160;&#160;&#160;FtpResult = ""</p>
+<p class="Source">&#160;&#160;&#160;if server = '' or localFile = '' or remoteFile = ''</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Status = 3</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;FReturn FtpResult</p>
+<p class="Source">&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;id = FtpRequestNew(condition(left(server, 1) = 's', true, false))</p>
+<p class="Source">&#160;&#160;&#160;st = FtpRequestSetUrl(id, server, remoteFile)</p>
+<p class="Source">&#160;&#160;&#160;if st &lt;&gt; 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestGetError(id, mess, ex)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Status = st</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Retour = mess</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Desc = ex</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestClose(id)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;freturn FtpResult</p>
+<p class="Source">&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;&#160;st = FtpRequestSetLogin(id, login, password)</p>
+<p class="Source">&#160;&#160;&#160;&#160;if st &lt;&gt; 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestGetError(id, mess, ex)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Status = st</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Retour = mess</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Desc = ex</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestClose(id)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;freturn FtpResult</p>
+<p class="Source">&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;&#160;if proxyServer &lt;&gt; ' '</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;st = FtpRequestSetProxy(id, proxyServer, ProxyMode, proxyLogin, ProxyPassword)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;if st &lt;&gt; 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestGetError(id, mess, ex)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Status = st</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Retour = mess</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Desc = ex</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestClose(id)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;freturn FtpResult</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;&#160;st = FtpRequestSetMethod(id, "RETR", localFile, OpenHarmony)</p>
+<p class="Source">&#160;&#160;&#160;&#160;if st &lt;&gt; 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestGetError(id, mess, ex)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Status = st</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Retour = mess</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Desc = ex</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestClose(id)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;freturn FtpResult &#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;&#160;st = FtpRequestExecRequest(id, retour, desc)</p>
+<p class="Source">&#160;&#160;&#160;&#160;FtpResult.Status = st</p>
+<p class="Source">&#160;&#160;&#160;&#160;FtpResult.Retour = retour</p>
+<p class="Source">&#160;&#160;&#160;&#160;FtpResult.Desc = desc</p>
+<p class="Source">&#160;&#160;&#160;&#160;if st &lt;&gt; 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestGetError(id, mess, ex)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Status = st</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Retour = mess</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpResult.Desc = ex</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FtpRequestClose(id)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;freturn FtpResult</p>
+<p class="Source">&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;&#160;FtpRequestClose(id)</p>
+<p class="Source">&#160;&#160;&#160;&#160;freturn FtpResult</p>
+<p class="Source">EndF</p>
+</body>
+</html>

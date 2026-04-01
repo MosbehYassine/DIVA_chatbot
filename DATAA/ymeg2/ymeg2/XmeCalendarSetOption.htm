@@ -1,0 +1,94 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeCalendarSetOption</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+p.hcp5 { font-style:italic; }
+ul.hcp6 { list-style:disc; }
+span.hcp7 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeCalendarSetOption <span style="font-weight: normal;">&#160;</span><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_agendas.htm"><span class="hcp1">Famille</span></a> <span class="hcp1"><a href="Agendas.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p style="font-weight: bold;"><span class="hcp2">Ajout d'une option dans la liste des options d'un agenda</span></p>
+<p>&#160;</p>
+<p><span class="hcp2">Long XmeCalendarSetOption</span> (<span class="hcp3">Identifiant</span>, <span class="hcp3">Option</span>)</p>
+<p>&#160;</p>
+<p><span class="hcp2">Paramètres</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 12.445%;">
+<col style="width: 87.555%;">
+<tr class="hcp4">
+<td style="border: Solid 1px #000000;width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">Identifiant</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Enregistrement identifiant l'agenda rendu par la fonction XmeCalendarGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="border-left: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">Option</p>
+</td>
+<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Instance de l'enregistrement <span class="hcp2">ObjectOption</span> du dictionnaire ddCalendar.dhsd.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp2">Valeur rendue par la fonction</span> :</p>
+<p>-1 : ticket invalide.</p>
+<p>Autre : Adresse de l’option dans la liste des options.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Description de la fonction</span> :</p>
+<ul class="hcp6">
+<li class="p">
+<p>La fonction XmeCalendarSetOption ajoute UNE option à la liste des options de l’agenda.<br>
+Si vous désirez positionner plusieurs options, il faut appeler la fonction pour <span class="hcp2">chacune</span> d'elles.</p>
+</li>
+<li class="p">
+<p>Pour positionner une option, il faut :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp6">
+<li class="p">
+<p>Utiliser une instance de l’enregistrement <span class="hcp2">ObjectOption</span> du dictionnaire ddCalendar.dhsd.</p>
+</li>
+<li class="p">
+<p>Préciser l’option choisie dans le champ <span class="hcp2">ObjectOption.Option</span>.</p>
+</li>
+<li class="p">
+<p>Affecter sa valeur dans le champ <span class="hcp2">ObjectOption.Value</span>.<br>
+Remarque : ce champ est de type alphanumérique ; si vous lui affectez une variable binaire (nature B, X ou L), prenez soin de la convertir en alpha par la fonction ToString ; réciproquement, utilisez la fonction Val pour transférer une option dans une variable binaire.</p>
+</li>
+<li class="p">
+<p>Pour une option contenant un libellé, précisez le code page (jeu de caractères à utiliser pour afficher les textes en langue étrangère, sinon 0) dans le champ <span class="hcp2">ObjectOption.CodePage</span>.</p>
+</li>
+<li class="p">
+<p>Ajouter l’option à la liste en exécutant la fonction XmeCalendarSetOption.</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp7">Attention</span>, les options qui concernent les vues doivent se programmer <span class="hcp7">avant</span> le premier affichage de la page Xwin contenant l’agenda. Ensuite, tout changement sur les vues est ignoré.</p>
+</li>
+</ul>
+<p>Vous trouverez la <span class="hcp2">liste des options disponibles</span> ainsi que des <span class="hcp2">exemples</span> à la rubrique <a href="Options_de_l_agenda.htm">Options de l'agenda</a>.</p>
+<p>&#160;</p>
+</body>
+</html>

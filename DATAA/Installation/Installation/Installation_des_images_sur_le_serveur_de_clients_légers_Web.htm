@@ -1,0 +1,58 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Installation des images sur le serveur de clients légers Web</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Installation des images sur le serveur de clients légers Web</h3>
+<p>&#160;</p>
+<p>Tout site Web IIS est identifié par un alias pointant un répertoire physique du serveur. Pour des raisons de sécurité, les fichiers d'une application Web (pages html / aspx / ..., sources Java Script et CSS, images, sons, vidéos, ...) ne sont accessibles aux navigateurs que s'ils sont stockés <span class="hcp1">dans une branche du disque incluse dans ce répertoire</span> physique.</p>
+&#160;
+<p>Nous avons vu précédemment comment installer un site Web IIS pour le client léger Html et le faire pointer le répertoire physique /Divalto/Internet/Lcweb (ou une copie de ce répertoire). Pour que les navigateurs aient accès aux fichiers images (et sons) référencés par les applications Harmony, il est donc impératif qu'ils soient placés sous ce répertoire physique.</p>
+&#160;
+<p>Dans la suite de cette rubrique, nous prendrons comme exemple le répertoire physique "Lcweb".</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Les applications Harmony référencent trois sortes d'images :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Les <span class="hcp1">images fournies par Divalto</span>.<br>
+Ces images sont regroupées dans des fichiers "Sprites" livrés en standard dans le sous-répertoire /Lcweb/Styles/Images.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les <span class="hcp1">images variables</span>.<br>
+Ces images sont automatiquement recopiées dans un sous-répertoire temporaire de racine "/Lcweb/Tmp/Images".<span class="hcp1"><br>
+<br>
+Remarque importante</span> : Il s'agit ici <span style="text-decoration: underline;">uniquement</span> des images référencées par un <span class="hcp1">objet "Image variable"</span> de Xwin et des images associées aux <span class="hcp1">ressources</span> et aux <span class="hcp1">types de ressources</span> de <span class="hcp1">l'objet "Agenda"</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les <span class="hcp1">images fixes</span>.<span class="hcp1"><br>
+Ces images doivent être</span> <span class="hcp2">transférées manuellement</span> <span class="hcp1">dans le dossier /Lcweb/Styles/Images</span>.<span class="hcp1"><br>
+<br>
+Remarque importante</span> : Il s'agit ici de <span class="hcp1">toutes les images autres que les images variables</span> citées ci-dessus (objets "Image" et "Bouton", images de menu ou de barre d'outil, choix des objets "Multi-choix Images", images propres aux tableaux et aux arbres, etc.).<br>
+&#160;</p>
+</li>
+</ul>
+<p><span class="hcp2">Attention</span> :</p>
+<p><span class="hcp1">Les fichiers images (fixes et variables) doivent aussi être accessibles à XrtDiva</span>.</p>
+<p>Un chemin implicite doit donc pointer chaque dossier contenant ce type d'images. En pratique, c'est généralement le cas à partir du moment où l'on utilise également ces images en client lourd ou léger Wpf.<br>
+<br>
+Si un chemin implicite ne pointe pas directement le dossier "/Lcweb/Tmp/Images", il faudra donc stocker les images fixes à deux endroits : celui habituellement utilisé pour leur affichage en client lourd ou léger Wpf et le répertoire des images du serveur Web "/Lcweb/Tmp/Images".</p>
+<p>&#160;</p>
+</body>
+</html>

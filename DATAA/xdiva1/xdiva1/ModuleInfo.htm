@@ -1,0 +1,167 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ModuleInfo</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+span.hcp4 { text-decoration:none; }
+p.hcp5 { font-weight:bold; }
+tr.hcp6 { vertical-align:top; }
+td.hcp7 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>ModuleInfo &#160;<a href="InstructionsdeModulesetProgrammes.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="G_n_ralit_s1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p>&#160;</p>
+<p>La fonction ModuleInfo retourne une chaîne <a href="G_n_ralit_s.htm">HMP</a> contenant des informations sur un module chargé.</p>
+<p>ModuleInfo fonctionne également pour les modules qui ont été chargés puis déchargés par la fonction de réinitialisation de Ywpf ou de Ymig.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Alpha</span> <span class="hcp2">ModuleInfo</span>( [<span class="hcp3">Module]</span> )</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètre</font></p>
+<p class="Body-Text"><font style="font-style: italic;">Module</font></p>
+<p class="decalage05">Nom du module.<br>
+Le nom doit comporter une extension correspondant à un objet, dhop, dhof, dhod etc.</p>
+<p class="decalage05">Si le paramètre <span class="hcp3">Module</span> n'est pas précisé, la fonction retourne les informations du module courant.</p>
+<p class="decalage05" style="text-decoration: underline;">Attention : le module doit être chargé en mémoire. <span class="hcp4">La fonction</span> <a href="GetAdressProcedure.htm">GetAdressProcedure</a> <span class="hcp4">permet de charger un module (voir exemple ci-dessous).</span></p>
+<p class="decalage05">&#160;</p>
+<p class="hcp5">Retour</p>
+<p>ModuleInfo retourne une chaîne HMP contenant les paramètres suivants :</p>
+<table style="vertical-align: top; margin-left: 40px;" cellspacing="4" width="100%">
+<col style="width: 18.949%;">
+<col style="width: 81.051%;">
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5">Status</p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>0 = pas d'erreur<br>
+1 = module non chargé en mémoire.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5">VersionModule</p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>Version du module positionnée par la pseudo instruction <a href="ModuleVersion.htm">ModuleVersion</a></p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5">Pack</p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>Numéro de Pack Divalto</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5">NumApplic</p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>Numéro d'appliction Divalto</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5">OverWrite</p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>Nom du module de surcharge associé</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5"><span class="hcp2">OverWrittenBy</span></p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>Nom du module surchargé.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5"><span class="hcp2">Deleted</span></p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>1 si le module a été déchargé par la fonction de réinitialisation de Ywpf ou de Ymig.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5">Info</p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>Informations stockées dans le module par <a href="SetModuleInfo.htm">SetModuleInfo</a>.</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td colspan="2" style="width:100%;" class="hcp7">
+<p class="hcp5">Si le paramètre OverWrite est présent, ModuleInfo retourne également les informations du module de surcharge</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5"><span class="hcp2">Status_s</span></p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>0=le module de surcharge existe<br>
+1=le module de surcharge n'existe pas</p>
+</td>
+</tr>
+<tr class="hcp6">
+<td style="width:18.949%;" class="hcp7">
+<p class="hcp5">VersionModule_s</p>
+</td>
+<td style="width:81.051%;" class="hcp7">
+<p>Version du module de surcharge positionné par la pseudo instruction <a href="ModuleVersion.htm">ModuleVersion</a></p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p class="hcp5">Exemples</p>
+<p class="Source">Procedure AfficherInfos(s)</p>
+<p class="Source">1 S &#160;&#160;&#160;&#160;&#160;S</p>
+<p class="Source">1 param &#160;S</p>
+<p class="Source">1 valeur S</p>
+<p class="Source">beginp</p>
+<p class="Source">&#160;&#160;&#160;Loop hmpRead(s,param,valeur) = 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;if valeur &lt;&gt; " "</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display param &amp; " " &amp; valeur</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;endloop</p>
+<p class="Source">endp</p>
+<p class="Source">&#160;</p>
+<p class="Source">main</p>
+<p class="Source">1 s &#160;&#160;S</p>
+<p class="Source">1 adr 16</p>
+<p class="Source">&#160;</p>
+<p class="Source">ModuleVersion("6.2a") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; positionnement de mon propre numéro de version</p>
+<p class="Source">s= ModuleInfo() &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; lecture des caractéristiques de moi-même</p>
+<p class="Source">AfficherInfos(s)</p>
+<p class="Source">&#160;</p>
+<p class="Source">GetAdressFunction("divalto.dhop","bidon",adr) ; provoque le chargement du module divalto.dhop</p>
+<p class="Source">s= ModuleInfo("divalto.dhop")</p>
+<p class="Source">AfficherInfos(s)</p>
+<p class="Source">&#160;</p>
+<p class="Source">xmeLoad("divaltoe.dhof") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; chargement d'un masque et lecture des informations</p>
+<p class="Source">s= ModuleInfo("divaltoe.dhof")</p>
+<p class="Source">AfficherInfos(s)</p>
+<p class="Source" style="font-weight: bold;">&#160;</p>
+<p class="hcp5">Voir</p>
+<p><a href="ModuleVersion.htm" style="font-weight: normal;">ModuleVersion</a>, <a href="OverWrite.htm">OverWrite</a> <a href="SetModuleInfo.htm">SetModuleInfo</a> <a href="GetModulesNames.htm">GetModulesNames</a></p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,111 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Objet Texte</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp3 { font-weight:normal; }
+span.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Objet Texte</h3>
+<p class="Body-Text">Les paramètres d'un objet Texte sont :<br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 16.498%;">
+<col style="width: 83.502%;">
+<tr class="hcp1">
+<td colspan="2" style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Texte</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:16.498%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Texte</p>
+</td>
+<td style="width:83.502%;" class="hcp2">
+<p class="Body-Text">Libellé du texte.<br>
+Voir les remarques en fin de rubrique.</p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 100%;">
+<tr class="hcp1">
+<td style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Présentation <span class="hcp3">: voir <a href="Pr_sentation.htm" style="font-weight: normal;">Présentation</a>.</span></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 16.498%;">
+<col style="width: 83.502%;">
+<tr class="hcp1">
+<td colspan="2" style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Aide</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:16.498%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Bulle</p>
+</td>
+<td style="width:83.502%;" class="hcp2">
+<p class="Body-Text">Libellé de la bulle.</p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 100%;">
+<tr class="hcp1">
+<td style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Attachements / coordonnées <span class="hcp3">: voir <a href="Attachements_Coordonn_es.htm">Attachements / Coordonnées</a>.</span></p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 100%;">
+<tr class="hcp1">
+<td style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Commentaire <span class="hcp3">: voir <a href="Commentaire.htm">Commentaire</a>.</span></p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp4">Remarques</span> :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Un objet Texte est interprété comme un objet Graphique si son contenu <span class="hcp4">débute par &lt;hog&gt;</span> (voir <a href="Les_commandes_de_l_objet_graphique_G_n_ralit_s.htm">Les commandes de l'objet graphique : Généralités</a>). (Non disponible en client léger Html.)<span class="hcp4"><br>
+<br>
+Restriction</span> : L’objet doit être soit un texte, soit un hog. Son type est déterminé statiquement, suivant le contenu du texte spécifié dans Xwin : hog si le texte débute par &lt;hog&gt;, simple label sinon.<br>
+il n’est pas autorisé de changer de type en changeant le texte par attribut dynamique. Ainsi, un objet Texte initialisé « normalement » dans Xwin, puis modifié dynamiquement avec un contenu de type hog, restera affiché comme un simple texte. La solution consiste à immédiatement spécifier ici un texte initial de type hog (par exemple : "&lt;hog&gt;Libellé" plutôt que "Libellé").<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">Lorsqu'un caractère du texte est précédé d'un "_", le client souligne ce caractère et élimine le "_".<br>
+Ceci permet normalement de visualiser le raccourci clavier du champ associé au label.<br>
+Cette fonctionnalité n'étant pas implémentée sous Harmony et pour ne pas induire l’utilisateur en erreur, Ywpf élimine automatiquement tout "_" simple placé dans le libellé d'un objet Texte.<span class="hcp4"><br>
+Si vous voulez effectivement afficher un "_", il faut le doubler</span>.</p>
+</li>
+</ul>
+</body>
+</html>

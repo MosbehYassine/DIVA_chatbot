@@ -1,0 +1,49 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Opérateurs de test</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:Courier New; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Opérateurs de test &#160;<a href="Op_rateurs_r_sum_.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Tous les opérateurs de test rendent comme résultat une valeur de type L contenant 0 pour faux et 1 pour vrai. Il est donc possible d'écrire les instructions suivantes :<br>
+<font face="Courier New" class="hcp1">i = (j &lt; 0)+1<br>
+if i | display "i est différent de 0" | endif</font></p>
+<p class="Body-Text">Il y a possibilité de mélanger les types, le type de la comparaison est déterminé par le type de la variable de gauche.</p>
+<p class="Body-Text">Les opérateurs de test sont :</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">= &#160;&#160;</font>: égal</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">&lt; &#160;&#160;</font>: inférieur</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">&gt; &#160;&#160;</font>: supérieur</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">&lt;= &#160;&#160;</font>: inférieur ou égal</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">&gt;= &#160;&#160;</font>: supérieur ou égal</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">&lt;&gt; &#160;&#160;</font>: différent</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">In &#160;&#160;</font>: appartenance à une énumération</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">Like&#160;&#160;</font>: comparaison approximative</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">Match&#160;&#160;</font>: comparaison approximative</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">LikeSql</font> : comparaison approximative compatible Sql</p>
+<p class="Body-Text"><font class="hcp2">Cas particulier :</font></p>
+<p class="Body-Text">Il est possible d'affecter une chaîne d'espaces à une variable numérique définie par longueur,décimales.</p>
+<p class="Body-Text">La valeur de cette variable est nulle et les tests suivants sont vrais :</p>
+<p class="Body-Text"><font face="Courier New" class="hcp1">If v = " "<br>
+If v = 0</font></p>
+<p class="Body-Text"><br>
+<font class="hcp2">Voir</font></p>
+<p class="Body-Text">La fonction <a href="Inspect.htm">Inspect</a> permet de tester l'appartenance d'une valeur à une liste de valeurs et/ou à un intervalle.</p>
+<p class="Body-Text">La fonction <a href="Search.htm">Search</a> permet de rechercher un élément dans un tableau.</p>
+<p class="Body-Text">Les fonctions <a href="Max.htm">Max</a> et <a href="Min.htm">Min</a> qui retournent respectivement la plus petite et la plus grande valeur.</p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Condition</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Condition &#160;<a href="Listedesstructuresdecontr_le.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Condition permet de simplifier l'écriture de certains tests.<br>
+<font class="hcp1"><br>
+Condition</font> <font class="hcp2">(expression , expression1 , expression2)</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Expression</font></p>
+<p class="decalage05">Expression booléenne.</p>
+<p class="Body-Text"><font class="hcp2">Expression1</font></p>
+<p class="decalage05">La fonction Condition retourne le résultat de <font class="hcp2">Expression1</font> si <font class="hcp2">Expression</font> est vraie.</p>
+<p class="Body-Text"><font class="hcp2">Expression2</font></p>
+<p class="decalage05">La fonction Condition retourne le résultat de <font class="hcp2">Expression2</font> si <font class="hcp2">Expression</font> est fausse.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="decalage05">La fonction renvoie le résultat de <font class="hcp2">Expression1</font> si <font class="hcp2">Expression</font> est vraie.</p>
+<p class="decalage05">La fonction renvoie le résultat de <font class="hcp2">Expression2</font> si <font class="hcp2">Expression</font> est fausse.</p>
+&#160;
+<p class="Body-Text">Le type de <font class="hcp2">Expression1</font> et de <font class="hcp2">Expression2</font> doit être identique.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple 1</font><font style="font-family: 'Courier New';" face="Courier New"><br>
+i = Condition(j&lt;2,0,2)&#160;<br>
+est équivalent aux 4 lignes suivantes :<br>
+if j&lt;2<br>
+&#160;i=0<br>
+else<br>
+&#160;i=2<br>
+endif</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple 2</font></p>
+<p class="Source">st = Condition(Sens_Lecture = 1 , Fread(tdf,art) , Fpread(tdf,art))</p>
+<p class="Body-Text">Si Sens_Lecture vaut 1, l'enregistrement suivant est lu, sinon c'est l'enregistrement précédent qui est lu.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="If_Else_Elsif_Endif.htm">If - Else - Elsif - Endif</a></p>
+</body>
+</html>

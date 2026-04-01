@@ -1,0 +1,77 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Pièges des touches</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+ol.hcp4 { list-style:decimal; }
+ul.hcp5 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Pièges des touches</h3>
+<p class="Body-Text">La boîte de dialogue des pièges de touche vous permet de spécifier les numéros des points d'arrêt conditionnels provoqués par la frappe de certaines touches du clavier.</p>
+<p class="Body-Text">Pour piéger une touche, il faut garnir la case correspondante avec un numéro de point d'arrêt (valeur comprise entre 1 et 65000). A l'exécution, le contrôle sera redonné au programme appelant si la touche est tapée pendant la saisie de la donnée concernée. Le programme récupère le <span class="hcp1">numéro du point d'arrêt</span> dans la donnée <span class="hcp1">Harmony.Arret</span> ou Harmony.DataArret <span class="hcp1">et</span> le <span class="hcp1">code de la touche</span> dans la donnée <span class="hcp1">Harmony.Key</span>.</p>
+<p class="Body-Text">Pour connaître tous les détails concernant la programmation des pièges de touche, reportez-vous au livre <span class="hcp1">"Programmation de la saisie d'un masque"</span> de la documentation consacrée à Ywpf (voir aussi l'annexe <span class="hcp1">"</span><font class="hcp2"><span class="hcp1">Entrées clavier sous Harmony"</span> <span class="hcp3">de cette même documentation)</span></font>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les pièges sont regroupés par "type de touches" :</p>
+<ol class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Touches de fonction</font><br>
+Les quatre lignes correspondent aux touches de fonction F1 à F16, avec, <span class="hcp1">de bas en haut</span> :</p>
+</li>
+</ol>
+<ol style="list-style: disc;">
+<li style="list-style:none;display: inline">
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Aucune touche complémentaire enfoncée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La touche <font class="hcp2">Shift</font> enfoncée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La touche <font class="hcp2">Ctrl</font> enfoncée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Les touches <font class="hcp2">Shift</font> <span class="hcp1">et</span> <font class="hcp2">Ctrl</font> enfoncées.</p>
+</li>
+</ul>
+</li>
+</ol>
+<ol start="2" class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Touches de contrôle (lettres frappées avec Ctrl enfoncée)<span class="hcp3">.</span></font><br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Autres touches (Flèche haut, Flèche bas, etc.)<span class="hcp3">.</span></font><br>
+&#160;</p>
+</li>
+</ol>
+<p class="Body-Text">&#160;&#160;<span class="hcp1">Remarques :</span></p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Vous pouvez vous déplacer au clavier dans les différentes cases par Tab, Back-tab, Flèche en bas et Flèche en haut.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Vous pouvez aussi vous <span class="hcp1">positionner directement dans la case correspondant à une (combinaison de) touche en tapant cette (combinaison de) touche</span> (sauf les quatre touches de déplacement précédentes).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="Pointd_arr_t_pointdetraitementetpi_gedetouche.htm">Point d'arrêt, point de traitement et piège de touche</a>, <a href="Ajoutertouches.htm">Ajouter touches</a></p>
+</body>
+</html>

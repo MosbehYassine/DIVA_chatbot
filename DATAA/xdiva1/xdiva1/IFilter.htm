@@ -1,0 +1,273 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>IFilter</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+font.hcp3 { font-weight:bold; }
+span.hcp4 { font-style:italic; }
+font.hcp5 { font-style:italic; }
+font.hcp6 { font-family:Times New Roman;
+font-size:12pt; }
+p.hcp7 { margin-left:2.20pt;
+margin-top:0.00pt; }
+font.hcp8 { font-family:Times New Roman;
+font-size:12pt;
+font-weight:bold; }
+tr.hcp9 { vertical-align:top; }
+td.hcp10 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp11 { font-size:11pt;
+text-decoration:underline; }
+p.hcp12 { font-size:11pt;
+font-weight:bold; }
+td.hcp13 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp14 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp15 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp16 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>IFilter &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p>&#160;</p>
+<p>La fonction Ifilter permet de positionner un filtre de sélection sur un fichier.</p>
+<p>Ce filtre permet de ne lire que les enregistrements désirés tout en améliorant les temps de réponse. Dans le cas d’un fichier situé sur un serveur Xlan, la sélection est faite sur le serveur ce qui diminue le trafic sur le réseau. Dans le cas d’un serveur SQL, le serveur SQL filtre lui-même les enregistrements, et les temps de réponse sont considérablement améliorés.</p>
+<p>Une fois le filtre positionné, les lectures par Iread et Ipread ne délivrent que des enregistrements qui remplissent la condition exprimée par le filtre. Seules les fonctions de lecture séquetielle sont concernées par le filtre. Les fonctions de recherche (iseek) ne sont pas affectées.</p>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">Int</font> <span style="font-weight: bold;">I</span><font class="hcp3">filter</font> <span class="hcp4">(Tdf, Filtre, NomIndex, [ Cle ] , [ Abort])</span></p>
+<p class="Body-Text"><font class="hcp5">Tdf</font></p>
+<p class="decalage05">Table de définition de fichier du fichier préalablement ouvert.</p>
+<p class="Body-Text"><font class="hcp5"><span class="hcp4">F</span>iltre</font></p>
+<p class="decalage05">Texte exprimant la condition que les enregistrements délivrés doivent remplir.</p>
+<p class="decalage05">Si le texte est à espaces, le filtre est retiré pour la clé spécifiée.</p>
+<p class="decalage05">La syntaxe du filtre est celle de la "search condition" du langage SQL.</p>
+<p class="decalage05"><font class="hcp3">Search_condition</font> désigne une expression logique avec des opérateurs <font class="hcp3">NOT</font>, <font class="hcp3">AND</font> et <font class="hcp3">OR</font> avec des parenthèses.</p>
+<p class="decalage05"><font face="Times New Roman" size="4" class="hcp6">Les éléments de base d'une expression logique sont les suivants :</font></p>
+<ul>
+<li class="p">
+<p class="hcp7"><font face="Times New Roman" size="4" class="hcp6">expression</font> <font face="Times New Roman" size="4" class="hcp8">&lt; | &gt; | &lt;= | &gt;= | = | &lt;&gt;</font> <font face="Times New Roman" size="4" class="hcp6">expression</font></p>
+</li>
+<li class="p">
+<p class="hcp7"><font face="Times New Roman" size="4" class="hcp6">expression [</font><font face="Times New Roman" size="4" class="hcp8">NOT</font><font face="Times New Roman" size="4" class="hcp6">]</font> <font face="Times New Roman" size="4" class="hcp8">BETWEEN</font> <font face="Times New Roman" size="4" class="hcp6">expression</font> <font face="Times New Roman" size="4" class="hcp8">AND</font> <font face="Times New Roman" size="4" class="hcp6">expression</font></p>
+</li>
+<li class="p">
+<p class="hcp7"><font face="Times New Roman" size="4" class="hcp6">expression [</font><font face="Times New Roman" size="4" class="hcp8">NOT</font><font face="Times New Roman" size="4" class="hcp6">]</font> <font face="Times New Roman" size="4" class="hcp8">IN</font> <font face="Times New Roman" size="4" class="hcp6">(valeur [,...])</font></p>
+</li>
+<li class="p">
+<p class="hcp7"><font face="Times New Roman" size="4" class="hcp6">expression [</font><font face="Times New Roman" size="4" class="hcp8">NOT</font><font face="Times New Roman" size="4" class="hcp6">]</font> <font face="Times New Roman" size="4" class="hcp8">LIKE</font> <font face="Times New Roman" size="4" class="hcp6">masque</font><span style="margin-left: 32.20pt; margin-top: 0.00pt;"><font face="Times New Roman" size="4" class="hcp8"><br>
+masque</font> <font face="Times New Roman" size="4" class="hcp6">est une chaîne de caractères, où _ désigne un caractère quelconque et % une suite quelconque de caractères ( même vide ).</font></span></p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp5">NomIndex</font></p>
+<p class="decalage05">Nom de l'index auquel le filtre est associé (il est donc possible de placer un filtre par clé du fichier).</p>
+<p class="Body-Text"><font class="hcp5">Clé</font></p>
+<p class="decalage05">Ce paramètre permet de spécifier la clé de départ pour la prochaine lecture.</p>
+<p class="decalage05">Si Clé est omis, c’est la valeur de la clé courante de la Tdf qui est utilisée.</p>
+<p class="Body-Text"><font class="hcp5">Abort</font></p>
+<p class="decalage05">Booléen (True par défaut) indiquant si le programme doit être interrompu en cas d’erreur.</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp9">
+<td style="width:13.49%;" class="hcp10">
+<p class="Definition" style="margin-top: 4.00pt;">0</p>
+</td>
+<td style="width:86.51%;" class="hcp10">
+<p class="Definition" style="margin-top: 4.00pt;">Pas d’erreur</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td style="width:13.49%;" class="hcp10">
+<p class="Definition" style="margin-top: 4.00pt;">Autre</p>
+</td>
+<td style="width:86.51%;" class="hcp10">
+<p class="Definition" style="margin-top: 4.00pt;">Code d’erreur système. Voir <a href="ErrorFatal.htm">ErrorFatal</a></p>
+<p class="Definition" style="margin-top: 4.00pt;">Si le texte du filtre est à espaces (pour retirer le filtre), la fonction retourne le nombre d’accès physiques effectués depuis le positionnement du filtre. Il ne s’agit donc pas d’un code d’erreur.</p>
+</td>
+</tr>
+</table>
+<p class="Definition" style="margin-top: 4.00pt;">&#160;</p>
+<p class="Definition" style="margin-top: 4.00pt;"><font class="hcp3">Remarques</font></p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text">Le dictionnaire doit être en ligne (et à jour) sur le serveur au moment de l’exécution du filtre.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text">Le fichier doit contenir le nom du dictionnaire et le nom de la base dans ce dernier (xtools.dhop, Modifier les caractéristiques).</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text">Les index de type multi-tables et avec identifiant <font style="text-decoration: underline;">ne permettent pas</font> l'utilisation de la fonction Ifilter.</p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p class="Heading-Base">Complément sur la syntaxe du filtre</p>
+<p class="hcp2">&#160;</p>
+<p><font size="2" class="hcp11">1) Les fonctions.</font></p>
+<p class="hcp2">&#160;</p>
+<p>La syntaxe du filtre permet l'utilisation des fonctions scalaires suivantes :</p>
+<p class="hcp2">&#160;</p>
+<table style="vertical-align: top; margin-left: 10px;" cellspacing="0">
+<col>
+<col>
+<col>
+<tr class="hcp9">
+<td style="border: Solid 1px #000000;padding-right: 10px; padding-left: 10px;">
+<p class="hcp12">Fonction&#160;&#160;&#160;</p>
+</td>
+<td class="hcp13">
+<p class="hcp12">Commentaire&#160;&#160;&#160;&#160;</p>
+</td>
+<td class="hcp13">
+<p class="hcp12">Exemple</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td class="hcp14">
+<p>Lower&#160;(chaine)</p>
+</td>
+<td class="hcp15">
+<p>Conversion d'une chaine en minuscule</p>
+</td>
+<td class="hcp15">
+<p>lower(Nom)</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td class="hcp14">
+<p>Upper&#160;(chaine)</p>
+</td>
+<td class="hcp15">
+<p>Conversion d'une chaine en majuscule&#160;</p>
+</td>
+<td class="hcp15">
+<p>upper(Nom)</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td class="hcp14">
+<p>Day&#160;(date)</p>
+</td>
+<td class="hcp15">
+<p>&#160;Jour d'une date D8</p>
+</td>
+<td class="hcp15">
+<p>day(Ecrdt)</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td class="hcp14">
+<p>Month&#160;(date)</p>
+</td>
+<td class="hcp15">
+<p>&#160;Mois d'une date D8&#160;</p>
+</td>
+<td class="hcp15">
+<p>&#160;month(Ecrdt)</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td class="hcp14">
+<p>Year&#160;(date)&#160;</p>
+</td>
+<td class="hcp15">
+<p>&#160;Année d'une date D8&#160;&#160;</p>
+</td>
+<td class="hcp15">
+<p>&#160;year(Ecrdt)</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td class="hcp14">
+<p>Letf&#160;(chaine,lg)</p>
+</td>
+<td class="hcp15">
+<p>Sous-chaine gauche de chaine</p>
+</td>
+<td class="hcp15">
+<p>&#160;left(Nom,10)</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td class="hcp14">
+<p>Right&#160;(chaine,lg)&#160;</p>
+</td>
+<td class="hcp15">
+<p>&#160;Sous-chaine droite de chaine&#160;</p>
+</td>
+<td class="hcp15">
+<p>&#160;right(Nom,10)</p>
+</td>
+</tr>
+<tr class="hcp9">
+<td class="hcp14">
+<p>Substring&#160;(chaine,pos,lg)</p>
+</td>
+<td class="hcp15">
+<p>&#160;Sous-chaine de chaine</p>
+</td>
+<td class="hcp15">
+<p>substring(Nom,2,3)</p>
+</td>
+</tr>
+</table>
+<p class="hcp2">&#160;</p>
+<p>Les fonctions peuvent être imbriquées. Ex&#160;: lower(left(Nom,10)) = 'jules'</p>
+<p class="hcp2">&#160;</p>
+<p><font size="2" class="hcp11">2) Tableaux.</font></p>
+<p class="hcp2">&#160;</p>
+<p>Pour l'utilisation d'un champ d'un tableau il faut utiliser la syntaxe Tab_iiii pour désigner l'élément Tab(i) où iiii est l'indice sur 4 positions.</p>
+<p class="hcp2">&#160;</p>
+<p>Exemple : Tab(1)&#160;devient Tab_0001</p>
+<p>&#160;&#160;Tab(3,4)&#160;devient Tab_00030004</p>
+<p class="hcp2">&#160;</p>
+<p><font size="2" class="hcp11">3) Dates</font></p>
+<p class="hcp2">&#160;</p>
+<p>Pour tester la valeur espace d'une date, il faut utiliser les opérateurs is null ou is not null.</p>
+<p class="hcp2">&#160;</p>
+<p>Exemples &#160;</p>
+<p>&#160;&#160;hfilter(tdf,"is Ecrdt null")</p>
+<p>&#160;&#160;hfilter(tdf,"is Echdt not null")</p>
+<p style="margin-top: 0.00pt;">&#160;</p>
+<p><font class="hcp3">Exemple</font></p>
+<p>&#160;Lecture des articles dont la référence est comprise en R3 et R6.</p>
+<p>&#160;&#160;</p>
+<p class="Source">hfile "odfdd.dhsd" odfic tdf</p>
+<p class="Source">1&#160;art 60</p>
+<p class="Source">main</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; positionnement du filtre&#160;</p>
+<p class="Source">Ifilter(tdf,"Reference Between 'R3' and 'R6'","PARREFERENCE")</p>
+<p class="Source">&#160;loop iread(tdf,art) = 0</p>
+<p class="Source">&#160;&#160;&#160;display art</p>
+<p class="Source">&#160;endloop</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; retrait du filtre&#160;</p>
+<p class="Source">&#160;ifilter(tdf," ",'B')</p>
+<p class="hcp2">&#160;</p>
+<p class="Heading-Base">Voir</p>
+<p class="Heading-Base" style="font-weight: normal;"><a href="Iread.htm"><span class="hcp16">Iread</span></a><span class="hcp16">, <a href="Ipread.htm" style="font-weight: normal;">Ipread</a></span></p>
+</body>
+</html>

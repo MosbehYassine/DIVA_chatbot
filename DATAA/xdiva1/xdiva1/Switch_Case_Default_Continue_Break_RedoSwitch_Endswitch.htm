@@ -1,0 +1,110 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Switch - Case - Default - Continue - Break - RedoSwitch - Endswitch</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Switch - Case - Default - Continue - Break - RedoSwitch - Endswitch &#160;<a href="Listedesstructuresdecontr_le.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font class="hcp1">Switch</font> <font class="hcp2">expression</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font class="hcp1">Case</font> <font class="hcp2">expression1</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;<font class="hcp2">instructions</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font class="hcp1">&#160;</font>[ <font class="hcp1">RedoSwitch</font> ]</p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font class="hcp1">&#160;</font>[ <font class="hcp1">Continue</font> ]</p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font class="hcp1">&#160;</font>[ <font class="hcp1">Break</font> ]</p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font class="hcp1">Case</font> <font class="hcp2">expression2</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;<font class="hcp2">instructions1</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;">……..</p>
+<p class="Body-Text" style="margin-top: 2.00pt;">[ <font class="hcp1">Default</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;<font class="hcp2">instructions2</font> ]</p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font class="hcp1">Endswitch</font></p>
+&#160;
+<p class="Body-Text">L'instruction <font class="hcp1">Switch Case</font> est une généralisation de l'instruction de sélection simple If. Dans cette structure, l'expression qui suit le mot réservé Switch est appelée sélecteur.</p>
+<p class="Body-Text">A l'exécution, la valeur du sélecteur doit correspondre à l'une des sélections possibles. Les instructions associées sont alors exécutées, après quoi le contrôle est donné à l'instruction suivant la fin de la structure (sauf si une instruction <font class="hcp1">Continue</font> a été rencontrée). Si le sélecteur ne correspond à aucune des sélections, les instructions suivant le mot réservé <font class="hcp1">Default</font> sont exécutées. Si le mot réservé Default est absent, l'exécution du programme se poursuit après le mot réservé Endswitch qui est obligatoire.</p>
+<p class="Body-Text"><font class="hcp1">Continue</font> provoque un branchement sur l'instruction qui suit le Case suivant (voir exemple).</p>
+<p class="Body-Text"><font class="hcp1">Break</font> provoque la sortie de la structure Switch. L'exécution du programme se continue après Endswitch.</p>
+<p class="Body-Text"><font class="hcp1">RedoSwitch</font> provoque un branchement à l'instruction Switch. <font class="hcp2">Expression</font> est à nouveau évaluée. <font class="hcp1"><br>
+&#160;</font></p>
+<p class="Body-Text"><font class="hcp1">Attention</font> : la valeur du sélecteur est empilée. Il ne faut jamais sortir de la structure par un GOTO ni par un EXIT.</p>
+&#160;
+<p class="Body-Text">L'expression de sélection peut prendre plusieurs formes :</p>
+<p class="Body-Text"><font class="hcp1">Sélection par une constante :</font></p>
+<p class="Body-Text">C'est le cas le plus utilisé. Le mot réservé Case est suivi d'une constante, et le sélecteur est comparé à cette valeur.</p>
+<p class="Body-Text">Exemple :</p>
+<p class="Source">Switch etat</p>
+<p class="Source">Case "m"</p>
+<p class="Source">&#160;&#160;&#160;display 'marie'</p>
+<p class="Source">Case "c"</p>
+<p class="Source">&#160;&#160;&#160;display 'célibataire"</p>
+<p class="Source">Case "d"</p>
+<p class="Source">&#160;&#160;&#160;display 'divorce'</p>
+<p class="Source">Case "v"</p>
+<p class="Source">&#160;&#160;&#160;display 'veuf'</p>
+<p class="Source">Default</p>
+<p class="Source">&#160;&#160;&#160;display 'etat indéterminé'</p>
+<p class="Source">Endswitch</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Sélection par une variable</font></p>
+<p class="Body-Text">Il est possible de remplacer la constante dans l'expression de sélection par une variable ou une expression qui n'utilise aucun des opérateurs de test. Cette écriture est similaire au cas précédent.</p>
+<p class="Body-Text">Exemple :<br>
+&#160;</p>
+<p class="Source">Switch i+j<br>
+Case pi*r*r</p>
+<p class="Source">&#160;&#160;&#160;…</p>
+<p class="Source">Case root(p)</p>
+<p class="Source">&#160;&#160;&#160;…</p>
+<p class="Source">Endswitch</p>
+<p class="Source">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp1">Sélection par une expression de test</font></p>
+<p class="Body-Text">Si l'expression de test contient au moins un opérateur de test, l'expression est évaluée telle quelle sans tenir compte de la valeur du sélecteur.</p>
+<p class="Body-Text">Il est toujours possible de faire référence à la valeur du sélecteur en utilisant la variable prédéfinie VSW. Cette variable représente toujours la valeur du sélecteur dans la structure Switch Case en cours.</p>
+<p class="Body-Text"><font class="hcp1">Exemple 1</font> : Cet exemple illustre la possibilité d'utiliser des opérateurs de test en utilisant la valeur du sélecteur.</p>
+<p class="Source">Switch dep</p>
+<p class="Source">Case 57</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display 'lorraine'&#160;</p>
+<p class="Source">Case 54</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display 'lorraine'&#160;</p>
+<p class="Source">Case vsw in (67,68)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display 'alsace'&#160;</p>
+<p class="Source">Case vsw in (75,91..95,78)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display 'île de France'&#160;</p>
+<p class="Source">Endswitch</p>
+<p class="Body-Text">&#160;<font class="hcp1">Exemple 2</font> : Cet exemple illustre la possibilité d'utiliser le Case sans même faire référence à la valeur du sélecteur.</p>
+<p class="Source">xmeinput ... ; saisie masque</p>
+<p class="Source">switch harmony.arret ; point d'arrêt</p>
+<p class="Source">case Harmony.Key = K_ESCAPE ; abandon ?</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;fini = 1&#160;</p>
+<p class="Source">case 2 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; appel de zoom</p>
+<p class="Source">&#160;&#160;&#160;ZoomSql (...)</p>
+<p class="Source">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; etc.</p>
+<p class="Source">endswitch</p>
+<p class="Body-Text"><font class="hcp1">Exemple 3</font> : Cet exemple illustre l'utilisation de Continue. Le programme effectue un traitement en fonction d'un numéro de département. Pour le département 75, il doit effectuer un traitement particulier pour la ville de Paris mais également effectuer le traitement standard de la région parisienne.</p>
+&#160;
+<p class="Source">switch dep</p>
+<p class="Source">case dep in (67..68)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Traitement("Alsace")&#160;</p>
+<p class="Source">case 75</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Traitement("Ville de Paris") &#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;continue&#160;</p>
+<p class="Source">case dep in (93,94,78)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Traitement("Région parisienne") &#160;</p>
+<p class="Source">endswitch</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Switch2_Case_Default_Continue_Break_RedoSwitch_Endswitch.htm">Switch2 - Case - Default - Continue - Break- RedoSwitch - Endswitch</a></p>
+</body>
+</html>

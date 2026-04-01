@@ -1,0 +1,400 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Description du tableau de calcul des efforts</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+table.hcp3 { vertical-align:top; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { border:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp6 { font-weight:bold; }
+td.hcp7 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp8 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+img.hcp9 { border:none; }
+td.hcp10 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp11 { font-weight:bold;
+text-decoration:underline; }
+p.hcp12 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Description du tableau de calcul des efforts</h3>
+<p>&#160;</p>
+<p>Le <span class="hcp1">tableau des efforts</span> reprend grosso modo les lignes de l'<a href="Description_du_programme_d_inventaire.htm">inventaire</a> qui présentent potentiellement une charge de travail pour la migration :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Les sources (dictionnaires, masques, modules diva) qui ont fait l'objet d'une surcharge et les sources spécifiques sont toujours évalués.<br>
+Ils sont globalement regroupés respectivement dans la branche <span class="hcp1">Sous-projets (surchargés)</span> et dans la branche <span class="hcp1">Sous-projets surcharge (spécifiques)</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span style="text-decoration: underline;">Les autres objets (zooms, fonctions, ...) auxquels Divalto n'a pas apporté de changement ne sont plus présents</span>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Le tableau présente les <span class="hcp1">colonnes</span> suivantes :</p>
+<p>&#160;</p>
+<table cellspacing="0" width="100%" class="hcp3">
+<col style="width: 20.239%;">
+<col style="width: 79.761%;">
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp5">
+<p class="hcp6">Entité</p>
+</td>
+<td style="width:79.761%;" class="hcp7">
+<p>Libellé de la famille ou de l'objet courant.<br>
+Exemples de famille : Sous-projets surchargés ou spécifiques, Fonctions, Records.<br>
+Exemple d'objet : Dictionnaire Dddd.dhsd.<br>
+<br>
+Remarque : L'objet Arbre de Xwin limite la taille de ce libellé à 64 caractères. Il est donc tronqué s'il dépasse cette taille limite. Toutefois, dans ce cas, la bulle associée affiche le libellé complet.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Note (icône <img src="image2.gif" alt="" width="14" height="15" border="0" class="hcp9">)</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>La présence de cette icône dans la colonne signale que la base de données Migration de Divalto met à disposition des informations complémentaires pour l'objet correspondant. Pour les afficher, cliquez sur l'icône dans le tableau ou cliquez sur le bouton équivalent de la barre d'outils après avoir sélectionné la ligne voulue.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Action Divalto</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Indique l'opération effectuée par Divalto sur un objet personnalisé en surcharge : modification, suppression, déplacement, etc.<br>
+Un source surchargé auquel Divalto n'a pas apporté de changement depuis la version de la surcharge a pour action "Aucune".<br>
+Un autre type d'objet non modifié par Divalto n'apparaît pas dans le tableau des efforts.</p>
+<p>Cette colonne est laissée à espace pour les sources développés en spécifique.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Effort estimé</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Valeur de l'effort estimée par le programme.<span class="hcp1"><br>
+Attention</span> : Lorsque la difficulté est inconnue (voir colonne Difficulté ci-dessous), cette valeur n'a pas été estimée et elle est positionnée à <span class="hcp1">"?"</span>.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Effort</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Valeur de l'effort à garnir <span class="hcp1">manuellement</span> (voir la rubrique <a href="Saisie_des_efforts.htm">Valorisation des efforts</a>).<br>
+En dessous du tableau, l'écran affiche les données suivantes :</p>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp1">Nombre d'efforts valorisés N1 / N2</span>.<br>
+N1 est le nombre de valeurs d'effort actuellement renseignées (donc non nulles).<br>
+N2 est le nombre total d'efforts à valoriser dans le tableau.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Total des efforts</span>.<br>
+Cumul de toutes les valeurs d'effort actuellement renseignées.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Difficulté</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Indique le degré de difficulté estimé par Divalto pour la migration d'un objet personnalisé en surcharge.<br>
+Le contenu de cette colonne provient donc de la base de données Migration de Divalto.<br>
+Les valeurs possibles sont : Automatique, Simple, Moyenne, Complexe, A réécrire et Inconnue.<br>
+Voir les rubriques <a href="Bae_de_donn&eacute;es_Migration_de_Divalto.htm">Base de données Migration de Divalto</a> et &#160;<a href="Bar&egrave;mes_de_calcul_des_efforts.htm">Barèmes de calcul des efforts</a>.<br>
+<br>
+Cette colonne est laissée à espace pour les sources développés en spécifique.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Ampleur surcharge</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Estimation du volume de l'objet.</p>
+<p>Dépend du type de l'objet et du fait qu'il s'agit d'un source personnalisé en surcharge ou d'un source spécifique. Par exemple, le volume d''un masque personnalisé est calculé à partir du nombre d'objets modifiés en surcharge et / ou du nombre de lignes de code des traitements de surcharge. L'ampleur d'un masque spécifique est calculée à partir du nombre d'objets total et / ou du nombre de lignes de code des traitements.</p>
+<p>Cette colonne est laissée à espace et n'est pas prise en compte dans l'estimation de l'effort si l'objet est présumé "vide" (par exemple, un module Diva ne contenant ni Main ni fonction ou procédure).</p>
+<p>Les valeurs possibles (Faible, Moyenne, Importante) et le mode de calcul pour les obtenir sont décrits dans la rubrique <a href="Bar&egrave;mes_de_calcul_des_efforts.htm">Barèmes de calcul des efforts</a>.</p>
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Nb surcharges</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Nombre de différences entre la surcharge et la base (objet Masque ou Dictionnaire de surcharge).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Nb pages / objets</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Nombre total de pages (ou de blocs) et d'objets contenus par l'objet Masque.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Nb fonctions / lignes</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Nombre total de fonctions (inclut la "fonction" Main) et de lignes de code du module Diva ou des traitements du masque ou du dictionnaire.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Nb utilisations</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Nombre d'utilisations de la Fonction, du Record(Sql), du Hfile ou du Champ standard dans l'ensemble du projet de surcharge.<br>
+Ce nombre est fourni à titre indicatif, il n'est pas pris en compte lors du calcul de l'estimation de l'effort de migration de l'objet.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Nb masques à convertir</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Nombre de masques d'écran spécifiques à convertir en version 7.<br>
+Cette colonne est absente si la version initiale n'est pas une version 6 et la version cible une version au moins égale à la 7. Elle concerne uniquement l'estimation de la ligne "Moulinette de conversion des masques spécifiques en version 7".<br>
+Ce nombre est fourni à titre indicatif pour aider à la valorisation de l'effort de migration en cas d'utilisation de la moulinette de conversion des masques d'écran.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Libellé</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Libellé complémentaire pour, le cas échéant et dans la mesure du possible, aider à identifier l'objet.<br>
+Par exemple :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Pour un masque, il s'agit du libellé spécifié dans les propriétés générales du masque dans Xwin (lorsqu'il est renseigné).</p>
+</li>
+<li class="p">
+<p>Pour un module, le libellé rappelle le nom du groupe ou du sous-projet où il se situe dans l'arbre du projet de Xwin.</p>
+</li>
+<li class="p">
+<p>Pour un dictionnaire, le libellé est recherché dans une table de libellés. Pour affecter un libellé à vos dictionnaires spécifiques, consultez la rubrique <a href="Param&eacute;trage_du_libell&eacute;_des_dictionnaires_sp&eacute;cifiques.htm">Paramétrage du libellé des dictionnaires spécifiques</a>.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.239%;" class="hcp8">
+<p class="hcp6">Détails du calcul de l'effort estimé</p>
+</td>
+<td style="width:79.761%;" class="hcp10">
+<p>Cette colonne affiche le barème qui a été utilisé par le programme pour estimer l'effort de migration de l'objet (identifiant du barème et valeur(s) calculée(s) en fonction de la difficulté et / ou du volume estimé de l'objet).<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>L'arbre des efforts présente les <span class="hcp1">branches</span> suivantes :<br>
+&#160;</p>
+<table cellspacing="0" width="100%" class="hcp3">
+<col style="width: 20.214%;">
+<col style="width: 79.786%;">
+<tr class="hcp4">
+<td style="width:20.214%;" class="hcp5">
+<p class="hcp6">Communs</p>
+</td>
+<td style="width:79.786%;" class="hcp7">
+<p>Liste complète des sources personnalisés en surcharge et inventoriés dans un groupe de sources.<br>
+Remarque : Les sources spécifiques inventoriés dans un groupe de sources sont transférés dans la famille des sous-projets spécifiques.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.214%;" class="hcp8">
+<p class="hcp6">Sous-projets<br>
+(surchargés)</p>
+</td>
+<td style="width:79.786%;" class="hcp10">
+<p>Liste complète des sources personnalisés en surcharge.<br>
+Remarque : L'arbre des efforts ne fait plus de regroupements par groupe de sources ou par sous-projet mais conserve l'ordre d'apparition des sources dans le projet Xwin (ce qui permet de conserver certains regroupements "naturels" comme, par exemple, le masque et le module de traitements d'un zoom).</p>
+&#160;
+<p>Un effort global est affecté à chaque source (le détail des personnalisations apportées aux dictionnaires et aux masques surchargés n'apparaît plus).<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.214%;" class="hcp8">
+<p class="hcp6"><span class="hcp1">Sous-projets surcharge</span></p>
+<p class="hcp6">(spécifiques)</p>
+</td>
+<td style="width:79.786%;" class="hcp10">
+<p>Liste complète des sources spécifiques.<br>
+Remarque : Là encore, l'arbre des efforts ne fait plus de regroupements par groupe de sources ou par sous-projet mais conserve l'ordre d'apparition des sources dans le projet Xwin.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.214%;" class="hcp8">
+<p class="hcp6">Zooms</p>
+</td>
+<td style="width:79.786%;" class="hcp10">
+<p><span class="hcp11">Attention</span> :</p>
+<p>La famille Zooms de l'inventaire liste tous les masques des zooms surchargés.<br>
+La famille Zooms de ce tableau <span class="hcp11">liste uniquement les masques des zooms dont le nom du masque a été modifié par Divalto</span> (ce qui généralement signifie que ce zoom a été "SQLisé" en standard).<br>
+<br>
+Les masques des <span class="hcp1">autres zooms</span> surchargés devront être valorisés en tant que masques "normaux".<br>
+&#160;</p>
+<p>Les modules de traitements des zooms sont toujours valorisés en tant que modules "normaux".<br>
+<br>
+Remarque : Le changement de nom de masque n'est détecté que si le numéro du zoom est resté inchangé dans le fichier a5f entre les deux versions.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.214%;" class="hcp8">
+<p class="hcp6">Zooms spécifiques</p>
+</td>
+<td style="width:79.786%;" class="hcp10">
+<p><span class="hcp11">Attention</span> :</p>
+<p>La famille Zooms spécifiques de l'inventaire liste tous les masques des zooms spécifiques (trouvés dans a5f(u)).<br>
+La famille Zooms spécifiques de ce tableau contient la même liste, <span class="hcp11">à condition que l'option "SQLisation des zooms" ait été activée</span> au moment d'exécuter le calcul d'estimation des efforts.<br>
+<br>
+A défaut, cette liste reste vide et les masques des zooms spécifiques devront être valorisés en tant que masques "normaux".<br>
+<br>
+Les modules de traitements des zooms sont toujours valorisés en tant que modules "normaux".<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.214%;" class="hcp8">
+<p class="hcp6">Fonctions, Records, Hfiles, Champs</p>
+</td>
+<td style="width:79.786%;" class="hcp10">
+<p>Idem arbre de l'inventaire à la <span class="hcp1">différence</span> que :</p>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp1">Seuls les objets modifiés ou supprimés par Divalto</span> (donc mentionnés dans la base de données Migration) <span class="hcp1">sont présents</span>.</p>
+</li>
+<li class="p">
+<p>Les regroupements par sous-familles disparaissent (par exemple, les fonctions ne sont plus regroupées par module).</p>
+</li>
+</ul>
+<p><span class="hcp1">Cas particulier</span> d'un objet <span class="hcp1">Hfile</span> : Lorsque les index d''un fichier d'un dictionnaire ont été modifiés par Divalto, une sous-liste présentant l'ensemble de ces modifications d'index est insérée, à titre indicatif, sous la ligne du Hfile concerné.<span class="hcp1"><br>
+<br>
+Cas particulier</span> des objets <span class="hcp1">Champ</span> :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Dans l'inventaire, un même champ peut apparaître à différents endroits s'il est référencé dans plusieurs tables.<br>
+Dans le tableau des efforts, <span class="hcp1">les champs homonymes</span> (modifiés ou supprimés par Divalto) <span class="hcp1">sont regroupés</span> dans une <span class="hcp1">sous-liste</span>, chapeautée par une <span class="hcp1">ligne récapitulative</span>.</p>
+</li>
+<li class="p">
+<p>Le libellé de la ligne récapitulative est le nom du champ.<br>
+Le libellé d'un élément de la sous liste est le nom du dictionnaire, suivi du nom de la table contenant le champ. Les éléments de la sous-liste sont triés par dictionnaire puis par enregistrement.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Chaque champ</span> de la sous-liste a fait l'objet d'une interrogation de la base Divalto et <span class="hcp1">dispose de ses propres informations</span> : commentaire, action Divalto, difficulté, effort estimé, nombre d'utilisations, etc. Par contre, aucun effort n'est à renseigner à ce niveau.</p>
+</li>
+<li class="p">
+<p>La <span class="hcp1">ligne récapitulative</span> affiche le champ ayant la <span class="hcp1">valeur maximale d'effort estimé</span> parmi tous les champs de la sous-liste. Le nombre d'utilisations est le cumul des nombres d'utilisation des champs homonymes.<br>
+L'<span class="hcp1">effort de migration</span> du champ <span class="hcp1">est à renseigner sur cette ligne</span> récapitulative.</p>
+</li>
+<li class="p">
+<p><span class="hcp11">Attention</span> : Tous les champs homonymes sont regroupés, quelque soit leur dictionnaire d'appartenance, partant du principe que les champs homonymes, même situés dans des dictionnaires distincts, représentent toujours la même donnée.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.214%;" class="hcp8">
+<p class="hcp6">Forfait migration</p>
+</td>
+<td style="width:79.786%;" class="hcp10">
+<p>Cette ligne permet de valoriser un effort forfaitaire représentant l'effort minimal à fournir pour initier et compléter toute migration (appel du choix de Xwin "Créer le projet de surcharge de la nouvelle version", migration des données, tests finaux, etc.). Un <a href="Bar&egrave;mes_de_calcul_des_efforts.htm">barème</a> d'effort spécifique est associé à cette ligne.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.214%;" class="hcp8">
+<p class="hcp6">Moulinette de conversion des masques spécifiques en version 7</p>
+</td>
+<td style="width:79.786%;" class="hcp10">
+<p>Cette ligne permet de valoriser un effort forfaitaire correspondant à la mise en oeuvre de la moulinette de conversion des masques spécifiques de version 6 en version 7. Un <a href="Bar&egrave;mes_de_calcul_des_efforts.htm">barème</a> d'effort spécifique est associé à cette ligne.<br>
+A titre indicatif, le nombre de masques à convertir est affiché dans la colonne "Nb masques à convertir".<br>
+Remarque : Cette ligne n'apparaît pas si ce nombre est nul ou si la version initiale n'est pas une version 6 et la version cible une version au moins égale à la 7.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>La <span class="hcp1">barre d'outils</span> présente les boutons spécifiques suivants :</p>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp1">Imprimer</span>.<br>
+Appelle l'impression paramétrable du zoom.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Note</span>.<br>
+Pour chaque objet du tableau des efforts, la présence de l'icône <span class="hcp1"><img src="image2.gif" alt="" width="14" height="15" border="0" class="hcp9"></span> dans la colonne correspondante signale que la base de données Migration de Divalto met à disposition des informations complémentaires pour cet objet. Pour les afficher, cliquez sur l'icône dans le tableau ou cliquez sur ce bouton de la barre d'outils après avoir sélectionné l'objet voulu dans le tableau (remarque : ce bouton est grisé si la ligne courante du tableau ne dispose pas de ces informations).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Tout réduire</span>.<br>
+Seuls les éléments de premier niveau restent affichés dans l'arbre.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Tout développer</span>.<br>
+Tous les éléments sont affichés dans l'arbre, quelque soit leur niveau.</p>
+</li>
+<li class="p">
+<p class="hcp6">Développer jusqu'au niveau...<span style="font-weight: normal;">.<br>
+Permet de spécifier le niveau maximal d'expansion des éléments de l'arbre. Les éléments de niveau supérieur ne sont plus affichés.<br>
+&#160;</span></p>
+</li>
+<li class="p">
+<p class="hcp12"><span class="hcp1">Saisir les efforts en série / Efforts non valorisés</span>.<br>
+Voir la rubrique <a href="Saisie_des_efforts.htm">Valorisation des efforts</a>.</p>
+</li>
+<li class="p">
+<p class="hcp12"><span class="hcp1">Inventaire</span>.<br>
+Retour au tableau de l'<a href="Description_du_programme_d_inventaire.htm">inventaire</a>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

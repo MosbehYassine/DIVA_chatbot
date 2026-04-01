@@ -1,0 +1,34 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Paramétrage du serveur d'application</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Paramétrage du serveur d'application</h2>
+<p>&#160;</p>
+<p class="Body-Text">Dans le chapitre <a title="Création d'un compte de service" href="../Création d'un compte de service">Création d'un compte de service</a>, nous avons créé le compte de service qui sera utilisé par les Harmony et Divalto pour communiquer avec la plateforme G Suite. A cette occasion une clé a été générée pour ce compte de service et nous l’avons exportée sous forme fichier JSON.</p>
+<p class="Body-Text">Ce fichier JSON est la clé qui permet d’accéder au compte G Suite de l’entreprise et avec des droits non négligeables sur les comptes et certaines données des utilisateurs. Il doit donc être conservé de manière sécurisée.</p>
+<p class="Body-Text">Sur le serveur d’application du site concerné, un administrateur doit récupérer ce fichier et le poser dans un répertoire local au serveur d’application, ET NON VISIBLE PAR LES UTILISATEURS.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp1">Note</span> : le fichier local sera crypté et donc non lisible et non portable sur une autre architecture, il est donc conseillé de ne pas utiliser le fichier JSON original.</p>
+<p class="Body-Text"><span class="hcp1">Note 2</span> : l’administrateur doit disposer des droits de lecture ET d’écriture sur le répertoire, sinon le fichier ne pourra pas être crypté.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Il faut lancer Xrtdiva en mode administrateur pour accéder à la question programme, puis lancer le programme diva xdivaltoparammapigsuite.dhop (pour « Divalto paramètres MAPI pour G Suite »).</p>
+<p class="Body-Text">Il faut ensuite sélectionner le chemin du fichier JSON (local) de la clé de compte de service, puis indiquer une phrase secrète qui sera utilisée pour le cryptage du fichier.</p>
+<p class="Body-Text">De la sorte, le fichier JSON local, désormais crypté, s’il venait à être volé, ne pourrait pas être utilisé par un programme étranger, ou même par un programme Divalto d’un autre site (la phrase secrète, clé de cryptage n’étant pas connue de cet autre site).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp1">Note 3</span> : En cas de vol, de perte du fichier, ou de doutes, il est possible de révoquer les droits d’un compte de service et de reconfigurer la liaison avec un nouveau compte de service.</p>
+</body>
+</html>

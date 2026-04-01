@@ -1,0 +1,143 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Hread</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Hread &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font>H</font>read permet :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">de lire l'enregistrement qui suit le dernier enregistrement lu,</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">de lire le premier enregistrement du fichier si aucune lecture n'a été effectuée,</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">de se positionner directement sur un enregistrement en modifiant la clé. L'enregistrement lu est alors celui ayant la clé la plus proche (supérieure ou égale) de la clé demandée (voir exemple).</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">Hread</font> ( <font class="hcp3">tdf</font> , <font class="hcp3">variable [, clé ]</font> <font class="hcp3">[ , code_réservation ]</font> )</p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Table de définition de fichier.</p>
+<p class="Body-Text"><font class="hcp3">Variable</font></p>
+<p class="decalage05">Donnée réceptrice qui contiendra l'enregistrement lu.</p>
+<p class="Body-Text"><font class="hcp3">Clé</font></p>
+<p class="decalage05">Ce paramètre est facultatif. Si <font class="hcp3">Clé</font> est spécifié et est différent de espaces, la lecture se fait à partir de cette clé. L'enregistrement lu est celui ayant la clé la plus proche (supérieure ou égale) de la clé demandée.</p>
+<p class="Body-Text"><font class="hcp3">Code</font>_<font class="hcp3">réservation</font></p>
+<p class="decalage05">Mode de partage de l'enregistrement ('P' par défaut).</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table style="left: 0px; top: 456px; height: 129px;" cellspacing="0" width="1034">
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">0 &#160;</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;"><font>H</font>_EOF &#160;</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Fin de fichier atteinte.&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:22.74%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">H_RESERVED &#160;</p>
+</td>
+<td style="width:77.26%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Enregistrement réservé.&#160;</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Toutes les autres erreurs provoquent l'arrêt du programme</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Particularités pour les fichiers de type I</font></p>
+<p class="decalage05">La lecture se fait d'après la clé courante (clé "A" par défaut) et la fin de fichier est provoquée par la fin de la clé en cours.</p>
+&#160;
+<p class="decalage05"><font class="hcp2">Fin de fichier</font></p>
+<p class="decalage05">Si la fonction Hread retourne H_EOF (fin de fichier), un appel à la fonction <a href="Hpread.htm">Hpread</a> délivre le dernier enregistrement du fichier d'après la clé en cours.</p>
+<p class="decalage05"><font class="hcp2">Sauvegarde et restauration de la clé</font></p>
+<p class="decalage05">Après la lecture, la clé exacte lue est placée dans la TDF par le système. Il est alors possible de sauvegarder cette clé dans une zone de 256 octets, d'effectuer d'autres opérations sur le fichier, puis de restaurer la clé afin de reprendre le traitement sur l'enregistrement suivant (voir exemple 3).</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarques</font></p>
+<p class="Body-Text">Après restauration de la clé la fonction Hread délivre l'enregistrement suivant, tandis que la fonction <a href="Hseek.htm">Hseek</a> délivre le même enregistrement.</p>
+<p class="Body-Text">Si l'enregistrement contient une zone packée, celle-ci est automatiquement dépackée.</p>
+<p class="Body-Text">La fonction <a href="Hfilter.htm">Hfilter</a> permet de filtrer les enregistrements.</p>
+<p class="Body-Text">La fonction <a href="GetLastRecord.htm">GetLastRecord</a> permet de récupérer le dernier enregistrement lu.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple 1</font>&#160;</p>
+<p class="Body-Text">Lire dans le fichier des compositeurs le premier compositeur dont le nom commence par une lettre de L à Z.</p>
+<p class="Source">st = Hread(comp, cpenr, "A" &amp; "L")</p>
+<p class="Source">switch st</p>
+<p class="Source">case H_EOF</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display "Pas de compositeur trouvé"&#160;</p>
+<p class="Source">case H_RESERVED</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display "Enregistrement réservé"&#160;</p>
+<p class="Source">endswitch</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple 2</font></p>
+<p class="Body-Text">Lire le fichier des compositeurs à partir de la lettre L. Dans ce cas, la clé doit être positionnée avant de rentrer dans la boucle.</p>
+<p class="Source">comp.key = 'A' &amp; 'L' ; positionnement clé</p>
+<p class="Source">do</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = Hread(comp ,cpenr ,,'F')&#160;</p>
+<p class="Source">while st = 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display [ cpenr.codecp " " cpenr.nom " " cpenr.prenom ]&#160;</p>
+<p class="Source">wend</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Exemple 3</font></p>
+<p class="Body-Text">Cet exemple illustre l'utilisation de la sauvegarde et de la restauration de la clé dans la tdf.</p>
+<p class="Body-Text">Soit un fichier de factures FFAC contenant deux types d'enregistrements :<br>
+&#160;- les entêtes (clé A),<br>
+&#160;- les lignes détail (clé B).</p>
+<p class="Body-Text">La donnée Numfac (numéro de facture) est présente dans les deux enregistrements (Entete.Numfac dans l'entête et Detail.Numfac dans la ligne détail) et sert de clé.</p>
+<p class="Body-Text">Après avoir lu une entête, on sauvegarde la clé; puis on change la clé pour lire les lignes détail correspondant à l'entête lue. Pour passer à la facture suivante, il faut restaurer la clé et lire l'entête suivante.</p>
+<p class="Source">1 wcle 256 ; pour sauvegarder la clé</p>
+&#160;
+<p class="Source">st = Hread(ffac, entete,, "F") ; lecture d'une entête</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; test des codes d'erreur&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">wcle = ffac.key ; sauvegarde de la clé&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; lecture de toutes les lignes&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">ffac.key = "B" &amp; numfac&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">do&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = Hread(ffac, detail,, "F")&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;; test des codes d'erreur&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">while st = 0 and Detail.Numfac = Entete.Numfac&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;... ; traitement de la ligne&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">wend&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; lecture de l'entête suivante&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">ffac.key = wcle ; restauration de la clé&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">st = Hread(ffac, entete,, "F")&#160;</p>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Hpread.htm">Hpread</a>, <a href="Hseek.htm">Hseek</a>, <a href="Fread.htm">Fread</a> , <a href="Hfilter.htm">Hfilter</a> , <a href="GetAdressProcedureRecord.htm">GetAdressProcedureRecord</a></p>
+</body>
+</html>

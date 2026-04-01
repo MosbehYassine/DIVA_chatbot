@@ -1,0 +1,87 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple de liaisons modèle / imprimante</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp3 { font-family:Courier New;
+font-size:10pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Exemple de liaisons modèle / imprimante</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Mon installation comporte deux imprimantes&#160;: une Epson sur LPT1, une HP Laser Jet sur LPT2. Je veux imprimer tous les états caractères sur l'imprimante Epson et les états graphiques soit sur l'imprimante Epson, soit sur l'imprimante HP. Au cas où l'utilisateur ne préciserait pas de modèle particulier, je décide que, par défaut, les états sortiront sur l'EPSON&#160;:</p>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="548">
+<tr class="hcp1">
+<td style="width:100.00%;" class="hcp2">
+<p class="Plain-Text"><font face="Courier New" size="2" class="hcp3">Application Harmony Application Harmony</font></p>
+<p class="Plain-Text"><font face="Courier New" size="2" class="hcp3">Etat graphique Etat caractères Etat Graphique</font></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="548">
+<tr class="hcp1">
+<td style="width:100.00%;" class="hcp2">
+<p class="Plain-Text"><font face="Courier New" size="2" class="hcp3">Driver EPSON Driver LASER JET</font></p>
+<p class="Plain-Text"><font face="Courier New" size="2" class="hcp3">pour IMP1 pour IMP1 pour IMP2</font></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="548">
+<tr class="hcp1">
+<td style="width:100.00%;" class="hcp2">
+<p class="Plain-Text" style="text-align: center;"><font face="Courier New" size="2" class="hcp3">SPOULEUR</font></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="552">
+<tr class="hcp1">
+<td style="width:100.00%;" class="hcp2">
+<p class="Plain-Text"><font face="Courier New" size="2" class="hcp3">Imprimante 1 Imprimante 2</font></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Une solution consiste ici à&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Installer les drivers Windows pour les deux imprimantes.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Créer deux modèles d'impression dans Harmony&#160;:<br>
+Modèle EPS : format spool = EPS (impressions EPSON) et<br>
+Modèle HP : format spool = HP (impressions HP),<br>
+en plus du modèle standard<br>
+Modèle STD : format spool = espace (modèle par défaut).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Créer par xDivaltoPrinters les sections&#160;:<br>
+[GraphPrinter-EPS]<br>
+device=Epson FX-80,EPSON9E,LPT1:<br>
+[GraphPrinter-HP]<br>
+device=HP laserJet Serie II,HPPCL,LPT2:<br>
+[GraphPrinter]<br>
+device=Epson FX-80,EPSON9E,LPT1:</p>
+</li>
+</ul>
+</body>
+</html>

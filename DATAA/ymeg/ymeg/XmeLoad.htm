@@ -1,0 +1,83 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeLoad</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeLoad &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Chargement d'un fichier masque</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeLoad</font> (<font class="hcp3">Nom du fichier masque</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:27.70%;" class="hcp4">
+<p class="Body-Text"><font class="hcp3">Nom du fichier masque</font><br>
+(Harmony.Masque)</p>
+</td>
+<td style="width:72.30%;" class="hcp4">
+<p class="Body-Text">Nom du fichier <font class="hcp2">objet</font> à charger (32 caractères maximum).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Avant toute utilisation d'un masque d'écran, vous devez le <font class="hcp2">charger en mémoire</font> de la tâche. Pour ce faire, appelez la fonction XmeLoad, en fournissant en paramètre le <font class="hcp2">Nom du fichier OBJET</font> contenant le masque (rappelons que tout masque source Xwin doit être compilé avant d'être utilisé).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le fichier contient plusieurs masques, la fonction charge l'ensemble de ces masques.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Vous pouvez charger jusqu'à 30 fichiers masque en mémoire et, par la suite, référencer n'importe lequel des fichiers chargés.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour créer vos fichiers masque, utilisez l'éditeur de masques d'écran de Xwin (décrit dans le livre "&#160;Utilisez l'éditeur de masques d'écran&#160;").</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">XmeLoad ("MASQUE") &#160;&#160;&#160;&#160;;chargement du fichier masque MASQUE.DHOF</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Cas particulier de l'exécution, par un programme « V6 » (win32), d’un traitement de masque « V7 »</p>
+<p>Un programme peut exécuter une procédure ou une fonction définie dans les traitements d’un masque. Pour cela, il doit charger le masque par XmeLoad, appeler la fonction Diva GetAdressProcedure ou GetAdressFunction pour récupérer l’adresse de la procédure ou de la fonction, et enfin appeler ProcedureCall ou FunctionCall en passant cette adresse en paramètre.<br>
+<br>
+<span class="hcp5">Exemple</span> :</p>
+<p class="Source">XmeLoad ("masque_v7") &#160;ou &#160;XmeLoad ("masque_v7.dhof")</p>
+<p class="Source">GetAdressProcedure ("masque_v7.dhof","procedure",adrproc)</p>
+<p class="Source">ProcedureCall (adrproc)</p>
+<p><br>
+Telle quelle, cette séquence de programme ne fonctionne pas si ce dernier est exécuté en version 6. En effet, XmeLoad détecte une erreur « Chargement par Ymeg d'un masque écran wpf interdit » (si l’extension .dhof est précisée) ou « Fichier xxxx absent ou inaccessible » (si l’extension .dhof est omise). Le chargement du masque en version 6 est toutefois accepté, à condition de suffixer le nom du masque par ".diva" au XmeLoad.</p>
+<p><span class="hcp5"><br>
+Exemple adapté pour un programme V6</span> :</p>
+<p class="Source">XmeLoad ("masque_v7<span class="hcp5">.diva</span>") &#160;ou &#160;XmeLoad ("masque_v7.dhof<span class="hcp5">.diva</span>")</p>
+<p class="Source">GetAdressProcedure ("masque_v7.dhof","procedure",adrproc)</p>
+<p class="Source">ProcedureCall (adrproc)</p>
+<p class="Source">&#160;</p>
+</body>
+</html>

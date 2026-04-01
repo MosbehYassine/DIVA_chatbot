@@ -1,0 +1,70 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>SocketGetHostByName</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+font.hcp4 { text-decoration:underline; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>SocketGetHostByName &#160;<font class="hcp1">Famille</font>&#160;&#160;&#160;<a href="G_n_ralit_s_sur_les_fonctions_socket.htm"><font class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">La fonction SocketGetHostByName permet de trouver l’adresse Internet d’un serveur dont on connaît le nom.</p>
+<p class="Body-Text"><font class="hcp2">alpha</font> = <font class="hcp2">SocketGetHostByName</font> <font class="hcp3">( nom )</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Nom</font></p>
+<p class="decalage05">Nom du serveur. Ex&#160;: <font color="#0000FF" class="hcp4">www.Divalto.fr</font>&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp5">
+<td style="width:14.99%;" class="hcp6">
+<p class="Body-Text">Espace</p>
+</td>
+<td style="width:85.01%;" class="hcp6">
+<p class="Body-Text">Le nom n’a pu être résolu. Voir <font color="#008000" class="hcp4">SocketLastError.</font></p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:14.99%;" class="hcp6">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:85.01%;" class="hcp6">
+<p class="Body-Text">Adresse IP de l’ordinateur.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">La fonction SocketNew doit avoir été appelée préalablement pour initiliser l’interface socket.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">s = SocketNew()</p>
+<p class="Source">display SocketGetHostByName("www.Divalto.fr") <font style="font-family: Wingdings;" face="Wingdings">à</font> 217.128.113.2</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p><a href="SocketConnect.htm">SocketConnect</a> , <a href="SocketLastError.htm">SocketLastError</a> , <a href="SocketNew.htm">SocketNew</a></p>
+</body>
+</html>

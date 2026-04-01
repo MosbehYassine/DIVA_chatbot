@@ -1,0 +1,93 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>StructureOpenFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>StructureOpenFile &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Cette structure est utilisée par les fonctions <a href="WinGetOpenFileName.htm">WinGetOpenFileName</a> et <a href="WinGetSaveFileName.htm">WinGetSaveFileName</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Source">1 SopenFile &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;700</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 Flags &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;L&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 Filtre &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;256&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 IndexFiltre &#160;&#160;&#160;&#160;&#160;&#160;X&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 IndexNom &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;X&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 IndexExtension &#160;&#160;&#160;X&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 RepertoireInitial 256&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 Titre &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;80&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">2 ExtensionDefaut &#160;&#160;4&#160;</p>
+<p class="Body-Text"><font class="hcp2">Membres</font></p>
+<p class="Body-Text"><font class="hcp3">Flags</font></p>
+<p class="decalage05">Spécifie les options de création de la boîte de dialogue. <font class="hcp3">Flags</font> est une combinaison des valeurs suivantes :</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">OFN_ALLOWMULTISELECT&#160;</p>
+<p class="decalage05">Autorise la sélection multiple. Au retour de la fonction, la donnée réceptrice reçoit le nom du répertoire puis la liste de tous les fichiers sélectionnés, chaque fichier étant terminé par le caractère $00. La fin de la liste est marqué par deux caractères nuls $00 $00. <font class="hcp2">Le flag OFN_EXPLORER doit également être positionné.</font><br>
+&#160;<br>
+OFN_CREATEPROMPT&#160;</p>
+<p class="decalage05">Spécifie que la boîte de dialogue doit demander une confirmation si l'utilisateur veut ouvrir un fichier qui n'existe pas. (Ce flag utilise automatiquement les flags OFN_PATHMUSTEXIST et OFN_FILEMUSTEXIST).</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">OFN_EXTENSIONDIFFERENT&#160;</p>
+<p class="decalage05">Spécifie que l'utilisateur peut sélectionner un fichier dont l'extension est différente de celle spécifiée dans <font class="hcp3">ExtensionDefaut</font>.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">OFN_FILEMUSTEXIST&#160;</p>
+<p class="decalage05">Spécifie que l'utilisateur ne peut taper que le nom d'un fichier existant. Si ce flag est spécifié et que l'utilisateur saisit un nom de fichier invalide, une boîte d'alerte est affichée. Si ce flag est spécifié, le flag OFN_PATHMUSTEXIST est également utilisé.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">OFN_HIDEREADONLY&#160;</p>
+<p class="decalage05">Spécifie que la case à cocher "Ouvrir en lecture" n'apparaît pas dans la boîte de dialogue.</p>
+<p class="decalage05">&#160;&#160;</p>
+<p class="decalage05">OFN_NOCHANGEDIR&#160;</p>
+<p class="decalage05">Indique que le répertoire courant doit être restauré après l'appel de la boîte de dialogue.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">OFN_NOLONGNAMES&#160;</p>
+<p class="decalage05">Spécifie que les fichiers ayant un nom long ne sont affichés.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">OFN_NONETWORKBUTTON&#160;</p>
+<p class="decalage05">Cache et invalide le bouton "Réseau".</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">OFN_NOREADONLYRETURN&#160;</p>
+<p class="decalage05">Spécifie que le fichier sélectionné ne soit pas en lecture seule et qu'il ne soit pas dans un répertoire protégé en écriture.</p>
+<p class="decalage05">&#160;&#160;&#160;</p>
+<p class="decalage05">OFN_PATHMUSTEXIST&#160;</p>
+<p class="decalage05">Spécifie que l'utilisateur ne peut taper que des chemins et des noms de fichiers valides. Si ce flag est utilisé et que l'utilisateur saisit un nom incorrect, une boîte d'alerte est affichée.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05">OFN_READONLY&#160;</p>
+<p class="decalage05">Coche la case à cocher "Ouvrir en lecture". En retour, ce flag indique l'état de la case à cocher.</p>
+<p class="decalage05">&#160;&#160;&#160;</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Filtre</font></p>
+<p class="decalage05">Donnée contenant des paires de filtres séparés par le caractère "|". Le premier membre de chaque paire décrit un filtre (par exemple, "Fichiers texte"), et le second membre spécifie le filtre à appliquer pour sélectionner ces fichiers (par exemple, "*.TXT"). Plusieurs filtres peuvent être précisés pour une seule description en séparant les filtres par des points virgule. (par exemple, "*.TXT;*.DOC;*.BAK"). Exemple :</p>
+<p class="decalage05">filtre = "Sources|*.cpp;*.hpp|includes|*.hpp|sources C|*.cpp|*.*|*.*"</p>
+<p class="Body-Text">&#160;<font class="hcp3">IndexFiltre</font></p>
+<p class="decalage05">Donnée numérique qui spécifie le filtre à utiliser lors de l'ouverture de la boîte de dialogue. Cette donnée indique une paire dans la donnée <font class="hcp3">Filtre</font>. La première paire correspond à l'indice 1.</p>
+<p class="Body-Text"><font class="hcp3">IndexNom</font></p>
+<p class="decalage05">En retour, spécifie un offset (à partir de 1) indiquant le début du nom du fichier dans la chaîne contenant le résultat. Par exemple, si le nom du fichier retourné est "c:\dir1\dir2\file.ext", ce champ vaut 13.</p>
+<p class="Body-Text"><font class="hcp3">IndexExtension</font></p>
+<p class="decalage05">En retour, spécifie un offset (à partir de 1) depuis le début du chemin complet jusqu'à l'extension du fichier. Par exemple, si le nom du fichier retourné est "c:\dir1\dir2\file.ext", ce champ vaut 18.</p>
+<p class="Body-Text"><font class="hcp3">RepertoireInitial</font></p>
+<p class="decalage05">Indique le répertoire par défaut. C'est le contenu de ce répertoire qui est affiché à l'ouverture de la boîte de dialogue. Si ce champ n'est pas précisé, le système utilise le répertoire courant comme répertoire initial.</p>
+<p class="Body-Text"><font class="hcp3">Titre</font></p>
+<p class="decalage05">Spécifie le titre affiché dans la barre de titre de la boîte de dialogue. Si ce champ est à espaces, le système utilise les titres par défaut (Ouvrir, Enregistrer).</p>
+<p class="Body-Text"><font class="hcp3">ExtensionDefaut</font></p>
+<p class="decalage05">Contient l'extension par défaut. Si l'utilisateur n'a pas saisi d'extension, les fonctions WinGetOpenFileName et WinGetSaveFileName ajoutent cette extension au nom du fichier. Seuls les trois premiers caractères de ce champ sont significatifs. Ce champ ne doit pas contenir le point (.).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="WinGetOpenFileName.htm">WinGetOpenFileName</a>, <a href="WinGetSaveFileName.htm">WinGetSaveFileName</a>.</p>
+</body>
+</html>

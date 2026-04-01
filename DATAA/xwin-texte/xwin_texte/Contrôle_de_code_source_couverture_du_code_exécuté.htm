@@ -1,0 +1,71 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Contrôle de code source (couverture du code exécuté)</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold;
+text-decoration:underline; }
+ul.hcp3 { list-style:disc; }
+p.hcp4 { font-weight:normal; }
+font.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Couverture du code exécuté</h3>
+&#160;
+<p>La couverture du code est une puissante fonctionnalité du débogueur de Xwin. Lorsqu'elle est activée, ce dernier <span class="hcp1">marque toutes les instructions du programme qui ont été exécutées</span>, à l'occasion d'un ou plusieurs tests. Dans vos sources, les <span class="hcp1">lignes effectivement exécutées</span> (ainsi que toutes les lignes ne contenant pas de code exécutable Diva) font alors l'objet d'une <span class="hcp1">coloration spécifique</span>, avec pour <span class="hcp1">conséquence</span> que :<br>
+&#160;</p>
+<p><span class="hcp1">Les lignes non coloriées n'ont</span> <span class="hcp2">jamais</span> <span class="hcp1">été exécutées</span>.<br>
+&#160;</p>
+<p>Vous pouvez ainsi mesurer visuellement l'efficacité de vos tests, ligne par ligne ou bloc par bloc, en repérant facilement les endroits où votre programme n’est jamais passé. Relancez de nouveaux tests en conséquence, avec pour objectif de vous assurer que <span class="hcp1">toutes</span> les instructions ont été exécutées <span class="hcp1">au moins à une reprise</span>.</p>
+<p>Bien entendu, <span class="hcp1">le fait d'avoir emprunté tous les chemins possibles</span> <span class="hcp2">NE signifie PAS que votre programme ne comporte aucun bogue</span> mais permet certainement d'éliminer une part non négligeable de bogues triviaux.</p>
+&#160;
+<p>&#160;</p>
+<p style="font-weight: bold;">Vocabulaire employé pour la couverture du code</p>
+<ul class="hcp3">
+<li class="p">
+<p>Une instruction exécutée en mode "Couverture du code" est dite "<span class="hcp1">tracée</span>".<br>
+Remarque : à un instant donné, sont uniquement tracées les instructions des sources du <span class="hcp1">sous-projet courant</span>.</p>
+</li>
+<li class="p">
+<p>Dans le source, la ligne de code correspondante est dite "<span class="hcp1">couverte</span>".<br>
+Remarque : Xwin détecte si tout ou seulement partie des éléments de la ligne a été exécuté. On distinguera donc les lignes "<span class="hcp1">totalement</span>" ou "<span class="hcp1">partiellement</span>" couvertes.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp1">Les rubriques suivantes expliquent en détails les conditions et les modalités de mise en oeuvre de cette fonctionnalité</span> :</p>
+<ul class="hcp3">
+<li class="p">
+<p class="hcp4">Comment <a href="Mise_en_route_de_la_couverture_du_code.htm">mettre en route la trace des instructions exécutées</a> ?</p>
+</li>
+<li class="p">
+<p class="hcp4">Quand et comment sont <a href="Colorisation_des_lignes_couvertes.htm">coloriées les lignes couvertes</a> ?</p>
+</li>
+<li class="p">
+<p class="hcp4">Comment <a href="Atteindre_une_ligne_non_ex&eacute;cut&eacute;e.htm">atteindre une ligne non exécutée</a> afin de se déplacer de ligne non couverte en ligne non couverte ?</p>
+</li>
+<li class="p">
+<p class="hcp4">Comment s'effectue le <a href="Suivi_des_informations_de_couverture_du_code.htm">suivi des informations de couverture</a> ?</p>
+</li>
+<li class="p">
+<p class="hcp4">Comment <a href="Configuration_de_la_couverture_du_code.htm">configurer la couverture du code</a> selon vos préférences ?</p>
+</li>
+<li class="p">
+<p class="hcp4">Et <a href="Si_la_couverture_du_code_ne_fonctionne_pas.htm">si la couverture du code ne fonctionne pas</a> ?</p>
+</li>
+</ul>
+<p class="hcp4">&#160;</p>
+<p><span class="hcp1">Remarque</span> :</p>
+<p>La couverture de code ne doit pas être confondue avec l'<a href="Consulterl_historique.htm">historique de l'exécution du programme</a> (le débogueur de Xwin conserve l'<font class="hcp5">historique</font> des <font class="hcp5">500 dernières instructions</font> exécutées ; à l'occasion d'un arrêt du programme, vous pouvez l'utiliser pour <font class="hcp5">vérifier "par où est passé"</font> votre programme avant son interruption).</p>
+<p>&#160;</p>
+</body>
+</html>

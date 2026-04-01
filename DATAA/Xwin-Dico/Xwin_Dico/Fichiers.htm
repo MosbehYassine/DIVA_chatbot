@@ -1,0 +1,123 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fichiers</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp3 { margin-top:0;
+margin-bottom:0; }
+font.hcp4 { font-weight:bold; }
+span.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fichiers</h3>
+&#160;
+<p>Les paramètres d’un fichier sont&#160;:<br>
+&#160;</p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="100%">
+<col style="width: 18.996%;">
+<col style="width: 81.004%;">
+<tr class="hcp1">
+<td style="width:18.996%;" class="hcp2">
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Libellé</p>
+</td>
+<td style="width:81.004%;" class="hcp2">
+<p class="footnote-text">Texte libre décrivant le fichier</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td colspan="2" style="width:100%;" class="hcp2">
+<p class="hcp3">&#160;</p>
+<p><font class="hcp4"><span class="hcp5">Famille</span> Fichier</font></p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:18.996%;" class="hcp2">
+<p><font class="hcp4">Nom</font></p>
+</td>
+<td style="width:81.004%;" class="hcp2">
+<p>Nom physique du fichier sur le disque. Ce nom ne doit pas être un nom absolu.</p>
+<p>Exemple&#160;: ccfdce.dhfi</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:18.996%;" class="hcp2">
+<p><font class="hcp4">Type</font></p>
+</td>
+<td style="width:81.004%;" class="hcp2">
+<p>Type du fichier :</p>
+<p>I fichier séquentiel-indexé.</p>
+<p>N (normal) &#160;: fichier de données ayant une structure interne propre à Harmony.</p>
+<p>U&#160;: fichier texte standard (avec CRLF pour marquer la fin des lignes).</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:18.996%;" class="hcp2">
+<p><font class="hcp4">Taille des enregistrements</font></p>
+</td>
+<td style="width:81.004%;" class="hcp2">
+<p>Pour les fichiers de type I, indique la taille des enregistrements du fichier N associé.</p>
+<p>Si une taille est précisée, cela signifie que tous les enregistrements du fichier ont la même taille.</p>
+<p>Si la taille n’est pas précisée, cela signifie que la taille des enregistrements est variable. Cette solution est utilisée lorsque une même fichier contient plusieurs tables.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:18.996%;" class="hcp2">
+<p><font class="hcp4">Version</font></p>
+</td>
+<td style="width:81.004%;" class="hcp2">
+<p>Numéro de version du fichier. Lors de l’utilisation du fichier, Harmony vérifie que les modules qui ouvrent le fichier ont été compilés avec la bonne description de ce dernier. Pour plus de détails, voir la rubrique "Version des fichiers" du livre de la documentation Xwin - Programmation consacré au langage Diva.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:18.996%;" class="hcp2">
+<p><font class="hcp4">Fichier temporaire</font></p>
+</td>
+<td style="width:81.004%;" class="hcp2">
+<p>Indique que le fichier est un fichier temporaire.<br>
+Cette propriété est utilisée lors de génération automatique des liens dans le dictionnaire. Les fichiers temporaires sont ignorés lors de cette génération.</p>
+<p class="hcp3">&#160;</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td colspan="2" style="width:100%;" class="hcp2">
+<p><font class="hcp4"><span class="hcp5">Famille</span> Moulinettes</font></p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:18.996%;" class="hcp2">
+<p><font class="hcp4">Sans reprise des données</font></p>
+</td>
+<td style="width:81.004%;" class="hcp2">
+<p>Cette propriété est utilisée par le générateur de moulinette. Si elle est cochée, la moulinette générée ne fait que créer le fichier avec la bonne version et les bonnes clés, mais ne recopie pas les enregistrements.</p>
+<p class="hcp3">&#160;</p>
+</td>
+</tr>
+</table>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">&#160;</p>
+<p class="NormalG">Remarques</p>
+<p>Un fichier de type séquentiel-indexé est physiquement composé de deux fichiers, un fichier des paramètres et clés et un fichier des données (de type N généralement). Le nom du fichier des données est déduit du nom fichier des clés en remplaçant l’extension .dhfi par l’extension .dhfd. Il n’y a donc pas lieu de préciser le nom du deuxième fichier.</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">&#160;</p>
+<p class="voir" style="border-top-width: 1px; border-top-color: #000000;">Voir également :</p>
+<p>Rubriques "Les fichiers de type U" / "Les fichiers de type N" / "Les fichiers séquentiel-indexés" et<br>
+rubrique "Version des fichiers" du livre de la documentation Xwin - Programmation consacré au langage Diva.</p>
+<p><a href="Moulinettes_de_conversion_des_fichiers.htm">Moulinettes de conversion des fichiers</a></p>
+</body>
+</html>

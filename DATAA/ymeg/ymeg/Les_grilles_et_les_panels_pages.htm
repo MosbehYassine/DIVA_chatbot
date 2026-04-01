@@ -1,0 +1,32 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Grilles et pages panels</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Grilles et pages panels</h2>
+<p>&#160;</p>
+<p>Grilles et panels pages sont deux objets indissociables qui permettent de <span class="hcp1">découper l'écran en cellules redimensionnables par l'utilisateur</span>. En déplaçant des "barres de redimensionnement", celui-ci peut ainsi privilégier l’affichage de telles ou telles pages du masque (la plupart du temps, dans le but d’augmenter l'espace alloué aux tableaux présents à l’écran).<br>
+<br>
+Xwin ne propose pas d'objet "Barre de redimensionnement" à proprement parler. Il faut utiliser l'objet "<span class="hcp1">Grille</span>", conteneur invisible à l'écran et divisé en cases nommées cellules. <span class="hcp1">Une barre de redimensionnement est automatiquement insérée entre deux cellules de grille adjacentes</span>.<br>
+<br>
+Une cellule de grille ne peut contenir qu'un seul objet, l'objet "<span class="hcp1">Panel page</span>". Cet objet référence une autre page du masque qui sera automatiquement incluse dans la cellule à l'affichage.</p>
+<p>&#160;</p>
+<p>Les objets "Grille" sont de simples conteneurs qui ne sont pas concernés par la programmation. Les objets "Panel page" en tant que tels ne servent qu'à référencer une autre page du masque Xwin et l'inclusion des objets de la page référencée dans la page parente est automatique et transparente pour le développeur.<span class="hcp1"><br>
+<br>
+Par contre, la programmation peut être affectée par la présence de pages panels dans un masque d'écran</span>.</p>
+<p>Les rubriques qui suivent décrivent les <span class="hcp1">spécificités de développement liés aux pages panels</span>.</p>
+<p>&#160;</p>
+</body>
+</html>

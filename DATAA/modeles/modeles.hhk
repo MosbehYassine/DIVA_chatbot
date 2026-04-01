@@ -1,0 +1,33 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Choix d'un modèle d'imprimante">
+    <param name="Name" value="Choix d'un modèle d'imprimante">
+    <param name="Local" value="modeles/Choixd_unmod_led_imprimante.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Gestion des modèles d'imprimante">
+    <param name="Name" value="Gestion des modèles d'imprimante">
+    <param name="Local" value="modeles/Gestiondesmod_lesd_imprimante.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modèle par défaut">
+    <param name="Name" value="Modèle par défaut">
+    <param name="Local" value="modeles/Mod_lepard_faut.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Modèle préconisé et modèle impératif">
+    <param name="Name" value="Modèle préconisé et modèle impératif">
+    <param name="Local" value="modeles/Mod_lepr_conis_etmod_leimp_ratif.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Principe général">
+    <param name="Name" value="Principe général">
+    <param name="Local" value="modeles/Principeg_n_ral.htm">
+  </object>
+</ul>
+</html>

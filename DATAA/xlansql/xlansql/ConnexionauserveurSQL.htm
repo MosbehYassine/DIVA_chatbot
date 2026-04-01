@@ -1,0 +1,46 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Connexion au serveur SQL</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Connexion au serveur SQL</h3>
+<p class="Body-Text">La plupart des actions réalisées par XPSQL nécessitent une <font class="hcp1">connexion avec le serveur SQL</font>.</p>
+<p class="Body-Text">XLANSQL utilise l'interface standard <font class="hcp1">ODBC</font> pour l'accès à la base SQL, notamment pour la connexion à la base. Pour chaque session, XLANSQL utilise le <font class="hcp1">code de l'utilisateur</font> HARMONY et son mot de passe du fichier XLOG.dhfi du serveur. L'utilitaire XPSQL permet de <font class="hcp1">simuler</font> la connexion à la base SQL. Il stocke une chaîne de caractères génériques contenant les informations pour la connexion à la base SQL dans le fichier paramètre FHSQL.</p>
+<p class="Body-Text">Lors de la <font class="hcp1">première connexion</font> au serveur, XPSQL ouvre la boîte de dialogue permettant de <font class="hcp1">choisir la source</font> de données. On choisira la source correspondante à la base dans l'onglet "&#160;<font class="hcp1">Source de données machine</font>&#160;".</p>
+<p class="Body-Text"><img src="../image/ebx_-481422119.gif" alt="image\ebx_-481422119.gif" title="image\ebx_-481422119.gif" width="485" height="399" border="0"></p>
+<p class="Body-Text" style="text-align: justify;">Le choix "&#160;Je veux me connecter en appelant la boîte de dialogue SQL pour changer de source&#160;" permet de <font class="hcp1">changer la source</font> de données en cas d'erreur.</p>
+<p class="Body-Text" style="text-align: justify;">&#160;</p>
+<p class="Body-Text" style="text-align: justify;"><font class="hcp1">Rappel</font></p>
+<p class="Body-Text" style="text-align: justify;">La source de données doit être configurée au préalable. <a href="ConfigurationdelasourceODBC_DSN__.htm">Voir Configuration de la source ODBC</a>.</p>
+<p class="Body-Text" style="text-align: justify;"><font class="hcp1">Attention pour SQL Server,</font></p>
+<p class="Body-Text" style="text-align: justify;"><font class="hcp1">Lorsque l’on gère plusieurs bases, on vérifiera que la chaîne de connexion correspond bien à la base choisie.</font></p>
+<p class="Body-Text" style="text-align: justify;"><img src="../image/ebx_796777386.gif" alt="image\ebx_796777386.gif" title="image\ebx_796777386.gif" width="438" height="334" border="0"></p>
+<p class="Body-Text" style="text-align: justify;">&#160;</p>
+<h3 class="Body-Text">Particularité pour DB2 sur un serveur i.</h3>
+<p class="Body-Text">Pour la gestion d'une base DB2 sur un serveur i, il y a en fait deux chaînes de connexion différentes :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">La chaîne de connexion ODBC (comme décrite ci-dessus), utilisée par l'utilitaire XPSQL pour la création des tables.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La chaîne de connexion CLI, utilisée par le travail XLAN sur le serveur i. En effet, le travail XLAN qui s'exécute sur le serveur, n'utilise pas l'interface ODBC pour dialoguer avec la base DB2, mais l'interface CLI propre au système i. On trouvera donc dans la boîte de dialogue des paramètres de la base, les deux chaînes de connexion.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">Voir aussi</span> : <a href="Option_de_connexion_Mars.htm">Option de connexion Mars</a>.</p>
+</body>
+</html>

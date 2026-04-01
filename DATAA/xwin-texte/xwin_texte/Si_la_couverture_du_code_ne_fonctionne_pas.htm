@@ -1,0 +1,67 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Si la couverture du code ne fonctionne pas</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Si la couverture du code ne fonctionne pas</h3>
+&#160;
+<p>Plusieurs causes peuvent justifier un dysfonctionnement apparent de la couverture du code :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Aucun sous-projet n'est actif.</p>
+</li>
+<li class="p">
+<p>L'application n'a pas été lancée en mode "débogueur".</p>
+</li>
+<li class="p">
+<p>Le source concerné n'a pas été compilé en mode "débogueur" et en mode "Couverture du code" (Cf. rubrique <a href="Configuration_de_la_couverture_du_code.htm">Configuration de la couverture du code</a>).<br>
+Activez les deux options (au niveau du profil) et demandez la reconstruction du sous-projet.</p>
+</li>
+<li class="p">
+<p>La trace des instructions exécutées a été invalidée.<br>
+Vérifiez l'état du bouton ou du choix de menu "<span class="hcp1">Tracer les instructions exécutées</span>". Le bouton doit être enfoncé et le choix du menu coché.</p>
+</li>
+<li class="p">
+<p>La colorisation des lignes spécifique à la couverture du code a été invalidée.<br>
+Vérifiez l'état du bouton ou du choix de menu "<span class="hcp1">Colorier les lignes couvertes</span>". Le bouton doit être enfoncé et le choix du menu coché.</p>
+</li>
+<li class="p">
+<p>La trace des instructions exécutées a été interrompue (voir les causes possibles d'interruption à la rubrique "<a href="Interruption_de_la_trace_des_instructions_ex&eacute;cut&eacute;es.htm">Interruption de la trace des instructions exécutées</a>").</p>
+</li>
+<li class="p">
+<p>La couverture du code a été globalement invalidée.<br>
+Vérifiez les options de Xwin (volet Débogage : Couverture du code).</p>
+</li>
+<li class="p">
+<p>Si la colorisation disparaît chaque fois que vous lancez l'application, vérifiez que l'option de Xwin (volet Débogage : Couverture du code) demandant l'effacement des informations à chaque nouvelle exécution n'est pas validée. A contrario, si la colorisation disparaît chaque fois que l'application se termine, vérifiez que l'option de Xwin (volet Débogage : Couverture du code) demandant la (dés)activation automatique de la colorisation n'est pas validée.</p>
+</li>
+<li class="p">
+<p>Les modules surchargés et les traitements de base des dictionnaires et des masques de surcharge ne sont pas tracés.</p>
+</li>
+<li class="p">
+<p>Si un fichier des couvertures est signalé comme n'étant pas en phase avec le source correspondant, cela signifie probablement que le source a été modifié en dehors de Xwin ou, dans le cas d'un masque ou d'un dictionnaire, que le source a été modifié en mode Texte.<br>
+Il est aussi possible qu'une modification ait été faite par un autre utilisateur, en particulier si vous avez l'habitude de travailler à plusieurs sur les mêmes sources car <span class="hcp2">Attention</span> <span style="text-decoration: underline;">: &#160;</span><span class="hcp2">Xwin ne gère pas le partage des informations de couverture par plusieurs utilisateurs.</span></p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>En tout état de cause, consultez la fenêtre de l'onglet "Messages" : les anomalies détectées par la fonction de couverture du code y sont répertoriées et datées.<span class="hcp1"><br>
+<br>
+Remarque</span> : Le contenu de la fenêtre "Messages" peut être effacé : cliquez droit dans la barre de titre de l'onglet et sélectionnez le choix <span class="hcp1">Effacer</span> du menu contextuel.<br>
+&#160;</p>
+<p style="text-decoration: underline;">&#160;</p>
+</body>
+</html>

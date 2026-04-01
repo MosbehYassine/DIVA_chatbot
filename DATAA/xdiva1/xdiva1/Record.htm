@@ -1,0 +1,111 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Record</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp5 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Record</h3>
+<p class="Body-Text">L'instruction Record permet de déclarer un enregistrement défini dans un dictionnaire de données.</p>
+<p class="Body-Text"><font class="hcp1">[public | protected] Record</font> <font class="hcp1">[KeepDataNames]</font> <font class="hcp2">dico mnémo</font> [<font class="hcp2">var</font>]</p>
+<p class="Body-Text"><font class="hcp2">Public</font></p>
+<p class="decalage05">Spécifie que la variable v<font class="hcp2">ar</font> est publique. Si plusieurs modules déclarent la même variable publique, elle est allouée une seule fois à l'exécution.</p>
+<p class="Body-Text"><font class="hcp2">Protected</font></p>
+<p class="decalage05">Spécifie que la variable <font class="hcp2">var</font> est protégée. Une nouvelle instance de <font class="hcp2">var</font> est allouée.</p>
+<p class="Body-Text"><font class="hcp2">KeepDataNames</font></p>
+<p class="decalage05">Précise que le compilateur doit garder les informations détaillées concernant les champs de cet enregistrement. Cette option permet d’utiliser ces champ dans les instructions <a href="DataCompute.htm">DataCompute</a> , <a href="DataDescriptor.htm">DataDescriptor</a> , <a href="DataValue.htm">DataValue</a> . .</p>
+<p class="decalage05">La pseudo-instruction /KEEPDATANAMES (oul ‘option de compilation K) permet de positionner cette option pour tous les enregistrements déclarés par la suite.</p>
+<p class="decalage05">Voir remarque ci-dessous.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Dico</font></p>
+<p class="decalage05">Nom du dictionnaire de données.</p>
+<p class="Body-Text"><font class="hcp2">Mnémo</font></p>
+<p class="decalage05">Nom de l'enregistrement défini dans le dictionnaire.</p>
+<p class="Body-Text"><font class="hcp2">Var</font></p>
+<p class="decalage05">Nom de la variable structurée représentant l'enregistrement. Si ce paramètre n'est pas spécifié, le nom de la donnée est le même que le mnémonique.</p>
+<p class="Body-Text">Record génère une seule donnée. Pour accéder à ses champs, il faut utiliser la notation pointée <font class="hcp1">donnee.champ</font> .</p>
+<p class="Body-Text">Si l'enregistrement contient une zone packée, le compilateur rajoute les quatre champs suivants :</p>
+<table cellspacing="0" width="436">
+<tr class="hcp3">
+<td style="width:33.54%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Champ</font></p>
+</td>
+<td style="width:66.46%;" class="hcp4">
+<p class="Body-Text"><font class="hcp1">Commentaire</font></p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.54%;" class="hcp4">
+<p class="Body-Text">Pack</p>
+</td>
+<td style="width:66.46%;" class="hcp4">
+<p class="Body-Text">Zone packée</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.54%;" class="hcp4">
+<p class="Body-Text">Depack</p>
+</td>
+<td style="width:66.46%;" class="hcp4">
+<p class="Body-Text">Zone dépackée</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.54%;" class="hcp4">
+<p class="Body-Text">Write</p>
+</td>
+<td style="width:66.46%;" class="hcp4">
+<p class="Body-Text">L'enregistrement sans la zone dépackée. C'est ce champ qui est écrit par la fonction Fwrite.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:33.54%;" class="hcp4">
+<p class="Body-Text">Memory</p>
+</td>
+<td style="width:66.46%;" class="hcp4">
+<p class="Body-Text">La totalité de l'enregistrement en mémoire, zone dépackée comprise.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques sur KeepDataNames</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">L’option KeepDataNames de l’instruction Record garde tous les noms des champs de l’enregistrement dans le fichier Hop. Ils pourront donc être utilisés dans les instructions <a href="DataCompute.htm">DataCompute</a> et <font color="#008000" class="hcp5">DataDescriptor.</font></p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Si au moment de l’exécution, des champs ont été ajoutés au dictionnaire (sans que le programme ne soit recompilé), XrtDiva.exe lit le dictionnaire pour compléter sa liste de champs. Il faut bien sûr que le dictionnaire soit en ligne.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Si l’option KeepDataNames n’est pas positionnée, les instructions DataCompute et DataDescriptor peuvent accéder a n’importe quel champ de n’importe quel enregistrement déclaré dans le module, à condition que le dictionnaire de données soit en ligne.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">A partir du moment ou le compilateur Diva rencontre une instruction DataCompute ou DataDescriptor, il positionne l’option KeepDataNames pour tous les enregistrements qui vont être déclarés par la suite.</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="GetRecordInfo.htm">GetRecordInfo</a>, <a href="HFile.htm">HFile</a>, <a href="Public.htm">Public</a>, <a href="Protected.htm">Protected</a>, <a href="Extern.htm">Extern</a>,<a href="HTmpFile.htm">HTmpFile</a></p>
+<p class="Body-Text"><a href="DataCompute.htm">DataCompute</a> , <font class="hcp5">DataDescriptor</font><font color="#008000">.,</font> <font color="#000000"><a href="DataValue.htm">DataValue</a></font> <a href="xwin-texte.chm::/xwin_texte/Insertion_de_commentaires_dans_le_code.htm">Insertion de commentaires dans le code</a>.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

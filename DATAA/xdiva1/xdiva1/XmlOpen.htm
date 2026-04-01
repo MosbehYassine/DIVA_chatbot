@@ -1,0 +1,148 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmlOpen</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmlOpen&#160;<a href="Liste_des_fonctions_Xml.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Fonctions_Xml.htm"><font class="hcp1">Thème</font></a></h3>
+<p style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction XmlOpen permet d’ouvrir un flux XML. Un flux est soit un fichier, soit une chaîne de caractères.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Numer XmlOpen</font> (<font class="hcp3">FichierOuChaine</font> <font class="hcp3">, [Mode]</font> )</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">FichierOuChaine</font></p>
+<p class="decalage05">Nom du fichier à ouvrir ou variable contenant le flux XML. Le flux peut être de type «&#160;fichier&#160;» ou de type «&#160;mémoire&#160;», en fonction de la variable Mode.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Mode</font></p>
+<p class="decalage05">Indique le type du flux.</p>
+<p class="decalage05">1 = le paramètre <font class="hcp3">Flux</font> est une chaîne de caractère contenant le code XML (valeur par défaut)</p>
+<p class="decalage05">2 = le paramètre <font class="hcp3">Flux</font> est un nom de fichier au format Windows</p>
+<p class="decalage05">3 = le paramètre <font class="hcp3">Flux</font> est un nom de fichier au format Harmony</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp4">
+<td style="width:10.50%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:89.50%;" class="hcp5">
+<p class="Body-Text">Erreur d’ouverture du fichier. Voir <a href="XmlGetFileError.htm">XmlGetFileError</a></p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:10.50%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:89.50%;" class="hcp5">
+<p class="Body-Text">Ticket. Ce ticket est ensuite utilisé comme premier paramètre dans les fonctions <a href="XmlRead.htm">XmlRead</a> et <a href="XmlClose.htm">XmlClose</a></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">Si le paramètre <font class="hcp3">Flux</font> vaut 3 (fichier au format Harmony), le fichier est lu tel que, par la fonction <a href="Freadst.htm">Freadst</a> , sans aucune conversion de caractères. Il faut veiller à ce que le jeu de caractère du fichier ne soit pas le jeu de caractères Harmony. Voir les <a href="Fonctionsdeconversion.htm">Fonctions de conversion</a> .</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;1&#160;: Ouverture d’un flux fichier</font></p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">1 ticket L</p>
+<p class="source">1 chaine S</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">ticket = XmlOpen("e:/Divalto/diconouvo/monfichier.xml",2)&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">if ticket = 0&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">status = XmlGetFileError(chaine)&#160;</p>
+<p class="source">&#160;display "Erreur=" &amp; tostring(status) &amp; " Fichier=" &amp; chaine</p>
+<p class="source">&#160;ProgramExit</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">endif&#160;</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;2&#160;: Ouverture et lecture d’un flux mémoire</font></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">1 ticket L</p>
+<p class="source">1 tag S</p>
+<p class="source">1 valeur S</p>
+<p class="source">1 chaine S</p>
+<p class="source">1 status L</p>
+<p class="source">1 stread L</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">1 article 508</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">2 code 20&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">2 libelle 40&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">2 prix 10,2&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">2 comm 50&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">main</p>
+<p class="source">; Création du flux XML dans une chaine de caractères</p>
+<p class="source">;--------------------------------------------------------------------------</p>
+<p class="source">chaine = `&lt;?xml version="1.0" standalone="yes"?&gt;`</p>
+<p class="source">chaine &amp;= `&lt;BaseArticle&gt;`</p>
+<p class="source">chaine &amp;= `&lt;Article code="A1" libelle="libellé article A1" prix="12,34" /&gt;`</p>
+<p class="source">chaine &amp;= `&lt;Article code="A2" libelle="libellé article A2" prix="45,88" &gt;`</p>
+<p class="source">chaine &amp;= `commentaire sous forme de valeur`</p>
+<p class="source">chaine &amp;= '&lt;/Article&gt;'</p>
+<p class="source">chaine &amp;= `&lt;/BaseArticle&gt;`</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">; Ouverture du flux. Comme la chaine a été composée en jeu de caractères OEM</p>
+<p class="source">; (jeu Harmony) il faut préalablement le convertir en Utf8</p>
+<p class="source">;--------------------------------------------------------------------------</p>
+<p class="source">ticket = XmlOpen(FromOemToUtf8(chaine))</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">; Positionnement option</p>
+<p class="source">;--------------------------------------------------------------------------</p>
+<p class="source">XmlSetOption(ticket,"&lt;whitespacehandling&gt;none")</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">; Lecture du flux</p>
+<p class="source">;--------------------------------------------------------------------------</p>
+<p class="source">loop (stread := XmlRead(ticket,tag,valeur)) not in (XML_ERROR,XML_END)</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;; Début d’un nouvel article&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;; - - - - - - - - - - - - - &#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;if tag = "Article" and stread = XML_BEGINTAG&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Article = " "&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;loop (stread := XmlRead(ticket,tag,valeur)) not in (XML_ERROR,XML_END,XML_ENDTAG)&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if tag = "code" and stread = XML_ATTRIBUT&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;code = valeur&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;elsif tag = "libelle" and stread = XML_ATTRIBUT&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;libelle = valeur&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;elsif tag = "prix" and stread = XML_ATTRIBUT&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;prix = valeur&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;elsif stread = XML_TEXTVALUE&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;comm = valeur&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;endif&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;endloop&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;; fin de l’article&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;; - - - - - - - - -&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;if stread = XML_ENDTAG&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display article&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;endif&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;endif&#160;</p>
+<p class="source">endloop</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">if stread = XML_ERROR</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display "Erreur : " &amp; XmlGetError&#160;</p>
+<p class="source">endif</p>
+<p class="source">XmlClose(ticket)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="XmlGetFileError.htm">XmlGetFileError</a> <a href="XmlRead.htm">XmlRead</a> <a href="Fonctionsdeconversion.htm">Fonctions de conversion</a> .</p>
+</body>
+</html>

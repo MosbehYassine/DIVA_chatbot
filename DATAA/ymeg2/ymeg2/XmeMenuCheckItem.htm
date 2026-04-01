@@ -1,0 +1,136 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeMenuCheckItem</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-family:Symbol; }
+font.hcp7 { text-decoration:underline; }
+font.hcp8 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeMenuCheckItem <font style="font-size: 10pt;" size="2">&#160;</font><a href="Liste_r_capitulative_des_fonctions_de_gestion_des_menus.htm"><font size="2" class="hcp1">Famille</font></a> &#160;<a href="Menus.htm"><font size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Coche ou décoche d’un choix de menu de</font> <a href="Natures_des_choix_de_menu.htm"><font class="hcp2">nature case à cocher</font></a></p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Ptr XmeMenuCheckItem</font> (<font class="hcp3">Id_Menu</font>, <font class="hcp3">Id_Choix</font>, <font class="hcp3">Etat</font>)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 9.936%;">
+<col style="width: 90.064%;">
+<tr class="hcp4">
+<td style="width:9.936%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Id_Menu</font></p>
+</td>
+<td style="width:90.064%;" class="hcp5">
+<p class="Body-Text">Identifiant du menu rendu par la fonction XmeMenuGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:9.936%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Id_Choix</font></p>
+</td>
+<td style="width:90.064%;" class="hcp5">
+<p class="Body-Text">Identificateur du choix à cocher ou décocher.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:9.936%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Etat</font></p>
+</td>
+<td style="width:90.064%;" class="hcp5">
+<p class="Body-Text">TRUE&#160;&#160;: le choix doit être coché.<br>
+FALSE&#160;: le choix doit être décoché.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Valeur rendue par la fonction</font>&#160;:</p>
+<p class="Body-Text" style="margin-left: 49.65pt; text-indent: -43.90pt;">0&#160;: &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Pas d’erreur détectée.<br>
+(remarque&#160;: aucune erreur n’est signalée <font face="Symbol" class="hcp6">-</font> la fonction est ignorée <font face="Symbol" class="hcp6">-</font> si le choix spécifié n'est ni de nature "case à cocher" ni de nature "bouton radio")</p>
+<p class="Body-Text" style="margin-left: 49.65pt; text-indent: -43.90pt;">0x1089&#160;:&#160;Choix inconnu dans le menu.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction XmeMenuCheckItem permet de cocher (<font class="hcp3">Etat</font> = TRUE) ou décocher (<font class="hcp3">Etat</font> = FALSE) le choix d’<a href="Identificateur_des_choix_de_menu.htm">identificateur</a> <font class="hcp3">Id_Choix</font> dans le menu <font class="hcp3">Id_Menu</font>. Elle ne s’applique qu’aux choix de nature "case à cocher" ou "bouton radio" (voir première remarque).</p>
+<p class="List" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Programmation d’un choix "case à cocher" :</font></p>
+<p class="Body-Text">Initialement, un choix de nature case à cocher est à l’état «&#160;non coché&#160;». De plus, lorsque l’utilisateur sélectionne un tel choix, <font class="hcp7">l’état de la coche</font> <font class="hcp8">N</font><font class="hcp7">’est</font> <font class="hcp8">PAS</font> <font class="hcp8">AUTOMATIQUEMENT</font> <font class="hcp7">actualisé</font>. En conséquence (voir l’exemple), votre programme&#160;doit exécuter XmeMenuCheckItem :</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Avant le premier affichage du menu, pour cocher le choix s’il doit apparaître initialement coché.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Ensuite, pour mettre l’état du choix à jour en cas de sélection par l’utilisateur (si l’utilisateur sélectionne un choix non coché, le programme doit le cocher et inversement, si l’utilisateur sélectionne un choix déjà coché, le programme doit le décocher).</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font>&#160;:</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Pour cocher un choix de nature "bouton radio", on utilisera de préférence la fonction <a href="XmeMenuCheckRadioItem.htm">XmeMenuCheckRadioItem</a>, qui décoche automatiquement le choix du groupe radio précédemment coché. Toutefois, XmeMenuCheckItem peut être utilisée pour décocher (un à un) TOUS les choix du groupe (ce que ne permet pas XmeMenuCheckRadioItem).</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Vous pouvez utiliser la fonction&#160;<a href="XmeMenuIsItemChecked.htm">XmeMenuIsItemChecked</a> pour connaître l’état courant du choix.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Lorsqu'un même menu est affiché dans plusieurs fenêtres empilées, ses MISES A JOUR (grisages, invalidations, coches, ajouts ou suppressions de choix, surcharge, ...) sont répercutées dans TOUTES les OCCURENCES affichées.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Source">...<br>
+Id_menu = XmeMenuGetId ("MASQUE","MENU")&#160;&#160;&#160;&#160;&#160;&#160;;chargement du menu "MENU"</p>
+<p class="Source">XmeMenuSetWindow (Id_menu,"MASQUE",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;attachement à la page 1</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;init choix avant affichage</p>
+<p class="Source">XmeMenuCheckItem (Id_menu,"OPTION_1",TRUE) &#160;&#160;&#160;;OPTION_1 coché au départ</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;OPTION_2 non coché&#160;</p>
+&#160;
+<p class="Source">XmeDisp ("MASQUE",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affichage page 1 &amp; menu</p>
+<p class="Source">...</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">Fini = FALSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation tableau</p>
+<p class="Source">Do</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListConsult (Id_tableau)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;Switch Harmony.Key&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Case K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;abandon&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Case Harmony.DataArret = 101 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;arrêt &lt;-&gt; choix OPTION_1&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeMenuCheckItem (Id_menu,"OPTION_1", \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;not XmeMenuIsItemChecked (Id_menu,"OPTION_1"))&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Case Harmony.DataArret = 102 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;arrêt &lt;-&gt; choix OPTION_2&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeMenuCheckItem (Id_menu,"OPTION_2", \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;not XmeMenuIsItemChecked (Id_menu,"OPTION_2"))&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Case ...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Default&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Id_tableau,Ligne,Scrollbar32)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;EndSwitch&#160;</p>
+<p class="Source">While not Fini</p>
+<p class="Source">Wend</p>
+</body>
+</html>

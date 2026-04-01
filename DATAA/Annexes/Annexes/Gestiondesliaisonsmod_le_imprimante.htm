@@ -1,0 +1,33 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion des liaisons modèle / imprimante</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Gestion des liaisons modèle / imprimante</h4>
+<p class="Body-Text">Pour <font class="hcp1">définir ou modifier une liaison</font>, appelez l'utilitaire <a href="UTILITAIRES.chm::/UTILITAIRES/XTESTIMP_Configurationdesimprimantes.htm">xDivaltoPrinters</a>. Celui-ci effectue automatiquement la mise à jour des chapitres [Printer] de Divalto.ini.</p>
+<p class="Body-Text">Voir aussi les rubriques <a href="M_thodedes_lectiondel_imprimante.htm">Méthode de sélection de l'imprimante</a> et <a href="Exempledeliaisonsmod_le_imprimante.htm">Exemple de liaisons modèle / imprimante</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">A titre indicatif, un chapitre [Printer] ou [Printer-xxxx] contient une commande <font class="hcp1">"device=..."</font> précisant l'imprimante, le driver et le port d'entrée/sortie. La syntaxe de la commande &lt;device&gt; est la suivante&#160;:<br>
+device=&lt;nom de l'imprimante&gt;,&lt;nom du driver&gt;,&lt;port&gt;<br>
+Par exemple&#160;:<br>
+device=HP LaserJet Series II,HPPCL,LPT1:<br>
+device=Epson FX-80,EPSON9E,LPT1:</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Une <font class="hcp1">impression "fichier"</font> est possible en remplaçant le port d'entrée / sortie par le nom (complet) d'un fichier. Par exemple&#160;:<br>
+device=Epson FX-80,EPSON9E,c:\Divalto\sys\ficimp</p>
+</body>
+</html>

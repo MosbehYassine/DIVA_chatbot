@@ -1,0 +1,62 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>RecordSql.RemoveCondition</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+font.hcp3 { font-weight:bold; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp5 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>RecordSql.RemoveCondition &#160;&#160;<span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>La méthode RemoveCondition s’applique aux méthodes Where ou Having &#160;du RecordSQL ( Record.Where.RemoveCondition, Record.Having.RemoveCondition).</p>
+<p>Elle permet de supprimer une condition préalablement ajoutée avec <a href="AddCondition.htm">AddCondition</a>.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Long</span> RecordSql<span class="hcp1">.Where.RemoveCondition</span> (<span class="hcp2">NomCondition</span>)</p>
+<p><span class="hcp1">Long</span> RecordSql<span class="hcp1">.Having.RemoveCondition</span> (<span class="hcp2">NomCondition</span>)</p>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp3">Paramètres</font></p>
+<p style="font-style: italic;">NomCondition</p>
+<p class="Decalage05">Correspond à l’identifiant de la condition à supprimer.<br>
+Si ce paramètre vaut espace, toutes les conditions précédemment ajoutées avec la clause AddCondition sont supprimées.</p>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp3">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr style="vertical-align: top;">
+<td style="width:14.09%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">1 &#160;</p>
+</td>
+<td style="width:85.91%;" class="hcp4">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.</p>
+</td>
+</tr>
+</table>
+<p>&#160;Toutes les erreurs provoquent l'arrêt du programme</p>
+<p>&#160;</p>
+<p class="hcp5">Exemples</p>
+<p class="Source">Client.Where.RemoveCondition('MaCondition’)</p>
+<p class="Source">Client.Where.RemoveCondition('Zoom_ClientValide’)</p>
+<p>&#160;</p>
+<p class="hcp5">Voir</p>
+<p><a href="Where.htm">&lt;Where&gt;</a></p>
+<p><a href="Having.htm">&lt;Having&gt;</a></p>
+<p><a href="AddCondition.htm">RecordSql.AddCondition</a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,233 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>LDAPRequest</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+table.hcp1 { vertical-align:top; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { border:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp4 { font-weight:bold; }
+td.hcp5 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp6 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp8 { font-family:"Courier New"  , monospace; }
+p.hcp9 { font-family:"Courier New"  , monospace; }
+span.hcp10 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>LDAPRequest</h3>
+<p>&#160;</p>
+<p>Pour interroger un domaine LDAP (ActiveDirectory par exemple), une assembly est disponible : DhSynchroLDAP.dll</p>
+<p>&#160;</p>
+<p>Il convient d'utiliser les <a href="AssemblyLoad.htm">fonctions Assembly</a> pour y accéder. La fonction à appeler est LDAPRequest.</p>
+<p class="Body-Text">&#160;</p>
+<p class="body-text">Comme toutes les fonctions appelées via les fonctions Assembly, elle renvoie le résultat sous forme de chaîne et prend un unique paramètre, de type chaîne.</p>
+<p class="body-text">&#160;</p>
+<p class="body-text">Ce paramètre est une chaîne HMP contenant différents paramètres pour l'interrogation :</p>
+<p class="body-text">&#160;</p>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="80.38%" class="hcp1">
+<col style="width: 24.247%;">
+<col style="width: 75.753%;">
+<tr class="hcp2">
+<td style="width:24.247%;" class="hcp3">
+<p class="hcp4">Paramètre</p>
+</td>
+<td style="width:75.753%;" class="hcp5">
+<p class="hcp4">Description</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.247%;" class="hcp6">
+<p>server</p>
+</td>
+<td style="width:75.753%;" class="hcp7">
+<p>Nom du domaine, ou adresse du serveur. Si vide, c'est le domaine courant qui est utilisé. (Facultatif)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.247%;" class="hcp6">
+<p>ou</p>
+</td>
+<td style="width:75.753%;" class="hcp7">
+<p>Organizational Unit. Pour se positionner directement sur une OU. (Facultatif)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.247%;" class="hcp6">
+<p>filter</p>
+</td>
+<td style="width:75.753%;" class="hcp7">
+<p>Filtre à appliquer à la requête. (Facultatif)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.247%;" class="hcp6">
+<p>login</p>
+</td>
+<td style="width:75.753%;" class="hcp7">
+<p>Identifiant pour la connexion au serveur. (Facultatif)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.247%;" class="hcp6">
+<p>pwd</p>
+</td>
+<td style="width:75.753%;" class="hcp7">
+<p>Mot de passe pour la connexion au serveur (Facultatif)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.247%;" class="hcp6">
+<p>fields</p>
+</td>
+<td style="width:75.753%;" class="hcp7">
+<p>Liste des champs, séparés par un point-virgule, à récupérer</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.247%;" class="hcp6">
+<p>output</p>
+</td>
+<td style="width:75.753%;" class="hcp7">
+<p>Type de sortie. Possibilité : xml, hmp, json. Par défaut : hmp</p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+<p class="body-text">&#160;</p>
+<p class="body-text" style="font-weight: bold;">Résultat</p>
+<p class="body-text">&#160;</p>
+<p class="body-text">Le résultat, quel que soit le type de sortie (json, xml, hmp) contient :</p>
+<p class="body-text">- une balise <span class="hcp8">item</span> par résultat</p>
+<p class="body-text" style="margin-left: 48px;">- une balise <span class="hcp8">field</span> par champ demandé</p>
+<p class="body-text" style="margin-left: 88px;">- pour chaque champ, une liste de balise <span class="hcp8">value</span> qui contient une valeur</p>
+<p class="body-text">&#160;</p>
+<table cellspacing="0" width="100%" class="hcp1">
+<col style="width: 15.687%;">
+<col style="width: 84.313%;">
+<tr class="hcp2">
+<td style="width:15.687%;" class="hcp3">
+<p class="hcp4">Type de sortie</p>
+</td>
+<td style="width:84.313%;" class="hcp5">
+<p class="hcp4">Sortie</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:15.687%;" class="hcp6">
+<p>hmp</p>
+</td>
+<td style="width:84.313%;" class="hcp7">
+<p class="hcp9">&lt;item&gt;&lt;field&gt;xxxx&lt;value&gt;yyyy&lt;value&gt;zzzz&lt;field&gt;aaaa&lt;value&gt;bbbb</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:15.687%;" class="hcp6">
+<p>xml</p>
+</td>
+<td style="width:84.313%;" class="hcp7">
+<p class="hcp9">&lt;Items&gt;</p>
+<p class="hcp9">&#160;&#160;&#160;&#160;&lt;Item&gt;</p>
+<p class="hcp9">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Field Name="xxxx"&gt;</p>
+<p class="hcp9">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Value&gt;yyyy&lt;/Value&gt;</p>
+<p class="hcp9">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Value&gt;zzzz&lt;/Value&gt;</p>
+<p class="hcp9">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;/Field&gt;</p>
+<p class="hcp9">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Field Name="aaaa"&gt;</p>
+<p class="hcp9">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;Value&gt;bbbb&lt;/Value&gt;</p>
+<p class="hcp9">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;/Field&gt;</p>
+<p class="hcp9">&#160;&#160;&#160;&#160;&lt;/Item&gt;</p>
+<p><span class="hcp8">&lt;/Items&gt;</span> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:15.687%;" class="hcp6">
+<p>json</p>
+</td>
+<td style="width:84.313%;" class="hcp7">
+<p style="text-align: justify; font-family: 'Courier New', monospace;">{"Items":[{"Fields":[{"Values":["yyyy","zzzz"],"Name":"xxxx"},{"Values":["bbbb"],"Name":"aaaa"}]}]}</p>
+</td>
+</tr>
+</table>
+<p class="body-text">&#160;</p>
+<p class="body-text"><span class="hcp10">Information</span> : Pour lire du JSON, utilisez les <a href="JsonOpen.htm">fonctions JSON</a>.</p>
+<p class="body-text">&#160;</p>
+<p class="body-text"><span class="hcp10">Exemple</span> :</p>
+<p class="body-text">Récupération de la liste des utilisateurs (attributs Name et MemberOf) en JSON avec lecture du résultat :</p>
+<p class="body-text">&#160;</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 idDll L</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 idFct L</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 sortie S</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">; chargement de l'assembly et récupération de l'identifiant de la méthode LDAPRequest</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">idDll = AssemblyLoad("DhSynchroLdap.dll")</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">idFct = AssemblyGetMethod(idDll, "LDAPRequest")</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">; appel de la méthode</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">if AssemblyMethodInvoke(idDll, idFct, "&lt;output&gt;json&lt;Fields&gt;name;memberof&lt;Filter&gt;(&amp;(objectCategory=person)(objectClass=user))", sortie) &lt;&gt; 0</p>
+<p class="body-text" style="margin-left: 48px; font-family: 'Courier New', monospace;">LCAssemblyGetError(sortie)</p>
+<p class="body-text" style="margin-left: 48px; font-family: 'Courier New', monospace;">MessageBox(sortie, "")</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">endif</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">; Lecture du résultat, qui est sous forme JSON</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 json L</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 nbItems L</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 nbFields L</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 nomField S</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 nbValues L</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 nomValue S</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 i L</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 j L</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">1 k L</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">json = JsonOpen()</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">JsonParse(json, sortie)</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">JsonGetLength(json, "Items", nbItems)</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">for i = 1 to nbItems</p>
+<p class="body-text" style="margin-left: 48px; font-family: 'Courier New', monospace;">Display "Item " &amp; toString(i)</p>
+<p class="body-text" style="margin-left: 48px; font-family: 'Courier New', monospace;">JsonGetLength(json, "Items[" &amp; toString(i) &amp; "].Fields", nbFields)</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="margin-left: 48px; font-family: 'Courier New', monospace;">for j = 1 to nbFields</p>
+<p class="body-text" style="margin-left: 88px; font-family: 'Courier New', monospace;">JsonGetValue(json, "Items[" &amp; toString(i) &amp; "].Fields[" &amp; toString(j) &amp; "].Name", nomField)</p>
+<p class="body-text" style="margin-left: 88px; font-family: 'Courier New', monospace;">Display " &#160;&#160;&#160;Field : " &amp; nomField</p>
+<p class="body-text" style="margin-left: 88px; font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="margin-left: 88px; font-family: 'Courier New', monospace;">JsonGetLength(json, "Items[" &amp; toString(i) &amp; "].Fields[" &amp; toString(j) &amp; "].Values", nbValues)</p>
+<p class="body-text" style="margin-left: 88px; font-family: 'Courier New', monospace;">Display " &#160;&#160;&#160;Values : "</p>
+<p class="body-text" style="margin-left: 88px; font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="margin-left: 88px; font-family: 'Courier New', monospace;">for k = 1 to nbValues</p>
+<p class="body-text" style="margin-left: 128px; font-family: 'Courier New', monospace;">JsonGetValue(json, "Items[" &amp; toString(i) &amp; "].Fields[" &amp; toString(j) &amp; "].Values[" &amp; toString(k) &amp; "]", nomValue)</p>
+<p class="body-text" style="margin-left: 128px; font-family: 'Courier New', monospace;"><span style="margin-left: 168px; font-family: 'Courier New', monospace;">Display " &#160;&#160;&#160;&#160;&#160;&#160;&#160;" &amp; nomValue</span></p>
+<p class="body-text" style="margin-left: 88px; font-family: 'Courier New', monospace;">next</p>
+<p class="body-text" style="font-family: 'Courier New', monospace; margin-left: 48px;"><span style="margin-left: 88px; font-family: 'Courier New', monospace;">next</span></p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">next</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="body-text" style="font-family: 'Courier New', monospace;">JsonClose(json)</p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

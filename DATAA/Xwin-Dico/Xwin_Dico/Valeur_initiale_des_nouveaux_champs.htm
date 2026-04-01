@@ -1,0 +1,77 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Valeur initiale des nouveaux champs</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:11.75pt; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+p.hcp3 { margin-left:127.60pt;
+text-indent:-92.15pt; }
+font.hcp4 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Valeur initiale des nouveaux champs</h3>
+<p>Lorsqu’un nouveau champ est ajouté à une table, la moulinette doit lui affectuer une valeur initiale.Par défaut, tous les champs sont initialisés avec des espaces.</p>
+<p>Dans les propriétés d’un champ, le dictionnaire permet de définir la valeur initiale de plusieurs manières&#160;:</p>
+<ul>
+<li style="font-size: 8pt;" class="p">
+<p class="hcp1">soit en donnant une valeur constante,</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p class="hcp1">soit en donnant une expression diva qui sera placée à la droite du signe = dans le code diva de la moulinette,</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p class="hcp1">soit en donnant une ou plusieurs instructions Diva qui doivent être exécutées pour calculer le nouveau champ.</p>
+</li>
+</ul>
+<p class="hcp2">&#160;</p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Valeur constante</p>
+<p>Le paramètre «&#160;Valeur initiale&#160;» du champ sera mis tel quel après le signe =.</p>
+<p>Les constantes de type alpha doivent donc être mises entre quotes.</p>
+<p>Exemples&#160;:</p>
+<p>&#160;123,45&#160;&#160;: le champ recevra toujours la valeur 123,45.</p>
+<p>&#160;"abc"&#160;&#160;: le champ recevra toujours la valeur "abc".</p>
+<p class="hcp2">&#160;</p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Expression diva</p>
+<p>Le paramètre «&#160;Valeur initiale&#160;» du champ sera mis tel quel après le signe = avec le cas particulier suivant&#160;: la chaine $Record est remplacée par le nom de la table traitée.</p>
+<p>La moulinette travaille sur deux enregistrements, celui de l’ancienne table et celui de la nouvelle table. L’instance de la nouvelle table a tout simplement le nom de la table et l’instance de l’ancienne table est le même nom préfixé par «&#160;old&#160;». Par exemple, si la moulinette traite la table C3, vous aurez donc une instance C3 qui représente le nouvel enregistrement, et une instance OldC3 qui représente l’ancien enregistrement.</p>
+<p>Dans le paramètre «&#160;Valeur initiale&#160;», pour accéder à l’ancien enregistrement, il faut donc écrire old$Record.</p>
+<p>Exemples&#160;:</p>
+<p class="hcp3">- Old$Record.Nom&#160;: le champ Nom de l’ancien enregistrement est copié dans le champ en cours.</p>
+<p class="hcp3">- Old$Valeur + 10&#160;: le champ Valeur de l’ancien enregistrement auquel on ajoute 10.</p>
+<p class="hcp2">&#160;</p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Instructions Diva</p>
+<p>Le paramètre «&#160;Valeur initiale&#160;» du champ contient $$ suivi des instructions Diva et sera recopié tel que dans le source Diva de la moulinette.</p>
+<p>Attention, ces instructions doivent positionner la nouvelle valeur dans le champ par une affectation.</p>
+<p>Comme pour le cas précédent, la chaîne $Record est remplacée par le nom de la table traitée.</p>
+<p>Exemple &#160;: Traitement de Usercr de la table C3.</p>
+<p class="hcp2">&#160;</p>
+<p style="text-indent: 29.70pt;">Contenu du paramètre «&#160;Valeur initiale&#160;»&#160;:</p>
+<p class="source" style="margin-left: 35.45pt;"><font color="#3366FF">$$if old$record.modt&lt;&gt;' ' | $record.usermo=old$record.util | $record.usermoori = 20 | else | $record.usercr = old$record.util | endif</font></p>
+<p class="source" style="margin-left: 35.45pt;">&#160;</p>
+<p class="source" style="margin-left: 35.45pt;">Le code de la moulinette contiendra les instructions suivantes&#160;:</p>
+<p class="source" style="margin-left: 35.45pt;">&#160;if OLDC3.MODT &lt;&gt; ' '</p>
+<p class="source" style="margin-left: 35.45pt;">&#160;C3.USERMO&#160;= OLDC3.UTIL</p>
+<p class="source" style="margin-left: 35.45pt;">&#160;C3.USERMOORI&#160;= 20</p>
+<p class="source" style="margin-left: 35.45pt;">&#160;else</p>
+<p class="source" style="margin-left: 35.45pt;">&#160;C3.USERCR&#160;= OLDC3.UTIL</p>
+<p class="source" style="margin-left: 35.45pt;">&#160;endif</p>
+<p class="source" style="margin-left: 35.45pt;">&#160;</p>
+<p><font style="font-weight: bold;">Valeur Initiale général / local</font></p>
+<p><font class="hcp4">La valeur initiale «&#160;Général&#160;»</font> est associé à l’objet indépendamment de son emplacement dans le dictionnaire. En effet, un champ peut se trouver dans plusieurs tables. Quelque soit la table où ce champ est placé, cette valeur initiale l’accompagne.</p>
+<p><font class="hcp4">La valeur initiale «&#160;Local&#160;»</font> est associé à l’objet et à sa position dans le dictionnaire. La valeur initiale d’un champ peut donc être différente suivant que ce champ est placé dans une table ou dans une autre. Si la valeur «&#160;Local&#160;» est précisée, elle masque la valeur «&#160;Général&#160;».</p>
+<p>Exemple&#160;:</p>
+<p><img src="../image/moulinette2.gif" alt="" width="528" height="205" border="0"></p>
+</body>
+</html>

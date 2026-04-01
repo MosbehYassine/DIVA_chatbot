@@ -1,0 +1,50 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinExpandEnvironmentStrings</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+p.hcp2 { font-family:MS Sans Serif; }
+span.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>WinExpandEnvironmentStrings &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p>&#160;</p>
+<p>La fonction WinExpandEnvironmentStrings remplace les variables d'environnement par leur valeur dans une chaîne de caractères.</p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text">Cette fonction se trouve dans le module ysystemex.dhop.</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2"><span style="font-weight: bold;">Ptr WinExpandEnvironmentStrings</span> <span class="hcp3">(entree , retour)</span></p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text"><font style="font-style: italic;">Entree</font></p>
+<p class="decalage05">Chaîne de caractères en entrée. Les variables d'environnement doivent être encadrées par le caractère %.</p>
+<p class="Body-Text" style="font-style: italic;">Retour</p>
+<p class="decalage05">Chaîne de caractères en sortie après substitution.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<p class="Body-Text">La fonction retourne le nombre de caractères de la chaîne <span class="hcp3">retour.</span></p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemples</p>
+<p class="Source" style="font-weight: normal;">1 expand 200</p>
+<p class="Source" style="font-weight: normal;">WinExpandEnvironmentStrings("%ProgramFiles%\divalto",expand)</p>
+<p class="Source" style="font-weight: normal;">; expand --&gt; "c:\Program Files\divalto"</p>
+<p class="Source" style="font-weight: normal;">&#160;</p>
+<p class="Source" style="font-weight: normal;">&#160;</p>
+<p class="Source" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text" style="font-weight: normal;"><a href="LCWinPathUnExpandEnvStrings.htm">LCWinPathUnExpandEnvStrings</a>, <a href="WinPathUnExpandEnvStrings.htm" style="font-weight: normal;">WinPathUnExpandEnvStrings</a></p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text">&#160;&#160;</p>
+</body>
+</html>

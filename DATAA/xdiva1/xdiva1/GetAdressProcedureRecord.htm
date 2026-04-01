@@ -1,0 +1,165 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>GetAdressProcedureRecord</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+font.hcp4 { font-style:italic; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-right:10px;
+padding-left:10px; }
+td.hcp7 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>GetAdressProcedureRecord <a href="Fonctionsetproc_dures_r_sum_.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Fonctionsetproc_duresutilisateur.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction GetAdressProcedureRecord permet d'obtenir l'adresse d'une procédure liée à une table d'un fichier &#160;en vue de son exécution par l'instruction ProcedureCall.</p>
+<p class="Body-Text">Rappelons qu'il est possible de définir dans le dictionnaire des fonctions qui seront appelée après chaque opération sur le fichier. L'appel est automatique si les fonctions Ixxx sont utilisées. Si les fonctions Ixxx ne peuvent être utilisées, GetAdressProcedureRecord rend possible l'appel de la fonction à la main.</p>
+&#160;
+<p class="Body-Text">Pour chaque table dans le fichier il est possible d'avoir une fonction qui sera exécutée</p>
+<ul style="list-style: inside disc;">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-top: 0pt;">après lecture (read, pread, seek)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">avant écriture (write)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">avant réécriture (rewrite)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">avant suppression (delete)</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp2">Long</font> <font class="hcp2">GetAdressProcedureRecord</font> <span class="hcp3">( tdf , table , opération , adrFonction , [ stopSiErreur] )</span></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp4">Tdf</font></p>
+<p class="decalage05">Tdf correspondant au ficher ouvert.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Table</p>
+<p class="decalage05">Instance de la table.</p>
+<p class="Body-Text" style="font-style: italic;">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Opération</p>
+<table style="vertical-align: top; margin-left: 40px;" cellspacing="0" width="26.121%">
+<col style="width: 18.525%;">
+<col style="width: 81.475%;">
+<tr class="hcp5">
+<td style="width:18.525%;" class="hcp6">
+<p>0</p>
+</td>
+<td style="width:81.475%;" class="hcp6">
+<p>après lecture (read , pread, seek)</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:18.525%;" class="hcp6">
+<p>1</p>
+</td>
+<td style="width:81.475%;" class="hcp6">
+<p>avant écriture (write)</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:18.525%;" class="hcp6">
+<p>2</p>
+</td>
+<td style="width:81.475%;" class="hcp6">
+<p>avant réécirture (rewrite)</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:18.525%;" class="hcp6">
+<p>3</p>
+</td>
+<td style="width:81.475%;" class="hcp6">
+<p>avant suppression (delete)</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Adresse</p>
+<p class="decalage05">Zone alphanumérique de 16 octets qui recevra l'adresse de la fonction. Cette adresse sera utilisée pour l'appel de la fonction.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span class="hcp3">StopSiErreur</span></p>
+<p class="decalage05">Booléen indiquant si le programme doit être arrêté en cas d'erreur (FALSE par défaut)</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarque</p>
+<p class="Body-Text" style="font-weight: normal;">GetAdressProcedureRecord&#160;&#160;ne peut être appelée que si le fichier est déclaré par HFile. Si le fichier a été ouvert par programme (Hopen) il faut utiliser <a href="GetAdressProcedureRecordEx.htm">GetAdressProcedureRecordEx</a>.</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp5">
+<td style="width:20.57%;" class="hcp7">
+<p class="Body-Text" style="margin-top: 2.00pt;">0</p>
+</td>
+<td style="width:79.43%;" class="hcp7">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:20.57%;" class="hcp7">
+<p class="Body-Text" style="margin-top: 2.00pt;">1</p>
+</td>
+<td style="width:79.43%;" class="hcp7">
+<p class="Body-Text" style="margin-top: 2.00pt;">Fonction non trouvée dans le module</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:20.57%;" class="hcp7">
+<p class="Body-Text" style="margin-top: 2.00pt;">2</p>
+</td>
+<td style="width:79.43%;" class="hcp7">
+<p class="Body-Text" style="margin-top: 2.00pt;">Autre erreur</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">Si <span class="hcp3">StopSiErreur =</span> TRUE toutes les autres erreurs provoquent un arrêt du programme en cours.</p>
+<p class="Body-Text">En retour, la zone <font class="hcp4">Adresse</font> contient l'adresse de la fonction.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple : appel de la fonction "après écriture"</font></p>
+&#160;
+<p class="Source">; cet exemple illustre le fait que l'appel a GetAdressProcedureRecord</p>
+<p class="Source">; peut être fait dans une procedure qui ignore le type de fichier et d'enregistrement</p>
+<p class="Source">; manipulés. Les informations concernant le fichier et l'enregistrement sont automatiquement</p>
+<p class="Source">; passées avec les paramètres.</p>
+<p class="Source">&#160;</p>
+<p class="Source">hfile testdd.dhsd farti tdfarti</p>
+<p class="Source">public record testdd.dhsd arti</p>
+<p class="Source">&#160;</p>
+<p class="Source">Public Procedure EcrireArticle(&amp;tdf,&amp;art,partage)</p>
+<p class="Source">record * htdf tdf</p>
+<p class="Source">1 art A</p>
+<p class="Source">1 partage 1</p>
+<p class="Source">beginp</p>
+<p class="Source">1 adr 16</p>
+<p class="Source">&#160;&#160;&#160;if GetAdressProcedureRecord(tdf,art,1,adr,FALSE) = 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;ProcedureCall(adr,tdf,art,partage)</p>
+<p class="Source">&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;hwrite(tdf,art,partage)</p>
+<p class="Source">endp</p>
+<p class="Source">&#160;</p>
+<p class="Source">main</p>
+<p class="Source">EcrireArticle(tdfarti,arti,'P')</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text" style="font-weight: normal;"><a href="Traitements_du_dictionnaire_associ&eacute;s_aux_fichiers.htm">Traitements du dictionnaire associés aux fichiers</a>, <a href="GetAdressProcedureRecordEx.htm">GetAdressProcedureRecordEx</a>. <a href="GetAdressProcedure.htm">GetAdressProcedure</a>, <a href="ProcedureCall.htm" style="font-weight: normal;">ProcedureCall</a></p>
+</body>
+</html>

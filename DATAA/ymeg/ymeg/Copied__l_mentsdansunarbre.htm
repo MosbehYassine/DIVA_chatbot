@@ -1,0 +1,35 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Copie d'éléments dans un arbre</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Copie d'éléments dans un arbre</h3>
+<p class="Body-Text">Les opérations "&#160;Copier&#160;", "&#160;Couper&#160;", "&#160;Coller&#160;" amènent les remarques suivantes dans le cas d'un arbre (du moins avec XmeListConsultDefault)&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Les éléments insérés depuis le presse-papiers conservent leur niveau initial (le niveau de création n'est pas pris en compte ici). Autrement dit, l'utilisateur ne peut pas copier ou couper des lignes puis les réinsérer à un niveau différent.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'état des drapeaux de la variable de contrôle reste inchangé entre le couper et le coller.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeListConsultDefault place les éléments "&#160;collés&#160;" avant l'élément courant. Toutefois, si celui-ci est le dernier élément <font style="font-weight: bold;">affiché de la liste</font>, il demande à l'utilisateur s'il désire une insertion après ou avant la ligne courante. Si après est choisi, l'insertion a toujours lieu en queue de liste.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Un coller est refusé si le premier élément qui doit être ajouté n'est pas immédiatement visible à l'écran (sous-niveau d'un élément réduit), à moins qu'il ne s'agisse d'un fils direct d'un élément réduit lui-même visible, auquel cas ce dernier est automatiquement expansé de manière à rendre son fils immédiatement visible.</p>
+</li>
+</ul>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="DefProcColler.htm">DefProcColler</a></p>
+</body>
+</html>

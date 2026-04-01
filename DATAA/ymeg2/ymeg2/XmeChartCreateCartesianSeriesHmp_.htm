@@ -1,0 +1,149 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeChartCreateCartesianSeriesHmp</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal; }
+tr.hcp4 { vertical-align:top; }
+p.hcp5 { font-weight:normal; }
+td.hcp6 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp8 { margin-left:448px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>XmeChartCreateCartesianSeriesHmp <span style="font-weight: normal; font-size: 11pt;"><a href="Liste_r&eacute;capitulative_des_fonctions_du_graphe.htm">Famille</a> <a href="Objet_Graphe.htm" style="font-size: 11pt;">Thème</a></span></h1>
+<p><span style="font-size: 11pt;">C</span><span class="hcp1">réation de la chaîne hmp décrivant une série de graphique cartésien</span></p>
+<p>&#160;</p>
+<p class="hcp2">Char XmeChartCreateCartesianSeriesHmp <span class="hcp3">(seriesId, seriesType, [seriesTitle], [seriesColor], [displayLabels], [pointVisual], [combineMode], [vAxisId], [hAxisId])</span></p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Paramètres :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 16.882%;">
+<col style="width: 83.118%;">
+<tr class="hcp4">
+<td style="border: Solid 1px #000000;width: 16.882%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">seriesId</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 83.118%; padding-right: 10px; padding-left: 10px;">
+<p>Identifiant de la série (alphanumérique)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">seriesType</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>Type de la série (voir la <a href="Liste_des_options_des_s&eacute;ries.htm">Liste des options des séries</a>)</p>
+<p>Les types de séries autorisés pour les graphiques cartésiens sont tous ceux qui ne sont pas réservé pour les diagrammes circulaires et les diagrammes polaires.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p>seriesTitle</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>Titre de la série (pour la légende)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">seriesColor</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>couleur de la série (entrée de la feuille de style)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">displayLabels</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>activation/désactivation de l'affichage des libellés des points de la série. 0=non, 1 = oui</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p>pointVisual</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>modèle de point (rond, carré, triangle, ...) (voir la <a href="Liste_des_options_des_s&eacute;ries.htm">Liste des options des séries</a>)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">combineMode</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>mode de combinaison de la série (voir la <a href="Liste_des_options_des_s&eacute;ries.htm">Liste des options des séries</a>)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp2"><span class="hcp3">vAxisId</span></p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>identifiant le l'axe vertical secondaire (alphanumérique)</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.882%;" class="hcp6">
+<p class="hcp5">hAxisId</p>
+</td>
+<td style="width:83.118%;" class="hcp7">
+<p>identifiant le l'axe horizontal secondaire (alphanumérique)</p>
+</td>
+</tr>
+</table>
+<p class="hcp2">&#160;</p>
+<p><span class="hcp1">Valeur rendue par la fonction</span> :</p>
+<p>espace : si les paramètres seriesId et/ou seriesType sont absents ou invalides.</p>
+<p>Autre : chaîne hmp décrivant la série définie par les paramètres.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Description de la fonction</span> :</p>
+<p>Cette fonction crée la chaîne hmp qui décrit une série de graphique cartésien telle que définie par les paramètres.</p>
+<p>Seuls le type et l'identifiant de la série sont obligatoires.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque</span> :</p>
+<p>Le type de série pour une série de graphique cartésien dépend également de son axe des abscisses! (voir <span style="color: #ff0000;">lien</span>).</p>
+<p>&#160;</p>
+<p><span class="hcp1">Exemple</span> :<br>
+&#160;</p>
+<p class="Source" style="font-style: normal;">module ychart.dhop</p>
+<p class="Source" style="font-style: normal;">include zchart.dhsp</p>
+<p class="Source" style="font-style: normal;">&#160;</p>
+<p class="Source" style="font-style: normal;">...</p>
+<p class="Source" style="font-style: normal;">record ddsys.dhsd IdChart chartId &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="Source" style="font-style: normal;">...</p>
+<p class="Source" style="font-style: normal;">XmeLoad ("masque") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source" style="font-style: normal;">chartId = XmeChartGetId(masque, 1, "CartesianChart") &#160;&#160;;initialisation du graphique nommé CartesianChart et situé dans la page 1 du masque</p>
+<p class="Source" style="font-style: normal;">...</p>
+<p class="Source" style="font-style: normal;"><span style="font-style: normal;">XmeChartSetOption(chartId, CHART_OPT_CHART_TYPE, CHART_OPTV_CHART_TYPE_CARTESIAN)</span></p>
+<p class="source">...</p>
+<p class="Source" style="font-style: italic;">ListAddEnd(chartId.IdSeries, XmeChartCreateCartesianSeriesHmp("serie1", CHART_OPTV_SR_T_BAR, , , , true)) <span class="hcp8">&#160;&#160;</span></p>
+<p class="Source" style="font-style: italic;"><span class="hcp8">... &#160;&#160;&#160;&#160;&#160;&#160;</span></p>
+<p class="Source" style="font-style: normal;">&#160;</p>
+<p class="Source" style="font-style: normal;">XmeDispv ("masque",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche la page contenant le graphe</p>
+<p class="Source" style="font-style: normal;">...</p>
+<p class="Source" style="font-style: normal;">XmeChartDisplay (chartId ) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche les données du graphe</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,224 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple général de programmation de l'impression d'un masque</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+font.hcp4 { font-family:Symbol; }
+font.hcp5 { font-style:italic;
+font-family:Courier New; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Exemple général de programmation de l'impression d'un masque</h3>
+<p class="Body-Text">Remarque préliminaire&#160;:</p>
+<p class="Body-Text">Nous considérons ici comme acquises certaines notions fondamentales de la programmation sous Harmony&#160;: déclaration des chemins implicites, paramétrage et mise en œuvre des projets dans l'éditeur Xwin, création des bases, tables et champs dans le dictionnaire, création d'un masque, dessin et paramétrage des objets dans un masque, etc.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Cette rubrique présente un cas classique de programmation d'une impression sous Harmony. Vous y trouverez des explications détaillées sur la manière d'obtenir l'état qui constitue notre <a href="Exempletyped__tatimprim_.htm">exemple type</a> et, plus précisément, sur&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Le paramétrage du masque dans Xwin.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">L'écriture du programme d'impression.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">1. Création et paramétrage du masque d'impression</font></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Création du fichier masques</font>.<br>
+Lancez le programme <font class="hcp2">Xwin</font>.<br>
+Sélectionnez le choix <font class="hcp2">Nouveau</font> du menu <font class="hcp2">Fichier</font>.<br>
+Sélectionnez le choix <font class="hcp2">Masque imprimante</font> et validez.<br>
+Sélectionnez le choix <font class="hcp2">Enregistrer Sous</font> du menu <font class="hcp2">Fichier</font>.<br>
+Donnez un nom au nouveau fichier masques (par exemple, ILISTE.dhsi) et enregistrez-le.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Déclaration des enregistrements utilisés dans le masque</font>.<br>
+Sélectionnez le choix <font class="hcp2">Enregistrements</font> du menu <font class="hcp2">Paramètres</font>.<br>
+Ajoutez l'enregistrement SYSTEM du dictionnaire DDSYS.dhsd (pour la donnée System.Zpage contenant le numéro de page) et le ou les enregistrements contenant les variables à imprimer.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Paramétrage global du masque</font>.<br>
+Sélectionnez le choix <font class="hcp2">Masque</font> du menu <font class="hcp2">Paramètres</font>.<br>
+Entrez le <font class="hcp3">Libellé</font>&#160;: <font class="hcp2">Exercice Harmony</font> (commentaire).<br>
+Cochez un des boutons radio du groupe <font class="hcp3">Hauteur de page</font> (Cf. rubrique <a href="R_glagedelahauteurdepage.htm">Réglage de la hauteur de page</a>)&#160;:<font face="Symbol" class="hcp4"><br>
+-</font> Si vous optez pour le bouton <font class="hcp2">d'après le masque</font>, vous devez garnir le champ <font class="hcp3">Nombre de lignes</font> avec le nombre de lignes que vous voulez faire figurer sur chaque page.<font face="Symbol" class="hcp4"><br>
+-</font> Si vous optez pour le bouton <font class="hcp2">d'après le modèle</font>, vous pourrez choisir le nombre de lignes par page en sélectionnant un modèle d'imprimante (la notion standard de modèle d'imprimante est définie dans le manuel de référence d'Harmony&#160;; rappelons également qu'un modèle est chargé dès que vous faites appel à un menu de type Divalto).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Paramétrage et dessin du bloc 1 (en-tête)</font>.<br>
+Sélectionnez le choix <font class="hcp2">Bloc courant</font> du menu <font class="hcp2">Paramètres</font> (raccourci clavier&#160;: <font class="hcp2">F3</font>).<br>
+Entrez le <font class="hcp3">Libellé</font>&#160;: <font class="hcp2">En-tête</font> (commentaire).<br>
+Sélectionnez le <font class="hcp3">Type de bloc</font>&#160;: <font class="hcp2">Fixe</font>.<font class="hcp3"><br>
+Position début</font>&#160;: <font class="hcp2">1</font><font class="hcp3">.<br>
+Position fin</font>&#160;: <font class="hcp2">7</font><font class="hcp3">.<br>
+Débordement</font>&#160;: <font class="hcp2">0</font><font class="hcp3">.<br>
+Chaînage</font>&#160;: <font class="hcp2">0</font><font class="hcp3">.</font><br>
+Validez la boîte de dialogue <font class="hcp3">Caractéristiques du bloc</font>.<br>
+&#160;<br>
+Dessinez le masque "&#160;en-tête&#160;" suivant (7 lignes)&#160;:</p>
+</li>
+</ul>
+<p class="Source">DIVALTO &#160;PAGE <font class="hcp3">page</font> (*)</p>
+<p class="Source">&#160;</p>
+<p class="Source">Liste des compositeurs</p>
+<p class="Source">+------+----------------+----------------+</p>
+<p class="Source">| Code | Nom &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| Catégorie &#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">+------+----------------+----------------+</p>
+<p class="Body-Text" style="margin-left: 48px;">(*) Pour imprimer le numéro de page, placez dans votre masque la donnée standard Zpage de l'enregistrement SYSTEM (dictionnaire DDSYS.dhsd).</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Paramétrage et dessin du bloc 2 (ligne détail)</font>.<br>
+Tapez la touche <font class="hcp2">Page-Down</font>.<br>
+Répondez Oui à la demande de création du bloc 2.<br>
+Sélectionnez le choix <font class="hcp2">Bloc courant</font> du menu <font class="hcp2">Paramètres</font> (raccourci clavier&#160;: <font class="hcp2">F3</font>).<br>
+Entrez le <font class="hcp3">Libellé</font>&#160;: <font class="hcp2">Ligne détail</font> (commentaire).<br>
+Sélectionnez le <font class="hcp3">Type de bloc</font>&#160;: <font class="hcp2">Mobile</font>.<font class="hcp3"><br>
+Nombre de lignes</font>&#160;: <font class="hcp2">1</font>.<font class="hcp3"><br>
+Position début</font>&#160;: <font class="hcp2">8</font><font class="hcp3">.<br>
+Position fin</font>&#160;: <font class="hcp2">-4</font><font class="hcp3">.<br>
+Débordement</font>&#160;: <font class="hcp2">3</font><font class="hcp3">.<br>
+Chaînage</font>&#160;: <font class="hcp2">0</font><font class="hcp3">.</font><br>
+Validez la boîte de dialogue <font class="hcp3">Caractéristiques du bloc</font>.<br>
+&#160;<br>
+Dessinez le masque "&#160;ligne détail&#160;" suivant (1 ligne)&#160;:</p>
+</li>
+</ul>
+<p class="Source">| <font class="hcp3">Code</font> | <font class="hcp3">Nom</font> | <font class="hcp3">Catégorie</font> | &#160;(*)</p>
+<p class="Body-Text" style="margin-left: 48px;">(*) <font face="Courier New" class="hcp5">Code</font>, <font face="Courier New" class="hcp5">Nom</font> et <font face="Courier New" class="hcp5">Catégorie</font> sont trois données de l'enregistrement compositeur.</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Paramétrage et dessin du bloc 3 (bas de cadre)</font>.<br>
+Tapez la touche <font class="hcp2">Page-Down</font>.<br>
+Répondez Oui à la demande de création du bloc 3.<br>
+Sélectionnez le choix <font class="hcp2">Bloc courant</font> du menu <font class="hcp2">Paramètres</font> (raccourci clavier&#160;: <font class="hcp2">F3</font>).<br>
+Entrez le <font class="hcp3">Libellé</font>&#160;: <font class="hcp2">Bas de cadre</font> (commentaire).<br>
+Sélectionnez le <font class="hcp3">Type de bloc</font>&#160;: <font class="hcp2">Mobile</font>.<font class="hcp3"><br>
+Nombre de lignes</font>&#160;: <font class="hcp2">1</font>.<font class="hcp3"><br>
+Position début</font>&#160;: <font class="hcp2">9</font><font class="hcp3">.<br>
+Position fin</font>&#160;: <font class="hcp2">-3</font><font class="hcp3">.<br>
+Débordement</font>&#160;: <font class="hcp2">0</font><font class="hcp3">.<br>
+Chaînage</font>&#160;: <font class="hcp2">4</font><font class="hcp3">.</font><br>
+Validez la boîte de dialogue <font class="hcp3">Caractéristiques du bloc</font>.<br>
+&#160;<br>
+Dessinez le masque "&#160;bas de cadre&#160;" suivant (1 ligne)&#160;:</p>
+</li>
+</ul>
+<p class="Source"><font style="font-family: 'Courier New';" face="Courier New">+------+----------------+----------------+</font></p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Paramétrage et dessin du bloc 4 (pied de page)</font>.<br>
+Tapez la touche <font class="hcp2">Page-Down</font>.<br>
+Répondez Oui à la demande de création du bloc 4.<br>
+Sélectionnez le choix <font class="hcp2">Bloc courant</font> du menu <font class="hcp2">Paramètres</font> (raccourci clavier&#160;: <font class="hcp2">F3</font>).<br>
+Entrez le <font class="hcp3">Libellé</font>&#160;: <font class="hcp2">Pied de page</font> (commentaire).<br>
+Sélectionnez le <font class="hcp3">Type de bloc</font>&#160;: <font class="hcp2">Fixe</font>.<br>
+Cochez la case <font class="hcp3">Saut après</font>.<font class="hcp3"><br>
+Position début</font>&#160;: <font class="hcp2">-2</font><font class="hcp3">.<br>
+Position fin</font>&#160;: <font class="hcp2">0</font><font class="hcp3">.<br>
+Débordement</font>&#160;: <font class="hcp2">0</font><font class="hcp3">.<br>
+Chaînage</font>&#160;: <font class="hcp2">1</font><font class="hcp3">.</font><br>
+Validez la boîte de dialogue <font class="hcp3">Caractéristiques du bloc</font>.<br>
+<br>
+Dessinez le masque "&#160;pied de page&#160;" suivant (3 lignes)&#160;:</p>
+</li>
+</ul>
+<p class="Source">+----------------------------------------+</p>
+<p class="Source"><font class="hcp3">|</font> Liste des compositeurs triés par code &#160;|</p>
+<p class="Source">+----------------------------------------+</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Positionnement des blocs dans la page</font>.<br>
+Rappelons que les positions des blocs&#160;:<font face="Symbol" class="hcp4"><br>
+-</font> <font class="hcp2">Strictement positives</font> sont relatives au début de la page.<font face="Symbol" class="hcp4"><br>
+-</font> <font class="hcp2">Négatives ou nulles</font> sont relatives à la fin de la page.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Affichage d'une "&#160;grille&#160;"</font>.<br>
+Pour vous aider à calculer le nombre de lignes et de colonnes d'un bloc, affichez une "&#160;grille&#160;" en sélectionnant le choix (de type case à cocher) <font class="hcp2">Grille</font> du menu <font class="hcp2">Options</font>.<br>
+La couleur de la grille peut être changée en sélectionnant le choix <font class="hcp2">Couleur grille</font> du menu <font class="hcp2">Options</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Affichage de blocs "&#160;en transparence&#160;"</font>.<br>
+Pour vous aider à "&#160;cadrer&#160;" les différents blocs les uns par rapport aux autres, utilisez la notion d'affichage en transparence. Par exemple, au niveau du bloc 1, affichez le bloc 2 en transparence, ce qui vous permettra de positionner correctement le cadre dessiné dans l'en-tête relativement aux données de la ligne détail. Pour cela&#160;:<br>
+Placez-vous sur le bloc 1 du masque.<br>
+Tapez F3 pour afficher les paramètres du bloc 1.<br>
+Entrez les paramètres suivants&#160;dans le cadre Transparence :<font class="hcp3"><br>
+Blocs</font>&#160;: <font class="hcp2">2</font>.<font class="hcp3"><br>
+Positions</font>&#160;: <font class="hcp2">8</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Simulation de l'impression</font>.<br>
+Pour vérifier rapidement le bon "&#160;cadrage&#160;" relatif des blocs, sélectionnez le choix <font class="hcp2">Simuler un état</font> du menu <font class="hcp2">Blocs</font>.<br>
+Entrez successivement&#160;:<font class="hcp3"><br>
+Bloc</font>&#160;: <font class="hcp2">1</font> <font class="hcp3">Nombre de fois</font>&#160;: <font class="hcp2">1</font><font class="hcp3"><br>
+Bloc</font>&#160;: <font class="hcp2">2</font> <font class="hcp3">Nombre de fois</font>&#160;: <font class="hcp2">5</font><font class="hcp3"><br>
+Bloc</font>&#160;: <font class="hcp2">3</font> <font class="hcp3">Nombre de fois</font>&#160;: <font class="hcp2">1</font><font class="hcp3"><br>
+Bloc</font>&#160;: <font class="hcp2">4</font> <font class="hcp3">Nombre de fois</font>&#160;: <font class="hcp2">1</font><br>
+Validez la boîte <font class="hcp3">Paramètres de l'état</font>.<br>
+Après consultation, tapez Return pour revenir au masque.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">2. Ecriture du programme d'impression</font></p>
+<p class="Body-Text">Saisissez les lignes de programme suivantes&#160;:</p>
+<p class="Source">;Exemple de programmation de l'impression d'un masque</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">HFILE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Appli.dhsd Fcomp Fcomp &#160;&#160;&#160;;fichier compositeurs&#160;</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Comp &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;enregistrement compositeur</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 cr X</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Programme principal</p>
+<p class="Source">MAIN</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmiLoad ("ILISTE.dhoi") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source">cr = PrintBegin &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;réservation de l'imprimante</p>
+<p class="Source">IF cr &lt;&gt; 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement de l'erreur&#160;</p>
+<p class="Source">ENDIF</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Impression de la première en-tête</p>
+<p class="Source">XmiPrint ("ILISTE.dhoi", 1)</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Boucle de lecture du fichier compositeurs</p>
+<p class="Source">;avec impression du bloc détail</p>
+<p class="Source">LOOP ((cr := FREAD (Fcomp, Comp, "F")) =0)</p>
+<p class="Source">&#160;&#160;&#160;XmiPrint ("ILISTE.fhoi", 2)</p>
+<p class="Source">ENDLOOP</p>
+<p class="Source">&#160;</p>
+<p class="Source">IF cr &lt;&gt; 2</p>
+<p class="Source">&#160;&#160;&#160;FERROR Fcomp cr &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;erreur fatale</p>
+<p class="Source">ENDIF</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Fin du fichier : impression du dernier bas de cadre</p>
+<p class="Source">;et du dernier pied de page avec Harmony.Ichainage = FALSE</p>
+<p class="Source">XmiPrint1 ("ILISTE.dhoi", 3, FALSE, Harmony.Ideborde, \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.IsautAvant, Harmony.IsautApres) ;(1)&#160;</p>
+<p class="Source">XmiPrint ("ILISTE.dhoi", 4) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(2)</p>
+<p class="Source">&#160;</p>
+<p class="Source">cr = PrintEnd &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;libération de l'imprimante</p>
+<p class="Source">IF cr &lt;&gt; 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement de l'erreur&#160;</p>
+<p class="Source">ENDIF</p>
+<p class="Source">PROGRAMEXIT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fin du programme</p>
+<p class="Body-Text">(1) On ne sait pas désactiver uniquement le chaînage bloc 4 (pied) --&gt; bloc 1 (en-tête), car le bloc 4 est lui-même automatiquement appelé par le bloc 3 (fermeture du cadre)&#160;: on désactive donc les chaînages dès l'appel du bloc 3.<br>
+Harmony.Ideborde, Harmony.IsautAvant et Harmony.IsautApres conservent ici leur valeur par défaut (TRUE).</p>
+<p class="Body-Text">(2) Harmony.Ichainage conserve sa valeur (FALSE) après le XmiPrint1&#160;: on peut donc exécuter la procédure XmiPrint pour imprimer le pied sans chaîner sur l'en-tête.</p>
+</body>
+</html>

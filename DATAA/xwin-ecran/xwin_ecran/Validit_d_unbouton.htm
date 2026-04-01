@@ -1,0 +1,111 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Validité d'un bouton</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold;
+text-decoration:underline; }
+span.hcp3 { font-weight:normal; }
+ul.hcp4 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Validité d'un bouton</h3>
+<p class="Body-Text">Il est possible d'une part de préciser la <span class="hcp1">portée</span> d'un bouton, d'autre part de spécifier si un bouton est <span class="hcp1">valide ou invalide</span> par exemple lors de la <span class="hcp1">saisie de telle ou telle donnée</span>. Nous nous intéressons ici aussi bien aux boutons classiques (placés dans une page Xwin) qu'aux boutons de barre d'outils et, par analogie, aux choix de menu.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Règle 1</font> : Un bouton n'est <span class="hcp1">valide</span> que dans la <span class="hcp1">fenêtre courante</span>. Par exemple :<br>
+&#160;</p>
+<p class="Body-Text"><img src="../image/help0015.gif" alt="" width="475" height="336" border="0"></p>
+&#160;
+<p class="Body-Text">Pendant la saisie des données de la fenêtre 1, le fait d'appuyer sur le bouton de validation provoque une action. Mais pendant la saisie de la fenêtre 2, même s'il est encore visible, il ne déclenche plus aucune action car il n'appartient pas à la fenêtre courante.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-size: 11pt; font-weight: bold;">Bouton global et bouton local</p>
+<p class="Body-Text">Cette propriété des boutons classiques (qui ne concerne ni les boutons de barre d’outils ni les choix de menu) permet d'invalider localement un bouton en saisie ou en consultation d'une page de masque.<br>
+&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span style="text-decoration: underline;">Règle 2</span> <span class="hcp3">: &#160;Après application de la règle 1 :</span></p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: bold; margin-left: 48px;"><span class="hcp3">Un bouton "</span>local<span class="hcp3">" n'est</span> valide <span class="hcp3">que s'il se trouve dans la</span> page Xwin courante<span class="hcp3">.</span></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: bold; margin-left: 48px;"><span class="hcp3">Un bouton "global" est valide même s'il se trouve dans une autre page Xwin.</span><span style="margin-left: 48px; font-weight: normal;"><br>
+&#160;</span></p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp3">&#160;Les boutons</span> locaux invalides <span class="hcp3">sont</span> "grisés" <span class="hcp3">pour signaler à l'utilisateur que l'action qui leur est associée n'est pas actuellement disponible.</span></p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text">Voyons l'exemple d'une facture présentant simultanément plusieurs pages Xwin à l'écran : une page d'en-tête avec deux boutons de validation et d'abandon et une page de pied :<br>
+&#160;</p>
+<p class="Body-Text"><img src="../image/help0016.gif" alt="" width="600" height="79" border="0"></p>
+<p class="Body-Text"><img src="../image/help0017.gif" alt="" width="518" height="58" border="0"></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Si les boutons sont déclarés "globaux", ils seront valides aussi bien lors de la saisie (ou la consultation) de l'en-tête que de celle du pied. Mais s'ils sont déclarés "locaux", ils ne seront pas valides durant la saisie (ou la consultation) du pied (puisqu'ils n'appartiennent pas à cette page Xwin).<br>
+&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-size: 11pt; font-weight: bold;">Bouton nommé</p>
+<p class="Body-Text">La propriété "<span class="hcp1">Nom pour la sélection</span>" permet d'invalider contextuellement un bouton, en saisie de page de masque ou de ligne de tableau et en consultation de page ou de tableau.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Règle 3</font> : &#160;Après application des règles 1 et 2, un bouton <span class="hcp1">nommé</span> n'est valide que si son nom figure dans la <span class="hcp1">liste des boutons valides</span> :</p>
+<ol style="list-style: disc;">
+<li style="list-style:none;display: inline">
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">De la <span class="hcp1">page</span>, en cas de la consultation d'une page Xwin par XmeConsult.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Du <span class="hcp1">tableau</span>, en cas de la consultation d'un tableau par XmeListConsult.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">De la <span class="hcp1">donnée</span> en cours de saisie, en cas de saisie par XmeInput ou XmeListInput.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p class="Body-Text">La validité d'un bouton non nommé est uniquement déterminée par les règles 1 et 2.</p>
+<p class="Body-Text">L'intérêt des boutons nommés est d'obtenir, <span style="font-weight: bold; text-decoration: underline;">sans aucune programmation</span>, le grisage des boutons qui n'ont pas d'effet à un instant donné. Ainsi, l'utilisateur connaît à tout moment les fonctionnalités disponibles. Cette règle concerne les boutons classiques, les boutons de barre d’outils et les choix de menu.</p>
+&#160;
+<p class="Body-Text">Reprenons l'exemple précédent en y ajoutant un bouton d'appel de zoom, servant uniquement à appeler le zoom client en cours de saisie du code client :</p>
+<p class="Body-Text"><img src="../image/help0018_wmf.gif" alt="" width="646" height="87" border="0"></p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">On ne nommera pas les boutons globaux de validation et d'abandon. Ceux-ci resteront toujours valides.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">On garnira la propriété "Nom pour la sélection" du bouton d'appel de zoom (par exemple avec le nom ZOOM_CLIENT). Par défaut, ce bouton restera invalide en consultation ou en saisie d'une donnée quelconque du masque. Pour le valider en saisie du code article, on ajoutera le bouton dans la liste des boutons valides du champ "Code client".</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Ce tableau résume les conditions de validité d'un bouton en saisie de donnée :</p>
+<p class="Body-Text"><span class="hcp1"><img src="../image/help0019.gif" alt="" width="414" height="172" border="0"></span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-size: 11pt; font-weight: bold;">Invalider un bouton par programme</p>
+<p class="Body-Text">Les fonctionnalités précédentes s'obtiennent sans qu'il soit nécessaire de programmer quoi que ce soit. Pour être complet, signalons qu'il est aussi possible d'invalider un bouton par programme :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Boutons classiques</span>.<br>
+Pour invalider un bouton classique par programme, il faut faire appel aux <a href="Attributsdynamiques.htm">attributs dynamiques</a> (attribut AN_VISIBILITE).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Boutons de barre d'outils</span>.<br>
+Pour invalider un bouton de barre d'outils par programme, il faut faire appel à la fonction spécifique XmeToolbarEnableButton.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Choix de menu</span>.<br>
+Pour invalider un choix de menu par programme, il faut faire appel à la fonction spécifique XmeMenuEnableItem.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

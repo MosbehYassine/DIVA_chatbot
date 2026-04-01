@@ -1,0 +1,46 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>String et fonctions du langage Diva</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>String et fonctions du langage Diva</h3>
+<p class="Body-Text">Les données de type String s’utilisent comme des données de type alpha-numérique. Les fonctions du langage acceptent toutes de recevoir un String en paramètre.</p>
+<p class="Body-Text">Les fonctions de lecture de liste (ListFirst …) peuvent être utilisées avec des String. La variable de type String est allouée en fonction de la taille de l’élément de la liste. De même pour les fonctions PingReceive, DataCompute, Sort, Left, Mid, Right, Search, WebServiceDivaExecute, HfileCheckVersion, HmpRead, HmpSeek, DDInterface.</p>
+<p class="Body-Text">Une variable de type String peut être utilisée pour lire dans un fichier (Hread) à condition qu’elle soit allouée avec la taille de l’enregistrement. Si la donnée de type String à une taille de 1 avant la lecture, seul le premier caractère de l’enregistrement sera lu.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques concernant quelques fonctions du langage Diva.</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 6.00pt;">La fonction Size (DataSize) retourne la longueur allouée de la chaîne de caractères.<br>
+<font style="font-family: 'Courier New';" face="Courier New">1 monstring S<br>
+monstring = "abc " --&gt; size(monstring) vaut 4</font></p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 6.00pt;">La fonction Length retourne la longueur de la chaîne sans les espaces de fin (3 dans l’exemple précédent)</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 6.00pt;">La fonction Ptr renvoie l’adresse de la chaîne de caractères. Attention, cette adresse peut être nulle si aucune affectation n’a été faite dans la donnée.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 6.00pt;">La fonction DataType retourne la valeur 3, comme pour les données de type alpha-numérique.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="StringContent.htm">StringContent</a> , <a href="StringNew.htm">StringNew</a> , <a href="Type_String_et_passage_de_param_tres.htm">Type String et passage de paramètres</a> , <a href="Ptr.htm">Ptr</a> , <a href="Length.htm">Length</a> , <a href="Size.htm">Size</a></p>
+</body>
+</html>

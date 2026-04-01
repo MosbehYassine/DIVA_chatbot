@@ -1,0 +1,137 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Modifier les caractéristiques d'un fichier</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp4 { margin-top:5.00pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Modifier les caractéristiques d'un fichier</h4>
+<p class="Body-Text">L'affichage des caractéristiques d'un fichier est obtenu par la touche <font class="hcp1">Shift F4</font> pendant le pointage. C'est le mode fiche du pointage, dans lequel on affiche des informations complémentaires sur le fichier.</p>
+<p class="Body-Text">En mode fiche, les touches suivantes sont traitées&#160;:</p>
+<table cellspacing="0" width="604">
+<tr class="hcp2">
+<td style="width:19.72%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Flèches</font></p>
+</td>
+<td style="width:80.28%;" class="hcp3">
+<p class="Body-Text">Affichage du fichier suivant ou précédent.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.72%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Entrée</font></p>
+</td>
+<td style="width:80.28%;" class="hcp3">
+<p class="Body-Text">Affichage du contenu du fichier.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:19.72%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Shift+F5</font></p>
+</td>
+<td style="width:80.28%;" class="hcp3">
+<p class="Body-Text">Affichage / modification des clés si le fichier est séquentiel indexé.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La modification des caractéristiques est obtenue uniquement par le menu &lt;<font class="hcp1">Fichier</font> <font style="font-family: Symbol; font-weight: bold;" face="Symbol">®</font> <font class="hcp1">Modifier les caractéristiques</font>&gt;. Xtools demande le nom du fichier à traiter (le fichier désigné par le curseur dans le pointage est proposé). Sont alors modifiables&#160;:</p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="613">
+<tr class="hcp2">
+<td style="width:20.36%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Longueur des enregistrements</font></p>
+</td>
+<td style="width:79.64%;" class="hcp3">
+<p class="Body-Text">Longueur des enregistrements du fichier (0 si longueurs variables).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:20.36%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Protection</font></p>
+</td>
+<td style="width:79.64%;" class="hcp3">
+<p class="Body-Text">Protection (E=effacement, R=lecture, N=non, W=écriture).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:20.36%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Version de la base</font></p>
+</td>
+<td style="width:79.64%;" class="hcp3">
+<p class="Body-Text">Numéro de version du fichier.<font class="hcp1"><br>
+Voir remarque ci-dessous</font>.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:20.36%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Toujours contrôler la version</font></p>
+</td>
+<td style="width:79.64%;" class="hcp3">
+<p class="Body-Text">Cochez cette case pour que la version du fichier soit toujours contrôlée par les programmes qui l’utilise.<font class="hcp1"><br>
+Voir remarque ci-dessous</font>.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:20.36%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Dictionnaire</font></p>
+</td>
+<td style="width:79.64%;" class="hcp3">
+<p class="Body-Text">Nom du dictionnaire contenant la description du fichier.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:20.36%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Mnémonique fichier dans le dictionnaire</font></p>
+</td>
+<td style="width:79.64%;" class="hcp3">
+<p class="Body-Text">Dans ce dictionnaire, nom du fichier correspondant.<br>
+Ce champ et le précédent <font class="hcp1">doivent être renseignés</font> si un <font class="hcp1">filtre</font> est programmé pour ce fichier (instruction Diva <font class="hcp1">HFILTER</font>).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque concernant la version des fichiers</font>&#160;:</p>
+<p class="Body-Text">Harmony peut effectuer un test de cohérence entre les programmes et les fichiers qu’ils utilisent, afin qu’une erreur soit détectée si un programme tente d’accéder à une version d’un fichier qu’il ne sait pas traiter. Pour ce faire, un numéro de version doit être indiqué&#160;:</p>
+<ol>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Au niveau du fichier physique</font>&#160;: c’est le numéro saisi ici dans le champ «&#160;Version de la base&#160;».</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Au niveau du dictionnaire de données</font>, dans le champ «&#160;Version&#160;» des propriétés de la base. <font class="hcp1">Attention</font>, ce numéro de version est enregistré dans les programmes objets au moment de leur <font class="hcp1">compilation</font>.</p>
+</li>
+</ol>
+<p class="Body-Text">A l’exécution, comparaison est faite entre le numéro enregistré dans le programme et le numéro indiqué dans le fichier physique&#160;: une <font class="hcp1">erreur</font> est signalée dès que ces numéros <font class="hcp1">ne sont pas strictement identiques</font>. On distingue alors deux cas&#160;:</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Un numéro de version est précisé dans le programme objet</font>.<br>
+Le contrôle de cohérence est <font class="hcp1">toujours</font> effectué&#160;: le fichier physique et le programme objet doivent être de versions identiques pour que l’accès au fichier soit autorisé.<br>
+Ainsi, un programme compilé en version X ne pourra accéder ni à un fichier sans numéro de version ni à un fichier de version plus récente ou plus ancienne.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp1">Aucun numéro de version n’est précisé dans le programme objet</font>.<br>
+Le contrôle de cohérence <font class="hcp1">n</font>’est fait <font class="hcp1">que</font> si la case <font class="hcp1">«&#160;Toujours contrôler la version&#160;»</font> est <font class="hcp1">cochée</font>.<br>
+Ainsi, case cochée et version précisée, un programme sans version ne pourra pas accéder au fichier&#160;; il pourra par contre y accéder si la case n’est pas cochée, que le fichier ait ou non un numéro de version.</p>
+</li>
+</ul>
+<p class="hcp4"><font class="hcp1">Pour mettre en oeuvre le contrôle de cohérence</font>, il faut compiler les nouveaux programmes avec un numéro de version dans le dictionnaire et livrer les nouveaux fichiers avec ce numéro de version et la case « Toujours contrôler la version » cochée.</p>
+<p class="hcp4">&#160;</p>
+</body>
+</html>

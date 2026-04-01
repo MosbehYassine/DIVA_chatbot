@@ -1,0 +1,99 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WebRequestSend</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-style:italic; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>WebRequestSend <a href="Liste_des_fonctions_WebRequest.htm">Famille</a> <a href="Fonctions_WebRequest.htm">Thème</a></h1>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Envoi de la requête et réception de la réponse.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">Int WebRequestSend &#160;</span>( <span class="hcp1">Ticket</span> <span class="hcp1">, DonnéesAEnvoyer , &amp;DonnéesRecues , &amp;StatusCode, [ Options ]</span> )</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">Ticket</p>
+<p class="decalage05">Ticket préalablement obtenu par WebRequestNew.</p>
+&#160;
+<p class="Body-Text" style="font-style: italic;">DonnéesAEnvoyer</p>
+<p class="decalage05">Données à placer dans la requête.</p>
+&#160;
+<p class="Body-Text" style="font-style: italic;">DonnéesRecues</p>
+<p class="decalage05">Réponse du serveur.</p>
+&#160;
+<p class="Body-Text" style="font-style: italic;"><span class="hcp1">StatusCode</span></p>
+<p class="decalage05">Status renvoyé par le serveur.</p>
+<p class="decalage05">OK : 200</p>
+<p class="decalage05">Created : 201 etc.</p>
+<p class="Body-Text" style="font-style: italic;">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Options</p>
+<p class="decalage05">Chaîne Hmp permettant de positionner des options.</p>
+<p class="decalage05">&lt;binary&gt;1 : indique que le contenu doit être envoyé tel que sur le web. Il n'y a aucune conversion d'effectuée sur les caractères. Cela permet par exemple de transférer des fichiers pdf.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<table cellspacing="0" width="436">
+<tr class="hcp2">
+<td style="width:16.24%;" class="hcp3">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:83.76%;" class="hcp3">
+<p class="Body-Text">Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.24%;" class="hcp3">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:83.76%;" class="hcp3">
+<p class="Body-Text">Ticket incorrect</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:16.24%;" class="hcp3">
+<p>2</p>
+</td>
+<td style="width:83.76%;" class="hcp3">
+<p class="Body-Text">Erreur. Voir le détail avec <a href="WebRequestGetError.htm">WebRequestGetError</a></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 ticketRequete L</p>
+<p class="Source">.....</p>
+<p class="Source">st = WebRequestSend(ticketRequete , jsonAEnvoyer , retour, statusCode)</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarques</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Les flux jsonAEnvoyer et retour sont convertis en variables de type String de .net. Si vous voulez faire transférer du binaire qui ne soit pas converti, il faut utiliser l'options &lt;Binary&gt;1</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Voir la fonction GZipCompress qui permet de compresser le contenu de la trame.</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text">Voir <a href="Exemple_de_programmation_des_fonctions_WebRequest.htm">Exemple de programmation des fonctions WebRequest</a></p>
+<p class="body-text">&#160;</p>
+<p class="body-text" style="font-weight: bold;">Voir</p>
+<p class="body-text" style="font-weight: normal;"><a href="WebRequestGetHeaders.htm">WebRequestGetHeaders</a></p>
+<p class="body-text">&#160;</p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

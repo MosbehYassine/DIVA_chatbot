@@ -1,0 +1,52 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Diva : Manuel de référence - Gestion de fichiers - Introduction</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Introduction</h3>
+<p class="Body-Text"><font>h</font>armony gère trois types de fichiers :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">les fichiers de type C ou U (fichiers sources),</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">les fichiers de type N (fichiers de données),</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">les fichiers de type I (séquentiels-indexés).</p>
+</li>
+</ul>
+&#160;
+<p class="Body-Text"><font class="hcp2">Les fichiers de type C</font> (sous <font>m</font>os) <font class="hcp2">ou de type U</font> (sous <font>u</font>nix et <font>w</font>indows) contiennent généralement du texte (fichier source, fichier d'aide,...). Ils peuvent être lus à l'aide des éditeurs standards (<font>x</font>ed sous <font>m</font>os, <font>e</font>dit sous <font>w</font>indows, <font>v</font>i sous <font>u</font>nix).</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Les fichiers de type N</font> (Normaux) contiennent les données des applications et les fichiers exécutables (Diva, Masques...). Ces fichiers sont rarement utilisés directement par les applications, mais plutôt comme composantes des fichiers séquentiels-indexés.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Les fichiers séquentiels-indexés</font> sont composés de deux fichiers physiquement distincts :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">un fichier de données, généralement de type N;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">un fichier "Paramètres et Clés" de type I qui contient les paramètres du séquentiel-indexé (description des clés) et les clés d'accès elles-mêmes.</p>
+</li>
+</ul>
+<p class="Body-Text">Nous détaillerons plus loin la structure de chaque type de fichiers ainsi que les méthodes d'accès et les fonctions permettant de les manipuler.</p>
+&#160;
+<p class="Body-Text">Diva propose deux familles de fonctions pour la gestion de fichier. <a href="Lesfonctions_volu_esdegestiondefichier.htm">Les fonctions évoluées</a> (préfixées par la lettre H) et <a href="Fonctionsavanc_esdegestiondefichiers.htm">les fonctions de base</a> (préfixées par la lettre F). Il est conseillé d'utiliser les fonctions évoluées pour éviter d'alourdir le programme principal par de nombreux tests d'erreur et surtout pour éviter d'oublier de traiter certaines erreurs.</p>
+</body>
+</html>

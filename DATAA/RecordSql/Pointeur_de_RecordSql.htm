@@ -1,0 +1,62 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Pointeur de RecordSql</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { margin-left:48px; }
+span.hcp3 { font-weight:bold; }
+span.hcp4 { font-style:italic; }
+a.hcp5 { font-weight:normal; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Pointeur de RecordSql</h3>
+<p>&#160;</p>
+<p class="hcp1">Utilité</p>
+<p>Des programmes généraux tels que le Zoom manipulent des RecordSql. Ces 
+ programmes ignorent à l'avance quels RecordSql ils vont manipuler.</p>
+<p>Pour accéder à des RecordSql de manière générique, il faut passer par 
+ les pointeurs de RecordSql.</p>
+<p>&#160;</p>
+<p class="hcp1">Définition</p>
+<p>Un pointeur de RecordSql est une variable qui contient l'adresse d'un 
+ RecordSql.</p>
+<p>Elle est utilisée exactement comme un RecordSql.</p>
+<p>&#160;</p>
+<p class="hcp1">Déclaration</p>
+<p class="hcp2"><span class="hcp3">RecordSqlPtr</span> 
+ <span class="hcp4">pointeur</span></p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp3">Initialisation</span></p>
+<p class="hcp2"><span class="hcp3"><a href="PtrRecordSql.htm">PtrRecordSql</a></span> 
+ (<span class="hcp4">pointeur</span>, <span class="hcp4">instance_publique</span>)</p>
+<p>&#160;</p>
+<p class="hcp1">Remarques</p>
+<p class="hcp2">Pour le positionnement des filtres / tris, 
+ il faut passer par les fonctions <a href="UseClause.htm">UseClause</a>.</p>
+<p>&#160;</p>
+<p><span class="hcp3">Exemple</span></p>
+<p class="Source">Public RecordSQL dico.dhoq TopCa</p>
+<p class="Source">RecordSqlPtr pointeur</p>
+<p class="Source">PtrRecordSql (&quot;TopCa&quot;, pointeur)</p>
+<p class="Source">&#160;</p>
+<p class="Source">pointeur.Select()</p>
+<p>&#160;</p>
+<p class="hcp1">Voir</p>
+<p style="font-weight: normal;"><a href="PtrRecordSql.htm" class="hcp5">PtrRecordSql</a>, 
+ <a href="PtrRecordSqlModule.htm" class="hcp5">PtrRecordSqlModule</a>, 
+ <a href="DuplicateInstance.htm" class="hcp5">DuplicateInstance</a>, 
+ <a href="PtrRecordSqlNew.htm">PtrRecordSqlNew</a></p>
+<p>&#160;</p>
+</body>
+</html>

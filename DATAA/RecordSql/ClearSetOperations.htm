@@ -1,0 +1,59 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>RecordSql.ClearSetOperations</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:Arial, sans-serif; }
+span.hcp2 { font-weight:bold; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp4 { font-family:"Courier New"  , monospace; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>RecordSql.ClearSetOperations &#160;<span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">La méthode ClearSetOperations permet de "nettoyer" une instance d'un RecordSql précédement utilisé avec des opérations ensemblistes (union, except, intersect).</p>
+<p class="hcp1">Il faut toujours appeler cette méthode sur une instance d'un RecordSql avant sa réutilisation et avant la création de l'ensemble.</p>
+<p class="hcp1">Il faut toujours appeler cette méthode sur toutes les instances concernées par un ensemble.</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1"><span class="hcp2">Long</span> RecordSql.<span class="hcp2">ClearSetOperations</span> ()</p>
+<p class="hcp1">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-family: Arial, sans-serif;">Retour</p>
+<table cellspacing="0" width="436">
+<tr style="vertical-align: top;">
+<td style="width:16.24%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 2.00pt; font-family: Arial, sans-serif;">1</p>
+</td>
+<td style="width:83.76%;" class="hcp3">
+<p class="Body-Text" style="margin-top: 2.00pt; font-family: Arial, sans-serif;">OK</p>
+</td>
+</tr>
+</table>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">Exemple :</p>
+<p>&#160;</p>
+<p class="hcp4">RecordSql "recordsql.dhoq" monRecord monInstance</p>
+<p class="hcp4">RecordSql "recordsql.dhoq" monRecord2 monInstance2</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">monInstance.ClearSetOperations() &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; nettoyage des instances pour être sûr de partir de zéro</p>
+<p class="hcp4">monInstance2.ClearSetOperations()</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">monInstance.AddUnion(monInstance2) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; Création et utilisation de mon ensemble</p>
+<p class="hcp4">monInstance.Select()</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">monInstance2.ClearSetOperations() &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; pour réutiliser monInstance2, il FAUT nettoyer l'instance</p>
+<p class="hcp4">monInstance2.Select()</p>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Edition d'une maquette</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Edition d'une maquette</h3>
+<p>&#160;</p>
+<p style="font-weight: bold;">A l'attention des développeurs</p>
+<p>&#160;</p>
+<p>Tout programme d'édition peut être appelé pour générer une <span class="hcp1">maquette</span> qui pourra ensuite être rejouée indépendamment du programme ayant produit cette édition :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Pour constituer une maquette, créez un <a href="Gestiondesmod_lesd_imprimante.htm">modèle</a> en lui affectant le <span class="hcp1">type d'imprimante "Maquette"</span> et sélectionnez-le.<br>
+<br>
+A partir de là, lorsque vous lancez un programme d'impression, celui-ci génère un fichier portant le nom du masque imprimante suffixé par "_" et d'extension .xml (*) (**).<br>
+Exemple : Si le programme charge le masque MonMasque.dhoi, le fichier généré portera le nom MonMasque_.xml.<br>
+<br>
+(*) Si le programme charge plusieurs masques d'impression, le fichier portera le nom du masque faisant l'objet du <span class="hcp1">premier</span> xmiPrint.<br>
+<br>
+(**) Si vous souhaitez générer plusieurs versions de maquette à partir d'une même édition, activez l'option "<span class="hcp1">Suffixer le nom du fichier maquette avec la date</span>" pour le modèle d'imprimante utilisé. Dans ce cas, un fichier différent sera généré à chaque appel du programme d'édition. Les différents fichiers porteront le nom du masque suffixé par "_" suivi de la date et de l'heure de l'édition.<br>
+Exemple : MonMasque_20160208_1726.xml.<br>
+<br>
+Les fichiers "maquette" sont <span class="hcp1">stockés</span> dans le <span class="hcp1">sous-dossier "Maquettes"</span> du dossier pointé par la clé ServeurXlogf du chapitre System de la base de registre (/Divalto/Sys/Maquettes par défaut). Le lieu de stockage dépend donc de l'environnement choisi.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Une maquette peut être "rejouée" depuis l'atelier de développement Xwin ou depuis l'assistant de personnalisation des impressions (Cf. leur documentation respective).</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

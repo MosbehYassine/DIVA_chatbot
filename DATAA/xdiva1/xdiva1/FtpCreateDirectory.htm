@@ -1,0 +1,128 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FtpCreateDirectory</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+table.hcp3 { vertical-align:top; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>FtpCreateDirectory <a href="Liste_des_fonctions_Ftp___Sftp.htm">Famille</a> 
+ <a href="Fonctions_Ftp___Sftp.htm">Thème</a></h1>
+<p>&#160;</p>
+<p>Création d'un répertoire sur le serveur.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Module</span> &quot;yftp.dhop&quot;</p>
+<p><span class="hcp1">FtpResult FtpcreateDirectory</span> 
+ <span class="hcp2">(server, login, password, Directory, 
+ [proxyServer], [ProxyMode], [proxyLogin], [proxyPassword])</span></p>
+<p>&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp1">Paramètres</span></p>
+<p class="Body-Text" style="font-style: italic;">Server</p>
+<p class="decalage05">Adresse du serveur sous la forme</p>
+<p class="decalage05">ftp://ip[:port] &#160;pour un serveur ftp</p>
+<p class="decalage05">sftp://ip[:port] &#160;pour un serveur sftp</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Login</p>
+<p class="decalage05">Identifiant sur le serveur. Si non précisé, c'est 
+ &quot;anonymous&quot; qui est utilisé. Dans ce cas, le serveur doit accepter 
+ les connexions anonymes.</p>
+&#160; 
+<p class="Body-Text" style="font-style: italic;"><span class="hcp2">Password</span></p>
+<p class="decalage05">Mot de passe sur le serveur.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Directory</p>
+<p class="decalage05">Chemin du répertoire à créer.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProxyServer</span></p>
+<p class="decalage05">Adresse du serveur proxy</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProxyMode</span></p>
+<p class="decalage05">Mode d'identification sur le proxy.</p>
+<table cellspacing="0" width="65.57%" class="hcp3">
+	<col style="width: 7.956%;">
+	<col style="width: 92.044%;">
+	<tr class="hcp4">
+		<td style="width:7.956%;" class="hcp5"><p>1</p></td>
+		<td style="width:92.044%;" class="hcp5"><p>Prendre 
+		 les paramètres du système. Il n'y a pas d'autre paramètres à préciser, 
+		 l'authentification est celle du poste de travail.</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:7.956%;" class="hcp5"><p>2</p></td>
+		<td style="width:92.044%;" class="hcp5"><p>Préciser 
+		 l'url du serveur, mais authentification SSPI. Inutile de préciser 
+		 ProxyLogin et ProxyPassword</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:7.956%;" class="hcp5"><p>3</p></td>
+		<td style="width:92.044%;" class="hcp5"><p>Mode 
+		 manuel. Il faut préciser tous les paramètres</p></td>
+	</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span class="hcp2">ProxyLogin</span></p>
+<p class="decalage05">Identifiant sur le serveur proxy.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProxyPassword</span></p>
+<p class="decalage05">Mot de passe sur le serveur proxy.</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Retour</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: normal;">La 
+ fonction retourne une structure FtpResult de trois valeurs.</p>
+<table cellspacing="0" width="66.667%" class="hcp3">
+	<col style="width: 11.115%;">
+	<col style="width: 88.884%;">
+	<tr class="hcp4">
+		<td style="width:11.115%;" class="hcp5"><p>Status</p></td>
+		<td style="width:88.884%;" class="hcp5"><p>0 
+		 = pas d'erreur &#160;&#160;2 = Erreur &#160;&#160;&#160;&#160;&#160;3 
+		 = paramètres incorrects</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:11.115%;" class="hcp5"><p>Retour</p></td>
+		<td style="width:88.884%;" class="hcp5"><p>Texte 
+		 renvoyé par la dll</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:11.115%;" class="hcp5"><p>Desc</p></td>
+		<td style="width:88.884%;" class="hcp5"><p>Texte 
+		 rendu par le serveur ou description de l'exception en cas d'erreur. 
+		 Voir aussi <a href="FtpGetLastErrorMessage.htm">FtpGetLastErrorMessage</a></p></td>
+	</tr>
+</table>
+<p class="decalage05" style="margin-left: 0px; font-weight: normal;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Remarques</p>
+<ul style="list-style: disc;">
+	<li class="p-decalage05"><p class="decalage05" style="margin-left: 0px; 
+								 font-weight: normal;">De nombreux serveurs 
+	 Ftp / Sftp sont sous Unix ou Linux. Sur ces systèmes d'exploitation, 
+	 les noms de fichiers sont sensibles à la casse.<br>
+	Le paramètre RemoteFile doit donc avoir la casse exacte.</p></li>
+	<li class="p-decalage05"><p class="decalage05" style="margin-left: 0px; 
+								 font-weight: normal;">En fonction de la 
+	 configuration du serveur, il se peut que les caractères spéciaux et 
+	 accentués posent problème.</p></li>
+</ul>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Exemple</p>
+<p class="Source"><span class="hcp1">module &quot;yftp.dhop&quot;</span></p>
+<p class="Source">recordDiva yftp.FtpResult &#160;r</p>
+<p class="Source">r = FtpCreateDirectory(&quot;ftp://psxbdbh02&quot;,&quot;&quot;,&quot;&quot;,&quot;nouveauRepertoire&quot;)</p>
+<p class="Source">ProgramExit</p>
+<h1>&#160;</h1>
+</body>
+</html>

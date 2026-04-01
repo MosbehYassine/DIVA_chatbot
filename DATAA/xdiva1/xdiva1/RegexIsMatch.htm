@@ -1,0 +1,126 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>RegexIsMatch</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3 style="font-family: 'MS Sans Serif';"><font style="font-weight: normal;"><span style="font-weight: bold; font-family: Arial, sans-serif;">RegexIsMatch <a href="Expressions_r&eacute;guli&egrave;res.htm">&#160;Famille</a></span>&#160;</font></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction RegexIsMatch permet de tester si une chaîne de caractères correspond à un format. Par exemple, tester qu'une adresse de messagerie internet est valide.</p>
+<p class="Body-Text">Le format utilise la syntaxe des expressions régulières.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Long</font> = <span style="font-weight: bold;">RegexIsMatch</span> <font class="hcp1"><span style="font-weight: bold; font-style: italic;">&#160;</span><span style="font-style: italic; font-weight: normal;">( chaine , format, [options] , [timeout]</span></font> )</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;">Chaine</p>
+<p class="decalage05"><span id="mt2" class="sentence" data-guid="05eca890313952000b14da2e351ceaff" data-source="The string to search for a match." xml:space="preserve">Chaîne dans laquelle une correspondance doit être recherchée.</span></p>
+&#160;
+<p class="Body-Text" style="font-style: italic;"><span class="sentence" data-guid="05eca890313952000b14da2e351ceaff" data-source="The string to search for a match." xml:space="preserve">Format</span></p>
+<p class="decalage05"><span id="mt3" class="sentence" data-guid="4ddca332823cb9ca188e839a0dfcdd78" data-source="The regular expression pattern to match." xml:space="preserve">Modèle d'expression régulière à mettre en correspondance.</span></p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span class="sentence" data-guid="05eca890313952000b14da2e351ceaff" data-source="The string to search for a match." xml:space="preserve" id="span1" style="font-style: italic;">Options</span></p>
+<p class="decalage05"><span id="mt4" class="sentence" data-guid="a9d4bee49fc3450b4ac1e7bfc9cd4bc6" data-source="A bitwise combination of the enumeration values that provide options for matching." xml:space="preserve">Options pour la correspondance. Voir</span> <a href="Options_Regex.htm">Options Regex</a></p>
+&#160;
+<p class="Body-Text" style="font-style: italic;"><span class="sentence" data-guid="05eca890313952000b14da2e351ceaff" data-source="The string to search for a match." xml:space="preserve" id="span2">TimeOut</span></p>
+<p class="decalage05"><span id="mt5" class="sentence" data-guid="aac27f4506a97458ee05411e4974b2bc" data-source="A time-out interval, or &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;Regex&lt;span class=&quot;mtpsTagOuterHtml&quot; xmlns=&quot;&quot;&gt;&lt;span&gt;.&lt;/span&gt;&lt;/span&gt;InfiniteMatchTimeout&lt;/span&gt;&lt;/span&gt; to indicate that the method should not time out." xml:space="preserve" style="margin-left: 48px;">Un délai d’attente en milli-secondes ou 0 pour indiquer que la méthode ne doit pas expirer.</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<table style="vertical-align: top; left: 0px; top: 435px; height: 163px;" cellspacing="0" width="1181">
+<col style="width: 4.152%;">
+<col style="width: 95.848%;">
+<tr class="hcp2">
+<td style="width:4.152%;" class="hcp3">
+<p>0</p>
+</td>
+<td style="width:95.848%;" class="hcp3">
+<p>L'expression régulière ne trouve aucune correspondance</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:4.152%;" class="hcp3">
+<p>1</p>
+</td>
+<td style="width:95.848%;" class="hcp3">
+<p>L'expression régulière trouve une correspondance</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:4.152%;" class="hcp3">
+<p>2</p>
+</td>
+<td style="width:95.848%;" class="hcp3">
+<p>Un des paramètres est null</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:4.152%;" class="hcp3">
+<p>3</p>
+</td>
+<td style="width:95.848%;" class="hcp3">
+<p><span id="mt9" class="sentence" data-guid="25da8a20ba7013322e204d31332665a9" data-source="&lt;em&gt;options&lt;/em&gt; is not a valid &lt;span class=&quot;mtpsTagOuterHtml&quot; &gt;&lt;span&gt;RegexOptions&lt;/span&gt;&lt;/span&gt; value." xml:space="preserve"><em xmlns="http://www.w3.org/1999/xhtml" style="font-style: italic;">Options</em> n’est pas une valeur correcte</span></p>
+<p><span id="mt11" class="sentence" data-guid="b6a01a993fa563a07beb889b636517e5" data-source="&lt;em&gt;matchTimeout&lt;/em&gt; is negative, zero, or greater than approximately 24 days." xml:space="preserve">ou</span> <span class="sentence" data-guid="b6a01a993fa563a07beb889b636517e5" data-source="&lt;em&gt;matchTimeout&lt;/em&gt; is negative, zero, or greater than approximately 24 days." xml:space="preserve" style="font-style: italic;">T<em xmlns="http://www.w3.org/1999/xhtml">im</em></span><em xmlns="http://www.w3.org/1999/xhtml"><span class="sentence" data-guid="b6a01a993fa563a07beb889b636517e5" data-source="&lt;em&gt;matchTimeout&lt;/em&gt; is negative, zero, or greater than approximately 24 days." xml:space="preserve">eout</span></em> <span class="sentence" data-guid="b6a01a993fa563a07beb889b636517e5" data-source="&lt;em&gt;matchTimeout&lt;/em&gt; is negative, zero, or greater than approximately 24 days." xml:space="preserve">a une valeur négative, nulle ou supérieure à environ 24&#160;jours</span></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:4.152%;" class="hcp3">
+<p>4</p>
+</td>
+<td style="width:95.848%;" class="hcp3">
+<p><span id="mt7" class="sentence" data-guid="0bac9f7aed23ee6817f077655f64007d" data-source="A regular expression parsing error occurred." xml:space="preserve">Une erreur d’analyse d’expression régulière s’est produite.</span></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:4.152%;" class="hcp3">
+<p>5</p>
+</td>
+<td style="width:95.848%;" class="hcp3">
+<p>Le délai d'attente a expiré</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:4.152%;" class="hcp3">
+<p>6</p>
+</td>
+<td style="width:95.848%;" class="hcp3">
+<p>Autre exception .net</p>
+</td>
+</tr>
+</table>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<p class="Source">&#160;</p>
+<p class="Source">; Vérifier qu'une adresse de messagerie internet est valide.</p>
+<p class="Source">&#160;</p>
+<p class="Source">main</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 formatregex S</p>
+<p class="Source">&#160;</p>
+<p class="Source">formatregex = '^(?("")("".+?(?&lt;!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&amp;' &amp; \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"'\*\+/=\?\^`\{\}\|~\w])*)(?&lt;=[0-9a-z])@))" &amp; \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;'(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-0-9a-z]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$'</p>
+<p class="Source">&#160;</p>
+<p class="Source">RegexIsMatch("Bruno.houver@laposte.net",formatregex &#160;&#160;,RegexOpt_IgnoreCase); &#160;&#160;&#160;--&gt; 1</p>
+<p class="Source">RegexIsMatch("Bruno.houver@laposte.net",formatregex); &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;--&gt; 0 (à cause du B majucule)</p>
+<p class="Source">RegexIsMatch("Bruno.houver!laposte.net",formatregex &#160;&#160;,RegexOpt_IgnoreCase, 1); --&gt; 0</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text"><a href="https://msdn.microsoft.com/fr-fr/library/hh160210(v%3dvs.110).aspx">https://msdn.microsoft.com/fr-fr/library/hh160210(v=vs.110).aspx</a></p>
+<p class="Body-Text"><a href="https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format">https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format</a></p>
+<p class="Body-Text"><a href="https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expressions">https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expressions</a>.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

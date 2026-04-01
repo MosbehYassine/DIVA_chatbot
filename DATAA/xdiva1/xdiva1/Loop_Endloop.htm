@@ -1,0 +1,50 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Loop - Endloop</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Loop - Endloop &#160;<a href="Listedesstructuresdecontr_le.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La structure Loop est une structure d'itération de type <font class="hcp1">Tant Que</font><br>
+<font class="hcp1"><br>
+Loop</font> <font class="hcp2">expression</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;">&#160;<font class="hcp2">instructions</font></p>
+<p class="Body-Text" style="margin-top: 2.00pt;"><font class="hcp1">Endloop</font></p>
+&#160;
+<p class="Body-Text">Dans cette structure, le test est effectué avant d'y rentrer la première fois. Donc, si la condition est fausse dès le départ, la boucle n'est jamais exécutée et le contrôle est donné à l'instruction suivant le mot réservé Endloop.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple :</font> Sachant que la somme : 1-1/3+1/5-1/7... tend vers PI/4, calculer PI avec 4 décimales.</p>
+<p class="Source">const eps = 0,00001</p>
+<p class="Source">vpi = 4</p>
+<p class="Source">i = 1</p>
+<p class="Source">s = -1</p>
+<p class="Source">t = 1/3</p>
+<p class="Source">&#160;</p>
+<p class="Source">loop t&gt;eps</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;t = 4/(2*i+1)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;vpi += s*t&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;s = -s&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;i++&#160;</p>
+<p class="Source">endloop</p>
+<p class="Body-Text">Si vous exécutez ce programme, soyez patient car le nombre de boucles à faire est impressionnant (200000).</p>
+<p class="Body-Text">Il vaut mieux écrire VPI = 3,14159 !!!!</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="RedoLoop.htm">RedoLoop</a>, <a href="ExitLoop.htm">ExitLoop</a>, <a href="For_To_Step_Next.htm">For - To - Step - Next</a>, <a href="Repeat_Until.htm">Repeat - Until</a>, <a href="Do_While_Wend.htm">Do - While - Wend</a></p>
+</body>
+</html>

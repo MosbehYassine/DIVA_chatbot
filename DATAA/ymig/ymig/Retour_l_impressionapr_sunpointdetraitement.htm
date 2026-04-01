@@ -1,0 +1,107 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Retour à l'impression après un point de traitement</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-family:Symbol;
+font-weight:bold; }
+font.hcp5 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Retour à l'impression après un point de traitement</h3>
+<p class="Body-Text">Ymig donne le contrôle à une séquence de traitement à l'occasion d'un point de traitement Avant gestion ou Avant ou Après l'impression d'un bloc (Cf. rubrique <a href="Principesg_n_rauxdel_impressiond_unmasque.htm">Principes généraux de l'impression d'un masque</a>).</p>
+<p class="Body-Text">Lorsque l'exécution de la séquence se termine, retour est fait à Ymig de <font class="hcp1">manière implicite</font>. Vous pouvez ici lui demander&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">De poursuivre normalement l'édition.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">D'ignorer le bloc courant ou d'imprimer un autre bloc, à la place de celui initialement prévu (traitement Avant Gestion).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">D'imprimer un bloc supplémentaire (traitement Après impression).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Pour cela, positionnez dans votre séquence les paramètres de retour Harmony.Retour et Harmony.CplRetour. Les valeurs possibles sont récapitulées dans le tableau suivant&#160;:</p>
+<table cellspacing="0" width="100%">
+<col style="width: 24.93%;">
+<col style="width: 75.07%;">
+<tr class="hcp2">
+<td style="width:24.93%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.Retour / CplRetour</font></p>
+</td>
+<td style="width:75.07%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Ordre donné à Ymig</font>&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.93%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">XMINEXT_DEFAUT = 0 /</font> <font face="Symbol" class="hcp4">-</font></p>
+</td>
+<td style="width:75.07%;" class="hcp3">
+<p class="Body-Text">Imprimer le bloc courant (traitement Avant Gestion) ou poursuivre normalement l'impression (autres traitements). Valeur par défaut.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.93%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">XMINEXT_SAUT_BLOC = 1 /</font> <font face="Symbol" class="hcp4">-</font></p>
+</td>
+<td style="width:75.07%;" class="hcp3">
+<p class="Body-Text">Annuler l'impression du bloc courant (traitement Avant Gestion).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:24.93%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">XMINEXT_AUTRE_BLOC = 2 / Numéro du nouveau bloc</font></p>
+</td>
+<td style="width:75.07%;" class="hcp3">
+<p class="Body-Text">Substituer le bloc indiqué au bloc courant (traitement Avant Gestion) ou imprimer le bloc indiqué en supplément du bloc courant (traitement Après Impression).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque</font>&#160;: Les valeurs XMINEXT_SAUT_BLOC et XMINEXT_AUTRE_BLOC sont à utiliser dans la séquence de traitement Avant Gestion de préférence à la séquence Avant Impression (qui sert plutôt à rechercher des informations externes ou à faire des calculs).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 1</font>&#160;:</p>
+<p class="Source">;Séquence de traitement Avant gestion du bloc <font class="hcp5">X</font></p>
+<p class="Source">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitements et tests</p>
+<p class="Source">SWITCH <font class="hcp5">resultat</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE 1&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMINEXT_DEFAUT &#160;&#160;&#160;&#160;;ok pour imprimer le bloc <font class="hcp5">X</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE 2&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMINEXT_SAUT_BLOC &#160;;annuler l'impression de <font class="hcp5">X</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE 3&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMINEXT_AUTRE_BLOC ;imprimer le bloc <font class="hcp5">Y</font></p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.CplRetour = <font class="hcp5">Y</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;à la place du bloc <font class="hcp5">X</font></p>
+<p class="Source">ENDSWITCH</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 2</font>&#160;:</p>
+<p class="Source">;Séquence de traitement Après impression du bloc <font class="hcp5">X</font></p>
+<p class="Source">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitements et tests</p>
+<p class="Source">SWITCH <font class="hcp5">resultat</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE 1&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMINEXT_DEFAUT &#160;&#160;&#160;&#160;;poursuite normale&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;CASE 2&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMINEXT_AUTRE_BLOC ;imprimer le bloc <font class="hcp5">Y</font> en</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Harmony.CplRetour = <font class="hcp5">Y</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;supplément du bloc <font class="hcp5">X</font></p>
+<p class="Source">ENDSWITCH</p>
+</body>
+</html>

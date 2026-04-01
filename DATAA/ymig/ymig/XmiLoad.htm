@@ -1,0 +1,67 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmiLoad</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmiLoad &#160;<a href="Lister_capitulativedesfonctionsdeYmig.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="L_ex_cuteurdemasquesd_imprimanteYmig.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Chargement d'un fichier masque</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmiLoad</font> (<font class="hcp3">Nom du fichier masque</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:26.16%;" class="hcp4">
+<p class="Body-Text"><font class="hcp3">Nom du fichier masque</font><br>
+(Harmony.Imasque)</p>
+</td>
+<td style="width:73.84%;" class="hcp4">
+<p class="Body-Text">Nom du fichier <font class="hcp2">objet</font> à charger (32 caractères maximum).<br>
+Le cas échéant, l'extension .dhoi <font class="hcp2">doit</font> être précisé.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Avant toute utilisation d'un masque d'imprimante, vous devez le <font class="hcp2">charger en mémoire</font> de la tâche. Pour ce faire, appelez la fonction XmiLoad, en fournissant en paramètre le <font class="hcp2">Nom du fichier OBJET</font> contenant le masque (rappelons que tout masque source Xwin doit être compilé avant d'être utilisé).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le chargement concerne l'ensemble des blocs contenus par le fichier.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Vous pouvez charger jusqu'à 10 fichiers masque en mémoire et, par la suite, référencer n'importe lequel des fichiers chargés.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Pour créer vos fichiers masque, utilisez l'éditeur de masques d'imprimante de Xwin (décrit dans le livre "&#160;Utilisez l'éditeur de masques d'imprimante&#160;").</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemples&#160;:</font></p>
+<p class="Source">XmiLoad ("MASQUE1.dhoi") ;chargement fichier masque MASQUE1</p>
+<p class="Source">XmiLoad ("MASQUE2.dhoi") ;chargement fichier masque MASQUE2</p>
+</body>
+</html>

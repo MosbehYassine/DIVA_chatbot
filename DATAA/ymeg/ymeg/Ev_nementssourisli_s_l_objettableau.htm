@@ -1,0 +1,334 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Evénements souris liés à l'objet tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp4 { list-style:disc; }
+span.hcp5 { font-weight:bold; }
+font.hcp6 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Evénements souris liés à l'objet tableau</h3>
+<p class="Body-Text"><font class="hcp1">A l'occasion d'une saisie de masque</font> (XmeInput), lorsque l'utilisateur clique sur certains éléments d'un tableau (Cf. schéma ci-après), le point d'arrêt paramétré dans Xwin pour ce tableau est exécuté. Son numéro est comme d'habitude rangé dans Harmony.Arret et la main est rendue au programme appelant. Celui-ci a alors accès aux renseignements suivants&#160;:<br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 18.012%;">
+<col style="width: 81.988%;">
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.Arret</font> et<font class="hcp1"><br>
+Harmony.Dataarret</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">&#160;
+<p class="Body-Text">Numéro du point d'arrêt "tableau".</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.TabClic</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Type d'événement souris produit (Cf. table détaillée des valeurs possibles ci-après).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.SourisBout</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Bouton de la souris qui a été enfoncé (**)&#160;:<br>
+LEFT_BUTTON = 1&#160;: bouton gauche.<br>
+RIGHT_BUTTON = 3&#160;: bouton droit.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.SourisClav</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Touche spéciale enfoncée en même temps que le clic (**)&#160;:<br>
+CTRL_CLICK = 1&#160;: Ctrl + Clic.<br>
+SHIFT_CLICK = 2&#160;: Shift + Clic.<br>
+SHIFT_CTRL_CLICK = 3&#160;: Shift + Ctrl + Clic.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.SourisClic</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Nombre de clics effectués (*) (**)&#160;:<br>
+SIMPLE_CLICK = 1&#160;: simple clic.<br>
+DOUBLE_CLICK = 2&#160;: double clic. Le double clic droit n'est pas traité en client léger Html.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.SourisPage</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Numéro de la page Xwin contenant la donnée cliquée (***).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.SourisSeq</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Numéro de point de séquence de la donnée cliquée (***).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.SourisPosX</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Numéro de colonne concernée (LIST_CLICK_COLUMN_CONTROL, LIST_CLICK_ACTIVE_CELL et LIST_CLICK_DROP).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.SourisPosY</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Numéro de ligne concernée (LIST_CLICK_ROW_CONTROL, LIST_CLICK_ACTIVE_CELL, LIST_CLICK_CREATE_CONTROL, LIST_CLICK_TREE_CONTROL et LIST_CLICK_DROP).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Harmony.ScrollbarPositionNew</p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Nouvelle position de l'ascenseur (LIST_CLICK_SCROLLBAR).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text" style="font-weight: bold;">Harmony.ScrollbarPositionOld</p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Ancienne position de l'ascenseur (LIST_CLICK_SCROLLBAR).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:18.012%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Harmony.DragXxxx<br>
+Harmony.DropXxxx</font></p>
+</td>
+<td style="width:81.988%;" class="hcp3">
+<p class="Body-Text">Renseignements liés au <a href="Drag_and_drop_d__l_ments_de_tableau.htm">drag and drop tableau</a> (LIST_CLICK_DROP).</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text">(*) En cas de double clic, <font class="hcp1">deux interruptions</font> sont successivement générées&#160;: une première signalant le premier clic (Harmony.SourisClic = SIMPLE_CLICK), suivie d'une seconde signalant le double clic (Harmony.SourisClic = DOUBLE_CLICK). Dans le cas du XmeInput, la <font class="hcp1">deuxième interruption</font> ne sera générée qu'<font class="hcp1">à condition</font> que vous ayez demandé le retour à la saisie (par XmeNext) après le premier point d'arrêt.</p>
+<p class="Body-Text">(**) Uniquement pour les événements&#160;: LIST_CLICK_HEADING_CONTROL, LIST_CLICK_ROW_CONTROL, LIST_CLICK_COLUMN_CONTROL, LIST_CLICK_ACTIVE_CELL, LIST_CLICK_CREATE_CONTROL et LIST_CLICK_TREE_CONTROL.</p>
+<p class="Body-Text">(***) Uniquement pour l'événement LIST_CLICK_ACTIVE_CELL et si la cellule cliquée contient une donnée déclarée en saisie dans Xwin. En cas d'utilisation de pages panels, voir aussi la rubrique <a href="Num&eacute;ros_de_page_transmis_dans_l’enregistrement_Harmony.htm">Numéros de page transmis dans l’enregistrement Harmony (pages panels)</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarque</font>&#160;: A l'occasion d'une saisie de ligne de tableau (XmeListInput), les événements souris concernant un tableau quelconque sont normalement ignorés. L'option "Arrêts en saisie de ligne : Autorisés" permet toutefois d'assouplir cette règle en rendant la main au programme appelant sur certains événements souris particuliers normalement ignorés. Pour plus de détails sur ce point, voir la fonction <a href="XmeListInput.htm">XmeListInput</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">A l'occasion d'une consultation</font> de masque (XmeConsult) ou de tableau (XmeListConsult), lorsque l'utilisateur clique dans un tableau, le programme récupère le contrôle (comme si une touche du clavier était tapée). Il n'y a pas de point d'arrêt à proprement parler (Harmony.Arret n'est pas positionné) mais <font class="hcp1">les autres paramètres de sortie</font> (Harmony.DataArret, Harmony.TabClic, etc.) <font class="hcp1">sont garnis</font> comme précédemment.</p>
+<p class="Body-Text">En particulier, Harmony.DataArret est chargé avec le numéro de point d'arrêt affecté au tableau dans Xwin et Harmony.TabClic est chargé avec le type de clic souris produit. Ces données peuvent donc être testées pour savoir si la sortie du XmeConsult ou du XmeListConsult a été provoquée par la frappe d'une touche (Harmony.DataArret = 0 et Harmony.TabClic = LIST_NO_MOUSE_ACTION) ou par un clic tableau (Harmony.DataArret = numéro de point d'arrêt tableau, Harmony.TabClic &lt;&gt; LIST_NO_MOUSE_ACTION et Harmony.Key = 0).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><img src="../image/help0003.gif" alt="image\help0003.gif" title="image\help0003.gif" width="713" height="206" border="0">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Table des événements souris</font> (voir schéma ci-dessus) <font class="hcp1">liés à l'objet tableau</font> (valeurs de <font class="hcp1">Harmony.TabClic</font>)&#160;:<br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 27.189%;">
+<col style="width: 72.811%;">
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_NO_MOUSE_ACTION</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Cette valeur signifie que l'interruption n'a pas été provoquée par une action souris sur le tableau.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_HEADING_CONTROL</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Interruption due à un clic souris dans l'<font class="hcp1">en-tête</font> de la <font class="hcp1">colonne d'état</font>.<br>
+En cas de clic gauche, XmeListConsultDefault sélectionne toutes les lignes du tableau (à condition que la sélection multiple soit autorisée par le programme).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_ROW_CONTROL</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Interruption due à un clic souris dans la <font class="hcp1">colonne d'état</font>.<br>
+Le <font class="hcp1">numéro</font> de la <font class="hcp1">ligne</font> (1) concernée est rendu dans la variable <font class="hcp1">Harmony.SourisPosY</font>.<br>
+En standard, <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a> considère cet événement comme une demande de modification de la ligne cliquée (à condition que vous ayez autorisé la modification des éléments du tableau).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_COLUMN_CONTROL</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Interruption due à un clic souris dans un <font class="hcp1">en-tête de colonne</font>.<br>
+Le <font class="hcp1">numéro</font> de la <font class="hcp1">colonne</font> (2) concernée est rendu dans la variable <font class="hcp1">Harmony.SourisPosX</font>.<br>
+XmeListConsultDefault ne traite pas cet événement en standard. Votre programme peut par exemple le faire en effectuant un tri sur la colonne cliquée.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_ACTIVE_CELL</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Interruption due à un clic souris dans une <font class="hcp1">cellule</font> valide (c'est à dire une colonne d'une ligne garnie).<br>
+Les <font class="hcp1">numéros</font> de <font class="hcp1">ligne</font> (1) et de <font class="hcp1">colonne</font> (2) concernées sont rendus respectivement dans les variables <font class="hcp1">Harmony.SourisPosY</font> et <font class="hcp1">Harmony.SourisPosX</font>.<br>
+De plus, si la donnée correspondante est définie en saisie dans Xwin, son numéro de point de séquence est rangé dans la variable <font class="hcp1">Harmony.SourisSeq</font> (Cf. rubriques <a href="Souris_Positionnementsensaisiedemasque.htm">Souris : Positionnements en saisie de masque</a> et <a href="Souris_Positionnementsenconsultationdemasque.htm">Souris : Positionnements en consultation de masque</a>).<br>
+En standard, XmeListConsultDefault considère cet événement comme un positionnement sur la ligne cliquée&#160;: elle délivre l'élément du tableau correspondant (par <a href="XmeListIndex.htm">XmeListIndex</a>) et gère la sélection multiple des lignes si celle-ci a été autorisée.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_SCROLLBAR</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Interruption due à une action souris sur l'<font class="hcp1">ascenseur vertical</font> :</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">nouvelle position</font> du curseur de l'ascenseur est rendue dans la variable <font class="hcp1">Harmony.ScrollbarPositionNew</font>, l'ancienne position dans la variable Harmony.ScrollbarPositionOld.<br>
+<br>
+De plus, toutes les informations de gestion de l'ascenseur peuvent être récupérées en appelant la procédure <a href="XmeListGetScrollBar.htm">XmeListGetScrollBar</a> (voir aussi la rubrique <a href="YMEG2.chm::/Ymeg2/D_clarationd_unascenseurWindows.htm">Déclaration d'un ascenseur</a>).<br>
+<br>
+XmeListConsultDefault traite cet événement en standard. A défaut, votre programme doit normalement réafficher le tableau après avoir changé l'élément affiché en première ligne (par <a href="XmeListSetOffset.htm">XmeListSetOffset</a>).<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En général, la nouvelle position de l'ascenseur renvoyée dans Harmony.ScrollbarPositionNew suffit à programmer l'ascenseur vertical du tableau. Une autre méthode consiste à se baser plutôt sur l'événement produit par l'utilisateur. Pour cela, deux informations supplémentaires sont fournies :<br>
+<br>
+Le type de <a href="YMEG2.chm::/Ymeg2/Commandesassoci_esauxascenseurs.htm">clic ascenseur</a> est rendu dans la variable <span class="hcp5">Harmony.ScrollbarClickType</span> :</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">LIST_CLICK_SCROLLBAR_LINEUP : clic sur la flèche du haut.</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">LIST_CLICK_SCROLLBAR_PAGEUP : clic sur la zone de déplacement "page" haute.</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">LIST_CLICK_SCROLLBAR_THUMBTRACK : clic sur le curseur de déplacement.</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">LIST_CLICK_SCROLLBAR_PAGEDOWN : clic sur la zone déplacement "page" basse.</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">LIST_CLICK_SCROLLBAR_LINEDOWN : clic sur la flèche du bas.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;">La variable <span class="hcp5">Harmony.ScrollbarClickBeginEnd</span> permet de savoir si, <span class="hcp5">après le déplacement</span>, l'ascenseur se retrouve en position début ou fin :</p>
+<ul class="hcp4">
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">LIST_CLICK_SCROLLBAR_BEGIN : l'ascenseur est en position début.</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">LIST_CLICK_SCROLLBAR_END : l'ascenseur est en position fin.</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 24px;">0 : l'ascenseur occupe une autre position.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_CREATE_CONTROL</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Interruption due à un clic souris dans la <a href="Colonned__tatd_untableau.htm">colonne d'état "création"</a> (en regard de la première ligne vide marquée d'un plus) (hors mode "Licence consultation").<br>
+Le <font class="hcp1">numéro</font> de la <font class="hcp1">ligne</font> (1) concernée est rendu dans la variable <font class="hcp1">Harmony.SourisPosY</font>.<br>
+Cet événement ne peut avoir lieu que si l'option "Création dans un tableau par un clic souris dans la colonne d'état" a été validée (par appel à la procédure <a href="XmeListSetCreatingOption.htm">XmeListSetCreatingOption</a> avec le paramètre <font class="hcp6">Création</font> à TRUE).<br>
+En standard, XmeListConsultDefault traite cet événement en demandant la saisie d'un nouvel élément sur la ligne cliquée.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_HEIGHT_CHANGING</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Interruption due à un <font class="hcp1">changement</font> <font class="hcp1">du nombre de lignes affichées à l'écran</font> (suite à une modification de la hauteur de la fenêtre ou à une modification de la hauteur des lignes du tableau). Une gestion standard de cet événement est assurée par XmeListConsultDefault.</p>
+<p class="Body-Text">Pour plus de détails sur cet événement et sur les traitements à la charge du programme (en particulier lorsque plusieurs tableaux sont présents à l'écran), voir la rubrique <a href="Modificationdelatailled_untableau.htm">Modification de la taille d'un tableau</a>.<font class="hcp1">&#160;</font></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_TREE_CONTROL<br>
+LIST_CLICK_TREE_CURSOR</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Cf. rubrique <a href="Ev_nementssourisli_s_l_objetarbre.htm">Evénements souris liés à l'objet arbre</a>.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:27.189%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">LIST_CLICK_DROP</font></p>
+</td>
+<td style="width:72.811%;" class="hcp3">
+<p class="Body-Text">Interruption provoquée par une opération «&#160;Drop&#160;» effectuée par l’utilisateur à l’intérieur du tableau (Cf. rubrique «&#160;<a href="Drag_and_drop_d__l_ments_de_tableau.htm">Drag and drop d'éléments de tableau</a> &#160;»).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">(1)</font> Le numéro de ligne rendu est un numéro de <font class="hcp1">ligne à l'écran</font> (exemple&#160;: si Harmony.SourisPosY vaut 4, cela signifie que le clic souris a eu lieu sur la quatrième ligne du tableau affichée à l'écran). La fonction <a href="XmeListGetOffset.htm">XmeListGetOffset</a> permet au besoin de connaître l'élément du tableau affiché en première ligne.</p>
+<p class="Body-Text"><font class="hcp1">(2)</font> Le numéro de colonne rendu est le <font class="hcp1">numéro d'ordre</font> de la colonne dans le tableau, <font class="hcp1">l'ordre à considérer étant celui défini dans Xwin</font>. Les numéros de colonne sont calculés à la compilation du masque&#160;: ils n'évoluent pas en exploitation, même si l'utilisateur intervertit des colonnes.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:</font></p>
+<p class="Source"><font class="hcp6">Fini</font> = FALSE</p>
+<p class="Source">DO</p>
+<p class="Source"><font class="hcp6">&#160;&#160;&#160;</font>XmeListConsult (<font class="hcp6">Ident</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Key&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fin&#160;</p>
+<p class="Source"><font class="hcp6">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini</font> = TRUE</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.DataArret = <font class="hcp6">xxx</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;point d'arrêt tableau</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;SWITCH2 Harmony.TabClic &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;test type de clic&#160;:</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE LIST_CLICK_CREATE_CONTROL &#160;&#160;&#160;;colonne d'état "création"</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE LIST_CLICK_ROW_CONTROL &#160;&#160;&#160;&#160;&#160;&#160;;colonne d'état&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE LIST_CLICK_ACTIVE_CELL &#160;&#160;&#160;&#160;&#160;&#160;;cellule active</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autre clic traité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres clics&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (<font class="hcp6">Ident</font>, <font class="hcp6">Ligne</font>, <span style="font-style: italic;">ScrollBar32</span>)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autre événement traité&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement personnel&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres événements&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (<font class="hcp6">Ident</font>, <font class="hcp6">Ligne</font>, <span><font class="hcp6">ScrollBar32</font></span>)</p>
+<p class="Source">&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE <font class="hcp6">Fini</font> = FALSE</p>
+<p class="Source">WEND</p>
+</body>
+</html>

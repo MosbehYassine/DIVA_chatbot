@@ -1,0 +1,32 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>LCWinPrint</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>LCWinPrint &#160;<span style="font-weight: normal;"><a href="Liste_des_fonctions_LC.htm">Famille</a> <a href="Introduction_devLC.htm">Thème</a></span></h1>
+<p class="Body-Text">La fonction LCWinPrint permet d’imprimer un fichier.</p>
+<p class="Body-Text">Elle a un paramètre de plus que la fonction <a href="WinPrint.htm">WinPrint</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Ptr LCWinPrint</font> <font style="font-style: italic;">( fichier , [imprimante] , [avec_message] , [autoriser_simpleprint] )</font></p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Paramètre supplémentaire</p>
+<p class="body-text" style="font-style: italic;">&#160;</p>
+<p class="body-text" style="font-style: italic;">Autoriser_simpleprint</p>
+<p class="decalage05">Ce paramètre est facultatif, sa valeur par défaut est TRUE. Il autorise l'utilisation de la commande Print si la commande PrintTo échoue.</p>
+<p class="decalage05">Lors de l'édition d’un fichier Harmony cherche un programme d’impression (en fonction de l'extension), qui accepte la commande PrintTo. La commande PrintTo envoie directement l’édition vers l'imprimante demandée.</p>
+<p class="decalage05">La plupart des outils de travail ont cette commande, comme word, excel, acrobat reader, wordpad, divaltoviewer etc. Mais quelques rares outils non pas de commande PrintTo mais juste la commande Print qui affiche toujours une boite de dialogue pour sélectionner l’imprimante.</p>
+<p class="decalage05"><span style="font-style: italic;">Autoriser_simple_print</span> = true, indique qu’on autorise aussi l’utilisation de la commande Print, si l’outil ne sait pas faire PrintTo mais seulement Print</p>
+<p class="decalage05"><span style="font-weight: bold;">En résumé</span> : pour les programmes interactifs, il vaut mieux utiliser LCWinprint &#160;(autoriser_simpleprint = TRUE), comme cela l'impression aura toujours lieu. &#160;</p>
+<p class="decalage05">Pour les taches de fond, il faut obligatoirement soit utiliser WinPrint &#160;ou bien LCWinprint &#160;(autoriser_simpleprint = FALSE) pour ne pas risquer bloquer le programme</p>
+<p class="decalage05">&#160;</p>
+<p class="body-text" style="font-style: normal; font-weight: bold;">Voir</p>
+<p class="body-text" style="font-style: normal;"><a href="WinPrint.htm">WinPrint</a></p>
+</body>
+</html>

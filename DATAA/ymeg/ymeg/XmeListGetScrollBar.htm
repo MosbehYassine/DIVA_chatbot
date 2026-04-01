@@ -1,0 +1,62 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListGetScrollBar</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListGetScrollBar &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Lecture des informations de gestion de l'ascenseur vertical d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+XmeListGetScrollBar</font> (<font class="hcp3">Identifiant, Ascenseur</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Ascenseur</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Adresse de la zone de stockage des informations lues (on utilisera l'enregistrement standard <font class="hcp2">ScrollBar32</font> du dictionnaire système DDSYS.dhsd).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La procédure <font class="hcp2">XmeListGetScrollBar</font> délivre les <a href="YMEG2.chm::/Ymeg2/D_clarationd_unascenseurWindows.htm">informations de gestion</a> courantes de l'<a href="Ascenseurverticald_untableau.htm">ascenseur vertical du tableau</a> dont l'identifiant est fourni en paramètre. Les données lues sont rangées dans la zone <font style="font-weight: bold; font-style: italic;">Ascenseur</font>&#160;; cette zone doit respecter la structure de l'enregistrement standard <font class="hcp2">ScrollBar32</font> du dictionnaire système DDSYS.dhsd.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Attention</font>, XmeListGetScrollBar NE peut être appelée QUE si la page de masque contenant le tableau est la page courante (ou une de ses pages panels).</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmeListSetScrollBar.htm">XmeListSetScrollBar</a></p>
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Filtres et zones spéciales</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { font-family:"Courier New"  , monospace; }
+img.hcp3 { border:none; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Filtres et zones spéciales</h1>
+<p>&#160;</p>
+<p class="hcp1">Les filtres</p>
+<p>&#160;</p>
+<p>Il est possible de redéfinir les jours affichés par l'objet Gantt.</p>
+<p>&#160;</p>
+<p>Pour cela, il faut donner le jour de début (par exemple lundi) et combien de jours afficher à partir de ce jour (par exemple 5).</p>
+<p>C'est forcément une suite continue de jours. On ne peut pas afficher par exemple, le lundi mardi jeudi vendredi.</p>
+<p>&#160;</p>
+<p>Par défaut, il n'y a pas de filtre.</p>
+<p>Pour le mettre en place, il faut ajouter l'option GANTT_OPT_TIMELINE_FILTERING avec la valeur GANTT_FILTERING_WEEK_DAYS.</p>
+<p>A partir de là, le filtre va utiliser les valeurs par défaut qui sont Lundi et 5 jours (masquer le weekend).</p>
+<p>&#160;</p>
+<p>Pour changer cela, il suffit de positionner l'option GANTT_OPT_FILTERING_FIRST_DAY à une autre valeur <span style="font-family: Arial, sans-serif;">(GANTT_WEEK_DAYS_*)</span> et l'option GANTT_OPT_FILTERING_DAYS_COUNT au nombre de jours à afficher.</p>
+<p>&#160;</p>
+<p>Pour revenir au filtre par défaut, il faut positionner l'option GANTT_OPT_TIMELINE_FILTERING à la valeur GANTT_FILTERING_DEFAULT.</p>
+<p>&#160;</p>
+<p class="hcp1">Exemple :</p>
+<p>&#160;</p>
+<p class="hcp2">Opt.Option = GANTT_OPT_TIMELINE_FILTERING</p>
+<p class="hcp2">Opt.OptValue = GANTT_FILTERING_WEEK_DAYS</p>
+<p class="hcp2">XmeGanttSetOption(IdGantt, Opt)</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Opt.Option = GANTT_OPT_FILTERING_DAYS_COUNT</p>
+<p class="hcp2">Opt.OptValue = 3</p>
+<p class="hcp2">XmeGanttSetOption(IdGantt, Opt)</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Opt.Option = GANTT_OPT_FILTERING_FIRST_DAY</p>
+<p class="hcp2">Opt.OptValue = GANTT_WEEK_DAYS_TUESDAY</p>
+<p class="hcp2">XmeGanttSetOption(IdGantt, Opt)</p>
+<p>&#160;</p>
+<p>Ce code affiche 3 jours à partir de mardi :</p>
+<p>&#160;</p>
+<p><img src="image7.jpg" alt="" width="889" height="399" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Les zones spéciales</p>
+<p>&#160;</p>
+<p><span style="text-decoration: underline;">Remarque</span> : les zones spéciales ne sont pas disponibles dans le client léger HTML5.</p>
+<p>&#160;</p>
+<p>Les zones spéciales permettent de griser certains jours.</p>
+<p style="text-decoration: underline;">Le fonctionnement est identique aux filtres.</p>
+<p>&#160;</p>
+<p>Seul le nom des options diffère : GANTT_OPT_SPECIAL_SLOTS, GANTT_OPT_SPECIAL_SLOTS_FIRST_DAY, GANTT_OPT_SPECIAL_SLOTS_DAYS_COUNT, GANTT_OPT_SPECIAL_SLOTS_DEFAULT.</p>
+<p>&#160;</p>
+<p class="hcp1">Exemple :</p>
+<p>&#160;</p>
+<p class="hcp2">Opt.Option = GANTT_OPT_SPECIAL_SLOTS</p>
+<p class="hcp2">Opt.OptValue = GANTT_SPECIAL_SLOTS_WEEK_DAYS</p>
+<p class="hcp2">XmeGanttSetOption(IdGantt, Opt)</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Opt.Option = GANTT_OPT_SPECIAL_SLOTS_DAYS_COUNT</p>
+<p class="hcp2">Opt.OptValue = 3</p>
+<p class="hcp2">XmeGanttSetOption(IdGantt, Opt)</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">Opt.Option = GANTT_OPT_SPECIAL_SLOTS_FIRST_DAY</p>
+<p class="hcp2">Opt.OptValue = GANTT_WEEK_DAYS_TUESDAY</p>
+<p class="hcp2">XmeGanttSetOption(IdGantt, Opt)</p>
+<p>&#160;</p>
+<p>Ce code grise 3 jours à partir de mardi :</p>
+<p>&#160;</p>
+<p><img src="image8.jpg" alt="" width="1184" height="387" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Voir l'<a href="Exemple_de_programmation_d_un_objet_Gantt.htm">exemple de programmation complet</a>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,137 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Propriétés du masque spécifiques à l'assistant</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+table.hcp2 { vertical-align:top; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { border:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp5 { font-weight:bold; }
+td.hcp6 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp7 { font-weight:bold;
+color:#ff0000;
+text-decoration:underline; }
+td.hcp8 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp9 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Propriétés du masque spécifiques à l'assistant</h3>
+<p>&#160;</p>
+<p>Pour accéder aux <a href="Masque.htm">propriétés générales du masque</a>, appelez le choix <span class="hcp1">Masque</span> du menu <span class="hcp1">Paramètres</span>. Les propriétés spécifiques à l'assistant sont regroupées dans le cadre <span class="hcp1">Assistant de personnalisation</span> :</p>
+<p>&#160;</p>
+<table cellspacing="0" width="100%" class="hcp2">
+<col style="width: 26.061%;">
+<col style="width: 73.939%;">
+<tr class="hcp3">
+<td style="width:26.061%;" class="hcp4">
+<p class="hcp5">Masque personnalisable&#160;par l'utilisateur</p>
+</td>
+<td style="width:73.939%;" class="hcp6">
+<p><span class="hcp7">ATTENTION</span> : <span class="hcp7">Par défaut, un masque d'impression n'est pas personnalisable</span>.<br>
+<br>
+Pour autoriser la personnalisation, il faut en premier lieu activer cette option.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.061%;" class="hcp8">
+<p class="hcp5">Modèle</p>
+</td>
+<td style="width:73.939%;" class="hcp9">
+<p>Libellé présenté à l'utilisateur et identifiant précisément l'état imprimé (exemple : "Facture&#160;avec traites").<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.061%;" class="hcp8">
+<p class="hcp5">Famille et Sous-famille</p>
+</td>
+<td style="width:73.939%;" class="hcp9">
+<p>Libellés présentés à l'utilisateur et servant de critères de regroupement pour des états de même type (exemple : Famille "Documents de pièces de vente client", Sous-familles&#160;"Devis", "Commandes", "BL", "Factures").<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.061%;" class="hcp8">
+<p class="hcp5">Pages de l'assistant</p>
+</td>
+<td style="width:73.939%;" class="hcp9">
+<p>Bouton ouvrant une boîte de dialogue permettant de définir les "pages" proposées à l'utilisateur dans l'assistant (voir paragraphe <span class="hcp1">Notion de "page"</span> ci-après).<span class="hcp7"><br>
+<br>
+ATTENTION</span> : <span class="hcp7">Il est impératif de définir au moins une page</span>.</p>
+<p>A défaut, l'assistant ne proposera aucune personnalisation à l'utilisateur.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold; font-size: 11pt;">Notion de "page"</p>
+<p>Une "page" visualise tout ou partie du document imprimé dans l’assistant de personnalisation. Elle est composée d'un ou plusieurs <a href="Bloc.htm">blocs</a> (au sens habituel du terme). La liste des blocs qui compose une page est quelconque et il est possible dans Xwin de définir un nombre quelconque de pages.</p>
+<p>Dans l’assistant, la personnalisation s’effectue "page" par "page" : l’utilisateur choisit successivement les "pages" qu’il veut personnaliser dans la liste des "pages" définies dans Xwin.<br>
+<br>
+On prendra soin de définir des pages cohérentes avec la ou les <a href="Constitution_et_impression_d_une_maquette.htm">maquettes</a> générées pour le masque.<br>
+&#160;</p>
+<p><span class="hcp1">Exemples</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Une "page" regroupant bloc d’en-tête, bloc de corps et bloc de pied ou, au contraire, trois pages distinctes affichant chacune l'un de ces trois blocs.</p>
+</li>
+<li class="p">
+<p>Trois "pages" montrant respectivement la page de garde, la page de corps et la page récapitulative de l'état imprimé, chaque page incluant la liste des blocs qui la composent.</p>
+</li>
+</ul>
+&#160;
+<p>La <span class="hcp1">boîte de dialogue "Pages de l'assistant"</span> affiche le tableau récapitulatif des "pages" déjà définies. Pour ajouter une page au tableau, renseignez les paramètres :</p>
+<p>&#160;</p>
+<table cellspacing="0" width="100%" class="hcp2">
+<col style="width: 26.533%;">
+<col style="width: 73.467%;">
+<tr class="hcp3">
+<td style="width:26.533%;" class="hcp4">
+<p class="hcp5">Libellé</p>
+</td>
+<td style="width:73.467%;" class="hcp6">
+<p>Libellé de la "page", proposé à l'utilisateur dans l'assistant pour l'identifier.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.533%;" class="hcp8">
+<p class="hcp5">Liste des blocs</p>
+</td>
+<td style="width:73.467%;" class="hcp9">
+<p>Indiquez ici les numéros des blocs qui composent la "page", séparés par un point-virgule.<br>
+Exemple : 1;2;6<br>
+<span class="hcp1"><br>
+Exception</span> : Les blocs de type Tableau (qui ne sont pas affichés par l'assistant) ne peuvent pas figurer dans cette liste.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+</body>
+</html>

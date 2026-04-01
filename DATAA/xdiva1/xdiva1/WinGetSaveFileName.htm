@@ -1,0 +1,70 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinGetSaveFileName</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinGetSaveFileName &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinGetSaveFileName ouvre la boîte de dialogue de sélection des fichiers de Windows, permettant à l'utilisateur de choisir un fichier à sauvegarder.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Long</font> <font class="hcp2">WinGetSaveFileName</font>( <font class="hcp3">StructureOpenFile</font> , <font class="hcp3">Résultat</font>)</p>
+<p class="Body-Text"><br>
+<font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">StructureOpenFile</font></p>
+<p class="decalage05">Donnée de 700 caractères contenant les informations utilisées pour ouvrir la boîte de dialogue. En retour, cette structure contient des renseignements sur le fichier sélectionné.</p>
+<p class="Body-Text"><font class="hcp3">Résultat</font></p>
+<p class="decalage05">En entrée, cette donnée contient le nom du fichier à proposer. S'il n'y a pas de nom à proposer, <font class="hcp3">Résultat</font> doit être initialisé à espaces</p>
+<p class="decalage05">Cette donnée contient en retour le nom du fichier sélectionné.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text">TRUE</p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Indique que l'utilisateur a sélectionné un fichier.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:27.30%;" class="hcp5">
+<p class="Body-Text">FALSE</p>
+</td>
+<td style="width:72.70%;" class="hcp5">
+<p class="Body-Text">Indique que l'utilisateur n'a pas sélectionné de fichier (sortie par Abandon) ou que la donnée de réception est trop petite pour contenir le résultat.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><font class="hcp2"><br>
+Remarque</font></p>
+<p class="Body-Text">En sortie de la boîte de dialogue, le répertoire courant est restauré à sa valeur d'avant l'appel.</p>
+<p class="Body-Text">&#160;<br>
+<font class="hcp2">Exemple</font></p>
+<p class="Body-Text">Voir l'exemple de la fonction <a href="WinGetOpenFileName.htm">WinGetOpenFileName</a>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="WinGetOpenFileName.htm">WinGetOpenFileName</a>, <a href="WinShFormatDrive.htm">WinShFormatDrive</a>, <a href="WinGetCurrentDirectory.htm">WinGetCurrentDirectory</a>, <a href="WinSetCurrentDirectory.htm">WinSetCurrentDirectory</a>, <a href="WinShGetSpecialFolderLocation.htm">WinShGetSpecialFolderLocation</a>, <a href="WinGetWindowsDirectory.htm">WinGetWindowsDirectory</a>, <a href="WinGetSystemDirectory.htm">WinGetSystemDirectory</a>, <a href="GetHarmonyDirectory.htm">GetHarmonyDirectory</a>, <a href="WinFindExecutable.htm">WinFindExecutable</a></p>
+</body>
+</html>

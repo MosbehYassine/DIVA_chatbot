@@ -1,0 +1,27 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Architecture de Divalto Power Search</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Architecture de Divalto Power Search</h1>
+<p>Le moteur de recherche effectue les recherches dans une base de données spécialement adaptée à la recherche que nous appellerons la <span class="hcp1">base Search</span>. Elle est alimentée à partir des données du système d'informations de l'entreprise, qui comporte les bases de données, mais également les pièces jointes associées. Nous appellerons ces données la <span class="hcp1">base ERP</span>. &#160;La description des documents établit le lien entre les données de la base ERP et celles de la base Search.</p>
+<p><img src="image1.jpg" style="border: none;" alt="" width="353" height="336" border="0"></p>
+<p>La base Search est gérée le <span class="hcp1">service DhsSearchServer.</span>.</p>
+<p>Le client Search dialogue avec le serveur de recherche en <span class="hcp1">mode client/serveur</span>. A chaque processus de recherche client correspond un thread sur le serveur de recherche. Le serveur renvoie le résultat de la recherche vers le client.</p>
+<p>La <span class="hcp1">console d’administration XSearchConsole</span> permet de visualiser l’activité du serveur et d’effectuer des actions (par exemple l’indexation d’un document, l’arrêt du serveur etc.)</p>
+<p>Un même serveur peut héberger <span class="hcp1">plusieurs services Search</span> par exemple si l’on souhaite physiquement séparer les bases pour un serveur en mode ASP ou pour une application sensible comme la paie.</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,173 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeGanttNewTask</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+p.hcp4 { font-style:italic; }
+td.hcp5 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp6 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeGanttNewTask <span style="font-weight: normal;">&#160;</span><span style="font-weight: normal; font-size: 11pt;"><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_objets_Gantt.htm">Famille</a> <a href="Objet_Gantt.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p style="font-weight: bold;">Ajout d'une tâche à la liste des tâches d'un Gantt</p>
+<p>&#160;</p>
+<p><span class="hcp1">Long XmeGanttNewTask</span> (<span class="hcp2">Identifiant</span>, <span class="hcp2">Titre</span>, <span class="hcp2">Date_début, Date_fin, [Etape_importante], [Date_limite], [Avancement], [Couleur], [Couleur_texte], [Info-bulle],</span>[<span class="hcp2">Code_page</span>])</p>
+<p>&#160;</p>
+<p><span class="hcp1">Paramètres</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 12.445%;">
+<col style="width: 87.555%;">
+<tr class="hcp3">
+<td style="border: Solid 1px #000000;width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp4">Identifiant</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Enregistrement identifiant le Gantt rendu par la fonction XmeGanttGetId.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Titre</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>Titre du rendez-vous (64 caractères maximum).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Date_début</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>Date et heure de début (nature DH).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Date_fin</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>Date et heure de fin (nature DH).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Etape_importante</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>La valeur TRUE indique que la tâche est une étape importante (milestone).<br>
+Paramètre facultatif (FALSE par défaut).<br>
+Dans ce cas, la tâche sera affiché non comme une tâche classique mais sous forme de losange à la date indiquée.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Date_limite</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>Date et heure limite d'accomplissement (nature DH)<br>
+Paramètre facultatif.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Avancement</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>Pourcentage d'avancement de la tâche<br>
+Paramètre facultatif.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Couleur</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>Nom d'une couleur dans la feuille de styles.<br>
+Paramètre facultatif (32 caractères maximum).<br>
+A défaut, la tâche prendra la couleur du thème choisi par l'utilisateur.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Couleur_texte</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>Couleur de la police du texte des libellés des tâches (nom d’une couleur de la feuille de styles).</p>
+<p>Paramètre facultatif (32 caractères maximum).<br>
+Permet de changer cette couleur, en particulier lorsque la couleur standard contraste peu avec celle du titre.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Info-bulle</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>Contenu de l'info-bulle personnalisée à afficher.</p>
+<p>Paramètre facultatif.</p>
+<p>A défaut, une info-bulle standard sera affichée, reprenant le titre, les dates de début et fin, et si précisé, l'avancement.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:12.445%;" class="hcp5">
+<p class="hcp4">Code_page</p>
+</td>
+<td style="width:87.555%;" class="hcp6">
+<p>Code page des textes (jeu de caractères à utiliser pour afficher les textes en langue étrangère).<br>
+Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp1">Valeur rendue par la fonction</span> :</p>
+<p>-1 : ticket invalide.</p>
+<p>Autre : Adresse de la nouvelle tâche dans la liste des tâches.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Description de la fonction</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>La fonction XmeGanttNewTask ajoute une tâche à la liste des <a href="T&acirc;che_d_un_Gantt.htm">tâches d'un Gantt</a>.</p>
+</li>
+<li class="p">
+<p>Pour associer un (ou plusieurs) enfant(s) à une tâche, faites appel à la fonction <a href="XmeGanttAddChild.htm">XmeGanttAddChild</a>.</p>
+</li>
+<li class="p">
+<p>Pour associer une (ou plusieurs) dépendance(s) à une tâche, faites appel à la fonction <a href="XmeGanttAddDependencies.htm">XmeGanttAddDependencie</a>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque</span> :</p>
+<p>Pour optimiser les transferts d'informations avec l'objet Gantt, la liste n'est pas immédiatement mise à jour (elle le sera au prochain affichage des données du Gantt).</p>
+<p>&#160;</p>
+<p><span class="hcp1">Exemples</span> :<br>
+&#160;</p>
+<p class="Source">1 &#160;DateDebut &#160;DH</p>
+<p class="Source">1 &#160;DateFin &#160;&#160;&#160;DH</p>
+<p class="Source">&#160;</p>
+<p class="Source">DateDebut = "20160408090000"<br>
+DateFin &#160;&#160;= "20160409100000"<br>
+XmeGanttNewTask (<span class="hcp2">IdGantt</span>,"Tâche 1",DateDebut,DateFin)<br>
+&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

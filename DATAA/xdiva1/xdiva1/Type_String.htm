@@ -1,0 +1,51 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Définition du type String</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Définition du type String</h3>
+<p class="Body-Text">Une variable de type String est une variable alpha-numérique de taille variable.</p>
+<p class="Body-Text">Les variables de type String sont très pratiques lorsqu’il faut traiter des données dont on ignore la taille. Par exemple, la fonction HmpRead peut renvoyer un seul caractère une chaîne de plusieurs milliers de caractères. Une variable de type String sera toujours assez grande (dans les limites de la mémoire de la machine tout de même) pour contenir le résultat.</p>
+<p class="Body-Text">Les variables de type String se manipulent exactement comme les variables de type alpha-numérique habituelles. Vous trouverez ci-dessous quelques précisions concernant des fonctions particulières.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Déclaration</font></p>
+<p class="Body-Text">Une donnée de type String se déclare selon la syntaxe habituelle des déclarations Diva. La longueur est remplacée par la lettre S.</p>
+<p class="Body-Text">Les données de type String doivent obligatoirement être définies au niveau 1. Elles ne peuvent être redéfinies par des sous-niveaux.</p>
+<p class="Body-Text">Exemple&#160;:</p>
+<p class="source">&#160;1 monstring S</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Utilisation</font></p>
+<p class="Body-Text">Le compilateur rend transparente l’utilisation des String. Les variables de type String s’utilisent donc comme des variables de type alpha-numérique.</p>
+<p class="Body-Text">Lorsqu’une variable de type String est déclarée, le compilateur alloue une structure contenant un pointeur vers la chaîne de caractères et sa longueur. Lorsque la donnée de type String est utilisée le compilateur rajoute un appel à la fonction <a href="StringContent.htm">StringContent</a> qui fait alors pointer vers la chaîne de caractères.</p>
+<p class="Body-Text">Tant qu’une donnée de type String n’a pas été initialisée, sa longueur est nulle. La fonction <a href="StringNew.htm">StringNew</a> permet d’allouer un chaîne à espaces.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Il n’est pas possible de déclarer une donnée de type String dans le dictionnaire des données, l’allocation de la mémoire étant dynamique.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Attention à l'utilisation des fonctions left, mid etc. avec des données de type String.<br>
+If left(monstring,5) = "12345" &#160;est potentiellement dangereux, car si la donnée contient moins de 5 caractères, le programme va être interrompu.<br>
+Il faut écrire : if size(monstring) &gt;= 5 and left(monstring,5) = "12345"</p>
+</li>
+</ul>
+<p class="List" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="String_et_fonctions_du_langage_Diva.htm">String et fonctions du langage Diva</a> , <a href="StringContent.htm">StringContent</a> , <a href="StringNew.htm">StringNew</a> , <a href="Type_String_et_passage_de_param_tres.htm">Type String et passage de paramètres</a></p>
+</body>
+</html>

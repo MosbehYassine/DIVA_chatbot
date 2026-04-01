@@ -1,0 +1,204 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Gestion des environnements</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+table.hcp2 { vertical-align:top; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { border:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp5 { font-weight:bold; }
+td.hcp6 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp7 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp8 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Gestion des environnements</h3>
+<p>&#160;</p>
+<p>L’utilitaire xConfigEnv.dhop permet de gérer les <a href="Installation_multi-environnement.htm">environnements Harmony</a> d’un serveur d'applications.</p>
+<p>Pour y faire appel, sélectionnez le choix "<span class="hcp1">Gestion des Environnements</span>" du menu "<span class="hcp1">Paramétrage</span>" du menu Harmony.</p>
+<p>Vous pouvez créer, modifier ou supprimer des environnements, à la manière habituelle avec un objet "Tableau".</p>
+<p>&#160;</p>
+<p>Un environnement Harmony comporte les paramètres suivants :<br>
+&#160;</p>
+<table cellspacing="0" width="100%" class="hcp2">
+<col style="width: 26.246%;">
+<col style="width: 73.754%;">
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp4">
+<p class="hcp5">Nom</p>
+</td>
+<td style="width:73.754%;" class="hcp6">
+<p>Nom donné à l'environnement Harmony.<span class="hcp1"><br>
+Exemples</span> :<br>
+Serveur1<br>
+Serveur2<br>
+<br>
+Vous pouvez définir un <span class="hcp1">environnement local</span> en créant un environnement de nom quelconque avec <span class="hcp1">tous ses paramètres à espace</span>. Cet environnement est, en particulier, identique au cas "ServeurXlogf absent".</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Courant</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p>Si vous cochez cette case, cet environnement sera chargé par défaut.<br>
+Si cette case n'est cochée pour aucun environnement, l'environnement chargé par défaut sera le premier rencontré dans la liste.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Chemin xlogf (*)</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p>Chemin d'accès au serveur Xlogf (même format que la clé de registre ServeurXlogf).<span class="hcp1"><br>
+Exemples</span> :<br>
+//serveur_un/divalto/sys<br>
+//serveur_deux/divalto/sys</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Chemin des langues (*)</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p>Chemin d'accès au fichier paramètres des langues (même format que la clé de registre CheminLangues).<span class="hcp1"><br>
+Exemples</span> :<br>
+//serveur_un/divalto/sys<br>
+//serveur_deux/divalto/langues</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Chemin des aides Web (*)</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p>Chemin d'accès au serveur d'aides V7 (même format que la clé de registre CheminAidesWeb).<span class="hcp1"><br>
+Exemples</span> :<br>
+file://serveur_un/divaltowebaide<br>
+http://serveur_aides/Client1_webaide</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Chemin des aides (*)</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p>Chemin d'accès au serveur d'aides V6 (même format que la clé de registre CheminAides).<span class="hcp1"><br>
+Exemples</span> :<br>
+//serveur_un/divalto/sys<br>
+//serveur_deux/divalto/Client1_aides</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Chemin xlogf au format Windows</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p class="Body-Text" style="font-weight: normal;">Chemin d'accès au fichier des utilisateurs au format Windows.<br>
+<span style="font-weight: normal;">Paramètre cloud.</span></p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Serveur search<br>
+Port du serveur search</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p class="Body-Text" style="font-weight: normal;">Nom donné au serveur "Search" dans la table des serveurs.<br>
+xSearch et les applications Diva dialoguent avec le service Divalto Power Search par les sockets TCP/IP. Il est possible de paramétrer le port de dialogue dans l’environnement (paramètre cloud).</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Serveur de licences<br>
+Port du serveur de licences</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p class="Body-Text" style="font-weight: normal;">Nom du serveur de licences pour le site.<br>
+Port TCP/IP pour accéder au serveur de licences.<br>
+Paramètres cloud.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Serveur du répertoire ServeurLog</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p class="Body-Text" style="font-weight: normal;">Chemin de stockage des fichiers log.<br>
+Paramètre cloud.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">Nom du serveur Xlan</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p class="Body-Text" style="font-weight: normal;">Nom attribué au serveur Xlan.<br>
+Paramètre cloud.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.246%;" class="hcp7">
+<p class="hcp5">DhServicesHost</p>
+<p class="hcp5">Port DhServices</p>
+</td>
+<td style="width:73.754%;" class="hcp8">
+<p class="Body-Text" style="font-weight: normal;">Nom et port du serveur sur lequel se trouve le serveur de données.<br>
+Paramètres cloud.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp1">(*) &#160;Le mot réservé "null" permet d'effacer un chemin</span>.</p>
+<p>&#160;</p>
+&#160;
+<p>De plus, l'utilitaire propose les <span class="hcp1">deux commandes</span> supplémentaires suivantes :<br>
+&#160;</p>
+<table cellspacing="0" width="100%" class="hcp2">
+<col style="width: 26.478%;">
+<col style="width: 73.522%;">
+<tr class="hcp3">
+<td style="width:26.478%;" class="hcp4">
+<p class="hcp5">Propager</p>
+</td>
+<td style="width:73.522%;" class="hcp6">
+<p>Chaque utilisateur dispose de sa propre section Divalto.ini dans la base de registre. Les modifications faites ici s'appliquent par défaut uniquement à l'utilisateur courant.<br>
+Ce bouton permet de répercuter localement (sur le serveur d'applications courant) les modifications vers les autres utilisateurs.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:26.478%;" class="hcp7">
+<p class="hcp5">Exporter dans un fichier</p>
+</td>
+<td style="width:73.522%;" class="hcp8">
+<p>Permet d'exporter la liste d'environnements dans un fichier .reg.<br>
+Si vous exécutez ensuite ce fichier sur un poste client léger, vous copierez les environnements exportés dans la base de registre de l'utilisateur de ce poste. Ceci constitue une méthode alternative de diffusion des environnements sur les postes clients légers : voir la rubrique <a href="Installation_multi-environnement.htm">Installation multi-environnement</a>.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+</body>
+</html>

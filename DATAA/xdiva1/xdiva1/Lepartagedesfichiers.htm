@@ -1,0 +1,44 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Le partage des fichiers</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Le partage des fichiers</h3>
+<p class="Body-Text">Lors de l'ouverture d'un fichier, trois modes de partage sont possibles :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">le mode réservé (R)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">le mode partagé (P)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">le mode lecture-seulement (READ_ONLY) et partagé (F).</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">Le mode réservé</font> est exclusif, c'est à dire qu'aucun programme ne peut ouvrir un fichier déjà ouvert en mode réservé. Si le fichier est déjà ouvert par un autre programme, l'ouverture en mode réservé est refusée.</p>
+<p class="Body-Text"><font class="hcp1">Le mode partagé</font> permet à plusieurs programmes d'ouvrir simultanément le même fichier. Pour assurer l'intégrité du fichier, le programme doit alors veiller si nécessaire à bien gérer le partage des enregistrements.</p>
+<p class="Body-Text"><font class="hcp1">Le mode lecture-seulement</font> permet d'ouvrir un fichier en mode partagé pour lequel l'utilisateur a les droits de lecture mais pas les droits d'écriture. En mode P ou R les fichiers sont toujours ouverts en lecture-écriture (O_RDWR).</p>
+<p class="Body-Text">Ce mode peut être utilisé pour accéder à un fichier d'un CDROM.</p>
+<p class="Body-Text">La libération du fichier est automatique, soit à la fermeture du fichier, soit lors de l'enchaînement à un autre programme.</p>
+<p class="Body-Text">Voir les instructions de déclaration de fichier <a href="HFile.htm">HFile</a> et <a href="HTmpFile.htm">HTmpFile</a> qui permettent d'ouvrir les fichiers automatiquement en précisant le mode de partage.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple :</font></p>
+<p class="Body-Text"><font style="font-family: 'Courier New';" face="Courier New">status = fopen(tdf,"P")</font><br>
+ouvre le fichier en mode partagé.</p>
+</body>
+</html>

@@ -1,0 +1,124 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>RecordSql.AddCondition</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-style:italic; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-weight:bold; }
+font.hcp4 { font-style:italic; }
+ul.hcp5 { list-style:disc; }
+td.hcp6 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp7 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>RecordSql.AddCondition &#160;&#160;<span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>Les méthodes AddCondition et <a href="RemoveCondition.htm">RemoveCondition</a> s’appliquent aux méthodes Where ou Having &#160;du RecordSQL ( Record.where.AddCondition, Record.Having.RemoveCondition).</p>
+<p>A partir des critères élémentaires (les <span class="hcp1">cases</span> des balises &lt;where&gt; ou &lt;having&gt;), il est possible grâce à la méthode AddCondition d’effectuer un filtrage par une combinaison logique de ses critères élémentaires.</p>
+<p>On peut décliner trois modes de fonctionnement :</p>
+<p>• Le filtrage par tamis successifs, en ajoutant des critères élémentaires liés par un ET logique.</p>
+<p>• Le filtrage par formule, où le développeur indique la combinaison logique des critères par une formule booléenne.</p>
+<p>• La combinaison des deux modes précédents.</p>
+<p>Si les conditions élémentaires comportent des paramètres, il faut d’abord invoquer la méthode Where ou Having de chaque condition élémentaire.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Long</span> RecordSql.<span class="hcp2">Where</span>.<span class="hcp2">AddCondition</span> ( <span class="hcp1">NomCondition</span>, [<span class="hcp1">Formule</span>] )</p>
+<p><span class="hcp2">Long</span> RecordSql.<span class="hcp2">Having</span>.<span class="hcp2">AddCondition</span> ( <span class="hcp1">NomCondition</span>, [<span class="hcp1">Formule</span>] )</p>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp3">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp4">NomCondition</font></p>
+<p class="Decalage05"><font class="hcp4">NomCondiion <span style="font-style: normal;">correspond :</span></font></p>
+<ul class="hcp5">
+<li class="p-Decalage05">
+<p class="Decalage05">soit au nom du critère de sélection des balises <a href="Where.htm">&lt;where&gt;</a> ou <a href="Having.htm">&lt;having&gt;</a>, qui devient alors l’identifiant de la condition.</p>
+</li>
+<li class="p-Decalage05">
+<p class="Decalage05">soit à un nom identifiant la formule (si le paramètre <span class="hcp1">Formule</span> est présent).</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-style: italic;">Formule</p>
+<p class="Decalage05">Contient une expression booléenne liant les critères élémentaires. Dans l’expression, les critères sont référencés par leur nom.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr style="vertical-align: top;">
+<td style="width:14.09%;" class="hcp6">
+<p class="Body-Text" style="margin-top: 2.00pt;">1 &#160;</p>
+</td>
+<td style="width:85.91%;" class="hcp6">
+<p class="Body-Text" style="margin-top: 2.00pt;">Pas d'erreur.</p>
+</td>
+</tr>
+</table>
+<p>&#160;Toutes les erreurs provoquent l'arrêt du programme</p>
+<p>&#160;</p>
+<p class="hcp7">Remarques</p>
+<ul class="hcp5">
+<li class="p">
+<p>Pour la balise &lt;where&gt; le critère commun s’applique toujours dans tous les cas.</p>
+</li>
+<li class="p">
+<p>Il est possible d'appeler plusieurs fois la même condition Where (voir exemple ci-dessous)</p>
+</li>
+</ul>
+<p class="hcp7">Exemple de tamis successifs</p>
+<p>Les clients valides dont le code finit par un 1 :</p>
+<p class="Source">Client.Where.Zoom_Like_Tiers('%1')</p>
+<p class="Source">Client.Where.Zoom_ClientValide(Today)</p>
+<p class="Source">Client.Where.AddCondition("Zoom_Like_Tiers")</p>
+<p class="Source">Client.Where.AddCondition("Zoom_ClientValide")</p>
+<p>&#160;</p>
+<p class="hcp7">Exemples avec une formule</p>
+<p>Les clients britanniques ou bas-rhinois.</p>
+<p class="Source">Client.Where.Zoom_Like_CPostal('67%')</p>
+<p class="Source">Client.Where.Zoom_Like_Pays('GB')</p>
+<p class="Source">Client.Where.AddCondition("Bas-Rhin ou GB","Zoom_Like_CPostal or Zoom_Like_Pays")</p>
+<p>&#160;</p>
+<p>Les clients alsaciens.</p>
+<p class="Source">Client.Where.Zoom_Like_CPostal('67%')</p>
+<p class="Source">Client.Where.Zoom_Like_CPostal('68%')</p>
+<p class="Source">Client.Where.AddCondition("Alsace","Zoom_Like_CPostal or Zoom_Like_CPostal")</p>
+<p class="source">&#160;</p>
+<p class="source">Ceci génère : champ like '68%' or champ like '67%' (les paramètres sont pris à l’envers)</p>
+<p>&#160;</p>
+<p class="hcp7">Remarques sur le ZoomSQL</p>
+<p>Le Zoom est un exemple typique d’utilisation de ces méthodes. En effet, un zoom comporte généralement 4 niveaux de filtrage :</p>
+<ol style="list-style: decimal;">
+<li class="p">
+<p>Un filtrage sur le dossier. Il s’agit du critère commun de la balise &lt;where&gt; du RecordSQL.</p>
+</li>
+<li class="p">
+<p>Un filtrage sur un critère passé en paramètre lors de l’appel du zoom, qui peut correspondre à des paramètres liés à l’utilisateur, par exemple un filtrage sur l’établissement. Il est traité par un AddCondition dans la procédure ZoomDebut.</p>
+</li>
+<li class="p">
+<p>Un filtrage par les critères de sélection choisis par l’utilisateur dans le « groupe de sélection » placé au-dessus du mode liste.<br>
+Ces critères sont traités dans la procédure ZoomApresCle par AddCondition.</p>
+</li>
+<li class="p">
+<p>Un filtrage par l’utilisateur dans la fenêtre des filtres personnalisés ou liés au contexte. Par exemple, uniquement les clients de mon secteur.</p>
+</li>
+</ol>
+<p>Ces critères sont mis en œuvre par le moteur du Zoom avec AddCondition.</p>
+<p>En conclusion, les 4 niveaux de filtrage s’appliquent pour donner la requête finale. La mise en œuvre de chaque niveau est indépendante et n’interfère pas avec les autres niveaux.</p>
+<p>&#160;</p>
+<p class="hcp7">Voir</p>
+<p><a href="Where.htm">&lt;Where&gt;</a></p>
+<p><a href="Having.htm">&lt;Having&gt;</a></p>
+<p><a href="RemoveCondition.htm">RecordSql.RemoveCondition</a></p>
+<p><a href="RecordSql.Where.AddToCondition.htm">AddToCondition</a></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

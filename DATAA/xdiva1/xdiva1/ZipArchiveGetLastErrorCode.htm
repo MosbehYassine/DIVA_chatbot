@@ -1,0 +1,44 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZipArchiveGetLastErrorCode</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>ZipArchiveGetLastErrorCode <a href="Liste_des_fonctions_de_gestion_des_archives.htm">Famille</a> <a href="Introduction_archive.htm">Thème</a></h1>
+<p>&#160;</p>
+<p class="Body-Text">La fonction ZipArchiveGetLastErrorCode() permet de récupérer un code d'erreur détaillé de la dernière fonction en échec du module de gestion des archives.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">Int ZipArchiveGetLastErrorCode</span>()</p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<p class="Body-Text" style="font-weight: normal;">Le code d'erreur détaillé de la dernière fonction en échec du module de gestion des archives. Il peut avoir une des valeurs suivantes :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">0 Pas d'erreur</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">1 Erreur de lecture ou d'écriture</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">2 Fichier non existant ou impossible d'ouvrir le fichier</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">256 Erreur interne au module de gestion des archives ou usage inattendu.</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarques</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0; font-weight: normal;">Cette fonction doit être appelée immédiatement après celle qui a renvoyé un code d'erreur.</p>
+<p class="Body-Text">Attention, après l'appel de cette fonction, le code d'erreur détaillé, que renverrait un deuxième appel à cette fonction, serait 0.</p>
+<p class="Body-Text">&#160;&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text" style="font-weight: bold;"><a href="ZipArchiveGetLastErrorMessage.htm">ZipArchiveGetLastErrorMessage</a></p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+</body>
+</html>

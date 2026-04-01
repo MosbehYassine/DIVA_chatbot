@@ -1,0 +1,58 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ZipArchiveCreateFromDirectory</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+span.hcp4 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>ZipArchiveCreateFromDirectory <a href="Liste_des_fonctions_de_gestion_des_archives.htm">Famille</a> <a href="Introduction_archive.htm">Thème</a></h1>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Création d'une archive au format zip et ajout d'un répertoire</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Bool</font> <span class="hcp2">ZipArchiveCreateFromDirectory</span>( ZipArchivePath, DirectoryToAdd[, <span class="hcp3">ZipPath</span>], [ZipPassword] )</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">ZipArchivePath</p>
+<p class="decalage05">Chemin vers le fichier zip à créer</p>
+<p class="Body-Text" style="font-style: italic;">DirectoryToAdd</p>
+<p class="decalage05">Chemin vers le répertoire dont le contenu sera ajouté à l'archive</p>
+<p class="Body-Text" style="font-style: italic;">ZipPath</p>
+<p class="decalage05">Chemin dans l'archive zip où le répertoire doit être ajouté. Ce paramètre est facultatif. S'il n'est pas spécifié, alors sa valeur sera la chaîne vide et le contenu de <span class="hcp3">DirectoryToAdd</span> sera ajouter à la racine de l'archive.</p>
+<p class="Body-Text" style="font-style: italic;">ZipPassword</p>
+<p class="decalage05">Mot de passe pour les fichiers chiffrés dans l'archive zip</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<p class="Body-Text" style="font-weight: normal;">La fonction renvoie 1 en cas de succès, 0 sinon. Pour avoir plus d'informations sur l'erreur en cas d'échec, utiliser la fonction <a href="ZipArchiveGetLastErrorCode.htm">ZipArchiveGetLastErrorCode</a>()</p>
+<p class="Body-Text" style="font-weight: normal;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques</font></p>
+<p class="Body-Text">Si le fichier n'existe pas, il est crée. S'il existe, son contenu est écrasé.</p>
+<p class="Body-Text">Le nom peut contenir le chemin complet vers le fichier, le chemin relatif ou juste le nom du fichier.</p>
+&#160;
+<p class="Body-Text" style="font-weight: bold;">Exemples</p>
+<p class="Code-Base">; Création de l'archive testZstd.zip et ajout du contenu du répertoire zstd_x64-windows dans l'archive</p>
+<p class="Code-Base">&#160;<span class="hcp2">r</span>etVal = ZipArchiveCreateFromDirectory("C:/zipArchive/testZstd.zip", "C:/zipArchive/zstd_x64-windows")</p>
+<p class="Code-Base">&#160;&#160;if retVal = 0</p>
+<p class="Code-Base"><span class="hcp4">&#160;&#160;&#160;&#160;errorCode = ZipArchiveGetLastErrorCode()</span></p>
+<p class="Code-Base"><span class="hcp4">&#160;&#160;&#160;&#160;</span>errorMessage = ZipArchiveGetLastErrorMessage()</p>
+<p class="Code-Base"><span class="hcp4">&#160;&#160;&#160;&#160;</span>;à faire: traiter l'erreur</p>
+<p class="Code-Base">&#160;&#160;endif</p>
+<p class="Body-Text">&#160;</p>
+<p class="Code-Base">; Création de l'archive testZstd2.zip et ajout du répertoire zstd_x64-windows et de son contenu dans l'archive</p>
+<p class="Code-Base">&#160;<span class="hcp2">r</span>etVal = ZipArchiveCreateFromDirectory("C:/zipArchive/testZstd2.zip", "C:/zipArchive/zstd_x64-windows", "zstd_x64-windows")</p>
+<p class="Code-Base">...&#160;</p>
+<p class="code-base">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Impression du nombre total de pages</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+p.hcp3 { font-size:11pt;
+font-weight:bold; }
+span.hcp4 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Impression du nombre total de pages</h1>
+<p>A partir de la version 6.2.</p>
+<p>&#160;</p>
+<p><span class="hcp1">But recherché</span> : Faire figurer le nombre total de pages sur chaque page d'un document (par exemple sous la forme "Page n/N").</p>
+<p>&#160;</p>
+<p>Rappelons tout d'abord quelques définitions et notions générales :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Un état correspond à l’ensemble des lignes imprimées entre les fonctions Diva <span class="hcp1">PrintBegin</span> et <span class="hcp1">PrintEnd</span>.<br>
+Toutes ces lignes sont stockées dans un même fichier d’aperçu avant impression et/ou dans un même état du spouleur de Windows.</p>
+</li>
+<li class="p">
+<p>Les fonctions PrintBegin et PrintEnd sont facultatives.<br>
+En cas d'absence, PrintBegin est automatiquement appelée à la première impression du programme, et PrintEnd à la fin de l’exécution du programme. Le programme n'imprime alors qu'un unique état.</p>
+</li>
+<li class="p">
+<p>Un document correspond à l’ensemble des lignes imprimées entre deux appels à la fonction <a href="XmiNewDocument.htm">XmiNewDocument</a> (ou entre une fonction XmiNewDocument et une fin d’état). Un même état peut contenir un ou plusieurs documents.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Le nombre total de pages du document n'est connu qu'à la fin de son édition. Harmony ne peut donc pas émettre le document vers l'imprimante au fur et à mesure des commandes d'impression faites par le programme. Il doit attendre la fin de l'édition puis il doit mettre à jour les informations de pagination et après seulement imprimer le document. Pour cela, Harmony va forcer le mode "Aperçu avant impression" et ce, même si l'utilisateur ne l'a pas explicitement demandé (dans ce cas, le passage en mode aperçu se fera de manière transparente pour l'utilisateur).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Comment faire figurer le nombre total de pages sur chaque page d'un document</p>
+<p>Pour faire figurer le nombre total de pages sur chaque page imprimée, il faut d'abord adapter le dessin du masque dans Xwin, de la manière suivante :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Dans le(s) bloc(s) où vous voulez faire figurer les informations de pagination, insérez une donnée de type <span class="hcp1">Texte</span>.</p>
+</li>
+<li class="p">
+<p>Placez la balise conventionnelle suivante à l'intérieur du libellé de ce texte :<span class="hcp1"><br>
+<br>
+$1/nbpages$</span><br>
+<br>
+Cette balise demande au moteur d’impression d’Harmony de n’envoyer les pages vers l’imprimante qu’après avoir comptabilisé le nombre de pages du document et remplacé les balises $1/nbpages$ par le nombre de page n / le nombre total de pages N.<span class="hcp1"><br>
+<br>
+Exemple</span> :<br>
+En haut à droite du bloc 1, insérez un objet Texte et saisissez pour ce texte le libellé "Page $1/nbpages$".<br>
+Sur chaque bloc 1 imprimé, figurera en haut à droite le texte :<br>
+Page <span class="hcp4">n</span>/<span class="hcp4">N &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</span>(<span class="hcp4">n</span> étant le numéro de la page courante et <span class="hcp4">N</span> le nombre total de pages du document).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp3">Comment forcer le passage en mode Aperçu avant impression</p>
+<p>La nouvelle propriété "<span class="hcp1">Pages X/N</span>" a été ajoutée dans les paramètres généraux des masques d'impression. Positionné à "Oui", cet indicateur force le passage en mode aperçu avant impression (le cas échéant de manière cachée pour l'utilisateur).<br>
+<br>
+On distingue alors les cas suivants :</p>
+<ul class="hcp2">
+<li class="p">
+<p><span class="hcp1">L'utilisateur a demandé l'aperçu avant impression</span>.<br>
+Dans ce cas, Harmony imprimera <span class="hcp1">toujours</span> n/N.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">L'utilisateur n'a pas demandé l'aperçu avant impression</span> :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp2">
+<li class="p">
+<p>Si le flag "<span class="hcp1">Pages X/N</span>" est positionné à <span class="hcp1">Oui</span>, le mode aperçu sera forcé et Harmony imprimera <span class="hcp4">n</span>/<span class="hcp4">N</span>.</p>
+</li>
+<li class="p">
+<p>Si le flag est positionné à <span class="hcp1">Non</span>, le mode aperçu ne sera pas mis en route et Harmony imprimera seulement le numéro de page <span class="hcp4">n</span> (/<span class="hcp4">N</span> n’apparaîtra pas).<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><span class="hcp1">Remarque</span> :</p>
+<p>L'impression du nombre total de pages est impossible dans un masque "Caractères" <span class="hcp1">imprimé en mode caractères pur</span> (sans fichier FihWgra) puisque, dans ce cas, l'aperçu avant impression ne fonctionne pas.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmiNewDocument.htm">XmiNewDocument</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

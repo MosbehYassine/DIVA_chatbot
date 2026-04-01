@@ -1,0 +1,68 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Les Tableaux</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-family:Courier New; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Les Tableaux</h3>
+<p class="Body-Text">Diva permet la déclaration et le traitement de tableaux de 1 à 4 dimensions.</p>
+<p class="Body-Text">&#160;<font class="hcp1"><br>
+Déclaration :</font></p>
+<p class="Body-Text">Syntaxe : <font style="font-style: italic;">taille_élément*nb_élts_dim_1 * nb_élts_dim_2 ...</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemples:</font></p>
+<p class="Body-Text"><font face="Courier New" class="hcp2">1 Tab 10*20*5</font><br>
+Tableau à 2 dimensions de variables alpha-numériques de taille 10.</p>
+&#160;
+<p class="Body-Text"><font face="Courier New" class="hcp2">1 Tab 10,2*10</font><br>
+Tableau d'entiers à une dimension</p>
+&#160;
+<p class="Body-Text"><font face="Courier New" class="hcp2">1 Tab X*10</font><br>
+Tableau de type X à une dimension.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Remarque :</font></p>
+<p class="Body-Text">Toutes les données de niveau supérieur à un tableau sont également indicées. Ceci permet de définir des tableaux de variables structurées.</p>
+<p class="Source">1 Tab 10*100<br>
+2 Var 5<br>
+2 Tab1 1*5</p>
+<p class="Body-Text">La variable Var est un tableau à une dimension et Tab1 est un tableau à 2 dimensions.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Utilisation des tableaux</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 0px;">en utilisation normale, le nom du tableau doit être suivi des indices écrits entre parenthèses et séparés par des virgules. Ex : Tab(1,i)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 0px;">il est possible d’utiliser la totalité du tableau comme une variable alpha-numérique dont la longueur est celle de tout le tableau. Le nom du tableau doit être suivi de (*).<br>
+Ex&#160;: Tab(*) met tout le tableau a espace.<br>
+Remarque&#160;: l’utilisation d’un tableau sans parenthèses est équivalent à (*). Cette écriture génère un warning à la compilation.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 0px;">il est également possible de mettre uniquement le couple parenthèse ouvrante, parenthèse fermante. Cette syntaxe est utilisée pour passer un tableau comme argument d'une fonction ou d'une procédure.<br>
+<br>
+Exemple :<font face="Courier New" class="hcp2"><br>
+I = Somtab(Tab())<br>
+Init Tab() = 'Bonjour'</font> remplit toutes les cases du tableau avec<br>
+la constante Bonjour.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">Remarques</font></p>
+<p class="Body-Text">La fonction <a href="Index.htm">Index</a> permet de connaître le nombre d'éléments d'une dimension d'un tableau. Elle permet de passer un tableau comme paramètre de fonction sans avoir a passer le nombre d'éléments.</p>
+<p class="Body-Text">La fonction <a href="Search.htm">Search</a> permet de rechercher un élément dans un tableau.</p>
+<p class="Body-Text">La fonction <a href="Sort.htm">Sort</a> permet de trier un tableau.</p>
+</body>
+</html>

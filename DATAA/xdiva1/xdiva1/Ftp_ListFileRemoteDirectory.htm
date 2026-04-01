@@ -1,0 +1,133 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Ftp_ListFileRemoteDirectory</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+table.hcp3 { vertical-align:top; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Ftp_ListFileRemoteDirectory <a href="Liste_des_fonctions_Ftp___Sftp.htm">Famille</a> 
+ <a href="Fonctions_Ftp___Sftp.htm">Thème</a></h1>
+<p>&#160;</p>
+<p>Fonction qui permet de lister les fichiers d'un FTP selon un pattern.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Module</span> &quot;yftp.dhop&quot;</p>
+<p><span class="hcp1">int Ftp_ListFileRemoteDirectory </span><span class="hcp2">(server, login, password, [RemoteDirectory], 
+ PatternRemoteFile, [OpenHarmony], [proxyServer], [ProxyMode], [proxyLogin], 
+ [proxyPassword], &amp;pListe, [keepAlive])</span></p>
+<p class="Body-Text" style="font-weight: bold;">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Paramètres</p>
+<p class="Body-Text" style="font-style: italic;">Server</p>
+<p class="decalage05">Adresse du serveur sous la forme</p>
+<p class="decalage05">ftp://ip[:port] &#160;pour un serveur ftp</p>
+<p class="decalage05">sftp://ip[:port] &#160;pour un serveur sftp</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Login</p>
+<p class="decalage05">Identifiant sur le serveur. Si non précisé, c'est 
+ &quot;anonymous&quot; qui est utilisé. Dans ce cas, le serveur doit accepter 
+ les connexions anonymes.</p>
+&#160;&#160;&#160;
+<p class="Body-Text" style="font-style: italic;"><span class="hcp2">Password</span></p>
+<p class="decalage05">Mot de passe sur le serveur.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">LocalDirectory</p>
+<p class="decalage05">Chemin local où va être téléchargé le ou les fichier(s).</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>RemoteDirectory</span></p>
+<p class="decalage05">Directory sur le FTP.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>PatternRemoteFile</span></p>
+<p class="decalage05">Pattern des fichiers à télécharger pour filtre des 
+ fichiers à récupérer (*.* pour tout ou *.xml pour ne prendre que les fichiers 
+ avec extension XML).</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>OpenHarmony</span></p>
+<p class="decalage05">Indique que le chemin LocalFile est au format Harmony 
+ (False par défaut). Cette fonctionnalité n'est implémentée que pour Ftp.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProxyServer</span></p>
+<p class="decalage05">Adresse du serveur proxy</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProxyMode</span></p>
+<p class="decalage05">Mode d'identification sur le proxy.</p>
+<table cellspacing="0" width="65.57%" class="hcp3">
+	<col style="width: 7.956%;">
+	<col style="width: 92.044%;">
+	<tr class="hcp4">
+		<td style="width:7.956%;" class="hcp5"><p>1</p></td>
+		<td style="width:92.044%;" class="hcp5"><p>Prendre 
+		 les paramètres du système. Il n'y a pas d'autre paramètres à préciser, 
+		 l'authentification est celle du poste de travail.</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:7.956%;" class="hcp5"><p>2</p></td>
+		<td style="width:92.044%;" class="hcp5"><p>Préciser 
+		 l'url du serveur, mais authentification SSPI. Inutile de préciser 
+		 ProxyLogin et ProxyPassword</p></td>
+	</tr>
+	<tr class="hcp4">
+		<td style="width:7.956%;" class="hcp5"><p>3</p></td>
+		<td style="width:92.044%;" class="hcp5"><p>Mode 
+		 manuel. Il faut préciser tous les paramètres</p></td>
+	</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span class="hcp2">ProxyLogin</span></p>
+<p class="decalage05">Identifiant sur le serveur proxy.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>ProxyPassword</span></p>
+<p class="decalage05">Mot de passe sur le serveur proxy.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">pListe</p>
+<p class="decalage05">Identifiant de liste contenant les fichiers disponibles 
+ sur le FTP. L'appelant devra détruire la liste après utilisation.</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-style: italic;"><span>KeepAlive</span></p>
+<p class="decalage05">La connexion reste ouverte en vue d'une nouvelle 
+ opération avec le même serveur (True par défaut)</p>
+<p class="decalage05">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Retour</p>
+<p class="decalage05" style="margin-left: 0px;">La fonction retourne un 
+ entier.</p>
+<table cellspacing="0" width="66.667%" class="hcp3">
+	<col style="width: 11.115%;">
+	<col style="width: 88.884%;">
+	<tr class="hcp4">
+		<td style="width:11.115%;" class="hcp5"><p>Status</p></td>
+		<td style="width:88.884%;" class="hcp5"><p>0 
+		 = OK &#160;&#160;1 = Erreur</p></td>
+	</tr>
+</table>
+<p class="decalage05" style="margin-left: 0px;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px;">Le détail est disponible 
+ est une structure FtpResult récupérable par Ftp_Get_LastFtpResult.</p>
+<p class="decalage05" style="margin-left: 0px;">&#160;</p>
+<p class="decalage05" style="margin-left: 0px; font-weight: bold;">Remarques</p>
+<ul style="list-style: disc;">
+	<li class="p-decalage05"><p class="decalage05" style="margin-left: 0px; 
+								 font-weight: normal;">De nombreux serveurs 
+	 Ftp / Sftp sont sous Unix ou Linux. Sur ces systèmes d'exploitation, 
+	 les noms de fichiers sont sensibles à la casse.<br>
+	Le paramètre RemoteFile doit donc avoir la casse exacte.</p></li>
+	<li class="p-decalage05"><p class="decalage05" style="margin-left: 0px; 
+								 font-weight: normal;">En fonction de la 
+	 configuration du serveur, il se peut que les caractères spéciaux et 
+	 accentués posent problème.</p></li>
+</ul>
+</body>
+</html>

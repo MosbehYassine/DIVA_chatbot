@@ -1,0 +1,504 @@
+{
+  "size_distribution": {
+    "total_chunks": 11228,
+    "in_target_range": 11221,
+    "too_short": 0,
+    "too_long": 7,
+    "avg_words": 104.9,
+    "median_words": 98,
+    "min_words": 18,
+    "max_words": 383,
+    "score": 99.9,
+    "grade": "A+"
+  },
+  "context_completeness": {
+    "chunks_with_context_prefix": 11228,
+    "chunks_with_title": 11214,
+    "chunks_with_content": 11228,
+    "chunks_with_module": 11228,
+    "chunks_with_overlap": 5688,
+    "score": 100.0,
+    "grade": "A+"
+  },
+  "coverage": {
+    "total_source_files": 4090,
+    "stub_files_skipped": 424,
+    "targetable_files": 3666,
+    "files_with_chunks": 3548,
+    "coverage_pct": 96.8,
+    "stub_files": [
+      "Acc_sauxfichiersd_Harmony.htm",
+      "Gestion_des_tableaux.htm",
+      "Gestiondesfen_tresetdesprogrammes.htm",
+      "Impressions.htm",
+      "Notionsdebasepourl_administrationd_Harmony.htm",
+      "Acc_sauxfichiersd_Harmony.htm",
+      "Commentutiliserl_aide_.htm",
+      "Arr_tetred_marrageautomatis_s.htm",
+      "Configurationetparam_traged_Harmony.htm",
+      "Connecteur_Harmony_pour_Lotus_Notes.htm",
+      "D_sinstallationd_Harmony.htm",
+      "Harmony_ini.htm",
+      "Installation_Harmony_Web.htm",
+      "InstallationsousWindowsNTTerminalServeur.htm",
+      "R_sum_etconseilspratiques.htm",
+      "affectations_des_droits_aux_utilisateurs.htm",
+      "droits_associés_au_rôle_d_administrateur.htm",
+      "CtiDrop.htm",
+      "Liste_des_fonctions_CTI.htm",
+      "Liste_des_fonctions_Drag_and_Drop.htm"
+    ],
+    "stub_count": 424,
+    "by_module": {
+      "Administration": {
+        "files": 55,
+        "chunks": 152
+      },
+      "Aides Fenêtrées": {
+        "files": 5,
+        "chunks": 11
+      },
+      "Annexes": {
+        "files": 15,
+        "chunks": 45
+      },
+      "Chemins Harmony": {
+        "files": 8,
+        "chunks": 37
+      },
+      "Codes d'Erreurs": {
+        "files": 7,
+        "chunks": 22
+      },
+      "Harmony Général": {
+        "files": 14,
+        "chunks": 38
+      },
+      "Installation": {
+        "files": 177,
+        "chunks": 617
+      },
+      "Interface Accueil": {
+        "files": 10,
+        "chunks": 36
+      },
+      "Interface Windows": {
+        "files": 23,
+        "chunks": 57
+      },
+      "Lotus Notes": {
+        "files": 12,
+        "chunks": 32
+      },
+      "Mise en Œuvre": {
+        "files": 32,
+        "chunks": 102
+      },
+      "ODBC": {
+        "files": 42,
+        "chunks": 117
+      },
+      "Record SQL": {
+        "files": 207,
+        "chunks": 546
+      },
+      "Recherche": {
+        "files": 73,
+        "chunks": 160
+      },
+      "Textes Riches": {
+        "files": 21,
+        "chunks": 52
+      },
+      "Unités V24": {
+        "files": 2,
+        "chunks": 4
+      },
+      "Xconsole": {
+        "files": 8,
+        "chunks": 27
+      },
+      "Xharview": {
+        "files": 27,
+        "chunks": 143
+      },
+      "Xlog1": {
+        "files": 4,
+        "chunks": 17
+      },
+      "Xlog": {
+        "files": 5,
+        "chunks": 10
+      },
+      "Xpath": {
+        "files": 6,
+        "chunks": 15
+      },
+      "Xrecup": {
+        "files": 6,
+        "chunks": 31
+      },
+      "Xreof": {
+        "files": 5,
+        "chunks": 12
+      },
+      "Xtranslate": {
+        "files": 48,
+        "chunks": 195
+      },
+      "Xwin Dico": {
+        "files": 81,
+        "chunks": 242
+      },
+      "Xwin Ressources": {
+        "files": 67,
+        "chunks": 191
+      },
+      "DLMT": {
+        "files": 31,
+        "chunks": 68
+      },
+      "HQL": {
+        "files": 47,
+        "chunks": 134
+      },
+      "Menus": {
+        "files": 16,
+        "chunks": 41
+      },
+      "Modèles": {
+        "files": 5,
+        "chunks": 21
+      },
+      "Réseaux": {
+        "files": 21,
+        "chunks": 51
+      },
+      "Utilitaires": {
+        "files": 10,
+        "chunks": 30
+      },
+      "Xdiva": {
+        "files": 1041,
+        "chunks": 2761
+      },
+      "Zoom": {
+        "files": 14,
+        "chunks": 65
+      },
+      "Xperf": {
+        "files": 7,
+        "chunks": 16
+      },
+      "Xtools": {
+        "files": 38,
+        "chunks": 129
+      },
+      "Xwin Migration": {
+        "files": 15,
+        "chunks": 92
+      },
+      "Xwin Écran": {
+        "files": 200,
+        "chunks": 687
+      },
+      "Xwin Imprimante": {
+        "files": 93,
+        "chunks": 405
+      },
+      "Xwin Projet": {
+        "files": 95,
+        "chunks": 246
+      },
+      "Xwin Texte": {
+        "files": 351,
+        "chunks": 1013
+      },
+      "ymeg2": {
+        "files": 259,
+        "chunks": 907
+      },
+      "ymeg": {
+        "files": 249,
+        "chunks": 1058
+      },
+      "ymig": {
+        "files": 37,
+        "chunks": 135
+      },
+      "yzoom": {
+        "files": 142,
+        "chunks": 365
+      },
+      "zoom": {
+        "files": 32,
+        "chunks": 93
+      }
+    },
+    "grade": "A"
+  },
+  "type_distribution": {
+    "MEDIUM_DESCRIPTIVE": 2486,
+    "SHORT_ATOMIC": 1577,
+    "DENSE_ANCHOR": 1827,
+    "EXAMPLE_TABLE_INTRO": 2,
+    "EXAMPLE_TABLE_BLOCK": 19,
+    "REFERENCE_TABLE_INTRO": 236,
+    "REFERENCE_TABLE_ROW": 1631,
+    "REFERENCE_TABLE_NOTES": 925,
+    "LONG_PROCEDURAL": 1702,
+    "GIANT_DOC_SECTION": 822,
+    "EXAMPLE_TABLE_SOLUTION": 1,
+    "PARENT": 4877
+  },
+  "retrieval_readiness": {
+    "chunks_with_domain_terms": 10434,
+    "score": 92.9,
+    "grade": "A"
+  },
+  "table_chunk_quality": {
+    "total_table_row_chunks": 1631,
+    "with_field_name_metadata": 1631,
+    "score": 100.0,
+    "grade": "A+"
+  },
+  "content_purity": {
+    "clean_chunks": 11228,
+    "polluted_chunks": 0,
+    "score": 100.0,
+    "grade": "A+"
+  },
+  "encoding_health": {
+    "clean_chunks": 11228,
+    "corrupted_chunks": 0,
+    "score": 100.0,
+    "grade": "A+"
+  },
+  "deduplication": {
+    "cross_file_duplicates_removed": 211
+  },
+  "hierarchy": {
+    "parent_chunks": 4877,
+    "child_chunks": 11228,
+    "avg_children_per_parent": 2.3
+  },
+  "gold_standard_rag": {
+    "recall_at_1": 58.8,
+    "recall_at_3": 76.5,
+    "grade": "A",
+    "n_questions": 17,
+    "details": [
+      {
+        "question": "Comment accéder à un fichier réseau Windows avec son nom Harmony ?",
+        "expected_file": "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+          "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+          "Noms_de_fichier_en_réseau_Windows.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment créer ou modifier un modèle d'imprimante dans Harmony ?",
+        "expected_file": "Gestiondesmod_lesd_imprimante.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Gestiondesmod_lesd_imprimante.htm",
+          "Gestiondesmod_lesd_imprimante.htm",
+          "Gestiondesmod_lesd_imprimante.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Que fait la commande /Ga dans un fichier pilote ?",
+        "expected_file": "Fichierdecommandes.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Fichierdecommandes.htm",
+          "Fichierdecommandes.htm",
+          "Fichierdecommandes.htm"
+        ],
+        "top_score": 0.9
+      },
+      {
+        "question": "Comment déclarer un chemin Harmony sur un serveur Xlan ?",
+        "expected_file": "Nomsdefichierenr_seauXlan.htm",
+        "found_in_top3": false,
+        "found_in_top1": false,
+        "top3_files": [
+          "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+          "CheminsHarmony.htm",
+          "Noms_de_fichier_en_réseau_Windows.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment configurer l'imprimante par défaut de Windows dans Harmony ?",
+        "expected_file": "Imprimantepard_fautdeWindows.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Imprimantepard_fautdeWindows.htm",
+          "Imprimantepard_fautdeWindows.htm",
+          "MiseenoeuvredesimpressionsHarmony_Windows.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment importer des utilisateurs depuis un annuaire LDAP ?",
+        "expected_file": "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm",
+        "found_in_top3": false,
+        "found_in_top1": false,
+        "top3_files": [
+          "Param_tres_d_un_utilisateur.htm",
+          "Param_tres_d_un_utilisateur.htm",
+          "Fichierdesutilisateurs.htm"
+        ],
+        "top_score": 1.0
+      },
+      {
+        "question": "Quelle est la différence entre un modèle préconisé et un modèle impératif ?",
+        "expected_file": "Mod_lepr_conis_etmod_leimp_ratif.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Mod_lepr_conis_etmod_leimp_ratif.htm",
+          "Mod_lepr_conis_etmod_leimp_ratif.htm",
+          "Mod_lepr_conis_etmod_leimp_ratif.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment lancer automatiquement une tâche de fond au démarrage ?",
+        "expected_file": "Lancementautomatiqued_unet_chedefond.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Lancementautomatiqued_unet_chedefond.htm",
+          "Lancementautomatiqued_unet_chedefond.htm",
+          "Pr_sentation_des_services.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment configurer les chemins implicites sur un poste client ?",
+        "expected_file": "Cheminsd_acc_simplicites.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Cheminsd_acc_simplicites.htm",
+          "Cheminsd_acc_simplicites.htm",
+          "Cheminsd_acc_simplicites.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment passer des paramètres à un programme Harmony version 6 ?",
+        "expected_file": "Passagedeparam_tresauxprogrammes.htm",
+        "found_in_top3": true,
+        "found_in_top1": false,
+        "top3_files": [
+          "Fichierdecommandes.htm",
+          "Passagedeparam_tresauxprogrammes.htm",
+          "Passagedeparam_tresauxprogrammes.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment fonctionne le format pour le spool dans un modèle d'imprimante ?",
+        "expected_file": "Gestiondesmod_lesd_imprimante.htm",
+        "found_in_top3": true,
+        "found_in_top1": false,
+        "top3_files": [
+          "Exempledeliaisonsmod_le_imprimante.htm",
+          "Exempledeliaisonsmod_le_imprimante.htm",
+          "Gestiondesmod_lesd_imprimante.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment configurer une liaison entre un modèle et une imprimante Windows ?",
+        "expected_file": "Liaisonentremod_leetimprimante_param_trageWindows.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Liaisonentremod_leetimprimante_param_trageWindows.htm",
+          "Liaisonentremod_leetimprimante_param_trageWindows.htm",
+          "Liaisonentremod_leetimprimante_param_trageWindows.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment installer le serveur Web Harmony ?",
+        "expected_file": "Installation_du_serveur_Web.htm",
+        "found_in_top3": false,
+        "found_in_top1": false,
+        "top3_files": [
+          "Compression_des_trames_pour_un_client_léger_Web.htm",
+          "Configuration_des_serveurs_d’aides_et_d’applications.htm",
+          "Connecteur_Outlook_pour_un_client_léger_Html5.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment se connecter au serveur SQL depuis Harmony ?",
+        "expected_file": "ConnexionauserveurSQL.htm",
+        "found_in_top3": false,
+        "found_in_top1": false,
+        "top3_files": [
+          "Connecteur_SQL.htm",
+          "Connecteur_SQL.htm",
+          "Connecteur_SQL.htm"
+        ],
+        "top_score": 1.0
+      },
+      {
+        "question": "Comment iconiser une application Harmony version 6 ?",
+        "expected_file": "Iconiseruneapplication.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Iconiseruneapplication.htm",
+          "Iconiseruneapplication.htm",
+          "Lancementautomatiqued_unet_chedefond.htm"
+        ],
+        "top_score": 0.95
+      },
+      {
+        "question": "Quels sont les codes d'erreurs Windows renvoyés par Harmony ?",
+        "expected_file": "10xxx_Erreurssignal_esparWindows.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "10xxx_Erreurssignal_esparWindows.htm",
+          "10xxx_Erreurssignal_esparWindows.htm",
+          "Formatd_affichagedeserreursHarmony.htm"
+        ],
+        "top_score": 1.15
+      },
+      {
+        "question": "Comment configurer le gestionnaire d'impression Windows (spouleur) ?",
+        "expected_file": "Gestionnaired_impressiondeWindows_spouleur_.htm",
+        "found_in_top3": true,
+        "found_in_top1": false,
+        "top3_files": [
+          "Etatsgraphiqueset_tatscaract_res.htm",
+          "Gestionnaired_impressiondeWindows_spouleur_.htm",
+          "Gestionnaired_impressiondeWindows_spouleur_.htm"
+        ],
+        "top_score": 0.95
+      }
+    ],
+    "note": "Keyword overlap proxy — replace with multilingual-e5-large for real semantic eval"
+  },
+  "OVERALL": {
+    "structural_avg": 98.5,
+    "rag_recall_at3": 76.5,
+    "score": 93.6,
+    "grade": "A"
+  }
+}

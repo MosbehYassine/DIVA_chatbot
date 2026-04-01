@@ -1,0 +1,160 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeRet</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:bold; }
+ul.hcp4 { list-style:disc; }
+span.hcp5 { font-weight:normal; }
+p.hcp6 { margin-left:48px; }
+p.hcp7 { margin-left:88px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeRet &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="font-weight: bold;">Retour au niveau logique précédent</p>
+<p class="Body-Text"><font class="hcp2"><span class="hcp3">F</span>ermeture de la fenêtre courante</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">XmeRet</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction XmeRet DOIT être utilisée pour <font class="hcp2">"dépiler"</font> la page ou la fenêtre <font class="hcp2">appelée précédemment en mode GOSUB</font> (voir la rubrique <a href="ModeGOTOetmodeGOSUB.htm">Mode GOTO et mode GOSUB</a>). Cette fonction&#160;:</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Referme la fenêtre</font> si la page Xwin "dépilée" est de type "Fenêtre".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp2">Restaure le contexte</font> logique qui prévalait avant l'appel en mode GOSUB.<br>
+Ce contexte (paramètres d'appel, page courante, donnée en cours de saisie au moment d'une interruption, cause de l'interruption, etc.) avait été sauvegardé par Ywpf au moment de l'appel en mode GOSUB.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text" style="font-weight: bold;">Attention&#160;:</p>
+<ul class="hcp4">
+<li class="p-Body-Text">
+<p class="Body-Text">XmeRet <span class="hcp3">ne réaffiche pas la page logiquement restaurée</span> (voir paragraphe "Attention au chevauchement de pages après un XmeRet" ci-dessous).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp5">Si la page restaurée était en cours de saisie au moment de l'appel en mode GOSUB, XmeRet</span> NE <span class="hcp5">provoque</span> PAS la reprise de la saisie<span class="hcp5">. Pour ce faire,</span> vous devez utiliser la fonction <a href="XmeNext.htm" style="font-weight: bold;">XmeNext</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">Un cas (très spécifique) ne restaure pas logiquement la page en cours au moment de l'appel en mode GOSUB : Cf. paragraphe "Conservation logique au XmeRet de la dernière page à onglet affichée" ci-dessous.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:</font></p>
+<p class="Body-Text">Le programme de saisie de l'enregistrement client propose un premier masque contenant uniquement les données principales (nom, adresse, ...). En appuyant sur une touche de fonction (piégée) ou en cliquant sur un bouton équivalent, l'utilisateur demande la saisie d'une fenêtre contenant des renseignements complémentaires (adresses à facturer et à livrer, commentaires, ...)&#160;:</p>
+<p class="Body-Text">&#160;</p>
+<p class="Source">Procedure Saisie_Complement</p>
+<p class="Source">1 fini X</p>
+<p class="Source">BEGINP</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;fini = 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeInput ("MASCLI",2,0,XME_MODE_GOSUB) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;saisie complément&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;en mode GOSUB&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;DO&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tests des causes&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;SWITCH Harmony.Arret &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;de l'interruption&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;WHILE fini = 0&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;XmeNext (Harmony.Retour, Harmony.CplRetour) &#160;&#160;;suite saisie <span style="margin-top: 0; margin-bottom: 0;">2ème masque&#160;</span></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;WEND&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeRet &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;retour au niveau précédent&#160;</p>
+<p class="Source">ENDP</p>
+<p class="SourceTop">&#160;</p>
+<p class="Source">Procedure Saisie_Principale</p>
+<p class="Source">1 fini X</p>
+<p class="Source">BEGINP</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;fini = 0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lancement saisie&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeInput ("MASCLI",1,0,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;masque principal&#160;</p>
+<p class="Source">&#160;&#160;&#160;DO</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;tests des causes&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;SWITCH Harmony.Arret &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;de l'interruption</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE <font style="font-style: italic;">xxx</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;piège de touche&#160;:</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Saisie_Complement &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;saisie masque complément</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;WHILE fini = 0&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;XmeNext (Harmony.Retour, Harmony.CplRetour) &#160;&#160;;suite saisie 1er masque</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;WEND&#160;</p>
+<p class="Source">ENDP</p>
+<p class="Source">&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold; font-size: 11pt;">Attention au chevauchement de pages après un XmeRet</p>
+<p>L’exemple schématique suivant peut provoquer un affichage erroné :</p>
+<ul class="hcp4">
+<li class="p">
+<p>Affichage de la page A (en effacement complet).</p>
+</li>
+<li class="p">
+<p>Affichage de la page B (en effacement complet) en mode GOSUB suivi d’un XmeRet : après le dépilage de la page B, la page A redevient la page courante.</p>
+</li>
+<li class="p">
+<p>Réaffichage de la page A par XmeDispV.</p>
+</li>
+</ul>
+<p>Rappelons qu'un XmeDispV appliqué à la page courante (préalablement affichée) NE procède PLUS à un éventuel effacement car il ne réaffiche que les objets variables de la page. La solution consiste ici à faire précéder le XmeDispv d'un XmeDisp. XmeDisp repart à zéro et applique à nouveau l’effacement spécifié pour la page A, effaçant la page B et évitant ainsi les chevauchements d’objets.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span style="font-weight: bold; font-size: 11pt;">Conservation logique au XmeRet de la dernière page à onglet affichée</span> (à partir de la version 7.3)</p>
+<p style="font-weight: normal;"><span style="text-decoration: underline;">Attention : ce paragraphe ne concerne que les pages, chaînées ou non, liées par un onglet</span>.<br>
+<br>
+Avant d'afficher une page B en mode GOSUB, Ywpf empile logiquement la page A courante. Au XmeRet, la page A est logiquement restaurée. Insistons toutefois sur le fait que cette restauration est purement logique : la page A n'est pas réaffichée à l'écran.</p>
+<p>Les pages liées par un onglet sont traitées différemment <span class="hcp3">(*)</span>.</p>
+&#160;
+<p><span class="hcp3">Exemple</span> d'un masque multi-écran comprenant deux pages chaînées F1 et F2, avec la séquence de programme suivante :<br>
+&#160;</p>
+<p class="hcp6">XmeConsult (masque,F1,XME_MODE_GOTO)</p>
+<p class="hcp7">=&gt; L'écran affiche la page F1</p>
+<p class="hcp6">XmeConsult (masque,F1,XME_MODE_GOSUB)</p>
+<p class="hcp7">=&gt; La même page F1 est redemandée en mode GOSUB ;</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;durant la consultation, l’utilisateur <span class="hcp3">passe de la page F1 à la page F2</span> (clic onglet par exemple)</p>
+<p class="hcp6">XmeRet</p>
+<p class="hcp7">=&gt; La page F2 reste affichée <span class="hcp3">(**)</span></p>
+<p class="hcp7"><span class="hcp3">&#160;&#160;&#160;&#160;&#160;</span>F1, page logique courante enregistrée au moment de l'appel en mode GOSUB n'est pas restaurée et</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;F2, <span class="hcp3">page liée couramment affichée</span>, reste la page logique courante <span class="hcp3">(*)</span></p>
+&#160;
+<p>Et avec la séquence inverse :<br>
+&#160;</p>
+<p class="hcp6">XmeConsult (masque,F1,XME_MODE_GOTO)</p>
+<p class="hcp7">=&gt; Durant la consultation, l’utilisateur <span class="hcp3">passe de la page F1 à la page F2</span></p>
+<p class="hcp6">XmeConsult (masque,F1,XME_MODE_GOSUB)</p>
+<p class="hcp7">=&gt; La même page F1 est redemandée en mode GOSUB ; elle <span>est donc réaffichée</span></p>
+<p class="hcp6">XmeRet</p>
+<p class="hcp7">=&gt; La page F1 reste affichée <span class="hcp3">(**)</span></p>
+<p class="hcp7"><span class="hcp3">&#160;&#160;&#160;&#160;&#160;</span>F2, page logique courante enregistrée au moment de l'appel en mode GOSUB n'est pas restaurée et</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;F1, <span class="hcp3">page liée couramment affichée</span>, reste la page logique courante <span class="hcp3">(*)</span></p>
+&#160;
+<p><span class="hcp3">(*)</span> Il s'agit d'une amélioration introduite par la version 7.3 d'Harmony. Dans les versions antérieures, il y avait une incohérence entre la page liée affichée à l'écran et la page liée logiquement connue de Ywpf après exécution du XmeRet.</p>
+<p><span class="hcp3">(**)</span> Mais la page liée affichée à l'écran ne change pas par rapport aux versions antérieures à la version 7.3.<br>
+<br>
+<br>
+Cette conservation logique au XmeRet de la dernière page à onglet affichée est étendue au cas des <span class="hcp3">pages panels</span> liées (Cf. rubrique <a href="Conservation_de_la_topographie_des_pages_panels_li&eacute;es_au_XmeRet.htm">Conservation au XmeRet de la topographie courante des pages panels liées</a>).</p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="Les_grilles_et_les_panels_pages.htm">Grilles et pages panels</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

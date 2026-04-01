@@ -1,0 +1,272 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Widget Graphique</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+p.hcp2 { font-weight:bold;
+text-align:center; }
+td.hcp3 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp4 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp5 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+ul.hcp6 { list-style:disc; }
+span.hcp7 { font-weight:bold; }
+p.hcp8 { font-weight:bold; }
+img.hcp9 { border:none; }
+p.hcp10 { font-family:"Courier New"  , monospace; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Widget Graphique (courbe, histogramme, circulaire)</h1>
+<p>&#160;</p>
+<p>Ces trois types de widgets partagent les mêmes informations.</p>
+<p>&#160;</p>
+<p>Les balises HMP sont :</p>
+<p>&#160;</p>
+<table style="vertical-align: top;" cellspacing="0">
+<col>
+<col>
+<col>
+<tr class="hcp1">
+<td style="border: Solid 1px #000000;padding-right: 10px; padding-left: 10px;">
+<p class="hcp2">Balise</p>
+</td>
+<td class="hcp3">
+<p class="hcp2">Commentaire</p>
+</td>
+<td class="hcp3">
+<p class="hcp2">Type</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>Type</p>
+</td>
+<td class="hcp5">
+<p>Type de graphique</p>
+<ul class="hcp6">
+<li class="p">
+<p>Bar (Histogramme)</p>
+</li>
+<li class="p">
+<p>Line (Courbe)</p>
+</li>
+<li class="p">
+<p>Pie (Camembert)</p>
+</li>
+</ul>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>HorizontalAxisTitle</p>
+</td>
+<td class="hcp5">
+<p>Titre de l'axe horizontal</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>VerticalAxisTitle</p>
+</td>
+<td class="hcp5">
+<p>Titre de l'axe vertical</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>Orientation</p>
+</td>
+<td class="hcp5">
+<p>Orientation du graphique de type Bar (histogramme)</p>
+<ul class="hcp6">
+<li class="p">
+<p>Horizontal</p>
+</li>
+<li class="p">
+<p>Vertical</p>
+</li>
+</ul>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>Palette</p>
+</td>
+<td class="hcp5">
+<p>Palette de couleur à utiliser</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>ShowLegend</p>
+</td>
+<td class="hcp5">
+<p>Pour afficher ou non la légende (1/0)</p>
+</td>
+<td class="hcp5">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>HideLabels</p>
+</td>
+<td class="hcp5">
+<p>Pour masquer (1) ou non (0) les libellés des points</p>
+</td>
+<td class="hcp5">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>Serie</p>
+</td>
+<td class="hcp5">
+<p>Nom de la série</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>&#160;&#160;&#160;&#160;Value</p>
+</td>
+<td class="hcp5">
+<p>Valeur</p>
+</td>
+<td class="hcp5">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p style="margin-left: 24px;">PointLabel</p>
+</td>
+<td class="hcp5">
+<p>Libellé du point (facultatif, par défaut, la valeur est utilisée comme libellé)</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>&#160;&#160;&#160;&#160;Name</p>
+</td>
+<td class="hcp5">
+<p>Nom/abscisse du point</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>La balise &lt;Text&gt; permet de changer le libellé affiché du widget. Par défaut, c'est le titre du widget qui est affiché.</p>
+<p>La balise &lt;Error&gt; permet d'afficher une erreur par dessus le widget.</p>
+<p>&#160;</p>
+<p><span class="hcp7">Remarque</span> :</p>
+<ul class="hcp6">
+<li class="p">
+<p>Ces balises sont les mêmes pour les différents type de graphique. Un même module de calcul peut donc être utilisé pour les trois affichages.</p>
+</li>
+<li class="p">
+<p>Pour les types Bar et Line, il est possible d'afficher plusieurs séries de valeurs</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp8">Couleurs des graphiques</p>
+<p>&#160;</p>
+<p>15 palettes de couleurs sont disponibles. Par défaut, c'est la palette <span class="hcp7">Windows8</span> qui est utilisée.</p>
+<p>&#160;</p>
+<p><img src="../palette.jpg" alt="" width="192" height="403" border="0" class="hcp9"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp7">Exemple</span> :</p>
+<p>&#160;</p>
+<p class="hcp10"><span style="font-family: 'Courier New', monospace;">Function String InitChart (&amp;Widget)</span></p>
+<p class="hcp10">record a5dd.dhsd MWidget Widget</p>
+<p class="hcp10">1 res S</p>
+<p class="hcp10">BeginF</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res = "&lt;Type&gt;Bar"</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res &amp;= "&lt;HorizontalAxisTitle&gt;Abscisse"</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res &amp;= "&lt;VerticalAxisTitle&gt;Ordonnée"</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res &amp;= "&lt;Serie&gt;Série 1"</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res &amp;= "&lt;Value&gt;10&lt;Name&gt;Jan" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;32&lt;Name&gt;Fév" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;42&lt;Name&gt;Mar" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;50&lt;Name&gt;Avr" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;62&lt;Name&gt;Mai" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;40&lt;Name&gt;Juin" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;80&lt;Name&gt;Juil" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;90&lt;Name&gt;Aou" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;40&lt;Name&gt;Sep" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;50&lt;Name&gt;Oct" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;70&lt;Name&gt;Nov" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;20&lt;Name&gt;Dec"</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res &amp;= "&lt;Serie&gt;Série 2"</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res &amp;= "&lt;Value&gt;14&lt;Name&gt;Jan" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;26&lt;Name&gt;Fév" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;64&lt;Name&gt;Mar" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;45&lt;Name&gt;Avr" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;32&lt;Name&gt;Mai" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;20&lt;Name&gt;Juin" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;70&lt;Name&gt;Juil" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;40&lt;Name&gt;Aou" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;80&lt;Name&gt;Sep" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;60&lt;Name&gt;Oct" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;70&lt;Name&gt;Nov" &amp; \</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;"&lt;Value&gt;10&lt;Name&gt;Dec"</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res &amp;= "&lt;Orientation&gt;Horizontal"</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res &amp;= "&lt;Palette&gt;Windows8"</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;res &amp;= "&lt;ShowLegend&gt;1"</p>
+<p class="hcp10">&#160;</p>
+<p class="hcp10">&#160;&#160;&#160;&#160;freturn res</p>
+<p class="hcp10">Endf</p>
+<p class="hcp10">&#160;</p>
+<p class="hcp10">&#160;</p>
+<p class="hcp8">Visuels</p>
+<p>&#160;</p>
+<p><img src="../histo.jpg" alt="" width="350" height="350" border="0" class="hcp9"></p>
+<p><img src="../courbe.jpg" alt="" width="350" height="350" border="0" class="hcp9"></p>
+<p><img src="../camembert.jpg" alt="" width="350" height="350" border="0" class="hcp9"></p>
+<p>&#160;</p>
+</body>
+</html>

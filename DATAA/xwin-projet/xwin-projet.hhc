@@ -1,0 +1,464 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utiliser les projets">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Présentation">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Notion de projet et sous-projet">
+        <param name="Local" value="xwinprojet/Notion_de_projet_et_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Notion de profil">
+        <param name="Local" value="xwinprojet/Notion_de_profil.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Exemple">
+        <param name="Local" value="xwinprojet/Exemple.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pourquoi utiliser les projets ?">
+        <param name="Local" value="xwinprojet/Pourquoi_utiliser_les_projets_.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Définitions">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Projet">
+        <param name="Local" value="xwinprojet/Projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Profil">
+        <param name="Local" value="xwinprojet/Profil.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Groupe de sources">
+        <param name="Local" value="xwinprojet/Groupe_de_sources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Divers">
+        <param name="Local" value="xwinprojet/Divers.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sous-Projet">
+        <param name="Local" value="xwinprojet/Sous_Projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fichiers du projet">
+        <param name="Local" value="xwinprojet/Fichiers_du_projet.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="La fenêtre du projet">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Présentation">
+        <param name="Local" value="xwinprojet/Pr_sentation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour faire apparaître la fenêtre du projet">
+        <param name="Local" value="xwinprojet/Pour_faire_appara_tre_la_fen_tre_du_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="L'arbre du projet">
+        <param name="Local" value="xwinprojet/L_arbre_du_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Les boutons de l'arbre">
+        <param name="Local" value="xwinprojet/Les_boutons_de_l_arbre.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Les menus contextuels de l'arbre">
+        <param name="Local" value="xwinprojet/les_menus_popup_de_l_arbre.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="La gestion des projets">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Introduction">
+        <param name="Local" value="xwinprojet/Introduction_gestion_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour ouvrir un projet">
+        <param name="Local" value="xwinprojet/Pour_ouvrir_un_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour créer un projet">
+        <param name="Local" value="xwinprojet/Pour_cr_er_un_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour modifier les paramètres d'un projet">
+        <param name="Local" value="xwinprojet/Pour_modifier_les_param_tres_d_un_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour modifier les paramètres par défaut des profils">
+        <param name="Local" value="xwinprojet/Pour_modifier_les_param_tres_par_d_faut_des_profils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour créer/modifier supprimer un profil">
+        <param name="Local" value="xwinprojet/Pour_cr_er_modifier_un_profil.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour sélectionner un profil">
+        <param name="Local" value="xwinprojet/Pour_s_lectionner_un_profil.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour créer / modifier / supprimer un groupe de sources">
+        <param name="Local" value="xwinprojet/Pour_cr_er_un_groupe_de_sources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour ajouter / supprimer des fichiers dans un groupe">
+        <param name="Local" value="xwinprojet/Pour_ajouter_supprimer_des_fichiers_dans_un_groupe.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour créer / supprimer un sous projet">
+        <param name="Local" value="xwinprojet/Pour_cr_er_un_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour inclure un sous-projet">
+        <param name="Local" value="xwinprojet/Pour_inclure_un_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour renommer un sous-projet">
+        <param name="Local" value="xwinprojet/Pour_renommer_un_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour choisir le sous-projet courant">
+        <param name="Local" value="xwinprojet/Pour_choisir_le_sous_projet_courant.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour modifier les paramètres d'un sous-projet">
+        <param name="Local" value="xwinprojet/Pour_modifier_les_param_tres_d_un_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour ajouter / supprimer des sources dans un sous-projet">
+        <param name="Local" value="xwinprojet/Pour_ajouter_supprimer_des_fichiers_dans_un_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour ajouter / supprimer un groupe de sources dans un sous-projet">
+        <param name="Local" value="xwinprojet/Pour_ajouter_supprimer_un_groupe_de_fichiers_dans_un_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour charger un fichier dans l'éditeur">
+        <param name="Local" value="xwinprojet/Pour_charger_un_fichier_dans_l__diteur.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour chercher un fichier dans le projet">
+        <param name="Local" value="xwinprojet/Pour_chercher_un_fichier_dans_le_projet.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Menus et raccourcis clavier du projet">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menus et raccourcis clavier du projet">
+        <param name="Local" value="xwinprojet/Menus_et_raccourcis_clavier_du_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu Projet">
+        <param name="Local" value="xwinprojet/Menu_Projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sous menu Projet">
+        <param name="Local" value="xwinprojet/Sous_menu_Projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sous menu Sous-projet">
+        <param name="Local" value="xwinprojet/Sous_menu_Sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sous menu Profil">
+        <param name="Local" value="xwinprojet/Sous_menu_Profil.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sous menu Aide à la migration">
+        <param name="Local" value="xwinprojet/Sous_menu_Aide_&agrave;_la_migration.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Projet">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Profils">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Profils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu Contextuel Profil">
+        <param name="Local" value="xwinprojet/Menu_Contextuel_Profil.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Groupes de sources">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Groupes_de_sources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Groupe de sources">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Groupe_de_sources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Divers">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Divers.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Fichier Divers">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Fichier_Divers.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Sous-projets">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Sous_projets.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Sous-projet">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Include">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Include.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Sources">
+        <param name="Local" value="xwinprojet/Menu_contextuel_Sources.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Menu contextuel Source">
+        <param name="Local" value="xwinprojet/Menu_contextuel_source.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Barre d'outils et raccourcis clavier du projet">
+        <param name="Local" value="xwinprojet/Barre_d_outils_du_projet.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Compiler des projets">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Compilation des projets">
+        <param name="Local" value="xwinprojet/Compilation_des_projets.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramètres de compilation">
+        <param name="Local" value="xwinprojet/Param_tres_de_compilation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour construire un sous-projet">
+        <param name="Local" value="xwinprojet/Pour_construire_un_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour construire un projet">
+        <param name="Local" value="xwinprojet/Pour_construire_un_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour compiler un fichier">
+        <param name="Local" value="xwinprojet/Pour_compiler_un_fichier.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour reconstruire tout un sous-projet">
+        <param name="Local" value="xwinprojet/Pour_reconstruire_tout_un_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour reconstruire tout un projet">
+        <param name="Local" value="xwinprojet/Pour_reconstruire_tout_un_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour interrompre une compilation">
+        <param name="Local" value="xwinprojet/Pour_interrompre_une_compilation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour corriger les erreurs de compilation">
+        <param name="Local" value="xwinprojet/Pour_corriger_les_erreurs_de_compilation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour compiler un projet depuis le mode commande (pilotage)">
+        <param name="Local" value="xwinprojet/Pour_compiler_un_projet_depuis_le_mode_commande_(pilotage).htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Piloter des fonctionnalités de Xwin">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Compiler un projet">
+        <param name="Local" value="xwinprojet/Compiler_un_projet_pilotage.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fusionner un projet et un projet de surcharge">
+        <param name="Local" value="xwinprojet/Fusionner_un_projet_et_un_projet_de_surcharge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fusionner un dictionnaire de données et sa surcharge">
+        <param name="Local" value="xwinprojet/Fusionner_un_dictionnaire_de_donn&eacute;es_et_sa_surcharge.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="La navigation">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Introduction à la navigation">
+        <param name="Local" value="xwinprojet/Introduction___la_navigation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Options de compilation">
+        <param name="Local" value="xwinprojet/Options_de_compilation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour afficher la fenêtre Navigation">
+        <param name="Local" value="xwinprojet/Pour_afficher_la_fen_tre_Navigation.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour naviguer dans le sous-projet">
+        <param name="Local" value="xwinprojet/Naviguer_dans_le_sous_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour naviguer dans le projet">
+        <param name="Local" value="xwinprojet/Naviguer_dans_le_proejt.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Historique des navigations">
+        <param name="Local" value="xwinprojet/Historique_des_navigations.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="L'exécution de programmes">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="L'exécution de programmes">
+        <param name="Local" value="xwinprojet/L_ex_cution_de_programmes.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Pour choisir le programme à exécuter">
+        <param name="Local" value="xwinprojet/Pour_choisir_le_programme___ex_cuter.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Identification en mode client léger Web">
+        <param name="Local" value="xwinprojet/Identification_en_mode_client_l&eacute;ger_Web.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="La surcharge des projets">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Surcharge des projets : Principe">
+        <param name="Local" value="xwinprojet/Surcharge_des_projets_Principe.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Création d'un projet de surcharge">
+        <param name="Local" value="xwinprojet/Cr_ation_d_un_projet_de_surcharge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Organisation des répertoires">
+        <param name="Local" value="xwinprojet/Organisation_des_r_pertoires.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ouverture d'un projet surchargé">
+        <param name="Local" value="xwinprojet/Ouverture_d_un_projet_surcharg_.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Construction  / compilation d'un sous-projet surchargé">
+        <param name="Local" value="xwinprojet/Construction_compilation_d_un_sous_projet_surcharg_.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Navigation dans un projet surchargé">
+        <param name="Local" value="xwinprojet/Navigation_dans_un_projet_surcharg_.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Mise à niveau des projets de surcharge">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Mise à niveau des projets de surcharge">
+        <param name="Local" value="xwinprojet/Mise_&agrave;_niveau_des_projets_de_surcharge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Mise à niveau des masques">
+        <param name="Local" value="xwinprojet/Mise_&agrave;_niveau_des_masques.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Mise à niveau des projets de surcharge version 6">
+        <param name="Local" value="xwinprojet/Mise_&agrave;_niveau_des_projets_de_surcharge_version_6.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fusion de projet et projet de surcharge">
+        <param name="Local" value="xwinprojet/Fusion_de_projet_et_projet_de_surcharge.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Les boîtes de dialogue des projets">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramètres du projet">
+        <param name="Local" value="xwinprojet/Param_tres_du_projet.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramètres des profils par défaut">
+        <param name="Local" value="xwinprojet/Param_tres_des_profils_par_d_faut.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramètres des profils">
+        <param name="Local" value="xwinprojet/Param_tres_des_profils.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Paramètres des sous-projets">
+        <param name="Local" value="xwinprojet/Param_tres_des_sous_projets.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Boite de dialogue Naviguer">
+        <param name="Local" value="xwinprojet/Boite_de_dialogue_Naviguer.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Boite de dialogue Propriétés">
+        <param name="Local" value="xwinprojet/Boite_de_dialogue_Propri_t_s.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Boite de dialogue Recherche">
+        <param name="Local" value="xwinprojet/Boite_de_dialogue_Recherche.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Boite de dialogue Création d'un projet surchargeable">
+        <param name="Local" value="xwinprojet/Boite_de_dialogue_Cr_ation_d_un_projet_surchargeable.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Boîte de dialogue Création d'un masque de surcharge">
+        <param name="Local" value="xwinprojet/Bo&icirc;te_de_dialogue_Cr&eacute;ation_d_un_masque_de_surcharge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Boîte de dialogue Création d'un module/dictionnaire Sql de surcharge">
+        <param name="Local" value="xwinprojet/Bo&icirc;te_de_dialogue_Cr&eacute;ation_d_un_module_de_surcharge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Boîte de dialogue Fusion de projet et projet de surcharge">
+        <param name="Local" value="xwinprojet/Bo&icirc;te_de_dialogue_Fusion_de_projet_et_projet_de_surcharge.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Création d'un projet de surcharge pour une nouvelle version de l'éditeur">
+        <param name="Local" value="xwinprojet/Cr&eacute;ation_d_un_projet_de_surcharge_pour_une_nouvelle_version_de_l_&eacute;diteur.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Mise à jour des masques du projet de surcharge">
+        <param name="Local" value="xwinprojet/Mise_&agrave;_jour_des_masques_du_projet_de_surcharge.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

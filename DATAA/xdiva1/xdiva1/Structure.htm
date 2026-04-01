@@ -1,0 +1,156 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Structure</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { font-weight:normal; }
+span.hcp3 { font-style:italic; }
+span.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Structure</h1>
+<p>La déclarative Structure permet de définir l'équivalent d'une Table Mémoire du dictionnaire de données. L'instanciation d'une structure se fait par l'instruction <a href="RecordDiva.htm">RecordDiva</a>.</p>
+<p>Les données instanciées par RecordDiva sont similaires à celles instanciées par Record à une seule restriction près : les Structures ne peuvent pas être vues dans les masques.</p>
+<p>&#160;</p>
+<p class="hcp1">[public] Structure NomStructure [ Taille ]</p>
+<p class="hcp1">....</p>
+<p class="hcp1">EndStructure</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp2">La déclaration d'une structure est bornée par les mots-clés : Structure et EndStructure.</p>
+<p class="hcp2">Le mot-clé Public indique que la structure peut être utilisée par un autre module.</p>
+<p class="hcp2">Le paramètre Taille est facultatif. S'il n'est pas précisé, le compilateur la calcule automatiquement.</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp1">Déclaration des champs de la structure</p>
+<p class="hcp2">Les champs de la structure peuvent être soit :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp2">une déclaration par niveau. Comme pour les tables du dictionnaire, les champs ne peuvent être de type S (string).<br>
+Le nom de la donnée est obligatoire, on ne peut avoir un numéro de niveau suivi d'une taille.</p>
+</li>
+<li class="p">
+<p class="hcp2">une déclaration par <a href="Record.htm">Record</a>.<br>
+Si le paramètre <span class="hcp3">Var</span> est spécifié, il devient un préfixe qui est ajouté à tous les champs.</p>
+</li>
+<li class="p">
+<p class="hcp2">une déclaration par <a href="RecordDiva.htm">RecordDiva</a>.<br>
+Si le paramètre <span class="hcp3">Var</span> est spécifié, il devient un préfixe qui est ajouté à tous les champs.</p>
+</li>
+<li class="p">
+<p class="hcp2">Une structure ne peut pas contenir de RecordSql.</p>
+</li>
+</ul>
+<p class="hcp1">Exemple 1</p>
+<p class="Source"><span style="font-weight: normal;">Structure Element</span></p>
+<p class="Source">1 Nom &#160;30</p>
+<p class="Source">1 Prenom 30</p>
+<p class="Source">EndStructure</p>
+<p class="Source">&#160;</p>
+<p class="Source">RecordDiva Element &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; déclaration d'une instance</p>
+<p class="Source">&#160;</p>
+<p class="Source">;On peut ensuite écrire</p>
+<p class="Source">Element.Nom = ...</p>
+<p class="Source">Element.Prenom = ...</p>
+<p class="Source">&#160;</p>
+<p class="hcp1">Exemple 2 : ajout d'une table de dictionnaire dans une structure</p>
+<p class="Source">Structure Element</p>
+<p class="Source">1 Nom &#160;30</p>
+<p class="Source">1 Prenom 30</p>
+<p class="Source" style="font-weight: bold;">Record odfdd.dhsd client</p>
+<p class="Source">EndStructure</p>
+<p class="Source">&#160;</p>
+<p class="Source">RecordDiva Element</p>
+<p class="Source">&#160;</p>
+<p class="Source">;on peut ensuite écrire</p>
+<p class="Source">Element.Nom = ...</p>
+<p class="Source">Element.Prenom = ...</p>
+<p class="Source">;champs de la table client</p>
+<p class="Source">Element.Adrcli = ...</p>
+<p class="Source">Element.Ce = ...</p>
+<p class="Source">Element.client = ...</p>
+<p class="Source">Element.Codecli = ...</p>
+<p class="Source">Element.Postalcli = ...</p>
+<p class="Source">Element.Societe = ...</p>
+<p class="Source">Element.Villecli = ...</p>
+<p class="Source">&#160;</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp4">Exemple 3 : ajout d'une table de dictionnaire dans une structure avec un préfixe</span></p>
+<p class="Source">Structure Element</p>
+<p class="Source">1 Nom &#160;30</p>
+<p class="Source">1 Prenom 30</p>
+<p class="Source" style="font-weight: bold;">Record odfdd.dhsd client cc_</p>
+<p class="Source">EndStructure</p>
+<p class="Source">&#160;</p>
+<p class="Source">RecordDiva Element</p>
+<p class="Source">&#160;</p>
+<p class="Source">;on peut ensuite écrire</p>
+<p class="Source">Element.Nom = ...</p>
+<p class="Source">Element.Prenom = ...</p>
+<p class="Source">;champs de la table client</p>
+<p class="Source">Element.cc_Adrcli = ...</p>
+<p class="Source">Element.cc_Ce = ...</p>
+<p class="Source">Element.cc_client = ...</p>
+<p class="Source">Element.cc_Codecli = ...</p>
+<p class="Source">Element.cc_Postalcli = ...</p>
+<p class="Source">Element.cc_Societe = ...</p>
+<p class="Source">Element.cc_Villecli = ...</p>
+<p class="Source">&#160;&#160;</p>
+<p class="Source">&#160;</p>
+<p class="hcp1">Exemple 4 : ajout d'une structure définie dans un module externe</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="font-weight: bold;"><span class="hcp4">;---------------- Module1.dhsp ----------------------</span></p>
+<p class="Source">Public Structure StructurePublique</p>
+<p class="Source">1 sp1 10</p>
+<p class="Source">1 sp2 X</p>
+<p class="Source">EndStructure</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="font-weight: bold;"><span><span class="hcp4">;---------------- Programme_principal.dhsp ----------</span></span></p>
+<p class="Source">Module module1.dhop</p>
+<p class="Source">Structure Element</p>
+<p class="Source">1 Nom &#160;30</p>
+<p class="Source">1 Prenom 30</p>
+<p class="Source"><span class="hcp4">RecordDiva module1.StructurePublique</span></p>
+<p class="Source">EndStructure</p>
+<p class="Source">&#160;</p>
+<p class="Source">RecordDiva Element</p>
+<p class="Source">&#160;</p>
+<p class="Source">;on peut ensuite écrire</p>
+<p class="Source">Element.Nom = ...</p>
+<p class="Source">Element.Prenom = ...</p>
+<p class="Source">Element.sp1 = ...</p>
+<p class="Source">Element.sp2 = ...</p>
+<p class="Source">Element.StructurePublique = ...</p>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp4">Exemple 5 : initialisation d'une donnée structurée par une fonction</span></p>
+<p class="Source">Structure Element</p>
+<p class="Source">1 Nom &#160;30</p>
+<p class="Source">1 Prenom 30</p>
+<p class="Source">1 Liste L</p>
+<p class="Source">1 Compteur X</p>
+<p class="Source">EndStructure</p>
+<p class="Source">&#160;</p>
+<p class="Source">Function char InitElement &#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="Source">;fonction d'initialisation pour la structure Element</p>
+<p class="Source">RecordDiva Element Elem</p>
+<p class="Source">beginf</p>
+<p class="Source">&#160;&#160;&#160;elem.Liste = ListCreate</p>
+<p class="Source">&#160;&#160;&#160;elem.Compteur = 1</p>
+<p class="Source">&#160;&#160;&#160;freturn elem</p>
+<p class="Source">endf</p>
+<p class="Source">&#160;</p>
+<p class="Source">RecordDiva Element = InitElement() &#160;&#160;; instanciation et initialisation</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span class="hcp4">Voir</span></p>
+<p class="body-text"><a href="RecordDiva.htm">RecordDiva</a>, <a href="Record.htm">Record</a>, <a href="Public.htm">Public</a></p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>[]</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+font.hcp3 { font-family:Courier New; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>[] &#160;<a href="Fonctionsdetraitementdescha_nesdecaract_res.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Les crochets sont un opérateur spécial permettant de concaténer une liste de données. A l'intérieur des crochets de concaténation, il est possible d'effectuer des opérations particulières qui sont :<br>
+&#160;- le positionnement de curseur,<br>
+&#160;- la génération d'une chaîne d'espaces,<br>
+&#160;- la duplication d'une constante.</p>
+<p class="Body-Text"><font class="hcp1">Alpha</font> [ <font class="hcp2">v1 v2 v3 …. vn</font> ]</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">V1 .. vn</font></p>
+<p class="decalage05">Le type des données se trouvant à l'intérieur des crochets est quelconque.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La concaténation renvoie toujours un résultat de type alphanumérique.</p>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp1">Positionnement du curseur</font></p>
+<p class="Body-Text"><font class="hcp1">[</font> <font class="hcp1">=</font> <font class="hcp2">ligne colonne</font> <font class="hcp1">]</font></p>
+<p class="Body-Text">Exemple : <font face="Courier New" class="hcp3">i</font><font face="Courier New" class="hcp3">nput [ = 10 2 'Code du compositeur.... : ' ]</font> <font face="Courier New" class="hcp3">c</font><font face="Courier New" class="hcp3">odecp</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Génération d'une chaîne d'espaces</font></p>
+<p class="Body-Text"><font class="hcp1">[</font> <font class="hcp1">*</font> <font class="hcp2">nombre_d'espaces</font> <font class="hcp1">]</font></p>
+<p class="Body-Text">Exemple : <font face="Courier New" class="hcp3">d</font><font face="Courier New" class="hcp3">isplay [ System.</font><font face="Courier New" class="hcp3">c</font><font face="Courier New" class="hcp3">lear System.</font><font face="Courier New" class="hcp3">r</font><font face="Courier New" class="hcp3">ever</font> <font face="Courier New" class="hcp3">'</font><font face="Courier New" class="hcp3">Divalto' *10 System.</font><font face="Courier New" class="hcp3">d</font><font face="Courier New" class="hcp3">ate ]</font></p>
+<p class="Body-Text">laisse 10 espaces entre les 2 variables.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Duplication d'une constante</font></p>
+<p class="Body-Text"><font class="hcp1">[ !</font> <font class="hcp2">nombre</font>_<font class="hcp2">de</font>_<font class="hcp2">fois constante</font> <font class="hcp1">]</font></p>
+<p class="Body-Text">Exemple : <font face="Courier New" class="hcp3">d</font><font face="Courier New" class="hcp3">isplay [ ! 80 '-' ]</font></p>
+<p class="Body-Text">affiche un trait de 80 tirets.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Op_rateursdeconcat_nation.htm">Opérateurs de concaténation</a>, <a href="Display.htm">Display</a>, <a href="Input.htm">Input</a>, <a href="Print.htm">Print</a></p>
+</body>
+</html>

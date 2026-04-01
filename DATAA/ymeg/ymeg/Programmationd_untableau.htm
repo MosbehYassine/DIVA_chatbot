@@ -1,0 +1,134 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation d'un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-family:Symbol; }
+font.hcp4 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Programmation d'un tableau</h3>
+<p class="Body-Text">Dans cette rubrique et la suivante, nous nous intéresserons plus particulièrement&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">A la <font class="hcp2">séquence d'opérations</font> à programmer avant la mise en attente d'une action (clavier ou souris) de l'utilisateur concernant le tableau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">A la <font class="hcp2">boucle d'attente et de traitement</font> des "&#160;événements tableau&#160;".</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">1. Mise en œuvre d'un tableau&#160;: Séquence des opérations</font></p>
+<p class="Body-Text">La programmation d'un objet tableau se déroule de la manière suivante&#160;:</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Chargement du masque par XmeLoad.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Initialisation du tableau avec récupération de son identifiant par la fonction <a href="XmeListGetId.htm">XmeListGetId</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Choix des options de fonctionnement&#160;:<font face="Symbol" class="hcp3"><br>
+-</font> Attributs d'affichage de la ligne courante (fonction <a href="XmeListSetSelectionOption.htm">XmeListSetSelectionOption</a>).<font face="Symbol" class="hcp3"><br>
+-</font> Existence d'une colonne d'état "&#160;création&#160;" (fonction <a href="XmeListSetCreatingOption.htm">XmeListSetCreatingOption</a>).<br>
+&#160;<br>
+Remarque concernant le <a href="Marquagedeslignesd_untableau.htm">marquage des lignes</a>&#160;: Il n'existe pas de fonction validant cette option&#160;; pour la mettre en œuvre, vous devez déclarer pour le tableau une donnée de contrôle des lignes dans Xwin et renseigner cette donnée avant toute opération de création ou de modification d'un élément du tableau.<br>
+&#160;<br>
+Remarque concernant la <a href="S_lectionmultipledeslignesd_untableau.htm">sélection multiple des lignes</a>&#160;: Il n'existe pas de fonction validant cette option&#160;; pour la mettre en œuvre avec XmeListConsultDefault, vous devez déclarer pour le tableau une donnée de contrôle des lignes dans Xwin, initialiser cette donnée avec les attributs choisis pour l'affichage des lignes sélectionnées et positionner le paramètre <font class="hcp4">Sélection</font> à TRUE à l'appel de XmeListConsultDefault.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le cas échéant, remplissage initial du tableau (Cf. rubrique <a href="Gestiondelalisteassoci_e_untableau.htm">Gestion de la liste associée à un tableau</a>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le cas échéant, positionnement initial dans le tableau (fonctions XmeListFirst, XmeListSetOffset, etc.).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Affichage de la page de masque contenant le tableau par XmeDisp, XmeDispv, etc.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Initialisation de l'ascenseur vertical du tableau (fonction <a href="XmeListScrollBarInit.htm">XmeListScrollBarInit</a>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Affichage des données du tableau avec mise en attente d'un événement clavier ou souris (fonction <a href="XmeListConsult.htm">XmeListConsult</a>).</p>
+</li>
+</ul>
+<p class="Body-Text">On obtient alors une séquence de mise en route du type suivant&#160;:</p>
+<p class="Source">...</p>
+<p class="Source">PUBLIC RECORD Appli.dhsd Ligne &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;contenu d'un élément</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd ScrollBar32 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ascenseur</p>
+<p class="Source">PUBLIC RECORD DDSYS.dhsd RowInfo &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;SI donnée de contrôle</p>
+<p class="Source">...</p>
+<p class="Source">1 Ident L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;identifiant du tableau</p>
+<p class="Source">1 Car B</p>
+<p class="Source">1 Fini B</p>
+<p class="Source">...</p>
+<p class="Source">MAIN&#160;</p>
+<p class="Source">...</p>
+<p class="Source">XmeLoad ("masque") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font class="hcp2">X</font>meInfoPage ("masque",<font class="hcp4">Page</font>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("masque",<font class="hcp4">Page</font>,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation tableau&#160;</p>
+<p class="Source">Ident = XmeListGetId ("MASQUE",<font class="hcp4">Page</font>,"TABLEAU",Ligne)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;choix des options&#160;</p>
+<p class="Source">XmeListSetSelectionOption (Ident,...) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ligne courante</p>
+<p class="Source">XmeListSetCreatingOption (Ident,TRUE) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;SI ligne "création"</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation contrôle&#160;</p>
+<p class="Source">RowInfo = " " &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;SI marquage ou sélection</p>
+<p class="Source">RowInfo.Bitmap = "..." &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;image bitmap</p>
+<p class="Source">RowInfo.Couleur = "..." &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;couleur</p>
+<p class="Source">RowInfo.CoulSelec = ...</p>
+<p class="Source">RowInfo.Selection = FALSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;état initial</p>
+<p class="Source">&#160;</p>
+<p class="Source">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;remplissage et</p>
+<p class="Source">XmeListFirst (Ident,Ligne) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;positionnement initial</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeDispv ("MASQUE",<font class="hcp4">Page</font>,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche la page</p>
+<p class="Source">XmeListScrollBarInit (Ident,ScrollBar32) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialisation ascenseur</p>
+<p class="Source">&#160;</p>
+<p class="Source">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;voir point 2 ci-dessous</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">2. Mise en œuvre d'un tableau&#160;: Boucle de traitement des événements</font></p>
+<p class="Body-Text">La gestion d'un tableau va consister la plupart du temps à exécuter une boucle "&#160;autour&#160;" de la fonction <a href="XmeListConsult.htm">XmeListConsult</a>. Cette fonction se met en attente d'une commande en provenance de l'utilisateur et vous informe sur l'événement (clavier ou souris) produit.</p>
+<p class="Body-Text">Ywpf propose une fonction (<a href="XmeListConsultDefault.htm">XmeListConsultDefault</a>) qui effectue un <a href="Traitementsli_s_l_objettableau.htm">traitement standard</a> pour la majorité des "&#160;événements tableau&#160;"&#160;: <font class="hcp2">on aura intérêt à l'utiliser aussi souvent que possible</font>.</p>
+<p class="Body-Text">On obtient alors une boucle schématique du type suivant&#160;:</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;boucle d'attente</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListConsult (Ident) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(ré)affiche et attend&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Key &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement produit&#160;?&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;touche Echap&#160;:&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;stop</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement traité de&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;manière non standard&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement traité de&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;manière non standard&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres événements&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Ident, Ligne, ScrollBar32, \&#160;</p>
+<p class="Source"><font class="hcp4">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Privilège</font>, <font class="hcp4">Sélection</font>)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="Exempledeprogrammationd_untableau.htm">Exemple de programmation d'un tableau</a></p>
+<p class="Body-Text"><a href="FonctionsdepersonnalisationdeXmeListConsultDefProc.htm">Fonctions de personnalisation de XmeListConsultDefault</a></p>
+</body>
+</html>

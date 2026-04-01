@@ -1,0 +1,45 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Menu du zoom</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Menu du Zoom</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Par défaut, le zoom gère automatiquement une barre de menu standard donnant accès aux différentes actions. Ce menu est défini dans les ressources du masque Zoom7.dhof.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Ce menu peut être personnalisé :</p>
+<ul>
+<li class="p-Body-Text">
+<p class="Body-Text">Soit par l'<span class="hcp1">ajout de choix supplémentaires</span> en fin de menu ou de sous-menus.<br>
+Pour cela, créez, dans les ressources du masque du zoom, un menu nommé <font class="hcp2">"ZoomAppend"</font>.<br>
+A l'exécution, il sera automatiquement fusionné au menu standard (les règles de fusion sont expliquées à la <font class="hcp2">rubrique Menus : Surcharge</font>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Soit par le <span class="hcp1">remplacement du menu complet</span>.<br>
+Pour cela, créez, dans les ressources du masque du zoom, un menu nommé <font class="hcp2">"Zoom"</font>.<br>
+A l'exécution, il remplacera le menu standard.<br>
+Vous pouvez récupérer dans votre menu personnel les choix du menu standard que vous souhaitez conserver. Pour cela, copiez ces choix dans le masque Zoom7.dhsf (source livré) et collez-les dans le masque du zoom.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt; font-style: italic;">Désactivation des choix</p>
+<p class="Body-Text">Le zoom gère l'activation et la désactivation des choix standard en fonction du contexte.</p>
+<p class="Body-Text">Dans le cas d'ajout de choix supplémentaires, il convient d'assurer cette gestion pour les choix ajoutés. Pour cela, la donnée <font class="hcp2">Zoom.IdMenu</font> contient l'identifiant du menu. Voir <a href="ZoomAvantInput.htm">ZoomAvantInput.</a></p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

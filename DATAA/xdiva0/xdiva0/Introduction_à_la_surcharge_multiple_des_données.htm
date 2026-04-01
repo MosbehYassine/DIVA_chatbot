@@ -1,0 +1,69 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Introduction à la surcharge multiple des données</title>
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-family:Arial, sans-serif;
+font-size:10pt; }
+ol.hcp2 { list-style:decimal; }
+li.hcp3 { font-family:Arial, sans-serif;
+font-size:10pt; }
+span.hcp4 { text-decoration:underline; }
+p.hcp5 { font-family:Arial, sans-serif;
+font-size:10pt;
+margin-left:40px;
+font-weight:normal; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2 style="font-family: Arial, sans-serif; font-size: 14pt;">Introduction 
+ à la surcharge multiple des données</h2>
+<p class="hcp1">A partir de 
+ la version 2020-406, harmony s'enrichit d'une nouvelle fonctionnalité 
+ importante : la surcharge multiple des données.</p>
+<p class="hcp1">L'ajout de 
+ données (pour la personnalisation d'une application) se fait en ajoutant 
+ des sous-champs dans les zones réservées à cet effet. Par exemple, pour 
+ ajouter des champs à l'enregistrement ART, il faut mettre ces champs dans 
+ la zone UART déjà présente dans le dictionnaire.</p>
+<p class="hcp1">Cette méthode 
+ présente deux limites importantes :</p>
+<ol class="hcp2">
+	<li class="hcp3"><p class="hcp1">La zone U est de taille fixe, et si elle n'est 
+	 pas assez grande pour contenir tous les champs, il faudra faire une 
+	 nouvelle table, ce qui est fastidieux.</p></li>
+	<li class="hcp3"><p class="hcp1">Si deux développements parallèles (add-on) ajoutent 
+	 des champs dans la même zone U, le jour où un partenaire veut utiliser 
+	 ces deux développements, il aura des problèmes car le dictionnaire 
+	 ne peut être surchargé qu'une seule fois.</p></li>
+</ol>
+<p class="hcp1">Les surcharges 
+ multiples permettent de dépasser ces deux limitations :</p>
+<ol class="hcp2">
+	<li class="hcp3"><p class="hcp1"><span class="hcp4">La 
+	 zone U devient extensible</span>, il n'y a donc plus de limite concernant 
+	 la taille et le nombre des champs que l'on peut ajouter.</p></li>
+	<li class="hcp3"><p class="hcp1"><span class="hcp4">Le 
+	 dictionnaire de données peut être surchargé plusieurs fois</span>. 
+	 Si deux add-ons ont ajouté des données dans le dictionnaire, les données 
+	 des deux add-ons seront mises dans la zone U.</p></li>
+</ol>
+<p style="font-family: Arial, sans-serif; font-size: 10pt; font-weight: bold;">Remarques</p>
+<ul style="list-style: disc;">
+	<li><p class="hcp5">La lecture de ce chapitre nécessite 
+	 de maîtriser les concepts de base d'Harmony et de la surcharge.</p></li>
+	<li><p class="hcp5">Concernant les dictionnaires de RecordSql, 
+	 il n'y a rien de spécial à dire car la surcharge à plusieurs niveau 
+	 est prise en charge depuis la création des RecordSql.</p></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,198 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Création d'un dictionnaire de référence</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { border-top:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp4 { font-weight:bold; }
+td.hcp5 { padding-right:10px;
+padding-left:10px; }
+span.hcp6 { color:#ff0000;
+font-weight:bold; }
+p.hcp7 { margin-left:48px;
+color:#ff0000;
+font-weight:bold; }
+p.hcp8 { margin-left:88px;
+font-weight:normal;
+color:#000000; }
+p.hcp9 { margin-left:48px; }
+p.hcp10 { margin-left:88px; }
+p.hcp11 { font-weight:normal; }
+span.hcp12 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Création d'un dictionnaire de référence</h3>
+<p>&#160;</p>
+<p>La création (ou la mise à jour) d'un dictionnaire de référence se fait depuis Xwin, choix <span class="hcp1">&lt;Extraire les libellés en vue de la traduction&gt;</span> du menu <span class="hcp1">&lt;Outils&gt;&lt;Traduction&gt;</span>.</p>
+<p>&#160;</p>
+<p>Les paramètres à renseigner sont :</p>
+<table style="vertical-align: top;" cellspacing="3" width="71.35%">
+<col style="width: 34.068%;">
+<col style="width: 65.932%;">
+<tr class="hcp2">
+<td style="width:34.068%;" class="hcp3">
+<p class="hcp4">Répertoire source</p>
+</td>
+<td style="width:65.932%;" class="hcp3">
+<p>Répertoire contenant les sources à traiter. Xwin traite les sous-répertoires.</p>
+<p>Les chemins implicites en place doivent permettre l'accès aux dictionnaires de données et aux dictionnaires de multi-choix utilisés dans les masques.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.068%;" class="hcp5">
+<p class="hcp4">Code langue de référence</p>
+</td>
+<td style="width:65.932%;" class="hcp5">
+<p>Code de la langue des libellés</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.068%;" class="hcp5">
+<p class="hcp4">Code page de la langue de référence</p>
+</td>
+<td style="width:65.932%;" class="hcp5">
+<p>Code page utilisé pour la langue de référence (0 par défaut)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.068%;" class="hcp5">
+<p class="hcp4">Dictionnaire de référence</p>
+</td>
+<td style="width:65.932%;" class="hcp5">
+<p>Nom du dictionnaire de référence à créer ou à mettre à jour. Il s'agit d'un fichier source-dictionnaire (.dhfi).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.068%;" class="hcp5">
+<p class="hcp4">Effacer complètement le fichier</p>
+</td>
+<td style="width:65.932%;" class="hcp5">
+<p><span class="hcp6">Attention</span> : si vous effacez un dictionnaire de référence existant, vous ne pourrez pas vous servir de ce dictionnaire pour mettre à jour des dictionnaires étrangers existants.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.068%;" class="hcp5">
+<p class="hcp4">Effacer uniquement les liens</p>
+</td>
+<td style="width:65.932%;" class="hcp5">
+<p>L'effacement des liens provoque la suppression des libellés inutilisés. <span class="hcp6">Attention</span>, si vous avez ajouté des libellés au dictionnaire de référence (par le programme xTranslate), ces libellés ajoutés seront perdus.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.068%;" class="hcp5">
+<p class="hcp4">Fichier paramètres complémentaire</p>
+</td>
+<td style="width:65.932%;" class="hcp5">
+<p>Nom d'un fichier paramètre complémentaire qui permet de poser des filtres et d'extraire les libellés contenus dans d'autres fichiers que les sources (menus, etc.). (Voir ci-dessous)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.068%;" class="hcp5">
+<p class="hcp4">Programme Diva avant</p>
+</td>
+<td style="width:65.932%;" class="hcp5">
+<p>Nom d'un programme Diva exécuté avant l'injection des libellés dans le dictionnaire. Ce programme peut éventuellement créer des fichiers qui seront injectés dans le dictionnaire. (Voir ci-dessous)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:34.068%;" class="hcp5">
+<p class="hcp4">Extraire uniquement les libellés qui ne figurent pas dans ce dictionnaire (surcharge)</p>
+</td>
+<td style="width:65.932%;" class="hcp5">
+<p>Permet d'ignorer les libellés déjà présents dans un autre dictionnaire. Si vous êtes dans le cas d'une surcharge de Divalto, vous disposez des dictionnaires de référence et étranger de Divalto, et il est donc inutile de mettre dans votre dictionnaire les libellés déjà traduits.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p style="font-weight: bold; color: #ff0000;">Remarque importante</p>
+<p><span style="text-decoration: underline;">Les dictionnaires de référence doivent être conservés et mis à jour d'une version à l'autre</span>. Il ne faut pas les supprimer puis les recréer lors d'une nouvelle version, car dans ce cas, ils ne peuvent plus servir à mettre à jour les dictionnaires en langue étrangère. En cas de perte accidentelle, un choix de xTranslate.dhop permet de recréer un dictionnaire de référence à partir d'un dictionnaire étranger.</p>
+<p>&#160;</p>
+<hr align="center" width="50%">
+<p class="hcp4">&#160;</p>
+<p class="hcp4">Fichier paramètre complémentaire</p>
+<p>Le fichier paramètre complémentaire est au format HMP. Il peut contenir les lignes suivantes</p>
+<p class="hcp7">&lt;Fichier_Dico&gt;....&lt;enreg&gt;.....&lt;Champ&gt;....&lt;Champ&gt;....&lt;Champ_filtre&gt;expression...&lt;Champ_filtre&gt;expression</p>
+<p class="hcp8">Ce type de ligne permet d'extraire les libellés d'un fichier en précisant le nom de l'enregistrement et le nom des champs. Attention, le nom du dictionnaire de données et le mnémonique du fichier dans le dictionnaire doivent être garnis dans le fichier. (&lt;xtools.dhop&gt;&lt;Fichier&gt;&lt;Modifier les caractéristiques&gt;, zones "Dictionnaire" et "Mnémonique fichier dans le dictionnaire")</p>
+<p class="hcp8">Attention : il ne faut pas ici mettre des champs multilingues (par exemple la description de l'article). La traduction de ces champs passe par un autre dictionnaire.</p>
+<p class="hcp8"><span class="hcp1">&lt;Champ_Filtre&gt;</span> permet de filtrer les enregistrements à traiter.</p>
+<p class="hcp8">La syntaxe de Expression est : &#160;<span class="hcp1">champ [not] opérateur &#160;constante</span></p>
+<p class="hcp8">Les opérateurs possibles sont <span class="hcp1">&#160;= &#160;&lt; &#160;&gt; &#160;&#160;&lt;&gt; &#160;&#160;&lt;= &#160;&#160;&gt;= &#160;Like &#160;&#160;Match &#160;Inspect</span></p>
+<p class="hcp8">Si plusieurs filtres sont positionnés, ils doivent tous être vrais pour que l'enregistrement soit traité.</p>
+<p class="hcp8">Si vous utilisez les opérateurs &lt; &gt; il faut utiliser les crochets pour la syntaxe hmp.</p>
+<p class="hcp8">&#160;</p>
+<p class="hcp8">Exemples :</p>
+<p class="hcp8">Extraction des libellés d'un menu : &lt;Fichier_dico&gt;g3f.dhfi&lt;enreg&gt;m2&lt;Champ&gt;lib &#160;&#160;&#160;&#160;&#160;</p>
+<p class="hcp8">Extraction des libellés d'un fichier d'erreurs : &lt;Fichier_dico&gt;gtferr.dhfi&lt;enreg&gt;Xerr&lt;Champ&gt;errtxt</p>
+<p class="hcp8">Extraction des libellés d'un menu pour les enregistrements dont le regroupement est PARAM ou DOC.</p>
+<p class="hcp8">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[Fichier_dico]harmonyf.dhfi[enreg]m2[Champ]lib[champ_filtre]reg inspect "PARAM DOC"</p>
+<p>&#160;</p>
+<p class="hcp7">&lt;Fichier&gt;...</p>
+<p class="hcp8">Ce type de ligne ajoute l'intégralité du contenu du fichier au dictionnaire.</p>
+<p class="hcp9">&#160;</p>
+<p class="hcp7">&lt;Filtre&gt;&lt;Match&gt;...</p>
+<p class="hcp7">&lt;Filtre&gt;&lt;Like&gt;...</p>
+<p class="hcp10">Ce &#160;type de ligne permet de filtrer les libellés, soit par l'opérateur Like soit par l'opérateur Match.</p>
+<p class="hcp10">exemple : &lt;FILTRE&gt;&lt;like&gt;*client*</p>
+<p class="hcp9">&#160;</p>
+<p class="hcp7"><span class="hcp6">&lt;FiltreIgnorer&gt;&lt;Match&gt;...</span></p>
+<p class="hcp7">&lt;FiltreIgnorer&gt;&lt;Like&gt;...</p>
+<p class="hcp10">Ce &#160;type de ligne permet de spécifier des libellés à ne pas mettre dans le dictionnaire.</p>
+<p class="hcp10">exemple : &lt;FiltreIgnorer&gt;&lt;like&gt;#*</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp7">&lt;SourcesTraiter&gt;...</p>
+<p class="hcp8">Ce type de ligne permet de spécifier un format de fichier à traiter.</p>
+<p class="hcp8">Si une ou plusieurs lignes de ce type existent dans le fichier, seuls les fichiers spécifiés par &lt;SourcesTraiter&gt; seront traités. Tous les autres fichiers seront ignorés.</p>
+<p class="hcp8">Exemple : &lt;SourcesTraiter&gt;gt*</p>
+<p>&#160;</p>
+<p class="hcp7">&lt;SourcesIgnorer&gt;...</p>
+<p class="hcp8">Ce type de ligne permet de spécifier un format de fichier à ignorer lors de l'extraction des libellés.</p>
+<p class="hcp8">Exemple : &lt;SourcesIgnorer&gt;pp*</p>
+<p>&#160;</p>
+<p>Pour valider les différents éléments du fichier paramètre, il est conseillé de lancer l'extraction des libellés sur un "petit" répertoire. En cas d'erreur dans le fichier paramètre (dictionnaire non renseigné par exemple), le programme est interrompu.</p>
+<p>&#160;</p>
+<hr align="center" width="50%">
+<p>&#160;</p>
+<p class="hcp4">Programme Diva Avant</p>
+<p class="hcp11">Le programme Diva peut lire les paramètres de la boîte de dialogue depuis le tunnel.</p>
+<p class="Source">PingReceive("nomdicobase" &#160;&#160;,valeur) &#160;&#160;&#160;&#160;; dictionnaire de référence également accessibles par "dicofrancais"</p>
+<p class="Source">PingReceive("effacement" &#160;&#160;&#160;,valeur1)</p>
+<p class="Source">PingReceive("ficparametres" ,valeur2)</p>
+<p class="Source">PingReceive("repertoire" &#160;&#160;&#160;,valeur3)</p>
+<p class="Source">PingReceive("fictmp" &#160;&#160;&#160;&#160;&#160;&#160;&#160;,valeur4)</p>
+<p class="Source">PingReceive("avecbase" &#160;&#160;&#160;&#160;&#160;,valeur5) &#160;&#160;&#160;; case "Extraire uniquement..." cochée</p>
+<p class="Source">PingReceive("dicobase" &#160;&#160;&#160;&#160;&#160;,valeur6) &#160;&#160;&#160;; dictionnaire si la case "Extraire uniquement..." est cochée.</p>
+<p class="Source">PingReceive(<span class="hcp1">"</span>codelangueref<span class="hcp1">"</span> <span>,valeur7) &#160;&#160;&#160;; code langue du dictionnaire de référence</span></p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4"><span class="hcp1">Remarques</span></p>
+<ul style="list-style: disc;">
+<li class="p">
+<p class="hcp11">A chaque libellé provenant d'un masque correspond une entrée dans le dictionnaire. Cela permet de traduire différemment un même texte en langue de base, présent à plusieurs endroits du masque ou dans des masques différents. Lors de la saisie des traductions, l'outil permet de propager une saisie à tous les libellés identiques.</p>
+</li>
+<li class="p">
+<p class="hcp11">Les textes "Aides lignes" ne sont pas intégrés au dictionnaire.</p>
+</li>
+<li class="p">
+<p class="hcp11">Les libellés qui ne proviennent pas des masques sont présents une seule fois dans le dictionnaire.<br>
+Toutefois l'instruction Diva Translate permet éventuellement de différencier deux libellés identiques.</p>
+</li>
+</ul>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">Voir également <span class="hcp12"><a href="Recr&eacute;er_un_dictionnaire_fran&ccedil;ais_&agrave;_partir_d_un_dictionnaire_&eacute;tranger.htm">Recréer un dictionnaire de référence à partir d'un dictionnaire étranger</a>,</span> <span class="hcp12"><a href="Pilotage_de_Xwin_pour_la_mise_&agrave;_jour_des_dictionnaires.htm">Pilotage de Xwin pour la mise à jour des dictionnaires</a>.</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

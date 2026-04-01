@@ -1,0 +1,47 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Définition des vues</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Définition des vues</h3>
+<p class="Body-Text">Une vue est une table virtuelle constituée de champs provenant d’une ou de plusieurs tables réelles. Elle est composée à partir des tables d’un ou de plusieurs dictionnaires. Elle est stockée dans un dictionnaire de vues (extension .dhdv).</p>
+<p class="Body-Text"><font class="hcp1">Les vues offrent de nombreux avantages :</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">L’utilisation d’une vue par un utilisateur est très <font class="hcp1">simple</font>. Il n’a pas à se soucier des jointures entre les différentes tables de la vue. La vue est composée des champs les plus pertinents. Elle rend un jeu de lignes cohérent.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Elle apporte un <font class="hcp1">niveau d’abstraction</font> sur l’organisation des tables et masque la complexité interne liée à des contraintes informatiques.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Lors d’une requête sur une vue, la recherche infructueuse d’une ligne dans une table liée renvoie des valeurs à espace pour les champs de cette table. De ce fait, on peut déclarer dans une vue des tables liées pour lesquelles les champs du lien n’ont pas été renseignés (Par exemple une adresse de livraison facultative pour un client).</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Une vue peut être <font class="hcp1">confidentielle</font> globalement ou pour chacun de ses champs. Chaque utilisateur verra les vues et les champs pour lesquelles il a les autorisations.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques&#160;:</font></p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Les champs d’une vue ne peuvent pas être mis à jour par les requêtes SQL «&#160;Insert&#160;», «&#160;Update&#160;» ou «&#160;Delete&#160;».</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Une vue est beaucoup plus facile à exploiter par un utilisateur, notamment lorsqu’elle fait intervenir plusieurs tables. On privilégiera donc l’utilisation des vues dans une source de données, plutôt que celle des tables individuelles.</p>
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Menus : Libellé et image des choix</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-weight:bold;
+font-style:italic; }
+font.hcp4 { font-style:italic; }
+font.hcp5 { font-style:italic;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Menus : Libellé et image des choix</h3>
+<p class="Body-Text">Hormis les séparateurs, tous les choix d’un menu affichent un libellé (propriété <font class="hcp1">Texte</font> dans l’éditeur de menus de Xwin).</p>
+<p class="Body-Text">De plus, si le choix est un choix terminal non situé dans la barre de choix principaux d’un menu classique,&#160;vous pouvez aussi lui affecter une image bitmap (propriété <span class="hcp2">Nom dans la feuille de style</span> ou <span class="hcp2">Fichier Image</span> dans l’éditeur de menus de Xwin), qui sera affichée devant le libellé.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques sur le libellé d’un choix&#160;:</font></p>
+<p class="Body-Text">Windows permet la sélection d’un choix par un raccourci clavier. Pour sélectionner un choix principal de menu classique au clavier, l’utilisateur doit taper <font class="hcp1">Alt+</font><font class="hcp3">X</font>, où <font class="hcp3">X</font> désigne le caractère <font class="hcp1">souligné</font> du libellé du choix. Si ce choix ouvre un sous-menu, l’utilisateur doit ensuite taper simplement <font class="hcp4">X</font>, où <font class="hcp4">X</font> désigne à nouveau le caractère souligné du libellé du sous-choix à atteindre, et ainsi de suite.</p>
+<p class="Body-Text">Pour souligner un caractère du libellé, il faut le faire précéder du caractère conventionnel _. Par exemple&#160;:</p>
+<p class="Body-Text">Libellé&#160;: _<font class="hcp4">Fichier</font>&#160;affichera le choix&#160;<font class="hcp5">F</font><font class="hcp4"><span style="font-style: normal;">i</span>chier</font><br>
+Libellé&#160;: <font class="hcp4">Forma_t</font>&#160;affichera le choix&#160;<font class="hcp4">Forma</font><font class="hcp5">t</font></p>
+&#160;
+<p class="Body-Text">Hors choix principal, vous pouvez aussi faire figurer dans le libellé les caractères conventionnels "<font class="hcp1">\t</font>"&#160;: dans ce cas, les caractères qui suivent seront <font class="hcp1">cadrés à droite</font>. On utilise généralement cette fonctionnalité pour signaler à l’utilisateur le raccourci clavier correspondant à la sélection du choix. Par exemple&#160;:</p>
+<p class="Body-Text">Libellé&#160;: <span style="font-style: italic;">_</span><font class="hcp4">Ouvrir\tCtrl+O</font>&#160;affichera le choix&#160;<font class="hcp5">O</font><font class="hcp4">uvrir&#160;&#160;Ctrl+O</font><br>
+Libellé&#160;: _<font class="hcp4">Création\tF3</font>&#160;&#160;affichera le choix&#160;<font class="hcp5">C</font><font class="hcp4">réation&#160;&#160;F3</font></p>
+</body>
+</html>

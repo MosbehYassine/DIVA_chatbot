@@ -1,0 +1,58 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>FileCrypt</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>FileCrypt &#160;<a href="Listedesfonctionsavanc_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">FileCrypt permet de crypter un fichier. Les fichiers cryptés par FileCypt peuvent être décryptés par la fonction <a href="FileUncrypt.htm">FileUncrypt</a> .</p>
+<p class="Body-Text">Le fichier crypté est également comprimé.</p>
+<p class="Body-Text"><font class="hcp2"><br>
+Ptr = FileCrypt</font> (<font class="hcp3">fichier_départ , fichier_arrivée, clé, code_système</font>)</p>
+<p class="Body-Text"><font class="hcp2"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Fichier_départ</font></p>
+<p class="decalage05">Nom du fichier à crypter.</p>
+<p class="Body-Text"><font class="hcp3">Fichier_arrivée</font></p>
+<p class="decalage05">Nom du fichier crypté. Si ce fichier n'existe pas, il est automatiquement créé. Le fichier d'arrivée doit obligatoirement être distinct du fichier de départ.</p>
+<p class="Body-Text"><font class="hcp3">Code_système</font></p>
+<p class="decalage05">Donnée numérique qui reçoit un code d'erreur système.</p>
+<p class="Body-Text"><font class="hcp3">Clé</font></p>
+<p class="decalage05">Clé de cryptage. Cette clé est bien évidemment nécessaire au décryptage. Elle ne doit pas être trop courte (plus de 20 caractères).</p>
+<p class="Body-Text">&#160;&#160;<br>
+<font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction retourne un code d'erreur principal et un code d'erreur système.</p>
+<p class="Body-Text">Voir <a href="Codes_d_erreurs_des_fonctions_de_cryptage_et_de_compression.htm">Codes d'erreurs des fonctions de cryptage et de compression</a> .</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">La fonction <a href="Crypt.htm">Crypt</a> permet de crypter une chaîne de caractères.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-left: 36.00pt;"><font class="hcp2"><br></font>1 cle&#160;S</p>
+<p class="source" style="margin-left: 36.00pt;">1 st&#160;x</p>
+<p class="source" style="margin-left: 36.00pt;">1 ficdepart S = "xxxx"&#160;</p>
+<p class="source" style="margin-left: 36.00pt;">1 ficarrivee S = "yyyy"&#160;</p>
+<p class="source" style="margin-left: 36.00pt;">cle = "ceciestmacledecryptage"&#160;</p>
+<p class="source" style="margin-left: 36.00pt;">FileCrypt(ficdepart,ficarrivee,cle,st)&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="FileUncrypt.htm">FileUncrypt</a> , <a href="FileCompress.htm">FileCompress</a> , <a href="Crypt.htm">Crypt</a></p>
+<p class="Body-Text"><a href="Codes_d_erreurs_des_fonctions_de_cryptage_et_de_compression.htm">Codes d'erreurs des fonctions de cryptage et de compression</a> .</p>
+</body>
+</html>

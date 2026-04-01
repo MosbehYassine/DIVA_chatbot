@@ -1,0 +1,96 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Positionnements souris en saisie de masque</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-family:Symbol; }
+font.hcp4 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Positionnements souris en saisie de masque</h3>
+<p class="Body-Text">Dans cette rubrique, nous allons nous intéresser aux <font class="hcp1">déplacements</font>, effectués par l'utilisateur à la <font class="hcp1">souris</font>, lors de la <font class="hcp1">saisie</font> d'un masque (fonction XmeInput) ou d'une ligne de tableau (fonction XmeListInput).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font><span class="hcp2">1.</span></font> <span class="hcp2">Déplacements souris en saisie d'une <font class="hcp1">page de masque Xwin "isolée"</font></span>.</p>
+<p class="Body-Text">Ces déplacements sont gérés par Ywpf de <font class="hcp1">manière transparente</font> pour les programmes&#160;: si l'utilisateur clique sur une <span class="hcp2">donnée B de la page X</span> depuis une <span class="hcp2">donnée A de la</span> <font class="hcp1">même page</font> <span class="hcp2">X</span>, le focus est automatiquement transféré sur la donnée B (sous certaines réserves toutefois : variable A obligatoire non renseignée ; refus de ce positionnement par un traitement ou arrêt <font face="Symbol" class="hcp3">-</font>APRES saisie de la donnée A et AVANT saisie de la donnée B<font face="Symbol" class="hcp3">-</font>).<br>
+&#160;<br>
+L'exemple suivant montre une telle saisie de page&#160;:<br>
+&#160;</p>
+<p class="Source">+--------------------------------------------+</p>
+<p class="Source">| Code client &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ........ &lt;--+--+ &#160;&#160;&#160;|</p>
+<p class="Source">| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;| &#160;&#160;&#160;|</p>
+<p class="Source">| Numéro de facture &#160;&#160;&#160;: ........ &lt;--+ &#160;| &#160;&#160;&#160;| Page de masque Xwin</p>
+<p class="Source">| &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;| &#160;&#160;&#160;|</p>
+<p class="Source">| Adresse de livraison : ........ &lt;--+--+ &#160;&#160;&#160;|</p>
+<p class="Source">+--------------------------------------------+</p>
+<p class="Source">&lt;-- Positionnements <font class="hcp1">traités</font> par Ywpf en interne</p>
+<p class="Body-Text">&#160;<br>
+Si l'utilisateur clique depuis n'importe quelle donnée sur n'importe quelle autre donnée de la même page, le déplacement du curseur sur la donnée cliquée est automatique et ne demande aucune programmation particulière.</p>
+<p class="Body-Text">Il en est de même en saisie d'une <font class="hcp1">ligne</font> de <a href="Tableaux.htm">tableau</a>, si l'utilisateur clique sur une donnée de la <font class="hcp1">même ligne</font>.<br>
+&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">2.</font> <span class="hcp2">Déplacements souris inter-<font class="hcp1">page</font></span>.</p>
+<p class="Body-Text"><font class="hcp1">Il n'en est plus ainsi</font> si l'écran affiche simultanément <font class="hcp1">plusieurs pages</font> de masque Xwin.<br>
+Ywpf <font class="hcp1">ne</font> peut se charger des positionnements souris <font class="hcp1">qu</font>'à l'intérieur de la <font class="hcp1">page</font> <font class="hcp4">en cours de saisie</font>&#160;car il faut avertir le programme appelant afin que celui-ci termine la saisie en cours et commande lui-même la saisie de la nouvelle page.<br>
+&#160;</p>
+<p class="Body-Text">Si l'utilisateur clique sur une <span class="hcp2">donnée B de la page Y</span> depuis une <span class="hcp2">donnée A d'une <font class="hcp4">autre page</font> X</span>, <font class="hcp1">le clic restera donc inopérant sans programmation complémentaire</font>. Il en sera de même en saisie d'une <font class="hcp1">ligne</font> de tableau, si l'utilisateur clique sur une donnée d'une <font class="hcp1">autre ligne</font>.<br>
+&#160;<br>
+Illustrons ceci par l'exemple d'un écran de type facturation présentant un en-tête, un tableau de lignes détail et un pied.<br>
+L'en-tête et le pied sont dessinés dans deux pages Xwin différentes (l'objet Tableau ne nous intéresse pas ici)&#160;:<br>
+&#160;</p>
+<p class="Source">+------------------------------------+ &lt;--+</p>
+<p class="Source">| Code client &#160;&#160;&#160;&#160;&#160;&#160;: ........ &#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;|</p>
+<p class="Source">| Numéro de facture : ........ &#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;| Page "En-tête"</p>
+<p class="Source">| ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;|</p>
+<p class="Source">+------------------------------------+ &lt;--+</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">+------------------------------------+ &lt;--+</p>
+<p class="Source">| Tva &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ........ &#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;|</p>
+<p class="Source">| Total &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ........ &#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;| Page "Pied"</p>
+<p class="Source">| ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;|</p>
+<p class="Source">+------------------------------------+ &lt;--+</p>
+<p class="Body-Text">&#160;<br>
+De manière automatique, Ywpf <font class="hcp4">ne</font> <font class="hcp1">permet</font> <font class="hcp4">pas</font> <font class="hcp1">de se déplacer à la souris</font>&#160;de l'en-tête vers le pied et réciproquement du pied vers l'en-tête car il s'agit de <font class="hcp1">pages Xwin différentes</font>&#160;:<br>
+&#160;</p>
+<p class="Source">+------------------------------------+</p>
+<p class="Source">| Code client &#160;&#160;&#160;&#160;&#160;&#160;: ........ &#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">| Numéro de facture : ........ &#160;&#160;&#160;&#160;&#160;&#160;|&lt;-------+</p>
+<p class="Source">| ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">+------------------------------------+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">+------------------------------------+ &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">| Tva &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ........ &#160;&#160;&#160;&#160;&#160;&#160;| &#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">| Total &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;: ........ &#160;&#160;&#160;&#160;&#160;&#160;|&lt;-------+</p>
+<p class="Source">| ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">+------------------------------------+</p>
+<p class="Source">&lt;-- Positionnements <font class="hcp1">non traités</font> par Ywpf en interne</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les positionnements souris inter-page restent cependant <font class="hcp1">programmables</font>&#160;en utilisant les <a href="Programmationdupointd_arr_t_Demandedesaisie_.htm">points d'arrêt "Demande de saisie"</a>.</p>
+<p class="Body-Text">Dans l'exemple, l'utilisateur pourra passer d'une donnée en saisie dans l'en-tête (respectivement le pied) vers une donnée en saisie dans le pied (respectivement l'en-tête) grâce à ce type de point d'arrêt.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="Positionnementssourisenconsultationdemasque.htm">Positionnements souris en consultation de masque</a></p>
+<p class="Body-Text"><a href="Clicssourissp_ciaux_clicsdroit_doubleclics_____.htm">Clics souris spéciaux (clics droit, double clics, ...)</a></p>
+<p class="Body-Text"><a href="Ordred_analysedesclicssourisensaisiededonn_e.htm">Ordre d'analyse des clics souris en saisie de donnée</a></p>
+<p class="Body-Text"><a href="Points_d’arr&ecirc;t__Demande_de_saisie_.htm">Points d’arrêt "Demande de saisie" (pages panels)</a></p>
+<p class="Body-Text"><a href="Num&eacute;ros_de_page_transmis_dans_l’enregistrement_Harmony.htm">Numéros de page transmis dans l’enregistrement Harmony (pages panels)</a></p>
+<p class="body-text">&#160;</p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

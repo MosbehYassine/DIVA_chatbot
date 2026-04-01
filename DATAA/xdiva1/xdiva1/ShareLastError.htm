@@ -1,0 +1,207 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>ShareLastError</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-right:10px;
+padding-left:10px; }
+p.hcp6 { font-weight:bold; }
+td.hcp7 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>ShareLastError &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction ShareLastError permet de savoir quelle est la tâche qui réserve une entité. Elle peut être appelée après une fonction Hshare qui a rendu H_RESERVED.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">ShareLastError</font> (<font class="hcp3">tdf</font> , <font class="hcp3">résultat</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tdf</font></p>
+<p class="decalage05">Table de définition de fichier. Elle doit correspondre au fichier pour lequel la fonction Hshare à renvoyé H_RESERVED.</p>
+<p class="Body-Text"><font class="hcp3">Résultat</font></p>
+<p class="decalage05">Variable de type alpha ou string recevant une chaîne Hmp indiquant la tâche qui réserve l'entité. Si l'entité est partagée par plusieurs tâches, la chaîne contient la liste des tâches qui partagent l'entité.</p>
+<p class="decalage05">La chaîne Hmp contient les paramètres suivants :</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 11.018%;">
+<col style="width: 88.982%;">
+<tr class="hcp4">
+<td colspan="2" style="width:100%;" class="hcp5">
+<p class="hcp6">Si l'entité est réservée :</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.018%;" class="hcp5">
+<p>&lt;Reserved&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp5">
+<p>Etat de l'entité. (R = réservé, F = forcé). Si ce paramètre est absent, cela signifie que l'entité est partagée.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.018%;" class="hcp5">
+<p>&lt;Task&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp5">
+<p>Numéro de tâche qui réserve l'entité.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.018%;" class="hcp5">
+<p>&lt;Host&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp5">
+<p>Nom de l'ordinateur qui réserve l'entité</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.018%;" class="hcp5">
+<p>&lt;User&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp5">
+<p>Nom de l'utilisateur qui réserve l'entité</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.018%;" class="hcp5">
+<p>&#160;</p>
+</td>
+<td style="width:88.982%;" class="hcp5">
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td colspan="2" style="width:100%;" class="hcp5">
+<p class="hcp6">Si l'entité est partagée, pour chaque tâche partageant l'entité :</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.018%;" class="hcp5">
+<p>&lt;Share&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp5">
+<p>Numéro de tâche qui partage l'entité</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.018%;" class="hcp5">
+<p>&lt;Host&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp5">
+<p>Nom de l'ordinateur qui partage l'entité</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:11.018%;" class="hcp5">
+<p>&lt;User&gt;</p>
+</td>
+<td style="width:88.982%;" class="hcp5">
+<p>Nom de l'utilisateur qui partage l'entité</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp4">
+<td style="width:13.49%;" class="hcp7">
+<p class="Definition" style="margin-top: 4.00pt;">0</p>
+</td>
+<td style="width:86.51%;" class="hcp7">
+<p class="Definition" style="margin-top: 4.00pt;">Pas d’erreur</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.49%;" class="hcp7">
+<p class="Definition" style="margin-top: 4.00pt;">Autre</p>
+</td>
+<td style="width:86.51%;" class="hcp7">
+<p class="Definition" style="margin-top: 4.00pt;">Code d’erreur système.</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Source">record * htdf tdf</p>
+<p class="Source">Procedure TraiterErreurShare</p>
+<p class="Source">1 chaine S</p>
+<p class="Source">1 host &#160;&#160;S</p>
+<p class="Source">1 user &#160;&#160;S</p>
+<p class="Source">1 &#160;tache &#160;4,0</p>
+<p class="Source">1 mode &#160;&#160;1</p>
+<p class="Source">1 param &#160;S</p>
+<p class="Source">1 &#160;valeur S</p>
+<p class="Source">beginp</p>
+<p class="Source">&#160;&#160;&#160;ShareLastError(tdf,chaine)</p>
+<p class="Source">&#160;&#160;&#160;if (mode := hmpSeek(chaine,"reserved")) &lt;&gt; " "</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;tache = HmpSeek(chaine,"task")</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;host &#160;= HmpSeek(chaine,"host")</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;user &#160;= HmpSeek(chaine,"user")</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;display "Mode=" &amp; mode &amp; " Tache=" &amp; tache &amp; " &#160;Host=" &amp; host &amp; " &#160;User=" &amp; user</p>
+<p class="Source">&#160;&#160;&#160;else</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Loop HmpRead(chaine,param,valeur) = 0</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;switch param</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;case "SHARE"</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;tache = valeur</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;case "HOST"</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;host = valeur</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;case "USER"</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;user = valeur</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;display "Tache=" &amp; tache &amp; " &#160;Host=" &amp; host &amp; " &#160;User=" &amp; user</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;endswitch</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;endloop</p>
+<p class="Source">&#160;&#160;&#160;endif</p>
+<p class="Source">endp</p>
+<p class="Source">&#160;</p>
+<p class="Source">1 car 1</p>
+<p class="Source">1 st &#160;X</p>
+<p class="Source">1 entite S = "entité"</p>
+<p class="Source">main</p>
+<p class="Source">tdf.Name = "fconfig.dhfi"</p>
+<p class="Source">hopen(tdf,"P")</p>
+<p class="Source">Loop TRUE</p>
+<p class="Source">&#160;&#160;&#160;Input "R=réserver &#160;P=partager &#160;F=Forcé &#160;L=libérer" car</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;switch fstring("U",car)</p>
+<p class="Source">&#160;&#160;&#160;case "R"</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;st = Hshare(tdf,entite,"R")</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;if st = H_RESERVED</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;TraiterErreurShare</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;case "P"</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;st = Hshare(tdf,entite,"P")</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;if st = H_RESERVED</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;TraiterErreurShare</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;case "F"</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;st = Hshare(tdf,entite,"F")</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;if st = H_RESERVED</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;TraiterErreurShare</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;endif</p>
+<p class="Source">&#160;&#160;&#160;case "L"</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;st = Hshare(tdf,entite,"L")</p>
+<p class="Source">&#160;&#160;&#160;default</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;programExit</p>
+<p class="Source">&#160;&#160;&#160;endswitch</p>
+<p class="Source">endloop</p>
+<p class="Source">&#160;</p>
+<p class="decalage05" style="font-weight: bold;">Voir</p>
+<p class="decalage05" style="font-weight: bold;"><a href="Hshare.htm">Hshare</a></p>
+</body>
+</html>

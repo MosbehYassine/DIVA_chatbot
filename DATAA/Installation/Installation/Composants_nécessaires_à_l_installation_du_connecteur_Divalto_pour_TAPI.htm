@@ -1,0 +1,52 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Composants nécessaires à l'installation du connecteur Divalto pour TAPI</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+img.hcp1 { border:none; }
+span.hcp2 { font-weight:bold;
+text-decoration:underline; }
+span.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Composants nécessaires à l'installation du connecteur Divalto pour TAPI</h3>
+<p>&#160;</p>
+<p>Pour permettre au "Connecteur Divalto pour Tapi" de fonctionner, il est nécessaire d’installer le driver TSP Tapi 2.x fourni avec votre logiciel de téléphonie.</p>
+<p>&#160;</p>
+<p>Après l'installation, vérifiez que ce driver est visible par la couche logicielle Tapi de Windows. Pour cela, lancez le choix « Téléphone et modem» du Panneau de configuration :</p>
+<p>&#160;</p>
+<p><img src="../image/tapi_01_panneau_config.png" alt="" width="531" height="472" border="0" class="hcp1"></p>
+<p>&#160;</p>
+<p>Et vérifiez que votre driver TSP figure bien dans la liste des fournisseurs de téléphonie :</p>
+<p>&#160;</p>
+<p><img src="../image/tapi_02_config_tsp.png" alt="" width="411" height="459" border="0" class="hcp1"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp2">Attention</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Il faut installer un driver de téléphonie <span class="hcp3">32 bits</span>. En général, les fournisseurs proposent un driver 32 bits pour les machines 32 bits et deux drivers (un en 32bits et un en 64bits) pour les machines 64 bits.</p>
+</li>
+<li class="p">
+<p>Attention aussi à la version de Windows du poste client, en particulier pour les systèmes Windows Vista et Windows 7. Le cas échéant, renseignez-vous auprès de votre fournisseur de téléphonie.</p>
+</li>
+<li class="p">
+<p>Sur les machines 64 bits, le choix « Téléphone et modem » du Panneau de configuration appelle <span class="hcp3">Tapi 64 bits</span>.<br>
+<span class="hcp2">Or ce n’est pas la couche logicielle que Divalto utilise</span>.<br>
+Pour &#160;appeler la couche 32 bits de Tapi, il faut lancer c:\Windows\SysWOPW64\telephon.cpl ou passer par un raccourci comme celui montré par l’image suivante :</p>
+</li>
+</ul>
+<p style="margin-left: 48px;"><img src="../image/tapi_03_appel_config_telephone_sur_windows_64bits.png" alt="" width="484" height="513" border="0" class="hcp1"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

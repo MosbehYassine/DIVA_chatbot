@@ -1,0 +1,69 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>MemOpen</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>MemOpen &#160;<a href="Listedesinstructionsdegestiondem_moiresuppl_mentaire.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Introduction3.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction MemOpen permet d'allouer une de la mémoire supplémentaire.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">m</font><font class="hcp2">emOpen</font> (<font class="hcp3">tds</font>, <font class="hcp3">nom</font>, <font class="hcp3">taille</font>, <font class="hcp3">code</font>_<font class="hcp3">réservation</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Tds</font></p>
+<p class="decalage05">Variable de 140 octets qui sert de zone de communication avec le système.</p>
+<p class="Body-Text"><font class="hcp3">Nom</font></p>
+<p class="decalage05">Nom de la mémoire à allouer sur 7 caractères maximum.</p>
+<p class="Body-Text"><font class="hcp3">Taille</font></p>
+<p class="decalage05">Taille de la mémoire à allouer en Ko.</p>
+<p class="Body-Text"><font class="hcp3">Code_réservation</font></p>
+<p class="decalage05">'R' si la mémoire est réservée, c'est à dire uniquement accessible par le programme qui l'a allouée.</p>
+<p class="decalage05">'P' si la mémoire est partagée, c'est à dire que plusieurs programmes peuvent l'utiliser simultanément.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:18.40%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:81.60%;" class="hcp5">
+<p class="Body-Text">Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:18.40%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Autre</p>
+</td>
+<td style="width:81.60%;" class="hcp5">
+<p class="Body-Text" style="margin-top: 2.00pt;">Erreur système</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">1&#160;tseg&#160;14</p>
+<p class="Source">st = MemOpen(tseg,"MEMSUP",128,'R')</p>
+</body>
+</html>

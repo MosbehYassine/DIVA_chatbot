@@ -1,0 +1,85 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Sort</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Sort</h3>
+<p class="Body-Text">L'instruction Sort permet de trier un tableau à une 
+ dimension. La fonction de comparaison de deux éléments est écrite en Diva, 
+ ce qui permet de paramétrer un ordre de tri quelconque.</p>
+&#160; 
+<p class="Body-Text"><font class="hcp1">Sort</font> (<font class="hcp2">tableau()</font> , <font class="hcp2">[ 
+ nb</font>_<font class="hcp2">éléments ]</font> , <font class="hcp2">fonction</font>_<font class="hcp2">compare</font>)</p>
+&#160; 
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Tableau</font></p>
+<p class="decalage05">Nom du tableau à trier. Le nom du tableau doit être 
+ suivi de ().</p>
+<p class="Body-Text"><font class="hcp2">Nb</font>_<font class="hcp2">éléments</font></p>
+<p class="decalage05">Nombre d'éléments à trier. Si ce paramètre est omis 
+ ou nul, tous les éléments du tableau sont triés.</p>
+<p class="Body-Text"><font class="hcp2">Fonction</font>_<font class="hcp2">compare</font></p>
+<p class="decalage05">Donnée de 16 octets contenant l'adresse de la fonction 
+ de comparaison. Cette adresse est obtenue par la fonction GetAdressFunction.<br>
+La fonction de comparaison doit avoir deux paramètres p1 et p2 de même 
+ type que les éléments du tableau. <font class="hcp1">Elle 
+ doit retourner une donnée de type L</font> avec les valeurs suivantes 
+ :</p>
+<p class="decalage05" style="margin-left: 159.45pt;">0 --&gt; p1 &gt; p2</p>
+<p class="decalage05" style="margin-left: 159.45pt;">1 --&gt; p1 &lt; p2</p>
+<p class="decalage05" style="margin-left: 159.45pt;">2 --&gt; p1 = p2</p>
+&#160; 
+<p class="decalage05">Si <font class="hcp2">fonction</font>_<font class="hcp2">compare</font> est initialisée à $00, 
+ le tri est alphanumérique.</p>
+<p class="Body-Text"><font class="hcp1">Remarque</font></p>
+<p class="Body-Text">La fonction de comparaison peut appeler <a href="SortCompare.htm">SortCompare</a> 
+ (ou <a href="SortCompare.htm">SortCompareV</a>) qui compare deux éléments 
+ et renvoie 0, 1 ou 2 suivant le résultat de la comparaison.</p>
+<p class="Body-Text">Sort utilise l'algorithme du &quot;quick-sort&quot; 
+ qui présente l'avantage d'être très rapide. Par contre, il présente l'inconvénient 
+ de ne pas être stable, c'est à dire que deux éléments dont la clé de tri 
+ est égale peuvent se trouver inverser après le tri.</p>
+&#160; 
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="Source">; Fonction de comparaison de deux éléments</p>
+<p class="Source">function long compare(&amp;p1,&amp;p2)</p>
+<p class="Source">1&#160;p1&#160;N</p>
+<p class="Source">1&#160;p2&#160;N</p>
+<p class="Source">beginf</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;freturn 
+ (condition(p1=p2,2,p1&lt;p2))&#160;</p>
+<p class="Source">&#160;&#160;&#160;; ou freturn SortCompare(p1,p2)</p>
+<p class="Source">endf</p>
+&#160; 
+<p class="Source">1 tab 10,0*10000</p>
+<p class="Source">1 adr 16</p>
+&#160; 
+<p class="Source">main</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; obtient l'adresse 
+ de la fonction de comparaison&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">GetAdressFunction(&quot; 
+ &quot;,&quot;compare&quot;,adr)&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">; appel du tri&#160;</p>
+<p class="Source">Sort(tab(),,adr)</p>
+&#160; 
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="SortCompare.htm">SortCompare</a></p>
+</body>
+</html>

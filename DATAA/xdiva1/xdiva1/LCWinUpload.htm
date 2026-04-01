@@ -1,0 +1,95 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>LCWinUpload</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal; }
+p.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:normal;
+font-style:italic; }
+p.hcp4 { font-weight:normal; }
+span.hcp5 { font-style:italic; }
+p.hcp6 { font-weight:normal;
+font-style:italic; }
+tr.hcp7 { vertical-align:top; }
+td.hcp8 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp9 { margin-left:48px; }
+span.hcp10 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>LCWinUpload &#160;<span class="hcp1"><a href="Liste_des_fonctions_LC.htm">Famille</a> <a href="Introduction_devLC.htm">Thème</a></span></h1>
+<p>La fonction LCWinUpload permet de copier un fichier du client vers le serveur.</p>
+<p>&#160;</p>
+<p class="hcp2">Long LcWinUpload <span class="hcp1">(</span><span class="hcp3">FichierDepart</span> <span class="hcp1">, &amp;</span><span class="hcp3">FichierArrivee</span> <span class="hcp1">, [</span><span class="hcp3">Compression</span><span class="hcp1">] , [</span><span class="hcp3">CleCryptage</span><span class="hcp1">] , [</span><span class="hcp3">ToujoursCreer</span><span class="hcp1">])</span></p>
+<p class="hcp4">&#160;</p>
+<p class="hcp2">Paramètres</p>
+<p class="hcp4"><span class="hcp5">FichierDepart</span></p>
+<p class="decalage05">Nom complet du fichier de départ</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp4"><span class="hcp5">FichierArrivee</span></p>
+<p class="decalage05">Nom complet du fichier d'arrivée. En retour de la fonction, <span class="hcp5">FichierArrivee</span> contient le nom effectif du fichier copié.</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp6">Compression</p>
+<p class="decalage05">True pour comprimer le fichier. (FALSE par défaut)</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp6">CleCryptage</p>
+<p class="decalage05">&#160;Clé de cryptage. Si la clé n'est pas spécifiée ou vaut espace il n'y a pas de cryptage.</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp6">ToujoursCreer</p>
+<p class="decalage05">True / False (par défaut)</p>
+<p class="decalage05">Cette option permet de toujours créer le fichier de destination. Si un fichier existe déjà avec le même nom, le nom du fichier est suffixé par un indice.</p>
+<p class="decalage05">Exemple : Rapport(2).doc</p>
+<p class="hcp4">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp7">
+<td style="width:14.99%;" class="hcp8">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:85.01%;" class="hcp8">
+<p class="Body-Text">Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp7">
+<td style="width:14.99%;" class="hcp8">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:85.01%;" class="hcp8">
+<p class="Body-Text">Code d'erreur système.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Cas particulier du client léger Web</p>
+<p>La fonction LCWinUpload est utilisable dans deux cas précis :</p>
+<ul style="list-style: disc;">
+<li style="margin-left: -20px;" class="p">
+<p class="hcp9">Après un <span class="hcp10">drag &amp; drop de fichiers</span> dans la fenêtre du navigateur.</p>
+</li>
+<li style="margin-left: -20px;" class="p">
+<p class="hcp9">Après appel à la fonction <span class="hcp10">WinGetOpenFileName</span>.</p>
+</li>
+</ul>
+<p>Les fichiers déposés ou sélectionnés sont placés dans un flux interne au navigateur, ce qui permet ensuite de les récupérer en appelant la fonction LCWinUpload.<span style="margin-left: 48px;"><br>
+Attention : Ce flux n’est valide que 15 minutes.<br>
+<br>
+Un appel "direct" à cette fonction en spécifiant un fichier quelconque du poste client n’est pas possible.</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Voir</p>
+<p class="hcp4"><a href="LCWinDownload.htm">LCWinDownload</a></p>
+</body>
+</html>

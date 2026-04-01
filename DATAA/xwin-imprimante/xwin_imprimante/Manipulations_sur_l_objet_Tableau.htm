@@ -1,0 +1,143 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Manipulations sur l'objet Tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-size:10pt; }
+ul.hcp2 { list-style:disc; }
+span.hcp3 { font-weight:bold;
+font-size:10pt; }
+span.hcp4 { font-weight:bold; }
+span.hcp5 { text-decoration:underline; }
+p.hcp6 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Manipulations sur l'objet Tableau</h3>
+<p>&#160;</p>
+<p class="hcp1">Re-dimensionner les éléments du tableau</p>
+&#160;
+<p><img src="../image14.gif" style="border: none;" alt="" width="489" height="148" border="0"><br>
+<br>
+Pour re-dimensionner un élément du tableau à la souris :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Cliquez sur le trait concerné pour le sélectionner.</p>
+</li>
+<li class="p">
+<p>Déplacez la souris sur le trait jusqu'à ce que le curseur change de forme.</p>
+</li>
+<li class="p">
+<p>Déplacez le trait en maintenant le bouton gauche de la souris enfoncé.</p>
+</li>
+</ul>
+<p>Pour re-dimensionner un élément du tableau au clavier :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Cliquez sur le trait concerné pour le sélectionner.</p>
+</li>
+<li class="p">
+<p>Utilisez ensuite les touches fléchées pour agrandir ou diminuer l'élément.</p>
+</li>
+</ul>
+<p>Peuvent être modifiées :</p>
+<ul class="hcp2">
+<li class="p">
+<p>La hauteur de l'en-tête (1).</p>
+</li>
+<li class="p">
+<p>La hauteur d'un bloc Tableau (2).<br>
+La taille d'un bloc étant toujours un multiple de la taille d'une ligne, le pas minimum de déplacement du trait est de 1 ligne (9 orteils en standard).</p>
+</li>
+<li class="p">
+<p>La largeur d'une colonne (3).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp3">Changer la largeur d'une colonne du tableau</span></p>
+<ul class="hcp2">
+<li class="p">
+<p>Rappelons tout d'abord (voir la rubrique <a href="Constituants_d_un_objet_Tableau.htm">Constituants d'un objet Tableau</a>) que le découpage du tableau en colonnes décide de sa présentation. Contrairement à leurs homologues dans les tableaux des masques d'écran, les colonnes ne délimitent pas les objets qu'elles contiennent de manière figée : un objet peut en effet <span class="hcp4">déborder d'une colonne</span>, être <span class="hcp4">à cheval sur deux colonnes</span> ou <span class="hcp4">s'étendre sur plusieurs colonnes</span>. Ceci permet de faire figurer des blocs de contenus hétérogènes dans un même tableau (cas de nombreux états imprimés par l'ERP Divalto).</p>
+</li>
+<li class="p">
+<p>Le changement de la largeur d'une colonne est <span class="hcp4">entièrement répercuté sur la largeur globale</span> du tableau.<br>
+Il n'influe donc pas sur la largeur des autres colonnes. Un débordement de la clip grille est possible.</p>
+</li>
+<li class="p">
+<p>Xwin n'autorise pas de réduire la largeur d'une colonne en dessous d'un certain seuil, dépendant de la taille des objets lui appartenant.</p>
+</li>
+<li class="p">
+<p>La propriété des objets "<span class="hcp4">Colonne</span>" détermine la manière de considérer les objets lors d'un changement de taille d'une colonne.<br>
+Par exemple, un objet à cheval sur les colonnes C1,C2,... est déplacé lorsque la largeur de la colonne A est modifiée, <span class="hcp5">sauf</span> s'il appartient explicitement à la colonne C1.</p>
+</li>
+</ul>
+<p style="margin-left: 8px;"><span style="font-weight: bold; text-decoration: underline;">Conseil</span> : Afin d'<span class="hcp4">éviter des effets indésirables</span> lors des manipulations sur les colonnes du tableau, pensez à figer la colonne d'appartenance des objets qui ne sont pas clairement situés à l'intérieur d'une colonne précise (objets à cheval sur plusieurs colonnes) ou qui n'appartiennent pas réellement à la colonne où ils sont placés (tableau à blocs hétérogènes).<br>
+&#160;</p>
+<p>&#160;</p>
+&#160;&#160;<span class="hcp4">Ajouter, supprimer ou fusionner des colonnes</span>
+<p>Cliquez droit dans le fond d'une colonne. Un menu contextuel est affiché, proposant les commandes suivantes :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Insérer une colonne avant / après.<br>
+L'insertion d'une colonne augmente la largeur globale du tableau et n'a pas de conséquence sur la largeur des autres colonnes. Un débordement de la clip grille est possible.</p>
+</li>
+<li class="p">
+<p>Supprimer la colonne.<br>
+La suppression d'une colonne diminue la largeur globale du tableau et n'a pas de conséquence sur la largeur des autres colonnes. Si un objet est <span class="hcp5">entièrement inclus</span> dans cette colonne et s'il n'est pas affecté manuellement à une autre colonne (voir la rubrique <a href="Constituants_d_un_objet_Tableau.htm">Constituants d'un objet Tableau</a>), il est également supprimé. Attention, tous les blocs Tableau ne sont pas forcément visibles à l'écran.</p>
+</li>
+<li class="p">
+<p>Fusionner avec la colonne suivante.<br>
+&#160;</p>
+</li>
+</ul>
+<p><span class="hcp3">Modifier les propriétés du tableau ou de ses colonnes</span></p>
+<ul class="hcp2">
+<li class="p">
+<p>Pour modifier les propriétés de l'objet tableau, sélectionnez-le en cliquant sur une ligne du cadre du tableau puis allez dans la fenêtre des propriétés.</p>
+</li>
+<li class="p">
+<p>Pour modifier les propriétés d'une colonne, cliquez dans le fond de cette colonne (y compris dans l'en-tête) puis allez dans la fenêtre des propriétés.<span class="hcp4"><br>
+<br>
+Remarque</span> : Il n'est pas possible de sélectionner plusieurs colonnes simultanément.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="hcp6">Sélectionner des objets dans un bloc contenant un tableau</p>
+<p>Lorsque le bloc en cours d'édition contient un ou plusieurs tableaux, les sélections d'objets ont un comportement légèrement différent du comportement habituel :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Par Maj+Clic, il n'est pas possible de sélectionner simultanément un objet tableau et un autre objet quelconque.</p>
+</li>
+<li class="p">
+<p>Au lasso, on peut sélectionner tous les objets, sauf les objets Tableau.</p>
+</li>
+<li class="p">
+<p>Ctrl+A sélectionne tous les objets du bloc édité, à l'exception des objets situés dans les blocs Tableau et dans les en-têtes de tableau.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="hcp6"><span class="hcp4">Copier / Couper / Coller d'un objet Tableau</span></p>
+<p>Signalons les spécificités suivantes concernant les opérations de copier / couper / coller appliquées à un objet Tableau :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Au coller d'un objet tableau, la liste des blocs Tableau inclus dans ce tableau au moment du copier ou du couper est conservée, à la <span class="hcp4">condition</span> que ces <span class="hcp4">blocs n'appartiennent plus à aucun tableau au moment du coller</span> (rappelons qu'un bloc Tableau ne peut appartenir qu'à un seul tableau). Ainsi, un copier immédiatement suivi d'un coller ne conserve pas la liste des blocs Tableau alors qu'un couper immédiatement suivi d'un coller la conserve.</p>
+</li>
+<li class="p">
+<p><span class="hcp4">Attention</span> : Au coller d'un objet tableau, les bornes d'impression de ses blocs Tableau ne sont pas recalculées en fonction de la nouvelle position du tableau dans le bloc ou des bornes d'impression du bloc lui-même. Les valeurs copiées dans le presse-papier sont purement et simplement conservées.<br>
+&#160;</p>
+</li>
+</ul>
+<p style="font-size: 11pt; font-weight: bold;">Autres fonctionnalités</p>
+<p>Consultez la rubrique <a href="Arbre_des_tableaux_d_un_bloc.htm">Arbre des tableaux d'un bloc</a> pour insérer des blocs dans le tableau, en retirer, spécifier l'ordre d'affichage ou masquer des blocs Tableau, etc.</p>
+<p>&#160;</p>
+</body>
+</html>

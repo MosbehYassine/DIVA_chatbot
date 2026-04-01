@@ -1,0 +1,42 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Formule des filtres</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Formule des filtres</h3>
+<p class="Body-Text">La formule des filtres permet de lier les différentes lignes de sélection par une autre condition que le "&#160;Et logique&#160;". Chaque ligne est identifiée par une lettre de 'a' à 'j'. Dans la formule cette lettre représente la ligne de sélection. Les lettres peuvent être liées par les opérateurs logiques <font class="hcp1">Et, Ou</font> et <font class="hcp1">Non.</font> La priorité naturelle des opérateurs est&#160;: Non, Et puis Ou, de la plus forte à la plus faible. Pour changer cette priorité, il convient de parenthéser l'expression logique. Il n'y a pas de limites dans le niveau de parenthésage.</p>
+<p class="Body-Text"><font class="hcp1">Exemples de formule</font>&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">a ou b</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">non (a ou b)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">(a et b) ou c</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">((non a et b) ou c) ou (e et f)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">f</p>
+</li>
+</ul>
+<p class="Body-Text">Si une lettre correspondant à une ligne de sélection valide n'est pas utilisée dans la formule, le zoom affiche un message d'avertissement. Vous pouvez néanmoins conserver la formule incomplète. Ceci permet par exemple de ne s'intéresser qu'à un seul critère de la liste en mettant la lettre dans la formule.</p>
+</body>
+</html>

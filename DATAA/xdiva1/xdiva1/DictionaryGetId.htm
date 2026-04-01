@@ -1,0 +1,62 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DictionaryGetId</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>DictionaryGetId&#160;<a href="Liste_des_fonctions_de_dictionnaires.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a> <font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestion_de_dictionnaires.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h1>
+<p class="Body-Text">DictionaryGetId permet de rechercher un dictionnaire nommé. Si le dictionnaire n’existe pas encore, il est alors créé et nommé. La fonction <a href="DictionaryExist.htm">DictionaryExist</a> permet de tester l’existence d’un dictionnaire sans le créer.</p>
+<p class="Body-Text">Les dictionnaires sont globaux à toute la tâche. Donc, un dictionnaire peut être alloué dans un module et un autre module peut récupérer son identifiant par DictionaryGetId.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Long DictionaryGetId</font> (<font class="hcp3">Nom, [ NombreElements]</font> )</p>
+<p class="Body-Text"><font class="hcp2">Paramètre</font></p>
+<p class="Body-Text"><font class="hcp3">Nom</font></p>
+<p class="decalage05">Nom du dictionnaire à chercher ou à créer.<br>
+Il n’y a pas de distinction entre minuscules et majuscules (MonDico &lt;=&gt; mondico).</p>
+<p class="Body-Text"><font class="hcp3">NombreElements</font></p>
+<p class="decalage05">Nombre approximatif d'éléments si le dictionnaire est créé. Voir <a href="DictionaryCreate.htm">DictionaryCreate</a>.</p>
+<p class="decalage05"><br></p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:16.24%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:83.76%;" class="hcp5">
+<p class="Body-Text">Erreur d'allocation du dictionnaire</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.24%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:83.76%;" class="hcp5">
+<p class="Body-Text">Ticket du dictionnaire</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source" style="margin-left: 36.00pt;"><br></p>
+<p class="Body-Text" style="font-weight: bold;">Voir</p>
+<p class="Body-Text"><a href="DictionaryExist.htm"><font class="hcp2">D</font>ictionaryExist</a>, <a href="DictionarySetName.htm">DictionarySetName</a></p>
+</body>
+</html>

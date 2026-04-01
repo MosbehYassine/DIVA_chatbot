@@ -1,0 +1,66 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>RecordSql.GetField</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+span.hcp3 { font-family:"Courier New"  , monospace; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1 style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;">GetField <a href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></h1>
+<p>&#160;</p>
+<p>La fonction GetField permet de lire un champ ajouté dynamiquement à une instance de recordSQL.</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Long</font> RecordSql<span class="hcp1">.</span>GetField(<span class="hcp2">Nomduchamp, &amp;Valeur)</span></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;"><span><span class="hcp1">Paramètre</span></span></p>
+<p style="font-style: italic;">Nomduchamp</p>
+<p class="Decalage05">Nom du champ à lire dans l'instance.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Decalage05" style="margin-left: 0px;">&#160;<span class="hcp2">Valeur</span></p>
+<p class="Decalage05" style="margin-left: 40px;"><span class="hcp2">Variable dans laquelle stocker la réponse</span></p>
+<p class="Decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<p class="Body-Text">0 : Pas d'erreur</p>
+<p class="Body-Text">Autre : Voir le contenu de <span class="hcp2">Message</span>.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;"><span class="hcp3"><span class="hcp3">p</span>ublic recordsql testsrsql.dhoq MyArticle ArticleMin &#160;</span></p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">public procedure article</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">1 ReaderId L</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">1 Valeur S</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">1 St L</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">beginp</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">ArticleMin.AddField("Designation", "ART.des", 3, 20)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">ArticleMin.AddField("Coeff", "ART.COEFPTS", 2, 8)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">ArticleMin.AddField("Qte", "ART.CDEINQTE", 1, 13)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">ArticleMin.AddField("IDS", "ART.ART_ID", 9, 5)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">ArticleMin.AddField("hsdt", "ART.USERMODH", 4, 8)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">ArticleMin.ReaderSelect();</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">ReaderId = ArticleMin.ReaderOpen()</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">1 &#160;testals L</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">; Exécution de la requête</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">ArticleMin.ReaderSelect(ReaderId)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">&#160;</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">do</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace; margin-left: 48px;">&#160;&#160;&#160;St = ArticleMin.ReaderNext(ReaderId) &#160;&#160;&#160;&#160;&#160;; Lecture</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">while &#160;St = 1</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace; margin-left: 48px;">ArticleMin.GetField("Designation", Valeur)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace; margin-left: 48px;">ArticleMin.GetField("Coeff", Valeur)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace; margin-left: 48px;">ArticleMin.GetField("IDS", Valeur)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace; margin-left: 48px;">ArticleMin.GetField("hsdt", Valeur)</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">Wend</p>
+<p class="Body-Text" style="font-family: 'Courier New', monospace;">endp</p>
+</body>
+</html>

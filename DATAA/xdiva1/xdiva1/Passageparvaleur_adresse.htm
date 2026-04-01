@@ -1,0 +1,67 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Passage par valeur/adresse</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-family:Times New Roman; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Passage par valeur/adresse</h3>
+<p class="Body-Text">Toute fonction ou procédure est appelée en lui passant un ou plusieurs paramètres. Diva dispose de deux modes de passage de paramètres : le passage par valeur et le passage par adresse.</p>
+<p class="Body-Text"><font class="hcp1">Lors du passage par valeur</font>, la valeur du paramètre est recopiée dans une zone de travail, et la fonction ou la procédure peut modifier cette zone mais non la zone d'origine. La fonction ou la procédure peut donc modifier la valeur du paramètre sans avoir d'influence sur le programme appelant. Le passage par valeur est obligatoire pour passer une constante comme paramètre.</p>
+<p class="Body-Text"><font class="hcp1">Lors du passage par adresse</font>, la fonction ou la procédure travaille directement sur les paramètres et modifie donc les valeurs utilisées dans le programme principal. Il est donc interdit de passer une constante par adresse.</p>
+<p class="Body-Text">Ces notions sont simples à comprendre à travers les exemples qui suivent.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">PASSAGE PAR VALEUR</font></p>
+<p class="Body-Text">Soit la procédure suivante qui affiche le carré du paramètre passé par valeur :</p>
+<p class="Source">Procedure Carre(I)</p>
+<p class="Source">1 i 24,10</p>
+<p class="Source"><font face="Times New Roman" class="hcp2">b</font>eginp</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;i = i * i&#160;</p>
+<p class="Source"><font face="Times New Roman" class="hcp2">&#160;&#160;&#160;d</font>isplay [ 'Le carré est : ' i ]</p>
+<p class="Source"><font face="Times New Roman" class="hcp2">e</font>ndp</p>
+&#160;
+<p class="Body-Text">et le programme principal :</p>
+<p class="Source"><font face="Times New Roman" class="hcp2">i</font>nput 'Donnez la valeur : ' val</p>
+<p class="Source"><font face="Times New Roman" class="hcp2">c</font>arre(val)</p>
+<p class="Source"><font face="Times New Roman" class="hcp2">d</font>isplay [ 'La valeur est : ' val ]</p>
+&#160;
+<p class="Body-Text">A l'exécution pour val = 10 ce programme va afficher :<br>
+Le carré est : 100<br>
+La valeur est : 10</p>
+<p class="Body-Text">Le paramètre bien que modifié à l'intérieur de la procédure n'est donc pas modifié dans le programme appelant.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">PASSAGE PAR ADRESSE</font></p>
+<p class="Body-Text">Soit le même programme que précédemment en modifiant la procédure pour que le passage se fasse par adresse :</p>
+<p class="Source">Procedure Carre(&amp;I) ; &amp; indique le passage par adresse</p>
+<p class="Source">1 i N</p>
+<p class="Source"><font face="Times New Roman" class="hcp2">b</font>eginp</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;i = i * i&#160;</p>
+<p class="Source"><font face="Times New Roman" class="hcp2">&#160;&#160;&#160;&#160;&#160;d</font>isplay [ 'Le carré est : ' i ]</p>
+<p class="Source"><font face="Times New Roman" class="hcp2">e</font>ndp</p>
+&#160;
+<p class="Body-Text">A l'exécution pour val = 10 ce programme va afficher :<br>
+Le carré est : 100<br>
+La valeur est : 100</p>
+<p class="Body-Text">Cet exemple est absurde, car la fonction <font>c</font>arre ne peut pas être appelée en passant une constante comme paramètre puisque le passage se fait par adresse.</p>
+<p class="Body-Text">Cet exemple montre qu'il est important de bien choisir son mode de passage, car dans ce cas la variable du programme appelant est modifiée et ce n'est absolument pas ce qui était prévu.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Type_String.htm">Définition du type String</a></p>
+<p class="Body-Text"><a href="RecordSql.chm::/Utilisation_d_un_RecordSql_en_Diva.htm">Utilisation des RecordSql</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

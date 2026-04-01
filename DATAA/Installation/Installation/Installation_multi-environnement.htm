@@ -1,0 +1,113 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Installation multi-environnement</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-size:11pt;
+font-style:italic; }
+ul.hcp2 { list-style:disc; }
+p.hcp3 { font-weight:normal; }
+span.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Installation multi-environnement</h2>
+<p>&#160;</p>
+&#160;
+<p class="hcp1">Objectif</p>
+<p>La notion de système multi-environnement a été introduite pour donner la possibilité à un utilisateur de changer dynamiquement son environnement de travail Harmony. Ceci s'avère pratique :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Pour un utilisateur final disposant d'un environnement de test et d'un environnement d'exploitation réelle ou disposant d'un environnement local et d'un environnement réseau.</p>
+</li>
+<li class="p">
+<p>Pour un développeur désirant reproduire les environnements de ses clients sur son propre ordinateur.</p>
+</li>
+<li class="p">
+<p>Pour l'administrateur d'un serveur ASP qui désire se connecter sous les différents environnements des clients hébergés.</p>
+</li>
+<li class="p">
+<p>Pour mettre à disposition des aides de versions différentes ou des aides traduites en langue étrangère selon les clients hébergés.</p>
+</li>
+</ul>
+&#160;
+<p class="hcp1">Définition de la notion d'environnement Harmony</p>
+<p>L'environnement Harmony signifie :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Un serveur de fichier Xlogf (base de données des utilisateurs Harmony).</p>
+</li>
+<li class="p">
+<p>Un serveur de fichier paramètres des langues (<a href="Xtranslate.chm::/Fichier_TranslateParams.txt.htm">TranslateParams.txt</a>).</p>
+</li>
+<li class="p">
+<p class="hcp3">Un serveur d’aides pour les applications s'exécutant en mode client léger et un serveur d’aides pour les applications tournant encore en version 6 (voir la rubrique <a href="Installation_des_aides_sur_un_site_multi-environnement.htm">Installation des aides sur un site multi-environnement</a>).</p>
+</li>
+<li class="p">
+<p class="hcp3">Un serveur pour la fonctionnalité "Search".</p>
+</li>
+</ul>
+<p>Changer d’environnement consiste alors à changer les chemins d'accès aux différents fichiers (Xlogf, TranslateParams.txt, aides), ce qui permet en particulier de récupérer les chemins implicites, les codes langue et les aides liés à l'utilisateur dans l’environnement choisi.</p>
+&#160;
+<p>&#160;</p>
+<p class="hcp1">Gestion des environnements sur le serveur d'applications</p>
+<p>L’utilitaire XConfigEnv.dhop permet de <a href="Gestion_des_environnements.htm">gérer les environnements</a> Harmony d’un serveur d'applications.</p>
+&#160;
+<p>Remarque : Les environnements sont stockés, sur le serveur d'applications, dans le chapitre [Environnement] de la section Divalto.Ini de la base de registres de l'utilisateur. Chaque environnement fait l'objet d'une clé dans ce chapitre. La clé conventionnellement nommée "Courant" fait référence à l'environnement qui doit être chargé par défaut. Si elle contient le nom d'un environnement absent de la liste, le chapitre [Environnement] est ignoré (on utilise alors les paramètres habituels ServeurXlogf, CheminLangues, CheminAidesWeb et CheminAides).<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Diffusion des environnements vers les postes clients légers</p>
+<p>Les environnements sont stockés, sur le poste client, dans la base de registres de l'utilisateur (chapitre [Environnement] de la section Divalto.Ini). Chaque environnement fait l'objet d'une clé dans ce chapitre.</p>
+<p>L'utilisateur peut récupérer les environnements du serveur d'applications par le <span class="hcp4">bouton « Réactualiser » des Options Avancées de connexion</span>.<br>
+Il rapatrie ainsi sur le poste client les dernières mises à jour d'environnements effectuées sur le serveur.<br>
+Remarque : Une mise à jour automatique est aussi effectuée lorsque l'utilisateur se connecte au serveur plus d'une heure après sa dernière connexion.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Choix de l'environnement par l'utilisateur</p>
+<ul class="hcp2">
+<li class="p">
+<p>En mode client léger, l'utilisateur choisit l'environnement adapté dans les Options Avancées de la boîte de dialogue de connexion au serveur d'applications.<br>
+Voir aussi : <a href="Profils_utilisateur.htm">Profils utilisateur</a>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Pour les applications tournant encore en version 6, l'utilisateur doit cliquer avec le bouton droit de la souris sur l'icône Divalto de la zone de notification (Traybar).<br>
+Dans certains environnements Windows (TSE notamment), l'utilisateur ne dispose pas d'une Traybar. Le changement d'environnement Harmony peut alors être obtenu en faisant appel à l'utilitaire xDivaltoSelectEnv.exe (éventuellement via un raccourci placé sur le bureau).<br>
+Remarque : Si la liste des environnements ne comporte qu'un élément unique, le choix d'un environnement n’existe pas dans la Traybar.</p>
+</li>
+</ul>
+<p>Attention, un changement ne concerne pas les tâches Harmony déjà chargées mais sera pris en compte lors des ouvertures de fenêtre Harmony ultérieures.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Pilotage du changement d'environnement</p>
+<p>En mode local, il est possible de piloter le changement d’environnement, par exemple via un raccourci placé sur le bureau, en faisant suivre l'appel à xDivaltoSelectEnv.exe des commandes :</p>
+<ul class="hcp2">
+<li class="p">
+<p>/env:"nom de l’environnement"</p>
+</li>
+<li class="p">
+<p>/cmd:"commande à lancer" (facultative)</p>
+</li>
+</ul>
+<p><span class="hcp4">Exemples</span> :</p>
+<p>Raccourci "Au bureau" :</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;xDivaltoSelectEnv.exe /env:"bureau"<br>
+ou, si on veut lancer le menu Divalto :<br>
+xDivaltoSelectEnv.exe &#160;/env:"bureau" /cmd:"c:\divalto\sys\xrtdiva.exe divalto.dhop"</p>
+<p>&#160;</p>
+<p>Raccourci "A la Maison" :</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;xDivaltoSelectEnv.exe /env:"maison"<br>
+ou<br>
+xDivaltoSelectEnv.exe &#160;/env:"maison" /cmd:"c:\divalto\sys\xrtdiva.exe divalto.dhop"</p>
+<p>&#160;</p>
+</body>
+</html>

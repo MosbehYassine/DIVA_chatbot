@@ -1,0 +1,135 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Cas d'utilisation</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-size:8pt; }
+span.hcp2 { margin-left:88px;
+font-size:8pt; }
+ul.hcp3 { list-style:disc; }
+p.hcp4 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Cas d'utilisation</h1>
+<p>&#160;</p>
+<ul>
+<li style="list-style: disc;" class="p">
+<p>Déclaration commune aux cas d'utilisation</p>
+</li>
+</ul>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;"><span class="hcp1">; Déclaration des chemins vers les clés</span></p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;"><span class="hcp1">1 pathFilenamePrivateKey S</span></p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">1 pathFilenamePublicKey S</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; Déclaration des clés</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;"><span class="hcp1">1 privateKey L</span></p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">1 publicKey L</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; Déclaration d'un message à signer, de la signature et un chemin vers un fichier</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">1 msg S</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">1 signature S</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">1 bigFile S</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; Valeur de retour et code d'erreur</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">1 retVal B</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">1 errorCode L</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;"><span class="hcp1">pathFilenamePrivateKey = "C:/tmp/privateKey.txt"</span></p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">pathFilenamePublicKey = "C:/tmp/publicKey.txt"</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;"><span class="hcp1">bigFile = "C:/tmp/unGrosFichier.dat"</span></p>
+<ul>
+<li style="list-style: disc;" class="p">
+<p>Création initiale des clés (dans des fichiers) avec traitement des erreurs</p>
+</li>
+</ul>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; *** Clé privé ***</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; Création d'une clé privée dans un fichier</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">retVal = PrivateKeyCreateToFile(pathFilenamePrivateKey)</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">if retVal = 0</p>
+<p class="Code-Base" style="margin-left: 88px; font-size: 8pt;">errorCode = CryptographyGetLastErrorCode()</p>
+<p class="Code-Base" style="margin-left: 88px; font-size: 8pt;">display CryptographyGetErrorMessage(errorCode)</p>
+<p class="Code-Base" style="margin-left: 88px; font-size: 8pt;">ProgramExit()</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">endif</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; Création de la clé privée à partir de ce même fichier</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">privateKey = PrivateKeyCreateFromFile(pathFilenamePrivateKey)</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">if privateKey = 0</p>
+<p class="Code-Base" style="margin-left: 88px; font-size: 8pt;">errorCode = CryptographyGetLastErrorCode()</p>
+<p class="Code-Base" style="margin-left: 88px; font-size: 8pt;">display CryptographyGetErrorMessage(errorCode)</p>
+<p class="Code-Base" style="margin-left: 88px; font-size: 8pt;">ProgramExit()</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">endif</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; *** Clé publique ***</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; Création d'une clé publique dans un fichier</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">retVal = PublicKeyCreateToFile(privateKey, pathFilenamePublicKey)</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">if retVal = 0</p>
+<p class="Code-Base" style="margin-left: 88px; font-size: 8pt;">; todo: traiter l'erreur</p>
+<p class="Code-Base" style="font-size: 8pt; margin-left: 48px;"><span class="hcp2">endif</span></p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; Création de la clé privée à partir de ce même fichier</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">publicKey = PublicKeyCreateFromFile(pathFilenamePublicKey)</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;"><span class="hcp2">if publicKey = 0</span></p>
+<p class="Code-Base" style="margin-left: 88px; font-size: 8pt;">; todo: traiter l'erreur</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">endif</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">; Destruction des clés</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">retVal = PrivateKeyDestroy( privateKey )</p>
+<p class="Code-Base" style="margin-left: 48px; font-size: 8pt;">retVal = PublicKeyDestroy( publicKey )</p>
+<ul class="hcp3">
+<li class="p">
+<p>Réutilisation des clés préalablement générées dans des fichiers</p>
+</li>
+</ul>
+<p class="Code-Base" style="margin-left: 48px;">; Par souci de clarté, le traitement des erreurs n'est pas écrit (voir le premier cas d'utilisation).</p>
+<p class="Code-Base" style="margin-left: 48px;">; Chargement des clés</p>
+<p class="Code-Base" style="margin-left: 48px;">privateKey = PrivateKeyCreateFromFile(pathFilenamePrivateKey)</p>
+<p class="Code-Base" style="margin-left: 48px;">publicKey = PublicKeyCreateFromFile(pathFilenamePublicKey)</p>
+<p class="Code-Base" style="margin-left: 48px;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px;">; Utilisation des clés pour signer des messages ou des fichiers (voir les 2 cas d'utilisation suivants)</p>
+<p class="Code-Base" style="margin-left: 48px;">...</p>
+<p class="Code-Base" style="margin-left: 48px;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px;">; Destruction des clés</p>
+<p class="Code-Base" style="margin-left: 48px;">retVal = PrivateKeyDestroy( privateKey )</p>
+<p class="Code-Base" style="margin-left: 48px;">retVal = PublicKeyDestroy( publicKey )</p>
+<ul class="hcp3">
+<li class="p">
+<p>Signature d'un message</p>
+</li>
+</ul>
+<p class="Code-Base" style="margin-left: 48px;">; Par souci de clarté, le traitement des erreurs n'est pas écrit (voir le premier cas d'utilisation).</p>
+<p class="Code-Base" style="margin-left: 48px;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px;">; Chargement des clés</p>
+<p class="Code-Base" style="margin-left: 48px;">privateKey = PrivateKeyCreateFromFile(pathFilenamePrivateKey)</p>
+<p class="Code-Base" style="margin-left: 48px;">publicKey = PublicKeyCreateFromFile(pathFilenamePublicKey)</p>
+<p class="Code-Base" style="margin-left: 48px;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px;">; Signature d'un message</p>
+<p class="Code-Base" style="margin-left: 48px;">msg = "mon message à signer"</p>
+<p class="Code-Base" style="margin-left: 48px;">signature = PrivateKeySignMessage( privateKey, msg )</p>
+<p class="Code-Base" style="margin-left: 48px;">if Length(signature) = 0</p>
+<p class="Code-Base" style="margin-left: 88px;">; todo: traiter l'erreur</p>
+<p class="Code-Base" style="margin-left: 48px;">endif</p>
+<p class="Code-Base" style="margin-left: 48px;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px;">; Vérification de la signature d'un message</p>
+<p class="Code-Base" style="margin-left: 48px;">retVal = PublicKeyVerifyMessageSignature( publicKey, msg, signature )</p>
+<p class="Code-Base" style="margin-left: 48px;">if retVal = 0</p>
+<p class="Code-Base" style="margin-left: 88px;">display "Echec de la vérification de la signature"</p>
+<p class="Code-Base" style="margin-left: 88px;">; todo: traiter l'erreur</p>
+<p class="Code-Base" style="margin-left: 48px;">endif</p>
+<p class="Code-Base" style="margin-left: 48px;">&#160;</p>
+<p class="Code-Base" style="margin-left: 48px;">; Destruction des clés</p>
+<p class="Code-Base" style="margin-left: 48px;">retVal = PrivateKeyDestroy( privateKey )</p>
+<p class="Code-Base" style="margin-left: 48px;">retVal = PublicKeyDestroy( publicKey )</p>
+<ul class="hcp3">
+<li class="p">
+<p>Signature d'un fichier</p>
+</li>
+</ul>
+<p class="hcp4">Similaire à l'exemple précédent en remplaçant PrivateKeySignMessage par PrivateKeySignFile (respectivement PublicKeyVerifyMessageSignature par PublicKeyVerifyFileSignature).</p>
+<p class="hcp4">&#160;</p>
+</body>
+</html>

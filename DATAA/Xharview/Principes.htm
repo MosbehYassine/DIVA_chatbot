@@ -1,0 +1,24 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Principes</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Principe</h2>
+<p>L'agent d'impression est un outil visant (initialement) à compenser certaines limitations du client html : celui-ci, "bridé" par le navigateur, ne permet pas aux programmes diva d'accéder au matériel de la machine locale, et en particulier aux imprimantes.</p>
+<p>&#160;</p>
+<p>En temps normal, lors d'une impression, le client html commandera la génération d'un document PDF sur le serveur, et en proposera le téléchargement, ce qui, entre autres, requiert une action utilisateur pour chaque document.</p>
+<p>Ce fonctionnement convient aux clients nomades, mais peut avoirs ses limites (impression des payes par exemple) pour les utilisateurs d'un site cloud, ou les utilisateurs d'un site pour lequel seul le client html a été choisit.</p>
+<p>&#160;</p>
+<p>Pour ces cas-ci, l'agent d'impression est mis à disposition.</p>
+<p>Le principe est le suivant :</p>
+<p>- après activation de ce mode, les éditions à imprimer sont centralisées sous forme de documents .dhvw dans un répertoire sur le serveur.</p>
+<p>- l'agent d'impression en lui-même est un programme exécuté par un <span style="text-decoration: underline;">client WPF</span> sur un poste dédié du site (physique) concerné et qui scrute le dossier où sont centralisés les éditions générées par les utilisateurs du site. Cet agent déclenche les impressions sur l'imprimante paramétrée puis efface les documents du répertoire après impression.</p>
+</body>
+</html>

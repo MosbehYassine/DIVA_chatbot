@@ -1,0 +1,77 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Microsoft Sql Server - Particularités</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold;
+font-style:italic;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { text-decoration:underline; }
+img.hcp4 { border:none; }
+p.hcp5 { font-weight:bold; }
+p.hcp6 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Base de données Microsoft Sql Server - Particularités</h3>
+<p>&#160;</p>
+<p class="hcp1">Version minimale de SQL Server</p>
+<p>L’ERP Divalto infinity version 7 nécessite impérativement un serveur de bases de données <span class="hcp2">Microsoft SQL Server 2008 R2</span>. Celui-ci doit être installé et opérationnel avant l’installation de l’ERP.<br>
+<br>
+&#160;</p>
+<p class="hcp1">Création des bases de données</p>
+<p><span class="hcp2">Attention</span> :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Le <span class="hcp2">nom de la base de données</span>, sensible à la casse, <span class="hcp3">doit impérativement être en majuscule</span>.</p>
+</li>
+<li class="p">
+<p>Le <span class="hcp3">paramètre "Classement" de l’onglet "Options" doit impérativement être positionné à</span> <span class="hcp2">Latin1_General_bin</span> lors de la création de la base :<br>
+<br>
+<img src="../image/SQL_classement.gif" alt="" width="705" height="158" border="0" class="hcp4"></p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp1">Divalto BI</p>
+<p>Pour l’utilisation de Divalto BI, il est impératif d’installer le serveur avec l’option "<span class="hcp2">Authentification mixte</span>". L’option par défaut proposée est Windows. Attention, il est préférable d’activer l’option lors de l’installation de SQL Server. (Elle peut toutefois être modifiée ultérieurement ou sur un serveur déjà installé sans cette option) :<br>
+<br>
+<br>
+<img src="../image/SQL_moteur_config.gif" alt="" width="821" height="278" border="0" class="hcp4"><br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Driver et chaîne de connexion ODBC</p>
+<p>Le service <span class="hcp2">Xlan</span> accède à la base de données Microsoft SQL Server 2008 par le driver <span class="hcp2">ODBC 32bits SQL Server Native Client 10.0</span> :<br>
+<br>
+<img src="../image/SQL_driver_odbc.gif" alt="" width="494" height="406" border="0" class="hcp4"><br>
+&#160;</p>
+<p>&#160;</p>
+<p>La chaîne de connexion ODBC à fournir au <a href="Connecteur_SQL.htm">connecteur SQL</a> sera par exemple la suivante :</p>
+<p style="font-style: italic;">DSN=sql2008;Description=sql2008;Trusted_Connection=Yes;APP=Divaltoinfinity;WSID=TL; DATABASE=ERPDIVALTO;<br>
+<br>
+<img src="../image/SQL_source_donnees.gif" alt="" width="494" height="399" border="0" class="hcp4"><br>
+<br>
+<img src="../image/SQL_connexion.gif" alt="" width="369" height="520" border="0" class="hcp4"></p>
+<p class="hcp5">&#160;</p>
+<p class="hcp5">&#160;</p>
+<p class="hcp1"><span style="font-weight: bold; font-style: italic; font-size: 11pt;">Ports TCP utilisés par SQL Server</span></p>
+<p>Dans une installation simple, seul le port <span class="hcp2">1433</span> est utilisé.<br>
+Pour plus de détails, reportez-vous à la documentation Microsoft (http://msdn.microsoft.com/fr-fr/library/cc646023.aspx).</p>
+<p class="hcp5">&#160;</p>
+<p class="hcp5">&#160;</p>
+<p class="hcp1">En cas d'installation de plusieurs instances de SQL Server</p>
+<p class="hcp6">Lors de l'installation de l'ERP, il faut alors renseigner le paramètre "<span class="hcp2">Nom de l’instance</span>" pendant la phase de paramétrage du <a href="Connecteur_SQL.htm">connecteur SQL</a>.<span class="hcp2"><br>
+<br>
+Attention</span> : Avec la version <span class="hcp2">SQL Express</span>, <span class="hcp3">il faut impérativement renseigner ce nom d’instance</span> (SQLEXPRESS par défaut).</p>
+<p class="hcp6">&#160;</p>
+<p class="hcp6">&#160;</p>
+</body>
+</html>

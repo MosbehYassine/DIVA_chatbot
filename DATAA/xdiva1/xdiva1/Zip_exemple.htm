@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Adobe RoboHelp 11" />
+<title>Zip exemple</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css" />
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js"></script>
+
+<h1>Fonctions Zip Exemple</h1>
+<p>&#160;</p>
+<p class="Source">module &quot;dhzip.dhop&quot;</p>
+<p class="Source">1 file1 260</p>
+<p class="Source">1 file2 260</p>
+<p class="Source">1 file3 260</p>
+<p class="Source">1 err L</p>
+<p class="Source">1 fd L</p>
+<p class="Source">1 lg L</p>
+<p class="Source">1 texte S = &quot;ceci est un petit exemple en zip&quot;</p>
+<p class="Source">1 lgdest L</p>
+<p class="Source">1 lgdest2 L</p>
+<p class="Source">1 ss S</p>
+<p class="Source">1 ss2 S</p>
+<p class="Source">1 expanse S = &quot;1234567890&quot;</p>
+<p class="Source">1 comprime S</p>
+<p class="Source">1 verif S</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">file1 = &quot;C:\divalto\Test\test.dhsp&quot;</p>
+<p class="Source">file2 = &quot;C:\divalto\Test\testCompresse.zip&quot;</p>
+<p class="Source">&#160;</p>
+<p class="Source">err = ZipOpen</p>
+<p class="Source">if err </p>
+<p class="Source">&#160;&#160;&#160;display &quot;erreur &quot; &amp; tostring(err)</p>
+<p class="Source">&#160;&#160;&#160;programexit</p>
+<p class="Source">endif</p>
+<p class="Source">&#160;</p>
+<p class="Source">; compression de fichier</p>
+<p class="Source">err = ZipComprFiles(left(file1),left(file2),1)</p>
+<p class="Source">if err </p>
+<p class="Source">&#160;&#160;&#160;display &quot;erreur &quot; &amp; tostring(err)</p>
+<p class="Source">endif</p>
+<p class="Source">&#160;</p>
+<p class="Source">; décompression de fichier</p>
+<p class="Source">; il faut que le fichier existe !</p>
+<p class="Source">file1 = &quot;C:\divalto\Test\testDecompresse.dhsp&quot;</p>
+<p class="Source">err = ZipUncomprFiles(left(file2),left(file1),1) </p>
+<p class="Source">if err </p>
+<p class="Source">&#160;&#160;&#160;display &quot;erreur &quot; &amp; tostring(err)</p>
+<p class="Source">endif</p>
+<p class="Source">&#160;</p>
+<p class="Source">; compression en mémoire</p>
+<p class="Source">comprime = ZipComprMemory(expanse,size(expanse),lgdest)</p>
+<p class="Source">comprime = left(comprime,lgdest)</p>
+<p class="Source">&#160;</p>
+<p class="Source">; décompression en mémoire</p>
+<p class="Source">verif = ZipUnComprMemory(comprime,size(comprime),lgdest)</p>
+<p class="Source">verif = left(verif,lgdest)</p>
+<p class="Source">&#160;</p>
+<p class="Source">ZipClose</p>
+</body>
+</html>

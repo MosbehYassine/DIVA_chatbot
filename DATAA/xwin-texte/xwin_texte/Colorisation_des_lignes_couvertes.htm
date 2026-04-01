@@ -1,0 +1,81 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Colorisation des lignes couvertes</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+span.hcp4 { font-family:"Courier New"  , monospace; }
+span.hcp5 { font-family:Arial, sans-serif; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Colorisation des lignes couvertes</h3>
+<p>&#160;</p>
+<p class="hcp1"><span class="hcp2">Quand les lignes couvertes sont-elles coloriées ?</span>&#160;</p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp2">Activation manuelle</span> : vous pouvez à tout moment activer ou désactiver la colorisation spécifique à la couverture du code, grâce au choix <span class="hcp2">Colorier les lignes couvertes</span> du sous-menu <span class="hcp2">Couverture du code</span> (menu Déboguer ou menu contextuel de l'éditeur de textes) ou grâce au bouton <img src="../image/btn_colorier.bmp" style="border: none;" alt="" width="16" height="16" border="0"> de la barre d'outils de l'éditeur de textes (raccourci clavier <span class="hcp2">Ctrl+F9</span>).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Activation / désactivation automatique</span> : de plus, une option de Xwin (non validée par défaut) permet de passer automatiquement en mode "Colorier les lignes couvertes" au lancement de l'exécution d'un programme en mode débogueur, et de revenir automatiquement en mode normal lorsque l'exécution du programme se termine (Cf. rubrique <a href="Configuration_de_la_couverture_du_code.htm">Configuration de la couverture du code</a>). Remarque : si cette option est validée, une (dés)activation manuelle reste toujours possible.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp1">Comment les lignes couvertes sont-elles coloriées ?</p>
+&#160;
+<p>Les instructions composées étant prises en compte, deux couleurs sont utilisées pour indiquer si une ligne de code a été couverte :</p>
+<ul class="hcp3">
+<li class="p">
+<p>La première couleur (intitulée "Ligne totalement couverte") est appliquée aux lignes dont <span class="hcp2">toutes</span> les composantes ont été exécutées (*).<br>
+Prenons l'exemple schématique de code suivant :<span class="hcp4"><br>
+<br>
+alpha = 0 | beta = 1</span><span style="font-family: 'Courier New', monospace; color: #0000ff;"><br>
+if alpha = 1 or beta = 1</span><span class="hcp4"><br>
+gamma = 3<br>
+endif</span><span class="hcp5"><br>
+<br>
+La 2ème ligne est ici totalement couverte car les deux composantes du test</span> <span class="hcp4">if alpha = 1 or beta = 1</span> <span class="hcp5">sont exécutées (la première condition du OU logique n'étant pas réalisée, la seconde a du être exécutée ; et remarquez que si beta ne valait pas 1, il en serait de même).</span><span style="font-family: Arial, sans-serif; font-weight: bold;"><br>
+<br>
+Remarque</span> <span class="hcp5">: les lignes ne comportant pas de code exécutable Diva sont également</span> coloriées avec cette couleur (de manière à ne pas créer de "trous" artificiels pouvant faire croire visuellement que certaines lignes n'ont pas été exécutées). Pour un source donné, cette coloration des lignes sans code exécutable a lieu, à chaque nouvelle exécution de l'application, au moment où une première instruction de ce source est exécutée.<span class="hcp5"><br>
+<br>
+&#160;</span></p>
+</li>
+<li class="p">
+<p>La seconde couleur (intitulée "Ligne partiellement couverte") est appliquée aux lignes dont <span class="hcp2">une partie seulement</span> des composantes a été exécutée (*).<br>
+Prenons l'exemple schématique de code presque identique suivant :<span class="hcp4"><br>
+<br>
+alpha = 0 | beta = 1</span><span style="font-family: 'Courier New', monospace; color: #ff0000;"><br>
+if alpha = 0</span> <span class="hcp4">or beta = 1<br>
+gamma = 3<br>
+endif</span><span class="hcp5"><br>
+<br>
+La 2ème ligne est ici partiellement couverte car la seconde composante du test</span> <span class="hcp4">if alpha = 0 or beta = 1</span> <span class="hcp5">n'a pas été exécutée (la première condition du OU logique étant réalisée ; et remarquez à nouveau que si beta ne valait pas 1, il en serait de même).</span></p>
+</li>
+</ul>
+&#160;
+<p>(*) Une ligne a de multiples composantes lorsqu'elle est formée de plusieurs instructions (séparées par "|") ou lorsqu'elle contient une instruction composée (opérateurs booléens, Condition, etc.).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp1">Choix des couleurs :</p>
+&#160;
+<p>Au niveau des options de Xwin (volet "Polices et couleurs"), vous pouvez choisir les deux couleurs spécifiquement utilisées pour la couverture du code : Cf. rubrique <a href="Modifierlescouleurs.htm">Modifier les couleurs</a>. Ces couleurs sont intitulées : "<span class="hcp2">Couverture : Ligne entièrement couverte</span>" et "<span class="hcp2">Couverture : Ligne partiellement couverte</span>".</p>
+<p class="body-text">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Procédures correspondantes :</p>
+<p class="body-text"><a href="Pour_activer_ou_d&eacute;sactiver_la_colorisation_des_lignes_couvertes.htm">Pour activer ou désactiver la colorisation des lignes couvertes</a></p>
+<p class="body-text"><a href="Pour_activer_ou_d&eacute;sactiver_automatiquement_la_colorisation_des_lignes_couvertes.htm">Pour activer ou désactiver automatiquement la colorisation des lignes couvertes</a></p>
+<p class="body-text"><a href="Pour_modifier_la_couleurs_des_informations_de_couverture_du_code.htm">Pour modifier la couleur des informations de couverture du code</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

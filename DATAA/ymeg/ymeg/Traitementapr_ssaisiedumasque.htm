@@ -1,0 +1,57 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Traitement après saisie du masque</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+font.hcp3 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Traitement après saisie du masque</h3>
+<p class="Body-Text">Vous pouvez demander à Ywpf d'appeler une <font class="hcp1">séquence de traitement Après la saisie du masque</font> pour, par exemple, effectuer un <font class="hcp1">contrôle global</font> des données saisies&#160;: dans Xwin, affichez la page concernée, sélectionnez le choix <font class="hcp1">Page Courante</font> du menu <font class="hcp1">Paramètres</font> (raccourci clavier&#160;: <font class="hcp1">F3</font>) et saisissez votre séquence dans la zone intitulée <font class="hcp1">Traitement Après</font>.</p>
+<p class="Body-Text">Cette séquence est exécutée après&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Validation du masque (Entrée, clic onglet).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Flèche en Bas ou Tab sur la dernière donnée du masque.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Flèche en Haut ou Back-Tab sur la première donnée du masque. Ici, le programme revient généralement à la saisie et vous ne devrez pas exécuter les contrôles et traitements de fin. Pour effectivement les annuler, interrompez immédiatement le traitement si Harmony.Key vaut K_UP&#160;ou K_BTAB&#160;:<br>
+IF Harmony.Key in (K_UP, K_BTAB) &#160;| &#160;PRETURN &#160;| &#160;ENDIF<br>
+… &#160;&#160;&#160;&#160;;traitements / contrôles</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques&#160;:</font></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">A la validation de la saisie d'une page incluant des <a href="Les_grilles_et_les_panels_pages.htm">pages panels</a>, sont exécutés les traitements Après saisie de TOUTES les pages Xwin rencontrées dans l'arbre des pages panels de la page saisie. Les traitements sont exécutés en ordre « ascendant » : on part des feuilles de l'arbre et on remonte jusqu’à la page saisie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Si le masque est multi-écran</font> (pages chaînées), saisissez la séquence de traitement à exécuter dans les paramètres de la <font class="hcp1">PREMIERE page</font> de la liste chaînée.<br>
+De même avec les pages panels chaînées : saisissez la séquence de traitement à exécuter dans les paramètres de la <font class="hcp1">PREMIERE page panel</font> chaînée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si la séquence ne précise pas de retour particulier (Harmony.Retour = 0 <font face="Symbol" class="hcp3">-</font>XMENEXT_DEFAUT<font face="Symbol" class="hcp3">-</font>, valeur par défaut), la saisie du masque se termine normalement et le contrôle est rendu au programme appelant.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Cas de la saisie d'une ligne de tableau</font></p>
+<p class="Body-Text">Tout ce qui a été dit dans cette rubrique reste vrai pour la saisie d'une ligne de tableau, à la différence près que la séquence de traitement Après la saisie du masque est ici remplacée par la <font class="hcp1">séquence de traitement Après saisie d'une ligne</font>&#160;: dans Xwin, saisissez votre séquence dans la propriété du tableau intitulée <font class="hcp1">Traitement après saisie d'une ligne</font>. Consultez aussi la rubrique <a href="R_affichagedesdonn_esli_es_untableau.htm">Réaffichage des données liées à un tableau</a> pour prendre connaissance des règles de réaffichage des données des tableaux.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

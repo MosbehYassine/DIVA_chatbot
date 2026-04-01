@@ -1,0 +1,83 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Créer un fichier séquentiel indexé</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp3 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Créer un fichier séquentiel indexé</h4>
+<p class="Body-Text">Les caractéristiques d'un fichier séquentiel-indexé sont résumées dans le tableau suivant&#160;:<br>
+&#160;</p>
+<table cellspacing="0" width="539">
+<col style="width: 31.311%;">
+<col style="width: 26.167%;">
+<col style="width: 19.27%;">
+<col style="width: 23.252%;">
+<tr class="hcp1">
+<td style="width:31.311%;" class="hcp2">
+<p class="Body-Text" style="font-family: Arial, sans-serif; text-align: center;">Lettres clés <span style="font-weight: bold;">in</span>valides</p>
+</td>
+<td style="width:26.167%;" class="hcp2">
+<p class="Body-Text" style="font-family: Arial, sans-serif; text-align: center;">Nombre maximum de données composant la clé</p>
+</td>
+<td style="width:19.27%;" class="hcp2">
+<p class="Body-Text" style="font-family: Arial, sans-serif; text-align: center;">Taille maximum d'une clé</p>
+</td>
+<td style="width:23.252%;" class="hcp2">
+<p class="Body-Text" style="font-family: Arial, sans-serif; text-align: center;">Taille maximale des fichiers</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:31.311%;" class="hcp2">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Espace<br>
+00 et FF binaires</p>
+</td>
+<td style="width:26.167%;" class="hcp2">
+<p class="Body-Text" style="font-family: Arial, sans-serif; text-align: center;">16</p>
+</td>
+<td style="width:19.27%;" class="hcp2">
+<p class="Body-Text" style="font-family: Arial, sans-serif; text-align: center;">239</p>
+</td>
+<td style="width:23.252%;" class="hcp2">
+<p class="Body-Text" style="font-family: Arial, sans-serif; text-align: center;">4G x 4Go</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<br>
+La création d'un fichier séquentiel indexé s'obtient uniquement par le choix du menu <font class="hcp3">&lt;Isam</font> <font style="font-family: Symbol; font-weight: bold;" face="Symbol">®</font> <font class="hcp3">Créer un Séquentiel Indexé</font>&gt;.</p>
+<p class="Body-Text">&#160;<br>
+La création se déroule en trois phases&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Saisie du <font class="hcp3">nom</font> du fichier des <font class="hcp3">clés</font> (celle du nom du fichier des données est facultative).<br>
+L'extension standard <font class="hcp3">.dhfi</font> est automatiquement ajoutée au nom du fichier des clés. Sauf précision contraire, le fichier des données sera créé dans le même dossier que le fichier des clés et portera le même nom, mais avec l'extension <font class="hcp3">.dhfd</font>.<br>
+Il est conseillé de <font class="hcp3">ne pas mentionner</font> ici de dossier pour le fichier des données. A défaut, il est impératif qu'à l'utilisation un chemin implicite mène à ce dossier.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Saisie des <font class="hcp3">caractéristiques</font> du fichier des <font class="hcp3">données</font> (s'il doit être créé).<br>
+Si le fichier des données existe déjà, Xtools le signale et permet de changer son nom. Il est en effet possible de créer un fichier des clés et de l'indexer sur un fichier des données déjà existant&#160;: après la création, il suffira de régénérer les clés. Si le fichier des données n'existe pas encore, le fichier séquentiel indexé est initialisé (pas de régénération nécessaire).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp3">Paramétrage des clés</font>.<br>
+Cette saisie se déroule comme la modification, sauf que l'on n'a pas accès au nom du fichier des données (Cf. rubrique suivante).</p>
+</li>
+</ul>
+</body>
+</html>

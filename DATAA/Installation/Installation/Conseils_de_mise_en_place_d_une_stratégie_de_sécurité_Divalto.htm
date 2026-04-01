@@ -1,0 +1,53 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Conseils de mise en place d'une stratégie de sécurité Divalto</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Conseils de mise en place d'une stratégie de sécurité Divalto</h2>
+<p>&#160;</p>
+<p>Pour obtenir une sécurité optimale lors de la connexion des utilisateurs, il est conseillé d'effectuer le paramétrage suivant :</p>
+<ol style="list-style: lower-alpha;">
+<li style="list-style: decimal;" class="p">
+<p>Paramétrage des <a href="Gestion_des_profils_de_connexion.htm">Profils de connexion</a>.<br>
+Le choix "Paramétrage : Gestion des Profils de connexion en client léger" du menu Harmony permet de configurer les profils de connexion. Pour chacun des profils, sélectionnez l'option d'identification "<span class="hcp1">Prendre l’identifiant Windows</span>".<span class="hcp1"><br>
+<br>
+Remarque</span> : Ceci interdit aux utilisateurs de choisir eux-mêmes leur option d'identification dans la boîte des Options de connexion avancées.<br>
+&#160;</p>
+</li>
+<li style="list-style: decimal;" class="p">
+<p>Paramétrage des <a href="D_clarationdesutilisateurs.htm">Utilisateurs Harmony</a>.<br>
+Saisissez pour chaque utilisateur le <span class="hcp1">nom du domaine</span> où leur compte est enregistré.<br>
+&#160;</p>
+</li>
+<li style="list-style: decimal;" class="p">
+<p>Paramétrage des <a href="Options_de_connexion_avanc&eacute;es.htm">Options de connexion avancées</a>.<br>
+Garnissez le champ <span class="hcp1">Code utilisateur Windows</span> de la boîte des options de connexion avancées avec le <span class="hcp1">compte utilisateur du domaine</span> (sous la forme User@Domaine - par exemple : demo@divalto.dmz).</p>
+</li>
+</ol>
+<p>&#160;</p>
+<p>Avec ce paramétrage, Divalto vérifie :</p>
+<ol style="list-style: decimal;">
+<li class="p">
+<p>Que l'utilisateur se connecte effectivement sur le domaine qui a été spécifié dans le fichier des utilisateurs Harmony.<br>
+A défaut, une erreur 0x0078 est détectée.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Que le code utilisateur Windows spécifié dans les options de connexion avancées et utilisé pour l'impersonnation du processus sur le serveur d’applications inclut un nom de domaine et que ce nom est identique à celui indiqué dans le fichier des utilisateurs Harmony.<br>
+A défaut, une erreur 0x0079 est détectée.</p>
+</li>
+</ol>
+</body>
+</html>

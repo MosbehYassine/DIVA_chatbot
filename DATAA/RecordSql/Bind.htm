@@ -1,0 +1,60 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Bind</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+p.hcp3 { font-weight:bold; }
+span.hcp4 { margin-left:8px; }
+p.hcp5 { margin-left:48px; }
+p.hcp6 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Bind <span style="font-family: Arial, sans-serif;">&#160;&#160;</span><span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_balises_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>Bind permet de lier une table d’un RecordSQL avec une instance publique du Record correspondant à la Table. Cette possibilité existe pour des raisons de compatibilité avec les développements antérieurs à la version 7.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Bind</span> &#160;<span class="hcp2">InstanceSql</span> &#160;[ <span class="hcp2">InstanceDiva</span> ]</p>
+<p>&#160;</p>
+<p class="hcp3">Paramètres</p>
+<p><span class="hcp2">InstanceSql</span> &#160;</p>
+<p class="Decalage05">Nom de l'instance dans le RecordSql</p>
+<p><span class="hcp2">InstanceDiva</span></p>
+<p class="Decalage05">Nom de l'instance dans le programme Diva. Si les deux instances ont le même nom, ce paramètre peut être omis.</p>
+<p>&#160;</p>
+<p>Pour utiliser Bind, il faut <span class="hcp4">i</span><span class="hcp4">mpérativement que tous les champs de la table à lier soient sélectionnés (Table.*).</span></p>
+<p>&#160;</p>
+<p><span class="hcp1">Exemple</span> :</p>
+<p class="Source">&lt;RecordSql Name=client Comment='Clients'&gt;</p>
+<p class="Source">Bind CLI</p>
+<p class="Source">&lt;SELECT&gt;</p>
+<p class="Source">CLI.*</p>
+<p class="hcp5">&#160;</p>
+<p class="hcp5">En diva :</p>
+<p class="hcp5">&#160;</p>
+<p class="Source">public record gtfdd.dhsd cli</p>
+<p class="Source">public RecordSql dicosql.dhoq client</p>
+<p class="Source">...</p>
+<p class="Source">;Le Record CLI et la table CLI du RecordSQL ont la même adresse mémoire</p>
+<p class="Source">;Donc : cli.Tiers est la même donnée que client.Tiers</p>
+<p class="Source">&#160;</p>
+<p class="hcp3">Pourquoi utiliser BIND ?</p>
+<p>Certaines fonctions de bas niveau de l’ERP utilisent des enregistrements publics.</p>
+<p>On utilisera BIND lorsqu’on souhaite utiliser ces fonctions de bas niveau après avoir accédé à la table de l’ERP par un RecordSQL.</p>
+<p>&#160;</p>
+<p class="hcp3"><span class="hcp1">Voir</span></p>
+<p class="hcp6"><a href="R&eacute;sum&eacute;_de_la_syntaxe.htm"><span style="font-weight: normal;">Résumé de la syntaxe</span></a></p>
+<p class="hcp6"><a href="Liste_des_balises_RecordSql.htm" style="font-weight: normal;">Liste des balises RecordSql</a></p>
+<p>&#160;</p>
+</body>
+</html>

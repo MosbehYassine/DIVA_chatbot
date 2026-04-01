@@ -1,0 +1,45 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Menus : Désactivation et invalidation des choix</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Menus : Désactivation et invalidation des choix</h3>
+<p class="Body-Text">Les choix d’un menu (hormis les séparateurs) peuvent être désactivés (ils apparaissent grisés à l’écran) ou totalement invalidés (ils n’apparaissent plus à l’écran).</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Pour <font class="hcp1">désactiver</font> (griser) un choix, quatre possibilités&#160;:</p>
+<ol>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Faites appel à la fonction&#160;Diva <a href="XmeMenuEnableItem.htm">XmeMenuEnableItem</a> pour désactiver <font class="hcp1">un choix précis</font> (menu classique ou surgissant).</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Faites appel à la fonction Diva&#160;<a href="XmeMenuEnable.htm">XmeMenuEnable</a> pour désactiver <font class="hcp1">l’ensemble des choix</font> (menu classique).<br>
+Remarque&#160;: si votre programme <font class="hcp1">empile plusieurs fenêtres</font> proposant chacune un menu, seul le menu affiché dans la dernière fenêtre est actif&#160;; les autres sont <font class="hcp1">automatiquement désactivés</font>.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">A l’occasion de la saisie d’une donnée ou de la consultation d’une page ou d’un tableau, vous pouvez demander un grisage <font class="hcp1">contextuel automatique d’un choix</font> en le nommant (propriété <font class="hcp1">Nom pour la sélection</font> dans l’éditeur de menus de Xwin). Par programme, vous pouvez aussi nommer le choix au moment de sa création ou lors de la modification de ses propriétés.<br>
+Cette fonctionnalité d’Harmony est opérationnelle aussi bien avec un menu classique qu’avec un menu surgissant. Pour plus de détails, consultez la rubrique <font class="hcp1">Boutons nommés</font> du livre consacré à l’éditeur de masques d’écran dans l’aide en ligne concernant les <font class="hcp1">éditeurs</font> de Xwin.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Lorsque le programme s'exécute en mode "Licence consultation", vous pouvez obtenir le grisage <font class="hcp1">automatique <span class="hcp2">d'un choix en activant l'option</span> <span style="font-weight: bold;">Licence consultation</span> <span class="hcp2">pour le choix dans Xwin. Par programme, vous pouvez aussi activer cette option lors de la création du choix</span></font> <span class="hcp2">ou lors de la modification <font style="font-weight: normal;">de ses propriétés</font></span>. A l'exécution, si le choix grisé génère une touche du clavier, la frappe de cette dernière est automatiquement invalidée.</p>
+</li>
+</ol>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">Pour <font class="hcp1">invalider</font> un choix par programme, faites appel à la fonction&#160;Diva <a href="XmeMenuValidateItem.htm">XmeMenuValidateItem</a>.</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

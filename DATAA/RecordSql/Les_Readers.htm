@@ -1,0 +1,43 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Les Readers</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Les Readers</h3>
+<p>&#160;</p>
+<p>Toute une série de méthodes du RecordSql permettent de lire séquentiellement un RecordSql. Le nom de ces méthodes est préfixé par Reader.</p>
+<p>Elles utilisent un ReaderId obtenu par les méthodes <a href="ReaderOpen.htm">ReaderOpen</a> ou <a href="ReaderSelect.htm">ReaderSelect</a>.</p>
+<p>La méthode <a href="ReaderSelect.htm">ReaderSelect</a> provoque l’exécution de la requête.</p>
+<p>Les méthodes <a href="ReaderFirst.htm">ReaderFirst</a>, <a href="ReaderNext.htm">ReaderNext</a> etc. permettent de lire les lignes du résultat de la requête.</p>
+<p>Les méthodes <a href="ReaderUpdate.htm">ReaderUpdate</a>, <a href="ReaderDelete.htm">ReaderDelete</a> et <a href="ReaderInsert.htm">ReaderInsert</a> permettent la mise à jour de la table de la balise &lt;From&gt; du RecordSql.</p>
+<p>La méthode <a href="ReaderClose.htm">ReaderClose</a> permet de fermer un Reader.</p>
+<p>&#160;</p>
+<p>Plusieurs Readers peuvent être ouverts simultanément sur la même instance d’un RecordSql, ce qui permet éventuellement de lire un RecordSql selon des critères différents. Par contre, chaque Reader ouvre une connexion exclusive vers le serveur. Le nombre total de connexions étant limité, il faut donc veiller à fermer les Reader en fin d’utilisation ou d’utiliser toujours le même Reader lorsque cela est possible.</p>
+<p>A la fin de la lecture du Reader, c'est à dire lors d'une tentative de lecture après la dernière ligne du Reader, celui-ci est automatiquement refermé.</p>
+<p>&#160;</p>
+<p>Exemple</p>
+<p class="Source">1 ReaderId L</p>
+<p class="Source">; Les Clients dont le Nom abrégé commence par A du dossier 998</p>
+<p class="Source">; triés par Nom abrégé</p>
+<p class="Source">MZ.Dos = 998</p>
+<p class="Source">Client.OrderBy.Par_NomAbrege()</p>
+<p class="Source">Client.Where.Zoom_Like_NomAbr('A%')</p>
+<p class="Source">; Id du Reader</p>
+<p class="Source">ReaderId = Client.ReaderOpen()</p>
+<p class="Source">; Exécution de la requête</p>
+<p class="Source">Client.ReaderSelect(ReaderId)</p>
+<p class="Source">do</p>
+<p class="Source">&#160;&#160;&#160;St = Client.ReaderNext(ReaderId) &#160;&#160;&#160;&#160;&#160;; Lecture</p>
+<p class="Source">while &#160;St = 1</p>
+<p class="Source">&#160;&#160;&#160;...</p>
+<p class="Source">Wend</p>
+<p class="Source">Client.ReaderClose(ReaderId)</p>
+</body>
+</html>

@@ -1,0 +1,112 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Créer un fichier pilote</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Créer un fichier pilote</h4>
+<p class="Body-Text">La génération d'un fichier pilote est accessible uniquement par le choix du menu &lt;<font class="hcp1">Outils</font> <font style="font-family: Symbol; font-weight: bold;" face="Symbol">®</font> <font class="hcp1">Créer un fichier pilote</font>&gt;. Elle permet par exemple de générer des pilotes de compilation ou de régénération des clés.</p>
+<p class="Body-Text">Xtools demande le nom d'un fichier modèle et le nom du fichier pilote à générer. Le bouton <font class="hcp1">Parcourir</font> ouvre une boîte de dialogue qui permet de sélectionner le fichier en naviguant dans les dossiers ou en choisissant un chemin implicite. Si le fichier à générer existe, il propose de l'effacer ou au contraire d'écrire à la suite.</p>
+<p class="Body-Text">Le fichier modèle est constitué de deux parties nommées 1 et 2. La partie 1 est optionnelle&#160;: elle est présente si une des lignes du fichier commence par la chaîne "/DEBUT", absente sinon (cette chaîne "/DEBUT" en première colonne d'une ligne sépare partie 1 et partie 2).</p>
+<p class="Body-Text">Si la partie 1 est présente, Xtools la copie telle quelle dans le fichier de sortie. Ensuite, et pour chaque fichier pointé, il copie la partie 2 du fichier modèle dans le fichier à générer en effectuant le remplacement de 4 paramètres de substitution ayant la signification suivante (exemple avec le fichier /Divalto/sys/xtools.dhop)&#160;:<br>
+&#160;</p>
+<table cellspacing="0" width="436">
+<tr class="hcp2">
+<td style="width:5.43%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">$0</font></p>
+</td>
+<td style="width:6.49%;" class="hcp3">
+<p class="Body-Text"><font face="Symbol" class="hcp4">«</font></p>
+</td>
+<td style="width:54.08%;" class="hcp3">
+<p class="Body-Text">Nom complet (chemin+nom+extension)</p>
+</td>
+<td style="width:34.00%;" class="hcp3">
+<p class="Body-Text">/Divalto/sys/xtools.dhop</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:5.43%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">$1</font></p>
+</td>
+<td style="width:6.49%;" class="hcp3">
+<p class="Body-Text"><font face="Symbol" class="hcp4">«</font></p>
+</td>
+<td style="width:54.08%;" class="hcp3">
+<p class="Body-Text">Chemin terminé par '/'</p>
+</td>
+<td style="width:34.00%;" class="hcp3">
+<p class="Body-Text">/Divalto/sys/</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:5.43%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">$2</font></p>
+</td>
+<td style="width:6.49%;" class="hcp3">
+<p class="Body-Text"><font face="Symbol" class="hcp4">«</font></p>
+</td>
+<td style="width:54.08%;" class="hcp3">
+<p class="Body-Text">Nom du fichier (ni chemin, ni extension)</p>
+</td>
+<td style="width:34.00%;" class="hcp3">
+<p class="Body-Text">xtools</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:5.43%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">$3</font></p>
+</td>
+<td style="width:6.49%;" class="hcp3">
+<p class="Body-Text"><font face="Symbol" class="hcp4">«</font></p>
+</td>
+<td style="width:54.08%;" class="hcp3">
+<p class="Body-Text">Extension précédée de "."</p>
+</td>
+<td style="width:34.00%;" class="hcp3">
+<p class="Body-Text">.dhop</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple</font>&#160;: Soit les 2 fichiers pointés /Divalto/src/xpath.dhse et /Divalto/src/xtools.dhse.</p>
+<p class="Body-Text">&#160;<br>
+Si le fichier modèle contient la ligne&#160;suivante&#160;:<br>
+xFormCompiler,$0,$1$2.dhoe,o,,,<br>
+&#160;<br>
+on obtiendra le fichier pilote de compilation suivant&#160;:<br>
+xFormCompiler,/Divalto/src/xpath.dhse,/Divalto/src/xpath.dhoe,o,,,<br>
+xFormCompiler,/Divalto/src/xtools.dhse,/Divalto/src/xtools.dhoe,o,,,</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Si le fichier modèle contient les lignes&#160;suivantes&#160;:<br>
+;Compilation des masques de l'application xxx<br>
+;…<br>
+/DEBUT<br>
+xFormCompiler,$0,$1$2.dhoe,o,,,<br>
+&#160;<br>
+on obtiendra le fichier pilote suivant&#160;:<br>
+;Compilation des masques de l'application xxx<br>
+;…<br>
+xFormCompiler,/Divalto/src/xpath.dhse,/Divalto/src/xpath.dhoe,o,,,<br>
+xFormCompiler,/Divalto/src/xtools.dhse,/Divalto/src/xtools.dhoe,o,,,</p>
+</body>
+</html>

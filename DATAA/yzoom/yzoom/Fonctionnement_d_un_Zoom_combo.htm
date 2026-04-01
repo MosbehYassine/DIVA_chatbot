@@ -1,0 +1,53 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctionnement d'un Zoom liste</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fonctionnement d'un Zoom liste</h3>
+<p>&#160;</p>
+<p>Le Zoom liste reprend les éléments suivants du Zoom classique :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text">Le <a href="RecordSql_associ&eacute;_au_zoom.htm">RecordSql</a>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le <a href="ModuleDivaduZoom.htm">module de traitements Diva</a> (voir la rubrique "<a href="S&eacute;quences_du_module_Diva_sp&eacute;cifiques_au_Zoom_combo.htm">Séquences du module Diva spécifiques au Zoom liste</a>").</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p>Mais si le Zoom liste et le Zoom classique présentent des points communs (et mise à part la simplification du premier par rapport au second), leur fonctionnement respectif est très différent :</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Le Zoom classique</span>.<br>
+Un Zoom classique est lancé par l'instruction ZoomSql, qui effectue un ProgramCall du programme Diva xZoom7.dhop, soit en mode CALL_WAIT (le programme appelant attend la fin du zoom pour poursuivre son exécution), soit en mode CALL_NOWAIT (le programme appelant et le zoom s'exécutent de manière totalement autonomes). Une nouvelle tâche XrtDiva.exe est créée sur le serveur d'applications avec une nouvelle tâche client associée.<br>
+Le zoom classique est un programme interactif tout à fait normal, qui affiche et saisit des masques d'écran Xwin, présente un menu et une barre d'outils, etc.<br>
+De plus, un Zoom classique peut être appelé depuis un menu, un programme d'application en consultation ou en saisie.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Le Zoom liste</span>.<br>
+Un Zoom liste est lancé par l'instruction <a href="ZoomCombo.htm">ZoomCombo</a>, qui effectue un ProgramCall de xZoomCombo.dhop. Ce programme Diva a pour uniques fonctions de rechercher les informations sur la table concernée et d'appeler quelques séquences du module de traitements du zoom. Il s'exécute dans une "tâche de fond" XrtDiva.exe créée sur le serveur d'applications et n'a pas de <span class="hcp2">tâche</span> interactive associée côté client.<br>
+<br>
+De plus, il <span class="hcp2">ne peut être appelé que lors de la saisie d'un objet Champ ou Multi-choix</span> ayant la propriété "<span class="hcp2">Table associée</span>" activée dans Xwin.<br>
+<br>
+L'interactivité avec l'utilisateur n'est pas assuré par le programme qui effectue la recherche mais par le programme appelant lui-même, par l'intermédiaire d'une fenêtre spécialisée gérée automatiquement par le système (si vous désirez en savoir plus sur ce point, consultez la rubrique du livre consacré à Ywpf décrivant l'instruction XmeZoomCombo).<br>
+<br>
+Une conséquence à savoir est que toutes les instructions exécutées dans les séquences de traitement du <a href="ModuleDivaduZoom.htm">module Diva du Zoom</a> appelées par xZoomCombo.dhop (voir la rubrique "<a href="S&eacute;quences_du_module_Diva_sp&eacute;cifiques_au_Zoom_combo.htm">Séquences du module Diva spécifiques au Zoom liste</a>") et concernant les masques Xwin du Zoom classique sont purement et simplement ignorées (par exemple, les instructions accédant à l'objet tableau, au menu ou à la barre d'outils).</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,71 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fnumer</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fnumer</h3>
+<p class="Body-Text">La fonction Fnumer formate une chaîne de caractères dans une donnée numérique. Elle vérifie qu’une donnée de type alpha contient une valeur numérique correcte et affecte cette valeur dans une variable numérique. Elle sort en erreur s’il y a débordement de capacité.</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Bool</font> <font class="hcp1">Fnumer</font> (<font class="hcp2">numer</font>&#160;, <font class="hcp2">alpha</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Numer</font></p>
+<p class="decalage05">Variable numérique qui reçoit la valeur contenue dans <font class="hcp2">alpha</font>.</p>
+<p class="Body-Text"><font class="hcp2">Alpha</font></p>
+<p class="decalage05">Variable de type alphanumérique qui contient la valeur à vérifier puis à affecter à <font class="hcp2">Numer</font>.</p>
+<p class="decalage05" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<table cellspacing="0" width="604">
+<tr class="hcp3">
+<td style="width:13.29%;" class="hcp4">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:86.71%;" class="hcp4">
+<p class="Body-Text">La donnée de type alpha contient des caractères non numériques ou il y a débordement de capacité lors de l’affectation de <font class="hcp2">alpha</font> dans <font class="hcp2">numer</font>.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:13.29%;" class="hcp4">
+<p class="Body-Text">1</p>
+</td>
+<td style="width:86.71%;" class="hcp4">
+<p class="Body-Text">Pas d’erreur</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="source">1 valeurweb 14</p>
+<p class="source">1 valnum 10,2</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">input " " valeurweb&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">if fnumer(valnum,valeurweb)&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display "ok" &amp; valnum&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">else&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display "erreur"&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">endif&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Isnum.htm">Isnum</a> , <a href="Isnumer.htm">Isnumer</a></p>
+</body>
+</html>

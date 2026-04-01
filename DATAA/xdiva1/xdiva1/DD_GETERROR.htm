@@ -1,0 +1,81 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DD_GETERROR</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DD_GETERROR &#160;<a href="Listedesinstructionsd_acc_saudictionnairedesdonn_es.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Acc_saudictionnairededonn_es.htm"><font class="hcp1">Thème</font></a></h3>
+<p><font class="hcp2">Long</font> <a href="DDInterface.htm"><font class="hcp2">DDInterface</font></a> (<font style="font-style: italic;">Commande , &amp;ticket , [paramètres] , retour, [niveau]</font>)</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font style="font-size: 12pt; font-weight: bold;" size="4" color="#FF0000">DD_GETERROR</font></p>
+<p class="decalage05" style="margin-left: 28.35pt;">La commande DD_GETERROR permet de recevoir un message d’erreur complet. Elle est appelée après une commande ayant retourné une erreur.</p>
+<p class="decalage05" style="margin-left: 28.35pt;">&#160;</p>
+<p class="decalage05" style="margin-left: 28.35pt;">Retour contient une chaîne <a href="Harmony_Markup_Parametres_HMP.htm">HMP</a> avec les paramètres suivants&#160;:</p>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<table style="margin-left: 28.35pt;" cellspacing="0" width="654">
+<tr class="hcp3">
+<td style="width:24.56%;" class="hcp4">
+<p class="decalage05">CodeErreur</p>
+</td>
+<td style="width:75.44%;" class="hcp4">
+<p class="decalage05">Code d’erreur principal.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:24.56%;" class="hcp4">
+<p class="decalage05">CodeSystème</p>
+</td>
+<td style="width:75.44%;" class="hcp4">
+<p class="decalage05">Code d’erreur système.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:24.56%;" class="hcp4">
+<p class="decalage05">CodeErrno</p>
+</td>
+<td style="width:75.44%;" class="hcp4">
+<p class="decalage05">Code rendu par Windows.</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:24.56%;" class="hcp4">
+<p class="decalage05">TexteErreur</p>
+</td>
+<td style="width:75.44%;" class="hcp4">
+<p class="decalage05">Texte de l’erreur.</p>
+</td>
+</tr>
+</table>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;">&#160;</p>
+<p class="decalage05" style="text-indent: 14.15pt;"><font class="hcp2">Exemple</font></p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;ticket&#160;L&#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">1&#160;&#160;reponse&#160;8096 &#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;if DDInterface(DD_OPEN,ticket,"odfdd.dhsd",reponse) &lt;&gt; 0</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;&#160;&#160;&#160;DDInterface(DD_GETERROR,ticket," ",reponse,niveaudico)&#160;</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;&#160;&#160;&#160;display HmpSeek(reponse,"TexteErreur");</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;&#160;&#160;&#160;ProgramExit</p>
+<p class="source" style="margin-left: 28.35pt; text-indent: 14.15pt;">&#160;endif</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="DDInterface.htm">DDInterface</a></p>
+</body>
+</html>

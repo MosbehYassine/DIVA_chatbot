@@ -1,0 +1,62 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>OpenXmlWord_CreateParagraph</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>OpenXmlWord_CreateParagraph &#160;<span style="font-weight: normal;"><a href="Liste_des_fonctions_traitement_de_texte_OpenXml.htm">Famille</a> &#160;<a href="Fonctions_OpenXml.htm">Theme</a></span></h3>
+<p>&#160;</p>
+<p>La fonction OpenXmlWord_CreateParagraph utilise le point d'ancrage précédemment posé par la fonction <a href="OpenXmlWord_Replace.htm">OpenXmlWord_Replace</a> pour y créer un paragraphe. Ce paragraphe pourra ensuite être garni par la fonction <a href="OpenXmlWord_InsertText.htm">OpenXmlWord_InsertText</a>.</p>
+<p>OpenXmlWord_CreateParagraph crée elle-même un nouveau point d'ancrage à la suite du paragraphe inséré. On peut ainsi ajouter successivement plusieurs paragraphes derrière le paragraphe contenant la chaîne de référence.</p>
+<p>&#160;</p>
+<p class="Body-Text"><span style="font-weight: bold;">Int OpenXmlWord_CreateParagraph</span> (<span style="font-style: italic;">justif, breakdoc</span>)</p>
+<p>&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Paramètres</font></p>
+<p class="Body-Text" style="font-style: italic;">Justif</p>
+<p class="decalage05">0 ou 1 : paragraphe cadré à gauche (valeur par défaut).<br>
+2 : paragraphe centré.<br>
+3 : paragraphe cadré à droite.<br>
+4 : paragraphe justifié.</p>
+<p class="Body-Text" style="font-style: italic;">BreakDoc</p>
+<p class="decalage05">1 : indique qu’il faut faire suivre le paragraphe d'une marque fin de document (0 par défaut).</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Retour</p>
+<table style="vertical-align: top;" cellspacing="0" width="82.422%">
+<col style="width: 4.844%;">
+<col style="width: 93.333%;">
+<tr class="hcp1">
+<td style="width:4.844%;" class="hcp2">
+<p>0</p>
+</td>
+<td style="width:93.333%;" class="hcp2">
+<p>Le paragraphe n'a pas été créé.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:4.844%;" class="hcp2">
+<p>1</p>
+</td>
+<td style="width:93.333%;" class="hcp2">
+<p>Le paragraphe a été créé.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p style="font-weight: bold;">Voir</p>
+<p><a href="OpenXml_Exemple_de_publipostage.htm">OpenXml Exemple de publipostage</a></p>
+<p>&#160;</p>
+</body>
+</html>

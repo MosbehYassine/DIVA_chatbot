@@ -1,0 +1,51 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exemple de client Diva d'un service Web Diva</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-top:0;
+margin-bottom:0; }
+font.hcp2 { font-family:Courier New; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Exemple de client Diva d'un service Web Diva</h3>
+<p class="hcp1">&#160;</p>
+<p><font face="Courier New" color="#008000" class="hcp2">;____________________________________________________________________</font></p>
+<p><font face="Courier New" color="#008000" class="hcp2">;Description&#160;:</font></p>
+<p><font face="Courier New" color="#008000" class="hcp2">;&#160;Demande la quantité en stock pour une référence article à</font></p>
+<p><font face="Courier New" color="#008000" class="hcp2">;&#160;un&#160;service Web Diva</font></p>
+<p class="footnote-text"><font face="Courier New" color="#008000" class="hcp2">;____________________________________________________________________</font></p>
+<p class="hcp1">&#160;</p>
+<p><font face="Courier New" class="hcp2">1&#160;Url&#160;&#160;&#160;&#160;S</font></p>
+<p class="footnote-text"><font face="Courier New" class="hcp2">1 &#160;St&#160;&#160;&#160;&#160;X</font></p>
+<p><font face="Courier New" class="hcp2">1 &#160;Retour&#160;&#160;&#160;S</font></p>
+<p><font face="Courier New" class="hcp2">1&#160;Stock &#160;&#160;&#160;12,D2</font></p>
+<p class="hcp1">&#160;</p>
+<p><font face="Courier New" color="#0000FF" class="hcp2">main</font></p>
+<p class="footnote-text">&#160;</p>
+<p><font face="Courier New" color="#008000" class="hcp2">;&#160;Appel du service</font></p>
+<p><font face="Courier New" class="hcp2">Url = "http://www.divalto.fr/Ws/WebServiceDiva.asmx"</font></p>
+<p><font face="Courier New" class="hcp2">St =&#160;</font><font face="Courier New" color="#0000FF" class="hcp2">WebServiceDivaExecute</font><font face="Courier New" class="hcp2">(Url, \</font></p>
+<p><font face="Courier New" class="hcp2">&#160;"&lt;action&gt;Stock", \</font></p>
+<p><font face="Courier New" class="hcp2">&#160;</font><font face="Courier New" class="hcp2">"&lt;dos&gt;998&lt;reference&gt;ALB0001", \</font></p>
+<p style="text-indent: 30.25pt;"><font face="Courier New" class="hcp2">Retour)</font></p>
+<p class="hcp1">&#160;</p>
+<p><font face="Courier New" color="#008000" class="hcp2">; en cas d'erreur Retour contient le message</font></p>
+<p><font face="Courier New" color="#0000FF" class="hcp2">if</font> <font face="Courier New" class="hcp2">St&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</font></p>
+<p><font face="Courier New" class="hcp2">&#160;</font><font face="Courier New" color="#0000FF" class="hcp2">MessageBox</font><font face="Courier New" class="hcp2">(</font><font face="Courier New" color="#0000FF" class="hcp2">binhexa</font><font face="Courier New" class="hcp2">(</font><font face="Courier New" color="#0000FF" class="hcp2">stx</font><font face="Courier New" class="hcp2">(St)) &amp; " " &amp; Retour&#160;," ")</font></p>
+<p><font face="Courier New" color="#0000FF" class="hcp2">else</font></p>
+<p><font face="Courier New" class="hcp2">&#160;Stock = Retour</font></p>
+<p><font face="Courier New" color="#0000FF" class="hcp2">endif</font></p>
+<p><font face="Courier New" color="#0000FF" class="hcp2">ProgramExit</font></p>
+</body>
+</html>

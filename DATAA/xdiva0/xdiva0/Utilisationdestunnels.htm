@@ -1,0 +1,80 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Utilisation des tunnels</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-family:Courier New;
+font-size:8pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Utilisation des tunnels</h3>
+<p class="Body-Text">Un tunnel est une liste de données dont chaque élément est identifié par un libellé.</p>
+<p class="Body-Text">Les instructions Ping et Pong permettent d'introduire des données dans un tunnel, les instructions PingReceive et PongReceive permettent d'extraire des données du tunnel.<br>
+PingReceive permet de lire les données placées dans le tunnel par l'instruction Ping, PongReceive permet de lire les données placées par Pong.</p>
+<p class="Body-Text">PingReceiveAndDelete, PongReceiveAndDelete permettent de lire les données d’un tunnel et de les supprimer du tunnel.</p>
+<p class="Body-Text">Lors de l'introduction d'une donnée dans un tunnel (Ping ou Pong), si un élément du tunnel existe déjà avec le même libellé il est remplacé par les nouvelles données.</p>
+<p class="Body-Text"><br>
+<font class="hcp1">Exemple<br></font></p>
+<table cellspacing="0" width="496">
+<tr class="hcp2">
+<td style="width:52.38%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Programme1</font></p>
+</td>
+<td style="width:47.62%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Programme2</font></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:52.38%;" class="hcp3">
+<p class="Body-Text"><font face="Courier New" size="2" class="hcp4">Ping( "client", Client)<br>
+Ping("article", Article)<br>
+ProgramCall ("Programme2")<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+PongReceive ("prix",PrixUnitaire)</font></p>
+</td>
+<td style="width:47.62%;" class="hcp3">
+<p class="Body-Text"><font face="Courier New" size="2" class="hcp4"><br>
+<br>
+<br>
+Main<br>
+PingReceive("client",Client)<br>
+PingReceive("article",Article)<br>
+<br>
+; calcul du prix en fonction du client<br>
+<br>
+Pong ("prix",PrixArticle)<br>
+ProgramExit</font></p>
+</td>
+</tr>
+</table>
+<p class="Body-Text"><br>
+Programme1 appelle Programme2 en lui passant ses enregistrements Client et Article et reçoit en retour une valeur numérique contenant le prix.</p>
+<p class="Body-Text"><br>
+<font class="hcp1">Voir</font></p>
+<p class="Body-Text">Ping - Pong.</p>
+</body>
+</html>

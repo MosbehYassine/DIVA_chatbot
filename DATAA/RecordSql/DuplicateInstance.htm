@@ -1,0 +1,76 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DuplicateInstance</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>DuplicateInstance&#160;&#160;<span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a 
+	 href="Liste_des_m&eacute;thodes_et_fonctions_sur_les_RecordSql.htm">Famille</a> 
+ &#160;<a href="Introduction.htm">Thème</a></span></h1>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La fonction DuplicateInstance permet de créer une 
+ nouvelle instance d'un RecordSql déjà existant.</p>
+&#160;&#160;&#160; 
+<p class="Body-Text"><font class="hcp1">Long</font> RecordSql<span class="hcp2">.DuplicateInstance </span>(P<span class="hcp3">trRecord</span>)</p>
+&#160;&#160;&#160; 
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><span class="hcp3">PtrRecord</span></p>
+<p class="decalage05">Donnée de type RecordSqlPtr recevant l'adresse de 
+ la nouvelle instance.</p>
+<p class="decalage05">&#160;&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<table cellspacing="0" width="436">
+	<tr style="vertical-align: top;">
+		<td style="width:16.24%;" class="hcp4"><p class="Body-Text">0</p></td>
+		<td style="width:83.76%;" class="hcp4"><p class="Body-Text">Pas 
+		 d'erreur</p></td>
+	</tr>
+</table>
+&#160;&#160;&#160; 
+<br>&#160; 
+<br>&#160;<span class="hcp2">Remarques</span> 
+ 
+<ul style="list-style: disc;">
+	<li><span>Les instances allouées par DuplicateInstance doivent être 
+	 implicitement libérées par </span><a href="PtrRecordSqlFreeInstance.htm">PtrRecordSqlFreeInstance</a>.</li>
+	<li>En fin de programme, toutes les instances sont automatiquement 
+	 libérées.</li>
+	<li>Seule la structure du RecordSql est allouée. Les données ne sont 
+	 pas recopiées dans la nouvelle instance.</li>
+	<li>Voir <a href="PtrRecordSqlNew.htm">PtrRecordSqlNew</a> qui permet 
+	 d'allouer un RecordSql sans déclaration préalable.</li>
+</ul>
+<p class="Body-Text" style="font-weight: bold;">Exemple</p>
+<p class="Source">RecordSql gtrsart.dhoq article articlepp</p>
+<p class="Source">RecordSqlPtr ptart</p>
+<p class="Source">&#160;</p>
+<p class="Source">articlepp.DuplicateInstance(ptart)</p>
+<p class="Source">ptart.Select()</p>
+<p class="Source">PtrRecordSqlFreeInstance(ptart) </p>
+<p class="Source">&#160;</p>
+&#160;&#160;&#160; 
+<p style="font-weight: bold;">Voir</p>
+<p class="Body-Text"><a href="Pointeur_de_RecordSql.htm">Pointeur de RecordSql</a>, 
+ <a href="PtrRecordSql.htm">PtrRecordSql</a>, <a href="PtrRecordSqlModule.htm">PtrRecordSqlModule</a>, 
+ <a href="PtrRecordSqlFreeInstance.htm">PtrRecordSqlFreeInstance</a>, <a 
+	 href="PtrRecordSqlNew.htm">PtrRecordSqlNew</a>, <a href="RecordSqlPtrToVoid.htm">RecordSqlPtrToVoid</a></p>
+</body>
+</html>

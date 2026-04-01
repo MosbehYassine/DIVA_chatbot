@@ -1,0 +1,172 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HSiCreate</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HSiCreate &#160;<a href="Listedesfonctionsdebasedegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Introduction1.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction HSiCreate permet de créer un fichier de type I (séquentiel indexé). HSiCreate crée et initialise le fichier paramètres et clés et crée le fichier des données.</p>
+<p class="Body-Text">Pour créer un fichier de type C, U ou N, il faut utiliser <a href="HCreateFile.htm">HCreateFile</a>.</p>
+<p>&#160;</p>
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">HS</font><font class="hcp2">iCreate</font> <font class="hcp3">(fichier, nomdata, type, lgenr, clés, [étendu], status, [abort])</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Fichier</font></p>
+<p class="decalage05">Nom complet du fichier des clés.</p>
+<p class="Body-Text"><font class="hcp3">NomData</font></p>
+<p class="decalage05">Nom du fichier des données.</p>
+<p class="decalage05">Si ce nom est à espaces, le nom du fichier des données est déduit du nom des clés de la manière suivante :</p>
+<p class="decalage05" style="margin-left: 56.70pt;">-&#160;si le fichier des clés a une extension, le fichier des données a le même nom avec l'extension .dhfd.</p>
+<p class="decalage05" style="margin-left: 56.70pt;">-&#160;si le fichier des clés n'a pas d'extension, le fichier des données a le même nom suffixé par la lettre d.</p>
+<p class="decalage05">En général, on ne précisera pas le chemin complet pour le nom du fichier des données. Dans ce cas, il sera créé dans le même répertoire que le fichier des clés.</p>
+<p class="decalage05" style="margin-left: 144.00pt;">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Type</font></p>
+<p class="decalage05">Type (N C ou U) du fichier des données.</p>
+<p class="Body-Text"><font class="hcp3">Lgenr</font></p>
+<p class="decalage05">Taille des enregistrements du fichier des données (0 = taille variable).</p>
+<p class="Body-Text"><font class="hcp3">Clés</font></p>
+<p class="decalage05">Description des clés. Ce paramètre doit être une instance de l'enregistrement Cles du dictionnaire ddsys.dhsd. Cette zone doit préalablement être initialisée par des $00.</p>
+<p class="Body-Text"><font class="hcp3">Etendu</font></p>
+<p class="decalage05">Paramètre non utilisé.</p>
+<p class="Body-Text"><font class="hcp3">Status</font></p>
+<p class="decalage05">Donnée de type X qui reçoit le code d'erreur système.</p>
+<p class="Body-Text"><font class="hcp3">Abort</font></p>
+<p class="decalage05">Booléen (TRUE par défaut) indiquant si la fonction doit arrêter le programme en cas d'erreur, ou rendre la main avec un code d'erreur.</p>
+<p class="decalage05">En cas d'arrêt du programme, la fenêtre standard des erreurs est affichée et l'erreur est journalisée dans le fichier ferror.log.</p>
+<p class="Body-Text">&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">L'enregistrement Cles contenant la description des clés est un tableau de 256 cases pour les clés.</font></p>
+<table cellspacing="0" width="411">
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">LettreCle</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Lettre clé.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">NomCle</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Nom de la clé. Il faut préciser soit LettreCle soit NomCle.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">PositionCe</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Position du code enregistrement.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">ValeurCe</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Valeur du code enregistrement.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">TestCe</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Test à effectuer sur le code enregistrement</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" height="72" class="hcp5">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:17.22%;" height="72" class="hcp5">
+<p class="Body-Text">0 =<br>
+1 &lt;&gt;<br>
+2 &lt;<br>
+3 &gt;<br>
+4 &lt;=<br>
+5 &gt;=<br>
+6 &amp;</p>
+</td>
+<td style="width:63.22%;" height="72" class="hcp5">
+<p class="Body-Text">égal<br>
+différent<br>
+inférieur<br>
+supérieur<br>
+inférieur ou égal<br>
+supérieur ou égal<br>
+et logique</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp2">Pour chaque clé, on trouve ensuite un tableau de 16 éléments décrivant les données qui composent la clé :</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:20.57%;" class="hcp5">
+<p class="Body-Text">PosCle</p>
+</td>
+<td style="width:79.43%;" class="hcp5">
+<p class="Body-Text">Position d'un fragment de clé.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.57%;" class="hcp5">
+<p class="Body-Text">LgCle</p>
+</td>
+<td style="width:79.43%;" class="hcp5">
+<p class="Body-Text">Longueur d'un fragment de clé.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction renvoie la valeur nulle en cas de succès. Sinon, elle renvoie un code d'erreur principal, et le paramètre <font class="hcp3">Status</font> contient le code d'erreur du système.</p>
+<p class="Body-Text">Pour la liste des erreurs possibles, voir <a href="ErreursdesfonctionsHcreate_Hsicreate.htm">Erreurs des fonctions HcreateFile, HSicreate</a></p>
+<p class="Body-Text">Si <font class="hcp3">Abort</font> = TRUE, toutes les erreurs provoquent l'arrêt du programme.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">L'instruction <a href="HTmpFile.htm">HTmpFile</a> permet de créer des fichiers séquentiels indexés temporaires. La description des clés est prise dans le dictionnaire des données.</p>
+<p class="Body-Text">La fonction <a href="DDInterface.htm">DDInterface</a> permet de lire la structure des clés d’un fichier telle qu’elle est définie dans le dictionnaire des données.</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">; Création du fichier ftest.dhfi</p>
+<p class="Source">; Le fichier des données sera ftest.dhfd</p>
+<p class="Source">record 'ddsys.dhsd' cles</p>
+<p class="Source">1 statsys x</p>
+&#160;
+<p class="Source">init cles = $00</p>
+<p class="Source">cles.lettrecle(1) = 'A'</p>
+<p class="Source">cles.poscle (1,1) = 1</p>
+<p class="Source">cles.lgcle (1,1) = 6</p>
+<p class="Source">HSiCreate("/Divalto/sys/ftest.dhfi"," ","N",124,cles, \</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">Etendu = TRUE,statsys,abort = TRUE)&#160;</p>
+<p class="Body-Text" style="margin-top: 0.00pt;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="HCreateFile.htm">HCreateFile</a>, <a href="HSiRead.htm">HSiRead</a>, <a href="HSiMod.htm">HSiMod</a>, <a href="HDeleteFile.htm">HDeleteFile</a>, <a href="SIVerifParam.htm">SIVerifParam</a> , <a href="DDInterface.htm">DDInterface</a></p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

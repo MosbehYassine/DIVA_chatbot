@@ -1,0 +1,58 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Modification des paramètres du serveur</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Modification des paramètres du serveur</h1>
+<p>Le fichier <span class="hcp1">/divalto/sys/</span><span style="font-weight: bold; font-style: italic;">config</span> contient des paramètres permettant de dimensionner les capacités de traitement du serveur XLAN. Ces paramètres influent directement sur la taille de la mémoire qui sera allouée par le travail XLAN.</p>
+<p>La modification des paramètres s'effectue par un éditeur de texte.</p>
+<p>Le choix "Compteurs" de la console d'administration Divalto permet d'afficher les valeurs instantanées ainsi que les valeurs maximales atteintes par ces paramètres.</p>
+<p><span class="hcp1">Attention :</span> Une modification de ces paramètres n'est pas immédiatement répercutée, il faut redémarrer le travail XLAN.</p>
+<p>&#160;</p>
+<p>La plupart des paramètres sont facultatifs et ont des valeurs par défaut.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Numero de Service</span> (clé NumeroService)</p>
+<p><span class="hcp1">Valeur par défaut :</span> 1235</p>
+<p>Ce paramètre représente le numéro de port d'écoute TCP/IP du serveur Xlan. En cas de conflit avec un service existant, il faut changer ce numéro. Dans ce cas, il faudra également changer la valeur sur les postes client.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Nombre maximum de threads XLAN</span> (clé NbTaches).</p>
+<p><span class="hcp1">Valeur par défaut :</span> 16</p>
+<p>Ce paramètre est indicatif et permet d'ajuster automatiquement les nombres maximums de réservations d'entité et d'enregistrement.</p>
+<p>Sa valeur maximale est 2000.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Nombre maximum de fichiers ouverts par XLAN</span> (clé NbFichiersParProcess).</p>
+<p><span class="hcp1">Valeur par défaut :</span> 10 000</p>
+<p>Indiquez ici le nombre maximal de fichiers que le job XLAN est susceptible d'ouvrir simultanément (tous threads confondus).</p>
+<p>On ne modifiera ce paramètre que si la valeur 10 000 est insuffisante. La valeur maximale de ce paramètre est 65 000.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Nombre maximum de fichiers séquentiels-indexés</span> (clé NbFichiersIndexes).</p>
+<p><span class="hcp1">Valeur par défaut :</span> 200</p>
+<p>Indiquez ici le nombre maximal de fichiers séquentiels indexés différents susceptibles d'être ouverts simultanément. Ce paramètre concerne l'ensemble des threads de XLAN. Un même fichier ouvert simultanément par plusieurs threads compte pour une seule unité. Ce paramètre doit être supérieur à 10.</p>
+<p><span class="hcp1">Attention :</span> On comptabilisera aussi dans ce paramètre le nombre de fichiers d'Harmony gérés dans la base DB2.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Nombre maximum d'autres fichiers</span> (clé NbFichiersDivers).</p>
+<p><span class="hcp1">Valeur par défaut :</span> 40</p>
+<p>Indiquez ici le nombre maximal de fichiers (non séquentiels indexés) différents susceptibles d'être ouverts simultanément. Ce paramètre concerne l'ensemble des threads de XLAN. Un même fichier ouvert simultanément par plusieurs tâches compte pour une seule unité. Ce paramètre doit être supérieur à 10.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Nombre de réservations d'enregistrement</span> (clé NbReservEnreg).</p>
+<p><span class="hcp1">Valeur par défaut :</span> 2000</p>
+<p>Indiquez ici le nombre maximal de réservations d'enregistrement susceptibles d'être faites simultanément. Le langage DIVA n'impose aucune limite au nombre de réservations mais il convient de ne pas saturer la table "système" associée. Ce paramètre concerne l'ensemble des tâches Harmony. Il doit être supérieur à 5 fois le nombre de tâches. Si les programmes ne réservent que quelques enregistrements simultanément, prenez comme valeur 10 fois le nombre de tâches.</p>
+<p>&#160;</p>
+<p><span class="hcp1">Nombre de réservations d'entité</span> (clé NbReservEntites).</p>
+<p><span class="hcp1">Valeur par défaut :</span> 200</p>
+<p>Indiquez ici le nombre maximal de réservations d'entité susceptibles d'être faites simultanément. Les entités sont réservées par la fonction FSHARE du langage Diva. Ce paramètre concerne l'ensemble des tâches Harmony. Il doit être supérieur à 5 fois le nombre de tâches.</p>
+<p>&#160;</p>
+</body>
+</html>

@@ -1,0 +1,121 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation d'un agenda</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-style:italic; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Programmation d'un agenda</h3>
+<p>&#160;</p>
+<p>Dans cette rubrique, nous nous intéresserons plus particulièrement à la séquence d'opérations à programmer avant la mise en attente d'une action de l'utilisateur concernant l'agenda et à la boucle d'attente et de traitement des "événements agenda".</p>
+&#160;
+<p style="font-weight: bold;">1. Mise en œuvre d'un agenda : Séquence des opérations</p>
+<p>La programmation d'un objet agenda se déroule de la manière suivante :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Déclaration du module "yCalendar.dhop" et du fichier Include "zCalendar.dhsp".</p>
+</li>
+<li class="p">
+<p>Déclaration des enregistrements du dictionnaire ddCalendar.dhsd utilisés.</p>
+</li>
+<li class="p">
+<p>Chargement du masque par XmeLoad.</p>
+</li>
+<li class="p">
+<p>Initialisation de la taille de la fenêtre Harmony.</p>
+</li>
+<li class="p">
+<p>Initialisation de l'agenda avec récupération de son identifiant par la fonction <a href="XmeCalendarGetId.htm">XmeCalendarGetId</a>.</p>
+</li>
+<li class="p">
+<p>Le cas échéant, choix des <a href="Options_de_l_agenda.htm">options</a> de fonctionnement par appel(s) à la fonction <a href="XmeCalendarSetOption.htm">XmeCalendarSetOption</a>.</p>
+</li>
+<li class="p">
+<p>Le cas échéant, remplissage initial des <a href="Gestion_des_listes_associ&eacute;es_&agrave;_un_agenda.htm">listes l'agenda</a>.</p>
+</li>
+<li class="p">
+<p>Affichage de la page de masque contenant l'agenda par XmeDisp, XmeDispv, etc.</p>
+</li>
+<li class="p">
+<p>Affichage des données de l'agenda avec mise en attente d'un événement par la fonction <a href="XmeCalendarConsult.htm">XmeCalendarConsult</a>.</p>
+</li>
+</ul>
+<p>On obtient alors une séquence de mise en route du type suivant :<br>
+&#160;</p>
+<p class="Source">Module &#160;"yCalendar.dhop"<br>
+Include "zCalendar.dhsp"</p>
+<p class="Source">Public &#160;Record ddCalendar.dhsd IdCalendar <span class="hcp1">IdCal</span></p>
+<p class="Source">Public &#160;Record ddCalendar.dhsd ObjectOption <span class="hcp1">Opt</span></p>
+<p class="Source"><span class="hcp2">...</span></p>
+<p class="Source">&#160;</p>
+<p class="Source"><span class="hcp1">1</span> Fini &#160;B</p>
+<p class="Source"><span class="hcp1">.</span>..</p>
+<p class="Source">&#160;</p>
+<p class="Source">MAIN</p>
+<p class="Source" style="font-style: italic;">...</p>
+<p class="Source">XmeLoad ("masque") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font class="hcp3">X</font>meInfoPage ("masque",Page) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page</p>
+<p class="Source">XmeSetWindowSize ("masque",Page,Harmony.Opara3,Harmony.Opara4)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;--&gt; taille initiale de la fenêtre Harmony</p>
+<p class="Source"><font class="hcp3">Id</font><span class="hcp1">Cal</span> = XmeCalendarGetId ("masque",Page,"CALEN") &#160;;initialisation agenda</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="Source"><span class="hcp1">Opt</span>.Option &#160;&#160;= ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;choix des options</p>
+<p class="Source"><span class="hcp1">Opt</span>.OptValue = ...</p>
+<p class="Source">XmeCalendarSetOption (<span class="hcp1">IdCal</span>,<span class="hcp1">Opt</span>)</p>
+<p class="Source"><span class="hcp1">Opt</span>.Option &#160;&#160;= ...</p>
+<p class="Source"><span class="hcp1">Opt</span>.OptValue = ...</p>
+<p class="Source">XmeCalendarSetOption (<span class="hcp1">IdCal</span>,<span class="hcp1">Opt</span>)</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;garnissage initial de l'agenda</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeDispv ("masque",Page,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche la page</p>
+<p class="Source">... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;voir point 2 ci-dessous</p>
+<p class="source">&#160;</p>
+<p>&#160;</p>
+<p>2. <span class="hcp2">Mise en œuvre d'un agenda : Boucle de traitement des événements</span></p>
+<p>La gestion d'un agenda va consister la plupart du temps à exécuter une boucle "autour" de la fonction <a href="XmeCalendarConsult.htm">XmeCalendarConsult</a>. Cette fonction se met en attente d'une commande en provenance de l'utilisateur et vous informe sur l'événement produit. On obtient alors une boucle schématique du type suivant :</p>
+<p class="source">&#160;</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;boucle d'attente</p>
+<p class="Source">&#160;&#160;XmeCalendarConsult (<span class="hcp1">IdCal</span>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;(ré)affiche l'agenda et attend</p>
+<p class="Source">&#160;&#160;SWITCH Harmony.DataArret &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement produit ?</p>
+<p class="Source">&#160;&#160;&#160;&#160;CASE Harmony.Key = K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;touche Echap :</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;stop</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;CASE nnn &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;point d'arrêt agenda</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;SWITCH2 Harmony.CalendarClic &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;test événement agenda produit :</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE CALENDAR_CLICK_APPOINTMENT_CREATION &#160;;création de rendez-vous</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE CALENDAR_CLICK_APPOINTMENT_DELETION &#160;;suppression de rendez-vous</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;etc.</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres cas (menu, barre d'outils, ...)</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;...</p>
+<p class="source">&#160;</p>
+<p class="Source">&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND</p>
+<p>&#160;</p>
+</body>
+</html>

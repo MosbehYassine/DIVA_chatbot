@@ -1,0 +1,96 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Utiliser Exchange Web Services pour l'envoi de mail et le CRM</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Utiliser Exchange Web Services pour l'envoi de mail et le CRM</h3>
+<p class="body-text">&#160;</p>
+<p class="body-text">Pour l'envoi d'un message électronique par programme, Harmony utilise habituellement l'interface MAPI (<span class="hcp1">I</span>nterface standard de <span class="hcp1">P</span>rogrammation d'<span class="hcp1">A</span>pplications de <span class="hcp1">M</span>essagerie). Le destinataire est un "serveur" Mapi (Outlook Express, Outlook, ...), qui stocke le message dans une base de données et l'émet (soit directement vers un fournisseur d'accès, soit par l'intermédiaire du service de messagerie Microsoft Exchange Server). Un <span class="hcp1">inconvénient</span> à cette méthode est l'obligation d'ouvrir une session utilisateur et d'y lancer le programme Microsoft Outlook.</p>
+<p class="body-text">Une <span class="hcp1">alternative</span> consiste à interfacer directement Microsoft Exchange Server via le service EWS (<span class="hcp1">E</span>xchange <span class="hcp1">W</span>eb <span class="hcp1">S</span>ervices). De plus, EWS est la seule solution en mode client léger Web.</p>
+<p>&#160;</p>
+<p class="Body-Text">Le bouton <span class="hcp1">Exchange Web Services</span> du choix <span class="hcp1">Paramètres</span> du menu <span class="hcp1">Options</span> de DivaltoViewer donne accès aux paramètres d'envoi de mail et du CRM par l'interface EWS. Les options suivantes sont proposées :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Utiliser Exchange Web Services pour l'envoi de mail et le CRM</span>.<br>
+Demande que les messages habituellement traités en utilisant l'interface MAPI soient redirigés sur EWS.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Utiliser la boîte de dialogue pour EWS pour le bouton contact de DivaltoViewer</span>.<br>
+Demande l'utilisation d'une boîte de dialogue Divalto plutôt que celle du client Outlook pour accéder au carnet d’adresses.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Accès au serveur EWS</span>.<br>
+L'installation du produit Exchange Server installe également un service Web auquel un nom est attribué. L'accès à ce service nécessite de préciser une url Web comportant le nom du produit (et sa version), le nom du service, le chemin d'accès et le nom de la page Web.<span class="hcp1"><br>
+<br>
+Exemple</span> :<br>
+https://Exchange2010.Divalto.local/EWS/Exchange.asmx<br>
+<br>
+Ce cadre précise la méthode devant être utilisée par DivaltoViewer pour accéder au serveur Exchange :<br>
+&#160;</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Nom Web du serveur EWS</span>.<br>
+Pour utiliser cette première méthode d'accès, saisissez ici uniquement :<br>
+Nom_produitVersion.Nom_service<br>
+<br>
+Dans l'exemple précédent : <span class="hcp1">Exchange2010.Divalto.local</span><br>
+DivaltoViewer complète automatiquement cette valeur pour constituer l'url Web complète indiquée en exemple.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Sinon utiliser l'url complète du service EWS</span>.<br>
+Une deuxième méthode consiste à spécifier ici l'url complète :<br>
+<br>
+Par exemple : https://Exchange2010.mon_service/mon_chemin/Exchange.asmx<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Sinon détecter automatiquement le serveur EWS avec l'adresse Email</span>.<br>
+Une troisième méthode consiste à indiquer l'adresse mail d'un compte utilisateur Exchange (qui peut être votre compte utilisateur). Dans ce cas, DivaltoViewer utilise une fonction qui lui permet de détecter automatiquement le service EWS. Cette méthode est la plus simple à mettre en oeuvre car elle ne nécessite pas de connaître le paramétrage fait à l'installation de Exchange.<br>
+<br>
+Par exemple : PaulDurand@mon_domaine.fr<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Version de Exchange</span>.<br>
+Indiquez ici la version du produit Exchange installée.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Compte utilisateur pour la connexion à EWS et la lecture de la boîte aux lettres</span> :<br>
+Indiquez ici votre compte, votre mot de passe, et, le cas échéant, le nom du domaine.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Compte pour la lecture des contacts dans Active Directory (si différent de celui de EWS)</span> :<br>
+Indiquez ici votre compte, votre mot de passe, et, le cas échéant, le nom du domaine.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp1">Code page du texte</span>.<br>
+A préciser en cas d'envoi d'un texte dans une langue non occidentale.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

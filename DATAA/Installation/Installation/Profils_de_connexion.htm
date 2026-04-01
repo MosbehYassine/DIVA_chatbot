@@ -1,0 +1,112 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Profils de connexion</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { font-weight:bold;
+font-style:italic;
+font-size:11pt; }
+ul.hcp3 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h2>Profils de connexion</h2>
+<p>&#160;</p>
+<p>Lorsqu'un poste client léger dialogue avec un serveur d'applications, il doit préciser et paramétrer le mode de transport qui permettra de véhiculer les informations. Les paramètres à spécifier sont regroupés dans un "<span class="hcp1">Profil de connexion</span>". Un ou plusieurs profils de connexion peuvent être utilisés sur un même serveur d'applications.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Types de connexion</p>
+<p>Il existe trois types de connexion :</p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Local</span>.<br>
+A configurer lorsque le poste client léger est aussi serveur d'applications.</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Réseau LAN</span>.<br>
+A configurer lorsque le poste client léger se connecte au serveur d'applications en mode Socket.<br>
+Dans ce cas, le profil doit aussi spécifier le nom du serveur (plus, éventuellement, son adresse IP et le port TCP/IP à utiliser).</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Service Web</span>.<br>
+A configurer lorsque le poste client léger se connecte au serveur d'applications en mode Service Web.<br>
+Dans ce cas, le profil doit aussi spécifier une Url d'accès au service Web sur le serveur.<br>
+Ce mode nécessite d'installer le service IIS de Microsoft sur le serveur d'applications.</p>
+</li>
+</ul>
+<p><span class="hcp1">Remarque</span> : Ces trois modes peuvent cohabiter sur un même serveur.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Gestion des profils de connexion sur le serveur d'applications</p>
+<p>L’utilitaire XConfigProfil.dhop permet de <a href="Gestion_des_profils_de_connexion.htm">gérer les profils de connexion</a> sur un serveur d'applications.<br>
+&#160;</p>
+<p>Remarque : Les profils de connexion sont stockés, sur le serveur d'applications, dans la base de registres de l'utilisateur (chapitre [ProfilConnexion] de la section Divalto.Ini). Chaque profil fait l'objet d'une clé dans ce chapitre.</p>
+&#160;
+<p>&#160;</p>
+<p class="hcp2">Diffusion des profils de connexion vers les postes clients légers</p>
+<ul class="hcp3">
+<li class="p">
+<p>Les profils de connexion sont stockés, sur le poste client, dans la base de registres de l'utilisateur (chapitre [ProfilConnexion] de la section Divalto.Ini). Chaque profil fait l'objet d'une clé dans ce chapitre.</p>
+</li>
+<li class="p">
+<p>Lorsque l'utilisateur d'un poste client léger se connecte au serveur d'applications, il fait référence à un profil de connexion qui doit être impérativement présent dans sa base de registre.<br>
+En particulier, il est nécessaire d'inscrire un profil de connexion initial qui servira au moins à la toute première connexion au serveur. Pour enregistrer un premier profil dans la base de registre, il existe deux méthodes :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Par l’installateur du poste client léger</span>.<br>
+Le plus simple pour l'utilisateur est d’inclure le profil de connexion dans le fichier d’installation .msi du client léger. L’outil ORCA permet de personnaliser le fichier fourni en standard pour y incorporer ce profil de connexion.<br>
+Voir : <a href="Installation_du_client_l&eacute;ger.htm">Installation du client léger</a>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Par la diffusion d’un fichier .reg</span>.<br>
+L’utilitaire <a href="Gestion_des_profils_de_connexion.htm">XconfigProfil.dhop</a> permet de créer puis d’exporter les profils de connexions dans un fichier .reg.<br>
+Ce fichier peut ensuite être envoyé vers les postes clients pour y être exécuté. Les profils sont alors intégrés à la base de registre de l'utilisateur sur son poste. Attention toutefois : les fichiers .reg étant des fichiers « sensibles », ils risquent d’être filtrés par les logiciels "antivirus".<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Ensuite</span>, il est possible de récupérer d'autres profils par le <span class="hcp1">bouton « Réactualiser » des Options Avancées de connexion</span>.<br>
+On rapatrie ainsi sur le poste client les dernières mises à jour de profils effectuées sur le serveur d'applications.<br>
+Remarque : Une mise à jour automatique est aussi effectuée lorsque l'utilisateur se connecte au serveur plus d'une heure après sa dernière connexion.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp2">Choix d'un profil de connexion par l'utilisateur</p>
+<p>L'utilisateur choisit le profil adapté dans les Options Avancées de la boîte de dialogue de connexion au serveur d'applications.</p>
+<p>Attention, un changement de profil ne concerne pas les tâches Harmony déjà chargées mais sera pris en compte lors des ouvertures de fenêtre Harmony ultérieures.<br>
+<br>
+Voir aussi : <a href="Profils_utilisateur.htm">Profils utilisateur</a>.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Choix d'une stratégie de sécurité pour Divalto</p>
+<p>Lorsque l'utilisateur lance une application Divalto, une boîte de connexion est normalement ouverte pour lui permettre de (ou le forcer à) s'identifier. Plusieurs solutions d'identification sont disponibles (pour en connaître la liste et le fonctionnement, voir le paramètre <span class="hcp1">Options d'identification</span> de la boîte des <a href="Options_de_connexion_avanc&eacute;es.htm">Options de connexion avancées</a>).</p>
+&#160;
+<p>Au niveau du <a href="Gestion_des_profils_de_connexion.htm">paramétrage des profils de connexion</a>, l'administrateur peut forcer une méthode d'identification donnée pour tous les utilisateurs de ce profil ou, au contraire, laisser ces utilisateurs libres de choisir eux-mêmes leur méthode.</p>
+<p>&#160;</p>
+<p>Voir la rubrique <a href="Conseils_de_mise_en_place_d_une_strat&eacute;gie_de_s&eacute;curit&eacute;_Divalto.htm">Conseils de mise en place d'une stratégie de sécurité Divalto</a>.<br>
+&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Limitation de l'accès aux options de connexion avancées</p>
+<p>Au niveau du <a href="Gestion_des_profils_de_connexion.htm">paramétrage des profils de connexion</a>, l'administrateur peut aussi préciser si l'utilisateur a toute liberté pour modifier les options de connexion avancées ou si certaines options lui sont interdites. Dans ce deuxième cas, l'administrateur qui se rend sur le poste d'un utilisateur peut, sous réserve de saisie d'un mot de passe, récupérer ponctuellement le droit d'accès à toutes les options (voir le paragraphe <span class="hcp1">Passage en mode administrateur</span> de la rubrique <a href="Options_de_connexion_avanc&eacute;es.htm">Options de connexion avancées</a>).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque</span> :</p>
+<p>Sur un poste client, les <span class="hcp1">profils de connexion ne sont jamais supprimés</span>, même s’ils n’existent pas ou plus sur le serveur d’applications, cela pour éviter de perdre une connexion qui n’aurait pas été définie ou qui aurait été supprimée côté serveur. Côté client, la <span class="hcp1">suppression des profils de connexion obsolètes doit donc être effectuée à la main</span>.</p>
+<p>Les profils de connexion sont stockés dans la base de registre du poste client à l’adresse suivante :</p>
+<p>HKEY_CURRENT_USER\Software\Divalto\divalto.ini\ProfilConnexion</p>
+<p>&#160;</p>
+</body>
+</html>

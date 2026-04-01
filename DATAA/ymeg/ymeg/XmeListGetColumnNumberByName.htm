@@ -1,0 +1,125 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListGetColumnNumberByName</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListGetColumnNumberByName &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Lecture du numéro de la colonne contenant une donnée d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Int XmeListGetColumnNumberByName</font> (<font class="hcp3">Identifiant</font>, <font class="hcp3">Enregistrement, Donnée, Indice1, Indice2, Indice3, Indice4</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètres&#160;:</font></p>
+<table cellspacing="0" width="100%">
+<col style="width: 13.024%;">
+<col style="width: 86.976%;">
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Enregistrement</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Nom de l'instance de l'enregistrement (Record) auquel la donnée cherchée appartient.<br>
+<span style="font-weight: bold;">Attention</span> : Si la donnée se trouve dans un RecordSql, il faut distinguer deux cas, suivant que le RecordSQL est lié (Bind) ou non à une instance publique du Record correspondant à la table :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Sans Bind : il faut donner en paramètre le nom de l'instance du RecordSql.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Avec Bind : il faut donner en paramètre le nom de l'instance du Record lié.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Donnée</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Mnémonique de la donnée (dans le dictionnaire).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice1</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Premier indice de la donnée (0 s'il ne s'agit pas d'un élément de tableau). Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice2</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Deuxième indice de la donnée (0 si la donnée n'est pas un élément de tableau ou s'il s'agit d'un élément de tableau à une seule dimension). Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice3</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Troisième indice de la donnée (0 si la donnée n'est pas un élément de tableau ou s'il s'agit d'un élément de tableau à une ou deux dimensions). Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:13.024%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Indice4</font></p>
+</td>
+<td style="width:86.976%;" class="hcp5">
+<p class="Body-Text">Quatrième indice de la donnée (0 si la donnée n'est pas un élément de tableau ou s'il s'agit d'un élément de tableau à une, deux ou trois dimensions). Paramètre facultatif (0 par défaut).</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font> Numéro de la colonne de tableau affichant la donnée concernée (0 si la donnée indiquée n'existe pas dans le tableau).<font class="hcp2"><br>
+Attention</font>&#160;: si la donnée est illisible ou cachée, suite à une modification de sa visibilité par <a href="XmeSetAttribut.htm">XmeSetAttribut</a>, la valeur rendue sera nulle&#160;; par contre, si la modification de sa visibilité a été obtenue par <a href="XmeListSetAttribut.htm">XmeListSetAttribut</a>, le numéro de colonne sera rendu normalement.</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<p class="Body-Text">La fonction <font class="hcp2">XmeListGetColumnNumberByName</font> délivre le numéro de la colonne du tableau (d'identifiant indiqué en paramètre) contenant la donnée identifiée par son nom <font class="hcp3">Donnée</font>, le nom de l'enregistrement auquel elle appartient <font class="hcp3">Enregistrement</font> et, s'il s'agit d'un élément de tableau, ses indices dans ce tableau <font class="hcp3">Indice1</font>, <font class="hcp3">Indice2</font>, <font class="hcp3">Indice3</font> et <font class="hcp3">Indice4</font>.</p>
+<p class="Body-Text">Le numéro de colonne est le numéro d'ordre de la colonne dans le tableau, l'ordre à considérer étant celui défini dans Xwin. Les numéros sont calculés à la compilation du masque&#160;: ils n'évoluent pas en exploitation, même si l'utilisateur intervertit des colonnes.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemples&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Recherche dans le tableau d'identifiant Ident de la donnée simple</p>
+<p class="Source">;Codart de l'enregistrement Arti</p>
+<p class="Source">enreg &#160;= "Arti"</p>
+<p class="Source">donnee = "Codart"</p>
+<p class="Source">NumCol = XmeListGetColumnNumberByName (Ident,enreg,donnee)</p>
+<p class="Source">&#160;</p>
+<p class="Source">;Recherche de l'élément Table (2,7) de l'enregistrement Man</p>
+<p class="Source">enreg &#160;= "Man"</p>
+<p class="Source">donnee = "Table"</p>
+<p class="Source">NumCol = XmeListGetColumnNumberByName (Ident,enreg,donnee,2,7)</p>
+</body>
+</html>

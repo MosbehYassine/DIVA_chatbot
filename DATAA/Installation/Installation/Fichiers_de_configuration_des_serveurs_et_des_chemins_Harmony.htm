@@ -1,0 +1,44 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fichiers de configuration des serveurs et des chemins Harmony</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Fichiers de configuration des serveurs et des chemins Harmony</h3>
+<p>&#160;</p>
+<p>Deux solutions sont possibles pour le stockage des tables des serveurs et des chemins Harmony :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Le fichier séquentiel-indexé Fconfig.dhfi (tables des serveurs et des chemins), mais cette solution est considérée comme <span class="hcp1">obsolète</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Les fichiers texte <span class="hcp1">DivaltoServer.cfg</span> (table des serveurs) et <span class="hcp1">DivaltoPath.cfg</span> (table des chemins), qui sont la solution <span class="hcp1">préconisée</span>.<br>
+<span class="hcp1"><br>
+Attention</span> : Lorsque ces fichiers sont présents, le fichier Fconfig.dhfi n’est plus utilisé. Les <span style="font-weight: bold; text-decoration: underline;">deux</span> fichiers doivent alors obligatoirement exister. Le fichier des chemins peut éventuellement être vide s’il n’y a pas de chemins spécifiques à définir (le chemin Divalto existe de manière implicite).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Dans les deux cas, les tables peuvent être garnies à l'aide d'un zoom (voir les rubriques <a href="D_clarationdesserveurs_etunit_slogiques_.htm">Déclaration des serveurs de données</a> et <a href="D_clarationdescheminsHarmony.htm">Déclaration des chemins Harmony</a>).</p>
+<p><span class="hcp1">Remarque</span> : Le bouton "<span class="hcp1">Export dans .cfg</span>" du zoom des serveurs ou du zoom des chemins permet de <span class="hcp1">créer les deux fichiers .cfg</span> à partir d'un fichier Fconfig existant.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Format d'une ligne "Serveur" dans la table des serveurs</p>
+<p>&lt;NAME&gt;Nom&lt;ADDRESS&gt;AdresseIp&lt;SQLPATH&gt;CheminSql&lt;COMMENT&gt;Commentaire&lt;TYPE&gt;Type&lt;OS&gt;WINDOWS&lt;PORT&gt;port</p>
+<p>&#160;</p>
+<p><span class="hcp1">Format d'une ligne "Chemin" dans la table des chemins</span></p>
+<p>&lt;NAME&gt;NomDuChemin&lt;PATH&gt;CheminDuChemin&lt;MULTIBASE&gt;OptionMultibase&lt;SHARENAME&gt;NomPourLesReservations</p>
+<p>&#160;</p>
+</body>
+</html>

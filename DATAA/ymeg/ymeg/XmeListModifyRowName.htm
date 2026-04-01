@@ -1,0 +1,105 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListModifyRowName</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp6 { font-weight:bold;
+text-decoration:underline; }
+font.hcp7 { font-weight:bold;
+font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListModifyRowName &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Modification du nom de la ligne courante d’un&#160;tableau (attributs dynamiques)</font></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Long XmeListModifyRowName</font> (<font class="hcp3">Identifiant</font>, <font class="hcp3">Nom de ligne</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.42%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Nom de ligne</font></p>
+</td>
+<td style="width:80.58%;" class="hcp5">
+<p class="Body-Text">Paramètre facultatif&#160;:</p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 1.40pt;"><font class="hcp2">Présent</font>&#160;: la valeur indiquée est transférée dans la donnée RowInfo.NomLigne de l’élément <font class="hcp6">courant</font> du tableau et dans la donnée de votre programme RowInfo.NomLigne.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 1.40pt;"><font class="hcp2">Absent</font>&#160;: la valeur actuelle de la donnée de votre programme Rowinfo.NomLigne est transférée telle quelle dans la donnée RowInfo.NomLigne de l’élément <font class="hcp6">courant</font> du tableau.</p>
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Description de la fonction&#160;:</font></p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">La fonction XmeListModifyRowName s’utilise dans le cadre de l’affectation dynamique d’attributs d'affichage aux cellules d’un&#160;tableau (pour plus de détails sur ce point, consultez les deux rubriques précédentes consacrées aux fonctions <a href="XmeListSetAttribut.htm">XmeListSetAttribut</a> et <a href="XmeListResetAttribut.htm">XmeListResetAttribut</a>).</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">XmeListModifyRowName modifie la valeur de la donnée RowInfo.NomLigne de l'élément <font class="hcp2">COURANT</font> du tableau, dans le but de changer les attributs d’affichage d’une ou plusieurs cellules de la ligne correspondante.<br>
+Si le paramètre <font class="hcp3">Nom de ligne</font> est présent (exemple 1 ci-dessous), son contenu est transféré dans la donnée RowInfo.NomLigne&#160;de l’élément courant (ainsi que dans la donnée de votre programme RowInfo.NomLigne).<br>
+Si le paramètre <font class="hcp3">Nom de ligne</font> est absent (exemple 2 ci-dessous), c’est la valeur actuelle de la donnée de votre programme RowInfo.NomLigne qui est transférée.</p>
+</li>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><font class="hcp6">ATTENTION</font><font class="hcp2">&#160;:</font> dans un point d’arrêt ou de traitement, <font class="hcp6">IL FAUT</font> utiliser cette fonction pour <font class="hcp2">changer le nom d’une ligne</font> <font class="hcp6">EN COURS DE SAISIE</font> (et non programmer «&#160;manuellement&#160;» la modification en liste).<br>
+<br>
+En effet, parce qu’elle <font class="hcp2">NE</font> modifie <font class="hcp2">QUE</font> <font class="hcp2">RowInfo.Nomligne</font> en liste, XmeListModifyRowName <font class="hcp2">N’est PAS EQUIVALENTE</font> à la séquence de programme&#160;:</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 56px; font-family: 'Courier New'; margin-top: 2pt;">XmeListCurrent (id,<font class="hcp7">w</font><font class="hcp3">ligne</font>) &#160;;<font class="hcp7">w</font><font class="hcp3">ligne</font> pour ne pas écraser les</p>
+<p class="Body-Text" style="margin-left: 56px; font-family: 'Courier New'; margin-top: 2pt;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;champs déjà saisis&#160;!</p>
+<p class="Body-Text" style="margin-left: 56px; font-family: 'Courier New'; margin-top: 2pt;">Rowinfo.NomLigne = "xxx" &#160;&#160;&#160;;nouveau nom de ligne</p>
+<p class="Body-Text" style="margin-left: 56px; font-family: 'Courier New'; margin-top: 2pt;">XmeListModify (id,<font class="hcp3">ligne</font>) &#160;&#160;&#160;;mise à jour en liste</p>
+<p class="Body-Text" style="font-family: Arial, sans-serif; margin-left: 60px;">XmeListModify <font class="hcp2">modifierait</font> l'élément courant <font class="hcp2">de la liste en totalité</font>&#160;(et pas uniquement RowInfo.NomLigne) : ainsi, les <font class="hcp2">valeurs déjà saisies</font> par l’utilisateur <font class="hcp2">avant</font> le point d’arrêt/traitement&#160;seraient définitivement <font class="hcp2">enregistrées</font> et ce, <font class="hcp2">même</font> si l’utilisateur <font class="hcp2">abandonne</font> ultérieurement la saisie&#160;<font class="hcp2">!!</font></p>
+<ul>
+<li style="font-size: 8pt;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">L’appel à XmeListModifyRowName est ignoré (sans erreur) si dans le masque Xwin, vous n’avez pas défini de donnée de contrôle des lignes pour le tableau.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Valeur rendue par la fonction&#160;:</font></p>
+<p class="Body-Text">1&#160;: Identifiant invalide.</p>
+<p class="Body-Text">0&#160;: Pas d'élément courant dans le tableau.</p>
+<p class="Body-Text">Autre&#160;: Adresse de l'élément courant dans la liste (ok).</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemples&#160;:</font> les deux exemples suivants produisent un résultat équivalent.</p>
+<p class="Body-Text">Exemple 1&#160;:</p>
+<p class="Source">XmeListModifyRowName (id,"NOUVEAU_NOM")</p>
+<p class="Body-Text">Exemple 2&#160;:</p>
+<p class="Source">RowInfo.NomLigne = "NOUVEAU_NOM"</p>
+<p class="Source">XmeListModifyRowName (id)</p>
+</body>
+</html>

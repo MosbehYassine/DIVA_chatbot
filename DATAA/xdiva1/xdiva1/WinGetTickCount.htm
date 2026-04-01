@@ -1,0 +1,50 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinGetTickCount</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinGetTickCount &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinGetTickCount permet de récupérer le nombre de millisecondes écoulées depuis la mise en route du système. Elle permet de calculer des durées de manière fine sans faire appel aux fonctions de dates et heures qui sont plus longues à s'exécuter.</p>
+<p class="Body-Text">Attention, la valeur retournée est sur 32 bits. Lors du calcul d'une durée (différence de deux valeurs), il faut tenir compte du fait que la valeur repasse à 0 tous les 50 jours environ.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Long</font> <font class="hcp2">WinGetTickCount</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text">La fonction n'a pas de paramètres.<br>
+&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction retourne le nombre de millisecondes écoulées depuis la mise en route du système.<br>
+&#160;&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Source">; calcul d'une durée</p>
+<p class="Source">1 tic L</p>
+<p class="Source">1 tic1 L</p>
+<p class="Source">1 delai 10,0</p>
+<p class="Source">1 car 1</p>
+<p class="Source">main</p>
+<p class="Source">tic = winGetTickCount</p>
+<p class="Source">input "tapez une touche" car</p>
+<p class="Source">tic1 = winGetTickCount</p>
+<p class="Source">delai = condition(tic &lt;= tic1,tic1 - tic,0Lffffffff - tic + tic1 + 1)</p>
+<p class="Source">display [ "Vous avez mis " delai " ms pour taper" ]</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="Rtime.htm">Rtime</a>, <a href="Time.htm">Time</a>, <a href="Timeval.htm">Timeval</a>, <a href="Diftime.htm">Diftime</a>, <font style="text-decoration: underline;">Sleep</font></p>
+</body>
+</html>

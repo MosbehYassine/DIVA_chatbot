@@ -1,0 +1,60 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Utiliser les points d'arrêt</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Utiliser les points d'arrêt</h3>
+&#160;
+<p class="Body-Text">Les points d'arrêt indiquent au débogueur où ou quand interrompre l'exécution d'un programme. L'interruption consiste en un arrêt temporaire, durant lequel vous pouvez examiner l'état de votre programme, consulter ou modifier ses variables, visualiser la pile, rejouer l'historique, etc.</p>
+<p class="Body-Text"><font class="hcp1">Nota</font>&#160;: Vous pouvez poser jusqu'à <font class="hcp1">100</font> points d'arrêt.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Il existe <font class="hcp1">sept types</font> de point d'arrêt :</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Arrêt sur ligne</font> : le programme s'interrompt, sans autre condition, juste <font class="hcp1">avant</font> que le débogueur n'exécute l'instruction située sur la ligne marquée par le point d'arrêt.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Arrêt sur ligne si expression vraie</font> : comme précédemment, le programme s'interrompt avant que le débogueur n'exécute l'instruction marquée par le point d'arrêt. Toutefois, l'interruption n'aura lieu que si une certaine expression en mémoire est vraie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Arrêt sur ligne si expression change</font> : arrêt similaire au cas précédent mais cette fois, l'interruption n'aura lieu que si une certaine expression en mémoire a changé de valeur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Arrêt si expression vraie</font> : le programme s'interrompt dès qu'une certaine expression en mémoire passe à vraie.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Arrêt si expression change</font> : le programme s'interrompt dès qu'une certaine expression en mémoire change de valeur.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Arrêt si attribut dynamique change</font> : le programme s'interrompt dès que la valeur d’un attribut dynamique est modifiée (fonctions Diva XmeSetAttribut et XmeResetAttribut).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">Arrêt si attribut dynamique ligne change</font> : le programme s'interrompt dès que la valeur d’un attribut dynamique «&#160;tableau&#160;» est modifiée (fonctions Diva XmeListSetAttribut et XmeListResetAttribut).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Utilisez par exemple le point d'arrêt sur ligne lorsque vous avez une idée approximative du lieu où votre programme pose problème. Le débogueur exécute le programme jusqu'à rencontre du point d'arrêt. A partir de là, vous pouvez utiliser les commandes du <a href="Dirigerl_ex_cutionduprogramme.htm">mode "&#160;pas à pas&#160;"</a> pour dérouler le programme jusqu'à ce que vous repériez précisément les instructions ayant un comportement anormal.</p>
+<p class="Body-Text">Les points d'arrêt sur expression sont plus rarement utilisés mais ils sont très pratiques, par exemple dans le cas suivant&#160;: vous savez que votre programme modifie la valeur d'une donnée de manière anormale mais vous ne savez pas à quel endroit. Le point d'arrêt sur ligne et le mode pas à pas sont ici peu efficaces pour repérer l'instruction en cause. Le point d'arrêt si expression change est par contre parfaitement adapté à cette situation.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Le <font class="hcp1">bouton</font> <img src="../image/btn_break.bmp" alt="" width="16" height="16" border="0"> ("Poser / Annuler un point d'arrêt") de la barre d'outils de l'éditeur de textes permet la pose (ou l'effacement) d'un point d'arrêt simple sur la ligne courante du source actif (fonction également disponible au menu, au clavier ou à la souris). La <font class="hcp1">boîte de dialogue "Points d'arrêt"</font> permet la pose de points d'arrêt plus complexes, comme ceux demandant l'interruption du programme si une expression change ou devient vraie.</p>
+<p class="Body-Text"><font class="hcp1">Des points d'arrêt peuvent être posés</font> dans le <font class="hcp1">programme principal</font>, les <font class="hcp1">includes</font>, les <font class="hcp1">modules</font>, les <font class="hcp1">traitements de dictionnaire ou de masque</font>. La boîte de dialogue "Points d'arrêt" maintient une liste de tous les points d'arrêt définis.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les points d'arrêt sur ligne sont <font class="hcp1">signalés</font> au niveau des <font class="hcp1">sources</font> par une <font class="hcp1">icone</font> de forme circulaire affichée en marge des lignes concernées.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les points d'arrêt que vous avez posé sont <font class="hcp1">mémorisés</font> lorsque vous quittez Xwin&#160;; ils redeviennent actifs lorsque Xwin est rouvert.</p>
+</body>
+</html>

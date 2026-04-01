@@ -1,0 +1,230 @@
+{
+  "size_distribution": {
+    "total_chunks": 113,
+    "in_target_range": 113,
+    "too_short": 0,
+    "too_long": 0,
+    "avg_words": 103.9,
+    "median_words": 88,
+    "min_words": 22,
+    "max_words": 326,
+    "floor_words": 15,
+    "score": 100.0,
+    "grade": "A+"
+  },
+  "context_completeness": {
+    "chunks_with_context_prefix": 113,
+    "chunks_with_title": 113,
+    "chunks_with_content": 113,
+    "score": 100.0,
+    "grade": "A+"
+  },
+  "coverage": {
+    "total_source_files": 60,
+    "stub_files_skipped": 5,
+    "targetable_files": 55,
+    "files_with_chunks": 55,
+    "coverage_pct": 100.0,
+    "stub_files": [
+      "Acc_sauxfichiersd_Harmony.htm",
+      "Gestion_des_tableaux.htm",
+      "Gestiondesfen_tresetdesprogrammes.htm",
+      "Impressions.htm",
+      "Notionsdebasepourl_administrationd_Harmony.htm"
+    ],
+    "grade": "A+"
+  },
+  "type_distribution": {
+    "MEDIUM_DESCRIPTIVE": 51,
+    "SHORT_ATOMIC": 19,
+    "EXAMPLE_TABLE_INTRO": 1,
+    "EXAMPLE_TABLE_SOLUTION": 1,
+    "REFERENCE_TABLE_INTRO": 4,
+    "REFERENCE_TABLE_ROW": 14,
+    "REFERENCE_TABLE_NOTES": 14,
+    "LONG_PROCEDURAL": 9
+  },
+  "retrieval_readiness": {
+    "chunks_with_domain_terms": 112,
+    "score": 99.1,
+    "grade": "A+"
+  },
+  "table_chunk_quality": {
+    "total_table_row_chunks": 14,
+    "with_field_name_metadata": 14,
+    "score": 100.0,
+    "grade": "A+"
+  },
+  "content_purity": {
+    "clean_chunks": 113,
+    "polluted_chunks": 0,
+    "score": 100.0,
+    "grade": "A+"
+  },
+  "encoding_health": {
+    "clean_chunks": 113,
+    "corrupted_chunks": 0,
+    "score": 100.0,
+    "grade": "A+"
+  },
+  "gold_standard_rag": {
+    "recall_at_1": 50.0,
+    "recall_at_3": 75.0,
+    "grade": "B",
+    "n_questions": 12,
+    "details": [
+      {
+        "question": "Comment accéder à un fichier réseau Windows avec son nom Harmony ?",
+        "expected_file": "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+          "CheminsHarmony.htm",
+          "Noms_de_fichier_en_réseau_Windows.htm"
+        ],
+        "top_score": 12.038
+      },
+      {
+        "question": "Comment créer ou modifier un modèle d'imprimante dans Harmony ?",
+        "expected_file": "Gestiondesmod_lesd_imprimante.htm",
+        "found_in_top3": true,
+        "found_in_top1": false,
+        "top3_files": [
+          "Exempledeliaisonsmod_le_imprimante.htm",
+          "Gestiondesmod_lesd_imprimante.htm",
+          "Liaisonentremod_leetimprimante_param_trageWindows.htm"
+        ],
+        "top_score": 9.17
+      },
+      {
+        "question": "Que fait la commande /Ga dans un fichier pilote ?",
+        "expected_file": "Fichierdecommandes.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Fichierdecommandes.htm",
+          "Fichierdecommandes.htm",
+          "Fichierdecommandes.htm"
+        ],
+        "top_score": 7.784
+      },
+      {
+        "question": "Comment déclarer un chemin Harmony sur un serveur Xlan ?",
+        "expected_file": "Nomsdefichierenr_seauXlan.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Nomsdefichierenr_seauXlan.htm",
+          "Noms_de_fichier_en_réseau_Windows.htm",
+          "Nomsdefichierenr_seauXlan.htm"
+        ],
+        "top_score": 11.728
+      },
+      {
+        "question": "Comment configurer l'imprimante par défaut de Windows dans Harmony ?",
+        "expected_file": "Imprimantepard_fautdeWindows.htm",
+        "found_in_top3": false,
+        "found_in_top1": false,
+        "top3_files": [
+          "Etatsgraphiqueset_tatscaract_res.htm",
+          "Impressions__Introduction.htm",
+          "Gestionnaired_impressiondeWindows_spouleur_.htm"
+        ],
+        "top_score": 9.811
+      },
+      {
+        "question": "Comment importer des utilisateurs depuis un annuaire LDAP ?",
+        "expected_file": "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm",
+        "found_in_top3": true,
+        "found_in_top1": false,
+        "top3_files": [
+          "Fichierdesutilisateurs.htm",
+          "Gestion_et_paramétrage_depuis_la_console_LDAP.htm",
+          "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm"
+        ],
+        "top_score": 9.107
+      },
+      {
+        "question": "Quelle est la différence entre un modèle préconisé et un modèle impératif ?",
+        "expected_file": "Mod_lepr_conis_etmod_leimp_ratif.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Mod_lepr_conis_etmod_leimp_ratif.htm",
+          "Mod_lepr_conis_etmod_leimp_ratif.htm",
+          "Mod_lepr_conis_etmod_leimp_ratif.htm"
+        ],
+        "top_score": 8.071
+      },
+      {
+        "question": "Comment lancer automatiquement une tâche de fond au démarrage ?",
+        "expected_file": "Lancementautomatiqued_unet_chedefond.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Lancementautomatiqued_unet_chedefond.htm",
+          "Sauvegarde_des_paramètres_de_l_utilisateur.htm",
+          "Administrationd_Harmony__Introduction.htm"
+        ],
+        "top_score": 12.932
+      },
+      {
+        "question": "Comment configurer les chemins implicites sur un poste client ?",
+        "expected_file": "Cheminsd_acc_simplicites.htm",
+        "found_in_top3": false,
+        "found_in_top1": false,
+        "top3_files": [
+          "D_clarationdescheminsetdesbiblioth_ques_unit_simplicites.htm",
+          "Nomsdefichierenr_seauXlan.htm",
+          "D_clarationdescheminsHarmony.htm"
+        ],
+        "top_score": 9.887
+      },
+      {
+        "question": "Comment passer des paramètres à un programme Harmony ?",
+        "expected_file": "Passagedeparam_tresauxprogrammes.htm",
+        "found_in_top3": false,
+        "found_in_top1": false,
+        "top3_files": [
+          "Appeld_unprogrammeWindows.htm",
+          "Fichierdecommandes.htm",
+          "Fichierdecommandes.htm"
+        ],
+        "top_score": 8.635
+      },
+      {
+        "question": "Comment fonctionne le format spool dans un modèle d'imprimante ?",
+        "expected_file": "Gestiondesmod_lesd_imprimante.htm",
+        "found_in_top3": true,
+        "found_in_top1": false,
+        "top3_files": [
+          "Exempledeliaisonsmod_le_imprimante.htm",
+          "Gestiondesmod_lesd_imprimante.htm",
+          "Liaisonentremod_leetimprimante_param_trageWindows.htm"
+        ],
+        "top_score": 6.727
+      },
+      {
+        "question": "Comment créer une maquette d'impression dans Harmony ?",
+        "expected_file": "Edition_d_une_maquette.htm",
+        "found_in_top3": true,
+        "found_in_top1": true,
+        "top3_files": [
+          "Edition_d_une_maquette.htm",
+          "Fichierdecommandes.htm",
+          "Gestiondesmod_lesd_imprimante.htm"
+        ],
+        "top_score": 12.303
+      }
+    ],
+    "scorer": "TF-IDF weighted keyword overlap (IDF over chunk corpus)",
+    "note": "Keyword proxy. Real semantic eval needs embedding model."
+  },
+  "OVERALL": {
+    "structural_avg": 99.9,
+    "rag_recall_at3": 75.0,
+    "score": 94.3,
+    "grade": "A"
+  }
+}

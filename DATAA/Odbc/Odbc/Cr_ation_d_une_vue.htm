@@ -1,0 +1,65 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Création d'une vue</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Création d'une vue</h3>
+<p class="Body-Text">La création d’une vue demande les informations suivantes&#160;:</p>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">nom</font> de la vue. C’est normalement aussi sous ce nom que la vue apparaîtra dans la liste des tables et des vues de la source. Pour distinguer les vues des tables, on peut préfixer les noms de vues par le mot «&#160;Vue&#160;».</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Un <font class="hcp1">commentaire</font>.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">dictionnaire de données</font>. C’est un multichoix qui propose la liste des dictionnaires de données associés au dictionnaire de vues. Si le dictionnaire souhaité n’est pas dans la liste, celle-ci peut être complétée. (raccourci <font class="hcp1">F5</font>)</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Le <font class="hcp1">fichier</font>. C’est un multichoix qui propose la liste des fichiers décrits dans le dictionnaire choisi.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">table</font>. C’est un multichoix qui propose la liste des tables du fichier choisi. Il s’agit de la table de base de la vue. Pour la constitution de la vue, on pourra choisir des champs dans cette table de base ainsi que dans toutes les tables qui lui sont directement ou indirectement (en passant par une autre table) liées. La table de base est lue séquentiellement par le driver ODBC. Il effectue un accès direct pour lire les champs des tables liées de la requête SQL.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">L’<font class="hcp1">index.</font> C’est un multichoix qui propose la liste des index de la table choisie. Cette information est <font class="hcp1">facultative.</font> Si elle n’est pas renseignée, le driver ODBC choisira le meilleur index en fonction des critères de sélection, de regroupement ou de tri de la requête SQL. Dans certains cas il peut être intéressant de préciser l’index à utiliser directement dans la vue, en particulier si l’on souhaite utiliser un <font class="hcp1">index conditionnel</font>. En effet, le driver ODBC ne choisit <font class="hcp1">jamais</font> un index conditionnel. Par contre, si l’index est précisé dans la vue, le driver prendra cet index quel que soit son type.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">condition</font>. La condition est une «&#160;<a href="Grammaire_SQL_support_e_par_le_driver_ODBC_Harmony.htm">search_condition&#160;</a>&#160;» de la clause <font class="hcp1">Where</font> du langage SQL. Elle permet de faire une sélection des lignes lues. Les champs de la condition doivent <font class="hcp1">obligatoirement</font> appartenir à la vue (ils peuvent éventuellement être <font class="hcp1">cachés,</font> dans ce cas il n’apparaîtront pas dans le catalogue des champs de la vue). La condition de la vue est combinée par un <font class="hcp1">ET LOGIQUE</font> avec la condition de la <font class="hcp1">clause Where du Select.</font> Elle entre dans le processus d’optimisation des accès.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 48px;">Exemples</p>
+<ul>
+<li style="font-size: 10pt;" class="p-source">
+<p class="source" style="margin-left: 29.75pt;">TypeTiers='C' and TypePiece='4'</p>
+</li>
+<li style="font-size: 10pt;" class="p-source">
+<p class="source" style="margin-left: 29.75pt;">Dossier = 1 and NOT Left(CodePostal,2)in(22,29,35,56)</p>
+</li>
+</ul>
+<ul>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text"><font class="hcp1">L’indicateur de lecture du fichier des données</font>.&#160;Pour les vues pour lesquelles l’on sait qu’il faut lire l’<font class="hcp1">ensemble</font> du fichier, il peut être plus performant d’activer l’option de lecture des données plutôt que de passer par les index. Cette option n’est généralement intéressante que pour des fichiers volumineux pour lesquels la table lue correspond à une proportion importante des lignes du fichier. Un chronométrage avec et sans l’option permet de prendre la meilleure décision.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">La <font class="hcp1">confidentialité</font>.&#160;Elle permet de réserver l’accès à la vue aux utilisateurs ayant les droits d’accès correspondants.</p>
+</li>
+<li style="font-size: 10pt;" class="p-Body-Text">
+<p class="Body-Text">Les noms des <font class="hcp1">procédures Diva</font> associées à l’<a href="Initialisation_d_une_vue.htm">initialisation</a>, à la <a href="Lecture_de_la_table_de_base_d_une_vue.htm">lecture</a> et à la gestion des <a href="Confidentialit_s_des_champs_d_une_vue.htm">confidentialités</a>.</p>
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeExecuteTreatmentAfter</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+span.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+font.hcp4 { font-weight:bold; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp6 { list-style:disc; }
+span.hcp7 { font-weight:bold;
+text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeExecuteTreatmentAfter &#160;<a href="Lister_capitulativedesfonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdeYmeg.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="font-weight: bold;">Exécution du traitement "Après Saisie" d'une donnée de la page courante</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp2">XmeExecuteTreatmentAfter</span> (<font class="hcp3">Numéro de point de séquence</font>)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:26.16%;" class="hcp5">
+<p class="Body-Text"><font class="hcp3">Numéro de point de séquence</font></p>
+</td>
+<td style="width:73.84%;" class="hcp5">
+<p class="Body-Text">Numéro de <a href="Pointsdes_quence.htm">point de séquence</a> de la donnée concernée.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp4">Description de la fonction&#160;:</font></p>
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure <font class="hcp4">XmeExecuteTreatmentAfter</font> commande l'exécution du traitement "Après Saisie", défini dans Xwin pour la <span class="hcp7">donnée de la page courante</span> identifiée par son <font style="font-weight: bold; font-style: italic;">Numéro de point de séquence</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Cette procédure <span class="hcp7">ne doit pas</span> être appelée pour une donnée :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp6">
+<li class="p-Body-Text">
+<p class="Body-Text">Non située dans la page courante (même si elle se trouve dans une page chaînée).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Située dans un objet tableau (même si le tableau est dans la page courante). Pour une donnée située dans un tableau, utilisez la procédure <a href="XmeListExecuteTreatmentAfter.htm">XmeListExecuteTreatmentAfter</a>.</p>
+</li>
+</ul>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque la page saisie inclut des <span class="hcp2">pages panels</span>, cette procédure <span class="hcp7">ne doit pas</span> être appelée pour une donnée située dans une page panel non affichée (même si elle se trouve dans une page panel chaînée). Et bien entendu, la donnée ne peut pas non plus se trouver dans une page panel (de la page saisie) à onglet NON chaînée (même affichée).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeExecuteTreatmentAfter ne fait rien si aucun traitement "Après Saisie" n'a été défini dans Xwin pour la donnée concernée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">XmeExecuteTreatmentAfter <font class="hcp4">ne traite pas</font> les <font class="hcp4">codes de retour</font> (Harmony.Retour et Harmony.CplRetour) positionnés par le traitement, mais les transmet au programme appelant.&#160;Le cas échéant, ce dernier pourra tester la valeur de Harmony.Retour pour connaître le "résultat" du traitement.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Au retour du traitement, XmeExecuteTreatmentAfter n'effectue <span class="hcp2">aucun réaffichage</span> des variables de la page.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Remarque :</p>
+<p class="Body-Text">Un traitement Après saisie peut être optimisé pour ne s'exécuter que si la valeur de la donnée saisie a changé. Par exemple :</p>
+<p class="Source">if Harmony.DataModif &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;la donnée saisie a changé ?<br>
+...<br>
+... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement<br>
+...<br>
+endif</p>
+<p class="Body-Text">Comme il n'y a pas de notion de saisie avec XmeExecuteTreatmentAfter, cette procédure positionne systématiquement Harmony.DataModif à la valeur TRUE avant d'appeler le traitement Après saisie. Ainsi, ce dernier sera exécuté même s'il a été optimisé.<br>
+&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp2">Exemple</span> :</p>
+<p class="Body-Text">On appellera par exemple cette procédure lors de la saisie d'un masque, suite à un point d'arrêt associé à la donnée (clic souris spécial, bouton, menu, tableau, ...) et se produisant AVANT l'exécution du traitement Après saisie (voir l'<a href="Algorithmedesaisiedesdonn_es.htm">algorithme de saisie d'une donnée</a>), afin de contrôler la validité de la valeur couramment saisie :<br>
+&#160;</p>
+<p class="Source">XmeExecuteTreatmentAfter (Harmony.DataSeq)</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

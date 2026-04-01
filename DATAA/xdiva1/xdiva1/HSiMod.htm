@@ -1,0 +1,146 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>HSiMod</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>HSiMod &#160;<a href="Listedesfonctions_volu_esdegestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="Gestiondefichiers.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">HSiMod permet de modifier les paramètres d'un fichier séquentiel indexé (nom du fichier des données et composition des clés). Elle s'utilise par exemple pour définir de nouvelles clés sur un fichier de travail.</p>
+<p class="Body-Text">La fonction HSiMod est en général précédée d'un appel à <a href="HSiRead.htm">HSiRead</a> pour lire les paramètres.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Ptr</font> = <font class="hcp2">HS</font><font class="hcp2">iMod</font> <font class="hcp3">(nomcles , cles, status, nomdata, abort)</font>&#160;<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Nomcles</font></p>
+<p class="decalage05">Nom complet du fichier des clés.</p>
+<p class="Body-Text"><font class="hcp3">Clés</font></p>
+<p class="decalage05">Nouvelle description des clés. Ce paramètre doit être une instance de l'enregistrement Cles du dictionnaire ddsys.dhsd.</p>
+<p class="Body-Text"><font class="hcp3">Status</font></p>
+<p class="decalage05">Donnée de type X qui reçoit le code d'erreur système.</p>
+<p class="Body-Text"><font class="hcp3">NomData</font></p>
+<p class="decalage05">Nouveau nom du fichier des données. Ce paramètre doit obligatoirement être renseigné.</p>
+<p class="Body-Text"><font class="hcp3">Abort</font></p>
+<p class="decalage05">Booléen (TRUE par défaut) indiquant si la fonction doit arrêter le programme en cas d'erreur, ou rendre la main avec un code d'erreur.</p>
+<p class="decalage05">En cas d'arrêt du programme, la fenêtre standard des erreurs est affichée et l'erreur est journalisée dans le fichier ferror.log.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<p class="Body-Text">La fonction renvoie la valeur nulle en cas de succès. Sinon, elle renvoie un code d'erreur principal, et le paramètre <font class="hcp3">Status</font> contient le code d'erreur du système.</p>
+<p class="Body-Text">Pour la liste des erreurs possibles, voir <a href="ErreursdesfonctionsHcreate_Hsicreate.htm">Erreurs des fonctions HcreateFile, HSicreate</a></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">L'enregistrement Cles contenant la description des clés est un tableau de 256 cases pour les clés.</font></p>
+<table cellspacing="0" width="411">
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">LettreCle</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Lettre clé.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">NomCle</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Nom de la clé.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">PositionCe</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Position du code enregistrement.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">ValeurCe</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Valeur du code enregistrement.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" class="hcp5">
+<p class="Body-Text">TestCe</p>
+</td>
+<td colspan="2" style="width:80.44%;" class="hcp5">
+<p class="Body-Text">Test à effectuer sur le code enregistrement</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:19.56%;" height="72" class="hcp5">
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+</td>
+<td style="width:14.93%;" height="72" class="hcp5">
+<p class="Body-Text">0 =<br>
+1 &lt;&gt;<br>
+2 &lt;<br>
+3 &gt;<br>
+4 &lt;=<br>
+5 &gt;=<br>
+6 &amp;</p>
+</td>
+<td style="width:65.51%;" height="72" class="hcp5">
+<p class="Body-Text">égal<br>
+différent<br>
+inférieur<br>
+supérieur<br>
+inférieur ou égal<br>
+supérieur ou égal<br>
+et logique</p>
+</td>
+</tr>
+</table>
+&#160;
+<p class="Body-Text"><font class="hcp2">Pour chaque clé, on trouve ensuite un tableau de 16 éléments décrivant les données qui composent la clé :</font></p>
+<table cellspacing="0" width="436">
+<tr class="hcp4">
+<td style="width:20.57%;" class="hcp5">
+<p class="Body-Text">PosCle</p>
+</td>
+<td style="width:79.43%;" class="hcp5">
+<p class="Body-Text">Position d'un fragment de clé.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.57%;" class="hcp5">
+<p class="Body-Text">LgCle</p>
+</td>
+<td style="width:79.43%;" class="hcp5">
+<p class="Body-Text">Longueur d'un fragment de clé.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Remarque</font></p>
+<p class="Body-Text">Il est conseillé d'utiliser préalablement la fonction <a href="HSiRead.htm">HSiRead</a> pour lire les paramètres. Mais attention, toutes les clés non utilisées doivent être positionnées à 0 binaire. Si vous n'utilisez pas toutes les clés déjà présentes dans le fichier il est donc conseillé de réinitialiser la zone définissant les clés (par Init cles&#160;=&#160;$00) puis de la reconstituer en totalité.</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="HCreateFile.htm">HCreateFile</a>, <a href="HSiCreate.htm">HSiCreate</a>, <a href="HSiRead.htm">HSiRead</a>, <a href="HDeleteFile.htm">HDeleteFile</a>, <a href="DDInterface.htm">SIVerifParam DDInterface</a></p>
+</body>
+</html>

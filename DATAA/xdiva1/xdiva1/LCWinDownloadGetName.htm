@@ -1,0 +1,83 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>LCWinDownloadGetName</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { font-style:italic; }
+p.hcp3 { font-weight:bold; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp6 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>LCWinDownloadGetName &#160;<span style="font-weight: normal;"><a href="Liste_des_fonctions_LC.htm">Famille</a> <a href="Introduction_devLC.htm">Thème</a></span></h1>
+<p>&#160;</p>
+<p>La fonction LCWinDownloadGetName permet de connaître le nom exact qu'aura un fichier transféré par la fonction <a href="LCWinDownload.htm">LCWinDownload</a>.</p>
+<p>&#160;</p>
+<p><span class="hcp1">long</span> <span class="hcp1">LCWinDownloadGetName</span> ( &amp;<span class="hcp2">Fichier</span> )</p>
+<p>&#160;</p>
+<p class="hcp3">Paramètre</p>
+<p style="font-style: italic;">Fichier</p>
+<p class="decalage05">En entrée : nom du fichier (sans le chemin)</p>
+<p class="decalage05">En sortie : nom complet du fichier</p>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font style="font-weight: bold;">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Pas d'erreur</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Code d'erreur système.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p class="hcp3">Remarques</p>
+<ul class="hcp6">
+<li class="p">
+<p><a href="LCWinDownload.htm">LCWinDownload</a> peut être appelée en positionnant <span class="hcp2">NePasModifierNomFichierArrivee</span> à TRUE, dans ce cas, il n'y a pas lieu d'utiliser LCWinDownloadGetName puisque le nom est figé.</p>
+</li>
+<li class="p">
+<p><a href="LCWinDownload.htm">LCWinDownload</a> retourne le nom exact du fichier coté client.<br>
+LCWinDownloadGetName permet donc de connaître le nom exact AVANT d'effectuer le transfert du fichier.</p>
+</li>
+<li class="p">
+<p>LCWinDownloadGetName peut être utilisée dans les cas suivants :</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp6">
+<li class="p">
+<p>Pour afficher un message avec le nom complet du fichier</p>
+</li>
+<li class="p">
+<p>Pour vérifier les attributs du fichier de destination. L'Erp Divalto positionne le drapeau "lecture seule" de certains fichiers après le transfert. Si on veut à nouveau transférer le même fichier, il faut d'abord changer la valeur de ce drapeau. LCWinDownloadGetName permet de connaître le nom du fichier pour faire la modification de l'attribut avant la copie.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp3">Voir</p>
+<p><a href="LCWinDownload.htm">LCWinDownload</a>, <a href="LCWinUpload.htm">LCWinUpload</a></p>
+</body>
+</html>

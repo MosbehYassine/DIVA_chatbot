@@ -1,0 +1,91 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinReadFile</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>WinReadFile &#160;<a href="ListedesfonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font><a href="FonctionsdegestiondefichiersWindows.htm"><font face="MS Sans Serif" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction WinReadFile lit des données depuis un fichier ; la lecture se fait à partir de la position courante du pointeur associé au fichier. Après chaque lecture le pointeur est mis à jour.</p>
+<p class="Body-Text"><font class="hcp2">Long</font> <font class="hcp2">WinReadFile</font>(<font class="hcp3">ticket</font>, <font class="hcp3">Article</font>, <font class="hcp3">TailleALire</font>, <font class="hcp3">TailleLue</font>)</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Ticket</font></p>
+<p class="Body-Text">Identifie le fichier à lire. Le fichier doit être ouvert avec l'accès GENERIC_READ.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Article</font></p>
+<p class="decalage05">Donnée qui reçoit les données lues.</p>
+<p class="Body-Text"><font class="hcp3">TailleALire</font></p>
+<p class="decalage05">Spécifie le nombre d'octets à lire dans le fichier.</p>
+<p class="Body-Text"><font class="hcp3">TailleLue</font></p>
+<p class="decalage05">Donnée numérique qui reçoit le nombre d'octets réellement lus.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table cellspacing="0" width="474">
+<tr class="hcp4">
+<td style="width:20.93%;" class="hcp5">
+<p class="Body-Text">TRUE</p>
+</td>
+<td style="width:79.07%;" class="hcp5">
+<p class="Body-Text">Ok. Le nombre d'octets lus est dans <font class="hcp3">TailleLue</font>. Si ce nombre est nul, c'est que la fin de fichier est atteinte.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:20.93%;" class="hcp5">
+<p class="Body-Text">FALSE</p>
+</td>
+<td style="width:79.07%;" class="hcp5">
+<p class="Body-Text">Erreur. Appelez la fonction <a href="WinGetLastError.htm">WinGetLastError</a> pour connaître le détail de l'erreur.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Remarques</font></p>
+<p class="Body-Text">Si un octet est réservé dans la portion de fichier à lire, la fonction sort en erreur.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple</font></p>
+<p class="Body-Text">Ouverture et lecture d'un fichier.</p>
+<p class="Source">1 fic L</p>
+<p class="Source">1 art 50</p>
+<p class="Source">1 nblus L</p>
+<p class="Source">fic = WinCreateFile("d:\Divalto\sys\stest", \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;GENERIC_READ, \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;FILE_SHARE_READ, \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;0, \</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;OPEN_EXISTING,0,0)</p>
+<p class="Source">if fic = -1</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;MessageBox ("Erreur " &amp; bindec(ldxl(WinGetLastError)), "erreur")&#160;</p>
+<p class="Source">endif</p>
+&#160;
+<p class="Source">do</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;st = WinReadFile(fic, art, size(art), nblus)&#160;</p>
+<p class="Source">while nblus &gt; 0</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;display fstring("F",left(art, nblus)) 0&#160;</p>
+<p class="Source">wend&#160;</p>
+<p class="Source">WinCloseHandle(fic)</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p class="Body-Text"><a href="WinCreateFile.htm">WinCreateFile</a>, <a href="WinReadFileRecord.htm">WinReadFileRecord</a>, <a href="WinWriteFile.htm">WinWriteFile</a>, <a href="WinSetFilePointer.htm">WinSetFilePointer</a>, <a href="WinLockFile.htm">WinLockFile</a>, <a href="WinUnLockFile.htm">WinUnLockFile</a>, <a href="WinGetLastError.htm">WinGetLastError</a></p>
+</body>
+</html>

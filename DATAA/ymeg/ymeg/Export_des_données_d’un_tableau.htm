@@ -1,0 +1,103 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Export des données d’un tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+p.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Export des données d’un tableau</h1>
+<p>Le module <span style="font-weight: bold;">yListExport.dhop</span> permet en particulier :</p>
+<ul class="hcp1">
+<li class="p">
+<p>D’exporter les données d’un tableau (de manière similaire à l’impression paramétré du zoom : fonctions Paramétrer l'impression, Imprimer, Ouvrir les paramètres, Enregistrer les paramètres, Enregistrer les paramètres sous).</p>
+</li>
+<li class="p">
+<p>De filtrer les lignes d’un tableau (de manière similaire à la fonction de filtrage du zoom : fonctions Filtrer et Enlever les filtres).</p>
+</li>
+</ul>
+<p>Ce module peut être appelé par tous les programmes qui gèrent un objet tableau.</p>
+<p>&#160;</p>
+<p>Il inclut les deux procédures publiques principales :</p>
+<ul class="hcp1">
+<li class="p">
+<p><a href="XmeListExportPopupMenu.htm">XmeListExportPopupMenu</a>.<br>
+Cette première procédure affiche un menu surgissant contextuel, proposant les fonctions d'export et/ou de filtrage que vous souhaitez fournir à l'utilisateur pour un objet tableau.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><a href="XmeListExport.htm">XmeListExport</a>.<br>
+Cette deuxième procédure exécute l'action correspondant au point d'arrêt généré par le choix du menu sélectionné par l'utilisateur.</p>
+</li>
+</ul>
+&#160;
+<p>Auxquelles s'ajoute la procédure secondaire suivante :</p>
+<ul class="hcp1">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-top: 1.00pt;"><a href="XmeListExportRefreshColumnHeaders.htm">XmeListExportRefreshColumnHeaders</a>.<br>
+Cette procédure réaffiche les étoiles et réinitialise les bulles des en-têtes de colonne du tableau.<br>
+On l'utilisera, lorsqu'un filtre est en cours, après un changement de page de masque suivi du retour à l'affichage du tableau (l<span>e changement de page provoquant la perte des attributs dynamiquement modifiés dans ColumnInfo, cette instruction permet de les repositionner).</span></p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp2">Exemple de programmation :</p>
+<p class="hcp2">&#160;</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">Module "yListExport.dhop"</p>
+<p class="Source">1 Ident &#160;L</p>
+<p class="Source">1 Fini &#160;&#160;B</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">Ligne = " "</p>
+<p class="Source">XmeLoad ("EOBJTAB")</p>
+<p class="Source">XmeInfoPage ("EOBJTAB",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("EOBJTAB",1,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source">&#160;</p>
+<p class="Source">Ident = XmeListGetId ("EOBJTAB",1,"TABLEAU",Ligne)</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">XmeDispv ("EOBJTAB",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche page tableau</p>
+<p class="Source">&#160;</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO</p>
+<p class="Source">&#160;&#160;&#160;XmeListConsult (Ident) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation</p>
+<p class="Source">&#160;&#160;&#160;SWITCH Harmony.Key</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;fin</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;;exemple d'appel du menu surgissant : l'utilisateur effectue un Ctrl+Clic</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;;avec le bouton gauche de la souris dans l'en-tête de la colonne d'état</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.DataArret = &lt;Arret_tableau&gt; \ &#160;;(point d'arrêt &lt;=&gt; tableau concerné)</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;and Harmony.TabClic &#160;&#160;&#160;= LIST_CLICK_HEADING_CONTROL \</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;and Harmony.SourisClic = SIMPLE_CLICK \</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;and Harmony.SourisBout = LEFT_BUTTON \</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;and Harmony.SourisClav = CTRL_CLICK</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListExportPopupMenu (Ident, ZOOM_EXPORT_IMP)</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;;XMELIST_ARRET_EXPORT est un Define de zdiva testant que Harmony.Dataarret</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;;contient un numéro de point d'arrêt &lt;=&gt; choix du menu précédent</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;CASE XMELIST_ARRET_EXPORT</p>
+<p class="Source" style="font-weight: bold; color: #0000ff;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListExport (Ident, Ligne, ZOOM_EXPORT_IMP) &#160;;exécution de l'action</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autre événement traité par le pg</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres événements traités par défaut</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Ident, Ligne, Ascens)</p>
+<p class="Source">&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p>&#160;</p>
+</body>
+</html>

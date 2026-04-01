@@ -1,0 +1,59 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mise à niveau des masques</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+p.hcp2 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Mise à niveau des masques</h3>
+<p class="hcp1"><br>
+Calcul de la différence entre deux masques</p>
+<p>Pour déterminer la différence entre deux masques, XWIN compare chaque propriété des entités des masques. Cela concerne :</p>
+<p class="hcp2">• Les propriétés générales du masque</p>
+<p class="hcp2">• Les propriétés des onglets</p>
+<p class="hcp2">• La liste des enregistrements</p>
+<p class="hcp2">• Les propriétés de pages</p>
+<p class="hcp2">• Les propriétés des objets</p>
+<p class="hcp2">• L'ordre de saisie</p>
+<p class="hcp2">• Les propriétés des toolbars</p>
+<p class="hcp2">• Les propriétés des menus.</p>
+<p>La première opération effectuée par Xwin est de calculer la différence entre le masque de base de l’éditeur et le masque de la nouvelle version. Si aucune différence n’est détectée (le masque n’a pas évolué dans la nouvelle version), le masque de surcharge est repris tel quel. Sinon cette différence sert à détecter d’éventuels conflits.</p>
+<p>&#160;</p>
+<p class="hcp1">Les objets</p>
+<p>Chaque objet d’un masque est identifié par un numéro (id) unique. Cet id permet de reconnaître le même objet dans deux masques de versions successives ou dans le masque de base de l’éditeur et sa surcharge. Cet id est attribué automatiquement par XWIN lors de la création d’un nouvel objet dans le masque.</p>
+<p>&#160;</p>
+<p class="hcp1">Interclassement des menus et des toolbars</p>
+<p>Les éléments d’un menu ou d’une toolbar sont identifiés par un identificateur unique. Contrairement aux identifiants des objets du masque proprement dit, les identificateurs des ressources sont affectés par le développeur lors de leur création. Nous recommandons de préfixer ces identificateurs par le code personnel du distributeur, afin d’éviter tout conflit avec d’éventuelles nouvelles ressources créées par l’éditeur.</p>
+<p>Exemple : xxxx_Separateur1.</p>
+<p>On procédera de même pour les ressources elles-mêmes, en préfixant les nouveaux menus ou les nouvelles toolbars.</p>
+<p>XWIN essaie au maximum de conserver l’ordre ou la hiérarchie des choix du masque surchargé lors de la constitution du nouveau masque.</p>
+<p>&#160;</p>
+<p class="hcp1">L’ordre de saisie</p>
+<p>Lorsque Xwin détermine que l’ordre de saisie des champs d’une page a été modifié dans le masque de surcharge, il répercute « au mieux » cet ordre dans le nouveau masque, c’est à dire qu’il essaie de restituer l’ordre choisi dans le masque de surcharge.</p>
+<p>&#160;</p>
+<p class="hcp1">Les conflits et les erreurs.</p>
+<p>Lors de la mise à niveau, XWIN peut détecter des conflits, voire des erreurs. La liste des conflits et des erreurs se trouve dans la fenêtre de compte rendu de XWIN. Un double-clic ou la touche F4 sur un élément de la liste permettent de se positionner sur le masque ou l’objet en erreur.</p>
+<p>Les conflits concernent essentiellement les modifications d’une même propriété dans la surcharge et la nouvelle version de l’éditeur mais avec des valeurs différentes.</p>
+<p>Les erreurs concernent par exemple des modifications des propriétés d’objets qui n’existent plus dans la nouvelle version de l’éditeur.</p>
+<p>XWIN signale également le chevauchement d’objets dû à la mise à niveau.</p>
+<p>&#160;</p>
+<p class="hcp1">Ajouts ou suppressions de pages ou de bloc dans un masque</p>
+<p>Lors de la surcharge d’un masque, il vaut mieux éviter d’ajouter ou de supprimer des pages dans un masque. Il arrive toutefois que cette opération soit nécessaire (en particulier à la fin du masque pour ajouter des modes liste dans un zoom par exemple ou ajouter de nouveaux blocs dans un masque d’impression).</p>
+<p>Dans tous les cas, XWIN essaiera de faire au mieux. S’il n’y a pas d’ajout ou de suppression dans la nouvelle version de l’éditeur l’opération se passe sans problème. Par contre si l’éditeur a également ajouté des pages, il conviendra au développeur de régler les conflits. Par exemple l’ajout de mode liste à un zoom nécessitera de décaler les numéros de suffixe des traitements liés au mode liste. Les pages ajoutées à la fin d’un masque de surcharge seront ajoutées APRES les nouvelles pages ajoutées par l’éditeur dans la nouvelle version.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="voir" style="border-top: 0.50pt solid #000000;">Voir également :</p>
+<p><a href="Mise_&agrave;_niveau_des_projets_de_surcharge.htm">Mise à niveau des projets de surcharge</a></p>
+</body>
+</html>

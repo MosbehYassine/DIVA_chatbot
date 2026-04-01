@@ -1,0 +1,102 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Nombre de tâches</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+p.hcp6 { text-align:justify; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h4>Nombre de tâches</h4>
+<p class="Body-Text" style="margin-left: 7.10pt;"><font class="hcp1">Principe&#160;:</font></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">998 tâches (portant un numéro compris entre 2 et 999) peuvent être lancées simultanément sur chaque serveur TSE ; les numéros ne sont pas liés à un client mais sont affectés dynamiquement au fur et à mesure de l'ouverture des fenêtres d’application.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Chaque fois que l'utilisateur lance une nouvelle application, il ouvre ce qu'il est convenu d'appeler une <font class="hcp3">Tâche de base</font> ; le programme peut ensuite lancer dynamiquement d’autres tâches dans de nouvelles fenêtres, dites tâches "filles" (instructions ProgramCall ou Zoom du langage Diva).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Remarque&#160;: le serveur ODBC d'Harmony (accès à la base Harmony par un client ODBC) utilise également une tâche par connexion (N connexions exécutées simultanément utilisent N tâches).</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-left: 7.10pt;"><font color="#000000">A la question</font> <font color="#000000" class="hcp1">Nombre de tâches</font> <font color="#000000">posée par l'installateur d’Harmony :</font></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text"><font color="#000000">Entrez le nombre total de</font> <font color="#000000" class="hcp3">Tâches de base</font> <font color="#000000">+ 1 (dans ce calcul, on</font> <font color="#000000" class="hcp1">NE</font> <font color="#000000">comptera donc</font> <font color="#000000" class="hcp1">NI</font> <font color="#000000">les tâches&#160;«&#160;filles&#160;»</font> <font color="#000000" class="hcp1">NI</font> <font color="#000000">les tâches «&#160;ODBC&#160;»).</font></p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><font color="#000000">Exemple&#160;: on souhaite connecter 10 postes client au serveur, chacun susceptible d’exécuter jusqu'à trois applications Harmony simultanément&#160;; on obtient alors le nombre</font> <font color="#000000" class="hcp1">31</font> <font color="#000000">(10 x 3 + 1).</font></p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 7.10pt;">&#160;</p>
+<p class="Body-Text" style="margin-left: 7.10pt;"><font class="hcp1">Remarque</font>&#160;: Les numéros de tâches iront :</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">En croissant pour les <font class="hcp3">Tâches de base</font> (à partir de 2).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En croissant pour les tâches filles supplémentaires (à partir du Nombre de tâches saisi + 1)&#160;;<br>
+dans notre exemple&#160;: 32, 33, 34, etc.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En décroissant pour les tâches ODBC (à partir de 999).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Modification ultérieure du nombre de tâches</font></p>
+<p class="Body-Text">Les informations concernant le nombre de tâches sont stockées dans Divalto.ini. Si vous souhaitez les modifier, appelez le programme <font class="hcp1">xDivaltoMajIni</font>(.exe)&#160;:<br>
+&#160;</p>
+<p class="Body-Text">Dans le chapitre <font class="hcp1">[System]</font>, vous trouverez les mots clés suivants&#160;(les valeurs associées sont ici données à titre d'exemple)&#160;:<br>
+NbTaches=31<br>
+TacheDebutModule=32<br>
+TacheFinModule=255</p>
+<table cellspacing="0" width="614">
+<tr class="hcp4">
+<td style="width:23.86%;" class="hcp5">
+<p class="hcp6"><font class="hcp1">NbTaches</font></p>
+</td>
+<td style="width:76.14%;" class="hcp5">
+<p class="Index-Base">Nombre de tâches&#160;Harmony saisi à l'installation (tâches de base + 1).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:23.86%;" class="hcp5">
+<p class="hcp6"><font class="hcp1">TacheDebutModule</font></p>
+</td>
+<td style="width:76.14%;" class="hcp5">
+<p class="Index-Base">Numéro de la première tâche lancée par ProgramCall ou Zoom.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:23.86%;" class="hcp5">
+<p class="hcp6"><font class="hcp1">TacheFinModule</font></p>
+</td>
+<td style="width:76.14%;" class="hcp5">
+<p class="hcp6">Numéro de la dernière tâche lancée par ProgramCall ou Zoom.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

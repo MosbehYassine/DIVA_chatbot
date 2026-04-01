@@ -1,0 +1,103 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>&lt;Select&gt;</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-right:10px;
+padding-left:10px; }
+p.hcp3 { font-weight:bold; }
+span.hcp4 { font-style:italic; }
+ul.hcp5 { list-style:disc; }
+span.hcp6 { font-weight:bold; }
+p.hcp7 { margin-left:48px;
+font-size:11pt; }
+p.hcp8 { margin-left:48px; }
+p.hcp9 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Select <span style="font-family: Arial, sans-serif;">&#160;&#160;</span><span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_balises_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>La balise Select permet de définir les colonnes de la requête Sql.</p>
+<p>Elle comporte les attributs :</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 18.881%;">
+<col style="width: 81.119%;">
+<tr class="hcp1">
+<td style="width:18.881%;" class="hcp2">
+<p class="hcp3">&#160;[Top=<span class="hcp4">n</span>]</p>
+</td>
+<td style="width:81.119%;" class="hcp2">
+<p>Limite le nombre de lignes de résultat de la requête aux <span class="hcp4">n</span> premières lignes.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:18.881%;" class="hcp2">
+<p class="hcp3">&#160;[Distinct=yes/no]</p>
+</td>
+<td style="width:81.119%;" class="hcp2">
+<p>Correspond à l’option "distinct" du langage SQL.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>Elle contient la liste des champs ou expressions qui constituent la structure du RecordSQL, séparés par une virgule.</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp6">Champs</span></p>
+</li>
+</ul>
+<p class="hcp7">{ table | alias }.ColumnName [ as uniqueName ] [ NoActivate ] [ GroupBy=yes | no ]</p>
+<p class="hcp8">Le nom du champ est précédé du nom de la table ou de son alias. S'il est suivi du paramètre <span style="margin-left: 48px;">uniqueName, ce dernier sera le nom par lequel il faudra référencer le champ.</span></p>
+<p class="hcp8">L'attribut NoActivate permet d'indiquer que le champ ne sera pas sélectionné par défaut. Sa sélection s'obtient alors par programme. Voir <a href="ColumnActivate.htm">RecordSql.Column.Activate</a>.</p>
+<p class="hcp8">L'attribut GroupBy permet de retirer une colonne du regroupement. Voir <a href="GroupBy.htm">GroupBy</a>.<br>
+&#160;</p>
+<p style="margin-left: 48px; font-weight: bold;">Cas particulier des tableaux</p>
+<p class="hcp8">Les tableaux n’existent pas dans une base de données.</p>
+<p class="hcp8">A la création de la table, un tableau est remplacé par autant de colonnes qu’il y a d'éléments dans le tableau. Chaque nom de colonne est suffixé par son indice dans le tableau. Par exemple, le tableau Rep(3) crée les trois champs Rep_0001, Rep_0002 et Rep_0003. Néanmoins, dans la description du RecordSQL et dans son utilisation en Diva et dans les masques, l’écriture indicée est conservée. En Diva, l'écriture indicée avec une variable est autorisée si tous les éléments du tableau sont inclus dans le RecordSQL.</p>
+<p class="hcp8">On pourra donc écrire :</p>
+<p class="hcp8">o Rep(1), Rep(2)</p>
+<p class="hcp8">o Rep(1) as CommercialSedentaire, Rep(2) as CommercialTerrain</p>
+<p class="hcp8">o Rep(*) pour inclure toutes les éléments dans le RecordSQL.</p>
+<p class="hcp8">&#160;</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp6">Expressions</span></p>
+</li>
+</ul>
+<p class="hcp7">Expression as UniqueName { (Format) | (ReferenceDico) } [ Name="nom" ] [ NoActivate ] [ GroupBy=yes|no ]</p>
+<p class="hcp8">Expression est une expression SQL. <span style="text-decoration: underline;">Le compilateur n’effectue aucun contrôle de la syntaxe de l’expression</span>. Si l’on se soucie de la portabilité du RecordSQL vers différents moteurs de base de données, utiliser impérativement des expressions compatibles avec ces moteurs.</p>
+<p class="hcp8">L’expression doit toujours être suivie d’un UniqueName qui servira à la référencer puis impérativement du <a href="Format_de_stockage_des_expressions.htm">format de stockage</a> ou d’une référence à un format en provenance du dictionnaire de données.</p>
+<p class="hcp8">L'attribut Name permet d'identifier la ou les jointures nécessaires à la résolution du champ (utilisé pour la désactivation des jointures). Cet attribut est obligatoire si le paramètre ZoomOptimize du chapitre RecordSql est positionné à YES.</p>
+<p class="hcp8">L'attribut NoActivate permet d'indiquer que le champ ne sera pas sélectionné par défaut. Sa sélection s'obtient alors par programme. Voir <a href="ColumnActivate.htm">RecordSql.Column.Activate</a>.</p>
+<p class="hcp8">L'attribut GroupBy permet de retirer une colonne du regroupement. Voir <a href="GroupBy.htm">GroupBy</a>.</p>
+<p class="hcp8">Exemples :</p>
+<p class="hcp8">PU*QTE as MT(10,2)</p>
+<p class="hcp8">PU*QTE as MT (&gt;gtfdd.dhsd MT)</p>
+<p class="hcp8">&#160;</p>
+<ul class="hcp5">
+<li class="p">
+<p class="hcp3">Tous les champs d’une table</p>
+</li>
+</ul>
+<p class="hcp7">{ table | alias }.*</p>
+<p class="hcp8">Le nom de la table ou son alias est suivi d’une étoile.</p>
+<p class="hcp8">Exemple :</p>
+<p class="hcp8">CLI.*</p>
+<p class="hcp8">&#160;</p>
+<p class="hcp3"><span class="hcp6">Voir</span></p>
+<p class="hcp9"><a href="R&eacute;sum&eacute;_de_la_syntaxe.htm"><span style="font-weight: normal;">Résumé de la syntaxe</span></a></p>
+<p class="hcp9"><a href="Liste_des_balises_RecordSql.htm" style="font-weight: normal;">Liste des balises RecordSql</a></p>
+<p class="hcp9"><a href="Format_de_stockage_des_expressions.htm">Format de stockage</a></p>
+<p>&#160;</p>
+</body>
+</html>

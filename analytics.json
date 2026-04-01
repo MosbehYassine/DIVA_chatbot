@@ -1,0 +1,632 @@
+{
+  "total_files": 60,
+  "processed_files": 55,
+  "skipped_stubs": 5,
+  "total_chunks": 113,
+  "chunks_by_type": {
+    "MEDIUM_DESCRIPTIVE": 51,
+    "SHORT_ATOMIC": 19,
+    "EXAMPLE_TABLE_INTRO": 1,
+    "EXAMPLE_TABLE_BLOCK": 4,
+    "EXAMPLE_TABLE_SOLUTION": 1,
+    "REFERENCE_TABLE_INTRO": 4,
+    "REFERENCE_TABLE_ROW": 14,
+    "REFERENCE_TABLE_NOTES": 14,
+    "LONG_PROCEDURAL": 9
+  },
+  "word_distribution": [
+    109,
+    95,
+    54,
+    83,
+    171,
+    48,
+    103,
+    48,
+    81,
+    40,
+    60,
+    153,
+    81,
+    45,
+    61,
+    49,
+    234,
+    91,
+    42,
+    180,
+    69,
+    19,
+    20,
+    16,
+    19,
+    74,
+    103,
+    75,
+    69,
+    74,
+    62,
+    42,
+    109,
+    295,
+    131,
+    75,
+    65,
+    40,
+    65,
+    74,
+    78,
+    52,
+    61,
+    74,
+    52,
+    88,
+    66,
+    62,
+    130,
+    106,
+    132,
+    84,
+    60,
+    98,
+    189,
+    84,
+    32,
+    61,
+    163,
+    165,
+    161,
+    157,
+    65,
+    84,
+    91,
+    146,
+    81,
+    108,
+    41,
+    45,
+    63,
+    120,
+    213,
+    193,
+    107,
+    129,
+    113,
+    97,
+    152,
+    120,
+    57,
+    49,
+    181,
+    88,
+    54,
+    187,
+    43,
+    193,
+    35,
+    80,
+    158,
+    22,
+    57,
+    176,
+    135,
+    186,
+    117,
+    90,
+    88,
+    38,
+    54,
+    173,
+    127,
+    58,
+    160,
+    89,
+    158,
+    326,
+    128,
+    61,
+    181,
+    143,
+    164,
+    58,
+    154,
+    82,
+    147
+  ],
+  "per_file": [
+    {
+      "file": "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 194,
+      "n_chunks": 2,
+      "title": "Accès à un fichier réseau Windows avec son nom Harmony"
+    },
+    {
+      "file": "Acc_sauxfichiersd_Harmony.htm",
+      "doc_type": "STUB",
+      "word_count": 8,
+      "n_chunks": 0,
+      "title": "Accès aux fichiers et aux programmes sous Harmony"
+    },
+    {
+      "file": "Administrationd_Harmony__Introduction.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 54,
+      "n_chunks": 1,
+      "title": "Administration d'Harmony : Introduction"
+    },
+    {
+      "file": "Affichage_et_pr_sentation_des_tableaux.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 83,
+      "n_chunks": 1,
+      "title": "Affichage et présentation des tableaux (version 6)"
+    },
+    {
+      "file": "Aper_usavantimpression.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 217,
+      "n_chunks": 2,
+      "title": "Aperçus avant impression"
+    },
+    {
+      "file": "Appeld_unprogrammeWindows.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 103,
+      "n_chunks": 1,
+      "title": "Appel d'un programme Windows"
+    },
+    {
+      "file": "Chemin_d_accès_et_nom_de_fichier_complet.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 48,
+      "n_chunks": 1,
+      "title": "Chemin d'accès et nom de fichier complet"
+    },
+    {
+      "file": "CheminsHarmony.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 125,
+      "n_chunks": 2,
+      "title": "Chemins Harmony"
+    },
+    {
+      "file": "Cheminsd_acc_simplicites.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 289,
+      "n_chunks": 3,
+      "title": "Chemins d'accès implicites"
+    },
+    {
+      "file": "D_clarationdescheminsHarmony.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 45,
+      "n_chunks": 1,
+      "title": "Déclaration des chemins Harmony"
+    },
+    {
+      "file": "D_clarationdescheminsetdesbiblioth_ques_unit_simplicites.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 61,
+      "n_chunks": 1,
+      "title": "Déclaration des chemins implicites"
+    },
+    {
+      "file": "D_clarationdesserveursetdesunit_slogiques.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 49,
+      "n_chunks": 1,
+      "title": "Déclaration des serveurs"
+    },
+    {
+      "file": "Edition_d_une_maquette.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 234,
+      "n_chunks": 1,
+      "title": "Edition d'une maquette"
+    },
+    {
+      "file": "Envoisdemessageetdet_l_copie.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 91,
+      "n_chunks": 1,
+      "title": "Envois de message et de télécopie"
+    },
+    {
+      "file": "Etatsgraphiqueset_tatscaract_res.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 217,
+      "n_chunks": 2,
+      "title": "Etats graphiques et états caractères"
+    },
+    {
+      "file": "Exempledeliaisonsmod_le_imprimante.htm",
+      "doc_type": "EXAMPLE_TABLE",
+      "word_count": 163,
+      "n_chunks": 6,
+      "title": "Exemple de liaisons modèle / imprimante"
+    },
+    {
+      "file": "Fichierdecommandes.htm",
+      "doc_type": "REFERENCE_TABLE",
+      "word_count": 565,
+      "n_chunks": 8,
+      "title": "Fichier de commandes"
+    },
+    {
+      "file": "Fichierdesutilisateurs.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 131,
+      "n_chunks": 1,
+      "title": "Fichier des utilisateurs"
+    },
+    {
+      "file": "Gestion_des_tableaux.htm",
+      "doc_type": "STUB",
+      "word_count": 5,
+      "n_chunks": 0,
+      "title": "Gestion des tableaux (version 6)"
+    },
+    {
+      "file": "Gestion_et_paramétrage_depuis_la_console_LDAP.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 174,
+      "n_chunks": 3,
+      "title": "Console d'administration LDAP"
+    },
+    {
+      "file": "Gestiondesfen_tresetdesprogrammes.htm",
+      "doc_type": "STUB",
+      "word_count": 6,
+      "n_chunks": 0,
+      "title": "Gestion des fenêtres et des programmes"
+    },
+    {
+      "file": "Gestiondesmod_lesd_imprimante.htm",
+      "doc_type": "REFERENCE_TABLE",
+      "word_count": 627,
+      "n_chunks": 14,
+      "title": "Gestion des modèles d'imprimante"
+    },
+    {
+      "file": "Gestionnaired_impressiondeWindows_spouleur_.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 60,
+      "n_chunks": 1,
+      "title": "Gestionnaire d'impression de Windows (spouleur)"
+    },
+    {
+      "file": "Iconiseruneapplication.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 98,
+      "n_chunks": 1,
+      "title": "Iconiser une application (version 6)"
+    },
+    {
+      "file": "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 189,
+      "n_chunks": 1,
+      "title": "Import et synchronisation des utilisateurs d’un annuaire LDAP"
+    },
+    {
+      "file": "Impressions.htm",
+      "doc_type": "STUB",
+      "word_count": 1,
+      "n_chunks": 0,
+      "title": "Impressions"
+    },
+    {
+      "file": "Impressions__Introduction.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 84,
+      "n_chunks": 1,
+      "title": "Impressions : Introduction"
+    },
+    {
+      "file": "Imprimantepard_fautdeWindows.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 32,
+      "n_chunks": 1,
+      "title": "Imprimante par défaut de Windows"
+    },
+    {
+      "file": "Installationetconfigurationd_uneimprimanteWindows.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 61,
+      "n_chunks": 1,
+      "title": "Installation et configuration d'une imprimante Windows"
+    },
+    {
+      "file": "Lancementautomatiqued_unet_chedefond.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 163,
+      "n_chunks": 1,
+      "title": "Lancement automatique d'une tâche de fond"
+    },
+    {
+      "file": "Liaisonentremod_leetimprimante_param_trageWindows.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 318,
+      "n_chunks": 2,
+      "title": "Liaison entre modèle et imprimante / paramétrage Windows"
+    },
+    {
+      "file": "M_thodedes_lectionducoupleimprimante_param_trage.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 290,
+      "n_chunks": 3,
+      "title": "Méthode de sélection du couple imprimante / paramétrage"
+    },
+    {
+      "file": "MiseenoeuvredesimpressionsHarmony_Windows.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 229,
+      "n_chunks": 2,
+      "title": "Mise en oeuvre des impressions Harmony / Windows"
+    },
+    {
+      "file": "Mod_led_imprimantepard_faut.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 81,
+      "n_chunks": 1,
+      "title": "Modèle d'imprimante par défaut"
+    },
+    {
+      "file": "Mod_lepr_conis_etmod_leimp_ratif.htm",
+      "doc_type": "REFERENCE_TABLE",
+      "word_count": 329,
+      "n_chunks": 5,
+      "title": "Modèle préconisé et modèle impératif"
+    },
+    {
+      "file": "Mod_lesd_imprimanteHarmony.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 213,
+      "n_chunks": 1,
+      "title": "Modèles d'imprimante Harmony"
+    },
+    {
+      "file": "Modegraphiqueetmodecaract_res.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 193,
+      "n_chunks": 1,
+      "title": "Mode graphique et mode caractères"
+    },
+    {
+      "file": "Modèles_d_utilisateur.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 107,
+      "n_chunks": 1,
+      "title": "Modèles d'utilisateurs"
+    },
+    {
+      "file": "Noms_de_fichier_en_réseau_Windows.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 329,
+      "n_chunks": 3,
+      "title": "Noms de fichier en réseau Windows"
+    },
+    {
+      "file": "Nomsdefichierenr_seauXlan.htm",
+      "doc_type": "REFERENCE_TABLE",
+      "word_count": 519,
+      "n_chunks": 5,
+      "title": "Noms de fichier en réseau Xlan"
+    },
+    {
+      "file": "Notification_des_opérations_réalisées_par_une_synchronisation_aux_administrateurs.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 133,
+      "n_chunks": 2,
+      "title": "Notification des opérations réalisées par une synchronisation aux administrateurs"
+    },
+    {
+      "file": "Notionsdebasepourl_administrationd_Harmony.htm",
+      "doc_type": "STUB",
+      "word_count": 6,
+      "n_chunks": 0,
+      "title": "Notions de base pour l'administration d'Harmony"
+    },
+    {
+      "file": "Param_tragedel_iconed_unet_che.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 223,
+      "n_chunks": 2,
+      "title": "Paramétrage de l'icone d'une tâche (version 6)"
+    },
+    {
+      "file": "Param_tragedesimpressionsHarmony.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 224,
+      "n_chunks": 2,
+      "title": "Paramétrage des impressions Harmony"
+    },
+    {
+      "file": "Passagedeparam_tresauxprogrammes.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 231,
+      "n_chunks": 2,
+      "title": "Passage de paramètres aux programmes de la version 6"
+    },
+    {
+      "file": "Principesg_n_rauxdesimpressionsHarmony_Windows.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 22,
+      "n_chunks": 1,
+      "title": "Principes généraux des impressions Harmony / Windows"
+    },
+    {
+      "file": "QuestionProgramme.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 231,
+      "n_chunks": 2,
+      "title": "Question Programme"
+    },
+    {
+      "file": "R_glagedelahauteurd__dition.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 135,
+      "n_chunks": 1,
+      "title": "Réglage de la hauteur d'édition"
+    },
+    {
+      "file": "R_glagedelalargeurd__dition.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 186,
+      "n_chunks": 1,
+      "title": "Réglage de la largeur d'édition"
+    },
+    {
+      "file": "R_glesg_n_ralesapplicablesauxnomsdefichierHarmony.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 117,
+      "n_chunks": 1,
+      "title": "Règles générales applicables aux noms de fichier Harmony"
+    },
+    {
+      "file": "Règles_de_correspondance_des_propriétés.htm",
+      "doc_type": "LONG_PROCEDURAL",
+      "word_count": 540,
+      "n_chunks": 6,
+      "title": "Règles de correspondance des propriétés"
+    },
+    {
+      "file": "Règles_de_correspondance_des_utilisateurs.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 213,
+      "n_chunks": 2,
+      "title": "Règles de correspondance des utilisateurs"
+    },
+    {
+      "file": "Règles_de_filtrage_dans_l_annuaire_LDAP.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 89,
+      "n_chunks": 1,
+      "title": "Règles de filtrage dans l'annuaire LDAP"
+    },
+    {
+      "file": "S_lectiond_unmod_led_imprimante.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 158,
+      "n_chunks": 1,
+      "title": "Sélection d'un modèle d'imprimante"
+    },
+    {
+      "file": "Sauvegarde_des_paramètres_de_l_utilisateur.htm",
+      "doc_type": "LONG_PROCEDURAL",
+      "word_count": 505,
+      "n_chunks": 3,
+      "title": "Sauvegarde des paramètres de l'utilisateur"
+    },
+    {
+      "file": "Services_de_synchronisation.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 321,
+      "n_chunks": 2,
+      "title": "Services de synchronisation"
+    },
+    {
+      "file": "Synchronisation.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 164,
+      "n_chunks": 1,
+      "title": "Synchronisation"
+    },
+    {
+      "file": "T_cheHarmony.htm",
+      "doc_type": "SHORT_ATOMIC",
+      "word_count": 58,
+      "n_chunks": 1,
+      "title": "Tâche Harmony"
+    },
+    {
+      "file": "Tailleetpositiondesfen_tresHarmony.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 232,
+      "n_chunks": 2,
+      "title": "Taille et position des fenêtres Harmony"
+    },
+    {
+      "file": "Zonage.htm",
+      "doc_type": "MEDIUM_DESCRIPTIVE",
+      "word_count": 147,
+      "n_chunks": 1,
+      "title": "Zonage (version 6)"
+    }
+  ],
+  "doc_type_map": {
+    "MEDIUM_DESCRIPTIVE": [
+      "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+      "Aper_usavantimpression.htm",
+      "CheminsHarmony.htm",
+      "Cheminsd_acc_simplicites.htm",
+      "Edition_d_une_maquette.htm",
+      "Etatsgraphiqueset_tatscaract_res.htm",
+      "Fichierdesutilisateurs.htm",
+      "Gestion_et_paramétrage_depuis_la_console_LDAP.htm",
+      "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm",
+      "Lancementautomatiqued_unet_chedefond.htm",
+      "Liaisonentremod_leetimprimante_param_trageWindows.htm",
+      "M_thodedes_lectionducoupleimprimante_param_trage.htm",
+      "MiseenoeuvredesimpressionsHarmony_Windows.htm",
+      "Mod_lesd_imprimanteHarmony.htm",
+      "Modegraphiqueetmodecaract_res.htm",
+      "Noms_de_fichier_en_réseau_Windows.htm",
+      "Notification_des_opérations_réalisées_par_une_synchronisation_aux_administrateurs.htm",
+      "Param_tragedel_iconed_unet_che.htm",
+      "Param_tragedesimpressionsHarmony.htm",
+      "Passagedeparam_tresauxprogrammes.htm",
+      "QuestionProgramme.htm",
+      "R_glagedelahauteurd__dition.htm",
+      "R_glagedelalargeurd__dition.htm",
+      "Règles_de_correspondance_des_utilisateurs.htm",
+      "S_lectiond_unmod_led_imprimante.htm",
+      "Services_de_synchronisation.htm",
+      "Synchronisation.htm",
+      "Tailleetpositiondesfen_tresHarmony.htm",
+      "Zonage.htm"
+    ],
+    "STUB": [
+      "Acc_sauxfichiersd_Harmony.htm",
+      "Gestion_des_tableaux.htm",
+      "Gestiondesfen_tresetdesprogrammes.htm",
+      "Impressions.htm",
+      "Notionsdebasepourl_administrationd_Harmony.htm"
+    ],
+    "SHORT_ATOMIC": [
+      "Administrationd_Harmony__Introduction.htm",
+      "Affichage_et_pr_sentation_des_tableaux.htm",
+      "Appeld_unprogrammeWindows.htm",
+      "Chemin_d_accès_et_nom_de_fichier_complet.htm",
+      "D_clarationdescheminsHarmony.htm",
+      "D_clarationdescheminsetdesbiblioth_ques_unit_simplicites.htm",
+      "D_clarationdesserveursetdesunit_slogiques.htm",
+      "Envoisdemessageetdet_l_copie.htm",
+      "Gestionnaired_impressiondeWindows_spouleur_.htm",
+      "Iconiseruneapplication.htm",
+      "Impressions__Introduction.htm",
+      "Imprimantepard_fautdeWindows.htm",
+      "Installationetconfigurationd_uneimprimanteWindows.htm",
+      "Mod_led_imprimantepard_faut.htm",
+      "Modèles_d_utilisateur.htm",
+      "Principesg_n_rauxdesimpressionsHarmony_Windows.htm",
+      "R_glesg_n_ralesapplicablesauxnomsdefichierHarmony.htm",
+      "Règles_de_filtrage_dans_l_annuaire_LDAP.htm",
+      "T_cheHarmony.htm"
+    ],
+    "EXAMPLE_TABLE": [
+      "Exempledeliaisonsmod_le_imprimante.htm"
+    ],
+    "REFERENCE_TABLE": [
+      "Fichierdecommandes.htm",
+      "Gestiondesmod_lesd_imprimante.htm",
+      "Mod_lepr_conis_etmod_leimp_ratif.htm",
+      "Nomsdefichierenr_seauXlan.htm"
+    ],
+    "LONG_PROCEDURAL": [
+      "Règles_de_correspondance_des_propriétés.htm",
+      "Sauvegarde_des_paramètres_de_l_utilisateur.htm"
+    ]
+  }
+}

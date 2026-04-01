@@ -1,0 +1,157 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Colonne de tableau</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp3 { font-weight:bold; }
+span.hcp4 { font-weight:bold; }
+ul.hcp5 { list-style:disc; }
+span.hcp6 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Colonne de tableau</h3>
+<p class="Body-Text">Les propriétés d'une colonne sont :<br>
+&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 19.683%;">
+<col style="width: 80.317%;">
+<tr class="hcp1">
+<td colspan="2" style="width:100%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Famille Colonne</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:19.683%;" class="hcp2">
+<p class="Body-Text"><font class="hcp3">Titre de l'en-tête</font></p>
+</td>
+<td style="width:80.317%;" class="hcp2">
+<p class="Body-Text">Libellé affiché dans l'en-tête de la colonne (*).<br>
+Le caractère | permet de passer à la ligne à l'intérieur du titre.<br>
+Remarque (client léger Wpf) : ce libellé est toujours centré dans l'en-tête. Un libellé plus large que la colonne est tronqué à gauche et à droite.</p>
+<p class="Body-Text">(*) Il est possible de remplacer le texte par une <span class="hcp4">image</span>. Pour ce faire, spécifiez ici le nom de l’image dans la feuille de styles, précédé du caractère "#". Remarque : l'affichage d'une image en supplément du texte est aussi possible par programme (fonction XmeListSetColumn).<br>
+<br>
+Voir aussi les remarques en fin de rubrique.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:19.683%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Style de l'en-tête</p>
+</td>
+<td style="width:80.317%;" class="hcp2">
+<p class="Body-Text">Voir <a href="Pr_sentation.htm">Présentation</a>.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:19.683%;" class="hcp2">
+<p class="Body-Text"><font class="hcp3">Police</font></p>
+</td>
+<td style="width:80.317%;" class="hcp2">
+<p class="Body-Text">Il s'agit de la police des caractères du <span class="hcp4">titre dans l'en-tête</span>.<br>
+La police de caractères du contenu de la colonne est celle qui a été définie pour la donnée placée dans cette colonne.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:19.683%;" class="hcp2">
+<p class="Body-Text"><span class="hcp4">Fond</span></p>
+</td>
+<td style="width:80.317%;" class="hcp2">
+<p class="Body-Text">Il s'agit de la couleur du fond de <span class="hcp4">l'en-tête</span>.<br>
+La couleur du fond de la colonne est celle qui a été définie pour la donnée placée dans cette colonne.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:19.683%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Affichage</p>
+</td>
+<td style="width:80.317%;" class="hcp2">
+<p class="Body-Text">L’utilisateur a la possibilité de choisir les colonnes qu’il veut voir affichées dans un tableau. Cette propriété permet au développeur de "cadrer" cette fonctionnalité :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp4">"Toujours"</span>.<br>
+La colonne est toujours affichée, elle ne peut pas être retirée par l’utilisateur.<br>
+Utilisez cette valeur pour forcer la présence d’une colonne. C’est indispensable, en particulier parce que certains champs doivent impérativement être saisis.<br>
+A l'écriture du masque, Xwin force également la valeur "Toujours" pour :</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 60px;">Un champ déclaré obligatoire en saisie.</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 60px;">Une donnée avec un point d'arrêt Avant ou Après saisie.</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 60px;">Une donnée avec un numéro de point de séquence non nul.</p>
+</li>
+<li style="list-style: circle;" class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 60px;">Une colonne de type "Arbre".</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp4">"Oui par défaut"</span>.<br>
+La colonne est affichée au départ mais l’utilisateur peut la retirer.<br>
+Utilisez cette valeur si vous considérez que la colonne doit plutôt être affichée par défaut.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp4">"Non par défaut"</span>.<br>
+La colonne n'est pas affichée au départ mais l’utilisateur peut l'ajouter.<br>
+Utilisez cette valeur si vous considérez que la colonne n’est pas vraiment indispensable et qu’elle ne doit pas être affichée par défaut.<br>
+"Non par défaut" est la valeur affectée à toute colonne nouvellement créée.</p>
+</li>
+</ul>
+<p class="Body-Text">Voir aussi les remarques en fin de rubrique.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:19.683%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Trait autour de la colonne</p>
+</td>
+<td style="width:80.317%;" class="hcp2">
+<p class="Body-Text">Demande l'affichage d'un trait vertical de séparation avec la colonne suivante.</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td style="width:19.683%;" class="hcp2">
+<p class="Body-Text" style="font-weight: bold;">Largeur de la colonne</p>
+</td>
+<td style="width:80.317%;" class="hcp2">
+<p class="Body-Text">Largeur en orteils de la colonne.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><span class="hcp4">Remarques concernant le choix des colonnes à afficher</span> :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Après avoir cliqué sur la « roue » située dans le coin NE du tableau, l'utilisateur peut choisir les colonnes à afficher (ou ne pas afficher) dans un menu popup. Pour une colonne donnée, ce menu affiche le <span class="hcp4">libellé affecté à l’en-tête de la colonne</span>. <span class="hcp6">Si l’en-tête ne contient pas de libellé</span> mais une image ou un hog, le menu affiche la <span class="hcp4">bulle affectée à la colonne</span> : <span class="hcp6">le développeur doit donc préciser une bulle pour chaque colonne de ce type</span> ; <span class="hcp6">à défaut, le choix du menu correspondant sera vide</span>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Ce menu ne présente ni les colonnes toujours présentes (propriété "Affichage" à la valeur "Toujours") ni les colonnes dont la visibilité a été modifiée par attribut dynamique à AV_CACHE.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="Body-Text"><span class="hcp4">Remarque importante concernant le développement des tableaux</span> :</p>
+<p class="Body-Text">Il peut être intéressant pour le développeur de voir son tableau soit comme un utilisateur, soit en intégralité (pour, par exemple, tester la saisie de toutes les colonnes). A cet effet, les Profils utilisateur de Xwin proposent l'option « <span class="hcp4">Afficher toutes les colonnes des tableaux (à l’exécution)</span> » :</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque le programme est lancé depuis Xwin et que l’option est désactivée, l’affichage des colonnes reste paramétrable et le tableau est vu en tant qu’utilisateur. Idem lorsque le programme n’est pas lancé depuis Xwin.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Mais si le programme est lancé depuis Xwin et que l’option est activée, toutes les colonnes sont toujours affichées à l’exécution.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

@@ -1,0 +1,246 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Codes Page</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+tr.hcp3 { vertical-align:top; }
+td.hcp4 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp5 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Codes Page</h3>
+<p>&#160;</p>
+<p>En standard, Harmony utilise le jeu de caractère ANSI latin occidental. Les caractères ANSI sont codés sur 8 bits (256 caractères différents). Le nombre de combinaisons est insuffisant pour coder l’ensemble de tous les caractères des alphabets utilisant le jeu ANSI. C’est pourquoi, il a été ajouté une notion complémentaire qui est le « code page » des caractères.</p>
+<p>Un même code dans deux codes page différents ne sera pas représenté par le même symbole.</p>
+<p>Exemple : le code 0xe6 correspond au symbole :</p>
+<p>&#263; &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;dans le code page Europe centrale</p>
+<p>æ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;dans le code page Europe occidentale</p>
+<p>Il existe une dizaine de codes page différents (Occidental, Hébreu, Arabe, Grec, Turc, Baltique, Europe centrale, Cyrillique, Vietnamien).</p>
+<p>La plupart des pays d’Europe utilise le code page « Occidental ». C’est le code standard de Divalto.</p>
+<p>Le polonais utilise le « code page » Europe centrale pour les caractères « spéciaux » de l’alphabet polonais. Si l’on souhaite afficher ces caractères, il faut utiliser une police de caractères avec le code page « Europe centrale ».</p>
+<p>Remarque : les 128 premiers caractères du jeu ANSI sont communs à l’ensemble des codes page. Ainsi, l’anglais, qui n’utilise pas de caractères accentués, est indépendant des codes page.</p>
+<p>&#160;</p>
+<p class="hcp1">Périmètre de la prise en compte du code page</p>
+<p>La prise en compte du code page concerne principalement :</p>
+<ul class="hcp2">
+<li class="p">
+<p>L’affichage et l’impression des constantes des masques.</p>
+</li>
+<li class="p">
+<p>L’affichage et l’impression des données (lorsque les bases de données contiennent des informations dans une langue étrangère).</p>
+</li>
+<li class="p">
+<p>L’affichage, la saisie et l’impression des champs multilingues.</p>
+</li>
+<li class="p">
+<p>La saisie de la traduction des masques par xtranslate.dhop.</p>
+</li>
+<li class="p">
+<p>L’import et l’export des textes à traduire dans cet outil.</p>
+</li>
+<li class="p">
+<p>La saisie des traductions des champs multilingues par xtranslateDataTools.dhop.</p>
+</li>
+<li class="p">
+<p>L’import et l’export des textes à traduire dans cet outil.</p>
+</li>
+<li class="p">
+<p>Les fonctions Diva liées à la traduction.</p>
+</li>
+<li class="p">
+<p>Les fonctions Diva de conversion de codage.</p>
+</li>
+<li class="p">
+<p>Les fonctions d’import et d’export tableur du module yoffice.dhop.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">La saisie des textes dans Xwin pour un masque conçu directement dans une langue étrangère (masque pour lequel la propriété "Code langue du masque" a été renseignée). <span style="color: #ff0000; font-weight: bold;">Attention,</span> dans l'atelier de développement Xwin, la possibilité de saisir des textes, dans une langue à code page non standard, est limitée aux libellés des objets posés dans le masque et affichés ou imprimés à l'exécution (par exemple, la propriété "Texte" d'un objet Texte). Elle ne concerne pas les libellés "propres" à l'atelier (par exemple, la propriété "Libellé" des boîtes de dialogue des paramètres du masque ou de la page). Pour ces derniers, il est préconisé de les saisir en langue anglaise.<br>
+&#160;</p>
+</li>
+</ul>
+<p class="hcp1">Dans les masques</p>
+<p>Pour les textes des masques, la prise en compte du code page est automatique. On indique, dans les propriétés du masque, le Code Langue d’origine du masque (il s’agit de la langue de référence du masque).</p>
+<p>Ce code détermine le code page du masque, s’il est affiché dans la langue d’origine du masque.</p>
+<p>A l’exécution, l’utilisateur choisit sa langue d’affichage ou d’impression.</p>
+<p>Si le Code Langue de référence du masque est différent du code d’affichage ou d’impression choisi par l’utilisateur, Harmony cherche, pour chaque texte à afficher ou à imprimer, sa traduction dans le dictionnaire de traduction.</p>
+<p>La recherche dans le dictionnaire renvoie soit :</p>
+<ul class="hcp2">
+<li class="p">
+<p>La traduction du texte dans la langue étrangère. La traduction est accompagnée du code page du texte traduit. Le texte est affiché ou imprimé dans ce code page.</p>
+</li>
+<li class="p">
+<p>Le texte dans la langue d’origine si la recherche n’a pas trouvé de traduction pour le texte concerné (soit parce que le texte n’a pas été traduit, soit parce que ce texte ne se trouve pas dans ce dictionnaire car il s’agit d’une version plus ancienne). Le dictionnaire renvoie le code page du texte d’origine. Le texte est affiché ou imprimé dans ce code page.</p>
+</li>
+</ul>
+<p>Remarques :</p>
+<ul class="hcp2">
+<li class="p">
+<p>Pour les multi-choix, le code page s’applique à l’ensemble des choix. Si un texte d’un multi-choix n’est pas traduit, la valeur s’affichera dans la langue d’origine, mais le code page appliqué sera celui de la langue étrangère.</p>
+</li>
+<li class="p">
+<p>Le code page du masque s’applique aussi aux ressources du masque (Menu, Popup et Toolbar).</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp1">Les données</p>
+<p>Pour les données, la balise &#160;&lt;LanguageBaseData&gt; du fichier paramètre permet de définir la langue des données stockées dans les tables. Le code page associé à cette langue est automatiquement pris en compte pour l’affichage et l’impression de toutes les données des masques.</p>
+<p>Attention :</p>
+<p>Les multi-choix et les menus (surtout les popup) peuvent contenir soit des constantes, soit des données qui proviennent des tables, soit des mélanges. Il faut impérativement que toutes les informations de ces objets soient dans le même code page.</p>
+<p>&#160;</p>
+<p class="hcp1">Les champs multilingues</p>
+<p>Pour les champs multilingues, la prise en compte du code page est automatique.</p>
+<p>L’affichage des champs multilingues, ainsi que leur saisie dans le zoom, tient compte du code page.</p>
+<p>&#160;</p>
+<p class="hcp1">Gestion dynamique des codes page</p>
+<p>Dans certains cas, la gestion des langues doit être dynamique, c’est-à-dire qu’elle ne dépend pas seulement du choix de la langue fait par l’utilisateur, mais également du contexte. Par exemple, si une table client contient des informations stockées directement dans la langue du client (l’adresse de livraison) et qu’elle n’est pas homogène pour toutes les lignes la table.</p>
+<p>Dans ce cas, qui n’est pas pris en charge par l’ERP Divalto en standard, il sera éventuellement nécessaire de changer les codes page dynamiquement à l’exécution pour l’affichage des champs concernés.</p>
+<p>Les fonctions XmeSetAttribut et XmeListSetAttribut permettent d’indiquer quel est le code à utiliser pour l’affichage ou la saisie de ces informations.</p>
+<p>&#160;</p>
+<p class="hcp1">Les valeurs des codes page</p>
+<p class="hcp1">&#160;</p>
+<table style="vertical-align: top; left: 0px; top: 606px; height: 293px; margin-left: 80px;" cellspacing="0" width="298">
+<col style="width: 49.105%;">
+<col style="width: 50.895%;">
+<tr class="hcp3">
+<td style="border: Solid 1px #000000;width: 49.105%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp1">Zone</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 50.895%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp1">Ansi &#160;Code Page</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Europe centrale</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>1250</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p style="margin-left: 8px;">Cyrillique</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>1251</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Occidental</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>1252</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Grec</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>1253</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Turc</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>1254</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Hébreu</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>1255</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Arabe</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>1256</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Baltique</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>1257</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Vietnamien</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>1258</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Thai</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>874</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Chine symboles simplifiés</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>936</p>
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Chine symboles traditionnels</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>950</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Corée</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>949</p>
+</td>
+</tr>
+<tr class="hcp3">
+<td style="width:49.105%;" class="hcp4">
+<p>Japon</p>
+</td>
+<td style="width:50.895%;" class="hcp5">
+<p>932</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+</body>
+</html>

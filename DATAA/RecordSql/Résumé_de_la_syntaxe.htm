@@ -1,0 +1,156 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Résumé de la syntaxe</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { margin-left:48px; }
+p.hcp2 { margin-left:48px; }
+p.hcp3 { margin-left:8px; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Résumé de la syntaxe</h3>
+<p>&#160;</p>
+<p>&lt;DictionarySql DefaultDictionary=value Database=value OverWrite=&quot;&quot; 
+ OverWrittenBy=&quot;&quot; ModuleInfo=&quot;&quot; ModuleVersion=&quot;&quot; 
+ &gt;</p>
+<p>&lt;RecordSql Name=leNom [ &lt;RecordSqlAttributeName&gt;=value ][ ...n 
+ ]&gt;</p>
+<p>[ public record ... ][ ...n ]</p>
+<p>[ Bind nomInstance ][ ...n ]</p>
+<p>&lt;select [ &lt;SelectAttributeName&gt;=value ]&gt;</p>
+<p>&#160;&#160;&#160;&lt;ColumnList&gt;</p>
+<p>&lt;MandatoryColumns [ Zoom=yes|no ]&gt;</p>
+<p><span class="hcp1">&#160;&#160;&#160;&lt;ColumnList&gt;</span></p>
+<p>&lt;from [ Database=value ] [ ReadOnly | { Insert= { yes | no } &amp; 
+ Update= { yes | no } &amp; Delete= { yes | no } } ] &gt;</p>
+<p>&#160;&#160;&#160;[ dictionaryName ] table [ as uniqueAlias ]</p>
+<p>[</p>
+<p>&#160;&#160;&#160;[</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&lt;&lt;JoinExpression&gt; [ Database=value 
+ ] &#160;[ GlobalConf={ yes | no } &#160;] &#160;[ Name=value ] [ ColumnNames=values 
+ ] [ Dependencies=values ] [ NoActivate ] [WithId] &gt;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[ dictionaryName 
+ ] table [ as uniqueAlias ]</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ON 
+ &lt;ConditionText&gt; &#160;| &#160;USING NomDeJointure [ (p1 [,pn]) ]</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</p>
+<p>&#160;&#160;&#160;][ ...n ]</p>
+<p>&#160;&#160;&#160;</p>
+<p>&#160;&#160;&#160;[</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&lt;where&gt;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[ 
+ &lt;ConditionText&gt; ] &amp;|</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;case 
+ [ public | private ] ConditionName [ ( {&lt;ParamType&gt; paramName }[ 
+ ,...n ] ) ] [ &quot;libellé&quot; ] [ Dependencies=&quot;value&quot; ]</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[ 
+ Standard ] &lt;ConditionText&gt;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;][ 
+ ...n ]</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</p>
+<p>&#160;&#160;&#160;]</p>
+<p>&#160;&#160;&#160;</p>
+<p>&#160;&#160;&#160;[</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&lt;orderby&gt;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;case 
+ [ public | private ] OrderByName [ &quot;libellé&quot; ] &#160;[ Dependencies=&quot;value&quot; 
+ ] [ ColumnNames=&quot;value&quot; ]</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[ 
+ Standard ] &lt;OrderByText&gt;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}[ ...n ]</p>
+<p>&#160;&#160;&#160;]</p>
+<p>&#160;&#160;&#160;</p>
+<p>&#160;&#160;&#160;[</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&lt;groupby &#160;[ &lt;GroupByAttributeName&gt;=value 
+ ]&gt;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[</p>
+<p class="hcp2">&#160;{</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{ 
+ table | alias } .columnName</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}[ 
+ ,...n ]</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;]</p>
+<p>&#160;&#160;&#160;]</p>
+<p>&#160;&#160;&#160;</p>
+<p>&#160;&#160;&#160;[</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&lt;having&gt;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;{</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;case 
+ [ public | private ] HavingName [ ( {&lt;ParamType&gt; paramName }[ ,...n 
+ ] ) ] [ &quot;libellé&quot; ] &#160;[ Dependencies=&quot;value&quot; ]</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[ 
+ Standard ] &lt;ConditionText&gt;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;][ 
+ ...n ]</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;}</p>
+<p>&#160;&#160;&#160;]</p>
+<p>&#160;</p>
+<p>&#160;&#160;&#160;[</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&lt;SubQuery&gt;</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;{</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;[</p>
+<p class="hcp2">&#160;&#160;&#160;&#160;case SubqueryName 
+ &#160;[ ( {&lt;ParamType&gt; paramName }[ ,...n ] ) ]</p>
+<p class="hcp2">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&lt;QueryText&gt;</p>
+<p class="hcp2">]</p>
+<p class="hcp3"><span class="hcp1">&#160;&#160;&#160;&#160;&#160;&#160;}</span></p>
+<p class="hcp3">&#160;&#160;&#160;]</p>
+<p class="hcp3">&#160;</p>
+<p>]</p>
+<p>&lt;RecordSqlAttributeName&gt; ::=</p>
+<p>&#160;&#160;&#160;{ DataBase | comment | ZoomOptimize }</p>
+<p>&#160;&#160;&#160;</p>
+<p>&lt;SelectAttributeName&gt; ::=</p>
+<p>&#160;&#160;&#160;{ Top=&lt;n&gt; | Distinct= { yes | no } }</p>
+<p>&#160;&#160;&#160;</p>
+<p>&lt;ColumnList&gt; ::=</p>
+<p>&#160;&#160;&#160;{ { { table | alias }.columnName [ as uniqueName ] 
+ [ Name=name ] [ NoActivate ] [ GroupBy=yes|no ] } &amp;|</p>
+<p>&#160;&#160;&#160;&#160;&#160;{ Expression as uniqueName [ Name=name 
+ ] [ NoActivate ] [ GroupBy=yes|no ] } &amp;|</p>
+<p>&#160;&#160;&#160;&#160;&#160;{ { table | alias }.* }</p>
+<p>&#160;&#160;&#160;}[ ,...n ]</p>
+<p>&#160;&#160;&#160;</p>
+<p>&lt;JoinExpression&gt; ::=</p>
+<p>&#160;&#160;&#160;{ Join | LeftJoin | RightJoin | FullJoin | CrossJoin 
+ | Join01 }</p>
+<p>&#160;&#160;&#160;</p>
+<p>&lt;Condition&gt; ::=</p>
+<p>&#160;&#160;&#160;{ = | &lt;&gt; | &lt;= | &gt;= | in | not in | is 
+ null | is not null | like | not like }</p>
+<p>&#160;&#160;&#160;</p>
+<p>&lt;ConditionText&gt; ::=</p>
+<p>&#160;&#160;&#160;{</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;{ { table | alias }.columnName | 
+ Expression } &lt;Condition&gt; { &#160;{ { table | alias }.columnName 
+ } | value | Expression }</p>
+<p>&#160;&#160;&#160;}[ ,...n ]</p>
+<p>&#160;&#160;&#160;</p>
+<p>&#160;&#160;&#160;</p>
+<p>&lt;ParamType&gt; ::=</p>
+<p>&#160;&#160;&#160;{ char | int | date }</p>
+<p>&lt;OrderByText&gt; ::=</p>
+<p>&#160;&#160;&#160;{</p>
+<p>&#160;&#160;&#160;&#160;&#160;&#160;{ table | alias }.columnName { ASC 
+ | DESC }</p>
+<p>&#160;&#160;&#160;}[ ,...n ]</p>
+<p>&#160;</p>
+<p>&lt;GroupByAttributeName&gt; ::=</p>
+<p>&#160;&#160;&#160;{ Dynamic= { yes | no } }</p>
+</body>
+</html>

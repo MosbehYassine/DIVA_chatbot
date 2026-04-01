@@ -1,0 +1,84 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Insertion de commentaires dans le code</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { font-weight:bold; }
+img.hcp3 { border:none; }
+ol.hcp4 { list-style:decimal; }
+p.hcp5 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Insertion de commentaires dans le code</h3>
+<p>Les <span class="hcp1">commentaires de code</span> sont des commentaires, placés dans des fichiers de code source de telle manière qu'ils sont ensuite disponibles pour les utilisateurs via la fonctionnalité <a href="Information_rapide_sur_un_membre.htm">Information rapide sur un membre</a>.</p>
+<p>&#160;</p>
+<p class="hcp2">Commenter un membre</p>
+<p>Tout commentaire placé sur la <span class="hcp1">même ligne</span> que la ligne de déclaration du membre est un commentaire de code. Par exemple :</p>
+<p><img src="../image16.gif" alt="" width="415" height="72" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p class="hcp2">Commenter un membre sur plusieurs lignes</p>
+<p>Il <span class="hcp1">FAUT d'abord</span> faire débuter le commentaire sur <span class="hcp1">la ligne même de la déclaration du membre</span> à commenter. Ensuite, les lignes qui <span class="hcp1">suivent</span> la ligne de déclaration et qui sont <span class="hcp1">elles-mêmes des lignes de commentaires</span> (<span style="text-decoration: underline;">à condition toutefois que le ";" ne soit pas placé en colonne 1</span>) sont encore considérées comme des commentaires de code pour le membre. Par exemple :</p>
+<p><img src="../image18.gif" alt="" width="513" height="90" border="0" class="hcp3"></p>
+<p>Un commentaire s’arrête donc à la rencontre d’une ligne à contenu effectif, d’une ligne blanche ou d’un commentaire débutant en colonne 1. Pour stopper le premier commentaire d'un groupe de deux commentaires successifs indépendants, il faut donc mettre une ligne blanche entre les deux ou faire débuter le deuxième en colonne 1. Par exemple :</p>
+<p><img src="../image22.gif" alt="" width="507" height="99" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p class="hcp2">Commenter une procédure ou une fonction</p>
+<p>Conventionnellement, sont considérés comme les commentaires de code d'une fonction toutes les lignes <span class="hcp1">consécutives</span> de commentaires, situées <span class="hcp1">entre la déclaration de la fonction</span> et la <span class="hcp1">déclaration des paramètres ou des données locales</span> (beginp / beginf par défaut). Par exemple :</p>
+<p><img src="../image19.gif" alt="" width="545" height="153" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p class="hcp2">Commenter les paramètres d'une procédure ou d'une fonction</p>
+<p>Les règles sont les mêmes que celles régissant les commentaires d'un membre simple.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Aligner les commentaires d'un membre</p>
+<p>De base, les commentaires présents sur plusieurs lignes sont automatiquement alignés sur le ";", même s'ils ne le sont pas dans le code source. Par exemple :</p>
+<p><img src="../image17.gif" alt="" width="527" height="89" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p>Plus généralement, les lignes de déclaration de paramètre font l’objet d’une mise en forme automatique pour aligner respectivement les numéros de niveau, les noms des paramètres, leurs natures et les commentaires. Par exemple :</p>
+<p><img src="../image21.gif" alt="" width="572" height="112" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p><span class="hcp1">Mise en forme avancée des commentaires</span></p>
+<p>Les alignements que vous avez prévus dans vos sources <span class="hcp1">à l'intérieur des commentaires</span> ne seront pas respectés dans la fenêtre d'information express car la police qui y est utilisée est la police proportionnelle des menus Windows, alors que celle employée pour afficher le code source est fixe. Par exemple :</p>
+<p><img src="../image20.gif" alt="" width="404" height="107" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p>Pour préserver les alignements à l’intérieur des commentaires et améliorer ainsi leur présentation et leur lisibilité, un mécanisme conventionnel de tabulations explicites (dans la limite de 10 tabulations par ligne, y compris les tabulations de mise en forme automatique pour les lignes de déclaration de paramètre) est proposé :</p>
+<ol class="hcp4">
+<li class="p">
+<p>Le <span class="hcp1">caractère ":"</span> fait automatiquement l'objet d'une tabulation. Par exemple :</p>
+</li>
+</ol>
+<p class="hcp5"><img src="../image23.gif" alt="" width="476" height="118" border="0" class="hcp3"></p>
+<ol start="2" class="hcp4">
+<li class="p">
+<p>Le <span class="hcp1">caractère "§"</span> est <span class="hcp1">remplacé</span> par une tabulation. Par exemple :</p>
+</li>
+</ol>
+<p class="hcp5"><img src="../image24.gif" alt="" width="539" height="119" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque</span> :</p>
+<p>Dans le cas d'une procédure / fonction comportant des commentaires généraux et des commentaires sur les paramètres, les alignements sont calculés indépendamment pour ces deux groupes de commentaires.</p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également&#160;:</p>
+<p><a href="Assistance_au_codage.htm">Assistance au codage</a></p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Procédures correspondantes :</p>
+<p class="Body-Text"><a href="Pour_ins&eacute;rer_des_commentaires_de_code.htm">Pour insérer des commentaires de code</a></p>
+<p class="Body-Text"><a href="Pour_afficher_la_liste_des_membres.htm">Pour afficher la liste des membres</a></p>
+<p class="Body-Text"><a href="Pour_s_informer_sur_les_param&egrave;tres.htm">Pour afficher la fenêtre des paramètres</a></p>
+<p class="Body-Text"><a href="Pour_afficher_la_fen&ecirc;tre_d_information_rapide.htm">Pour afficher la fenêtre d'information rapide</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

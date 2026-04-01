@@ -1,0 +1,60 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Programmation des points d'arrêt et de traitement &quot;Clic souris&quot;</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-weight:bold;
+text-decoration:underline; }
+font.hcp3 { font-family:Symbol; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Programmation des points d'arrêt et de traitement "Clic souris"</h3>
+<p class="Body-Text">Avant d'aborder ce chapitre, nous vous conseillons de consulter la rubrique <a href="Clicssourissp_ciaux_clicsdroit_doubleclics_____.htm">Clics souris spéciaux (clics droit, double clics, ...)</a>, qui explique les principes généraux régissant le traitement des clics souris spéciaux.</p>
+<p class="Body-Text">Nous nous intéresserons ici spécifiquement aux <font class="hcp1">points d'arrêt et de traitement</font>, générés lors de la <font class="hcp1">saisie</font> d'un masque (fonction XmeInput) ou d'une ligne de tableau (fonction XmeListInput), à l'occasion d'un clic souris "spécial" (<font class="hcp1">clic droit</font> ou <font class="hcp1">clic avec</font> le(s) bouton(s) <font class="hcp1">Maj</font> et/ou <font class="hcp1">Ctrl</font> enfoncé(s)) sur une <font class="hcp1">donnée en saisie</font> de la page ou de la ligne <font class="hcp1">courante</font>&#160;: en saisie d'une donnée X de la page A, l'utilisateur clique sur une donnée en saisie quelconque (X ou Y) de la même page A.</p>
+<p class="Body-Text">&#160;<br>
+Nous illustrerons ceci par un exemple consistant à appeler un <a href="YMEG2.chm::/Ymeg2/Menuscontextuels_ousurgissant_.htm">menu contextuel</a> lorsque l'utilisateur clique avec le bouton droit de la souris sur une quelconque donnée en saisie du masque suivant&#160;:<br>
+&#160;</p>
+<p class="Source">+------------------------------------+</p>
+<p class="Source">| Donnée 1 : ........ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">| Donnée 2 : ........ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">| Donnée 3 : ........ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">| Donnée 4 : ........ &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">| ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;|</p>
+<p class="Source">+------------------------------------+</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Lors de la saisie d'un masque ou d'une ligne de tableau, <font class="hcp1">sans paramétrage particulier</font> de votre part, Ywpf <font class="hcp2">n'avertit pas</font> le programme de ces événements souris. Il effectue un traitement standard consistant à&#160;donner le focus à la donnée cliquée (si celle-ci ne l'a pas déjà).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Si vous souhaitez donner une signification particulière</font> à un clic souris spécial effectué sur une donnée X, vous devez paramétrer dans Xwin un <font class="hcp1">point de traitement</font> ou <font class="hcp1">un point d'arrêt "Clic souris"</font>&#160;au niveau des propriétés de cette donnée X.</p>
+<p class="Body-Text">&#160;<br>
+Lorsqu'un clic spécial a lieu sur la donnée, Ywpf exécute le point d'arrêt (contrôle rendu au programme appelant) ou le point de traitement paramétré. Il fournit à cette occasion tous les renseignements permettant d'identifier le clic (voir rubrique suivante).<br>
+&#160;<br>
+Ainsi, dans notre exemple, si nous voulons appeler un menu contextuel différent pour chaque donnée du masque en utilisant des points d'arrêt, nous devons renseigner la propriété «&#160;Arrêt clic souris&#160;» pour chacune des données et traiter ces différents points d'arrêt dans le programme appelant (Cf. rubrique <a href="Exempledeprogrammationdupointd_arr_t_Clicsouris_.htm">Exemple de programmation du point d'arrêt "Clic souris"</a>).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques</font>&#160;:</p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Supposons que la donnée en cours de saisie au moment du clic souris spécial soit la donnée X&#160;:<font face="Symbol" class="hcp3"><br>
+-</font> Si le clic a lieu sur la même donnée X, il provoque la sortie de l'input clavier et le traitement ou l'arrêt est exécuté. Un clic spécial souris est donc traité de manière similaire à la frappe d'une touche piégée.<font face="Symbol" class="hcp3"><br>
+-</font> Si le clic a lieu sur une autre donnée Y, Ywpf donne d'abord le focus à la donnée cliquée Y&#160;; l'input clavier de la donnée Y est sauté et on se ramène au cas précédent.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque le point d'arrêt ou de traitement "Clic souris" se produit, <font class="hcp1">ni le point de traitement Après ni le point d'arrêt Après la saisie</font> de la donnée cliquée ne sont encore exécutés (Cf. rubrique <a href="Algorithmedesaisiedesdonn_es.htm">Algorithme de saisie des données</a>). Le test d'obligation de saisie a de plus été sauté. Il est donc conseillé de revenir à la saisie de cette donnée au retour du traitement, afin de bien effectuer les éventuels contrôles programmés à ces niveaux (Harmony.Retour = XMENEXT_RESSAISIE, qui est d'ailleurs le code de retour par défaut).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si un <font class="hcp1">point de traitement</font> <font class="hcp2">ET</font> <font class="hcp1">un point d'arrêt</font> "Clic souris" ont été paramétrés, le point de traitement sera exécuté en premier et le point d'arrêt <font class="hcp1">NE</font> sera exécuté <font class="hcp1">QUE</font> si le <font class="hcp1">code de retour</font> (Harmony.Retour) demandé dans le point de traitement est <font class="hcp1">égal à 0</font> (valeur par défaut).</p>
+</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,58 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Zone packée</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-top:0;
+margin-bottom:0; }
+td.hcp2 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Zone packée</h3>
+<p>Harmony permet de comprimer les champs numériques des tables pour gagner de l'espace disque.</p>
+<p>Les champs comprimés occupent moitié moins de place que les champs correspondants non comprimés.</p>
+<p>Les champs comprimés d'une table sont tous regroupés dans une zone contiguë, appelée "zone packée" et située généralement en fin de table. On ne peut définir qu'une zone packée par table.</p>
+<p class="hcp1">&#160;</p>
+<p class="Plain-Text" style="text-align: justify;">&#160;</p>
+<table cellspacing="0" width="567">
+<tr style="vertical-align: top;">
+<td style="width:13.33%;" class="hcp2">
+<p><img src="../image/ebx_-1681317174.gif" alt="" width="31" height="31" border="0"></p>
+</td>
+<td style="width:86.67%;" class="hcp2">
+<p class="Plain-Text" style="text-align: justify;"><font style="font-family: Arial; font-size: 11pt; font-weight: bold;" face="Arial" size="2">Seuls les champs de type Numérique, Numérique,d, Date, Durée et Heures peuvent être packés.</font></p>
+</td>
+</tr>
+</table>
+<p class="Plain-Text" style="text-align: justify;">&#160;</p>
+<p>Les champs packés s'emploient de la même manière que les champs classiques (le package et le dépackage sont automatiques). Pour plus de détails, voir la rubrique "Record" du livre de la documentation Xwin - Programmation consacré au langage Diva.</p>
+<p class="hcp1">&#160;</p>
+<p class="NormalGG">Structure d’une table ayant une zone packée</p>
+<p class="hcp1">&#160;</p>
+<p class="NormalG">Schéma d'un enregistrement stocké sur disque</p>
+<p class="hcp1">&#160;</p>
+<p class="Source" style="margin-top: 4.00pt;"><font style="font-family: Arial;" face="Arial">Lorsqu'un programme Diva lit cet enregistrement, il décondense automatiquement la zone packée. Les champs dépackés sont regroupés dans une zone contiguë, appelée zone dépackée et située en mémoire à la suite de l'enregistrement.</font></p>
+<p style="text-indent: 30.25pt;"><img src="../image/pack1.gif" alt="" width="429" height="114" border="0"></p>
+<p class="NormalG">Schéma de l'enregistrement stocké en mémoire</p>
+<p><img src="../image/pack2.gif" alt="" width="597" height="110" border="0"></p>
+<p>La taille totale occupée en mémoire est donc égale à la taille de l'enregistrement disque plus deux fois la taille de la zone packée. C'est la raison pour laquelle le champ "Taille en mémoire" de l'objet "Table" doit être saisi au moins égal à la longueur déclarée de la table plus deux fois la longueur de la zone packée.</p>
+<p class="hcp1">&#160;</p>
+<p class="NormalGG">Création des champs packés</p>
+<p>Pour mettre des champs packés dans une table,</p>
+<p>vous devez tout d'abord créer une zone packée (clic droit puis <font style="font-weight: bold;">Créer zone packée</font>),</p>
+<p>puis insérez les champs comme des sous-champs du champ PACK.</p>
+</body>
+</html>

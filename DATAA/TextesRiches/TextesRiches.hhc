@@ -1,0 +1,144 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="toc">
+  <param name="Image Width" value="16">
+  <param name="Window Styles" value="0x800027">
+  <param name="ExWindow Styles" value="0x100">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Editeur de textes riches (version 6)">
+  </object>
+  <ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Présentation de l'éditeur">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Présentation de l'éditeur">
+        <param name="Local" value="TextesRiches/Pr_sentationdel__diteur.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Introduction">
+        <param name="Local" value="TextesRiches/Introduction.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Appel du menu de l'éditeur">
+        <param name="Local" value="TextesRiches/Appeldumenudel__diteur.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="La barre d'outils et de format">
+        <param name="Local" value="TextesRiches/Labarred_outilsetdeformat.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Texte riche et Texte simple">
+        <param name="Local" value="TextesRiches/TextericheetTextesimple.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Ligne d'état">
+        <param name="Local" value="TextesRiches/Ligned__tat.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Utilisation de la souris dans l'éditeur">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Utilisation de la souris dans l'éditeur">
+        <param name="Local" value="TextesRiches/Utilisationdelasourisdansl__diteur.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déplacements dans le texte avec la souris">
+        <param name="Local" value="TextesRiches/D_placementsdansletexteaveclasouris.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sélections à la souris">
+        <param name="Local" value="TextesRiches/S_lections_lasouris.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Autres fonctions de la souris">
+        <param name="Local" value="TextesRiches/Autresfonctionsdelasouris.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Utilisation du clavier dans l'éditeur">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Utilisation du clavier dans l'éditeur">
+        <param name="Local" value="TextesRiches/Utilisationduclavierdansl__diteur.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Déplacements dans le texte au clavier">
+        <param name="Local" value="TextesRiches/D_placementsdansletexteauclavier.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Sélection au clavier">
+        <param name="Local" value="TextesRiches/S_lectionauclavier.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Insertions et suppressions au clavier">
+        <param name="Local" value="TextesRiches/Insertionsetsuppressionsauclavier.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Autres fonctions du clavier">
+        <param name="Local" value="TextesRiches/Autresfonctionsduclavier.htm">
+      </object>
+      </ul>
+    <li><object type="text/sitemap">
+      <param name="Name" value="Fonctions accessibles depuis le menu de l'éditeur">
+    </object>
+    <ul>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fonctions accessibles depuis le menu de l'éditeur">
+        <param name="Local" value="TextesRiches/Fonctionsaccessiblesdepuislemenudel__diteur.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Accessibilité">
+        <param name="Local" value="TextesRiches/Accessibilit_.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Format des caractères (texte riche uniquement)">
+        <param name="Local" value="TextesRiches/Formatdescaract_res_textericheuniquement_.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Format des paragraphes (texte riche uniquement)">
+        <param name="Local" value="TextesRiches/Formatdesparagraphes_textericheuniquement_.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Chercher / Remplacer">
+        <param name="Local" value="TextesRiches/Chercher_Remplacer.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Copier / Couper / Coller">
+        <param name="Local" value="TextesRiches/Copier_Couper_Coller.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fichier">
+        <param name="Local" value="TextesRiches/Fichier.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Annuler la dernière modification">
+        <param name="Local" value="TextesRiches/Annulerladerni_remodification.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Rafraîchir l'écran">
+        <param name="Local" value="TextesRiches/Rafra_chirl__cran.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Aide">
+        <param name="Local" value="TextesRiches/Aide.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="Fin de saisie du texte">
+        <param name="Local" value="TextesRiches/Findesaisiedutexte.htm">
+      </object>
+      <li><object type="text/sitemap">
+        <param name="Name" value="&lt;Objet&gt; (texte riche uniquement)">
+        <param name="Local" value="TextesRiches/_Objet__textericheuniquement_.htm">
+      </object>
+      </ul>
+    </ul>
+</ul>
+</html>

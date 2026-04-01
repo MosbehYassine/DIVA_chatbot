@@ -1,0 +1,50 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>WinRegEnumValueName</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:normal; }
+p.hcp3 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>WinRegEnumValueName</h1>
+<p>La fonction WinRegEnumValueName permet de connaître tous les noms de valeurs qui sont sous une clé.</p>
+<p class="Body-Text">Cette fonction se trouve dans le module ysystemex.dhop.</p>
+<p class="body-text">&#160;</p>
+<p class="hcp1">int WinRegEnumValueName <span class="hcp2">&#160;(</span> <span style="font-weight: normal; font-style: italic;">clé_départ , index , &amp;nom_valeur</span> <span class="hcp2">)</span></p>
+<p>&#160;</p>
+<p class="hcp1">Paramètres</p>
+<p class="hcp3">Clé_départ</p>
+<p class="decalage05">Clé de départ dans le registre. La fonction balaye toutes les valeurs de cette clé.</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp3">Index</p>
+<p class="decalage05">Doit contenir le résultat du précédent appel ou 0 lors du premier appel.</p>
+<p class="decalage05">&#160;</p>
+<p class="hcp3">Sous_clé</p>
+<p class="decalage05">En retour, nom de la valeur trouvée.</p>
+<p>&#160;</p>
+<p class="hcp1">Exemple</p>
+<p class="Source">1 idx 5,0</p>
+<p class="Source">1 cle 256</p>
+<p class="Source">&#160;</p>
+<p class="Source">idx = 0</p>
+<p class="Source">do</p>
+<p class="Source">&#160;&#160;&#160;idx = WinRegEnumValueName("HKEY_CURRENT_USER\Software\Divalto\divalto.ini\system",idx,cle)</p>
+<p class="Source">while idx</p>
+<p class="Source">&#160;&#160;&#160;display &#160;cle</p>
+<p class="Source">wend</p>
+<p>&#160;</p>
+<p class="hcp1">Voir</p>
+<p><a href="LCWinRegEnumValueName.htm">LCWinRegEnumValueName</a></p>
+</body>
+</html>

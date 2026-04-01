@@ -1,0 +1,103 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Règles de correspondance des propriétés</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+span.hcp2 { text-decoration:underline; }
+img.hcp3 { border:none; }
+span.hcp4 { font-weight:bold;
+text-decoration:underline; }
+ul.hcp5 { list-style:disc; }
+li.hcp6 { list-style:none;
+display:inline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Règles de correspondance des propriétés</h3>
+<p>&#160;</p>
+<p>Les données des utilisateurs de l'annuaire LDAP sont copiées dans la table des utilisateurs de l'ERP sur la base de règles permettant d'associer <span class="hcp1">propriétés dans l'annuaire</span> et <span class="hcp1">champs de la fiche utilisateur de l'ERP</span>.</p>
+<p>&#160;</p>
+<p>Après avoir lancé la console d'administration LDAP, cliquez sur le bouton <span class="hcp1">Champs</span>. Le tableau affiché permet de saisir <span class="hcp2">librement</span> (*) les associations. Par exemple :</p>
+<p><img src="../image5.gif" alt="" width="748" height="127" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p>(*) <span class="hcp2">Seule l'association entre une propriété LDAP (uid dans cet exemple) et le champ MUSER.USERX est obligatoire</span> (afin de renseigner au minimum le code utilisateur Divalto).</p>
+<p>&#160;</p>
+<p><span class="hcp1">Attention</span> : <span class="hcp2">L’utilisateur de la console doit disposer du droit</span> <span class="hcp4">HCO</span> <span class="hcp2">pour être autorisé à créer ou modifier ces associations</span>.</p>
+<p>&#160;</p>
+<p>A partir de là, les valeurs des propriétés LDAP nommées dans le tableau seront transférées dans les champs correspondants de la table des utilisateurs de l'ERP. A titre d'exemple, avec le tableau ci-dessus, les valeurs des propriétés LDAP <span class="hcp1">name</span>, <span class="hcp1">uid</span>, <span class="hcp1">telephonenumber</span> et <span class="hcp1">mail</span> seront respectivement placées dans les champs MUSER.NOM (Nom), MUSER.USERX (Code), MUSER.TEL (Téléphone) et MUSER.EMAIL (Mèl) de la fiche utilisateur :<br>
+&#160;</p>
+<p><img src="../image6.gif" alt="" width="285" height="112" border="0" class="hcp3"></p>
+<p>&#160;</p>
+<p><span class="hcp1">Remarque importante</span> :</p>
+<ul class="hcp5">
+<li class="p">
+<p><span class="hcp2">Les données spécifiées dans le tableau</span> <span class="hcp4">ne sont plus modifiables</span> <span class="hcp2">depuis le zoom des utilisateurs</span> communs de l’ERP.</p>
+</li>
+<li class="p">
+<p>En cas de modification dans l’annuaire LDAP, les nouvelles valeurs seront synchronisées.</p>
+</li>
+<li class="p">
+<p style="text-decoration: none;">Dans un annuaire LDAP, l'administrateur est autorisé à ajouter des propriétés personnalisées. Vous pouvez utiliser cette capacité pour y déclarer des <span class="hcp2">propriétés spécifiques aux utilisateurs de Divalto</span>. Associez ici ces propriétés à des champs de la fiche utilisateur pour qu'elles soient importées et synchronisées.</p>
+</li>
+</ul>
+&#160;
+<p><span class="hcp1">Option Synchroniser les applications</span> :</p>
+<ul class="hcp5">
+<li class="p">
+<p>Si vous le souhaitez, vous pouvez spécifier les droits d'accès aux applications Divalto directement dans l'annuaire LDAP (voir remarque précédente concernant la capacité à déclarer des propriétés personnalisées dans un annuaire LDAP).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Pour que ces droits soient importés et synchronisés, cochez la case <span class="hcp1">Synchronisez les applications</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Pourquoi utiliser cette option</span> :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Vous avez associé le groupe d'utilisateurs LDAP GROUPE_1 au modèle d'utilisateurs MODELE_1. Dans ce modèle, vous avez globalement autorisé l'accès aux applications APPLI_1, APPLI_2, ..., APPLI_P. Par défaut, ces droits s'appliqueront donc à tous les utilisateurs du groupe GROUPE_1.</p>
+</li>
+<li class="p">
+<p>Toutefois, quelques utilisateurs de ce groupe auront accès à l'une ou l'autre application supplémentaire ou, à l'inverse, n'auront pas accès à l'une ou l'autre application globalement autorisée.</p>
+</li>
+<li class="p">
+<p>Plutôt que d'éclater un groupe majoritairement homogène en plusieurs groupes et modèles reflétant l'ensemble des déclinaisons possibles, spécifiez uniquement les rares différences dans une propriété spécifique de l'annuaire LDAP. Les droits ajoutés ou retirés dans l'annuaire seront prioritaires sur ceux trouvés au niveau du modèle.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Comment la mettre en oeuvre</span> :</p>
+</li>
+<li class="hcp6">
+<ul class="hcp5">
+<li class="p">
+<p>Dans l'annuaire, créer une propriété pour chaque application concernée. Par convention, le <span class="hcp1">nom de cette propriété est fixée</span> à la valeur <span class="hcp1">DIVALTO</span><span style="font-style: italic; font-weight: bold;">CodeApplic</span>, où <span style="font-style: italic;">CodeApplic</span> est le nom de code de l'application (voir la table MAPPLIC).<br>
+<br>
+Par exemple : DIVALTODAV, DIVALTODPAIE, DIVALTODCPT, …</p>
+</li>
+<li class="p">
+<p>Pour un utilisateur qui <span class="hcp1">doit avoir accès</span> à une application (lorsque cette application n'est pas autorisée au niveau du modèle), affectez la <span class="hcp1">valeur 1</span> à la propriété LDAP correspondante.</p>
+</li>
+<li class="p">
+<p>Pour un utilisateur qui <span class="hcp1">ne doit pas avoir accès</span> à une application (lorsque cette application est autorisée au niveau du modèle), affectez la <span class="hcp1">valeur 0</span> à la propriété LDAP correspondante.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>&#160;</p>
+<p>Voir aussi : <a href="R&egrave;gles_de_correspondance_des_utilisateurs.htm">Règles de correspondance des utilisateurs de l'annuaire avec les modèles d'utilisateurs de l'ERP</a>.</p>
+<p>&#160;</p>
+</body>
+</html>

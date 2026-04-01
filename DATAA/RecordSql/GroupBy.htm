@@ -1,0 +1,108 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>&lt;GroupBy&gt;</title>
+<link rel="StyleSheet" href="Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+td.hcp1 { padding-right:10px;
+padding-left:10px; }
+p.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:bold; }
+p.hcp4 { margin-left:8px; }
+p.hcp5 { margin-left:8px;
+font-weight:bold; }
+p.hcp6 { font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>GroupBy <span style="font-family: Arial, sans-serif;">&#160;&#160;</span><span style="font-weight: normal; font-family: 'Microsoft Sans Serif', sans-serif;"><a href="Liste_des_balises_RecordSql.htm">Famille</a> &#160;<a href="Introduction.htm">Thème</a></span></h3>
+<p>&#160;</p>
+<p>La balise GroupBy permet de définir des critères de regroupement.</p>
+<p>Elle comporte un attribut :</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 19.878%;">
+<col style="width: 80.122%;">
+<tr style="vertical-align: top;">
+<td style="width:19.878%;" class="hcp1">
+<p class="hcp2">&#160;[Dynamic=yes/no]</p>
+</td>
+<td style="width:80.122%;" class="hcp1">
+<p>Permet d'activer les regroupements dynamiques.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&lt;<span class="hcp3">GroupBy</span>&gt;</p>
+<p style="margin-left: 48px;">Liste_des_colonnes</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp5">Si le regroupement dynamique n'est pas activé</p>
+<p class="hcp4">La balise GroupBy est suivie par la liste des champs critères de regroupement. Toutes les colonnes de la balise &lt;Select&gt; (en dehors des fonctions d’agrégation) doivent être présentes dans la balise &lt;GroupBy&gt;. Par contre, une colonne peut être présente dans cette balise sans être sélectionnée.</p>
+<p class="hcp4">Les critères de sélection pour le regroupement sont définis dans la balise <a href="Having.htm">&lt;Having&gt;</a></p>
+<p class="hcp4">&#160;</p>
+<p class="hcp5">Si le regroupement dynamique est activé</p>
+<p class="hcp4">La liste des colonnes doit être vide. <span style="margin-left: 8px;">Sont alors placées dans le regroupement toutes les colonnes de la balise &lt;Select&gt; qui ne sont pas marquées avec l'attribut GroupBy=No.</span></p>
+<p class="hcp4">Les instructions <a href="GroupBy.Activate.htm">RecordSql.GroupBy.Activate</a> et <a href="GroupBy.DeActivate.htm">RecordSql.GroupBy.Deactivate</a> permettront de modifier dynamiquement les colonnes du regroupement.</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp4">&#160;</p>
+<p class="hcp5">Exemple 1 (non dynamique) :</p>
+<p class="hcp5">&#160;</p>
+<p class="Source">&lt;RecordSql Name=TopCA&gt;</p>
+<p class="Source">&lt;Select&gt;</p>
+<p class="Source" style="margin-left: 88px;">MOUV.REF, Sum(MOUV.MONT) as Montant(10,2),</p>
+<p class="Source" style="margin-left: 88px;">ART.DES</p>
+<p class="Source">&lt;From&gt;</p>
+<p class="Source" style="margin-left: 88px;">MOUV</p>
+<p class="Source">&lt;Join&gt;</p>
+<p class="Source" style="margin-left: 88px;">ART</p>
+<p class="Source" style="margin-left: 88px;">ON MOUV.DOS = ART.DOS and MOUV.REF = ART.REF</p>
+<p class="Source">&lt;Where&gt;</p>
+<p class="Source" style="margin-left: 88px;">Case private ParClient</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;MOUV.Ticod = 'C' and MOUV.Picod = 4</p>
+<p class="Source">&lt;GroupBy&gt;</p>
+<p class="Source" style="margin-left: 88px;">MOUV.REF, ART.DES</p>
+<p class="Source">&lt;Having&gt;</p>
+<p class="Source" style="margin-left: 88px;">Case Montant (int mt)</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;Montant &gt;= mt</p>
+<p class="Source">&lt;OrderBy&gt;</p>
+<p class="Source" style="margin-left: 88px;">Case ParMontant</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;Montant DESC</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="Source" style="margin-left: 8px;">&#160;</p>
+<p class="hcp5">Exemple 2 &#160;(dynamique) :</p>
+<p class="hcp5">&#160;</p>
+<p class="Source">&lt;RecordSql Name=TopCA&gt;</p>
+<p class="Source">&lt;Select&gt;</p>
+<p class="Source" style="margin-left: 88px;">MOUV.REF,</p>
+<p class="Source" style="margin-left: 88px;">Sum(MOUV.MONT) as Montant(10,2) GroupBy=no,</p>
+<p class="Source" style="margin-left: 88px;">ART.DES</p>
+<p class="Source">&lt;From&gt;</p>
+<p class="Source" style="margin-left: 88px;">MOUV</p>
+<p class="Source">&lt;Join&gt;</p>
+<p class="Source" style="margin-left: 88px;">ART</p>
+<p class="Source" style="margin-left: 88px;">ON MOUV.DOS = ART.DOS and MOUV.REF = ART.REF</p>
+<p class="Source">&lt;Where&gt;</p>
+<p class="Source" style="margin-left: 88px;">Case private ParClient</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;MOUV.Ticod = 'C' and MOUV.Picod = 4</p>
+<p class="Source">&lt;GroupBy Dynamic=yes&gt;</p>
+<p class="Source">&lt;Having&gt;</p>
+<p class="Source" style="margin-left: 88px;">Case Montant (int mt)</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;Montant &gt;= mt</p>
+<p class="Source">&lt;OrderBy&gt;</p>
+<p class="Source" style="margin-left: 88px;">Case ParMontant</p>
+<p class="Source" style="margin-left: 88px;">&#160;&#160;&#160;&#160;Montant DESC</p>
+<p class="Source" style="margin-left: 88px;">&#160;</p>
+<p class="hcp2"><span class="hcp3">Voir</span></p>
+<p class="hcp6"><a href="R&eacute;sum&eacute;_de_la_syntaxe.htm"><span style="font-weight: normal;">Résumé de la syntaxe</span></a></p>
+<p class="hcp6"><a href="Liste_des_balises_RecordSql.htm" style="font-weight: normal;">Liste des balises RecordSql</a></p>
+<p>&#160;</p>
+</body>
+</html>

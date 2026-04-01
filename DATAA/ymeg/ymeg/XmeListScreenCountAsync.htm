@@ -1,0 +1,123 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeListScreenCountAsync</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp5 { list-style:disc; }
+span.hcp6 { font-weight:bold; }
+a.hcp7 { font-weight:normal; }
+span.hcp8 { font-weight:normal; }
+span.hcp9 { margin-left:17.85pt;
+text-indent:-17.85pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeListScreenCountAsync &#160;<a href="Lister_capitulativedesfonctionsdegestiondestableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="Tableaux.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Lecture "asynchrone" du nombre de lignes d'un tableau</font></p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Long XmeListScreenCountAsync</font> (<font class="hcp3">Identifiant</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;</font><font class="hcp2"><br>
+Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:19.42%;" class="hcp4">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp4">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Valeur rendue par la fonction&#160;:</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Si le tableau est à l'écran, la fonction renvoie le nombre de lignes actuellement affichées.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le tableau n'est pas à l'écran, la fonction renvoie le nombre de lignes présentes à l'écran lors du dernier affichage du tableau (nombre lu dans la base de registre).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Si le tableau n'a <span class="hcp6">jamais</span> été affiché (lorsque la base de registre ne contient pas ou plus l'information), la fonction renvoie un nombre de lignes approximatif basé sur le dessin du tableau dans Xwin.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la fonction&#160;:</font></p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">La fonction <font class="hcp2">XmeListScreenCountAsync</font> doit être utilisé dans le seul but d'accélérer le chargement et l'affichage initial d'un objet tableau (Cf. rubriques <a href="Optimisation_des_performances.htm">Affichage et exécution d'un traitement Diva simultanés</a> et <a href="XmeFlushAsync.htm" class="hcp7">XmeFlushAsync</a>).<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;"><font class="hcp2"><span class="hcp8">Elle présente les différences suivantes par rapport à la fonction</span> <span class="hcp9"><a href="XmeListScreenCount.htm" class="hcp7">XmeListScreenCount</a></span> <span class="hcp8">:<br>
+&#160;</span></font></p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text" style="font-weight: normal;">XmeListScreenCount ne peut être appelée que si <span class="hcp9">la page de masque affichant le tableau est la page courante (ou une de ses pages panels). E</span>lle délivre toujours le nombre exact de lignes visibles du tableau.<br>
+<br>
+XmeListScreenCountAsync <span class="hcp9">peut être appelée si le tableau n'est pas présent à l'écran ou alors que la page de masque affichant le tableau n'est pas la page courante.</span> Elle permet d'avoir une idée approximative du nombre de lignes qui seront visibles lorsque le tableau sera affiché à l'écran.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Après l'affichage de la page contenant le tableau par le programme Diva, la fonction XmeListScreenCount interroge le client pour connaître le nombre exact de lignes visibles. Le client ne peut répondre à cette question qu'après avoir "physiquement" affiché le tableau. Il en résulte une interruption de l'asynchronisme entre XrtDiva et le client, dont l'exécution respective redevient séquentielle.<br>
+<br>
+XmeListScreenCountAsync n'interroge jamais le client mais lit le "dernier" nombre de lignes visibles dans la base de registre. Elle ne rompt donc pas l'asynchronisme entre XrtDiva et le client dont l'exécution respective peut se poursuivre en parallèle.<br>
+&#160;</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text"><span class="hcp6">Mais attention, il n'est</span> <span style="font-weight: bold; text-decoration: underline;">en aucun cas</span> <span class="hcp6">garanti</span> que le nombre rendu par XmeListScreenCountAsync corresponde exactement au nombre de lignes visibles au prochain affichage du tableau (même s'il s'agira du nombre exact dans la plupart des cas). Il est donc impératif d'appeler ensuite XmeListScreenCount pour garnir correctement le tableau (voir l'exemple).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p style="font-weight: bold;">Exemple :</p>
+<p>Cet exemple est calqué sur le cas du programme Diva xZoom. Au chargement du Zoom, celui-ci exécute une requête SQL pour lire les informations destinées à garnir le tableau du mode liste. En effectuant cette lecture en parallèle avec l'affichage du masque du zoom, il en résulte une accélération du chargement initial.</p>
+&#160;
+<p class="Body-Text">&#160;</p>
+<p class="Source"><span class="hcp6">1. Exécution "synchrone" :</span><br>
+<br>
+XmeLoad &#160;...</p>
+<p class="Source">...</p>
+<p class="Source">XmeDispv ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affichage de la page contenant le tableau</p>
+<p class="Source">NbLig = XmeListScreenCount (Id) &#160;&#160;&#160;&#160;&#160;&#160;;récupération du nb exact de lignes visibles<br>
+GarnirTableau (NbLig) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lecture des informations</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeListConsult (Id) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation du tableau</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="font-weight: bold;">2. Exécution "asynchrone" :</p>
+<p class="Source">&#160;</p>
+<p class="Source">XmeLoad &#160;...</p>
+<p class="Source">...</p>
+<p class="Source">XmeDispv ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affichage "logique" de la page contenant le tableau</p>
+<p class="Source">XmeFlushAsync &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lancement de l'affichage "physique"</p>
+<p class="Source">NbLig = XmeListScreenCountAsync (Id) &#160;;nb de lignes théoriquement visibles</p>
+<p class="Source">GarnirTableau (NbLig) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;pré-lecture des informations en parallèle</p>
+&#160;
+<p class="Source">NbLig = XmeListScreenCount (Id) &#160;&#160;&#160;&#160;&#160;&#160;;récupération du nb exact de lignes visibles<br>
+AjusterTableau (NbLig) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ajustement entre nb de lignes théoriques et réels</p>
+&#160;
+<p class="Source">XmeListConsult (Id) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation du tableau</p>
+<p>&#160;</p>
+</body>
+</html>

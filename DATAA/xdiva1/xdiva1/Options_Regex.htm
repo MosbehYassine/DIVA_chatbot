@@ -1,0 +1,121 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Options Regex</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold;
+font-family:Arial, sans-serif; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp4 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp5 { font-family:MS Sans Serif; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Options Regex <font><span class="hcp1">&#160;</span></font><a href="Expressions_r&eacute;guli&egrave;res.htm"><font style="font-weight: normal;"><span class="hcp1">&#160;</span><span style="font-family: 'MS Sans Serif';">Famille</span></font></a></h1>
+<p>&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="66.372%">
+<col style="width: 13.162%;">
+<col style="width: 68.763%;">
+<tr class="hcp2">
+<td style="border: Solid 1px #000000;width: 13.162%; padding-right: 10px; padding-left: 10px;">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_None</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 68.763%; padding-right: 10px; padding-left: 10px;">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Spécifie qu'aucune option n'est définie.Pour plus d'informations sur le comportement &#160;par défaut du moteur d'expressions régulières.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:13.162%;" class="hcp3">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_IgnoreCase</p>
+</td>
+<td style="width:68.763%;" class="hcp4">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Spécifie la correspondance qui ne respecte pas la casse.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:13.162%;" class="hcp3">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_Multiline</p>
+</td>
+<td style="width:68.763%;" class="hcp4">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Mode multiligne. Modifie la signification de ^ et $ de sorte qu'ils correspondent respectivement au début et à la fin de n'importe quelle ligne, et non simplement au début et à la fin de la chaîne entière.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:13.162%;" class="hcp3">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_ExplicitCapture</p>
+</td>
+<td style="width:68.763%;" class="hcp4">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Spécifie que les seules captures valides sont des groupes explicitement nommés &#160;ou numérotés du formulaire (?&lt;name&gt;…).Ceci permet à des parenthèses sans nom d'agir comme des groupes qui ne sont pas des groupes de captures sans la lourdeur &#160;syntaxique de l'expression (?:…).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:13.162%;" class="hcp3">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_Compiled</p>
+</td>
+<td style="width:68.763%;" class="hcp4">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Spécifie que l'expression régulière est compilée vers un assembly. L'exécution est plus rapide, mais le temps de démarrage s'en trouve augmenté.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:13.162%;" class="hcp3">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_Singleline</p>
+</td>
+<td style="width:68.763%;" class="hcp4">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Spécifie le mode à ligne simple.Modifie la signification du point (.) de sorte qu'il corresponde à chaque caractère (et non à chaque caractère sauf \n).</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:13.162%;" class="hcp3">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_IgnorePatternWhitespace</p>
+</td>
+<td style="width:68.763%;" class="hcp4">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Élimine l'espace blanc sans séquence d'échappement du modèle et active les commentaires marqués avec #. Cependant, cette valeur n'affecte ni n'élimine l'espace blanc dans les classes de caractères, les quantificateurs numériques ou les jetons qui marquent le début d'éléments de langage d'expression régulière.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:13.162%;" class="hcp3">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_RightToLeft</p>
+</td>
+<td style="width:68.763%;" class="hcp4">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Spécifie que la recherche sera effectuée de droite à gauche et non de gauche à droite.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:13.162%;" class="hcp3">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_ECMAScript</p>
+</td>
+<td style="width:68.763%;" class="hcp4">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Active un comportement conforme ECMAScript pour l'expression. Cette valeur ne &#160;peut être utilisée qu'en association avec les valeurs RegexOpt_IgnoreCase, RegexOpt_Multiline et RegexOpt_Compiled. L'utilisation de cette valeur avec n'importe quelle autre valeur donne lieu à une exception.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:13.162%;" class="hcp3">
+<p class="Body-Text" style="font-family: Arial, sans-serif; font-weight: bold;">RegexOpt_CultureInvariant</p>
+</td>
+<td style="width:68.763%;" class="hcp4">
+<p class="Body-Text" style="font-family: Arial, sans-serif;">Indique que les différences culturelles dans la langue ne sont pas prises en compte.</p>
+</td>
+</tr>
+</table>
+<p class="hcp5">&#160;</p>
+<p class="hcp5">&#160;</p>
+<p class="hcp5">&#160;&#160;&#160;</p>
+<p class="hcp5">&#160;&#160;&#160;</p>
+</body>
+</html>

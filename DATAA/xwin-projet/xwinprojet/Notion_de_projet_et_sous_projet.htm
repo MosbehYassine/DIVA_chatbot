@@ -1,0 +1,51 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Notion de projet et sous-projet</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-top:0;
+margin-bottom:0; }
+font.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Notion de projet et sous-projet</h3>
+<p>L'atelier de développement d'Harmony a pour base la notion de projet.</p>
+<p>L'utilisation des projets apporte au développeur les avantages suivants :</p>
+<ul style="list-style: square;">
+<li style="font-size: 8pt;" class="p">
+<p>une gestion simplifiée des fichiers sources</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>la recompilation automatique des sources en fonction des modifications effectuées (calcul des dépendances entre les modules, entre les sources et les includes, entre les sources et les dictionnaires)</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p>la possibilité de naviguer dans les sources (recherche de la définition d'une fonction, recherche de toutes les utilisations d'une donnée, etc.)</p>
+</li>
+</ul>
+<p class="hcp1">&#160;</p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Qu'est ce qu'un projet ?</p>
+<p>Un projet représente une application complète. Par exemple, Divalto Achat-Vente est un projet, Divalto Comptabilité est un autre projet.</p>
+<p>Un projet est donc une entité de grande taille. En effet, Divalto Achat-Vente est composé de plusieurs centaines de programmes.</p>
+<p>Pour ne pas travailler au niveau d'une entité aussi volumineuse, le programmeur découpera un projet en plusieurs sous-projets.</p>
+&#160;
+<p><font class="hcp2">Qu'est ce qu'un sous-projet ?</font></p>
+<p>Un sous-projet est donc un sous ensemble du projet. Pour simplifier, nous pouvons dire qu'un sous-projet correspond à un choix du menu.</p>
+<p>Par exemple, le programme de saisie de commandes de Divalto Achat-Vente est un sous-projet qui comporte un programme Diva, un masque écran, plusieurs modules de traitement etc.</p>
+<p>Un autre exemple de projet est un module de fonctions qui est utilisé dans plusieurs programmes. Un tel module fait l'objet d'un sous-projet.</p>
+<p>La définition du contenu d'un sous-projet est entièrement libre. Le développeur peut y inclure les éléments sur lesquels il désire travailler à un moment donné.</p>
+<p class="hcp1">&#160;</p>
+<p><font class="hcp2">Surcharge des projets</font></p>
+<p>Les projets peuvent être surchargés.</p>
+<p>La surcharge des projets est utilisée lors de la verticalisation d'applications. Par exemple, Divalto livre un projet pour Divalto Achats-Ventes. Le développeur qui rajoute des nouvelles fonctionnalités (nouveaux sources, nouvelles fonctions etc.) peut alors rajouter ses fichiers dans le projet, naviguer dans ses sources et dans les sources fournis par Divalto. Ces modifications sont stockées dans d'autres fichiers projets que les fichiers fournis par Divalto. Ainsi, lors du passage à une nouvelle version (installation du projet modifié par Divalto) les modifications ne sont pas écrasées.</p>
+</body>
+</html>

@@ -1,0 +1,75 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mise en oeuvre du CTI dans Divalto</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+img.hcp1 { border:none; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Mise en oeuvre du CTI dans Divalto</h3>
+<p>&#160;</p>
+<p>La mise en fonction du CTI se fait par le menu Divalto : Relation-Tiers : Utilitaires : CTI : Mise en fonction du CTI :</p>
+<p>&#160;</p>
+<p><img src="../image/tapi_12_mise_en_fonction_cti.png" alt="" width="531" height="516" border="0" class="hcp1"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Ce choix lance le connecteur Divalto pour Tapi et affiche une fenêtre d'informations plus une icône dans la barre des tâches de Windows (zone de notification - traybar) :<br>
+<br>
+<img src="../image/tapi_13_fenetre_tapi_et_traybar.png" alt="" width="512" height="175" border="0" class="hcp1"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Si le nom de la ligne est erroné, vous obtenez le message suivant :<br>
+&#160;</p>
+<p><img src="../image/tapi_14_ligne_non_trouv&eacute;e.png" alt="" width="512" height="170" border="0" class="hcp1"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Lors d’un appel entrant et si le numéro existe dans la base de données du <span style="font-style: italic;">CRM</span> de Divalto, la fenêtre d'informations affiche les propriétés du correspondant. Le bouton à gauche permet d'appeler la fonction "Montée de fiche" (lorsque celle-ci n’est pas automatique) :</p>
+<p>&#160;</p>
+<p><img src="../image/tapi_15_appel_entrant.png" alt="" width="515" height="170" border="0" class="hcp1"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Un clic droit à la souris soit sur le bouton du Connecteur Divalto pour Tapi de la traybar, soit dans la fenêtre d’informations permet d’afficher le menu suivant :</p>
+<p>&#160;</p>
+<p><img src="../image/tapi_16_menu_traybar.png" alt="" width="444" height="159" border="0" class="hcp1"></p>
+<p>&#160;</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p><span class="hcp2">Appeler la montée de fiche</span>.<br>
+Fait appel à la fonction "Montée de fiche" de Divalto.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Cacher la fenêtre d'information</span>.<br>
+On peut afficher ou cacher la fenêtre d’informations.<br>
+Remarque : Si la fenêtre est cachée, l'appel de la montée de fiche reste possible en sélectionnant le choix du menu correspondant à partir de la traybar.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Se reconnecter à la ligne téléphonique</span>.<br>
+A utiliser lorsqu'un nouveau paramétrage a été fait sur le serveur de téléphonie ou lorsque la ligne est en mode indisponible et que l'on souhaite faire immédiatement une tentative de connexion sans arrêt et redémarrage du CTI.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Afficher/Effacer le code d'erreur</span>.<br>
+Si la ligne devient indisponible (par exemple lorsque la connexion avec le serveur de téléphonie est momentanément coupée) ou pour toute autre erreur, le connecteur passe la ligne en mode "Indisponible" et fait automatiquement plusieurs tentatives de reconnexion (d'abord toutes les 3 secondes puis toutes les 20 secondes).<br>
+Si l’erreur persiste, ce choix permet d'afficher (puis d'effacer) le texte et le numéro de l’erreur renvoyés pas le driver Tapi de votre fournisseur de téléphonie :<br>
+<br>
+<img src="../image/tapi_17_ligne_indisponible.png" alt="" width="512" height="169" border="0" class="hcp1"><br>
+<br>
+<img src="../image/tapi_18_ligne_indisponible_menu_afficher_code_erreur.png" alt="" width="509" height="169" border="0" class="hcp1"><br>
+&#160;</p>
+</li>
+</ul>
+<p>&#160;</p>
+</body>
+</html>

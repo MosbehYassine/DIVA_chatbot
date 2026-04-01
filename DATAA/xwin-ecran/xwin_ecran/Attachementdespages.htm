@@ -1,0 +1,103 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Attachement des pages</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+span.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Attachement des pages</h3>
+<p class="Body-Text">L'attachement d'une page permet de définir le comportement de celle-ci en cas d'agrandissement de la fenêtre dans laquelle elle se trouve.</p>
+<p class="Body-Text">La page peut soit :</p>
+<ul>
+<li class="p-List">
+<p class="List">Rester à la même place et ne pas changer de taille.</p>
+</li>
+<li class="p-List">
+<p class="List">Se déplacer proportionnellement à la page/fenêtre.</p>
+</li>
+<li class="p-List">
+<p class="List">S'étendre proportionnellement à la page/fenêtre.</p>
+</li>
+</ul>
+<p class="Body-Text"><font class="hcp1">&#160;<br>
+Exemple</font></p>
+<p class="Body-Text">La fenêtre ci-dessous contient deux pages. La première contient uniquement le tableau, la seconde contient le pied de la facture et le bouton OK. La page de pied est déclarée comme étant attachée au bas, c'est à dire qu'elle va descendre lorsque la fenêtre sera agrandie.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><img src="../image/help0010.gif" alt="" width="368" height="219" border="0"></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Après agrandissement de la fenêtre, la page de pied se trouve décalée vers le bas.</p>
+<p class="Body-Text"><img src="../image/help0011.gif" alt="" width="372" height="323" border="0"></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Comment préciser les attachements d'une page ?</font></p>
+<p class="Body-Text">L'attachement d'une page se définit dans les paramètres de la page, par le choix <font class="hcp1">Page courante</font> du menu <font class="hcp1">Paramètres</font> ou par le raccourci <font class="hcp1">F3.</font> Les paramètres concernant l'attachement d'une page sont :</p>
+<p class="Body-Text">&#160;</p>
+<table cellspacing="0" width="100%">
+<col style="width: 14.025%;">
+<col style="width: 85.975%;">
+<tr class="hcp2">
+<td style="width:14.025%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Attaché à droite</font></p>
+</td>
+<td style="width:85.975%;" class="hcp3">
+<p class="Body-Text">Indique que la page peut éventuellement être déplacée vers la droite en cas d'élargissement de la page de fond.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:14.025%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Attaché au bas</font></p>
+</td>
+<td style="width:85.975%;" class="hcp3">
+<p class="Body-Text">Indique que la page peut éventuellement être déplacée vers le bas en cas d'allongement de la page de fond.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:14.025%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Largeur variable</font></p>
+</td>
+<td style="width:85.975%;" class="hcp3">
+<p class="Body-Text">Indique que la page peut être élargie en cas d'élargissement de la fenêtre de base.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:14.025%;" class="hcp3">
+<p class="Body-Text"><font class="hcp1">Hauteur variable</font></p>
+</td>
+<td style="width:85.975%;" class="hcp3">
+<p class="Body-Text">Indique que la page peut être agrandie en hauteur en cas d'allongement de la fenêtre de fond.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Attention :</font></p>
+<ul style="list-style: disc;">
+<li class="p-Body-Text">
+<p class="Body-Text">Un type d'attachement défini pour une <span class="hcp4">page</span> est automatiquement répercuté <font class="hcp1">à l'exécution</font> à <span class="hcp4">tous les objets</span> contenus dans la page. Par exemple, si vous déclarez qu'une page est "Attachée en bas", tous ses objets auront cette propriété.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque vous définissez un type d'attachement pour un objet, il est <span class="hcp4">impératif de définir un type d'attachement compatible pour la page</span> contenant cet objet. Dans le cas contraire, une erreur est détectée à la compilation. Par exemple, si vous déclarez qu'un objet est "Attachée en bas", il faut aussi déclarer que la page est de "Hauteur variable" (la page peut aussi être déclarée "Attachée en bas" mais dans ce cas, il est redondant d'affecter cette propriété à l'objet - voir le paragraphe précédent).</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p class="Body-Text"><a href="Attachementdesobjets.htm">Attachement des objets</a></p>
+</body>
+</html>

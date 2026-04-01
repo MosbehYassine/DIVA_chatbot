@@ -1,0 +1,836 @@
+{
+  "n_questions": 40,
+  "recall@1": 57.5,
+  "recall@3": 90.0,
+  "recall@5": 92.5,
+  "recall@10": 97.5,
+  "mrr": 0.7384,
+  "grade": "A",
+  "per_module": {
+    "Administration": {
+      "total": 20,
+      "recall@1": 45.0,
+      "recall@3": 90.0,
+      "recall@5": 95.0
+    },
+    "Installation": {
+      "total": 5,
+      "recall@1": 80.0,
+      "recall@3": 80.0,
+      "recall@5": 80.0
+    },
+    "RecordSql": {
+      "total": 5,
+      "recall@1": 40.0,
+      "recall@3": 80.0,
+      "recall@5": 80.0
+    },
+    "Erreurs": {
+      "total": 1,
+      "recall@1": 100.0,
+      "recall@3": 100.0,
+      "recall@5": 100.0
+    },
+    "zoom": {
+      "total": 2,
+      "recall@1": 50.0,
+      "recall@3": 100.0,
+      "recall@5": 100.0
+    },
+    "yzoom": {
+      "total": 1,
+      "recall@1": 100.0,
+      "recall@3": 100.0,
+      "recall@5": 100.0
+    },
+    "ymeg2": {
+      "total": 2,
+      "recall@1": 100.0,
+      "recall@3": 100.0,
+      "recall@5": 100.0
+    },
+    "ymeg": {
+      "total": 4,
+      "recall@1": 75.0,
+      "recall@3": 100.0,
+      "recall@5": 100.0
+    }
+  },
+  "per_category": {
+    "direct": {
+      "total": 36,
+      "recall@1": 61.1,
+      "recall@3": 88.9
+    },
+    "indirect": {
+      "total": 4,
+      "recall@1": 25.0,
+      "recall@3": 100.0
+    }
+  },
+  "details": [
+    {
+      "question": "Comment accéder à un fichier réseau Windows avec son nom Harmony ?",
+      "expected_file_raw": "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+      "expected_file": "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.9096,
+      "expected_score": 0.9096,
+      "top3_files": [
+        "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+        "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+        "Noms_de_fichier_en_réseau_Windows.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment créer ou modifier un modèle d'imprimante dans Harmony ?",
+      "expected_file_raw": "Gestiondesmod_lesd_imprimante.htm",
+      "expected_file": "Gestiondesmod_lesd_imprimante.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 3,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8805,
+      "expected_score": 0.8852,
+      "top3_files": [
+        "Principeg_n_ral.htm",
+        "Principeg_n_ral.htm",
+        "Gestiondesmod_lesd_imprimante.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Que fait la commande /Ga dans un fichier pilote ?",
+      "expected_file_raw": "Fichierdecommandes.htm",
+      "expected_file": "Fichierdecommandes.htm",
+      "module": "Administration",
+      "category": "indirect",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8379,
+      "expected_score": 0.8379,
+      "top3_files": [
+        "Fichierdecommandes.htm",
+        "Fichierdecommandes.htm",
+        "Fichierdecommandes.htm"
+      ],
+      "top1_chunk_type": "REFERENCE_TABLE_INTRO"
+    },
+    {
+      "question": "Comment déclarer un chemin Harmony sur un serveur Xlan ?",
+      "expected_file_raw": "Nomsdefichierenr_seauXlan.htm",
+      "expected_file": "Nomsdefichierenr_seauXlan.htm",
+      "module": "Administration",
+      "category": "indirect",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.9011,
+      "expected_score": 0.8853,
+      "top3_files": [
+        "D_clarationdescheminsHarmonyduserveur2.htm",
+        "Nomsdefichierenr_seauXlan.htm",
+        "Nomsdefichierenr_seauXlan.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment configurer l'imprimante par défaut de Windows dans Harmony ?",
+      "expected_file_raw": "Imprimantepard_fautdeWindows.htm",
+      "expected_file": "Imprimantepard_fautdeWindows.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8896,
+      "expected_score": 0.8832,
+      "top3_files": [
+        "MiseenoeuvredesimpressionsHarmony_Windows.htm",
+        "Imprimantepard_fautdeWindows.htm",
+        "Miseenoeuvredesimpressionsspoolenmodecaract_res.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment importer des utilisateurs depuis un annuaire LDAP dans Harmony ?",
+      "expected_file_raw": "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm",
+      "expected_file": "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8903,
+      "expected_score": 0.8903,
+      "top3_files": [
+        "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm",
+        "3.8_Import_depuis_un_annuaire_LDAP.htm",
+        "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Quelle est la différence entre un modèle préconisé et un modèle impératif ?",
+      "expected_file_raw": "Mod_lepr_conis_etmod_leimp_ratif.htm",
+      "expected_file": "Mod_lepr_conis_etmod_leimp_ratif.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8907,
+      "expected_score": 0.8907,
+      "top3_files": [
+        "Mod_lepr_conis_etmod_leimp_ratif.htm",
+        "Mod_lepr_conis_etmod_leimp_ratif.htm",
+        "Mod_lepr_conis_etmod_leimp_ratif.htm"
+      ],
+      "top1_chunk_type": "SHORT_ATOMIC"
+    },
+    {
+      "question": "Comment lancer automatiquement une tâche de fond au démarrage d'Harmony ?",
+      "expected_file_raw": "Lancementautomatiqued_unet_chedefond.htm",
+      "expected_file": "Lancementautomatiqued_unet_chedefond.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.9074,
+      "expected_score": 0.9074,
+      "top3_files": [
+        "Lancementautomatiqued_unet_chedefond.htm",
+        "Identificationautomatiqueaulancementd_unet_cheHarmony.htm",
+        "Lancementautomatiqued_unet_chedefond.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment configurer les chemins implicites sur un poste client Harmony ?",
+      "expected_file_raw": "Cheminsd_acc_simplicites.htm",
+      "expected_file": "Cheminsd_acc_simplicites.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 7,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "top_score": 0.8883,
+      "expected_score": 0.8919,
+      "top3_files": [
+        "Implantationdesfichiersd_implicitessurunr_seauclient_serveurHarmony.htm",
+        "Fichiersdecheminsimplicitesetutilisateurs.htm",
+        "Biblioth_quesdel_utilisateur_.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment passer des paramètres à un programme Harmony version 6 ?",
+      "expected_file_raw": "Passagedeparam_tresauxprogrammes.htm",
+      "expected_file": "Passagedeparam_tresauxprogrammes.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 3,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8724,
+      "expected_score": 0.8776,
+      "top3_files": [
+        "Fichierdecommandes.htm",
+        "Param_tragedel_iconed_unet_che.htm",
+        "Passagedeparam_tresauxprogrammes.htm"
+      ],
+      "top1_chunk_type": "REFERENCE_TABLE_INTRO"
+    },
+    {
+      "question": "Comment configurer une liaison entre un modèle et une imprimante Windows ?",
+      "expected_file_raw": "Liaisonentremod_leetimprimante_param_trageWindows.htm",
+      "expected_file": "Liaisonentremod_leetimprimante_param_trageWindows.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.891,
+      "expected_score": 0.8889,
+      "top3_files": [
+        "Liaisonentremod_leetimprimanteWindows.htm",
+        "Liaisonentremod_leetimprimante_param_trageWindows.htm",
+        "Liaisonentremod_leetimprimante_param_trageWindows.htm"
+      ],
+      "top1_chunk_type": "SHORT_ATOMIC"
+    },
+    {
+      "question": "Comment fonctionne le format spool dans un modèle d'imprimante Harmony ?",
+      "expected_file_raw": "Gestiondesmod_lesd_imprimante.htm",
+      "expected_file": "Gestiondesmod_lesd_imprimante.htm",
+      "module": "Administration",
+      "category": "indirect",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8854,
+      "expected_score": 0.8869,
+      "top3_files": [
+        "M_thodedes_lectiondel_imprimante.htm",
+        "Gestiondesmod_lesd_imprimante.htm",
+        "Gestiondesmod_lesd_imprimante.htm"
+      ],
+      "top1_chunk_type": "SHORT_ATOMIC"
+    },
+    {
+      "question": "Comment iconiser une application Harmony version 6 ?",
+      "expected_file_raw": "Iconiseruneapplication.htm",
+      "expected_file": "Iconiseruneapplication.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.9025,
+      "expected_score": 0.9025,
+      "top3_files": [
+        "Iconiseruneapplication.htm",
+        "Iconiseruneapplication.htm",
+        "Param_tragedel_iconed_unet_che.htm"
+      ],
+      "top1_chunk_type": "DENSE_ANCHOR"
+    },
+    {
+      "question": "Comment configurer le gestionnaire d'impression Windows (spouleur) dans Harmony ?",
+      "expected_file_raw": "Gestionnaired_impressiondeWindows_spouleur_.htm",
+      "expected_file": "Gestionnaired_impressiondeWindows_spouleur_.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8879,
+      "expected_score": 0.8831,
+      "top3_files": [
+        "MiseenoeuvredesimpressionsHarmony_Windows.htm",
+        "Gestionnaired_impressiondeWindows_spouleur_.htm",
+        "Impressions__Introduction.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment synchroniser les utilisateurs Harmony avec un annuaire LDAP ?",
+      "expected_file_raw": "Synchronisation.htm",
+      "expected_file": "Synchronisation.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8873,
+      "expected_score": 0.8958,
+      "top3_files": [
+        "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm",
+        "Synchronisation.htm",
+        "Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Quelles sont les règles de correspondance des propriétés LDAP dans Harmony ?",
+      "expected_file_raw": "Règles_de_correspondance_des_propriétés.htm",
+      "expected_file": "Règles_de_correspondance_des_propriétés.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8747,
+      "expected_score": 0.8747,
+      "top3_files": [
+        "Règles_de_correspondance_des_propriétés.htm",
+        "Règles_de_correspondance_des_propriétés.htm",
+        "Règles_de_correspondance_des_propriétés.htm"
+      ],
+      "top1_chunk_type": "LONG_PROCEDURAL"
+    },
+    {
+      "question": "Comment paramétrer une icône pour une tâche de fond dans Harmony ?",
+      "expected_file_raw": "Param_tragedel_iconed_unet_che.htm",
+      "expected_file": "Param_tragedel_iconed_unet_che.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.872,
+      "expected_score": 0.872,
+      "top3_files": [
+        "Param_tragedel_iconed_unet_che.htm",
+        "Param_tragedel_iconed_unet_che.htm",
+        "Lancementautomatiqued_unet_chedefond.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment déclarer un serveur dans la table des serveurs Harmony ?",
+      "expected_file_raw": "D_clarationdesserveursetdesunit_slogiques.htm",
+      "expected_file": "D_clarationdesserveursetdesunit_slogiques.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 4,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": true,
+      "top_score": 0.8763,
+      "expected_score": 0.8818,
+      "top3_files": [
+        "Param_tragedesserveursHarmony.htm",
+        "D_clarationdesserveurs_etunit_slogiques_.htm",
+        "D_clarationdesutilisateursd_unr_seauHarmony.htm"
+      ],
+      "top1_chunk_type": "REFERENCE_TABLE_INTRO"
+    },
+    {
+      "question": "Comment déclarer un chemin dans la table des chemins Harmony ?",
+      "expected_file_raw": "D_clarationdescheminsHarmony.htm",
+      "expected_file": "D_clarationdescheminsHarmony.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8621,
+      "expected_score": 0.8847,
+      "top3_files": [
+        "D_clarationdescheminsHarmonyduserveur2.htm",
+        "D_clarationdescheminsHarmony.htm",
+        "D_clarationdescheminsHarmony.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment accéder au fichier des utilisateurs Harmony ?",
+      "expected_file_raw": "Fichierdesutilisateurs.htm",
+      "expected_file": "Fichierdesutilisateurs.htm",
+      "module": "Administration",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8854,
+      "expected_score": 0.8854,
+      "top3_files": [
+        "Fichierdesutilisateurs.htm",
+        "Utilisateursd_Harmony.htm",
+        "Param_tragedescheminsimplicites.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment installer le serveur Web Harmony ?",
+      "expected_file_raw": "Installation_du_serveur_Web.htm",
+      "expected_file": "Installation_du_serveur_Web.htm",
+      "module": "Installation",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8844,
+      "expected_score": 0.8844,
+      "top3_files": [
+        "Installation_du_serveur_Web.htm",
+        "Installation_de_services_Web.htm",
+        "Installation_automatisée_du_serveur_de_clients_légers_Web.htm"
+      ],
+      "top1_chunk_type": "SHORT_ATOMIC"
+    },
+    {
+      "question": "Comment installer et paramétrer le service dhsTelnet (Xtelnet) ?",
+      "expected_file_raw": "Installation_et_param_trage_du_service_Xtelnet.htm",
+      "expected_file": "Installation_et_param_trage_du_service_Xtelnet.htm",
+      "module": "Installation",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8849,
+      "expected_score": 0.8849,
+      "top3_files": [
+        "Installation_et_param_trage_du_service_Xtelnet.htm",
+        "Installation_et_param_trage_du_service_Xtelnet.htm",
+        "Installation_et_param_trage_du_service_Xtelnet.htm"
+      ],
+      "top1_chunk_type": "REFERENCE_TABLE_ROW"
+    },
+    {
+      "question": "Comment configurer la mémoire commune dans Harmony ?",
+      "expected_file_raw": "Configurationdelam_moirecommune.htm",
+      "expected_file": "Configurationdelam_moirecommune.htm",
+      "module": "Installation",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8675,
+      "expected_score": 0.8675,
+      "top3_files": [
+        "Configurationdelam_moirecommune.htm",
+        "Configurationdelam_moirecommune.htm",
+        "Configurationdelam_moirecommune.htm"
+      ],
+      "top1_chunk_type": "LONG_PROCEDURAL"
+    },
+    {
+      "question": "Comment configurer le client léger HTML dans Harmony ?",
+      "expected_file_raw": "Configuration_du_client_l_ger_Html.htm",
+      "expected_file": "Configuration_du_client_léger_Html.htm",
+      "module": "Installation",
+      "category": "direct",
+      "rank": 0,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "top_score": 0.9066,
+      "expected_score": 0.0,
+      "top3_files": [
+        "Client_léger_Harmony_Web.htm",
+        "Spécificités_de_développement_pour_le_client_léger_Web.htm",
+        "Client_léger_Harmony_Web.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment activer la compression des trames pour le client léger Web ?",
+      "expected_file_raw": "Compression_des_trames_pour_un_client_l_ger_Web.htm",
+      "expected_file": "Compression_des_trames_pour_un_client_léger_Web.htm",
+      "module": "Installation",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.9247,
+      "expected_score": 0.9247,
+      "top3_files": [
+        "Compression_des_trames_pour_un_client_léger_Web.htm",
+        "Compression_des_trames_pour_un_client_léger_Web.htm",
+        "Installation_du_serveur_en_mode_Service_Web.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment se connecter au serveur SQL depuis Harmony ?",
+      "expected_file_raw": "ConnexionauserveurSQL.htm",
+      "expected_file": "ConnexionauserveurSQL.htm",
+      "module": "RecordSql",
+      "category": "direct",
+      "rank": 7,
+      "hit@1": false,
+      "hit@3": false,
+      "hit@5": false,
+      "top_score": 0.8701,
+      "expected_score": 0.8755,
+      "top3_files": [
+        "Cr_ationdesutilisateursd_Harmony_.htm",
+        "Configurationdel_unit_logiqueSQL_.htm",
+        "D_clarationdesserveurs_etunit_slogiques_.htm"
+      ],
+      "top1_chunk_type": "SHORT_ATOMIC"
+    },
+    {
+      "question": "Quelles sont les particularités de DB2 sur un serveur IBM i dans Harmony ?",
+      "expected_file_raw": "ConnexionauserveurSQL.htm",
+      "expected_file": "ConnexionauserveurSQL.htm",
+      "module": "RecordSql",
+      "category": "indirect",
+      "rank": 3,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8762,
+      "expected_score": 0.8506,
+      "top3_files": [
+        "Installation_et_mise_en_oeuvre_sur_un_serveur_IBM.htm",
+        "Création_du_schéma_dans_la_base_DB2.htm",
+        "ConnexionauserveurSQL.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment désactiver le contexte d'utilisation par défaut dans Harmony ?",
+      "expected_file_raw": "D_sactivation_du_contexte_d_utilisation_par_d_faut.htm",
+      "expected_file": "Désactivation_du_contexte_d_utilisation_par_défaut.htm",
+      "module": "RecordSql",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8516,
+      "expected_score": 0.8516,
+      "top3_files": [
+        "Désactivation_du_contexte_d_utilisation_par_défaut.htm",
+        "Désactivation_du_contexte_d_utilisation_par_défaut.htm",
+        "Utilisateur_par_défaut_pour_Odbc.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment insérer et supprimer des objets dans Harmony ?",
+      "expected_file_raw": "Ins_rer_et_supprimer_des_objets.htm",
+      "expected_file": "Insérer_et_supprimer_des_objets.htm",
+      "module": "RecordSql",
+      "category": "direct",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8633,
+      "expected_score": 0.8514,
+      "top3_files": [
+        "Commentd_sinstallerHarmony.htm",
+        "Insérer_et_supprimer_des_objets.htm",
+        "Gestionetparam_tragedescheminsimplicites.htm"
+      ],
+      "top1_chunk_type": "SHORT_ATOMIC"
+    },
+    {
+      "question": "Comment paramétrer un agent d'impression dans Harmony ?",
+      "expected_file_raw": "Param_trage.htm",
+      "expected_file": "Paramétrage.htm",
+      "module": "RecordSql",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8761,
+      "expected_score": 0.8761,
+      "top3_files": [
+        "Paramétrage.htm",
+        "MiseenoeuvredesimpressionsHarmony_Windows.htm",
+        "Param_tragedesimpressionsHarmony.htm"
+      ],
+      "top1_chunk_type": "LONG_PROCEDURAL"
+    },
+    {
+      "question": "Quels sont les codes d'erreur Windows renvoyés par Harmony (erreurs 10xxx) ?",
+      "expected_file_raw": "10xxx_Erreurssignal_esparWindows.htm",
+      "expected_file": "10xxx_Erreurssignal_esparWindows.htm",
+      "module": "Erreurs",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8984,
+      "expected_score": 0.8984,
+      "top3_files": [
+        "10xxx_Erreurssignal_esparWindows.htm",
+        "10xxx_Erreurssignal_esparWindows.htm",
+        "Formatd_affichagedeserreursHarmony.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment fonctionne la sélection multiple dans le zoom Harmony ?",
+      "expected_file_raw": "S_lection_multiple_du_zoom.htm",
+      "expected_file": "S_lection_multiple_du_zoom.htm",
+      "module": "zoom",
+      "category": "direct",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.858,
+      "expected_score": 0.86,
+      "top3_files": [
+        "S_lection_multiple.htm",
+        "S_lection_multiple_du_zoom.htm",
+        "S_lection_multiple.htm"
+      ],
+      "top1_chunk_type": "LONG_PROCEDURAL"
+    },
+    {
+      "question": "Comment effectuer une consultation en mode fiche dans un zoom Harmony ?",
+      "expected_file_raw": "Consultationenmodefiche.htm",
+      "expected_file": "Consultationenmodefiche.htm",
+      "module": "zoom",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8686,
+      "expected_score": 0.8686,
+      "top3_files": [
+        "Consultationenmodefiche.htm",
+        "Introduction1.htm",
+        "Appel_d_un__Zoom__ou_de_la_fenêtre__Combo_zoom_.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment lancer un zoom depuis un menu dans Harmony ?",
+      "expected_file_raw": "Appeld_unzoomdepuisunmenu.htm",
+      "expected_file": "Appeld_unzoomdepuisunmenu.htm",
+      "module": "yzoom",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8781,
+      "expected_score": 0.8781,
+      "top3_files": [
+        "Appeld_unzoomdepuisunmenu.htm",
+        "Appeld_unzoomdepuisunmenu.htm",
+        "D_clarationdescheminsHarmony.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment afficher un agenda dans Harmony ymeg2 ?",
+      "expected_file_raw": "Affichage_d_un_agenda.htm",
+      "expected_file": "Affichage_d_un_agenda.htm",
+      "module": "ymeg2",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8691,
+      "expected_score": 0.8691,
+      "top3_files": [
+        "Affichage_d_un_agenda.htm",
+        "XmeCalendarConsult.htm",
+        "Evénements_liés_à_l_objet_agenda.htm"
+      ],
+      "top1_chunk_type": "MEDIUM_DESCRIPTIVE"
+    },
+    {
+      "question": "Comment programmer un tableau dans Harmony ymeg ?",
+      "expected_file_raw": "Programmationd_untableau.htm",
+      "expected_file": "Programmationd_untableau.htm",
+      "module": "ymeg",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8686,
+      "expected_score": 0.8686,
+      "top3_files": [
+        "Programmationd_untableau.htm",
+        "Exempledeprogrammationd_untableau.htm",
+        "Ev_nementssourisli_s_l_objettableau.htm"
+      ],
+      "top1_chunk_type": "LONG_PROCEDURAL"
+    },
+    {
+      "question": "Quelles sont les restrictions imposées par les navigateurs Web dans Harmony ?",
+      "expected_file_raw": "Restrictions_impos_es_par_les_navigateurs_Web.htm",
+      "expected_file": "Restrictions_imposées_par_les_navigateurs_Web.htm",
+      "module": "ymeg2",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8697,
+      "expected_score": 0.8697,
+      "top3_files": [
+        "Restrictions_imposées_par_les_navigateurs_Web.htm",
+        "Spécificités_de_développement_pour_le_client_léger_Web.htm",
+        "Restrictions_d_utilisation_du_client_léger_Web_par_rapport_au_client_léger_Wpf.htm"
+      ],
+      "top1_chunk_type": "REFERENCE_TABLE_NOTES"
+    },
+    {
+      "question": "Comment utiliser le drag and drop dans un tableau Harmony ymeg ?",
+      "expected_file_raw": "Drag_and_drop_d__l_ments_de_tableau.htm",
+      "expected_file": "Drag_and_drop_d__l_ments_de_tableau.htm",
+      "module": "ymeg",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8848,
+      "expected_score": 0.8848,
+      "top3_files": [
+        "Drag_and_drop_d__l_ments_de_tableau.htm",
+        "Drag_and_drop_d__l_ments_de_tableau.htm",
+        "Drag_and_drop_d__l_ments_de_tableau.htm"
+      ],
+      "top1_chunk_type": "GIANT_DOC_SECTION"
+    },
+    {
+      "question": "Comment gérer la liste associée à un tableau dans Harmony ymeg ?",
+      "expected_file_raw": "Gestiondelalisteassoci_e_untableau.htm",
+      "expected_file": "Gestiondelalisteassoci_e_untableau.htm",
+      "module": "ymeg",
+      "category": "direct",
+      "rank": 1,
+      "hit@1": true,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8821,
+      "expected_score": 0.8821,
+      "top3_files": [
+        "Gestiondelalisteassoci_e_untableau.htm",
+        "Gestiondelalisteassoci_e_unarbre.htm",
+        "Gestiondelalisteassoci_e_untableau.htm"
+      ],
+      "top1_chunk_type": "GIANT_DOC_SECTION"
+    },
+    {
+      "question": "Comment utiliser XmeListSetAttribut pour modifier les attributs d'une liste ?",
+      "expected_file_raw": "XmeListSetAttribut.htm",
+      "expected_file": "XmeListSetAttribut.htm",
+      "module": "ymeg",
+      "category": "direct",
+      "rank": 2,
+      "hit@1": false,
+      "hit@3": true,
+      "hit@5": true,
+      "top_score": 0.8772,
+      "expected_score": 0.88,
+      "top3_files": [
+        "XmeSetAttribut.htm",
+        "XmeListSetAttribut.htm",
+        "XmeListResetAttribut.htm"
+      ],
+      "top1_chunk_type": "GIANT_DOC_SECTION"
+    }
+  ],
+  "model": "intfloat/multilingual-e5-large",
+  "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "n_chunks": 11228
+}

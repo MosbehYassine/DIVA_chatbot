@@ -1,0 +1,66 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>SocketSetOption</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>SocketSetOption &#160;<font class="hcp1">Famille</font>&#160;&#160;&#160;<a href="G_n_ralit_s_sur_les_fonctions_socket.htm"><font class="hcp1">Thème</font></a></h3>
+<p class="Body-Text">La fonction SocketSetOption permet de positionner une option d’un socket.</p>
+<p class="Body-Text"><font class="hcp2">Int</font> = <font class="hcp2">SocketSetOption</font> <font class="hcp3">(socket , niveau , option , valeur)</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp3">Socket</font></p>
+<p class="decalage05">Socket obtenu par la fonction <a href="SocketNew.htm">SocketNew</a> .</p>
+<p class="Body-Text"><font class="hcp3">Niveau</font></p>
+<p class="decalage05">Niveau auquel l’option est définie.</p>
+<p class="Body-Text"><font class="hcp3">Option</font></p>
+<p class="decalage05">Option à modifier</p>
+<p class="Body-Text"><font class="hcp3">Valeur</font></p>
+<p class="decalage05">Nouvelle valeur de l’option</p>
+&#160;
+<p class="Body-Text"><font class="hcp2">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="630">
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">0</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Pas d’erreur</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:14.99%;" class="hcp5">
+<p class="Body-Text">Autre</p>
+</td>
+<td style="width:85.01%;" class="hcp5">
+<p class="Body-Text">Erreur. Voir <a href="SocketLastError.htm">SocketLastError</a></p>
+</td>
+</tr>
+</table>
+&#160; <br>&#160;
+<p class="Body-Text"><font class="hcp2">Voir</font></p>
+<p><a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/winsock/winsock/setsockopt_2.asp">Documentation MSDN</a>.</p>
+<p class="Body-Text"><a href="Constantes.htm">Constantes socket</a></p>
+<p><a href="SocketLastError.htm">SocketLastError</a> , <a href="SocketNew.htm">SocketNew</a></p>
+</body>
+</html>

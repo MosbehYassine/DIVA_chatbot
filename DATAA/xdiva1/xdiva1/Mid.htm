@@ -1,0 +1,55 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Mid</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Mid &#160;<a href="Fonctionsdetraitementdescha_nesdecaract_res.htm"><font style="font-family: 'MS Sans Serif'; font-weight: normal;" face="MS Sans Serif">Famille</font></a><font style="font-family: 'MS Sans Serif';" face="MS Sans Serif">&#160;</font></h3>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text">La fonction Mid permet d'extraire une sous chaîne d'une chaîne de caractères. Elle peut se trouver à gauche dans une affectation.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Char</font> = <font class="hcp1">m</font><font class="hcp1">id</font> (<font class="hcp2">variable</font>, <font class="hcp2">position</font>, <font class="hcp2">[ longueur</font> <font class="hcp2">])</font></p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Variable</font></p>
+<p class="decalage05">Le type de la variable est quelconque.</p>
+<p class="Body-Text"><font class="hcp2">Position</font></p>
+<p class="decalage05">Valeur numérique indiquant la position de début (à partir de 1) de la sous chaîne à extraire.</p>
+<p class="Body-Text"><font class="hcp2">Longueur</font></p>
+<p class="decalage05">Valeur numérique indiquant la taille de la sous chaîne à extraire. Si ce paramètre est omis ou nul, la longueur est :<br>
+Taille de <font class="hcp2">variable</font> - <font class="hcp2">position +</font> 1<br>
+c'est à dire la partie droite de <font class="hcp2">variable</font> à partir de <font class="hcp2">position</font>.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Retour</font></p>
+<p class="Body-Text">La fonction renvoie la sous chaîne définie par <font class="hcp2">Position</font> et <font class="hcp2">Longueur</font>. Le type de retour est toujours alphanumérique.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemples</font></p>
+<p class="Source">display mid("BONJOUR",3,4)</p>
+<p class="Source">; affiche NJOU</p>
+&#160;
+<p class="Source">mid(art,3,5) = '12345'</p>
+<p class="Source">; positionne les caractères 12345 à partir du troisième caractères</p>
+<p class="Source">de Art.</p>
+&#160;
+<p class="Source">1 art 10 = "1234567890"</p>
+<p class="Source">display mid(art,5)</p>
+<p class="Source">; affiche 567890</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Voir</font></p>
+<p class="Body-Text"><a href="Left.htm">Left</a>, <a href="Right.htm">Right</a>, <a href="NoSpaces.htm">NoSpaces</a>, <a href="Nmid.htm">Nmid</a>, <a href="Bmid.htm">Bmid</a>, <a href="Xmid.htm">Xmid</a>, <a href="Lmid.htm">Lmid</a>, <a href="Zmid.htm">Zmid</a></p>
+</body>
+</html>

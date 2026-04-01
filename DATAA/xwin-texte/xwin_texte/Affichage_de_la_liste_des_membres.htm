@@ -1,0 +1,148 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Utilisation de la liste des membres</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+p.hcp2 { font-weight:bold;
+font-size:11pt; }
+ul.hcp3 { list-style:disc; }
+li.hcp4 { list-style:none;
+display:inline; }
+span.hcp5 { color:#ff0000; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Utilisation de la liste des membres</h3>
+<p>Vous pouvez afficher la liste des membres <span class="hcp1">disponibles</span> (fonction du contexte d'appel et de la position où se situe le curseur clavier dans le code source) dans une liste déroulante. Après sélection d'un membre de la liste, vous pouvez l'insérer directement dans votre code.</p>
+&#160;
+<p>Par exemple :</p>
+<p><img src="../image14.gif" style="border: none;" alt="" width="150" height="126" border="0"></p>
+&#160;
+<p>&#160;</p>
+<p class="hcp2">Afficher la liste des membres</p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Appel automatique</span> :<br>
+Dans certains cas particuliers, la liste des membres s'ouvre de manière automatique.<br>
+Par <span class="hcp1">exemple</span>, la frappe d'un <span class="hcp1">point (".")</span> derrière un nom de table ou un nom de module affiche la liste des champs de cette table ou la liste des procédures et fonctions de ce module.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Appel manuel</span> :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p">
+<p>Lorsque le contexte d'appel et la position du curseur clavier dans le source le permettent, les touches <span class="hcp1">Ctrl+J</span> et <span class="hcp1">Ctrl+Espace</span> (ou <span class="hcp1">Alt+Flèche Droite</span>) ouvrent explicitement la liste des membres disponibles.<br>
+Ces commandes sont également accessibles depuis le menu <span class="hcp1">Edition : Saisie assistée</span> ou depuis le sous-menu <span class="hcp1">Saisie assistée</span> du menu contextuel ouvert par un clic droit dans la zone d'édition de texte (choix <span class="hcp1">Liste des membres</span> et <span class="hcp1">Compléter le mot</span>).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Ctrl+J ouvre systématiquement la liste des membres</span>.<br>
+Si le curseur est placé sur une chaîne de caractères, la liste présente tous les membres dont le nom contient cette chaîne de caractères.<br>
+Dans l'exemple ci-dessus (champs de la table RowInfo), si vous tapez "<span class="hcp5">sel</span>" puis Ctrl+J, la liste affichera les champs Coul<span class="hcp5">Sel</span>ec, F<span class="hcp5">sel</span>zoom et <span class="hcp5">Sel</span>ection.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Si le curseur est placé sur une chaîne de caractères qui correspond au début du nom d'un membre et <span class="hcp1">si aucune ambiguïté ne subsiste</span>, <span class="hcp1">Ctrl+Espace complète automatiquement la chaîne déjà saisie</span>.<br>
+Dans ce cas, la liste n'est pas ouverte et vous faites appel à la fonctionnalité <a href="Compl&eacute;tion_automatique_de_mot.htm">Compléter le mot</a>.<br>
+Dans l'exemple ci-dessus (champs de la table RowInfo), si vous tapez "<span class="hcp5">no</span>" puis Ctrl+Espace, l'éditeur remplace immédiatement "<span class="hcp5">no</span>" par "<span class="hcp5">Nomligne</span>".<br>
+Si aucune ou plusieurs correspondances existent encore, la liste est ouverte, comme après la frappe de Ctrl+J.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp1">Exemple de corrélation avec le contexte d'appel</span>.<br>
+Derrière un nom de dictionnaire de donnée (.dhsd) ou de RecordSql (.dhoq), ces fonctions considèrent différents types de membre, selon le contexte courant :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p">
+<p>Liste des Fichiers dans une déclarative Hfile.</p>
+</li>
+<li class="p">
+<p>Liste des Tables dans une déclarative Record.</p>
+</li>
+<li class="p">
+<p>Liste des Champs derrière "&gt;nom_dico.dhsd".</p>
+</li>
+<li class="p">
+<p>Liste des RecordSql dans une déclarative RecordSql.<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Cas particuliers des sources de dictionnaire de RecordSql ou de Jointures Sql</span> :<br>
+Voir la rubrique <a href="Assistance_au_codage_dans_un_dictionnaire_Sql.htm">Assistance au codage dans un dictionnaire Sql</a>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Naviguer dans la Liste des membres</p>
+<ul class="hcp3">
+<li class="p">
+<p>Vous pouvez naviguer dans cette liste en la faisant <span class="hcp1">défiler</span> (ascenseur ou molette) ou en utilisant les <span class="hcp1">touches de direction</span> (Flèche en Bas, Flèche en Haut, Page Up, Page Down, Ctrl+Page Up, Ctrl+Page Down).</p>
+</li>
+<li class="p">
+<p>La <span class="hcp1">sélection</span> dans la liste <span class="hcp1">« suit » les caractères (déjà) tapés</span>. Si vous connaissez les premières lettres du nom du membre, tapez-les pour atteindre directement le membre en question dans la liste.</p>
+</li>
+</ul>
+<p>Une fenêtre d'information rapide affiche des renseignements sur l'élément couramment sélectionné dans la liste des membres et sur les commentaires du code qui s'y rapporte (pour plus d'informations sur ce dernier point, consultez la rubrique <a href="Insertion_de_commentaires_dans_le_code.htm">Insertion de commentaires dans le code</a>).</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Insérer un membre de la liste dans le code source</p>
+<p>Effectuez l'une des opérations suivantes :</p>
+<ul class="hcp3">
+<li class="p">
+<p><span class="hcp1">Sélectionnez</span> le membre (clic simple, ...) puis :</p>
+</li>
+<li class="hcp4">
+<ul class="hcp3">
+<li class="p">
+<p>Tapez <span class="hcp1">Tab</span> ou <span class="hcp1">Entrée</span> pour insérer uniquement ce membre.</p>
+</li>
+<li class="p">
+<p>Tapez directement le <span class="hcp1">caractère qui doit être inséré à la suite du membre</span> (parenthèse ouvrante, virgule, espace, point, égal, etc.).</p>
+</li>
+</ul>
+</li>
+<li class="p">
+<p><span class="hcp1">Double-cliquez</span> sur le membre.</p>
+</li>
+<li class="p">
+<p>Sans membre sélectionné, appuyez sur <span class="hcp1">Tab</span> ou <span class="hcp1">Ctrl+Entrée</span> pour insérer l'élément qui a le <span class="hcp1">focus</span>.</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p class="hcp2">Refermer la liste des membres</p>
+<p>A tout moment, appuyez sur <span class="hcp1">Echap</span> ou <span class="hcp1">cliquez dans l'éditeur</span>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp2">Désactiver la liste des membres</p>
+<p>Décochez la case "<span class="hcp1">Afficher la liste des membres</span>" dans les options de l'éditeur de texte (volet Saisie assistée). Pour plus d'informations, consultez la rubrique <a href="Modification_des_options_et_d&eacute;sactivation_des_fonctions_d_assistance_au_codage.htm">Modification des options et désactivation des fonctions d'assistance au codage</a>.</p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également&#160;:</p>
+<p><a href="Assistance_au_codage.htm">Assistance au codage</a></p>
+<p><a href="Assistance_au_codage_dans_un_dictionnaire_Sql.htm">Assistance au codage dans un dictionnaire Sql</a></p>
+<p>&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Procédures correspondantes :</p>
+<p class="Body-Text"><a href="Pour_afficher_la_liste_des_membres.htm">Pour afficher la liste des membres</a></p>
+<p class="Body-Text"><a href="Pour_compl&eacute;ter_un_mot.htm">Pour compléter un mot</a></p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

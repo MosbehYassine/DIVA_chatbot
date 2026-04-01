@@ -1,0 +1,25 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Assistant_de_création_d_un_projet_de_surcharge</title>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<p>La création d’un projet de surcharge peut s’effectuer au travers d’un assistant .Cette fonctionnalité évite de réaliser manuellement de nombreuses opérations lors de cette création.</p>
+<p>&#160;</p>
+<p>L’accès à l’assistant nécessite que les règles d’installation des produits aient été respectées. En particulier, le répertoire où est installé l’ERP doit obligatoirement contenir la chaine « /erp ».</p>
+<p>L’assistant :</p>
+<p>Crée l’arborescence du projet de surcharge sous le répertoire « chemin relatif des surcharges » fourni en paramètre. Le &#160;répertoire de base porte le « Nom de la surcharge » suffixé par le nom du répertoire de la version de base (par exemple « Dubois_Erp207 » pour la surcharge du master 207 pour le client Dubois).</p>
+<p>Crée le projet de surcharge dans le sous-répertoire « Sources ».</p>
+<p>Crée le fichier des implicites du projet.</p>
+<p>Crée le profil de développement.</p>
+<p>Crée éventuellement un environnement et l’associe au projet. Dans ce cas, les fichiers des utilisateurs (xlog), le fichier de connexion à la base de données, les fichiers d’implicites sont recopiés dans le sous-répertoire « fichiers » de la surcharge.</p>
+<p>Duplique éventuellement la base de données afin de disposer d’un jeu de données spécifiques au projet surchargé. Dans ce cas, le répertoire « fichiers » du projet d’origine est copié dans celui de la surcharge. Le répertoire « BaseSql » contient alors les dictionnaires de données ainsi que le fichier fhsql.dhfi de paramétrage des accès à la base de données. L’assistant duplique la base de données et crée une nouvelle source de données permettant d’accéder à celle-ci. &#160;Le fichier connexions.xml est mis à jour pour pointer vers la nouvelle instance de la base.</p>
+<p>Attention : l’option « Duplication de la base de données » arrête le serveur SQL afin de pouvoir effectuer la copie de la base. Il convient donc de s’assurer que le serveur n’est pas en cours d’utilisation et d’exécuter Xwin7 en tant qu’administrateur si l’UAC est active.</p>
+<p>&#160;</p>
+</body>
+</html>

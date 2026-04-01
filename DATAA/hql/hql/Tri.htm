@@ -1,0 +1,146 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Tri</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+font.hcp2 { font-style:italic; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Tri</h3>
+<p class="Body-Text">La procédure HqlTri appelée depuis le chapitre HqlDebutListe 
+ permet d'indiquer au moteur HQL l'ordre de tri désiré du fichier.</p>
+<p class="Body-Text">Si les critères de tri comportent plusieurs champs, 
+ on appellera autant de fois la fonction HqlTri qu'il y a de champs, en 
+ commençant par les critères majeurs et en finissant par les critères mineurs.</p>
+<p class="Body-Text">En cas d'homonymie, le tri respecte l'ordre de lecture 
+ dans le fichier de base.</p>
+<p class="Body-Text">Pour chaque champ, on pourra indiquer le sens de tri, 
+ croissant ou décroissant.</p>
+<p class="Body-Text">Le tri tient compte de la nature des données (alphanumérique 
+ ou numérique).</p>
+&#160; 
+<p class="Body-Text"><font class="hcp1">HqlTri</font> (<font class="hcp2">Critere,[Sens],[Raz])</font></p>
+<p class="Body-Text"><font class="hcp1">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp2">Critere</font></p>
+<p class="decalage05">Donnée composant la clé de tri. Les données qui composent 
+ la clé peuvent appartenir indifféremment au fichier principal, à un ou 
+ plusieurs fichiers complémentaires, aux données internes du programme. 
+ Dans ces deux derniers cas, elles doivent être recherchées dans les fichiers 
+ ou calculées dans le chapitre Hql<font style="font-variant: small-caps;">s</font>election 
+ (chapitre qui précède le tri). Ce paramètre est passé par adresse à la 
+ fonction, les données ne peuvent pas être des variables locales d'une 
+ fonction, mais doivent <font class="hcp1">impérativement</font> 
+ être des variables globales.</p>
+<p class="Body-Text"><font class="hcp2">[Sens]</font></p>
+<p class="decalage05">La valeur 'c' ou '+' indique que l'on souhaite un 
+ tri croissant sur ce critère. Toute autre valeur (en particulier 'd' ou 
+ '-') indique un tri décroissant sur ce critère. Par défaut l'ordre de 
+ tri est croissant.</p>
+<p class="Body-Text"><font class="hcp2">[Raz]</font></p>
+<p class="decalage05">La valeur TRUE initialise la liste des critères de 
+ tri. Ainsi, le champ <font class="hcp2">Critere</font> 
+ devient le critère majeur de tri et les champs précédemment passés en 
+ paramètre à la fonction HqlTri sont effacés des critères de tri. On utilisera 
+ cette option en particulier dans un module de surcharge du module des 
+ chapitres si l'on souhaite changer les critères de tri.</p>
+<p class="decalage05">&#160;<font class="hcp1"><br>
+Remarques</font></p>
+<ul style="list-style: disc;">
+	<li class="p-Body-Text"><p class="Body-Text">La procédure HqlTri est 
+	 facultative, en cas d'absence, les enregistrements sont traités dans 
+	 l'ordre de lecture de la clé choisie.</p></li>
+	<li class="p-Body-Text"><p class="Body-Text">Le tri utilise soit une 
+	 liste chaînée en mémoire, soit un <a href="Param_tresdeHarmony_ini.htm">fichier 
+	 de manœuvre.</a></p></li>
+	<li class="p-Body-Text"><p class="Body-Text">L'opération de tri peut 
+	 prendre du temps si le nombre d'enregistrements sélectionnés est grand. 
+	 Ne demandez pas un tri si le fichier principal propose déjà une clé 
+	 correspondant au critère choisi !</p></li>
+	<li class="p-Body-Text"><p class="Body-Text"><font class="hcp1">Attention</font>, 
+	 si le programme comporte un tri, l'enregistrement n'est pas relu depuis 
+	 le fichier lors de l'exécution du chapitre HqlDetail (le tri est fait 
+	 dans une liste). Il n'est donc pas possible d'utiliser la fonction 
+	 de réécriture (hrewrite) sans refaire une lecture préalable depuis 
+	 le fichier.</p></li>
+</ul>
+&#160; 
+<p class="Body-Text"><font class="hcp1">Exemple 1</font></p>
+<p class="Body-Text">Tri du fichier d'adresses sur le département.</p>
+<p class="Source"><font color="#0000FF">procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source">&#160;HqlTri(adr.depart)</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+&#160; 
+<br>&#160; 
+<p class="Body-Text"><font class="hcp1">Exemple 2</font></p>
+<p class="Body-Text">Tri du fichier d'adresses par région puis par département, 
+ la région se trouvant dans un fichier externe.</p>
+<p class="Source"><font color="#0000FF">public hfile</font> exodd freg 
+ tdfreg</p>
+<p class="Source"><font color="#0000FF">public record</font> exodd reg</p>
+<p class="Source"><font color="#0000FF">procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source">&#160;HqlTri(reg.nomregion)</p>
+<p class="Source">&#160;HqlTri(adr.departement)</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+<p class="Source"><font color="#0000FF">procedure</font> HqlSelection ; 
+ recherche de la région pour le Tri</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;Hseek(tdfreg, 
+ reg, &quot;A&quot; &amp; adr.departement)&#160;</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+&#160; 
+<br>&#160; 
+<p class="Body-Text"><font class="hcp1">Exemple 3</font></p>
+<p class="Body-Text">Tri du fichier d'adresses par département et par montant 
+ décroissant.</p>
+<p class="Source"><font color="#0000FF">procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source">&#160;HqlTri(adr.departement)</p>
+<p class="Source">&#160;HqlTri(adr.montant,'-')</p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+&#160; 
+<br>&#160; 
+<p class="Body-Text"><font class="hcp1">Exemple 4</font></p>
+<p class="Body-Text">Dans cet exemple le choix du critère est laissé à 
+ l'utilisateur. Pour cela, nous allons utiliser une donnée interne comme 
+ critère de tri.</p>
+<p class="Source">1&#160;cletri 50</p>
+<p class="Source">1 rep 1,0&#160;<font color="#0000FF"><br>
+<br>
+procedure</font> HqlDebutListe</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source">&#160;HqlTri(CleTri)</p>
+<p class="Source">&#160;input &quot;Tri sur le nom (1), le cp(2), le cp 
+ + nom (3) : &quot; rep<font color="#0000FF"><br>
+endp</font></p>
+<p class="Source"><font color="#0000FF">procedure</font> HqlSelection ; 
+ constitution de la clé de tri</p>
+<p class="Source"><font color="#0000FF">beginp</font></p>
+<p class="Source"><font color="#0000FF">&#160;switch2</font> rep</p>
+<p class="Source"><font color="#0000FF">&#160;&#160;case</font> 1</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;cletri 
+ = adr.nom&#160;</p>
+<p class="Source"><font color="#0000FF">&#160;&#160;case</font> 2</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;cletri 
+ = adr.cp&#160;</p>
+<p class="Source"><font color="#0000FF">&#160;&#160;case</font> 3</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;cletri 
+ = adr.cp &amp; adr.nom&#160;</p>
+<p class="Source"><font color="#0000FF">&#160;endswitch</font></p>
+<p class="Source"><font color="#0000FF">endp</font></p>
+</body>
+</html>

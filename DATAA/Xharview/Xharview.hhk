@@ -1,0 +1,195 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Agent d'impression">
+    <param name="Name" value="Principes">
+    <param name="Local" value="Principes.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Aperçu avant impression">
+    <param name="Name" value="Principe général">
+    <param name="Local" value="Xharview/Principeg_n_ral.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Choix du format d'adresse pour les différents types d'édition">
+    <param name="Name" value="Choix du format d'adresse pour les différents types d'édition">
+    <param name="Local" value="Xharview/Choix_du_format_d_adresse_pour_les_diff&eacute;rents_types_d_&eacute;dition.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Consultation du contenu de l'état">
+    <param name="Name" value="Consultation du contenu de l'état">
+    <param name="Local" value="Xharview/Consultationducontenudel__tat.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Conversion au format PDF">
+    <param name="Name" value="Conversion au format PDF">
+    <param name="Local" value="Xharview/Conversion_au_format_PDF.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Description de la fenêtre d'infos">
+    <param name="Name" value="Description de la fenêtre d'infos">
+    <param name="Local" value="Xharview/Descriptiondelafen_tred_infos.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Envoi de fax">
+    <param name="Name" value="Envoi de fax">
+    <param name="Local" value="Xharview/Envoi_de_fax.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Envoi de messages électroniques par le protocole SMTP">
+    <param name="Name" value="Envoi de messages électroniques par le service Smtp">
+    <param name="Local" value="Xharview/Envoi_de_messages_&eacute;lectroniques_par_le_service_Smtp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Envoyer vers un fax ou une messagerie électronique">
+    <param name="Name" value="Envoyer vers un fax ou une messagerie électronique">
+    <param name="Local" value="Xharview/Envoyerversunfaxouunemessagerie_lectronique.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Export tableur des états imprimés">
+    <param name="Name" value="Export tableur des états imprimés">
+    <param name="Local" value="Xharview/Export_des_impressions_vers_Excel.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Export tableur des états imprimés - Paramétrage">
+    <param name="Name" value="Paramétrage de l'export tableur des états imprimés">
+    <param name="Local" value="Xharview/Param&eacute;trage_de_l_export_des_donn&eacute;es_vers_Excel.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fax - paramétrage">
+    <param name="Name" value="Envoi de fax">
+    <param name="Local" value="Xharview/Envoi_de_fax.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Fusion de plusieurs fichiers dhvw">
+    <param name="Name" value="Fusion de plusieurs fichiers dhvw">
+    <param name="Local" value="Xharview/Fusion_de_plusieurs_fichiers_dhvw.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Impression de l'état affiché">
+    <param name="Name" value="Impression de l'état affiché">
+    <param name="Local" value="Xharview/Impressiondel__tataffich_.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Lancement manuel de DivaltoViewer">
+    <param name="Name" value="Lancement manuel de Xharview">
+    <param name="Local" value="Xharview/LancementmanueldeXharview.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Mise en oeuvre de DivaltoViewer">
+    <param name="Name" value="Mise en oeuvre de Xharview">
+    <param name="Local" value="Xharview/MiseenoeuvredeXharview.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Notions de base pour l'envoi de fax ou de message">
+    <param name="Name" value="Notions de base">
+    <param name="Local" value="Xharview/Notionsdebase.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Options de DivaltoViewer">
+    <param name="Name" value="Options de DivaltoViewer">
+    <param name="Local" value="Xharview/Options_de_DivaltoViewer.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Options générales et options liées à l'impression">
+    <param name="Name" value="Options générales et options liées à l'impression">
+    <param name="Local" value="Xharview/Options_g&eacute;n&eacute;rales_et_options_li&eacute;es_&agrave;_l_impression.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage de DivaltoViewer">
+    <param name="Name" value="Paramétrage de DivaltoViewer">
+    <param name="Local" value="Xharview/Param_trageduchoixEnvoyervers.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Paramétrage de l'export tableur des états imprimés">
+    <param name="Name" value="Paramétrage de l'export tableur des états imprimés">
+    <param name="Local" value="Xharview/Param&eacute;trage_de_l_export_des_donn&eacute;es_vers_Excel.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="PDF - conversion">
+    <param name="Name" value="Conversion au format PDF">
+    <param name="Local" value="Xharview/Conversion_au_format_PDF.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Principe général">
+    <param name="Name" value="Principe général">
+    <param name="Local" value="Xharview/Principeg_n_ral.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Protocole MAILTO">
+    <param name="Name" value="Utiliser le protocole MAILTO pour l'envoi de mail en client léger Web">
+    <param name="Local" value="Xharview/Utiliser_le_protocole_MAILTO_pour_l_envoi_de_mail_en_client_l&eacute;ger_Web.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Protocole MAPI">
+    <param name="Name" value="Utiliser le protocole Mapi pour l'envoi de mail ou de fax et le CRM">
+    <param name="Local" value="Xharview/Utiliser_Mapi_et_Outlook_pour_l_envoi_de_mail_et_le_CRM.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Protocole OLE">
+    <param name="Name" value="Envoi de fax">
+    <param name="Local" value="Xharview/Envoi_de_fax.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Protocole SMTP">
+    <param name="Name" value="Envoi de messages électroniques par le service Smtp">
+    <param name="Local" value="Xharview/Envoi_de_messages_&eacute;lectroniques_par_le_service_Smtp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Relecture d'un fichier de sauvegarde">
+    <param name="Name" value="Relecture d'un fichier de sauvegarde">
+    <param name="Local" value="Xharview/Relectured_unfichierdesauvegarde.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sauvegarde de l'état affiché sur fichier">
+    <param name="Name" value="Sauvegarde de l'état affiché sur fichier">
+    <param name="Local" value="Xharview/Sauvegardedel__tataffich_surfichier.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Service SMTP">
+    <param name="Name" value="Envoi de messages électroniques par le service Smtp">
+    <param name="Local" value="Xharview/Envoi_de_messages_&eacute;lectroniques_par_le_service_Smtp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="SMTP (service)">
+    <param name="Name" value="Envoi de messages électroniques par le service Smtp">
+    <param name="Local" value="Xharview/Envoi_de_messages_&eacute;lectroniques_par_le_service_Smtp.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utiliser Exchange Web Services pour l'envoi de mail et le CRM">
+    <param name="Name" value="Utiliser Exchange Web Services pour l'envoi de mail et le CRM">
+    <param name="Local" value="Xharview/Utiliser_Exchange_Web_Services_pour_l_envoi_de_mail_et_le_CRM.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utiliser le protocole MAILTO pour l'envoi de mail en client léger Web">
+    <param name="Name" value="Utiliser le protocole MAILTO pour l'envoi de mail en client léger Web">
+    <param name="Local" value="Xharview/Utiliser_le_protocole_MAILTO_pour_l_envoi_de_mail_en_client_l&eacute;ger_Web.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utiliser le protocole MAPI pour l'envoi de mail ou de fax et le CRM">
+    <param name="Name" value="Utiliser le protocole Mapi pour l'envoi de mail ou de fax et le CRM">
+    <param name="Local" value="Xharview/Utiliser_Mapi_et_Outlook_pour_l_envoi_de_mail_et_le_CRM.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Utiliser Lotus Notes pour l'envoi de mail et le CRM">
+    <param name="Name" value="Utiliser Lotus Notes pour l'envoi de mail et le CRM">
+    <param name="Local" value="Xharview/Utiliser_Lotus_Notes_pour_l_envoi_de_mail_et_le_CRM.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="xDivaltoMajIni : Mise à jour de Divalto.ini">
+    <param name="Name" value="xDivaltoMajIni : Mise à jour de Divalto.ini">
+    <param name="Local" value="Xharview/xDivaltoMajIni___Mise_&agrave;_jour_de_Divalto.ini.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="xDivaltoPrinters : Configuration des imprimantes">
+    <param name="Name" value="xDivaltoPrinters : Configuration des imprimantes">
+    <param name="Local" value="Xharview/xDivaltoPrinters___Configuration_des_imprimantes.htm">
+    <param name="Name" value="Principes">
+    <param name="Local" value="Principes.htm">
+  </object>
+</ul>
+</html>

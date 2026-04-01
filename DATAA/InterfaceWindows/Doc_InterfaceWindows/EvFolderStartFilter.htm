@@ -1,0 +1,132 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>EvFolderStartFilter</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:normal; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+font.hcp3 { font-weight:bold; }
+font.hcp4 { font-style:italic; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-right:10px;
+padding-left:10px; }
+p.hcp7 { margin-left:8px; }
+td.hcp8 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>EvFolderStartFilter &#160;<a href="Liste_des_fonctions_EvFolder.htm"><font class="hcp1">Famille</font></a> &#160;<a href="Introduction_aux_fonctions_EvFolder_.htm"><font class="hcp1">Thème</font></a></h1>
+<p class="hcp2">&#160;</p>
+<p>La fonction EvFolderStartFilter permet d’indiquer le nom d’un répertoire à surveiller.</p>
+<p>Elle fonctionne de façon identique à la fonction <a href="EvFolderStart.htm">EvFolderStart</a> avec la possibilité supplémentaire de pouvoir filtrer les événements susceptibles de "réveiller" le programme.</p>
+<p>Elle peut être appelée plusieurs fois afin de surveiller plusieurs répertoires.</p>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">module</font> "<font class="hcp3">ysystemex.dhop</font>"</p>
+<p><font class="hcp3">Ptr EvFolderStartFilter</font> ( <font class="hcp4">dir , filtre</font> )</p>
+<p class="hcp2">&#160;</p>
+<p><font class="hcp3">Paramètres</font></p>
+<p class="Body-Text"><font class="hcp4">Dir</font></p>
+<p class="decalage05">Nom du répertoire à surveiller.</p>
+<p class="decalage05">Ce nom doit être au format Windows.</p>
+<p class="decalage05">Le répertoire peut être local ou sur une autre machine via le réseau (sauf répertoire réseau d’une machine 95, 98 ou Millenium).</p>
+<p class="hcp2">&#160;</p>
+<p class="Body-Text" style="font-style: italic;">Filtre</p>
+<p class="decalage05">Le filtre est une variable numérique qui est la combinaison des constantes suivantes :</p>
+<p class="decalage05">&#160;</p>
+<table style="vertical-align: top; left: 0px; top: 375px; height: 233px; margin-left: 40px;" cellspacing="3" width="850">
+<col style="width: 35.961%;">
+<col style="width: 64.039%;">
+<tr class="hcp5">
+<td style="width:35.961%;" class="hcp6">
+<p>FILE_NOTIFY_CHANGE_FILE_NAME &#160;&#160;&#160;</p>
+</td>
+<td style="width:64.039%;" class="hcp6">
+<p>Création, suppression, changement de nom d'un fichier.<br>
+Cette valeur est utilisée par la fonction EvFolderStartFilter.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:35.961%;" class="hcp6">
+<p>&#160;FILE_NOTIFY_CHANGE_DIR_NAME &#160;&#160;&#160;&#160;</p>
+</td>
+<td style="width:64.039%;" class="hcp6">
+<p>Création, changement de nom ou suppression d'un répertoire.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:35.961%;" class="hcp6">
+<p class="hcp7">FILE_NOTIFY_CHANGE_ATTRIBUTES &#160;&#160;</p>
+</td>
+<td style="width:64.039%;" class="hcp6">
+<p class="hcp7">Changement des attributs d'un fichier.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:35.961%;" class="hcp6">
+<p>FILE_NOTIFY_CHANGE_SIZE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</p>
+</td>
+<td style="width:64.039%;" class="hcp6">
+<p>Changement de taille d'un fichier. (détecté uniquement au moment de l'écriture physique sur le disque).</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:35.961%;" class="hcp6">
+<p>FILE_NOTIFY_CHANGE_LAST_WRITE &#160;&#160;</p>
+</td>
+<td style="width:64.039%;" class="hcp6">
+<p>Ecriture physique dans un fichier.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:35.961%;" class="hcp6">
+<p>FILE_NOTIFY_CHANGE_SECURITY &#160;&#160;&#160;&#160;</p>
+</td>
+<td style="width:64.039%;" class="hcp6">
+<p>Changement des autorisations d'un fichier.</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Retour</font></p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="669">
+<tr class="hcp5">
+<td style="width:9.89%;" class="hcp8">
+<p>0</p>
+</td>
+<td style="width:90.11%;" class="hcp8">
+<p>Erreur, la surveillance du répertoire n'a pas pu être initialisée.</p>
+<p>Attention : si le répertoire n'existe pas, la fonction ne retourne pas d'erreur, mais elle refait des tentatives à intervalles réguliers pour voir si le répertoire existe. Cela peut être le cas si vous surveillez un répertoire situé sur le réseau et que l'ordinateur n'est pas encore démarré. Dans ce cas, la surveillance deviendra opérationnelle dès que possible sans que le programme Diva aie quelque chose à faire.<br>
+Par contre, si le nom du répertoire est erroné, la fonction ne sort pas d'erreur et la surveillance n'est pas opérationnelle.</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:9.89%;" class="hcp8">
+<p>Autre</p>
+</td>
+<td style="width:90.11%;" class="hcp8">
+<p>Ticket. La fonction <font style="text-decoration: underline;" color="#008000">EvFolderGet</font> de lecture d’un événement retourne la valeur de ce ticket pour indiquer le répertoire qui a provoqué l’événement.</p>
+</td>
+</tr>
+</table>
+<p class="decalage05">&#160;</p>
+<p class="Body-Text" style="font-weight: bold;">Exemples</p>
+<p class="Body-Text">Voir <a href="EvFolderStart.htm">EvFolderStart</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp3">Voir</font></p>
+<p style="font-weight: bold;"><a href="EvFolderStart.htm">EvFolderStart</a>, <a href="EvFolderOpen.htm">EvFolderOpen</a> , <a href="EvFolderGet.htm">EvFolderGet</a> , <a href="EvFolderWriteEvent.htm">EvFolderWriteEvent</a> , <a href="Introduction_fermeture_sesssion.htm">Fermeture de session</a></p>
+<p>&#160;</p>
+<p class="body-text">&#160;</p>
+</body>
+</html>

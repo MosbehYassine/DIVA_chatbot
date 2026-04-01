@@ -1,0 +1,196 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Saisie des champs en mode liste</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-top:0;
+margin-bottom:0; }
+tr.hcp2 { vertical-align:top; }
+td.hcp3 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+font.hcp4 { font-weight:bold; }
+p.hcp5 { margin-left:11.75pt; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Saisie des champs en mode liste</h3>
+<p>Pour permettre une saisie rapide des données du dictionnaire en mode liste, la nature, la taille, le nombre de décimales et les dimensions de tableau sont "réunis" en un champ unique&#160;: Nature.</p>
+<p>Voici la syntaxe à respecter pour la saisie de ce champ pour chaque nature :</p>
+<p class="hcp1">&#160;</p>
+<table style="margin-left: 2.25pt;" cellspacing="0" width="623">
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p class="NormalG">Nature</p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p><font class="hcp4">Représentation</font></p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p><font class="hcp4">Exemples</font></p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p><font class="hcp4">Alpha</font></p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>taille</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p>8 &#160;(donnée alpha de 8 caractères)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p><font class="hcp4">Numérique</font></p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>taille,décimales</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p>10,2 &#160;(nombre de 10 caractères au total avec 2 décimales ;<br>
+&#160;valeurs limites : [-999999,99 ; 9999999,99] )</p>
+<p>6,0 &#160;(nombre entier de 6 caractères ; [-99999 ; 999999] )</p>
+<p>24,10 &#160;(capacité maximale d'un nombre sous Harmony)</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p><font class="hcp4">Numérique,D</font></p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>taille,Dn</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p>10, D0 &#160;(nombre de 10 caractères au total ; le nombre de décimales sera recherché à l'exécution dans la première case de la table des décimales variables)</p>
+<p>8, D2 &#160;(nombre de 8 caractères au total ; recherche du nombre de décimales dans la 3ème case)</p>
+<p>7, D9 &#160;(nombre de 7 caractères au total ; recherche du nombre de décimales dans la dernière case)</p>
+<p class="hcp1">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p><font class="hcp4">Date</font></p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>D</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="hcp1">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p><font class="hcp4">Date mensuelle</font></p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>DM</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="hcp1">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p><font class="hcp4">Date + heure</font></p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>DH</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="hcp1">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p><font class="hcp4">Heure</font></p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>H4 ou H6</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p>H4&#160;champ au format hhmm</p>
+<p>H6&#160;champ au format hhmmss</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">T</p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>T</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="hcp1">Durée</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">B</p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>B</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="hcp1">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p><font class="hcp4">X</font></p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>X</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="hcp1">&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:17.90%;" class="hcp3">
+<p><font class="hcp4">L</font></p>
+</td>
+<td style="width:19.98%;" class="hcp3">
+<p>L</p>
+</td>
+<td style="width:62.12%;" class="hcp3">
+<p class="hcp1">&#160;</p>
+</td>
+</tr>
+</table>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="NormalG">Tableaux</p>
+<p>Pour définir des tableaux (champs indicés) la syntaxe est la suivante&#160;:</p>
+<p>nature *dim1 [*dim2] [*dim3] [*dim4]</p>
+<p class="hcp1">&#160;</p>
+<p>Exemples&#160;:</p>
+<p>X*10&#160;(tableau de 10 données de type X)</p>
+<p class="Source" style="margin-left: 7.10pt; margin-top: 4.00pt;"><font style="font-family: Arial;" face="Arial">8,0*100 &#160;(tableau de 100 entiers de 8 chiffres)</font></p>
+<p>L*5*2&#160;(tableau à deux dimensions de type L)</p>
+<p class="Plain-Text" style="margin-left: 42.55pt; text-indent: -14.20pt; text-align: justify;">&#160;</p>
+<p class="hcp1">&#160;</p>
+<p class="Tip-Note-Heading" style="margin-top: 4.00pt;">Remarques</p>
+<ul>
+<li style="font-size: 8pt;" class="p">
+<p class="hcp5">Le type D6 (date AAMMJJ) existe pour assurer la compatibilité avec les anciennes applications. Il ne doit plus être utilisé.</p>
+</li>
+<li style="font-size: 8pt;" class="p">
+<p class="hcp5">Le choix <span style="font-weight: bold;">&lt;Edition&gt;&lt;Rester en modification&gt;</span> permet de modifier des lignes en série. Lorsque l'option est active, la validation de la modification d'une ligne provoque le positionnement automatique sur la propriété en cours de saisie de la ligne suivante. La touche " Echap " permet de sortir d'un cycle de modifications.</p>
+</li>
+</ul>
+</body>
+</html>

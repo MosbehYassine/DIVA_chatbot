@@ -1,0 +1,189 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Menus : Chargement et affichage</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+ul.hcp3 { list-style:disc; }
+font.hcp4 { font-weight:bold;
+text-decoration:underline; }
+font.hcp5 { text-decoration:underline; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Menus : Chargement et affichage</h3>
+<p class="Body-Text">Avant toute utilisation d’un menu (classique ou surgissant), il est nécessaire de le <font class="hcp1">charger en mémoire</font> et de récupérer son <font class="hcp1">identifiant</font>, en faisant appel à la fonction&#160;<a href="XmeMenuGetId.htm">XmeMenuGetId</a>. Cet identifiant servira de paramètre à toutes les fonctions Diva référençant ce menu et appelées ultérieurement par votre programme.<br>
+&#160;</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Affichage d'un menu classique</p>
+<p class="Body-Text">Pour afficher un <font class="hcp1">menu classique</font> dans une fenêtre, vous devez l’<font class="hcp1">attacher à une page de masque</font> Xwin, par la fonction&#160;<a href="XmeMenuSetWindow.htm">XmeMenuSetWindow</a>. Cet attachement fait que le menu sera ensuite automatiquement affiché en même temps que la page de masque considérée (à l’occasion d’un XmeDisp, XmeDispv, XmeInput, XmeConsult de cette page&#160;: voir l’<font class="hcp1">exemple 1</font>).<br>
+&#160;</p>
+<p class="Body-Text"><span class="hcp2">Attention</span> :</p>
+<p class="Body-Text">L’attachement de ressources <span class="hcp2">spécifiques à une page panel n’est pas géré</span>. Lorsqu’une page mère incluant des pages panels est affichée, Ywpf affiche les ressources attachées à cette page mère mais il NE parcourt PAS l’arbre des pages panels pour voir si d'autres ressources leur sont attachées (si c’est le cas, ces attachements sont ignorés). Il faut donc limiter l'attachement de ressources aux seules pages mères.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text" style="font-weight: bold; font-size: 11pt;">Affichage d'un menu surgissant</p>
+<p class="Body-Text" style="font-weight: normal;">Pour afficher un menu surgissant, il existe deux méthodes :</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><span class="hcp2">Affichage implicite en consultation ou en saisie de masque</span> (méthode conseillée).</p>
+</li>
+<li style="list-style: none; display: inline">
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Pour demander l'affichage d'un menu surgissant à l’occasion d’une <font class="hcp1">consultation</font> de masque ou de tableau, vous devez, <span class="hcp2">avant</span> d’appeler XmeConsult ou XmeListConsult, charger la donnée <span class="hcp2">Harmony.PopupMenu</span> avec l’<span class="hcp2">identifiant du menu</span> (voir l’<font class="hcp1">exemple 2</font>).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;">Pour demander l'affichage d'un menu surgissant dans un <span class="hcp2">point d’arrêt</span> ou de <span class="hcp2">traitement</span> produit lors d’une <font class="hcp1">saisie</font> de masque ou de ligne de tableau, vous devez, <span class="hcp2">avant</span> d’appeler XmeNext ou XmeListInputNext, charger la donnée <span class="hcp2">Harmony.PopupMenu</span> avec l’<span class="hcp2">identifiant du menu</span> et la donnée <span class="hcp2">Harmony.Retour</span> avec la valeur <span class="hcp2">XMENEXT_POPUP_MENU</span> (voir l’<font class="hcp1">exemple 3</font>).</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="Body-Text" style="margin-left: 56px;">L’affichage du menu popup est ensuite automatique.</p>
+<p class="Body-Text" style="margin-left: 56px;"><span class="hcp2">Remarque</span> : Le <a href="Menus_D_sactivation_et_invalidation_des_choix.htm">grisage automatique des choix nommés</a> fonctionne ici de la même manière qu'avec un menu classique.<br>
+&#160;</p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text" style="margin-left: 11.75pt;"><span class="hcp2">Affichage par appel explicite à la fonction Diva XmeMenuPopup</span>.<br>
+La fonction <a href="XmeMenuPopup.htm">XmeMenuPopup</a> permet d'afficher un menu surgissant en dehors de tout contexte (voir l’<font class="hcp1">exemple 4</font>).<br>
+Mais cette méthode présente un désavantage par rapport à la méthode précédente car le <a href="Menus_D_sactivation_et_invalidation_des_choix.htm">grisage automatique des choix nommés</a> ne fonctionne pas.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Remarques&#160;:</font></p>
+<ul class="hcp3">
+<li class="p-Body-Text">
+<p class="Body-Text">Une fenêtre ne peut afficher qu’un seul menu à la fois.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il n’est pas possible de supprimer un menu.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Il n’est pas possible de remplacer un menu par un autre pour une <span class="hcp2">même</span> <span class="hcp2">page</span> de masque mais il existe une solution de contournement : attachez chaque menu à une page "de fond" Xwin différente ; affichez ensuite la première page pour présenter le 1er menu, le deuxième page pour présenter le second menu, etc.</p>
+</li>
+</ul>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple 1&#160;: affichage d’un menu</font> <font class="hcp4">classique</font> <font class="hcp1">dans une fenêtre Harmony</font></p>
+&#160;
+<p class="Source">1 Id_menu L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ident menu classique</p>
+<p class="Source">...</p>
+<p class="Source">...<br>
+XmeLoad "masque" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font class="hcp1">X</font>meInfoPage ("masque",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("masque",1,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source">&#160;</p>
+<p class="Source"><font class="hcp1">Id_menu = XmeMenuGetId ("masque","MENU") &#160;&#160;&#160;&#160;</font>;chargement du menu "MENU"</p>
+<p class="Source"><font class="hcp1">XmeMenuSetWindow (Id_menu,"masque",1)</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;;attachement à la page 1<br>
+<br>
+XmeDisp ("masque",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affichage page 1 &amp; menu</p>
+<p class="Source">...<br>
+...</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-left: 63.80pt; text-indent: -58.05pt; font-weight: bold;">Exemple 2&#160;:&#160;affichage d’un menu <font class="hcp5">popup</font> en <font class="hcp5">consultation</font> <span style="font-weight: normal;">(ici de tableau mais le principe est le même en consultation de masque)</span></p>
+&#160;
+<p class="Source">1 Id_popup L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ident menu popup<br>
+1 Id_tableau L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ident tableau<br>
+1 Fini B<br>
+&#160;</p>
+<p class="Source">...</p>
+<p class="Source">...<br>
+XmeLoad "masque" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font class="hcp1">X</font>meInfoPage ("masque",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("masque",1,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source">&#160;</p>
+<p class="Source">Id_popup = XmeMenuGetId ("masque","POPUP") &#160;&#160;;chargement menu "POPUP"</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">Fini = FALSE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation tableau</p>
+<p class="Source">DO</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListConsult (Id_tableau)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Key&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;abandon&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_F7 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;touche F7&#160;</p>
+<p class="Source"><font class="hcp1">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.PopupMenu = Id_popup</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;;prépare l’appel du menu</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;popup (affichage au&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;prochain XmeListConsult)&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;CASE ...</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Id_tableau,Ligne,Scrollbar32)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source">WHILE NOT Fini</p>
+<p class="Source">WEND</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Body-Text" style="margin-left: 63.80pt; text-indent: -58.05pt;"><font class="hcp1">Exemple 3&#160;:&#160;affichage d’un menu</font> <font class="hcp4">popup</font> <font class="hcp1">en</font> <font class="hcp4">saisie</font> (ici de masque mais le principe est le même en saisie de ligne de tableau)</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source">1 Id_popup L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ident menu popup<br>
+1 Fini B<br>
+...</p>
+<p class="Source">...<br>
+XmeLoad "masque" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font class="hcp1">X</font>meInfoPage ("masque",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("masque",1,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source">&#160;</p>
+<p class="Source">Id_popup = XmeMenuGetId ("masque","POPUP") &#160;&#160;&#160;;chargement menu "POPUP"</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">XmeInput ("masque",1,0,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;lancer la saisie</p>
+<p class="Source">Do</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Arret&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.Key = K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;abandon&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE 120 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;arrêt "clic souris"&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;if Harmony.SourisBout = RIGHT_BUTTON &#160;&#160;;bouton droit :</p>
+<p class="Source"><font class="hcp1">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.PopupMenu = Id_popup</font> &#160;&#160;&#160;&#160;&#160;&#160;&#160;;prépare l’appel du</p>
+<p class="Source"><font class="hcp1">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Harmony.Retour = XMENEXT_POPUP_MENU</font> ;menu popup (affichage</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;endif &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;au prochain XmeNext)&#160;</p>
+&#160;
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;CASE ...</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE ...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE Harmony.Key in (K_RETURN, K_TAB, K_DOWN) ;validation&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDSWITCH&#160;</p>
+<p class="Source">WHILE NOT Fini &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;poursuite de la saisie</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeNext (Harmony.Retour, Harmony.CplRetour)&#160;</p>
+<p class="Source">WEND</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Body-Text" style="margin-left: 63.80pt; text-indent: -58.05pt; font-weight: bold;">Exemple 4&#160;:&#160;affichage d’un menu <font class="hcp5">popup</font> par <span style="text-decoration: underline;"><a href="XmeMenuPopup.htm">XmeMenuPopup</a></span></p>
+<p class="Source">&#160;</p>
+<p class="Source">1 Id_popup L &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;ident menu popup</p>
+<p class="Source">1 st &#160;&#160;&#160;&#160;&#160;&#160;X</p>
+<p class="Source">...</p>
+<p class="Source">...<br>
+XmeLoad "masque" &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font class="hcp1">X</font>meInfoPage ("masque",1) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;récupération de la taille de la page 1</p>
+<p class="Source">XmeSetWindowSize ("masque",1,Harmony.Opara3,Harmony.Opara4) ;--&gt; taille initiale de la fenêtre</p>
+<p class="Source">&#160;</p>
+<p class="Source">Id_popup = XmeMenuGetId ("masque","POPUP") &#160;&#160;&#160;;chargement menu "POPUP"</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">st = XmeMenuPopup (id_popup) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;appel explicite au menu</p>
+<p class="Source">if st &lt;&gt; 0 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;un choix a été sélectionné :</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement des choix</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;...&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">endif</p>
+<p class="Source">&#160;</p>
+</body>
+</html>

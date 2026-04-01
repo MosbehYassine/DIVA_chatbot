@@ -1,0 +1,33 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Fonctions Ftp / Sftp</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Fonctions Ftp / Sftp</h1>
+<p>&#160;</p>
+<p>Les fonctions Ftp et Sftp permettent de dialoguer avec des serveurs Ftp et Sftp.</p>
+<p>Les opérations les plus courantes sont le transfert de fichiers dans les deux sens.</p>
+<p>&#160;</p>
+<p><a href="FtpDownloadFile.htm">FtpDownloadFile</a> qui permet de télécharger un fichier depuis un serveur.</p>
+<p><a href="FtpUploadFile.htm">FtpUploadFile</a> qui permet d'envoyer un fichier vers un serveur.</p>
+<p>&#160;</p>
+<p>Le choix entre Ftp et Sftp se fait simplement en précisant le nom du protocole pour l'Url.</p>
+<p class="hcp1">r = FtpUploadFile("ftp://psxbdbh02", ...) &#160;pour ftp</p>
+<p class="hcp1">r = FtpUploadFile("sftp://psxbdbh02", ...) &#160;pour sftp</p>
+<p>&#160;</p>
+<p>Les fonctions de haut niveau sont suffisante dans la majorité des cas.</p>
+<p>En Ftp uniquement, les fonctions de bas niveau permettent d'appeler n'importe quelle commande Ftp.</p>
+</body>
+</html>

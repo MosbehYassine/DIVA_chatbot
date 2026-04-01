@@ -1,0 +1,36 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Passage de paramètres aux programmes</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Passage de paramètres aux programmes de la version 6</h3>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">La méthode habituelle de passage des paramètres consiste tout simplement à répondre aux questions posées par le programme, au fur et à mesure de leur rencontre. Si le dialogue qui va être engagé est connu, les réponses peuvent être directement données sur la même ligne, après le nom du programme. Le nom doit être séparé de la première réponse par le caractère "," (virgule), de même que les réponses entre elles.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:</font></p>
+<p class="Body-Text">Xlog.dhop,ROOT,, appelle le programme Xlog, avec "ROOT" comme nom d'utilisateur, validation de la demande "Ok ?" et retour à la question "Programme".</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Les réponses données à ce niveau ne contiennent normalement que des caractères "affichables" (",", "$", "!" et "?" exceptés). Mais on peut également simuler la frappe au clavier d'une touche de fonction ou de contrôle. Pour ce faire, il faut indiquer le code hexadécimal de la touche, précédé du caractère "$" (dollar). Par exemple, $E0 simule la frappe de la touche de fonction F1.</p>
+<p class="Body-Text">Entrée est représentée par une virgule.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Enfin, la main peut être rendue au clavier le temps d'une réponse. Il faut, pour ce faire, remplacer le paramètre à introduire manuellement par le caractère "?" (point d'interrogation).</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:</font></p>
+<p class="Body-Text">Xloh.dhop,?,, appelle le programme Xlog, avec entrée du nom de l'utilisateur au clavier et retour à la question "Programme".</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text">Voir aussi la rubrique <a href="Fichierdecommandes.htm">Fichier de commandes</a>.</p>
+</body>
+</html>

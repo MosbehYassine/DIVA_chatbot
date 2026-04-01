@@ -1,0 +1,39 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Décimales variables</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Décimales variables</h3>
+<p>Il est possible de définir des champs numériques sans connaître le nombre de décimales de ces champs lors de la saisie du dictionnaire. Par exemple, dans certains pays la comptabilité se fait sur trois décimales, et en gestion, les quantités peuvent être sur 0 1 2 ou 3 décimales etc.</p>
+<p>Lorsque le nombre de décimales n’est pas connu au moment de la saisie du dictionnaire, le champ est déclaré avec des décimales variables. Le nombre réel de décimales sera fourni au moment de l’exécution du programme.</p>
+<p>Harmony peut gérer jusque 10 types de décimales variables.</p>
+<p>&#160;</p>
+<p class="NormalG">Déclaration d'un champ à décimales variables</p>
+<p>Le chiffre saisi dans le champ &#160;<font class="hcp1">Décimales</font> indique non pas un nombre de décimales, mais un indice dans une table (de 0 à 9) qui contiendra le nombre de décimal réel au moment de l’exécution.</p>
+<p class="hcp2">&#160;</p>
+<p class="NormalG">Utilisation du champ</p>
+<p>Les champs à décimales variables s'utilisent exactement de la même manière que les champs à décimales fixes.</p>
+<p>Le nombre de décimales de la variable sera pris en fonction de son type dans un tableau défini dans l'enregistrement System.</p>
+<p>Avant d'utiliser une donnée à décimales variables, cette table doit être initialisée par le programme. Il est toujours possible de changer en temps réel cette table en cours d'exécution.</p>
+<p>Pour plus de détails, voir la rubrique "Décimales variables" du livre de la documentation Xwin - Programmation consacré au langage Diva.</p>
+&#160;
+<p class="Body-Text"><font class="hcp1">Exemple</font></p>
+<p class="Body-Text"><img src="../image/decimalesvariables.gif" alt="" width="594" height="206" border="0"> &#160;</p>
+<p class="hcp2">&#160;</p>
+</body>
+</html>

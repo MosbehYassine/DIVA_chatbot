@@ -1,0 +1,219 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Widget Feu et Jauge</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+tr.hcp1 { vertical-align:top; }
+p.hcp2 { font-weight:bold;
+text-align:center; }
+td.hcp3 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp4 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp5 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+span.hcp6 { font-weight:bold; }
+p.hcp7 { font-family:"Courier New"  , monospace; }
+img.hcp8 { border:none; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Widget Feu et Jauge</h1>
+<p>&#160;</p>
+<p>Ces deux types de widgets partagent les mêmes informations.</p>
+<p>&#160;</p>
+<p>Les balises HMP sont :</p>
+<p>&#160;</p>
+<table style="vertical-align: top;" cellspacing="0">
+<col>
+<col>
+<col>
+<tr class="hcp1">
+<td style="border: Solid 1px #000000;padding-right: 10px; padding-left: 10px;">
+<p class="hcp2">Balise</p>
+</td>
+<td class="hcp3">
+<p class="hcp2">Commentaire</p>
+</td>
+<td class="hcp3">
+<p class="hcp2">Type</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>MinValue</p>
+</td>
+<td class="hcp5">
+<p>Valeur minimale</p>
+</td>
+<td class="hcp5">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>MaxValue</p>
+</td>
+<td class="hcp5">
+<p>Valeur maximale</p>
+</td>
+<td class="hcp5">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>CurrentValue</p>
+</td>
+<td class="hcp5">
+<p>Valeur courante</p>
+</td>
+<td class="hcp5">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>State</p>
+</td>
+<td class="hcp5">
+<p>Etat (couleur)</p>
+</td>
+<td class="hcp5">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>Spread (Facultatif)</p>
+</td>
+<td class="hcp5">
+<p>Ecart par rapport à l'objectif</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>Current (Facultatif)</p>
+</td>
+<td class="hcp5">
+<p>Valeur courante formatée</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>Text (Facultatif)</p>
+</td>
+<td class="hcp5">
+<p>Titre du widget</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp1">
+<td class="hcp4">
+<p>Error (Facultatif)</p>
+</td>
+<td class="hcp5">
+<p>Texte d'erreur</p>
+</td>
+<td class="hcp5">
+<p>Alpha</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>La balise &lt;Text&gt; permet de changer le libellé affiché du widget. Par défaut, c'est le titre du widget qui est affiché.</p>
+<p>La balise &lt;Error&gt; permet d'afficher une erreur par dessus le widget.</p>
+<p>Si la balise &lt;Current&gt; est présente, c'est le contenu de cette balise qui est affichée. Cela permet d'afficher une valeur mise en forme.</p>
+<p>&#160;</p>
+<p><span class="hcp6">Remarque</span> : Ces balises sont les mêmes pour le widget Feu et Jauge. Un même module de calcul peut donc être utilisé pour les deux types.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-weight: bold;">Couleur de l'indicateur</p>
+<p>&#160;</p>
+<p>4 constantes sont définis dans l'include zdiva.dhsp :</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>TRAFFIC_STATE_NEUTRAL (bleu)</p>
+</li>
+<li class="p">
+<p>TRAFFIC_STATE_GREEN (vert)</p>
+</li>
+<li class="p">
+<p>TRAFFIC_STATE_ORANGE (orange)</p>
+</li>
+<li class="p">
+<p>TRAFFIC_STATE_RED (rouge)</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p><span class="hcp6">Exemple</span> :</p>
+<p>&#160;</p>
+<p class="hcp7">1 compteur X = 0</p>
+<p class="hcp7">Function String InitFeu(&amp;Widget)</p>
+<p class="hcp7">record a5dd.dhsd MWidget Widget</p>
+<p class="hcp7">beginf</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;FReturn "&lt;MinValue&gt;0&lt;MaxValue&gt;100"</p>
+<p class="hcp7">endf</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp7">Function String UpdateFeu (&amp;Widget)</p>
+<p class="hcp7">record a5dd.dhsd MWidget Widget</p>
+<p class="hcp7">1 valeur X</p>
+<p class="hcp7">1 resultat S</p>
+<p class="hcp7">beginf</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;valeur = Modulo(compteur++, 4)</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;resultat = "&lt;CurrentValue&gt;" &amp; ToString(valeur) &amp;&amp; "&lt;State&gt;" &amp; ToString (valeur) &amp;&amp; "&lt;Spread&gt;Ecart : " &amp; toString(100 - compteur) &amp; "&lt;Current&gt;"</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;Switch2 (valeur)</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Case TRAFFIC_STATE_NEUTRAL</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;resultat &amp;= "NaN"</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Case TRAFFIC_STATE_GREEN</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;resultat &amp;= "Excellent"</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Case TRAFFIC_STATE_ORANGE</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;resultat &amp;= "Moyen"</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Case TRAFFIC_STATE_RED</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;resultat &amp;= "Médiocre"</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;EndSwitch</p>
+<p class="hcp7">&#160;&#160;&#160;&#160;FReturn resultat</p>
+<p class="hcp7">endf</p>
+<p class="hcp7">&#160;</p>
+<p class="hcp7">&#160;</p>
+<p>Si ce widget Feu est configuré pour être rafraîchi toutes les secondes, on obtient à l'affichage :</p>
+<p>&#160;</p>
+<p><img src="../feu_neutre.jpg" alt="" width="349" height="169" border="0" class="hcp8"> puis</p>
+<p>&#160;<img src="../feu_vert.jpg" alt="" width="349" height="169" border="0" class="hcp8"> puis</p>
+<p>&#160;<img src="../feu_orange.jpg" alt="" width="349" height="169" border="0" class="hcp8"> puis</p>
+<p>&#160;<img src="../feu_rouge.jpg" alt="" width="349" height="170" border="0" class="hcp8"></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p>Si on choisit le type Jauge, on obtient :</p>
+<p>&#160;</p>
+<p><img src="../jauge_neutre.jpg" alt="" width="350" height="170" border="0" class="hcp8"> puis</p>
+<p><img src="../jauge_vert.jpg" alt="" width="350" height="170" border="0" class="hcp8"> puis</p>
+<p>&#160;<img src="../jauge_orange.jpg" alt="" width="350" height="170" border="0" class="hcp8"> puis</p>
+<p>&#160;<img src="../jauge_rouge.jpg" alt="" width="350" height="170" border="0" class="hcp8"></p>
+<p>&#160;</p>
+</body>
+</html>

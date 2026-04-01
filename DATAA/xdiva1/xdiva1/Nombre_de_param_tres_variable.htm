@@ -1,0 +1,124 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Nombre de paramètres variable</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+p.hcp2 { margin-top:0;
+margin-bottom:0; }
+-->
+</style>
+</head>
+
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Nombre de paramètres variable</h3>
+<p class="Definition" style="margin-top: 4.00pt;">Le langage Diva permet 
+ de déclarer des fonctions/procédures avec un nombre de paramètres variable.</p>
+<p><font class="hcp1">Syntaxe</font>&#160;: Le nom de la 
+ fonction/procédure doit être suivi de <font class="hcp1">(*)</font></p>
+<p><font class="hcp1">Exemple&#160;:</font> procedure htmcases(*)</p>
+<p>Lors de l’appel les paramètres sont passés par valeur selon la méthode 
+ habituelle.</p>
+<p class="hcp2">&#160;</p>
+<p class="Heading-Base">Récupération des paramètres</p>
+<p>Pour connaître les paramètres passés à la fonction/procédure, cette 
+ dernière doit appeler la fonction <a href="ListParamGetId.htm">ListParamGetId</a> 
+ qui retourne un identifiant de liste. Cette liste contient les différents 
+ paramètres.</p>
+<p>Les instructions classiques des listes (<a href="ListFirst.htm">ListFirst</a>, 
+ <a href="ListNext.htm">ListNext</a> …) permettent ensuite de lire les 
+ paramètres.</p>
+<p>Cette liste est détruite automatiquement lorsque la fonction/procédure 
+ se termine.</p>
+<p>Si la fonction/procédure veut connaître les caractéristiques du paramètre, 
+ elle peut appeler la fonction <a href="ListDataDescriptor.htm">ListDataDescriptor</a> 
+ qui lui donne un descripteur de la donnée. Les informations sont ensuite 
+ obtenues par les fonctions <a href="DataSize.htm">DataSize</a> , <a href="DataType.htm">DataType</a> 
+ , <a href="DataDec.htm">DataDec</a> et <a href="DataValue.htm">DataValue</a> 
+ .</p>
+<p class="hcp2">&#160;</p>
+<p class="Heading-Base">Exemple 1</p>
+<p class="source">procedure proc_param_multi(*)</p>
+<p class="source">1 id &#160;&#160;&#160;&#160;X&#160;&#160;; id de la 
+ liste des paramètres</p>
+<p class="source">1 descripteur &#160;60&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ descripteur du paramètre courant</p>
+<p class="source">1 valeur &#160;&#160;&#160;&#160;60&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ valeur obtenue lors du listnext</p>
+<p class="source">1 valeuralpha &#160;60&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ valeur si le type est alpha</p>
+<p class="source">1 valeurnumer 24,10&#160;&#160;&#160;&#160;&#160;; valeur 
+ si le type est numérique</p>
+<p class="source">1 type &#160;&#160;&#160;X&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ type du paramètre</p>
+<p class="source">1 lg &#160;&#160;&#160;&#160;&#160;X&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ taille</p>
+<p class="source">1 dec &#160;&#160;&#160;&#160;X&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ nombre de décimales</p>
+<p class="source">RecordSqlPtr ptSql &#160;&#160;&#160;&#160;&#160;; pointeur 
+ de RecordSql</p>
+<p class="source">beginp</p>
+<p class="source">&#160;id = ListParamGetId&#160;&#160;&#160;&#160;; récupération 
+ de la listedes paramètre</p>
+<p class="source">&#160;ListBegin(id)</p>
+<p class="source">&#160;loop ListNext(id,valeur)&#160;&#160;&#160;&#160;&#160;&#160;</p>
+<p class="source">&#160;&#160;ListDataDescriptor(id,descripteur)&#160;&#160;; 
+ descripteur du paramètre</p>
+<p class="source">&#160;&#160;type = datatype(datavalue(descripteur))&#160;; 
+ caractéristiques</p>
+<p class="source">&#160;&#160;lg = datasize(datavalue(descripteur))</p>
+<p class="source">&#160;&#160;dec = datadec (datavalue(descripteur))</p>
+<p class="source">&#160;&#160;if type = 3&#160;&#160;&#160;&#160;&#160;&#160;&#160;; 
+ alpha = 3</p>
+<p class="source">&#160;&#160;&#160;valeuralpha = datavalue(descripteur)&#160;</p>
+<p class="source">&#160;&#160;&#160;display valeuralpha</p>
+<p class="source">&#160;</p>
+<p class="source">&#160;&#160;elsif type = 101</p>
+<p class="source">&#160;&#160;&#160;&#160;&#160;PtrRecordSqlFromDescriptor(ptSql,datavalue(descripteur))</p>
+<p class="source">&#160;&#160;&#160;&#160;&#160;ptSql.ReaderNext(reader)</p>
+<p class="source">&#160;&#160;else</p>
+<p class="source">&#160;&#160;&#160;valeurnumer = datavalue(descripteur)</p>
+<p class="source">&#160;&#160;&#160;display valeurnumer</p>
+<p class="source">&#160;&#160;endif</p>
+<p class="source">&#160;endloop</p>
+<p class="source">endp</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">Main</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">proc_param_multi(1,2,3,&quot;toto&quot;,12.3)&#160;</p>
+<p class="hcp2">&#160;</p>
+<p class="Heading-Base">Exemple 2</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">; la procedure htmcases crée les entêtes d’un tableau 
+ html</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">procedure htmcases(*)&#160;1&#160;liste&#160;L</p>
+<p class="source">1&#160;elem&#160;250</p>
+<p class="source">beginp</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">liste = ListParamGetId&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">listbegin(liste)&#160;</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">loop listnext(liste,elem)&#160;</p>
+<p class="source" style="text-indent: 30.35pt;">htm(elem)&#160;&#160;&#160;; 
+ ajout d’une nouvelle case</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">endloop&#160;</p>
+<p class="source">endp</p>
+<p class="source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="source">Main</p>
+<p class="source">htmcases('Client','Stat','CA','Théorique','Visout','Timing','Dernière')</p>
+<p class="hcp2">&#160;</p>
+<p class="hcp2">&#160;</p>
+<p class="Heading-Base">Voir</p>
+<p><a href="ListParamGetId.htm">ListParamGetId</a> , <a href="ListDataDescriptor.htm">ListDataDescriptor</a> 
+ , <a href="DataSize.htm">DataSize</a> , <a href="DataType.htm">DataType</a> 
+ , <a href="DataDec.htm">DataDec</a> , <a href="DataValue.htm">DataValue</a> 
+ .</p>
+</body>
+</html>

@@ -1,0 +1,162 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Création d'un élément d'arbre</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+ul.hcp2 { list-style:disc; }
+font.hcp3 { font-family:Courier New; }
+tr.hcp4 { vertical-align:top; }
+td.hcp5 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Création d'un élément d'arbre</h3>
+<p class="Body-Text">Contrairement aux éléments d'un tableau, les éléments d'un arbre <font class="hcp1">ne sont pas tous situés au même niveau</font>. En standard (XmeListConsultDefault), un nouvel élément est créé au niveau correspondant à la position courante du <font class="hcp1">curseur de création</font> (sauf si l'utilisateur a cliqué sur la colonne d'état en regard de la première ligne vierge - colonne affichant un plus -, auquel cas le niveau du nouvel élément est <font class="hcp1">forcé à 1</font> et la création a lieu en toute fin de liste).</p>
+<p class="Body-Text">&#160;<br>
+L'existence de niveaux implique des différences entre la programmation d'une création dans un tableau et celle d'une création dans un arbre&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Le programme doit tenir compte du niveau de création pour situer le nouvel élément dans la liste. En effet, lors d'une création dans un tableau, le nouvel élément est inséré immédiatement derrière l'élément courant&#160;; dans le cas d'un arbre, la position du nouvel élément relativement à celle de l'élément courant peut varier suivant leurs niveaux respectifs (voir exemple ci-après).</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Le programme doit faire attention à ne pas autoriser la création à n'importe quel niveau (en particulier, un "&#160;saut&#160;" de niveau entre père et fils est interdit, ainsi qu'un "&#160;changement de père&#160;"&#160;: voir exemple ci-après). En standard&#160;:<br>
+– Lorsque l'utilisateur modifie la position du curseur de création, XmeListConsultDefault vérifie automatiquement la cohérence du niveau de création sélectionné, en fonction de l'état de l'arbre et du niveau de l'élément courant&#160;; en cas d'incohérence (ou de dépassement), XmeListConsultDefault refuse le repositionnement du curseur (ou force le niveau maximum ou minimum autorisé).<br>
+– Lorsque l'utilisateur se déplace dans l'arbre, XmeListConsultDefault modifie automatiquement la position du curseur de création pour qu'elle corresponde au niveau du nouvel élément courant.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple :</font> Soit l'arbre suivant&#160;:</p>
+<p class="Source">1. A1</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;2. A11&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;3. A111&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;3. A112&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;4. A1121</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;2. A12&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;3. A121&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;3. A122 (élément courant)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;4. A1222&#160;</p>
+<p class="Body-Text">&#160;<br>
+Après positionnement sur l'élément A122, la frappe de la touche Inser&#160;:</p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Doit être <font class="hcp1">refusée</font> au niveau de création <font class="hcp1">5</font> car un saut de niveau (ici du 3 au 5) est interdit (remarque&#160;: lorsque l'élément A122 est sélectionné, XmeListConsultDefault interdit le positionnement du curseur de création au niveau 5)</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Au niveau de création <font class="hcp1">4</font>, demande la création du descendant A1221 de l'élément A122&#160;:</p>
+</li>
+</ul>
+<p class="Source">3. A122</p>
+<p class="Source">&#160;&#160;&#160;4. A1221</p>
+<p class="Source"><font face="Courier New" class="hcp3">&#160;&#160;&#160;4. A1222</font></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Au niveau de création <font class="hcp1">3</font>, poursuit la décomposition de l'élément A12 (création de A123&#160;; remarquez qu'il faut ici "&#160;sauter&#160;" l'élément A1222 en liste)&#160;:</p>
+</li>
+</ul>
+<p class="Source">3. A121</p>
+<p class="Source">3. A122</p>
+<p class="Source">&#160;&#160;&#160;4. A1222</p>
+<p class="Source"><font face="Courier New" class="hcp3">3. A123</font></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Au niveau de création <font class="hcp1">2</font>, reprend la décomposition de l'élément A1 (création de A13&#160;; remarquez qu'ici aussi il faut "&#160;sauter&#160;" l'élément A1222)&#160;:</p>
+</li>
+</ul>
+<p class="Source">2. A12</p>
+<p class="Source">&#160;&#160;&#160;3. A121</p>
+<p class="Source">&#160;&#160;&#160;3. A122</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;4. A1222</p>
+<p class="Source"><font face="Courier New" class="hcp3">2. A13</font></p>
+<ul class="hcp2">
+<li class="p-Body-Text">
+<p class="Body-Text">Au niveau de création <font class="hcp1">1</font>, crée le nouvel élément de 1er niveau A2&#160;:</p>
+</li>
+</ul>
+<p class="Source">1. A1</p>
+<p class="Source">&#160;&#160;&#160;2. A11</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;3. A111</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;3. A112</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;4. A1121</p>
+<p class="Source">&#160;&#160;&#160;2. A12</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;3. A121</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;3. A122</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;4. A1222</p>
+<p class="Source">1 A2</p>
+<p class="Body-Text" style="margin-left: 48px; font-family: 'Courier New';">&#160;</p>
+<p class="Body-Text" style="margin-left: 48px;">Remarquez que cette création serait interdite si l'élément fils de A1 A13 existait dans l'arbre (car A1 "&#160;perdrait&#160;" ce fils A13)&#160;; dans ce cas, XmeListConsultDefault interdirait d'ailleurs le positionnement du curseur de création au niveau 1.</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Mise en route et gestion du curseur de création</font></p>
+<p class="Body-Text">L'affichage à l'écran du curseur de création (<font class="hcp1">qui a lieu uniquement lors d'un XmeListConsult</font>) est une <font class="hcp1">option</font> que vous <font class="hcp1">devez activer</font> dans votre programme en appelant la procédure <a href="XmeListTreeCursorInit.htm">XmeListTreeCursorInit</a>. Attention&#160;: cette option est d'ailleurs obligatoire si vous laissez gérer vos créations par XmeListConsultDefault.</p>
+<p class="Body-Text">&#160;<br>
+De plus, si vous décidez de ne pas faire appel à la procédure standard XmeListConsultDefault pour gérer le curseur de création, vous disposez des fonctions suivantes pour sa programmation&#160;:</p>
+<p class="Body-Text"><a href="XmeListTreeGetCursor.htm">XmeListTreeGetCursor</a></p>
+<p class="Body-Text"><a href="XmeListTreeSetCursor.htm">XmeListTreeSetCursor</a></p>
+<p class="Body-Text"><a href="XmeListTreeGetCursorOption.htm">XmeListTreeGetCursorOption</a></p>
+<p class="Body-Text"><a href="XmeListTreeSetCursorOption.htm">XmeListTreeSetCursorOption</a></p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Création d'un élément par XmeListConsultDefault</font></p>
+<p class="Body-Text">Lorsqu'il crée un élément, XmeListConsultDefault initialise les champs de la <a href="Variabledecontr_led_unarbre.htm">variable de contrôle</a> associée au nouvel élément de la manière suivante&#160;:</p>
+<table cellspacing="0" width="604">
+<tr class="hcp4">
+<td style="width:16.42%;" class="hcp5">
+<p class="Body-Text">Niveau</p>
+</td>
+<td style="width:83.58%;" class="hcp5">
+<p class="Body-Text">Valeur correspondant à la position courante du curseur de création (sauf si l'utilisateur a cliqué sur le plus de création, auquel cas le niveau du nouvel élément est forcé à 1).</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.42%;" class="hcp5">
+<p class="Body-Text">SousNiveau</p>
+</td>
+<td style="width:83.58%;" class="hcp5">
+<p class="Body-Text">FALSE.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.42%;" class="hcp5">
+<p class="Body-Text">Expanse</p>
+</td>
+<td style="width:83.58%;" class="hcp5">
+<p class="Body-Text">FALSE.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.42%;" class="hcp5">
+<p class="Body-Text">Libel</p>
+</td>
+<td style="width:83.58%;" class="hcp5">
+<p class="Body-Text">Espace.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="width:16.42%;" class="hcp5">
+<p class="Body-Text">BitmapExp<br>
+/<br>
+BitmapRed</p>
+</td>
+<td style="width:83.58%;" class="hcp5">
+<p class="Body-Text">Si vous avez programmé une fonction de saisie personnelle (<a href="DefProcSaisie.htm">DefProcSaisie</a>)&#160;: Espace.<br>
+&#160;<br>
+Sinon&#160;: Valeur que vous avez donnée aux variables (de l'enregistrement Harmony) <font class="hcp1">Harmony.BitmapExp</font> / <font class="hcp1">Harmony.BitmapRed</font>. On initialisera en général ces deux données au lancement du programme.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<br>
+Vous pouvez bien entendu modifier ces valeurs en liste par la suite. En particulier, des images bitmap spécifiques à chaque élément peuvent être chargées dans DefProcSaisie (vous trouverez un exemple à la rubrique descriptive de la fonction <a href="DefProcSaisie.htm">DefProcSaisie</a>).</p>
+</body>
+</html>

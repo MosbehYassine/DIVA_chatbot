@@ -1,0 +1,52 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Numérotation des pages et des lignes</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Numérotation des pages et des lignes</h3>
+<p class="Body-Text">Au lancement d'un programme, les données <font class="hcp1">System.Zpage</font> (numéro de page) et <font class="hcp1">System.Zligne</font> (numéro de ligne) sont automatiquement initialisées à la valeur <font class="hcp1">1</font>. Il est donc inutile de positionner ces variables avant d'imprimer un <font class="hcp1">état unique</font> (ou le premier état).</p>
+<p class="Body-Text"><font class="hcp1">Par contre, si votre programme édite plusieurs états, vous devez réinitialiser System.Zpage et System.Zligne au début de chaque nouvelle impression</font> (à partir de la version 6.2, on utilisera pour cela la fonction <a href="XmiNewDocument.htm">XmiNewDocument</a>).</p>
+<p class="Body-Text">Rappelons également que pour séparer les différents états au niveau du spouleur de Windows, vous devez "encadrer" chaque édition d'une réservation et d'une libération de l'imprimante (fonctions Diva respectives&#160;: <span class="hcp2">PrintBegin</span> et <span class="hcp2">PrintEnd</span>).</p>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp1">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">REPEAT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;boucle sur <font style="font-style: italic;">N</font> exemplaires&#160;:</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;System.Zpage = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;réinitialisation page&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;System.Zligne = 1 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;et ligne&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;cr = PrintBegin &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;réservation de l'imprimante&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;IF cr &lt;&gt; 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement de l'erreur&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDIF&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ImprimeFacture &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;édition d'un exemplaire&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;cr = PrintEnd &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;libération de l'imprimante&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;IF cr &lt;&gt; 0&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement de l'erreur&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;ENDIF&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;INPUT "Voulez-vous refaire une impression ? " rep</p>
+<p class="Source">UNTIL NOT rep IN ("O", "o")</p>
+<p class="SourceTop">&#160;</p>
+<p class="Body-Text" style="border-bottom: 1.50pt solid #000000;">&#160;</p>
+<p class="RelatedHead">Voir également :</p>
+<p class="Body-Text"><a href="XmiNewDocument.htm">XmiNewDocument</a></p>
+<p class="Body-Text"><a href="Impression_du_nombre_total_de_pages.htm">Impression du nombre total de pages</a></p>
+<p class="Body-Text">&#160;</p>
+</body>
+</html>

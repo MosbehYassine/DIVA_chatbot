@@ -1,0 +1,115 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Evénements liés à l'objet Gantt</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:bold; }
+tr.hcp2 { vertical-align:top; }
+p.hcp3 { font-weight:bold; }
+span.hcp4 { font-style:italic; }
+td.hcp5 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp6 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Evénements liés à l'objet Gantt</h3>
+<p>&#160;</p>
+<p>A l'occasion d'une consultation par <a href="XmeGanttConsult.htm">XmeGanttConsult</a> (**), lorsque l'utilisateur effectue certaines actions (*) au niveau du Gantt, le <span class="hcp1">point d'arrêt paramétré dans Xwin</span> pour ce Gantt est exécuté. Son numéro est comme d'habitude rangé dans <span class="hcp1">Harmony.DataArret</span> et la main est rendue au programme appelant.</p>
+<p>&#160;</p>
+<p>(*) Les actions qui génèrent un événement sont le clic ou double-clic sur une tâche, le Drag &amp; drop, l'étirement et l'ajout de relation entre deux tâches.</p>
+<p>(**) Remarque : En cours d'input sur une donnée d'un masque ou d'une ligne de tableau, les clics sur l'objet Gantt sont totalement ignorés (ils ne génèrent donc pas de point d'arrêt).</p>
+&#160;
+<p>&#160;</p>
+<p>L'événement produit est stocké dans la variable <span class="hcp1">Harmony.GanttClic</span> et peut prendre les valeurs suivantes :</p>
+<p>&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 38.333%;">
+<col style="width: 61.667%;">
+<tr class="hcp2">
+<td style="border: Solid 1px #000000;width: 38.333%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp3">GANTT_TASK_CLIC</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 61.667%; padding-right: 10px; padding-left: 10px;">
+<p>Clic ou double clic sur une tâche.<span class="hcp1"><br>
+Harmony.GanttTaskId</span> est ici renseigné avec l’adresse de la tâche concernée dans la liste <span class="hcp4">IdGantt</span>.IdTask (où <span class="hcp4">IdGantt</span> est le nom de l'enregistrement renvoyé par XmeGanttGetId).<br>
+<span class="hcp1">Harmony.SourisClic</span> est renseigné avec le nombre de clics effectués. Permet de différencier le simple clic du double.</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:38.333%;" class="hcp5">
+<p class="hcp3">GANTT_MODIFY_TASK</p>
+</td>
+<td style="width:61.667%;" class="hcp6">
+<p style="font-weight: normal;">Modification d'une tâche par drag&amp;drop ou par étirement.</p>
+<p><span class="hcp1">Harmony.GanttTaskId</span> est ici renseigné avec l’adresse de la tâche concernée dans la liste <span class="hcp4">IdGantt</span>.IdTask (où <span class="hcp4">IdGantt</span> est le nom de l'enregistrement renvoyé par XmeGanttGetId).</p>
+<p><span class="hcp1">Harmony.GanttTaskDebut</span> et <span class="hcp1">Harmony.GanttTaskFin</span> sont ici renseignés avec les nouvelles dates début et fin affichées à l'écran.<br>
+&#160;</p>
+</td>
+</tr>
+<tr class="hcp2">
+<td style="width:38.333%;" class="hcp5">
+<p class="hcp3">GANTT_ADD_RELATION</p>
+</td>
+<td style="width:61.667%;" class="hcp6">
+<p>Ajout d'une relation entre une tâche et une autre.<span class="hcp1"><br>
+Harmony.GanttTaskId</span> et <span class="hcp1">Harmony.GanttTaskId2</span> sont ici renseignés respectivement avec l'adresse de la tâche&#160;dont part la relation et l'adresse de la tâche de destination de la relation.</p>
+<p><span class="hcp1">Harmony.GanttDependencyType</span> contient le type de la dépendance.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<p><span class="hcp1">Exemple</span> :<br>
+&#160;</p>
+<p class="Source">Module &#160;"yGantt.dhop"<br>
+Include "zGantt.dhsp"</p>
+<p class="Source">Public &#160;Record ddGantt.dhsd IdGantt <span class="hcp4">IdGantt</span></p>
+<p class="Source"><span class="hcp4">...</span></p>
+<p class="Source">XmeLoad ("masque") &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;chargement du masque</p>
+<p class="Source"><font style="font-style: italic;">Id</font><span class="hcp4">Cal</span> = XmeGanttGetId ("masque",1,"GANTT") &#160;&#160;&#160;&#160;&#160;&#160;&#160;;initialise le Gantt</p>
+<p class="Source">XmeDispv ("masque",1,XME_MODE_GOTO) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;affiche la page</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO</p>
+<p class="Source">&#160;&#160;XmeGanttConsult (<span class="hcp4">IdGantt</span>) &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;consultation Gantt</p>
+<p class="Source">&#160;&#160;SWITCH Harmony.DataArret</p>
+<p class="Source">&#160;&#160;&#160;&#160;CASE Harmony.Key = K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;touche Echap</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;stop</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;CASE nnn &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;point d'arrêt Gantt</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;SWITCH2 Harmony.GanttClic &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;test événement Gantt produit :</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE GANTT_TASK_CLIC &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Clic sur une tâche</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE GANTT_MODIFY_TASK &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;Modification d'une tâche</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CASE ... &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;etc.</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;...</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">&#160;</p>
+<p class="Source">&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND</p>
+<p>&#160;</p>
+<p>&#160;</p>
+</body>
+</html>

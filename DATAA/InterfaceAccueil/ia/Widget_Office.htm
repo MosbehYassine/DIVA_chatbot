@@ -1,0 +1,816 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Widget Office</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ol.hcp1 { list-style:decimal; }
+p.hcp2 { font-weight:bold; }
+span.hcp3 { font-weight:bold; }
+table.hcp4 { vertical-align:top; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { border:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+p.hcp7 { font-weight:bold;
+text-align:center; }
+td.hcp8 { border-top:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp9 { border-left:Solid 1px #000000;
+border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+td.hcp10 { border-right:Solid 1px #000000;
+border-bottom:Solid 1px #000000;
+padding-right:10px;
+padding-left:10px; }
+ul.hcp11 { list-style:disc; }
+p.hcp12 { font-weight:bold;
+margin-left:40px; }
+table.hcp13 { vertical-align:top;
+margin-left:80px; }
+p.hcp14 { margin-left:40px; }
+p.hcp15 { margin-left:0px;
+font-weight:bold; }
+p.hcp16 { margin-left:0px; }
+img.hcp17 { border:none; }
+p.hcp18 { margin-left:48px; }
+p.hcp19 { font-weight:bold;
+margin-left:48px; }
+p.hcp20 { margin-left:48px;
+font-weight:normal; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h1>Widget Office</h1>
+<p>&#160;</p>
+<p>Le widget Office permet à un utilisateur de créer son indicateur à l'aide d'un tableau (Excel ou LibreOffice). Aucune compétence de développement n'est requise.</p>
+<p>Il peut être associé aux <a href="Widget_Feu_et_Jauge.htm">widgets de type Feu et Jauge</a> ainsi qu'aux <a href="Widget_Graphique.htm">widgets de type Graphique</a>.</p>
+<p>Il permet également de lire un fichier texte contenant les balises Hmp correspondant aux widgets de type Feu, Jauge et Graphique.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<ol class="hcp1">
+<li style="font-weight: bold;" class="p">
+<p class="hcp2">Paramétrage du widget</p>
+</li>
+</ol>
+<p>&#160;</p>
+<p>Lors de la création du widget dans le Zoom des widgets, il convient de choisir le type de widget <span class="hcp3">Feu, Jauge ou Graphique.</span></p>
+<p>&#160;</p>
+<p>&#160;</p>
+<table cellspacing="0" class="hcp4">
+<col>
+<col>
+<tr class="hcp5">
+<td class="hcp6">
+<p class="hcp7">Paramètre</p>
+</td>
+<td class="hcp8">
+<p class="hcp7">Valeur</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td class="hcp9">
+<p>Module</p>
+</td>
+<td class="hcp10">
+<p>ModuleOffice.dhop</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td class="hcp9">
+<p>Fonction d'initialisation</p>
+</td>
+<td class="hcp10">
+<p>InitOffice</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td class="hcp9">
+<p>Fonction de mise à jour</p>
+</td>
+<td class="hcp10">
+<p>UpdateOffice</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>C'est dans la zone "Paramètres" qu'il faut renseigner les informations concernant le fichier Office à traiter. C'est une chaîne au format HMP :</p>
+<p>&#160;</p>
+<p class="hcp2">Pour un indicateur de type Feu ou Jauge</p>
+<p>&#160;</p>
+<table cellspacing="0" width="83.603%" class="hcp4">
+<col style="width: 38.028%;">
+<col style="width: 44.544%;">
+<col style="width: 17.428%;">
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp6">
+<p class="hcp7">Paramètre</p>
+</td>
+<td style="width:44.544%;" class="hcp8">
+<p class="hcp7">Description</p>
+</td>
+<td style="width:17.428%;" class="hcp8">
+<p class="hcp7">Type</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;OfficeType&gt; (ou &lt;TypeOffice&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Indique le type de widget à traiter</p>
+<ul class="hcp11">
+<li class="p">
+<p class="hcp2">Indicator (ou Indicateur) pour les types Feu ou Jauge</p>
+</li>
+<li class="p">
+<p>Chart (ou Graphique) pour les graphiques</p>
+</li>
+</ul>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;File&gt; (ou &lt;Fichier&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Indique le fichier Office à traiter. Il doit se trouver dans le répertoire des fichiers joints de l'application "COMMUN".</p>
+<p>Ici, le mot clé "$user" sera remplacé par le code utilisateur Divalto<br>
+(exemple : &lt;File&gt;$user/planmarche.xlsx).</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;FileText&gt; (ou &lt;FichierTexte&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Fichier texte avec les valeurs des balises du widget Feu ou Jauge.</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;Sheet&gt; (ou &lt;Feuille&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Nom de la feuille dans le document Office</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;Min&gt;</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Valeur minimale</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;MinCell&gt; (ou &lt;CelluleMin&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant la valeur minimale</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;Max&gt;</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Valeur maximale</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;MaxCell&gt; (ou &lt;CelluleMax&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant la valeur maximale</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;CurrentCell&gt; (ou CelluleCourante&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant la valeur courante</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;StateCell&gt; (ou &lt;CelluleEtat&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule avec la couleur (couleur du widget Feu)</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Numérique</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;SpreadValueCell&gt; (ou &lt;CelluleValeurEcart&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule avec l'écart par rapport à l'objectif</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;CurrentValueCell&gt; (ou &lt;CelluleValeurCourante&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule avec la valeur courante formatée pour l'affichage. Par défaut, c'est &lt;CurrentCell&gt; qui est affichée.</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;Text&gt; (ou &lt;Texte&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Titre du widget</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;TextCell&gt; (ou &lt;CelluleTexte&gt;) (Faculatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant le titre du widget</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>&#160;</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p class="hcp2">Pour un graphique</p>
+<p class="hcp2">&#160;</p>
+<table cellspacing="0" width="83.603%" class="hcp4">
+<col style="width: 38.028%;">
+<col style="width: 44.544%;">
+<col style="width: 17.428%;">
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp6">
+<p class="hcp7">Paramètre</p>
+</td>
+<td style="width:44.544%;" class="hcp8">
+<p class="hcp7">Description</p>
+</td>
+<td style="width:17.428%;" class="hcp8">
+<p class="hcp7">Type</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;OfficeType&gt; (ou &lt;TypeOffice&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Indique le type de widget à traiter</p>
+<ul class="hcp11">
+<li class="p">
+<p>Indicator (ou Indicateur) pour les types Feu ou Jauge</p>
+</li>
+<li class="p">
+<p class="hcp2">Chart (ou Graphique) pour les graphiques</p>
+</li>
+</ul>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;File&gt; (ou &lt;Fichier&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Indique le fichier Office à traiter. Il doit se trouver dans le répertoire des fichiers joints de l'application "COMMUN".</p>
+<p>Ici, le mot clé "$user" sera remplacé par le code utilisateur Divalto<br>
+(exemple : &lt;File&gt;$user/planmarche.xlsx).</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;FileText&gt; (ou &lt;FichierTexte&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Fichier texte avec les valeurs des balises du widget Feu ou Jauge.</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;Sheet&gt; (ou &lt;Feuille&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Nom de la feuille dans le document Office</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;ChartType&gt; (ou &lt;TypeGraphique&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Type de graphique</p>
+<ul class="hcp11">
+<li class="p">
+<p>Bar (Histogramme)</p>
+</li>
+<li class="p">
+<p>Line (Courbe)</p>
+</li>
+<li class="p">
+<p>Pie (Camembert)</p>
+</li>
+</ul>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;ChartTypeCell&gt; (ou &lt;CelluleTypeGraphique&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant le type de graphique</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;VerticalAxisTitleCell&gt; (ou &lt;CelluleTitreAxeVertical&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant le titre de l'axe vertical</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;VerticalAxisTitle&gt; (ou &lt;TitreAxeVertical&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Titre de l'axe vertical</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;HorizontalAxisTitleCell&gt; (ou &lt;CelluleTitreAxeHorizontal&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant le titre de l'axe horizontal</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;HorizontalAxisTitle&gt; (ou &lt;TitreAxeHorizontal&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Titre de l'axe horizontal</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;ShowLegendCell&gt; (ou &lt;CelluleAfficherLegende&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule indiquant s'il faut afficher la légende (0/1)</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;ShowLegend&gt; (ou &lt;AfficherLegende&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Afficher la légende (0/1)</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;PaletteCell&gt; (ou &lt;CellulePalette&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant le nom de la palette de couleur à utiliser</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;Palette&gt; (Faculatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Palette de couleur à utiliser</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;OrientationCell&gt; (ou &lt;CelulleOrientation&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant l'orientation du graphique (utilisé seulement pour le type Bar (histrogramme)</p>
+<ul class="hcp11">
+<li class="p">
+<p>Horizontal</p>
+</li>
+<li class="p">
+<p>Vertical</p>
+</li>
+</ul>
+<p>&#160;</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;Orientation&gt; (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Orientation du graphique (utilisé seulement pour le type Bar (histogramme))</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;AbscissaRange&gt; (ou &lt;PlageAbscisse&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Plage de données représentant les valeurs de l'abscisse</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;SerieNameCell&gt; (ou &lt;CelluleNomSerie&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant le nom de la série</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;SerieName&gt; (ou &lt;NomSerie&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Nom de la série</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;SerieRange&gt; (ou &lt;PlageSerie&gt;)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Plage des valeurs de la série</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;Text&gt; (ou &lt;Texte&gt;) (Facultatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Titre du widget</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:38.028%;" class="hcp9">
+<p>&lt;TextCell&gt; (ou &lt;CelluleTexte&gt;) (Faculatif)</p>
+</td>
+<td style="width:44.544%;" class="hcp10">
+<p>Cellule contenant le titre du widget</p>
+</td>
+<td style="width:17.428%;" class="hcp10">
+<p>Alpha</p>
+</td>
+</tr>
+</table>
+<p class="hcp2">&#160;</p>
+<p>&#160;</p>
+<p>Si c'est l'attribut &lt;FileText&gt; qui est utilisé, le fichier texte doit contenir les <a href="Widget_Feu_et_Jauge.htm">balises des widgets Feu / Jauge</a>, ou alors les <a href="Widget_Graphique.htm">balises du widget Graphique</a>.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<ol start="2" class="hcp1">
+<li style="font-weight: bold;" class="p">
+<p class="hcp2">Adressage d'une cellule</p>
+</li>
+</ol>
+<ul class="hcp11">
+<li class="p">
+<p class="hcp12">Adresser une cellule<span style="margin-left: 48px; font-weight: normal;"><br>
+<br>
+On peut adresser une cellule selon 3 formats :<br>
+&#160;</span></p>
+</li>
+</ul>
+<table cellspacing="0" width="43.454%" class="hcp13">
+<col style="width: 34.63%;">
+<col style="width: 64.083%;">
+<tr class="hcp5">
+<td style="width:34.63%;" class="hcp6">
+<p class="hcp7">Référence</p>
+</td>
+<td style="width:64.083%;" class="hcp8">
+<p class="hcp7">Commentaire</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:34.63%;" class="hcp9">
+<p>[feuille:]A:1</p>
+</td>
+<td style="width:64.083%;" class="hcp10">
+<p>Colonne Alpha et ligne</p>
+<p>&#160;</p>
+<p>Ex :</p>
+<p>B:10</p>
+<p>AA:142</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:34.63%;" class="hcp9">
+<p>[feuille:]L1:C1</p>
+</td>
+<td style="width:64.083%;" class="hcp10">
+<p>Ligne et colonne numérique</p>
+<p>&#160;</p>
+<p>Ex :</p>
+<p>1:1</p>
+<p>10:50</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:34.63%;" class="hcp9">
+<p>Nom</p>
+</td>
+<td style="width:64.083%;" class="hcp10">
+<p>Cellule nommée</p>
+<p>&#160;</p>
+<p>Ex :</p>
+<p>ObjectifCA</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<ul class="hcp11">
+<li class="p">
+<p class="hcp12">Formule<span style="font-weight: normal;"><br>
+<br>
+La référence à une cellule peut être une expression. C'est le numéro de la cellule, suivi éventuellement d'un calcul.<br>
+<br>
+Le numéro de la cellule est évalué par la fonction DataCompute du langage Diva. On peut donc utiliser dans la formule toutes les fonctions du langage Diva évaluable par DataCompute, ainsi que les données des enregistrements publics visibles dans le module WidgetOffice.dhop (par exemple MZ.DOS).</span></p>
+</li>
+</ul>
+<p style="font-weight: normal;">&#160;</p>
+<ul class="hcp11">
+<li class="p">
+<p class="hcp14"><span class="hcp3">Mots clés substitués lors de l'exécution</span></p>
+</li>
+</ul>
+<p>&#160;</p>
+<table cellspacing="0" class="hcp13">
+<col>
+<col>
+<tr class="hcp5">
+<td class="hcp6">
+<p class="hcp7">Mot clé</p>
+</td>
+<td class="hcp8">
+<p class="hcp7">Commentaire</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td class="hcp9">
+<p>Day</p>
+</td>
+<td class="hcp10">
+<p>Jour du mois courant</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td class="hcp9">
+<p>Month</p>
+</td>
+<td class="hcp10">
+<p>Mois de l'année courante</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td class="hcp9">
+<p>Year</p>
+</td>
+<td class="hcp10">
+<p>Année courante</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td class="hcp9">
+<p>NumWeek</p>
+</td>
+<td class="hcp10">
+<p>Numéro de la semaine courante</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td class="hcp9">
+<p>DayWeek</p>
+</td>
+<td class="hcp10">
+<p>Numéro du jour de la semaine courante</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td class="hcp9">
+<p>NumDay</p>
+</td>
+<td class="hcp10">
+<p>Numéro du jour dans l'année courante</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p>&#160;</p>
+<ol start="3" class="hcp1">
+<li style="font-weight: bold;" class="p">
+<p class="hcp15">Exemple</p>
+</li>
+</ol>
+<p class="hcp12">3.1. Widget Feu / Jauge</p>
+<p class="hcp15">&#160;</p>
+<p class="hcp14">Pour le tableur ci-dessous :</p>
+<p class="hcp16">&#160;</p>
+<p class="hcp16"><img src="../planmarche.jpg" alt="" width="876" height="302" border="0" class="hcp17"></p>
+<p class="hcp15">&#160;</p>
+<p class="hcp14">&lt;file&gt;planmarche.xlsx</p>
+<p class="hcp14">&lt;sheet&gt;feuil1</p>
+<p class="hcp14">&lt;min&gt;0</p>
+<p class="hcp14">&lt;maxcell&gt;objectif</p>
+<p class="hcp14">&lt;currentCell&gt;e:2+month</p>
+<p class="hcp14">&lt;StateCell&gt;2+month:10</p>
+<p class="hcp14">&lt;CurrentValueCell&gt;f:2+month</p>
+<p class="hcp14">&lt;SpreadValueCell&gt;2+Month:9</p>
+<p class="hcp15">&#160;</p>
+<p>&#160;</p>
+<p class="hcp18">Dans cet exemple, on utilise une cellule nommée pour la cellule contenant la valeur maximale, l'écriture A:1 pour CurrentCell et CurrentValueCell, l'écriture L1:C1 pour StateCell et SpreadValueCell.</p>
+<p class="hcp18">Il y a aussi un exemple d'utilisation de formule.</p>
+<p class="hcp18">&#160;</p>
+<p class="hcp18">Pour une exécution au mois de mai, on obtient :</p>
+<p>&#160;</p>
+<p class="hcp18"><img src="../jauge.jpg" alt="" width="349" height="170" border="0" class="hcp17"></p>
+<p>&#160;</p>
+<p class="hcp18">Sous la jauge, ce sont les valeurs minimales et maximales.</p>
+<p class="hcp18">Sur la droite, on a le nom du widget, la valeur courante (ici, c'est CurrentValueCell -colonne F- qui est utilisée car le paramètre a été renseigné (valeur courante sinon -colonne E-)), l'objectif (valeur maximale) et l'écart (colonne I).</p>
+<p class="hcp18">Enfin, la couleur de la jauge provient de la colonne J.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p class="hcp19">3.2. Widget Graphique</p>
+<p class="hcp19">&#160;</p>
+<p class="hcp20">Pour le tableau ci-dessous :</p>
+<p class="hcp19">&#160;</p>
+<p class="hcp20"><img src="../tableur_graphique.jpg" alt="" width="1067" height="181" border="0" class="hcp17"></p>
+<p>&#160;</p>
+<p class="hcp18">&lt;File&gt;graphique.xlsx</p>
+<p class="hcp18">&lt;OfficeType&gt;chart</p>
+<p class="hcp18">&lt;ChartType&gt;bar</p>
+<p class="hcp18">&lt;verticalaxistitle&gt;ordonnée</p>
+<p class="hcp18">&lt;horizontalaxistitle&gt;abscisse</p>
+<p class="hcp18">&lt;AfficherLegende&gt;1</p>
+<p class="hcp18">&lt;AbscissaRange&gt;b:1;m:1</p>
+<p class="hcp18">&lt;SerieName&gt;Série1</p>
+<p class="hcp18">&lt;SerieRange&gt;b:2;m:2</p>
+<p class="hcp18">&lt;SerieName&gt;Série 2</p>
+<p class="hcp18">&lt;SerieRange&gt;b:3;m:3</p>
+<p class="hcp18">&lt;OrientationCell&gt;a:8</p>
+<p class="hcp18">&lt;Palette&gt;Windows8</p>
+<p class="hcp18">&#160;</p>
+<p class="hcp18">On obtient :</p>
+<p class="hcp18"><img src="../histo.jpg" alt="" width="350" height="350" border="0" class="hcp17"></p>
+<p>&#160;</p>
+<ol start="4" class="hcp1">
+<li style="font-weight: bold;" class="p">
+<p class="hcp2">Performance, cache</p>
+</li>
+</ol>
+<p class="hcp18">Pour ne pas charger Office ou OpenOffice pour chaque widget de chaque utilisateur, ce qui pourrait dégrader les performances du serveur et ralentir le chargement de l'interface d'accueil, le résultat de chaque widget est stocké dans un fichier texte.</p>
+<p class="hcp18">Ce fichier texte est stocké dans le sous-répertoire Widget du répertoire où se trouve le fichier Office. Il porte le nom de l'identifiant unique du widget.</p>
+<p class="hcp18">&#160;</p>
+<p class="hcp18">Il contient éventuellement une date d'expiration. En effet, si les formules de calcul des cellules contiennent par exemple une référence au jour de la semaine, le fichier a une durée de vie d'un seul jour.</p>
+<p class="hcp18">&#160;</p>
+<p class="hcp18">Le fichier texte est créé après le premier accès au fichier Office. Le module stocke le résultat dans le fichier texte.</p>
+<p class="hcp18">&#160;</p>
+<p class="hcp18">A l'ouverture d'un fichier Office, le module regarde :</p>
+<ul class="hcp11">
+<li style="list-style:none;display: inline">
+<ul class="hcp11">
+<li class="p">
+<p>s'il existe un fichier texte correspondant ;</p>
+</li>
+<li class="p">
+<p>si le fichier texte est encore pérenne ;</p>
+</li>
+<li class="p">
+<p>si le fichier texte a la même date que le fichier Office.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp18">Dans ce cas, c'est le contenu du fichier texte qui sera utilisé.</p>
+<p class="hcp18">Sinon, le module recalcule le résultat à partir du fichier Office, calcule la nouvelle date d'expiration puis stocke le résultat dans le fichier texte.</p>
+<p>&#160;</p>
+</body>
+</html>

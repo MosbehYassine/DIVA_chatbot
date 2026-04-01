@@ -1,0 +1,64 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>XmeCalendarRemoveOption</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+span.hcp1 { font-weight:normal;
+font-size:11pt; }
+span.hcp2 { font-weight:bold; }
+span.hcp3 { font-style:italic; }
+tr.hcp4 { vertical-align:top; }
+p.hcp5 { font-style:italic; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>XmeCalendarRemoveOption <span style="font-weight: normal;">&#160;</span><a href="Liste_r&eacute;capitulative_des_fonctions_de_gestion_des_agendas.htm"><span class="hcp1">Famille</span></a> <span class="hcp1"><a href="Agendas.htm" style="font-size: 11pt;">Thème</a></span></h3>
+<p style="font-weight: bold;"><span class="hcp2">Retrait d'une option à la liste des options d'un agenda</span></p>
+<p>&#160;</p>
+<p><span class="hcp2">Long XmeCalendarRemoveOption</span> (<span class="hcp3">Identifiant</span>, <span class="hcp3">IdOption</span>)</p>
+<p>&#160;</p>
+<p><span class="hcp2">Paramètres</span> :<br>
+&#160;</p>
+<table style="vertical-align: top;" cellspacing="0" width="100%">
+<col style="width: 12.445%;">
+<col style="width: 87.555%;">
+<tr class="hcp4">
+<td style="border: Solid 1px #000000;width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">Identifiant</p>
+</td>
+<td style="border-top: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Enregistrement identifiant l'agenda rendu par la fonction XmeCalendarGetId.</p>
+</td>
+</tr>
+<tr class="hcp4">
+<td style="border-left: Solid 1px #000000; border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 12.445%; padding-right: 10px; padding-left: 10px;">
+<p class="hcp5">IdOption</p>
+</td>
+<td style="border-right: Solid 1px #000000; border-bottom: Solid 1px #000000; width: 87.555%; padding-right: 10px; padding-left: 10px;">
+<p>Identifiant de l'option à annuler.</p>
+</td>
+</tr>
+</table>
+<p>&#160;</p>
+<p><span class="hcp2">Valeur rendue par la fonction</span> : 0.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Description de la fonction</span> :</p>
+<p>La fonction XmeCalendarRemoveOption supprime l'option passée en paramètre (précédemment positionnée via la fonction <a href="XmeCalendarSetOption.htm">XmeCalendarSetOption</a>) de la liste des options de l’agenda. L’option concernée reprend alors sa valeur par défaut.</p>
+<p>&#160;</p>
+<p><span class="hcp2">Remarque</span> :</p>
+<p>Pour optimiser les transferts d'informations avec l'objet agenda, la liste n'est pas immédiatement mise à jour (elle le sera au prochain affichage des données de l'agenda).</p>
+<p>&#160;</p>
+<p><span class="hcp2">Exemple</span> :<br>
+&#160;</p>
+<p class="Source"><span class="hcp2">XmeCalendarRemoveOption</span> (<span class="hcp3">IdCal</span>,<span class="hcp2">CAL_OPT_ACCESS_RIGHTS</span>) &#160;;annuler les droits d'accès courants</p>
+<p>&#160;</p>
+</body>
+</html>

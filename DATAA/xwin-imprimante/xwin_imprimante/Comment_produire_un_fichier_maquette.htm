@@ -1,0 +1,135 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Comment produire un fichier maquette</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+ul.hcp1 { list-style:disc; }
+span.hcp2 { font-weight:bold; }
+li.hcp3 { list-style:none;
+display:inline; }
+span.hcp4 { font-weight:bold;
+color:#ff0000;
+text-decoration:underline; }
+span.hcp5 { font-weight:bold;
+color:#ff0000; }
+p.hcp6 { margin-left:48px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Comment produire un fichier maquette</h3>
+<p>&#160;</p>
+<p>La constitution d'une maquette pour un état imprimé s'obtient en lançant le programme à l'origine de l'état souhaité, après avoir spécifié l'utilisation d'un modèle d'imprimante demandant la génération d'une maquette :</p>
+<ul class="hcp1">
+<li class="p">
+<p><span class="hcp2">Créez un modèle d'imprimante</span> avec le <span class="hcp2">Type d'imprimante "Maquette"</span> et <span class="hcp2">sélectionnez-le</span>.<br>
+Toute édition effectuée avec ce modèle générera un fichier maquette qui pourra ensuite être rejoué indépendamment du programme ayant produit cette édition (voir la rubrique <a href="Comment_imprimer_une_maquette.htm">Comment imprimer une maquette</a>).<br>
+<br>
+La gestion des modèles et la méthode pour sélectionner un modèle donné sont expliquées dans le livre <span class="hcp2">Impressions</span> du <span class="hcp2">manuel de référence d'Harmony</span> (voir en particulier les rubriques <span class="hcp2">Configuration des éditions</span> et <span class="hcp2">Gestion des modèles d'imprimante</span>).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Lancez votre programme d'impression</span>.<br>
+Un fichier maquette est généré, portant le nom du masque imprimante suffixé par "_" et d'extension <span class="hcp2">.xml</span>.<span class="hcp2"><br>
+<br>
+Exemple</span> : Si le programme utilise le masque MonMasque.dhoi, le fichier généré portera le nom MonMasque_.xml.<span class="hcp2"><br>
+<br>
+Remarque</span> :<br>
+Lorsque le fichier n'existe pas, il est créé au premier xmiPrint.<br>
+Si le programme charge <span class="hcp2">plusieurs masques</span>, le fichier maquette portera le nom du masque faisant l'objet du premier xmiPrint (voir le paragraphe "Restriction lorsque le programme de constitution de la maquette charge plusieurs masques" à la fin de cette rubrique).<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Pour générer plusieurs maquettes à partir du même masque d'impression</span>.<br>
+Par défaut, un fichier maquette unique est associé à chaque masque d'impression et l'ancien contenu du fichier xml est écrasé chaque fois que le programme est exécuté.<br>
+<br>
+Si vous souhaitez produire plusieurs maquettes à partir d'un même masque (obtenues par exemple pour différents jeux de données ou différentes options du programme), activez l'option du modèle <span class="hcp2">Suffixer le nom du fichier maquette avec la date</span>.<br>
+<br>
+Dans ce cas, un nouveau fichier est généré à chaque exécution du programme d'impression, portant le nom du masque suffixé par "_" suivi de la date et de l'heure de l'édition.<span class="hcp2"><br>
+<br>
+Exemple</span> : MonMasque_20160308_1726.xml.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p><span class="hcp2">Pour faciliter l'identification d'une maquette par un utilisateur</span>.<br>
+Une maquette peut être imprimée par un utilisateur depuis l'<a href="Assistant_de_personnalisation_des_masques_d_impression.htm">Assistant de personnalisation des masques d'impression</a>. Si plusieurs maquettes existent pour un masque donné, l'assistant affiche la liste de ces maquettes et propose à l'utilisateur de choisir la maquette qu'il désire dans cette liste. <span class="hcp2">Il est donc important de lui faciliter la tâche en identifiant chaque maquette le plus clairement possible</span>.<br>
+<br>
+Dans ce but, l'assistant affiche deux renseignements que vous pouvez personnaliser :<br>
+&#160;</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p">
+<p>Le <span class="hcp2">nom</span> du fichier maquette.<br>
+Vous pouvez changer le nom du fichier, afin de le rendre "compréhensible".<br>
+<br>
+Mais <span class="hcp4">attention</span>, <span class="hcp5">il est impératif que le nom du fichier reste</span> <span class="hcp4">préfixé</span> <span class="hcp5">par le nom du masque suivi de "_" et conserve l'extension .xml</span>.<span class="hcp2"><br>
+<br>
+Exemples</span> avec le masque MaPiece.dhoi : MaPiece_Devis.xml ; MaPiece_Facture.xml.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p>Le <span class="hcp2">libellé</span> de la maquette.<br>
+Ce libellé est recherché dans l'<span class="hcp2">attribut "libelle"</span> de la <span class="hcp2">balise &lt;report&gt;</span> du fichier xml (deuxième ligne du contenu du fichier).<br>
+<br>
+Cet attribut est initialisé à espace à la 1ère constitution de la maquette. Vous pouvez ensuite le garnir manuellement à votre convenance (256 caractères maximum).<span class="hcp2"><br>
+<br>
+Exemples</span> : &lt;report libelle="Devis" ... ; &lt;report libelle="Facture" ...<br>
+&#160;</p>
+</li>
+</ul>
+</li>
+</ul>
+<p class="hcp6"><span class="hcp5">Remarque importante concernant l'affichage de ces renseignements en langue étrangère :</span></p>
+<ul class="hcp1">
+<li class="p">
+<p class="hcp6">Le nom du fichier personnalisé n'est évidemment pas traduit.<br>
+Le cas échéant, il peut être copié sous un autre nom (dans la langue souhaité) ou créé immédiatement en langue anglaise.<br>
+En cas de changement de nom, <span style="text-decoration: underline;">attention à conserver le préfixe initial</span>.<br>
+&#160;</p>
+</li>
+<li class="p">
+<p class="hcp6">Le libellé fait l'objet d'une traduction "Diva", recherchée dans le dictionnaire "Divalto".<br>
+Il convient donc d'injecter les libellés des maquettes dans un fichier dictionnaire de référence et de les traduire dans la langue souhaitée.<br>
+<br>
+La méthode suivante pourra être utilisée pour injecter les libellés dans le fichier dictionnaire de référence :</p>
+</li>
+<li class="hcp3">
+<ul class="hcp1">
+<li class="p">
+<p class="hcp6">Développeur de l'ERP Divalto.<br>
+Placer les libellés des maquettes dans un fichier spécifique (par exemple : LibellesMaquettes.txt).<br>
+Ajouter le nom de ce fichier à la liste des fichiers à traiter lors de l'injection. L'ajout se fait dans le "<span class="hcp2">Fichier paramètres complémentaire</span>", sous la balise <span class="hcp2">&lt;Fichier&gt;</span> (par exemple : &lt;Fichier&gt;LibellesMaquettes.txt).</p>
+</li>
+<li class="p">
+<p class="hcp6">Développeur d'une surcharge de l'ERP Divalto (ou d'une application spécifique).<br>
+La méthode est identique, à ceci près que l'injection doit être faite dans votre fichier dictionnaire de surcharge (ou spécifique).<br>
+Le fichier dictionnaire contenant les traductions doit être ajouté, dans le fichier paramètres TranslateParams.txt, à la liste des fichiers du dictionnaire Divalto. Par exemple :<br>
+&lt;Dictionnary&gt;Divalto<br>
+&lt;Language&gt;EN<br>
+&lt;File&gt;InfinityLangue_en.dhot<br>
+<span style="font-weight: bold; color: #0000ff;">&lt;File&gt;MonDictionnaire_en.dhot</span></p>
+</li>
+</ul>
+</li>
+</ul>
+<p style="margin-left: 88px;">Pour tous les détails, se reporter à la rubrique "Création d'un dictionnaire de référence" du livre "Traduction" du manuel de référence d'Harmony.</p>
+<p>&#160;</p>
+<p>Les fichiers maquette sont stockés dans le sous-dossier "<span class="hcp2">Maquettes</span>" du dossier pointé par la <span class="hcp2">clé ServeurXlogf</span> du chapitre System de la base de registre (<span class="hcp2">/Divalto/Sys/Maquettes</span> par défaut). Le lieu de stockage dépend donc de l'environnement choisi.</p>
+<p>&#160;</p>
+<p>&#160;</p>
+<p style="font-size: 11pt; font-weight: bold;">Restriction lorsque le programme de constitution de la maquette charge plusieurs masques</p>
+<p>Comme nous l'avons vu précédemment, le nom du fichier xml créé à la constitution d'une maquette est calculé à partir du nom du masque ayant fait l'objet du premier xmiPrint. Réciproquement, le programme générique d'impression des maquettes se sert du nom du masque qui lui est fourni en paramètre pour reconstituer la liste des fichiers xml concernés et, s'il y en a plusieurs, proposer à l'utilisateur de choisir celui qu'il désire.<br>
+<br>
+Le plus souvent, le programme à l'origine d'une série de maquettes charge un masque <span class="hcp2">unique</span>, les fichiers xml créés sont identifiés à partir du nom de ce masque et le programme générique d'impression des maquettes sait en reconstituer la liste.</p>
+<p>Mais si le programme à l'origine des maquettes charge <span class="hcp2">deux ou plusieurs masques</span>, le programme générique d'impression des maquettes ne saura pas reconstituer la liste des fichiers xml concernés si le masque qui lui est fourni en paramètre <span class="hcp2">n'est pas celui qui a fait l'objet du 1er xmiPrint</span>.</p>
+<p>&#160;</p>
+</body>
+</html>

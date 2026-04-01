@@ -1,0 +1,114 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>DefProcCopier</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+font.hcp1 { font-family:MS Sans Serif;
+font-size:10pt;
+font-weight:normal; }
+font.hcp2 { font-weight:bold; }
+font.hcp3 { font-style:italic; }
+td.hcp4 { padding-left:1px;
+padding-top:1px;
+padding-right:1px;
+padding-bottom:1px; }
+ul.hcp5 { list-style:disc; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>DefProcCopier &#160;<a href="Lister_capitulativedesfonctionsdepersonnalisationdeXmeListConsultDefProc.htm"><font face="MS Sans Serif" size="2" class="hcp1">Famille</font></a><font style="font-family: 'MS Sans Serif'; font-size: 10pt;" face="MS Sans Serif" size="2">&#160;</font><a href="FonctionsdepersonnalisationdeXmeListConsultDefProc.htm"><font face="MS Sans Serif" size="2" class="hcp1">Thème</font></a></h3>
+<p class="Body-Text"><font class="hcp2">Procédure "&#160;Copier&#160;" d'une ligne de tableau / arbre personnalisée</font><br>
+(appelée par <a href="XmeListConsultDefault.htm">XmeListConsultDefault</a>)</p>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+DefProcCopier</font> (<font class="hcp3">Identifiant</font>)</p>
+<p class="Body-Text"><font class="hcp2">&#160;<br>
+Paramètre&#160;:</font></p>
+<table cellspacing="0" width="614">
+<tr style="vertical-align: top;">
+<td style="width:19.42%;" class="hcp4">
+<p class="Body-Text"><font class="hcp3">Identifiant</font></p>
+</td>
+<td style="width:80.58%;" class="hcp4">
+<p class="Body-Text">Identificateur du tableau rendu par la fonction XmeListGetId.</p>
+</td>
+</tr>
+</table>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Conditions d'exécution de la procédure&#160;:</font></p>
+<p class="Body-Text">Pour que XmeListConsultDefault fasse appel à DefProcCopier, vous devez&#160;:</p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">Mettre le paramètre <font style="font-weight: bold; font-style: italic;">Perso</font> de XmeListConsultDefault à la valeur <font class="hcp2">TRUE</font>.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Dans votre programme et avant tout appel à XmeListConsultDefault, placer le <font class="hcp2">nom du module</font> (qui peut être le programme courant) contenant la définition de DefProcCopier, dans la zone <font class="hcp2">DefpModule</font> de l'enregistrement Harmony.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;<font class="hcp2"><br>
+Description de la procédure&#160;:</font></p>
+<ul class="hcp5">
+<li class="p-Body-Text">
+<p class="Body-Text">La procédure <font class="hcp2">DefProcCopier</font> est appelée par XmeListConsultDefault après une demande de "&#160;Copier&#160;" par l'utilisateur et avant la copie d'une ligne dans le presse-papiers. En cas de copie d'une sélection, elle est appelée avant la copie dans le presse-papiers de CHAQUE ligne sélectionnée.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Elle peut être utilisée par exemple pour effectuer une copie personnelle des lignes concernées.<br>
+Remarque&#160;: Avant d'appeler DefProcCopier, XmeListConsultDefault fait pointer le courant de la liste sur la ligne à copier et garnit l'enregistrement concerné avec le contenu de cette ligne.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">En cas de "&#160;Copier&#160;" d'un élément d'<a href="Arbres.htm">arbre</a>, les sous-niveaux de l'élément sont automatiquement copiés dans le presse-papiers.<br>
+DefProcCopier est alors appelée pour CHAQUE ligne copiée (donc pour l'élément "&#160;père&#160;" puis pour chaque "&#160;descendant&#160;").<br>
+En cas de copie d'une sélection dans un arbre, rappelons que les pères sélectionnés sont tous de même niveau.</p>
+</li>
+<li class="p-Body-Text">
+<p class="Body-Text">Lorsque l'utilisateur effectue un "&#160;Copier&#160;", un <font class="hcp2">en-tête de reconnaissance personnalisé</font> peut être placé par XmeListConsultDefault dans le presse-papiers. Vous pouvez ensuite consulter cet en-tête lorsque l'utilisateur effectue le "&#160;Coller&#160;" correspondant. Pour tous les détails à ce sujet, reportez-vous à la rubrique consacrée à la fonction <a href="DefProcColler.htm">DefProcColler</a>.</p>
+</li>
+</ul>
+<p class="Body-Text">&#160;</p>
+<p class="Body-Text"><font class="hcp2">Attention</font>&#160;: <font class="hcp2">DefProcCopier DOIT laisser l'élément courant de la liste inchangé</font>. De plus, c'est l'enregistrement concerné (garni en entrée) lui-même qui sera copié dans le presse-papiers&#160;; si vous changez son contenu, c'est l'enregistrement modifié qui sera copié.<br>
+&#160;</p>
+<p class="Body-Text"><font class="hcp2">Exemple&#160;:<br>
+&#160;</font></p>
+<p class="Source">;Programme PROG (schéma)</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">Procedure DefProcCopier (Ident)</p>
+<p class="Source">1 Ident L</p>
+<p class="Source">beginp</p>
+<p class="Source">&#160;&#160;&#160;...</p>
+<p class="Source">endp</p>
+<p class="Source">&#160;</p>
+<p class="Source">...</p>
+<p class="Source">...</p>
+<p class="Source">&#160;</p>
+<p class="Source">Main</p>
+<p class="Source">...</p>
+<p class="Source">Harmony.DefpModule = 'PROG.dhop' &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;le programme lui-même</p>
+<p class="Source">...</p>
+<p class="Source">Fini = FALSE</p>
+<p class="Source">DO &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;boucle de consultation</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;XmeListConsult (Ident)&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;SWITCH Harmony.Key &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;événement produit&#160;?&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;CASE K_ESCAPE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;touche Echap&#160;:&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Fini = TRUE &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;stop&#160;</p>
+<p class="Source">&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;DEFAULT &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;autres événements&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;traitement par défaut&#160;</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;;avec personnalisation&#160;</p>
+<p class="Source">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;XmeListConsultDefault (Ident, <font class="hcp3">Ligne</font>, <span><font class="hcp3">ScrollBar32</font></span>, \</p>
+<p class="Source"><font class="hcp3">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Privilège</font>, <font class="hcp3">Sélection</font>, <font class="hcp2">TRUE</font>)</p>
+<p class="Source">&#160;&#160;&#160;ENDSWITCH</p>
+<p class="Source">WHILE Fini = FALSE</p>
+<p class="Source">WEND</p>
+<p class="Source">...</p>
+</body>
+</html>

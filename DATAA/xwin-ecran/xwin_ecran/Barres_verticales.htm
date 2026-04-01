@@ -1,0 +1,85 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Barres verticales</title>
+<link rel="StyleSheet" href="../Docs.css" type="text/css">
+
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { margin-top:0;
+margin-bottom:0; }
+ul.hcp2 { list-style:square; }
+font.hcp3 { font-size:12pt;
+font-weight:bold; }
+font.hcp4 { font-weight:bold; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="../ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Barres verticales</h3>
+<p class="hcp1">&#160;</p>
+<ul class="hcp2">
+<li class="p-List">
+<p class="List" style="margin-top: 4.00pt;"><font size="4" class="hcp3">&lt;vb&gt;largeur,position,hauteur</font></p>
+</li>
+</ul>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">Trace une barre verticale.</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">Taille, position et hauteur sont exprimées en pourcentages par rapport à la taille de l'objet graphique. Ces valeurs peuvent être des nombres décimaux.</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">&#160;</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;"><font class="hcp4">Exemple :</font></p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;vb&gt;10;10;60"</p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;vb&gt;20;20;80"</p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;vb&gt;10;40;30"</p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;vb&gt;10;50;50"</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0; margin-left: 88px;">&#160;</p>
+<p class="Source" style="margin-left: 88px;"><img src="../image/graph13.gif" alt="" width="241" height="173" border="0"></p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<ul class="hcp2">
+<li class="p-List">
+<p class="List" style="margin-top: 4.00pt;"><font size="4" class="hcp3">&lt;vb1&gt;largeur,position,hauteur<br>
+&lt;vb2&gt;largeur,position,hauteur<br>
+&lt;vb3&gt;largeur,position,hauteur</font></p>
+</li>
+</ul>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">Ces commandes sont identiques à &lt;vb&gt;. Les variantes proposées par ces commandes concernent uniquement le dessin des extrémités des barres. Cela permet de visualiser le fait que la barre n'ait pu être entièrement dessinée car elle dépasse des bornes.</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">b1 : la barre déborde en haut <img src="../image/graph14.gif" alt="" width="23" height="26" border="0"></p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">b2 : la barre déborde en bas <img src="../image/graph15.gif" alt="" width="23" height="21" border="0"></p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">b3 : la barre déborde en haut et en bas.</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">&#160;</p>
+<ul class="hcp2">
+<li class="p-List">
+<p class="List" style="margin-top: 4.00pt;"><font size="4" class="hcp3">&lt;bl&gt;nnn</font></p>
+</li>
+</ul>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">La commande &lt;bl&gt; (base line) permet de positionner la ligne zéro afin de pouvoir afficher des barres avec des valeurs négatives.</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">La valeur nnn est un pourcentage de la hauteur totale de l'objet graphique.</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">Cette commande doit se trouver <font class="hcp4">avant</font> les commandes d'affichage des barres (&lt;vb&gt;)</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">Par exemple, une valeur de 20 signifie que 20% de la hauteur sont réservés aux valeurs négatives et les 80 % restant aux valeurs positives.</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">Les valeurs possibles pour les barres sont maintenant de -20% a 100%.</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">&#160;</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;"><font class="hcp4">Exemple</font> :</p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;bl&gt;20"&#160;&#160;&#160;&#160;; 20% pour le négatif</p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;vb&gt;10;10;-20"&#160;</p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;vb&gt;20;20;-10"</p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;vb&gt;10;40;30"</p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;vb&gt;10;50;50"</p>
+<p class="Source" style="margin-left: 88px;">ff.graph &amp;= "&lt;vb&gt;10;60;95"</p>
+<p class="Source" style="margin-top: 0; margin-bottom: 0; margin-left: 88px;">&#160;</p>
+<p class="Source" style="margin-left: 88px;"><img src="../image/graph16.gif" alt="" width="239" height="168" border="0"></p>
+<p class="List" style="margin-top: 4.00pt;">&#160;</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;"><font class="hcp4">Remarque</font> :</p>
+<p class="List" style="margin-top: 4.00pt; margin-left: 40px;">Avant de dessiner un histogramme, il faut donc balayer toutes les valeurs possibles pour déterminer la valeur de la commande &lt;bl&gt;.</p>
+<p class="hcp1">&#160;</p>
+<p class="Body-Text" style="margin-top: 0; margin-bottom: 0;">&#160;</p>
+<p class="RelatedHead" style="border-top: 1.50pt solid #000000;">Voir</p>
+<p><a href="Commandes_de_pr_sentation.htm">Encadrement et hachurage des barres &lt;cc&gt; &lt;ha&gt;</a></p>
+<p><a href="Affichage_des_valeurs_des_barres.htm">Affichage des valeurs des barres</a></p>
+<p><a href="R_capitulatif_des_commandes_de_l_objet_graphique.htm">Récapitulatif des commandes de l'objet graphique</a></p>
+</body>
+</html>

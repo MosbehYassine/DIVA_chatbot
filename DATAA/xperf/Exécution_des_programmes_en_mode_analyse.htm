@@ -1,0 +1,125 @@
+
+<!doctype HTML public "-//W3C//DTD HTML 4.0 Frameset//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+ <meta name="generator" content="Adobe RoboHelp 11">
+<title>Exécution des programmes en mode analyse</title>
+<link rel="StyleSheet" href="docs.css" type="text/css">
+<style title="hcp" type="text/css">
+<!--
+p.hcp1 { font-weight:bold; }
+span.hcp2 { font-weight:bold; }
+p.hcp3 { font-weight:normal; }
+p.hcp4 { font-weight:bold;
+font-size:11pt; }
+tr.hcp5 { vertical-align:top; }
+td.hcp6 { padding-right:10px;
+padding-left:10px; }
+-->
+</style>
+</head>
+<body>
+<script type="text/javascript" src="ehlpdhtm.js" language="JavaScript1.2"></script>
+
+<h3>Exécution des programmes en mode analyse</h3>
+<p>&#160;</p>
+<p class="hcp1">Remarques préliminaires</p>
+<ul style="list-style: disc;">
+<li class="p">
+<p>Pour qu'un programme soit analysable, il doit avoir été <span class="hcp2">compilé</span> dans une version supérieurs ou égale à la version 6.2. Les modules compilés avec des versions antérieures ne seront pas analysés.</p>
+</li>
+<li class="p">
+<p class="hcp3"><span class="hcp2">Pour avoir le droit</span> de lancer un programme en mode analyse, l'utilisateur doit avoir l'entrée suivante dans Divalto.ini &#160;(xDivaltoMajIni) :<br>
+[system]<br>
+xperf=1</p>
+</li>
+</ul>
+<p>&#160;</p>
+<p>L'analyse de performances peut être lancée depuis Xwin et, pour les applications de la version 6, depuis l'icône de lancement d'un programme et depuis le menu système. L'analyse des performances est indépendante de l'option de compilation Debug.</p>
+<p>&#160;</p>
+<p class="hcp4">Lancement depuis Xwin</p>
+<p class="hcp3">Dans les paramètres du sous-projet, vous pouvez demander que les programmes soient exécutés "Avec analyseur de performances".</p>
+<p class="hcp3">Les paramètres complémentaires sont :<br>
+&#160;</p>
+<table style="vertical-align: top; left: 0px; top: 216px; height: 95px;" cellspacing="0" width="1035">
+<col style="width: 16.545%;">
+<col style="width: 83.455%;">
+<tr class="hcp5">
+<td style="width:16.545%;" class="hcp6">
+<p class="hcp1">Garder les numéros de ligne</p>
+</td>
+<td style="width:83.455%;" class="hcp6">
+<p>Cette option est liée à la pile. Elle permet de garder le numéro de ligne de l'appel d'une fonction.</p>
+<p>Exemple :</p>
+<p class="Source">1 &#160;procedure A</p>
+<p class="Source">2 &#160;beginp</p>
+<p class="Source">3 &#160;endp</p>
+<p class="Source">4</p>
+<p class="Source">5 &#160;main</p>
+<p class="Source">6 &#160;1 i X</p>
+<p class="Source">7 &#160;A</p>
+<p class="Source">8 &#160;for i = 1 to 2</p>
+<p class="Source">9 &#160;A</p>
+<p class="Source">10 next</p>
+<p>Si les numéros de lignes sont gardés, dans le résultat nous voyons que la procédure A a été appelée depuis Main une fois en ligne 7 et deux fois en ligne 9. Si les numéros de ligne ne sont pas gardés, dans le résultat nous voyons que la procédure A a été appelée trois fois depuis Main.</p>
+<p>Le fait de garder les numéros de ligne va augmenter la quantité d'informations gardées par l'analyseur mais offre une plus grande finesse d'analyse.</p>
+<p>Cette option nécessite que les objets soient compilés avec l'option Debug.</p>
+<p>&#160;</p>
+</td>
+</tr>
+<tr class="hcp5">
+<td style="width:16.545%;" class="hcp6">
+<p class="hcp1">Nombre de niveau de la pile à garder</p>
+</td>
+<td style="width:83.455%;" class="hcp6">
+<p>Indique combien de niveaux de pile vous voulez garder (0 = ne pas garder les piles).</p>
+<p>Le fait de garder les piles ralenti l'exécution du programme, mais ne fausse pas les résultats de l'analyse. Le temps passé dans la gestion du stockage des piles est déduit.<br>
+&#160;</p>
+</td>
+</tr>
+</table>
+<p class="hcp3">Chaque exécution de programme (F5 ou Ctrl-F5) va alors générer un rapport d'analyse.</p>
+<p class="hcp3">Les programmes lancés par ProgramCall ou ProgramGoto généreront également un rapport d'analyse distinct.</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp4">Lancement depuis le menu système (applications de la version 6)</p>
+<p class="hcp3">Le choix <span class="hcp2">Analyseur de performances</span> du menu système permet de passer en mode analyse de performances.</p>
+<p class="hcp3">Vous devez alors garnir les deux paramètres (Garder les numéros de ligne et Nombre de niveaux de la pile à garder).</p>
+<p class="hcp3">Une fois le mode analyse lancé, le choix <span class="hcp2">Analyseur de performances</span> permet d'interrompre puis de relancer l'analyse.</p>
+<p>&#160;</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp4">Lancement depuis une icône (applications de la version 6)</p>
+<p class="hcp3">Dans les paramètres d'une icône du bureau vous pouvez demander à lancer le programme en mode analyse.</p>
+<p class="hcp3">Les paramètres à ajouter à la ligne de commande sont :</p>
+<p class="Source"><span class="hcp2">/analyze –n</span> nombre_de_niveaux &#160;<span class="hcp2">-l</span> avec_numéros_ligne</p>
+<p class="hcp3">Nombre_de_niveaux : Nombre de niveaux de la pile que vous désirez garder.</p>
+<p class="hcp3">Avec_numéros_ligne : 0 = non &#160;1 = oui</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">Exemple : <span style="font-family: 'Courier New', monospace;">C:\divalto\sys\XRtDiva.exe divalto.dhop &#160;/analyze -n 99 -l 1</span></p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp4"><span style="font-weight: bold; font-size: 11pt;">Lancement depuis une icône (applications de la version 7)</span></p>
+<p class="hcp3">Dans les paramètres d'une icône du bureau vous pouvez demander à lancer le programme en mode analyse.</p>
+<p class="hcp3">Les paramètres à ajouter à la ligne de commande sont :</p>
+<p class="Source"><span class="hcp2">/div /analyze –n</span> nombre_de_niveaux &#160;<span class="hcp2">-l</span> avec_numéros_ligne /enddiv</p>
+<p class="hcp3">Nombre_de_niveaux : Nombre de niveaux de la pile que vous désirez garder.</p>
+<p class="hcp3">Avec_numéros_ligne : 0 = non &#160;1 = oui</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp4">Lancement de l'analyse depuis le programme Diva</p>
+<p class="hcp3">L'instruction Diva <span class="hcp2">AnalyzeStart ( [NiveauxDePiles], [GarderLignes])</span> permet de lancer l'analyse du programme courant.</p>
+<p class="hcp3">Voir <a href="Instructions_Diva.htm">Instructions Diva</a>.</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp4">Fichier résultat</p>
+<p class="hcp3">Pour chaque programme lancé en mode Analyse, un fichier est créé dans le répertoire /divalto/divaltoLog/perf.</p>
+<p class="hcp3">Le nom du fichier est composé de la manière suivante : &#160;NomDuProgramme_date_heure_utilisateur.xml.</p>
+<p class="hcp3">Exemple : harmony-dhop_22-06-2009_09-19-03_bhouver.xml</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp3">&#160;</p>
+<p class="hcp4">Remarque</p>
+<p class="hcp3">Après l'appel à la fonction de réinitialisation du module Ymig, les noms des fonctions des masques déchargés sont perdus et ne peuvent être affichés.</p>
+<p class="hcp3">Voir <a href="Instructions_Diva.htm">Instructions Diva</a> pour les paramètres qu'il est possible de positionner dans le registre.</p>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<!-- Sitemap 1.0 -->
+<object type="text/site properties">
+  <param name="SiteType" value="index">
+</object>
+<ul>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Aides fenêtrées">
+    <param name="Name" value="Gestion des aides fenêtrées sous Harmony">
+    <param name="Local" value="AidesFenetrees/Gestiondesaidesfen_tr_essousHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="chm">
+    <param name="Name" value="Gestion des aides fenêtrées sous Harmony">
+    <param name="Local" value="AidesFenetrees/Gestiondesaidesfen_tr_essousHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Exécution du fichier d'aides">
+    <param name="Name" value="Exécution du fichier d'aides Windows">
+    <param name="Local" value="AidesFenetrees/Ex_cutiondufichierd_aidesWindows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="hlp">
+    <param name="Name" value="Gestion des aides fenêtrées sous Harmony">
+    <param name="Local" value="AidesFenetrees/Gestiondesaidesfen_tr_essousHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="htm">
+    <param name="Name" value="Gestion des aides fenêtrées sous Harmony">
+    <param name="Local" value="AidesFenetrees/Gestiondesaidesfen_tr_essousHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="HtmlHelp">
+    <param name="Name" value="Gestion des aides fenêtrées sous Harmony">
+    <param name="Local" value="AidesFenetrees/Gestiondesaidesfen_tr_essousHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Saisie et génération d'un fichier d'aides">
+    <param name="Name" value="Saisie et constitution d'un fichier d'aides Windows">
+    <param name="Local" value="AidesFenetrees/Saisieetconstitutiond_unfichierd_aidesWindows.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Sommaire d'une aide">
+    <param name="Name" value="Gestion des aides fenêtrées sous Harmony">
+    <param name="Local" value="AidesFenetrees/Gestiondesaidesfen_tr_essousHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Traduction d'un fichier d'aides">
+    <param name="Name" value="Traduction d'un fichier d'aides">
+    <param name="Local" value="AidesFenetrees/Traduction_d_un_fichier_d_aides.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="Visualisation des aides depuis Xwin">
+    <param name="Name" value="Visualisation des aides depuis Xwin">
+    <param name="Local" value="AidesFenetrees/Visualisation_des_aides_depuis_Xwin.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="WebHelp">
+    <param name="Name" value="Gestion des aides fenêtrées sous Harmony">
+    <param name="Local" value="AidesFenetrees/Gestiondesaidesfen_tr_essousHarmony.htm">
+  </object>
+  <li><object type="text/sitemap">
+    <param name="Name" value="WinHelp">
+    <param name="Name" value="Gestion des aides fenêtrées sous Harmony">
+    <param name="Local" value="AidesFenetrees/Gestiondesaidesfen_tr_essousHarmony.htm">
+  </object>
+</ul>
+</html>
