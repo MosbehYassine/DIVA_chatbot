@@ -1,5 +1,67 @@
-.venv
-.vscode
-__pycache__
-OllamaSetup.exe
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation directories (keep only what we need)
+# Keep Administration/, Chemins/, etc. for processing
+
+# Logs and temporary files
 *.log
+*.tmp
+.cache/
+
+# Test files
+test_*.py
+*_test.py
+tests/
+
+# FAISS index (will be created at runtime)
+faiss_index/
+faiss_index_v2/
+
+# Network graph
+networkx_graph.pkl
+
+# Reports
+RAPPORT_*.txt
+*.md
+!README.md

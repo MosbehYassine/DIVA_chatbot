@@ -1,0 +1,193 @@
+{
+  "test_questions": [
+    {
+      "id": "chemins_harmony_001",
+      "category": "Chemins Harmony",
+      "question": "Qu'est-ce qu'un chemin Harmony ?",
+      "expected_answer": "Les chemins Harmony permettent de raccourcir les noms de fichier ou de convenir de noms de chemin plus parlants en remplaçant tout ou partie des chemins d'accès réels aux fichiers.",
+      "difficulty": "facile",
+      "source_files": ["CheminsHarmony.htm"]
+    },
+    {
+      "id": "chemins_harmony_002",
+      "category": "Chemins Harmony",
+      "question": "Comment utiliser un chemin Harmony dans un nom de fichier ?",
+      "expected_answer": "Si un nom de fichier Harmony commence par '/', le premier segment du chemin d'accès est un nom de chemin Harmony qui sera remplacé par le chemin réel qu'il représente.",
+      "difficulty": "moyen",
+      "source_files": ["CheminsHarmony.htm"]
+    },
+    {
+      "id": "chemins_harmony_003",
+      "category": "Chemins Harmony",
+      "question": "L'emploi des chemins Harmony est-il obligatoire ?",
+      "expected_answer": "L'emploi de chemins Harmony est facultatif en local mais obligatoire au niveau d'un serveur de réseau Xlan.",
+      "difficulty": "moyen",
+      "source_files": ["CheminsHarmony.htm"]
+    },
+    {
+      "id": "utilisateurs_001",
+      "category": "Gestion des utilisateurs",
+      "question": "Comment Harmony gère-t-il les utilisateurs ?",
+      "expected_answer": "Harmony gère une base de données des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier préalablement.",
+      "difficulty": "facile",
+      "source_files": ["Fichierdesutilisateurs.htm"]
+    },
+    {
+      "id": "utilisateurs_002",
+      "category": "Gestion des utilisateurs",
+      "question": "Quel programme assure la gestion des utilisateurs dans Harmony ?",
+      "expected_answer": "La gestion des utilisateurs est assurée par le programme Xlog1.dhop (ou par le menu Divalto.dhop).",
+      "difficulty": "facile",
+      "source_files": ["Fichierdesutilisateurs.htm"]
+    },
+    {
+      "id": "utilisateurs_003",
+      "category": "Gestion des utilisateurs",
+      "question": "Où peut être stocké le fichier des utilisateurs Xlogf ?",
+      "expected_answer": "Le fichier Xlogf peut être stocké localement (un fichier par ordinateur) ou de manière centralisée sur un serveur Harmony (un fichier unique pour tout le site).",
+      "difficulty": "moyen",
+      "source_files": ["Fichierdesutilisateurs.htm"]
+    },
+    {
+      "id": "impressions_001",
+      "category": "Impressions",
+      "question": "Que couvre la documentation sur les impressions dans Harmony ?",
+      "expected_answer": "La documentation explique le fonctionnement des impressions commandées par les applications Harmony, notamment les principes généraux des impressions Windows et Harmony.",
+      "difficulty": "facile",
+      "source_files": ["Impressions__Introduction.htm"]
+    },
+    {
+      "id": "impressions_002",
+      "category": "Impressions",
+      "question": "Quels sont les deux aspects principaux couverts par la documentation des impressions ?",
+      "expected_answer": "Dans un premier temps, les principes généraux des impressions Windows et Harmony (gestionnaire d'impression, imprimante par défaut, modes graphique et caractères, modèles d'imprimante). Dans un deuxième temps, les opérations pour la mise en œuvre optimale des impressions Harmony sous Windows.",
+      "difficulty": "moyen",
+      "source_files": ["Impressions__Introduction.htm"]
+    },
+    {
+      "id": "impressions_003",
+      "category": "Impressions",
+      "question": "Où trouver la documentation sur le paramétrage des imprimantes en mode client léger ?",
+      "expected_answer": "Pour connaître les particularités de paramétrage des imprimantes en mode client léger, il faut consulter la documentation de xDivaltoPrinters.",
+      "difficulty": "moyen",
+      "source_files": ["Impressions__Introduction.htm"]
+    },
+    {
+      "id": "administration_001",
+      "category": "Administration générale",
+      "question": "Qu'est-ce que Xlog dans le contexte Harmony ?",
+      "expected_answer": "Xlog est un système de gestion des utilisateurs dans Harmony qui nécessite une identification préalable des utilisateurs travaillant dans l'environnement.",
+      "difficulty": "facile",
+      "source_files": ["Fichierdesutilisateurs.htm"]
+    },
+    {
+      "id": "administration_002",
+      "category": "Administration générale",
+      "question": "Quels sont les droits gérés par le système d'identification des utilisateurs ?",
+      "expected_answer": "Le système met en place les chemins implicites de l'utilisateur et ses droits d'accès ou codes de confidentialité utilisés par les programmes et menus d'Harmony.",
+      "difficulty": "moyen",
+      "source_files": ["Fichierdesutilisateurs.htm"]
+    },
+    {
+      "id": "chemins_acces_001",
+      "category": "Chemins d'accès",
+      "question": "Comment fonctionnent les chemins d'accès simplifiés dans Harmony ?",
+      "expected_answer": "Les chemins d'accès simplifiés permettent de remplacer tout ou partie des chemins d'accès réels aux fichiers par des noms plus courts et parlants.",
+      "difficulty": "facile",
+      "source_files": ["Cheminsd_acc_simplicites.htm", "CheminsHarmony.htm"]
+    },
+    {
+      "id": "chemins_acces_002",
+      "category": "Chemins d'accès",
+      "question": "Quelle est la différence entre chemins implicites et chemins Harmony ?",
+      "expected_answer": "Les chemins implicites sont définis par utilisateur tandis que les chemins Harmony sont des alias globaux définis au niveau système pour simplifier les noms de chemin.",
+      "difficulty": "difficile",
+      "source_files": ["D_clarationdescheminsHarmony.htm", "Fichierdesutilisateurs.htm"]
+    },
+    {
+      "id": "impression_windows_001",
+      "category": "Impression Windows",
+      "question": "Comment Harmony gère-t-il l'impression sous Windows ?",
+      "expected_answer": "Harmony utilise le gestionnaire d'impression (spouleur) de Windows et permet de définir une imprimante par défaut, de gérer les modes graphique et caractères, et d'utiliser des modèles d'imprimante.",
+      "difficulty": "moyen",
+      "source_files": ["Principesg_n_rauxdesimpressionsHarmony_Windows.htm", "Impressions__Introduction.htm"]
+    },
+    {
+      "id": "impression_windows_002",
+      "category": "Impression Windows",
+      "question": "Qu'est-ce qu'un modèle d'imprimante dans Harmony ?",
+      "expected_answer": "Un modèle d'imprimante définit les paramètres d'impression spécifiques à une imprimante ou un type d'imprimante, permettant de standardiser les configurations d'impression.",
+      "difficulty": "moyen",
+      "source_files": ["Mod_lesd_imprimanteHarmony.htm", "Imprimantepard_fautdeWindows.htm"]
+    },
+    {
+      "id": "ldap_synchronisation_001",
+      "category": "LDAP et synchronisation",
+      "question": "Que permet la synchronisation LDAP dans Harmony ?",
+      "expected_answer": "La synchronisation LDAP permet d'importer et synchroniser les utilisateurs d'un annuaire LDAP avec la base utilisateurs Harmony.",
+      "difficulty": "moyen",
+      "source_files": ["Import_et_synchronisation_des_utilisateurs_dun_annuaire_LDAP.htm"]
+    },
+    {
+      "id": "ldap_synchronisation_002",
+      "category": "LDAP et synchronisation",
+      "question": "Quels sont les avantages de l'utilisation d'un annuaire LDAP avec Harmony ?",
+      "expected_answer": "L'utilisation d'un annuaire LDAP permet une gestion centralisée des utilisateurs, une synchronisation automatique, et une intégration avec les systèmes d'authentification d'entreprise.",
+      "difficulty": "difficile",
+      "source_files": ["Synchronisation.htm", "Import_et_synchronisation_des_utilisateurs_dun_annuaire_LDAP.htm"]
+    },
+    {
+      "id": "fichiers_commandes_001",
+      "category": "Fichiers de commandes",
+      "question": "Qu'est-ce qu'un fichier de commandes dans Harmony ?",
+      "expected_answer": "Un fichier de commandes (batch) peut être appelé 'fichier pilote' pour enregistrer l'appel d'un programme (ou d'une séquence) avec ses paramètres.",
+      "difficulty": "moyen",
+      "source_files": ["Fichierdecommandes.htm"]
+    },
+    {
+      "id": "fichiers_commandes_002",
+      "category": "Fichiers de commandes",
+      "question": "Comment lancer automatiquement une tâche de fond dans Harmony ?",
+      "expected_answer": "Le lancement automatique d'une tâche de fond peut être configuré via les paramètres d'icône ou les fichiers de commandes programmés.",
+      "difficulty": "difficile",
+      "source_files": ["Lancementautomatiqued_unet_chedefond.htm", "Fichierdecommandes.htm"]
+    },
+    {
+      "id": "etats_graphiques_001",
+      "category": "États et graphiques",
+      "question": "Quelles sont les possibilités d'édition d'états dans Harmony ?",
+      "expected_answer": "Harmony permet l'édition d'états graphiques et caractères, avec gestion des tableaux, paramétrage des impressions, et aperçu avant impression.",
+      "difficulty": "facile",
+      "source_files": ["Etatsgraphiqueset_tatscaract_res.htm", "Edition_d_une_maquette.htm"]
+    },
+    {
+      "id": "etats_graphiques_002",
+      "category": "États et graphiques",
+      "question": "Comment régler la hauteur et largeur d'édition dans Harmony ?",
+      "expected_answer": "La hauteur et largeur d'édition peuvent être réglées via les paramètres d'impression et de mise en page des états.",
+      "difficulty": "moyen",
+      "source_files": ["R_glagedelahauteurd__dition.htm", "R_glagedelalargeurd__dition.htm"]
+    }
+  ],
+  "metadata": {
+    "total_questions": 20,
+    "categories": [
+      "Chemins Harmony",
+      "Gestion des utilisateurs",
+      "Impressions",
+      "Administration générale",
+      "Chemins d'accès",
+      "Impression Windows",
+      "LDAP et synchronisation",
+      "Fichiers de commandes",
+      "États et graphiques"
+    ],
+    "difficulty_distribution": {
+      "facile": 6,
+      "moyen": 10,
+      "difficile": 4
+    },
+    "created_date": "2026-04-08",
+    "purpose": "Test du système RAG pour la documentation Harmony/Divalto"
+  }
+}

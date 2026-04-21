@@ -1,228 +1,156 @@
+#!/usr/bin/env python3
+"""
+Script de requête pour le système GraphRAG
+Utilise le graphe NetworkX créé par ingest_docs.py pour répondre aux questions.
+"""
+
 import os
 import pickle
-from langchain_community.graphs.networkx_graph import NetworkxEntityGraph
-from langchain_openai import ChatOpenAI
-import re
+import networkx as nx
+from typing import List, Dict
+import json
 
-# Charger les variables d'environnement depuis .env si le fichier existe
-try:
-    from dotenv import load_dotenv
-    load_dotenv()
-except ImportError:
-    pass  # python-dotenv n'est pas installé, continuer sans
+# Configuration
+GRAPH_PATH = "networkx_graph.pkl"
 
-# Configuration (fichier du graphe sauvegardé par ingest_docs.py)
-DB_DIR = "networkx_graph.pkl"
+class GraphQuery:
+    def __init__(self, graph_path: str = GRAPH_PATH):
+        self.graph_path = graph_path
+        self.graph = None
+        self._load_graph()
 
-# OpenRouter configuration
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-if not OPENROUTER_API_KEY:
-    raise ValueError("OPENROUTER_API_KEY environment variable is required. Please set it in your environment variables or create a .env file.")
+    def _load_graph(self):
+        """Charge le graphe NetworkX depuis le fichier pickle."""
+        if os.path.exists(self.graph_path):
+            with open(self.graph_path, 'rb') as f:
+                self.graph = pickle.load(f)
+            print(f"✅ Graphe chargé: {self.graph.number_of_nodes()} noeuds, {self.graph.number_of_edges()} relations")
+        else:
+            print(f"❌ Fichier graphe non trouvé: {self.graph_path}")
+            print("Exécutez d'abord: python ingest_docs.py")
+            self.graph = None
 
-# Modèle OpenRouter (Qwen recommandé pour la compatibilité)
-MODEL_NAME = "qwen/qwen-2.5-72b-instruct"
+    def search_entities(self, query: str, top_k: int = 5) -> List[str]:
+        """Recherche d'entités pertinentes dans le graphe."""
+        if not self.graph:
+            return []
 
+        query_lower = query.lower()
+        entities = []
 
-def _load_llm():
-    """Initialize OpenRouter LLM"""
-    llm = ChatOpenAI(
-        model=MODEL_NAME,
-        openai_api_key=OPENROUTER_API_KEY,
-        openai_api_base="https://openrouter.ai/api/v1",
-        temperature=0.1,  # Low temperature for more consistent responses
-        max_tokens=200,
-    )
-    return llm
+        # Recherche d'entités dont le nom contient des mots de la requête
+        for node in self.graph.nodes():
+            if isinstance(node, str) and len(node) > 2:
+                node_lower = node.lower()
+                # Vérifier si des mots de la requête sont dans le nom de l'entité
+                query_words = query_lower.split()
+                if any(word in node_lower for word in query_words):
+                    entities.append(node)
 
-def query_vector_store(query):
-    if not os.path.exists(DB_DIR):
-        print(f"Erreur : Le graphe n'a pas été trouvé à {DB_DIR}. Veuillez exécuter ingest_docs.py d'abord.")
+        return entities[:top_k]
+
+    def get_related_documents(self, entities: List[str], top_k: int = 3) -> List[Dict]:
+        """Récupère les documents liés aux entités trouvées."""
+        if not self.graph:
+            return []
+
+        related_docs = []
+
+        for entity in entities:
+            if entity in self.graph:
+                # Trouver tous les documents connectés à cette entité
+                neighbors = list(self.graph.neighbors(entity))
+                docs = [n for n in neighbors if n.startswith("Document_")]
+
+                for doc in docs:
+                    if doc in self.graph:
+                        doc_data = self.graph.nodes[doc]
+                        text = doc_data.get('text', '')
+                        related_docs.append({
+                            'entity': entity,
+                            'document': doc,
+                            'text': text
+                        })
+
+        # Dédoublonner et limiter
+        seen_docs = set()
+        unique_docs = []
+        for doc in related_docs:
+            if doc['document'] not in seen_docs:
+                unique_docs.append(doc)
+                seen_docs.add(doc['document'])
+                if len(unique_docs) >= top_k:
+                    break
+
+        return unique_docs
+
+    def query(self, question: str) -> Dict:
+        """Traite une question et retourne les résultats."""
+        print(f"\n🔍 Recherche pour: {question}")
+
+        # 1. Trouver les entités pertinentes
+        entities = self.search_entities(question)
+        print(f"📋 Entités trouvées: {entities}")
+
+        # 2. Récupérer les documents liés
+        documents = self.get_related_documents(entities)
+        print(f"📄 Documents trouvés: {len(documents)}")
+
+        # 3. Construire la réponse
+        context_parts = []
+        for doc in documents:
+            context_parts.append(f"[{doc['entity']}] {doc['text'][:300]}...")
+
+        context = "\n\n".join(context_parts) if context_parts else "Aucune information trouvée."
+
+        return {
+            'question': question,
+            'entities_found': entities,
+            'documents_found': len(documents),
+            'context': context,
+            'response': f"Réponse basée sur {len(documents)} documents trouvés dans le graphe."
+        }
+
+def main():
+    """Interface interactive pour poser des questions."""
+    print("🤖 SYSTÈME GRAPHRAG - REQUÊTES")
+    print("=" * 50)
+
+    query_system = GraphQuery()
+
+    if not query_system.graph:
         return
 
-    print("Chargement du graphe des connaissances...")
-    try:
-        with open(DB_DIR, "rb") as f:
-            graph_data = pickle.load(f)
-            # Reconstruire l'objet métier
-            graph = NetworkxEntityGraph()
-            graph._graph = graph_data
-    except Exception as e:
-        print(f"Erreur lors du chargement du graphe: {e}")
-        return
-        
-    print(f"Graphe chargé avec {graph._graph.number_of_nodes()} noeuds.")
+    while True:
+        question = input("\n💬 Posez votre question (ou 'exit'): ").strip()
 
-    print("\n--- Analyse du graphe ---")
-    # 1. Extraction basique des entités de la question (mots clés simples)
-    mots_cles = [word for word in query.split() if len(word) > 3]
+        if question.lower() in ['exit', 'quit', 'q']:
+            break
 
-    # 2. Recherche de correspondances dans le graphe (on ne garde QUE des extraits de texte)
-    doc_snippets = []
+        if not question:
+            continue
 
-    for noeud in graph._graph.nodes():
-        for mot in mots_cles:
-            if mot.lower() in str(noeud).lower():
-                try:
-                    # On regarde les documents liés à ce nœud (prédécesseurs)
-                    voisins_docs = set(graph._graph.predecessors(noeud))
-                    for v in voisins_docs:
-                        attrs = graph._graph.nodes[v]
-                        if "text" in attrs:
-                            snippet = attrs["text"]
-                            snippet_lower = snippet.lower()
-                            # On ne garde que les extraits qui contiennent au moins un mot-clé de la requête
-                            if any(m.lower() in snippet_lower for m in mots_cles):
-                                doc_snippets.append(snippet[:250])
-                except Exception:
-                    pass
+        # Traiter la question
+        result = query_system.query(question)
 
-    # Contexte = concaténation de quelques extraits de documents pertinents
-    if doc_snippets:
-        texte_contexte = "\n\n--- EXTRAICTS DE DOCUMENTS ---\n\n" + "\n\n".join(doc_snippets[:3])
-    else:
-        texte_contexte = "Aucune information précise trouvée dans le graphe."
-    print("Contexte extrait du Graphe RAG :")
-    print(texte_contexte)
+        # Afficher les résultats
+        print("\n" + "="*50)
+        print("📋 ENTITÉS TROUVÉES:")
+        for entity in result['entities_found']:
+            print(f"  • {entity}")
 
-    print(f"\n--- Requête : '{query}' ---\n")
+        print(f"\n📄 DOCUMENTS ({result['documents_found']}):")
+        if result['documents_found'] > 0:
+            for i, doc in enumerate(result['documents_found'] if isinstance(result['documents_found'], list) else [], 1):
+                print(f"  {i}. {doc}")
+        else:
+            print("  Aucun document trouvé")
 
-    # === Ancienne version OpenAI (désactivée pour solution 100% gratuite) ===
-    # from langchain_core.prompts import PromptTemplate
-    # from langchain_openai import ChatOpenAI
-    # llm = ChatOpenAI(model="gpt-4o-mini")
-    # ...
+        print("\n🤖 RÉPONSE:")
+        print(result['response'])
 
-    # === Version OpenRouter (remplace les modèles locaux) ===
-    try:
-        llm = _load_llm()
-        print(f"Modèle OpenRouter chargé: {MODEL_NAME}")
-
-        system_msg = (
-            "Tu es un assistant RAG. Tu réponds en français.\n"
-            "Règles STRICTES :\n"
-            "- Utilise UNIQUEMENT les informations présentes dans le CONTEXTE.\n"
-            "- Si le CONTEXTE ne suffit pas pour répondre, dis : \"Le contexte fourni ne permet pas de répondre précisément.\" puis ajoute au plus 1 phrase expliquant ce qui manque.\n"
-            "- Réponds en 3 à 5 phrases complètes, sans liste, sans puces, sans numérotation.\n"
-            "- Ne copie pas mot à mot des passages du CONTEXTE.\n"
-        )
-        user_msg = f"CONTEXTE:\n{texte_contexte}\n\nQUESTION:\n{query}\n"
-
-        from langchain_core.prompts import ChatPromptTemplate
-        prompt = ChatPromptTemplate.from_messages([
-            ("system", system_msg),
-            ("human", user_msg)
-        ])
-
-        chain = prompt | llm
-        response = chain.invoke({})
-        answer = response.content.strip()
-
-        # Post-traitement léger: supprimer listes/numérotation et garder 3–5 phrases max.
-        answer = re.sub(r"(?m)^\s*[\-\*\d]+\s*[\)\.\-]?\s*", "", answer).strip()
-        answer = re.sub(r"\n{2,}", "\n", answer).replace("\n", " ").strip()
-        sentences = re.split(r"(?<=[\.\!\?])\s+", answer)
-        sentences = [s.strip() for s in sentences if s.strip()]
-        if len(sentences) > 5:
-            answer = " ".join(sentences[:5]).strip()
-
-        # Garde-fou anti-hallucination: si la réponse ne recoupe pas le contexte, on bascule sur un fallback.
-        ctx = texte_contexte.lower()
-        ans = answer.lower()
-        # On inclut aussi les mots clés issus de la question pour éviter de retomber sur un fallback "Harmony" hors sujet.
-        query_tokens = [t.lower() for t in re.findall(r"[a-zA-ZÀ-ÿ0-9]+", query) if len(t) >= 3]
-        base_keywords = [
-            "harmony",
-            "windows",
-            "imprim",
-            "impression",
-            "imprimante",
-            "aperu",
-            "aperçu",
-            "etat",
-            "état",
-            "graphique",
-            "caract",
-            "fax",
-            "messagerie",
-            "utilisateur",
-            "serveur",
-            "chemin",
-            "batch",
-            "fichier pilote",
-            "xlog",
-            "xperf",
-            "diva",
-            "xrtdiva",
-            "zoom",
-        ]
-        likely_keywords = list(dict.fromkeys(query_tokens + base_keywords))
-        keyword_overlap = any((k in ans) and (k in ctx) for k in likely_keywords)
-        contains_obvious_hallucination = any(bad in ans for bad in ["microsoft", "autodesk", "biblioth", "java", "python", "linux"])
-
-        # Si la réponse contient des affirmations "définitionnelles" non supportées par le contexte, on force le fallback.
-        suspicious_terms = [
-            "développ",
-            "developp",
-            "éditeur",
-            "editeur",
-            "société",
-            "societe",
-            "autodesk",
-            "microsoft",
-            "bibliothèque",
-            "bibliotheque",
-            "langage",
-        ]
-        introduces_external_claim = any((t in ans) and (t not in ctx) for t in suspicious_terms)
-
-        if (not keyword_overlap) or contains_obvious_hallucination or introduces_external_claim:
-            facts = []
-            # Fallback orienté "question": on ne parle que de ce qui apparaît réellement dans le contexte.
-            if ("xrtdiva" in ctx) or ("diva" in ctx):
-                facts.append("Le contexte mentionne le programme `xRtDiva.exe` (lié à l’iconisation d’une application Harmony), mais n’explique pas sa fonction exacte.")
-            if "xlog" in ctx or "xlogf" in ctx:
-                facts.append("Le contexte associe `Xlog`/`Xlogf` à une base utilisateurs et à l’identification préalable des utilisateurs.")
-            if "xperf" in ctx:
-                facts.append("Le contexte cite `Xperf`, mais ne détaille pas son rôle dans l’extrait fourni.")
-            if "zoom" in ctx:
-                facts.append("Le contexte mentionne un \"zoom\" de paramétrage (par exemple pour déclarer des serveurs), sans décrire davantage son fonctionnement.")
-            if "fichier pilote" in ctx or "batch" in ctx:
-                facts.append("Sous Harmony, un fichier \"batch\" peut être appelé \"fichier pilote\" pour enregistrer l’appel d’un programme (ou d’une séquence) avec ses paramètres.")
-            if "imprim" in ctx or "imprimante" in ctx or "windows" in ctx:
-                facts.append("Le contexte associe Harmony à des fonctions d’édition/impression sous Windows (imprimante par défaut, paramètres d’impression, aperçu avant impression).")
-            if "utilisateur" in ctx:
-                facts.append("Le contexte indique qu’Harmony gère des utilisateurs qui doivent s’identifier pour travailler dans l’environnement.")
-            if "chemins harmony" in ctx or ("chemin" in ctx and "harmony" in ctx):
-                facts.append("Le contexte mentionne des \"chemins Harmony\" servant à remplacer tout ou partie des chemins d’accès réels aux fichiers.")
-            if not facts:
-                facts.append("Le contexte ne contient pas d’éléments exploitables pour répondre à cette question.")
-
-            # 3 à 5 phrases, sans liste.
-            core = facts[:4]
-            if len(core) < 2:
-                core.append("Le contexte ne fournit pas suffisamment de détails sur le sujet demandé.")
-            answer = " ".join(core[:4]).strip()
-            answer += f" Le contexte fourni ne permet pas de répondre précisément à la question \"{query}\" au-delà de ces éléments."
-
-        print("\n=== RÉPONSE ===")
-        print(answer)
-        print("===============\n")
-        return answer
-    except Exception as e:
-        print(f"Erreur lors de l'exécution de la requête (OpenRouter) : {e}")
-        return None
+        print("\n📖 CONTEXTE:")
+        print(result['context'][:500] + "..." if len(result['context']) > 500 else result['context'])
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) > 1:
-        user_query = " ".join(sys.argv[1:])
-        query_vector_store(user_query)
-    else:
-        # Interactive mode
-        print("Enter your query (or 'quit' to exit):")
-        while True:
-            user_input = input("> ")
-            if user_input.lower() in ['quit', 'exit']:
-                break
-            if user_input.strip():
-                query_vector_store(user_input)
+    main()
