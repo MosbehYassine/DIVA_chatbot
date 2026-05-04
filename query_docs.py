@@ -1,124 +1,202 @@
 #!/usr/bin/env python3
 """
-Script de requête pour le système GraphRAG
-Utilise le graphe NetworkX créé par ingest_docs.py pour répondre aux questions.
+Script de requête pour un système RAG hybride (Graph RAG + Vector RAG)
+Combine recherche par graphe (entités) et recherche vectorielle (similarité sémantique)
 """
 
 import os
 import pickle
-import networkx as nx
-from typing import List, Dict
 import json
+import numpy as np
+import networkx as nx
+from typing import List, Dict, Tuple
+from sentence_transformers import SentenceTransformer
 
 # Configuration
 GRAPH_PATH = "networkx_graph.pkl"
+FAISS_INDEX_PATH = "faiss_index.pkl"
+CHUNKS_METADATA_PATH = "chunks_metadata.json"
+EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
-class GraphQuery:
-    def __init__(self, graph_path: str = GRAPH_PATH):
-        self.graph_path = graph_path
+
+class HybridRAG:
+    """Système RAG hybride combinant Graph RAG et Vector RAG"""
+    
+    def __init__(self, graph_path: str = GRAPH_PATH, 
+                 faiss_path: str = FAISS_INDEX_PATH,
+                 metadata_path: str = CHUNKS_METADATA_PATH):
         self.graph = None
-        self._load_graph()
+        self.faiss_index = None
+        self.metadata = []
+        self.embedding_model = None
+        
+        self._load_graph(graph_path)
+        self._load_vector_index(faiss_path, metadata_path)
+        self._load_embedding_model()
 
-    def _load_graph(self):
-        """Charge le graphe NetworkX depuis le fichier pickle."""
-        if os.path.exists(self.graph_path):
-            with open(self.graph_path, 'rb') as f:
+    def _load_graph(self, graph_path):
+        """Charge le graphe NetworkX."""
+        if os.path.exists(graph_path):
+            with open(graph_path, 'rb') as f:
                 self.graph = pickle.load(f)
             print(f"✅ Graphe chargé: {self.graph.number_of_nodes()} noeuds, {self.graph.number_of_edges()} relations")
         else:
-            print(f"❌ Fichier graphe non trouvé: {self.graph_path}")
-            print("Exécutez d'abord: python ingest_docs.py")
-            self.graph = None
+            print(f"⚠️  Graphe non trouvé: {graph_path}")
 
-    def search_entities(self, query: str, top_k: int = 5) -> List[str]:
-        """Recherche d'entités pertinentes dans le graphe."""
+    def _load_vector_index(self, faiss_path, metadata_path):
+        """Charge l'index FAISS et les métadonnées."""
+        if os.path.exists(faiss_path) and os.path.exists(metadata_path):
+            with open(faiss_path, 'rb') as f:
+                self.faiss_index = pickle.load(f)
+            with open(metadata_path, 'r', encoding='utf-8') as f:
+                self.metadata = json.load(f)
+            print(f"✅ Index FAISS chargé: {len(self.metadata)} chunks indexés")
+        else:
+            print(f"⚠️  Index vectoriel non trouvé")
+
+    def _load_embedding_model(self):
+        """Charge le modèle d'embeddings."""
+        print(f"📦 Chargement du modèle d'embeddings...")
+        self.embedding_model = SentenceTransformer(EMBEDDING_MODEL)
+        print(f"✅ Modèle chargé")
+
+    # ============= RETRIEVAL PAR GRAPHE =============
+    def search_graph(self, query: str, top_k: int = 5) -> List[Dict]:
+        """Recherche par graphe (entités)."""
         if not self.graph:
             return []
 
+        results = []
         query_lower = query.lower()
-        entities = []
-
-        # Recherche d'entités dont le nom contient des mots de la requête
+        
+        # Chercher les entités qui matchent la requête
+        entities_found = []
         for node in self.graph.nodes():
-            if isinstance(node, str) and len(node) > 2:
-                node_lower = node.lower()
-                # Vérifier si des mots de la requête sont dans le nom de l'entité
-                query_words = query_lower.split()
-                if any(word in node_lower for word in query_words):
-                    entities.append(node)
-
-        return entities[:top_k]
-
-    def get_related_documents(self, entities: List[str], top_k: int = 3) -> List[Dict]:
-        """Récupère les documents liés aux entités trouvées."""
-        if not self.graph:
-            return []
-
-        related_docs = []
-
-        for entity in entities:
+            if isinstance(node, str) and len(node) > 2 and not node.startswith("Document_"):
+                if any(word in node.lower() for word in query_lower.split()):
+                    entities_found.append(node)
+        
+        # Pour chaque entité, récupérer les documents associés
+        for entity in entities_found[:top_k]:
             if entity in self.graph:
-                # Trouver tous les documents connectés à cette entité
                 neighbors = list(self.graph.neighbors(entity))
                 docs = [n for n in neighbors if n.startswith("Document_")]
-
-                for doc in docs:
-                    if doc in self.graph:
-                        doc_data = self.graph.nodes[doc]
-                        text = doc_data.get('text', '')
-                        related_docs.append({
+                
+                for doc_node in docs:
+                    if doc_node in self.graph:
+                        doc_data = self.graph.nodes[doc_node]
+                        results.append({
                             'entity': entity,
-                            'document': doc,
-                            'text': text
+                            'document_id': doc_node,
+                            'text': doc_data.get('text', ''),
+                            'score': 0.8,  # Confiance de la recherche par graphe
+                            'method': 'graph'
                         })
+        
+        return results[:top_k]
 
-        # Dédoublonner et limiter
-        seen_docs = set()
-        unique_docs = []
-        for doc in related_docs:
-            if doc['document'] not in seen_docs:
-                unique_docs.append(doc)
-                seen_docs.add(doc['document'])
-                if len(unique_docs) >= top_k:
-                    break
+    # ============= RETRIEVAL VECTORIEL =============
+    def search_vector(self, query: str, top_k: int = 5) -> List[Dict]:
+        """Recherche vectorielle (similarité sémantique)."""
+        if not self.faiss_index or not self.embedding_model:
+            return []
+        
+        # Générer l'embedding de la requête
+        query_embedding = self.embedding_model.encode([query], normalize_embeddings=True)
+        query_embedding = np.array(query_embedding).astype('float32')
+        
+        # Rechercher dans FAISS (Inner Product = similarité cosinus avec embeddings normalisés)
+        distances, indices = self.faiss_index.search(query_embedding, top_k)
+        
+        results = []
+        for i, idx in enumerate(indices[0]):
+            if 0 <= idx < len(self.metadata):
+                score = float(distances[0][i])  # Score de similarité cosinus [0, 1]
+                chunk_meta = self.metadata[idx]
+                results.append({
+                    'chunk_id': idx,
+                    'text': chunk_meta['text'],
+                    'source': chunk_meta['source'],
+                    'score': score,
+                    'method': 'vector'
+                })
+        
+        return results
 
-        return unique_docs
+    # ============= FUSION DES RÉSULTATS =============
+    def _merge_results(self, graph_results: List[Dict], 
+                      vector_results: List[Dict]) -> List[Dict]:
+        """Fusionne et déduplique les résultats des deux méthodes."""
+        seen_texts = {}
+        merged = []
+        
+        # Ajouter les résultats du graphe
+        for result in graph_results:
+            text_key = result['text'][:100]
+            if text_key not in seen_texts:
+                result['hybrid_score'] = result['score'] * 0.7  # Pondération graphe
+                merged.append(result)
+                seen_texts[text_key] = result
+        
+        # Ajouter les résultats vectoriels (nouveaux)
+        for result in vector_results:
+            text_key = result['text'][:100]
+            if text_key not in seen_texts:
+                result['hybrid_score'] = result['score'] * 0.8  # Pondération vectoriel
+                merged.append(result)
+                seen_texts[text_key] = result
+        
+        # Trier par score hybride décroissant
+        merged.sort(key=lambda x: x['hybrid_score'], reverse=True)
+        return merged
 
-    def query(self, question: str) -> Dict:
-        """Traite une question et retourne les résultats."""
-        print(f"\n🔍 Recherche pour: {question}")
-
-        # 1. Trouver les entités pertinentes
-        entities = self.search_entities(question)
-        print(f"📋 Entités trouvées: {entities}")
-
-        # 2. Récupérer les documents liés
-        documents = self.get_related_documents(entities)
-        print(f"📄 Documents trouvés: {len(documents)}")
-
-        # 3. Construire la réponse
+    # ============= INTERFACE PRINCIPALE =============
+    def query(self, question: str, top_k: int = 1) -> Dict:
+        """Traite une question avec retrieval hybride."""
+        print(f"\n🔍 Recherche hybride pour: {question}")
+        
+        # 1. Recherche par graphe
+        graph_results = self.search_graph(question, top_k=top_k)
+        print(f"   📊 Graphe: {len(graph_results)} résultat(s)")
+        
+        # 2. Recherche vectorielle
+        vector_results = self.search_vector(question, top_k=top_k)
+        print(f"   🔢 Vectoriel: {len(vector_results)} résultat(s)")
+        
+        # 3. Fusion des résultats
+        merged_results = self._merge_results(graph_results, vector_results)
+        
+        # 4. Construire le contexte (seulement le meilleur résultat)
         context_parts = []
-        for doc in documents:
-            context_parts.append(f"[{doc['entity']}] {doc['text'][:300]}...")
-
-        context = "\n\n".join(context_parts) if context_parts else "Aucune information trouvée."
-
+        best_result = merged_results[:top_k] if merged_results else []
+        
+        for result in best_result:
+            method = f"[{result['method'].upper()}]"
+            score = f"{result['hybrid_score']:.2f}"
+            text_preview = result['text'][:400].replace('\n', ' ')
+            context_parts.append(f"{method} ({score})\n{text_preview}")
+        
+        context = "\n".join(context_parts) if context_parts else "Aucune information trouvée."
+        
         return {
             'question': question,
-            'entities_found': entities,
-            'documents_found': len(documents),
+            'graph_results_count': len(graph_results),
+            'vector_results_count': len(vector_results),
+            'merged_results': best_result,
             'context': context,
-            'response': f"Réponse basée sur {len(documents)} documents trouvés dans le graphe."
+            'response': f"Réponse hybride trouvée"
         }
 
+
 def main():
-    """Interface interactive pour poser des questions."""
-    print("🤖 SYSTÈME GRAPHRAG - REQUÊTES")
-    print("=" * 50)
+    """Interface interactive."""
+    print("🤖 SYSTÈME RAG HYBRIDE (Graph RAG + Vector RAG)")
+    print("=" * 60)
 
-    query_system = GraphQuery()
+    rag = HybridRAG()
 
-    if not query_system.graph:
+    if not rag.graph and not rag.faiss_index:
+        print("❌ Erreur: Exécutez d'abord python ingest_docs.py")
         return
 
     while True:
@@ -130,27 +208,25 @@ def main():
         if not question:
             continue
 
-        # Traiter la question
-        result = query_system.query(question)
+        # Traiter la question (top_k=1 pour une seule réponse)
+        result = rag.query(question, top_k=1)
 
         # Afficher les résultats
-        print("\n" + "="*50)
-        print("📋 ENTITÉS TROUVÉES:")
-        for entity in result['entities_found']:
-            print(f"  • {entity}")
-
-        print(f"\n📄 DOCUMENTS ({result['documents_found']}):")
-        if result['documents_found'] > 0:
-            for i, doc in enumerate(result['documents_found'] if isinstance(result['documents_found'], list) else [], 1):
-                print(f"  {i}. {doc}")
+        print("\n" + "=" * 60)
+        print("✅ MEILLEURE RÉPONSE (Hybride)")
+        print("=" * 60)
+        
+        if result['merged_results']:
+            best = result['merged_results'][0]
+            print(f"\n📚 Source: {best.get('source', best.get('document_id', 'inconnu'))}")
+            print(f"📊 Méthode: {best['method'].upper()} | Score: {best['hybrid_score']:.2%}")
+            print(f"\n📖 CONTENU:")
+            print(best['text'])
         else:
-            print("  Aucun document trouvé")
+            print("\n❌ Aucune réponse trouvée.")
+        
+        print("\n" + "=" * 60)
 
-        print("\n🤖 RÉPONSE:")
-        print(result['response'])
-
-        print("\n📖 CONTEXTE:")
-        print(result['context'][:500] + "..." if len(result['context']) > 500 else result['context'])
 
 if __name__ == "__main__":
     main()

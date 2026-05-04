@@ -12,3 +12,4 @@ langchain-experimental
 networkx
 pyvis
 python-dotenv
+tabulate

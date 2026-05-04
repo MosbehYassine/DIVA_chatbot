@@ -98,6 +98,67 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
+# RAG System - Generated files and data
+data/                          # Dossier contenant tous les documents (trop volumineux)
+*.pkl                          # Index FAISS et graphe NetworkX
+chunks_metadata.json           # Métadonnées des chunks
+test_results_*.json            # Résultats de test
+faiss_index/                   # Index FAISS
+
+# Documentation archives (keep only code)
+Administration/
+AidesFenetrees/
+Annexes/
+Chemins/
+dlmt/
+Erreurs/
+Harmony/
+harmonya/
+hql/
+Installation/
+InterfaceAccueil/
+InterfaceWindows/
+LotusNotes/
+menus/
+Miseenoeuvre/
+modeles/
+Odbc/
+RecordSql/
+reseaux/
+Search/
+Services/
+TextesRiches/
+UnitesV24/
+utilitaires/
+Xconsole/
+Xdiva/
+xdiva0/
+xdiva1/
+xgenzoom/
+Xharview/
+xlansql/
+Xlog/
+Xlog1/
+Xpath/
+xperf/
+Xrecup/
+Xreof/
+xtools/
+Xtranslate/
+Xwin-Dico/
+xwin-ecran/
+xwin-imprimante/
+xwin-Migration/
+xwin-projet/
+Xwin-ressources/
+xwin-texte/
+Xwin4/
+ymeg/
+ymeg2/
+ymig/
+yzoom/
+zoom/
+
 # mkdocs documentation
 /site
 

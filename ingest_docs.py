@@ -1,12 +1,21 @@
 import os
 import glob
+import pickle
+import json
+import numpy as np
 from bs4 import BeautifulSoup
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
 from langchain_core.documents import Document
+from sentence_transformers import SentenceTransformer
+import faiss
 
 # Configuration
-DOCS_DIR = "."
+DOCS_DIR = "data"  # Tous les documents sont maintenant dans le dossier data
+EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+GRAPH_PATH = "networkx_graph.pkl"
+FAISS_INDEX_PATH = "faiss_index.pkl"
+CHUNKS_METADATA_PATH = "chunks_metadata.json"
 
 def load_documents(directory):
     documents = []
@@ -53,7 +62,6 @@ def chunk_documents(documents):
     return chunks
 
 from langchain_community.graphs.networkx_graph import NetworkxEntityGraph
-import pickle
 
 # Quelques termes clés typiques de la doc Harmony / Divalto
 KEY_TERMS = [
@@ -82,13 +90,58 @@ def extract_entities_rule_based(text: str):
             found.add(term)
     return list(found)
 
-def create_vector_store(chunks):
-    print("\n--- CONSTRUCTION DU GRAPHE (GraphRAG) SANS LLM ---")
+def create_vector_embeddings(chunks):
+    """Crée les embeddings vectoriels avec sentence-transformers et FAISS."""
+    print("\n--- CRÉATION DE L'INDEX VECTORIEL (FAISS) ---")
+    
+    # Charger le modèle d'embeddings
+    print(f"Chargement du modèle: {EMBEDDING_MODEL}...")
+    model = SentenceTransformer(EMBEDDING_MODEL)
+    
+    # Extraire les textes
+    texts = [chunk.page_content for chunk in chunks]
+    
+    # Générer les embeddings
+    print(f"Génération des embeddings pour {len(texts)} chunks...")
+    embeddings = model.encode(texts, batch_size=64, show_progress_bar=True, normalize_embeddings=True)
+    embeddings = np.array(embeddings).astype('float32')
+    
+    # Créer l'index FAISS
+    print("Création de l'index FAISS...")
+    dimension = embeddings.shape[1]
+    index = faiss.IndexFlatIP(dimension)  # Inner Product pour similarité cosinus
+    index.add(embeddings)
+    
+    # Sauvegarder l'index
+    print(f"Sauvegarde de l'index FAISS dans {FAISS_INDEX_PATH}...")
+    with open(FAISS_INDEX_PATH, 'wb') as f:
+        pickle.dump(index, f)
+    
+    # Sauvegarder les métadonnées (textes originaux)
+    metadata = [
+        {
+            'chunk_id': i,
+            'text': chunk.page_content[:500],  # Preview
+            'source': chunk.metadata.get('source', 'unknown')
+        }
+        for i, chunk in enumerate(chunks)
+    ]
+    print(f"Sauvegarde des métadonnées dans {CHUNKS_METADATA_PATH}...")
+    with open(CHUNKS_METADATA_PATH, 'w', encoding='utf-8') as f:
+        json.dump(metadata, f, ensure_ascii=False, indent=2)
+    
+    print(f"Index FAISS créé avec {len(texts)} vecteurs de dimension {dimension}.")
+    return index, embeddings, model
+
+def create_graph(chunks):
+    """Crée le graphe NetworkX pour Graph RAG."""
+    print("\n--- CONSTRUCTION DU GRAPHE (GraphRAG) ---")
     graph = NetworkxEntityGraph()
     total_chunks = len(chunks)
 
     for i, chunk in enumerate(chunks):
-        print(f"Construction du graphe pour le document {i+1}/{total_chunks}...")
+        if (i + 1) % max(1, total_chunks // 10) == 0:
+            print(f"Traitement du chunk {i+1}/{total_chunks}...")
         try:
             doc_id = f"Document_{i}"
 
@@ -110,9 +163,6 @@ def create_vector_store(chunks):
                     if len(module_name) > 2:
                         entities.add(module_name)
 
-            if i == 0:
-                print(f"DEBUG - Entités trouvées pour le 1er chunk : {entities}")
-
             # Ajout des nœuds entités et relations Document -> Entité
             for node_name in entities:
                 if len(node_name) > 2 and len(node_name) < 80:
@@ -121,173 +171,37 @@ def create_vector_store(chunks):
                     graph._graph.add_edge(doc_id, node_name, relation="CONTIENT")
 
         except Exception as e:
-            print(f"Erreur lors de la construction du graphe : {e}")
+            print(f"Erreur lors du traitement du chunk {i}: {e}")
 
-    graph_path = "networkx_graph.pkl"
-    print(f"Sauvegarde du graphe dans {graph_path}...")
-    with open(graph_path, "wb") as f:
+    # Sauvegarder le graphe
+    print(f"Sauvegarde du graphe dans {GRAPH_PATH}...")
+    with open(GRAPH_PATH, "wb") as f:
         pickle.dump(graph._graph, f)
 
     print(f"Graphe créé avec {graph._graph.number_of_nodes()} noeuds et {graph._graph.number_of_edges()} relations.")
+    return graph._graph
 
 if __name__ == "__main__":
-    print("Starting ingestion process...")
+    print("🚀 Starting hybrid RAG ingestion process...")
     docs = load_documents(DOCS_DIR)
-    print(f"Loaded {len(docs)} documents.")
+    print(f"📚 Loaded {len(docs)} documents.")
 
     if docs:
         print("\n--- TRAITEMENT DE TOUS LES DOCUMENTS ---")
         # On filtre les pages vides ou de pure mise en page
         valid_docs = [d for d in docs if len(d.page_content.strip()) > 300]
         docs = valid_docs
-        print(f"Documents valides après filtrage: {len(docs)}")
+        print(f"✅ Documents valides après filtrage: {len(docs)}")
 
         chunks = chunk_documents(docs)
-        print(f"Création de {len(chunks)} chunks à partir de tous les documents valides.")
+        print(f"📝 Création de {len(chunks)} chunks à partir de tous les documents valides.")
 
-        create_vector_store(chunks)
-        print("Ingestion complete!")
+        # Créer les deux index
+        create_vector_embeddings(chunks)
+        create_graph(chunks)
+        
+        print("\n✅ Ingestion hybride (Graph RAG + Vector RAG) complète!")
+        print("   - Index FAISS créé")
+        print("   - Graphe NetworkX créé")
     else:
-        print("No documents found to ingest.")
-
-def load_documents(directory):
-    documents = []
-    # Find all HTML and Markdown files
-    html_files = glob.glob(os.path.join(directory, "**/*.htm"), recursive=True) + \
-                 glob.glob(os.path.join(directory, "**/*.html"), recursive=True)
-    md_files = glob.glob(os.path.join(directory, "**/*.md"), recursive=True)
-
-    print(f"Found {len(html_files)} HTML files and {len(md_files)} Markdown files.")
-
-    # Process HTML files
-    for file_path in html_files:
-        try:
-            with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-                soup = BeautifulSoup(f, "html.parser")
-                text = soup.get_text(separator="\n")
-                if text.strip():
-                    documents.append(Document(page_content=text, metadata={"source": file_path}))
-        except Exception as e:
-            print(f"Error loading HTML {file_path}: {e}")
-
-    # Process Markdown files
-    for file_path in md_files:
-        try:
-            loader = TextLoader(file_path, encoding="utf-8")
-            documents.extend(loader.load())
-        except Exception as e:
-            print(f"Error loading Markdown {file_path}: {e}")
-            
-    return documents
-
-def chunk_documents(documents):
-    if not documents:
-        return []
-        
-    print("Initialisation du TextSplitter classique pour le Graph (besoin de contexte)...")
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1500, # Assez grand pour qu'il y ait des relations à extraire
-        chunk_overlap=150
-    )
-    
-    print("Découpage des documents...")
-    chunks = text_splitter.split_documents(documents)
-    return chunks
-
-from langchain_community.graphs.networkx_graph import NetworkxEntityGraph
-import pickle
-
-# Quelques termes clés typiques de la doc Harmony / Divalto
-KEY_TERMS = [
-    "Harmony",
-    "Xwpf.exe",
-    "XrtDiva.exe",
-    "XLAN",
-    "RecordSQL",
-    "ODBC",
-    "MSSQL",
-    "Oracle",
-    "DB2",
-    "Lotus Notes",
-    "Serveur Xlan",
-    "Serveur d'applications",
-    "Client léger",
-    "Architecture 3-tiers",
-]
-
-def extract_entities_rule_based(text: str):
-    """Extraction simple d'entités par mots-clés connus (rule-based)."""
-    found = set()
-    lower_text = text.lower()
-    for term in KEY_TERMS:
-        if term.lower() in lower_text:
-            found.add(term)
-    return list(found)
-
-def create_vector_store(chunks):
-    print("\n--- CONSTRUCTION DU GRAPHE (GraphRAG) SANS LLM ---")
-    graph = NetworkxEntityGraph()
-    total_chunks = len(chunks)
-    
-    for i, chunk in enumerate(chunks):
-        print(f"Construction du graphe pour le document {i+1}/{total_chunks}...")
-        try:
-            doc_id = f"Document_{i}"
-
-            # Nœud document avec un extrait de texte utile comme attribut
-            if not graph._graph.has_node(doc_id):
-                snippet = chunk.page_content[:400]
-                graph._graph.add_node(doc_id, text=snippet)
-
-            # Entités par règles
-            entities = set(extract_entities_rule_based(chunk.page_content))
-
-            # Entité "module" basée sur le chemin du fichier source, si dispo
-            source = chunk.metadata.get("source")
-            if source:
-                rel = os.path.relpath(source, DOCS_DIR)
-                parts = rel.split(os.sep)
-                if parts:
-                    module_name = parts[0]
-                    if len(module_name) > 2:
-                        entities.add(module_name)
-
-            if i == 0:
-                print(f"DEBUG - Entités trouvées pour le 1er chunk : {entities}")
-
-            # Ajout des nœuds entités et relations Document -> Entité
-            for node_name in entities:
-                if len(node_name) > 2 and len(node_name) < 80:
-                    if not graph._graph.has_node(node_name):
-                        graph._graph.add_node(node_name)
-                    graph._graph.add_edge(doc_id, node_name, relation="CONTIENT")
-
-        except Exception as e:
-            print(f"Erreur lors de la construction du graphe : {e}")
-
-    graph_path = "networkx_graph.pkl"
-    print(f"Sauvegarde du graphe dans {graph_path}...")
-    with open(graph_path, "wb") as f:
-        pickle.dump(graph._graph, f)
-        
-    print(f"Graphe créé avec {graph._graph.number_of_nodes()} noeuds et {graph._graph.number_of_edges()} relations.")
-
-if __name__ == "__main__":
-    print("Starting ingestion process...")
-    docs = load_documents(DOCS_DIR)
-    print(f"Loaded {len(docs)} documents.")
-    
-    if docs:
-        print("\n--- TRAITEMENT DE TOUS LES DOCUMENTS ---")
-        # On filtre les pages vides ou de pure mise en page
-        valid_docs = [d for d in docs if len(d.page_content.strip()) > 300]
-        docs = valid_docs
-        print(f"Documents valides après filtrage: {len(docs)}")
-        
-        chunks = chunk_documents(docs)
-        print(f"Création de {len(chunks)} chunks à partir de tous les documents valides.")
-        
-        create_vector_store(chunks)
-        print("Ingestion complete!")
-    else:
-        print("No documents found to ingest.")
+        print("❌ No documents found to ingest.")
