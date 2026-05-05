@@ -67,41 +67,9 @@ python query_docs.py
 
 Le système propose plusieurs approches pour traiter et interroger la documentation :
 
-### Architecture RAG Modulaire (Recommandé)
-- `process_documents.py` : Charge et traite les documents, crée l'index FAISS
-- `answer_questions.py` : Interface interactive pour poser des questions et obtenir des réponses générées
-
 ### GraphRAG (Alternative)
 - `ingest_docs.py` : Charge les documents et crée un graphe de connaissances NetworkX
 - `query_docs.py` : Interface de requête basée sur le graphe pour recherche d'entités
-
-### Pipeline Complet (Legacy)
-- `rag_pipeline.py` : Pipeline complet en un seul script
-
-## Workflows d'utilisation
-
-### Workflow RAG Vectoriel (Recommandé)
-```bash
-# Étape 1: Indexer les documents (une seule fois)
-python process_documents.py
-
-# Étape 2: Poser des questions (interface interactive)
-python answer_questions.py
-```
-
-**Fonctionnalités de `process_documents.py` :**
-- 📂 Analyse récursive de tous les dossiers de documentation
-- 📊 Statistiques détaillées du traitement (documents, chunks, index)
-- 🧠 Construction d'index vectoriel FAISS optimisé
-- 💾 Sauvegarde automatique dans `faiss_index/`
-
-**Fonctionnalités de `answer_questions.py` :**
-- 💬 Interface de chat avec historique des questions
-- 📊 Statistiques de l'index (`stats`)
-- 🔄 Rechargement à chaud (`reload`)
-- 📖 Aide intégrée (`help`)
-- 🧹 Effacement d'écran (`clear`)
-- 📜 Historique des questions (`history`)
 
 ### Workflow GraphRAG
 ```bash
@@ -130,15 +98,6 @@ python rag_pipeline.py
 #### Mode interactif normal
 ```bash
 python query_docs.py
-```
-
-### Utilisation avancée
-```bash
-# Indexer les documents
-python process_documents.py
-
-# Poser des questions interactivement
-python answer_questions.py
 ```
 
 ## Tests et validation

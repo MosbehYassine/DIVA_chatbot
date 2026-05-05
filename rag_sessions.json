@@ -1,0 +1,60 @@
+{
+  "active_session": "my_session",
+  "sessions": {
+    "default": {
+      "metadata": {
+        "created": "2026-04-27T17:36:35.296638",
+        "modified": "2026-04-27T17:36:35.296666",
+        "description": "Session par défaut"
+      },
+      "turns": []
+    },
+    "my_session": {
+      "metadata": {
+        "created": "2026-04-27T17:36:35.296744",
+        "modified": "2026-04-27T19:09:30.080760",
+        "description": "Session créée le 2026-04-27 17:36"
+      },
+      "turns": [
+        {
+          "timestamp": "2026-04-27T19:08:17",
+          "question": "Qu'est-ce qu'un chemin Harmony ?",
+          "answer": "Un atelier de dveloppement, car c'est un outil complet d'aide la conception d'applications."
+        },
+        {
+          "timestamp": "2026-04-27T19:08:36",
+          "question": "Comment utiliser un chemin Harmony dans un nom de fichier ?",
+          "answer": "Si un nom de fichier Harmony commence par '/', le premier segment du chemin d'accès est un nom de chemin Harmony qui sera remplacé par le chemin réel qu'il représente."
+        },
+        {
+          "timestamp": "2026-04-27T19:08:48",
+          "question": "L'emploi des chemins Harmony est-il obligatoire ?",
+          "answer": "Dclaration des chemins Harmony       Dclaration des chemins Harmony     Sous Harmony, les chemins d'accs aux fichiers peuvent rfrencer des chemins spcifiques, appels \"chemins Harmony\"."
+        },
+        {
+          "timestamp": "2026-04-27T19:09:12",
+          "question": "Comment Harmony gère-t-il les utilisateurs ?",
+          "answer": "Harmony gère une base de données des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier préalablement."
+        },
+        {
+          "timestamp": "2026-04-27T19:09:22",
+          "question": "Quel programme assure la gestion des utilisateurs dans Harmony ?",
+          "answer": "La gestion des utilisateurs est assurée par le programme Xlog1.dhop (ou par le menu Xlog via l'atelier Harmony)."
+        },
+        {
+          "timestamp": "2026-04-27T19:09:30",
+          "question": "Où peut être stocké le fichier des utilisateurs Xlogf ?",
+          "answer": "Choix du fichier Xlogf (hors serveur Xlan scuris)       Choix du fichier Xlogf     Le fichier Xlogf trait par dfaut par Xlog1 est dtermin par la cl ServeurXlogf du chapitre [System] saisi avec xDivaltoMajini."
+        }
+      ]
+    },
+    "my_session1": {
+      "metadata": {
+        "created": "2026-04-27T18:55:27.688267",
+        "modified": "2026-04-27T18:55:27.688272",
+        "description": "Session créée le 2026-04-27 18:55"
+      },
+      "turns": []
+    }
+  }
+}
