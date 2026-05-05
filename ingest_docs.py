@@ -3,6 +3,8 @@ import glob
 import pickle
 import json
 import numpy as np
+import io
+import sys
 from bs4 import BeautifulSoup
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import TextLoader
@@ -10,8 +12,11 @@ from langchain_core.documents import Document
 from sentence_transformers import SentenceTransformer
 import faiss
 
+# Forcer UTF-8 pour éviter les problèmes d'encodage
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+
 # Configuration
-DOCS_DIR = "data"  # Tous les documents sont maintenant dans le dossier data
+DOCS_DIR = "data"  # Lis les documents depuis le dossier data
 EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 GRAPH_PATH = "networkx_graph.pkl"
 FAISS_INDEX_PATH = "faiss_index.pkl"
@@ -53,8 +58,8 @@ def chunk_documents(documents):
 
     print("Initialisation du TextSplitter classique pour le Graph (besoin de contexte)...")
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1500, # Assez grand pour qu'il y ait des relations à extraire
-        chunk_overlap=150
+        chunk_size=2000, # Augmenté pour plus de contexte et meilleure pertinence
+        chunk_overlap=250  # Augmenté pour meilleure continuité
     )
 
     print("Découpage des documents...")
@@ -63,7 +68,7 @@ def chunk_documents(documents):
 
 from langchain_community.graphs.networkx_graph import NetworkxEntityGraph
 
-# Quelques termes clés typiques de la doc Harmony / Divalto
+# Termes clés typiques de la doc Harmony / Divalto (optimisé)
 KEY_TERMS = [
     "Harmony",
     "Xwpf.exe",
@@ -79,6 +84,19 @@ KEY_TERMS = [
     "Serveur d'applications",
     "Client léger",
     "Architecture 3-tiers",
+    "Chemin Harmony",
+    "Utilisateur",
+    "Imprimante",
+    "Impression",
+    "Graphique",
+    "LDAP",
+    "Fichier",
+    "Divalto",
+    "Installation",
+    "Configuration",
+    "Droit d'accès",
+    "Base de données",
+    "Paramètre",
 ]
 
 def extract_entities_rule_based(text: str):

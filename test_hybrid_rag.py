@@ -6,9 +6,14 @@ Teste le modèle avec les questions du fichier test_questions.json
 
 import json
 import os
+import io
+import sys
 from datetime import datetime
 from query_docs import HybridRAG
 from typing import Dict, List
+
+# Forcer UTF-8
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 class RAGTester:
     def __init__(self, test_file: str = "test_questions.json"):
@@ -24,26 +29,26 @@ class RAGTester:
             with open(self.test_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 self.test_questions = data.get('test_questions', [])
-            print(f"✅ {len(self.test_questions)} questions de test chargées")
+            print(f"Chargement: {len(self.test_questions)} questions de test")
         else:
-            print(f"❌ Fichier de test non trouvé: {self.test_file}")
+            print(f"Fichier de test non trouve: {self.test_file}")
 
     def run_tests(self) -> List[Dict]:
         """Exécute tous les tests."""
         print("\n" + "=" * 80)
-        print("🚀 DÉMARRAGE DES TESTS DU SYSTÈME RAG HYBRIDE")
+        print("DEMARRAGE DES TESTS DU SYSTEME RAG HYBRIDE")
         print("=" * 80)
 
         if not self.rag.graph and not self.rag.faiss_index:
-            print("❌ Erreur: Les index ne sont pas chargés")
-            print("   Exécutez d'abord: python ingest_docs.py")
+            print("Erreur: Les index ne sont pas charges")
+            print("Executez d'abord: python ingest_docs.py")
             return []
 
         total = len(self.test_questions)
         for idx, test in enumerate(self.test_questions, 1):
             print(f"\n[{idx}/{total}] Test: {test['id']}")
-            print(f"   Catégorie: {test['category']}")
-            print(f"   Difficulté: {test['difficulty']}")
+            print(f"   Categorie: {test['category']}")
+            print(f"   Difficulte: {test['difficulty']}")
             print(f"   Question: {test['question']}")
 
             try:
@@ -72,13 +77,13 @@ class RAGTester:
                 
                 # Afficher le résultat
                 if test_result['found']:
-                    print(f"   ✅ TROUVÉ (Score: {test_result['score']:.2%})")
-                    print(f"   📖 Réponse: {best_response[:150]}...")
+                    print(f"   TROUVE (Score: {test_result['score']:.2%})")
+                    print(f"   Reponse: {best_response[:150]}...")
                 else:
-                    print(f"   ❌ AUCUNE RÉPONSE TROUVÉE")
+                    print(f"   AUCUNE REPONSE TROUVEE")
 
             except Exception as e:
-                print(f"   ❌ ERREUR: {e}")
+                print(f"   ERREUR: {e}")
                 self.results.append({
                     'test_id': test['id'],
                     'question': test['question'],
@@ -94,10 +99,10 @@ class RAGTester:
 
         return self.results
 
-    def generate_report(self, output_file: str = "test_results.json") -> Dict:
+    def generate_report(self, output_file: str = "test_results_optimized.json") -> Dict:
         """Génère un rapport de test."""
         print("\n" + "=" * 80)
-        print("📊 GÉNÉRATION DU RAPPORT")
+        print("GENERATION DU RAPPORT")
         print("=" * 80)
 
         total = len(self.results)
@@ -155,25 +160,25 @@ class RAGTester:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(report, f, ensure_ascii=False, indent=2)
         
-        print(f"✅ Rapport sauvegardé: {output_file}")
+        print(f"Rapport sauvegarde: {output_file}")
 
         # Afficher le résumé
         print("\n" + "=" * 80)
-        print("📈 RÉSUMÉ DES RÉSULTATS")
+        print("RESUME DES RESULTATS")
         print("=" * 80)
-        print(f"✅ Réponses trouvées: {found}/{total} ({(found/total*100):.1f}%)")
-        print(f"❌ Aucune réponse: {total - found}/{total} ({((total-found)/total*100):.1f}%)")
-        print(f"📊 Score moyen: {avg_score:.2%}")
+        print(f"Reponses trouvees: {found}/{total} ({(found/total*100):.1f}%)")
+        print(f"Aucune reponse: {total - found}/{total} ({((total-found)/total*100):.1f}%)")
+        print(f"Score moyen: {avg_score:.2%}")
 
-        print("\n📋 PAR CATÉGORIE:")
+        print("\nPAR CATEGORIE:")
         for cat, stats in categories_stats.items():
             success_rate = (stats['found'] / stats['total'] * 100) if stats['total'] > 0 else 0
-            print(f"   • {cat}: {stats['found']}/{stats['total']} ({success_rate:.0f}%) - Score: {stats['avg_score']:.2%}")
+            print(f"   - {cat}: {stats['found']}/{stats['total']} ({success_rate:.0f}%) - Score: {stats['avg_score']:.2%}")
 
-        print("\n📊 PAR DIFFICULTÉ:")
+        print("\nPAR DIFFICULTE:")
         for diff, stats in difficulty_stats.items():
             success_rate = (stats['found'] / stats['total'] * 100) if stats['total'] > 0 else 0
-            print(f"   • {diff}: {stats['found']}/{stats['total']} ({success_rate:.0f}%) - Score: {stats['avg_score']:.2%}")
+            print(f"   - {diff}: {stats['found']}/{stats['total']} ({success_rate:.0f}%) - Score: {stats['avg_score']:.2%}")
 
         print("\n" + "=" * 80)
 
@@ -184,14 +189,14 @@ def main():
     tester = RAGTester()
     
     if not tester.test_questions:
-        print("❌ Aucune question de test chargée")
+        print("Aucune question de test chargee")
         return
 
     # Exécuter les tests
     tester.run_tests()
     
     # Générer le rapport
-    report = tester.generate_report("test_results_hybrid_rag.json")
+    report = tester.generate_report("test_results_optimized.json")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,307 @@
+{
+  "timestamp": "2026-05-05T01:03:17.178858",
+  "summary": {
+    "total_tests": 21,
+    "found": 21,
+    "not_found": 0,
+    "success_rate": "100.0%",
+    "average_score": "61.82%"
+  },
+  "by_category": {
+    "Chemins Harmony": {
+      "total": 3,
+      "found": 3,
+      "avg_score": 0.6545403798421224
+    },
+    "Gestion des utilisateurs": {
+      "total": 3,
+      "found": 3,
+      "avg_score": 0.6807363092899322
+    },
+    "Impressions": {
+      "total": 3,
+      "found": 3,
+      "avg_score": 0.576739639043808
+    },
+    "Administration générale": {
+      "total": 2,
+      "found": 2,
+      "avg_score": 0.6561855733394623
+    },
+    "Chemins d'accès": {
+      "total": 2,
+      "found": 2,
+      "avg_score": 0.5852399349212647
+    },
+    "Impression Windows": {
+      "total": 2,
+      "found": 2,
+      "avg_score": 0.6262428253889083
+    },
+    "LDAP et synchronisation": {
+      "total": 2,
+      "found": 2,
+      "avg_score": 0.6077010616660118
+    },
+    "Fichiers de commandes": {
+      "total": 2,
+      "found": 2,
+      "avg_score": 0.6043460696935654
+    },
+    "États et graphiques": {
+      "total": 2,
+      "found": 2,
+      "avg_score": 0.5433486267924308
+    }
+  },
+  "by_difficulty": {
+    "facile": {
+      "total": 7,
+      "found": 7,
+      "avg_score": 0.6448652280228478
+    },
+    "moyen": {
+      "total": 11,
+      "found": 11,
+      "avg_score": 0.6207475556568667
+    },
+    "difficile": {
+      "total": 3,
+      "found": 3,
+      "avg_score": 0.5466324865818023
+    }
+  },
+  "detailed_results": [
+    {
+      "test_id": "chemins_harmony_001",
+      "question": "Qu'est-ce qu'un chemin Harmony ?",
+      "expected_answer": "Les chemins Harmony permettent de raccourcir les noms de fichier ou de convenir de noms de chemin plus parlants en remplaçant tout ou partie des chemins d'accès réels aux fichiers.",
+      "retrieved_text": "Prsentation d'Harmony\n\n\n\n\n\n\n\n\nPrsentation d'Harmony\n\n\nCertaines des applications avec lesquelles vous allez travailler s'excutent sous Harmony. Mais au fait, qu'est-ce qu'Harmony ?\n\n\nHarmony est  la fois un atelier de dveloppement et une base de donnes. Un atelier de dveloppement, car c'est un outil complet d'aide  la conception d'applications. Une base de donnes, car il s'appuie sur une puissante gestion de fichiers multi-cl.\n\n\nAvant de donner des explications dtailles sur son utilisation, il e",
+      "method": "vector",
+      "score": 0.6453887313604355,
+      "category": "Chemins Harmony",
+      "difficulty": "facile",
+      "found": true
+    },
+    {
+      "test_id": "chemins_harmony_002",
+      "question": "Comment utiliser un chemin Harmony dans un nom de fichier ?",
+      "expected_answer": "Si un nom de fichier Harmony commence par '/', le premier segment du chemin d'accès est un nom de chemin Harmony qui sera remplacé par le chemin réel qu'il représente.",
+      "retrieved_text": "Chemins Harmony\n\n\n\n\n\n\n\n\n\n\n\n\nChemins Harmony\n\n\n \n\n\nPour raccourcir les noms de fichier ou convenir de noms de chemin plus parlants, des \"\nchemins Harmony\n\" peuvent remplacer tout ou partie des chemins d'accs rels aux fichiers.\n\n\nPar exemple :\n\n\n\n\n\n\n\n\n\n\n\n\nDivalto\n\n\n\n\n\n\npour c:/divalto\n\n\n\n\n\n\n\n\n\n\nCompta\n\n\n\n\n\n\npour d:/fichiers/comptabilit\n\n\n\n\n\n\n\n\n \n\n\nSi un nom de fichier Harmony commence par \"/\"\n, le premier segment du chemin d'accs est un nom de chemin Harmony : ce nom sera remplac par le chemin rel",
+      "method": "vector",
+      "score": 0.7127666145563125,
+      "category": "Chemins Harmony",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "chemins_harmony_003",
+      "question": "L'emploi des chemins Harmony est-il obligatoire ?",
+      "expected_answer": "L'emploi de chemins Harmony est facultatif en local mais obligatoire au niveau d'un serveur de réseau Xlan.",
+      "retrieved_text": "Prsentation d'Harmony\n\n\n\n\n\n\n\n\nPrsentation d'Harmony\n\n\nCertaines des applications avec lesquelles vous allez travailler s'excutent sous Harmony. Mais au fait, qu'est-ce qu'Harmony ?\n\n\nHarmony est  la fois un atelier de dveloppement et une base de donnes. Un atelier de dveloppement, car c'est un outil complet d'aide  la conception d'applications. Une base de donnes, car il s'appuie sur une puissante gestion de fichiers multi-cl.\n\n\nAvant de donner des explications dtailles sur son utilisation, il e",
+      "method": "vector",
+      "score": 0.6054657936096192,
+      "category": "Chemins Harmony",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "utilisateurs_001",
+      "question": "Comment Harmony gère-t-il les utilisateurs ?",
+      "expected_answer": "Harmony gère une base de données des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier préalablement.",
+      "retrieved_text": "Fichier des utilisateurs\n\n\n\n\n\n\n\n\n\n\n\n\nFichier des utilisateurs\n\n\n \n\n\nHarmony gre une base de donnes des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier pralablement, de manire  mettre en place en particulier :\n\n\n\n\n\n\nSes chemins implicites.\n\n\n\n\n\n\nSes droits d'accs ou codes de confidentialit (utiliss par les programmes et les menus d'Harmony pour autoriser ou non certaines actions).\n\n\n\n\n\n\n \n\n\nLa \ngestion des utilisateurs\n est assure par le programme Xl",
+      "method": "vector",
+      "score": 0.7078468918800354,
+      "category": "Gestion des utilisateurs",
+      "difficulty": "facile",
+      "found": true
+    },
+    {
+      "test_id": "utilisateurs_002",
+      "question": "Quel programme assure la gestion des utilisateurs dans Harmony ?",
+      "expected_answer": "La gestion des utilisateurs est assurée par le programme Xlog1.dhop (ou par le menu Divalto.dhop).",
+      "retrieved_text": "Fichier des utilisateurs\n\n\n\n\n\n\n\n\n\n\n\n\nFichier des utilisateurs\n\n\n \n\n\nHarmony gre une base de donnes des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier pralablement, de manire  mettre en place en particulier :\n\n\n\n\n\n\nSes chemins implicites.\n\n\n\n\n\n\nSes droits d'accs ou codes de confidentialit (utiliss par les programmes et les menus d'Harmony pour autoriser ou non certaines actions).\n\n\n\n\n\n\n \n\n\nLa \ngestion des utilisateurs\n est assure par le programme Xl",
+      "method": "vector",
+      "score": 0.6932365238666535,
+      "category": "Gestion des utilisateurs",
+      "difficulty": "facile",
+      "found": true
+    },
+    {
+      "test_id": "utilisateurs_003",
+      "question": "Où peut être stocké le fichier des utilisateurs Xlogf ?",
+      "expected_answer": "Le fichier Xlogf peut être stocké localement (un fichier par ordinateur) ou de manière centralisée sur un serveur Harmony (un fichier unique pour tout le site).",
+      "retrieved_text": "Choix du fichier Xlogf (hors serveur Xlan scuris)\n\n\n\n\n\n\n\n\n\n\n\n\nChoix du fichier Xlogf\n\n\n \n\n\nLe fichier Xlogf trait \npar dfaut\n par Xlog1 est dtermin par la cl \nServeurXlogf\n du chapitre \n[System]\n saisi avec xDivaltoMajini. Si cette cl est absente, le fichier est cherch en local dans /divalto/sys.\n\n\n \n\n\nLe bouton \nSlection d'un serveur\n permet de \nchanger de fichier Xlogf\n :\n\n\n\n\n\n\nLe choix du serveur s'effectue exactement de la mme manire que le garnissage de la cl ServeurXlogf dans la base de re",
+      "method": "vector",
+      "score": 0.6411255121231079,
+      "category": "Gestion des utilisateurs",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "impressions_001",
+      "question": "Que couvre la documentation sur les impressions dans Harmony ?",
+      "expected_answer": "La documentation explique le fonctionnement des impressions commandées par les applications Harmony, notamment les principes généraux des impressions Windows et Harmony.",
+      "retrieved_text": "Administration d'Harmony: Introduction\n\n\n\n\n\n\n\n\n\n\nAdministration d'Harmony : Introduction\n\n\n \n\n\nCe livre introduit dans un premier temps quelques points indispensables  une bonne matrise d'Harmony,  savoir les notions de :\n\n\n\nTche\n.\n\n\n\nAccs aux fichiers\n.\n\n\n\nFichier des utilisateurs\n.\n\n\n \n\n\nPuis il traite de l'administration d'Harmony en abordant les points suivants :\n\n\n\nImpressions\n.\n\n\n\nGestion des fentres et des programmes\n.\n\n\n\n\nGestion des tableaux\n.",
+      "method": "vector",
+      "score": 0.6131390511989593,
+      "category": "Impressions",
+      "difficulty": "facile",
+      "found": true
+    },
+    {
+      "test_id": "impressions_002",
+      "question": "Quels sont les deux aspects principaux couverts par la documentation des impressions ?",
+      "expected_answer": "Dans un premier temps, les principes généraux des impressions Windows et Harmony (gestionnaire d'impression, imprimante par défaut, modes graphique et caractères, modèles d'imprimante). Dans un deuxième temps, les opérations pour la mise en œuvre optimale des impressions Harmony sous Windows.",
+      "retrieved_text": "Impressions: Introduction\n\n\n\n\n\n\n\n\n\n\nImpressions : Introduction\n\n\n \n\n\nCe livre explique le fonctionnement des impressions commandes par les applications Harmony :\n\n\n\n\n\n\nDans un premier temps, nous dcrirons les \nprincipes gnraux des impressions Windows et Harmony\n : gestionnaire d'impression (spouleur), imprimante par dfaut, mode graphique et mode caractres, modles d'imprimante, etc.\n\n\n\n\n\n\nDans un deuxime temps, nous tudierons les oprations  effectuer pour obtenir une \nmise en uvre optimale des im",
+      "method": "vector",
+      "score": 0.5286077737808227,
+      "category": "Impressions",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "impressions_003",
+      "question": "Où trouver la documentation sur le paramétrage des imprimantes en mode client léger ?",
+      "expected_answer": "Pour connaître les particularités de paramétrage des imprimantes en mode client léger, il faut consulter la documentation de xDivaltoPrinters.",
+      "retrieved_text": "Exemple de liaisons modle / imprimante\n\n\n\n\n\n\n\n\n\n\n\n\nExemple de liaisons modle / imprimante\n\n\n \n\n\nMon installation comporte deux imprimantes : une Epson sur LPT1, une HP Laser Jet sur LPT2. Je veux imprimer tous les tats caractres sur l'imprimante Epson et les tats graphiques soit sur l'imprimante Epson, soit sur l'imprimante HP. Au cas o l'utilisateur ne prciserait pas de modle particulier, je dcide que, par dfaut, les tats sortiront sur l'EPSON :\n\n\n \n\n\n\n\n\n\n\n\nApplication Harmony Application Harmo",
+      "method": "vector",
+      "score": 0.5884720921516419,
+      "category": "Impressions",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "administration_001",
+      "question": "Qu'est-ce que Xlog dans le contexte Harmony ?",
+      "expected_answer": "Xlog est un système de gestion des utilisateurs dans Harmony qui nécessite une identification préalable des utilisateurs travaillant dans l'environnement.",
+      "retrieved_text": "Descriptif du programme Xlog\n\n\n\n\n\n\n\n\n\n\nDescriptif du programme Xlog\n\n\n \n\n\nL'utilitaire Xlog.dhop (*) permet de vous prsenter au systme Harmony, afin que ce dernier mette en place votre contexte Harmony personnel (chemins implicites, droits d'accs, etc.). Il permet aussi de modifier votre mot de passe (hors serveur Xlan scuris).\n\n\nPar dfaut, Harmony oblige l'utilisateur  s'identifier  \nchaque\n ouverture de tche Harmony.\n\n\nL'administrateur du systme peut toutefois dcider que cette identification e",
+      "method": "vector",
+      "score": 0.7012198448181152,
+      "category": "Administration générale",
+      "difficulty": "facile",
+      "found": true
+    },
+    {
+      "test_id": "administration_002",
+      "question": "Quels sont les droits gérés par le système d'identification des utilisateurs ?",
+      "expected_answer": "Le système met en place les chemins implicites de l'utilisateur et ses droits d'accès ou codes de confidentialité utilisés par les programmes et menus d'Harmony.",
+      "retrieved_text": "Identification de l'utilisateur\n\n\n\n\n\n\n\n\n\n\nIdentification de l'utilisateur\n\n\nDcliner son identit n'est possible que si celle-ci est enregistre dans le fichier des utilisateurs. Si vous ne disposez pas encore d'un code d'identification, consultez l'administrateur du systme pour qu'il vous en attribue un.\n\n \n\nLorsque vous appelez Xlog.dhop, celui-ci :\n\n\n\n\n\n\nEnregistre votre code utilisateur. La connaissance de ce code est impose par la plupart des applications.\n\n\n\n\n\n\nModifie vos chemins implicites ",
+      "method": "vector",
+      "score": 0.6111513018608093,
+      "category": "Administration générale",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "chemins_acces_001",
+      "question": "Comment fonctionnent les chemins d'accès simplifiés dans Harmony ?",
+      "expected_answer": "Les chemins d'accès simplifiés permettent de remplacer tout ou partie des chemins d'accès réels aux fichiers par des noms plus courts et parlants.",
+      "retrieved_text": "Dclaration des chemins Harmony du serveur de donnes\n\n\n\n\n\n\n\n\n\n\n\n\nDclaration des chemins Harmony du serveur de donnes\n\n\nPour accder aux fichiers du serveur de donnes par Xlan, il faut \nobligatoirement\n passer par un \nchemin Harmony dclar sur ce serveur\n (Cf. rubrique \nAccs aux fichiers d'Harmony\n).\n\n\nAprs l'installation du serveur de donnes, seul le chemin /Divalto (qui pointe sur le dossier d'installation Divalto) est configur. Pour dfinir d'autres chemins Harmony, slectionnez le choix <\nParamtra",
+      "method": "vector",
+      "score": 0.6207390487194061,
+      "category": "Chemins d'accès",
+      "difficulty": "facile",
+      "found": true
+    },
+    {
+      "test_id": "chemins_acces_002",
+      "question": "Quelle est la différence entre chemins implicites et chemins Harmony ?",
+      "expected_answer": "Les chemins implicites sont définis par utilisateur tandis que les chemins Harmony sont des alias globaux définis au niveau système pour simplifier les noms de chemin.",
+      "retrieved_text": "Paramtrage des chemins implicites\n\n\n\n\n\n\n\n\n\n\n\n\nParamtrage des chemins implicites\n\n\nSous Harmony, chaque utilisateur dispose d'une liste de chemins d'accs dits \nchemins implicites\n. Ainsi, lorsque le chemin d'accs complet  un fichier n'est pas prcis (ce qui est gnralement le cas), Harmony le recherche d'abord en suivant le premier chemin implicite puis, si ncessaire, en suivant le second, le troisime et ainsi de suite jusqu' trouver le fichier.\n\n\n \n\n\nUne liste de chemins implicites est enregistre ",
+      "method": "vector",
+      "score": 0.5497408211231232,
+      "category": "Chemins d'accès",
+      "difficulty": "difficile",
+      "found": true
+    },
+    {
+      "test_id": "impression_windows_001",
+      "question": "Comment Harmony gère-t-il l'impression sous Windows ?",
+      "expected_answer": "Harmony utilise le gestionnaire d'impression (spouleur) de Windows et permet de définir une imprimante par défaut, de gérer les modes graphique et caractères, et d'utiliser des modèles d'imprimante.",
+      "retrieved_text": "Paramtrage des impressions Harmony\n\n\n\n\n\n\n\n\n\n\n\n\nParamtrage des impressions Harmony\n\n\n \n\n\nNous distinguerons ici deux types de paramtrage, un paramtrage \"Windows\" et un paramtrage spcifique  Harmony :\n\n \n\n\nChoix et paramtrage \"Windows\" de l'imprimante\n\n\n\n\n\n\nSauf prcision contraire, une dition faite par une application Harmony utilise l'\nimprimante par dfaut\n de Windows et tient compte du paramtrage effectu pour cette imprimante dans le gestionnaire d'impression.\n\nPar exemple, si vous configurez l'",
+      "method": "vector",
+      "score": 0.6347015261650085,
+      "category": "Impression Windows",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "impression_windows_002",
+      "question": "Qu'est-ce qu'un modèle d'imprimante dans Harmony ?",
+      "expected_answer": "Un modèle d'imprimante définit les paramètres d'impression spécifiques à une imprimante ou un type d'imprimante, permettant de standardiser les configurations d'impression.",
+      "retrieved_text": "Fichiers descriptifs d'imprimante Harmony\n\n\n\n\n\n\n\n\n\n\n\n\nFichiers descriptifs d'imprimante Harmony\n\n\nPour chaque type d'imprimantes utilises lors d'une dition en mode \ncaractres\n, Harmony utilise un fichier paramtres dnomm \"\nfichier descriptif d'imprimante\n\". Il s'agit d'un fichier au format .txt contenant, pour chaque \nattribut d'impression\n, la commande correspondante adapte au matriel concern.\n\n\n \n\n\nDes \nfichiers descriptifs \"gnriques\"\n, correspondant aux types d'imprimantes les plus courants, s",
+      "method": "vector",
+      "score": 0.6177841246128082,
+      "category": "Impression Windows",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "ldap_synchronisation_001",
+      "question": "Que permet la synchronisation LDAP dans Harmony ?",
+      "expected_answer": "La synchronisation LDAP permet d'importer et synchroniser les utilisateurs d'un annuaire LDAP avec la base utilisateurs Harmony.",
+      "retrieved_text": "Synchronisation\n\n\n\n\n\n\n\n\n\n\n\n\nSynchronisation\n\n\n \n\n\nSynchronisation manuelle\n\n\nLa console LDAP permet de simuler ou excuter une synchronisation de lannuaire LDAP avec les utilisateurs de lERP.\n\n\nAvant dexcuter la synchronisation, elle pr-visualise les oprations qui seront effectues afin de permettre  ladministrateur de vrifier que son paramtrage est correct.\n\n\n \n\n\n\n\n\n\nLe menu \nSynchronisation\n cre (choix \nMode rel\n) ou simule (choix \nMode audit\n) la cration ou la mise  jour des utilisateurs dans l",
+      "method": "vector",
+      "score": 0.6955791234970092,
+      "category": "LDAP et synchronisation",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "ldap_synchronisation_002",
+      "question": "Quels sont les avantages de l'utilisation d'un annuaire LDAP avec Harmony ?",
+      "expected_answer": "L'utilisation d'un annuaire LDAP permet une gestion centralisée des utilisateurs, une synchronisation automatique, et une intégration avec les systèmes d'authentification d'entreprise.",
+      "retrieved_text": "Import et synchronisation des utilisateurs dun annuaire LDAP\n\n\n\n\n\n\n\n\n\n\n\n\nImport et synchronisation des utilisateurs dun annuaire LDAP\n\n\n \n\n\nL'\ninterface LDAP\n permet de synchroniser les utilisateurs enregistrs dans un annuaire LDAP (par exemple l'\nActive Directory\n de Microsoft) avec les utilisateurs de l'ERP Divalto.\n\n\n \n\n\nIl assure  la fois l'import des utilisateurs de l'annuaire dans le fichier des utilisateurs de lERP et leur synchronisation automatique en temps rel. Ainsi :\n\n\n\n\n\n\nA l'instal",
+      "method": "vector",
+      "score": 0.5198229998350143,
+      "category": "LDAP et synchronisation",
+      "difficulty": "difficile",
+      "found": true
+    },
+    {
+      "test_id": "fichiers_commandes_001",
+      "question": "Qu'est-ce qu'un fichier de commandes dans Harmony ?",
+      "expected_answer": "Un fichier de commandes (batch) peut être appelé 'fichier pilote' pour enregistrer l'appel d'un programme (ou d'une séquence) avec ses paramètres.",
+      "retrieved_text": "Dclaration des chemins Harmony\n\n\n\n\n\n\n\n\n\n\n\n\nDclaration des chemins Harmony\n\n\n \n\n\nSous Harmony, les chemins d'accs aux fichiers peuvent rfrencer des chemins spcifiques, appels \"chemins Harmony\". Leur emploi est facultatif en local mais obligatoire au niveau d'un serveur Xlan.\n\n\nLa notion de chemin Harmony est dtaille au chapitre \nAccs aux fichiers d'Harmony\n.\n\n \n\n\nLes chemins Harmony utiliss sur un ordinateur sont \nlocalement\n paramtrs dans le fichier Fconfig.dhfi \nou\n dans le fichier texte Divalt",
+      "method": "vector",
+      "score": 0.6383585005998611,
+      "category": "Fichiers de commandes",
+      "difficulty": "moyen",
+      "found": true
+    },
+    {
+      "test_id": "fichiers_commandes_002",
+      "question": "Comment lancer automatiquement une tâche de fond dans Harmony ?",
+      "expected_answer": "Le lancement automatique d'une tâche de fond peut être configuré via les paramètres d'icône ou les fichiers de commandes programmés.",
+      "retrieved_text": "Prsentation d'Harmony\n\n\n\n\n\n\n\n\nPrsentation d'Harmony\n\n\nCertaines des applications avec lesquelles vous allez travailler s'excutent sous Harmony. Mais au fait, qu'est-ce qu'Harmony ?\n\n\nHarmony est  la fois un atelier de dveloppement et une base de donnes. Un atelier de dveloppement, car c'est un outil complet d'aide  la conception d'applications. Une base de donnes, car il s'appuie sur une puissante gestion de fichiers multi-cl.\n\n\nAvant de donner des explications dtailles sur son utilisation, il e",
+      "method": "vector",
+      "score": 0.5703336387872696,
+      "category": "Fichiers de commandes",
+      "difficulty": "difficile",
+      "found": true
+    },
+    {
+      "test_id": "etats_graphiques_001",
+      "question": "Quelles sont les possibilités d'édition d'états dans Harmony ?",
+      "expected_answer": "Harmony permet l'édition d'états graphiques et caractères, avec gestion des tableaux, paramétrage des impressions, et aperçu avant impression.",
+      "retrieved_text": "Administration d'Harmony: Introduction\n\n\n\n\n\n\n\n\n\n\nAdministration d'Harmony : Introduction\n\n\n \n\n\nCe livre introduit dans un premier temps quelques points indispensables  une bonne matrise d'Harmony,  savoir les notions de :\n\n\n\nTche\n.\n\n\n\nAccs aux fichiers\n.\n\n\n\nFichier des utilisateurs\n.\n\n\n \n\n\nPuis il traite de l'administration d'Harmony en abordant les points suivants :\n\n\n\nImpressions\n.\n\n\n\nGestion des fentres et des programmes\n.\n\n\n\n\nGestion des tableaux\n.",
+      "method": "vector",
+      "score": 0.5324865043163299,
+      "category": "États et graphiques",
+      "difficulty": "facile",
+      "found": true
+    },
+    {
+      "test_id": "etats_graphiques_002",
+      "question": "Comment régler la hauteur et largeur d'édition dans Harmony ?",
+      "expected_answer": "La hauteur et largeur d'édition peuvent être réglées via les paramètres d'impression et de mise en page des états.",
+      "retrieved_text": "Prsentation d'Harmony\n\n\n\n\n\n\n\n\nPrsentation d'Harmony\n\n\nCertaines des applications avec lesquelles vous allez travailler s'excutent sous Harmony. Mais au fait, qu'est-ce qu'Harmony ?\n\n\nHarmony est  la fois un atelier de dveloppement et une base de donnes. Un atelier de dveloppement, car c'est un outil complet d'aide  la conception d'applications. Une base de donnes, car il s'appuie sur une puissante gestion de fichiers multi-cl.\n\n\nAvant de donner des explications dtailles sur son utilisation, il e",
+      "method": "vector",
+      "score": 0.5542107492685318,
+      "category": "États et graphiques",
+      "difficulty": "moyen",
+      "found": true
+    }
+  ]
+}

@@ -62,22 +62,29 @@ class HybridRAG:
 
     # ============= RETRIEVAL PAR GRAPHE =============
     def search_graph(self, query: str, top_k: int = 5) -> List[Dict]:
-        """Recherche par graphe (entités)."""
+        """Recherche par graphe (entités) - optimisée."""
         if not self.graph:
             return []
 
         results = []
         query_lower = query.lower()
+        query_words = [w for w in query_lower.split() if len(w) > 2]  # Mots > 2 caractères
         
         # Chercher les entités qui matchent la requête
         entities_found = []
         for node in self.graph.nodes():
             if isinstance(node, str) and len(node) > 2 and not node.startswith("Document_"):
-                if any(word in node.lower() for word in query_lower.split()):
-                    entities_found.append(node)
+                node_lower = node.lower()
+                # Meilleur matching pour les entités
+                score = sum(1 for word in query_words if word in node_lower) / max(1, len(query_words))
+                if score > 0:
+                    entities_found.append((node, score * 0.9))  # Score: 0-0.9
+        
+        # Trier par score
+        entities_found.sort(key=lambda x: x[1], reverse=True)
         
         # Pour chaque entité, récupérer les documents associés
-        for entity in entities_found[:top_k]:
+        for entity, entity_score in entities_found[:top_k]:
             if entity in self.graph:
                 neighbors = list(self.graph.neighbors(entity))
                 docs = [n for n in neighbors if n.startswith("Document_")]
@@ -89,7 +96,7 @@ class HybridRAG:
                             'entity': entity,
                             'document_id': doc_node,
                             'text': doc_data.get('text', ''),
-                            'score': 0.8,  # Confiance de la recherche par graphe
+                            'score': entity_score,  # Score basé sur le matching
                             'method': 'graph'
                         })
         
@@ -126,15 +133,16 @@ class HybridRAG:
     # ============= FUSION DES RÉSULTATS =============
     def _merge_results(self, graph_results: List[Dict], 
                       vector_results: List[Dict]) -> List[Dict]:
-        """Fusionne et déduplique les résultats des deux méthodes."""
+        """Fusionne et déduplique les résultats des deux méthodes avec pondération optimale."""
         seen_texts = {}
         merged = []
         
-        # Ajouter les résultats du graphe
+        # Ajouter les résultats du graphe (ajuster la pondération)
         for result in graph_results:
             text_key = result['text'][:100]
             if text_key not in seen_texts:
-                result['hybrid_score'] = result['score'] * 0.7  # Pondération graphe
+                # Augmenter le poids du graphe (0.75 au lieu de 0.7)
+                result['hybrid_score'] = min(0.95, result['score'] * 0.75)
                 merged.append(result)
                 seen_texts[text_key] = result
         
@@ -142,9 +150,16 @@ class HybridRAG:
         for result in vector_results:
             text_key = result['text'][:100]
             if text_key not in seen_texts:
-                result['hybrid_score'] = result['score'] * 0.8  # Pondération vectoriel
+                # Augmenter le poids vectoriel (0.85 au lieu de 0.8)
+                result['hybrid_score'] = min(0.95, result['score'] * 0.85)
                 merged.append(result)
                 seen_texts[text_key] = result
+            else:
+                # Si le texte existe déjà, combiner les scores
+                existing = seen_texts[text_key]
+                combined_score = (existing.get('hybrid_score', 0.5) + result['score'] * 0.85) / 2
+                existing['hybrid_score'] = min(0.95, combined_score)
+                existing['method'] = 'hybrid'
         
         # Trier par score hybride décroissant
         merged.sort(key=lambda x: x['hybrid_score'], reverse=True)
@@ -152,15 +167,18 @@ class HybridRAG:
 
     # ============= INTERFACE PRINCIPALE =============
     def query(self, question: str, top_k: int = 1) -> Dict:
-        """Traite une question avec retrieval hybride."""
+        """Traite une question avec retrieval hybride optimisé."""
         print(f"\n🔍 Recherche hybride pour: {question}")
         
+        # Augmenter les recherches internes pour avoir plus de candidats
+        internal_k = max(3, top_k * 2)
+        
         # 1. Recherche par graphe
-        graph_results = self.search_graph(question, top_k=top_k)
+        graph_results = self.search_graph(question, top_k=internal_k)
         print(f"   📊 Graphe: {len(graph_results)} résultat(s)")
         
         # 2. Recherche vectorielle
-        vector_results = self.search_vector(question, top_k=top_k)
+        vector_results = self.search_vector(question, top_k=internal_k)
         print(f"   🔢 Vectoriel: {len(vector_results)} résultat(s)")
         
         # 3. Fusion des résultats
