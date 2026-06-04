@@ -1,0 +1,473 @@
+{
+  "active_session": "default",
+  "sessions": {
+    "default": {
+      "metadata": {
+        "created": "2026-06-04T17:01:01.515285",
+        "modified": "2026-06-04T17:59:26.834261",
+        "description": "default"
+      },
+      "context": {
+        "global_context": "",
+        "indexed_entities": []
+      },
+      "turns": [
+        {
+          "timestamp": "2026-05-05T16:34:47",
+          "question": "Comment Harmony gère les utilisateurs ?",
+          "context": "Fichier des utilisateurs\n\n\n\n\n\n\n\n\n\n\n\n\nFichier des utilisateurs\n\n\n \n\n\nHarmony gre une base de donnes des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier pralablement, de manire  mettre en place en particulier :\n\n\n\n\n\n\nSes chemins implicites.\n\n\n\n\n\n\nSes droits d'accs ou codes de confidentialit (utiliss par les programmes et les menus d'Harmony pour autoris",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Les resultats ont ete fusionnes et tries; meilleur candidat via methode 'vector' (score 0.72).",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-05T16:35:53",
+          "question": "et xlogf?",
+          "context": "Fichier des utilisateurs\n\n\n\n\n\n\n\n\n\n\n\n\nFichier des utilisateurs\n\n\n \n\n\nHarmony gre une base de donnes des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier pralablement, de manire  mettre en place en particulier :\n\n\n\n\n\n\nSes chemins implicites.\n\n\n\n\n\n\nSes droits d'accs ou codes de confidentialit (utiliss par les programmes et les menus d'Harmony pour autoris",
+          "cot_steps": [
+            "La question a ete enrichie avec le contexte recent de la session.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Les resultats ont ete fusionnes et tries; meilleur candidat via methode 'vector' (score 0.74).",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-04T17:01:28",
+          "question": "c'est quoi un chemin harmony",
+          "answer": "Exemples : Nom du chemin Chemin Sources c:/Divalto/Sources Compta d:/Fichiers/Comptabilit : Il est gnralement inutile de crer des chemins Harmony sur les postes autonomes ou les postes clients d'un serveur.",
+          "metadata": {
+            "cot_steps": [
+              "La question a ete enrichie avec le contexte recent de la session.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Administration\\Administration\\Fichierdesutilisateurs.htm' via la methode 'vector' (score 1.22).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-04T17:03:06",
+          "question": "c'est quoi un chemin harmony?",
+          "answer": "chemins Harmony Par exemple : Divalto pour c:/divalto Compta pour d:/fichiers/comptabilit , le premier segment du chemin d'accs est un nom de chemin Harmony : ce nom sera remplac par le chemin rel qu'il reprsente pour donner le nom de fichier complet.",
+          "metadata": {
+            "cot_steps": [
+              "La question a ete enrichie avec le contexte recent de la session.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Installation\\Installation\\D_clarationdesutilisateursd_unr_seauHarmony.htm' via la methode 'graph' (score 1.25).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-04T17:59:26",
+          "question": "qu'est ce qu'un chemin harmoy",
+          "answer": "Conseil pratique : en local, un chemin Harmony ne doit jamais en rfrencer un autre (la rcursivit est interdite).",
+          "metadata": {
+            "cot_steps": [
+              "La question a ete enrichie avec le contexte recent de la session.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Administration\\Administration\\CheminsHarmony.htm' via la methode 'graph' (score 1.24).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        }
+      ]
+    },
+    "s_ctx_a": {
+      "metadata": {
+        "created": "2026-06-04T17:01:01.515296",
+        "modified": "2026-06-04T17:01:01.515298",
+        "description": "s_ctx_a"
+      },
+      "context": {
+        "global_context": "",
+        "indexed_entities": []
+      },
+      "turns": [
+        {
+          "timestamp": "2026-05-05T16:38:09",
+          "question": "Comment Harmony g?re les utilisateurs ?",
+          "context": "Fichier des utilisateurs\n\n\n\n\n\n\n\n\n\n\n\n\nFichier des utilisateurs\n\n\n \n\n\nHarmony gre une base de donnes des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier pralablement, de manire  mettre en place en particulier :\n\n\n\n\n\n\nSes chemins implicites.\n\n\n\n\n\n\nSes droits d'accs ou codes de confidentialit (utiliss par les programmes et les menus d'Harmony pour autoris",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Les resultats ont ete fusionnes et tries; meilleur candidat via methode 'vector' (score 0.70).",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-05T16:38:09",
+          "question": "Et Xlogf ?",
+          "context": "Fichier des utilisateurs\n\n\n\n\n\n\n\n\n\n\n\n\nFichier des utilisateurs\n\n\n \n\n\nHarmony gre une base de donnes des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier pralablement, de manire  mettre en place en particulier :\n\n\n\n\n\n\nSes chemins implicites.\n\n\n\n\n\n\nSes droits d'accs ou codes de confidentialit (utiliss par les programmes et les menus d'Harmony pour autoris",
+          "cot_steps": [
+            "La question a ete enrichie avec le contexte recent de la session.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Les resultats ont ete fusionnes et tries; meilleur candidat via methode 'vector' (score 0.70).",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-07T17:34:52",
+          "question": "Que dit la documentation sur: Dclaration des chemins Harmony ?",
+          "context": "Administration d'Harmony: Introduction\n\n\n\n\n\n\n\n\n\n\nAdministration d'Harmony : Introduction\n\n\n \n\n\nCe livre introduit dans un premier temps quelques points indispensables  une bonne matrise d'Harmony,  savoir les notions de :\n\n\n\nTche\n.\n\n\n\nAccs aux fichiers\n.\n\n\n\nFichier des utilisateurs\n.\n\n\n \n\n\nPuis il traite de l'administration d'Harmony en abordant les points suivants :\n\n\n\nImpressions\n.\n\n\n\nGestion de",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Les resultats ont ete fusionnes et tries; meilleur candidat via methode 'vector' (score 0.64).",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-07T17:37:40",
+          "question": "Je dois installer une architecture TSE multi-serveurs avec des clients légers Web. Quelles sont les étapes à suivre pour configurer les chemins Harmony, déclarer les serveurs de données, configurer les imprimantes, et mettre en place les fichiers d'aides ?",
+          "context": "Installation d'Harmony pour TSE\n\n\n\n\n\n\n\n\n\n\n\n\nInstallation d'Harmony pour TSE\n\n\nL'installation d'Harmony sur un serveur dapplications TSE doit tre effectue sous un compte d'administration et \naprs\n \nlinstallation de TSE\n. Elle diffre uniquement d'une installation classique sous Windows par quelques particularits, que nous allons dtailler dans les rubriques qui suivent.\n\n \n\n\nEn particulier, si vous i",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Les resultats ont ete fusionnes et tries; meilleur candidat via methode 'vector' (score 0.63).",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-07T17:39:32",
+          "question": "Un utilisateur ne peut pas accéder aux fichiers via le chemin Harmony, les imprimantes ne fonctionnent pas, et les aides ne s'affichent pas. Quels fichiers de configuration dois-je vérifier et dans quel ordre pour diagnostiquer le problème ?",
+          "context": "Noms de fichier en rseau poste  poste\n\n\n\n\n\n\n\n\n\n\n\n\nNoms de fichier en rseau Windows\n\n\n \n\n\nSous Harmony, ce type de rseau sert uniquement  accder  des fichiers purement Windows, hors Xlan (donc, en particulier, sans gestion de rservations \"Harmony\"). Pour accder  un fichier Windows, Harmony passe galement par la \ntable des serveurs\n. Mais ici, l'adresse du serveur prcise l'ordinateur concern et, ven",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Les resultats ont ete fusionnes et tries; meilleur candidat via methode 'vector' (score 0.48).",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-07T18:54:55",
+          "question": "Un utilisateur ne peut pas accéder aux fichiers via le chemin Harmony, les imprimantes ne fonctionnent pas, et les aides ne s'affichent pas. Quels fichiers de configuration dois-je vérifier et dans quel ordre pour diagnostiquer le problème ?",
+          "context": "Noms de fichier en rseau poste  poste\n\n\n\n\n\n\n\n\n\n\n\n\nNoms de fichier en rseau Windows\n\n\n \n\n\nSous Harmony, ce type de rseau sert uniquement  accder  des fichiers purement Windows, hors Xlan (donc, en particulier, sans gestion de rservations \"Harmony\"). Pour accder  un fichier Windows, Harmony passe galement par la \ntable des serveurs\n. Mais ici, l'adresse du serveur prcise l'ordinateur concern et, ven",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Noms_de_fichier_en_réseau_Windows.htm' via la methode 'vector' (score 0.48).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-07T18:55:54",
+          "question": "Qu'est-ce qu'un modèle d'imprimante dans Harmony ?",
+          "context": "Fichiers descriptifs d'imprimante Harmony\n\n\n\n\n\n\n\n\n\n\n\n\nFichiers descriptifs d'imprimante Harmony\n\n\nPour chaque type d'imprimantes utilises lors d'une dition en mode \ncaractres\n, Harmony utilise un fichier paramtres dnomm \"\nfichier descriptif d'imprimante\n\". Il s'agit d'un fichier au format .txt contenant, pour chaque \nattribut d'impression\n, la commande correspondante adapte au matriel concern.\n\n\n ",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Annexes\\Annexes\\Fichiersdescriptifsd_imprimanteHarmony.htm' via la methode 'vector' (score 0.62).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-07T18:56:51",
+          "question": "Que permet la synchronisation LDAP dans Harmony ?",
+          "context": "Synchronisation\n\n\n\n\n\n\n\n\n\n\n\n\nSynchronisation\n\n\n \n\n\nSynchronisation manuelle\n\n\nLa console LDAP permet de simuler ou excuter une synchronisation de lannuaire LDAP avec les utilisateurs de lERP.\n\n\nAvant dexcuter la synchronisation, elle pr-visualise les oprations qui seront effectues afin de permettre  ladministrateur de vrifier que son paramtrage est correct.\n\n\n \n\n\n\n\n\n\nLe menu \nSynchronisation\n cre (",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Synchronisation.htm' via la methode 'vector' (score 0.70).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-07T18:57:58",
+          "question": "Que dit la documentation sur: Installation et configuration d'une imprimante Windows ?",
+          "context": "Installation et configuration d'une imprimante Windows\n\n\n\n\n\n\n\n\n\n\nInstallation et configuration d'une imprimante Windows\n\n\n \n\n\nAvant toute utilisation d'une imprimante sous Windows, il faut installer le pilote (driver) d'imprimante correspondant au matriel utilis. C'est le gestionnaire d'impression qui permet cette installation.\n\n\nLe gestionnaire d'impression permet aussi de configurer les impriman",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Installationetconfigurationd_uneimprimanteWindows.htm' via la methode 'vector' (score 0.72).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-07T18:58:26",
+          "question": "Que dit la documentation sur: Modles d'utilisateur ?",
+          "context": "Pour crer ces raccourcis, reportez-vous au paragraphe \"Raccourci vers lapplication en prcisant le profil utilisateur\" de la rubrique \nRaccourcis vers l'application\n.",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Installation\\Installation\\Profils_utilisateur.htm' via la methode 'vector' (score 0.57).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-11T18:24:15",
+          "question": "\"Un utilisateur ne peut pas accéder aux fichiers via le chemin Harmony, les imprimantes ne fonctionnent pas, et les aides ne s'affichent pas. Quels fichiers de configuration dois-je vérifier et dans quel ordre pour diagnostiquer le problème ?\"",
+          "context": "Accs  un fichier rseau Windows sous son nom Harmony\n\n\n\n\n\n\n\n\n\n\n\n\nAccs  un fichier rseau Windows avec son nom Harmony\n\n\n \n\n\nCertaines applications permettent douvrir un fichier rseau  Windows  (par exemple, un fichier Word ou Excel), en fournissant son nom Xlan Harmony (fonction WinShellExecute du langage Diva). \nCeci ne peut fonctionner que sil existe une stricte quivalence entre le nom Xlan Harmon",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm' via la methode 'graph' (score 0.51).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-11T18:28:35",
+          "question": "Je dois installer une architecture TSE multi-serveurs avec des clients légers Web. Quelles sont les étapes à suivre pour configurer les chemins Harmony, déclarer les serveurs de données, configurer les imprimantes, et mettre en place les fichiers d'aides ?",
+          "context": "Accs  un fichier rseau Windows sous son nom Harmony\n\n\n\n\n\n\n\n\n\n\n\n\nAccs  un fichier rseau Windows avec son nom Harmony\n\n\n \n\n\nCertaines applications permettent douvrir un fichier rseau  Windows  (par exemple, un fichier Word ou Excel), en fournissant son nom Xlan Harmony (fonction WinShellExecute du langage Diva). \nCeci ne peut fonctionner que sil existe une stricte quivalence entre le nom Xlan Harmon",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm' via la methode 'graph' (score 0.68).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-11T19:02:49",
+          "question": "Dans la session A, quel est le nom de l'utilisateur et quel projet est en cours ?",
+          "context": "Dans le tableau, le \ncaractre \n \n-\n \n permet dafficher le niveau prcdent.\n\n\n \n\n\nLa \nliste des utilisateurs\n affiche en particulier le nom complet de lutilisateur. Il correspond  la zone commentaire de la fiche utilisateur dans XLOG.\n\n\nLa \nliste des programmes\n affiche en particulier le nombre dutilisations du programme pour la slection en cours ainsi que le nombre total dutilisation du programme s",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Xconsole\\Xconsole\\EtatSysteme.htm' via la methode 'vector' (score 0.56).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-11T19:03:08",
+          "question": "Peux-tu rappeler la première action réalisée dans cette session ?",
+          "context": "Ordre d'excution des points d'arrt et de traitement Avant / Aprs\n\n\nLe cas chant, les points d'arrt et de traitement dclars ici seront excuts dans l'ordre suivant (Cf. rubrique \"Algorithme de saisie des donnes\" du livre consacr  Ywpf) :\n\n\n\n\n\n\nPoint d'arrt Avant saisie.\n\n\n\n\n\n\nTraitement Avant saisie.\n\n\n\nEntre\n \nde la donne\n \npar l'utilisateur\n\n \n\n\n\n\n\n\nPige de touche.\n\n\n\n\n\n\nTraitement Aprs saisie.\n\n\n",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\xwin-ecran\\xwin_ecran\\Traitements.htm' via la methode 'vector' (score 0.39).",
+            "Aucune correspondance par graphe n'a ete trouvee; la recherche vectorielle a fourni les candidats.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-11T19:04:30",
+          "question": "Comment Harmony gère les utilisateurs ?",
+          "context": "Fichier des utilisateurs\n\n\n\n\n\n\n\n\n\n\n\n\nFichier des utilisateurs\n\n\n \n\n\nHarmony gre une base de donnes des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier pralablement, de manire  mettre en place en particulier :\n\n\n\n\n\n\nSes chemins implicites.\n\n\n\n\n\n\nSes droits d'accs ou codes de confidentialit (utiliss par les programmes et les menus d'Harmony pour autoris",
+          "cot_steps": [
+            "La question a ete enrichie avec le contexte recent de la session.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Fichierdesutilisateurs.htm' via la methode 'vector' (score 0.51).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-11T19:04:56",
+          "question": "et xlogf?",
+          "context": "Cration des utilisateurs Harmony\n\n\n\n\n\n\n\n\n\n\nCration des utilisateurs Harmony\n\n\nLors de l'ouverture d'une session par un poste client, le serveur XLANSQL contrle que l'utilisateur d'Harmony existe dans le fichier XLOG.dhfi du serveur. Le menu DIVALTO ou l'utilitaire XLOG1.dhop permettent de crer les utilisateurs d'Harmony.\n\n\nLe bouton \"Choix du serveur\" de XLOG1 permet de slectionner le serveur IBM ",
+          "cot_steps": [
+            "La question a ete enrichie avec le contexte recent de la session.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\xlansql\\xlansql\\Création_des_utilisateurs_Harmony.htm' via la methode 'vector' (score 0.58).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-11T19:13:34",
+          "question": "Comment fonctionnent les chemins Harmony ?",
+          "context": "Fichier des utilisateurs\n\n\n\n\n\n\n\n\n\n\n\n\nFichier des utilisateurs\n\n\n \n\n\nHarmony gre une base de donnes des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier pralablement, de manire  mettre en place en particulier :\n\n\n\n\n\n\nSes chemins implicites.\n\n\n\n\n\n\nSes droits d'accs ou codes de confidentialit (utiliss par les programmes et les menus d'Harmony pour autoris",
+          "cot_steps": [
+            "La question a ete enrichie avec le contexte recent de la session.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Fichierdesutilisateurs.htm' via la methode 'vector' (score 0.69).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-11T19:14:32",
+          "question": "Et en local ?",
+          "context": "Dclaration des chemins Harmony\n\n\n\n\n\n\n\n\n\n\n\n\nDclaration des chemins Harmony\n\n\n \n\n\nSous Harmony, les chemins d'accs aux fichiers peuvent rfrencer des chemins spcifiques, appels \"chemins Harmony\". Leur emploi est facultatif en local mais obligatoire au niveau d'un serveur Xlan.\n\n\nLa notion de chemin Harmony est dtaille au chapitre \nAccs aux fichiers d'Harmony\n.\n\n \n\n\nLes chemins Harmony utiliss sur un ",
+          "cot_steps": [
+            "La question a ete enrichie avec le contexte recent de la session.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Installation\\Installation\\D_clarationdescheminsHarmony.htm' via la methode 'vector' (score 0.59).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-01T16:19:07",
+          "question": "Quel programme assure la gestion des utilisateurs dans Harmony ?",
+          "context": "de ses investissements logiciels, sachant en particulier que les matriels \n voluent trs rapidement.  \nLes buts viss par Harmony sont donc multiples :  \nDcharger le programmeur \n de toute la partie prsentation. L'apport d'Harmony est ici un gain de temps considrable dans l'criture \n de nouvelles applications, une fiabilit accrue des programmes, une maintenance \n et une reprise facilites.  \nRendre l",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Miseenoeuvre\\Miseenoeuvre\\Lesbutsvis_sparHarmony.htm' via la methode 'vector' (score 0.75).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-01T16:20:12",
+          "question": "Où peut être stocké le fichier des utilisateurs Xlogf ?",
+          "context": "Le fichier Xlogf trait par Xlog1 est dtermin par la cl du chapitre saisi avec xDivaltoMajini. Si cette cl est absente, le fichier est cherch en local dans /divalto/sys.  \npar dfaut  \nServeurXlogf  \n[System]  \nLe bouton permet de :  \nSlection d'un serveur  \nchanger de fichier Xlogf  \nLe choix du serveur s'effectue exactement de la mme manire que le garnissage de la cl ServeurXlogf dans la base de r",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Xlog1\\Xlog1\\ChoixdufichierXlogf_horsserveurXlans_curis__.htm' via la methode 'vector' (score 0.73).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-01T17:11:23",
+          "question": "Comment appeler le zoom des serveurs Harmony ?",
+          "context": "Le zoom permettant la dclaration des (Xlan ou SQL) auxquels un poste a accs est appel :  \nserveurs de fichiers Harmony  \nSoit depuis le choix du menu Harmony.dhop.  \nParamtrage : Serveurs  \nSoit depuis l'utilitaire (bouton ou choix du menu ).  \nXpath.dhop  \nServeurs  \nOutils : Zoom des serveurs",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\D_clarationdesserveursetdesunit_slogiques.htm' via la methode 'vector' (score 0.76).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-01T17:15:29",
+          "question": "Où peut être stocké le fichier des utilisateurs Xlogf ?",
+          "context": "Le fichier Xlogf trait par Xlog1 est dtermin par la cl du chapitre saisi avec xDivaltoMajini. Si cette cl est absente, le fichier est cherch en local dans /divalto/sys.  \npar dfaut  \nServeurXlogf  \n[System]  \nLe bouton permet de :  \nSlection d'un serveur  \nchanger de fichier Xlogf  \nLe choix du serveur s'effectue exactement de la mme manire que le garnissage de la cl ServeurXlogf dans la base de r",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Xlog1\\Xlog1\\ChoixdufichierXlogf_horsserveurXlans_curis__.htm' via la methode 'vector' (score 0.73).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-01T17:15:47",
+          "question": "Que couvre la documentation sur les impressions dans Harmony ?",
+          "context": "Ce livre explique le fonctionnement des impressions commandes par les applications Harmony :  \nDans un premier temps, nous dcrirons les : gestionnaire d'impression (spouleur), imprimante par dfaut, mode graphique et mode caractres, modles d'imprimante, etc.  \nprincipes gnraux des impressions Windows et Harmony  \nDans un deuxime temps, nous tudierons les oprations  effectuer pour obtenir une Harmon",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 3 candidats graphe et 3 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Impressions__Introduction.htm' via la methode 'vector' (score 0.75).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-03T16:00:27",
+          "question": "c'est quoi harmony",
+          "context": "Implantation des fichiers d'implicites sur un rseau client-serveur Harmony Les fichiers d'implicites peuvent tre stocks en local. implanter ces fichiers sur le serveur va de pair avec celle des utilisateurs modifier Xdivalto Maj Ini Serveur Xlogf [System] client Dclaration des utilisateurs d'un rseau Harmony Conseils pratiques : Centralisez la gestion des utilisateurs et des chemins implicites.",
+          "cot_steps": [
+            "La question a ete enrichie avec le contexte recent de la session.",
+            "Recherche hybride effectuee: 20 candidats graphe et 20 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Installation\\Installation\\Implantationdesfichiersd_implicitessurunr_seauclient_serveurHarmony.htm' via la methode 'vector' (score 0.80).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-03T16:00:59",
+          "question": "qu'est ce qu'un chemin harmonyh",
+          "context": "Les chemins implicites sont stocks dans des fichiers .txt, o chaque ligne contient un chemin.",
+          "cot_steps": [
+            "La question a ete enrichie avec le contexte recent de la session.",
+            "Recherche hybride effectuee: 20 candidats graphe et 20 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Cheminsd_acc_simplicites.htm' via la methode 'graph' (score 0.82).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-03T16:01:52",
+          "question": "l'emploi de ces chemins est il obligatoire?",
+          "context": "Leur emploi est facultatif en local mais obligatoire au niveau d'un serveur Xlan. localement ou Fichiers de configuration des serveurs et des chemins Harmony Un zoom accessible depuis le menu d'Harmony (choix ) ou depuis l'utilitaire (bouton ou choix du menu ) permet ce paramtrage.",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 15 candidats graphe et 20 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Installation\\Installation\\D_clarationdescheminsHarmony.htm' via la methode 'vector' (score 0.90).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-03T16:11:07",
+          "question": "Quel programme assure la gestion des utilisateurs dans Harmony ?",
+          "context": "La gestion des utilisateurs est assurée par le programme Xlog1.dhop (ou par le menu Divalto.dhop).",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 20 candidats graphe et 20 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Administrationd_Harmony__Introduction.htm' via la methode 'graph' (score 0.89).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-03T16:11:58",
+          "question": "Où peut être stocké le fichier Xlogf ?",
+          "context": "Le fichier Xlogf peut être stocké localement (un fichier par ordinateur) ou de manière centralisée sur un serveur Harmony (un fichier unique pour tout le site).",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 15 candidats graphe et 20 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Fichierdesutilisateurs.htm' via la methode 'graph' (score 0.77).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-06-03T16:12:13",
+          "question": "Où trouver la documentation sur le paramétrage des imprimantes en mode client léger ?",
+          "context": "Pour connaître les particularités de paramétrage des imprimantes en mode client léger, il faut consulter la documentation de xDivaltoPrinters.",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 16 candidats graphe et 20 candidats vectoriels.",
+            "Le meilleur extrait provient de 'data\\Administration\\Administration\\Param_tragedesimpressionsHarmony.htm' via la methode 'vector' (score 0.77).",
+            "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+            "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+          ]
+        }
+      ]
+    },
+    "s_ctx_b": {
+      "metadata": {
+        "created": "2026-06-04T17:01:01.515301",
+        "modified": "2026-06-04T17:01:01.515302",
+        "description": "s_ctx_b"
+      },
+      "context": {
+        "global_context": "",
+        "indexed_entities": []
+      },
+      "turns": [
+        {
+          "timestamp": "2026-05-05T16:38:09",
+          "question": "Comment fonctionnent les chemins Harmony ?",
+          "context": "Prsentation d'Harmony\n\n\n\n\n\n\n\n\nPrsentation d'Harmony\n\n\nCertaines des applications avec lesquelles vous allez travailler s'excutent sous Harmony. Mais au fait, qu'est-ce qu'Harmony ?\n\n\nHarmony est  la fois un atelier de dveloppement et une base de donnes. Un atelier de dveloppement, car c'est un outil complet d'aide  la conception d'applications. Une base de donnes, car il s'appuie sur une puissante",
+          "cot_steps": [
+            "La question utilisateur a ete utilisee telle quelle.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Les resultats ont ete fusionnes et tries; meilleur candidat via methode 'vector' (score 0.64).",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        },
+        {
+          "timestamp": "2026-05-05T16:38:09",
+          "question": "Et en local ?",
+          "context": "Dclaration des chemins Harmony\n\n\n\n\n\n\n\n\n\n\n\n\nDclaration des chemins Harmony\n\n\n \n\n\nSous Harmony, les chemins d'accs aux fichiers peuvent rfrencer des chemins spcifiques, appels \"chemins Harmony\". Leur emploi est facultatif en local mais obligatoire au niveau d'un serveur Xlan.\n\n\nLa notion de chemin Harmony est dtaille au chapitre \nAccs aux fichiers d'Harmony\n.\n\n \n\n\nLes chemins Harmony utiliss sur un ",
+          "cot_steps": [
+            "La question a ete enrichie avec le contexte recent de la session.",
+            "Recherche hybride effectuee: 0 candidats graphe et 3 candidats vectoriels.",
+            "Les resultats ont ete fusionnes et tries; meilleur candidat via methode 'vector' (score 0.59).",
+            "La reponse finale est basee sur les 1 meilleur(s) extrait(s)."
+          ]
+        }
+      ]
+    }
+  }
+}

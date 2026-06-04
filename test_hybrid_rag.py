@@ -9,7 +9,10 @@ import os
 import io
 import sys
 from datetime import datetime
+from difflib import SequenceMatcher
 from query_docs import HybridRAG
+from rag_answer import generate_answer_from_results, build_context_from_results
+from rag_config import TARGET_PRECISION
 from typing import Dict, List
 
 # Forcer UTF-8
@@ -53,12 +56,23 @@ class RAGTester:
 
             try:
                 # Exécuter la requête
-                result = self.rag.query(test['question'], top_k=1)
+                result = self.rag.query(test['question'], top_k=3)
                 
-                # Récupérer la meilleure réponse
-                best_response = ""
-                if result['merged_results']:
-                    best_response = result['merged_results'][0]['text']
+                generated = result.get("generated_answer") or generate_answer_from_results(
+                    test["question"],
+                    result.get("merged_results", []),
+                    embedding_model=self.rag.embedding_model,
+                    embedding_model_name=self.rag.embedding_model_name,
+                )
+                best_response = generated
+                if not best_response and result.get("merged_results"):
+                    best_response = result["merged_results"][0]["text"]
+
+                similarity = SequenceMatcher(
+                    None,
+                    (generated or "").lower(),
+                    test["expected_answer"].lower(),
+                ).ratio()
                 
                 # Enregistrer le résultat
                 test_result = {
@@ -70,14 +84,23 @@ class RAGTester:
                     'score': result['merged_results'][0]['hybrid_score'] if result['merged_results'] else 0,
                     'category': test['category'],
                     'difficulty': test['difficulty'],
-                    'found': len(result['merged_results']) > 0
+                    'found': len(result['merged_results']) > 0,
+                    'similarity': similarity,
+                    'quality': (
+                        "EXCELLENT" if similarity >= 0.9 else
+                        "TRES BON" if similarity >= 0.8 else
+                        "BON" if similarity >= 0.7 else
+                        "MOYEN" if similarity >= 0.6 else
+                        "FAIBLE" if similarity >= 0.4 else
+                        "TRES FAIBLE"
+                    ),
                 }
                 
                 self.results.append(test_result)
                 
                 # Afficher le résultat
                 if test_result['found']:
-                    print(f"   TROUVE (Score: {test_result['score']:.2%})")
+                    print(f"   TROUVE (Score: {test_result['score']:.2%}, similarite: {similarity:.2%}, {test_result['quality']})")
                     print(f"   Reponse: {best_response[:150]}...")
                 else:
                     print(f"   AUCUNE REPONSE TROUVEE")
@@ -108,6 +131,9 @@ class RAGTester:
         total = len(self.results)
         found = sum(1 for r in self.results if r['found'])
         avg_score = sum(r['score'] for r in self.results if r['found']) / found if found > 0 else 0
+        avg_similarity = sum(r.get('similarity', 0) for r in self.results) / total if total > 0 else 0
+        excellent = sum(1 for r in self.results if r.get('similarity', 0) >= 0.9)
+        good = sum(1 for r in self.results if r.get('similarity', 0) >= 0.7)
 
         # Statistiques par catégorie
         categories_stats = {}
@@ -149,7 +175,10 @@ class RAGTester:
                 'found': found,
                 'not_found': total - found,
                 'success_rate': f"{(found / total * 100):.1f}%" if total > 0 else "0%",
-                'average_score': f"{avg_score:.2%}"
+                'average_score': f"{avg_score:.2%}",
+                'average_similarity': f"{avg_similarity:.2%}",
+                'excellent_similarity_count': excellent,
+                'good_similarity_count': good,
             },
             'by_category': categories_stats,
             'by_difficulty': difficulty_stats,
@@ -168,7 +197,10 @@ class RAGTester:
         print("=" * 80)
         print(f"Reponses trouvees: {found}/{total} ({(found/total*100):.1f}%)")
         print(f"Aucune reponse: {total - found}/{total} ({((total-found)/total*100):.1f}%)")
-        print(f"Score moyen: {avg_score:.2%}")
+        print(f"Score moyen retrieval: {avg_score:.2%}")
+        print(f"Similarite moyenne vs attendu: {avg_similarity:.2%}")
+        print(f"Objectif precision ({TARGET_PRECISION:.0%}): {'ATTEINT' if avg_similarity >= TARGET_PRECISION else 'NON ATTEINT'}")
+        print(f"Excellent (>=90%): {excellent}/{total} | Bon (>=70%): {good}/{total}")
 
         print("\nPAR CATEGORIE:")
         for cat, stats in categories_stats.items():
@@ -197,6 +229,10 @@ def main():
     
     # Générer le rapport
     report = tester.generate_report("test_results_optimized.json")
+    avg_sim = sum(r.get("similarity", 0) for r in tester.results) / max(len(tester.results), 1)
+    if avg_sim < TARGET_PRECISION:
+        print(f"\nECHEC: precision {avg_sim:.2%} < objectif {TARGET_PRECISION:.0%}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":

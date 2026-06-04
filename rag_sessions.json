@@ -1,5 +1,5 @@
 {
-  "active_session": "my_session",
+  "active_session": "default",
   "sessions": {
     "default": {
       "metadata": {
@@ -55,6 +55,45 @@
         "description": "Session créée le 2026-04-27 18:55"
       },
       "turns": []
+    },
+    "harmony_admin": {
+      "metadata": {
+        "created": "2026-05-05T16:13:38.234419",
+        "modified": "2026-05-05T16:13:38.353168",
+        "description": "Questions sur l'administration Harmony"
+      },
+      "context": {
+        "global_context": "Documentation d'administration du système Harmony",
+        "indexed_entities": []
+      },
+      "turns": [
+        {
+          "timestamp": "2026-05-05T16:13:38",
+          "question": "Où peut être stocké le fichier des utilisateurs Xlogf ?",
+          "answer": "Choix du fichier Xlogf (hors serveur Xlan scuris)\n\n\n\n\n\n\n\n\n\n\n\n\nChoix du fichier Xlogf\n\n\n \n\n\nLe fichier Xlogf trait \npar dfaut\n par Xlog1 est dtermin par la cl \nServeurXlogf\n du chapitre \n[System]\n saisi avec xDivaltoMajini. Si cette cl est absente, le fichier est cherch en local dans /divalto/sys.\n\n\n \n\n\nLe bouton \nSlection d'un serveur\n permet de \nchanger de fichier Xlogf\n :\n\n\n\n\n\n\nLe choix du serveur s'effectue exactement de la mme manire que le garnissage de la cl ServeurXlogf dans la base de re",
+          "metadata": {
+            "graph_results": 0,
+            "vector_results": 3
+          },
+          "rag_context": {
+            "sources": [
+              {
+                "document_id": "",
+                "text_preview": "Choix du fichier Xlogf (hors serveur Xlan scuris)\n\n\n\n\n\n\n\n\n\n\n\n\nChoix du fichier Xlogf\n\n\n \n\n\nLe fichier Xlogf trait \npar dfaut\n par Xlog1 est dtermin par la cl \nServeurXlogf\n du chapitre \n[System]\n sais",
+                "method": "vector"
+              }
+            ],
+            "scores": [
+              0.754265308380127
+            ],
+            "method": "hybrid",
+            "entities": [
+              ""
+            ],
+            "documents_count": 1
+          }
+        }
+      ]
     }
   }
 }

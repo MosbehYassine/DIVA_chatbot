@@ -1,0 +1,424 @@
+{
+  "timestamp": "2026-06-03T16:40:28.452117",
+  "summary": {
+    "total_tests": 15,
+    "passed": 15,
+    "failed": 0,
+    "success_rate": 100.0,
+    "average_hybrid_score": 0.8725
+  },
+  "by_module": {
+    "Zooms et paramétrage": {
+      "total": 2,
+      "passed": 2
+    },
+    "Menu Harmony": {
+      "total": 2,
+      "passed": 2
+    },
+    "Utilisateurs": {
+      "total": 1,
+      "passed": 1
+    },
+    "Chemins": {
+      "total": 1,
+      "passed": 1
+    },
+    "Impressions": {
+      "total": 3,
+      "passed": 3
+    },
+    "LDAP": {
+      "total": 2,
+      "passed": 2
+    },
+    "Réseau": {
+      "total": 2,
+      "passed": 2
+    },
+    "Xwin": {
+      "total": 1,
+      "passed": 1
+    },
+    "Outils": {
+      "total": 1,
+      "passed": 1
+    }
+  },
+  "results": [
+    {
+      "id": "zoom_chemins_001",
+      "module": "Zooms et paramétrage",
+      "question": "Depuis où peut-on ouvrir le zoom de déclaration des chemins Harmony ?",
+      "method": "graph",
+      "hybrid_score": 0.9184375,
+      "retrieved_source": "data\\Administration\\Administration\\Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+      "retrieved_text_preview": "Le zoom des chemins Harmony est accessible via Paramétrage : Chemins Harmony ou via Xpath.dhop (Outils : Zoom des chemins).",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "Xpath.dhop",
+        "Parametrage",
+        "Chemins Harmony",
+        "Zoom des chemins"
+      ],
+      "keywords_hits": [
+        "Xpath.dhop",
+        "Parametrage",
+        "Chemins Harmony",
+        "Zoom des chemins"
+      ],
+      "keyword_ratio": 1.0,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "zoom_serveurs_001",
+      "module": "Zooms et paramétrage",
+      "question": "Comment appeler le zoom des serveurs Harmony ?",
+      "method": "vector",
+      "hybrid_score": 0.8756237584352494,
+      "retrieved_source": "data\\Installation\\Installation\\Paramétrage_des_serveurs_Harmony..htm",
+      "retrieved_text_preview": "Le zoom des serveurs est accessible via Paramétrage : Serveurs ou via Xpath.dhop (Outils : Zoom des serveurs).",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "Parametrage",
+        "Serveurs",
+        "Xpath.dhop",
+        "Zoom des serveurs"
+      ],
+      "keywords_hits": [
+        "Parametrage",
+        "Serveurs",
+        "Xpath.dhop",
+        "Zoom des serveurs"
+      ],
+      "keyword_ratio": 1.0,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "zoom_menu_001",
+      "module": "Menu Harmony",
+      "question": "Quelle touche permet de sélectionner un zoom dans le menu Harmony ?",
+      "method": "vector",
+      "hybrid_score": 0.8234901195764541,
+      "retrieved_source": "data\\menus\\menus\\Conceptsg_n_rauxetd_finitions.htm",
+      "retrieved_text_preview": "La touche F7 permet de sélectionner un zoom dans le menu Harmony.",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "F7",
+        "Selection d un zoom",
+        "menu"
+      ],
+      "keywords_hits": [
+        "F7",
+        "menu"
+      ],
+      "keyword_ratio": 0.6666666666666666,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "zoom_menu_002",
+      "module": "Menu Harmony",
+      "question": "Quelle touche ouvre la gestion des zooms du menu ?",
+      "method": "graph",
+      "hybrid_score": 0.8632142857142857,
+      "retrieved_source": "data\\Administration\\Administration\\Gestiondesmod_lesd_imprimante.htm",
+      "retrieved_text_preview": "La touche Shift+F7 donne accès au zoom de gestion de tous les zooms du menu.",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "Shift+F7",
+        "gestion des zooms",
+        "menu"
+      ],
+      "keywords_hits": [
+        "Shift+F7",
+        "menu"
+      ],
+      "keyword_ratio": 0.6666666666666666,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "utilisateurs_advanced_001",
+      "module": "Utilisateurs",
+      "question": "Quel programme assure la gestion des utilisateurs Harmony ?",
+      "method": "graph",
+      "hybrid_score": 0.9761904761904762,
+      "retrieved_source": "data\\Administration\\Administration\\Administrationd_Harmony__Introduction.htm",
+      "retrieved_text_preview": "La gestion des utilisateurs est assurée par le programme Xlog1.dhop (ou par le menu Divalto.dhop).",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "Xlog1.dhop",
+        "Xlogf",
+        "utilisateurs"
+      ],
+      "keywords_hits": [
+        "Xlog1.dhop",
+        "utilisateurs"
+      ],
+      "keyword_ratio": 0.6666666666666666,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "chemins_advanced_001",
+      "module": "Chemins",
+      "question": "A quoi servent les chemins d'accès implicites ?",
+      "method": "vector",
+      "hybrid_score": 0.7825764644145966,
+      "retrieved_source": "data\\Installation\\Installation\\D_clarationdeschemins_etbiblioth_ques_unit_s_implicites.htm",
+      "retrieved_text_preview": "Les chemins implicites sont définis par utilisateur et complètent les chemins Harmony ; ils permettent d'adapter le nom complet de fichier à chaque utilisateur.",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "nom complet",
+        "fichier",
+        "implicites",
+        "chemin"
+      ],
+      "keywords_hits": [
+        "nom complet",
+        "fichier",
+        "implicites",
+        "chemin"
+      ],
+      "keyword_ratio": 1.0,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "impression_advanced_001",
+      "module": "Impressions",
+      "question": "Quel est le rôle du spouleur Windows dans les impressions Harmony ?",
+      "method": "vector",
+      "hybrid_score": 0.8884685945510866,
+      "retrieved_source": "data\\Administration\\Administration\\Impressions__Introduction.htm",
+      "retrieved_text_preview": "Harmony utilise le spouleur (gestionnaire d'impression) de Windows pour gérer les files d'impression et le routage vers les imprimantes.",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "gestionnaire d impression",
+        "spouleur",
+        "file d attente",
+        "impression"
+      ],
+      "keywords_hits": [
+        "gestionnaire d impression",
+        "spouleur",
+        "impression"
+      ],
+      "keyword_ratio": 0.75,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "impression_advanced_002",
+      "module": "Impressions",
+      "question": "Comment sélectionner un modèle d'imprimante dans Harmony ?",
+      "method": "vector",
+      "hybrid_score": 0.7732550509770713,
+      "retrieved_source": "data\\Annexes\\Annexes\\M_thodedes_lectiondel_imprimante.htm",
+      "retrieved_text_preview": "La sélection d'un modèle d'imprimante s'effectue via Fprinters.dhop ; la touche Shift+F6 permet de choisir un modèle lors de l'impression.",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "Shift+F6",
+        "Fprinters",
+        "modele d imprimante"
+      ],
+      "keywords_hits": [
+        "Shift+F6",
+        "Fprinters",
+        "modele d imprimante"
+      ],
+      "keyword_ratio": 1.0,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "impression_advanced_003",
+      "module": "Impressions",
+      "question": "Quelle différence existe entre mode graphique et mode caractères ?",
+      "method": "graph",
+      "hybrid_score": 0.7474999999999999,
+      "retrieved_source": "data\\Administration\\Administration\\Aper_usavantimpression.htm",
+      "retrieved_text_preview": "Le mode graphique offre des fonctions avancées (cadres, images) tandis que le mode caractères est plus simple et adapté aux impressions texte.",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "mode graphique",
+        "mode caracteres",
+        "driver",
+        "imprimante"
+      ],
+      "keywords_hits": [
+        "mode graphique",
+        "mode caracteres"
+      ],
+      "keyword_ratio": 0.5,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "ldap_advanced_001",
+      "module": "LDAP",
+      "question": "Que permet la console d'administration LDAP ?",
+      "method": "graph",
+      "hybrid_score": 1.109,
+      "retrieved_source": "data\\Administration\\Administration\\Gestion_et_paramétrage_depuis_la_console_LDAP.htm",
+      "retrieved_text_preview": "La console d'administration LDAP permet de définir des règles de filtrage, des correspondances de champs et de piloter la synchronisation des utilisateurs avec Harmony.",
+      "source_match": true,
+      "matched_source_token": "console_LDAP",
+      "keywords_expected": [
+        "regle de filtrage",
+        "correspondance",
+        "synchronisation",
+        "LDAP"
+      ],
+      "keywords_hits": [
+        "correspondance",
+        "synchronisation",
+        "LDAP"
+      ],
+      "keyword_ratio": 0.75,
+      "result": "TRES BON",
+      "passed": true
+    },
+    {
+      "id": "ldap_advanced_002",
+      "module": "LDAP",
+      "question": "Quel est le principe d'import et synchronisation LDAP des utilisateurs ?",
+      "method": "vector",
+      "hybrid_score": 1.0880827327569327,
+      "retrieved_source": "data\\Administration\\Administration\\Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm",
+      "retrieved_text_preview": "L'import et la synchronisation LDAP permettent d'intégrer les utilisateurs d'un annuaire (ex. Active Directory) dans la base utilisateurs Harmony.",
+      "source_match": true,
+      "matched_source_token": "Import_et_synchronisation_des_utilisateurs",
+      "keywords_expected": [
+        "import",
+        "synchronisation",
+        "annuaire",
+        "Active Directory"
+      ],
+      "keywords_hits": [
+        "import",
+        "synchronisation",
+        "annuaire",
+        "Active Directory"
+      ],
+      "keyword_ratio": 1.0,
+      "result": "TRES BON",
+      "passed": true
+    },
+    {
+      "id": "reseau_xlan_001",
+      "module": "Réseau",
+      "question": "Comment sont construits les noms de fichier en réseau Xlan ?",
+      "method": "graph",
+      "hybrid_score": 0.7474999999999999,
+      "retrieved_source": "data\\Administration\\Administration\\CheminsHarmony.htm",
+      "retrieved_text_preview": "Les noms de fichier réseau Xlan s'appuient sur une table de serveurs et utilisent la forme //serveur/chemin pour accéder aux fichiers.",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "table de serveurs",
+        "//",
+        "serveur",
+        "fichier reseau"
+      ],
+      "keywords_hits": [
+        "table de serveurs",
+        "//",
+        "serveur",
+        "fichier reseau"
+      ],
+      "keyword_ratio": 1.0,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "reseau_windows_001",
+      "module": "Réseau",
+      "question": "Comment accéder à un fichier Windows via un nom Harmony ?",
+      "method": "graph",
+      "hybrid_score": 0.9897142857142858,
+      "retrieved_source": "data\\Administration\\Administration\\Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+      "retrieved_text_preview": "L'accès passe par la table des serveurs Windows : un nom Harmony est résolu vers le chemin réseau ou local réel du fichier.",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "table des serveurs",
+        "Windows",
+        "nom Harmony",
+        "fichier"
+      ],
+      "keywords_hits": [
+        "table des serveurs",
+        "Windows",
+        "nom Harmony",
+        "fichier"
+      ],
+      "keyword_ratio": 1.0,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "xwin_001",
+      "module": "Xwin",
+      "question": "A quoi servent les maquettes d'édition et comment les générer ?",
+      "method": "vector",
+      "hybrid_score": 0.7005376334985098,
+      "retrieved_source": "data\\xwin-imprimante\\xwin_imprimante\\Comment_produire_un_fichier_maquette.htm",
+      "retrieved_text_preview": "Les maquettes d'édition servent de modèles d'états ; elles se génèrent selon le type d'imprimante et peuvent être rejouées pour reproduire une mise en page.",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "maquette",
+        "modele",
+        "type d imprimante",
+        "rejouee"
+      ],
+      "keywords_hits": [
+        "maquette",
+        "modele",
+        "type d imprimante",
+        "rejouee"
+      ],
+      "keyword_ratio": 1.0,
+      "result": "OK",
+      "passed": true
+    },
+    {
+      "id": "xtools_001",
+      "module": "Outils",
+      "question": "Dans quel contexte utilise-t-on Xtools.dhop dans la documentation ?",
+      "method": "graph",
+      "hybrid_score": 0.80375,
+      "retrieved_source": "data\\Administration\\Administration\\Noms_de_fichier_en_réseau_Windows.htm",
+      "retrieved_text_preview": "Xtools.dhop est un utilitaire Harmony utilisé pour manipuler ou inspecter des chemins et noms de fichiers (notamment en réseau).",
+      "source_match": false,
+      "matched_source_token": "",
+      "keywords_expected": [
+        "Xtools.dhop",
+        "programme",
+        "chemin",
+        "fichier"
+      ],
+      "keywords_hits": [
+        "Xtools.dhop",
+        "chemin",
+        "fichier"
+      ],
+      "keyword_ratio": 0.75,
+      "result": "OK",
+      "passed": true
+    }
+  ]
+}

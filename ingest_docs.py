@@ -5,22 +5,62 @@ import json
 import numpy as np
 import io
 import sys
+import unicodedata
+import html as html_module
 from bs4 import BeautifulSoup
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter, HTMLHeaderTextSplitter
 from langchain_community.document_loaders import TextLoader
 from langchain_core.documents import Document
 from sentence_transformers import SentenceTransformer
 import faiss
 
+from rag_config import (
+    EMBEDDING_MODEL,
+    EMBEDDING_BATCH_SIZE,
+    CHUNK_STRATEGY,
+    CHUNK_SIZE,
+    CHUNK_OVERLAP,
+    SEMANTIC_BREAKPOINT_THRESHOLD,
+    is_e5_model,
+    E5_PASSAGE_PREFIX,
+    DOCS_DIR,
+    FAISS_INDEX_PATH,
+    CHUNKS_METADATA_PATH,
+    GRAPH_PATH,
+    GRAPH_SOURCES_PATH,
+    INDEX_CONFIG_PATH,
+)
+
 # Forcer UTF-8 pour éviter les problèmes d'encodage
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
-# Configuration
-DOCS_DIR = "data"  # Lis les documents depuis le dossier data
-EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-GRAPH_PATH = "networkx_graph.pkl"
-FAISS_INDEX_PATH = "faiss_index.pkl"
-CHUNKS_METADATA_PATH = "chunks_metadata.json"
+# Configuration (voir rag_config.py)
+
+def normalize_text(text: str) -> str:
+    """
+    Nettoie et normalise le texte extrait :
+    - Décode les entités HTML (&nbsp;, &gt;, &lt;, &é;, etc.)
+    - Normalise Unicode (NFC)
+    - Supprime les espaces superflus
+    - Nettoie les retours à la ligne multiples
+    """
+    # Décoder les entités HTML
+    text = html_module.unescape(text)
+    
+    # Normaliser Unicode (NFC = composition canonique)
+    # Cela combine les caractères combinants (ex: é = e + accent) en forme composée
+    text = unicodedata.normalize('NFC', text)
+    
+    # Remplacer les espaces non-breaking et autres espaces spéciaux par un espace normal
+    text = text.replace('\xa0', ' ').replace('\u2009', ' ').replace('\u200b', '')
+    
+    # Nettoyer les retours à la ligne multiples
+    text = '\n'.join(line.strip() for line in text.split('\n') if line.strip())
+    
+    # Supprimer les espaces superflus avant/après
+    text = text.strip()
+    
+    return text
 
 def load_documents(directory):
     documents = []
@@ -37,6 +77,8 @@ def load_documents(directory):
             with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
                 soup = BeautifulSoup(f, "html.parser")
                 text = soup.get_text(separator="\n")
+                # Normaliser le texte extrait
+                text = normalize_text(text)
                 if text.strip():
                     documents.append(Document(page_content=text, metadata={"source": file_path}))
         except Exception as e:
@@ -52,18 +94,79 @@ def load_documents(directory):
 
     return documents
 
+def _fallback_recursive_split(documents, chunk_size: int, chunk_overlap: int):
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=chunk_size,
+        chunk_overlap=chunk_overlap,
+        separators=["\n\n", "\n", ". ", " ", ""],
+    )
+    return splitter.split_documents(documents)
+
+
 def chunk_documents(documents):
+    """
+    Découpe les documents selon RAG_CHUNK_STRATEGY:
+    - recursive: par taille (NON sémantique)
+    - html: par titres HTML (structure sémantique, recommandé pour la doc Harmony)
+    - semantic: par ruptures de similarité entre phrases (sémantique, plus lent)
+    """
     if not documents:
         return []
 
-    print("Initialisation du TextSplitter classique pour le Graph (besoin de contexte)...")
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=2000, # Augmenté pour plus de contexte et meilleure pertinence
-        chunk_overlap=250  # Augmenté pour meilleure continuité
-    )
+    strategy = CHUNK_STRATEGY
+    print(f"Stratégie de chunking: {strategy} (size={CHUNK_SIZE}, overlap={CHUNK_OVERLAP})")
 
-    print("Découpage des documents...")
-    chunks = text_splitter.split_documents(documents)
+    if strategy == "semantic":
+        try:
+            from langchain_experimental.text_splitter import SemanticChunker
+            from langchain_huggingface import HuggingFaceEmbeddings
+
+            print("Chunking sémantique (SemanticChunker) — peut prendre plusieurs minutes...")
+            embedder = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL)
+            splitter = SemanticChunker(
+                embedder,
+                breakpoint_threshold_type="percentile",
+                breakpoint_threshold_amount=SEMANTIC_BREAKPOINT_THRESHOLD,
+            )
+            chunks = splitter.split_documents(documents)
+            print(f"  -> {len(chunks)} chunks sémantiques")
+            return chunks
+        except Exception as exc:
+            print(f"  SemanticChunker indisponible ({exc}), repli sur html + recursive")
+
+    if strategy in ("html", "semantic"):
+        # Découpe d'abord par structure HTML (sections logiques de la doc CHM)
+        try:
+            html_splitter = HTMLHeaderTextSplitter(
+                headers_to_split_on=[
+                    ("h1", "Header 1"),
+                    ("h2", "Header 2"),
+                    ("h3", "Header 3"),
+                ]
+            )
+            html_chunks = []
+            for doc in documents:
+                source = doc.metadata.get("source", "")
+                if source.lower().endswith((".htm", ".html")):
+                    try:
+                        with open(source, "r", encoding="utf-8", errors="ignore") as f:
+                            for part in html_splitter.split_text(f.read()):
+                                part.metadata = {**doc.metadata, **part.metadata}
+                                html_chunks.append(part)
+                    except Exception:
+                        html_chunks.append(doc)
+                else:
+                    html_chunks.append(doc)
+
+            if html_chunks:
+                chunks = _fallback_recursive_split(html_chunks, CHUNK_SIZE, CHUNK_OVERLAP)
+                print(f"  -> {len(chunks)} chunks (html + recursive)")
+                return chunks
+        except Exception as exc:
+            print(f"  HTMLHeaderTextSplitter en échec ({exc}), repli recursive")
+
+    chunks = _fallback_recursive_split(documents, CHUNK_SIZE, CHUNK_OVERLAP)
+    print(f"  -> {len(chunks)} chunks (recursive uniquement — non sémantique)")
     return chunks
 
 from langchain_community.graphs.networkx_graph import NetworkxEntityGraph
@@ -97,6 +200,12 @@ KEY_TERMS = [
     "Droit d'accès",
     "Base de données",
     "Paramètre",
+    "Zoom",
+    "Xpath",
+    "Xlog",
+    "Xlogf",
+    "Xtools",
+    "Xwin",
 ]
 
 def extract_entities_rule_based(text: str):
@@ -119,9 +228,19 @@ def create_vector_embeddings(chunks):
     # Extraire les textes
     texts = [chunk.page_content for chunk in chunks]
     
-    # Générer les embeddings
+    # Générer les embeddings (préfixe passage: pour modèles E5)
+    if is_e5_model(EMBEDDING_MODEL):
+        texts_for_encode = [f"{E5_PASSAGE_PREFIX}{t}" for t in texts]
+    else:
+        texts_for_encode = texts
+
     print(f"Génération des embeddings pour {len(texts)} chunks...")
-    embeddings = model.encode(texts, batch_size=64, show_progress_bar=True, normalize_embeddings=True)
+    embeddings = model.encode(
+        texts_for_encode,
+        batch_size=EMBEDDING_BATCH_SIZE,
+        show_progress_bar=True,
+        normalize_embeddings=True,
+    )
     embeddings = np.array(embeddings).astype('float32')
     
     # Créer l'index FAISS
@@ -139,8 +258,10 @@ def create_vector_embeddings(chunks):
     metadata = [
         {
             'chunk_id': i,
-            'text': chunk.page_content[:500],  # Preview
-            'source': chunk.metadata.get('source', 'unknown')
+            'text': chunk.page_content,
+            'source': chunk.metadata.get('source', 'unknown'),
+            'embedding_model': EMBEDDING_MODEL,
+            'chunk_strategy': CHUNK_STRATEGY,
         }
         for i, chunk in enumerate(chunks)
     ]
@@ -148,6 +269,18 @@ def create_vector_embeddings(chunks):
     with open(CHUNKS_METADATA_PATH, 'w', encoding='utf-8') as f:
         json.dump(metadata, f, ensure_ascii=False, indent=2)
     
+    index_config = {
+        "embedding_model": EMBEDDING_MODEL,
+        "embedding_dimension": int(dimension),
+        "chunk_strategy": CHUNK_STRATEGY,
+        "chunk_count": len(texts),
+        "chunk_size": CHUNK_SIZE,
+        "chunk_overlap": CHUNK_OVERLAP,
+    }
+    with open(INDEX_CONFIG_PATH, "w", encoding="utf-8") as f:
+        json.dump(index_config, f, ensure_ascii=False, indent=2)
+    print(f"Config index sauvegardée: {INDEX_CONFIG_PATH}")
+
     print(f"Index FAISS créé avec {len(texts)} vecteurs de dimension {dimension}.")
     return index, embeddings, model
 
@@ -165,8 +298,13 @@ def create_graph(chunks):
 
             # Nœud document avec un extrait de texte utile comme attribut
             if not graph._graph.has_node(doc_id):
-                snippet = chunk.page_content[:400]
-                graph._graph.add_node(doc_id, text=snippet)
+                source = chunk.metadata.get("source", "unknown")
+                graph._graph.add_node(
+                    doc_id,
+                    text=chunk.page_content[:2000],
+                    source=source,
+                    chunk_id=i,
+                )
 
             # Entités par règles
             entities = set(extract_entities_rule_based(chunk.page_content))
@@ -192,8 +330,10 @@ def create_graph(chunks):
             print(f"Erreur lors du traitement du chunk {i}: {e}")
 
     # Sauvegarder le graphe
-    print(f"Sauvegarde du graphe dans {GRAPH_PATH}...")
+    print(f"Sauvegarde du graphe dans {GRAPH_PATH} et {GRAPH_SOURCES_PATH}...")
     with open(GRAPH_PATH, "wb") as f:
+        pickle.dump(graph._graph, f)
+    with open(GRAPH_SOURCES_PATH, "wb") as f:
         pickle.dump(graph._graph, f)
 
     print(f"Graphe créé avec {graph._graph.number_of_nodes()} noeuds et {graph._graph.number_of_edges()} relations.")

@@ -1,0 +1,137 @@
+{
+  "timestamp": "2026-06-05T00:47:58.090077",
+  "target": 0.8,
+  "average_similarity": 0.3803,
+  "passed": 2,
+  "total": 21,
+  "success_rate_pct": 9.52,
+  "meets_target": false,
+  "details": [
+    {
+      "id": "chemins_harmony_001",
+      "similarity": 0.3297,
+      "passed": false,
+      "generated_preview": "L'emploi de chemins Harmony est mais au , comme nous allons le voir dans les rubriques suivantes."
+    },
+    {
+      "id": "chemins_harmony_002",
+      "similarity": 0.351,
+      "passed": false,
+      "generated_preview": "Un fichier ou un programme Harmony est identifi par un nom de la forme : //serveur/chemin/dossier/nom o : reprsente un nom de serveur, serveur reprsen"
+    },
+    {
+      "id": "chemins_harmony_003",
+      "similarity": 0.49,
+      "passed": false,
+      "generated_preview": "L'emploi de chemins Harmony est mais au , comme nous allons le voir dans les rubriques suivantes."
+    },
+    {
+      "id": "utilisateurs_001",
+      "similarity": 0.2974,
+      "passed": false,
+      "generated_preview": "Dans ce cas uniquement, vous pourrez utiliser les chemins Harmony sur le client et sur le serveur (ce qui est pratique lorsque le serveur est lui-mme "
+    },
+    {
+      "id": "utilisateurs_002",
+      "similarity": 0.2452,
+      "passed": false,
+      "generated_preview": "Utilisateur expriment uniquement Dans la plupart des cas, vous lancerez vos programmes d'application Harmony comme n'importe quelle autre application "
+    },
+    {
+      "id": "utilisateurs_003",
+      "similarity": 0.8158,
+      "passed": true,
+      "generated_preview": "gestion des utilisateurs Le fichier Xlogf peut tre stock (un fichier par ordinateur) ou de manire centralise sur un (un fichier unique pour tout le si"
+    },
+    {
+      "id": "impressions_001",
+      "similarity": 0.5854,
+      "passed": false,
+      "generated_preview": "Ce livre explique le fonctionnement des impressions commandes par les applications Harmony : Dans un premier temps, nous dcrirons les : gestionnaire d"
+    },
+    {
+      "id": "impressions_002",
+      "similarity": 0.1759,
+      "passed": false,
+      "generated_preview": "mise en uvre optimale des impressions Pour connatre les particularits de paramtrage des imprimantes en mode client lger, consultez la documentation de"
+    },
+    {
+      "id": "impressions_003",
+      "similarity": 0.8178,
+      "passed": true,
+      "generated_preview": "ne que paramtrage Pour connatre les particularits de paramtrage des imprimantes en mode client lger, consultez la documentation de ."
+    },
+    {
+      "id": "administration_001",
+      "similarity": 0.2795,
+      "passed": false,
+      "generated_preview": "L'utilitaire Xlog.dhop (*) permet de vous prsenter au systme Harmony, afin que ce dernier mette en place votre contexte Harmony personnel (chemins imp"
+    },
+    {
+      "id": "administration_002",
+      "similarity": 0.3368,
+      "passed": false,
+      "generated_preview": ": Ceci interdit aux utilisateurs de choisir eux-mmes leur option d'identification dans la bote des Options de connexion avances."
+    },
+    {
+      "id": "chemins_acces_001",
+      "similarity": 0.4127,
+      "passed": false,
+      "generated_preview": "Sous Harmony, les chemins d'accs aux fichiers peuvent rfrencer des chemins spcifiques, appels \"chemins Harmony\"."
+    },
+    {
+      "id": "chemins_acces_002",
+      "similarity": 0.2665,
+      "passed": false,
+      "generated_preview": "format des chemins implicites Exemple : Avec le fichier d'implicites suivant : /divalto/sys/ d:/src/ //serveurcompta/fic/ l'accs au fichier c 3f.dhfi "
+    },
+    {
+      "id": "impression_windows_001",
+      "similarity": 0.373,
+      "passed": false,
+      "generated_preview": "Cette deuxime partie du livre consacr aux impressions Harmony explique successivement comment : et un modle d'imprimante."
+    },
+    {
+      "id": "impression_windows_002",
+      "similarity": 0.2963,
+      "passed": false,
+      "generated_preview": ": Le fichier de stockage des modles d'imprimante (Fprinters.dhfi) est un fichier \"systme\", unique pour toutes les applications Harmony."
+    },
+    {
+      "id": "ldap_synchronisation_001",
+      "similarity": 0.4453,
+      "passed": false,
+      "generated_preview": "Synchronisation manuelle La console LDAP permet de simuler ou excuter une synchronisation de lannuaire LDAP avec les utilisateurs de l ERP."
+    },
+    {
+      "id": "ldap_synchronisation_002",
+      "similarity": 0.4112,
+      "passed": false,
+      "generated_preview": "L' permet de synchroniser les utilisateurs enregistrs dans un annuaire LDAP (par exemple l' de Microsoft) avec les utilisateurs de l'ERP Divalto."
+    },
+    {
+      "id": "fichiers_commandes_001",
+      "similarity": 0.0962,
+      "passed": false,
+      "generated_preview": "pralablement Il est possible de dclarer sur un poste client un chemin Harmony faisant rfrence un serveur Windows et d'utiliser ensuite ce chemin pour "
+    },
+    {
+      "id": "fichiers_commandes_002",
+      "similarity": 0.2449,
+      "passed": false,
+      "generated_preview": "Systme Avanc Variables d'environnement Variables utilisateur : l'installation du run-time d'Harmony, garnissez la zone pour affecter automatiquement u"
+    },
+    {
+      "id": "etats_graphiques_001",
+      "similarity": 0.375,
+      "passed": false,
+      "generated_preview": "Mais Harmony propose une manire plus simple et plus rapide qui consiste : Pour l'administrateur : - A des \" \" adapts aux besoins et aux matriels."
+    },
+    {
+      "id": "etats_graphiques_002",
+      "similarity": 0.3416,
+      "passed": false,
+      "generated_preview": "Comme la hauteur du papier est diffrente en mode paysage et en mode portrait, le paramtrage Harmony permet d'indiquer un nombre maximum de lignes pour"
+    }
+  ]
+}

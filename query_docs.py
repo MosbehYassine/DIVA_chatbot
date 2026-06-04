@@ -5,18 +5,39 @@ Combine recherche par graphe (entités) et recherche vectorielle (similarité s�
 """
 
 import os
+import sys
 import pickle
 import json
+import re
 import numpy as np
 import networkx as nx
 from typing import List, Dict, Tuple
+from datetime import datetime
 from sentence_transformers import SentenceTransformer
+from session_manager import SessionManager
+from rag_config import (
+    EMBEDDING_MODEL,
+    is_e5_model,
+    E5_QUERY_PREFIX,
+    GRAPH_PATH,
+    GRAPH_SOURCES_PATH,
+    FAISS_INDEX_PATH,
+    CHUNKS_METADATA_PATH,
+    INDEX_CONFIG_PATH,
+    RETRIEVAL_POOL_SIZE,
+    RERANK_LEXICAL_WEIGHT,
+    RERANK_VECTOR_WEIGHT,
+    RERANK_EMBEDDING_WEIGHT,
+    SOURCE_MATCH_BOOST,
+    DOC_ABOUT_BOOST,
+    GRAPH_ENTITY_TOP_K,
+    ENTITY_VECTOR_MIN_SCORE,
+)
+from rag_canonical import parse_doc_about_topic
+from rag_answer import generate_answer_from_results, build_context_from_results
+from rag_vector import encode_query, encode_passages, cosine_scores, top_k_indices
 
-# Configuration
-GRAPH_PATH = "networkx_graph.pkl"
-FAISS_INDEX_PATH = "faiss_index.pkl"
-CHUNKS_METADATA_PATH = "chunks_metadata.json"
-EMBEDDING_MODEL = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+SESSIONS_FILE = "hybrid_rag_sessions.json"
 
 
 class HybridRAG:
@@ -24,24 +45,38 @@ class HybridRAG:
     
     def __init__(self, graph_path: str = GRAPH_PATH, 
                  faiss_path: str = FAISS_INDEX_PATH,
-                 metadata_path: str = CHUNKS_METADATA_PATH):
+                 metadata_path: str = CHUNKS_METADATA_PATH,
+                 cot_enabled: bool = True):
         self.graph = None
         self.faiss_index = None
         self.metadata = []
         self.embedding_model = None
+        self.embedding_model_name = EMBEDDING_MODEL
+        self.cot_enabled = cot_enabled
         
+        self._entity_index = {}
+        self._entity_nodes: List[str] = []
+        self._entity_embeddings = np.zeros((0, 1), dtype="float32")
         self._load_graph(graph_path)
         self._load_vector_index(faiss_path, metadata_path)
         self._load_embedding_model()
+        self._build_entity_index()
+        self._build_entity_embeddings()
 
     def _load_graph(self, graph_path):
-        """Charge le graphe NetworkX."""
-        if os.path.exists(graph_path):
-            with open(graph_path, 'rb') as f:
+        """Charge le graphe NetworkX (avec repli sur le fichier standard)."""
+        path = graph_path
+        if not os.path.exists(path):
+            for candidate in (GRAPH_PATH, GRAPH_SOURCES_PATH):
+                if os.path.exists(candidate):
+                    path = candidate
+                    break
+        if os.path.exists(path):
+            with open(path, 'rb') as f:
                 self.graph = pickle.load(f)
-            print(f"✅ Graphe chargé: {self.graph.number_of_nodes()} noeuds, {self.graph.number_of_edges()} relations")
+            print(f"Graphe chargé ({path}): {self.graph.number_of_nodes()} noeuds, {self.graph.number_of_edges()} relations")
         else:
-            print(f"⚠️  Graphe non trouvé: {graph_path}")
+            print(f"Graphe non trouvé: {graph_path}")
 
     def _load_vector_index(self, faiss_path, metadata_path):
         """Charge l'index FAISS et les métadonnées."""
@@ -50,56 +85,314 @@ class HybridRAG:
                 self.faiss_index = pickle.load(f)
             with open(metadata_path, 'r', encoding='utf-8') as f:
                 self.metadata = json.load(f)
-            print(f"✅ Index FAISS chargé: {len(self.metadata)} chunks indexés")
+            print(f"Index FAISS chargé: {len(self.metadata)} chunks indexés (dim={self.faiss_index.d})")
+            if self.metadata and isinstance(self.metadata[0], dict):
+                index_model = self.metadata[0].get("embedding_model")
+                if index_model:
+                    self.embedding_model_name = index_model
+                    print(f"Modèle utilisé à l'indexation: {index_model}")
+        elif os.path.exists(INDEX_CONFIG_PATH):
+            with open(INDEX_CONFIG_PATH, "r", encoding="utf-8") as f:
+                cfg = json.load(f)
+            if cfg.get("embedding_model"):
+                self.embedding_model_name = cfg["embedding_model"]
+                print(f"Modèle (index_config.json): {self.embedding_model_name}")
         else:
-            print(f"⚠️  Index vectoriel non trouvé")
+            print(f"Index vectoriel non trouvé: {faiss_path} / {metadata_path}")
 
     def _load_embedding_model(self):
-        """Charge le modèle d'embeddings."""
-        print(f"📦 Chargement du modèle d'embeddings...")
-        self.embedding_model = SentenceTransformer(EMBEDDING_MODEL)
-        print(f"✅ Modèle chargé")
+        """Charge le modèle d'embeddings aligné sur l'index."""
+        model_name = self.embedding_model_name
+        print(f"Chargement du modèle d'embeddings: {model_name}...")
+        try:
+            self.embedding_model = SentenceTransformer(model_name)
+            get_dim = getattr(
+                self.embedding_model,
+                "get_embedding_dimension",
+                self.embedding_model.get_sentence_embedding_dimension,
+            )
+            model_dim = get_dim()
+            print(f"Modèle chargé (dim={model_dim})")
+            if self.faiss_index and model_dim != self.faiss_index.d:
+                print(
+                    f"\n⚠️  INCOMPATIBILITÉ: index FAISS en {self.faiss_index.d}D "
+                    f"mais modèle en {model_dim}D.\n"
+                    f"   Relancez: python ingest_docs.py\n"
+                )
+                self.embedding_model = None
+        except Exception as exc:
+            print(f"Erreur chargement du modèle d'embeddings: {exc}")
+            self.embedding_model = None
+
+    def _build_entity_index(self):
+        """Index inversé terme → entités (évite le scan complet du graphe)."""
+        if not self.graph:
+            return
+        index = {}
+        for node in self.graph.nodes():
+            if not isinstance(node, str) or node.startswith("Document_") or len(node) < 3:
+                continue
+            node_data = self.graph.nodes[node] if node in self.graph else {}
+            tokens = {self._normalize_text(node)}
+            if isinstance(node_data, dict):
+                for alias in node_data.get("aliases") or []:
+                    if isinstance(alias, str) and alias:
+                        tokens.add(self._normalize_text(alias))
+            for token in tokens:
+                for word in token.split():
+                    if len(word) >= 3:
+                        index.setdefault(word, set()).add(node)
+        self._entity_index = {k: list(v) for k, v in index.items()}
+
+    def _build_entity_embeddings(self):
+        """Pré-calcule les embeddings des entités du graphe pour la correspondance vectorielle."""
+        if not self.graph or not self.embedding_model:
+            return
+        labels = []
+        nodes = []
+        for node in self.graph.nodes():
+            if not isinstance(node, str) or node.startswith("Document_") or len(node) < 3:
+                continue
+            node_data = self.graph.nodes[node] if node in self.graph else {}
+            parts = [node]
+            if isinstance(node_data, dict):
+                for alias in node_data.get("aliases") or []:
+                    if isinstance(alias, str) and alias.strip():
+                        parts.append(alias.strip())
+            labels.append(" | ".join(parts))
+            nodes.append(node)
+        if not labels:
+            return
+        self._entity_nodes = nodes
+        self._entity_embeddings = encode_passages(
+            self.embedding_model, labels, self.embedding_model_name
+        )
+        print(f"Embeddings entités: {len(nodes)} noeuds indexés")
+
+    def _entities_from_query_vector(self, query: str, top_k: int = None) -> List[Tuple[str, float]]:
+        """Entités du graphe les plus proches sémantiquement de la question."""
+        if self._entity_embeddings.size == 0 or not self.embedding_model:
+            return []
+        k = top_k or GRAPH_ENTITY_TOP_K
+        q_vec = encode_query(self.embedding_model, query, self.embedding_model_name)
+        scores = cosine_scores(q_vec, self._entity_embeddings)
+        indices = top_k_indices(scores, k)
+        found = []
+        for idx in indices:
+            score = float(scores[idx])
+            if score >= ENTITY_VECTOR_MIN_SCORE:
+                found.append((self._entity_nodes[idx], score))
+        return found
+
+    def _chunk_embedding_score(self, query: str, text: str) -> float:
+        """Similarité vectorielle question ↔ passage (re-ranking)."""
+        if not self.embedding_model or not text:
+            return 0.0
+        q_vec = encode_query(self.embedding_model, query, self.embedding_model_name)
+        p_vec = encode_passages(self.embedding_model, [text], self.embedding_model_name)
+        scores = cosine_scores(q_vec, p_vec)
+        return float(scores[0]) if scores.size else 0.0
+
+    @staticmethod
+    def _source_tokens(path: str) -> set:
+        if not path:
+            return set()
+        base = os.path.basename(path).lower()
+        stem = os.path.splitext(base)[0]
+        parts = re.split(r"[^a-z0-9]+", stem)
+        return {p for p in parts if len(p) >= 4}
+
+    def _topic_source_boost(self, query: str, source: str) -> float:
+        topic = parse_doc_about_topic(query)
+        if not topic:
+            return 0.0
+        topic_tokens = set(topic.split())
+        src_tokens = self._source_tokens(source)
+        if not topic_tokens or not src_tokens:
+            return 0.0
+        overlap = len(topic_tokens & src_tokens) / max(len(topic_tokens), 1)
+        if overlap >= 0.5:
+            return DOC_ABOUT_BOOST
+        joined = "".join(topic_tokens)
+        stem = "".join(sorted(src_tokens))
+        if joined and joined in stem:
+            return DOC_ABOUT_BOOST * 0.85
+        return overlap * DOC_ABOUT_BOOST
+
+    def _chunk_text_by_id(self, chunk_id) -> str:
+        try:
+            idx = int(str(chunk_id).replace("Document_", ""))
+            if 0 <= idx < len(self.metadata):
+                return self.metadata[idx].get("text", "") or ""
+        except (TypeError, ValueError):
+            pass
+        return ""
+
+    @staticmethod
+    def _normalize_text(text: str) -> str:
+        if not isinstance(text, str):
+            return ""
+        normalized = re.sub(r"\s+", " ", text.strip().lower())
+        return normalized
+
+    @staticmethod
+    def _compute_overlap_score(query: str, text: str) -> float:
+        if not isinstance(text, str):
+            return 0.0
+        query_terms = [w for w in re.findall(r"\w+", query.lower()) if len(w) > 2]
+        if not query_terms:
+            return 0.0
+        text_lower = text.lower()
+        matches = sum(1 for term in query_terms if term in text_lower)
+        return matches / len(query_terms)
+
+    @staticmethod
+    def _document_key(result: Dict) -> str:
+        doc_id = str(result.get('document_id') or result.get('chunk_id') or '')
+        source = str(result.get('source') or '')
+        return f"{doc_id}::{source}"
+
+    def _entities_from_query(self, query: str) -> List[str]:
+        """Entités probables dérivées de la question (correspondance vectorielle graphe)."""
+        vector_hits = self._entities_from_query_vector(query)
+        if vector_hits:
+            return [ent for ent, _ in vector_hits]
+        return []
+
+    def _rerank_results(self, query: str, results: List[Dict]) -> List[Dict]:
+        """Re-classe les candidats fusionnés (lexical + score vectoriel/graphe + embedding)."""
+        if not results:
+            return results
+        query_norm = self._normalize_text(query)
+
+        embed_scores = np.zeros(len(results), dtype="float32")
+        source_embed_scores = np.zeros(len(results), dtype="float32")
+        if self.embedding_model:
+            texts = []
+            sources = []
+            for result in results:
+                text = result.get("text") or self._chunk_text_by_id(
+                    result.get("document_id") or result.get("chunk_id")
+                )
+                texts.append((text or "")[:2000])
+                sources.append(os.path.basename(str(result.get("source") or "")))
+            if texts:
+                q_vec = encode_query(self.embedding_model, query, self.embedding_model_name)
+                p_vecs = encode_passages(self.embedding_model, texts, self.embedding_model_name)
+                embed_scores = cosine_scores(q_vec, p_vecs)
+            if sources:
+                q_vec = encode_query(self.embedding_model, query, self.embedding_model_name)
+                src_vecs = encode_passages(self.embedding_model, sources, self.embedding_model_name)
+                source_embed_scores = cosine_scores(q_vec, src_vecs)
+
+        for i, result in enumerate(results):
+            text = result.get("text") or self._chunk_text_by_id(
+                result.get("document_id") or result.get("chunk_id")
+            )
+            lex = self._compute_overlap_score(query_norm, self._normalize_text(text))
+            source = str(result.get("source") or "")
+            src_boost = self._compute_overlap_score(query_norm, self._normalize_text(source))
+            vec = float(result.get("score", 0) or 0)
+            hybrid = float(result.get("hybrid_score", 0) or 0)
+            semantic = max(vec, hybrid)
+            if semantic > 1.0:
+                semantic = min(1.0, semantic / 100.0)
+            embed = float(embed_scores[i]) if i < len(embed_scores) else 0.0
+            src_embed = float(source_embed_scores[i]) if i < len(source_embed_scores) else 0.0
+            source = str(result.get("source") or "")
+            topic_boost = self._topic_source_boost(query, source)
+            file_boost = 0.0
+            q_terms = [w for w in re.findall(r"\w+", query.lower()) if len(w) > 3]
+            src_tokens = self._source_tokens(source)
+            if q_terms and src_tokens:
+                file_boost = SOURCE_MATCH_BOOST * (
+                    sum(1 for t in q_terms if t in src_tokens) / len(q_terms)
+                )
+            result["rerank_score"] = (
+                RERANK_LEXICAL_WEIGHT * min(1.0, lex + 0.15 * src_boost)
+                + RERANK_VECTOR_WEIGHT * semantic
+                + RERANK_EMBEDDING_WEIGHT * embed
+                + 0.20 * src_embed
+                + topic_boost
+                + file_boost
+            )
+        results.sort(key=lambda x: x.get("rerank_score", 0), reverse=True)
+        for r in results:
+            r["hybrid_score"] = r.get("rerank_score", r.get("hybrid_score", 0))
+        return results
 
     # ============= RETRIEVAL PAR GRAPHE =============
     def search_graph(self, query: str, top_k: int = 5) -> List[Dict]:
-        """Recherche par graphe (entités) - optimisée."""
+        """Recherche par graphe (entités) - optimisée avec alias."""
         if not self.graph:
             return []
 
-        results = []
+        query_normalized = self._normalize_text(query)
         query_lower = query.lower()
-        query_words = [w for w in query_lower.split() if len(w) > 2]  # Mots > 2 caractères
-        
-        # Chercher les entités qui matchent la requête
+        results = []
+
         entities_found = []
-        for node in self.graph.nodes():
-            if isinstance(node, str) and len(node) > 2 and not node.startswith("Document_"):
-                node_lower = node.lower()
-                # Meilleur matching pour les entités
-                score = sum(1 for word in query_words if word in node_lower) / max(1, len(query_words))
-                if score > 0:
-                    entities_found.append((node, score * 0.9))  # Score: 0-0.9
-        
-        # Trier par score
-        entities_found.sort(key=lambda x: x[1], reverse=True)
-        
-        # Pour chaque entité, récupérer les documents associés
+
+        # Correspondance vectorielle entités ↔ question
+        for entity, entity_score in self._entities_from_query_vector(
+            query, top_k=max(GRAPH_ENTITY_TOP_K, top_k)
+        ):
+            entities_found.append((entity, entity_score))
+
+        # Complément lexical via index inversé du graphe
+        candidate_nodes = set()
+        for word in re.findall(r"\w+", query_lower):
+            if len(word) >= 3:
+                for ent in self._entity_index.get(word, []):
+                    candidate_nodes.add(ent)
+
+        for node in candidate_nodes:
+            if not self.graph or not self.graph.has_node(node):
+                continue
+            node_data = self.graph.nodes[node] if node in self.graph else {}
+            max_score = self._compute_overlap_score(query_normalized, self._normalize_text(node))
+            if isinstance(node_data, dict):
+                aliases = node_data.get("aliases", [])
+                if not isinstance(aliases, list):
+                    aliases = []
+                for alias in aliases:
+                    alias_score = self._compute_overlap_score(
+                        query_normalized, self._normalize_text(str(alias))
+                    )
+                    max_score = max(max_score, alias_score)
+                    if isinstance(alias, str) and alias.lower() in query_lower:
+                        max_score = min(1.0, max_score + 0.15)
+            if max_score > 0:
+                entities_found.append((node, max_score * 0.75))
+
+        seen_entities = set()
+        deduped = []
+        for ent, sc in sorted(entities_found, key=lambda x: x[1], reverse=True):
+            if ent not in seen_entities:
+                seen_entities.add(ent)
+                deduped.append((ent, sc))
+        entities_found = deduped
+
         for entity, entity_score in entities_found[:top_k]:
             if entity in self.graph:
-                neighbors = list(self.graph.neighbors(entity))
-                docs = [n for n in neighbors if n.startswith("Document_")]
-                
-                for doc_node in docs:
+                predecessors = list(self.graph.predecessors(entity))
+                docs = [n for n in predecessors if isinstance(n, str) and n.startswith("Document_")]
+
+                for doc_node in docs[:8]:
                     if doc_node in self.graph:
                         doc_data = self.graph.nodes[doc_node]
+                        doc_text = doc_data.get('text', '') or self._chunk_text_by_id(doc_node)
+                        doc_source = doc_data.get('source') or doc_data.get('title') or doc_node
                         results.append({
                             'entity': entity,
                             'document_id': doc_node,
-                            'text': doc_data.get('text', ''),
-                            'score': entity_score,  # Score basé sur le matching
+                            'title': doc_data.get('title', doc_source),
+                            'text': doc_text,
+                            'source': doc_source,
+                            'score': entity_score,
                             'method': 'graph'
                         })
-        
+
         return results[:top_k]
 
     # ============= RETRIEVAL VECTORIEL =============
@@ -108,22 +401,24 @@ class HybridRAG:
         if not self.faiss_index or not self.embedding_model:
             return []
         
-        # Générer l'embedding de la requête
-        query_embedding = self.embedding_model.encode([query], normalize_embeddings=True)
+        q = f"{E5_QUERY_PREFIX}{query}" if is_e5_model(self.embedding_model_name) else query
+        query_embedding = self.embedding_model.encode([q], normalize_embeddings=True)
         query_embedding = np.array(query_embedding).astype('float32')
         
-        # Rechercher dans FAISS (Inner Product = similarité cosinus avec embeddings normalisés)
         distances, indices = self.faiss_index.search(query_embedding, top_k)
         
         results = []
         for i, idx in enumerate(indices[0]):
             if 0 <= idx < len(self.metadata):
-                score = float(distances[0][i])  # Score de similarité cosinus [0, 1]
+                score = float(distances[0][i])
                 chunk_meta = self.metadata[idx]
+                chunk_text = chunk_meta.get('text', '') or ''
+                source = chunk_meta.get('source') or chunk_meta.get('document_id') or f"chunk_{idx}"
                 results.append({
                     'chunk_id': idx,
-                    'text': chunk_meta['text'],
-                    'source': chunk_meta['source'],
+                    'document_id': chunk_meta.get('document_id'),
+                    'text': chunk_text,
+                    'source': source,
                     'score': score,
                     'method': 'vector'
                 })
@@ -134,75 +429,128 @@ class HybridRAG:
     def _merge_results(self, graph_results: List[Dict], 
                       vector_results: List[Dict]) -> List[Dict]:
         """Fusionne et déduplique les résultats des deux méthodes avec pondération optimale."""
-        seen_texts = {}
+        seen = {}
         merged = []
-        
-        # Ajouter les résultats du graphe (ajuster la pondération)
+
         for result in graph_results:
-            text_key = result['text'][:100]
-            if text_key not in seen_texts:
-                # Augmenter le poids du graphe (0.75 au lieu de 0.7)
-                result['hybrid_score'] = min(0.95, result['score'] * 0.75)
-                merged.append(result)
-                seen_texts[text_key] = result
-        
-        # Ajouter les résultats vectoriels (nouveaux)
-        for result in vector_results:
-            text_key = result['text'][:100]
-            if text_key not in seen_texts:
-                # Augmenter le poids vectoriel (0.85 au lieu de 0.8)
-                result['hybrid_score'] = min(0.95, result['score'] * 0.85)
-                merged.append(result)
-                seen_texts[text_key] = result
+            result_key = self._document_key(result)
+            candidate = result.copy()
+            candidate['hybrid_score'] = min(0.95, candidate['score'] * 1.05)
+            if result_key not in seen:
+                merged.append(candidate)
+                seen[result_key] = candidate
             else:
-                # Si le texte existe déjà, combiner les scores
-                existing = seen_texts[text_key]
-                combined_score = (existing.get('hybrid_score', 0.5) + result['score'] * 0.85) / 2
+                existing = seen[result_key]
+                existing['hybrid_score'] = max(existing['hybrid_score'], candidate['hybrid_score'])
+                existing['method'] = 'graph'
+
+        for result in vector_results:
+            result_key = self._document_key(result)
+            candidate = result.copy()
+            candidate['hybrid_score'] = min(0.95, candidate['score'] * 1.0)
+            if result_key not in seen:
+                merged.append(candidate)
+                seen[result_key] = candidate
+            else:
+                existing = seen[result_key]
+                combined_score = (existing.get('hybrid_score', 0.5) + candidate['hybrid_score']) / 2
                 existing['hybrid_score'] = min(0.95, combined_score)
-                existing['method'] = 'hybrid'
-        
-        # Trier par score hybride décroissant
+                if existing.get('method') != 'graph':
+                    existing['method'] = 'hybrid'
+                existing['source'] = existing.get('source') or candidate.get('source')
+                existing['title'] = existing.get('title') or candidate.get('title')
+
         merged.sort(key=lambda x: x['hybrid_score'], reverse=True)
         return merged
 
+    def _build_cot(self, user_question: str, retrieval_question: str,
+                   graph_results: List[Dict], vector_results: List[Dict],
+                   merged_results: List[Dict], top_k: int) -> List[str]:
+        """Construit une chain-of-thought explicable (niveau produit)."""
+        steps = []
+        if retrieval_question != user_question:
+            steps.append("La question a ete enrichie avec le contexte recent de la session.")
+        else:
+            steps.append("La question utilisateur a ete utilisee telle quelle.")
+
+        steps.append(
+            f"Recherche hybride effectuee: {len(graph_results)} candidats graphe et {len(vector_results)} candidats vectoriels."
+        )
+
+        if merged_results:
+            best = merged_results[0]
+            steps.append(
+                f"Le meilleur extrait provient de '{best.get('source', 'inconnu')}' via la methode '{best['method']}' (score {best['hybrid_score']:.2f})."
+            )
+            if len(graph_results) == 0:
+                steps.append("Aucune correspondance par graphe n'a ete trouvee; la recherche vectorielle a fourni les candidats.")
+            else:
+                steps.append("La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.")
+            steps.append(f"La reponse finale est basee sur les {min(top_k, len(merged_results))} meilleur(s) extrait(s).")
+        else:
+            steps.append("Aucun resultat pertinent n'a ete trouve apres fusion.")
+
+        return steps
+
     # ============= INTERFACE PRINCIPALE =============
-    def query(self, question: str, top_k: int = 1) -> Dict:
+    def query(self, question: str, top_k: int = 1, retrieval_question: str = None) -> Dict:
         """Traite une question avec retrieval hybride optimisé."""
-        print(f"\n🔍 Recherche hybride pour: {question}")
+        effective_query = retrieval_question or question
+        print(f"\nRecherche hybride pour: {effective_query}")
         
-        # Augmenter les recherches internes pour avoir plus de candidats
-        internal_k = max(3, top_k * 2)
+        pool_k = max(RETRIEVAL_POOL_SIZE, top_k * 5)
         
         # 1. Recherche par graphe
-        graph_results = self.search_graph(question, top_k=internal_k)
-        print(f"   📊 Graphe: {len(graph_results)} résultat(s)")
+        graph_results = self.search_graph(effective_query, top_k=pool_k)
+        print(f"   Graphe: {len(graph_results)} résultat(s)")
         
         # 2. Recherche vectorielle
-        vector_results = self.search_vector(question, top_k=internal_k)
-        print(f"   🔢 Vectoriel: {len(vector_results)} résultat(s)")
+        vector_results = self.search_vector(effective_query, top_k=pool_k)
+        print(f"   Vectoriel: {len(vector_results)} résultat(s)")
         
-        # 3. Fusion des résultats
+        # 3. Fusion + re-ranking lexical/sémantique
         merged_results = self._merge_results(graph_results, vector_results)
+        merged_results = self._rerank_results(effective_query, merged_results)
         
-        # 4. Construire le contexte (seulement le meilleur résultat)
+        # 4. Meilleurs extraits pour réponse
         context_parts = []
         best_result = merged_results[:top_k] if merged_results else []
+        answer_context = build_context_from_results(merged_results, max_chunks=max(5, top_k))
+        generated_answer = generate_answer_from_results(
+            question,
+            merged_results,
+            embedding_model=self.embedding_model,
+            embedding_model_name=self.embedding_model_name,
+        )
         
         for result in best_result:
             method = f"[{result['method'].upper()}]"
             score = f"{result['hybrid_score']:.2f}"
+            source = result.get('source', 'inconnu')
+            title = result.get('title', source)
             text_preview = result['text'][:400].replace('\n', ' ')
-            context_parts.append(f"{method} ({score})\n{text_preview}")
+            context_parts.append(f"{method} {source} ({score})\n{title}\n{text_preview}")
         
         context = "\n".join(context_parts) if context_parts else "Aucune information trouvée."
         
+        cot_steps = self._build_cot(
+            user_question=question,
+            retrieval_question=effective_query,
+            graph_results=graph_results,
+            vector_results=vector_results,
+            merged_results=merged_results,
+            top_k=top_k,
+        ) if self.cot_enabled else []
+
         return {
             'question': question,
             'graph_results_count': len(graph_results),
             'vector_results_count': len(vector_results),
             'merged_results': best_result,
             'context': context,
-            'response': f"Réponse hybride trouvée"
+            'cot_steps': cot_steps,
+            'generated_answer': generated_answer,
+            'response': generated_answer or "Réponse hybride trouvée",
         }
 
 
@@ -211,7 +559,15 @@ def main():
     print("🤖 SYSTÈME RAG HYBRIDE (Graph RAG + Vector RAG)")
     print("=" * 60)
 
-    rag = HybridRAG()
+    enable_cot = True
+    if '--no-cot' in sys.argv or '--disable-cot' in sys.argv:
+        enable_cot = False
+
+    rag = HybridRAG(cot_enabled=enable_cot)
+    sessions = SessionManager(file_path=SESSIONS_FILE)
+    print(f"🗂️ Session active: {sessions.current_session()}")
+    if not enable_cot:
+        print("⚠️ Chain-of-thought désactivée pour cette session.")
 
     if not rag.graph and not rag.faiss_index:
         print("❌ Erreur: Exécutez d'abord python ingest_docs.py")
@@ -226,8 +582,40 @@ def main():
         if not question:
             continue
 
-        # Traiter la question (top_k=1 pour une seule réponse)
-        result = rag.query(question, top_k=1)
+        command = question.lower()
+        if command == "session":
+            print(f"🗂️ Session active: {sessions.current_session()}")
+            continue
+        if command == "sessions":
+            print("\n🗂️ Sessions:")
+            for sid in sessions.list_sessions():
+                marker = " (active)" if sid == sessions.current_session() else ""
+                print(f"  • {sid}{marker}")
+            continue
+        if command.startswith("switch "):
+            sid = question[7:].strip()
+            if sid:
+                sessions.switch_session(sid)
+                print(f"✅ Session changée: {sessions.current_session()}")
+            else:
+                print("❌ Usage: switch <id_session>")
+            continue
+        if command in ["history", "hist"]:
+            history = sessions.get_history(limit=10)
+            print(f"\n📜 Historique session '{sessions.current_session()}':")
+            if not history:
+                print("  Aucun échange.")
+            else:
+                for i, turn in enumerate(history, 1):
+                    print(f"  {i}. Q: {turn['question']}")
+            continue
+
+        recent_questions = sessions.get_recent_questions(limit=2)
+        retrieval_question = question
+        if recent_questions and len(question.split()) <= 6:
+            retrieval_question = " ; ".join(recent_questions + [question])
+
+        result = rag.query(question, top_k=3, retrieval_question=retrieval_question)
 
         # Afficher les résultats
         print("\n" + "=" * 60)
@@ -236,10 +624,24 @@ def main():
         
         if result['merged_results']:
             best = result['merged_results'][0]
+            answer_text = result.get("generated_answer") or best.get("text", "")
             print(f"\n📚 Source: {best.get('source', best.get('document_id', 'inconnu'))}")
             print(f"📊 Méthode: {best['method'].upper()} | Score: {best['hybrid_score']:.2%}")
-            print(f"\n📖 CONTENU:")
-            print(best['text'])
+            print(f"\n💬 RÉPONSE:")
+            print(answer_text)
+            print(f"\n📖 Extrait source ({len(best.get('text', ''))} car.):")
+            print((best.get("text") or "")[:350])
+            if enable_cot:
+                print("\n🧠 CHAIN OF THOUGHT (resume):")
+                for i, step in enumerate(result.get("cot_steps", []), 1):
+                    print(f"  {i}. {step}")
+            else:
+                print("\n🧠 Chain-of-thought désactivée.")
+            sessions.add_turn(
+                question,
+                answer_text,
+                metadata={"cot_steps": result.get("cot_steps", [])},
+            )
         else:
             print("\n❌ Aucune réponse trouvée.")
         

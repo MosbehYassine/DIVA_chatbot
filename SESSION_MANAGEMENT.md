@@ -114,7 +114,115 @@ sm.add_turn(question, answer)
 previous_context = sm.get_history(limit=10)
 ```
 
-## 📁 Structure des données
+### 🎯 Gestion du Contexte RAG
+
+#### Créer une session avec contexte global
+
+```python
+from session_manager import SessionManager
+
+sm = SessionManager()
+
+# Créer une session avec contexte initial
+sm.create_session(
+    session_id="support_harmony",
+    description="Support utilisateurs Harmony",
+    context="Contexte: Documentation d'administration, guides de dépannage"
+)
+```
+
+#### Stocker le contexte RAG dans chaque tour
+
+```python
+# Ajouter un tour avec le contexte RAG (documents retrouvés, scores, etc)
+sm.add_turn(
+    question="Où stocker le fichier Xlogf?",
+    answer="Le fichier Xlogf doit être stocké dans le répertoire data...",
+    rag_context={
+        "sources": [
+            {
+                "document_id": "doc_123",
+                "text_preview": "Fichier de configuration Xlogf..."
+            }
+        ],
+        "scores": [0.85],
+        "method": "hybrid",  # graph, vector, ou hybrid
+        "entities": ["Xlogf", "stockage"],
+        "documents_count": 1
+    }
+)
+```
+
+#### Gérer le contexte de session
+
+```python
+# Définir le contexte global d'une session
+sm.set_session_context(
+    session_id="support_harmony",
+    context="Sujet: Administration système, Focus: Gestion des fichiers utilisateurs"
+)
+
+# Ajouter des entités indexées
+sm.add_indexed_entities(
+    entities=["Xlogf", "Xlog1", "utilisateurs", "stockage"],
+    session_id="support_harmony"
+)
+
+# Récupérer le contexte de la session
+context = sm.get_session_context("support_harmony")
+print(f"Contexte global: {context['global_context']}")
+print(f"Entités connues: {context['indexed_entities']}")
+```
+
+#### Récupérer et exporter le contexte
+
+```python
+# Récupérer le contexte d'un tour spécifique
+turn_context = sm.get_turn_context(0, "support_harmony")
+print(f"Méthode RAG: {turn_context['method']}")
+print(f"Documents trouvés: {turn_context['documents_count']}")
+
+# Exporter toute la session avec contexte
+json_export = sm.export_session_context("support_harmony", format="json")
+markdown_export = sm.export_session_context("support_harmony", format="markdown")
+
+with open("session_context.json", "w") as f:
+    f.write(json_export)
+```
+
+### Intégration complète RAG + Sessions
+
+```python
+from rag_with_sessions import RAGWithSessions
+
+# Initialiser le système complet
+rag_sessions = RAGWithSessions()
+
+# Créer une session avec contexte
+rag_sessions.create_session_with_context(
+    session_id="admin_support",
+    description="Support administration",
+    context="Documentation: Administration système Harmony"
+)
+
+# Poser une question (le contexte RAG est automatiquement stocké!)
+result = rag_sessions.query_with_context(
+    question="Où peut être stocké le fichier des utilisateurs Xlogf?",
+    session_id="admin_support",
+    store_context=True
+)
+
+print(f"Question: {result['question']}")
+print(f"Réponse: {result['answer']}")
+print(f"Documents trouvés: {result['rag_context']['documents_count']}")
+print(f"Méthode: {result['rag_context']['method']}")
+
+# Exporter la session complète
+export = rag_sessions.export_session_with_context("admin_support", format="markdown")
+print(export)
+```
+
+## 📁 Structure des données avec contexte
 
 Les sessions sont stockées dans `rag_sessions.json` avec la structure suivante:
 
@@ -128,12 +236,32 @@ Les sessions sont stockées dans `rag_sessions.json` avec la structure suivante:
         "modified": "2026-04-27T11:45:00",
         "description": "Session par défaut"
       },
+      "context": {
+        "global_context": "Contexte général de la session",
+        "indexed_entities": ["Xlog", "Xlogf", "utilisateurs"]
+      },
       "turns": [
         {
           "timestamp": "2026-04-27T10:30:15",
-          "question": "Comment utiliser Harmony?",
-          "answer": "Harmony est une plateforme de gestion...",
-          "metadata": {}
+          "question": "Où peut être stocké le fichier Xlogf?",
+          "answer": "Le fichier Xlogf doit être stocké...",
+          "rag_context": {
+            "sources": [
+              {
+                "document_id": "doc_456",
+                "text_preview": "Fichier de configuration Xlogf pour...",
+                "method": "hybrid"
+              }
+            ],
+            "scores": [0.87],
+            "method": "hybrid",
+            "entities": ["Xlogf", "stockage", "configuration"],
+            "documents_count": 1
+          },
+          "metadata": {
+            "graph_results": 2,
+            "vector_results": 5
+          }
         }
       ]
     }
@@ -141,24 +269,52 @@ Les sessions sont stockées dans `rag_sessions.json` avec la structure suivante:
 }
 ```
 
+## 📊 Métadonnées du contexte RAG
+
+Chaque `rag_context` contient:
+
+| Champ | Type | Description |
+|-------|------|-------------|
+| `sources` | Array | Liste des documents retrouvés avec `document_id`, `text_preview`, et `method` |
+| `scores` | Array | Scores de pertinence (0-1) pour chaque document |
+| `method` | String | Méthode de recherche utilisée (`graph`, `vector`, `hybrid`) |
+| `entities` | Array | Entités extraites et matchées du texte |
+| `documents_count` | Number | Nombre total de documents retrouvés |
+
 ## 🔑 Méthodes principales
 
 ### SessionManager
 
 | Méthode | Description |
 |---------|-------------|
-| `create_session(id, description)` | Crée une nouvelle session |
+| `create_session(id, description, context)` | Crée une nouvelle session avec contexte optionnel |
 | `delete_session(id)` | Supprime une session |
 | `switch_session(id)` | Bascule vers une session |
 | `list_sessions()` | Liste toutes les sessions |
 | `current_session()` | Retourne la session active |
-| `add_turn(question, answer)` | Ajoute un tour Q/R |
+| `add_turn(question, answer, metadata, rag_context)` | Ajoute un tour Q/R avec contexte RAG |
 | `get_history(session_id, limit)` | Récupère l'historique |
+| `get_session_context(session_id)` | Récupère le contexte global de la session |
+| `set_session_context(session_id, context)` | Définit le contexte global |
+| `add_indexed_entities(entities, session_id)` | Ajoute des entités indexées |
+| `get_turn_context(turn_index, session_id)` | Récupère le contexte d'un tour |
+| `export_session_context(session_id, format)` | Exporte session + contexte complet |
+| `get_session_info(session_id)` | Infos détaillées avec contexte |
 | `search_history(query, session_id)` | Cherche dans l'historique |
 | `export_session(session_id, format)` | Exporte une session |
 | `clear_session(session_id)` | Efface l'historique |
-| `get_session_info(session_id)` | Infos détaillées |
 | `update_session_description(id, desc)` | Met à jour la description |
+
+### RAGWithSessions
+
+| Méthode | Description |
+|---------|-------------|
+| `query_with_context(question, session_id, store_context)` | Exécute une requête RAG et stocke le contexte |
+| `create_session_with_context(id, description, context)` | Crée une session avec contexte pour le RAG |
+| `set_session_context(context, session_id)` | Définit le contexte |
+| `get_session_with_context(session_id)` | Récupère session + contexte |
+| `list_sessions_overview()` | Aperçu de toutes les sessions |
+| `export_session_with_context(session_id, format)` | Exporte session + contexte RAG |
 
 ## 📊 Formats d'export
 
