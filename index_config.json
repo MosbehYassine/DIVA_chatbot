@@ -1,8 +1,8 @@
 {
-  "embedding_model": "intfloat/multilingual-e5-base",
-  "embedding_dimension": 768,
-  "chunk_strategy": "html",
-  "chunk_count": 9985,
-  "chunk_size": 1200,
-  "chunk_overlap": 150
+  "embedding_model": "intfloat/multilingual-e5-large",
+  "embedding_dimension": 1024,
+  "chunk_strategy": "semantic",
+  "chunk_count": 13216,
+  "chunk_size": 800,
+  "chunk_overlap": 200
 }

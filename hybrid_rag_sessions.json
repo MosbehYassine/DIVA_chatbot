@@ -4,7 +4,7 @@
     "default": {
       "metadata": {
         "created": "2026-06-04T17:01:01.515285",
-        "modified": "2026-06-04T17:59:26.834261",
+        "modified": "2026-06-09T18:21:32.955283",
         "description": "default"
       },
       "context": {
@@ -71,6 +71,118 @@
               "La question a ete enrichie avec le contexte recent de la session.",
               "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
               "Le meilleur extrait provient de 'data\\Administration\\Administration\\CheminsHarmony.htm' via la methode 'graph' (score 1.24).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-08T19:38:20",
+          "question": "c'est quoi un chemin harmony",
+          "answer": "chemins Harmony Par exemple : Divalto pour c:/divalto Compta pour d:/fichiers/comptabilit , le premier segment du chemin d'accs est un nom de chemin Harmony : ce nom sera remplac par le chemin rel qu'il reprsente pour donner le nom de fichier complet.",
+          "metadata": {
+            "cot_steps": [
+              "La question a ete enrichie avec le contexte recent de la session.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Administration\\Administration\\CheminsHarmony.htm' via la methode 'graph' (score 1.24).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-08T19:39:01",
+          "question": "Comment utiliser un chemin Harmony dans un nom de fichier ?",
+          "answer": "Un fichier ou un programme Harmony est identifi par un nom de la forme : //serveur/chemin/dossier/nom o : reprsente un nom de serveur, serveur reprsente un chemin (suite de dossiers), chemin reprsente un nom de rpertoire, dossier est le nom du fichier proprement dit.",
+          "metadata": {
+            "cot_steps": [
+              "La question utilisateur a ete utilisee telle quelle.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Administration\\Administration\\Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm' via la methode 'graph' (score 1.35).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-09T04:50:57",
+          "question": "c'est quoi un chemin harmony?",
+          "answer": "Sous Harmony, les chemins d'accs aux fichiers peuvent rfrencer des chemins spcifiques, appels \"chemins Harmony\".",
+          "metadata": {
+            "cot_steps": [
+              "La question a ete enrichie avec le contexte recent de la session.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Administration\\Administration\\Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm' via la methode 'graph' (score 1.28).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-09T04:55:32",
+          "question": "Quel programme assure la gestion des utilisateurs dans Harmony ?",
+          "answer": "Utilisateur expriment uniquement Dans la plupart des cas, vous lancerez vos programmes d'application Harmony comme n'importe quelle autre application Windows, partir du plan de travail ou du gestionnaire de programmes.",
+          "metadata": {
+            "cot_steps": [
+              "La question utilisateur a ete utilisee telle quelle.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Administration\\Administration\\Administrationd_Harmony__Introduction.htm' via la methode 'graph' (score 1.29).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-09T04:57:33",
+          "question": "Où peut être stocké le fichier des utilisateurs Xlogf ?",
+          "answer": "gestion des utilisateurs Le fichier Xlogf peut tre stock (un fichier par ordinateur) ou de manire centralise sur un (un fichier unique pour tout le site).",
+          "metadata": {
+            "cot_steps": [
+              "La question utilisateur a ete utilisee telle quelle.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Administration\\Administration\\Fichierdesutilisateurs.htm' via la methode 'graph' (score 1.23).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-09T17:05:57",
+          "question": "Qu'est-ce que Xlog dans le contexte Harmony ?",
+          "answer": "L'utilitaire Xlog.dhop (*) permet de vous prsenter au systme Harmony, afin que ce dernier mette en place votre contexte Harmony personnel (chemins implicites, droits d'accs, etc.).",
+          "metadata": {
+            "cot_steps": [
+              "La question utilisateur a ete utilisee telle quelle.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\xlansql\\xlansql\\Cr_ationdesutilisateursd_Harmony_.htm' via la methode 'vector' (score 1.33).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-09T17:08:35",
+          "question": "Quels sont les droits gérés par le système d'identification des utilisateurs ?",
+          "answer": "Elle permet de rserver laccs la vue aux utilisateurs ayant les droits daccs correspondants.",
+          "metadata": {
+            "cot_steps": [
+              "La question utilisateur a ete utilisee telle quelle.",
+              "Recherche hybride effectuee: 30 candidats graphe et 30 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Administration\\Administration\\Import_et_synchronisation_des_utilisateurs_d’un_annuaire_LDAP.htm' via la methode 'graph' (score 1.07).",
+              "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
+              "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
+            ]
+          }
+        },
+        {
+          "timestamp": "2026-06-09T18:21:32",
+          "question": "c'est quoi un chemin harmony?",
+          "answer": "va de pair avec celle des utilisateurs modifier Xdivalto Maj Ini Serveur Xlogf [System] client Dclaration des utilisateurs d'un rseau Harmony Conseils pratiques : Centralisez la gestion des utilisateurs et des chemins implicites.",
+          "metadata": {
+            "cot_steps": [
+              "La question a ete enrichie avec le contexte recent de la session.",
+              "Recherche hybride effectuee: 80 candidats graphe et 80 candidats vectoriels.",
+              "Le meilleur extrait provient de 'data\\Xlog1\\Xlog1\\D_clarationdesutilisateursd_unr_seauXlan.htm' via la methode 'graph' (score 1.44).",
               "La fusion a combine les resultats graphe et vectoriel pour identifier le meilleur passage.",
               "La reponse finale est basee sur les 3 meilleur(s) extrait(s)."
             ]

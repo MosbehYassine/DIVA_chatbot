@@ -53,8 +53,10 @@ def ingest():
     print("=" * 60)
     env = os.environ.copy()
     env.setdefault("PYTHONIOENCODING", "utf-8")
-    env.setdefault("RAG_EMBEDDING_MODEL", "intfloat/multilingual-e5-base")
-    env.setdefault("RAG_CHUNK_STRATEGY", "html")
+    env.setdefault("RAG_EMBEDDING_MODEL", "intfloat/multilingual-e5-large")
+    env.setdefault("RAG_CHUNK_STRATEGY", "semantic")
+    env.setdefault("RAG_CHUNK_SIZE", "800")
+    env.setdefault("RAG_CHUNK_OVERLAP", "200")
     run([PY, "ingest_docs.py"], env=env)
 
 

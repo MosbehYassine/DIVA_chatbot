@@ -5,6 +5,7 @@ import json
 import numpy as np
 import io
 import sys
+import re
 import unicodedata
 import html as html_module
 from bs4 import BeautifulSoup
@@ -62,6 +63,15 @@ def normalize_text(text: str) -> str:
     
     return text
 
+def read_file_as_unicode(file_path: str) -> str:
+    """Lit un fichier de manière robuste en gérant l'encodage (UTF-8 / CP1252)."""
+    with open(file_path, "rb") as f:
+        content_bytes = f.read()
+    try:
+        return content_bytes.decode("utf-8")
+    except UnicodeDecodeError:
+        return content_bytes.decode("windows-1252", errors="ignore")
+
 def load_documents(directory):
     documents = []
     # Find all HTML and Markdown files
@@ -74,8 +84,8 @@ def load_documents(directory):
     # Process HTML files
     for file_path in html_files:
         try:
-            with open(file_path, "r", encoding="utf-8", errors="ignore") as f:
-                soup = BeautifulSoup(f, "html.parser")
+            with open(file_path, "rb") as f:
+                soup = BeautifulSoup(f.read(), "html.parser")
                 text = soup.get_text(separator="\n")
                 # Normaliser le texte extrait
                 text = normalize_text(text)
@@ -149,10 +159,10 @@ def chunk_documents(documents):
                 source = doc.metadata.get("source", "")
                 if source.lower().endswith((".htm", ".html")):
                     try:
-                        with open(source, "r", encoding="utf-8", errors="ignore") as f:
-                            for part in html_splitter.split_text(f.read()):
-                                part.metadata = {**doc.metadata, **part.metadata}
-                                html_chunks.append(part)
+                        html_content = read_file_as_unicode(source)
+                        for part in html_splitter.split_text(html_content):
+                            part.metadata = {**doc.metadata, **part.metadata}
+                            html_chunks.append(part)
                     except Exception:
                         html_chunks.append(doc)
                 else:
@@ -209,14 +219,29 @@ KEY_TERMS = [
 ]
 
 def extract_entities_rule_based(text: str):
-    """Extraction simple d'entités par mots-clés connus (rule-based)."""
-    found = set()
+    """
+    Extraction hybride :
+    - mots-clés Harmony/Divalto
+    - termes techniques détectés automatiquement
+    """
+
+    entities = set()
+
     lower_text = text.lower()
+
+    # 1. Entités connues
     for term in KEY_TERMS:
         if term.lower() in lower_text:
-            found.add(term)
-    return list(found)
+            entities.add(term)
 
+    # 2. Mots techniques commençant par une majuscule
+    candidates = re.findall(r'\b[A-Z][A-Za-z0-9_.-]{2,}\b', text)
+
+    for candidate in candidates:
+        if len(candidate) > 2:
+            entities.add(candidate)
+
+    return list(entities)
 def create_vector_embeddings(chunks):
     """Crée les embeddings vectoriels avec sentence-transformers et FAISS."""
     print("\n--- CRÉATION DE L'INDEX VECTORIEL (FAISS) ---")

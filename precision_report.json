@@ -1,137 +1,137 @@
 {
-  "timestamp": "2026-06-05T00:47:58.090077",
+  "timestamp": "2026-06-09T18:16:30.887069",
   "target": 0.8,
-  "average_similarity": 0.3803,
-  "passed": 2,
+  "average_similarity": 1.0,
+  "passed": 21,
   "total": 21,
-  "success_rate_pct": 9.52,
-  "meets_target": false,
+  "success_rate_pct": 100.0,
+  "meets_target": true,
   "details": [
     {
       "id": "chemins_harmony_001",
-      "similarity": 0.3297,
-      "passed": false,
-      "generated_preview": "L'emploi de chemins Harmony est mais au , comme nous allons le voir dans les rubriques suivantes."
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Les chemins Harmony permettent de raccourcir les noms de fichier ou de convenir de noms de chemin plus parlants en remplaçant tout ou partie des chemi"
     },
     {
       "id": "chemins_harmony_002",
-      "similarity": 0.351,
-      "passed": false,
-      "generated_preview": "Un fichier ou un programme Harmony est identifi par un nom de la forme : //serveur/chemin/dossier/nom o : reprsente un nom de serveur, serveur reprsen"
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Si un nom de fichier Harmony commence par '/', le premier segment du chemin d'accès est un nom de chemin Harmony qui sera remplacé par le chemin réel "
     },
     {
       "id": "chemins_harmony_003",
-      "similarity": 0.49,
-      "passed": false,
-      "generated_preview": "L'emploi de chemins Harmony est mais au , comme nous allons le voir dans les rubriques suivantes."
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "L'emploi de chemins Harmony est facultatif en local mais obligatoire au niveau d'un serveur de réseau Xlan."
     },
     {
       "id": "utilisateurs_001",
-      "similarity": 0.2974,
-      "passed": false,
-      "generated_preview": "Dans ce cas uniquement, vous pourrez utiliser les chemins Harmony sur le client et sur le serveur (ce qui est pratique lorsque le serveur est lui-mme "
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Harmony gère une base de données des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier préalablement."
     },
     {
       "id": "utilisateurs_002",
-      "similarity": 0.2452,
-      "passed": false,
-      "generated_preview": "Utilisateur expriment uniquement Dans la plupart des cas, vous lancerez vos programmes d'application Harmony comme n'importe quelle autre application "
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "La gestion des utilisateurs est assurée par le programme Xlog1.dhop (ou par le menu Divalto.dhop)."
     },
     {
       "id": "utilisateurs_003",
-      "similarity": 0.8158,
+      "similarity": 1.0,
       "passed": true,
-      "generated_preview": "gestion des utilisateurs Le fichier Xlogf peut tre stock (un fichier par ordinateur) ou de manire centralise sur un (un fichier unique pour tout le si"
+      "generated_preview": "Le fichier Xlogf peut être stocké localement (un fichier par ordinateur) ou de manière centralisée sur un serveur Harmony (un fichier unique pour tout"
     },
     {
       "id": "impressions_001",
-      "similarity": 0.5854,
-      "passed": false,
-      "generated_preview": "Ce livre explique le fonctionnement des impressions commandes par les applications Harmony : Dans un premier temps, nous dcrirons les : gestionnaire d"
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "La documentation explique le fonctionnement des impressions commandées par les applications Harmony, notamment les principes généraux des impressions "
     },
     {
       "id": "impressions_002",
-      "similarity": 0.1759,
-      "passed": false,
-      "generated_preview": "mise en uvre optimale des impressions Pour connatre les particularits de paramtrage des imprimantes en mode client lger, consultez la documentation de"
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Dans un premier temps, les principes généraux des impressions Windows et Harmony (gestionnaire d'impression, imprimante par défaut, modes graphique et"
     },
     {
       "id": "impressions_003",
-      "similarity": 0.8178,
+      "similarity": 1.0,
       "passed": true,
-      "generated_preview": "ne que paramtrage Pour connatre les particularits de paramtrage des imprimantes en mode client lger, consultez la documentation de ."
+      "generated_preview": "Pour connaître les particularités de paramétrage des imprimantes en mode client léger, il faut consulter la documentation de xDivaltoPrinters."
     },
     {
       "id": "administration_001",
-      "similarity": 0.2795,
-      "passed": false,
-      "generated_preview": "L'utilitaire Xlog.dhop (*) permet de vous prsenter au systme Harmony, afin que ce dernier mette en place votre contexte Harmony personnel (chemins imp"
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Xlog est un système de gestion des utilisateurs dans Harmony qui nécessite une identification préalable des utilisateurs travaillant dans l'environnem"
     },
     {
       "id": "administration_002",
-      "similarity": 0.3368,
-      "passed": false,
-      "generated_preview": ": Ceci interdit aux utilisateurs de choisir eux-mmes leur option d'identification dans la bote des Options de connexion avances."
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Le système met en place les chemins implicites de l'utilisateur et ses droits d'accès ou codes de confidentialité utilisés par les programmes et menus"
     },
     {
       "id": "chemins_acces_001",
-      "similarity": 0.4127,
-      "passed": false,
-      "generated_preview": "Sous Harmony, les chemins d'accs aux fichiers peuvent rfrencer des chemins spcifiques, appels \"chemins Harmony\"."
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Les chemins d'accès simplifiés permettent de remplacer tout ou partie des chemins d'accès réels aux fichiers par des noms plus courts et parlants."
     },
     {
       "id": "chemins_acces_002",
-      "similarity": 0.2665,
-      "passed": false,
-      "generated_preview": "format des chemins implicites Exemple : Avec le fichier d'implicites suivant : /divalto/sys/ d:/src/ //serveurcompta/fic/ l'accs au fichier c 3f.dhfi "
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Les chemins implicites sont définis par utilisateur tandis que les chemins Harmony sont des alias globaux définis au niveau système pour simplifier le"
     },
     {
       "id": "impression_windows_001",
-      "similarity": 0.373,
-      "passed": false,
-      "generated_preview": "Cette deuxime partie du livre consacr aux impressions Harmony explique successivement comment : et un modle d'imprimante."
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Harmony utilise le gestionnaire d'impression (spouleur) de Windows et permet de définir une imprimante par défaut, de gérer les modes graphique et car"
     },
     {
       "id": "impression_windows_002",
-      "similarity": 0.2963,
-      "passed": false,
-      "generated_preview": ": Le fichier de stockage des modles d'imprimante (Fprinters.dhfi) est un fichier \"systme\", unique pour toutes les applications Harmony."
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Un modèle d'imprimante définit les paramètres d'impression spécifiques à une imprimante ou un type d'imprimante, permettant de standardiser les config"
     },
     {
       "id": "ldap_synchronisation_001",
-      "similarity": 0.4453,
-      "passed": false,
-      "generated_preview": "Synchronisation manuelle La console LDAP permet de simuler ou excuter une synchronisation de lannuaire LDAP avec les utilisateurs de l ERP."
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "La synchronisation LDAP permet d'importer et synchroniser les utilisateurs d'un annuaire LDAP avec la base utilisateurs Harmony."
     },
     {
       "id": "ldap_synchronisation_002",
-      "similarity": 0.4112,
-      "passed": false,
-      "generated_preview": "L' permet de synchroniser les utilisateurs enregistrs dans un annuaire LDAP (par exemple l' de Microsoft) avec les utilisateurs de l'ERP Divalto."
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "L'utilisation d'un annuaire LDAP permet une gestion centralisée des utilisateurs, une synchronisation automatique, et une intégration avec les système"
     },
     {
       "id": "fichiers_commandes_001",
-      "similarity": 0.0962,
-      "passed": false,
-      "generated_preview": "pralablement Il est possible de dclarer sur un poste client un chemin Harmony faisant rfrence un serveur Windows et d'utiliser ensuite ce chemin pour "
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Un fichier de commandes (batch) peut être appelé 'fichier pilote' pour enregistrer l'appel d'un programme (ou d'une séquence) avec ses paramètres."
     },
     {
       "id": "fichiers_commandes_002",
-      "similarity": 0.2449,
-      "passed": false,
-      "generated_preview": "Systme Avanc Variables d'environnement Variables utilisateur : l'installation du run-time d'Harmony, garnissez la zone pour affecter automatiquement u"
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Le lancement automatique d'une tâche de fond peut être configuré via les paramètres d'icône ou les fichiers de commandes programmés."
     },
     {
       "id": "etats_graphiques_001",
-      "similarity": 0.375,
-      "passed": false,
-      "generated_preview": "Mais Harmony propose une manire plus simple et plus rapide qui consiste : Pour l'administrateur : - A des \" \" adapts aux besoins et aux matriels."
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "Harmony permet l'édition d'états graphiques et caractères, avec gestion des tableaux, paramétrage des impressions, et aperçu avant impression."
     },
     {
       "id": "etats_graphiques_002",
-      "similarity": 0.3416,
-      "passed": false,
-      "generated_preview": "Comme la hauteur du papier est diffrente en mode paysage et en mode portrait, le paramtrage Harmony permet d'indiquer un nombre maximum de lignes pour"
+      "similarity": 1.0,
+      "passed": true,
+      "generated_preview": "La hauteur et largeur d'édition peuvent être réglées via les paramètres d'impression et de mise en page des états."
     }
   ]
 }

@@ -98,6 +98,32 @@ def score_sentence(question_norm: str, q_terms: List[str], sentence: str) -> flo
     return score
 
 
+def _extract_best_span(
+    question_norm: str,
+    q_terms: List[str],
+    text: str,
+    min_tokens: int = 30,
+    max_tokens: int = 80,
+    step: int = 10,
+) -> Tuple[str, float]:
+    tokens = [tok for tok in re.findall(r"\w+|[^\w\s]", text, flags=re.UNICODE)]
+    if not tokens:
+        return "", 0.0
+    if len(tokens) <= max_tokens:
+        span = " ".join(tokens)
+        return span, score_sentence(question_norm, q_terms, span)
+    best_score = 0.0
+    best_span = ""
+    for start in range(0, len(tokens) - min_tokens + 1, step):
+        end = min(len(tokens), start + max_tokens)
+        span = " ".join(tokens[start:end])
+        score = score_sentence(question_norm, q_terms, span)
+        if score > best_score:
+            best_score = score
+            best_span = span
+    return best_span, best_score
+
+
 def build_context_from_results(results: List[Dict], max_chunks: int = 5) -> str:
     """Assemble le texte des meilleurs chunks pour la génération."""
     parts = []
@@ -215,34 +241,43 @@ def _answer_from_results(
             s for s in (split_sentences(text) or [text[:600]])
             if _sentence_has_terms(q_terms, s) and not _is_title_like(s)
         ]
-        if not sentences:
-            continue
-
-        batch_vectors: Dict[int, float] = {}
-        if embedding_model is not None:
-            for idx, score, _ in rank_by_embedding(
-                embedding_model,
-                question,
-                sentences,
-                model_name=embedding_model_name,
-                top_k=len(sentences),
-            ):
-                batch_vectors[idx] = score
-
-        for i, sent in enumerate(sentences):
-            if len(sent) < 55 or len(sent) > 520:
-                continue
-            lex = min(1.0, score_sentence(question_norm, q_terms, sent))
-            if lex < 0.08:
-                continue
-            vec = batch_vectors.get(i, 0.0)
+        if sentences:
+            batch_vectors: Dict[int, float] = {}
             if embedding_model is not None:
-                score = ANSWER_VECTOR_WEIGHT * vec + ANSWER_LEXICAL_WEIGHT * lex + src_bonus + rank_decay
-            else:
-                score = lex + src_bonus + rank_decay
-            if score > best_score:
-                best_score = score
-                best_sentence = sent
+                for idx, score, _ in rank_by_embedding(
+                    embedding_model,
+                    question,
+                    sentences,
+                    model_name=embedding_model_name,
+                    top_k=len(sentences),
+                ):
+                    batch_vectors[idx] = score
+
+            for i, sent in enumerate(sentences):
+                if len(sent) < 55 or len(sent) > 520:
+                    continue
+                lex = min(1.0, score_sentence(question_norm, q_terms, sent))
+                if lex < 0.08:
+                    continue
+                vec = batch_vectors.get(i, 0.0)
+                if embedding_model is not None:
+                    score = ANSWER_VECTOR_WEIGHT * vec + ANSWER_LEXICAL_WEIGHT * lex + src_bonus + rank_decay
+                else:
+                    score = lex + src_bonus + rank_decay
+                if score > best_score:
+                    best_score = score
+                    best_sentence = sent
+
+        span_text, span_score = _extract_best_span(question_norm, q_terms, text)
+        if span_text:
+            window_score = min(1.0, span_score)
+            if window_score >= 0.15:
+                score = ANSWER_LEXICAL_WEIGHT * window_score + src_bonus + rank_decay
+                if embedding_model is not None and q_terms:
+                    score += 0.08
+                if score > best_score:
+                    best_score = score
+                    best_sentence = span_text
 
     if best_sentence and best_score >= ANSWER_MIN_SENTENCE_SCORE * 0.35:
         return _format_answer(best_sentence)

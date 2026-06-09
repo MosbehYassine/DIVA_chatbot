@@ -16,7 +16,8 @@ _META: List[Tuple[str, str]] = []
 _VECTORS: Optional[np.ndarray] = None
 _MODEL = None
 _MODEL_NAME = EMBEDDING_MODEL
-_MIN_SCORE = float(os.getenv("RAG_CURATED_MIN_SCORE", "0.78"))
+_MIN_SCORE = float(os.getenv("RAG_CURATED_MIN_SCORE", "0.92"))
+_MIN_MARGIN = float(os.getenv("RAG_CURATED_MIN_MARGIN", "0.05"))
 
 
 def _passage_text(question: str) -> str:
@@ -73,7 +74,10 @@ def lookup_by_vector(question: str, model, model_name: str = "") -> Optional[str
     scores = cosine_scores(q_vec, _VECTORS)
     if scores.size == 0:
         return None
-    best_idx = int(top_k_indices(scores, 1)[0])
-    if float(scores[best_idx]) >= _MIN_SCORE:
+    ranked = top_k_indices(scores, min(2, scores.size))
+    best_idx = int(ranked[0])
+    best_score = float(scores[best_idx])
+    second_score = float(scores[int(ranked[1])]) if len(ranked) > 1 else -1.0
+    if best_score >= _MIN_SCORE and (best_score - second_score) >= _MIN_MARGIN:
         return _META[best_idx][1]
     return None

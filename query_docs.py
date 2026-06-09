@@ -9,6 +9,7 @@ import sys
 import pickle
 import json
 import re
+import math
 import numpy as np
 import networkx as nx
 from typing import List, Dict, Tuple
@@ -32,12 +33,54 @@ from rag_config import (
     DOC_ABOUT_BOOST,
     GRAPH_ENTITY_TOP_K,
     ENTITY_VECTOR_MIN_SCORE,
+    RERANK_GRAPH_WEIGHT,
+    ABSTENTION_THRESHOLD,
 )
 from rag_canonical import parse_doc_about_topic
 from rag_answer import generate_answer_from_results, build_context_from_results
 from rag_vector import encode_query, encode_passages, cosine_scores, top_k_indices
 
 SESSIONS_FILE = "hybrid_rag_sessions.json"
+
+
+class ConfidenceCalibrator:
+    """Modèle de calibration (Platt Sigmoid / Isotonic) pour le score de rerank."""
+    def __init__(self, model_path="calibration_model.json"):
+        self.model_path = model_path
+        self.method = "platt"  # "platt" ou "isotonic"
+        self.platt_a = -10.0   # Paramètres heuristiques par défaut
+        self.platt_b = 5.0
+        self.isotonic_x = []
+        self.isotonic_y = []
+        self.load()
+
+    def load(self):
+        if os.path.exists(self.model_path):
+            try:
+                with open(self.model_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                self.method = data.get("method", "platt")
+                self.platt_a = data.get("platt_a", self.platt_a)
+                self.platt_b = data.get("platt_b", self.platt_b)
+                self.isotonic_x = data.get("isotonic_x", [])
+                self.isotonic_y = data.get("isotonic_y", [])
+                print(f"Modèle de calibration chargé : {self.model_path} ({self.method})")
+            except Exception as e:
+                print(f"Erreur lors du chargement de la calibration : {e}")
+
+    def calibrate(self, score: float) -> float:
+        if self.method == "platt":
+            try:
+                val = self.platt_a * score + self.platt_b
+                val = max(-100.0, min(100.0, val)) # Éviter overflow
+                return 1.0 / (1.0 + math.exp(val))
+            except Exception:
+                return 0.0
+        elif self.method == "isotonic":
+            if not self.isotonic_x or not self.isotonic_y:
+                return 0.0
+            return float(np.interp(score, self.isotonic_x, self.isotonic_y))
+        return 0.0
 
 
 class HybridRAG:
@@ -53,6 +96,7 @@ class HybridRAG:
         self.embedding_model = None
         self.embedding_model_name = EMBEDDING_MODEL
         self.cot_enabled = cot_enabled
+        self.calibrator = ConfidenceCalibrator()
         
         self._entity_index = {}
         self._entity_nodes: List[str] = []
@@ -248,9 +292,15 @@ class HybridRAG:
 
     @staticmethod
     def _document_key(result: Dict) -> str:
-        doc_id = str(result.get('document_id') or result.get('chunk_id') or '')
+        doc_id = result.get('document_id') or result.get('chunk_id')
+        if doc_id is not None:
+            doc_str = str(doc_id)
+            if not doc_str.startswith("Document_"):
+                doc_str = f"Document_{doc_str}"
+        else:
+            doc_str = ""
         source = str(result.get('source') or '')
-        return f"{doc_id}::{source}"
+        return f"{doc_str}::{source}"
 
     def _entities_from_query(self, query: str) -> List[str]:
         """Entités probables dérivées de la question (correspondance vectorielle graphe)."""
@@ -259,11 +309,35 @@ class HybridRAG:
             return [ent for ent, _ in vector_hits]
         return []
 
+    def _compute_graph_score(self, doc_id: str, matched_entities: List[Tuple[str, float]]) -> float:
+        """Calcule un score basé sur les poids des connexions entre le document et les entités."""
+        if doc_id is None:
+            return 0.0
+        doc_str = str(doc_id)
+        if not doc_str.startswith("Document_"):
+            doc_str = f"Document_{doc_str}"
+            
+        if not self.graph or not self.graph.has_node(doc_str):
+            return 0.0
+        
+        score = 0.0
+        neighbors = set(self.graph.neighbors(doc_str))
+        for entity, ent_score in matched_entities:
+            if entity in neighbors:
+                edge_data = self.graph.get_edge_data(doc_str, entity) or {}
+                weight = float(edge_data.get("weight", 1.0))
+                # log1p atténue l'influence des fréquences géantes
+                score += ent_score * np.log1p(weight)
+        return score
+
     def _rerank_results(self, query: str, results: List[Dict]) -> List[Dict]:
-        """Re-classe les candidats fusionnés (lexical + score vectoriel/graphe + embedding)."""
+        """Re-classe les candidats fusionnés (lexical + score vectoriel/graphe + embedding + poids graphe)."""
         if not results:
             return results
         query_norm = self._normalize_text(query)
+
+        # Calculer les entités les plus pertinentes de la requête
+        matched_entities = self._entities_from_query_vector(query, top_k=GRAPH_ENTITY_TOP_K)
 
         embed_scores = np.zeros(len(results), dtype="float32")
         source_embed_scores = np.zeros(len(results), dtype="float32")
@@ -286,9 +360,8 @@ class HybridRAG:
                 source_embed_scores = cosine_scores(q_vec, src_vecs)
 
         for i, result in enumerate(results):
-            text = result.get("text") or self._chunk_text_by_id(
-                result.get("document_id") or result.get("chunk_id")
-            )
+            raw_doc_id = result.get("document_id") or result.get("chunk_id")
+            text = result.get("text") or self._chunk_text_by_id(raw_doc_id)
             lex = self._compute_overlap_score(query_norm, self._normalize_text(text))
             source = str(result.get("source") or "")
             src_boost = self._compute_overlap_score(query_norm, self._normalize_text(source))
@@ -299,7 +372,10 @@ class HybridRAG:
                 semantic = min(1.0, semantic / 100.0)
             embed = float(embed_scores[i]) if i < len(embed_scores) else 0.0
             src_embed = float(source_embed_scores[i]) if i < len(source_embed_scores) else 0.0
-            source = str(result.get("source") or "")
+            
+            # Calcul du score de poids de graphe
+            graph_weight_score = self._compute_graph_score(raw_doc_id, matched_entities)
+            
             topic_boost = self._topic_source_boost(query, source)
             file_boost = 0.0
             q_terms = [w for w in re.findall(r"\w+", query.lower()) if len(w) > 3]
@@ -311,6 +387,7 @@ class HybridRAG:
             result["rerank_score"] = (
                 RERANK_LEXICAL_WEIGHT * min(1.0, lex + 0.15 * src_boost)
                 + RERANK_VECTOR_WEIGHT * semantic
+                + RERANK_GRAPH_WEIGHT * graph_weight_score
                 + RERANK_EMBEDDING_WEIGHT * embed
                 + 0.20 * src_embed
                 + topic_boost
@@ -512,16 +589,28 @@ class HybridRAG:
         merged_results = self._merge_results(graph_results, vector_results)
         merged_results = self._rerank_results(effective_query, merged_results)
         
+        # B. Confidence Calibration & Abstention check
+        top_score = merged_results[0].get("rerank_score", 0.0) if merged_results else 0.0
+        confidence = self.calibrator.calibrate(top_score)
+        print(f"   Score top rerank: {top_score:.4f} | Confidence: {confidence:.2%}")
+        
+        abstained = False
+        
         # 4. Meilleurs extraits pour réponse
         context_parts = []
         best_result = merged_results[:top_k] if merged_results else []
         answer_context = build_context_from_results(merged_results, max_chunks=max(5, top_k))
-        generated_answer = generate_answer_from_results(
-            question,
-            merged_results,
-            embedding_model=self.embedding_model,
-            embedding_model_name=self.embedding_model_name,
-        )
+        
+        if confidence < ABSTENTION_THRESHOLD:
+            abstained = True
+            generated_answer = "Désolé, je n'ai pas trouvé d'information pertinente dans la documentation."
+        else:
+            generated_answer = generate_answer_from_results(
+                question,
+                merged_results,
+                embedding_model=self.embedding_model,
+                embedding_model_name=self.embedding_model_name,
+            )
         
         for result in best_result:
             method = f"[{result['method'].upper()}]"
@@ -541,6 +630,9 @@ class HybridRAG:
             merged_results=merged_results,
             top_k=top_k,
         ) if self.cot_enabled else []
+        
+        if abstained:
+            cot_steps.append(f"Abstention: La confiance ({confidence:.2%}) est inferieure au seuil ({ABSTENTION_THRESHOLD:.2%}).")
 
         return {
             'question': question,
@@ -551,6 +643,8 @@ class HybridRAG:
             'cot_steps': cot_steps,
             'generated_answer': generated_answer,
             'response': generated_answer or "Réponse hybride trouvée",
+            'calibrated_confidence': confidence,
+            'abstained': abstained,
         }
 
 
