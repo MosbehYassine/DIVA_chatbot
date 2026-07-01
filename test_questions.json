@@ -1,193 +1,3349 @@
 {
+  "metadata": {
+    "description": "Jeu unique de test couvrant les modules principaux du dossier data avec 3 questions par module: facile, moyen, difficile.",
+    "coverage_unit": "top_level_data_directory",
+    "questions_per_module": 3,
+    "module_count": 52,
+    "total_questions": 156
+  },
   "test_questions": [
     {
-      "id": "chemins_harmony_001",
-      "category": "Chemins Harmony",
-      "question": "Qu'est-ce qu'un chemin Harmony ?",
-      "expected_answer": "Les chemins Harmony permettent de raccourcir les noms de fichier ou de convenir de noms de chemin plus parlants en remplaçant tout ou partie des chemins d'accès réels aux fichiers.",
-      "difficulty": "facile",
-      "source_files": ["CheminsHarmony.htm"]
-    },
-    {
-      "id": "chemins_harmony_002",
-      "category": "Chemins Harmony",
-      "question": "Comment utiliser un chemin Harmony dans un nom de fichier ?",
-      "expected_answer": "Si un nom de fichier Harmony commence par '/', le premier segment du chemin d'accès est un nom de chemin Harmony qui sera remplacé par le chemin réel qu'il représente.",
-      "difficulty": "moyen",
-      "source_files": ["CheminsHarmony.htm"]
-    },
-    {
-      "id": "chemins_harmony_003",
-      "category": "Chemins Harmony",
-      "question": "L'emploi des chemins Harmony est-il obligatoire ?",
-      "expected_answer": "L'emploi de chemins Harmony est facultatif en local mais obligatoire au niveau d'un serveur de réseau Xlan.",
-      "difficulty": "moyen",
-      "source_files": ["CheminsHarmony.htm"]
-    },
-    {
-      "id": "utilisateurs_001",
-      "category": "Gestion des utilisateurs",
-      "question": "Comment Harmony gère-t-il les utilisateurs ?",
-      "expected_answer": "Harmony gère une base de données des utilisateurs (fichier Xlogf.dhfi). Tout utilisateur travaillant sous Harmony doit s'identifier préalablement.",
-      "difficulty": "facile",
-      "source_files": ["Fichierdesutilisateurs.htm"]
-    },
-    {
-      "id": "utilisateurs_002",
-      "category": "Gestion des utilisateurs",
-      "question": "Quel programme assure la gestion des utilisateurs dans Harmony ?",
-      "expected_answer": "La gestion des utilisateurs est assurée par le programme Xlog1.dhop (ou par le menu Divalto.dhop).",
-      "difficulty": "facile",
-      "source_files": ["Fichierdesutilisateurs.htm"]
-    },
-    {
-      "id": "utilisateurs_003",
-      "category": "Gestion des utilisateurs",
-      "question": "Où peut être stocké le fichier des utilisateurs Xlogf ?",
-      "expected_answer": "Le fichier Xlogf peut être stocké localement (un fichier par ordinateur) ou de manière centralisée sur un serveur Harmony (un fichier unique pour tout le site).",
-      "difficulty": "moyen",
-      "source_files": ["Fichierdesutilisateurs.htm"]
-    },
-    {
-      "id": "impressions_001",
-      "category": "Impressions",
-      "question": "Que couvre la documentation sur les impressions dans Harmony ?",
-      "expected_answer": "La documentation explique le fonctionnement des impressions commandées par les applications Harmony, notamment les principes généraux des impressions Windows et Harmony.",
-      "difficulty": "facile",
-      "source_files": ["Impressions__Introduction.htm"]
-    },
-    {
-      "id": "impressions_002",
-      "category": "Impressions",
-      "question": "Quels sont les deux aspects principaux couverts par la documentation des impressions ?",
-      "expected_answer": "Dans un premier temps, les principes généraux des impressions Windows et Harmony (gestionnaire d'impression, imprimante par défaut, modes graphique et caractères, modèles d'imprimante). Dans un deuxième temps, les opérations pour la mise en œuvre optimale des impressions Harmony sous Windows.",
-      "difficulty": "moyen",
-      "source_files": ["Impressions__Introduction.htm"]
-    },
-    {
-      "id": "impressions_003",
-      "category": "Impressions",
-      "question": "Où trouver la documentation sur le paramétrage des imprimantes en mode client léger ?",
-      "expected_answer": "Pour connaître les particularités de paramétrage des imprimantes en mode client léger, il faut consulter la documentation de xDivaltoPrinters.",
-      "difficulty": "moyen",
-      "source_files": ["Impressions__Introduction.htm"]
-    },
-    {
       "id": "administration_001",
-      "category": "Administration générale",
-      "question": "Qu'est-ce que Xlog dans le contexte Harmony ?",
-      "expected_answer": "Xlog est un système de gestion des utilisateurs dans Harmony qui nécessite une identification préalable des utilisateurs travaillant dans l'environnement.",
+      "category": "Administration",
+      "module": "Administration",
+      "question": "Que couvre la page \"Accès à un fichier réseau Windows sous son nom Harmony\" dans le module Administration ?",
+      "expected_answer": "Accès à un fichier réseau Windows avec son nom Harmony Certaines applications permettent d’ouvrir un fichier réseau « Windows » (par exemple, un fichier Word ou Excel), en fournissant son nom Xlan Harmony (fonction WinShellExecute du langage Diva). Ceci ne peut fonctionner que s’il existe une stricte équivalence entre le nom Xlan Harmony et le nom Windows de ce fichier. Pour cela, il faut impérativement :",
       "difficulty": "facile",
-      "source_files": ["Fichierdesutilisateurs.htm"]
+      "source_files": [
+        "Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm"
+      ],
+      "source_path": "data/Administration/Administration/Acc_s___un_fichier_r_seau_Windows_sous_son_nom_Harmony.htm",
+      "expected_keywords": [
+        "administration",
+        "acces",
+        "fichier",
+        "reseau",
+        "windows",
+        "certaines",
+        "applications",
+        "permettent"
+      ]
     },
     {
       "id": "administration_002",
-      "category": "Administration générale",
-      "question": "Quels sont les droits gérés par le système d'identification des utilisateurs ?",
-      "expected_answer": "Le système met en place les chemins implicites de l'utilisateur et ses droits d'accès ou codes de confidentialité utilisés par les programmes et menus d'Harmony.",
+      "category": "Administration",
+      "module": "Administration",
+      "question": "Quel est le contenu principal de \"Accès aux fichiers d'Harmony\" dans le module Administration ?",
+      "expected_answer": "Accès aux fichiers et aux programmes sous Harmony",
       "difficulty": "moyen",
-      "source_files": ["Fichierdesutilisateurs.htm"]
+      "source_files": [
+        "Acc_sauxfichiersd_Harmony.htm"
+      ],
+      "source_path": "data/Administration/Administration/Acc_sauxfichiersd_Harmony.htm",
+      "expected_keywords": [
+        "administration",
+        "acces",
+        "fichiers",
+        "programmes"
+      ]
     },
     {
-      "id": "chemins_acces_001",
-      "category": "Chemins d'accès",
-      "question": "Comment fonctionnent les chemins d'accès simplifiés dans Harmony ?",
-      "expected_answer": "Les chemins d'accès simplifiés permettent de remplacer tout ou partie des chemins d'accès réels aux fichiers par des noms plus courts et parlants.",
+      "id": "administration_003",
+      "category": "Administration",
+      "module": "Administration",
+      "question": "Quels details importants sont presentes dans \"Administration d'Harmony: Introduction\" pour le module Administration ?",
+      "expected_answer": "Puis il traite de l'administration d'Harmony en abordant les points suivants : Impressions . Gestion des fenêtres et des programmes . Gestion des tableaux .",
+      "difficulty": "difficile",
+      "source_files": [
+        "Administrationd_Harmony__Introduction.htm"
+      ],
+      "source_path": "data/Administration/Administration/Administrationd_Harmony__Introduction.htm",
+      "expected_keywords": [
+        "administration",
+        "introduction",
+        "puis",
+        "traite",
+        "abordant",
+        "points",
+        "suivants",
+        "impressions"
+      ]
+    },
+    {
+      "id": "aidesfenetrees_001",
+      "category": "AidesFenetrees",
+      "module": "AidesFenetrees",
+      "question": "Que couvre la page \"Exécution du fichier d'aides Windows\" dans le module AidesFenetrees ?",
+      "expected_answer": "Exécution du fichier d'aides En exploitation (à l'exécution des programmes et des masques), les fichiers d'aide doivent être en ligne pour le poste client léger , ce qui impose des règles d'installation précises. Vous trouverez tous les détails concernant l'installation des fichiers d'aide dans le manuel de référence d'Harmony (chapitre Installation).",
       "difficulty": "facile",
-      "source_files": ["Cheminsd_acc_simplicites.htm", "CheminsHarmony.htm"]
+      "source_files": [
+        "Ex_cutiondufichierd_aidesWindows.htm"
+      ],
+      "source_path": "data/AidesFenetrees/AidesFenetrees/Ex_cutiondufichierd_aidesWindows.htm",
+      "expected_keywords": [
+        "aidesfenetrees",
+        "execution",
+        "fichier",
+        "aides",
+        "windows",
+        "exploitation",
+        "programmes",
+        "masques"
+      ]
     },
     {
-      "id": "chemins_acces_002",
-      "category": "Chemins d'accès",
-      "question": "Quelle est la différence entre chemins implicites et chemins Harmony ?",
-      "expected_answer": "Les chemins implicites sont définis par utilisateur tandis que les chemins Harmony sont des alias globaux définis au niveau système pour simplifier les noms de chemin.",
+      "id": "aidesfenetrees_002",
+      "category": "AidesFenetrees",
+      "module": "AidesFenetrees",
+      "question": "Quel est le contenu principal de \"Gestion des aides fenêtrées sous Harmony\" dans le module AidesFenetrees ?",
+      "expected_answer": "Xwin permet d'associer une aide fenêtrée à chaque donnée d'un masque. Pour afficher l'aide affectée à une donnée, l'utilisateur doit taper la touche Maj+F1 en cours de saisie de cette donnée. Une aide fenêtrée peut aussi être associée au menu Divalto, aux zooms ou à vos programmes (instruction Diva XmeHelp).",
+      "difficulty": "moyen",
+      "source_files": [
+        "Gestiondesaidesfen_tr_essousHarmony.htm"
+      ],
+      "source_path": "data/AidesFenetrees/AidesFenetrees/Gestiondesaidesfen_tr_essousHarmony.htm",
+      "expected_keywords": [
+        "aidesfenetrees",
+        "gestion",
+        "aides",
+        "fenetrees",
+        "xwin",
+        "permet",
+        "associer",
+        "aide"
+      ]
+    },
+    {
+      "id": "aidesfenetrees_003",
+      "category": "AidesFenetrees",
+      "module": "AidesFenetrees",
+      "question": "Quels details importants sont presentes dans \"Saisie et constitution d'un fichier d'aides Windows\" pour le module AidesFenetrees ?",
+      "expected_answer": "Spécifiez le format de mise en page WebHelp ( attention à ne pas sélectionner le format WebHelp Pro ). Au niveau des propriétés de mise en page dans RoboHelp, le dossier de sortie doit impérativement porter le nom du fichier d'aides spécifié dans les masques Xwin ou dans vos programmes et la page de lancement doit impérativement porter ce même nom avec l'extension .htm (voir la remarque finale dans la rubrique Gestion des aides fenêtrées sous Harmony ). Exemple : Dans un masque Xwin, vous avez paramétré l'aide contextuelle suivante pour une donnée en saisie : Fichier : monaide ; Numéro : 1407. --> Spécifiez comme dossier de sortie et page de lancement : ...\\ monaide \\ monaide .htm.",
       "difficulty": "difficile",
-      "source_files": ["D_clarationdescheminsHarmony.htm", "Fichierdesutilisateurs.htm"]
+      "source_files": [
+        "Saisieetconstitutiond_unfichierd_aidesWindows.htm"
+      ],
+      "source_path": "data/AidesFenetrees/AidesFenetrees/Saisieetconstitutiond_unfichierd_aidesWindows.htm",
+      "expected_keywords": [
+        "aidesfenetrees",
+        "saisie",
+        "constitution",
+        "fichier",
+        "aides",
+        "windows",
+        "specifiez",
+        "format"
+      ]
     },
     {
-      "id": "impression_windows_001",
-      "category": "Impression Windows",
-      "question": "Comment Harmony gère-t-il l'impression sous Windows ?",
-      "expected_answer": "Harmony utilise le gestionnaire d'impression (spouleur) de Windows et permet de définir une imprimante par défaut, de gérer les modes graphique et caractères, et d'utiliser des modèles d'imprimante.",
-      "difficulty": "moyen",
-      "source_files": ["Principesg_n_rauxdesimpressionsHarmony_Windows.htm", "Impressions__Introduction.htm"]
-    },
-    {
-      "id": "impression_windows_002",
-      "category": "Impression Windows",
-      "question": "Qu'est-ce qu'un modèle d'imprimante dans Harmony ?",
-      "expected_answer": "Un modèle d'imprimante définit les paramètres d'impression spécifiques à une imprimante ou un type d'imprimante, permettant de standardiser les configurations d'impression.",
-      "difficulty": "moyen",
-      "source_files": ["Mod_lesd_imprimanteHarmony.htm", "Imprimantepard_fautdeWindows.htm"]
-    },
-    {
-      "id": "ldap_synchronisation_001",
-      "category": "LDAP et synchronisation",
-      "question": "Que permet la synchronisation LDAP dans Harmony ?",
-      "expected_answer": "La synchronisation LDAP permet d'importer et synchroniser les utilisateurs d'un annuaire LDAP avec la base utilisateurs Harmony.",
-      "difficulty": "moyen",
-      "source_files": ["Import_et_synchronisation_des_utilisateurs_dun_annuaire_LDAP.htm"]
-    },
-    {
-      "id": "ldap_synchronisation_002",
-      "category": "LDAP et synchronisation",
-      "question": "Quels sont les avantages de l'utilisation d'un annuaire LDAP avec Harmony ?",
-      "expected_answer": "L'utilisation d'un annuaire LDAP permet une gestion centralisée des utilisateurs, une synchronisation automatique, et une intégration avec les systèmes d'authentification d'entreprise.",
-      "difficulty": "difficile",
-      "source_files": ["Synchronisation.htm", "Import_et_synchronisation_des_utilisateurs_dun_annuaire_LDAP.htm"]
-    },
-    {
-      "id": "fichiers_commandes_001",
-      "category": "Fichiers de commandes",
-      "question": "Qu'est-ce qu'un fichier de commandes dans Harmony ?",
-      "expected_answer": "Un fichier de commandes (batch) peut être appelé 'fichier pilote' pour enregistrer l'appel d'un programme (ou d'une séquence) avec ses paramètres.",
-      "difficulty": "moyen",
-      "source_files": ["Fichierdecommandes.htm"]
-    },
-    {
-      "id": "fichiers_commandes_002",
-      "category": "Fichiers de commandes",
-      "question": "Comment lancer automatiquement une tâche de fond dans Harmony ?",
-      "expected_answer": "Le lancement automatique d'une tâche de fond peut être configuré via les paramètres d'icône ou les fichiers de commandes programmés.",
-      "difficulty": "difficile",
-      "source_files": ["Lancementautomatiqued_unet_chedefond.htm", "Fichierdecommandes.htm"]
-    },
-    {
-      "id": "etats_graphiques_001",
-      "category": "États et graphiques",
-      "question": "Quelles sont les possibilités d'édition d'états dans Harmony ?",
-      "expected_answer": "Harmony permet l'édition d'états graphiques et caractères, avec gestion des tableaux, paramétrage des impressions, et aperçu avant impression.",
+      "id": "annexes_001",
+      "category": "Annexes",
+      "module": "Annexes",
+      "question": "Que couvre la page \"Attributs d'impression caractères\" dans le module Annexes ?",
+      "expected_answer": "Attributs d'impression caractères Contrairement aux impressions graphiques, les impressions \"Caractères\" ne disposent pas de fonctions évoluées telles que tracé de cadre ou impression d'image. Toutefois, des instructions simples peuvent être envoyées à l'imprimante pour que celle-ci sélectionne des attributs d'impression et les affecte aux caractères imprimés.",
       "difficulty": "facile",
-      "source_files": ["Etatsgraphiqueset_tatscaract_res.htm", "Edition_d_une_maquette.htm"]
+      "source_files": [
+        "Attributs_d_impression_caractères.htm"
+      ],
+      "source_path": "data/Annexes/Annexes/Attributs_d_impression_caractères.htm",
+      "expected_keywords": [
+        "annexes",
+        "attributs",
+        "impression",
+        "caracteres",
+        "contrairement",
+        "impressions",
+        "graphiques",
+        "disposent"
+      ]
     },
     {
-      "id": "etats_graphiques_002",
-      "category": "États et graphiques",
-      "question": "Comment régler la hauteur et largeur d'édition dans Harmony ?",
-      "expected_answer": "La hauteur et largeur d'édition peuvent être réglées via les paramètres d'impression et de mise en page des états.",
+      "id": "annexes_002",
+      "category": "Annexes",
+      "module": "Annexes",
+      "question": "Quel est le contenu principal de \"Codes d'attribut d'impression prédéfinis\" dans le module Annexes ?",
+      "expected_answer": "L'enregistrement System contient les champs de codage d'attribut suivants : Caractères comprimés début",
       "difficulty": "moyen",
-      "source_files": ["R_glagedelahauteurd__dition.htm", "R_glagedelalargeurd__dition.htm"]
+      "source_files": [
+        "Codes_d_attribut_d_impression_prédéfinis.htm"
+      ],
+      "source_path": "data/Annexes/Annexes/Codes_d_attribut_d_impression_prédéfinis.htm",
+      "expected_keywords": [
+        "annexes",
+        "codes",
+        "attribut",
+        "impression",
+        "predefinis",
+        "enregistrement",
+        "system",
+        "contient"
+      ]
+    },
+    {
+      "id": "annexes_003",
+      "category": "Annexes",
+      "module": "Annexes",
+      "question": "Quels details importants sont presentes dans \"Exemple de liaisons modèle / imprimante\" pour le module Annexes ?",
+      "expected_answer": "Application Harmony Application Harmony Etat graphique Etat caractères Etat graphique Etat caractères",
+      "difficulty": "difficile",
+      "source_files": [
+        "Exempledeliaisonsmod_le_imprimante.htm"
+      ],
+      "source_path": "data/Annexes/Annexes/Exempledeliaisonsmod_le_imprimante.htm",
+      "expected_keywords": [
+        "annexes",
+        "exemple",
+        "liaisons",
+        "modele",
+        "imprimante",
+        "application",
+        "etat",
+        "graphique"
+      ]
+    },
+    {
+      "id": "chemins_001",
+      "category": "Chemins",
+      "module": "Chemins",
+      "question": "Que couvre la page \"Accès aux fichiers d'Harmony\" dans le module Chemins ?",
+      "expected_answer": "Accès aux fichiers d'Harmony",
+      "difficulty": "facile",
+      "source_files": [
+        "Acc_sauxfichiersd_Harmony.htm"
+      ],
+      "source_path": "data/Chemins/Chemins/Acc_sauxfichiersd_Harmony.htm",
+      "expected_keywords": [
+        "chemins",
+        "acces",
+        "fichiers"
+      ]
+    },
+    {
+      "id": "chemins_002",
+      "category": "Chemins",
+      "module": "Chemins",
+      "question": "Quel est le contenu principal de \"Chemin d'accès et nom de fichier complet\" dans le module Chemins ?",
+      "expected_answer": "Un \"nom de fichier complet\" est le nom qui permet d'identifier un fichier (ou un programme) de manière absolue dans l'ordinateur. Par exemple : c:/divalto/sys/xtools.dhop d:/fichiers/comptabilité/c3f.dhfi",
+      "difficulty": "moyen",
+      "source_files": [
+        "Chemind_acc_setnomdefichiercomplet.htm"
+      ],
+      "source_path": "data/Chemins/Chemins/Chemind_acc_setnomdefichiercomplet.htm",
+      "expected_keywords": [
+        "chemins",
+        "chemin",
+        "acces",
+        "fichier",
+        "complet",
+        "permet",
+        "identifier",
+        "programme"
+      ]
+    },
+    {
+      "id": "chemins_003",
+      "category": "Chemins",
+      "module": "Chemins",
+      "question": "Quels details importants sont presentes dans \"Chemins d'accès implicites\" pour le module Chemins ?",
+      "expected_answer": "Par exemple, pour appeler le programme Xtools.dhop, on va saisir uniquement Xtools.dhop et non son nom complet c:/divalto/sys/xtools.dhop. De même, une application qui traite le fichier c3f.dhfi ne va pas ouvrir d:/fichiers/comptabilité/c3f.dhfi mais simplement c3f.dhfi.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Cheminsd_acc_simplicites.htm"
+      ],
+      "source_path": "data/Chemins/Chemins/Cheminsd_acc_simplicites.htm",
+      "expected_keywords": [
+        "chemins",
+        "acces",
+        "implicites",
+        "exemple",
+        "appeler",
+        "programme",
+        "xtools",
+        "dhop"
+      ]
+    },
+    {
+      "id": "dlmt_001",
+      "category": "dlmt",
+      "module": "dlmt",
+      "question": "Que couvre la page \"Introduction\" dans le module dlmt ?",
+      "expected_answer": "Accueil | DLMT - Gestion des licences nommées | Introduction A partir de la version 10, l’utilisation de l’ERP Divalto est soumise à des licences nommées, c’est-à-dire que chaque utilisateur de l’ERP doit être identifié par son compte et son mot de passe Windows.",
+      "difficulty": "facile",
+      "source_files": [
+        "1_Introduction.htm"
+      ],
+      "source_path": "data/dlmt/DLMT/1_Introduction.htm",
+      "expected_keywords": [
+        "dlmt",
+        "introduction",
+        "accueil",
+        "gestion",
+        "licences",
+        "nommees",
+        "partir",
+        "version"
+      ]
+    },
+    {
+      "id": "dlmt_002",
+      "category": "dlmt",
+      "module": "dlmt",
+      "question": "Quel est le contenu principal de \"Certificat de licences d'un site\" dans le module dlmt ?",
+      "expected_answer": "Certificat de licences d'un site Chaque site dispose d’un certificat de licences comprenant les informations suivantes :",
+      "difficulty": "moyen",
+      "source_files": [
+        "2_Certificat_de_licences_site.htm"
+      ],
+      "source_path": "data/dlmt/DLMT/2_Certificat_de_licences_site.htm",
+      "expected_keywords": [
+        "dlmt",
+        "certificat",
+        "licences",
+        "site",
+        "chaque",
+        "dispose",
+        "comprenant",
+        "informations"
+      ]
+    },
+    {
+      "id": "dlmt_003",
+      "category": "dlmt",
+      "module": "dlmt",
+      "question": "Quels details importants sont presentes dans \"Gestion des groupes d’utilisateurs de l’annuaire LDAP\" pour le module dlmt ?",
+      "expected_answer": "DLMT propose la gestion des groupes d’un annuaire LDAP. Sont prises en compte les opérations d’ajout, de suppression et de modification. L’utilisateur souhaitant effectuer ces opérations depuis DLMT devra avoir les droits d’accès définis au niveau de l’annuaire.",
+      "difficulty": "difficile",
+      "source_files": [
+        "3.10_Gestion_des_groupes_utilisateurs_annuaire_LDAP.htm"
+      ],
+      "source_path": "data/dlmt/DLMT/3.10_Gestion_des_groupes_utilisateurs_annuaire_LDAP.htm",
+      "expected_keywords": [
+        "dlmt",
+        "gestion",
+        "groupes",
+        "utilisateurs",
+        "annuaire",
+        "ldap",
+        "propose",
+        "prises"
+      ]
+    },
+    {
+      "id": "erreurs_001",
+      "category": "Erreurs",
+      "module": "Erreurs",
+      "question": "Que couvre la page \"Erreurs signalées par Windows (10xxx)\" dans le module Erreurs ?",
+      "expected_answer": "Erreurs signalées par Windows (10xxx) Harmony ajoute 10000 aux codes d'erreur renvoyés par Windows pour les différencier des erreurs Harmony. Vous trouverez ici quelques unes de ces erreurs : si le code ne s'y trouve pas, reportez-vous à la documentation Windows.",
+      "difficulty": "facile",
+      "source_files": [
+        "10xxx_Erreurssignal_esparWindows.htm"
+      ],
+      "source_path": "data/Erreurs/Erreurs/10xxx_Erreurssignal_esparWindows.htm",
+      "expected_keywords": [
+        "erreurs",
+        "signalees",
+        "windows",
+        "10xxx",
+        "ajoute",
+        "10000",
+        "codes",
+        "erreur"
+      ]
+    },
+    {
+      "id": "erreurs_002",
+      "category": "Erreurs",
+      "module": "Erreurs",
+      "question": "Quel est le contenu principal de \"Exception non gérée dans xrtDiva\" dans le module Erreurs ?",
+      "expected_answer": "Si une exception se produit dans xrtDiva, un fichier dump est généré dans le dossier /divalto/dump. Un fichier .dmp est généré par exception, avec une limite de 10 fichiers .dmp au total (pour limiter la place disque occupée, un fichier .dmp occupant un volume assez conséquent).",
+      "difficulty": "moyen",
+      "source_files": [
+        "Exception_non_gérée_dans_xrtDiva.htm"
+      ],
+      "source_path": "data/Erreurs/Erreurs/Exception_non_gérée_dans_xrtDiva.htm",
+      "expected_keywords": [
+        "erreurs",
+        "exception",
+        "geree",
+        "xrtdiva",
+        "produit",
+        "fichier",
+        "dump",
+        "genere"
+      ]
+    },
+    {
+      "id": "erreurs_003",
+      "category": "Erreurs",
+      "module": "Erreurs",
+      "question": "Quels details importants sont presentes dans \"Familles d'erreurs Harmony\" pour le module Erreurs ?",
+      "expected_answer": "Erreurs signalées par le noyau d'Harmony Erreurs signalées par le réseau XLAN",
+      "difficulty": "difficile",
+      "source_files": [
+        "Familles_des_erreurs_Harmony.htm"
+      ],
+      "source_path": "data/Erreurs/Erreurs/Familles_des_erreurs_Harmony.htm",
+      "expected_keywords": [
+        "erreurs",
+        "familles",
+        "signalees",
+        "noyau",
+        "reseau",
+        "xlan"
+      ]
+    },
+    {
+      "id": "harmony_001",
+      "category": "Harmony",
+      "module": "Harmony",
+      "question": "Que couvre la page \"Comment utiliser l'aide ?\" dans le module Harmony ?",
+      "expected_answer": "Comment utiliser l'aide ?",
+      "difficulty": "facile",
+      "source_files": [
+        "Commentutiliserl_aide_.htm"
+      ],
+      "source_path": "data/Harmony/Harmony/Commentutiliserl_aide_.htm",
+      "expected_keywords": [
+        "utiliser",
+        "aide"
+      ]
+    },
+    {
+      "id": "harmony_002",
+      "category": "Harmony",
+      "module": "Harmony",
+      "question": "Quel est le contenu principal de \"Copier une rubrique d'aide dans le presse-papiers\" dans le module Harmony ?",
+      "expected_answer": "Pour copier dans le presse-papiers une rubrique d'aide de la fenêtre d'affichage des textes d'aide : Sélectionnez (à la souris) le texte à copier dans la rubrique et tapez la touche Ctrl+Inser ou Ctrl+C.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Copierunerubriqued_aidedanslepresse_papiers.htm"
+      ],
+      "source_path": "data/Harmony/Harmony/Copierunerubriqued_aidedanslepresse_papiers.htm",
+      "expected_keywords": [
+        "copier",
+        "rubrique",
+        "aide",
+        "presse",
+        "papiers",
+        "fenetre",
+        "affichage",
+        "textes"
+      ]
+    },
+    {
+      "id": "harmony_003",
+      "category": "Harmony",
+      "module": "Harmony",
+      "question": "Quels details importants sont presentes dans \"Imprimer une ou toutes les rubriques d'un livre\" pour le module Harmony ?",
+      "expected_answer": "Pour imprimer toutes les rubriques d'un livre, cliquez sur l'onglet Sommaire de l'aide de la fenêtre Rubriques d'aide , sélectionnez le livre concerné puis cliquez sur le bouton Imprimer .",
+      "difficulty": "difficile",
+      "source_files": [
+        "Imprimeruneoutouteslesrubriquesd_unlivre.htm"
+      ],
+      "source_path": "data/Harmony/Harmony/Imprimeruneoutouteslesrubriquesd_unlivre.htm",
+      "expected_keywords": [
+        "imprimer",
+        "rubriques",
+        "livre",
+        "cliquez",
+        "onglet",
+        "sommaire",
+        "aide",
+        "fenetre"
+      ]
+    },
+    {
+      "id": "harmonya_001",
+      "category": "harmonya",
+      "module": "harmonya",
+      "question": "Que couvre la page \"Configuration des éditions\" dans le module harmonya ?",
+      "expected_answer": "Configuration des éditions Une fonction du menu permet de configurer les éditions et ce, à n'importe quel moment. Toutefois, il faut avoir au préalable :",
+      "difficulty": "facile",
+      "source_files": [
+        "Configuration_des_éditions.htm"
+      ],
+      "source_path": "data/harmonya/hmenua/Configuration_des_éditions.htm",
+      "expected_keywords": [
+        "harmonya",
+        "configuration",
+        "editions",
+        "fonction",
+        "menu",
+        "permet",
+        "configurer",
+        "importe"
+      ]
+    },
+    {
+      "id": "harmonya_002",
+      "category": "harmonya",
+      "module": "harmonya",
+      "question": "Quel est le contenu principal de \"Fonctions du menu\" dans le module harmonya ?",
+      "expected_answer": "Gestion des choix du menu Choix d'un modèle d'imprimante",
+      "difficulty": "moyen",
+      "source_files": [
+        "Fonctionsdumenu.htm"
+      ],
+      "source_path": "data/harmonya/hmenua/Fonctionsdumenu.htm",
+      "expected_keywords": [
+        "harmonya",
+        "fonctions",
+        "menu",
+        "gestion",
+        "choix",
+        "modele",
+        "imprimante"
+      ]
+    },
+    {
+      "id": "harmonya_003",
+      "category": "harmonya",
+      "module": "harmonya",
+      "question": "Quels details importants sont presentes dans \"Gestion des choix du menu\" pour le module harmonya ?",
+      "expected_answer": "Libellé . Libellé désignant le choix dans le menu (50 caractères maximum). Si vous faites figurer le caractère & devant un caractère quelconque du libellé, ce dernier caractère sera souligné et pourra servir de raccourci clavier pour sélectionner le choix. Confidentialité . Code d'accès au choix (4 caractères quelconques). Si aucun code n'est saisi, le choix est accessible à tous. Sinon, l'utilisateur devra posséder ce code pour appeler le choix. Les choix confidentialisés, inaccessibles pour l'utilisateur, sont grisés au menu. L'utilisateur qui possède le code $$ peut appeler tous les choix du menu, quelque soit leur code d'accès. Les codes sont attribués aux utilisateurs par l'utilitaire X",
+      "difficulty": "difficile",
+      "source_files": [
+        "Gestiondeschoixdumenu.htm"
+      ],
+      "source_path": "data/harmonya/hmenua/Gestiondeschoixdumenu.htm",
+      "expected_keywords": [
+        "harmonya",
+        "gestion",
+        "choix",
+        "menu",
+        "libelle",
+        "designant",
+        "caracteres",
+        "maximum"
+      ]
+    },
+    {
+      "id": "hql_001",
+      "category": "hql",
+      "module": "hql",
+      "question": "Que couvre la page \"Chapitres\" dans le module hql ?",
+      "expected_answer": "Chapitres",
+      "difficulty": "facile",
+      "source_files": [
+        "Chapitres.htm"
+      ],
+      "source_path": "data/hql/hql/Chapitres.htm",
+      "expected_keywords": [
+        "chapitres"
+      ]
+    },
+    {
+      "id": "hql_002",
+      "category": "hql",
+      "module": "hql",
+      "question": "Quel est le contenu principal de \"Comptage\" dans le module hql ?",
+      "expected_answer": "La donnée HQL.NbFiches contient : Le nombre total de fiches sélectionnées en HQLFinListe",
+      "difficulty": "moyen",
+      "source_files": [
+        "Comptage.htm"
+      ],
+      "source_path": "data/hql/hql/Comptage.htm",
+      "expected_keywords": [
+        "comptage",
+        "donnee",
+        "nbfiches",
+        "contient",
+        "nombre",
+        "total",
+        "fiches",
+        "selectionnees"
+      ]
+    },
+    {
+      "id": "hql_003",
+      "category": "hql",
+      "module": "hql",
+      "question": "Quels details importants sont presentes dans \"Comptages et totalisations\" pour le module hql ?",
+      "expected_answer": "Comptages et totalisations",
+      "difficulty": "difficile",
+      "source_files": [
+        "Comptagesettotalisations.htm"
+      ],
+      "source_path": "data/hql/hql/Comptagesettotalisations.htm",
+      "expected_keywords": [
+        "comptages",
+        "totalisations"
+      ]
+    },
+    {
+      "id": "installation_001",
+      "category": "Installation",
+      "module": "Installation",
+      "question": "Que couvre la page \"Activation de l'accès aux API\" dans le module Installation ?",
+      "expected_answer": "Activation de l'accès aux API L’interface entre Harmony et G Suite se fait au moyen d’API mises à disposition par Google, mais qu’il faut activer au niveau de la console d’administration du compte G Suite ( https://admin.google.com )",
+      "difficulty": "facile",
+      "source_files": [
+        "activation_de_l_accès_aux_api.htm"
+      ],
+      "source_path": "data/Installation/Installation/activation_de_l_accès_aux_api.htm",
+      "expected_keywords": [
+        "installation",
+        "activation",
+        "acces",
+        "interface",
+        "suite",
+        "fait",
+        "moyen",
+        "mises"
+      ]
+    },
+    {
+      "id": "installation_002",
+      "category": "Installation",
+      "module": "Installation",
+      "question": "Quel est le contenu principal de \"Activation des API\" dans le module Installation ?",
+      "expected_answer": "Dans la console d'administration Google Cloud Platform (https://console.cloud.google.com/home), allez dans le menu \"API et Services\" puis le sous-menu \"Bibliothèque\". Les API à activer pour le lien avec Harmony sont les suivantes :",
+      "difficulty": "moyen",
+      "source_files": [
+        "activation_des_api.htm"
+      ],
+      "source_path": "data/Installation/Installation/activation_des_api.htm",
+      "expected_keywords": [
+        "installation",
+        "activation",
+        "console",
+        "administration",
+        "google",
+        "cloud",
+        "platform",
+        "https"
+      ]
+    },
+    {
+      "id": "installation_003",
+      "category": "Installation",
+      "module": "Installation",
+      "question": "Quels details importants sont presentes dans \"Affectations des droits aux utilisateurs\" pour le module Installation ?",
+      "expected_answer": "Affectations des droits aux utilisateurs",
+      "difficulty": "difficile",
+      "source_files": [
+        "affectations_des_droits_aux_utilisateurs.htm"
+      ],
+      "source_path": "data/Installation/Installation/affectations_des_droits_aux_utilisateurs.htm",
+      "expected_keywords": [
+        "installation",
+        "affectations",
+        "droits",
+        "utilisateurs"
+      ]
+    },
+    {
+      "id": "interfaceaccueil_001",
+      "category": "InterfaceAccueil",
+      "module": "InterfaceAccueil",
+      "question": "Que couvre la page \"Flux RSS\" dans le module InterfaceAccueil ?",
+      "expected_answer": "Indique si l'utilisateur à le droit de modifier le flux (valeurs : 0/1) La balise <Error> permet d'afficher une erreur par dessus le widget.",
+      "difficulty": "facile",
+      "source_files": [
+        "Flux_RSS.htm"
+      ],
+      "source_path": "data/InterfaceAccueil/ia/Flux_RSS.htm",
+      "expected_keywords": [
+        "interfaceaccueil",
+        "flux",
+        "indique",
+        "utilisateur",
+        "droit",
+        "modifier",
+        "valeurs",
+        "balise"
+      ]
+    },
+    {
+      "id": "interfaceaccueil_002",
+      "category": "InterfaceAccueil",
+      "module": "InterfaceAccueil",
+      "question": "Quel est le contenu principal de \"Fonctionnement général de l'interface d'accueil\" dans le module InterfaceAccueil ?",
+      "expected_answer": "Contrairement au reste de l'ERP, ce n'est pas le serveur qui reste maître et le client qui est attente. Dans l'interface d'accueil, c'est le serveur qui répond aux demandes du client.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Fonctionnement.htm"
+      ],
+      "source_path": "data/InterfaceAccueil/ia/Fonctionnement.htm",
+      "expected_keywords": [
+        "interfaceaccueil",
+        "fonctionnement",
+        "general",
+        "interface",
+        "accueil",
+        "contrairement",
+        "reste",
+        "serveur"
+      ]
+    },
+    {
+      "id": "interfaceaccueil_003",
+      "category": "InterfaceAccueil",
+      "module": "InterfaceAccueil",
+      "question": "Quels details importants sont presentes dans \"Introduction\" pour le module InterfaceAccueil ?",
+      "expected_answer": "L’utilisateur organise ses tâches et peut créer ses propres activités . La fonction de recherche dans les traitements offre un accès direct aux choix utilisés occasionnellement.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Introduction.htm"
+      ],
+      "source_path": "data/InterfaceAccueil/ia/Introduction.htm",
+      "expected_keywords": [
+        "interfaceaccueil",
+        "introduction",
+        "utilisateur",
+        "organise",
+        "taches",
+        "creer",
+        "propres",
+        "activites"
+      ]
+    },
+    {
+      "id": "interfacewindows_001",
+      "category": "InterfaceWindows",
+      "module": "InterfaceWindows",
+      "question": "Que couvre la page \"CtiClose\" dans le module InterfaceWindows ?",
+      "expected_answer": "L’instruction CtiClose ferme le module Cti. Elle doit être appelée en fin de programme.",
+      "difficulty": "facile",
+      "source_files": [
+        "CtiClose.htm"
+      ],
+      "source_path": "data/InterfaceWindows/Doc_InterfaceWindows/CtiClose.htm",
+      "expected_keywords": [
+        "interfacewindows",
+        "cticlose",
+        "instruction",
+        "ferme",
+        "elle",
+        "doit",
+        "appelee",
+        "programme"
+      ]
+    },
+    {
+      "id": "interfacewindows_002",
+      "category": "InterfaceWindows",
+      "module": "InterfaceWindows",
+      "question": "Quel est le contenu principal de \"CtiDial\" dans le module InterfaceWindows ?",
+      "expected_answer": "Numéro de téléphone à appeler. Dans le projet exemples.dhpt, le sous-projet cti.",
+      "difficulty": "moyen",
+      "source_files": [
+        "CtiDial.htm"
+      ],
+      "source_path": "data/InterfaceWindows/Doc_InterfaceWindows/CtiDial.htm",
+      "expected_keywords": [
+        "interfacewindows",
+        "ctidial",
+        "numero",
+        "telephone",
+        "appeler",
+        "projet",
+        "exemples",
+        "dhpt"
+      ]
+    },
+    {
+      "id": "interfacewindows_003",
+      "category": "InterfaceWindows",
+      "module": "InterfaceWindows",
+      "question": "Quels details importants sont presentes dans \"CtiDrop\" pour le module InterfaceWindows ?",
+      "expected_answer": "Dans le projet exemples.dhpt, le sous-projet cti.",
+      "difficulty": "difficile",
+      "source_files": [
+        "CtiDrop.htm"
+      ],
+      "source_path": "data/InterfaceWindows/Doc_InterfaceWindows/CtiDrop.htm",
+      "expected_keywords": [
+        "interfacewindows",
+        "ctidrop",
+        "projet",
+        "exemples",
+        "dhpt"
+      ]
+    },
+    {
+      "id": "lotusnotes_001",
+      "category": "LotusNotes",
+      "module": "LotusNotes",
+      "question": "Que couvre la page \"Accès aux contacts de Lotus Notes depuis DivaltoViewer\" dans le module LotusNotes ?",
+      "expected_answer": "Accès aux contacts de Lotus Notes depuis DivaltoViewer Dans la boîte de dialogue Envoyer vers de DivaltoViewer, cliquez sur le bouton Carnet d'adresses pour appeler Lotus Notes et afficher sa liste des contacts :",
+      "difficulty": "facile",
+      "source_files": [
+        "Accès_aux_contacts_de_Lotus_Notes_depuis_DivaltoViewer.htm"
+      ],
+      "source_path": "data/LotusNotes/Accès_aux_contacts_de_Lotus_Notes_depuis_DivaltoViewer.htm",
+      "expected_keywords": [
+        "lotusnotes",
+        "acces",
+        "contacts",
+        "lotus",
+        "notes",
+        "depuis",
+        "divaltoviewer",
+        "boite"
+      ]
+    },
+    {
+      "id": "lotusnotes_002",
+      "category": "LotusNotes",
+      "module": "LotusNotes",
+      "question": "Quel est le contenu principal de \"Ajout de la liste des contacts dans les rendez-vous\" dans le module LotusNotes ?",
+      "expected_answer": "Le masque standard des rendez-vous de Lotus Notes peut être modifié pour lui ajouter un accès à la liste des contacts (fonctionnalité non inclue en standard dans Lotus -alors qu'elle l'est dans Outlook- et intégrée à la CRM de Divalto). A cet effet, un modèle de la portion de masque écran à ajouter au masque des rendez-vous de Lotus est livré dans le fichier modèle (Notes Template file) Divalto_BoutonsCRM.ntf (situé dans le répertoire \\Divalto\\CRM_LotusNotes ou \\Har\\CRM_LotusNotes en version 5 de Divalto). Les copies d'écran suivantes (en version anglaise) montrent comment copier ce bout de masque puis le coller dans le masque Lotus.",
+      "difficulty": "moyen",
+      "source_files": [
+        "ajout_de_la_liste_des_contacts_dans_les_rendez-vous.htm"
+      ],
+      "source_path": "data/LotusNotes/ajout_de_la_liste_des_contacts_dans_les_rendez-vous.htm",
+      "expected_keywords": [
+        "lotusnotes",
+        "ajout",
+        "liste",
+        "contacts",
+        "rendez",
+        "vous",
+        "masque",
+        "standard"
+      ]
+    },
+    {
+      "id": "lotusnotes_003",
+      "category": "LotusNotes",
+      "module": "LotusNotes",
+      "question": "Quels details importants sont presentes dans \"Connecteur Harmony pour Lotus Notes\" pour le module LotusNotes ?",
+      "expected_answer": "De manière équivalente, Divalto communique avec Lotus Notes grâce à deux interfaces : l'interface standard Mapi ou l'interface native de Lotus dans le cas de la messagerie, cette même interface native dans le cas de la gestion d'informations personnelles. Le « Connecteur Harmony pour Lotus Notes » permet le dialogue entre Divalto et Lotus, via son interface native.",
+      "difficulty": "difficile",
+      "source_files": [
+        "connecteur_harmony_pour_lotus_notes.htm"
+      ],
+      "source_path": "data/LotusNotes/connecteur_harmony_pour_lotus_notes.htm",
+      "expected_keywords": [
+        "lotusnotes",
+        "connecteur",
+        "lotus",
+        "notes",
+        "maniere",
+        "equivalente",
+        "communique",
+        "grace"
+      ]
+    },
+    {
+      "id": "menus_001",
+      "category": "menus",
+      "module": "menus",
+      "question": "Que couvre la page \"Assistance à l'utilisation\" dans le module menus ?",
+      "expected_answer": "Assistance à l'utilisation Une aide en ligne expliquant en particulier l'l'utilisation des touches dans le menu peut être obtenue en tapant la touche Shift+F1 .",
+      "difficulty": "facile",
+      "source_files": [
+        "Assistance_l_utilisation.htm"
+      ],
+      "source_path": "data/menus/menus/Assistance_l_utilisation.htm",
+      "expected_keywords": [
+        "menus",
+        "assistance",
+        "utilisation",
+        "aide",
+        "ligne",
+        "expliquant",
+        "particulier",
+        "touches"
+      ]
+    },
+    {
+      "id": "menus_002",
+      "category": "menus",
+      "module": "menus",
+      "question": "Quel est le contenu principal de \"Choix de deuxième niveau ou de niveau inférieur\" dans le module menus ?",
+      "expected_answer": "Voici par exemple les sous-choix obtenus après avoir cliqué sur le choix principal \"Utilitaires\".",
+      "difficulty": "moyen",
+      "source_files": [
+        "Choixdedeuxi_meniveauoudeniveauinf_rieur.htm"
+      ],
+      "source_path": "data/menus/menus/Choixdedeuxi_meniveauoudeniveauinf_rieur.htm",
+      "expected_keywords": [
+        "menus",
+        "choix",
+        "deuxieme",
+        "niveau",
+        "inferieur",
+        "voici",
+        "exemple",
+        "obtenus"
+      ]
+    },
+    {
+      "id": "menus_003",
+      "category": "menus",
+      "module": "menus",
+      "question": "Quels details importants sont presentes dans \"Choix de premier niveau\" pour le module menus ?",
+      "expected_answer": "Pour abandonner le menu, frappez la touche Echap (ou F9 ) . Vous pouvez aussi directement fermer la fenêtre par le choix Fermeture du menu système ou en cliquant sur le bouton correspondant de la fenêtre Windows, ou par la touche Alt+F4 .",
+      "difficulty": "difficile",
+      "source_files": [
+        "Choixdepremierniveau.htm"
+      ],
+      "source_path": "data/menus/menus/Choixdepremierniveau.htm",
+      "expected_keywords": [
+        "menus",
+        "choix",
+        "premier",
+        "niveau",
+        "abandonner",
+        "menu",
+        "frappez",
+        "touche"
+      ]
+    },
+    {
+      "id": "miseenoeuvre_001",
+      "category": "Miseenoeuvre",
+      "module": "Miseenoeuvre",
+      "question": "Que couvre la page \"Aides utilisateur\" dans le module Miseenoeuvre ?",
+      "expected_answer": "Une application Harmony peut proposer une assistance contextuelle à trois niveaux : Premier niveau . Positionnez le curseur de la souris sur un objet du masque (bouton, variable, etc.) et gardez-le immobile quelques instants. Une bulle apparaît, expliquant généralement le rôle du bouton, la signification de la variable, etc.",
+      "difficulty": "facile",
+      "source_files": [
+        "Aidesutilisateur.htm"
+      ],
+      "source_path": "data/Miseenoeuvre/Miseenoeuvre/Aidesutilisateur.htm",
+      "expected_keywords": [
+        "miseenoeuvre",
+        "aides",
+        "utilisateur",
+        "application",
+        "proposer",
+        "assistance",
+        "contextuelle",
+        "trois"
+      ]
+    },
+    {
+      "id": "miseenoeuvre_002",
+      "category": "Miseenoeuvre",
+      "module": "Miseenoeuvre",
+      "question": "Quel est le contenu principal de \"Arbres\" dans le module Miseenoeuvre ?",
+      "expected_answer": "Nous appellerons niveau la position d'un élément dans la hiérarchie : les éléments à la base de l'arbre sont au 1 er niveau ; ils peuvent ensuite se décomposer en éléments de niveau 2, qui eux-mêmes peuvent se décomposer en éléments de niveau 3, et ainsi de suite.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Arbres.htm"
+      ],
+      "source_path": "data/Miseenoeuvre/Miseenoeuvre/Arbres.htm",
+      "expected_keywords": [
+        "miseenoeuvre",
+        "arbres",
+        "nous",
+        "appellerons",
+        "niveau",
+        "position",
+        "element",
+        "hierarchie"
+      ]
+    },
+    {
+      "id": "miseenoeuvre_003",
+      "category": "Miseenoeuvre",
+      "module": "Miseenoeuvre",
+      "question": "Quels details importants sont presentes dans \"Ascenseurs\" pour le module Miseenoeuvre ?",
+      "expected_answer": "Un ascenseur peut être horizontal ou vertical et il est divisé en cinq zones : Extrémités de l'ascenseur (flèches) . Les deux extrémités contiennent le dessin d'une flèche : flèches gauche et droite pour un ascenseur horizontal, flèches haute et basse pour un ascenseur vertical. Cliquer sur une flèche provoque un déplacement \"minimal\" du contenu de la fenêtre dans un sens ou dans l'autre (par exemple, un déplacement d'un élément dans le cas d'une liste).",
+      "difficulty": "difficile",
+      "source_files": [
+        "Ascenseurs.htm"
+      ],
+      "source_path": "data/Miseenoeuvre/Miseenoeuvre/Ascenseurs.htm",
+      "expected_keywords": [
+        "miseenoeuvre",
+        "ascenseurs",
+        "ascenseur",
+        "horizontal",
+        "vertical",
+        "divise",
+        "cinq",
+        "zones"
+      ]
+    },
+    {
+      "id": "modeles_001",
+      "category": "modeles",
+      "module": "modeles",
+      "question": "Que couvre la page \"Choix d'un modèle d'imprimante\" dans le module modeles ?",
+      "expected_answer": "Choix d'un modèle d'imprimante Pour choisir un modèle d'imprimante , tapez la touche F6 .",
+      "difficulty": "facile",
+      "source_files": [
+        "Choixd_unmod_led_imprimante.htm"
+      ],
+      "source_path": "data/modeles/modeles/Choixd_unmod_led_imprimante.htm",
+      "expected_keywords": [
+        "modeles",
+        "choix",
+        "modele",
+        "imprimante",
+        "choisir",
+        "tapez",
+        "touche"
+      ]
+    },
+    {
+      "id": "modeles_002",
+      "category": "modeles",
+      "module": "modeles",
+      "question": "Quel est le contenu principal de \"Gestion des modèles d'imprimante\" dans le module modeles ?",
+      "expected_answer": "La gestion des modèles se commande, depuis n'importe quel menu de type Hmenu (Harmony.dhop, par exemple), par la frappe de Shift+F6 . En suivant la procédure habituelle des zooms, vous pouvez créer de nouveaux modèles, consulter, modifier ou supprimer des modèles existants. Une fiche modèle contient les champs suivants :",
+      "difficulty": "moyen",
+      "source_files": [
+        "Gestiondesmod_lesd_imprimante.htm"
+      ],
+      "source_path": "data/modeles/modeles/Gestiondesmod_lesd_imprimante.htm",
+      "expected_keywords": [
+        "modeles",
+        "gestion",
+        "imprimante",
+        "commande",
+        "depuis",
+        "importe",
+        "menu",
+        "type"
+      ]
+    },
+    {
+      "id": "modeles_003",
+      "category": "modeles",
+      "module": "modeles",
+      "question": "Quels details importants sont presentes dans \"Modèle par défaut\" pour le module modeles ?",
+      "expected_answer": "Si aucun modèle n'est indiqué dans les paramètres généraux, du modèle précisé au niveau du fichier Divalto.ini (clé ModeleDefaut du chapitre [System], modifiable par xDivaltoMajIni). Si cette clé est absente de Divalto.ini, du modèle de nom STD.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Mod_lepard_faut.htm"
+      ],
+      "source_path": "data/modeles/modeles/Mod_lepard_faut.htm",
+      "expected_keywords": [
+        "modeles",
+        "modele",
+        "defaut",
+        "aucun",
+        "indique",
+        "parametres",
+        "generaux",
+        "precise"
+      ]
+    },
+    {
+      "id": "odbc_001",
+      "category": "Odbc",
+      "module": "Odbc",
+      "question": "Que couvre la page \"Annexes\" dans le module Odbc ?",
+      "expected_answer": "Annexes",
+      "difficulty": "facile",
+      "source_files": [
+        "Annexes.htm"
+      ],
+      "source_path": "data/Odbc/Odbc/Annexes.htm",
+      "expected_keywords": [
+        "odbc",
+        "annexes"
+      ]
+    },
+    {
+      "id": "odbc_002",
+      "category": "Odbc",
+      "module": "Odbc",
+      "question": "Quel est le contenu principal de \"Caractéristiques et limites du Serveur ODBC Harmony\" dans le module Odbc ?",
+      "expected_answer": "Le driver ODBC Harmony ( xodbcil.dll ) utilise la dll dhXisam.dll pour accéder aux fichiers, ceux-ci pouvant être en local ou sur un serveur XLAN. A chaque connexion, le serveur ODBC Harmony utilise donc une tâche Harmony. Le nombre de connexions possibles sur un ordinateur est donc limité à 998 (Tâches Harmony de 2 à 999).",
+      "difficulty": "moyen",
+      "source_files": [
+        "Caract_ristiques_et_limites_du_Serveur_ODBC_Harmony.htm"
+      ],
+      "source_path": "data/Odbc/Odbc/Caract_ristiques_et_limites_du_Serveur_ODBC_Harmony.htm",
+      "expected_keywords": [
+        "odbc",
+        "caracteristiques",
+        "limites",
+        "serveur",
+        "driver",
+        "xodbcil",
+        "utilise",
+        "dhxisam"
+      ]
+    },
+    {
+      "id": "odbc_003",
+      "category": "Odbc",
+      "module": "Odbc",
+      "question": "Quels details importants sont presentes dans \"Champs d'une vue\" pour le module Odbc ?",
+      "expected_answer": "La constitution de la vue s’effectue par simple sélection des champs des différentes tables liées. Sélection des champs de la vue",
+      "difficulty": "difficile",
+      "source_files": [
+        "Champs_d_une_vue.htm"
+      ],
+      "source_path": "data/Odbc/Odbc/Champs_d_une_vue.htm",
+      "expected_keywords": [
+        "odbc",
+        "champs",
+        "constitution",
+        "effectue",
+        "simple",
+        "selection",
+        "differentes",
+        "tables"
+      ]
+    },
+    {
+      "id": "recordsql_001",
+      "category": "RecordSql",
+      "module": "RecordSql",
+      "question": "Que couvre la page \"RecordSql.AddClause\" dans le module RecordSql ?",
+      "expected_answer": "RecordSql.Where.AddClause Famille Thème RecordSql.Having.AddClause",
+      "difficulty": "facile",
+      "source_files": [
+        "AddClause.htm"
+      ],
+      "source_path": "data/RecordSql/AddClause.htm",
+      "expected_keywords": [
+        "recordsql",
+        "addclause",
+        "where",
+        "famille",
+        "theme",
+        "having"
+      ]
+    },
+    {
+      "id": "recordsql_002",
+      "category": "RecordSql",
+      "module": "RecordSql",
+      "question": "Quel est le contenu principal de \"RecordSql.AddCondition\" dans le module RecordSql ?",
+      "expected_answer": "Les méthodes AddCondition et RemoveCondition s’appliquent aux méthodes Where ou Having du RecordSQL ( Record.where.AddCondition, Record.Having.RemoveCondition). A partir des critères élémentaires (les cases des balises <where> ou <having>), il est possible grâce à la méthode AddCondition d’effectuer un filtrage par une combinaison logique de ses critères élémentaires.",
+      "difficulty": "moyen",
+      "source_files": [
+        "AddCondition.htm"
+      ],
+      "source_path": "data/RecordSql/AddCondition.htm",
+      "expected_keywords": [
+        "recordsql",
+        "addcondition",
+        "methodes",
+        "removecondition",
+        "appliquent",
+        "where",
+        "having",
+        "record"
+      ]
+    },
+    {
+      "id": "recordsql_003",
+      "category": "RecordSql",
+      "module": "RecordSql",
+      "question": "Quels details importants sont presentes dans \"RecordSql.AddExcept\" pour le module RecordSql ?",
+      "expected_answer": "Cela permet de retirer aux résultats de la première requête le résultat de la seconde. Long RecordSql. AddExcept ( InstanceRecordSql )",
+      "difficulty": "difficile",
+      "source_files": [
+        "AddExcept.htm"
+      ],
+      "source_path": "data/RecordSql/AddExcept.htm",
+      "expected_keywords": [
+        "recordsql",
+        "addexcept",
+        "permet",
+        "retirer",
+        "resultats",
+        "premiere",
+        "requete",
+        "resultat"
+      ]
+    },
+    {
+      "id": "reseaux_001",
+      "category": "reseaux",
+      "module": "reseaux",
+      "question": "Que couvre la page \"Autres conseils pour la connexion de postes délocalisés\" dans le module reseaux ?",
+      "expected_answer": "Les temps de réponse sur les postes distants sont conditionnés par la bande passante de la liaison entre les sites. Une liaison à 64 Kbits / s permet de transférer 6 Ko par seconde entre le serveur de données et le client (à titre de comparaison, le débit moyen d'une disquette est de l'ordre de 20 Ko par seconde). De plus, la bande passante peut être partagée par plusieurs utilisateurs ou tâches.",
+      "difficulty": "facile",
+      "source_files": [
+        "Autresconseilspourlaconnexiondepostesd_localis_s.htm"
+      ],
+      "source_path": "data/reseaux/reseaux/Autresconseilspourlaconnexiondepostesd_localis_s.htm",
+      "expected_keywords": [
+        "reseaux",
+        "autres",
+        "conseils",
+        "connexion",
+        "postes",
+        "delocalises",
+        "temps",
+        "reponse"
+      ]
+    },
+    {
+      "id": "reseaux_002",
+      "category": "reseaux",
+      "module": "reseaux",
+      "question": "Quel est le contenu principal de \"Configuration du serveur de données\" dans le module reseaux ?",
+      "expected_answer": "Le chapitre [System] de Divalto.ini peut être modifié sur le serveur de données ( par xDivaltoMajIni ). Il contient tout d'abord un paramètre spécifique réseau : NumeroService . Ce paramètre représente le numéro de port TCP/IP du serveur Xlan. Il doit obligatoirement être renseigné. La valeur 1235 est proposée par défaut. En cas de conflit avec un service existant, il faut changer ce numéro.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Configurationduserveur2.htm"
+      ],
+      "source_path": "data/reseaux/reseaux/Configurationduserveur2.htm",
+      "expected_keywords": [
+        "reseaux",
+        "configuration",
+        "serveur",
+        "donnees",
+        "chapitre",
+        "system",
+        "modifie",
+        "xdivaltomajini"
+      ]
+    },
+    {
+      "id": "reseaux_003",
+      "category": "reseaux",
+      "module": "reseaux",
+      "question": "Quels details importants sont presentes dans \"Connexion à un poste délocalisé\" pour le module reseaux ?",
+      "expected_answer": "Une option du protocole TCP/IP permet de mettre en place une surveillance de la connexion entre le client et le serveur. Si cette option est active, le protocole TCP/IP envoie régulièrement une trame du serveur vers le client afin de vérifier que ce dernier est toujours présent. Cette trame est envoyée s'il n'y a pas de dialogue entre le client et le serveur pendant un certain temps.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Connexion_unposted_localis_.htm"
+      ],
+      "source_path": "data/reseaux/reseaux/Connexion_unposted_localis_.htm",
+      "expected_keywords": [
+        "reseaux",
+        "connexion",
+        "poste",
+        "delocalise",
+        "option",
+        "protocole",
+        "permet",
+        "mettre"
+      ]
+    },
+    {
+      "id": "search_001",
+      "category": "Search",
+      "module": "Search",
+      "question": "Que couvre la page \"Affichage\" dans le module Search ?",
+      "expected_answer": "Le choix \"Affichage\" du menu propose Afficher l’état général du serveur",
+      "difficulty": "facile",
+      "source_files": [
+        "Affichage.htm"
+      ],
+      "source_path": "data/Search/Affichage.htm",
+      "expected_keywords": [
+        "search",
+        "affichage",
+        "choix",
+        "menu",
+        "propose",
+        "afficher",
+        "etat",
+        "general"
+      ]
+    },
+    {
+      "id": "search_002",
+      "category": "Search",
+      "module": "Search",
+      "question": "Quel est le contenu principal de \"Appel d'un ZoomSQL pour afficher un document\" dans le module Search ?",
+      "expected_answer": "Le ZoomSQL peut être un choix judicieux pour afficher un document résultat d'une recherche. Le ZoomSQL a été spécialement adapté pour gérer cette nouvelle fonctionnalité, en effet dans ce mode, le zoom n'affiche qu'une seule fiche.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Appel_d_un_ZoomSQL_pour_afficher_un_document.htm"
+      ],
+      "source_path": "data/Search/Appel_d_un_ZoomSQL_pour_afficher_un_document.htm",
+      "expected_keywords": [
+        "search",
+        "appel",
+        "zoomsql",
+        "afficher",
+        "document",
+        "choix",
+        "judicieux",
+        "resultat"
+      ]
+    },
+    {
+      "id": "search_003",
+      "category": "Search",
+      "module": "Search",
+      "question": "Quels details importants sont presentes dans \"Application associée à un document\" pour le module Search ?",
+      "expected_answer": "A l’exécution de cette fonction, il faut sauvegarder le contexte, car cette fonction peut-être appelée depuis le menu Divalto par exemple. Paramètre de la fonction associée à un document",
+      "difficulty": "difficile",
+      "source_files": [
+        "Application_associée_à_un_document.htm"
+      ],
+      "source_path": "data/Search/Application_associée_à_un_document.htm",
+      "expected_keywords": [
+        "search",
+        "application",
+        "associee",
+        "document",
+        "execution",
+        "fonction",
+        "faut",
+        "sauvegarder"
+      ]
+    },
+    {
+      "id": "services_001",
+      "category": "Services",
+      "module": "Services",
+      "question": "Que couvre la page \"Algorithme général de XBAL\" dans le module Services ?",
+      "expected_answer": "Algorithme général de XBAL XBAL lit la boîte de réception des messages. Il ne traite que les messages non lus. Il récupère l'objet du message qui doit contenir une chaîne de commande de type HMP.",
+      "difficulty": "facile",
+      "source_files": [
+        "Algorithme_g_n_ral_de_XBAL.htm"
+      ],
+      "source_path": "data/Services/Services/Algorithme_g_n_ral_de_XBAL.htm",
+      "expected_keywords": [
+        "services",
+        "algorithme",
+        "general",
+        "xbal",
+        "boite",
+        "reception",
+        "messages",
+        "traite"
+      ]
+    },
+    {
+      "id": "services_002",
+      "category": "Services",
+      "module": "Services",
+      "question": "Quel est le contenu principal de \"Architecture\" dans le module Services ?",
+      "expected_answer": "Architecture Architecture",
+      "difficulty": "moyen",
+      "source_files": [
+        "Architecture.htm"
+      ],
+      "source_path": "data/Services/Services/Architecture.htm",
+      "expected_keywords": [
+        "services",
+        "architecture"
+      ]
+    },
+    {
+      "id": "services_003",
+      "category": "Services",
+      "module": "Services",
+      "question": "Quels details importants sont presentes dans \"Client Diva d'un service Web Diva\" pour le module Services ?",
+      "expected_answer": "Elle comporte 4 paramètres : L’URL de la page WebServiceDiva.asmx du serveur Web",
+      "difficulty": "difficile",
+      "source_files": [
+        "Client_Diva_d_un_service_Web_Diva_.htm"
+      ],
+      "source_path": "data/Services/Services/Client_Diva_d_un_service_Web_Diva_.htm",
+      "expected_keywords": [
+        "services",
+        "client",
+        "diva",
+        "service",
+        "elle",
+        "comporte",
+        "parametres",
+        "webservicediva"
+      ]
+    },
+    {
+      "id": "textesriches_001",
+      "category": "TextesRiches",
+      "module": "TextesRiches",
+      "question": "Que couvre la page \"<Objet> (texte riche uniquement)\" dans le module TextesRiches ?",
+      "expected_answer": "<Objet> (texte riche uniquement) Lorsque vous sélectionnez un objet OLE, le menu présente un dernier choix mentionnant le type de l'objet. Si vous activez ce choix, un sous-menu apparaît avec la liste des actions possibles sur cet objet OLE.",
+      "difficulty": "facile",
+      "source_files": [
+        "_Objet__textericheuniquement_.htm"
+      ],
+      "source_path": "data/TextesRiches/TextesRiches/_Objet__textericheuniquement_.htm",
+      "expected_keywords": [
+        "textesriches",
+        "objet",
+        "texte",
+        "riche",
+        "uniquement",
+        "lorsque",
+        "vous",
+        "selectionnez"
+      ]
+    },
+    {
+      "id": "textesriches_002",
+      "category": "TextesRiches",
+      "module": "TextesRiches",
+      "question": "Quel est le contenu principal de \"Accessibilité\" dans le module TextesRiches ?",
+      "expected_answer": "Certaines des fonctions décrites ci-après ne concernent que les \"textes riches\". Elle seront explicitement signalées par la mention \"texte riche uniquement\". Les fonctions ne comportant pas cette mention s'appliquent aussi bien aux \"textes riches\" qu'aux \"textes simples\".",
+      "difficulty": "moyen",
+      "source_files": [
+        "Accessibilit_.htm"
+      ],
+      "source_path": "data/TextesRiches/TextesRiches/Accessibilit_.htm",
+      "expected_keywords": [
+        "textesriches",
+        "accessibilite",
+        "certaines",
+        "fonctions",
+        "decrites",
+        "apres",
+        "concernent",
+        "textes"
+      ]
+    },
+    {
+      "id": "textesriches_003",
+      "category": "TextesRiches",
+      "module": "TextesRiches",
+      "question": "Quels details importants sont presentes dans \"Aide\" pour le module TextesRiches ?",
+      "expected_answer": "Ce choix équivaut à la frappe de Shift+F1 . Il appelle l'aide fenêtrée de l'application. Si le choix est grisé, cela signifie qu'aucune aide n'a été prévue à cet endroit par le concepteur.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Aide.htm"
+      ],
+      "source_path": "data/TextesRiches/TextesRiches/Aide.htm",
+      "expected_keywords": [
+        "textesriches",
+        "aide",
+        "choix",
+        "equivaut",
+        "frappe",
+        "shift",
+        "appelle",
+        "fenetree"
+      ]
+    },
+    {
+      "id": "unitesv24_001",
+      "category": "UnitesV24",
+      "module": "UnitesV24",
+      "question": "Que couvre la page \"Paramétrage d'une unité V24\" dans le module UnitesV24 ?",
+      "expected_answer": "Paramétrage d'une unité V24 Lorsque vous déclarez une unité de type V24, vous devez renseigner les champs suivants :",
+      "difficulty": "facile",
+      "source_files": [
+        "Param_traged_uneunit_V24.htm"
+      ],
+      "source_path": "data/UnitesV24/UnitesV24/Param_traged_uneunit_V24.htm",
+      "expected_keywords": [
+        "unitesv24",
+        "parametrage",
+        "unite",
+        "lorsque",
+        "vous",
+        "declarez",
+        "type",
+        "devez"
+      ]
+    },
+    {
+      "id": "unitesv24_002",
+      "category": "UnitesV24",
+      "module": "UnitesV24",
+      "question": "Quel est le contenu principal de \"Voies V24 et imprimante parallèle\" dans le module UnitesV24 ?",
+      "expected_answer": "Il existe deux cas pour lesquels vous devez déclarer une voie de type V24 : Utilisation d'un logiciel de communication.",
+      "difficulty": "moyen",
+      "source_files": [
+        "VoiesV24etimprimanteparall_le.htm"
+      ],
+      "source_path": "data/UnitesV24/UnitesV24/VoiesV24etimprimanteparall_le.htm",
+      "expected_keywords": [
+        "unitesv24",
+        "voies",
+        "imprimante",
+        "parallele",
+        "existe",
+        "deux",
+        "lesquels",
+        "vous"
+      ]
+    },
+    {
+      "id": "unitesv24_003",
+      "category": "UnitesV24",
+      "module": "UnitesV24",
+      "question": "Quels details importants sont presentes dans \"Paramétrage d'une unité V24\" pour le module UnitesV24 ?",
+      "expected_answer": "Il s'agit du nom Windows du port d'entrée-sortie. En général : COM1: COM2: … (voies série)",
+      "difficulty": "difficile",
+      "source_files": [
+        "Param_traged_uneunit_V24.htm"
+      ],
+      "source_path": "data/UnitesV24/UnitesV24/Param_traged_uneunit_V24.htm",
+      "expected_keywords": [
+        "unitesv24",
+        "parametrage",
+        "unite",
+        "agit",
+        "windows",
+        "port",
+        "entree",
+        "sortie"
+      ]
+    },
+    {
+      "id": "utilitaires_001",
+      "category": "utilitaires",
+      "module": "utilitaires",
+      "question": "Que couvre la page \"HARMONY : Menu d'Harmony\" dans le module utilitaires ?",
+      "expected_answer": "Un menu des différents outils d'Harmony peut être obtenu en appelant le programme Harmony.dhop . Le fonctionnement du menu lui-même est documenté dans le livre \" Menu Harmony : Guide d'utilisation \". Ce menu propose en particulier les choix suivants :",
+      "difficulty": "facile",
+      "source_files": [
+        "HARMONY_Menud_Harmony.htm"
+      ],
+      "source_path": "data/utilitaires/utilitaires/HARMONY_Menud_Harmony.htm",
+      "expected_keywords": [
+        "utilitaires",
+        "menu",
+        "differents",
+        "outils",
+        "obtenu",
+        "appelant",
+        "programme",
+        "dhop"
+      ]
+    },
+    {
+      "id": "utilitaires_002",
+      "category": "utilitaires",
+      "module": "utilitaires",
+      "question": "Quel est le contenu principal de \"LISCAR : Test d'impression en mode caractères\" dans le module utilitaires ?",
+      "expected_answer": "Le programme Liscar fait un test d'édition en mode caractères.",
+      "difficulty": "moyen",
+      "source_files": [
+        "LISCAR_Testd_impressionenmodecaract_res.htm"
+      ],
+      "source_path": "data/utilitaires/utilitaires/LISCAR_Testd_impressionenmodecaract_res.htm",
+      "expected_keywords": [
+        "utilitaires",
+        "liscar",
+        "test",
+        "impression",
+        "mode",
+        "caracteres",
+        "programme",
+        "fait"
+      ]
+    },
+    {
+      "id": "utilitaires_003",
+      "category": "utilitaires",
+      "module": "utilitaires",
+      "question": "Quels details importants sont presentes dans \"XCMU et XCMU2 : Conversion de fichiers Harmony\" pour le module utilitaires ?",
+      "expected_answer": "Ces programmes peuvent être utilisés par exemple pour constituer un fichier de remises en banque lisible par les ordinateurs des banques. Xcmu et Xcmu2 diffèrent par la méthode de stockage des enregistrements dans le fichier Dos :",
+      "difficulty": "difficile",
+      "source_files": [
+        "XCMUetXCMU2_ConversiondefichiersHarmony.htm"
+      ],
+      "source_path": "data/utilitaires/utilitaires/XCMUetXCMU2_ConversiondefichiersHarmony.htm",
+      "expected_keywords": [
+        "utilitaires",
+        "xcmu",
+        "xcmu2",
+        "conversion",
+        "fichiers",
+        "programmes",
+        "utilises",
+        "exemple"
+      ]
+    },
+    {
+      "id": "xconsole_001",
+      "category": "Xconsole",
+      "module": "Xconsole",
+      "question": "Que couvre la page \"Actions\" dans le module Xconsole ?",
+      "expected_answer": "Envoyer un message à tous les utilisateurs connectés . L’envoi d’un message à tous les utilisateurs connectés permet à l’administrateur du site d’informer l’ensemble des utilisateurs. Par exemple : N’oubliez pas le pot de Willy à 12 heures.",
+      "difficulty": "facile",
+      "source_files": [
+        "Actions.htm"
+      ],
+      "source_path": "data/Xconsole/Xconsole/Actions.htm",
+      "expected_keywords": [
+        "xconsole",
+        "actions",
+        "envoyer",
+        "message",
+        "utilisateurs",
+        "connectes",
+        "envoi",
+        "permet"
+      ]
+    },
+    {
+      "id": "xconsole_002",
+      "category": "Xconsole",
+      "module": "Xconsole",
+      "question": "Quel est le contenu principal de \"Compteurs\" dans le module Xconsole ?",
+      "expected_answer": "Le nombre de licences utilisées par des sessions actives rapporté au nombre de sessions totales est affiché pour les licences concurrentes « Divalto WEB ». Les valeurs maximales atteintes correspondent aux valeurs maximum depuis la dernière initialisation des compteurs qui est affichée dans la première ligne du tableau.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Compteurs.htm"
+      ],
+      "source_path": "data/Xconsole/Xconsole/Compteurs.htm",
+      "expected_keywords": [
+        "xconsole",
+        "compteurs",
+        "nombre",
+        "licences",
+        "utilisees",
+        "sessions",
+        "actives",
+        "rapporte"
+      ]
+    },
+    {
+      "id": "xconsole_003",
+      "category": "Xconsole",
+      "module": "Xconsole",
+      "question": "Quels details importants sont presentes dans \"Etat système\" pour le module Xconsole ?",
+      "expected_answer": "pour un utilisateur, connaître les programmes en cours, puis pour un de ces programmes, la liste des fichiers ouverts. pour un programme, quels sont les utilisateurs en cours et quels sont les fichiers ouverts.",
+      "difficulty": "difficile",
+      "source_files": [
+        "EtatSysteme.htm"
+      ],
+      "source_path": "data/Xconsole/Xconsole/EtatSysteme.htm",
+      "expected_keywords": [
+        "xconsole",
+        "etat",
+        "systeme",
+        "utilisateur",
+        "connaitre",
+        "programmes",
+        "cours",
+        "puis"
+      ]
+    },
+    {
+      "id": "xdiva_001",
+      "category": "Xdiva",
+      "module": "Xdiva",
+      "question": "Que couvre la page \"Xwin-Programmation\" dans le module Xdiva ?",
+      "expected_answer": "Xwin - Atelier de développement Harmony - Programmation",
+      "difficulty": "facile",
+      "source_files": [
+        "Xwin_Programmation.htm"
+      ],
+      "source_path": "data/Xdiva/Xdiva/Xwin_Programmation.htm",
+      "expected_keywords": [
+        "xdiva",
+        "xwin",
+        "programmation",
+        "atelier",
+        "developpement"
+      ]
+    },
+    {
+      "id": "xdiva_002",
+      "category": "Xdiva",
+      "module": "Xdiva",
+      "question": "Quel est le contenu principal de \"Xwin-Programmation\" dans le module Xdiva ?",
+      "expected_answer": "Xwin - Atelier de développement Harmony - Programmation",
+      "difficulty": "moyen",
+      "source_files": [
+        "Xwin_Programmation.htm"
+      ],
+      "source_path": "data/Xdiva/Xdiva/Xwin_Programmation.htm",
+      "expected_keywords": [
+        "xdiva",
+        "xwin",
+        "programmation",
+        "atelier",
+        "developpement"
+      ]
+    },
+    {
+      "id": "xdiva_003",
+      "category": "Xdiva",
+      "module": "Xdiva",
+      "question": "Quels details importants sont presentes dans \"Xwin-Programmation\" pour le module Xdiva ?",
+      "expected_answer": "Xwin - Atelier de développement Harmony - Programmation",
+      "difficulty": "difficile",
+      "source_files": [
+        "Xwin_Programmation.htm"
+      ],
+      "source_path": "data/Xdiva/Xdiva/Xwin_Programmation.htm",
+      "expected_keywords": [
+        "xdiva",
+        "xwin",
+        "programmation",
+        "atelier",
+        "developpement"
+      ]
+    },
+    {
+      "id": "xdiva0_001",
+      "category": "xdiva0",
+      "module": "xdiva0",
+      "question": "Que couvre la page \"Appel de fonctions par le nom\" dans le module xdiva0 ?",
+      "expected_answer": "Appel de fonctions par le nom Diva offre la possibilité d'appeler une fonction/procédure dont le nom n'est pas connu à la compilation, mais uniquement à l'exécution.",
+      "difficulty": "facile",
+      "source_files": [
+        "Appeldefonctionsparlenom.htm"
+      ],
+      "source_path": "data/xdiva0/xdiva0/Appeldefonctionsparlenom.htm",
+      "expected_keywords": [
+        "xdiva0",
+        "appel",
+        "fonctions",
+        "diva",
+        "offre",
+        "possibilite",
+        "appeler",
+        "fonction"
+      ]
+    },
+    {
+      "id": "xdiva0_002",
+      "category": "xdiva0",
+      "module": "xdiva0",
+      "question": "Quel est le contenu principal de \"Appels de programmes\" dans le module xdiva0 ?",
+      "expected_answer": "Le programme appelé est exécuté dans une autre tâche Harmony avec le même contexte (chemins implicites etc.) que le programme appelant. L'exécution du programme appelant est généralement suspendue jusqu'à la fin de l'exécution du programme appelé. Une option permet également de lancer un programme et de continuer l'exécution du programme appelant sans attendre que le nouveau programme soit terminé. Les deux programmes s'exécutent alors de façon autonome.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Appelsdeprogrammes.htm"
+      ],
+      "source_path": "data/xdiva0/xdiva0/Appelsdeprogrammes.htm",
+      "expected_keywords": [
+        "xdiva0",
+        "appels",
+        "programmes",
+        "programme",
+        "appele",
+        "execute",
+        "autre",
+        "tache"
+      ]
+    },
+    {
+      "id": "xdiva0_003",
+      "category": "xdiva0",
+      "module": "xdiva0",
+      "question": "Quels details importants sont presentes dans \"Arbitrage de l'ordre d'appel des fonctions\" pour le module xdiva0 ?",
+      "expected_answer": "le standard appelle la procédure MaProc en utilisant GetAdressProcedure. La procédure MaProc n'existe pas dans le standard. Plusieurs add-ons déclarent la procédure MaProc en public. Si l'intégrateur surcharge cette procédure l'exécuteur ne sais pas quoi faire. A la compilation il y aura une erreur Dans ce cas, il faut obligatoirement surcharger la procédure et utiliser la nouvelle écriture : standard.nom_de_laddOn.procedure",
+      "difficulty": "difficile",
+      "source_files": [
+        "Arbitrage_de_l_ordre_d_appel_des_fonctions.htm"
+      ],
+      "source_path": "data/xdiva0/xdiva0/Arbitrage_de_l_ordre_d_appel_des_fonctions.htm",
+      "expected_keywords": [
+        "xdiva0",
+        "arbitrage",
+        "ordre",
+        "appel",
+        "fonctions",
+        "standard",
+        "appelle",
+        "procedure"
+      ]
+    },
+    {
+      "id": "xdiva1_001",
+      "category": "xdiva1",
+      "module": "xdiva1",
+      "question": "Que couvre la page \":=\" dans le module xdiva1 ?",
+      "expected_answer": ":= := Voir Opérateurs : résumé = Affectation",
+      "difficulty": "facile",
+      "source_files": [
+        "_2pegal.htm"
+      ],
+      "source_path": "data/xdiva1/xdiva1/_2pegal.htm",
+      "expected_keywords": [
+        "xdiva1",
+        "voir",
+        "operateurs",
+        "resume",
+        "affectation"
+      ]
+    },
+    {
+      "id": "xdiva1_002",
+      "category": "xdiva1",
+      "module": "xdiva1",
+      "question": "Quel est le contenu principal de \"[]\" dans le module xdiva1 ?",
+      "expected_answer": "Le type des données se trouvant à l'intérieur des crochets est quelconque. La concaténation renvoie toujours un résultat de type alphanumérique.",
+      "difficulty": "moyen",
+      "source_files": [
+        "__12.htm"
+      ],
+      "source_path": "data/xdiva1/xdiva1/__12.htm",
+      "expected_keywords": [
+        "xdiva1",
+        "type",
+        "donnees",
+        "trouvant",
+        "interieur",
+        "crochets",
+        "quelconque",
+        "concatenation"
+      ]
+    },
+    {
+      "id": "xdiva1_003",
+      "category": "xdiva1",
+      "module": "xdiva1",
+      "question": "Quels details importants sont presentes dans \"= Affectation\" pour le module xdiva1 ?",
+      "expected_answer": "Il est possible d'affecter tous les types entre eux, le type de la variable à gauche du signe = déterminant le type de l'affectation. Voir également les Opérateurs d'affectation qui permettent de combiner une opération arithmétique avec l'affectation.",
+      "difficulty": "difficile",
+      "source_files": [
+        "_Affectation.htm"
+      ],
+      "source_path": "data/xdiva1/xdiva1/_Affectation.htm",
+      "expected_keywords": [
+        "xdiva1",
+        "affectation",
+        "possible",
+        "affecter",
+        "types",
+        "type",
+        "variable",
+        "gauche"
+      ]
+    },
+    {
+      "id": "xgenzoom_001",
+      "category": "xgenzoom",
+      "module": "xgenzoom",
+      "question": "Que couvre la page \"Générateur de zoom\" dans le module xgenzoom ?",
+      "expected_answer": "L'utilitaire xGenZoom.dhop permet, à partir d'une table décrite dans le dictionnaire des données, de générer un zoom sur cette table. Grâce à un haut niveau de paramétrage et de personnalisation, le zoom produit par le générateur est rapidement exploitable.",
+      "difficulty": "facile",
+      "source_files": [
+        "Générateur_de_zoom.htm"
+      ],
+      "source_path": "data/xgenzoom/Générateur_de_zoom.htm",
+      "expected_keywords": [
+        "xgenzoom",
+        "generateur",
+        "zoom",
+        "utilitaire",
+        "dhop",
+        "permet",
+        "partir",
+        "table"
+      ]
+    },
+    {
+      "id": "xgenzoom_002",
+      "category": "xgenzoom",
+      "module": "xgenzoom",
+      "question": "Quel est le contenu principal de \"Mise en oeuvre du générateur de zoom\" dans le module xgenzoom ?",
+      "expected_answer": "Remarque préliminaire : Les fonctions de Xwin associées au générateur de zoom nécessitent le paramétrage préalable du générateur (au niveau des propriétés du projet et du dictionnaire des données). Pour faire appel à ces fonctions :",
+      "difficulty": "moyen",
+      "source_files": [
+        "Mise_en_oeuvre_du_générateur_de_zoom.htm"
+      ],
+      "source_path": "data/xgenzoom/Mise_en_oeuvre_du_générateur_de_zoom.htm",
+      "expected_keywords": [
+        "xgenzoom",
+        "mise",
+        "oeuvre",
+        "generateur",
+        "zoom",
+        "remarque",
+        "preliminaire",
+        "fonctions"
+      ]
+    },
+    {
+      "id": "xgenzoom_003",
+      "category": "xgenzoom",
+      "module": "xgenzoom",
+      "question": "Quels details importants sont presentes dans \"Paramétrage au lancement de la génération\" pour le module xgenzoom ?",
+      "expected_answer": "Nom de la feuille de styles. Nom du modèle de présentation dans cette feuille de styles.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Paramétrage_au_lancement_de_la_génération.htm"
+      ],
+      "source_path": "data/xgenzoom/Paramétrage_au_lancement_de_la_génération.htm",
+      "expected_keywords": [
+        "xgenzoom",
+        "parametrage",
+        "lancement",
+        "generation",
+        "feuille",
+        "styles",
+        "modele",
+        "presentation"
+      ]
+    },
+    {
+      "id": "xharview_001",
+      "category": "Xharview",
+      "module": "Xharview",
+      "question": "Que couvre la page \"Paramétrage\" dans le module Xharview ?",
+      "expected_answer": "Paramétrage d'un agent d'impression. 1. Paramétrage d'un format pour le spool en mode \"Agent d'impression\"",
+      "difficulty": "facile",
+      "source_files": [
+        "Paramétrage.htm"
+      ],
+      "source_path": "data/Xharview/Paramétrage.htm",
+      "expected_keywords": [
+        "xharview",
+        "parametrage",
+        "agent",
+        "impression",
+        "format",
+        "spool",
+        "mode"
+      ]
+    },
+    {
+      "id": "xharview_002",
+      "category": "Xharview",
+      "module": "Xharview",
+      "question": "Quel est le contenu principal de \"Principes\" dans le module Xharview ?",
+      "expected_answer": "En temps normal, lors d'une impression, le client html commandera la génération d'un document PDF sur le serveur, et en proposera le téléchargement, ce qui, entre autres, requiert une action utilisateur pour chaque document. Ce fonctionnement convient aux clients nomades, mais peut avoirs ses limites (impression des payes par exemple) pour les utilisateurs d'un site cloud, ou les utilisateurs d'un site pour lequel seul le client html a été choisit.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Principes.htm"
+      ],
+      "source_path": "data/Xharview/Principes.htm",
+      "expected_keywords": [
+        "xharview",
+        "principes",
+        "temps",
+        "normal",
+        "lors",
+        "impression",
+        "client",
+        "html"
+      ]
+    },
+    {
+      "id": "xharview_003",
+      "category": "Xharview",
+      "module": "Xharview",
+      "question": "Quels details importants sont presentes dans \"Choix du format d'adresse pour les différents types d'édition\" pour le module Xharview ?",
+      "expected_answer": "Remarque : Ces types correspondent aux choix du multi-choix Type de la boîte de dialogue Destinations de l'état de Xwin (accessible depuis un masque d'impression par le choix du menu Paramètres : Masque, bouton Adresses) : Fax L'adresse doit alors contenir le numéro de fax du destinataire. Exemple : \"03 88 01 02 03\" ou \"paul@03 88 01 02 03\"",
+      "difficulty": "difficile",
+      "source_files": [
+        "Choix_du_format_d_adresse_pour_les_différents_types_d_édition.htm"
+      ],
+      "source_path": "data/Xharview/Xharview/Choix_du_format_d_adresse_pour_les_différents_types_d_édition.htm",
+      "expected_keywords": [
+        "xharview",
+        "choix",
+        "format",
+        "adresse",
+        "differents",
+        "types",
+        "edition",
+        "remarque"
+      ]
+    },
+    {
+      "id": "xlansql_001",
+      "category": "xlansql",
+      "module": "xlansql",
+      "question": "Que couvre la page \"Actions.\" dans le module xlansql ?",
+      "expected_answer": "Les actions que permet d'exécuter XPSQL sont matérialisées par deux barres de boutons situées sur la droite de l'écran. La barre de boutons du haut porte sur le fichier ou les fichiers sélectionnés. La barre de boutons du bas porte sur tous les fichiers \" Valides \" de l'application de la fiche sélectionnée.",
+      "difficulty": "facile",
+      "source_files": [
+        "Actions_.htm"
+      ],
+      "source_path": "data/xlansql/xlansql/Actions_.htm",
+      "expected_keywords": [
+        "xlansql",
+        "actions",
+        "permet",
+        "executer",
+        "xpsql",
+        "materialisees",
+        "deux",
+        "barres"
+      ]
+    },
+    {
+      "id": "xlansql_002",
+      "category": "xlansql",
+      "module": "xlansql",
+      "question": "Quel est le contenu principal de \"Activation des licences Divalto\" dans le module xlansql ?",
+      "expected_answer": "Cette opération est facultative si le serveur IBM i n'est pas un serveur de licences pour Divalto. Elle nécessite la connexion d'un lecteur réseau permettant d'accéder au répertoire Divalto de l'IFS du serveur.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Activation_des_licences_Divalto.htm"
+      ],
+      "source_path": "data/xlansql/xlansql/Activation_des_licences_Divalto.htm",
+      "expected_keywords": [
+        "xlansql",
+        "activation",
+        "licences",
+        "operation",
+        "facultative",
+        "serveur",
+        "elle",
+        "necessite"
+      ]
+    },
+    {
+      "id": "xlansql_003",
+      "category": "xlansql",
+      "module": "xlansql",
+      "question": "Quels details importants sont presentes dans \"Application.\" pour le module xlansql ?",
+      "expected_answer": "En cas de mise à jour , le fichier paramètre FHSQL n'est pas copié sur le disque. L'installateur copie le fichier paramètres modèle (FhsqlDivalto) dans le répertoire /divalto/sys. Le bouton \"Mettre à jour la liste des fichiers\" effectue la mise à jour des fichiers à partir du modèle.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Application_.htm"
+      ],
+      "source_path": "data/xlansql/xlansql/Application_.htm",
+      "expected_keywords": [
+        "xlansql",
+        "application",
+        "mise",
+        "jour",
+        "fichier",
+        "parametre",
+        "fhsql",
+        "copie"
+      ]
+    },
+    {
+      "id": "xlog_001",
+      "category": "Xlog",
+      "module": "Xlog",
+      "question": "Que couvre la page \"Déclaration d'un mot de passe (hors serveur Xlan sécurisé)\" dans le module Xlog ?",
+      "expected_answer": "Déclaration d'un mot de passe (hors serveur Xlan sécurisé) Le mot de passe permet d'interdire, à quiconque ne le connaît pas, d'accéder à votre code utilisateur. Pour déclarer ou, par la suite, modifier votre mot de passe :",
+      "difficulty": "facile",
+      "source_files": [
+        "D_clarationd_unmotdepasse_horsserveurXlans_curis__.htm"
+      ],
+      "source_path": "data/Xlog/Xlog/D_clarationd_unmotdepasse_horsserveurXlans_curis__.htm",
+      "expected_keywords": [
+        "xlog",
+        "declaration",
+        "passe",
+        "hors",
+        "serveur",
+        "xlan",
+        "securise",
+        "permet"
+      ]
+    },
+    {
+      "id": "xlog_002",
+      "category": "Xlog",
+      "module": "Xlog",
+      "question": "Quel est le contenu principal de \"Descriptif du programme Xlog\" dans le module Xlog ?",
+      "expected_answer": "L'utilitaire Xlog.dhop (*) permet de vous présenter au système Harmony, afin que ce dernier mette en place votre contexte Harmony personnel (chemins implicites, droits d'accès, etc.). Il permet aussi de modifier votre mot de passe (hors serveur Xlan sécurisé).",
+      "difficulty": "moyen",
+      "source_files": [
+        "DescriptifduprogrammeXlog.htm"
+      ],
+      "source_path": "data/Xlog/Xlog/DescriptifduprogrammeXlog.htm",
+      "expected_keywords": [
+        "xlog",
+        "descriptif",
+        "programme",
+        "utilitaire",
+        "dhop",
+        "permet",
+        "vous",
+        "presenter"
+      ]
+    },
+    {
+      "id": "xlog_003",
+      "category": "Xlog",
+      "module": "Xlog",
+      "question": "Quels details importants sont presentes dans \"Identification de l'utilisateur\" pour le module Xlog ?",
+      "expected_answer": "Enregistre votre code utilisateur. La connaissance de ce code est imposée par la plupart des applications. Modifie vos chemins implicites et vos droits d'accès. Ainsi, lorsque vous travaillez avec une application Harmony, vous retrouvez toujours votre contexte d'exécution personnel.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Identificationdel_utilisateur.htm"
+      ],
+      "source_path": "data/Xlog/Xlog/Identificationdel_utilisateur.htm",
+      "expected_keywords": [
+        "xlog",
+        "identification",
+        "utilisateur",
+        "enregistre",
+        "votre",
+        "code",
+        "connaissance",
+        "imposee"
+      ]
+    },
+    {
+      "id": "xlog1_001",
+      "category": "Xlog1",
+      "module": "Xlog1",
+      "question": "Que couvre la page \"Choix du fichier Xlogf (hors serveur Xlan sécurisé)\" dans le module Xlog1 ?",
+      "expected_answer": "Le fichier Xlogf traité par défaut par Xlog1 est déterminé par la clé ServeurXlogf du chapitre [System] saisi avec xDivaltoMajini. Si cette clé est absente, le fichier est cherché en local dans /divalto/sys. Le bouton Sélection d'un serveur permet de changer de fichier Xlogf :",
+      "difficulty": "facile",
+      "source_files": [
+        "ChoixdufichierXlogf_horsserveurXlans_curis__.htm"
+      ],
+      "source_path": "data/Xlog1/Xlog1/ChoixdufichierXlogf_horsserveurXlans_curis__.htm",
+      "expected_keywords": [
+        "xlog1",
+        "choix",
+        "fichier",
+        "xlogf",
+        "hors",
+        "serveur",
+        "xlan",
+        "securise"
+      ]
+    },
+    {
+      "id": "xlog1_002",
+      "category": "Xlog1",
+      "module": "Xlog1",
+      "question": "Quel est le contenu principal de \"Déclaration des utilisateurs d'un réseau Xlan\" dans le module Xlog1 ?",
+      "expected_answer": "Tout utilisateur qui désire accéder à un serveur Xlan doit être déclaré dans le fichier des utilisateurs Divalto du serveur . En principe, tous les utilisateurs du réseau doivent donc être déclarés deux fois : une fois dans le fichier Xlogf de l'ordinateur client et une fois dans le fichier Xlogf du serveur !",
+      "difficulty": "moyen",
+      "source_files": [
+        "D_clarationdesutilisateursd_unr_seauXlan.htm"
+      ],
+      "source_path": "data/Xlog1/Xlog1/D_clarationdesutilisateursd_unr_seauXlan.htm",
+      "expected_keywords": [
+        "xlog1",
+        "declaration",
+        "utilisateurs",
+        "reseau",
+        "xlan",
+        "utilisateur",
+        "desire",
+        "acceder"
+      ]
+    },
+    {
+      "id": "xlog1_003",
+      "category": "Xlog1",
+      "module": "Xlog1",
+      "question": "Quels details importants sont presentes dans \"Descriptif du programme Xlog1\" pour le module Xlog1 ?",
+      "expected_answer": "L'usage du programme Xlog1 étant exclusivement réservé à l'administrateur du système, il faut obligatoirement s'identifier (par Xlog.dhop) sous le code utilisateur ROOT avant d'appeler Xlog1. Pour interdire effectivement l'accès de Xlog1 aux autres usagers, l'administrateur prendra soin d'associer (toujours par Xlog) un mot de passe au code utilisateur ROOT.",
+      "difficulty": "difficile",
+      "source_files": [
+        "DescriptifduprogrammeXlog1.htm"
+      ],
+      "source_path": "data/Xlog1/Xlog1/DescriptifduprogrammeXlog1.htm",
+      "expected_keywords": [
+        "xlog1",
+        "descriptif",
+        "programme",
+        "usage",
+        "etant",
+        "exclusivement",
+        "reserve",
+        "administrateur"
+      ]
+    },
+    {
+      "id": "xpath_001",
+      "category": "Xpath",
+      "module": "Xpath",
+      "question": "Que couvre la page \"Descriptif du programme Xpath\" dans le module Xpath ?",
+      "expected_answer": "Descriptif du programme Xpath Tout fichier ou programme est identifié par un chemin d'accès et un nom de fichier mais seul ce dernier est obligatoire : si le chemin n'est pas précisé, le fichier est automatiquement recherché dans une liste de chemins, nommés chemins implicites. Chaque utilisateur peut disposer de sa propre liste de chemins implicites (Cf. utilitaire Xlog1 ). Les listes associées aux divers utilisateurs d'un site sont stockées dans autant de fichiers texte (extension .txt), que nous nommerons par la suite fichiers de chemins implicites ou fichiers d'implicites. Au démarrage d'une tâche Harmony, le fichier d'implicites affecté à l'utilisateur courant est chargé en mémoire. La",
+      "difficulty": "facile",
+      "source_files": [
+        "DescriptifduprogrammeXpath.htm"
+      ],
+      "source_path": "data/Xpath/Xpath/DescriptifduprogrammeXpath.htm",
+      "expected_keywords": [
+        "xpath",
+        "descriptif",
+        "programme",
+        "fichier",
+        "identifie",
+        "chemin",
+        "acces",
+        "seul"
+      ]
+    },
+    {
+      "id": "xpath_002",
+      "category": "Xpath",
+      "module": "Xpath",
+      "question": "Quel est le contenu principal de \"Fichiers de chemins implicites et utilisateurs\" dans le module Xpath ?",
+      "expected_answer": "Chaque utilisateur déclaré dans la base des utilisateurs d'Harmony peut disposer de son propre fichier de chemins implicites mais un même fichier peut aussi être affecté à plusieurs utilisateurs (l'association d'un fichier de chemins implicites à chaque utilisateur s'effectuant par Xlog1 ).",
+      "difficulty": "moyen",
+      "source_files": [
+        "Fichiersdecheminsimplicitesetutilisateurs.htm"
+      ],
+      "source_path": "data/Xpath/Xpath/Fichiersdecheminsimplicitesetutilisateurs.htm",
+      "expected_keywords": [
+        "xpath",
+        "fichiers",
+        "chemins",
+        "implicites",
+        "utilisateurs",
+        "chaque",
+        "utilisateur",
+        "declare"
+      ]
+    },
+    {
+      "id": "xpath_003",
+      "category": "Xpath",
+      "module": "Xpath",
+      "question": "Quels details importants sont presentes dans \"Gestion et paramétrage des chemins implicites\" pour le module Xpath ?",
+      "expected_answer": "Un chemin comporte les paramètres suivants : Chemin d'accès (local ou réseau).",
+      "difficulty": "difficile",
+      "source_files": [
+        "Gestionetparam_tragedescheminsimplicites.htm"
+      ],
+      "source_path": "data/Xpath/Xpath/Gestionetparam_tragedescheminsimplicites.htm",
+      "expected_keywords": [
+        "xpath",
+        "gestion",
+        "parametrage",
+        "chemins",
+        "implicites",
+        "chemin",
+        "comporte",
+        "parametres"
+      ]
+    },
+    {
+      "id": "xperf_001",
+      "category": "xperf",
+      "module": "xperf",
+      "question": "Que couvre la page \"Affichage des fonctions appelées\" dans le module xperf ?",
+      "expected_answer": "Affichage des fonctions appelées Lorsque l'option Afficher les fonctions appelées est sélectionnée, le tableau inférieur contient la liste des fonctions appelées par la fonction pointée dans le tableau supérieur.",
+      "difficulty": "facile",
+      "source_files": [
+        "Affichage_des_fonctions_appelées.htm"
+      ],
+      "source_path": "data/xperf/Affichage_des_fonctions_appelées.htm",
+      "expected_keywords": [
+        "xperf",
+        "affichage",
+        "fonctions",
+        "appelees",
+        "lorsque",
+        "option",
+        "afficher",
+        "selectionnee"
+      ]
+    },
+    {
+      "id": "xperf_002",
+      "category": "xperf",
+      "module": "xperf",
+      "question": "Quel est le contenu principal de \"Affichage des piles\" dans le module xperf ?",
+      "expected_answer": "Soit le programme suivant L'affichage des piles pour la procédure B donne :",
+      "difficulty": "moyen",
+      "source_files": [
+        "Affichage_des_piles.htm"
+      ],
+      "source_path": "data/xperf/Affichage_des_piles.htm",
+      "expected_keywords": [
+        "xperf",
+        "affichage",
+        "piles",
+        "soit",
+        "programme",
+        "suivant",
+        "procedure",
+        "donne"
+      ]
+    },
+    {
+      "id": "xperf_003",
+      "category": "xperf",
+      "module": "xperf",
+      "question": "Quels details importants sont presentes dans \"Exécution des programmes en mode analyse\" pour le module xperf ?",
+      "expected_answer": "Pour avoir le droit de lancer un programme en mode analyse, l'utilisateur doit avoir l'entrée suivante dans Divalto.ini (xDivaltoMajIni) : [system] xperf=1 L'analyse de performances peut être lancée depuis Xwin et, pour les applications de la version 6, depuis l'icône de lancement d'un programme et depuis le menu système. L'analyse des performances est indépendante de l'option de compilation Debug.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Exécution_des_programmes_en_mode_analyse.htm"
+      ],
+      "source_path": "data/xperf/Exécution_des_programmes_en_mode_analyse.htm",
+      "expected_keywords": [
+        "xperf",
+        "execution",
+        "programmes",
+        "mode",
+        "analyse",
+        "droit",
+        "lancer",
+        "programme"
+      ]
+    },
+    {
+      "id": "xrecup_001",
+      "category": "Xrecup",
+      "module": "Xrecup",
+      "question": "Que couvre la page \"Correction automatisée\" dans le module Xrecup ?",
+      "expected_answer": "Avec cette méthode, xRepair corrige automatiquement les erreurs en invalidant les caractères n'appartenant pas à des enregistrements corrects. Si vous optez pour cette méthode, cliquez sur le bouton Correction automatisée .",
+      "difficulty": "facile",
+      "source_files": [
+        "Correctionautomatis_e.htm"
+      ],
+      "source_path": "data/Xrecup/Xrecup/Correctionautomatis_e.htm",
+      "expected_keywords": [
+        "xrecup",
+        "correction",
+        "automatisee",
+        "methode",
+        "xrepair",
+        "corrige",
+        "automatiquement",
+        "erreurs"
+      ]
+    },
+    {
+      "id": "xrecup_002",
+      "category": "Xrecup",
+      "module": "Xrecup",
+      "question": "Quel est le contenu principal de \"Correction manuelle\" dans le module Xrecup ?",
+      "expected_answer": "Si vous optez pour cette méthode, cliquez sur le bouton Correction manuelle . Après détection de l'erreur, xRepair affiche le contenu physique du fichier , par bloc de 256 caractères (à droite en Ansi, à gauche en Hexadécimal). Il se positionne au départ sur le premier octet physique (en général, l' octet \" réseau \" ) du dernier enregistrement correct .",
+      "difficulty": "moyen",
+      "source_files": [
+        "Correctionmanuelle.htm"
+      ],
+      "source_path": "data/Xrecup/Xrecup/Correctionmanuelle.htm",
+      "expected_keywords": [
+        "xrecup",
+        "correction",
+        "manuelle",
+        "vous",
+        "optez",
+        "methode",
+        "cliquez",
+        "bouton"
+      ]
+    },
+    {
+      "id": "xrecup_003",
+      "category": "Xrecup",
+      "module": "Xrecup",
+      "question": "Quels details importants sont presentes dans \"Correction semi-automatique par pointage\" pour le module Xrecup ?",
+      "expected_answer": "Après détection de l'erreur, xRepair affiche le contenu physique du fichier , par bloc de 256 caractères (à droite en Ansi, à gauche en Hexadécimal). Il se positionne au départ sur le premier octet physique du dernier enregistrement correct . Positionnez-vous sur l'enregistrement erroné en cliquant sur le bouton Pointer longueur suivante (attention à ce que le curseur pointe bien le premier octet de la dernière longueur correcte). (Remarque : plus généralement, vous pouvez progresser d'un enregistrement dans le fichier en plaçant le curseur sur le premier octet de la longueur d'un enregistrement correct, puis en cliquant sur le bouton Pointer longueur suivante.)",
+      "difficulty": "difficile",
+      "source_files": [
+        "Correctionsemi_automatiqueparpointage.htm"
+      ],
+      "source_path": "data/Xrecup/Xrecup/Correctionsemi_automatiqueparpointage.htm",
+      "expected_keywords": [
+        "xrecup",
+        "correction",
+        "semi",
+        "automatique",
+        "pointage",
+        "apres",
+        "detection",
+        "erreur"
+      ]
+    },
+    {
+      "id": "xreof_001",
+      "category": "Xreof",
+      "module": "Xreof",
+      "question": "Que couvre la page \"Comment choisir la taille du cache ?\" dans le module Xreof ?",
+      "expected_answer": "Comment choisir la taille du cache ? Attention : lorsque le volume des clés est important, n'importe quelle taille mémoire ne permet pas de traiter n'importe quel fichier .",
+      "difficulty": "facile",
+      "source_files": [
+        "Commentchoisirlatailleducache_.htm"
+      ],
+      "source_path": "data/Xreof/Xreof/Commentchoisirlatailleducache_.htm",
+      "expected_keywords": [
+        "xreof",
+        "choisir",
+        "taille",
+        "cache",
+        "attention",
+        "lorsque",
+        "volume",
+        "cles"
+      ]
+    },
+    {
+      "id": "xreof_002",
+      "category": "Xreof",
+      "module": "Xreof",
+      "question": "Quel est le contenu principal de \"Compte-rendu d'exécution\" dans le module Xreof ?",
+      "expected_answer": "__________________________________________________________________ Fichier paramètres et clés ffffffffff Fichier des données ffffffffff Taille mémoire ttttt Ko Heure Début hh/hh/hh Nombre maximum de monotonies nnnn Heure Fin hh/hh/hh __________________________________________________________________ Monotonies : nnn Enregistrements : nnnnn Clés : nnnnn __________________________________________________________________ PASSE 1 : Génération des clés et constitution du fichier intermédiaire xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx PASSE 2 : Interclassement et reconstitution du fichier des clés xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx ___________",
+      "difficulty": "moyen",
+      "source_files": [
+        "Compte_rendud_ex_cution.htm"
+      ],
+      "source_path": "data/Xreof/Xreof/Compte_rendud_ex_cution.htm",
+      "expected_keywords": [
+        "xreof",
+        "compte",
+        "rendu",
+        "execution",
+        "fichier",
+        "parametres",
+        "cles",
+        "ffffffffff"
+      ]
+    },
+    {
+      "id": "xreof_003",
+      "category": "Xreof",
+      "module": "Xreof",
+      "question": "Quels details importants sont presentes dans \"Descriptif du programme Xreof\" pour le module Xreof ?",
+      "expected_answer": "La \"Régénération des clés\" reconstitue les clés d'accès du fichier, à partir des paramètres enregistrés dans le fichier \"Paramètres et Clés\" et des enregistrements existants dans le fichier des données. La \"Réorganisation\" permet à la fois de supprimer les enregistrements blancs du fichier des données (fichier de type N uniquement) et de reconstituer les clés.",
+      "difficulty": "difficile",
+      "source_files": [
+        "DescriptifduprogrammeXreof.htm"
+      ],
+      "source_path": "data/Xreof/Xreof/DescriptifduprogrammeXreof.htm",
+      "expected_keywords": [
+        "xreof",
+        "descriptif",
+        "programme",
+        "regeneration",
+        "cles",
+        "reconstitue",
+        "acces",
+        "fichier"
+      ]
+    },
+    {
+      "id": "xtools_001",
+      "category": "xtools",
+      "module": "xtools",
+      "question": "Que couvre la page \"Afficher / Modifier le contenu d'un fichier\" dans le module xtools ?",
+      "expected_answer": "Cette fonction est appelée par : La touche Entrée ou un double clic sur le fichier à afficher.",
+      "difficulty": "facile",
+      "source_files": [
+        "Afficher_Modifierlecontenud_unfichier.htm"
+      ],
+      "source_path": "data/xtools/xtools/Afficher_Modifierlecontenud_unfichier.htm",
+      "expected_keywords": [
+        "xtools",
+        "afficher",
+        "modifier",
+        "contenu",
+        "fichier",
+        "fonction",
+        "appelee",
+        "touche"
+      ]
+    },
+    {
+      "id": "xtools_002",
+      "category": "xtools",
+      "module": "xtools",
+      "question": "Quel est le contenu principal de \"Afficher / Modifier le contenu d'un fichier d'après le dictionnaire\" dans le module xtools ?",
+      "expected_answer": "Choix de l'enregistrement à afficher Lorsque vous appelez cette fonction pour la première fois (pour un enregistrement donné), vous devez introduire le nom réel du fichier, ainsi que le nom du dictionnaire des données, le nom du fichier et le nom de l'enregistrement dans le dictionnaire. Par la suite, si vous avez sauvegardé votre paramétrage dans un fichier, vous pouvez introduire simplement le nom du fichier paramètres : vous retrouverez alors le paramétrage sauvegardé.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Afficher_Modifierlecontenud_unfichierd_apr_sledictionnaire.htm"
+      ],
+      "source_path": "data/xtools/xtools/Afficher_Modifierlecontenud_unfichierd_apr_sledictionnaire.htm",
+      "expected_keywords": [
+        "xtools",
+        "afficher",
+        "modifier",
+        "contenu",
+        "fichier",
+        "apres",
+        "dictionnaire",
+        "choix"
+      ]
+    },
+    {
+      "id": "xtools_003",
+      "category": "xtools",
+      "module": "xtools",
+      "question": "Quels details importants sont presentes dans \"Afficher / Modifier le contenu physique d'un fichier\" pour le module xtools ?",
+      "expected_answer": "Le choix du menu < Fichier ® Afficher / Modifier (fichier physique) >. Elle lit le fichier sans tenir compte de la structure Harmony des enregistrements, c'est à dire qu'elle lit le contenu du fichier tel qu'il est écrit sur le disque (en-tête Harmony excepté). Xtools lit le fichier par paquets de 400 octets . La modification du fichier est possible mais il faut faire attention à ne pas modifier les longueurs d'enregistrement.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Afficher_Modifierlecontenuphysiqued_unfichier.htm"
+      ],
+      "source_path": "data/xtools/xtools/Afficher_Modifierlecontenuphysiqued_unfichier.htm",
+      "expected_keywords": [
+        "xtools",
+        "afficher",
+        "modifier",
+        "contenu",
+        "physique",
+        "fichier",
+        "choix",
+        "menu"
+      ]
+    },
+    {
+      "id": "xtranslate_001",
+      "category": "Xtranslate",
+      "module": "Xtranslate",
+      "question": "Que couvre la page \"Affichage des masques\" dans le module Xtranslate ?",
+      "expected_answer": "La synchronisation avec Xwin vous permet de voir le contexte dans lequel se trouvent les libellés que vous traduisez. De plus, vous pouvez immédiatement voir le résultat de votre travail en demandant à Xwin d'afficher les libellés traduits. Le bouton ouvre l'éditeur de masques Xwin et affiche le masque sur lequel vous travaillez. L'objet concerné par le libellé courant est encadré d'un trait noir.",
+      "difficulty": "facile",
+      "source_files": [
+        "Affichage_des_masques.htm"
+      ],
+      "source_path": "data/Xtranslate/Affichage_des_masques.htm",
+      "expected_keywords": [
+        "xtranslate",
+        "affichage",
+        "masques",
+        "synchronisation",
+        "xwin",
+        "vous",
+        "permet",
+        "voir"
+      ]
+    },
+    {
+      "id": "xtranslate_002",
+      "category": "Xtranslate",
+      "module": "Xtranslate",
+      "question": "Quel est le contenu principal de \"Ajout de la fonction Translate\" dans le module Xtranslate ?",
+      "expected_answer": "Certaines chaînes de caractères constantes se trouvant dans les programmes Diva doivent être traduites. De même, des libellés (textes d'erreur par exemple) stockés dans des fichiers doivent également être traduits. ATTENTION : Cette fonction doit impérativement être sur une seule ligne. Elle ne doit pas être interrompue par le caractère \\.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Ajout_de_la_fonction_Translate.htm"
+      ],
+      "source_path": "data/Xtranslate/Ajout_de_la_fonction_Translate.htm",
+      "expected_keywords": [
+        "xtranslate",
+        "ajout",
+        "fonction",
+        "translate",
+        "certaines",
+        "chaines",
+        "caracteres",
+        "constantes"
+      ]
+    },
+    {
+      "id": "xtranslate_003",
+      "category": "Xtranslate",
+      "module": "Xtranslate",
+      "question": "Quels details importants sont presentes dans \"Caractères spéciaux dans les libellés\" pour le module Xtranslate ?",
+      "expected_answer": "Ces caractères (ou groupes de caractères) peuvent-être déplacés mais doivent toujours être présents dans le libellé traduit. Table des caractères spéciaux :",
+      "difficulty": "difficile",
+      "source_files": [
+        "Caractères_spéciaux_dans_les_libellés.htm"
+      ],
+      "source_path": "data/Xtranslate/Caractères_spéciaux_dans_les_libellés.htm",
+      "expected_keywords": [
+        "xtranslate",
+        "caracteres",
+        "speciaux",
+        "libelles",
+        "groupes",
+        "deplaces",
+        "doivent",
+        "toujours"
+      ]
+    },
+    {
+      "id": "xwin_dico_001",
+      "category": "Xwin-Dico",
+      "module": "Xwin-Dico",
+      "question": "Que couvre la page \"Affichage du contenu d'un fichier\" dans le module Xwin-Dico ?",
+      "expected_answer": "Affichage du contenu d'un fichier Depuis Xwin, il est possible de visualiser le contenu d’un fichier.",
+      "difficulty": "facile",
+      "source_files": [
+        "Affichage_du_contenu_d_un_fichier.htm"
+      ],
+      "source_path": "data/Xwin-Dico/Xwin_Dico/Affichage_du_contenu_d_un_fichier.htm",
+      "expected_keywords": [
+        "xwin",
+        "dico",
+        "affichage",
+        "contenu",
+        "fichier",
+        "depuis",
+        "possible",
+        "visualiser"
+      ]
+    },
+    {
+      "id": "xwin_dico_002",
+      "category": "Xwin-Dico",
+      "module": "Xwin-Dico",
+      "question": "Quel est le contenu principal de \"Ascendants / descendants\" dans le module Xwin-Dico ?",
+      "expected_answer": "Voir Naviguer dans le dictionnaire",
+      "difficulty": "moyen",
+      "source_files": [
+        "Ascendants_descendants.htm"
+      ],
+      "source_path": "data/Xwin-Dico/Xwin_Dico/Ascendants_descendants.htm",
+      "expected_keywords": [
+        "xwin",
+        "dico",
+        "ascendants",
+        "descendants",
+        "voir",
+        "naviguer",
+        "dictionnaire"
+      ]
+    },
+    {
+      "id": "xwin_dico_003",
+      "category": "Xwin-Dico",
+      "module": "Xwin-Dico",
+      "question": "Quels details importants sont presentes dans \"Menu, barre d'outils et raccourcis clavier\" pour le module Xwin-Dico ?",
+      "expected_answer": "Propriétés du lien courant dans l’arbre Propriétés du schéma courant",
+      "difficulty": "difficile",
+      "source_files": [
+        "Barre_d_outils_et_raccourcis_clavier.htm"
+      ],
+      "source_path": "data/Xwin-Dico/Xwin_Dico/Barre_d_outils_et_raccourcis_clavier.htm",
+      "expected_keywords": [
+        "xwin",
+        "dico",
+        "menu",
+        "barre",
+        "outils",
+        "raccourcis",
+        "clavier",
+        "proprietes"
+      ]
+    },
+    {
+      "id": "xwin_ecran_001",
+      "category": "xwin-ecran",
+      "module": "xwin-ecran",
+      "question": "Que couvre la page \"Accès à la documentation\" dans le module xwin-ecran ?",
+      "expected_answer": "Accès à la documentation Accès à la documentation",
+      "difficulty": "facile",
+      "source_files": [
+        "Acc_s_ladocumentation.htm"
+      ],
+      "source_path": "data/xwin-ecran/xwin_ecran/Acc_s_ladocumentation.htm",
+      "expected_keywords": [
+        "xwin",
+        "ecran",
+        "acces"
+      ]
+    },
+    {
+      "id": "xwin_ecran_002",
+      "category": "xwin-ecran",
+      "module": "xwin-ecran",
+      "question": "Quel est le contenu principal de \"Action d'un bouton\" dans le module xwin-ecran ?",
+      "expected_answer": "La génération de caractère, équivalente à la frappe d'une touche au clavier. Il s'agit le plus souvent d'une touche de fonction (ou de contrôle), éventuellement piégée au niveau d'une ou plusieurs données en saisie (*). La syntaxe à respecter pour la génération est décrite au paragraphe Objet Bouton .",
+      "difficulty": "moyen",
+      "source_files": [
+        "Action_d_un_bouton.htm"
+      ],
+      "source_path": "data/xwin-ecran/xwin_ecran/Action_d_un_bouton.htm",
+      "expected_keywords": [
+        "xwin",
+        "ecran",
+        "action",
+        "bouton",
+        "generation",
+        "caractere",
+        "equivalente",
+        "frappe"
+      ]
+    },
+    {
+      "id": "xwin_ecran_003",
+      "category": "xwin-ecran",
+      "module": "xwin-ecran",
+      "question": "Quels details importants sont presentes dans \"Affichage des objets dans Xwin\" pour le module xwin-ecran ?",
+      "expected_answer": "Autant que faire se peut, le design dans Xwin a été adapté pour s’approcher au maximum du rendu obtenu à l’exécution avec le client léger (Wpf ou Html). Malheureusement, Win32 ne permet pas de modifier certaines propriétés pour certains types d’objet (*). De plus, les caractères d’une même police ne sont pas toujours dessinés à l’identique.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Affichage_des_objets_dans_Xwin.htm"
+      ],
+      "source_path": "data/xwin-ecran/xwin_ecran/Affichage_des_objets_dans_Xwin.htm",
+      "expected_keywords": [
+        "xwin",
+        "ecran",
+        "affichage",
+        "objets",
+        "autant",
+        "design",
+        "adapte",
+        "approcher"
+      ]
+    },
+    {
+      "id": "xwin_imprimante_001",
+      "category": "xwin-imprimante",
+      "module": "xwin-imprimante",
+      "question": "Que couvre la page \"Adresses de destination d'une édition Xwin\" dans le module xwin-imprimante ?",
+      "expected_answer": "Adresses de destination d'une édition Xwin Un état graphique peut, en plus de l'impression, être envoyé à un fax, à une adresse Mail ou E-Mail (Internet).",
+      "difficulty": "facile",
+      "source_files": [
+        "Adressesdedestinationd_une_ditionXwin.htm"
+      ],
+      "source_path": "data/xwin-imprimante/xwin_imprimante/Adressesdedestinationd_une_ditionXwin.htm",
+      "expected_keywords": [
+        "xwin",
+        "imprimante",
+        "adresses",
+        "destination",
+        "edition",
+        "etat",
+        "graphique",
+        "impression"
+      ]
+    },
+    {
+      "id": "xwin_imprimante_002",
+      "category": "xwin-imprimante",
+      "module": "xwin-imprimante",
+      "question": "Quel est le contenu principal de \"Arbre des tableaux d'un bloc\" dans le module xwin-imprimante ?",
+      "expected_answer": "La fenêtre Arbre des tableaux d'un bloc est associée à l’ onglet Tableaux de la barre d'onglets verticaux de Xwin. Elle n'est présente que si la fenêtre MDI active est de type \"Masque d'imprimante graphique\". Cette fenêtre affiche, sous forme arborescente, chaque objet Tableau dessiné dans le bloc courant du masque, ainsi que les blocs inclus dans ce tableau . Elle est très importante car de nombreuses fonctionnalités applicables aux tableaux se commandent depuis cette fenêtre (par exemple, l'insertion de blocs dans un tableau ).",
+      "difficulty": "moyen",
+      "source_files": [
+        "Arbre_des_tableaux_d_un_bloc.htm"
+      ],
+      "source_path": "data/xwin-imprimante/xwin_imprimante/Arbre_des_tableaux_d_un_bloc.htm",
+      "expected_keywords": [
+        "xwin",
+        "imprimante",
+        "arbre",
+        "tableaux",
+        "bloc",
+        "fenetre",
+        "associee",
+        "onglet"
+      ]
+    },
+    {
+      "id": "xwin_imprimante_003",
+      "category": "xwin-imprimante",
+      "module": "xwin-imprimante",
+      "question": "Quels details importants sont presentes dans \"Assistant de personnalisation\" pour le module xwin-imprimante ?",
+      "expected_answer": "Les propriétés des objets concernant l'assistant de personnalisation sont décrites à la rubrique Propriétés des objets spécifiques à l'assistant du livre Assistant de personnalisation des masques d'impression .",
+      "difficulty": "difficile",
+      "source_files": [
+        "Assistant_de_personnalisation.htm"
+      ],
+      "source_path": "data/xwin-imprimante/xwin_imprimante/Assistant_de_personnalisation.htm",
+      "expected_keywords": [
+        "xwin",
+        "imprimante",
+        "assistant",
+        "personnalisation",
+        "proprietes",
+        "objets",
+        "concernant",
+        "decrites"
+      ]
+    },
+    {
+      "id": "xwin_migration_001",
+      "category": "xwin-Migration",
+      "module": "xwin-Migration",
+      "question": "Que couvre la page \"Base de données Migration de Divalto\" dans le module xwin-Migration ?",
+      "expected_answer": "Base de données Migration de Divalto Au passage d'une version de l'ERP à la suivante, les modifications apportées par Divalto sont inventoriées et enregistrées dans la \" Base de données Migration de Divalto \". Cette base est consultée par le programme d' estimation de l'effort à produire pour la migration du projet de surcharge .",
+      "difficulty": "facile",
+      "source_files": [
+        "Bae_de_données_Migration_de_Divalto.htm"
+      ],
+      "source_path": "data/xwin-Migration/Bae_de_données_Migration_de_Divalto.htm",
+      "expected_keywords": [
+        "xwin",
+        "migration",
+        "base",
+        "donnees",
+        "passage",
+        "version",
+        "suivante",
+        "modifications"
+      ]
+    },
+    {
+      "id": "xwin_migration_002",
+      "category": "xwin-Migration",
+      "module": "xwin-Migration",
+      "question": "Quel est le contenu principal de \"Barèmes de calcul des efforts\" dans le module xwin-Migration ?",
+      "expected_answer": "Le programme d'estimation de l'effort à produire pour une migration base ses calculs sur une série de barèmes . Des barèmes par défaut sont proposés : vous les trouverez dans le fichier paramètres MigrationEffortSample.txt , livré en exemple .",
+      "difficulty": "moyen",
+      "source_files": [
+        "Barèmes_de_calcul_des_efforts.htm"
+      ],
+      "source_path": "data/xwin-Migration/Barèmes_de_calcul_des_efforts.htm",
+      "expected_keywords": [
+        "xwin",
+        "migration",
+        "baremes",
+        "calcul",
+        "efforts",
+        "programme",
+        "estimation",
+        "effort"
+      ]
+    },
+    {
+      "id": "xwin_migration_003",
+      "category": "xwin-Migration",
+      "module": "xwin-Migration",
+      "question": "Quels details importants sont presentes dans \"Chargement d’un projet et de masques de la version 6\" pour le module xwin-Migration ?",
+      "expected_answer": "Le projet est ouvert en lecture seule et ne peut pas être compilé. Il n’est pas destiné à être utilisé pour un développement en version 7 mais pour la mise en œuvre des outils d’aide à la migration :",
+      "difficulty": "difficile",
+      "source_files": [
+        "Chargement_d’un_projet_et_de_masques_de_la_version_6.htm"
+      ],
+      "source_path": "data/xwin-Migration/Chargement_d’un_projet_et_de_masques_de_la_version_6.htm",
+      "expected_keywords": [
+        "xwin",
+        "migration",
+        "chargement",
+        "projet",
+        "masques",
+        "version",
+        "ouvert",
+        "lecture"
+      ]
+    },
+    {
+      "id": "xwin_projet_001",
+      "category": "xwin-projet",
+      "module": "xwin-projet",
+      "question": "Que couvre la page \"Assistant_de_création_d_un_projet_de_surcharge\" dans le module xwin-projet ?",
+      "expected_answer": "La création d’un projet de surcharge peut s’effectuer au travers d’un assistant .Cette fonctionnalité évite de réaliser manuellement de nombreuses opérations lors de cette création. L’accès à l’assistant nécessite que les règles d’installation des produits aient été respectées. En particulier, le répertoire où est installé l’ERP doit obligatoirement contenir la chaine « /erp ».",
+      "difficulty": "facile",
+      "source_files": [
+        "Assistant_de_création_d_un_projet_de_surcharge.htm"
+      ],
+      "source_path": "data/xwin-projet/xwinprojet/Assistant_de_création_d_un_projet_de_surcharge.htm",
+      "expected_keywords": [
+        "xwin",
+        "projet",
+        "assistant",
+        "creation",
+        "surcharge",
+        "effectuer",
+        "travers",
+        "fonctionnalite"
+      ]
+    },
+    {
+      "id": "xwin_projet_002",
+      "category": "xwin-projet",
+      "module": "xwin-projet",
+      "question": "Quel est le contenu principal de \"Barre d'outils du projet\" dans le module xwin-projet ?",
+      "expected_answer": "Compiler le fichier courant Construire le sous-projet",
+      "difficulty": "moyen",
+      "source_files": [
+        "Barre_d_outils_du_projet.htm"
+      ],
+      "source_path": "data/xwin-projet/xwinprojet/Barre_d_outils_du_projet.htm",
+      "expected_keywords": [
+        "xwin",
+        "projet",
+        "barre",
+        "outils",
+        "compiler",
+        "fichier",
+        "courant",
+        "construire"
+      ]
+    },
+    {
+      "id": "xwin_projet_003",
+      "category": "xwin-projet",
+      "module": "xwin-projet",
+      "question": "Quels details importants sont presentes dans \"Boîte de dialogue Création d'un projet surchargeable\" pour le module xwin-projet ?",
+      "expected_answer": "Les paramètres à saisir sont : Il s'agit du répertoire dans lequel le sous-projet va être copié puis modifié pour devenir surchargeable.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Boite_de_dialogue_Cr_ation_d_un_projet_surchargeable.htm"
+      ],
+      "source_path": "data/xwin-projet/xwinprojet/Boite_de_dialogue_Cr_ation_d_un_projet_surchargeable.htm",
+      "expected_keywords": [
+        "xwin",
+        "projet",
+        "boite",
+        "dialogue",
+        "creation",
+        "surchargeable",
+        "parametres",
+        "saisir"
+      ]
+    },
+    {
+      "id": "xwin_ressources_001",
+      "category": "Xwin-ressources",
+      "module": "Xwin-ressources",
+      "question": "Que couvre la page \"Annuler (undo) une opération d'édition de barre d'outils\" dans le module Xwin-ressources ?",
+      "expected_answer": "Annuler (undo) une opération d'édition de barre d'outils Pour revenir sur la dernière opération effectuée dans la fenêtre d’édition des barres d’outils :",
+      "difficulty": "facile",
+      "source_files": [
+        "Annuler_undo_une_op_ration_d__dition_de_barre_d_outils.htm"
+      ],
+      "source_path": "data/Xwin-ressources/Xwin_ressources/Annuler_undo_une_op_ration_d__dition_de_barre_d_outils.htm",
+      "expected_keywords": [
+        "xwin",
+        "ressources",
+        "annuler",
+        "undo",
+        "operation",
+        "edition",
+        "barre",
+        "outils"
+      ]
+    },
+    {
+      "id": "xwin_ressources_002",
+      "category": "Xwin-ressources",
+      "module": "Xwin-ressources",
+      "question": "Quel est le contenu principal de \"Annuler (undo) une opération d'édition de menu\" dans le module Xwin-ressources ?",
+      "expected_answer": "Pour revenir sur la dernière opération effectuée dans la fenêtre d’édition des menus : Validez le choix Annuler du menu Edition (raccourci clavier Ctrl+Z ) ou Cliquez sur le bouton de la barre d'outils.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Annuler_undo_une_op_ration_d__dition_de_menu.htm"
+      ],
+      "source_path": "data/Xwin-ressources/Xwin_ressources/Annuler_undo_une_op_ration_d__dition_de_menu.htm",
+      "expected_keywords": [
+        "xwin",
+        "ressources",
+        "annuler",
+        "undo",
+        "operation",
+        "edition",
+        "menu",
+        "revenir"
+      ]
+    },
+    {
+      "id": "xwin_ressources_003",
+      "category": "Xwin-ressources",
+      "module": "Xwin-ressources",
+      "question": "Quels details importants sont presentes dans \"Annuler (undo) une opération d'édition de ressource\" pour le module Xwin-ressources ?",
+      "expected_answer": "Validez le choix Annuler du menu Edition (raccourci clavier Ctrl+Z ) ou Cliquez sur le bouton de la barre d'outils. Attention : Cette fonction ne concerne pas les opérations effectuées dans la fenêtre d’édition des menus ou des barres d’outils. Pour revenir sur une opération affectant les choix d’un menu donné ou les boutons d’une barre d’outils donnée, rééditez la ressource concernée ( à affichez la fenêtre d’édition des choix du menu ou des boutons de la barre d’outils) avant de rappeler la fonction d’annulation.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Annuler_undo_une_op_ration_d__dition_de_ressource.htm"
+      ],
+      "source_path": "data/Xwin-ressources/Xwin_ressources/Annuler_undo_une_op_ration_d__dition_de_ressource.htm",
+      "expected_keywords": [
+        "xwin",
+        "ressources",
+        "annuler",
+        "undo",
+        "operation",
+        "edition",
+        "ressource",
+        "validez"
+      ]
+    },
+    {
+      "id": "xwin_texte_001",
+      "category": "xwin-texte",
+      "module": "xwin-texte",
+      "question": "Que couvre la page \"Utiliser l'éditeur de textes: Manuel de référence - Accès à la documentation\" dans le module xwin-texte ?",
+      "expected_answer": "Utiliser l'éditeur de textes: Manuel de référence - Accès à la documentation Accès à la documentation",
+      "difficulty": "facile",
+      "source_files": [
+        "Acc_s_ladocumentation1.htm"
+      ],
+      "source_path": "data/xwin-texte/xwin_texte/Acc_s_ladocumentation1.htm",
+      "expected_keywords": [
+        "xwin",
+        "texte",
+        "utiliser",
+        "editeur",
+        "textes",
+        "manuel",
+        "reference",
+        "acces"
+      ]
+    },
+    {
+      "id": "xwin_texte_002",
+      "category": "xwin-texte",
+      "module": "xwin-texte",
+      "question": "Quel est le contenu principal de \"Utiliser l'éditeur de textes: Instructions pas à pas - Accès à la documentation\" dans le module xwin-texte ?",
+      "expected_answer": "Utiliser l'éditeur de textes: Instructions pas à pas - Accès à la documentation Accès à la documentation",
+      "difficulty": "moyen",
+      "source_files": [
+        "Acc_s_ladocumentation2.htm"
+      ],
+      "source_path": "data/xwin-texte/xwin_texte/Acc_s_ladocumentation2.htm",
+      "expected_keywords": [
+        "xwin",
+        "texte",
+        "utiliser",
+        "editeur",
+        "textes",
+        "instructions",
+        "acces"
+      ]
+    },
+    {
+      "id": "xwin_texte_003",
+      "category": "xwin-texte",
+      "module": "xwin-texte",
+      "question": "Quels details importants sont presentes dans \"Activer ou désactiver l'espace virtuel\" pour le module xwin-texte ?",
+      "expected_answer": "Cette option induit en particulier les différences suivantes en édition du texte : Flèche à droite tapée en fin de ligne déplace le curseur d'une position vers la droite (donc hors texte effectif). Flèche à gauche tapée en début de ligne ne déplace pas le curseur. Un clic souris effectué au delà de la fin effective d'une ligne positionne le curseur à l'endroit cliqué. La coloration d'une ligne sélectionnée ne s'interrompt pas à la fin de la ligne.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Activer_ou_désactiver_l_espace_virtuel.htm"
+      ],
+      "source_path": "data/xwin-texte/xwin_texte/Activer_ou_désactiver_l_espace_virtuel.htm",
+      "expected_keywords": [
+        "xwin",
+        "texte",
+        "activer",
+        "desactiver",
+        "espace",
+        "virtuel",
+        "option",
+        "induit"
+      ]
+    },
+    {
+      "id": "xwin4_001",
+      "category": "Xwin4",
+      "module": "Xwin4",
+      "question": "Que couvre la page \"Xwin-Editeurs\" dans le module Xwin4 ?",
+      "expected_answer": "Xwin - Atelier de développement Harmony - Editeurs",
+      "difficulty": "facile",
+      "source_files": [
+        "Xwin.htm"
+      ],
+      "source_path": "data/Xwin4/Xwin4/Xwin.htm",
+      "expected_keywords": [
+        "xwin4",
+        "xwin",
+        "editeurs",
+        "atelier",
+        "developpement"
+      ]
+    },
+    {
+      "id": "xwin4_002",
+      "category": "Xwin4",
+      "module": "Xwin4",
+      "question": "Quel est le contenu principal de \"Xwin-Editeurs\" dans le module Xwin4 ?",
+      "expected_answer": "Xwin - Atelier de développement Harmony - Editeurs",
+      "difficulty": "moyen",
+      "source_files": [
+        "Xwin.htm"
+      ],
+      "source_path": "data/Xwin4/Xwin4/Xwin.htm",
+      "expected_keywords": [
+        "xwin4",
+        "xwin",
+        "editeurs",
+        "atelier",
+        "developpement"
+      ]
+    },
+    {
+      "id": "xwin4_003",
+      "category": "Xwin4",
+      "module": "Xwin4",
+      "question": "Quels details importants sont presentes dans \"Xwin-Editeurs\" pour le module Xwin4 ?",
+      "expected_answer": "Xwin - Atelier de développement Harmony - Editeurs",
+      "difficulty": "difficile",
+      "source_files": [
+        "Xwin.htm"
+      ],
+      "source_path": "data/Xwin4/Xwin4/Xwin.htm",
+      "expected_keywords": [
+        "xwin4",
+        "xwin",
+        "editeurs",
+        "atelier",
+        "developpement"
+      ]
+    },
+    {
+      "id": "ymeg_001",
+      "category": "ymeg",
+      "module": "ymeg",
+      "question": "Que couvre la page \"Affichage, consultation et saisie de la page mère (pages panels)\" dans le module ymeg ?",
+      "expected_answer": "Affichage, consultation et saisie de la page mère (pages panels) Le programme Diva peut demander l'affichage, la consultation ou la saisie de la page mère en globalité.",
+      "difficulty": "facile",
+      "source_files": [
+        "Affichage,_consultation_et_saisie_de_la_page_mère.htm"
+      ],
+      "source_path": "data/ymeg/ymeg/Affichage,_consultation_et_saisie_de_la_page_mère.htm",
+      "expected_keywords": [
+        "ymeg",
+        "affichage",
+        "consultation",
+        "saisie",
+        "mere",
+        "pages",
+        "panels",
+        "programme"
+      ]
+    },
+    {
+      "id": "ymeg_002",
+      "category": "ymeg",
+      "module": "ymeg",
+      "question": "Quel est le contenu principal de \"Affichage, consultation et saisie isolée d'une page panel\" dans le module ymeg ?",
+      "expected_answer": "La rubrique précédente décrivait l'appel, par le programme Diva, d'une page mère en globalité. Mais une fois la page mère affichée à l'écran, le programme peut aussi afficher, consulter ou saisir l’une quelconque de ses pages filles. On parle alors d'appel \"isolé\" d'une page panel.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Affichage,_consultation_et_saisie_isolée_d_une_page_panel.htm"
+      ],
+      "source_path": "data/ymeg/ymeg/Affichage,_consultation_et_saisie_isolée_d_une_page_panel.htm",
+      "expected_keywords": [
+        "ymeg",
+        "affichage",
+        "consultation",
+        "saisie",
+        "isolee",
+        "panel",
+        "rubrique",
+        "precedente"
+      ]
+    },
+    {
+      "id": "ymeg_003",
+      "category": "ymeg",
+      "module": "ymeg",
+      "question": "Quels details importants sont presentes dans \"Affichage, consultation, saisie et déplacements dans un arbre\" pour le module ymeg ?",
+      "expected_answer": "Par contre, la programmation des déplacements (et du scrolling) dans un arbre est spécifique du fait que les sous-niveaux des éléments réduits n'apparaissent pas à l'écran. Si vous décidez de ne pas faire appel à la procédure standard XmeListConsultDefault pour gérer les déplacements dans l'arbre, Ywpf propose des fonctions qui vous aideront à programmer ces déplacements :",
+      "difficulty": "difficile",
+      "source_files": [
+        "Affichage_consultation_saisieetd_placementsdansunarbre.htm"
+      ],
+      "source_path": "data/ymeg/ymeg/Affichage_consultation_saisieetd_placementsdansunarbre.htm",
+      "expected_keywords": [
+        "ymeg",
+        "affichage",
+        "consultation",
+        "saisie",
+        "deplacements",
+        "arbre",
+        "contre",
+        "programmation"
+      ]
+    },
+    {
+      "id": "ymeg2_001",
+      "category": "ymeg2",
+      "module": "ymeg2",
+      "question": "Que couvre la page \"Affichage d'un agenda\" dans le module ymeg2 ?",
+      "expected_answer": "Le \"cadre\" d'un objet agenda est affiché par les fonctions classiques d'affichage de page de Ywpf (XmeDisp, etc.). Par contre, aucune fonction de base de Ywpf n'affiche les données d'un agenda. Il faut utiliser pour cela les fonctions spécifiques \"agenda\" XmeCalendarDisplay ou XmeCalendarConsult .",
+      "difficulty": "facile",
+      "source_files": [
+        "Affichage_d_un_agenda.htm"
+      ],
+      "source_path": "data/ymeg2/ymeg2/Affichage_d_un_agenda.htm",
+      "expected_keywords": [
+        "ymeg2",
+        "affichage",
+        "agenda",
+        "cadre",
+        "objet",
+        "affiche",
+        "fonctions",
+        "classiques"
+      ]
+    },
+    {
+      "id": "ymeg2_002",
+      "category": "ymeg2",
+      "module": "ymeg2",
+      "question": "Quel est le contenu principal de \"Affichage d'un objet Gantt\" dans le module ymeg2 ?",
+      "expected_answer": "Le \"cadre\" d'un objet Gantt est affiché par les fonctions classiques d'affichage de page de Ywpf (XmeDisp, etc.). Par contre, aucune fonction de base de Ywpf n'affiche les données d'un Gantt. Il faut utiliser pour cela les fonctions spécifiques \"Gantt\" XmeGanttDisplay ou XmeGanttConsult .",
+      "difficulty": "moyen",
+      "source_files": [
+        "Affichage_d_un_objet_Gantt.htm"
+      ],
+      "source_path": "data/ymeg2/ymeg2/Affichage_d_un_objet_Gantt.htm",
+      "expected_keywords": [
+        "ymeg2",
+        "affichage",
+        "objet",
+        "gantt",
+        "cadre",
+        "affiche",
+        "fonctions",
+        "classiques"
+      ]
+    },
+    {
+      "id": "ymeg2_003",
+      "category": "ymeg2",
+      "module": "ymeg2",
+      "question": "Quels details importants sont presentes dans \"Agendas\" pour le module ymeg2 ?",
+      "expected_answer": "Agendas",
+      "difficulty": "difficile",
+      "source_files": [
+        "Agendas.htm"
+      ],
+      "source_path": "data/ymeg2/ymeg2/Agendas.htm",
+      "expected_keywords": [
+        "ymeg2",
+        "agendas"
+      ]
+    },
+    {
+      "id": "ymig_001",
+      "category": "ymig",
+      "module": "ymig",
+      "question": "Que couvre la page \"Algorithme de l'impression des blocs\" dans le module ymig ?",
+      "expected_answer": "Algorithme de l'impression des blocs Pour Ymig, l'impression d'un bloc ne se résume pas à une simple sortie sur l'imprimante. Elle comporte en réalité de nombreuses étapes, fonction du paramétrage effectué au niveau du masque Xwin et de l'état courant de l'édition. Le cas échéant, Ymig : - Exécute le point de traitement avant gestion. - Exécute les points d'arrêt et de traitement avant impression. - Imprime le bloc de débordement ou le bloc chaîné. - Effectue un saut de page. - Etc.",
+      "difficulty": "facile",
+      "source_files": [
+        "Algorithmedel_impressiondesblocs.htm"
+      ],
+      "source_path": "data/ymig/ymig/Algorithmedel_impressiondesblocs.htm",
+      "expected_keywords": [
+        "ymig",
+        "algorithme",
+        "impression",
+        "blocs",
+        "bloc",
+        "resume",
+        "simple",
+        "sortie"
+      ]
+    },
+    {
+      "id": "ymig_002",
+      "category": "ymig",
+      "module": "ymig",
+      "question": "Quel est le contenu principal de \"Appel des fonctions de Ymig\" dans le module ymig ?",
+      "expected_answer": "Ymig regroupe un certain nombre de fonctions, auxquelles vous allez faire appel pour charger un masque en mémoire, pour imprimer un bloc, etc. Des instructions spécialisées du langage Diva vous permettront d'appeler ces fonctions. Par exemple :",
+      "difficulty": "moyen",
+      "source_files": [
+        "AppeldesfonctionsdeYmig.htm"
+      ],
+      "source_path": "data/ymig/ymig/AppeldesfonctionsdeYmig.htm",
+      "expected_keywords": [
+        "ymig",
+        "appel",
+        "fonctions",
+        "regroupe",
+        "certain",
+        "nombre",
+        "auxquelles",
+        "vous"
+      ]
+    },
+    {
+      "id": "ymig_003",
+      "category": "ymig",
+      "module": "ymig",
+      "question": "Quels details importants sont presentes dans \"Déclaration des données communes au programme et au(x) masque(s)\" pour le module ymig ?",
+      "expected_answer": "En général, les variables imprimées dans le(s) masque(s) sont chargées par le programme appelant. Pour que Ymig et votre programme travaillent effectivement sur les mêmes données, il faut déclarer PUBLIC le(s) enregistrement(s) concerné(s). ;enregistrements communs au programme et au masque Xwin :",
+      "difficulty": "difficile",
+      "source_files": [
+        "D_clarationdesdonn_escommunesauprogrammeetau_x_masque_s_.htm"
+      ],
+      "source_path": "data/ymig/ymig/D_clarationdesdonn_escommunesauprogrammeetau_x_masque_s_.htm",
+      "expected_keywords": [
+        "ymig",
+        "declaration",
+        "donnees",
+        "communes",
+        "programme",
+        "masque",
+        "general",
+        "variables"
+      ]
+    },
+    {
+      "id": "yzoom_001",
+      "category": "yzoom",
+      "module": "yzoom",
+      "question": "Que couvre la page \"Algorithme de l'impression en mode fiche\" dans le module yzoom ?",
+      "expected_answer": "Algorithme de l'impression en mode fiche Le zoom réalise les opérations suivantes lors d'une impression en mode fiche :",
+      "difficulty": "facile",
+      "source_files": [
+        "Algorithmedel_impressionenmodefiche.htm"
+      ],
+      "source_path": "data/yzoom/yzoom/Algorithmedel_impressionenmodefiche.htm",
+      "expected_keywords": [
+        "yzoom",
+        "algorithme",
+        "impression",
+        "mode",
+        "fiche",
+        "zoom",
+        "realise",
+        "operations"
+      ]
+    },
+    {
+      "id": "yzoom_002",
+      "category": "yzoom",
+      "module": "yzoom",
+      "question": "Quel est le contenu principal de \"Algorithme de l'impression en mode liste\" dans le module yzoom ?",
+      "expected_answer": "Le zoom réalise les opérations suivantes lors d'une impression en mode liste : Appel de la procédure ZoomInitListe .",
+      "difficulty": "moyen",
+      "source_files": [
+        "Algorithmedel_impressionenmodeliste.htm"
+      ],
+      "source_path": "data/yzoom/yzoom/Algorithmedel_impressionenmodeliste.htm",
+      "expected_keywords": [
+        "yzoom",
+        "algorithme",
+        "impression",
+        "mode",
+        "liste",
+        "zoom",
+        "realise",
+        "operations"
+      ]
+    },
+    {
+      "id": "yzoom_003",
+      "category": "yzoom",
+      "module": "yzoom",
+      "question": "Quels details importants sont presentes dans \"Appel d'un Zoom Sql en saisie de donnée\" pour le module yzoom ?",
+      "expected_answer": "Dans un masque d'écran Xwin, les objets Champ et Multi-choix disposent de plus de la propriété \" Table associée \" (famille Saisie). Celle-ci signifie qu'une table est associée à l'objet et que vous voulez que l'utilisateur ait accès à cette table. Lorsque cette propriété est positionnée à \"Oui\" :",
+      "difficulty": "difficile",
+      "source_files": [
+        "Appel_d_un_Zoom_Sql_en_saisie_de_donnée.htm"
+      ],
+      "source_path": "data/yzoom/yzoom/Appel_d_un_Zoom_Sql_en_saisie_de_donnée.htm",
+      "expected_keywords": [
+        "yzoom",
+        "appel",
+        "zoom",
+        "saisie",
+        "donnee",
+        "masque",
+        "ecran",
+        "xwin"
+      ]
+    },
+    {
+      "id": "zoom_001",
+      "category": "zoom",
+      "module": "zoom",
+      "question": "Que couvre la page \"Annexes\" dans le module zoom ?",
+      "expected_answer": "Annexes",
+      "difficulty": "facile",
+      "source_files": [
+        "Annexes.htm"
+      ],
+      "source_path": "data/zoom/zoom/Annexes.htm",
+      "expected_keywords": [
+        "zoom",
+        "annexes"
+      ]
+    },
+    {
+      "id": "zoom_002",
+      "category": "zoom",
+      "module": "zoom",
+      "question": "Quel est le contenu principal de \"Appartient à\" dans le module zoom ?",
+      "expected_answer": "Critère de sélection sur le département, la valeur 54..55 57 88 67..68 permettra de sélectionner les départements d'Alsace et de Lorraine.",
+      "difficulty": "moyen",
+      "source_files": [
+        "Appartient_.htm"
+      ],
+      "source_path": "data/zoom/zoom/Appartient_.htm",
+      "expected_keywords": [
+        "zoom",
+        "appartient",
+        "critere",
+        "selection",
+        "departement",
+        "valeur",
+        "permettra",
+        "selectionner"
+      ]
+    },
+    {
+      "id": "zoom_003",
+      "category": "zoom",
+      "module": "zoom",
+      "question": "Quels details importants sont presentes dans \"Consultation en mode fiche\" pour le module zoom ?",
+      "expected_answer": "Changer de page lorsque le mode fiche en comporte plusieurs. Un onglet permet généralement d'afficher la ou les autres pages. Les touches \" Page Suivante \" et \" Page Précédente \" permettent d'afficher les autres pages. Afficher la fiche suivante . Lorsque la dernière fiche est affichée, la demande d'affichage de la fiche suivante émet un signal sonore.",
+      "difficulty": "difficile",
+      "source_files": [
+        "Consultationenmodefiche.htm"
+      ],
+      "source_path": "data/zoom/zoom/Consultationenmodefiche.htm",
+      "expected_keywords": [
+        "zoom",
+        "consultation",
+        "mode",
+        "fiche",
+        "changer",
+        "lorsque",
+        "comporte",
+        "plusieurs"
+      ]
     }
-  ],
-  "metadata": {
-    "total_questions": 20,
-    "categories": [
-      "Chemins Harmony",
-      "Gestion des utilisateurs",
-      "Impressions",
-      "Administration générale",
-      "Chemins d'accès",
-      "Impression Windows",
-      "LDAP et synchronisation",
-      "Fichiers de commandes",
-      "États et graphiques"
-    ],
-    "difficulty_distribution": {
-      "facile": 6,
-      "moyen": 10,
-      "difficile": 4
-    },
-    "created_date": "2026-04-08",
-    "purpose": "Test du système RAG pour la documentation Harmony/Divalto"
-  }
+  ]
 }

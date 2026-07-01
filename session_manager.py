@@ -8,14 +8,24 @@ import os
 import json
 import logging
 import sqlite3
+import re
+import unicodedata
+from collections import Counter
 from datetime import datetime
 from typing import Dict, List, Optional, Tuple
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-SESSIONS_FILE = os.getenv("RAG_SESSIONS_FILE", "rag_sessions.json")
-DB_SESSIONS_PATH = os.getenv("RAG_SESSIONS_DB", "rag_sessions.db")
+SESSIONS_FILE = os.getenv("RAG_SESSIONS_FILE", "hybrid_rag_sessions.json")
+DB_SESSIONS_PATH = os.getenv("RAG_SESSIONS_DB", "hybrid_rag_sessions.db")
+
+SESSION_STOPWORDS = {
+    "comment", "faire", "quel", "quelle", "quels", "quelles", "pourquoi",
+    "dans", "avec", "sans", "depuis", "harmony", "divalto", "peut", "pour",
+    "une", "un", "des", "les", "la", "le", "de", "du", "au", "aux", "et",
+    "est", "sont", "etre", "ce", "cette", "ces", "quoi", "plus", "moins",
+}
 
 
 class SessionManager:
@@ -23,11 +33,13 @@ class SessionManager:
 
     def __init__(
         self,
-        file_path: str = SESSIONS_FILE,
+        file_path: Optional[str] = None,
         db_path: Optional[str] = None,
         use_db: bool = False,
+        max_history_turns: int = 5,
     ):
         self.file_path = file_path
+        self.max_history_turns = max(1, int(max_history_turns))
         self.db_path = None
         self.use_db = False
         self.conn: Optional[sqlite3.Connection] = None
@@ -136,7 +148,7 @@ class SessionManager:
 
     def _load_json(self):
         """Charge les sessions depuis le fichier JSON."""
-        if os.path.exists(self.file_path):
+        if self.file_path and os.path.exists(self.file_path):
             try:
                 with open(self.file_path, "r", encoding="utf-8") as f:
                     loaded = json.load(f)
@@ -206,8 +218,12 @@ class SessionManager:
         cursor.execute("SELECT session_id FROM sessions")
         sessions = cursor.fetchall()
 
-        if not sessions and os.path.exists(self.file_path):
+        if not sessions and self.file_path and os.path.exists(self.file_path):
             self._migrate_json_to_db()
+        elif self.file_path and os.path.exists(self.file_path):
+            cursor.execute("SELECT COUNT(1) AS count FROM turns")
+            if cursor.fetchone()["count"] == 0:
+                self._migrate_json_turns_to_db()
 
         active_session = self._get_setting("active_session", "default")
         self.data["active_session"] = active_session
@@ -308,11 +324,32 @@ class SessionManager:
                     continue
 
                 self._insert_session_db(session_id, session_obj)
+                for turn in session_obj.get("turns", []):
+                    self._insert_turn_db(session_id, turn)
 
             active_session = loaded.get("active_session", "default")
             self._set_setting("active_session", active_session)
         except Exception as e:
             logger.warning(f"⚠️ Migration JSON vers SQLite échouée: {e}")
+
+    def _migrate_json_turns_to_db(self):
+        try:
+            with open(self.file_path, "r", encoding="utf-8") as f:
+                loaded = json.load(f)
+            sessions = loaded.get("sessions", {})
+            if not isinstance(sessions, dict):
+                return
+            for session_id, session_data in sessions.items():
+                if isinstance(session_data, list):
+                    turns = session_data
+                elif isinstance(session_data, dict):
+                    turns = session_data.get("turns", [])
+                else:
+                    turns = []
+                for turn in turns:
+                    self._insert_turn_db(session_id, turn)
+        except Exception as e:
+            logger.warning(f"Migration des tours JSON vers SQLite echouee: {e}")
 
     def _ensure_default_session(self):
         """Assure qu'une session par défaut existe."""
@@ -341,7 +378,7 @@ class SessionManager:
 
     def _save(self):
         """Sauvegarde les sessions dans le fichier ou la base."""
-        if self.use_db and self.conn:
+        if (self.use_db and self.conn) or not self.file_path:
             return
 
         try:
@@ -363,6 +400,25 @@ class SessionManager:
                 session_obj["metadata"].get("modified", datetime.now().isoformat()),
                 session_obj["context"].get("global_context", ""),
                 json.dumps(session_obj["context"].get("indexed_entities", []), ensure_ascii=False),
+            ),
+        )
+        self.conn.commit()
+        return True
+
+    def _insert_turn_db(self, session_id: str, turn: Dict) -> bool:
+        if not self.conn:
+            return False
+        cursor = self.conn.cursor()
+        cursor.execute(
+            "INSERT INTO turns(session_id, timestamp, question, answer, metadata, rag_context) "
+            "VALUES (?, ?, ?, ?, ?, ?)",
+            (
+                session_id,
+                turn.get("timestamp") or datetime.now().isoformat(timespec="seconds"),
+                turn.get("question", ""),
+                turn.get("answer", ""),
+                json.dumps(turn.get("metadata", {}), ensure_ascii=False),
+                json.dumps(turn.get("rag_context", {}), ensure_ascii=False),
             ),
         )
         self.conn.commit()
@@ -504,7 +560,7 @@ class SessionManager:
         self._save()
         return True
 
-    def add_turn(
+    def _add_turn_legacy(
         self,
         question: str,
         answer: str,
@@ -557,6 +613,142 @@ class SessionManager:
         except Exception as e:
             logger.error(f"Erreur lors de l'ajout du tour: {e}")
             return False
+
+    def add_turn(
+        self,
+        *args,
+        session_id: Optional[str] = None,
+        user_message: Optional[str] = None,
+        assistant_answer: Optional[str] = None,
+        sources: Optional[List] = None,
+        question: Optional[str] = None,
+        answer: Optional[str] = None,
+        metadata: Optional[Dict] = None,
+        rag_context: Optional[Dict] = None,
+    ) -> bool:
+        """Store a turn using either the session-aware or legacy API."""
+        if len(args) >= 3:
+            session_id, user_message, assistant_answer = args[:3]
+        elif len(args) == 2:
+            question, answer = args
+        elif len(args) == 1 and question is None and user_message is None:
+            question = args[0]
+
+        question = str(user_message if user_message is not None else question or "")
+        answer = str(
+            assistant_answer if assistant_answer is not None else answer or ""
+        )
+        target_session = str(session_id or self.current_session())
+        if not self.get_session_info(target_session):
+            self.create_session(target_session, target_session, "")
+
+        previous_session = self.current_session()
+        if target_session != previous_session:
+            self.switch_session(target_session)
+        context = dict(rag_context or {})
+        if sources is not None:
+            context["sources"] = sources
+        try:
+            stored = self._add_turn_legacy(
+                question,
+                answer,
+                metadata=metadata,
+                rag_context=context,
+            )
+            if stored:
+                if self.use_db and self.conn:
+                    # SQLite is the durable audit/history store. Limit context at
+                    # read time, not by deleting old question/answer turns.
+                    pass
+                else:
+                    self._save()
+                self.refresh_session_memory(target_session)
+            return stored
+        finally:
+            if target_session != previous_session:
+                self.switch_session(previous_session)
+
+    @staticmethod
+    def _source_label(source_item) -> str:
+        if isinstance(source_item, dict):
+            return str(
+                source_item.get("filename")
+                or source_item.get("source")
+                or source_item.get("title")
+                or ""
+            ).strip()
+        return str(source_item or "").strip()
+
+    @staticmethod
+    def _important_terms(text: str) -> List[str]:
+        words = re.findall(r"[A-Za-zÀ-ÿ0-9_.-]{3,}", str(text or "").lower())
+        terms = []
+        for word in words:
+            normalized = word.strip("._-")
+            ascii_norm = unicodedata.normalize("NFD", normalized)
+            ascii_norm = "".join(
+                char for char in ascii_norm
+                if unicodedata.category(char) != "Mn"
+            )
+            if normalized and ascii_norm not in SESSION_STOPWORDS:
+                terms.append(normalized)
+        return terms
+
+    def get_recent_sources(
+        self,
+        session_id: Optional[str] = None,
+        limit: int = 5,
+    ) -> List[str]:
+        sources = []
+        seen = set()
+        for turn in reversed(self.get_history(session_id=session_id, limit=0)):
+            context = turn.get("rag_context") or {}
+            for item in context.get("sources", []) or []:
+                label = self._source_label(item)
+                if label and label not in seen:
+                    seen.add(label)
+                    sources.append(label)
+                    if len(sources) >= limit:
+                        return sources
+        return sources
+
+    def build_session_summary(
+        self,
+        session_id: Optional[str] = None,
+        max_turns: int = 8,
+    ) -> Dict:
+        turns = self.get_history(session_id=session_id, limit=max_turns)
+        if not turns:
+            return {"summary": "", "topics": [], "sources": []}
+
+        term_counts = Counter()
+        for turn in turns:
+            term_counts.update(self._important_terms(turn.get("question", "")))
+        topics = [term for term, _count in term_counts.most_common(8)]
+        sources = self.get_recent_sources(session_id=session_id, limit=5)
+        last_question = turns[-1].get("question", "")
+
+        pieces = []
+        if topics:
+            pieces.append("Sujets: " + ", ".join(topics[:6]))
+        if sources:
+            pieces.append("Sources recentes: " + ", ".join(sources[:4]))
+        if last_question:
+            pieces.append("Derniere question: " + last_question[:180])
+        return {
+            "summary": " | ".join(pieces),
+            "topics": topics,
+            "sources": sources,
+        }
+
+    def refresh_session_memory(self, session_id: Optional[str] = None) -> Dict:
+        if session_id is None:
+            session_id = self.current_session()
+        summary = self.build_session_summary(session_id=session_id)
+        self.set_session_context(session_id, summary.get("summary", ""))
+        if summary.get("topics"):
+            self.add_indexed_entities(summary["topics"], session_id=session_id)
+        return summary
 
     def set_session_context(self, session_id: Optional[str] = None, context: str = "") -> bool:
         if self.use_db and self.conn:
@@ -651,15 +843,32 @@ class SessionManager:
         turns = self.get_history(limit=limit)
         return [t.get("question", "") for t in turns if t.get("question")]
 
-    def get_history(self, session_id: Optional[str] = None, limit: int = 10) -> List[Dict]:
+    def get_history(
+        self,
+        session_id: Optional[str] = None,
+        limit: Optional[int] = None,
+    ) -> List[Dict]:
+        if limit is None:
+            limit = self.max_history_turns
         if self.use_db and self.conn:
             if session_id is None:
                 session_id = self.current_session()
             cursor = self.conn.cursor()
-            cursor.execute(
-                "SELECT timestamp, question, answer, metadata, rag_context FROM turns WHERE session_id = ? ORDER BY id DESC",
-                (session_id,),
-            )
+            if limit is not None and limit > 0:
+                cursor.execute(
+                    "SELECT timestamp, question, answer, metadata, rag_context "
+                    "FROM ("
+                    "  SELECT id, timestamp, question, answer, metadata, rag_context "
+                    "  FROM turns WHERE session_id = ? ORDER BY id DESC LIMIT ?"
+                    ") ORDER BY id ASC",
+                    (session_id, limit),
+                )
+            else:
+                cursor.execute(
+                    "SELECT timestamp, question, answer, metadata, rag_context "
+                    "FROM turns WHERE session_id = ? ORDER BY id ASC",
+                    (session_id,),
+                )
             rows = cursor.fetchall()
             turns = []
             for row in rows:
@@ -682,7 +891,7 @@ class SessionManager:
                         "rag_context": rag_context,
                     }
                 )
-            return turns if limit <= 0 else turns[:limit]
+            return turns
 
         if session_id is None:
             session_id = self.current_session()

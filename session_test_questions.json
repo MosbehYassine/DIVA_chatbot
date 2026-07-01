@@ -1,0 +1,100 @@
+{
+  "metadata": {
+    "description": "Mini fichier de test pour verifier les sessions et l'utilisation de l'historique conversationnel.",
+    "how_to_use": [
+      "Lancer: python query_docs.py",
+      "Choisir une session existante ou creer la session indiquee dans session_id.",
+      "Poser les questions dans l'ordre du scenario.",
+      "Verifier que les questions avec expected_history_usage=true sont reformulees avec le sujet precedent."
+    ],
+    "expected_cli_behavior": [
+      "Au demarrage, query_docs.py doit demander quelle session utiliser.",
+      "La commande history doit afficher les questions deja posees dans la session active.",
+      "La commande switch <session_id> doit permettre de changer de session.",
+      "Les questions de suivi doivent utiliser l'historique de la meme session, pas celui d'une autre session."
+    ]
+  },
+  "sessions": [
+    {
+      "session_id": "test_session_administration",
+      "theme": "Administration et droits utilisateurs",
+      "turns": [
+        {
+          "turn": 1,
+          "difficulty": "facile",
+          "question": "A quoi sert le module Administration ?",
+          "expected_history_usage": false,
+          "expected_observation": "La reponse doit identifier le role general du module Administration."
+        },
+        {
+          "turn": 2,
+          "difficulty": "moyen",
+          "question": "Et comment gerer les utilisateurs dedans ?",
+          "expected_history_usage": true,
+          "expected_observation": "Le systeme doit comprendre que 'dedans' fait reference au module Administration."
+        },
+        {
+          "turn": 3,
+          "difficulty": "difficile",
+          "question": "Quels droits faut-il verifier avant de modifier ces parametres ?",
+          "expected_history_usage": true,
+          "expected_observation": "La reponse doit rester sur les droits ou profils lies a l'administration, sans repartir vers un autre module."
+        }
+      ]
+    },
+    {
+      "session_id": "test_session_recherche",
+      "theme": "Recherche et consultation",
+      "turns": [
+        {
+          "turn": 1,
+          "difficulty": "facile",
+          "question": "Comment faire une recherche dans le logiciel ?",
+          "expected_history_usage": false,
+          "expected_observation": "La reponse doit decrire le principe ou le point d'entree de la recherche."
+        },
+        {
+          "turn": 2,
+          "difficulty": "moyen",
+          "question": "Quels filtres peut-on appliquer apres ca ?",
+          "expected_history_usage": true,
+          "expected_observation": "Le systeme doit relier 'ca' a la recherche precedente."
+        },
+        {
+          "turn": 3,
+          "difficulty": "difficile",
+          "question": "Si je ne trouve pas le resultat attendu, que dois-je controler ?",
+          "expected_history_usage": true,
+          "expected_observation": "La reponse doit proposer des controles coherents avec la recherche: criteres, filtres, perimetre ou droits."
+        }
+      ]
+    },
+    {
+      "session_id": "test_session_impression",
+      "theme": "Impression et edition",
+      "turns": [
+        {
+          "turn": 1,
+          "difficulty": "facile",
+          "question": "Comment lancer une impression ?",
+          "expected_history_usage": false,
+          "expected_observation": "La reponse doit expliquer l'action d'impression ou le menu associe."
+        },
+        {
+          "turn": 2,
+          "difficulty": "moyen",
+          "question": "Et comment choisir le modele avant de l'imprimer ?",
+          "expected_history_usage": true,
+          "expected_observation": "Le systeme doit comprendre que 'l'' fait reference au document ou etat a imprimer."
+        },
+        {
+          "turn": 3,
+          "difficulty": "difficile",
+          "question": "Que faire si la mise en page n'est pas correcte ?",
+          "expected_history_usage": true,
+          "expected_observation": "La reponse doit rester dans le contexte impression/modele/mise en page."
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,6 @@ Jeu de tests etendu pour couvrir plus de fichiers/modules de la documentation.
 Evaluation: correspondance de source + couverture de mots-cles attendus.
 """
 
-import io
 import json
 import os
 import re
@@ -15,7 +14,8 @@ from typing import Dict, List
 
 from query_docs import HybridRAG
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 def normalize_text(text: str) -> str:

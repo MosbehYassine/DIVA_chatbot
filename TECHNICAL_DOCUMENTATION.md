@@ -1,323 +1,571 @@
-# Documentation Technique - Projet RAG Harmony/Divalto
+# Documentation Technique - RAG Harmony/Divalto
 
-## 1. Objectif du projet
+## 1. Objectif
 
-Ce projet implemente un systeme RAG hybride pour interroger une documentation Harmony/Divalto extraite de fichiers CHM.
+Ce projet est un systeme RAG local pour interroger la documentation Harmony/Divalto extraite de fichiers CHM.
 
-Le systeme utilise maintenant uniquement le pipeline RAG documentaire :
+Le systeme est volontairement documentaire :
 
-1. Recherche graphe dans `networkx_graph.pkl`.
-2. Recherche vectorielle FAISS dans `faiss_index.pkl`.
-3. Fusion des resultats graphe/vectoriels.
-4. Reranking lexical, vectoriel et graphe.
-5. Generation extractive depuis les meilleurs passages.
+- il ne retourne pas de reponse curatee avant la recherche ;
+- il ne force pas les reponses attendues de `test_questions.json` ;
+- il cherche dans les documents locaux ;
+- il extrait une reponse depuis les passages retrouves ;
+- il ajoute des sources ;
+- il verifie que la reponse est supportee par le contexte.
 
-L'objectif est de fournir une reponse fiable a une question utilisateur en s'appuyant sur les sources documentaires locales.
-
-## 2. Architecture generale
+Le mode actuel est donc un RAG pur :
 
 ```text
-Question utilisateur
-        |
-        v
-query_docs.py / HybridRAG.query()
-        |
-        +--> Recherche graphe
-        |       - networkx_graph.pkl
-        |
-        +--> Recherche vectorielle FAISS
-        |       - faiss_index.pkl
-        |       - chunks_metadata.json
-        |
-        +--> Fusion + deduplication
-        |
-        +--> Reranking lexical/vectoriel/graphe
-        |
-        +--> Generation extractive via rag_answer.py
+question
+  -> transformation de requete
+  -> recherche graphe
+  -> recherche vectorielle FAISS
+  -> recherche lexicale BM25/TF-IDF
+  -> fusion des resultats
+  -> mapping child -> parent
+  -> MMR
+  -> reranking cross-encoder ou fallback
+  -> compression contextuelle
+  -> generation extractive
+  -> verification documentaire
 ```
 
-## 3. Fichiers essentiels
+## 2. Structure Du Projet
 
-### Pipeline principal
-
-| Fichier | Role |
-|---|---|
-| `ingest_docs.py` | Lit les documents dans `data/`, cree les chunks, l'index FAISS et le graphe NetworkX. |
-| `query_docs.py` | Point d'entree d'interrogation. Contient la classe `HybridRAG`. |
-| `build_rag.py` | Compile, relance l'ingestion et execute les tests selon les options. |
-| `run_precision.py` | Lance une mesure rapide de similarite sur `test_questions.json`. |
-| `measure_precision.py` | Mesure la precision avec un mode reusable/importable. |
-
-### Modules RAG
+### Fichiers racine utiles
 
 | Fichier | Role |
 |---|---|
-| `rag_config.py` | Configuration centrale : modele embeddings, chunking, chemins, poids de reranking, seuils. |
-| `rag_vector.py` | Fonctions communes d'encodage embeddings et similarite cosinus. |
-| `rag_answer.py` | Generation extractive de reponse depuis les meilleurs passages. |
-| `rag_canonical.py` | Ressource optionnelle pour tests/reponses connues ; non utilisee par `query_docs.py`. |
-| `rag_curated_vector.py` | Ressource optionnelle pour QA curatee ; non utilisee par `query_docs.py`. |
-| `session_manager.py` | Gestion des sessions et historique conversationnel. |
+| `README.md` | Presentation courte du projet. |
+| `TECHNICAL_DOCUMENTATION.md` | Documentation technique detaillee. |
+| `requirements.txt` | Dependances Python. |
+| `Dockerfile` | Execution conteneurisee optionnelle. |
+| `.env` | Variables locales, notamment cles API optionnelles. |
+| `build_rag.py` | Compilation, ingestion et tests. |
 
 ### Donnees et index
 
-| Fichier/Dossier | Role |
+| Fichier ou dossier | Role |
 |---|---|
-| `data/` | Documents source extraits des CHM. |
-| `chunks_metadata.json` | Metadonnees et textes des chunks indexes. |
-| `faiss_index.pkl` | Index vectoriel FAISS. |
+| `data/` | Documentation source extraite des CHM. |
+| `faiss_index.pkl` | Index FAISS des chunks enfants. |
+| `chunks_metadata.json` | Metadonnees des chunks enfants. |
+| `parent_chunks_metadata.json` | Metadonnees des chunks parents. |
 | `networkx_graph.pkl` | Graphe de connaissances NetworkX. |
-| `networkx_graph_sources.pkl` | Graphe avec informations de sources. |
-| `index_config.json` | Configuration de l'index courant. |
-| `curated_qa.json` | Questions/reponses validees manuellement, conservees comme ressource optionnelle. |
-| `curated_qa_vectors.npz` | Embeddings pre-calcules des questions curatees, non utilises par la requete principale. |
+| `networkx_graph_sources.pkl` | Copie du graphe avec sources. |
+| `index_config.json` | Configuration de l'index actuellement genere. |
+| `hybrid_rag_sessions.db` | Base SQLite locale des sessions, questions et reponses. |
+| `hybrid_rag_sessions.json` | Ancien stockage JSON, utilise comme source de migration si la base est vide. |
 
-### Tests
+### Pipeline RAG
 
 | Fichier | Role |
 |---|---|
-| `test_questions.json` | Jeu principal de 21 questions avec reponses attendues. |
-| `test_questions_extended.json` | Jeu etendu pour verifier sources et mots-cles. |
-| `test_hybrid_rag.py` | Tests du RAG hybride sur le jeu principal. |
-| `test_hybrid_rag_extended.py` | Tests etendus par module/source. |
-| `precision_report.json` | Rapport genere par `run_precision.py`. |
+| `ingest_docs.py` | Ingestion, sectionnement HTML, parent-child chunking, FAISS, graphe. |
+| `query_docs.py` | Moteur de requete `HybridRAG`. |
+| `rag_config.py` | Configuration centrale. |
+| `rag_vector.py` | Encodage embeddings et similarite cosinus. |
+| `rag_answer.py` | Generation extractive et sources. |
+| `rag_llm_answer.py` | Reformulation LLM controlee de la reponse finale. |
+| `rag_canonical.py` | Helpers de normalisation et extraction de sujet documentaire. |
+| `rag_lexical.py` | BM25, TF-IDF ou fallback lexical. |
+| `rag_mmr.py` | Diversification MMR. |
+| `rag_reranker.py` | Reranking cross-encoder avec fallback. |
+| `rag_query_transform.py` | Expansion, SelfQuery, variantes de recherche. |
+| `rag_hyde.py` | Generation HyDE pour le retrieval uniquement. |
+| `rag_compressor.py` | Compression extractive des contextes. |
+| `rag_verifier.py` | Verification du support documentaire. |
+| `rag_conversation.py` | Reformulation avec historique conversationnel. |
+| `session_manager.py` | Sessions et historique. |
 
-## 4. Pipeline d'ingestion
+### Evaluation
 
-Commande :
+| Fichier | Role |
+|---|---|
+| `measure_precision.py` | Evaluation detaillee retrieval + answer. |
+| `run_precision.py` | Lance une evaluation rapide et regenere `precision_report.json`. |
+| `test_questions.json` | Fichier unique de test : 3 questions par module principal de `data/` (facile, moyen, difficile). |
+| `session_test_questions.json` | Mini scenarios de questions liees pour tester la memoire de session. |
+| `test_hybrid_rag.py` | Tests fonctionnels du RAG. |
+| `test_hybrid_rag_extended.py` | Tests etendus. |
+| `test_rag_pipeline_components.py` | Tests des composants internes du pipeline. |
 
-```powershell
-python ingest_docs.py
+## 3. Fichiers Supprimes
+
+Les fichiers suivants ont ete supprimes car ils ne font plus partie du pipeline actif :
+
+| Fichier | Raison |
+|---|---|
+| `__pycache__/` | Cache Python regenere automatiquement. |
+| `precision_report.json` | Rapport genere, regenere par `python run_precision.py`. |
+| `curated_qa.json` | Ancienne base QA curatee, non utilisee par `query_docs.py`. |
+| `curated_qa_vectors.npz` | Ancien index vectoriel QA curatee. |
+| `rag_curated_vector.py` | Ancien raccourci de reponse curatee, desactive. |
+| `README_RAG.md` | Documentation redondante et obsolescente. |
+| `EXECUTION_GUIDE.md` | Guide ancien remplace par cette documentation. |
+
+Le pipeline actuel ne depend plus de ces fichiers.
+
+## 4. Ingestion Semantique
+
+Le fichier principal est `ingest_docs.py`.
+
+### Etapes
+
+1. Lecture des fichiers HTML/Markdown dans `data/`.
+2. Detection d'encodage avec `UnicodeDammit`.
+3. Nettoyage et normalisation du texte.
+4. Decoupage HTML par sections `h1`, `h2`, `h3`.
+5. Construction des chunks parents et enfants.
+6. Enrichissement du texte envoye a FAISS.
+7. Creation des embeddings.
+8. Creation de l'index FAISS.
+9. Creation du graphe NetworkX avec aretes ponderees.
+10. Sauvegarde des artefacts.
+
+### Section-aware chunking
+
+Avant, le parent-child chunking etait surtout une fenetre de tokens.
+
+Maintenant, l'ingestion cree d'abord des documents de section :
+
+```text
+document HTML
+  -> section h1/h2/h3
+  -> parent chunk
+  -> child chunk
 ```
 
-Etapes principales :
+Cela evite de melanger plusieurs sections et ameliore la coherence semantique.
 
-1. Lecture des fichiers `.htm`, `.html` et `.md` dans `data/`.
-2. Nettoyage HTML avec BeautifulSoup.
-3. Normalisation texte.
-4. Decoupage en chunks selon `RAG_CHUNK_STRATEGY`.
-5. Encodage des chunks avec SentenceTransformers.
-6. Creation de l'index FAISS.
-7. Extraction d'entites et creation du graphe NetworkX.
-8. Sauvegarde des artefacts :
-   - `faiss_index.pkl`
-   - `chunks_metadata.json`
-   - `networkx_graph.pkl`
-   - `networkx_graph_sources.pkl`
-   - `index_config.json`
+### Parent-child retrieval
 
-Configuration actuelle de l'index :
+Configuration actuelle dans `rag_config.py` :
 
-```json
-{
-  "embedding_model": "intfloat/multilingual-e5-large",
-  "embedding_dimension": 1024,
-  "chunk_strategy": "semantic",
-  "chunk_count": 13216,
-  "chunk_size": 800,
-  "chunk_overlap": 200
-}
+```text
+RAG_ENABLE_PARENT_CHILD_RETRIEVAL=true
+RAG_PARENT_CHUNK_SIZE=1000
+RAG_PARENT_CHUNK_OVERLAP=200
+RAG_CHILD_CHUNK_SIZE=250
+RAG_CHILD_CHUNK_OVERLAP=50
 ```
 
-## 5. Pipeline de requete
+Principe :
 
-Commande interactive :
+- les enfants sont petits et optimises pour la recherche ;
+- les parents sont plus longs et optimises pour la reponse ;
+- les resultats enfants sont regroupes par `parent_id`.
 
-```powershell
-python query_docs.py
+### Texte indexe dans FAISS
+
+FAISS n'encode pas seulement le contenu brut. Il encode un texte enrichi :
+
+```text
+Module: Administration
+Titre: Acces aux fichiers d'Harmony
+Section: Acces aux fichiers d'Harmony
+Fichier: Acc_sauxfichiersd_Harmony.htm
+Contenu: ...
 ```
 
-Flux logique :
+Le contenu original reste conserve dans `text` pour la reponse.
 
-1. La question est recue par `HybridRAG.query()`.
-2. Le systeme lance la recherche graphe.
-3. Le systeme lance la recherche vectorielle FAISS.
-4. Les resultats sont fusionnes et dedupliques.
-5. Les passages sont rerankes avec les signaux lexicaux, vectoriels, source et graphe.
-6. La reponse finale est generee de maniere extractive depuis les meilleurs passages.
+Le texte reel encode est garde dans `index_text` pour debug.
 
-La requete principale n'utilise plus :
+### Graphe pondere
 
-- `lookup_canonical()` ;
-- `lookup_by_vector()` ;
-- les reponses canoniques ;
-- les reponses QA curatees.
+Chaque relation document -> entite contient maintenant un poids :
 
-## 6. Evaluation et precision
-
-Commande :
-
-```powershell
-python run_precision.py
+```text
+weight = occurrences dans le chunk + bonus titre/section/module
 ```
 
-Note importante :
+Le graphe devient donc plus utile pour le reranking.
 
-- Le score depend maintenant uniquement de la capacite du RAG documentaire a retrouver puis extraire les bons passages.
-- Les resultats ne sont plus forces par les reponses attendues de `test_questions.json`.
-- Le benchmark devient plus realiste pour evaluer le retrieval et la generation extractive.
-- L'ancien score de 100% n'est plus representatif, car il provenait des reponses canoniques maintenant desactivees.
-- Il faut relancer `python run_precision.py` pour generer un nouveau `precision_report.json` en mode RAG pur.
+## 5. Requete
 
-## 7. Variables de configuration utiles
+Le fichier principal est `query_docs.py`.
 
-| Variable | Role | Valeur recommandee |
-|---|---|---|
-| `RAG_EMBEDDING_MODEL` | Modele d'embeddings | `intfloat/multilingual-e5-large` |
-| `RAG_CHUNK_STRATEGY` | Strategie de chunking | `semantic` |
-| `RAG_CHUNK_SIZE` | Taille des chunks | `800` |
-| `RAG_CHUNK_OVERLAP` | Overlap entre chunks | `200` |
-| `RAG_TARGET_PRECISION` | Seuil de validation | `0.80` |
+### Flux
 
-## 8. Fine-tuning : est-ce possible ?
-
-Oui, le fine-tuning est possible, mais il faut choisir le bon niveau.
-
-### Option A - Fine-tuning du modele d'embeddings
-
-C'est l'option la plus pertinente pour ce projet.
-
-Objectif :
-
-- ameliorer la recherche FAISS ;
-- rapprocher les questions utilisateur des bons passages ;
-- reduire les erreurs de retrieval.
-
-Donnees necessaires :
-
-```json
-[
-  {
-    "question": "Qu'est-ce qu'un chemin Harmony ?",
-    "positive_passage": "Les chemins Harmony permettent de raccourcir les noms de fichier...",
-    "negative_passages": [
-      "La gestion des utilisateurs est assuree par Xlog1.dhop...",
-      "Harmony utilise le spouleur Windows..."
-    ]
-  }
-]
+```text
+HybridRAG.query()
+  -> memoire conversationnelle
+  -> reformulation si besoin
+  -> transformation de requete
+  -> recherche graphe
+  -> recherche vectorielle FAISS
+  -> recherche lexicale
+  -> fusion enfants
+  -> mapping enfants vers parents
+  -> MMR
+  -> cross-encoder
+  -> compression
+  -> generation extractive
+  -> verification
+  -> reessai optionnel
 ```
 
-Volume conseille :
+### Important
 
-- minimum utile : 100 a 300 paires question/passage ;
-- bon niveau : 500 a 2000 paires ;
-- ideal : paires positives + negatives difficiles.
+`query_docs.py` ne fait plus :
+
+- lookup canonique de reponse attendue ;
+- lookup dans une base QA curatee ;
+- generation d'une reponse HyDE visible par l'utilisateur.
+
+HyDE est seulement utilise comme aide au retrieval.
+
+## 6. Reranking
+
+Le reranking combine plusieurs signaux :
+
+- score vectoriel FAISS ;
+- score lexical ;
+- signal graphe ;
+- correspondance source/fichier ;
+- metadata issue de SelfQuery ;
+- MMR pour diversifier ;
+- cross-encoder si disponible.
+
+Le cross-encoder cible est :
+
+```text
+BAAI/bge-reranker-v2-m3
+```
+
+Si `FlagEmbedding` ou le modele ne sont pas disponibles, le systeme revient au score hybride interne.
+
+## 7. Generation De Reponse
+
+La reponse suit maintenant deux etapes :
+
+1. generation extractive depuis les meilleurs passages ;
+2. reformulation LLM controlee de cette reponse extractive.
+
+Le LLM ne doit pas inventer une reponse libre. Il recoit :
+
+- la question utilisateur ;
+- la reponse extractive ;
+- les passages documentaires autorises ;
+- le resume de session ;
+- le plan interne de lecture documentaire.
+
+Il reformule la reponse dans un style plus naturel, puis `rag_verifier.py` verifie que la reponse finale reste supportee par les contextes.
+
+Avant la compression et la generation extractive, le moteur construit maintenant un plan de raisonnement interne court. Ce plan decompose la question en sous-objectifs documentaires, par exemple :
+
+- identifier le sujet principal ;
+- chercher les etapes ou actions si la question demande `comment` ;
+- chercher les prerequis si la question parle de condition ou d'obligation ;
+- chercher les causes et controles si la question parle d'erreur ;
+- garder le contexte de session si la question est une question de suivi.
+
+Ce plan n'est pas affiche comme un bloc de chain-of-thought. Il sert seulement a mieux orienter le classement des phrases et la verification de la reponse finale.
 
 Avantages :
 
-- ameliore le coeur du RAG ;
-- conserve les sources documentaires ;
-- moins couteux qu'un fine-tuning LLM complet.
+- meilleure formulation selon la question ;
+- garde-fou documentaire via les passages et la verification ;
+- reponses ancrees dans la documentation ;
+- sources faciles a fournir.
 
 Limites :
 
-- necessite de reconstruire `faiss_index.pkl` apres fine-tuning ;
-- demande un jeu de donnees annote proprement.
+- necessite une cle `OPENAI_API_KEY` ou `OPENROUTER_API_KEY` ;
+- si l'appel LLM echoue, le systeme revient a la reponse extractive ;
+- similarite faible si la reponse attendue est une reformulation ;
+- depend beaucoup de la qualite du passage retrouve.
 
-### Option B - Fine-tuning d'un reranker
+## 8. Verification
 
-Tres utile si le retrieval retourne les bons documents dans le top 20 mais pas en top 1.
+`rag_verifier.py` verifie que la reponse est supportee par le contexte :
 
-Objectif :
+- support lexical ;
+- support par embeddings ;
+- detection de reponses generiques ;
+- option LLM verifier si active.
 
-- reclasser les passages candidats ;
-- ameliorer la precision finale sans modifier l'index principal.
+Si le support est insuffisant, le pipeline peut retenter une recherche elargie.
 
-Donnees necessaires :
+## 9. Configuration Principale
 
-```json
-{
-  "question": "...",
-  "passage": "...",
-  "label": 1
-}
-```
+Variables utiles :
 
-ou :
+| Variable | Role | Defaut |
+|---|---|---|
+| `RAG_EMBEDDING_MODEL` | Modele embeddings | `intfloat/multilingual-e5-large` |
+| `RAG_ENABLE_PARENT_CHILD_RETRIEVAL` | Active parent-child | `true` |
+| `RAG_PARENT_CHUNK_SIZE` | Taille parent | `1000` |
+| `RAG_CHILD_CHUNK_SIZE` | Taille enfant | `250` |
+| `RAG_ENABLE_BM25` | Active BM25 | `true` |
+| `RAG_ENABLE_MMR` | Active MMR | `true` |
+| `RAG_ENABLE_CROSS_ENCODER_RERANKER` | Active reranker | `true` |
+| `RAG_ENABLE_CONTEXT_COMPRESSION` | Active compression | `true` |
+| `RAG_ENABLE_HYDE` | Active HyDE retrieval | `true` |
+| `RAG_ENABLE_ANSWER_VERIFIER` | Active verification | `true` |
+| `RAG_ENABLE_LLM_ANSWER_GENERATION` | Active la reformulation LLM de la reponse finale | `true` |
+| `RAG_ANSWER_LLM_MODEL` | Modele LLM pour formuler la reponse | `gpt-4o-mini` |
+| `RAG_ENABLE_REASONING_PLAN` | Active la decomposition interne de la question avant generation | `true` |
+| `RAG_MAX_RETRY_COUNT` | Nombre de reessais | `1` |
 
-```json
-{
-  "question": "...",
-  "positive": "...",
-  "negative": "..."
-}
-```
+## 10. Commandes
 
-Avantages :
-
-- tres efficace pour la precision ;
-- peut etre ajoute apres FAISS ;
-- evite de trop dependre du matching lexical.
-
-### Option C - Fine-tuning d'un LLM generateur
-
-Possible, mais ce n'est pas la premiere recommandation ici.
-
-Pourquoi :
-
-- le projet utilise surtout une generation extractive ;
-- le risque principal actuel est le choix du bon passage, pas la redaction ;
-- fine-tuner un LLM peut produire des reponses fluides mais hallucinees si le retrieval est faible.
-
-Fine-tuning LLM utile si :
-
-- on veut un assistant conversationnel qui reformule mieux ;
-- on dispose de nombreuses paires question/reponse validees ;
-- on garde le RAG comme source de contexte.
-
-Format typique :
-
-```jsonl
-{"messages":[{"role":"system","content":"Tu reponds uniquement depuis la documentation Harmony/Divalto."},{"role":"user","content":"Qu'est-ce qu'un chemin Harmony ?"},{"role":"assistant","content":"Les chemins Harmony permettent de raccourcir les noms de fichier..."}]}
-```
-
-Volume conseille :
-
-- minimum : 100 exemples tres propres ;
-- recommande : 500+ exemples ;
-- ideal : exemples multi-domaines, avec refus quand la documentation ne contient pas la reponse.
-
-## 9. Recommandation
-
-Pour ce projet, l'ordre recommande est :
-
-1. Evaluer le RAG documentaire sur des questions metier variees.
-2. Annoter les bons passages retrouves pour chaque question.
-3. Ajouter des negatives difficiles pour entrainer un reranker ou un modele d'embeddings.
-4. Entrainer ou adapter un modele d'embeddings/reranker.
-5. Reindexer les documents.
-6. Fine-tuner un LLM uniquement si la qualite de formulation reste insuffisante.
-
-Conclusion :
-
-- Fine-tuning possible : oui.
-- Fine-tuning recommande en premier : embeddings ou reranker.
-- Fine-tuning LLM : possible, mais secondaire.
-- Priorite actuelle : construire un dataset d'evaluation plus large et tester les questions hors benchmark canonique.
-
-## 10. Commandes de maintenance
-
-Compiler le projet :
+### Compilation
 
 ```powershell
 python build_rag.py --compile
 ```
 
-Recreer les index :
+### Ingestion complete
 
 ```powershell
 python ingest_docs.py
 ```
 
-Tester la precision :
+Cette commande regenere :
+
+- `faiss_index.pkl`
+- `chunks_metadata.json`
+- `parent_chunks_metadata.json`
+- `networkx_graph.pkl`
+- `networkx_graph_sources.pkl`
+- `index_config.json`
+
+### Evaluation
 
 ```powershell
 python run_precision.py
 ```
 
-Lancer l'interface :
+ou :
+
+```powershell
+python measure_precision.py
+```
+
+Le fichier utilise par defaut est `test_questions.json`. Il couvre les dossiers de premier niveau dans `data/` avec trois questions par module :
+
+- `facile` : question generale sur une page du module ;
+- `moyen` : question sur le contenu principal d'une autre page ;
+- `difficile` : question plus detaillee sur une troisieme page, ou sur la meilleure page disponible si le module contient peu de contenu exploitable.
+
+Le rapport `precision_report.json` donne maintenant une indication plus complete de performance :
+
+- `average_performance_score` : score composite retrieval + qualite reponse + source ;
+- `retrieval.recall_at_5`, `recall_at_10`, `mrr`, `ndcg_at_5` : qualite de recherche documentaire ;
+- `answer.keyword_overlap`, `supported_answer_rate`, `hallucination_rate` : qualite de reponse ;
+- `by_module`, `by_difficulty`, `by_category` : performance detaillee par groupe ;
+- `failure_reasons` : cause principale des echecs ;
+- `weakest_cases` : questions a inspecter en priorite.
+
+Commandes utiles :
+
+```powershell
+python measure_precision.py --output precision_report.json --no-fail
+python measure_precision.py --test-file test_questions.json --no-fail
+```
+
+### Interface interactive
 
 ```powershell
 python query_docs.py
+```
+
+Les sessions sont stockees dans la base SQLite locale :
+
+```text
+hybrid_rag_sessions.db
+```
+
+Au premier lancement, si la base est vide et que `hybrid_rag_sessions.json` existe, `SessionManager` migre automatiquement les anciennes sessions JSON vers SQLite.
+
+Schema principal :
+
+```text
+sessions(session_id, description, created, modified, global_context, indexed_entities)
+turns(id, session_id, timestamp, question, answer, metadata, rag_context)
+settings(key, value)
+```
+
+Au lancement, l'interface demande quelle session utiliser :
+
+- choisir une session existante avec son numero ;
+- appuyer sur `Entree` pour garder la session active ;
+- saisir `N` pour creer une nouvelle session ;
+- saisir directement un identifiant pour activer ou creer une session.
+
+Pendant la conversation, les commandes utiles sont :
+
+```text
+session              affiche la session active
+sessions             liste les sessions disponibles
+switch <session_id>  change de session
+history              affiche les derniers tours de la session
+summary              recalcule et affiche le resume de la session
+search-history <mot> cherche dans les questions/reponses de la session
+export-session       exporte la session active en Markdown
+export-session json  exporte la session active en JSON
+/clear               vide l'historique de la session active
+exit                 quitte l'interface
+```
+
+L'historique est utilise par `HybridRAG.query()` avant la recherche. Si une question depend du contexte precedent, `rag_conversation.py` reformule la question avec les derniers tours de la meme session.
+
+La session garde aussi un resume deterministe dans `sessions.global_context` :
+
+- sujets detectes depuis les dernieres questions ;
+- sources documentaires recentes ;
+- derniere question importante.
+
+Ce resume est mis a jour apres chaque reponse. Les sources recentes peuvent donner un petit bonus au reranking, ce qui aide les questions de suivi a rester dans le bon contexte sans forcer la reponse.
+
+Variables de configuration :
+
+```text
+RAG_ENABLE_SESSION_SUMMARY=true
+RAG_ENABLE_SESSION_SOURCE_BOOST=true
+RAG_SESSION_SOURCE_BOOST=0.04
+```
+
+Flux conversationnel :
+
+```text
+question de suivi
+  -> historique de la session active
+  -> resume de session
+  -> reformulation contextuelle
+  -> recherche graphe / FAISS / lexical
+  -> bonus leger sur les sources recentes de la session
+  -> fusion, reranking, generation extractive
+```
+
+Pour tester cette partie, utiliser `session_test_questions.json`. Chaque scenario contient trois questions a poser dans l'ordre dans la meme session. Les tours 2 et 3 doivent utiliser l'historique, par exemple les pronoms ou expressions comme `dedans`, `apres ca`, `ces parametres`.
+
+Verifier rapidement la base SQLite :
+
+```powershell
+python -c "import sqlite3; con=sqlite3.connect('hybrid_rag_sessions.db'); print(con.execute('select count(*) from sessions').fetchone()[0], 'sessions'); print(con.execute('select count(*) from turns').fetchone()[0], 'tours')"
+```
+
+## 11. Etat Actuel Des Index
+
+L'index actuel a ete regenere apres le passage en ingestion semantique.
+
+Les artefacts importants sont :
+
+```text
+faiss_index.pkl
+chunks_metadata.json
+parent_chunks_metadata.json
+networkx_graph.pkl
+networkx_graph_sources.pkl
+index_config.json
+```
+
+Verifier la configuration :
+
+```powershell
+Get-Content index_config.json
+```
+
+## 12. Points A Surveiller
+
+### Encodage
+
+Les fichiers CHM peuvent avoir des encodages anciens. L'ingestion utilise `UnicodeDammit`, mais il faut verifier les sorties si des textes comme `reprsente` ou `ncessite` apparaissent encore.
+
+### Cross-encoder
+
+Le reranker peut fonctionner en fallback si le backend n'est pas disponible.
+
+Verifier les logs :
+
+```text
+Cross-encoder FlagEmbedding charge
+Cross-encoder SentenceTransformers charge
+Cross-encoder indisponible; fallback combined_score
+```
+
+### Evaluation
+
+Un score bas peut venir de trois endroits differents :
+
+1. retrieval : la bonne source n'est pas dans le top-k ;
+2. reranking : la bonne source est trouvee mais mal classee ;
+3. generation extractive : le bon passage est present mais la phrase extraite est mauvaise.
+
+Il faut donc regarder :
+
+- `recall_at_5`
+- `recall_at_10`
+- `mrr`
+- `source_match`
+- `keyword_overlap`
+- `supported_answer_rate`
+
+## 13. Fine-tuning
+
+Le fine-tuning est possible, mais il faut choisir le bon niveau.
+
+### Recommande en premier : embeddings ou reranker
+
+Pour ce projet, le plus utile est de fine-tuner :
+
+- le modele d'embeddings ;
+- ou un reranker.
+
+Format de donnees utile :
+
+```json
+{
+  "question": "Qu'est-ce qu'un chemin Harmony ?",
+  "positive_passage": "Les chemins Harmony permettent...",
+  "negative_passages": [
+    "La gestion des utilisateurs...",
+    "Les impressions Windows..."
+  ]
+}
+```
+
+### Fine-tuning LLM
+
+Possible, mais secondaire.
+
+Le projet utilise surtout une generation extractive. Avant de fine-tuner un LLM, il faut d'abord stabiliser :
+
+- l'ingestion ;
+- le retrieval ;
+- le reranking ;
+- la verification.
+
+Un LLM generateur est utile si l'objectif devient :
+
+- reponses plus fluides ;
+- synthese multi-sources ;
+- reformulation professionnelle.
+
+Il doit rester contraint par les sources.
+
+## 14. Checklist De Maintenance
+
+Avant livraison :
+
+```powershell
+python build_rag.py --compile
+python run_precision.py
+```
+
+Apres modification de l'ingestion :
+
+```powershell
+python ingest_docs.py
+python run_precision.py
+```
+
+Apres modification de `query_docs.py` ou des modules RAG :
+
+```powershell
+python test_rag_pipeline_components.py
+python run_precision.py
 ```

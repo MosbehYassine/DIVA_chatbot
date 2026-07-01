@@ -13,3 +13,5 @@ networkx
 pyvis
 python-dotenv
 tabulate
+rank-bm25
+scikit-learn

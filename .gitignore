@@ -98,12 +98,17 @@ venv.bak/
 # Rope project settings
 .ropeproject
 
-# RAG System - Generated files and data
-data/                          # Dossier contenant tous les documents (trop volumineux)
-*.pkl                          # Index FAISS et graphe NetworkX
-chunks_metadata.json           # Métadonnées des chunks
-test_results_*.json            # Résultats de test
-faiss_index/                   # Index FAISS
+# RAG System - generated files and local data
+data/
+*.pkl
+chunks_metadata.json
+parent_chunks_metadata.json
+index_config.json
+hybrid_rag_sessions.json
+precision_report.json
+precision_*.json
+test_results_*.json
+faiss_index/
 
 # Documentation archives (keep only code)
 Administration/

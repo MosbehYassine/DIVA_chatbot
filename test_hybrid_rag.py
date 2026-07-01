@@ -6,7 +6,6 @@ Teste le modèle avec les questions du fichier test_questions.json
 
 import json
 import os
-import io
 import sys
 from datetime import datetime
 from difflib import SequenceMatcher
@@ -15,8 +14,9 @@ from rag_answer import generate_answer_from_results, build_context_from_results
 from rag_config import TARGET_PRECISION
 from typing import Dict, List
 
-# Forcer UTF-8
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
+# Configurer UTF-8 sans remplacer le flux partagé.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 class RAGTester:
     def __init__(self, test_file: str = "test_questions.json"):
