@@ -161,6 +161,12 @@ RAG_ANSWER_LLM_MODEL = os.getenv(
     "RAG_ANSWER_LLM_MODEL",
     os.getenv("RAG_QUERY_LLM_MODEL", "gpt-4o-mini"),
 )
+RAG_LLM_PROVIDER = os.getenv("RAG_LLM_PROVIDER", "auto").strip().lower()
+RAG_OLLAMA_MODEL = os.getenv("RAG_OLLAMA_MODEL", "llama3.2:1b")
+RAG_OLLAMA_BASE_URL = os.getenv(
+    "RAG_OLLAMA_BASE_URL",
+    "http://127.0.0.1:11434",
+).rstrip("/")
 RAG_LLM_ANSWER_MAX_CONTEXT_CHARS = int(
     os.getenv("RAG_LLM_ANSWER_MAX_CONTEXT_CHARS", "9000")
 )

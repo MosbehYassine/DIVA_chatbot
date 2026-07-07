@@ -1,6 +1,8 @@
 """Grounded LLM answer formulation on top of extractive RAG evidence."""
+import json
 import os
 import re
+import urllib.request
 from typing import Dict, List, Optional
 
 from rag_answer import is_not_found_answer
@@ -8,6 +10,9 @@ from rag_config import (
     RAG_ANSWER_LLM_MODEL,
     RAG_ENABLE_LLM_ANSWER_GENERATION,
     RAG_LLM_ANSWER_MAX_CONTEXT_CHARS,
+    RAG_LLM_PROVIDER,
+    RAG_OLLAMA_BASE_URL,
+    RAG_OLLAMA_MODEL,
 )
 
 
@@ -22,6 +27,9 @@ def _load_env_once():
 
 def _client_and_model():
     _load_env_once()
+    if RAG_LLM_PROVIDER == "ollama":
+        return None, ""
+
     openai_key = os.getenv("OPENAI_API_KEY")
     openrouter_key = os.getenv("OPENROUTER_API_KEY")
     if not openai_key and not openrouter_key:
@@ -42,6 +50,66 @@ def _client_and_model():
         ),
         model,
     )
+
+
+def _answer_messages(
+    question: str,
+    extractive_answer: str,
+    context: str,
+    reasoning_plan: Optional[List[str]] = None,
+    session_summary: str = "",
+) -> List[Dict[str, str]]:
+    return [
+        {
+            "role": "system",
+            "content": (
+                "Tu es un assistant RAG documentaire Harmony/Divalto. "
+                "Formule une reponse naturelle, concise et utile en francais. "
+                "Tu dois utiliser uniquement les informations presentes dans "
+                "la reponse extractive et les passages fournis. "
+                "N'ajoute aucun fait non supporte. "
+                "Ne mentionne pas ton raisonnement interne. "
+                "Si les passages ne supportent pas la reponse, retourne "
+                "exactement: Information non trouvee dans la documentation locale fournie."
+            ),
+        },
+        {
+            "role": "user",
+            "content": (
+                f"Question utilisateur:\n{question}\n\n"
+                f"Plan interne de lecture documentaire:\n"
+                f"{'; '.join(reasoning_plan or [])}\n\n"
+                f"Resume de session:\n{session_summary}\n\n"
+                f"Reponse extractive a reformuler:\n{extractive_answer}\n\n"
+                f"Passages documentaires autorises:\n{context}\n\n"
+                "Reponds directement a la question. "
+                "Ne copie pas un long chunk; structure la reponse si utile."
+            ),
+        },
+    ]
+
+
+def _ollama_answer(messages: List[Dict[str, str]]) -> str:
+    payload = json.dumps(
+        {
+            "model": RAG_OLLAMA_MODEL,
+            "messages": messages,
+            "stream": False,
+            "options": {
+                "temperature": 0.0,
+                "num_predict": 350,
+            },
+        }
+    ).encode("utf-8")
+    request = urllib.request.Request(
+        f"{RAG_OLLAMA_BASE_URL}/api/chat",
+        data=payload,
+        headers={"Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=180) as response:
+        data = json.load(response)
+    return str((data.get("message") or {}).get("content") or "").strip()
 
 
 def _context_from_results(results: List[Dict]) -> str:
@@ -82,6 +150,17 @@ def formulate_answer_with_llm(
         return extractive_answer
 
     try:
+        messages = _answer_messages(
+            question,
+            extractive_answer,
+            context,
+            reasoning_plan=reasoning_plan or [],
+            session_summary=session_summary,
+        )
+        if RAG_LLM_PROVIDER == "ollama":
+            answer = _ollama_answer(messages)
+            return answer or extractive_answer
+
         client, model = _client_and_model()
         if client is None:
             return extractive_answer
@@ -89,34 +168,7 @@ def formulate_answer_with_llm(
         response = client.chat.completions.create(
             model=model,
             temperature=0.0,
-            messages=[
-                {
-                    "role": "system",
-                    "content": (
-                        "Tu es un assistant RAG documentaire Harmony/Divalto. "
-                        "Formule une reponse naturelle, concise et utile en francais. "
-                        "Tu dois utiliser uniquement les informations presentes dans "
-                        "la reponse extractive et les passages fournis. "
-                        "N'ajoute aucun fait non supporte. "
-                        "Ne mentionne pas ton raisonnement interne. "
-                        "Si les passages ne supportent pas la reponse, retourne "
-                        "exactement: Information non trouvee dans la documentation locale fournie."
-                    ),
-                },
-                {
-                    "role": "user",
-                    "content": (
-                        f"Question utilisateur:\n{question}\n\n"
-                        f"Plan interne de lecture documentaire:\n"
-                        f"{'; '.join(reasoning_plan or [])}\n\n"
-                        f"Resume de session:\n{session_summary}\n\n"
-                        f"Reponse extractive a reformuler:\n{extractive_answer}\n\n"
-                        f"Passages documentaires autorises:\n{context}\n\n"
-                        "Reponds directement a la question. "
-                        "Ne copie pas un long chunk; structure la reponse si utile."
-                    ),
-                },
-            ],
+            messages=messages,
         )
         answer = (response.choices[0].message.content or "").strip()
         return answer or extractive_answer

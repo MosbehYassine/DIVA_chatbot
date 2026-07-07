@@ -41,6 +41,13 @@ def normalize_for_match(text: str) -> str:
     return " ".join(text.split())
 
 
+def raw_match_key(text: str) -> str:
+    text = (text or "").lower()
+    text = unicodedata.normalize("NFD", text)
+    text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+    return re.sub(r"\s+", "", text)
+
+
 def is_not_found_answer(answer: str) -> bool:
     """Return whether an answer is an explicit documentary abstention."""
     normalized = normalize_for_match(answer)
@@ -114,9 +121,10 @@ def _is_title_like(sentence: str) -> bool:
         return True
     lower = sentence.lower()
     content_markers = (
-        " est ", " sont ", " peut ", " peuvent ", " permet ", " doit ", " doivent ",
+        " est ", " sont ", " peut ", " peuvent ", " pouvez ", " permet ", " doit ", " doivent ",
         " pour ", " si ", " lors ", " via ", " par ", " avec ", " sans ", " dans ",
         " remplac ", " stock ", " assure ", " accessible ", " explique ", " couvre ",
+        " propose ", " proposent ",
     )
     if not any(m in lower for m in content_markers):
         return True
@@ -283,21 +291,60 @@ def _quoted_phrases(question: str) -> List[str]:
     return [phrase for phrase in phrases if phrase]
 
 
+def _all_quoted_phrases(question: str) -> List[str]:
+    phrases = _quoted_phrases(question)
+    for pattern in (
+        r"'([^']+)'",
+        r"«([^»]+)»",
+        r"“([^”]+)”",
+    ):
+        phrases.extend(match.strip() for match in re.findall(pattern, question or ""))
+    return list(dict.fromkeys(phrase for phrase in phrases if phrase))
+
+
+def _module_hint(question: str) -> str:
+    match = re.search(
+        r"\bmodule\s+([A-Za-zÀ-ÿ0-9_.-]+)",
+        question or "",
+        re.IGNORECASE,
+    )
+    return normalize_for_match(match.group(1)) if match else ""
+
+
 def _result_title_score(result: Dict, quoted_phrase: str, question: str) -> float:
     phrase_norm = normalize_for_match(quoted_phrase)
-    if not phrase_norm:
-        return 0.0
-
     title_norm = normalize_for_match(result.get("title") or "")
     section_norm = normalize_for_match(result.get("section") or "")
     source_norm = normalize_for_match(os.path.splitext(os.path.basename(str(result.get("source") or "")))[0])
     fields = [title_norm, section_norm, source_norm]
 
     score = 0.0
-    if any(phrase_norm == field for field in fields if field):
+    if not phrase_norm:
+        phrase_key = raw_match_key(quoted_phrase)
+        raw_fields = [
+            raw_match_key(result.get("title") or ""),
+            raw_match_key(result.get("section") or ""),
+            raw_match_key(os.path.splitext(os.path.basename(str(result.get("source") or "")))[0]),
+        ]
+        if phrase_key and any(phrase_key == field for field in raw_fields if field):
+            score = 1.0
+        elif phrase_key and any(phrase_key in field or field in phrase_key for field in raw_fields if field):
+            score = 0.88
+    elif any(phrase_norm == field for field in fields if field):
         score = 1.0
-    elif any(phrase_norm in field or field in phrase_norm for field in fields if field):
+    elif any(phrase_norm in field for field in fields if field):
         score = 0.88
+    elif any(field in phrase_norm for field in fields if field):
+        phrase_terms = set(phrase_norm.split())
+        best_coverage = 0.0
+        for field in fields:
+            field_terms = set(field.split())
+            if field_terms and field in phrase_norm:
+                best_coverage = max(
+                    best_coverage,
+                    len(field_terms) / max(len(phrase_terms), 1),
+                )
+        score = 0.78 if best_coverage >= 0.50 else 0.62
     else:
         phrase_terms = set(phrase_norm.split())
         best_overlap = 0.0
@@ -310,9 +357,12 @@ def _result_title_score(result: Dict, quoted_phrase: str, question: str) -> floa
         score = best_overlap
 
     module = normalize_for_match(str(result.get("module") or ""))
+    module_hint = _module_hint(question)
     question_norm = normalize_for_match(question)
-    if module and module in question_norm:
+    if module and (module == module_hint or module in question_norm):
         score += 0.08
+    elif module_hint and module and _is_page_overview_question(question) and score >= 0.70:
+        score *= 0.78
     return min(score, 1.0)
 
 
@@ -321,7 +371,7 @@ def _lead_answer_from_matching_result(
     results: List[Dict],
     max_chars: int = 900,
 ) -> str:
-    phrases = _quoted_phrases(question)
+    phrases = _all_quoted_phrases(question)
     if not phrases:
         return ""
 
@@ -389,6 +439,70 @@ def _block_windows(text: str, max_chars: int = 1000) -> List[str]:
     return list(dict.fromkeys(windows))
 
 
+def _dedupe_repeated_sentences(text: str) -> str:
+    sentences = split_sentences(text)
+    if not sentences:
+        return clean_text(text)
+    output = []
+    seen = set()
+    for sentence in sentences:
+        key = normalize_for_match(sentence)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        output.append(sentence)
+    return " ".join(output).strip()
+
+
+def _contentful_text_from_result(result: Dict) -> str:
+    text = _result_full_text(result)
+    compressed = clean_text(result.get("compressed_text") or "")
+    original = clean_text(result.get("original_text") or "")
+    if original and (not text or len(original) > len(text) * 1.25):
+        return original
+    if compressed and len(compressed) > len(text):
+        return compressed
+    return text
+
+
+def _looks_like_breadcrumb(block: str) -> bool:
+    normalized = normalize_for_match(block)
+    if not normalized:
+        return True
+    if block.count("|") >= 2:
+        return True
+    words = normalized.split()
+    if len(words) <= 12 and not re.search(r"[.!?:;]", block):
+        return True
+    return False
+
+
+def _first_contentful_block(text: str, max_chars: int = 950) -> str:
+    text = _dedupe_repeated_sentences(text)
+    sentences = [
+        sentence
+        for sentence in split_sentences(text)
+        if not _looks_like_breadcrumb(sentence)
+    ]
+    if not sentences:
+        cleaned = clean_text(text)
+        return "" if _looks_like_breadcrumb(cleaned) else cleaned[:max_chars].strip()
+
+    selected = []
+    current_len = 0
+    for sentence in sentences:
+        next_len = current_len + len(sentence) + 1
+        if selected and next_len > max_chars:
+            break
+        selected.append(sentence)
+        current_len = next_len
+        if current_len >= max_chars * 0.55:
+            break
+    if selected:
+        return " ".join(selected).strip()
+    return sentences[0][:max_chars].strip()
+
+
 def _informativeness_score(block: str) -> float:
     normalized = normalize_for_match(block)
     words = normalized.split()
@@ -415,7 +529,7 @@ def _detail_answer_from_matching_result(
     embedding_model_name: str = "",
     max_chars: int = 950,
 ) -> str:
-    phrases = _quoted_phrases(question)
+    phrases = _all_quoted_phrases(question)
     question_norm = normalize_for_match(question)
     q_terms = extract_question_terms(question)
     phrase_terms = set()
@@ -427,7 +541,9 @@ def _detail_answer_from_matching_result(
     ]
 
     candidates = []
-    for rank, result in enumerate(results[:20]):
+    exact_title_results = []
+    module_hint = _module_hint(question)
+    for rank, result in enumerate(results[:30]):
         title_score = 0.0
         if phrases:
             title_score = max(
@@ -439,9 +555,15 @@ def _detail_answer_from_matching_result(
         if title_score < 0.55 and rank > 5:
             continue
 
-        text = _result_full_text(result)
+        module_norm = normalize_for_match(str(result.get("module") or ""))
+        if module_hint and module_norm and module_norm != module_hint and title_score < 0.96:
+            title_score *= 0.65
+
+        text = _contentful_text_from_result(result)
         if not text:
             continue
+        if title_score >= 0.94:
+            exact_title_results.append((rank, title_score, result, text))
         blocks = _block_windows(text, max_chars=max_chars)
         if not blocks:
             continue
@@ -471,15 +593,17 @@ def _detail_answer_from_matching_result(
             info = _informativeness_score(block)
             vec = vector_scores.get(block_index, 0.0)
             intro_penalty = 0.0
+            if _looks_like_breadcrumb(block):
+                intro_penalty += 0.35
             if block_index == 0 and title_norm and title_norm in block_norm[: max(80, len(title_norm) + 20)]:
-                intro_penalty += 0.18
-            if phrase_terms and len(set(block_norm.split()) & phrase_terms) / max(len(phrase_terms), 1) > 0.75:
                 intro_penalty += 0.08
+            if phrase_terms and len(set(block_norm.split()) & phrase_terms) / max(len(phrase_terms), 1) > 0.75:
+                intro_penalty += 0.03
             if len(block) < 120:
                 intro_penalty += 0.10
 
             score = (
-                0.36 * title_score
+                0.42 * title_score
                 + 0.24 * info
                 + 0.18 * min(1.0, lex)
                 + 0.14 * vec
@@ -488,6 +612,18 @@ def _detail_answer_from_matching_result(
                 - intro_penalty
             )
             candidates.append((score, block))
+
+    if exact_title_results:
+        exact_title_results.sort(key=lambda item: (-item[1], item[0]))
+        for _, _, result, text in exact_title_results:
+            lead = _first_contentful_block(text, max_chars=max_chars)
+            if lead:
+                title = clean_text(result.get("title") or result.get("section") or "")
+                title_norm = normalize_for_match(title)
+                lead_norm = normalize_for_match(lead)
+                if title and len(lead) < 140 and title_norm not in lead_norm:
+                    lead = f"{title}. {lead}"
+                return _format_answer(lead[:max_chars].strip())
 
     if not candidates:
         return ""

@@ -102,6 +102,23 @@ def _source_metadata(file_path: str, title: str = "", section: str = "") -> dict
         "module": module,
     }
 
+
+def is_indexable_document(document: Document) -> bool:
+    """Keep normal pages and short CHM pages that are searchable by title."""
+    text = normalize_text(document.page_content or "")
+    if len(text) > 300:
+        return True
+    metadata = document.metadata or {}
+    title = normalize_text(metadata.get("title", ""))
+    section = normalize_text(metadata.get("section", ""))
+    source = os.path.splitext(os.path.basename(str(metadata.get("source", ""))))[0]
+    source = normalize_text(source.replace("_", " "))
+    if not text:
+        return False
+    searchable_header = " ".join(value for value in (title, section, source) if value)
+    return bool(searchable_header and len(searchable_header) >= 3)
+
+
 def load_documents(directory):
     documents = []
     # Find all HTML and Markdown files
@@ -568,7 +585,7 @@ if __name__ == "__main__":
     if docs:
         print("\n--- TRAITEMENT DE TOUS LES DOCUMENTS ---")
         # On filtre les pages vides ou de pure mise en page
-        valid_docs = [d for d in docs if len(d.page_content.strip()) > 300]
+        valid_docs = [d for d in docs if is_indexable_document(d)]
         docs = valid_docs
         print(f"✅ Documents valides après filtrage: {len(docs)}")
 

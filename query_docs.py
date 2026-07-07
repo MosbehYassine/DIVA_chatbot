@@ -84,7 +84,7 @@ from rag_compressor import ContextualCompressor
 from rag_lexical import LexicalRetriever
 from rag_mmr import maximal_marginal_relevance
 from rag_query_transform import extract_query_metadata, transform_query
-from rag_conversation import reformulate_with_history
+from rag_conversation import reformulate_with_history_info
 from rag_llm_answer import formulate_answer_with_llm
 from rag_reranker import CrossEncoderReranker
 try:
@@ -477,6 +477,14 @@ class HybridRAG:
         return " ".join(text.split())
 
     @staticmethod
+    def _raw_match_key(text: str) -> str:
+        if not isinstance(text, str):
+            return ""
+        text = unicodedata.normalize("NFD", text.lower())
+        text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+        return re.sub(r"\s+", "", text)
+
+    @staticmethod
     def _page_overview_query(query: str) -> bool:
         normalized = HybridRAG._match_norm(query)
         return any(
@@ -500,6 +508,13 @@ class HybridRAG:
         )
         return HybridRAG._match_norm(match.group(1)) if match else ""
 
+    def _module_match_score_for_query(self, query: str, result: Dict) -> float:
+        module_hint = self._module_hint(query)
+        module_norm = self._match_norm(str(result.get("module") or ""))
+        if not module_hint or not module_norm:
+            return 0.0
+        return 1.0 if module_hint == module_norm else 0.0
+
     def _title_match_score_for_query(self, query: str, result: Dict) -> float:
         phrases = self._quoted_phrases(query)
         if not phrases:
@@ -512,19 +527,35 @@ class HybridRAG:
             result.get("source") or "",
         ]
         field_norms = [self._match_norm(value) for value in fields if value]
+        field_raw_keys = [self._raw_match_key(value) for value in fields if value]
         best = float(result.get("title_match_score", 0.0) or 0.0)
         for phrase in phrases:
             phrase_norm = self._match_norm(phrase)
+            phrase_raw_key = self._raw_match_key(phrase)
             if not phrase_norm:
+                if not phrase_raw_key:
+                    continue
+                for field_raw_key in field_raw_keys:
+                    if not field_raw_key:
+                        continue
+                    if phrase_raw_key == field_raw_key:
+                        best = max(best, 1.0)
+                    elif phrase_raw_key in field_raw_key or field_raw_key in phrase_raw_key:
+                        best = max(best, 0.94)
                 continue
+
             phrase_terms = set(phrase_norm.split())
             for field_norm in field_norms:
                 if not field_norm:
                     continue
                 if phrase_norm == field_norm:
                     score = 1.0
-                elif phrase_norm in field_norm or field_norm in phrase_norm:
+                elif phrase_norm in field_norm:
                     score = 0.94
+                elif field_norm in phrase_norm:
+                    field_terms = set(field_norm.split())
+                    coverage = len(field_terms) / max(len(phrase_terms), 1)
+                    score = 0.88 if coverage >= 0.50 else 0.70
                 else:
                     field_terms = set(field_norm.split())
                     overlap = len(phrase_terms & field_terms) / max(len(phrase_terms), 1)
@@ -535,7 +566,9 @@ class HybridRAG:
         module_hint = self._module_hint(query)
         module_norm = self._match_norm(str(result.get("module") or ""))
         if module_hint and module_norm and module_hint == module_norm:
-            best = min(1.0, best + 0.06)
+            best = min(1.0, best + 0.12)
+        elif module_hint and module_norm and self._page_overview_query(query) and best >= 0.70:
+            best *= 0.78
         return min(1.0, best)
 
     @staticmethod
@@ -659,6 +692,7 @@ class HybridRAG:
             
             topic_boost = self._topic_source_boost(query, source)
             title_score = self._title_match_score_for_query(query, result)
+            module_score = self._module_match_score_for_query(query, result)
             title_boost = 0.0
             if title_score >= 0.98:
                 title_boost = RAG_TITLE_EXACT_BOOST
@@ -666,6 +700,8 @@ class HybridRAG:
                 title_boost = RAG_TITLE_PARTIAL_BOOST * title_score
             elif result.get("retrieval_source") == "title_lookup":
                 title_boost = 0.35
+            if self._page_overview_query(query) and title_score >= 0.70:
+                title_boost += 0.35 * module_score
             file_boost = 0.0
             q_terms = [w for w in re.findall(r"\w+", query.lower()) if len(w) > 3]
             src_tokens = self._source_tokens(source)
@@ -684,6 +720,7 @@ class HybridRAG:
             result["document_topic_boost"] = topic_boost
             result["title_match_boost"] = title_boost
             result["title_match_score"] = title_score
+            result["module_match_score"] = module_score
             result["rerank_score"] = (
                 RERANK_LEXICAL_WEIGHT * min(1.0, lex + 0.15 * src_boost)
                 + RERANK_VECTOR_WEIGHT * semantic
@@ -743,21 +780,49 @@ class HybridRAG:
             for source in session_context.get("recent_sources", [])
             if source
         }
-        if not recent_sources:
+        raw_terms = []
+        raw_terms.extend(session_context.get("indexed_entities") or [])
+        focus = session_context.get("reformulation_focus") or {}
+        raw_terms.extend(value for value in focus.values() if value)
+        session_terms = {
+            self._match_norm(str(term))
+            for term in raw_terms
+            if str(term or "").strip()
+        }
+        session_terms = {
+            term for term in session_terms
+            if len(term) >= 4 and term not in {"harmony", "divalto"}
+        }
+        if not recent_sources and not session_terms:
             return results
         for result in results:
             filename = os.path.basename(str(result.get("source") or "")).lower()
-            if filename and filename in recent_sources:
+            haystack = self._match_norm(
+                " ".join(
+                    str(result.get(key) or "")
+                    for key in ("source", "title", "section", "module")
+                )
+            )
+            exact_source_match = filename and filename in recent_sources
+            term_hits = sum(1 for term in session_terms if term and term in haystack)
+            term_score = min(1.0, term_hits / max(len(session_terms), 1))
+            boost = 0.0
+            if exact_source_match:
+                boost += RAG_SESSION_SOURCE_BOOST
+            if term_score:
+                boost += RAG_SESSION_SOURCE_BOOST * 0.60 * term_score
+            if boost:
                 base_score = float(result.get("hybrid_score", 0.0) or 0.0)
-                result["session_source_boost"] = RAG_SESSION_SOURCE_BOOST
-                result["hybrid_score"] = base_score + RAG_SESSION_SOURCE_BOOST
+                result["session_source_boost"] = boost
+                result["session_term_score"] = term_score
+                result["hybrid_score"] = base_score + boost
                 result["rerank_score"] = (
                     float(result.get("rerank_score", base_score) or 0.0)
-                    + RAG_SESSION_SOURCE_BOOST
+                    + boost
                 )
                 result["combined_score"] = (
                     float(result.get("combined_score", base_score) or 0.0)
-                    + RAG_SESSION_SOURCE_BOOST
+                    + boost
                 )
         results.sort(
             key=lambda item: float(item.get("hybrid_score", 0.0) or 0.0),
@@ -888,7 +953,7 @@ class HybridRAG:
         for groups in phrases:
             value = next((part for part in groups if part), "")
             value = re.sub(r"\s+", " ", value).strip()
-            if len(value) >= 4:
+            if len(value) >= 4 or re.search(r"[^A-Za-zÀ-ÿ0-9\s]", value):
                 values.append(value)
         return list(dict.fromkeys(values))
 
@@ -905,6 +970,8 @@ class HybridRAG:
         )
         if module_match:
             module_hint = self._normalize_text(module_match.group(1))
+        module_hint = self._module_hint(query)
+        is_page_overview = self._page_overview_query(query)
 
         candidates = []
         seen = set()
@@ -923,30 +990,49 @@ class HybridRAG:
                 os.path.splitext(os.path.basename(source))[0],
                 source,
             ]
-            haystack_norm = " ".join(
-                self._normalize_text(value) for value in haystack_values
-            )
+            field_norms = [self._match_norm(value) for value in haystack_values if value]
+            field_raw_keys = [self._raw_match_key(value) for value in haystack_values if value]
             best = 0.0
             for phrase in phrases:
-                phrase_norm = self._normalize_text(phrase)
+                phrase_norm = self._match_norm(phrase)
+                phrase_raw_key = self._raw_match_key(phrase)
                 if not phrase_norm:
+                    if not phrase_raw_key:
+                        continue
+                    for field_raw_key in field_raw_keys:
+                        if not field_raw_key:
+                            continue
+                        if phrase_raw_key == field_raw_key:
+                            best = max(best, 1.0)
+                        elif phrase_raw_key in field_raw_key or field_raw_key in phrase_raw_key:
+                            best = max(best, 0.94)
                     continue
-                if phrase_norm in haystack_norm:
-                    score = 1.0
-                else:
-                    score = max(
-                        SequenceMatcher(
-                            None,
-                            phrase_norm,
-                            self._normalize_text(value),
-                        ).ratio()
-                        for value in haystack_values
-                        if value
-                    )
-                best = max(best, score)
-            if module_hint and module_hint == self._normalize_text(module):
-                best = min(1.0, best + 0.08)
-            if best < 0.70:
+
+                phrase_terms = set(phrase_norm.split())
+                for field_norm in field_norms:
+                    if not field_norm:
+                        continue
+                    if phrase_norm == field_norm:
+                        score = 1.0
+                    elif phrase_norm in field_norm:
+                        score = 0.94
+                    elif field_norm in phrase_norm:
+                        field_terms = set(field_norm.split())
+                        coverage = len(field_terms) / max(len(phrase_terms), 1)
+                        score = 0.88 if coverage >= 0.50 else 0.70
+                    else:
+                        field_terms = set(field_norm.split())
+                        overlap = len(phrase_terms & field_terms) / max(len(phrase_terms), 1)
+                        sequence = SequenceMatcher(None, phrase_norm, field_norm).ratio()
+                        score = max(overlap, sequence * 0.82)
+                    best = max(best, score)
+            module_norm = self._match_norm(module)
+            module_match_score = 1.0 if module_hint and module_norm == module_hint else 0.0
+            if module_match_score:
+                best = min(1.0, best + 0.14)
+            elif module_hint and module_norm and is_page_overview and best >= 0.70:
+                best *= 0.78
+            if best < 0.62:
                 continue
             key = str(chunk_meta.get("parent_id") or chunk_meta.get("child_id") or source)
             if key in seen:
@@ -967,11 +1053,19 @@ class HybridRAG:
                     "score": best,
                     "lexical_score": best,
                     "title_match_score": best,
+                    "module_match_score": module_match_score,
                     "method": "title",
                     "retrieval_source": "title_lookup",
                 }
             )
-        candidates.sort(key=lambda item: item["title_match_score"], reverse=True)
+        candidates.sort(
+            key=lambda item: (
+                float(item.get("module_match_score", 0.0) or 0.0),
+                float(item.get("title_match_score", 0.0) or 0.0),
+                float(item.get("lexical_score", 0.0) or 0.0),
+            ),
+            reverse=True,
+        )
         return candidates[:top_k]
 
     # ============= FUSION DES RÉSULTATS =============
@@ -1048,6 +1142,10 @@ class HybridRAG:
                 existing["lexical_score"] = max(
                     float(existing.get("lexical_score", 0.0) or 0.0),
                     candidate["lexical_score"],
+                )
+                existing["module_match_score"] = max(
+                    float(existing.get("module_match_score", 0.0) or 0.0),
+                    float(candidate.get("module_match_score", 0.0) or 0.0),
                 )
                 existing["hybrid_score"] = max(
                     float(existing.get("hybrid_score", 0.0) or 0.0),
@@ -1154,6 +1252,10 @@ class HybridRAG:
             existing["lexical_score"] = max(
                 float(existing.get("lexical_score", 0.0) or 0.0),
                 float(candidate.get("lexical_score", 0.0) or 0.0),
+            )
+            existing["module_match_score"] = max(
+                float(existing.get("module_match_score", 0.0) or 0.0),
+                float(candidate.get("module_match_score", 0.0) or 0.0),
             )
             existing["matched_child_ids"].extend(candidate["matched_child_ids"])
             existing["matched_child_ids"] = list(dict.fromkeys(existing["matched_child_ids"]))
@@ -1351,7 +1453,16 @@ class HybridRAG:
                 result.get("retrieval_source") == "title_lookup"
                 or float(result.get("title_match_score", 0.0) or 0.0) >= 0.70
             )
-        ][:5]
+        ]
+        protected_title_results.sort(
+            key=lambda item: (
+                float(item.get("module_match_score", 0.0) or 0.0),
+                float(item.get("title_match_score", 0.0) or 0.0),
+                float(item.get("rerank_score", item.get("hybrid_score", 0.0)) or 0.0),
+            ),
+            reverse=True,
+        )
+        protected_title_results = protected_title_results[:5]
         if protected_title_results:
             mmr_results = self._dedupe_ranked_results(
                 protected_title_results + mmr_results
@@ -1362,7 +1473,7 @@ class HybridRAG:
         cross_k = max(RAG_FINAL_TOP_K, RAG_CROSS_ENCODER_CANDIDATE_K)
         if RAG_ENABLE_CROSS_ENCODER_RERANKER:
             reranked_pool = self.cross_encoder.rerank(
-                question,
+                retrieval_query,
                 mmr_results,
                 top_k=cross_k,
             )
@@ -1380,8 +1491,18 @@ class HybridRAG:
                 float(result.get("title_match_score", 0.0) or 0.0),
                 title_score,
             )
+            module_score = max(
+                float(result.get("module_match_score", 0.0) or 0.0),
+                self._module_match_score_for_query(retrieval_query, result),
+            )
+            result["module_match_score"] = module_score
             if self._page_overview_query(retrieval_query):
-                result["hybrid_score"] += 0.45 * result["title_match_score"]
+                title_score = result["title_match_score"]
+                result["hybrid_score"] += 0.75 * title_score + 0.25 * module_score
+                if title_score >= 0.94:
+                    result["hybrid_score"] += 0.55
+                if title_score >= 0.94 and module_score >= 1.0:
+                    result["hybrid_score"] += 0.35
         reranked_pool.sort(
             key=lambda item: float(item.get("hybrid_score", 0.0) or 0.0),
             reverse=True,
@@ -1408,11 +1529,12 @@ class HybridRAG:
         )
 
         print("   [compression]")
+        answer_question = original_question or retrieval_query or question
         compression_pool = self._dedupe_ranked_results(
             reranked_results + reranked_pool + parent_results[:RAG_EXTRACTION_TOP_K]
         )[:max(RAG_FINAL_TOP_K, RAG_EXTRACTION_TOP_K)]
         compressed_results = self.compressor.compress(
-            question,
+            answer_question,
             compression_pool,
             embedding_model=self.embedding_model,
             embedding_model_name=self.embedding_model_name,
@@ -1420,7 +1542,7 @@ class HybridRAG:
         print(f"   Contextes compresses: {len(compressed_results)}")
 
         extractive_answer = generate_answer_from_results(
-            question,
+            answer_question,
             compressed_results,
             embedding_model=self.embedding_model,
             embedding_model_name=self.embedding_model_name,
@@ -1522,6 +1644,8 @@ class HybridRAG:
         original_question = question
         history = []
         history_used = False
+        reformulation_confidence = 0.0
+        reformulation_focus = {}
         session_context = {}
         session_summary = ""
         recent_sources = []
@@ -1540,8 +1664,14 @@ class HybridRAG:
                 and not retrieval_question
                 and history
             ):
-                question = reformulate_with_history(question, history)
-                history_used = question != original_question
+                reformulation = reformulate_with_history_info(question, history)
+                question = reformulation.question
+                history_used = reformulation.history_used
+                reformulation_confidence = reformulation.confidence
+                reformulation_focus = {
+                    "module": reformulation.module,
+                    "topic": reformulation.topic,
+                }
             print(
                 f"   [chat memory] session={session_id} "
                 f"turns={len(history)} used={history_used}"
@@ -1549,7 +1679,10 @@ class HybridRAG:
             if session_summary:
                 print(f"   Session summary: {session_summary[:180]}")
             if history_used:
-                print(f"   Standalone question: {question[:220]}")
+                print(
+                    f"   Standalone question: {question[:220]} "
+                    f"(confidence={reformulation_confidence:.2f})"
+                )
         else:
             print("   [chat memory] disabled or no session_id")
 
@@ -1557,6 +1690,8 @@ class HybridRAG:
         active_session_context = {
             "summary": session_summary,
             "recent_sources": recent_sources,
+            "indexed_entities": (session_context or {}).get("indexed_entities", []),
+            "reformulation_focus": reformulation_focus,
         }
         reasoning_plan = self._build_reasoning_plan(question, session_summary)
         reasoning_question = self._question_with_reasoning_plan(
@@ -1724,6 +1859,8 @@ class HybridRAG:
                 "history_turns": len(history),
                 "session_summary": session_summary,
                 "session_recent_sources": recent_sources,
+                "reformulation_confidence": reformulation_confidence,
+                "reformulation_focus": reformulation_focus,
                 "reasoning_plan": reasoning_plan,
                 "backends": {
                     "lexical": (
@@ -1767,6 +1904,9 @@ class HybridRAG:
                 metadata={
                     "standalone_question": question,
                     "history_used": history_used,
+                    "reformulation_confidence": reformulation_confidence,
+                    "reformulation_focus": reformulation_focus,
+                    "session_recent_sources": recent_sources,
                     "verification": verification,
                     "session_summary": session_summary,
                     "reasoning_plan": reasoning_plan,

@@ -15,7 +15,7 @@ from rag_query_transform import extract_query_metadata, rewrite_query
 from rag_reranker import CrossEncoderReranker
 from rag_hyde import build_hyde_queries, generate_hypothetical_document
 from rag_verifier import verify_answer
-from rag_conversation import reformulate_with_history
+from rag_conversation import reformulate_with_history, reformulate_with_history_info
 from session_manager import SessionManager
 from ingest_docs import Document, create_parent_child_chunks
 
@@ -184,6 +184,29 @@ class PipelineComponentTests(unittest.TestCase):
         )
         self.assertIn("facture", standalone.lower())
         self.assertIn("imprimer", standalone.lower())
+        sessions.add_turn(
+            "admin_session",
+            "A quoi sert le module Administration ?",
+            "Le module Administration sert a gerer les utilisateurs et les profils.",
+            sources=[{"filename": "Administrationd_Harmony__Introduction.htm"}],
+        )
+        admin_history = sessions.get_history("admin_session")
+        admin_standalone = reformulate_with_history(
+            "Et comment gerer les utilisateurs dedans ?",
+            admin_history,
+        )
+        admin_info = reformulate_with_history_info(
+            "Et comment gerer les utilisateurs dedans ?",
+            admin_history,
+        )
+        self.assertIn("module administration", admin_standalone.lower())
+        self.assertIn("gerer les utilisateurs", admin_standalone.lower())
+        self.assertNotIn("quoi sert", admin_standalone.lower())
+        self.assertTrue(admin_info.history_used)
+        self.assertGreaterEqual(admin_info.confidence, 0.75)
+        self.assertEqual(admin_info.module.lower(), "administration")
+        summary = sessions.build_session_summary("admin_session")
+        self.assertIn("Module actif: Administration", summary["summary"])
         sessions.clear_session("test_session")
         self.assertEqual(sessions.get_history("test_session"), [])
 
@@ -213,7 +236,7 @@ class PipelineComponentTests(unittest.TestCase):
             "child_id": "child_000001",
         }
 
-        def execute(question, retrieval_query, top_k, retry=False):
+        def execute(question, retrieval_query, top_k, retry=False, **_kwargs):
             calls.append((question, retrieval_query, retry))
             verification = {
                 "answer_supported": retry,

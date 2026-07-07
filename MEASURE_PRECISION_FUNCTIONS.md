@@ -8,6 +8,13 @@ Il mesure deux familles de qualite :
 - **Retrieval** : est-ce que le bon fichier/source est retrouve dans les resultats ?
 - **Answer quality** : est-ce que la reponse generee ressemble a la reponse attendue et reste supportee par le contexte ?
 
+Note session management :
+
+- `measure_precision.py` evalue principalement des questions independantes ;
+- il ne mesure pas encore un scenario multi-tours complet avec `session_id` ;
+- les champs de session comme `standalone_question`, `history_used`, `reformulation_confidence` et `reformulation_focus` sont stockes par `query_docs.py` dans SQLite pendant l'usage interactif ;
+- les tests conversationnels sont documentes dans `SESSION_MANAGEMENT_DOCUMENTATION.md` et `session_test_questions.json`.
+
 ## Vue Globale
 
 Le flux principal est :

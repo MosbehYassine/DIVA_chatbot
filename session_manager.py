@@ -694,6 +694,48 @@ class SessionManager:
                 terms.append(normalized)
         return terms
 
+    @staticmethod
+    def _extract_module(text: str) -> str:
+        match = re.search(
+            r"\bmodule\s+(?:de\s+|d[' ]|du\s+|des\s+)?([A-Za-z0-9_.-]+)",
+            str(text or ""),
+            flags=re.IGNORECASE,
+        )
+        return match.group(1).strip(" .,:;!?") if match else ""
+
+    @staticmethod
+    def _infer_intention(text: str) -> str:
+        normalized = unicodedata.normalize("NFD", str(text or "").lower())
+        normalized = "".join(
+            char for char in normalized
+            if unicodedata.category(char) != "Mn"
+        )
+        patterns = [
+            ("impression", ("imprimer", "impression", "imprimante")),
+            ("configuration", ("configurer", "parametre", "parametrage")),
+            ("gestion", ("gerer", "gestion", "utilisateur", "profil")),
+            ("creation", ("creer", "creation", "nouveau")),
+            ("diagnostic", ("erreur", "probleme", "corriger", "controler")),
+            ("consultation", ("chercher", "rechercher", "consulter", "afficher")),
+        ]
+        for label, markers in patterns:
+            if any(marker in normalized for marker in markers):
+                return label
+        return ""
+
+    @staticmethod
+    def _source_terms(sources: List[str]) -> List[str]:
+        terms = []
+        for source in sources:
+            label = re.sub(r"\.[A-Za-z0-9]+$", "", str(source or ""))
+            label = re.sub(r"[_-]+", " ", label)
+            terms.extend(
+                word.lower()
+                for word in re.findall(r"[A-Za-z0-9]{3,}", label)
+                if word.lower() not in SESSION_STOPWORDS
+            )
+        return terms
+
     def get_recent_sources(
         self,
         session_id: Optional[str] = None,
@@ -724,21 +766,65 @@ class SessionManager:
         term_counts = Counter()
         for turn in turns:
             term_counts.update(self._important_terms(turn.get("question", "")))
+            metadata = turn.get("metadata") or {}
+            if metadata.get("standalone_question"):
+                term_counts.update(
+                    self._important_terms(metadata.get("standalone_question", ""))
+                )
         topics = [term for term, _count in term_counts.most_common(8)]
         sources = self.get_recent_sources(session_id=session_id, limit=5)
         last_question = turns[-1].get("question", "")
+        last_metadata = turns[-1].get("metadata") or {}
+        last_standalone = last_metadata.get("standalone_question", "")
+        active_module = ""
+        active_topic = ""
+        last_intention = ""
+        for turn in reversed(turns):
+            metadata = turn.get("metadata") or {}
+            focus = metadata.get("reformulation_focus") or {}
+            if not active_module:
+                active_module = (
+                    str(focus.get("module") or "")
+                    or self._extract_module(metadata.get("standalone_question", ""))
+                    or self._extract_module(turn.get("question", ""))
+                    or self._extract_module(turn.get("answer", ""))
+                )
+            if not active_topic:
+                active_topic = str(focus.get("topic") or "")
+            if not last_intention:
+                last_intention = (
+                    self._infer_intention(metadata.get("standalone_question", ""))
+                    or self._infer_intention(turn.get("question", ""))
+                )
+            if active_module and active_topic and last_intention:
+                break
+        if not active_topic:
+            source_terms = self._source_terms(sources)
+            if source_terms:
+                active_topic = " ".join(source_terms[:3])
 
         pieces = []
+        if active_module:
+            pieces.append("Module actif: " + active_module)
+        if active_topic:
+            pieces.append("Sujet actif: " + active_topic)
+        if last_intention:
+            pieces.append("Derniere intention: " + last_intention)
         if topics:
             pieces.append("Sujets: " + ", ".join(topics[:6]))
         if sources:
             pieces.append("Sources recentes: " + ", ".join(sources[:4]))
+        if last_standalone and last_standalone != last_question:
+            pieces.append("Question autonome: " + last_standalone[:180])
         if last_question:
             pieces.append("Derniere question: " + last_question[:180])
         return {
             "summary": " | ".join(pieces),
             "topics": topics,
             "sources": sources,
+            "active_module": active_module,
+            "active_topic": active_topic,
+            "last_intention": last_intention,
         }
 
     def refresh_session_memory(self, session_id: Optional[str] = None) -> Dict:
@@ -746,8 +832,17 @@ class SessionManager:
             session_id = self.current_session()
         summary = self.build_session_summary(session_id=session_id)
         self.set_session_context(session_id, summary.get("summary", ""))
-        if summary.get("topics"):
-            self.add_indexed_entities(summary["topics"], session_id=session_id)
+        entities = list(summary.get("topics") or [])
+        entities.extend(
+            value for value in (
+                summary.get("active_module"),
+                summary.get("active_topic"),
+                summary.get("last_intention"),
+            )
+            if value
+        )
+        if entities:
+            self.add_indexed_entities(entities, session_id=session_id)
         return summary
 
     def set_session_context(self, session_id: Optional[str] = None, context: str = "") -> bool:

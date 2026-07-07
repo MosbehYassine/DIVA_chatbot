@@ -1,131 +1,164 @@
-# Chatbot RAG Harmony - OpenRouter Version
+# RAG Harmony/Divalto
 
-Ce projet est un chatbot RAG (Retrieval-Augmented Generation) basé sur la documentation Harmony/Divalto extraite de fichiers CHM.
+Systeme RAG local pour interroger la documentation Harmony/Divalto extraite de fichiers CHM.
 
-## Configuration
+Le pipeline actif combine :
 
-### Variables d'environnement requises
+- recherche graphe NetworkX ;
+- recherche vectorielle FAISS ;
+- recherche lexicale BM25/TF-IDF ;
+- fusion et parent-child retrieval ;
+- MMR ;
+- reranking cross-encoder si disponible ;
+- compression contextuelle ;
+- generation extractive ;
+- reformulation LLM optionnelle et controlee ;
+- verification documentaire ;
+- sessions persistantes SQLite.
 
-#### Méthode 1: Fichier .env (recommandé)
-Créez un fichier `.env` dans le répertoire du projet :
-```
-OPENROUTER_API_KEY=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
-```
+## Documentation
 
-#### Méthode 2: Variable d'environnement système (Windows)
-1. Rechercher "variables d'environnement" dans le menu Démarrer
-2. Cliquer sur "Variables d'environnement"
-3. Dans "Variables utilisateur", cliquer sur "Nouvelle..."
-4. Nom: `OPENROUTER_API_KEY`
-5. Valeur: `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`
+| Fichier | Contenu |
+|---|---|
+| `TECHNICAL_DOCUMENTATION.md` | Documentation technique globale du projet. |
+| `SESSION_MANAGEMENT_DOCUMENTATION.md` | Documentation detaillee des sessions, historique, reformulation et SQLite. |
+| `INGEST_DOCS_DOCUMENTATION.md` | Documentation de l'ingestion et du chunking. |
+| `MEASURE_PRECISION_FUNCTIONS.md` | Documentation des fonctions d'evaluation. |
 
-#### Méthode 3: PowerShell (session temporaire)
+## Installation
+
 ```powershell
-$env:OPENROUTER_API_KEY = "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"
-```
-
-### Modèle utilisé
-
-Le chatbot utilise le modèle `qwen/qwen-2.5-72b-instruct` via l'API OpenRouter.
-
-## Installation et utilisation
-
-### Avec Docker (recommandé)
-
-1. Construire l'image :
-```bash
-docker build -t diva-chatbot .
-```
-
-2. Lancer le conteneur :
-```bash
-# Avec fichier .env
-docker run -it --env-file .env diva-chatbot
-
-# Ou avec variable d'environnement
-docker run -it -e OPENROUTER_API_KEY="votre_clé" diva-chatbot
-```
-
-### Sans Docker
-
-1. Installer les dépendances :
-```bash
 pip install -r requirements.txt
 ```
 
-2. Lancer l'ingestion des documents :
-```bash
+Pour utiliser BM25 :
+
+```powershell
+pip install rank_bm25
+```
+
+## Ingestion
+
+```powershell
 python ingest_docs.py
 ```
 
-3. Lancer le chatbot :
-```bash
+Cette commande regenere :
+
+- `faiss_index.pkl`
+- `chunks_metadata.json`
+- `parent_chunks_metadata.json`
+- `networkx_graph.pkl`
+- `networkx_graph_sources.pkl`
+- `index_config.json`
+
+## Requete Interactive
+
+```powershell
 python query_docs.py
 ```
 
-## Fonctionnement
+Au lancement, l'application demande quelle session utiliser.
 
-Le système propose plusieurs approches pour traiter et interroger la documentation :
+Commandes utiles dans l'interface :
 
-### GraphRAG (Alternative)
-- `ingest_docs.py` : Charge les documents et crée un graphe de connaissances NetworkX
-- `query_docs.py` : Interface de requête basée sur le graphe pour recherche d'entités
+```text
+sessions
+session
+switch <session_id>
+history
+summary
+search-history <mot>
+export-session
+/clear
+exit
+```
 
-### Workflow GraphRAG
-```bash
-# Étape 1: Créer le graphe de connaissances
-python ingest_docs.py
+Les sessions sont stockees dans :
 
-# Étape 2: Interroger le graphe
+```text
+hybrid_rag_sessions.db
+```
+
+## LLM
+
+Le systeme peut fonctionner sans LLM generateur : il garde une reponse extractive locale.
+
+Pour utiliser Ollama en local :
+
+```powershell
+$env:RAG_LLM_PROVIDER="ollama"
+$env:RAG_OLLAMA_MODEL="llama3.2:1b"
 python query_docs.py
 ```
 
-### Workflow Legacy
-```bash
-# Tout en un (recharge les documents à chaque fois)
-python rag_pipeline.py
+Ou dans `.env` :
+
+```env
+RAG_LLM_PROVIDER=ollama
+RAG_OLLAMA_MODEL=llama3.2:1b
 ```
 
-2. **Évaluation des réponses** : Après génération, l'utilisateur peut :
-   - Noter la réponse (1-5 étoiles)
-   - Fournir des commentaires
-   - Corriger la réponse si nécessaire
+Pour OpenAI/OpenRouter, utiliser les variables habituelles :
 
-3. **Analyse du feedback** : Le système enregistre toutes les interactions pour analyse future.
-
-### Utilisation
-
-#### Mode interactif normal
-```bash
-python query_docs.py
+```env
+OPENAI_API_KEY=...
+OPENROUTER_API_KEY=...
 ```
 
-## Tests et validation
+Si le quota ou le reseau est indisponible, le systeme revient a la reponse extractive.
 
-Un jeu complet de tests a été créé pour valider le système :
+## Evaluation
 
-### Fichiers de test
-- `test_questions.json` : 20 questions de test avec réponses attendues
-- `test_runner.py` : Script d'exécution des tests automatisés
-- `TEST_README.md` : Documentation détaillée des tests
+Lancer l'evaluation interactive :
 
-### Exécution des tests
-```bash
-# Résumé des tests disponibles
-python test_runner.py
-
-# Exécution des tests automatisés
-python test_runner.py run
+```powershell
+python run_precision.py
 ```
 
-### Couverture des tests
-- **20 questions** réparties en 9 catégories
-- Niveaux de difficulté : Facile (30%), Moyen (50%), Difficile (20%)
-- Sujets : Chemins Harmony, Utilisateurs, Impressions, LDAP, etc.
+Ou directement :
 
-## Changements récents
+```powershell
+python measure_precision.py --output precision_report.json --no-fail
+```
 
-- Refactorisation en architecture modulaire (process_documents.py + answer_questions.py)
-- Utilisation de FAISS pour la recherche vectorielle
-- Génération de réponses avec GPT-2
-- Suppression du Human-in-the-Loop pour automatisation complète
+Le fichier principal de test est :
+
+```text
+test_questions.json
+```
+
+Il contient des questions faciles, moyennes et difficiles reparties par modules.
+
+## Tests
+
+Compilation :
+
+```powershell
+python build_rag.py --compile
+```
+
+Tests composants :
+
+```powershell
+python -m unittest test_rag_pipeline_components.py
+```
+
+Tests session cibles :
+
+```powershell
+python -m unittest test_rag_pipeline_components.PipelineComponentTests.test_chat_memory_reformulation_and_clear test_rag_pipeline_components.PipelineComponentTests.test_hybrid_query_uses_memory_and_retries_once
+```
+
+## Fichiers Importants
+
+| Fichier | Role |
+|---|---|
+| `ingest_docs.py` | Ingestion, chunking, FAISS, graphe. |
+| `query_docs.py` | Pipeline de requete et interface interactive. |
+| `session_manager.py` | Sessions SQLite et resume conversationnel. |
+| `rag_conversation.py` | Reformulation conversationnelle deterministe. |
+| `rag_answer.py` | Generation extractive et extraction ciblee. |
+| `rag_llm_answer.py` | Reformulation LLM controlee, OpenAI/OpenRouter/Ollama. |
+| `measure_precision.py` | Evaluation retrieval + reponse. |
+| `run_precision.py` | Lanceur d'evaluation. |

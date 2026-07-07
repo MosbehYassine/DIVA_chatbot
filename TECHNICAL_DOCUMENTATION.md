@@ -38,6 +38,7 @@ question
 |---|---|
 | `README.md` | Presentation courte du projet. |
 | `TECHNICAL_DOCUMENTATION.md` | Documentation technique detaillee. |
+| `SESSION_MANAGEMENT_DOCUMENTATION.md` | Documentation detaillee des sessions, historique et SQLite. |
 | `requirements.txt` | Dependances Python. |
 | `Dockerfile` | Execution conteneurisee optionnelle. |
 | `.env` | Variables locales, notamment cles API optionnelles. |
@@ -90,21 +91,32 @@ question
 | `test_hybrid_rag_extended.py` | Tests etendus. |
 | `test_rag_pipeline_components.py` | Tests des composants internes du pipeline. |
 
-## 3. Fichiers Supprimes
+## 3. Artefacts Generes Et Fichiers Non Requis
 
-Les fichiers suivants ont ete supprimes car ils ne font plus partie du pipeline actif :
+Le pipeline actif ne depend plus des anciens raccourcis de reponses curates.
+
+Fichiers ou dossiers regenerables :
 
 | Fichier | Raison |
 |---|---|
 | `__pycache__/` | Cache Python regenere automatiquement. |
-| `precision_report.json` | Rapport genere, regenere par `python run_precision.py`. |
+| `precision_*.json` | Rapports d'evaluation regeneres par `run_precision.py` ou `measure_precision.py`. |
+| `faiss_index.pkl` | Regenere par `ingest_docs.py`. |
+| `chunks_metadata.json` | Regenere par `ingest_docs.py`. |
+| `parent_chunks_metadata.json` | Regenere par `ingest_docs.py`. |
+| `networkx_graph.pkl` | Regenere par `ingest_docs.py`. |
+| `networkx_graph_sources.pkl` | Regenere par `ingest_docs.py`. |
+| `index_config.json` | Regenere par `ingest_docs.py`. |
+
+Anciens fichiers non requis par le pipeline actuel s'ils reapparaissent :
+
+| Fichier | Raison |
+|---|---|
 | `curated_qa.json` | Ancienne base QA curatee, non utilisee par `query_docs.py`. |
 | `curated_qa_vectors.npz` | Ancien index vectoriel QA curatee. |
 | `rag_curated_vector.py` | Ancien raccourci de reponse curatee, desactive. |
 | `README_RAG.md` | Documentation redondante et obsolescente. |
 | `EXECUTION_GUIDE.md` | Guide ancien remplace par cette documentation. |
-
-Le pipeline actuel ne depend plus de ces fichiers.
 
 ## 4. Ingestion Semantique
 
@@ -116,12 +128,14 @@ Le fichier principal est `ingest_docs.py`.
 2. Detection d'encodage avec `UnicodeDammit`.
 3. Nettoyage et normalisation du texte.
 4. Decoupage HTML par sections `h1`, `h2`, `h3`.
-5. Construction des chunks parents et enfants.
-6. Enrichissement du texte envoye a FAISS.
-7. Creation des embeddings.
-8. Creation de l'index FAISS.
-9. Creation du graphe NetworkX avec aretes ponderees.
-10. Sauvegarde des artefacts.
+5. Conservation des pages courtes mais indexables par titre/source, notamment
+   les pages CHM composees surtout d'une image ou d'un schema.
+6. Construction des chunks parents et enfants.
+7. Enrichissement du texte envoye a FAISS.
+8. Creation des embeddings.
+9. Creation de l'index FAISS.
+10. Creation du graphe NetworkX avec aretes ponderees.
+11. Sauvegarde des artefacts.
 
 ### Section-aware chunking
 
@@ -270,9 +284,16 @@ Avantages :
 - reponses ancrees dans la documentation ;
 - sources faciles a fournir.
 
+Modes disponibles :
+
+- `RAG_LLM_PROVIDER=auto` : OpenAI/OpenRouter si une cle est disponible, sinon repli extractif ;
+- `RAG_LLM_PROVIDER=ollama` : reformulation via Ollama local, par defaut `llama3.2:1b` ;
+- `RAG_ENABLE_LLM_ANSWER_GENERATION=false` : reponse extractive sans LLM.
+
 Limites :
 
-- necessite une cle `OPENAI_API_KEY` ou `OPENROUTER_API_KEY` ;
+- OpenAI/OpenRouter necessitent une cle et un quota disponible ;
+- Ollama necessite que le service local soit lance ;
 - si l'appel LLM echoue, le systeme revient a la reponse extractive ;
 - similarite faible si la reponse attendue est une reformulation ;
 - depend beaucoup de la qualite du passage retrouve.
@@ -306,7 +327,15 @@ Variables utiles :
 | `RAG_ENABLE_ANSWER_VERIFIER` | Active verification | `true` |
 | `RAG_ENABLE_LLM_ANSWER_GENERATION` | Active la reformulation LLM de la reponse finale | `true` |
 | `RAG_ANSWER_LLM_MODEL` | Modele LLM pour formuler la reponse | `gpt-4o-mini` |
+| `RAG_LLM_PROVIDER` | Fournisseur LLM : `auto`, `ollama` | `auto` |
+| `RAG_OLLAMA_MODEL` | Modele Ollama local | `llama3.2:1b` |
+| `RAG_OLLAMA_BASE_URL` | URL Ollama local | `http://127.0.0.1:11434` |
 | `RAG_ENABLE_REASONING_PLAN` | Active la decomposition interne de la question avant generation | `true` |
+| `RAG_ENABLE_CHAT_MEMORY` | Active la memoire de session | `true` |
+| `RAG_ENABLE_CONVERSATION_REFORMULATION` | Active la reformulation conversationnelle deterministe | `true` |
+| `RAG_ENABLE_SESSION_SUMMARY` | Active le resume structure de session | `true` |
+| `RAG_ENABLE_SESSION_SOURCE_BOOST` | Active le boost sources/sujets recents | `true` |
+| `RAG_SESSION_SOURCE_BOOST` | Intensite du boost session | `0.04` |
 | `RAG_MAX_RETRY_COUNT` | Nombre de reessais | `1` |
 
 ## 10. Commandes
@@ -372,15 +401,19 @@ python measure_precision.py --test-file test_questions.json --no-fail
 python query_docs.py
 ```
 
-Les sessions sont stockees dans la base SQLite locale :
+Les sessions sont documentees en detail dans :
+
+```text
+SESSION_MANAGEMENT_DOCUMENTATION.md
+```
+
+La base locale active est :
 
 ```text
 hybrid_rag_sessions.db
 ```
 
-Au premier lancement, si la base est vide et que `hybrid_rag_sessions.json` existe, `SessionManager` migre automatiquement les anciennes sessions JSON vers SQLite.
-
-Schema principal :
+Schema principal SQLite :
 
 ```text
 sessions(session_id, description, created, modified, global_context, indexed_entities)
@@ -412,17 +445,37 @@ exit                 quitte l'interface
 
 L'historique est utilise par `HybridRAG.query()` avant la recherche. Si une question depend du contexte precedent, `rag_conversation.py` reformule la question avec les derniers tours de la meme session.
 
-La session garde aussi un resume deterministe dans `sessions.global_context` :
+La reformulation retourne maintenant :
 
-- sujets detectes depuis les dernieres questions ;
-- sources documentaires recentes ;
-- derniere question importante.
+```text
+standalone_question
+history_used
+reformulation_confidence
+reformulation_focus.module
+reformulation_focus.topic
+```
 
-Ce resume est mis a jour apres chaque reponse. Les sources recentes peuvent donner un petit bonus au reranking, ce qui aide les questions de suivi a rester dans le bon contexte sans forcer la reponse.
+Ces informations sont stockees dans `turns.metadata`.
+
+La session garde aussi un resume structure dans `sessions.global_context` :
+
+```text
+Module actif: Administration
+Sujet actif: utilisateurs
+Derniere intention: gestion
+Sujets: ...
+Sources recentes: ...
+Question autonome: ...
+Derniere question: ...
+```
+
+Ce resume est mis a jour apres chaque reponse. Les sources recentes, le module actif et le sujet actif peuvent donner un petit bonus au reranking, ce qui aide les questions de suivi a rester dans le bon contexte sans forcer la reponse.
 
 Variables de configuration :
 
 ```text
+RAG_ENABLE_CHAT_MEMORY=true
+RAG_ENABLE_CONVERSATION_REFORMULATION=true
 RAG_ENABLE_SESSION_SUMMARY=true
 RAG_ENABLE_SESSION_SOURCE_BOOST=true
 RAG_SESSION_SOURCE_BOOST=0.04
@@ -433,11 +486,12 @@ Flux conversationnel :
 ```text
 question de suivi
   -> historique de la session active
-  -> resume de session
-  -> reformulation contextuelle
+  -> resume structure de session
+  -> reformulation contextuelle + score de confiance
   -> recherche graphe / FAISS / lexical
-  -> bonus leger sur les sources recentes de la session
+  -> bonus leger sur sources, module et sujet recents
   -> fusion, reranking, generation extractive
+  -> stockage SQLite de la question, reponse, sources et metadonnees
 ```
 
 Pour tester cette partie, utiliser `session_test_questions.json`. Chaque scenario contient trois questions a poser dans l'ordre dans la meme session. Les tours 2 et 3 doivent utiliser l'historique, par exemple les pronoms ou expressions comme `dedans`, `apres ca`, `ces parametres`.
@@ -446,6 +500,12 @@ Verifier rapidement la base SQLite :
 
 ```powershell
 python -c "import sqlite3; con=sqlite3.connect('hybrid_rag_sessions.db'); print(con.execute('select count(*) from sessions').fetchone()[0], 'sessions'); print(con.execute('select count(*) from turns').fetchone()[0], 'tours')"
+```
+
+Voir les metadonnees de reformulation :
+
+```powershell
+python -c "import sqlite3, json; con=sqlite3.connect('hybrid_rag_sessions.db'); rows=con.execute('select question, metadata from turns order by id desc limit 3').fetchall(); [print(q, json.loads(m or '{}')) for q,m in rows]"
 ```
 
 ## 11. Etat Actuel Des Index

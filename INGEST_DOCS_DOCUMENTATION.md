@@ -33,6 +33,11 @@ Apres ingestion, le systeme peut faire :
 - reranking ;
 - generation extractive avec sources.
 
+Note : l'ingestion ne cree pas et ne modifie pas les sessions utilisateur.
+Les sessions, l'historique, les questions posees et les reponses sont geres
+separement par `session_manager.py` dans `hybrid_rag_sessions.db`. Voir
+`SESSION_MANAGEMENT_DOCUMENTATION.md`.
+
 ## 2. Commande d'execution
 
 Commande principale :
@@ -351,20 +356,22 @@ nom du fichier.
 Fonction :
 
 ```python
-is_valid_document(document)
+is_indexable_document(document)
 ```
 
 Elle garde :
 
 - les documents avec plus de 300 caracteres ;
 - ou les petites pages CHM si elles ont quand meme un titre, une section, une
-  source, un module et un minimum de texte.
+  source indexable et un minimum de texte.
 
 But :
 
 - supprimer les pages vides ou purement decoratives ;
 - garder les pages courtes mais utiles, par exemple une page avec un titre
-  important.
+  important ou une page composee surtout d'une image/schema. Exemple :
+  `data/Services/Services/Architecture.htm` contient seulement le titre
+  `Architecture` et une image, mais doit rester recherchable.
 
 ## 10. Creation de l'index FAISS
 

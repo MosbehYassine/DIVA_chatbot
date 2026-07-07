@@ -13,7 +13,7 @@ from rag_config import RAG_ENABLE_BM25, RAG_ENABLE_TFIDF
 def normalize_lexical(text: str) -> str:
     value = unicodedata.normalize("NFD", (text or "").lower())
     value = "".join(ch for ch in value if unicodedata.category(ch) != "Mn")
-    return " ".join(re.findall(r"[a-z0-9_.-]+", value))
+    return " ".join(re.findall(r"[a-z0-9]+(?:[_.-][a-z0-9]+)*", value))
 
 
 def tokenize(text: str) -> List[str]:
@@ -89,6 +89,10 @@ class LexicalRetriever:
             scores = np.asarray((self.matrix @ query_vector.T).toarray()).reshape(-1)
         else:
             scores = self._overlap_scores(query_tokens)
+        retrieval_source = self.backend
+        if scores.size and float(np.max(scores)) <= 0.0 and self.backend != "token_overlap":
+            scores = self._overlap_scores(query_tokens)
+            retrieval_source = "token_overlap"
 
         order = np.argsort(-scores)[:min(top_k, len(scores))]
         max_score = float(np.max(scores)) if scores.size else 0.0
@@ -108,8 +112,8 @@ class LexicalRetriever:
                     "source": item.get("source", "unknown"),
                     "lexical_score": float(score),
                     "score": float(score),
-                    "retrieval_source": self.backend,
-                    "method": self.backend,
+                    "retrieval_source": retrieval_source,
+                    "method": retrieval_source,
                 }
             )
         return results
